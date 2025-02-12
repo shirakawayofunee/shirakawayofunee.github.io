@@ -2,13 +2,13 @@
  * @Author: 左措 73263982+kiiyorku@users.noreply.github.com
  * @Date: 2025-02-10 11:38:26
  * @LastEditors: 左措 73263982+kiiyorku@users.noreply.github.com
- * @LastEditTime: 2025-02-12 21:18:24
- * @FilePath: \shirakawayofunee.github.io\AU\AU2.html
+ * @LastEditTime: 2025-02-13 01:22:34
+ * @FilePath: \shirakawayofunee.github.io\AU\gxx.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
-
+<title></title>
 <head>
   <meta charset="UTF-8">
   <style>
@@ -26,16 +26,35 @@
     .metric-container {
       display: flex;
       gap: 30px;
-      justify-content: center;
+      /* justify-content: center; */
       pointer-events: none;
       /* 禁用鼠标事件 */
       user-select: none;
       /* 禁止文字选择 */
+      justify-content: space-between; /* 左右两端对齐 */
+    }
+
+    /* 左侧指标项（文字左对齐） */
+    .metric-item.left-item {
+      text-align: left;
+    }
+
+    /* 右侧指标项（文字右对齐） */
+    .metric-item.right-item {
+      text-align: right;
+    }
+
+    /* 蓝色进度条从右向左填充（修复方向） */
+    .progress-container.right::after {
+      background: #1A6DEA;
+      position: absolute;
+      right: 0; /* 从右侧开始填充 */
+      transform: scaleX(-1);
     }
 
     /* 指标项-固定布局 */
     .metric-item {
-      width: 200px;
+      width: 720px;
       opacity: 0.999;
       /* 绕过开发者工具样式覆盖 */
     }
@@ -51,10 +70,11 @@
     .progress-container {
       height: 18px;
       background: #ffffff;
-      border-radius: 6px;
+      /* border-radius: 6px; */
       overflow: hidden;
       position: relative;
-      outline: 1.5px solid black; /* 黑色描边 */
+      outline: 1.5px solid black;
+      /* 黑色描边 */
     }
 
     /* 动态进度条（通过伪元素实现） */
@@ -64,7 +84,7 @@
       height: 100%;
       background: #FF0020;
       /* 红色 */
-      border-radius: 6px;
+      /* border-radius: 6px; */
       width: var(--progress);
       /* 后台控制变量 */
       transition: width 0.3s;
@@ -76,18 +96,20 @@
       height: 100%;
       background: #1A6DEA;
       /* 蓝色 */
-      border-radius: 6px;
+      /* border-radius: 6px; */
       width: var(--progress);
       /* 后台控制变量 */
       transition: width 0.3s;
-      transform: scaleX(-1);
+      position: absolute;  /* 关键修改：绝对定位 */
+      right: 0;            /* 从右侧开始填充 */
+      /* transform: scaleX(-1); */
       /* 从右向左播放 */
     }
 
     /* 当进度为 0% 时的样式 */
-    .progress-container.zero::after {
-      background: #000;
-      /* 黑色 */
+    .progress-container.left.zero::after,
+    .progress-container.right.zero::after {
+      background: #000 !important;
     }
 
     .metric-container {
@@ -107,11 +129,11 @@
 <body>
   <!-- 每个进度值通过内联style由服务端注入 -->
   <div class="metric-container">
-    <div class="metric-item">
+    <div class="metric-item left-item">
       <div class="metric-label">信頼度</div>
       <div class="progress-container left" style="--progress: 75%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">信頼度</div>
       <div class="progress-container right" style="--progress: 95%"></div>
     </div>
@@ -119,9 +141,9 @@
   <div class="metric-container">
     <div class="metric-item">
       <div class="metric-label">忠誠度</div>
-      <div class="progress-container left" style="--progress: 0%"></div>
+      <div class="progress-container left zero"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">忠誠度</div>
       <div class="progress-container right" style="--progress: 100%"></div>
     </div>
@@ -131,7 +153,7 @@
       <div class="metric-label">依存度</div>
       <div class="progress-container left" style="--progress: 35%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">依存度</div>
       <div class="progress-container right" style="--progress: 80%"></div>
     </div>
@@ -141,7 +163,7 @@
       <div class="metric-label">保護欲</div>
       <div class="progress-container left" style="--progress: 100%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">保護欲</div>
       <div class="progress-container right" style="--progress: 100%"></div>
     </div>
@@ -151,7 +173,7 @@
       <div class="metric-label">征服欲</div>
       <div class="progress-container left" style="--progress: 10%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">征服欲</div>
       <div class="progress-container right" style="--progress: 25%"></div>
     </div>
@@ -161,7 +183,7 @@
       <div class="metric-label">独占欲</div>
       <div class="progress-container left" style="--progress: 50%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">独占欲</div>
       <div class="progress-container right" style="--progress: 85%"></div>
     </div>
@@ -171,19 +193,19 @@
       <div class="metric-label">優越感</div>
       <div class="progress-container left" style="--progress: 5%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">優越感</div>
-      <div class="progress-container right" style="--progress: 0%"></div>
+      <div class="progress-container right zero"></div>
     </div>
   </div>
   <div class="metric-container">
     <div class="metric-item">
       <div class="metric-label">功利性</div>
-      <div class="progress-container left" style="--progress: 0%"></div>
+      <div class="progress-container left zero"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">功利性</div>
-      <div class="progress-container right" style="--progress: 0%"></div>
+      <div class="progress-container right zero"></div>
     </div>
   </div>
   <div class="metric-container">
@@ -191,7 +213,7 @@
       <div class="metric-label">娯楽性</div>
       <div class="progress-container left" style="--progress: 60%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">娯楽性</div>
       <div class="progress-container right" style="--progress: 25%"></div>
     </div>
@@ -201,7 +223,7 @@
       <div class="metric-label">愛情</div>
       <div class="progress-container left" style="--progress: 30%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">愛情</div>
       <div class="progress-container right" style="--progress: 99%"></div>
     </div>
@@ -211,7 +233,7 @@
       <div class="metric-label">理性</div>
       <div class="progress-container left" style="--progress: 80%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">理性</div>
       <div class="progress-container right" style="--progress: 20%"></div>
     </div>
@@ -221,7 +243,7 @@
       <div class="metric-label">親情</div>
       <div class="progress-container left" style="--progress: 70%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">親情</div>
       <div class="progress-container right" style="--progress: 100%"></div>
     </div>
@@ -231,7 +253,7 @@
       <div class="metric-label">友情</div>
       <div class="progress-container left" style="--progress: 70%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">友情</div>
       <div class="progress-container right" style="--progress: 60%"></div>
     </div>
@@ -241,7 +263,7 @@
       <div class="metric-label">献身</div>
       <div class="progress-container left" style="--progress: 85%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">献身</div>
       <div class="progress-container right" style="--progress: 99%"></div>
     </div>
@@ -251,7 +273,7 @@
       <div class="metric-label">欲求</div>
       <div class="progress-container left" style="--progress: 20%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">欲求</div>
       <div class="progress-container right" style="--progress: 60%"></div>
     </div>
@@ -261,7 +283,7 @@
       <div class="metric-label">偏愛</div>
       <div class="progress-container left" style="--progress: 90%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">偏愛</div>
       <div class="progress-container right" style="--progress: 100%"></div>
     </div>
@@ -271,9 +293,9 @@
       <div class="metric-label">支配</div>
       <div class="progress-container left" style="--progress: 60%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">支配</div>
-      <div class="progress-container right" style="--progress: 5%"></div>
+      <div class="progress-container right" style="--progress: 10%"></div>
     </div>
   </div>
   <div class="metric-container">
@@ -281,7 +303,7 @@
       <div class="metric-label">服従</div>
       <div class="progress-container left" style="--progress: 3%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">服従</div>
       <div class="progress-container right" style="--progress: 90%"></div>
     </div>
@@ -289,9 +311,9 @@
   <div class="metric-container">
     <div class="metric-item">
       <div class="metric-label">崇拜</div>
-      <div class="progress-container left" style="--progress: 0%"></div>
+      <div class="progress-container left zero"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">崇拝</div>
       <div class="progress-container right" style="--progress: 90%"></div>
     </div>
@@ -301,7 +323,7 @@
       <div class="metric-label">同情</div>
       <div class="progress-container left" style="--progress: 70%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">同情</div>
       <div class="progress-container right" style="--progress: 15%"></div>
     </div>
@@ -311,7 +333,7 @@
       <div class="metric-label">歓楽</div>
       <div class="progress-container left" style="--progress: 60%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">歓楽</div>
       <div class="progress-container right" style="--progress: 100%"></div>
     </div>
@@ -319,11 +341,11 @@
   <div class="metric-container">
     <div class="metric-item">
       <div class="metric-label">苦痛</div>
-      <div class="progress-container left" style="--progress: 0%"></div>
+      <div class="progress-container left zero"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">苦痛</div>
-      <div class="progress-container right" style="--progress: 30%"></div>
+      <div class="progress-container right" style="--progress: 15%"></div>
     </div>
   </div>
   <div class="metric-container">
@@ -331,7 +353,7 @@
       <div class="metric-label">情欲</div>
       <div class="progress-container left" style="--progress: 20%"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">情欲</div>
       <div class="progress-container right" style="--progress: 80%"></div>
     </div>
@@ -341,28 +363,28 @@
   <div class="metric-container">
     <div class="metric-item">
       <div class="metric-label">敵意</div>
-      <div class="progress-container left" style="--progress: 0%"></div>
+      <div class="progress-container left zero"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">敵意</div>
-      <div class="progress-container right" style="--progress: 0%"></div>
+      <div class="progress-container right zero"></div>
     </div>
   </div>
   </div>
   <div class="metric-container">
-    <div class="metric-item">
+    <div class="metric-item left-item">
       <div class="metric-label">悪意</div>
-      <div class="progress-container left" style="--progress: 0%"></div>
+      <div class="progress-container left zero"></div>
     </div>
-    <div class="metric-item">
+    <div class="metric-item right-item">
       <div class="metric-label">悪意</div>
-      <div class="progress-container right" style="--progress: 0%"></div>
+      <div class="progress-container right zero"></div>
     </div>
-
   </div>
 
   <!-- 其他指标项同理 -->
   <!--     // 前端保护脚本（需放在body末尾） -->
+
   <script>
     (function () {
       setInterval(() => {
