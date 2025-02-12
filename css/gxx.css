@@ -1,0 +1,116 @@
+/* 防篡改基础样式 */
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  font-family: "Microsoft YaHei", sans-serif;
+  background: #f8f9fa;
+}
+
+/* 数据容器-禁用所有交互 */
+.metric-container {
+  display: flex;
+  gap: 30px;
+  /* justify-content: center; */
+  pointer-events: none;
+  /* 禁用鼠标事件 */
+  user-select: none;
+  /* 禁止文字选择 */
+  justify-content: space-between;
+  /* 左右两端对齐 */
+}
+
+/* 左侧指标项（文字左对齐） */
+.metric-item.left-item {
+  text-align: left;
+}
+
+/* 右侧指标项（文字右对齐） */
+.metric-item.right-item {
+  text-align: right;
+}
+
+/* 蓝色进度条从右向左填充（修复方向） */
+.progress-container.right::after {
+  background: #1A6DEA;
+  position: absolute;
+  right: 0;
+  /* 从右侧开始填充 */
+  transform: scaleX(-1);
+}
+
+/* 指标项-固定布局 */
+.metric-item {
+  width: 720px;
+  opacity: 0.999;
+  /* 绕过开发者工具样式覆盖 */
+}
+
+/* 数据标签样式 */
+.metric-label {
+  font-size: 16px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+/* 进度条容器-固定尺寸 */
+.progress-container {
+  height: 18px;
+  background: #ffffff;
+  /* border-radius: 6px; */
+  overflow: hidden;
+  position: relative;
+  outline: 1.5px solid black;
+  /* 黑色描边 */
+}
+
+/* 动态进度条（通过伪元素实现） */
+.progress-container.left::after {
+  content: "";
+  display: block;
+  height: 100%;
+  background: #FF0020;
+  /* 红色 */
+  background: #ECEBF3;
+  /* border-radius: 6px; */
+  width: var(--progress);
+  /* 后台控制变量 */
+  transition: width 0.3s;
+}
+
+.progress-container.right::after {
+  content: "";
+  display: block;
+  height: 100%;
+  background: #676DB9;
+  /* 蓝色 */
+  /* border-radius: 6px; */
+  width: var(--progress);
+  /* 后台控制变量 */
+  transition: width 0.3s;
+  position: absolute;
+  /* 关键修改：绝对定位 */
+  right: 0;
+  /* 从右侧开始填充 */
+  /* transform: scaleX(-1); */
+  /* 从右向左播放 */
+}
+
+/* 当进度为 0% 时的样式 */
+.progress-container.left.zero::after,
+.progress-container.right.zero::after {
+  background: #000 !important;
+}
+
+.metric-container {
+  pointer-events: none;
+  /* 禁用所有鼠标事件 */
+  user-select: none;
+  /* 防止用户选择文字 */
+}
+
+.metric-item {
+  opacity: 0.999;
+  /* 绕过浏览器开发者工具的样式覆盖检测 */
+}

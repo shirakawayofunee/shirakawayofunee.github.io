@@ -2,22 +2,24 @@
  * @Author: 左措 73263982+kiiyorku@users.noreply.github.com
  * @Date: 2025-02-10 11:38:26
  * @LastEditors: 左措 73263982+kiiyorku@users.noreply.github.com
- * @LastEditTime: 2025-02-13 01:26:18
+ * @LastEditTime: 2025-02-13 01:40:32
  * @FilePath: \shirakawayofunee.github.io\AU\gxx.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <title></title>
+
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href=css/gxx.css" rel="stylesheet">
   <style>
     /* 防篡改基础样式 */
     body {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      padding: 30px;
+      padding: 80px;
       font-family: "Microsoft YaHei", sans-serif;
       background: #f8f9fa;
     }
@@ -25,13 +27,14 @@
     /* 数据容器-禁用所有交互 */
     .metric-container {
       display: flex;
-      gap: 30px;
+      gap: 00px;
       /* justify-content: center; */
       pointer-events: none;
       /* 禁用鼠标事件 */
       user-select: none;
       /* 禁止文字选择 */
-      justify-content: space-between; /* 左右两端对齐 */
+      justify-content: space-between;
+      /* 左右两端对齐 */
     }
 
     /* 左侧指标项（文字左对齐） */
@@ -44,13 +47,6 @@
       text-align: right;
     }
 
-    /* 蓝色进度条从右向左填充（修复方向） */
-    .progress-container.right::after {
-      background: #1A6DEA;
-      position: absolute;
-      right: 0; /* 从右侧开始填充 */
-      transform: scaleX(-1);
-    }
 
     /* 指标项-固定布局 */
     .metric-item {
@@ -62,7 +58,7 @@
     /* 数据标签样式 */
     .metric-label {
       font-size: 16px;
-      color: #2c3e50;
+      color: #000;
       margin-bottom: 8px;
     }
 
@@ -101,8 +97,10 @@
       width: var(--progress);
       /* 后台控制变量 */
       transition: width 0.3s;
-      position: absolute;  /* 关键修改：绝对定位 */
-      right: 0;            /* 从右侧开始填充 */
+      position: absolute;
+      /* 关键修改：绝对定位 */
+      right: 0;
+      /* 从右侧开始填充 */
       /* transform: scaleX(-1); */
       /* 从右向左播放 */
     }
