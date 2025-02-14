@@ -36,36 +36,79 @@
 <!-- utf2internal --><link rel="stylesheet" href="css/style5701.css">
 <!-- DISP:detail-->
 <script type="module">
-	// Import the functions you need from the SDKs you need
-	import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
-	import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
-	// TODO: Add SDKs for Firebase products that you want to use
-	// https://firebase.google.com/docs/web/setup#available-libraries
-  
-	// Your web app's Firebase configuration
-	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-	const firebaseConfig = {
-	  apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
-	  authDomain: "fangkeshuju.firebaseapp.com",
-	  projectId: "fangkeshuju",
-	  storageBucket: "fangkeshuju.firebasestorage.app",
-	  messagingSenderId: "1043722790851",
-	  appId: "1:1043722790851:web:01cca5afff820eb202ff76",
-	  measurementId: "G-MGC7KEWX53"
-	};
-  
-	// Initialize Firebase
-	const app = initializeApp(firebaseConfig);
-	const analytics = getAnalytics(app);
-  </script>
-<script>
-	// 记录页面访问事件
-	analytics.logEvent('page_view', {
-	  page_title: document.title,
-	  page_location: window.location.href,
-	  page_path: window.location.pathname
-	});
-  </script>
+  // 导入 Firebase SDK
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+
+  // Firebase 配置
+  const firebaseConfig = {
+    apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
+    authDomain: "fangkeshuju.firebaseapp.com",
+    projectId: "fangkeshuju",
+    storageBucket: "fangkeshuju.firebasestorage.app",
+    messagingSenderId: "1043722790851",
+    appId: "1:1043722790851:web:01cca5afff820eb202ff76",
+    measurementId: "G-MGC7KEWX53"
+  };
+
+  // 初始化 Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  // 记录页面访问事件并保存到 Firestore
+  async function logPageView() {
+    try {
+      await addDoc(collection(db, 'page_views'), {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        timestamp: serverTimestamp()
+      });
+      console.log('Page view saved to Firestore');
+    } catch (error) {
+      console.error('Error saving page view: ', error);
+    }
+  }
+
+  // 调用函数
+  logPageView();
+
+  // 追踪图片查看行为
+  const images = document.querySelectorAll('img.trackable');
+  images.forEach(img => {
+    let startTime = null;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startTime = Date.now();
+        } else if (startTime) {
+          const duration = (Date.now() - startTime) / 1000;
+          saveImageView(img.src, duration);
+          startTime = null;
+        }
+      });
+    });
+
+    observer.observe(img);
+  });
+
+  // 保存图片查看行为到 Firestore
+  async function saveImageView(imageSrc, duration) {
+    try {
+      await addDoc(collection(db, 'image_views'), {
+        image_src: imageSrc,
+        view_duration: duration,
+        timestamp: serverTimestamp()
+      });
+      console.log('Image view saved to Firestore');
+    } catch (error) {
+      console.error('Error saving image view: ', error);
+    }
+  }
+</script>
 <style>
 @charset "UTF-8";
 /* 作品データベース（詳細ページ） */
