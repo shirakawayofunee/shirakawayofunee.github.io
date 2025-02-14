@@ -14,7 +14,7 @@
 
 
 
-	<title>AU一覧</title>
+	<title>AU一覧?</title>
 	<link rel="icon" href="img/hp_icon32.png" sizes="32x32" />
 	<link rel="icon" href="img/hp_icon192.png" sizes="192x192" />
 	<link rel="apple-touch-icon-precomposed" href="img/hp_icon152.png" />
@@ -6825,64 +6825,6 @@
 
 				});
 		}
-
-		//-------
-		//Ajaxで評価のみ　投票する処理
-		//未使用とする2023.10.10
-		/***********
-		function selectedNoReview() {
-			var goods_id = $('input#goods_id').val();
-		
-			location.href="https://www.chil-chil.net/login/?after=%2FgoodsDetail%2Fgoods_id%2F"+goods_id+"%2F";
-			//$('#js-vote_btn').hide();
-			//$('div.Hyouka_Btn').hide();
-			//$('div#ReviewContHeader2').hide();
-			//$('img#revBtn').attr("src","img/database_btn_Rev02.gif");
-			//$('img#revBtn').attr("alt","評価・レビュー修正する");
-			//$('#js-posted_msg').append("30日以内なら、評価の修正ができますよ！");
-		}
-		****/
-
-		function revEnt(path, goods_id, levelId, resId, postBtnId, optBtnsId) {
-			var review_id = $("input#review_id").val();
-			var level = $("input#level").val();
-			if (level > 0) {
-				var url = path + "restRevEntDone/goods_id/" + goods_id + "/level/" + level + "/";
-				if (review_id) url += "review_id/" + review_id + "/";
-				//console.log("revEnt url="+url);
-				$.getJSON(
-					url,
-					function (result) {
-
-						if (result) {
-							if (result['state'] == 1) {
-
-								//投稿成功
-
-								$("#voted_msg").show();	//投稿済みメッセージ表示
-
-								revId = result['review_id'];	//review_id
-								if (revId) $("input#review_id").val(revId);	//review_idセット
-
-							}
-							else if (result['state'] == 0) {
-								//$(optBtnsId).hide();
-								$(postBtnId).show();
-								alert("投稿できませんでした。" + "\n" + result['error']);
-							}
-							else {
-								//$(optBtnsId).hide();
-								$(postBtnId).show();
-								alert("投稿できませんでした。");
-							}
-						}
-
-					});
-			}
-			else alert("評価が入っていません。");
-
-		}
-
 	</script>
 	<!-- /bkshMng_dlg.tpl -->
 	<!-- utf2internal -->

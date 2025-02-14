@@ -3926,6 +3926,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // -->
+/* 访客 */
+firebase.analytics().setUserProperties({
+  user_id: '12345',
+  user_role: 'guest'
+});
+firebase.analytics().logEvent('user_action', {
+  action: 'view_page',
+  page_name: 'home'
+});
+// 选择所有需要追踪的图片
+const images = document.querySelectorAll('img.trackable');
+
+images.forEach(img => {
+  let startTime = null;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // 图片进入视口，开始计时
+        startTime = Date.now();
+      } else if (startTime) {
+        // 图片离开视口，计算时长并发送事件
+        const duration = (Date.now() - startTime) / 1000; // 转换为秒
+        firebase.analytics().logEvent('image_view', {
+          image_src: img.src,
+          view_duration: duration
+        });
+        startTime = null;
+      }
+    });
+  });
+
+  // 开始观察图片
+  observer.observe(img);
+});
 </script>
 
 <!-- ネタバレ表示あり -->
