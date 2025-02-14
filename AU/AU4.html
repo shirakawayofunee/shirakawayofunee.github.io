@@ -2067,30 +2067,10 @@ function chgAct() {
 		<li class="js-dropdown"><a>AU総集編</a>
 <!-- 		<ul class="js-dropdown_menu">
 			<li><a href="https://www.chil-chil.net/blAwardRank/y/2024/"><i class="fa fa-angle-right"></i>第15回 BLアワード2024</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2023/"><i class="fa fa-angle-right"></i>第14回 BLアワード2023</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2022/"><i class="fa fa-angle-right"></i>第13回 BLアワード2022</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2021/"><i class="fa fa-angle-right"></i>第12回 BLアワード2021</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2020/"><i class="fa fa-angle-right"></i>第11回 BLアワード2020</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2019/"><i class="fa fa-angle-right"></i>第10回 BLアワード2019</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2018/"><i class="fa fa-angle-right"></i>第9回 BLアワード2018</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2017/"><i class="fa fa-angle-right"></i>第8回 BLアワード2017</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2016/"><i class="fa fa-angle-right"></i>第7回 BLアワード2016</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2015/"><i class="fa fa-angle-right"></i>第6回 BLアワード2015</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2014/"><i class="fa fa-angle-right"></i>第5回 BLアワード2014</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2012/"><i class="fa fa-angle-right"></i>第4回 BLアワード2012</a></li>
-			<li><a href="https://www.chil-chil.net/blAwardRank/y/2011/"><i class="fa fa-angle-right"></i>第3回 BLアワード2011</a></li>
-			<li><a href="https://www.chil-chil.net/viewer/rank2010/"><i class="fa fa-angle-right"></i>第2回 BLアワード2010</a></li>
-			<li><a href="https://www.chil-chil.net/viewer/rank2009/"><i class="fa fa-angle-right"></i>第1回 BLアワード2009</a></li>
+	
 		</ul> -->
 		</li>
 		<li class="js-dropdown"><a>情報・コラム</a>
-<!-- 		<ul class="js-dropdown_menu">
-			<li><a href="https://blnews.chil-chil.net/newsList/"><i class="fa fa-bookmark"></i>BLニュース</a></li>
-			<li><a href="https://www.chil-chil.net/compNewsList/k/801authors108/"><i class="fa fa-microphone"></i>作家インタビュー</a></li>
-			<li><a href="https://www.chil-chil.net/compNewsAllList/"><i class="fa fa-building"></i>企業お知らせ</a></li>
-			<li><a href="https://blnews.chil-chil.net/newsCmtList/"><i class="fa fa-comment"></i>新着記事コメント</a></li>
-			<li><a href="https://www.chil-chil.net/enqBackNumber/"><i class="fa fa-pencil-square-o"></i>読者投稿</a></li>
-		</ul> -->
 		</li>
 	</ul>
 </div>
@@ -2360,7 +2340,7 @@ function chgAct() {
 	<div class="c-detail_main">
 		<!-- 試し読み -->
 		<div class="c-trial01">
-			<div class="try"><a class="btn" href="https://shirakawayofunee.github.io/AU/AU4.html">試し読み</a></div>			
+			<div class="try"><a class="btn" href="zanshi.html">試し読み</a></div>			
 		</div>
 	</div>
 </div><!-- /c-detail type02 -->
@@ -3223,58 +3203,6 @@ console.log("content="+result['content']);
 	//通信が終了した場合
 	.always ( function() {  });
 
-}
-
-
-
-//評価レビューダイアログの前回値
-var old_level = null;
-var old_title = null;
-var old_comment = null;
-var old_netabare = null;
-
-
-
-function clrLastValRev() {
-console.log("clrLastValRev");
-	//前回値
-	old_level = null;
-	old_title = null;
-	old_comment = null;
-	old_netabare = null;
-}
-
-function keepLastValRev() {
-
-//console.log("keepLastValRev");
-	//前回値保存
-	old_level = $('input#level').val();
-	old_title = $('input#popup_rev_title').val();
-	old_comment = $('textarea#popup_rev_comment').val();
-	old_netabare = ($('input#popup_rev_netabare').prop('checked')? 1: 0);
-}
-
-function isChangedValRev() {
-
-//console.log("isChangedValRev");
-
-	var form_level = $('input#level').val();
-	var form_title = $('input#popup_rev_title').val();
-	var form_comment = $('textarea#popup_rev_comment').val();
-	var form_netabare = ($('input#popup_rev_netabare').prop('checked')? 1: 0);
-
-	var ret = false;
-
-console.log("old_level:"+old_level+" form_level:"+form_level);
-
-
-	//本棚管理へは完了画面からのみ行けるようにしたため、そこでのlevelの変化はチェック不要 2023.12.21
-	//if(form_level && old_level != form_level) ret = true;
-	if(form_title && old_title != form_title) ret = true;
-	if(form_comment && old_comment != form_comment) ret = true;
-	if(form_netabare && old_netabare != form_netabare) ret = true;
-
-	return ret;
 }
 
 
