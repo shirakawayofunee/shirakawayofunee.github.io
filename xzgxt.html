@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>刑侦关系网络图</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            font-family: 'Courier New', 'Comic Sans MS', cursive;
+            overflow: hidden;
+        }
+
+        #board {
+            width: 100vw;
+            height: 100vh;
+            background-color: #2c3e50;
+            border: 10px solid #34495e;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .node {
+            position: absolute;
+            cursor: move;
+            text-align: center;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #ecf0f1;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+            background-image: url('default-avatar.png');
+            /* 默认头像 */
+            transition: transform 0.3s;
+            /* 添加悬停放大效果 */
+        }
+
+        .avatar:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .label {
+            color: #ecf0f1;
+            margin-top: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .relation-line {
+            stroke: #e74c3c;
+            stroke-width: 2;
+            marker-end: url(#arrowhead);
+        }
+
+        .dashed-line {
+            stroke-dasharray: 5;
+        }
+
+        /* 增强曲线过渡效果 */
+        .relation-line {
+            transition: d 0.3s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="board">
+        <svg id="lines" style="position: absolute; width: 100%; height: 100%">
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
+                </marker>
+            </defs>
+        </svg>
+
+        <!-- 人物节点 -->
+        <div class="node" style="left: 300px; top: 200px">
+            <div class="avatar" style="background-image: src:image()"></div>
+            <div class="label">Leopold
+                <br>
+
+            </div>
+        </div>
+
+        <div class="node" style="left: 500px; top: 250px">
+            <div class="avatar"></div>
+            <div class="label">Severo<br>
+                26歳、容疑者。<br>
+                憂いと苦悩、感傷に満ちた女性として偽装して登場する。</div>
+        </div>
+
+        <div class="node" style="left: 200px; top: 350px">
+            <div class="avatar"></div>
+            <div class="label">证人C</div>
+        </div>
+
+        <div class="node" style="left: 400px; top: 400px">
+            <div class="avatar"></div>
+            <div class="label">Lの母親の隣人のパートナーの園芸師の姪。<br>
+                現在はLの養女。Lが一番好き。<br>
+                正真正銘の十代少女。<br>
+                Lへの想いが家族愛か恋愛か自分でもわからない。<br>
+                Lが最近ハマっている手作りスイーツ店に長蛇の列でも並びに行く（？）<br></div>
+        </div>
+
+        <div class="node" style="left: 600px; top: 350px">
+            <div class="avatar"></div>
+            <div class="label">关系人E</div>
+        </div>
+    </div>
+
+    <script>
+        // 连线数据
+        const connections = [
+            { from: 0, to: 1, label: "慈しむ、憐憫", dashed: false },
+            { from: 0, to: 3, label: "亲属关系", dashed: true },
+            { from: 2, to: 1, label: "目击证词", dashed: false },
+            { from: 3, to: 4, label: "通讯记录", dashed: true },
+            { from: 1, to: 0, label: "独占欲", dashed: false },
+        ];
+
+        // 初始化连线
+        function drawLines() {
+            const svg = document.getElementById('lines');
+            svg.innerHTML = '';
+
+            const nodes = document.getElementsByClassName('node');
+
+            connections.forEach(conn => {
+                const fromNode = nodes[conn.from].getBoundingClientRect();
+                const toNode = nodes[conn.to].getBoundingClientRect();
+
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                const startX = fromNode.left + fromNode.width / 2;
+                const startY = fromNode.top + fromNode.height / 2;
+                const endX = toNode.left + toNode.width / 2;
+                const endY = toNode.top + toNode.height / 2;
+
+                line.setAttribute('d', `M ${startX} ${startY} L ${endX} ${endY}`);
+                line.classList.add('relation-line');
+                if (conn.dashed) line.classList.add('dashed-line');
+
+                svg.appendChild(line);
+                // 在connections.forEach循环内追加以下代码：
+                // 添加关系标签
+                const textGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                const textPadding = 4;
+
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.textContent = conn.label;
+                text.setAttribute('x', (startX + endX) / 2);
+                text.setAttribute('y', (startY + endY) / 2 - 5); // 上移5像素避免与线重叠
+                text.setAttribute('fill', '#ecf0f1');
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('font-family', "'Courier New', monospace");
+                text.setAttribute('font-size', '12px');
+
+                // 添加文字背景
+                const bbox = text.getBBox();
+                const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                rect.setAttribute('x', bbox.x - textPadding);
+                rect.setAttribute('y', bbox.y - textPadding);
+                rect.setAttribute('width', bbox.width + textPadding * 2);
+                rect.setAttribute('height', bbox.height + textPadding * 2);
+                rect.setAttribute('fill', 'rgba(44, 62, 80, 0.9)');
+                rect.setAttribute('rx', '3');
+
+                // 组合元素
+                textGroup.appendChild(rect);
+                textGroup.appendChild(text);
+                svg.appendChild(textGroup);
+            });
+        }
+
+        // 拖拽功能
+        let dragNode = null;
+        let offset = { x: 0, y: 0 };
+
+        document.querySelectorAll('.node').forEach(node => {
+            node.addEventListener('mousedown', startDrag);
+        });
+
+        function startDrag(e) {
+            dragNode = e.target.closest('.node');
+            const rect = dragNode.getBoundingClientRect();
+            offset = {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top
+            };
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', stopDrag);
+        }
+
+        function drag(e) {
+            if (!dragNode) return;
+            dragNode.style.left = `${e.clientX - offset.x}px`;
+            dragNode.style.top = `${e.clientY - offset.y}px`;
+            drawLines(); // 实时更新连线
+        }
+
+        function stopDrag() {
+            dragNode = null;
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', stopDrag);
+        }
+
+        // 初始绘制
+        drawLines();
+        window.addEventListener('resize', drawLines);
+
+        // 修改drawLines函数中的路径生成部分：
+        function drawLines() {
+            const svg = document.getElementById('lines');
+            svg.innerHTML = '';
+
+            const nodes = document.getElementsByClassName('node');
+
+            connections.forEach(conn => {
+                const fromNode = nodes[conn.from].getBoundingClientRect();
+                const toNode = nodes[conn.to].getBoundingClientRect();
+
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                const startX = fromNode.left + fromNode.width / 2;
+                const startY = fromNode.top + fromNode.height / 2;
+                const endX = toNode.left + toNode.width / 2;
+                const endY = toNode.top + toNode.height / 2;
+
+                // 计算连线向量
+                const dx = endX - startX;
+                const dy = endY - startY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                // 检查是否存在反向连接
+                const hasReverse = connections.some(c =>
+                    c.from === conn.to && c.to === conn.from
+                );
+
+                // 自动计算曲线偏移量（根据连接距离动态调整）
+                const curveOffset = hasReverse ? distance / 4 : 0;
+
+                if (hasReverse) {
+                    // 生成二次贝塞尔曲线路径
+                    const midX = (startX + endX) / 2;
+                    const midY = (startY + endY) / 2;
+
+                    // 根据角色ID大小决定曲线方向（保证双向箭头对称）
+                    const direction = conn.from < conn.to ? 1 : -1;
+                    const ctrlX = midX + (-dy / distance) * curveOffset * direction;
+                    const ctrlY = midY + (dx / distance) * curveOffset * direction;
+
+                    line.setAttribute('d',
+                        `M ${startX} ${startY} 
+                 Q ${ctrlX} ${ctrlY} 
+                 ${endX} ${endY}`);
+                } else {
+                    // 直线路径
+                    line.setAttribute('d', `M ${startX} ${startY} L ${endX} ${endY}`);
+                }
+
+                line.classList.add('relation-line');
+                if (conn.dashed) line.classList.add('dashed-line');
+                svg.appendChild(line);
+
+                // 保持原有的文字标签添加代码...
+            });
+        }
+    </script>
+</body>
+
+</html>
