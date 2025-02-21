@@ -26,22 +26,40 @@
             transition: filter 0.5s;
         }
 
+        body::before {
+            content: '';
+            /* 加载背景图 */
+            background-image: url('img/bg_full.png');
+            /* 固定背景 */
+            background-attachment: fixed;
+            /* 完美居中 */
+            background-position: center center;
+            /* 自适应缩放 */
+            background-size: contain;
+            /* 或使用 cover 根据需求 */
+            /* 禁用重复 */
+            background-repeat: no-repeat;
+            /* 全屏覆盖 */
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            /* 置于底层 */
+            z-index: -1;
+            /* 可选阴影效果 */
+            box-shadow: inset 0 0 15rem rgba(0, 0, 0, 0.6);
+            /* 硬件加速优化 */
+            transform: translateZ(0);
+            /* 渐进加载优化 */
+            background-color: #1a1a1a;
+            /* 背景主色 */
+            filter: blur(10px);
+            transition: filter 0.5s;
+        }
+
+
         /* 加载完成状态 */
         body.loaded::before {
             filter: blur(0) !important;
-        }
-
-        /* 临时调试层 */
-        body::after {
-            content: '当前状态：' attr(class);
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 5px;
-            z-index: 99999;
-            font-family: monospace;
         }
 
         /* 主画布容器 */
@@ -71,7 +89,7 @@
             width: 150px;
             height: 200px;
             border: 2px solid #ecf0f1;
-            background: #95a5a6 url('img/default-avatar.png') top/cover;
+            background: url('img/default-avatar.png') top/cover;
             border-radius: 3px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
@@ -176,43 +194,58 @@
         <div class="node">
             <div class="avatar" style="background-image: url('img/id-leopold.jpg')"></div>
             <div class="label">Leopold
-                <br>事件捜査官
-                <br>冷徹な論理派だが
+                <br>警視庁エリート
+                <br>見た目は16～17歳だが、実年齢不明。<br>
+                見た目は優れ、常に世を拗ねるような微笑を浮かべている。<br>
+                好き嫌いが激しく、享楽主義者でもあるが、細やかで優しい一面も持っている。<br>
+                落ち着き払った自信に満ちていて、自信かつ優雅な態度を保ち、性格は八方巧み。<br>
+                一流の銃術と剣術の使い手である。
             </div>
         </div>
         <div class="node">
             <div class="avatar" style="background-image: url('img/id-severo.jpg')"></div>
             <div class="label">Severo<br>
                 26歳、容疑者。<br>
-                憂いと苦悩、感傷に満ちた女性として偽装して登場する。</div>
+                憂いと苦悩、感傷に満ちた女性として偽装して登場する。<br>
+                第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。
+            </div>
         </div>
 
         <div class="node">
             <div class="avatar"></div>
             <div class="label">J<br>
-                Lの養女</div>
+                23歳、Lの養女<br>
+                警察庁高官を母に持つの刑事
+            
+            </div>
         </div>
 
         <div class="node">
             <div class="avatar"></div>
-            <div class="label">Lの母親の隣人のパートナーの園芸師の姪。<br>
-                現在はLの養女。Lが一番好き。<br>
-                正真正銘の十代少女。<br>
+            <div class="label">K<br>
+                Lの母親の隣人のパートナーの園芸師の姪（？<br>
+                18歳、Lの養女。Lが一番好き。<br>
                 Lへの想いが家族愛か恋愛か自分でもわからない。<br>
-                Lが最近ハマっている手作りスイーツ店に長蛇の列でも並びに行く（？）<br></div>
+                Lが最近ハマっている手作りスイーツ店に長蛇の列でも並びに行く<br></div>
         </div>
         <div class="node">
             <div class="avatar"></div>
-            <div class="label">连续杀人案件的真凶</div>
+            <div class="label">X<br>
+                連続殺人事件の真犯人
+                <br>
+            </div>
         </div>
     </div>
     <script>
         // 连线数据
         const connections = [
-            { from: 0, to: 1, label: "慈しむ、憐憫", dashed: false },
-            { from: 0, to: 2, label: "師匠と弟子", dashed: true },
+            { from: 0, to: 1, label: "控えめな探求、飼養、優しくも支配的", dashed: false },
+            { from: 0, to: 2, label: "母女、師弟", dashed: true },
             { from: 0, to: 3, label: "慈しむ、憐憫", dashed: false },
-            { from: 0, to: 4, label: "師匠と弟子", dashed: true },
+            { from: 0, to: 4, label: "やり返す", dashed: true },
+            { from: 1, to: 4, label: "厭悪", dashed: true },
+            { from: 3, to: 4, label: "厭悪", dashed: true },
+            { from: 3, to: 2, label: "", dashed: false },
         ];
 
         // 系统状态管理
