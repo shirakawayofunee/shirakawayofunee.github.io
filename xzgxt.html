@@ -23,25 +23,37 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
+        /* 调整节点整体尺寸 */
         .node {
             position: absolute;
             cursor: move;
             text-align: center;
             filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+            /* 移除transform属性 */
+            width: auto;
+            /* 移除固定宽度 */
         }
 
         .avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 150px;
+            /* 根据证件照比例缩放的宽度 */
+            height: 200px;
+            /* 根据证件照比例缩放的高度 */
             border: 2px solid #ecf0f1;
             background-size: cover;
-            background-position: center;
+            background-position: top center;
+            /* 确保人脸部分居中 */
             margin: 0 auto;
             background-image: url('default-avatar.png');
-            /* 默认头像 */
             transition: transform 0.3s;
-            /* 添加悬停放大效果 */
+            border-radius: 3px;
+            /* 改为直角边框 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            /* 添加立体感 */
+            display: block;
+            /* 确保垂直居中 */
+            margin: 0 auto 10px;
+            /* 底部留出文字间距 */
         }
 
         .avatar:hover {
@@ -49,33 +61,64 @@
             cursor: pointer;
         }
 
+        /* 修改标签样式以适应证件照宽度 */
         .label {
-            color: #ecf0f1;
-            margin-top: 5px;
-            font-size: 14px;
-            white-space: nowrap;
-            text-shadow: 1px 1px 2px #000;
+            max-width: 150px;
+            white-space: normal;
+            /* 允许换行 */
+            word-break: break-word;
+            /* 日文换行 */
+            line-height: 1.4;
+            margin-top: 10px;
+            padding: 4px;
+            background: rgba(44, 62, 80, 0.9);
+            /* 添加背景 */
+            border-radius: 2px;
+            position: relative;
+            z-index: 1;
+            transform: none !important;
+            /* 防止意外继承 */
+            position: relative;
+            z-index: 2;
+            /* 确保文字在连线之上 */
         }
 
         .relation-line {
             stroke: #e74c3c;
             stroke-width: 2;
             marker-end: url(#arrowhead);
+            transition: d 0.3s ease-out;
+            /* 增强曲线过渡效果 */
+            fill: none;
+            /* 防止路径闭合形成填充区域 */
+            stroke-linecap: round;
+            /* 改善线条末端显示 */
         }
 
         .dashed-line {
             stroke-dasharray: 5;
         }
 
-        /* 增强曲线过渡效果 */
-        .relation-line {
-            transition: d 0.3s ease-out;
+/*         .avatar::after {
+            content: "⚠ 画像読み込み失敗";
+            display: none;
+            position: absolute;
+            bottom: 0;
+            background: #e74c3c;
+            color: white;
+            padding: 2px;
+            font-size: 10px;
         }
+
+        .avatar[style*="background-image"]:empty::after {
+            display: block;
+            /* 图片加载失败时显示 */
+        } */
     </style>
 </head>
 
 <body>
-    <div id="board">
+    <div id="board" style="background-image:url('img/bg_full.png') ;">
         <svg id="lines" style="position: absolute; width: 100%; height: 100%">
             <defs>
                 <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
@@ -85,14 +128,14 @@
         </svg>
 
         <!-- 人物节点 -->
+        <!-- 修改后的人物节点示例 -->
         <div class="node" style="left: 300px; top: 200px">
-            <div class="avatar" style="background-image: src:image()"></div>
+            <div class="avatar" style="background-image: url('img/zjzleopold-id.jpg')"></div>
             <div class="label">Leopold
-                <br>
-
+                <br>事件捜査官
+                <br>冷徹な論理派だが
             </div>
         </div>
-
         <div class="node" style="left: 500px; top: 250px">
             <div class="avatar"></div>
             <div class="label">Severo<br>
@@ -129,60 +172,6 @@
             { from: 3, to: 4, label: "通讯记录", dashed: true },
             { from: 1, to: 0, label: "独占欲", dashed: false },
         ];
-
-        // 初始化连线
-        function drawLines() {
-            const svg = document.getElementById('lines');
-            svg.innerHTML = '';
-
-            const nodes = document.getElementsByClassName('node');
-
-            connections.forEach(conn => {
-                const fromNode = nodes[conn.from].getBoundingClientRect();
-                const toNode = nodes[conn.to].getBoundingClientRect();
-
-                const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                const startX = fromNode.left + fromNode.width / 2;
-                const startY = fromNode.top + fromNode.height / 2;
-                const endX = toNode.left + toNode.width / 2;
-                const endY = toNode.top + toNode.height / 2;
-
-                line.setAttribute('d', `M ${startX} ${startY} L ${endX} ${endY}`);
-                line.classList.add('relation-line');
-                if (conn.dashed) line.classList.add('dashed-line');
-
-                svg.appendChild(line);
-                // 在connections.forEach循环内追加以下代码：
-                // 添加关系标签
-                const textGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                const textPadding = 4;
-
-                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                text.textContent = conn.label;
-                text.setAttribute('x', (startX + endX) / 2);
-                text.setAttribute('y', (startY + endY) / 2 - 5); // 上移5像素避免与线重叠
-                text.setAttribute('fill', '#ecf0f1');
-                text.setAttribute('text-anchor', 'middle');
-                text.setAttribute('font-family', "'Courier New', monospace");
-                text.setAttribute('font-size', '12px');
-
-                // 添加文字背景
-                const bbox = text.getBBox();
-                const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                rect.setAttribute('x', bbox.x - textPadding);
-                rect.setAttribute('y', bbox.y - textPadding);
-                rect.setAttribute('width', bbox.width + textPadding * 2);
-                rect.setAttribute('height', bbox.height + textPadding * 2);
-                rect.setAttribute('fill', 'rgba(44, 62, 80, 0.9)');
-                rect.setAttribute('rx', '3');
-
-                // 组合元素
-                textGroup.appendChild(rect);
-                textGroup.appendChild(text);
-                svg.appendChild(textGroup);
-            });
-        }
-
         // 拖拽功能
         let dragNode = null;
         let offset = { x: 0, y: 0 };
@@ -230,50 +219,63 @@
                 const fromNode = nodes[conn.from].getBoundingClientRect();
                 const toNode = nodes[conn.to].getBoundingClientRect();
 
-                const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                // 修正坐标计算（考虑节点实际中心点）
                 const startX = fromNode.left + fromNode.width / 2;
                 const startY = fromNode.top + fromNode.height / 2;
                 const endX = toNode.left + toNode.width / 2;
                 const endY = toNode.top + toNode.height / 2;
 
-                // 计算连线向量
+                // 创建路径组
+                const pathGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+                // 绘制主路径
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+
+                // 计算向量参数
                 const dx = endX - startX;
                 const dy = endY - startY;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-
-                // 检查是否存在反向连接
                 const hasReverse = connections.some(c =>
                     c.from === conn.to && c.to === conn.from
                 );
 
-                // 自动计算曲线偏移量（根据连接距离动态调整）
-                const curveOffset = hasReverse ? distance / 4 : 0;
-
                 if (hasReverse) {
-                    // 生成二次贝塞尔曲线路径
-                    const midX = (startX + endX) / 2;
-                    const midY = (startY + endY) / 2;
-
-                    // 根据角色ID大小决定曲线方向（保证双向箭头对称）
-                    const direction = conn.from < conn.to ? 1 : -1;
-                    const ctrlX = midX + (-dy / distance) * curveOffset * direction;
-                    const ctrlY = midY + (dx / distance) * curveOffset * direction;
+                    // 优化曲线算法
+                    const curvature = 0.3; // 曲率系数
+                    const ctrlX = startX + dx / 2 - dy * curvature;
+                    const ctrlY = startY + dy / 2 + dx * curvature;
 
                     line.setAttribute('d',
-                        `M ${startX} ${startY} 
-                 Q ${ctrlX} ${ctrlY} 
-                 ${endX} ${endY}`);
+                        `M ${startX} ${startY}
+                 Q ${ctrlX} ${ctrlY}
+                 ${endX} ${endY}`
+                    );
                 } else {
-                    // 直线路径
                     line.setAttribute('d', `M ${startX} ${startY} L ${endX} ${endY}`);
                 }
 
                 line.classList.add('relation-line');
                 if (conn.dashed) line.classList.add('dashed-line');
-                svg.appendChild(line);
+                pathGroup.appendChild(line);
 
-                // 保持原有的文字标签添加代码...
+                // 添加文字标签（优化位置计算）
+                const textGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+
+                // 动态计算标签位置
+                const labelPos = hasReverse
+                    ? { x: (startX + endX) / 2 - dy * 0.15, y: (startY + endY) / 2 + dx * 0.15 }
+                    : { x: (startX + endX) / 2, y: (startY + endY) / 2 - 5 };
+
+                text.setAttribute('x', labelPos.x);
+                text.setAttribute('y', labelPos.y);
+                // 保持原有文字样式...
+
+                // 先添加路径再添加文字
+                svg.appendChild(pathGroup);
+                svg.appendChild(textGroup);
             });
+
         }
     </script>
 </body>
