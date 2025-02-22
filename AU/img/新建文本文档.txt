@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胶片轮播图</title>
+    <style>
+        .slide:hover {
+            filter: grayscale(0);
+        }
+
+        /* 调整齿孔位置避免遮挡 */
+        .slider-container::before,
+        .slider-container::after {
+            height: 28px;
+            /* 稍微加高 */
+            background-size: 20px;
+            /* 调整齿孔间距 */
+        }
+
+
+        .slider-container::before {
+            top: 10px;
+        }
+
+        .slider-container::after {
+            bottom: 10px;
+        }
+
+        /* 胶片边缘效果 */
+        .slider-container {
+            border-top: 4px solid #3a3a3a;
+            border-bottom: 4px solid #3a3a3a;
+        }
+
+
+        .slider-container {
+            --target-width: 713px;
+            --target-height: 400px;
+            --slide-gap: 20px;
+            /* 幻灯片间距 */
+
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            background: #000;
+            padding: 50px 0;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            gap: var(--slide-gap);
+        }
+
+        .slide {
+            flex: 0 0 var(--target-width);
+            position: relative;
+            height: var(--target-height);
+            filter: grayscale(0.2);
+            transition: filter 0.3s;
+            transform-origin: center center;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 3px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        /* 悬停放大效果 */
+        .slide:hover img {
+            transform: scale(1.03);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 1200px) {
+            .slider-container {
+                --target-width: 600px;
+                --target-height: 337px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .slider-container {
+                --target-width: 500px;
+                --target-height: 281px;
+                --slide-gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slider-container {
+                --target-width: 90vw;
+                --target-height: calc(90vw * 400 / 713);
+                padding: 30px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <div class="slider-track">
+            <!-- 实际图片 -->
+            <div class="slide"><img src="img/lb5.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb1.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb2.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb3.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb4.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb5.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb1.jpg" alt=""></div>
+        </div>
+    </div>
+    <script>
+    // 修改位移计算逻辑
+    const track = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 1;
+    let autoPlay = true;
+    let isAnimating = false;
+
+    // 获取实际幻灯片宽度（包含间距）
+    function getSlideWidth() {
+        const slide = document.querySelector('.slide');
+        const style = getComputedStyle(slide);
+        return slide.offsetWidth + parseInt(style.marginLeft) + parseInt(style.marginRight);
+    }
+
+    function moveToNext() {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        currentIndex++;
+        track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
+
+        // 重置逻辑
+        if (currentIndex >= slides.length - 2) {
+            setTimeout(() => {
+                track.style.transition = 'none';
+                currentIndex = 1;
+                track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
+                setTimeout(() => {
+                    track.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                    isAnimating = false;
+                }, 20);
+            }, 800);
+        } else {
+            setTimeout(() => isAnimating = false, 800);
+        }
+    }
+
+    // 修改moveToPrev同理...
+    
+    // 窗口大小变化时重置位置
+    window.addEventListener('resize', () => {
+        track.style.transition = 'none';
+        track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
+        setTimeout(() => track.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)', 50);
+    });
+
+
+
+
+
+
+
+
+
+        // 在脚本开始处添加尺寸初始化
+        function initSliderSize() {
+            const container = document.querySelector('.slider-container');
+            const slides = document.querySelectorAll('.slide');
+
+            // 动态设置slide宽度
+            const visibleSlides = parseInt(getComputedStyle(container)
+                .getPropertyValue('--visible-slides'));
+            slides.forEach(slide => {
+                slide.style.flexBasis = `calc(100% / ${visibleSlides})`;
+            });
+        }
+
+        // 窗口改变时重置尺寸
+        window.addEventListener('resize', initSliderSize);
+        initSliderSize(); // 初始化
+
+
+
+        const track = document.querySelector('.slider-track');
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 1; // 从真实的第一张开始
+        let autoPlay = true;
+        let isAnimating = false;
+
+        function moveToNext() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            currentIndex++;
+            track.style.transform = `translateX(-${currentIndex * 33.3333}%)`;
+
+            // 重置逻辑优化
+            if (currentIndex >= slides.length - 2) {
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    currentIndex = 1;
+                    track.style.transform = `translateX(-${currentIndex * 33.3333}%)`;
+                    setTimeout(() => {
+                        track.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                        isAnimating = false;
+                    }, 20);
+                }, 800);
+            } else {
+                setTimeout(() => isAnimating = false, 800);
+            }
+        }
+
+        function moveToPrev() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            currentIndex--;
+            track.style.transform = `translateX(-${currentIndex * 33.3333}%)`;
+
+            if (currentIndex <= 0) {
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    currentIndex = slides.length - 3;
+                    track.style.transform = `translateX(-${currentIndex * 33.3333}%)`;
+                    setTimeout(() => {
+                        track.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                        isAnimating = false;
+                    }, 20);
+                }, 800);
+            } else {
+                setTimeout(() => isAnimating = false, 800);
+            }
+        }
+
+        // 优化自动播放
+        let autoPlayInterval = setInterval(() => {
+            if (autoPlay) moveToNext();
+        }, 3000);
+
+        // 滚轮控制逻辑优化
+        const wheelHandler = (e) => {
+            e.preventDefault();
+            if (isAnimating) return;
+
+            const delta = Math.sign(e.deltaY);
+            delta > 0 ? moveToNext() : moveToPrev();
+        };
+
+        // 事件监听优化
+        const container = document.querySelector('.slider-container');
+        container.addEventListener('wheel', wheelHandler, { passive: false });
+
+        container.addEventListener('mouseenter', () => {
+            autoPlay = false;
+            clearInterval(autoPlayInterval);
+        });
+
+        container.addEventListener('mouseleave', () => {
+            autoPlay = true;
+            autoPlayInterval = setInterval(() => {
+                if (autoPlay) moveToNext();
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>

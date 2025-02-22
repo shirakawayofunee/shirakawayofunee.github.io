@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>胶片轮播图</title>
     <style>
+        /* 优化后的CSS */
         .slider-container {
+            --target-width: 713px;
+            --target-height: 400px;
+            --slide-gap: 20px;
+            border-top: 4px solid #3a3a3a;
+            border-bottom: 4px solid #3a3a3a;
             overflow: hidden;
             width: 100%;
             position: relative;
             background: #000;
-            padding: 40px 0;
+            padding: 50px 0;
         }
 
         .slider-track {
             display: flex;
             transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            gap: var(--slide-gap);
         }
 
         .slide {
-            flex: 0 0 33.3333%;
-            position: relative;
-            padding: 0 10px;
-            box-sizing: border-box;
+            flex: 0 0 var(--target-width);
+            height: var(--target-height);
             filter: grayscale(0.2);
             transition: filter 0.3s;
         }
@@ -33,28 +39,29 @@
 
         .slide img {
             width: 100%;
-            height: 400px;
-            object-fit: cover;
+            height: 100%;
+            object-fit: contain;
             border-radius: 3px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
         }
 
-        /* 胶片齿孔效果 */
+        .slide:hover img {
+            transform: scale(1.03);
+        }
+
         .slider-container::before,
         .slider-container::after {
             content: '';
             position: absolute;
             left: 0;
             right: 0;
-            height: 24px;
-            background: 
-                repeating-linear-gradient(
-                    90deg,
+            height: 28px;
+            background: repeating-linear-gradient(90deg,
                     transparent 0,
                     transparent 14px,
                     #fff 14px,
-                    #fff 18px
-                );
+                    #fff 18px);
             z-index: 2;
             opacity: 0.8;
         }
@@ -67,17 +74,34 @@
             bottom: 10px;
         }
 
-        /* 胶片边缘效果 */
-        .slider-container {
-            border-top: 4px solid #3a3a3a;
-            border-bottom: 4px solid #3a3a3a;
+        @media (max-width: 1200px) {
+            .slider-container {
+                --target-width: 600px;
+                --target-height: 337px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .slider-container {
+                --target-width: 500px;
+                --target-height: 281px;
+                --slide-gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slider-container {
+                --target-width: 90vw;
+                --target-height: calc(90vw * 400 / 713);
+                padding: 30px 0;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="slider-container">
         <div class="slider-track">
-            <!-- 实际图片 -->
             <div class="slide"><img src="img/lb5.jpg" alt=""></div>
             <div class="slide"><img src="img/lb1.jpg" alt=""></div>
             <div class="slide"><img src="img/lb2.jpg" alt=""></div>
@@ -89,37 +113,98 @@
     </div>
 
     <script>
+        // 单一实例化
         const track = document.querySelector('.slider-track');
         const slides = document.querySelectorAll('.slide');
-        let currentIndex = 1; // 从真实的第一张开始
+        let currentIndex = 1;
         let autoPlay = true;
+        let isAnimating = false;
 
-        // 克隆逻辑已直接在HTML中实现
+        // 精确计算幻灯片宽度
+        function getSlideWidth() {
+            const slide = slides[0];
+            const style = getComputedStyle(slide);
+            return slide.offsetWidth + parseInt(style.marginLeft) + parseInt(style.marginRight);
+        }
+
+        // 统一运动函数
         function moveToNext() {
-            currentIndex++;
-            track.style.transform = `translateX(-${currentIndex * 33.3333}%)`;
+            if (isAnimating) return;
+            isAnimating = true;
 
-            // 当到达最后克隆项时重置
-            if (currentIndex >= slides.length - 3) {
+            currentIndex++;
+            track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
+
+            handleLoopTransition();
+        }
+
+        function moveToPrev() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            currentIndex--;
+            track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
+
+            handleLoopTransition(true);
+        }
+
+        // 循环逻辑处理
+        function handleLoopTransition(isPrev = false) {
+            const threshold = isPrev ? 0 : slides.length - 2;
+            const resetIndex = isPrev ? slides.length - 3 : 1;
+
+            if ((!isPrev && currentIndex >= threshold) || 
+                (isPrev && currentIndex <= threshold)) {
                 setTimeout(() => {
                     track.style.transition = 'none';
-                    currentIndex = 1;
-                    track.style.transform = `translateX(-${currentIndex * 33.3333}%)`;
+                    currentIndex = resetIndex;
+                    track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
                     setTimeout(() => {
                         track.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
-                    }, 10);
+                        isAnimating = false;
+                    }, 20);
                 }, 800);
+            } else {
+                setTimeout(() => isAnimating = false, 800);
             }
         }
 
-        // 自动播放
-        setInterval(() => {
+        // 自动播放控制
+        let autoPlayInterval = setInterval(() => {
             if (autoPlay) moveToNext();
         }, 3000);
 
-        // 暂停/恢复自动播放
-        track.addEventListener('mouseenter', () => autoPlay = false);
-        track.addEventListener('mouseleave', () => autoPlay = true);
+        // 事件处理
+        const container = document.querySelector('.slider-container');
+        
+        // 滚轮控制
+        container.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (isAnimating) return;
+            Math.sign(e.deltaY) > 0 ? moveToNext() : moveToPrev();
+        }, { passive: false });
+
+        // 暂停控制
+        container.addEventListener('mouseenter', () => {
+            autoPlay = false;
+            clearInterval(autoPlayInterval);
+        });
+
+        container.addEventListener('mouseleave', () => {
+            autoPlay = true;
+            autoPlayInterval = setInterval(() => {
+                if (autoPlay) moveToNext();
+            }, 3000);
+        });
+
+        // 窗口重置
+        window.addEventListener('resize', () => {
+            track.style.transition = 'none';
+            track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
+            setTimeout(() => {
+                track.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+            }, 50);
+        });
     </script>
 </body>
 </html>
