@@ -289,27 +289,39 @@
     const viewportHeight = window.innerHeight;
     const isMobile = viewportWidth <= 768;
 
+    // 调试信息
+    console.log(`Viewport: ${viewportWidth}x${viewportHeight}`);
+    console.log(`Is Mobile: ${isMobile}`);
+
     // 动态半径计算
     const baseRadius = isMobile 
         ? Math.min(viewportWidth, viewportHeight) * 0.15
         : Math.min(viewportWidth, viewportHeight) * 0.25;
 
+    // 调试信息
+    console.log(`Base Radius: ${baseRadius}`);
+
     // 统一坐标系统
     const positions = [
         [0, 0],     // Leopold (中心)
-        [isMobile ? 1.2 : 2, isMobile ? 0.3 : 0.5],   // Severo
-        [isMobile ? -1.5 : -3, isMobile ? 0.3 : 0.5],// J
-        [isMobile ? -1.0 : -1.8, isMobile ? -0.3 : -0.5], // K
-        [isMobile ? 1.5 : 3, isMobile ? -0.6 : -1]   // X
+        [1.3, 0.5],   // Severo
+        [-2.3, 0.5],  // J
+        [-1.4,-0.5], // K
+        [2.6, -1]   // X
     ];
 
     state.nodes.forEach((node, index) => {
         const [dx, dy] = positions[index];
-        const aspectRatio = viewportWidth / viewportHeight;
         
+        // 调试信息
+        console.log(`Node ${index} Position: [${dx}, ${dy}]`);
+
         // 统一坐标计算公式
-        const x = viewportWidth/2 + dx * baseRadius * (isMobile ? 0.8 : aspectRatio);
-        const y = viewportHeight/2 + dy * baseRadius * (isMobile ? 1.5 : 1);
+        const x = viewportWidth/2 + dx * baseRadius;
+        const y = viewportHeight/2 + dy * baseRadius;
+
+        // 调试信息
+        console.log(`Node ${index} Calculated Position: [${x}, ${y}]`);
 
         Object.assign(node.style, {
             left: `${x}px`,
@@ -318,59 +330,37 @@
         });
     });
 
-    // 自动居中修正
-    setTimeout(() => checkNodePositions(true), 100);
+    // 调试信息
+    console.log('Layout initialized');
 }
 
-// 增强版边界检查
-function checkNodePositions(forceAdjust = false) {
-    const boardRect = document.getElementById('board').getBoundingClientRect();
-    
-    state.nodes.forEach((node, index) => {
-        const nodeRect = node.getBoundingClientRect();
-        const centerX = nodeRect.left + nodeRect.width/2;
-        const centerY = nodeRect.top + nodeRect.height/2;
+// 修改初始化流程
+function initialize() {
+    // 确保节点正确获取
+    state.nodes = Array.from(document.querySelectorAll('.node'));
+    if (state.nodes.length === 0) {
+        console.error('No nodes found!');
+        return;
+    }
 
-        // 计算相对于画布的位置
-        const relativeX = centerX - boardRect.left;
-        const relativeY = centerY - boardRect.top;
+    // 调试信息
+    console.log(`Found ${state.nodes.length} nodes`);
 
-        // 如果节点超出画布中心区域则调整
-        if (forceAdjust || 
-            relativeX < boardRect.width*0.1 || 
-            relativeX > boardRect.width*0.9 ||
-            relativeY < boardRect.height*0.1 || 
-            relativeY > boardRect.height*0.9) {
-            
-            const targetX = boardRect.width/2 + (Math.random() - 0.5)*boardRect.width*0.3;
-            const targetY = boardRect.height/2 + (Math.random() - 0.5)*boardRect.height*0.3;
-            
-            Object.assign(node.style, {
-                left: `${targetX}px`,
-                top: `${targetY}px`
-            });
-        }
+    // 强制清除残留样式
+    state.nodes.forEach(node => {
+        node.style.removeProperty('left');
+        node.style.removeProperty('top');
     });
+
+    // 主初始化流程
+    initLayout();
+    initDragSystem();
+    initResponsive();
+    drawLines();
+
+    // 调试信息
+    console.log('Initialization completed');
 }
-        // 修改初始化流程
-        function initialize() {
-            state.nodes = Array.from(document.querySelectorAll('.node'));
-
-            // 强制清除残留样式
-            state.nodes.forEach(node => {
-                node.style.removeProperty('left');
-                node.style.removeProperty('top');
-            });
-
-            // 主初始化流程
-            initLayout();
-            checkNodePositions(); // 新增位置验证
-            initDragSystem();
-            initResponsive();
-            drawLines();
-
-            // 其他保持原有代码...
-        }
         // 连线绘制
         // 修改drawLines函数
         function drawLines() {
