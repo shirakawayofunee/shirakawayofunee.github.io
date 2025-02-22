@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>相関図 ドラッグ可能な手がかりボード</title>
     <style>
         /* 基础全局样式 */
@@ -11,8 +11,11 @@
             margin: 0;
             position: relative;
             min-height: 100vh;
+            min-width: 100vw;
             font-family: 'Courier New', Arial, sans-serif;
-            overflow: hidden;
+            /* overflow: hidden; */
+            overflow: auto;
+            /* 允许页面滚动 */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -49,18 +52,26 @@
             left: 0;
             overflow: visible;
             pointer-events: none;
+            position: relative;
+            /* 改为相对定位 */
+            width: 150vw;
+            /* 扩展画布区域 */
+            height: 150vh;
+            min-width: 1000px;
+            /* 保持桌面端最小尺寸 */
         }
 
         /* 角色节点 */
         .node {
             position: absolute;
-            pointer-events: auto;
             transform: translate(-50%, -50%);
+            pointer-events: auto;
             width: 160px;
             transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
             z-index: 3;
-            touch-action: none; /* 防止默认触摸行为 */
+            touch-action: none;
+            /* 防止默认触摸行为 */
         }
 
         /* 证件照样式 */
@@ -138,14 +149,25 @@
         /* 移动端适配 */
         @media (max-width: 768px) {
 
+            #board {
+                width: 200vw;
+                /* 移动端扩展更多空间 */
+                height: 200vh;
+            }
+
             /* 移动端优化调整 */
             .node {
+                transform: translate(-50%, -50%) !important;
+                will-change: transform;
                 width: 110px;
+                max-width: 25vw !important;
             }
 
             .avatar {
                 width: 100px;
                 height: 140px;
+                max-width: 28vw;
+                height: 37vw;
             }
 
             .label {
@@ -263,58 +285,73 @@
         // 初始化布局
         // 修改初始化布局函数
         function initLayout() {
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-            const baseRadius = Math.min(viewportWidth, viewportHeight) * 0.25;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const isMobile = viewportWidth <= 768;
 
-            // 菱形布局坐标（45度方向）
-            const positions = [
-                [0, 0],     // 0: Leopold - 绝对中心
-                [2, 0.5],   // 1: Severo - 右下方
-                [-3, 0.5],    // 2: J左下
-                [-1.8, -0.5],   // 3:K 左上
-                [3, -1]     // 4: X右上
-            ];
+    // 动态半径计算
+    const baseRadius = isMobile 
+        ? Math.min(viewportWidth, viewportHeight) * 0.15
+        : Math.min(viewportWidth, viewportHeight) * 0.25;
 
-            state.nodes.forEach((node, index) => {
-                if (!positions[index]) return;
+    // 统一坐标系统
+    const positions = [
+        [0, 0],     // Leopold (中心)
+        [isMobile ? 1.2 : 2, isMobile ? 0.3 : 0.5],   // Severo
+        [isMobile ? -1.5 : -3, isMobile ? 0.3 : 0.5],// J
+        [isMobile ? -1.0 : -1.8, isMobile ? -0.3 : -0.5], // K
+        [isMobile ? 1.5 : 3, isMobile ? -0.6 : -1]   // X
+    ];
 
-                const [dx, dy] = positions[index];
-                // 动态比例适配
-                const aspectRatio = viewportWidth / viewportHeight;
-                const x = viewportWidth / 2 + dx * baseRadius * (aspectRatio > 1 ? 0.8 : 1);
-                const y = viewportHeight / 2 + dy * baseRadius * (aspectRatio > 1 ? 1.2 : 1);
+    state.nodes.forEach((node, index) => {
+        const [dx, dy] = positions[index];
+        const aspectRatio = viewportWidth / viewportHeight;
+        
+        // 统一坐标计算公式
+        const x = viewportWidth/2 + dx * baseRadius * (isMobile ? 0.8 : aspectRatio);
+        const y = viewportHeight/2 + dy * baseRadius * (isMobile ? 1.5 : 1);
 
-                Object.assign(node.style, {
-                    left: `${x}px`,
-                    top: `${y}px`,
-                    transition: state.dragging ? 'none' : 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)'
-                });
+        Object.assign(node.style, {
+            left: `${x}px`,
+            top: `${y}px`,
+            transition: state.dragging ? 'none' : 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)'
+        });
+    });
+
+    // 自动居中修正
+    setTimeout(() => checkNodePositions(true), 100);
+}
+
+// 增强版边界检查
+function checkNodePositions(forceAdjust = false) {
+    const boardRect = document.getElementById('board').getBoundingClientRect();
+    
+    state.nodes.forEach((node, index) => {
+        const nodeRect = node.getBoundingClientRect();
+        const centerX = nodeRect.left + nodeRect.width/2;
+        const centerY = nodeRect.top + nodeRect.height/2;
+
+        // 计算相对于画布的位置
+        const relativeX = centerX - boardRect.left;
+        const relativeY = centerY - boardRect.top;
+
+        // 如果节点超出画布中心区域则调整
+        if (forceAdjust || 
+            relativeX < boardRect.width*0.1 || 
+            relativeX > boardRect.width*0.9 ||
+            relativeY < boardRect.height*0.1 || 
+            relativeY > boardRect.height*0.9) {
+            
+            const targetX = boardRect.width/2 + (Math.random() - 0.5)*boardRect.width*0.3;
+            const targetY = boardRect.height/2 + (Math.random() - 0.5)*boardRect.height*0.3;
+            
+            Object.assign(node.style, {
+                left: `${targetX}px`,
+                top: `${targetY}px`
             });
         }
-
-
-        // 新增边界检查函数
-        function checkNodePositions() {
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-
-            state.nodes.forEach((node, index) => {
-                const rect = node.getBoundingClientRect();
-                const centerX = rect.left + rect.width / 2;
-                const centerY = rect.top + rect.height / 2;
-
-                // 打印实际位置
-                console.log(`节点${index}实际位置：`, centerX, centerY);
-
-                // 检查是否超出可视区域
-                if (centerX < 0 || centerX > viewportWidth ||
-                    centerY < 0 || centerY > viewportHeight) {
-                    console.warn(`节点${index}超出可视区域！`);
-                }
-            });
-        }
-
+    });
+}
         // 修改初始化流程
         function initialize() {
             state.nodes = Array.from(document.querySelectorAll('.node'));
@@ -454,78 +491,78 @@
         }
         // 拖拽系统
         function initDragSystem() {
-    let dragInfo = null;
+            let dragInfo = null;
 
-    document.querySelectorAll('.node').forEach(node => {
-        // 鼠标事件
-        node.addEventListener('mousedown', startDrag);
-        // 触摸事件
-        node.addEventListener('touchstart', e => {
-            e.preventDefault();
-            startDrag(e.touches[0]);
-        });
-    });
+            document.querySelectorAll('.node').forEach(node => {
+                // 鼠标事件
+                node.addEventListener('mousedown', startDrag);
+                // 触摸事件
+                node.addEventListener('touchstart', e => {
+                    e.preventDefault();
+                    startDrag(e.touches[0]);
+                });
+            });
 
-    function startDrag(e) {
-        state.dragging = true;
-        const rect = e.target.closest('.node').getBoundingClientRect();
-        dragInfo = {
-            node: e.target.closest('.node'),
-            offsetX: e.clientX - rect.left,
-            offsetY: e.clientY - rect.top
-        };
+            function startDrag(e) {
+                state.dragging = true;
+                const rect = e.target.closest('.node').getBoundingClientRect();
+                dragInfo = {
+                    node: e.target.closest('.node'),
+                    offsetX: e.clientX - rect.left,
+                    offsetY: e.clientY - rect.top
+                };
 
-        // 添加事件监听
-        document.addEventListener('mousemove', onDrag);
-        document.addEventListener('mouseup', onDragEnd);
-        document.addEventListener('touchmove', onTouchDrag, { passive: false });
-        document.addEventListener('touchend', onDragEnd);
-    }
+                // 添加事件监听
+                document.addEventListener('mousemove', onDrag);
+                document.addEventListener('mouseup', onDragEnd);
+                document.addEventListener('touchmove', onTouchDrag, { passive: false });
+                document.addEventListener('touchend', onDragEnd);
+            }
 
-    function onDrag(e) {
-        updatePosition(e.clientX, e.clientY);
-    }
+            function onDrag(e) {
+                updatePosition(e.clientX, e.clientY);
+            }
 
-    function onTouchDrag(e) {
-        e.preventDefault();
-        updatePosition(e.touches[0].clientX, e.touches[0].clientY);
-    }
+            function onTouchDrag(e) {
+                e.preventDefault();
+                updatePosition(e.touches[0].clientX, e.touches[0].clientY);
+            }
 
-    function updatePosition(clientX, clientY) {
-        if (!dragInfo) return;
+            function updatePosition(clientX, clientY) {
+                if (!dragInfo) return;
 
-        const { node, offsetX, offsetY } = dragInfo;
-        const newX = clientX - offsetX;
-        const newY = clientY - offsetY;
+                const { node, offsetX, offsetY } = dragInfo;
+                const newX = clientX - offsetX;
+                const newY = clientY - offsetY;
 
-        // 边界检查
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        const nodeWidth = node.offsetWidth;
-        const nodeHeight = node.offsetHeight;
+                // 边界检查
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+                const nodeWidth = node.offsetWidth;
+                const nodeHeight = node.offsetHeight;
 
-        const boundedX = Math.max(nodeWidth/2, Math.min(newX, viewportWidth - nodeWidth/2));
-        const boundedY = Math.max(nodeHeight/2, Math.min(newY, viewportHeight - nodeHeight/2));
+                const boundedX = Math.max(nodeWidth / 2, Math.min(newX, viewportWidth - nodeWidth / 2));
+                const boundedY = Math.max(nodeHeight / 2, Math.min(newY, viewportHeight - nodeHeight / 2));
 
-        Object.assign(node.style, {
-            left: `${boundedX}px`,
-            top: `${boundedY}px`,
-            transition: 'none'
-        });
+                Object.assign(node.style, {
+                    left: `${boundedX}px`,
+                    top: `${boundedY}px`,
+                    transition: 'none'
+                });
 
-        requestAnimationFrame(drawLines);
-    }
+                requestAnimationFrame(drawLines);
+            }
 
-    function onDragEnd() {
-        state.dragging = false;
-        dragInfo = null;
-        // 移除所有事件监听
-        document.removeEventListener('mousemove', onDrag);
-        document.removeEventListener('mouseup', onDragEnd);
-        document.removeEventListener('touchmove', onTouchDrag);
-        document.removeEventListener('touchend', onDragEnd);
-    }
-}
+            function onDragEnd() {
+                state.dragging = false;
+                dragInfo = null;
+                // 移除所有事件监听
+                document.removeEventListener('mousemove', onDrag);
+                document.removeEventListener('mouseup', onDragEnd);
+                document.removeEventListener('touchmove', onTouchDrag);
+                document.removeEventListener('touchend', onDragEnd);
+            }
+        }
         // 自适应系统
         function initResponsive() {
             window.addEventListener('resize', () => {

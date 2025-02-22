@@ -1,59 +1,603 @@
-function createConnectionLabel(text, start, end, isCurve) {
-    const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    const padding = 4;
-    const lineHeight = 18;
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-    // 拆分多行文本
-    const lines = text.split(/[、\n]/); // 同时支持顿号和换行符
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>相関図 ドラッグ可能な手がかりボード</title>
+    <style>
+        /* 基础全局样式 */
+        body {
+            margin: 0;
+            position: relative;
+            min-height: 100vh;
+            font-family: 'Courier New', Arial, sans-serif;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
 
-    // 计算标签位置
-    const angle = Math.atan2(end.y - start.y, end.x - start.x);
-    const labelPos = {
-        x: (start.x + end.x) / 2 + Math.cos(angle) * (isCurve ? 15 : 0),
-        y: (start.y + end.y) / 2 + Math.sin(angle) * (isCurve ? 15 : -5)
-    };
+        /* 背景图层 */
+        /* 合并重复的body::before */
+        body::before {
+            content: '';
+            background: url('img/bg_full.png') center/contain no-repeat fixed;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            box-shadow: inset 0 0 15rem rgba(0, 0, 0, 0.6);
+            filter: blur(10px) brightness(0.9);
+            transition: filter 0.5s;
+            /* 移除重复属性 */
+        }
 
-    // 创建文本容器
-    const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    textEl.setAttribute('x', labelPos.x);
-    textEl.setAttribute('y', labelPos.y);
-    textEl.setAttribute('text-anchor', 'middle');
-    textEl.setAttribute('dominant-baseline', 'middle');
-    textEl.setAttribute('fill', '#ecf0f1');
-    textEl.setAttribute('font-size', '12px');
 
-    // 添加多行tspan
-    lines.forEach((line, index) => {
-        if (!line) return;
-        const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
-        tspan.setAttribute('x', labelPos.x);
-        tspan.setAttribute('dy', index === 0 ? '0' : '1.2em');
-        tspan.textContent = line;
-        textEl.appendChild(tspan);
-    });
+        /* 加载完成状态 */
+        body.loaded::before {
+            filter: blur(0) !important;
+        }
 
-    // 临时添加到文档以计算尺寸
-    const tempContainer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    document.body.appendChild(tempContainer);
-    tempContainer.appendChild(textEl);
-    
-    const bbox = textEl.getBBox();
-    document.body.removeChild(tempContainer);
+        /* 主画布容器 */
+        #board {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            overflow: visible;
+            pointer-events: none;
+        }
 
-    // 创建背景框
-    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    rect.setAttribute('x', bbox.x - padding);
-    rect.setAttribute('y', bbox.y - padding);
-    rect.setAttribute('width', bbox.width + padding * 2);
-    rect.setAttribute('height', bbox.height + padding * 2);
-    rect.setAttribute('fill', 'rgba(44, 62, 80, 0.9)');
-    rect.setAttribute('rx', '3');
-    rect.setAttribute('stroke', '#2c3e50');
-    rect.setAttribute('stroke-width', '1');
+        /* 角色节点 */
+        .node {
+            position: absolute;
+            pointer-events: auto;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+            z-index: 3;
+            touch-action: none;
+            /* 防止默认触摸行为 */
+        }
 
-    // 确保层级顺序：先背景后文字
-    group.appendChild(rect);
-    group.appendChild(textEl);
+        /* 证件照样式 */
+        .avatar {
+            width: 150px;
+            height: 200px;
+            border: 2px solid #ecf0f1;
+            background: url('img/default-avatar.png') top/cover;
+            border-radius: 3px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            margin: 0 auto 10px;
+            display: block;
+        }
 
-    return group;
-}
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+
+        /* 文字标签 */
+        .label {
+            max-width: 150px;
+            padding: 8px;
+            color: #ecf0f1;
+            border-radius: 3px;
+            font-size: 12px;
+            line-height: 1.4;
+            word-break: break-word;
+            z-index: 3;
+            position: relative;
+            background: rgba(44, 62, 80, 0.8) !important;
+            /* 增强透明度 */
+            backdrop-filter: blur(2px);
+            /* 添加背景模糊 */
+        }
+
+
+        /* 关系连线 */
+        .relation-line {
+            stroke: #e74c3c !important;
+            /* 强制显示颜色 */
+            stroke-width: 2;
+            stroke-linecap: round;
+            fill: none;
+            marker-end: url(#arrowhead);
+            transition: all 0.3s ease-out;
+            z-index: 1 !important;
+        }
+
+        .dashed-line {
+            stroke-dasharray: 5;
+        }
+
+        /* SVG文字标签 */
+        #lines text {
+            fill: #000;
+            font: 16px Arial;
+            text-anchor: middle;
+            dominant-baseline: middle;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* 调整行间距 */
+        #lines tspan {
+            letter-spacing: 0.5px;
+        }
+
+        /* 修复标签背景 */
+        #lines rect {
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+            z-index: 2;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+
+            /* 移动端优化调整 */
+            .node {
+                transform: translate(-50%, -50%) !important;
+                will-change: transform;
+                width: 110px;
+            }
+
+            .avatar {
+                width: 100px;
+                height: 140px;
+                max-width: 28vw;
+                height: 37vw;
+            }
+
+            .label {
+                font-size: 10px;
+                padding: 4px;
+                line-height: 1.3;
+            }
+        }
+
+        /* 加载过渡动画 */
+        body:not(.loaded) .node {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+
+        body.loaded .node {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* 添加SVG文本样式 */
+        #lines text {
+            font-family: 'MS Gothic', 'Courier New', monospace;
+            /* 日文字体优化 */
+            z-index: 3;
+        }
+
+        #lines tspan {
+            white-space: pre;
+            /* 保留换行符 */
+            letter-spacing: 0.05em;
+            /* 日文间距优化 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="board">
+        <svg id="lines" style="position: absolute; width: 100%; height: 100%">
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
+                </marker>
+            </defs>
+        </svg>
+
+        <!-- 人物节点 -->
+        <div class="node">
+            <div class="avatar" style="background-image: url('img/id-leopold.jpg')"></div>
+            <div class="label">
+                警視庁エリート
+                <br>見た目は16～17歳だが、実年齢不明。<br>
+                見た目は優れ、常に世を拗ねるような微笑を浮かべている。<br>
+                好き嫌いが激しく、享楽主義者でもあるが、細やかで優しい一面も持っている。<br>
+                落ち着き払った自信に満ちていて、自信かつ優雅な態度を保ち、性格は八方巧み。
+            </div>
+        </div>
+        <div class="node">
+            <div class="avatar" style="background-image: url('img/id-severo.jpg')"></div>
+            <div class="label">
+                26歳、容疑者。<br>
+                憂いと苦悩、感傷に満ちた女性として偽装して登場する。<br>
+                第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。
+            </div>
+        </div>
+
+        <div class="node">
+            <div class="avatar"></div>
+            <div class="label">J<br>
+                23歳、Lの養女<br>
+                警察庁高官を母に持つの刑事
+            </div>
+        </div>
+
+        <div class="node">
+            <div class="avatar"></div>
+            <div class="label">K<br>
+                Lの母親の隣人のパートナーの園芸師の姪（？<br>
+                18歳、Lの養女。Lが一番好き。<br>
+                Lへの想いが家族愛か恋愛か自分でもわからない。<br>
+                Lが最近ハマっている手作りスイーツ店に長蛇の列でも並びに行く<br></div>
+        </div>
+        <div class="node">
+            <div class="avatar"></div>
+            <div class="label">X<br>
+                連続殺人事件の真犯人
+                <br>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 连线数据
+        const connections = [
+            {
+                from: 0,
+                to: 1,
+                label: "控えめな探求、飼養、優しくも支配的", // 使用\n换行
+                dashed: false
+            },
+            { from: 0, to: 2, label: "母女、師弟", dashed: true },
+            { from: 0, to: 3, label: "慈しむ、憐憫", dashed: false },
+            { from: 0, to: 4, label: "やり返す", dashed: true },
+            { from: 1, to: 4, label: "厭悪", dashed: true },
+            { from: 3, to: 4, label: "厭悪", dashed: true },
+            { from: 3, to: 2, label: "", dashed: false },
+        ];
+
+        // 系统状态管理
+        const state = {
+            dragging: false,
+            nodes: [],
+            resizeTimer: null
+        };
+
+        // 初始化布局
+        // 修改初始化布局函数
+        function initLayout() {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const baseRadius = Math.min(viewportWidth, viewportHeight) * 0.25;
+
+            // 菱形布局坐标（45度方向）
+            const positions = [
+                [0, 0],     // 0: Leopold - 绝对中心
+                [2, 0.5],   // 1: Severo - 右下方
+                [-3, 0.5],    // 2: J左下
+                [-1.8, -0.5],   // 3:K 左上
+                [3, -1]     // 4: X右上
+            ];
+
+            state.nodes.forEach((node, index) => {
+                if (!positions[index]) return;
+
+                const [dx, dy] = positions[index];
+                // 动态比例适配
+                const aspectRatio = viewportWidth / viewportHeight;
+                const x = viewportWidth / 2 + dx * baseRadius * (aspectRatio > 1 ? 0.8 : 1);
+                const y = viewportHeight / 2 + dy * baseRadius * (aspectRatio > 1 ? 1.2 : 1);
+
+                Object.assign(node.style, {
+                    left: `${x}px`,
+                    top: `${y}px`,
+                    transition: state.dragging ? 'none' : 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                });
+            });
+        }
+
+
+        // 新增边界检查函数
+        function checkNodePositions() {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            state.nodes.forEach((node, index) => {
+                const rect = node.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                // 打印实际位置
+                console.log(`节点${index}实际位置：`, centerX, centerY);
+
+                // 检查是否超出可视区域
+                if (centerX < 0 || centerX > viewportWidth ||
+                    centerY < 0 || centerY > viewportHeight) {
+                    console.warn(`节点${index}超出可视区域！`);
+                }
+            });
+        }
+
+        // 修改初始化流程
+        function initialize() {
+            state.nodes = Array.from(document.querySelectorAll('.node'));
+
+            // 强制清除残留样式
+            state.nodes.forEach(node => {
+                node.style.removeProperty('left');
+                node.style.removeProperty('top');
+            });
+
+            // 主初始化流程
+            initLayout();
+            checkNodePositions(); // 新增位置验证
+            initDragSystem();
+            initResponsive();
+            drawLines();
+
+            // 其他保持原有代码...
+        }
+        // 连线绘制
+        // 修改drawLines函数
+        function drawLines() {
+            const svg = document.getElementById('lines');
+            svg.innerHTML = '';
+
+            connections.forEach(conn => {
+                // 校验连接有效性
+                if (conn.from >= state.nodes.length || conn.to >= state.nodes.length) {
+                    console.error(`无效连接索引：${conn.from}→${conn.to}`);
+                    return;
+                }
+
+                // 获取实际坐标（考虑滚动位置）
+                const fromRect = state.nodes[conn.from].getBoundingClientRect();
+                const toRect = state.nodes[conn.to].getBoundingClientRect();
+
+                const start = {
+                    x: fromRect.left + fromRect.width / 2 + window.scrollX,
+                    y: fromRect.top + fromRect.height / 2 + window.scrollY
+                };
+                const end = {
+                    x: toRect.left + toRect.width / 2 + window.scrollX,
+                    y: toRect.top + toRect.height / 2 + window.scrollY
+                };
+
+                // 创建路径
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.classList.add('relation-line');
+                if (conn.dashed) path.classList.add('dashed-line');
+
+                // 智能曲线检测
+                const isReverse = connections.some(c =>
+                    c.from === conn.to && c.to === conn.from &&
+                    c.label !== conn.label // 防止相同标签干扰
+                );
+
+                if (isReverse) {
+                    const curvature = 0.3;
+                    const ctrl = {
+                        x: (start.x + end.x) / 2 + curvature * (end.y - start.y),
+                        y: (start.y + end.y) / 2 + curvature * (start.x - end.x)
+                    };
+                    path.setAttribute('d', `M ${start.x} ${start.y} Q ${ctrl.x} ${ctrl.y} ${end.x} ${end.y}`);
+                } else {
+                    path.setAttribute('d', `M ${start.x} ${start.y} L ${end.x} ${end.y}`);
+                }
+
+                // 创建标签组（修复z-index问题）
+                const textGroup = createConnectionLabel(conn.label, start, end, isReverse);
+
+                // 添加顺序：先线后字
+                svg.appendChild(path);
+                svg.appendChild(textGroup);
+            });
+        }
+        // 创建连线标签
+        // 修复布局问题（十字形布局）
+        // 增强连线绘制功能
+        function createConnectionLabel(text, start, end, isCurve) {
+            const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            const padding = 4;
+            const lineHeight = 18;
+
+            // 拆分多行文本
+            const lines = text.split(/[、\n]/); // 同时支持顿号和换行符
+
+            // 计算标签位置
+            const angle = Math.atan2(end.y - start.y, end.x - start.x);
+            const labelPos = {
+                x: (start.x + end.x) / 2 + Math.cos(angle) * (isCurve ? 15 : 0),
+                y: (start.y + end.y) / 2 + Math.sin(angle) * (isCurve ? 15 : -5)
+            };
+
+            // 创建文本容器
+            const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            textEl.setAttribute('x', labelPos.x);
+            textEl.setAttribute('y', labelPos.y);
+            textEl.setAttribute('text-anchor', 'middle');
+            textEl.setAttribute('dominant-baseline', 'middle');
+            textEl.setAttribute('fill', '#ecf0f1');
+            textEl.setAttribute('font-size', '12px');
+
+            // 添加多行tspan
+            lines.forEach((line, index) => {
+                if (!line) return;
+                const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+                tspan.setAttribute('x', labelPos.x);
+                tspan.setAttribute('dy', index === 0 ? '0' : '1.2em');
+                tspan.textContent = line;
+                textEl.appendChild(tspan);
+            });
+
+            // 临时添加到文档以计算尺寸
+            const tempContainer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            document.body.appendChild(tempContainer);
+            tempContainer.appendChild(textEl);
+
+            const bbox = textEl.getBBox();
+            document.body.removeChild(tempContainer);
+
+            // 创建背景框
+            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            rect.setAttribute('x', bbox.x - padding);
+            rect.setAttribute('y', bbox.y - padding);
+            rect.setAttribute('width', bbox.width + padding * 2);
+            rect.setAttribute('height', bbox.height + padding * 2);
+            rect.setAttribute('fill', 'rgba(44, 62, 80, 0.9)');
+            rect.setAttribute('rx', '3');
+            rect.setAttribute('stroke', '#2c3e50');
+            rect.setAttribute('stroke-width', '1');
+
+            // 确保层级顺序：先背景后文字
+            group.appendChild(rect);
+            group.appendChild(textEl);
+
+            return group;
+        }
+        // 拖拽系统
+        function initDragSystem() {
+            let dragInfo = null;
+
+            document.querySelectorAll('.node').forEach(node => {
+                // 鼠标事件
+                node.addEventListener('mousedown', startDrag);
+                // 触摸事件
+                node.addEventListener('touchstart', e => {
+                    e.preventDefault();
+                    startDrag(e.touches[0]);
+                });
+            });
+
+            function startDrag(e) {
+                state.dragging = true;
+                const rect = e.target.closest('.node').getBoundingClientRect();
+                dragInfo = {
+                    node: e.target.closest('.node'),
+                    offsetX: e.clientX - rect.left,
+                    offsetY: e.clientY - rect.top
+                };
+
+                // 添加事件监听
+                document.addEventListener('mousemove', onDrag);
+                document.addEventListener('mouseup', onDragEnd);
+                document.addEventListener('touchmove', onTouchDrag, { passive: false });
+                document.addEventListener('touchend', onDragEnd);
+            }
+
+            function onDrag(e) {
+                updatePosition(e.clientX, e.clientY);
+            }
+
+            function onTouchDrag(e) {
+                e.preventDefault();
+                updatePosition(e.touches[0].clientX, e.touches[0].clientY);
+            }
+
+            function updatePosition(clientX, clientY) {
+                if (!dragInfo) return;
+
+                const { node, offsetX, offsetY } = dragInfo;
+                const newX = clientX - offsetX;
+                const newY = clientY - offsetY;
+
+                // 边界检查
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+                const nodeWidth = node.offsetWidth;
+                const nodeHeight = node.offsetHeight;
+
+                const boundedX = Math.max(nodeWidth / 2, Math.min(newX, viewportWidth - nodeWidth / 2));
+                const boundedY = Math.max(nodeHeight / 2, Math.min(newY, viewportHeight - nodeHeight / 2));
+
+                Object.assign(node.style, {
+                    left: `${boundedX}px`,
+                    top: `${boundedY}px`,
+                    transition: 'none'
+                });
+
+                requestAnimationFrame(drawLines);
+            }
+
+            function onDragEnd() {
+                state.dragging = false;
+                dragInfo = null;
+                // 移除所有事件监听
+                document.removeEventListener('mousemove', onDrag);
+                document.removeEventListener('mouseup', onDragEnd);
+                document.removeEventListener('touchmove', onTouchDrag);
+                document.removeEventListener('touchend', onDragEnd);
+            }
+        }
+        // 自适应系统
+        function initResponsive() {
+            window.addEventListener('resize', () => {
+                clearTimeout(state.resizeTimer);
+                state.resizeTimer = setTimeout(() => {
+                    initLayout();
+                    drawLines();
+                }, 200);
+            });
+        }
+        // 增强版初始化函数
+        function initialize() {
+            // 验证节点存在
+            state.nodes = Array.from(document.querySelectorAll('.node'));
+            if (state.nodes.length === 0) {
+                console.error('未找到任何角色节点!');
+                return;
+            }
+
+            // 强制清晰化机制
+            const forceClear = () => {
+                document.body.classList.add('loaded');
+                console.log('强制清晰化已触发');
+            };
+
+            // 图片加载监控
+            const bgImage = new Image();
+            bgImage.src = 'img/bg_full.png';
+
+            bgImage.onload = () => {
+                console.log('背景图加载成功');
+                document.body.classList.add('loaded');
+            };
+
+            bgImage.onerror = (e) => {
+                console.error('背景图加载失败:', e);
+                forceClear();
+            };
+
+            // 主初始化流程
+            try {
+                initLayout();
+                initDragSystem();
+                initResponsive();
+                drawLines();
+                console.log('系统初始化完成');
+            } catch (error) {
+                console.error('初始化过程中发生错误:', error);
+                forceClear();
+            }
+
+            // 最终保障
+            setTimeout(forceClear, 3000);
+        }
+
+        // 单一入口的加载监听
+        window.addEventListener('load', () => {
+            console.log('窗口load事件触发');
+            initialize();
+        });
+        // 添加触摸事件支持在移动设备上正常使用
+        node.addEventListener('touchstart', e => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            // ...类似鼠标事件的逻辑
+        });
+    </script>
+</body>
+
+</html>
