@@ -9,15 +9,28 @@
         /* 优化后的CSS */
         .slider-container {
             /* 精确尺寸控制 */
-            --slide-width: 713px;
-            --slide-height: 400px;
+            --slide-width: 430px;
+            --slide-height: 241px;
             --slide-gap: 20px;
-
             /* 容器尺寸限制 */
             max-width: calc(var(--slide-width)*3 + var(--slide-gap)*2);
             margin: 0 auto;
             padding: 50px 20px;
             /* 增加左右安全间距 */
+            position: relative;
+            /* 为伪元素定位提供参考 */
+            background: #2a2a2a;
+            /* 添加胶片底色 */
+            border-radius: 8px;
+            /* 圆角更柔和 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            /* 增加立体阴影 */
+            border-top: 3px solid #4a4a4a;
+            border-bottom: 3px solid #4a4a4a;
+            box-shadow:
+                inset 0 8px 15px -5px rgba(255, 255, 255, 0.1),
+                /* 添加内发光 */
+                inset 0 -8px 15px -5px rgba(255, 255, 255, 0.1);
         }
 
         .slider-track {
@@ -27,20 +40,25 @@
         }
 
         .slide {
-            flex: 0 0 var(--slide-width);
-            height: var(--slide-height);
-            /* 添加尺寸限制保险 */
-            max-width: var(--slide-width);
-            min-width: var(--slide-width);
+            /* 强制尺寸控制 */
+            width: 430px !important;
+            height: 241px !important;
+            min-width: 430px !important;
+            max-width: 430px !important;
+            min-height: 241px !important;
+            max-height: 241px !important;
+
+            /* 防止内边距影响 */
+            padding: 0 !important;
+            margin: 0 !important;
             box-sizing: border-box;
         }
 
         .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* 改为cover保持填充 */
-            object-position: center;
+            /* 精确填充控制 */
+            object-fit: contain;
+            width: 100% !important;
+            height: 100% !important;
         }
 
         .slide:hover {
@@ -49,30 +67,6 @@
 
         .slide:hover img {
             transform: scale(1.03);
-        }
-
-        .slider-container::before,
-        .slider-container::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 28px;
-            background: repeating-linear-gradient(90deg,
-                    transparent 0,
-                    transparent 14px,
-                    #fff 14px,
-                    #fff 18px);
-            z-index: 2;
-            opacity: 0.8;
-        }
-
-        .slider-container::before {
-            top: 10px;
-        }
-
-        .slider-container::after {
-            bottom: 10px;
         }
 
         @media (max-width: 1600px) {
@@ -95,11 +89,52 @@
         }
 
         @media (max-width: 768px) {
-            .slider-container {
-                --slide-width: 90vw;
-                --slide-height: calc(90vw * 400 / 713);
-                max-width: none;
+            .slider-container::before,
+            .slider-container::after {
+                height: 14px;
+                background:
+                    repeating-linear-gradient(90deg,
+                        transparent 0,
+                        transparent 8px,
+                        #5a5a5a 8px,
+                        #5a5a5a 12px);
             }
+        }
+
+        /* 改进的胶片齿孔 */
+        .slider-container::before,
+        .slider-container::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            /* 扩展两侧齿孔 */
+            right: -10px;
+            height: 18px;
+            /* 优化齿孔高度 */
+            background:
+                repeating-linear-gradient(90deg,
+                    transparent 0,
+                    transparent 10px,
+                    /* 减小间隔 */
+                    #5a5a5a 10px,
+                    /* 调整齿孔颜色 */
+                    #5a5a5a 14px);
+            /* 减小齿孔宽度 */
+            z-index: 2;
+            opacity: 0.9;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            /* 增加内阴影增强立体感 */
+        }
+
+        .slider-container::before {
+            top: -6px;
+            /* 微调位置对齐边框 */
+            transform: translateY(-50%);
+        }
+
+        .slider-container::after {
+            bottom: -6px;
+            transform: translateY(50%);
         }
     </style>
 </head>
@@ -116,29 +151,27 @@
             <div class="slide"><img src="img/lb1.jpg" alt=""></div>
         </div>
     </div>
-
     <script>
-        // 单一实例化
         const track = document.querySelector('.slider-track');
         const slides = document.querySelectorAll('.slide');
-        let currentIndex = 1;
+        let currentIndex = 1;  // 从第二个真实项开始
         let autoPlay = true;
         let isAnimating = false;
+        let autoPlayInterval;
 
-        // 精确计算幻灯片宽度
-        function getSlideWidth() {
-            const slide = slides[0];
-            const style = getComputedStyle(slide);
-            return slide.offsetWidth + parseInt(style.marginLeft) + parseInt(style.marginRight);
+        // 获取单步移动距离（包含间隙）
+        function getSlideStep() {
+            const trackStyle = getComputedStyle(track);
+            return slides[0].offsetWidth + parseInt(trackStyle.gap);
         }
 
-        // 统一运动函数
+        // 核心运动函数
         function moveToNext() {
             if (isAnimating) return;
             isAnimating = true;
 
             currentIndex++;
-            track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
+            applyTransform(currentIndex);
 
             handleLoopTransition();
         }
@@ -148,36 +181,52 @@
             isAnimating = true;
 
             currentIndex--;
-            track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
+            applyTransform(currentIndex);
 
             handleLoopTransition(true);
         }
 
-        // 循环逻辑处理
+        // 应用transform变化
+        function applyTransform(index) {
+            track.style.transform = `translateX(-${index * getSlideStep()}px)`;
+        }
+
+        // 循环逻辑处理（核心改进）
         function handleLoopTransition(isPrev = false) {
-            const threshold = isPrev ? 0 : slides.length - 2;
+            const threshold = isPrev ? 1 : slides.length - 2;
             const resetIndex = isPrev ? slides.length - 3 : 1;
 
             if ((!isPrev && currentIndex >= threshold) ||
                 (isPrev && currentIndex <= threshold)) {
+
+                // 在动画结束前重置位置
                 setTimeout(() => {
                     track.style.transition = 'none';
                     currentIndex = resetIndex;
-                    track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
-                    setTimeout(() => {
-                        track.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
-                        isAnimating = false;
-                    }, 20);
-                }, 800);
+                    applyTransform(currentIndex);
+
+                    // 确保渲染同步
+                    requestAnimationFrame(() => {
+                        setTimeout(() => {
+                            track.style.transition =
+                                'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                            isAnimating = false;
+                        }, 20);
+                    });
+                }, 750); // 比动画时间短50ms
             } else {
                 setTimeout(() => isAnimating = false, 800);
             }
         }
 
         // 自动播放控制
-        let autoPlayInterval = setInterval(() => {
-            if (autoPlay) moveToNext();
-        }, 3000);
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                if (autoPlay && document.visibilityState === 'visible') {
+                    moveToNext();
+                }
+            }, 3000);
+        }
 
         // 事件处理
         const container = document.querySelector('.slider-container');
@@ -189,7 +238,7 @@
             Math.sign(e.deltaY) > 0 ? moveToNext() : moveToPrev();
         }, { passive: false });
 
-        // 暂停控制
+        // 暂停控制（改进可见性处理）
         container.addEventListener('mouseenter', () => {
             autoPlay = false;
             clearInterval(autoPlayInterval);
@@ -197,30 +246,45 @@
 
         container.addEventListener('mouseleave', () => {
             autoPlay = true;
-            autoPlayInterval = setInterval(() => {
-                if (autoPlay) moveToNext();
-            }, 3000);
+            startAutoPlay();
         });
 
-        // 窗口重置
-        window.addEventListener('resize', () => {
-            track.style.transition = 'none';
-            track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
-            setTimeout(() => {
-                track.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
-            }, 50);
+        // 页面可见性处理
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                startAutoPlay();
+            } else {
+                clearInterval(autoPlayInterval);
+            }
         });
-    </script>
-    <script>
-        // 在原有脚本中添加尺寸校验
+
+        // 窗口重置处理
+        function handleResize() {
+            track.style.transition = 'none';
+            applyTransform(currentIndex);
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    track.style.transition =
+                        'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                }, 50);
+            });
+        }
+
+        // 防抖处理
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(handleResize, 100);
+        });
+
+        // 尺寸校验（保持原有）
         function validateSize() {
             const sampleSlide = document.querySelector('.slide');
             const actualWidth = sampleSlide.offsetWidth;
             const targetWidth = parseInt(getComputedStyle(document.documentElement)
                 .getPropertyValue('--slide-width'));
-            
+
             if (Math.abs(actualWidth - targetWidth) > 5) {
-                console.warn('尺寸偏差超过5px，正在强制修正...');
                 document.documentElement.style.setProperty(
                     '--slide-width', `${actualWidth}px`
                 );
@@ -229,9 +293,12 @@
                 );
             }
         }
-    
-        // 初始化时和窗口变化时校验
-        window.addEventListener('load', validateSize);
+
+        // 初始化
+        window.addEventListener('load', () => {
+            validateSize();
+            startAutoPlay();
+        });
         window.addEventListener('resize', validateSize);
     </script>
 </body>

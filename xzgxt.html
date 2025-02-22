@@ -12,9 +12,14 @@
             min-height: 100vh;
             font-family: 'Courier New', Arial, sans-serif;
             overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         /* 背景图层 */
+        /* 合并重复的body::before */
         body::before {
             content: '';
             background: url('img/bg_full.png') center/contain no-repeat fixed;
@@ -22,38 +27,10 @@
             width: 100vw;
             height: 100vh;
             z-index: -1;
+            box-shadow: inset 0 0 15rem rgba(0, 0, 0, 0.6);
             filter: blur(10px) brightness(0.9);
             transition: filter 0.5s;
-        }
-
-        body::before {
-            content: '';
-            /* 加载背景图 */
-            background-image: url('img/bg_full.png');
-            /* 固定背景 */
-            background-attachment: fixed;
-            /* 完美居中 */
-            background-position: center center;
-            /* 自适应缩放 */
-            background-size: contain;
-            /* 或使用 cover 根据需求 */
-            /* 禁用重复 */
-            background-repeat: no-repeat;
-            /* 全屏覆盖 */
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            /* 置于底层 */
-            z-index: -1;
-            /* 可选阴影效果 */
-            box-shadow: inset 0 0 15rem rgba(0, 0, 0, 0.6);
-            /* 硬件加速优化 */
-            transform: translateZ(0);
-            /* 渐进加载优化 */
-            background-color: #1a1a1a;
-            /* 背景主色 */
-            filter: blur(10px);
-            transition: filter 0.5s;
+            /* 移除重复属性 */
         }
 
 
@@ -128,7 +105,7 @@
             fill: none;
             marker-end: url(#arrowhead);
             transition: all 0.3s ease-out;
-            z-index: 2;
+            z-index: 1 !important;
         }
 
         .dashed-line {
@@ -138,16 +115,22 @@
         /* SVG文字标签 */
         #lines text {
             fill: #000;
-            font: 12px Arial;
+            font: 16px Arial;
             text-anchor: middle;
             dominant-baseline: middle;
             pointer-events: none;
             user-select: none;
         }
 
+        /* 调整行间距 */
+        #lines tspan {
+            letter-spacing: 0.5px;
+        }
+
         /* 修复标签背景 */
         #lines rect {
             filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+            z-index: 2;
         }
 
         /* 移动端适配 */
@@ -176,6 +159,20 @@
         body.loaded .node {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* 添加SVG文本样式 */
+        #lines text {
+            font-family: 'MS Gothic', 'Courier New', monospace;
+            /* 日文字体优化 */
+            z-index: 3;
+        }
+
+        #lines tspan {
+            white-space: pre;
+            /* 保留换行符 */
+            letter-spacing: 0.05em;
+            /* 日文间距优化 */
         }
     </style>
 </head>
@@ -215,7 +212,6 @@
             <div class="label">J<br>
                 23歳、Lの養女<br>
                 警察庁高官を母に持つの刑事
-            
             </div>
         </div>
 
@@ -238,7 +234,12 @@
     <script>
         // 连线数据
         const connections = [
-            { from: 0, to: 1, label: "控えめな探求、飼養、優しくも支配的", dashed: false },
+            {
+                from: 0,
+                to: 1,
+                label: "控えめな探求、飼養、優しくも支配的", // 使用\n换行
+                dashed: false
+            },
             { from: 0, to: 2, label: "母女、師弟", dashed: true },
             { from: 0, to: 3, label: "慈しむ、憐憫", dashed: false },
             { from: 0, to: 4, label: "やり返す", dashed: true },
@@ -385,9 +386,15 @@
             });
         }
         // 创建连线标签
+        // 修复布局问题（十字形布局）
+        // 增强连线绘制功能
         function createConnectionLabel(text, start, end, isCurve) {
             const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
             const padding = 4;
+            const lineHeight = 18;
+
+            // 拆分多行文本
+            const lines = text.split(/[、\n]/); // 同时支持顿号和换行符
 
             // 计算标签位置
             const angle = Math.atan2(end.y - start.y, end.x - start.x);
@@ -396,37 +403,50 @@
                 y: (start.y + end.y) / 2 + Math.sin(angle) * (isCurve ? 15 : -5)
             };
 
-            // 文本元素
+            // 创建文本容器
             const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            textEl.textContent = text;
-            Object.assign(textEl, {
-                x: labelPos.x,
-                y: labelPos.y,
-                fill: '#ecf0f1',
-                'font-size': '12px',
-                'text-anchor': 'middle',
-                'dominant-baseline': 'middle'
+            textEl.setAttribute('x', labelPos.x);
+            textEl.setAttribute('y', labelPos.y);
+            textEl.setAttribute('text-anchor', 'middle');
+            textEl.setAttribute('dominant-baseline', 'middle');
+            textEl.setAttribute('fill', '#ecf0f1');
+            textEl.setAttribute('font-size', '12px');
+
+            // 添加多行tspan
+            lines.forEach((line, index) => {
+                if (!line) return;
+                const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+                tspan.setAttribute('x', labelPos.x);
+                tspan.setAttribute('dy', index === 0 ? '0' : '1.2em');
+                tspan.textContent = line;
+                textEl.appendChild(tspan);
             });
 
-            // 背景框
+            // 临时添加到文档以计算尺寸
+            const tempContainer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            document.body.appendChild(tempContainer);
+            tempContainer.appendChild(textEl);
+
             const bbox = textEl.getBBox();
-            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            Object.assign(rect, {
-                x: bbox.x - padding,
-                y: bbox.y - padding,
-                width: bbox.width + padding * 2,
-                height: bbox.height + padding * 2,
-                fill: 'rgba(44, 62, 80, 0.9)',
-                rx: '3',
-                stroke: '#2c3e50',
-                'stroke-width': '1'
-            });
+            document.body.removeChild(tempContainer);
 
+            // 创建背景框
+            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            rect.setAttribute('x', bbox.x - padding);
+            rect.setAttribute('y', bbox.y - padding);
+            rect.setAttribute('width', bbox.width + padding * 2);
+            rect.setAttribute('height', bbox.height + padding * 2);
+            rect.setAttribute('fill', 'rgba(44, 62, 80, 0.9)');
+            rect.setAttribute('rx', '3');
+            rect.setAttribute('stroke', '#2c3e50');
+            rect.setAttribute('stroke-width', '1');
+
+            // 确保层级顺序：先背景后文字
             group.appendChild(rect);
             group.appendChild(textEl);
+
             return group;
         }
-
         // 拖拽系统
         function initDragSystem() {
             let dragInfo = null;
@@ -480,33 +500,6 @@
                 }, 200);
             });
         }
-
-        // 修改初始化代码（精简后的正确版本）
-        window.addEventListener('load', () => {
-            // 移除重复的load监听器
-            state.nodes = Array.from(document.querySelectorAll('.node'));
-
-            // 初始化系统
-            initLayout();
-            initDragSystem();
-            initResponsive();
-            drawLines();
-
-            // 强制移除模糊（双保险）
-            document.body.classList.add('loaded');
-
-            // 添加图片加载检测
-            const bgImg = new Image();
-            bgImg.src = 'img/bg_full.png';
-            bgImg.onload = () => {
-                document.body.classList.add('loaded');
-            };
-
-            // 超时强制清晰化
-            setTimeout(() => {
-                document.body.classList.add('loaded');
-            }, 3000);
-        });
         // 增强版初始化函数
         function initialize() {
             // 验证节点存在
@@ -557,50 +550,13 @@
             console.log('窗口load事件触发');
             initialize();
         });
+        // 添加触摸事件支持在移动设备上正常使用
+        node.addEventListener('touchstart', e => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            // ...类似鼠标事件的逻辑
+        });
     </script>
-
-    <script>
-        // 修复布局问题（十字形布局）
-        // 增强连线绘制功能
-        function createConnectionLabel(text, start, end, isCurve) {
-            const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-            const padding = 4;
-
-            // 计算标签位置
-            const angle = Math.atan2(end.y - start.y, end.x - start.x);
-            const labelPos = {
-                x: (start.x + end.x) / 2 + Math.cos(angle) * (isCurve ? 15 : 0),
-                y: (start.y + end.y) / 2 + Math.sin(angle) * (isCurve ? 15 : -5)
-            };
-
-            // 文本元素（正确设置方式）
-            const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            textEl.textContent = text;
-            textEl.setAttribute('x', labelPos.x);
-            textEl.setAttribute('y', labelPos.y);
-            textEl.setAttribute('fill', '#ecf0f1');
-            textEl.setAttribute('font-size', '12px');
-            textEl.setAttribute('text-anchor', 'middle');
-            textEl.setAttribute('dominant-baseline', 'middle');
-
-            // 背景框（保持原有正确设置）
-            const bbox = textEl.getBBox();
-            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            rect.setAttribute('x', bbox.x - padding);
-            rect.setAttribute('y', bbox.y - padding);
-            rect.setAttribute('width', bbox.width + padding * 2);
-            rect.setAttribute('height', bbox.height + padding * 2);
-            rect.setAttribute('fill', 'rgba(44, 62, 80, 0.9)');
-            rect.setAttribute('rx', '3');
-            rect.setAttribute('stroke', '#2c3e50');
-            rect.setAttribute('stroke-width', '1');
-
-            group.appendChild(rect);
-            group.appendChild(textEl);
-            return group;
-        }
-    </script>
-
 </body>
 
 </html>
