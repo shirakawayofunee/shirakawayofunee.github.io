@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胶片轮播图</title>
+    <style>
+        .slider-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            background: #000;
+            padding: 40px 0;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .slide {
+            flex: 0 0 33.3333%;
+            position: relative;
+            padding: 0 10px;
+            box-sizing: border-box;
+            filter: grayscale(0.2);
+            transition: filter 0.3s;
+        }
+
+        .slide:hover {
+            filter: grayscale(0);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 3px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* 胶片齿孔效果 */
+        .slider-container::before,
+        .slider-container::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 24px;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0,
+                    transparent 14px,
+                    #fff 14px,
+                    #fff 18px
+                );
+            z-index: 2;
+            opacity: 0.8;
+        }
+
+        .slider-container::before {
+            top: 10px;
+        }
+
+        .slider-container::after {
+            bottom: 10px;
+        }
+
+        /* 胶片边缘效果 */
+        .slider-container {
+            border-top: 4px solid #3a3a3a;
+            border-bottom: 4px solid #3a3a3a;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider-track">
+            <!-- 实际图片 -->
+            <div class="slide"><img src="img/lb5.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb1.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb2.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb3.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb4.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb5.jpg" alt=""></div>
+            <div class="slide"><img src="img/lb1.jpg" alt=""></div>
+        </div>
+    </div>
+
+    <script>
+        const track = document.querySelector('.slider-track');
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 1; // 从真实的第一张开始
+        let autoPlay = true;
+
+        // 克隆逻辑已直接在HTML中实现
+        function moveToNext() {
+            currentIndex++;
+            track.style.transform = `translateX(-${currentIndex * 33.3333}%)`;
+
+            // 当到达最后克隆项时重置
+            if (currentIndex >= slides.length - 3) {
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    currentIndex = 1;
+                    track.style.transform = `translateX(-${currentIndex * 33.3333}%)`;
+                    setTimeout(() => {
+                        track.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                    }, 10);
+                }, 800);
+            }
+        }
+
+        // 自动播放
+        setInterval(() => {
+            if (autoPlay) moveToNext();
+        }, 3000);
+
+        // 暂停/恢复自动播放
+        track.addEventListener('mouseenter', () => autoPlay = false);
+        track.addEventListener('mouseleave', () => autoPlay = true);
+    </script>
+</body>
+</html>
