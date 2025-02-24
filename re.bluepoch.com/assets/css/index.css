@@ -283,7 +283,8 @@ l {
   background: url("../img/second/t3.png") top/100% no-repeat;
   width: 23.3125rem;
   height: 8.625rem;
-  margin: 0 auto 0;
+  margin: 0 0 0 10%;  /* 左边距10% */
+  transform: translateX(-15%);  /* 向左微调 */
 }
 
 .part2 .part-content {
@@ -306,6 +307,7 @@ l {
   background: url(../img/second/1-1.png) no-repeat;
   background-size: contain;
   background-position: 40% -3rem;
+  background-position: center top; /* 水平居中 顶部对齐 */
 }
 
 .part2 .wrap-switch {

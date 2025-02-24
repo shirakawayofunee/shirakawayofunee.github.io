@@ -201,7 +201,7 @@
       //切换
       var src = this.rookieData[this.rookieFlag][flag];
       console.log(src);
-     
+
       this.$rookie.find(".wrap-rookie").css("background-image", `url(${src})`);
     },
     //适龄弹窗
@@ -279,21 +279,21 @@
     new App().init();
   });
 })(jQuery);
-function changeWan(num){
+function changeWan(num) {
   console.log(5555)
-   if(num==1){
-      $(`.partwan-left-img1`).hide();
-      $(`.partwan-left-img2`).show();
-      $(`.partwan-left-img1c`).show();
-      $(`.partwan-left-img2c`).hide(); 
-      $(`.partwan-right-1`).show();
-      $(`.partwan-right-2`).hide(); 
-   }else{
-      $(`.partwan-left-img1`).show();
-      $(`.partwan-left-img2`).hide();
-      $(`.partwan-left-img1c`).hide();
-      $(`.partwan-left-img2c`).show(); 
-      $(`.partwan-right-1`).hide();
-      $(`.partwan-right-2`).show(); 
-   }
+  if (num == 1) {
+    $(`.partwan-left-img1`).hide();
+    $(`.partwan-left-img2`).show();
+    $(`.partwan-left-img1c`).show();
+    $(`.partwan-left-img2c`).hide();
+    $(`.partwan-right-1`).show();
+    $(`.partwan-right-2`).hide();
+  } else {
+    $(`.partwan-left-img1`).show();
+    $(`.partwan-left-img2`).hide();
+    $(`.partwan-left-img1c`).hide();
+    $(`.partwan-left-img2c`).show();
+    $(`.partwan-right-1`).hide();
+    $(`.partwan-right-2`).show();
+  }
 }
