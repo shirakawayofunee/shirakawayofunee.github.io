@@ -2,7 +2,7 @@
  * @Author: 左措 73263982+kiiyorku@users.noreply.github.com
  * @Date: 2025-02-10 11:38:26
  * @LastEditors: 左措 73263982+kiiyorku@users.noreply.github.com
- * @LastEditTime: 2025-02-13 01:49:25
+ * @LastEditTime: 2025-02-24 01:21:39
  * @FilePath: \shirakawayofunee.github.io\AU\gxx.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -398,5 +398,78 @@
     })();
   </script>
 </body>
+<script type="module">
+  // 导入 Firebase SDK
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
 
+  // Firebase 配置
+  const firebaseConfig = {
+    apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
+    authDomain: "fangkeshuju.firebaseapp.com",
+    projectId: "fangkeshuju",
+    storageBucket: "fangkeshuju.firebasestorage.app",
+    messagingSenderId: "1043722790851",
+    appId: "1:1043722790851:web:01cca5afff820eb202ff76",
+    measurementId: "G-MGC7KEWX53"
+  };
+
+  // 初始化 Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  // 记录页面访问事件并保存到 Firestore
+  async function logPageView() {
+    try {
+      await addDoc(collection(db, 'page_views'), {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        timestamp: serverTimestamp()
+      });
+      console.log('Page view saved to Firestore');
+    } catch (error) {
+      console.error('Error saving page view: ', error);
+    }
+  }
+
+  // 调用函数
+  logPageView();
+
+  // 追踪图片查看行为
+  const images = document.querySelectorAll('img.trackable');
+  images.forEach(img => {
+    let startTime = null;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startTime = Date.now();
+        } else if (startTime) {
+          const duration = (Date.now() - startTime) / 1000;
+          saveImageView(img.src, duration);
+          startTime = null;
+        }
+      });
+    });
+
+    observer.observe(img);
+  });
+
+  // 保存图片查看行为到 Firestore
+  async function saveImageView(imageSrc, duration) {
+    try {
+      await addDoc(collection(db, 'image_views'), {
+        image_src: imageSrc,
+        view_duration: duration,
+        timestamp: serverTimestamp()
+      });
+      console.log('Image view saved to Firestore');
+    } catch (error) {
+      console.error('Error saving image view: ', error);
+    }
+  }
+</script>
 </html>

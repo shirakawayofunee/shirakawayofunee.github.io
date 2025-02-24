@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="script/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/animateSelf.css">
+    <link rel="stylesheet" href="css/index.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/mouse.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/news.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/first.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/character.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/backstory.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/gallery.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/statement.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/videomaskDetail.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/papermask.css" media="(min-device-width:926px)">
+    <link rel="stylesheet" href="css/papermaskDetail.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/newsDetail.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/index926.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/firstMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/mobileNews.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/characterMobile.css" media="(max-device-width:599px)">
+    <link rel="stylesheet" href="css/characterPad.css" media="(min-width:600px) and (max-width:926px)" />
+    <link rel="stylesheet" href="css/backstoryMobile.css" media="(max-device-width:599px)" />
+    <link rel="stylesheet" href="css/backstoryPad.css" media="(min-width:600px) and (max-width:926px)" />
+    <link rel="stylesheet" href="css/galleryMobile.css" media="(max-device-width:599px)" />
+    <link rel="stylesheet" href="css/galleryPad.css" media="(min-width:600px) and (max-width:926px)">
+    <link rel="stylesheet" href="css/statementMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/musicmaskMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/musicmaskDetailMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/papermaskMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/videomaskMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/yuyue.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/yuyueMobile.css" media="(max-device-width:926px)">
+    <link rel="icon" type="image/x-icon" id="icon">
+
+    <title>多错本旨</title>
+    <style>
+        /* 移动端适配（750px 基准） */
+        html {
+            font-size: calc(100vw / 750 * 16);
+        }
+
+        /* PC 端适配（1920px 基准） */
+        @media (min-width: 768px) {
+            html {
+                font-size: calc(100vw / 1920 * 16);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 鼠标样式 -->
+    <div class="div" id="d1"></div>
+    <div id="loading" data-mouse="small" class="animate__animated" style="display: none;">
+        <img src="img/loading/loading.gif" alt="" class="loadingImg">
+        <div class="loadingProgress">
+        </div>
+    </div>
+    <!-- 手机端导航 -->
+    <div class="mobile head-mob">
+        <div class="musicmaskDetail-top-mobile">
+            <img src="img/music/hide.png" alt="" onclick="musicmaskDetailHideM(1)">
+        </div>
+        <div class="head-mob-right">
+            <img src="img/logo.png" alt="" class="head-mob-logo">
+        </div>
+        <div class="head-mob-left">
+            <img src="img/v2.webp" alt="" onclick="muteMusic(1)" class="imgMusicPlay" style="display: none;">
+            <img src="img/v2c.png" alt="" onclick="muteMusic(2)" class="imgMusicStop">
+            <img src="img/mobile/Menu.png" alt="" style="transform: scale(0.5);" onclick="changeHead(1)"
+                class="menuMobile">
+            <img src="img/mobile/Menuc.png" alt="" style="transform: scale(0.5);display: none;" onclick="changeHead(2)"
+                class="menucMobile">
+        </div>
+
+    </div>
+    <!-- pc导航栏 -->
+    <div class="swiper mySwiper swiperBG pc" id="allSwiper">
+        <div class="head pc" data-mouse="small">
+            <div class="h-con-left">
+                <h1 data-mouse="mid">
+                    <a href="index.html" style="cursor: none;" data-mouse="mid">
+                        <img src="img/logo.png" alt="多错本旨" data-mouse="mid" class="head-logo">
+                    </a>
+                </h1>
+            </div>
+            <div class="h-con-right pc" data-mouse="mid">
+                <div class="h-con-right-l" data-mouse="mid">
+                    <div class="div-center div-centerpc" onclick="changeBanner(0)" id="banner0" data-mouse="mid">
+                        <div class="div-head-text" data-mouse="mid">首页</div>
+                        <div class="div-head-text-en" data-mouse="mid">HOME</div>
+                    </div>
+                    <div class="div-center div-centerpc" onclick="changeBanner(1)" id="banner1" data-mouse="mid">
+                        <div class="div-head-text" data-mouse="mid">资讯</div>
+                        <div class="div-head-text-en" data-mouse="mid">NEWS</div>
+                    </div>
+                    <div class="div-center div-centerpc" onclick="changeBanner(2)" id="banner2" data-mouse="mid">
+                        <div class="div-head-text" data-mouse="mid">角色</div>
+                        <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
+                    </div>
+                    <div class="div-center div-centerpc" onclick="changeBanner(3)" id="banner3" data-mouse="mid">
+                        <div class="div-head-text" data-mouse="mid">美術館</div>
+                        <div class="div-head-text-en" data-mouse="mid">gallery</div>
+                    </div>
+                    <div class="div-center div-centerpc" onclick="changeBanner(4)" id="banner4" data-mouse="mid">
+                        <div class="div-head-text" data-mouse="mid">影音</div>
+                        <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
+                    </div>
+                </div>
+                <div class="h-con-right-r">
+                    <div class="h-con-right-r-con">
+                        <div style="position:relative" data-mouse="mid">
+                            <img src="img/share.png" alt="" onclick="changeShare()" data-mouse="mid" data-type="share"
+                                id="imgShare">
+                        </div>
+                        <div>
+                            <img src="img/v2.webp" alt="" onclick="muteMusic(1)" class="imgMusicPlay shareMusic"
+                                style="display: none;">
+                            <img src="img/v2c.png" alt="" onclick="muteMusic(2)" class="imgMusicStop shareMusic">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- head -->
+
+    </div>
+    <div class="swiper-wrapper" data-mouse="small">
+        <!-- pc首页 -->
+        <div class="swiper-slide pc first" data-mouse="small" id="slide1">
+            <!-- <img src="./img/01.jpg" alt="" class="first-bg animate__animated animate__fadeIn"> -->
+            <video src="#" style="width:100%;" muted autoplay loop id="kvPc" poster="kv/p.jpg"
+                data-mouse="small"></video>
+            <img src="img/first/1.png" alt="" class="first-1" data-mouse="small">
+            <img src="img/first/2.png" alt="" class="first-2" data-mouse="small">
+            <img src="img/first/3.webp" alt="" class="first-3" data-mouse="small">
+            <div class="first-zhe" data-mouse="small">
+
+            </div>
+            <div class="first-4 animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
+                <div class="first-4-1" data-mouse="mid">
+                    <img src="#" alt="" id="imgQR">
+                </div>
+                <div class="first-4-2">
+                    <div class="first-4-2-con">
+                        <a href="#" id="iosDownload" target="_blank"><img src="img/first/ios.png" alt=""
+                                data-type="ios" onclick="uploadShuShu()"></a>
+                        <a href="#" id="androidDownload" download target="_blank"><img src="img/first/android.png"
+                                alt="" data-type="android" onclick="uploadShuShu()"> </a>
+                    </div>
+                </div>
+                <div class="first-4-mumu" data-mouse="mid">
+                    <div class="first-4-2-con">
+                        <a href="#" id="mumuDownload" download target="_blank"><img src="img/first/mumu.png" alt=""
+                                data-type="mumu" onclick="uploadShuShu()"></a>
+                        <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank"><img
+                                src="img/first/taptap.png" alt=""></a>
+                    </div>
+
+                </div>
+                <div class="first-4-3" data-mouse="mid" onclick="playFirst(1)">
+                    <img src="img/first/play.webp" alt="" class="first-4-3-bg">
+                </div>
+            </div>
+            <div class="first-yuyue animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
+                <img src="img/first/yu.png" alt="" class="first-yuyue-img" onclick="showYuyue()">
+                <div data-mouse="mid" onclick="playFirst(1)">
+                    <img src="img/first/play.webp" alt="" class="first-yuyue-play">
+                </div>
+            </div>
+        </div>
+        <!-- pc资讯 -->
+        <div class="swiper-slide news pc" data-mouse="small" id="slide2">
+            <div class="news-left animate__animated animate__fadeInLeft" data-mouse="small" id="newsLeft">
+                <div class="swiper-wrapper new-left-swiper" id="imgNews">
+                    <!-- <div class="swiper-slide news-left-con">Slide 1</div>
+                  <div class="swiper-slide news-left-con">Slide 2</div>
+                  <div class="swiper-slide news-left-con">Slide 3</div>                  -->
+                </div>
+                <div class="news-left-con-page" data-mouse="small" id="newsPage">
+
+                </div>
+            </div>
+            <div class="news-right" data-mouse="small">
+                <div class="news-right-head">
+                    <div class="news-right-head-img animate__animated animate__fadeInUp">
+                        <img src="img/News.png" alt="" class="news-icon">
+                    </div>
+                    <div class="news-right-head-bg animate__animated animate__fadeInUp">
+                        <div class="news-right-head-bg-list" onclick="changeNews(0)" id="news0" data-mouse="mid">最新
+                        </div>
+                        <div class="news-right-head-bg-list" onclick="changeNews(1)" id="news1" data-mouse="mid">公告
+                        </div>
+                        <div class="news-right-head-bg-list" onclick="changeNews(2)" id="news2" data-mouse="mid">活动
+                        </div>
+                        <div class="news-right-head-bg-list" onclick="changeNews(3)" id="news3" data-mouse="mid">新闻
+                        </div>
+                    </div>
+                </div>
+                <div class="news-right-con animate__animated animate__fadeInUp">
+                    <!-- 遍历获取数据 setNews -->
+                    <!-- <div class="news-right-con-list" data-news="0" onclick="goNews(this)">
+                    <div class="news-right-con-list-left">
+                      <div class="news-right-con-list-left-icon">
+                        <img src="./img/see.png" alt="">
+                      </div>
+                      <div class="news-right-con-list-left-type">新闻</div>
+                      <div class="news-right-con-list-left-title">即使是可能萨克斯888888888888888888</div>
+                    </div>
+                    <div>11111111111111</div>
+                  </div>
+                  <div class="news-right-con-list">2</div>
+                  <div class="news-right-con-list">3</div>
+                  <div class="news-right-con-list">4</div>
+                  <div class="news-right-con-list">5</div> -->
+                </div>
+                <div class="news-right-foot animate__animated animate__fadeInUp" data-mouse="mid">
+                    <div class="news-right-foot-button" onclick="goToMore()" data-mouse="mid">
+                        <img src="img/jian.png" alt="" data-mouse="mid">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 角色pc -->
+        <div class="swiper-slide character pc" data-mouse="small" id="slide3">
+            <div class="character-left animate__animated animate__fadeInLeft" data-mouse="small" data-swiper="no"
+                onmouseenter="changeAllSwipperAbled(1)" onmouseleave="changeAllSwipperAbled(2)">
+                <div class="swiper characterpc" id="characterpc" data-mouse="small" data-swiper="no">
+                    <div class="swiper-wrapper" data-mouse="small" data-swiper="no">
+                        <div class="swiper-slide" data-mouse="mid" data-swiper="no">
+                            <img src="img/character/1.png" alt="" data-mouse="mid"
+                                class="character-left-role-r role1" id="role1" data-swiper="no">
+
+                        </div>
+                        <div class="swiper-slide" data-mouse="mid">
+                            <img src="img/character/2.png" alt="" data-mouse="mid"
+                                class="character-left-role-l role2" id="role2" data-swiper="no">
+
+                        </div>
+                        <div class="swiper-slide" data-mouse="mid">
+                            <img src="img/character/3.png" alt="" data-mouse="mid"
+                                class="character-left-role-r role3" id="role3" data-swiper="no">
+
+                        </div>
+                        <div class="swiper-slide" data-mouse="mid">
+                            <img src="img/character/4.png" alt="" data-mouse="mid"
+                                class="character-left-role-l role4" id="role4" data-swiper="no">
+
+                        </div>
+                        <div class="swiper-slide" data-mouse="mid">
+                            <img src="img/character/5.png" alt="" data-mouse="mid"
+                                class="character-left-role-r role5" id="role5" data-swiper="no">
+
+                        </div>
+                        <div class="swiper-slide" data-mouse="mid">
+                            <img src="img/character/6.png" alt="" data-mouse="mid"
+                                class="character-left-role-l role6" id="role6" data-swiper="no">
+
+                        </div>
+                        <div class="swiper-slide" data-mouse="mid">
+                            <img src="img/character/7.png" alt="" data-mouse="mid"
+                                class="character-left-role-r role7" id="role7" data-swiper="no">
+
+                        </div>
+                        <div class="swiper-slide" data-mouse="mid">
+                            <img src="img/character/8.png" alt="" data-mouse="mid"
+                                class="character-left-role-l role8" id="role8" data-swiper="no">
+
+                        </div>
+                        <div class="swiper-slide" data-mouse="mid">
+                            <img src="img/character/9.png" alt="" data-mouse="mid"
+                                class="character-left-role-r role9" id="role9" data-swiper="no">
+
+                        </div>
+                        <div class="swiper-slide" data-mouse="mid">
+                            <img src="img/character/10.png" alt="" data-mouse="mid"
+                                class="character-left-role-l role10" id="role10" data-swiper="no">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="character-right">
+                <div class="character-right-left animate__animated animate__fadeIn" id="roleBg">
+                    <img src="img/role/false.webp" alt="">
+                    <img src="#" alt="" id="roleImg">
+                    <video id="v1" muted loop style="display: none;">
+                        <source src="#" type="video/mp4">
+                    </video>
+                    <canvas id="c1" width="940" height="2320" style="display: none;"></canvas>
+                    <canvas id="c2" width="940" height="1160" class="character-canvas" data-mouse="mid"></canvas>
+
+                </div>
+            </div>
+            <div class="character-right-right animate__animated animate__fadeInRight">
+                <div class="character-right-right-title">
+                    <img src="img/role/1t.png" alt="" class="characterFadeInRight" id="roleTitle">
+                </div>
+                <div class="character-right-right-str characterFadeInRight" id="roleStr">
+                    在海上漂流，在电台狂欢，<br>
+                    向所有的新玩意儿发起进攻，直到永远！
+                </div>
+                <div class="character-right-right-button animate__animated" id="roleButton">
+                    <div class="character-right-right-button-left" data-mouse="mid">
+                        <img src="img/yuyin_01.png" alt="" id="roleVoice" onclick="playCharacterVioce(1)">
+                        <img src="img/yuyin_02.webp" alt="" id="roleVoiceing" onclick="playCharacterVioce(2)"
+                            style="display: none;">
+                    </div>
+                    <div class="character-right-right-button-right">
+                        <img src="img/live2d.png" id="roleLive" alt="" onclick="changeLive(1)">
+                        <img src="img/Live2Ding.png" id="roleLiveing" alt="" onclick="changeLive(2)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- pc世界 -->
+        <div class="swiper-slide pc backstory" data-mouse="small" id="slide4">
+            <div class="backstory-left animate__animated animate__fadeInLeft" data-mouse="small">
+                <div class="swiper mySwiper backstory-border" id="pcbackstory" data-mouse="small">
+                    <div class="swiper-wrapper" data-mouse="small">
+                        <div class="swiper-slide backstory-left-list" data-mouse="small">
+                            <img src="img/backstory/p1.png" alt="" data-mouse="big" data-img="img/backstory/p1c.png"
+                                class="backstory-img slide-inner" onclick="paperShowBig(this,'p1d.html')">
+                            <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
+                        </div>
+                        <div class="swiper-slide backstory-left-list">
+                            <img src="img/backstory/p2.png" alt="" data-mouse="big" data-img="img/backstory/p2c.png"
+                                class="backstory-img slide-inner" onclick="paperShowBig(this,'p2d.html')">
+                            <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
+                        </div>
+                        <div class="swiper-slide backstory-left-list">
+                            <img src="img/backstory/p3.png" alt="" data-mouse="big" data-img="img/backstory/p3c.png"
+                                class="backstory-img slide-inner" onclick="paperShowBig(this,'p3d.html')">
+                            <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
+                        </div>
+                        <div class="swiper-slide backstory-left-list">
+                            <img src="img/backstory/p4.png" alt="" data-mouse="big" data-img="img/backstory/p4c.png"
+                                class="backstory-img slide-inner" onclick="paperShowBig(this,'p4d.html')">
+                            <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
+                        </div>
+                        <div class="swiper-slide backstory-left-list">
+                            <img src="img/backstory/p5.png" alt="" data-mouse="big" data-img="img/backstory/p5c.png"
+                                class="backstory-img slide-inner" onclick="paperShowBig(this,'p5d.html')">
+                            <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
+                        </div>
+                        <div class="swiper-slide backstory-left-list">
+                            <img src="img/backstory/p6.png" alt="" data-mouse="big" data-img="img/backstory/p6c.png"
+                                class="backstory-img slide-inner" onclick="paperShowBig(this,'p6d.html')">
+                            <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
+                        </div>
+                        <div class="swiper-slide backstory-left-list">
+                            <img src="img/backstory/p7.png" alt="" data-mouse="big" data-img="img/backstory/p7c.png"
+                                class="backstory-img slide-inner" onclick="paperShowBig(this,'p7d.html')">
+                            <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
+                        </div>
+                        <div class="swiper-slide backstory-left-list">
+                            <img src="img/backstory/p8.png" alt="" data-mouse="big" data-img="img/backstory/p8c.png"
+                                class="backstory-img slide-inner" onclick="paperShowBig(this,'p8d.html')">
+                            <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
+                        </div>
+                    </div>
+
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+            </div>
+            <div class="backstory-right" data-mouse="small">
+                <div class="backstory-right-title" data-mouse="small">
+                    <img src="img/backstory/t1.png" alt="" data-mouse="small"
+                        class="animate__animated animate__fadeInUp" id="backstoryTitle">
+                </div>
+                <div class="backstory-right-str animate__animated animate__fadeInUp" data-mouse="small"
+                    id="backstoryStr">
+                    1999年最后一天，“暴雨”降临世界：<br>
+                    地面无故溢起积水，你的指尖碰到飞升的雨滴—— 一场“暴雨”在向天空倾泻。<br>
+                    行人和墙壁在雨中剥落溶解，世界似乎来到一个崭新的旧时代。<br>
+                    而除了你之外的所有人，都在“暴雨”侵蚀后不知所踪。<br>
+                    1999年的秘密，藏在层层雨幕的背后，藏在1999年最后一天。
+                </div>
+                <div class="backstory-right-page animate__animated animate__fadeInUp " data-mouse="mid">
+                    <div id="backstoryPre" data-mouse="mid">
+                        <img src="img/backstory/pre.png" alt="" data-mouse="mid" style="margin-right: 1vw;">
+                    </div>
+                    <div data-mouse="mid">
+                        <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img1"
+                            id="backstoryImg1" onclick="changeBackstoryClick(0)">
+                        <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img2"
+                            id="backstoryImg2" onclick="changeBackstoryClick(1)">
+                        <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img3"
+                            id="backstoryImg3" onclick="changeBackstoryClick(2)">
+                        <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img4"
+                            id="backstoryImg4" onclick="changeBackstoryClick(3)">
+                        <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img5"
+                            id="backstoryImg5" onclick="changeBackstoryClick(4)">
+                        <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img6"
+                            id="backstoryImg6" onclick="changeBackstoryClick(5)">
+                        <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img7"
+                            id="backstoryImg7" onclick="changeBackstoryClick(6)">
+                        <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img8"
+                            id="backstoryImg8" onclick="changeBackstoryClick(7)">
+                    </div>
+                    <div data-mouse="mid" id="backstoryNext">
+                        <img data-mouse="mid" src="img/backstory/next.png" alt="" style="margin-left: 1vw;">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- pc影音 -->
+        <div class="swiper-slide pc gallery" data-mouse="small" id="slide5">
+            <div class="gallery-top" data-mouse="small">
+                <div class="gallery-top-1 animate__animated animate__fadeInUp" data-mouse="small"
+                    onclick="openVideomask()">
+                    <!--游戏视频-->
+                    <img src="img/gallery/01.png" data-mouse="big" data-img="./img/gallery/01d.png" alt=""
+                        class="gallery-top-img gallery-top-bg">
+                    <img src="img/gallery/01_GIF.gif" alt="" class="gallery-top-1-icon" data-mouse="small">
+                    <img src="img/gallery/01_t.png" alt="" class="gallery-top-1-text" data-mouse="small">
+                </div>
+                <div class="gallery-top-2 animate__animated animate__fadeInUp animate__delay-1.5s"
+                    data-mouse="small" onclick="openPapermask()">
+                    <!--游戏图集-->
+                    <img src="img/gallery/02.png" data-mouse="big" data-img="./img/gallery/02d.png" alt=""
+                        class="gallery-top-img gallery-top-bg">
+                    <img src="img/gallery/02_GIF.webp" alt="" class="gallery-top-2-icon" data-mouse="small">
+                    <img src="img/gallery/02_t.png" alt="" class="gallery-top-2-text" data-mouse="small">
+                </div>
+                <div class="gallery-top-3 animate__animated animate__fadeInUp animate__delay-2s" data-mouse="small"
+                    onclick="openMusicmask()">
+                    <!--游戏音乐-->
+                    <img src="img/gallery/03.png" data-mouse="big" data-img="./img/gallery/03d.png" alt=""
+                        class="gallery-top-img gallery-top-bg">
+                    <img src="img/gallery/mu.png" alt="" class="gallery-top-3-icon music-rotate" data-mouse="small">
+                    <img src="img/gallery/03_t.png" alt="" class="gallery-top-3-text" data-mouse="small">
+                </div>
+                <div class="gallery-top-4 animate__animated animate__fadeIn">
+                    <img src="img/gallery/txt_1.png" data-mouse="small" alt="" class="gallery-top-img-icon">
+                </div>
+                <div class="gallery-top-5 animate__animated animate__fadeIn">
+                    <img src="img/gallery/txt_2.png" data-mouse="small" alt="" class="gallery-top-img-icon">
+                </div>
+                <div class="gallery-top-6 animate__animated animate__fadeIn">
+                    <img src="img/gallery/txt_3.png" data-mouse="small" alt="" class="gallery-top-img-icon">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sl-part part2">
+        <h2 class="title"></h2>
+        <div class="part-content" id="J_rookie">
+          <p class="switch-tips">洞悉形象切换</p>
+          <div class="wrap-rookie">
+            <!-- <img src="./assets/img/second/1-1.png" class="rookie" alt="" /> -->
+          </div>
+          <div class="wrap-switch">
+            <div class="switch switch1 curr" data-flag="rookie1"></div>
+            <div class="switch switch2" data-flag="rookie2"></div>
+          </div>
+          <div class="wrap-media">
+            <div class="media-audio media-audio1" data-type="audioEnglish">
+              <!-- <img src="./assets/img/second/y.gif" alt="" style="width: 100%;"> -->
+            </div>
+            <div class="media-audio media-audio2" data-type="audioChinese"></div>
+            <div class="media-video media-video1 J_video" data-src="./assets/media/role1.mp4"></div>
+          </div>
+          <div class="wrap-state">
+            <img src="assets/img/second/1t.png" class="rookie1-text" alt="" />
+          </div>
+          <div class="wrap-tab">
+            <div class="tab tab1 curr" data-flag="0">
+              <img src="assets/img/second/h1c.png" alt="">
+            </div>
+            <div class="tab tab2" data-flag="1">
+              <img src="assets/img/second/h2c.png" alt="">
+            </div>
+            <div class="tab tab3" data-flag="2">
+              <img src="assets/img/second/h3c.png" alt="">
+            </div>
+            <!-- <div class="tab tab4" data-flag="3">
+              <img src="./assets/img/second/h4c.png" alt="">
+            </div> -->
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>

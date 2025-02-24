@@ -1,0 +1,228 @@
+@font-face {
+  font-family: "SourceHanSerifCN";
+  src: url(../font/Serif.ttf);
+}
+/* @font-face {
+  font-family: "cn";
+  src: url(../font/Sans.ttf);
+} */
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  font-family: "SourceHanSerifCN";
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  scrollbar-color: transparent transparent;
+  scrollbar-track-color: transparent;
+  -ms-scrollbar-track-color: transparent;
+  font-family: SourceHanSerifCN;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+.out-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e8d5c7;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.tip {
+  font-size: 26px;
+  text-align: center;
+}
+
+.qq-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+.qq-page .back {
+  background: #2d2f33;
+  color: #f2eae5;
+  width: 100%;
+  overflow: hidden;
+  font-size: 26px;
+  padding: 10px 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+}
+
+.back-btn {
+  cursor: pointer;
+}
+
+.qq-page-title {
+    background: url("../img/PC%c3%a7%c2%ab%c2%af.html") no-repeat center;
+    background-size: auto 100%;
+    width: 100%;
+    height: 21.1875rem;
+    margin-top: 4rem;
+}
+
+.qq-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.qq-box {
+  width: 480px;
+  margin: 20px 20px;
+  padding: 30px;
+  border: 4px double #e8d5c7;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qq-name {
+  padding-right: 20px;
+  font-size: 20px;
+}
+
+.qq-number {
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+}
+
+.qq-number:hover::after {
+  content: "点击QQ号复制";
+  font-size: 12px;
+  padding: 5px 10px;
+  color: #fff;
+  background: #2d2f33;
+  position: absolute;
+  right: -40px;
+}
+
+.qq-join-btn {
+  width: 80px;
+  padding: 10px 15px;
+  background: #2d2f33;
+  color: #f2eae5;
+  border: 4px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.message {
+  font-size: 20px;
+  color: #000;
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  padding: 10px 30px;
+  border-radius: 8px;
+  z-index: 20;
+  opacity: 0;
+  transition: all 0.5s;
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateX(-50%);
+}
+
+.message.show {
+  top: 20px;
+  opacity: 1;
+}
+
+@media screen and (max-width: 926px) {
+  .tip {
+    font-size: 0.26rem;
+    text-align: center;
+  }
+
+  .qq-page .back {
+    background: #2d2f33;
+    color: #f2eae5;
+    width: 100%;
+    font-size: 0.34rem;
+    padding: 0.1rem 0.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+  }
+
+  .qq-page-title {
+    background: url("../img/%c3%a6%c2%89%c2%8b%c3%a6%c2%9c%c2%ba%c3%a7%c2%ab%c2%af.html") no-repeat center;
+    background-size: 100% auto;
+    width: 90%;
+    height: 4.8125rem;
+    margin-top: .5rem;
+  }
+
+  .qq-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .qq-box {
+    width: 90%;
+    margin: 0.2rem 0.25rem;
+    box-sizing: border-box;
+    padding: 0.3rem;
+    border: 0.04rem double #e8d5c7;
+    border-radius: 0.04rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .qq-name {
+    font-size: 0.28rem;
+  }
+
+  .qq-number {
+    font-size: 0.28rem;
+    margin-top: 0.2rem;
+  }
+
+  .qq-number:hover::after {
+    display: none;
+  }
+
+  .qq-join-btn {
+    width: 1.2rem;
+    padding: 0.1rem 0.3rem;
+    background: #2d2f33;
+    color: #f2eae5;
+    border: 0.04rem;
+    font-size: 0.26rem;
+  }
+
+  .message {
+    font-size: 0.20rem;
+  }
+}

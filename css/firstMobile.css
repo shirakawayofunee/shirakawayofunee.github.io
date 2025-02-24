@@ -1,0 +1,35 @@
+.firstMobile{
+    position: relative;
+    overflow: hidden;
+    /* background: firebrick; */
+}
+.firstMobile-bg{
+    position: absolute;
+    z-index: 1;
+    object-fit: cover;
+    width: 100%;
+    overflow: hidden;
+}
+.firstMobile-1{
+    position: absolute;
+    z-index: 2;
+    top:80%;
+    left: 50%;
+    transform: translate(-50%,-50%) translateZ(1px);
+    width: 5rem;
+}
+.firstMobile-2{
+    
+}
+.mobile-allDown{
+    position: absolute;
+    z-index: 2;
+    bottom: 4%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.mobile-allDown img{
+    width: 38vw;
+}

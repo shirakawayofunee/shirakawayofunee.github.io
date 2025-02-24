@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/statement.css">
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="stylesheet" href="assets/css/alert.css">
+  <title>2.5「唐人街影话」</title>
+  <script>
+    (function (win, doc) {
+      if (!win.addEventListener) return;
+      var html = document.documentElement;
+
+      function setFont() {
+        if (/iPhone|iPad|iPod|Android/gi.test(navigator.userAgent)) {
+          var cliWidth = html.clientWidth;
+          var size = 16 * (cliWidth / 750);
+          if (size > 16) size = 16;
+          html.style.fontSize = size + "px";
+        } else {
+          var cliWidth = html.clientWidth;
+          html.style.fontSize = 16 * (cliWidth / 1920) + "px";
+        }
+      }
+      win.addEventListener("resize", setFont, false);
+      setFont();
+    })(window, document);
+  </script>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <div class="wrapper">
+    <div class="page-bg">
+      <img src="assets/img/bg.jpg" alt="" />
+    </div>
+    <div class="sl-part part1">
+      <div class="part-content">
+        <div class="sl-logo">
+          <img src="assets/img/first/logo.png" alt="" srcset="">
+          <!-- <img src="./assets/img/first/箱中logo.png" alt="" style="margin-left: 1rem;"> -->
+        </div>
+        <a class="btn-home" href="home/index.html"></a>
+        <div class="sl-slogan"></div>
+        <div class="sl-slogan-min"></div>
+        <div class="download-box">
+          <div class="box box1">
+            <img src="assets/img/first/qr.png" alt="" />
+          </div>
+          <div class="box box2">
+            <a href="#" class="appstore"><img src="assets/img/first/ios.png" alt="" /></a>
+            <a href="#" class="android" data-agl-cvt="6"><img src="assets/img/first/android.png" alt=""
+                style="margin-top: .9375rem;" /></a>
+          </div>
+          <div class="box box3">
+            <a href="#" class="simulator">
+              <img src="assets/img/first/mu.png" alt="" srcset="" />
+            </a>
+            <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" class="taptap" target="_blank">
+              <img src="assets/img/first/tap.png" alt="" style="margin-top: .9375rem;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- 角色 -->
+    <div class="sl-part part2">
+      <div class="part-content" id="J_rookie">
+        <p class="switch-tips">洞悉形象切换</p>
+        <div class="wrap-rookie">
+
+        </div>
+        <div class="wrap-switch">
+          <div class="switch switch1 curr" data-flag="rookie1"></div>
+          <div class="switch switch2" data-flag="rookie2"></div>
+        </div>
+<!--         <div class="wrap-media">
+          <div class="media-audio media-audio1" data-type="audioEnglish">
+          </div>
+          <div class="media-audio media-audio2" data-type="audioChinese"></div>
+          <div class="media-video media-video1 J_video" data-src="./assets/media/role1.mp4"></div>
+        </div> -->
+        <div class="wrap-state">
+          <img src="assets/img/second/1t.png" class="rookie1-text" alt="" />
+        </div>
+        <div class="wrap-tab">
+          <div class="tab tab1 curr" data-flag="0">
+            <img src="assets/img/second/h1c.png" alt="">
+          </div>
+          <div class="tab tab2" data-flag="1">
+            <img src="assets/img/second/h2c.png" alt="">
+          </div>
+          <div class="tab tab3" data-flag="2">
+            <img src="assets/img/second/h3c.png" alt="">
+          </div>
+          <!-- <div class="tab tab4" data-flag="3">
+            <img src="./assets/img/second/h4c.png" alt="">
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="sl-part partwan">
+      <h2 class="title">全新玩法</h2>
+      <div class="part-content">
+        <div class="partwan-bg"></div>
+        <div class="partwan-left">
+          <img
+            src="assets/img/wan/%e6%96%b0%e5%b7%b4%e5%88%ab%e5%a1%94%e9%ad%94%e7%b2%be%e5%85%ac%e5%8f%b8%e7%82%b9%e5%87%bb%e5%90%8e.png"
+            alt="" onclick="changeWan(1)" class="partwan-left-img1c">
+          <img
+            src="assets/img/wan/%e7%99%bd%e5%b8%86%e8%a7%81%e9%97%bb%e5%bd%95%e7%82%b9%e5%87%bb%e5%90%8e%e7%82%b9%e5%87%bb%e5%89%8d.png"
+            alt="" onclick="changeWan(2)" class="partwan-left-img2">
+          <img
+            src="assets/img/wan/%e6%96%b0%e5%b7%b4%e5%88%ab%e5%a1%94%e9%ad%94%e7%b2%be%e5%85%ac%e5%8f%b8%e7%82%b9%e5%87%bb%e5%89%8d.png"
+            alt="" srcset="" onclick="changeWan(1)" class="partwan-left-img1" style="display: none;">
+          <img src="assets/img/wan/%e7%99%bd%e5%b8%86%e8%a7%81%e9%97%bb%e5%bd%95%e7%82%b9%e5%87%bb%e5%90%8e.png" alt=""
+            onclick="changeWan(2)" class="partwan-left-img2c" style="display: none;">
+        </div>
+        <div class="partwan-right">
+          <div class="partwan-right-1">
+            <img src="assets/img/wan/%e6%96%b0%e5%b7%b4%e5%88%ab%e5%a1%94%e9%ad%94%e7%b2%be%e5%85%ac%e5%8f%b8.png"
+              alt="" srcset="">
+            <video src="assets/img/wan/%e9%ad%94%e7%b2%be-973x548%20MP4%2010M.mp4" autoplay muted loop></video>
+          </div>
+          <div class="partwan-right-2" style="display: none;">
+            <img src="assets/img/wan/%e7%99%bd%e5%b8%86%e8%a7%81%e9%97%bb%e5%bd%95.png" alt="" srcset="">
+            <video src="assets/img/wan/%e7%99%bd%e5%b8%86-973x548%20MP4%2010M.mp4" autoplay muted loop></video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sl-part part3">
+      <h2 class="title">游戏特色</h2>
+      <div class="part-content">
+        <div class="banner-bg"></div>
+        <ul id="banner"></ul>
+        <div class="page">
+          <img src="assets/img/third/xn.png" alt="" class="page-img" />
+          <img src="assets/img/third/xn.png" alt="" class="page-img" />
+          <img src="assets/img/third/xn.png" alt="" class="page-img" />
+          <img src="assets/img/third/xn.png" alt="" class="page-img" />
+          <img src="assets/img/third/xn.png" alt="" class="page-img" />
+          <img src="assets/img/third/xn.png" alt="" class="page-img" />
+        </div>
+      </div>
+    </div>
+
+    <div class="sl-part part4">
+      <h2 class="title">官方社群</h2>
+      <div class="part-content" style="margin-top: 2.5rem;">
+        <div class="link-box">
+          <a href="#" target="_blank" class="weibo"><img src="assets/img/fourth/wb.png" alt="" /></a>
+          <a href="#" target="_blank" class="official-tongren"><img src="assets/img/fourth/t.png" alt="" /></a>
+          <a href="#" target="_blank" class="bilibili"><img src="assets/img/fourth/b.png" alt="" /></a>
+          <a href="#" target="_blank" class="tap"><img src="assets/img/fourth/tap.png" alt="" /></a>
+          <a href="#" target="_blank" class="hykb"><img src="assets/img/fourth/h.png" alt="" /></a>
+          <a href="#" target="_blank" class="tiktok"><img src="assets/img/fourth/d.png" alt="" /></a>
+          <a href="#" target="_blank" class="official-qq"><img src="assets/img/fourth/q.png" alt="" /></a>
+          <a class="official-xhs"><img src="assets/img/fourth/xhs.png" alt="" /></a>
+          <a class="official-wx-h"><img src="assets/img/fourth/wc.png" alt="" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="sl-part part5" id="J_footer">
+      <div class="statement">
+        <div>
+          <img src="assets/img/statement/logo.png" alt="" />
+        </div>
+        <div>
+          <img class="footer-tips" src="assets/img/statement/age.png" alt="" />
+        </div>
+        <div class="statement-word">
+          <div class="statement-word-self">
+            <div><a href="home/agreementc81e.html?2" target="_blank">许可及服务协议</a></div>
+            <div><a href="home/agreementc4ca.html?1" target="_blank">隐私政策</a></div>
+            <div><a href="home/custody.html" target="_blank">家长监护工程</a></div>
+          </div>
+          <div>
+            适龄提示：本游戏适合12岁（含）以上的用户使用<br />
+            抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。<br />
+            合理安排时间，享受健康生活。<br />
+            全国警方反诈劝阻电话“96110”系专门针对避免您财产被骗受损而设，请您一旦收到来电，立即接听。<br />
+            电话：020-85445191 | 客服邮箱：Re99cs@bluepoch.com | 商务邮箱：re1999_business@bluepoch.com<br />
+            ©2021 深蓝互动版权所有 | 广州深蓝互动网络科技有限公司 |
+            <img src="assets/img/statement/cha.png" alt=""
+              style="height:0.625rem;margin:0;display: inline-block;">粤公网安备44010502002654 |
+            <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="statement-href">粤ICP备
+              2021071545号- 2</a>
+          </div>
+        </div>
+      </div>
+      <audio src="#" style="display: none" id="J_audio"></audio>
+    </div>
+    <!-- 适龄弹窗 -->
+    <div class="pop pop-tips hide">
+      <div class="pop-cover"></div>
+      <div class="pop-content pop-tips-content">
+        <img src="assets/img/statement/ageword.png" alt="" />
+      </div>
+    </div>
+    <!-- 视频弹窗 -->
+    <div class="pop pop-video hide">
+      <div class="pop-cover"></div>
+      <div class="pop-content pop-tips-content">
+        <video controls src="#"></video>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="assets/js/jquery-3.7.0.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/index.js"></script>
+<script src="assets/js/changeImg.js"></script>
+<script src="assets/js/baidu.js"></script>
+<!-- <script src="./assets/js/canvas.js"></script> -->
+
+
+<!-- Mirrored from re.bluepoch.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Feb 2025 23:08:43 GMT -->
+
+</html>
