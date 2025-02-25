@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5W78LXJT');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+  <title>多错本旨 公式サイト</title>
   <link rel="stylesheet" href="script/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/animateSelf.css">
+  <!-- <link rel="stylesheet" href="./JSON/spine-player.css"> -->
   <link rel="stylesheet" href="css/index.css" media="(min-device-width:926px)" />
   <link rel="stylesheet" href="css/mouse.css" media="(min-device-width:926px)" />
   <link rel="stylesheet" href="css/news.css" media="(min-device-width:926px)" />
@@ -35,13 +48,24 @@
   <link rel="stylesheet" href="css/papermaskMobile.css" media="(max-device-width:926px)" />
   <link rel="stylesheet" href="css/videomaskMobile.css" media="(max-device-width:926px)" />
   <link rel="stylesheet" href="css/yuyue.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/cookie.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/cookieMobile.css" media="(max-device-width:926px)">
   <link rel="stylesheet" href="css/yuyueMobile.css" media="(max-device-width:926px)">
   <link rel="icon" type="image/x-icon" id="icon">
 
-  <title>多错本旨</title>
+  <!-- Google tag (gtag.js) -->
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FK5XEG3GQ6');
+  </script>
 </head>
 
 <body id="all">
+  <div class="pvVideo" onclick="hideKv()"></div>
   <!-- 鼠标样式 -->
   <div class="div" id="d1"></div>
   <div id="loading" data-mouse="small" class="animate__animated" style="display: none;">
@@ -107,8 +131,9 @@
           <img src="img/login/g.png" alt="" class="loginAgree-icon-g" style="display: none;">
         </div>
         <div>
-          我已详细阅读并同意<a href="agreementc81e.html?2" target="_blank" rel="noopener noreferrer">《深蓝用户协议》</a> 和<a
-            href="agreementc4ca.html?1" target="_blank" rel="noopener noreferrer">《隐私政策》</a>
+          我已详细阅读并同意<a href="https://re.bluepoch.com/home/agreement.html?2" target="_blank"
+            rel="noopener noreferrer">《深蓝用户协议》</a> 和<a href="https://re.bluepoch.com/home/agreement.html?1"
+            target="_blank" rel="noopener noreferrer">《隐私政策》</a>
         </div>
       </div>
       <div class="yuyueMsg" data-mouse="small">
@@ -139,35 +164,29 @@
       <div class="h-con-right pc" data-mouse="mid">
         <div class="h-con-right-l" data-mouse="mid">
           <div class="div-center div-centerpc" onclick="changeBanner(0)" id="banner0" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">首页</div>
+            <div class="div-head-text" data-mouse="mid">ホーム</div>
             <div class="div-head-text-en" data-mouse="mid">HOME</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(1)" id="banner1" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">资讯</div>
+            <div class="div-head-text" data-mouse="mid">ニュース</div>
             <div class="div-head-text-en" data-mouse="mid">NEWS</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(2)" id="banner2" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">角色</div>
+            <div class="div-head-text" data-mouse="mid">登場人物</div>
             <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(3)" id="banner3" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">世界</div>
+            <div class="div-head-text" data-mouse="mid">世界観</div>
             <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(4)" id="banner4" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">影音</div>
+            <div class="div-head-text" data-mouse="mid">展示場</div>
             <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
           </div>
-          <a class="div-center div-centerpc" href="../usercenter/index.html" target="_blank" id="banner5"
-            data-mouse="mid" style="text-decoration: none;">
-            <div class="div-head-text" data-mouse="mid">个人中心</div>
-            <div class="div-head-text-en" data-mouse="mid">ACCOUNT</div>
-          </a>
-          <a class="div-center div-centerpc" href="../paymentsl/index.html" target="_blank" data-mouse="mid"
-            style="text-decoration: none;">
-            <div class="div-head-text" data-mouse="mid">充值中心</div>
-            <div class="div-head-text-en" data-mouse="mid">PAYMENT</div>
-          </a>
+          <div class="div-center div-center-mobile" onclick="openPayment()" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">チャージセンター</div>
+            <div class="div-head-text-en" data-mouse="mid">Official Top-up</div>
+          </div>
         </div>
         <div class="h-con-right-r">
           <div class="h-con-right-r-con">
@@ -196,33 +215,33 @@
 
         </div>
         <div class="first-4 animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
-          <div class="first-4-1" data-mouse="mid">
-            <img src="#" alt="" id="imgQR">
-          </div>
+          <!-- <div class="first-4-1" data-mouse="mid">
+              <img src="" alt="" id="imgQR">
+            </div> -->
           <div class="first-4-2">
             <div class="first-4-2-con">
-              <a href="#" id="iosDownload" target="_blank"><img src="img/first/ios.png" alt="" data-type="ios"
-                  onclick="uploadShuShu()"></a>
-              <a href="#" id="androidDownload" download target="_blank"><img src="img/first/android.png" alt=""
-                  data-type="android" onclick="uploadShuShu()"> </a>
+              <a href="#" id="iosDownload" class="app-store-link" download target="_blank"
+                onclick="sendGA('OfficialLaunch_apple_pc_button')"><img src="img/first/appstore.png" alt=""
+                  data-type="ios"></a>
+              <a href="#" id="androidDownload" class="google-pay-link" download="" target="_blank"
+                onclick="sendGA('OfficialLaunch_google_pc_button')"><img src="img/first/google.png" alt=""
+                  data-type="android"></a>
+              <!-- <a href="" id="mumuDownload" class="mumu-load-link" target="_blank" ><img src="./img/first/bluestacks.png" alt=""  data-type="mumuDownload"></a> -->
             </div>
           </div>
           <div class="first-4-mumu" data-mouse="mid">
             <div class="first-4-2-con">
-              <a href="#" id="mumuDownload" download target="_blank"><img src="img/first/mumu.png" alt=""
-                  data-type="mumu" onclick="uploadShuShu()"></a>
-              <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank"><img
-                  src="img/first/taptap.png" alt=""></a>
+              <a href="#" id="pcDownload" class="pc-load-link" download target="_blank"
+                onclick="sendGA('OfficialLaunch_pc_download')"><img src="img/first/pc.png" alt="" data-type="pc"></a>
             </div>
-
           </div>
-          <div class="first-4-3" data-mouse="mid" onclick="playFirst(1)">
+          <div class="first-4-3 pageVideo" data-mouse="mid" onclick="showYoutubeVideo(this);sendGA('playpv_pc_button')">
             <img src="img/first/play.webp" alt="" class="first-4-3-bg">
           </div>
         </div>
         <div class="first-yuyue animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
           <img src="img/first/yu.png" alt="" class="first-yuyue-img" onclick="showYuyue()">
-          <div data-mouse="mid" onclick="playFirst(1)">
+          <div data-mouse="mid" class="pageVideo" onclick="showYoutubeVideo(this)">
             <img src="img/first/play.webp" alt="" class="first-yuyue-play">
           </div>
         </div>
@@ -246,9 +265,9 @@
             </div>
             <div class="news-right-head-bg animate__animated animate__fadeInUp">
               <div class="news-right-head-bg-list" onclick="changeNews(0)" id="news0" data-mouse="mid">最新</div>
-              <div class="news-right-head-bg-list" onclick="changeNews(1)" id="news1" data-mouse="mid">公告</div>
-              <div class="news-right-head-bg-list" onclick="changeNews(2)" id="news2" data-mouse="mid">活动</div>
-              <div class="news-right-head-bg-list" onclick="changeNews(3)" id="news3" data-mouse="mid">新闻</div>
+              <div class="news-right-head-bg-list" onclick="changeNews(1)" id="news1" data-mouse="mid">お知らせ</div>
+              <div class="news-right-head-bg-list" onclick="changeNews(2)" id="news2" data-mouse="mid">イベント</div>
+              <div class="news-right-head-bg-list" onclick="changeNews(3)" id="news3" data-mouse="mid">ニュース</div>
             </div>
           </div>
           <div class="news-right-con animate__animated animate__fadeInUp">
@@ -350,10 +369,7 @@
           <div class="character-right-right-title">
             <img src="img/role/1t.png" alt="" class="characterFadeInRight" id="roleTitle">
           </div>
-          <div class="character-right-right-str characterFadeInRight" id="roleStr">
-            在海上漂流，在电台狂欢，<br>
-            向所有的新玩意儿发起进攻，直到永远！
-          </div>
+          <div class="character-right-right-str characterFadeInRight" id="roleStr"></div>
           <div class="character-right-right-button animate__animated" id="roleButton">
             <div class="character-right-right-button-left" data-mouse="mid">
               <img src="img/yuyin_01.png" alt="" id="roleVoice" onclick="playCharacterVioce(1)">
@@ -373,42 +389,42 @@
           <div class="swiper mySwiper backstory-border" id="pcbackstory" data-mouse="small">
             <div class="swiper-wrapper" data-mouse="small">
               <div class="swiper-slide backstory-left-list" data-mouse="small">
-                <img src="img/backstory/p1.png" alt="" data-mouse="big" data-img="img/backstory/p1c.png"
+                <img src="img/backstory/p1.png" alt="" data-mouse="big" data-img="./img/backstory/p1c.png"
                   class="backstory-img slide-inner" onclick="paperShowBig(this,'p1d.html')">
                 <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
               </div>
               <div class="swiper-slide backstory-left-list">
-                <img src="img/backstory/p2.png" alt="" data-mouse="big" data-img="img/backstory/p2c.png"
+                <img src="img/backstory/p2.png" alt="" data-mouse="big" data-img="./img/backstory/p2c.png"
                   class="backstory-img slide-inner" onclick="paperShowBig(this,'p2d.html')">
                 <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
               </div>
               <div class="swiper-slide backstory-left-list">
-                <img src="img/backstory/p3.png" alt="" data-mouse="big" data-img="img/backstory/p3c.png"
+                <img src="img/backstory/p3.png" alt="" data-mouse="big" data-img="./img/backstory/p3c.png"
                   class="backstory-img slide-inner" onclick="paperShowBig(this,'p3d.html')">
                 <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
               </div>
               <div class="swiper-slide backstory-left-list">
-                <img src="img/backstory/p4.png" alt="" data-mouse="big" data-img="img/backstory/p4c.png"
+                <img src="img/backstory/p4.png" alt="" data-mouse="big" data-img="./img/backstory/p4c.png"
                   class="backstory-img slide-inner" onclick="paperShowBig(this,'p4d.html')">
                 <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
               </div>
               <div class="swiper-slide backstory-left-list">
-                <img src="img/backstory/p5.png" alt="" data-mouse="big" data-img="img/backstory/p5c.png"
+                <img src="img/backstory/p5.png" alt="" data-mouse="big" data-img="./img/backstory/p5c.png"
                   class="backstory-img slide-inner" onclick="paperShowBig(this,'p5d.html')">
                 <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
               </div>
               <div class="swiper-slide backstory-left-list">
-                <img src="img/backstory/p6.png" alt="" data-mouse="big" data-img="img/backstory/p6c.png"
+                <img src="img/backstory/p6.png" alt="" data-mouse="big" data-img="./img/backstory/p6c.png"
                   class="backstory-img slide-inner" onclick="paperShowBig(this,'p6d.html')">
                 <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
               </div>
               <div class="swiper-slide backstory-left-list">
-                <img src="img/backstory/p7.png" alt="" data-mouse="big" data-img="img/backstory/p7c.png"
+                <img src="img/backstory/p7.png" alt="" data-mouse="big" data-img="./img/backstory/p7c.png"
                   class="backstory-img slide-inner" onclick="paperShowBig(this,'p7d.html')">
                 <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
               </div>
               <div class="swiper-slide backstory-left-list">
-                <img src="img/backstory/p8.png" alt="" data-mouse="big" data-img="img/backstory/p8c.png"
+                <img src="img/backstory/p8.png" alt="" data-mouse="big" data-img="./img/backstory/p8c.png"
                   class="backstory-img slide-inner" onclick="paperShowBig(this,'p8d.html')">
                 <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
               </div>
@@ -423,11 +439,10 @@
               id="backstoryTitle">
           </div>
           <div class="backstory-right-str animate__animated animate__fadeInUp" data-mouse="small" id="backstoryStr">
-            1999年最后一天，“暴雨”降临世界：<br>
-            地面无故溢起积水，你的指尖碰到飞升的雨滴—— 一场“暴雨”在向天空倾泻。<br>
-            行人和墙壁在雨中剥落溶解，世界似乎来到一个崭新的旧时代。<br>
-            而除了你之外的所有人，都在“暴雨”侵蚀后不知所踪。<br>
-            1999年的秘密，藏在层层雨幕的背后，藏在1999年最后一天。
+            1999年12月31日、23時59分。世紀の終わりに「ストーム」は訪れた。<br>消えていく。パーティーも、イルミネーションも。最終バスの行き先も。世界は新しい旧時代へと「巻き戻った」。<br>
+            少女が一人。彼女は「<span class="cus-key">時を司る者<span
+                class="cus-target1">タイムキーパー</span></span>」。<br>ただ一人、かの暴雨から守られた、幾重の時代を見届ける者。<br>時代の波を歩き、あらゆる時代、<br>あらゆる国の<span
+              class="cus-key">神秘学家<span class="cus-target2">アルカニスト</span></span>と共に。<br>そして、彼らと逃れるのだ、「ストーム」から。
           </div>
           <div class="backstory-right-page animate__animated animate__fadeInUp " data-mouse="mid">
             <div id="backstoryPre" data-mouse="mid">
@@ -508,17 +523,18 @@
         <!-- <img src="./m/m_00000.jpg" alt="" style="height: 100%;" class="firstMobile-bg" id="kvMobile"> -->
         <!-- <video src="" style="width:100%;display: none;" muted  loop  id="kvMobile" playsinline="true" poster="./kv/m.jpg" 
            webkit-playsinline="true" class="mobileFadeIn" ></video> -->
-        <img src="kv/m.jpg" alt="" style="width: 100%;" class="mobileFadeIn">
-        <img src="img/firstMobile/p2.png" alt="" class="firstMobile-1 mobileFadeInDelay" onclick="playFirstM(1)"
-          style="display: none;">
+        <img src="kv/m.jpg" alt="" style="width: 100%;" class="mobileFadeIn m-kv">
+        <img src="kv/slogan.png" class="m-slogan" alt="">
+        <img src="img/firstMobile/p2.png" alt="" class="firstMobile-1 mobileFadeInDelay pageVideo"
+          onclick="showYoutubeVideoM(this);sendGA('playpv_m_button')" style="display: none;">
         <div class="mobile-allDown" style="display: none;">
-          <a href="#" id="mobileDown" target="_blank">
+          <a href="https://reverse1999jp.onelink.me/XuII/ebqqh579" id="mobileDown" target="_blank">
             <img src="img/firstMobile/d1.png" alt="" class="firstMobile-2 mobileFadeInDelay" data-type="mobile"
-              onclick="uploadShuShu()">
+              onclick="sendGA('OfficialLaunch_download_m_button')">
           </a>
-          <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank">
-            <img src="img/firstMobile/taptap.png" alt="" class="firstMobile-2 mobileFadeInDelay">
-          </a>
+          <!-- <a href="https://www.taptap.cn/app/221062" target="_blank">
+                  <img src="./img/firstMobile/taptap.png" alt="" class="firstMobile-2 mobileFadeInDelay">
+              </a> -->
         </div>
 
         <img src="img/login/y.png" alt="" class="yuyue-button" onclick="showYuyue()" style="display: none;">
@@ -541,9 +557,9 @@
           <div class="newsMobile-mid-head">
             <div class="news-right-head-bg news-right-head-bg-mobile">
               <div class="news-right-head-bg-list" onclick="changeNewsM(0)" id="newsM0" data-mouse="mid">最新</div>
-              <div class="news-right-head-bg-list" onclick="changeNewsM(1)" id="newsM1" data-mouse="mid">公告</div>
-              <div class="news-right-head-bg-list" onclick="changeNewsM(2)" id="newsM2" data-mouse="mid">活动</div>
-              <div class="news-right-head-bg-list" onclick="changeNewsM(3)" id="newsM3" data-mouse="mid">新闻</div>
+              <div class="news-right-head-bg-list" onclick="changeNewsM(1)" id="newsM1" data-mouse="mid">お知らせ</div>
+              <div class="news-right-head-bg-list" onclick="changeNewsM(2)" id="newsM2" data-mouse="mid">イベント</div>
+              <div class="news-right-head-bg-list" onclick="changeNewsM(3)" id="newsM3" data-mouse="mid">ニュース</div>
             </div>
           </div>
           <div class="newsMobile-mid-list">
@@ -559,7 +575,7 @@
       <!-- mobile角色 -->
       <div class="swiper-slide moblie characterMobile" id="slideM3">
         <div class="characterMobile-top" id="roleBgM">
-          <img src="img/role/false.webp" alt="" class="characterMobile-top-quan">
+          <img src="img/role/01q.gif" alt="" class="characterMobile-top-quan">
           <img src="img/role/1.png" class="characterMobile-top-role characterFadeInRight" id="roleImgM" alt="">
           <div class="characterMobile-top-con">
             <div class="characterMobile-top-con-title">
@@ -641,11 +657,10 @@
         <img src="img/backstoryM/t1.png" alt="" class="backstoryMobile-top-title animate__animated animate__fadeInUp"
           id="backstoryMobileTitle">
         <div class="backstoryMobile-mid animate__animated animate__fadeInUp" id="backstoryMobileStr">
-          1999年最后一天，“暴雨”降临世界：<br>
-          地面无故溢起积水，你的指尖碰到飞升的雨滴—— 一场“暴雨”在向天空倾泻。<br>
-          行人和墙壁在雨中剥落溶解，世界似乎来到一个崭新的旧时代。<br>
-          而除了你之外的所有人，都在“暴雨”侵蚀后不知所踪。<br>
-          1999年的秘密，藏在层层雨幕的背后，藏在1999年最后一天。
+          1999年12月31日、23時59分。世紀の終わりに「ストーム」は訪れた。<br>消えていく。パーティーも、イルミネーションも。最終バスの行き先も。世界は新しい旧時代へと「巻き戻った」。<br>
+          少女が一人。彼女は「<span class="cus-key">時を司る者<span
+              class="cus-target1">タイムキーパー</span></span>」。<br>ただ一人、かの暴雨から守られた、幾重の時代を見届ける者。<br>時代の波を歩き、あらゆる時代、<br>あらゆる国の<span
+            class="cus-key">神秘学家<span class="cus-target2">アルカニスト</span></span>と共に。<br>そして、彼らと逃れるのだ、「ストーム」から。
         </div>
       </div>
       <!-- mobile影音 -->
@@ -657,7 +672,7 @@
         </div>
         <div class="galleryMobile-2 fadeInUpSelf" onclick="galleryMobileShow(2)">
           <img src="img/gallery/02M.png" alt="" class="galleryMobile-2-img">
-          <img src="img/gallery/02_GIF.webp" alt="" class="galleryMobile-2-gif">
+          <img src="img/gallery/02_GIF.gif" alt="" class="galleryMobile-2-gif">
           <img src="img/gallery/02_t.png" alt="" class="galleryMobile-2-text">
         </div>
         <div class="galleryMobile-3 fadeInUpSelf" onclick="galleryMobileShow(3)">
@@ -677,72 +692,50 @@
       </div>
     </div>
   </div>
-  <div class="mobile headMobile">
-    <div class="h-con-left">
-      <h1 data-mouse="mid">
-        <a href="index.html" style="cursor: none;" data-mouse="mid">
-          <img src="img/logo.png" alt="重返未来logo" data-mouse="mid" class="characterFadeIn">
-        </a>
-      </h1>
-    </div>
-  </div>
+  <!-- <div class="mobile headMobile">
+        <div class="h-con-left">
+          <h1 data-mouse="mid">
+            <a href="./" style="cursor: none;" data-mouse="mid">
+              <img src="./img/logo.png" alt="重返未来logo"  data-mouse="mid" class="characterFadeIn">
+            </a>
+          </h1>
+        </div>
+      </div> -->
   <div class="mobile headM fadeInUpSelf" onclick="hideHeadM()" style="display: none;">
     <!-- 手机端 -->
     <div class="mobile h-con-right-mobile" data-mouse="mid">
       <div class="mobile h-con-right-l " data-mouse="mid">
         <div class="div-center div-center-mobile" onclick="changeBannerMobile(0)" id="bannerM0" data-type="share">
-          <div class="div-head-text" data-mouse="mid">首页</div>
+          <div class="div-head-text" data-mouse="mid">ホーム</div>
           <div class="div-head-text-en" data-mouse="mid">HOME</div>
         </div>
         <div class="div-center div-center-mobile" onclick="changeBannerMobile(1)" id="bannerM1" data-type="share">
-          <div class="div-head-text" data-mouse="mid">资讯</div>
+          <div class="div-head-text" data-mouse="mid">ニュース</div>
           <div class="div-head-text-en" data-mouse="mid">NEWS</div>
         </div>
         <div class="div-center div-center-mobile" onclick="changeBannerMobile(2)" id="bannerM2" data-type="share">
-          <div class="div-head-text" data-mouse="mid">角色</div>
+          <div class="div-head-text" data-mouse="mid">登場人物</div>
           <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
         </div>
         <div class="div-center div-center-mobile" onclick="changeBannerMobile(3)" id="bannerM3" data-type="share">
-          <div class="div-head-text" data-mouse="mid">世界</div>
+          <div class="div-head-text" data-mouse="mid">世界観</div>
           <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
         </div>
         <div class="div-center div-center-mobile" onclick="changeBannerMobile(4)" id="bannerM4" data-type="share">
-          <div class="div-head-text" data-mouse="mid">影音</div>
+          <div class="div-head-text" data-mouse="mid">展示場</div>
           <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
         </div>
-        <div class="div-center div-center-mobile" data-type="share">
-          <a href="https://cfwl1999.tmall.com/" target="_blank">
-            <div class="div-head-text" data-mouse="mid">周边</div>
-          </a>
-          <a href="https://cfwl1999.tmall.com/" target="_blank">
-            <div class="div-head-text-en" data-mouse="mid">SHOP</div>
-          </a>
-        </div>
-        <div class="div-center div-center-mobile" data-type="share">
-          <a class="div-head-text" data-mouse="mid" href="https://weibo.com/u/7759764101" target="_blank">同人</a>
-          <div class="div-head-text-en" data-mouse="mid">FAN ART</div>
-        </div>
-        <div class="div-center div-center-mobile" data-type="share">
-          <a class="div-head-text" data-mouse="mid" href="../usercenter/index.html" target="_blank">个人中心</a>
-          <div class="div-head-text-en" data-mouse="mid">ACCOUNT</div>
-        </div>
-        <div class="div-center div-center-mobile" data-type="share">
-          <a class="div-head-text" data-mouse="mid" href="../paymentsl/index.html" target="_blank">充值中心</a>
-          <div class="div-head-text-en" data-mouse="mid">PAYMENT</div>
+        <div class="div-center div-center-mobile" onclick="openPayment()" data-type="share">
+          <div class="div-head-text" data-mouse="mid">チャージセンター</div>
+          <div class="div-head-text-en" data-mouse="mid">Official Top-up</div>
         </div>
       </div>
       <div class="mobile h-con-bottom">
-        <a class="share-content-w" data-type="share" data-type="share" href="https://weibo.com/7600886366"
-          target="_blank"></a>
-        <a class="share-content-t" data-type="share" data-type="share"
-          href="https://l.tapdb.net/RAVIX3kJ?channel=rep-rep_mfi0dchkjo2" target="_blank"></a>
-        <a class="share-content-b" data-type="share" data-type="share" href="https://space.bilibili.com/1197454103"
-          target="_blank"></a>
-        <a class="share-content-h" href="https://www.3839.com/a/136385.htm?from=hykb" target="_blank"
-          data-type="share"></a>
-        <a class="share-content-q" data-type="share" href="../qq/index.html" target="_blank"></a>
-        <!-- <div class="share-content-q" data-type="share" onclick="changeInfoM(3)"></div> -->
-        <div class="share-content-c" data-type="share" onclick="changeInfoM(1)"></div>
+        <div class="share-content-tw" data-type="share" onclick="sendGA('SNS_m_twitter');goTo('t')"></div>
+        <div class="share-content-yt" data-type="share" onclick="sendGA('SNS_m_youtube');goTo('y')"></div>
+        <div class="share-content-ln" data-type="share" onclick="sendGA('SNS_m_line');goTo('line')"></div>
+        <div class="share-content-tt" data-type="share" onclick="sendGA('SNS_m_tiktok');goTo('tiktok')"></div>
+        <div class="share-content-dc" data-type="share" onclick="sendGA('SNS_m_discord');goTo('discord')"></div>
       </div>
       <div class="h-con-right-r">
         <div class="h-con-right-r-con">
@@ -765,59 +758,32 @@
     </div>
   </div>
   <!--pc 声明 -->
-  <div class="statement pc" style="display: none;">
-    <div>
-      <img src="img/statement/logo.png" alt="">
-    </div>
-    <div>
-      <img src="img/statement/age.png" alt="" onclick="changeAge()">
-    </div>
-    <div class="statement-word">
-      <div class="statement-word-self">
-        <div> <a href="agreementc81e.html?2" target="_blank">许可及服务协议</a></div>
-        <div><a href="agreementc4ca.html?1" target="_blank">隐私政策</a> </div>
-        <div><a href="custody.html" target="_blank">家长监护工程</a> </div>
-      </div>
-      <div>
-        适龄提示：本游戏适合12岁（含）以上的用户使用<br>
-        抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。<br>
-        适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。<br>
-        全国警方反诈劝阻电话“96110”系专门针对避免您财产被骗受损而设，请您一旦收到来电，立即接听。<br>
-        电话：020-85445191 | 客服邮箱：Re99cs@bluepoch.com | 商务邮箱：re1999_business@bluepoch.com<br>
-        ©2021 深蓝互动版权所有 | 广州深蓝互动网络科技有限公司 | <img src="img/statement/cha.png" alt=""
-          style="height:0.625rem;margin:0;display: inline-block;">粤公网安备44010502002654 |<a
-          href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="statement-href">粤ICP备 2021071545号-
-          1</a>
-      </div>
-    </div>
+  <div class="statement pc">
+
   </div>
   <!-- 手机端声明 -->
-  <div class="statementMobile mobile" style="display: none;">
-    <div class="statement-word">
-      <div class="statement-word-self">
-        <div> <a href="agreementc81e.html?2" target="_blank">许可及服务协议</a></div>
-        <div><a href="agreementc4ca.html?1" target="_blank">隐私政策</a> </div>
-        <div><a href="custody.html" target="_blank">家长监护工程</a> </div>
-      </div>
-      <div class="statement-word-con">
-        适龄提示：本游戏适合12岁（含）以上的用户使用<br>
-        抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。<br>
-        适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。<br>
-        全国警方反诈劝阻电话“96110”系专门针对避免您财产被骗受损而设，<br>
-        请您一旦收到来电，立即接听。电话：020-85445191 <br>
-        客服邮箱：Re99cs@bluepoch.com | 商务邮箱：re1999_business@bluepoch.com<br>
-        ©2021 深蓝互动版权所有 | 广州深蓝互动网络科技有限公司 |<br><img src="img/statement/cha.png" alt=""
-          style="height:0.625rem;margin:0;display: inline-block;">粤公网安备44010502002654 |<a class="statement-href"
-          href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">粤ICP备 2021071545号- 1</a>
+  <div class="statementMobile mobile" style="display: none;"></div>
+  <!-- pc分享 -->
+  <div class="share-content pc animate__animated animate__fadeIn" id="share" data-mouse="mid" data-type="share">
+    <div data-mouse="mid" class="share-content-item" data-type="share">
+      <div class="share-content-twitter" data-mouse="mid" data-type="share"
+        onclick="sendGA('SNS_top_twitter');goTo('t')"></div>
+    </div>
+    <div data-mouse="mid" class="share-content-item" data-type="share">
+      <div class="share-content-youtube" data-mouse="mid" data-type="share"
+        onclick="sendGA('SNS_top_youtube');goTo('y')"></div>
+    </div>
+    <div data-mouse="mid" class="share-content-item" data-type="share">
+      <div class="share-content-line" data-mouse="mid" data-type="share" onclick="sendGA('SNS_top_line');goTo('line')">
       </div>
     </div>
-    <div class="statementMobile-bottom">
-      <div class="statementMobile-bottom-logo">
-        <img src="img/statement/logo.png" alt="">
-      </div>
-      <div class="statementMobile-bottom-state">
-        <img src="img/statement/age.png" alt="" onclick="changeAge()">
-      </div>
+    <div data-mouse="mid" class="share-content-item" data-type="share">
+      <div class="share-content-tiktok" data-mouse="mid" data-type="share"
+        onclick="sendGA('SNS_top_tiktok');goTo('tiktok')"></div>
+    </div>
+    <div data-mouse="mid" class="share-content-item" data-type="share">
+      <div class="share-content-discord" data-mouse="mid" data-type="share"
+        onclick="sendGA('SNS_top_discord');goTo('discord')"></div>
     </div>
   </div>
   <div class="mask"></div>
@@ -863,6 +829,8 @@
       <video src="#" controls class="videomaskDetail-video-mobile-player" data-mouse="mid" id="videoDetailM"></video>
     </div>
   </div>
+  <!-- cookie-pop -->
+  <div class="sl-cookie-pop"></div>
 </body>
 <script src="script/jquery-1.11.3.min.js"></script>
 <script src="script/swiper-bundle.min.js"></script>
@@ -889,89 +857,14 @@
 <script src="js/musicControls.js"></script>
 <script src="js/formatSeconds.js"></script>
 <script src="js/yuyue.js"></script>
-<script src="shushu/thinkingdata.umd.min.js"></script>
-<script src="shushu/index.js"></script>
 <script>
-
-
-</script>
- <!--  访客 -->
- <script type="module">
-  // 导入 Firebase SDK
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
-  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
-
-  // Firebase 配置
-  const firebaseConfig = {
-    apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
-    authDomain: "fangkeshuju.firebaseapp.com",
-    projectId: "fangkeshuju",
-    storageBucket: "fangkeshuju.firebasestorage.app",
-    messagingSenderId: "1043722790851",
-    appId: "1:1043722790851:web:01cca5afff820eb202ff76",
-    measurementId: "G-MGC7KEWX53"
-  };
-
-  // 初始化 Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const db = getFirestore(app);
-
-  // 记录页面访问事件并保存到 Firestore
-  async function logPageView() {
-    try {
-      await addDoc(collection(db, 'page_views'), {
-        page_title: document.title,
-        page_location: window.location.href,
-        page_path: window.location.pathname,
-        timestamp: serverTimestamp()
-      });
-      console.log('Page view saved to Firestore');
-    } catch (error) {
-      console.error('Error saving page view: ', error);
-    }
+  function openPayment() {
+    window.open('../../payment/info.html')
   }
 
-  // 调用函数
-  logPageView();
-
-  // 追踪图片查看行为
-  const images = document.querySelectorAll('img.trackable');
-  images.forEach(img => {
-    let startTime = null;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          startTime = Date.now();
-        } else if (startTime) {
-          const duration = (Date.now() - startTime) / 1000;
-          saveImageView(img.src, duration);
-          startTime = null;
-        }
-      });
-    });
-
-    observer.observe(img);
-  });
-
-  // 保存图片查看行为到 Firestore
-  async function saveImageView(imageSrc, duration) {
-    try {
-      await addDoc(collection(db, 'image_views'), {
-        image_src: imageSrc,
-        view_duration: duration,
-        timestamp: serverTimestamp()
-      });
-      console.log('Image view saved to Firestore');
-    } catch (error) {
-      console.error('Error saving image view: ', error);
-    }
-  }
 </script>
 
 
-<!-- Mirrored from re.bluepoch.com/home/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Feb 2025 23:09:25 GMT -->
+<!-- Mirrored from re1999.bluepoch.com/jp/home/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2025 23:05:10 GMT -->
 
 </html>

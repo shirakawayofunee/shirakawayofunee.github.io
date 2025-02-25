@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カップリング紹介シート</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ff99cc; /* 粉红色背景 */
+            background-image: radial-gradient(circle, #ff99cc 1px, transparent 1px);
+            background-size: 20px 20px; /* 点状图案 */
+        }
+
+        .container {
+            width: 900px; /* 假设图像宽度 */
+            margin: 20px auto;
+            padding: 20px;
+            border: 5px solid #ff66b3;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff66b3;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .character-panel {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .character {
+            width: 45%;
+            background-color: #fff;
+            border: 3px solid #ff66b3;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .character img {
+            width: 100%;
+            height: auto;
+        }
+
+        .profile {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .dialogue {
+            background-color: #ffccff;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        .placeholder {
+            width: 100%;
+            height: 200px; /* 占位符高度 */
+            background-color: #ccc; /* 灰色占位符 */
+            text-align: center;
+            line-height: 200px;
+            color: #666;
+        }
+
+        .profiles {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .profile-box {
+            width: 45%;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            border: 3px solid #ff66b3;
+        }
+
+        .free-space {
+            background-color: #fff;
+            border: 3px dashed #ff66b3;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hearts {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin: 10px 0;
+        }
+
+        .heart {
+            width: 20px;
+            height: 20px;
+            background-color: #ff66b3;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        .checkbox {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            ［物語］ めい美しさ ベサウー
+        </div>
+
+        <div class="character-panel">
+            <div class="character">
+                <div class="placeholder">Before キャラクター画像</div>
+                <div class="dialogue">
+                    「君のその微笑んだ 表情が好きだよ」
+                </div>
+                <p>高橋力・天性スタリ・男爵</p>
+            </div>
+
+            <div class="character">
+                <div class="placeholder">After キャラクター画像</div>
+                <div class="dialogue">
+                    素敵 ですね
+                </div>
+                <p>高フィード・極秘・現役男子 体育・極秘・おとなっぽ</p>
+            </div>
+        </div>
+
+        <div class="profiles">
+            <div class="profile-box">
+                <p>名前 ベサワー （8月・ふぁいん！）</p>
+                <p>誕生日:8月にやれ</p>
+                <p>身長 2m</p>
+                <p>趣味: 好きな</p>
+                <p>好きなもの 光るの かたいもの ぐちゃぐちゃ</p>
+                <p>好きな 好きな （好きなかーるー）</p>
+            </div>
+
+            <div class="profile-box">
+                <p>名前 ファンド</p>
+                <p>誕生日 3月・ぉぉん</p>
+                <p>身長 185cm・ぉん</p>
+                <p>趣味: セレブ</p>
+                <p>好きなもの 美しい ヴィーナス でも</p>
+                <p>あふれるの 美しい 素敵</p>
+            </div>
+        </div>
+
+        <div class="free-space">
+            「％ 笑ってい！ ぉ3ぉ あふれないです」
+            <div class="hearts">
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <input type="checkbox" class="checkbox">
+                <input type="checkbox" class="checkbox">
+            </div>
+            <div class="placeholder">キャラクターイラスト</div>
+        </div>
+    </div>
+</body>
+</html>

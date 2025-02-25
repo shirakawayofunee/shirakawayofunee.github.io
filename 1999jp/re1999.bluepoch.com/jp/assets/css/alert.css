@@ -1,0 +1,35 @@
+.allAlert{
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    top: 40%;
+    left: 50%;
+    z-index: 1000;
+    font-size: 1.2rem;
+    color: rgb(233,220,205);
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.allAlert-str{
+    background: rgba(0, 0, 0, .7);
+    border-radius: 90px;
+    padding: .5rem 2rem;
+    box-sizing: border-box;
+    border: 1px solid #505933;
+}
+.fadeInUpSelf{
+    animation-name: selfFadeInUp;
+    animation-duration:0.5s;
+}
+@keyframes selfFadeInUp {
+    0%{
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

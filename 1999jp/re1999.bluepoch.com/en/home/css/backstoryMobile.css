@@ -1,0 +1,95 @@
+.backstoryMobile {
+  /* background: forestgreen; */
+  padding: 8vh 4vw;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.backstoryMobile-top {
+  height: 28rem;
+  /* background: goldenrod; */
+  position: relative;
+  padding: 0 3vw;
+  background-size: 100%;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.backstoryMobile-top-img {
+  height: 100%;
+  object-fit: cover;
+}
+.backstoryMobile-top-pre {
+  position: absolute;
+  left: 0;
+  width: 3.75rem;
+  z-index: 100;
+  top: 45%;
+  transform: translateZ(1px);
+}
+.backstoryMobile-top-next {
+  position: absolute;
+  right: 0;
+  width: 3.75rem;
+  z-index: 100;
+  top: 45%;
+  transform: translateZ(1px);
+}
+.backstoryMobile-top-title {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  left: 0;
+  top: 25rem;
+  object-fit: fill;
+}
+.backstoryMobile-mid {
+  height: 35%;
+  padding: 0 3vw;
+  /* background: firebrick; */
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #bba893;
+  overflow-y: auto;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+.backstoryMobile-mid::-webkit-scrollbar {
+  width: 4px;
+}
+.backstoryMobile-mid::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+.backstoryMobile-mid::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: rgb(124, 65, 32) !important;
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+#backstoryMobileStr {
+  margin-top: -1.2rem;
+  z-index: 999;
+  position: relative;
+  padding-bottom: 1.875rem;
+}
+/* 小屏幕 */
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .backstoryMobile-top-title {
+    top: 21rem;
+  }
+  .backstoryMobile-top {
+    height: 27rem;
+    margin-bottom: 0;
+  }
+  #backstoryMobileStr {
+    padding-bottom: 3.5rem;
+  }
+}
+/* 8plus */
+@media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+  #backstoryMobileStr {
+    padding-bottom: 3.2rem;
+  }
+}

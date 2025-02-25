@@ -1,0 +1,108 @@
+.statement {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 1);
+    width: 100%;
+    bottom: 0;
+    padding: 3.1875rem 0 4.1875rem;
+    box-sizing: border-box;
+    /* border-top: 1px solid #b55829; */
+    font-family: "Microsoft YaHei";
+  }
+  
+  .statement-word {
+    color: #8c8d8c;
+    font-weight: 400;
+    font-size: 0.75rem;
+    margin-top: 2vh;
+    line-height: 1.25rem;
+  }
+  .statement-icon > img {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 1.25rem;
+  }
+  
+  .statement-bottom {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    position: relative;
+  }
+  .statement-logo {
+    width: 24.875rem;
+    height: 4.6875rem;
+  }
+  .statement-us {
+    width: 54.25rem;
+    height: 4.6875rem;
+    position: relative;
+    color: rgba(255, 255, 255, 1);
+    font-size: 1rem;
+    top: 0.7rem;
+    /* flex: 1; */
+  }
+  .statement-a {
+    position: relative;
+    top: 0.3125rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .statement-a a {
+    text-decoration: none;
+    color: white;
+  }
+  .statement-i {
+    position: absolute;
+    bottom: 0;
+    color: #8c8d8c;
+    font-weight: 400;
+    font-size: 0.75rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .statement-xiang {
+    position: absolute;
+    top: -7rem;
+    right: 2rem;
+  }
+  .statement-xiang img {
+    width: 13.5rem;
+  }
+  .statement-la {
+    position: relative;
+    top: 0.9rem;
+    cursor: pointer;
+    margin: 0 2.5rem;
+  }
+  .statement-la img {
+    width: 8.4375rem;
+    height: auto;
+  }
+  .statement-choice {
+    position: absolute;
+    top: -7.5rem;
+    left: 0;
+    right: 0;
+    width: 8.4375rem;
+    background: rgba(0, 0, 0, 1);
+  }
+  .statement-choice > div {
+    width: 100%;
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+  }
+  .statement-choice > div:hover {
+    background: rgba(169, 169, 169, 1);
+  }
+  

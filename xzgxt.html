@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5W78LXJT');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>相関図 ドラッグ可能な手がかりボード</title>
@@ -285,82 +294,82 @@
         // 初始化布局
         // 修改初始化布局函数
         function initLayout() {
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-    const isMobile = viewportWidth <= 768;
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const isMobile = viewportWidth <= 768;
 
-    // 调试信息
-    console.log(`Viewport: ${viewportWidth}x${viewportHeight}`);
-    console.log(`Is Mobile: ${isMobile}`);
+            // 调试信息
+            console.log(`Viewport: ${viewportWidth}x${viewportHeight}`);
+            console.log(`Is Mobile: ${isMobile}`);
 
-    // 动态半径计算
-    const baseRadius = isMobile 
-        ? Math.min(viewportWidth, viewportHeight) * 0.15
-        : Math.min(viewportWidth, viewportHeight) * 0.25;
+            // 动态半径计算
+            const baseRadius = isMobile
+                ? Math.min(viewportWidth, viewportHeight) * 0.15
+                : Math.min(viewportWidth, viewportHeight) * 0.25;
 
-    // 调试信息
-    console.log(`Base Radius: ${baseRadius}`);
+            // 调试信息
+            console.log(`Base Radius: ${baseRadius}`);
 
-    // 统一坐标系统
-    const positions = [
-        [0, 0],     // Leopold (中心)
-        [1.3, 0.5],   // Severo
-        [-2.3, 0.5],  // J
-        [-1.4,-0.5], // K
-        [2.6, -1]   // X
-    ];
+            // 统一坐标系统
+            const positions = [
+                [0, 0],     // Leopold (中心)
+                [1.3, 0.5],   // Severo
+                [-2.3, 0.5],  // J
+                [-1.4, -0.5], // K
+                [2.6, -1]   // X
+            ];
 
-    state.nodes.forEach((node, index) => {
-        const [dx, dy] = positions[index];
-        
-        // 调试信息
-        console.log(`Node ${index} Position: [${dx}, ${dy}]`);
+            state.nodes.forEach((node, index) => {
+                const [dx, dy] = positions[index];
 
-        // 统一坐标计算公式
-        const x = viewportWidth/2 + dx * baseRadius;
-        const y = viewportHeight/2 + dy * baseRadius;
+                // 调试信息
+                console.log(`Node ${index} Position: [${dx}, ${dy}]`);
 
-        // 调试信息
-        console.log(`Node ${index} Calculated Position: [${x}, ${y}]`);
+                // 统一坐标计算公式
+                const x = viewportWidth / 2 + dx * baseRadius;
+                const y = viewportHeight / 2 + dy * baseRadius;
 
-        Object.assign(node.style, {
-            left: `${x}px`,
-            top: `${y}px`,
-            transition: state.dragging ? 'none' : 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)'
-        });
-    });
+                // 调试信息
+                console.log(`Node ${index} Calculated Position: [${x}, ${y}]`);
 
-    // 调试信息
-    console.log('Layout initialized');
-}
+                Object.assign(node.style, {
+                    left: `${x}px`,
+                    top: `${y}px`,
+                    transition: state.dragging ? 'none' : 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                });
+            });
 
-// 修改初始化流程
-function initialize() {
-    // 确保节点正确获取
-    state.nodes = Array.from(document.querySelectorAll('.node'));
-    if (state.nodes.length === 0) {
-        console.error('No nodes found!');
-        return;
-    }
+            // 调试信息
+            console.log('Layout initialized');
+        }
 
-    // 调试信息
-    console.log(`Found ${state.nodes.length} nodes`);
+        // 修改初始化流程
+        function initialize() {
+            // 确保节点正确获取
+            state.nodes = Array.from(document.querySelectorAll('.node'));
+            if (state.nodes.length === 0) {
+                console.error('No nodes found!');
+                return;
+            }
 
-    // 强制清除残留样式
-    state.nodes.forEach(node => {
-        node.style.removeProperty('left');
-        node.style.removeProperty('top');
-    });
+            // 调试信息
+            console.log(`Found ${state.nodes.length} nodes`);
 
-    // 主初始化流程
-    initLayout();
-    initDragSystem();
-    initResponsive();
-    drawLines();
+            // 强制清除残留样式
+            state.nodes.forEach(node => {
+                node.style.removeProperty('left');
+                node.style.removeProperty('top');
+            });
 
-    // 调试信息
-    console.log('Initialization completed');
-}
+            // 主初始化流程
+            initLayout();
+            initDragSystem();
+            initResponsive();
+            drawLines();
+
+            // 调试信息
+            console.log('Initialization completed');
+        }
         // 连线绘制
         // 修改drawLines函数
         function drawLines() {
@@ -620,80 +629,84 @@ function initialize() {
             // ...类似鼠标事件的逻辑
         });
     </script>
-      <script type="module">
+    <script type="module">
         // 导入 Firebase SDK
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
-    
+
         // Firebase 配置
         const firebaseConfig = {
-          apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
-          authDomain: "fangkeshuju.firebaseapp.com",
-          projectId: "fangkeshuju",
-          storageBucket: "fangkeshuju.firebasestorage.app",
-          messagingSenderId: "1043722790851",
-          appId: "1:1043722790851:web:01cca5afff820eb202ff76",
-          measurementId: "G-MGC7KEWX53"
+            apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
+            authDomain: "fangkeshuju.firebaseapp.com",
+            projectId: "fangkeshuju",
+            storageBucket: "fangkeshuju.firebasestorage.app",
+            messagingSenderId: "1043722790851",
+            appId: "1:1043722790851:web:01cca5afff820eb202ff76",
+            measurementId: "G-MGC7KEWX53"
         };
-    
+
         // 初始化 Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const db = getFirestore(app);
-    
+
         // 记录页面访问事件并保存到 Firestore
         async function logPageView() {
-          try {
-            await addDoc(collection(db, 'page_views'), {
-              page_title: document.title,
-              page_location: window.location.href,
-              page_path: window.location.pathname,
-              timestamp: serverTimestamp()
-            });
-            console.log('Page view saved to Firestore');
-          } catch (error) {
-            console.error('Error saving page view: ', error);
-          }
+            try {
+                await addDoc(collection(db, 'page_views'), {
+                    page_title: document.title,
+                    page_location: window.location.href,
+                    page_path: window.location.pathname,
+                    timestamp: serverTimestamp()
+                });
+                console.log('Page view saved to Firestore');
+            } catch (error) {
+                console.error('Error saving page view: ', error);
+            }
         }
-    
+
         // 调用函数
         logPageView();
-    
+
         // 追踪图片查看行为
         const images = document.querySelectorAll('img.trackable');
         images.forEach(img => {
-          let startTime = null;
-    
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                startTime = Date.now();
-              } else if (startTime) {
-                const duration = (Date.now() - startTime) / 1000;
-                saveImageView(img.src, duration);
-                startTime = null;
-              }
+            let startTime = null;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startTime = Date.now();
+                    } else if (startTime) {
+                        const duration = (Date.now() - startTime) / 1000;
+                        saveImageView(img.src, duration);
+                        startTime = null;
+                    }
+                });
             });
-          });
-    
-          observer.observe(img);
+
+            observer.observe(img);
         });
-    
+
         // 保存图片查看行为到 Firestore
         async function saveImageView(imageSrc, duration) {
-          try {
-            await addDoc(collection(db, 'image_views'), {
-              image_src: imageSrc,
-              view_duration: duration,
-              timestamp: serverTimestamp()
-            });
-            console.log('Image view saved to Firestore');
-          } catch (error) {
-            console.error('Error saving image view: ', error);
-          }
+            try {
+                await addDoc(collection(db, 'image_views'), {
+                    image_src: imageSrc,
+                    view_duration: duration,
+                    timestamp: serverTimestamp()
+                });
+                console.log('Image view saved to Firestore');
+            } catch (error) {
+                console.error('Error saving image view: ', error);
+            }
         }
-      </script>
+    </script>
 </body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W78LXJT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
 </html>

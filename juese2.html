@@ -1,0 +1,62 @@
+<div class="profile-container">
+    <p class="data-text" id="name">Leopold</p>
+    <p class="data-text" id="birth-age">3月・ぉぉん 30さい・ぉん</p>
+    <p class="data-text" id="height-job">185cm・ぉん セレブ</p>
+    <p class="data-text" id="hobby">好きな</p>
+    <p class="data-text" id="like">美しい ヴィーナス でも</p>
+    <p class="data-text" id="dislike">あふれるの 美しい 素敵</p>
+</div>
+
+<style>
+    .profile-container {
+        width: 689px; /* 图片宽度 */
+        height: 464px; /* 图片高度 */
+        background: url('img/mingpian.png') no-repeat center center; /* 替换为实际图片路径 */
+        background-size: 100% 100%; /* 确保图片填充容器 */
+        position: relative;
+        border: 5px solid #ff66b3; /* 粉红色边框，与原图一致 */
+    }
+
+    .data-text {
+        position: absolute;
+        color: #fff; /* 白色文字 */
+        font-family: 'Noto Serif JP', serif; /* 思源宋体 */
+        font-size: 32px; /* 调整为与图片一致的字体大小 */
+        line-height: 1.2; /* 调整行高，使文本垂直居中 */
+        margin: 0; /* 移除默认 margins */
+        padding: 5px 0; /* 仅垂直方向有内边距，与原图文本间距一致 */
+        background: transparent; /* 透明背景，确保显示背景图片 */
+        white-space: nowrap; /* 防止文本换行 */
+    }
+
+    /* 使用更精确的比例定位，确保与图片中的文本框对齐 */
+    #name {
+        top: 10%; /* 13px / 464px ≈ 0.028 */
+        left: 20%; /* 20px / 689px ≈ 0.029 */
+    }
+
+    #birth-age {
+        top: 25%; /* 60px / 464px ≈ 0.129 */
+        left: 24%; /* 20px / 689px ≈ 0.029 */
+    }
+
+    #height-job {
+        top: 40%; /* 100px / 464px ≈ 0.216 */
+        left: 24%; /* 20px / 689px ≈ 0.029 */
+    }
+
+    #hobby {
+        top: 60%; /* 140px / 464px ≈ 0.302 */
+        left: 35%; /* 20px / 689px ≈ 0.029 */
+    }
+
+    #like {
+        top: 70%; /* 180px / 464px ≈ 0.388 */
+        left: 32%; /* 20px / 689px ≈ 0.029 */
+    }
+
+    #dislike {
+        top: 80%; /* 220px / 464px ≈ 0.474 */
+        left: 40%; /* 20px / 689px ≈ 0.029 */
+    }
+</style>

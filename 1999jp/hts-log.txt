@@ -1,0 +1,37 @@
+HTTrack3.49-2+htsswf+htsjava launched on Tue, 25 Feb 2025 07:04:09 at https://re1999.bluepoch.com/jp +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "zh, en, *" https://re1999.bluepoch.com/jp -O1 "D:\webdl\1999jp" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+07:05:36	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/jp/home/p1d.jpg (from https://re1999.bluepoch.com/jp/home/)
+07:05:36	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/jp/home/p2d.jpg (from https://re1999.bluepoch.com/jp/home/)
+07:05:36	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/jp/home/p3d.jpg (from https://re1999.bluepoch.com/jp/home/)
+07:05:36	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/jp/home/p4d.jpg (from https://re1999.bluepoch.com/jp/home/)
+07:05:36	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/jp/home/p5d.jpg (from https://re1999.bluepoch.com/jp/home/)
+07:05:36	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/jp/home/p6d.jpg (from https://re1999.bluepoch.com/jp/home/)
+07:05:36	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/jp/home/p7d.jpg (from https://re1999.bluepoch.com/jp/home/)
+07:05:36	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/jp/home/p8d.jpg (from https://re1999.bluepoch.com/jp/home/)
+07:06:40	Warning: 	File not parsed, looks like binary: https://re1999.bluepoch.com/jp/home/font/myFont.ttf
+07:06:40	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/jp/home/img/lottery/bgno.png (from https://re1999.bluepoch.com/jp/home/css/yuyue.css)
+07:06:40	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/jp/home/img/first/cookieï¼close.png (from https://re1999.bluepoch.com/jp/home/css/cookie.css)
+07:06:40	Warning: 	Retry after error -5 (error:00000005:lib(0):func(0):DH lib) at link https://connect.facebook.net/en_US/sdk.js (from https://re1999.bluepoch.com/payment/info)
+07:06:54	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/en/home/p1d.jpg (from https://re1999.bluepoch.com/en/home/)
+07:06:54	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/en/home/p2d.jpg (from https://re1999.bluepoch.com/en/home/)
+07:06:54	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/en/home/p3d.jpg (from https://re1999.bluepoch.com/en/home/)
+07:06:54	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/en/home/p4d.jpg (from https://re1999.bluepoch.com/en/home/)
+07:06:54	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/en/home/p5d.jpg (from https://re1999.bluepoch.com/en/home/)
+07:06:54	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/en/home/p6d.jpg (from https://re1999.bluepoch.com/en/home/)
+07:06:54	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/en/home/p7d.jpg (from https://re1999.bluepoch.com/en/home/)
+07:06:54	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/en/home/p8d.jpg (from https://re1999.bluepoch.com/en/home/)
+07:07:00	Warning: 	Retry after error -5 (error:00000005:lib(0):func(0):DH lib) at link https://connect.facebook.net/en_US/sdk.js (from https://re1999.bluepoch.com/payment/info)
+07:07:00	Warning: 	File not parsed, looks like binary: https://re1999.bluepoch.com/en/home/font/Serif.ttf
+07:07:00	Warning: 	File not parsed, looks like binary: https://re1999.bluepoch.com/en/home/font/Sans.ttf
+07:07:00	Error: 	"Not Found" (404) at link https://re1999.bluepoch.com/en/home/img/icon/QQ.png (from https://re1999.bluepoch.com/en/home/css/index.css)
+07:07:00	Warning: 	File not parsed, looks like binary: https://re1999.bluepoch.com/en/home/font/Didot.ttf
+07:07:20	Error: 	"error:00000005:lib(0):func(0):DH lib" (-5) after 2 retries at link https://connect.facebook.net/en_US/sdk.js (from https://re1999.bluepoch.com/payment/info)
+
+HTTrack Website Copier/3.49-2 mirror complete in 3 minutes 11 seconds : 564 links scanned, 541 files written (241751092 bytes overall) [239964253 bytes received at 1256357 bytes/sec], 3132564 bytes transferred using HTTP compression in 148 files, ratio 36%, 37.4 requests per connection
+(20 errors, 6 warnings, 0 messages)
