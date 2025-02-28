@@ -1,0 +1,95 @@
+@supports (font-variation-settings:normal) {
+    @font-face {
+        font-display: swap;
+        font-family: Satoshi;
+        src: url(https://vgen.co/fonts/Satoshi-Variable.woff2) format("woff2"), url(https://vgen.co/fonts/Satoshi-Variable.woff) format("woff"), url(https://vgen.co/fonts/Satoshi-Variable.ttf) format("truetype");
+        font-weight: 125 950;
+        font-stretch: 75% 125%;
+        unicode-range: u+0-5f, u+61-10ffff
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: Satoshi;
+        src: url(https://vgen.co/fonts/Satoshi-VariableItalic.woff2) format("woff2"), url(https://vgen.co/fonts/Satoshi-VariableItalic.woff) format("woff"), url(https://vgen.co/fonts/Satoshi-VariableItalic.ttf) format("truetype");
+        font-weight: 125 950;
+        font-stretch: 75% 125%;
+        font-style: italic;
+        unicode-range: u+0-5f, u+61-10ffff
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: Arial;
+        src: local("Arial");
+        unicode-range: u+60
+    }
+}
+
+@supports not (font-variation-settings:normal) {
+    @font-face {
+        font-display: swap;
+        font-family: Satoshi;
+        font-weight: 480;
+        src: url(https://vgen.co/fonts/Satoshi-Regular.woff2) format("woff2"), url(https://vgen.co/fonts/Satoshi-Regular.woff) format("woff"), url(https://vgen.co/fonts/Satoshi-Regular.ttf) format("truetype");
+        unicode-range: u+0-5f, u+61-10ffff
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: Satoshi;
+        font-weight: 640;
+        src: url(https://vgen.co/fonts/Satoshi-Bold.woff2) format("woff2"), url(https://vgen.co/fonts/Satoshi-Bold.woff) format("woff"), url(https://vgen.co/fonts/Satoshi-Bold.ttf) format("truetype");
+        unicode-range: u+0-5f, u+61-10ffff
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: Satoshi;
+        font-weight: 840;
+        src: url(https://vgen.co/fonts/Satoshi-Black.woff2) format("woff2"), url(https://vgen.co/fonts/Satoshi-Black.woff) format("woff"), url(https://vgen.co/fonts/Satoshi-Black.ttf) format("truetype");
+        unicode-range: u+0-5f, u+61-10ffff
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: Arial;
+        src: local("Arial");
+        unicode-range: u+60
+    }
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Sniglet;
+    font-weight: 400;
+    src: url(https://vgen.co/fonts/Sniglet-Regular.ttf) format("truetype")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Sniglet;
+    font-weight: 800;
+    src: url(https://vgen.co/fonts/Sniglet-ExtraBold.ttf) format("truetype")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Dongle;
+    font-weight: 300;
+    src: url(https://vgen.co/fonts/Dongle-Light.woff2) format("woff2"), url(https://vgen.co/fonts/Dongle-Light.woff) format("woff")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Dongle;
+    font-weight: 400;
+    src: url(https://vgen.co/fonts/Dongle-Regular.woff2) format("woff2"), url(https://vgen.co/fonts/Dongle-Regular.woff) format("woff")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Dongle;
+    font-weight: 700;
+    src: url(https://vgen.co/fonts/Dongle-Bold.woff2) format("woff2"), url(https://vgen.co/fonts/Dongle-Bold.woff) format("woff")
+}

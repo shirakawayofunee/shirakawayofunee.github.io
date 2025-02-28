@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F8F7F8" />
+    <title>Leopold |</title>
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/concepts/56462d7e-18fe-44d4-885a-1993d3612921/references/baf757de-d5c8-4813-8e5b-c1c2350b2d8d.webp"
+    />
+    <meta property="og:site_name" content="VGen" />
+    <style>
+      /* 基础布局样式 */
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Banner 样式 */
+      .banner {
+        width: 100vw;
+        height: 300px;
+        object-fit: cover;
+        background: url("https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/banners/89b41936-7fbd-4d16-90e2-e358c1b4daf7.webp")
+          no-repeat center;
+        background-size: cover;
+        position: relative;
+      }
+
+      .banner .solidLayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      /* Avatar 样式 */
+      .avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: url("https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/avatars/4f5102ae-0b4c-4fbe-9599-40b63e92626e.webp")
+          no-repeat center;
+        background-size: cover;
+        margin: -100px auto 20px;
+        position: relative;
+        z-index: 1;
+        border: 4px solid #fff;
+      }
+
+      /* 内容区域样式 */
+      .section {
+        margin: 30px 0;
+        padding: 20px;
+        background: #f5f5f5;
+        border-radius: 5px;
+      }
+
+      .attributes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .attributes p {
+        margin: 5px 0;
+      }
+
+      .attributes p:first-child {
+        font-weight: bold;
+      }
+
+      /* 颜色调色板样式 */
+      .color-palette {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .color-box {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #000;
+        border-radius: 5px;
+      }
+
+      /* 标题和引用样式 */
+      .displayName {
+        font-size: 2em;
+        font-weight: 600;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .quoteSection {
+        text-align: center;
+        font-size: 1.2em;
+        margin: 20px 0;
+        position: relative;
+      }
+
+      .quoteSection svg {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+      .introductionSection {
+        white-space: pre-wrap;
+        text-align: center;
+        font-size: 1.1em;
+        margin: 20px 0;
+      }
+
+      hr {
+        border: 0;
+        border-top: 1px solid #eee;
+        margin: 20px 0;
+      }
+
+      /* 按钮样式 */
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background: #2778c4;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1em;
+      }
+
+      button:hover {
+        background: #1e5d9e;
+      }
+
+      /* 标签样式 */
+      .tagsContainer {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .tagName {
+        background: #e0e0e0;
+        padding: 5px 10px;
+        border-radius: 15px;
+      }
+
+      /* 用户信息样式 */
+      .userRelationSection {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .userInfo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+      }
+
+      .userInfo .avatar {
+        width: 40px;
+        height: 40px;
+        margin: 0 10px 0 0;
+      }
+
+      .userInfoTextContainer {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .userNameContainer {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .badges img {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* 折叠面板样式 */
+      .accordionSectionHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .accordionSectionHeader svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .accordionSectionContentContainer {
+        overflow: hidden;
+        transition: height 0.3s ease;
+      }
+
+      /* 滑块样式 */
+      .slider {
+        height: 5px;
+        background: linear-gradient(
+          to right,
+          #333 0%,
+          #333 50%,
+          #ccc 50%,
+          #ccc 100%
+        );
+        border-radius: 5px;
+        position: relative;
+      }
+
+      .thumb {
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border: 2px solid #333;
+        border-radius: 50%;
+        position: absolute;
+        top: -7px;
+      }
+
+      .labelsContainer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Banner -->
+      <div class="banner">
+        <div class="solidLayer"></div>
+      </div>
+
+      <!-- Avatar -->
+      <div class="avatar"></div>
+
+      <!-- Profile Section -->
+      <div class="section">
+        <p class="displayName">Leopold</p>
+        <div class="quoteSection">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M22.744 20.64H14.392C13.576 18 13.168 15.264 13.168 12.432C13.168 9.552 13.912 7.272 15.4 5.592C16.936 3.864 19.192 3 22.168 3V7.032C19.768 7.032 18.568 8.496 18.568 11.424V12.792H22.744V20.64ZM10.576 20.64H2.224C1.408 18 1 15.264 1 12.432C1 9.552 1.744 7.272 3.232 5.592C4.768 3.864 7.024 3 10 3V7.032C7.6 7.032 6.4 8.496 6.4 11.424V12.792H10.576V20.64Z"
+            ></path>
+          </svg>
+          <p>"UWAAAAAAAAAAAA!! 🫧"</p>
+        </div>
+        <pre class="introductionSection">
+✦ 156 cm | 48 kg
+✧ bubble bath monster
+✦ airhead, oblivious of others</pre
+        >
+        <hr />
+        <div class="fanworkPolicyContainer">
+          <button>Fanwork policy</button>
+          <button>Submit fanwork</button>
+        </div>
+        <hr />
+        <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/track/5RBOcBpJXaNnHCGViJmYhh?utm_source=generator&theme=0"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+
+        <div class="tagsContainer">
+          <p class="tagName">mascot</p>
+          <p class="tagName">oc</p>
+          <p class="tagName">vtuber</p>
+          <p class="tagName">sona</p>
+          <p class="tagName">persona</p>
+        </div>
+        <hr />
+        <div class="userRelationSection">
+          <a
+            href="https://vgen.co/floofyfloffy"
+            target="_blank"
+            class="userInfo"
+          >
+            <div
+              class="avatar"
+              style="
+                background-image: url('https://storage.googleapis.com/vgen-production-storage/uploads/5408d70c-146e-4839-a838-90ee5302be32/1975d338-6510-4adf-bd11-aad01199d1d5.webp');
+              "
+            ></div>
+            <div class="userInfoTextContainer">
+              <div class="userNameContainer">
+                <p>floof 🫧</p>
+                <div class="badges">
+                  <img src="/img/badges/RoleAffiliate.webp" alt="Verified" />
+                  <img src="/img/badges/Beta20.webp" alt="Beta batch 20" />
+                </div>
+              </div>
+              <p>Creator</p>
+            </div>
+          </a>
+          <a
+            href="https://vgen.co/floofyfloffy"
+            target="_blank"
+            class="userInfo"
+          >
+            <div
+              class="avatar"
+              style="
+                background-image: url('https://storage.googleapis.com/vgen-production-storage/uploads/5408d70c-146e-4839-a838-90ee5302be32/1975d338-6510-4adf-bd11-aad01199d1d5.webp');
+              "
+            ></div>
+            <div class="userInfoTextContainer">
+              <div class="userNameContainer">
+                <p>floof 🫧</p>
+                <div class="badges">
+                  <img src="/img/badges/RoleAffiliate.webp" alt="Verified" />
+                  <img src="/img/badges/Beta20.webp" alt="Beta batch 20" />
+                </div>
+              </div>
+              <p>Owner</p>
+            </div>
+          </a>
+        </div>
+        <hr />
+        <div class="accordionSection">
+          <div class="accordionSectionHeader">
+            <h3>Overview</h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              style="transform: rotate(180deg)"
+            >
+              <path
+                d="M7.41 7.83997L12 12.42L16.59 7.83997L18 9.24997L12 15.25L6 9.24997L7.41 7.83997Z"
+              ></path>
+            </svg>
+          </div>
+          <div class="accordionSectionContentContainer" style="height: auto">
+            <div class="attributes">
+              <div>
+                <p>Nickname</p>
+                <p>ms. bub</p>
+              </div>
+              <div>
+                <p>Pronouns</p>
+                <p>she / her</p>
+              </div>
+              <div>
+                <p>Species</p>
+                <p>yao (monster)</p>
+              </div>
+              <div>
+                <p>Birthday</p>
+                <p>Oct. 31st</p>
+              </div>
+              <div>
+                <p>Height</p>
+                <p>156 cm</p>
+              </div>
+              <div>
+                <p>Traits</p>
+                <p>drippy hair, can turn invisible</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="accordionSection">
+          <div class="accordionSectionHeader">
+            <h3>Personality</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M7.41 7.83997L12 12.42L16.59 7.83997L18 9.24997L12 15.25L6 9.24997L7.41 7.83997Z"
+              ></path>
+            </svg>
+          </div>
+          <div class="accordionSectionContentContainer" style="height: auto">
+            <div>
+              <p>Extraversion</p>
+              <div
+                class="slider"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    #333 0%,
+                    #333 59.16%,
+                    #ccc 59.16%,
+                    #ccc 100%
+                  );
+                "
+              >
+                <div class="thumb" style="left: 59%"></div>
+              </div>
+              <div class="labelsContainer">
+                <p>Introvert</p>
+                <p>Extrovert</p>
+              </div>
+            </div>
+            <div>
+              <p>Silliness</p>
+              <div
+                class="slider"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    #333 0%,
+                    #333 100%,
+                    #ccc 100%,
+                    #ccc 100%
+                  );
+                "
+              >
+                <div class="thumb" style="left: 100%"></div>
+              </div>
+              <div class="labelsContainer">
+                <p>Serious</p>
+                <p>Trickster</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design Reference Section -->
+      <div class="section">
+        <h2>Design Reference</h2>
+        <img
+          src="https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/concepts/56462d7e-18fe-44d4-885a-1993d3612921/references/baf757de-d5c8-4813-8e5b-c1c2350b2d8d.webp"
+          alt="Primary reference"
+          style="max-width: 100%; border-radius: 5px"
+        />
+        <p>
+          * NOTE: please try to stick to the colors as much as possible with its
+          original vibrancy, thank you! ദ്ദി ˉ͈̀꒳ˉ͈́ )✧
+        </p>
+        <hr />
+        <div class="color-palette">
+          <div>
+            <div class="color-box" style="background-color: #ffddad"></div>
+            <p>#FFDDAD - rubber ducky color</p>
+          </div>
+          <div>
+            <div class="color-box" style="background-color: #fef7f3"></div>
+            <p>#FEF7F3 - skin color</p>
+          </div>
+          <div>
+            <div class="color-box" style="background-color: #fcebf4"></div>
+            <p>#FCEBF4 - hair accent color 1</p>
+          </div>
+          <div>
+            <div class="color-box" style="background-color: #f4b3e7"></div>
+            <p>#F4B3E7 - eye color / main accent color</p>
+          </div>
+          <div>
+            <div class="color-box" style="background-color: #f65ec5"></div>
+            <p>#F65EC5 - accent color</p>
+          </div>
+          <div>
+            <div class="color-box" style="background-color: #8ed3fc"></div>
+            <p>#8ED3FC - hair + eye gradient color</p>
+          </div>
+          <div>
+            <div class="color-box" style="background-color: #72a1f3"></div>
+            <p>#72A1F3 - hair accent color 2</p>
+          </div>
+          <div>
+            <div class="color-box" style="background-color: #2b3880"></div>
+            <p>#2B3880 - inner shirt / socks color</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

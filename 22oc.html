@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8F7F8">
+    <title>Leopold: Original | VGen</title>
+    <meta property="og:type" content="website">
+    <meta property="og:image"
+        content="https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/concepts/56462d7e-18fe-44d4-885a-1993d3612921/references/baf757de-d5c8-4813-8e5b-c1c2350b2d8d.webp">
+    <meta property="og:site_name" content="VGen">
+    <meta property="og:url" content="https://vgen.co/c/Leopold">
+    <meta property="og:title" content="Leopold: Original">
+    <meta property="og:description"
+        content='"UWAAAAAAAAAAAA!! 🫧" | ✦ 156 cm | 48 kg,✧ bubble bath monster,✦ airhead, oblivious of others | * NOTE: please try to stick to the colors as much as possible with its original vibrancy,,thank you! ദ്ദി ˉ͈̀꒳ˉ͈́ )✧'>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+    <style>
+        /* 重置样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #fff;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* 背景图片 */
+        .banner {
+            width: 100%;
+            height: 400px;
+            background: url('https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/banners/89b41936-7fbd-4d16-90e2-e358c1b4daf7.webp') no-repeat center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .banner .solid-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* 头像 */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: url('https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/avatars/4f5102ae-0b4c-4fbe-9599-40b63e92626e.webp') no-repeat center;
+            background-size: cover;
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid #fff;
+            z-index: 2;
+        }
+
+        /* 内容容器 */
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 20px;
+        }
+
+        /* 简介部分 */
+        .profile-section {
+            background: #e6f0fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            height: 100%;
+        }
+
+        .display-name {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .quote-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .quote-section svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .introduction-section {
+            font-size: 1em;
+            color: #666;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .introduction-section p {
+            margin: 5px 0;
+        }
+
+        .introduction-section span {
+            margin-right: 5px;
+        }
+
+        .fanwork-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .fanwork-buttons button {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        /* 设计参考部分 */
+        .design-section {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .concept-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .concept-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: url('https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/avatars/e4045f23-aa00-4bb5-a849-39b502f85523.webp') no-repeat center;
+            background-size: cover;
+        }
+
+        .concept-info h3 {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .concept-info .tagline {
+            color: #666;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+
+        .concept-info .tags {
+            display: flex;
+            gap: 8px;
+        }
+
+        .concept-info .tags .tag {
+            background: #e0e0e0;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+
+        .concept-info .note {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+
+        .design-section hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 15px 0;
+        }
+
+        /* 折叠部分 */
+        .accordion-button {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #333;
+            background: none;
+            border: none;
+            padding: 10px 0;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .accordion-button::after {
+            width: 24px;
+            height: 24px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 7.83997L12 12.42L16.59 7.83997L18 9.24997L12 15.25L6 9.24997L7.41 7.83997Z"/></svg>');
+            background-size: contain;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            padding: 10px 0;
+        }
+
+        /* 子折叠部分 */
+        .sub-accordion-button {
+            font-size: 1.2em;
+            font-weight: 500;
+            color: #666;
+            background: none;
+            border: none;
+            padding: 5px 0;
+        }
+
+        .sub-accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .sub-accordion-button::after {
+            width: 20px;
+            height: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 7.83997L12 12.42L16.59 7.83997L18 9.24997L12 15.25L6 9.24997L7.41 7.83997Z"/></svg>');
+            background-size: contain;
+        }
+
+        .sub-accordion-button:not(.collapsed)::after {
+            transform: rotate(180deg);
+        }
+
+        /* Credits 部分 */
+        .credit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .credit-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: url('https://storage.googleapis.com/vgen-production-storage/uploads/5408d70c-146e-4839-a838-90ee5302be32/1975d338-6510-4adf-bd11-aad01199d1d5.webp') no-repeat center;
+            background-size: cover;
+        }
+
+        .credit-info p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .credit-info .name {
+            font-weight: 700;
+        }
+
+        .credit-info .badges img {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+        }
+
+        /* References 部分 */
+        .reference-item {
+            margin: 10px 0;
+        }
+
+        .reference-item img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .reference-item .title {
+            font-size: 1em;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .reference-item .description {
+            font-size: 0.9em;
+            color: #666;
+            margin: 5px 0 0;
+        }
+
+        /* 调色板 */
+        .color-palette {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .color-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .color-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .color-detail {
+            text-align: center;
+        }
+
+        .color-detail .color-circle {
+            margin-bottom: 5px;
+        }
+
+        .color-detail p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .color-detail .hex-code {
+            font-weight: 700;
+        }
+
+/* 画廊部分样式 */
+.gallery-section {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.gallery-header .nav-tabs {
+    border-bottom: 2px solid #000;
+}
+
+.gallery-header .nav-link {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #ccc;
+    padding: 5px 15px;
+}
+
+.gallery-header .nav-link.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+.filter-tags .btn {
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+
+.sort-options {
+    font-size: 0.9em;
+}
+
+.gallery-item {
+    margin-bottom: 15px; /* 图片间距 */
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover; /* 确保图片裁剪适应 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 动画过渡效果 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
+.gallery-image:hover {
+    transform: scale(1.05); /* 悬停时放大5% */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时添加阴影 */
+}
+
+/* 模态框图片样式 */
+.modal-body img {
+    max-height: 70vh; /* 限制图片最大高度，适应屏幕 */
+}
+
+/* 左右箭头样式 */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* 调整箭头区域宽度 */
+    background: rgba(0, 0, 0, 0.3); /* 半透明背景 */
+    border-radius: 5px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 50%, 50%; /* 调整箭头图标大小 */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(0, 0, 0, 0.5); /* 悬停时加深背景 */
+}
+    </style>
+</head>
+
+<body>
+    <!-- 背景图片 -->
+    <div class="banner">
+        <div class="solid-layer"></div>
+    </div>
+
+    <!-- 头像 -->
+    <div class="avatar"></div>
+
+    <!-- 内容区域 -->
+    <div class="content-container">
+        <div class="row">
+            <!-- 简介部分 -->
+            <div class="col-md-4">
+                <div class="profile-section">
+                    <p class="display-name">Leopold</p>
+                    <div class="quote-section">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M22.744 20.64H14.392C13.576 18 13.168 15.264 13.168 12.432C13.168 9.552 13.912 7.272 15.4 5.592C16.936 3.864 19.192 3 22.168 3V7.032C19.768 7.032 18.568 8.496 18.568 11.424V12.792H22.744V20.64ZM10.576 20.64H2.224C1.408 18 1 15.264 1 12.432C1 9.552 1.744 7.272 3.232 5.592C4.768 3.864 7.024 3 10 3V7.032C7.6 7.032 6.4 8.496 6.4 11.424V12.792H10.576V20.64Z">
+                            </path>
+                        </svg>
+                        <p>"UWAAAAAAAAAAAA!! 🫧"</p>
+                    </div>
+                    <div class="introduction-section">
+                        <p><span>✦</span> 156 cm | 48 kg</p>
+                        <p><span>✧</span> bubble bath monster</p>
+                        <p><span>✦</span> airhead, oblivious of others</p>
+                    </div>
+                    <div class="fanwork-buttons">
+                        <button class="btn btn-primary">Fanwork policy</button>
+                        <button class="btn btn-primary">Submit fanwork</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 设计参考部分 -->
+            <div class="col-md-8">
+                <div class="design-section">
+                    <div class="concept-header">
+                        <div class="concept-avatar"></div>
+                        <div class="concept-info">
+                            <h3>Original</h3>
+                            <p class="tagline">Debut Jan 2025</p>
+                            <div class="tags">
+                                <span class="tag">vtuber</span>
+                                <span class="tag">2d</span>
+                                <span class="tag">oc</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="note">* NOTE: please try to stick to the colors as much as possible with its original
+                        vibrancy, thank you! ദ്ദി ˉ͈̀꒳ˉ͈́ )✧</p>
+                    <hr>
+
+                    <!-- 设计参考折叠部分 -->
+                    <div class="accordion" id="designReferenceAccordion">
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#designReferenceCollapse" aria-expanded="false"
+                                    aria-controls="designReferenceCollapse">
+                                    Design reference
+                                </button>
+                                <!-- 略缩图部分 -->
+                                <img src="https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/concepts/56462d7e-18fe-44d4-885a-1993d3612921/references/baf757de-d5c8-4813-8e5b-c1c2350b2d8d.webp"
+                                    alt="Design Reference" class="img-fluid"
+                                    style="border-radius: 5px; margin-bottom: 15px;">
+
+                                <!-- 调色板关闭状态 -->
+                                <div class="color-palette">
+                                    <div class="color-circle" style="background-color: #FFDDAD;"></div>
+                                    <div class="color-circle" style="background-color: #FEF7F3;"></div>
+                                    <div class="color-circle" style="background-color: #FCEBF4;"></div>
+                                    <div class="color-circle" style="background-color: #F4B3E7;"></div>
+                                    <div class="color-circle" style="background-color: #F65EC5;"></div>
+                                    <div class="color-circle" style="background-color: #8ED3FC;"></div>
+                                    <div class="color-circle" style="background-color: #72A1F3;"></div>
+                                    <div class="color-circle" style="background-color: #2B3880;"></div>
+                                </div>
+
+                            </h2>
+                            <div id="designReferenceCollapse" class="accordion-collapse collapse"
+                                data-bs-parent="#designReferenceAccordion">
+                                <div class="accordion-body">
+
+                                    <!-- 子折叠部分 -->
+                                    <div class="accordion mt-3" id="subAccordion">
+                                        <!-- Credits -->
+                                        <div class="accordion-item border-0">
+                                            <h3 class="accordion-header">
+                                                <button class="sub-accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#creditsCollapse"
+                                                    aria-expanded="false" aria-controls="creditsCollapse">
+                                                    Credits
+                                                </button>
+                                            </h3>
+                                            <div id="creditsCollapse" class="accordion-collapse collapse"
+                                                data-bs-parent="#subAccordion">
+                                                <div class="accordion-body">
+                                                    <div class="credit-item">
+                                                        <div class="credit-avatar"></div>
+                                                        <div class="credit-info">
+                                                            <p class="name">floof 🫧 <img
+                                                                    src="/img/badges/RoleAffiliate.webp"
+                                                                    alt="Verified"><img src="/img/badges/Beta20.webp"
+                                                                    alt="Beta batch 20"></p>
+                                                            <p>Designer, Artist</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- References -->
+                                        <div class="accordion-item border-0">
+                                            <h3 class="accordion-header">
+                                                <button class="sub-accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#referencesCollapse"
+                                                    aria-expanded="false" aria-controls="referencesCollapse">
+                                                    References
+                                                </button>
+                                            </h3>
+                                            <div id="referencesCollapse" class="accordion-collapse collapse"
+                                                data-bs-parent="#subAccordion">
+                                                <div class="accordion-body">
+                                                    <div class="reference-item">
+                                                        <img src="https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/concepts/56462d7e-18fe-44d4-885a-1993d3612921/references/baf757de-d5c8-4813-8e5b-c1c2350b2d8d.webp"
+                                                            alt="Plushies and Cute Things">
+                                                        <p class="title">plushies and cute things</p>
+                                                        <p class="description">reference for cute items!</p>
+                                                    </div>
+                                                    <div class="reference-item">
+                                                        <img src="https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/concepts/56462d7e-18fe-44d4-885a-1993d3612921/references/b7d1d1ea-959f-40da-ae10-8763a9b6b52b.webp"
+                                                            alt="Design Reference">
+                                                        <p class="title">Design reference</p>
+                                                        <p class="description">* some design details optional (check ref
+                                                            for specifics)!!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Palette -->
+                                        <div class="accordion-item border-0">
+                                            <h3 class="accordion-header">
+                                                <button class="sub-accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#paletteCollapse"
+                                                    aria-expanded="false" aria-controls="paletteCollapse">
+                                                    Palette
+                                                </button>
+                                            </h3>
+                                            <div id="paletteCollapse" class="accordion-collapse collapse"
+                                                data-bs-parent="#subAccordion">
+                                                <div class="accordion-body">
+                                                    <div class="color-details">
+                                                        <div class="color-detail">
+                                                            <div class="color-circle"
+                                                                style="background-color: #FFDDAD;"></div>
+                                                            <p class="hex-code">#FFDDAD</p>
+                                                            <p>rubber ducky</p>
+                                                        </div>
+                                                        <div class="color-detail">
+                                                            <div class="color-circle"
+                                                                style="background-color: #FEF7F3;"></div>
+                                                            <p class="hex-code">#FEF7F3</p>
+                                                            <p>skin color</p>
+                                                        </div>
+                                                        <div class="color-detail">
+                                                            <div class="color-circle"
+                                                                style="background-color: #FCEBF4;"></div>
+                                                            <p class="hex-code">#FCEBF4</p>
+                                                            <p>hair accent color 1</p>
+                                                        </div>
+                                                        <div class="color-detail">
+                                                            <div class="color-circle"
+                                                                style="background-color: #F4B3E7;"></div>
+                                                            <p class="hex-code">#F4B3E7</p>
+                                                            <p>eye color / main accent color</p>
+                                                        </div>
+                                                        <div class="color-detail">
+                                                            <div class="color-circle"
+                                                                style="background-color: #F65EC5;"></div>
+                                                            <p class="hex-code">#F65EC5</p>
+                                                            <p>accent color</p>
+                                                        </div>
+                                                        <div class="color-detail">
+                                                            <div class="color-circle"
+                                                                style="background-color: #8ED3FC;"></div>
+                                                            <p class="hex-code">#8ED3FC</p>
+                                                            <p>hair + eye gradient color</p>
+                                                        </div>
+                                                        <div class="color-detail">
+                                                            <div class="color-circle"
+                                                                style="background-color: #72A1F3;"></div>
+                                                            <p class="hex-code">#72A1F3</p>
+                                                            <p>hair accent color 2</p>
+                                                        </div>
+                                                        <div class="color-detail">
+                                                            <div class="color-circle"
+                                                                style="background-color: #2B3880;"></div>
+                                                            <p class="hex-code">#2B3880</p>
+                                                            <p>inner shirt / socks color</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- 画廊部分 -->
+<div class="gallery-section mt-5">
+    <div class="gallery-header mb-3">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Tagged</a>
+            </li>
+        </ul>
+        <div class="gallery-filters d-flex justify-content-between align-items-center mt-2">
+            <div class="filter-tags">
+                <button class="btn btn-outline-secondary btn-sm active">All</button>
+                <button class="btn btn-outline-secondary btn-sm">Official</button>
+                <button class="btn btn-outline-secondary btn-sm">Fanwork</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 画廊网格 -->
+    <div class="row">
+        <!-- 图片1：占2列 -->
+        <div class="col-12 col-md-6 col-lg-6 gallery-item">
+            <img src="img/L/L1.jpg" alt="Gallery Image 1" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L1.jpg" data-index="0">
+        </div>
+        <!-- 图片2：占1列 -->
+        <div class="col-12 col-md-6 col-lg-3 gallery-item">
+            <img src="img/L/L2.jpg" alt="Gallery Image 2" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/300x300" data-index="1">
+        </div>
+        <!-- 图片3：占1列 -->
+        <div class="col-12 col-md-6 col-lg-3 gallery-item">
+            <img src="img/L/L3.jpg" alt="Gallery Image 3" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/300x400" data-index="2">
+        </div>
+        <!-- 图片4：占1列 -->
+        <div class="col-12 col-md-6 col-lg-3 gallery-item">
+            <img src="img/L/L4.jpg" alt="Gallery Image 4" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/300x200" data-index="3">
+        </div>
+        <!-- 图片5：占1列 -->
+        <div class="col-12 col-md-6 col-lg-3 gallery-item">
+            <img src="img/L/L5.jpg" alt="Gallery Image 5" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/300x300" data-index="4">
+        </div>
+        <!-- 图片6：占2列 -->
+        <div class="col-12 col-md-6 col-lg-6 gallery-item">
+            <img src="img/L/L6.jpg" alt="Gallery Image 6" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/600x300" data-index="5">
+        </div>
+        <!-- 图片7：占1列 -->
+        <div class="col-12 col-md-6 col-lg-3 gallery-item">
+            <img src="img/L/L7.jpg" alt="Gallery Image 7" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/300x400" data-index="6">
+        </div>
+        <!-- 图片8：占1列 -->
+        <div class="col-12 col-md-6 col-lg-3 gallery-item">
+            <img src="img/L/L8.jpg" alt="Gallery Image 8" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/300x200" data-index="7">
+        </div>
+        <!-- 图片9：占2列 -->
+        <div class="col-12 col-md-6 col-lg-6 gallery-item">
+            <img src="img/L/L9.jpg" alt="Gallery Image 9" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/600x400" data-index="8">
+        </div>
+        <!-- 图片10：占1列 -->
+        <div class="col-12 col-md-6 col-lg-3 gallery-item">
+            <img src="img/L/L10.jpg" alt="Gallery Image 10" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/300x300" data-index="9">
+        </div>
+    </div>
+</div>
+
+<!-- 模态框 -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center position-relative">
+                <!-- 左右箭头 -->
+                <button class="carousel-control-prev" type="button" id="prevImage">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <img src="" alt="Preview Image" class="img-fluid" id="modalImage">
+                <button class="carousel-control-next" type="button" id="nextImage">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+</body>
+<script>
+    // 获取所有画廊图片
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    const modalImage = document.getElementById('modalImage');
+    const prevButton = document.getElementById('prevImage');
+    const nextButton = document.getElementById('nextImage');
+    let currentIndex = 0;
+
+    // 将图片信息存储到数组中
+    const imageData = Array.from(galleryImages).map(image => ({
+        src: image.getAttribute('data-src'),
+        index: parseInt(image.getAttribute('data-index'))
+    }));
+
+    // 点击图片时更新模态框并记录当前索引
+    galleryImages.forEach(image => {
+        image.addEventListener('click', function() {
+            const src = this.getAttribute('data-src');
+            currentIndex = parseInt(this.getAttribute('data-index'));
+            modalImage.src = src;
+        });
+    });
+
+    // 上一张图片
+    prevButton.addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + imageData.length) % imageData.length;
+        modalImage.src = imageData[currentIndex].src;
+    });
+
+    // 下一张图片
+    nextButton.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % imageData.length;
+        modalImage.src = imageData[currentIndex].src;
+    });
+
+    // 键盘导航（可选）：左右箭头键切换图片
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft' && document.getElementById('imageModal').classList.contains('show')) {
+            prevButton.click();
+        } else if (event.key === 'ArrowRight' && document.getElementById('imageModal').classList.contains('show')) {
+            nextButton.click();
+        }
+    });
+</script>
+
+</html>
