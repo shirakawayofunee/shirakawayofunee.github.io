@@ -13,6 +13,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 
+    <!-- 你的现有 head 部分保持不变 -->
     <style>
         /* 重置样式 */
         * {
@@ -333,7 +334,7 @@
             font-weight: 700;
         }
 
-        /* 画廊部分样式 */
+        /* 画廊部分样式调整为瀑布流 */
         .gallery-section {
             background: #fff;
             border-radius: 10px;
@@ -357,18 +358,28 @@
             border-bottom: 2px solid #000;
         }
 
-        .filter-tags .btn {
-            margin-right: 5px;
-            font-size: 0.9em;
+        /* 新增瀑布流样式 */
+        .gallery-container {
+            column-count: 3; /* 列数，可以根据需要调整 */
+            column-gap: 15px; /* 列间距 */
+            width: 100%;
         }
 
-        .sort-options {
-            font-size: 0.9em;
+        @media (max-width: 992px) {
+            .gallery-container {
+                column-count: 2; /* 中等屏幕显示3列 */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-container {
+                column-count: 1; /* 小屏幕显示2列 */
+            }
         }
 
         .gallery-item {
-            margin-bottom: 15px;
-            /* 图片间距 */
+            break-inside: avoid; /* 防止图片被分割 */
+            margin-bottom: 15px; /* 图片之间的垂直间距 */
         }
 
         .gallery-image {
@@ -376,62 +387,48 @@
             height: auto;
             border-radius: 5px;
             object-fit: cover;
-            /* 确保图片裁剪适应 */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            /* 动画过渡效果 */
             cursor: pointer;
-            /* 鼠标悬停时显示手型 */
         }
 
         .gallery-image:hover {
             transform: scale(1.05);
-            /* 悬停时放大5% */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* 悬停时添加阴影 */
         }
 
-        /* 模态框图片样式 */
+        /* 模态框样式保持不变 */
         .modal-body img {
             max-height: 70vh;
-            /* 限制图片最大高度，适应屏幕 */
         }
 
-        /* 左右箭头样式 */
         .carousel-control-prev,
         .carousel-control-next {
             width: 5%;
-            /* 调整箭头区域宽度 */
             background: rgba(0, 0, 0, 0.3);
-            /* 半透明背景 */
             border-radius: 5px;
         }
 
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
             background-size: 50%, 50%;
-            /* 调整箭头图标大小 */
         }
 
         .carousel-control-prev:hover,
         .carousel-control-next:hover {
             background: rgba(0, 0, 0, 0.5);
-            /* 悬停时加深背景 */
         }
     </style>
 </head>
-
 <body>
     <!-- 画廊部分 -->
     <div class="gallery-section mt-5">
         <div class="gallery-header mb-3">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab"
-                        aria-controls="gallery" aria-selected="true">gallery</a>
+                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab" aria-controls="gallery" aria-selected="true">gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="cloakroom-tab" data-bs-toggle="tab" href="#cloakroom" role="tab"
-                        aria-controls="cloakroom" aria-selected="false">cloakroom</a>
+                    <a class="nav-link" id="cloakroom-tab" data-bs-toggle="tab" href="#cloakroom" role="tab" aria-controls="cloakroom" aria-selected="false">cloakroom</a>
                 </li>
             </ul>
         </div>
@@ -440,89 +437,63 @@
         <div class="tab-content" id="galleryTabContent">
             <!-- Gallery 画廊 -->
             <div class="tab-pane fade show active" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
-                <div class="row">
-                    <!-- 图片1：占2列 -->
-                    <div class="col-12 col-md-6 col-lg-6 gallery-item">
-                        <img src="img/L/L1.jpg" alt="Gallery Image 1" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L1.jpg" data-index="0">
+                <div class="gallery-container">
+                    <!-- 移除 row 和 col 结构，直接用 gallery-item -->
+                    <div class="gallery-item">
+                        <img src="img/L/L1.jpg" alt="Gallery Image 1" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L1.jpg" data-index="0">
                     </div>
-                    <!-- 图片2：占1列 -->
-                    <div class="col-12 col-md-6 col-lg-6 gallery-item">
-                        <img src="img/L/L2.jpg" alt="Gallery Image 2" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L2.jpg" data-index="1">
+                    <div class="gallery-item">
+                        <img src="img/L/L2.jpg" alt="Gallery Image 2" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L2.jpg" data-index="1">
                     </div>
-                    <!-- 图片3：占1列 -->
-                    <div class="col-12 col-md-6 col-lg-6 gallery-item">
-                        <img src="img/L/L3.jpg" alt="Gallery Image 3" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L3.jpg" data-index="2">
+                    <div class="gallery-item">
+                        <img src="img/L/L3.jpg" alt="Gallery Image 3" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L3.jpg" data-index="2">
                     </div>
-                    <!-- 图片4：占1列 -->
-                    <div class="col-12 col-md-6 col-lg-3 gallery-item">
-                        <img src="img/L/L4.jpg" alt="Gallery Image 4" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L4.jpg" data-index="3">
+                    <div class="gallery-item">
+                        <img src="img/L/L4.jpg" alt="Gallery Image 4" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L4.jpg" data-index="3">
                     </div>
-                    <!-- 图片5：占1列 -->
-                    <div class="col-12 col-md-6 col-lg-3 gallery-item">
-                        <img src="img/L/L5.jpg" alt="Gallery Image 5" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L5.jpg" data-index="4">
+                    <div class="gallery-item">
+                        <img src="img/L/L5.jpg" alt="Gallery Image 5" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L5.jpg" data-index="4">
                     </div>
-                    <!-- 图片6：占2列 -->
-                    <div class="col-12 col-md-6 col-lg-6 gallery-item">
-                        <img src="img/L/L6.jpg" alt="Gallery Image 6" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L6.jpg" data-index="5">
+                    <div class="gallery-item">
+                        <img src="img/L/L6.jpg" alt="Gallery Image 6" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L6.jpg" data-index="5">
                     </div>
-                    <!-- 图片7：占1列 -->
-                    <div class="col-12 col-md-6 col-lg-3 gallery-item">
-                        <img src="img/L/L7.jpg" alt="Gallery Image 7" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L7.jpg" data-index="6">
+                    <div class="gallery-item">
+                        <img src="img/L/L7.jpg" alt="Gallery Image 7" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L7.jpg" data-index="6">
                     </div>
-                    <!-- 图片8：占1列 -->
-                    <div class="col-12 col-md-6 col-lg-3 gallery-item">
-                        <img src="img/L/L8.jpg" alt="Gallery Image 8" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L8.jpg" data-index="7">
+                    <div class="gallery-item">
+                        <img src="img/L/L8.jpg" alt="Gallery Image 8" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L8.jpg" data-index="7">
                     </div>
-                    <!-- 图片9：占2列 -->
-                    <div class="col-12 col-md-6 col-lg-6 gallery-item">
-                        <img src="img/L/L9.jpg" alt="Gallery Image 9" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L9.jpg" data-index="8">
+                    <div class="gallery-item">
+                        <img src="img/L/L9.jpg" alt="Gallery Image 9" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L9.jpg" data-index="8">
                     </div>
-                    <!-- 图片10：占1列 -->
-                    <div class="col-12 col-md-6 col-lg-3 gallery-item">
-                        <img src="img/L/L10.jpg" alt="Gallery Image 10" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L10.jpg" data-index="9">
+                    <div class="gallery-item">
+                        <img src="img/L/L10.jpg" alt="Gallery Image 10" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L10.jpg" data-index="9">
                     </div>
-                    <!-- 图片11：占1列 -->
-                    <div class="col-12 col-md-6 col-lg-3 gallery-item">
-                        <img src="img/L/L11.png" alt="Gallery Image 10" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L11.png" data-index="9">
+                    <div class="gallery-item">
+                        <img src="img/L/L11.png" alt="Gallery Image 11" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L11.png" data-index="10">
                     </div>
-                    <!-- 图片12：占1列 -->
-                    <div class="col-12 col-md-6 col-lg-3 gallery-item">
-                        <img src="img/L/L12.png" alt="Gallery Image 10" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L12.png" data-index="9">
+                    <div class="gallery-item">
+                        <img src="img/L/L12.png" alt="Gallery Image 12" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L12.png" data-index="11">
                     </div>
                 </div>
             </div>
+
             <!-- Cloakroom 画廊 -->
             <div class="tab-pane fade" id="cloakroom" role="tabpanel" aria-labelledby="cloakroom-tab">
-                <div class="row">
-                    <!-- 这里添加 cloakroom 的图片 -->
-                    <div class="col-12 col-md-6 col-lg-6 gallery-item">
-                        <img src="img/S/S1.jpg" alt="Cloakroom Image 1" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/S/S1.jpg" data-index="0">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="img/S/S1.jpg" alt="Cloakroom Image 1" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/S/S1.jpg" data-index="0">
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3 gallery-item">
-                        <img src="img/S/S2.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/S/S2.jpg" data-index="1">
+                    <div class="gallery-item">
+                        <img src="img/S/S2.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/S/S2.jpg" data-index="1">
                     </div>
                     <!-- 你可以根据需要添加更多 cloakroom 图片 -->
                 </div>
             </div>
         </div>
     </div>
-    </div>
 
-    <!-- 模态框 -->
+    <!-- 模态框保持不变 -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -531,7 +502,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center position-relative">
-                    <!-- 左右箭头 -->
                     <button class="carousel-control-prev" type="button" id="prevImage">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
@@ -545,72 +515,69 @@
             </div>
         </div>
     </div>
-    </div>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-</body>
-<script>
-    // 获取所有画廊图片
-    const galleryTabs = document.querySelectorAll('.nav-link');
-    const modalImage = document.getElementById('modalImage');
-    const prevButton = document.getElementById('prevImage');
-    const nextButton = document.getElementById('nextImage');
-    let currentIndex = 0;
-    let currentImages = [];
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    // 更新图片数据函数
-    function updateImageData(tabId) {
-        const activePane = document.querySelector(tabId);
-        currentImages = Array.from(activePane.querySelectorAll('.gallery-image')).map(image => ({
-            src: image.getAttribute('data-src'),
-            index: parseInt(image.getAttribute('data-index'))
-        }));
-    }
+    <script>
+        // 获取所有画廊图片
+        const galleryTabs = document.querySelectorAll('.nav-link');
+        const modalImage = document.getElementById('modalImage');
+        const prevButton = document.getElementById('prevImage');
+        const nextButton = document.getElementById('nextImage');
+        let currentIndex = 0;
+        let currentImages = [];
 
-    // 初始化默认选项卡的图片数据
-    updateImageData('#gallery');
-
-    // 点击图片时更新模态框
-    document.querySelectorAll('.gallery-image').forEach(image => {
-        image.addEventListener('click', function () {
-            const src = this.getAttribute('data-src');
-            currentIndex = parseInt(this.getAttribute('data-index'));
-            modalImage.src = src;
-        });
-    });
-
-    // 切换选项卡时更新图片数据
-    galleryTabs.forEach(tab => {
-        tab.addEventListener('shown.bs.tab', function (e) {
-            const targetTab = e.target.getAttribute('href');
-            updateImageData(targetTab);
-            currentIndex = 0; // 重置索引
-        });
-    });
-
-    // 上一张图片
-    prevButton.addEventListener('click', function () {
-        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-        modalImage.src = currentImages[currentIndex].src;
-    });
-
-    // 下一张图片
-    nextButton.addEventListener('click', function () {
-        currentIndex = (currentIndex + 1) % currentImages.length;
-        modalImage.src = currentImages[currentIndex].src;
-    });
-
-    // 键盘导航
-    document.addEventListener('keydown', function (event) {
-        if (event.key === 'ArrowLeft' && document.getElementById('imageModal').classList.contains('show')) {
-            prevButton.click();
-        } else if (event.key === 'ArrowRight' && document.getElementById('imageModal').classList.contains('show')) {
-            nextButton.click();
+        // 更新图片数据函数
+        function updateImageData(tabId) {
+            const activePane = document.querySelector(tabId);
+            currentImages = Array.from(activePane.querySelectorAll('.gallery-image')).map(image => ({
+                src: image.getAttribute('data-src'),
+                index: parseInt(image.getAttribute('data-index'))
+            }));
         }
-    });
-</script>
 
+        // 初始化默认选项卡的图片数据
+        updateImageData('#gallery');
+
+        // 点击图片时更新模态框
+        document.querySelectorAll('.gallery-image').forEach(image => {
+            image.addEventListener('click', function () {
+                const src = this.getAttribute('data-src');
+                currentIndex = parseInt(this.getAttribute('data-index'));
+                modalImage.src = src;
+            });
+        });
+
+        // 切换选项卡时更新图片数据
+        galleryTabs.forEach(tab => {
+            tab.addEventListener('shown.bs.tab', function (e) {
+                const targetTab = e.target.getAttribute('href');
+                updateImageData(targetTab);
+                currentIndex = 0; // 重置索引
+            });
+        });
+
+        // 上一张图片
+        prevButton.addEventListener('click', function () {
+            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+            modalImage.src = currentImages[currentIndex].src;
+        });
+
+        // 下一张图片
+        nextButton.addEventListener('click', function () {
+            currentIndex = (currentIndex + 1) % currentImages.length;
+            modalImage.src = currentImages[currentIndex].src;
+        });
+
+        // 键盘导航
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowLeft' && document.getElementById('imageModal').classList.contains('show')) {
+                prevButton.click();
+            } else if (event.key === 'ArrowRight' && document.getElementById('imageModal').classList.contains('show')) {
+                nextButton.click();
+            }
+        });
+    </script>
+</body>
 </html>
