@@ -1,879 +1,707 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSTEMY36NM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SSTEMY36NM');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>相関図 ドラッグ可能な手がかりボード</title>
-    <style>
-        /* 基础全局样式 */
-        body {
-            margin: 0;
-            position: relative;
-            min-height: 100vh;
-            min-width: 100vw;
-            font-family: 'Courier New', Arial, sans-serif;
-            /* overflow: hidden; */
-            overflow: auto;
-            /* 允许页面滚动 */
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        /* 背景图层 */
-        /* 合并重复的body::before */
-        body::before {
-            content: '';
-            background: url('img/bg_full.png') center/contain no-repeat fixed;
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            box-shadow: inset 0 0 15rem rgba(0, 0, 0, 0.6);
-            filter: blur(10px) brightness(0.9);
-            transition: filter 0.5s;
-            /* 移除重复属性 */
-        }
-
-
-        /* 加载完成状态 */
-        body.loaded::before {
-            filter: blur(0) !important;
-        }
-
-        /* 主画布容器 */
-        #board {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            overflow: visible;
-            pointer-events: none;
-            position: relative;
-            /* 改为相对定位 */
-            width: 150vw;
-            /* 扩展画布区域 */
-            height: 150vh;
-            min-width: 1000px;
-            /* 保持桌面端最小尺寸 */
-        }
-
-        /* 角色节点 */
-        .node {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            pointer-events: auto;
-            width: 160px;
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-            filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
-            z-index: 3;
-            touch-action: none;
-            /* 防止默认触摸行为 */
-        }
-
-        /* 证件照样式 */
-        .avatar {
-            width: 150px;
-            height: 200px;
-            border: 2px solid #ecf0f1;
-            background: url('img/default-avatar.png') top/cover;
-            border-radius: 3px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-            margin: 0 auto 10px;
-            display: block;
-        }
-
-        .avatar:hover {
-            transform: scale(1.05);
-        }
-
-        /* 文字标签 */
-        .label {
-            max-width: 150px;
-            padding: 8px;
-            color: #ecf0f1;
-            border-radius: 3px;
-            font-size: 12px;
-            line-height: 1.4;
-            word-break: break-word;
-            z-index: 3;
-            position: relative;
-            background: rgba(44, 62, 80, 0.8) !important;
-            /* 增强透明度 */
-            backdrop-filter: blur(2px);
-            /* 添加背景模糊 */
-        }
-
-
-        /* 关系连线 */
-        .relation-line {
-            stroke: #e74c3c !important;
-            /* 强制显示颜色 */
-            stroke-width: 2;
-            stroke-linecap: round;
-            fill: none;
-            marker-end: url(#arrowhead);
-            transition: all 0.3s ease-out;
-            z-index: 1 !important;
-        }
-
-        .dashed-line {
-            stroke-dasharray: 5;
-        }
-
-        /* SVG文字标签 */
-        #lines text {
-            fill: #ecf0f1; /* 保持文字颜色 */
-            font-family: 'MS Gothic', 'Courier New', monospace;
-            font-size: 13px;
-            text-anchor: middle;
-            dominant-baseline: middle;
-            pointer-events: none;
-            user-select: none;
-            z-index: 3;
-        }
-
-        /* 调整行间距 */
-        #lines tspan {
-            letter-spacing: 0.5px;
-        }
-
-        /* 修复标签背景 */
-        #lines rect {
-/*             fill: rgba(26, 34, 85, 0.9); */
-            fill:#1A2255;
-            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
-            z-index: 2;
-            rx: 5;
-        }
-
-        /* 移动端适配 */
-        @media (max-width: 768px) {
-
-            #board {
-                width: 200vw;
-                /* 移动端扩展更多空间 */
-                height: 200vh;
-            }
-
-            /* 移动端优化调整 */
-            .node {
-                transform: translate(-50%, -50%) !important;
-                will-change: transform;
-                width: 110px;
-                max-width: 25vw !important;
-            }
-
-            .avatar {
-                width: 100px;
-                height: 140px;
-                max-width: 28vw;
-                height: 37vw;
-            }
-
-            .label {
-                font-size: 10px;
-                padding: 4px;
-                line-height: 1.3;
-            }
-        }
-
-        /* 加载过渡动画 */
-        body:not(.loaded) .node {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.8);
-        }
-
-        body.loaded .node {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        /* 添加SVG文本样式 */
-
-
-        #lines tspan {
-            white-space: pre;
-            /* 保留换行符 */
-            letter-spacing: 0.05em;
-            /* 日文间距优化 */
-        }
-        /* 角色节点基础样式 */
-.node {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    pointer-events: auto;
-    width: 102px; /* 默认宽度为小尺寸角色 */
-    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
-    z-index: 3;
-    touch-action: none;
-}
-
-/* 大尺寸角色 (L 和 S) */
-.large-node {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    pointer-events: auto;
-    width: 153px; /* 大尺寸宽度 */
-    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
-    z-index: 3;
-    touch-action: none;
-}
-
-/* 默认尺寸的证件照 */
-.node .avatar {
-    width: 102px;
-    height: 133px;
-    border: 2px solid #ecf0f1;
-    background: url('img/default-avatar.png') top/cover;
-    border-radius: 3px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-    margin: 0 auto 10px;
-    display: block;
-}
-
-/* 大尺寸的证件照 */
-.large-node .avatar {
-    width: 153px;
-    height: 200px;
-    border: 2px solid #ecf0f1;
-    background: url('img/default-avatar.png') top/cover;
-    border-radius: 3px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-    margin: 0 auto 10px;
-    display: block;
-}
-
-.avatar:hover {
-    transform: scale(1.05);
-}
-
-/* 默认尺寸的角色介绍标签 */
-.node .label {
-    max-width: 102px;
-    padding: 8px;
-    color: #ecf0f1;
-    border-radius: 3px;
-    font-size: 12px;
-    line-height: 1.4;
-    word-break: break-word;
-    z-index: 3;
-    position: relative;
-    background: rgba(103, 109, 138, 0.8) !important; /* #676D8A with 0.8 opacity */
-    backdrop-filter: blur(2px);
-}
-
-/* 大尺寸的角色介绍标签 (L 和 S) */
-.large-node .label {
-    max-width: 153px;
-    padding: 8px;
-    color: #ecf0f1;
-    border-radius: 3px;
-    font-size: 12px;
-    line-height: 1.4;
-    word-break: break-word;
-    z-index: 3;
-    position: relative;
-    background: rgba(103, 109, 138, 0.8) !important; /* #676D8A with 0.8 opacity */
-    backdrop-filter: blur(2px);
-}
-
-/* 移动端适配 */
-@media (max-width: 768px) {
-    #board {
-        width: 200vw;
-        height: 200vh;
-    }
-
-    /* 默认尺寸移动端 */
-    .node {
-        transform: translate(-50%, -50%) !important;
-        will-change: transform;
-        width: 70px; /* 缩小比例 */
-        max-width: 25vw !important;
-    }
-
-    .node .avatar {
-        width: 70px;
-        height: 91px; /* 按比例缩小 */
-        max-width: 28vw;
-        height: 37vw;
-    }
-
-    .node .label {
-        max-width: 70px;
-        font-size: 10px;
-        padding: 4px;
-        line-height: 1.3;
-        background: rgba(103, 109, 138, 0.8) !important; /* 保持一致 */
-    }
-
-    /* 大尺寸移动端 */
-    .large-node {
-        transform: translate(-50%, -50%) !important;
-        will-change: transform;
-        width: 105px; /* 按比例缩小 */
-        max-width: 25vw !important;
-    }
-
-    .large-node .avatar {
-        width: 105px;
-        height: 137px; /* 按比例缩小 */
-        max-width: 28vw;
-        height: 37vw;
-    }
-
-    .large-node .label {
-        max-width: 105px;
-        font-size: 10px;
-        padding: 4px;
-        line-height: 1.3;
-        background: rgba(103, 109, 138, 0.8) !important; /* 保持一致 */
-    }
-        /* 关系标签在移动端调整 */
-        #lines text {
-        font-size: 12px; /* 移动端稍小一点，可调整 */
-    }
-}
-    </style>
-</head>
-
-<body>
-
-    <div id="board">
-        <svg id="lines" style="position: absolute; width: 100%; height: 100%">
-            <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
-                </marker>
-            </defs>
-        </svg>
-
-        <!-- 人物节点 -->
-        <div class="node large-node">
-            <div class="avatar" style="background-image: url('img/id-leopold.jpg')"></div>
-            <div class="label">
-                警視庁エリート
-                <br>見た目は16～17歳だが、実年齢不明。<br>
-                見た目は優れ、常に世を拗ねるような微笑を浮かべている。<br>
-                好き嫌いが激しく、享楽主義者でもあるが、細やかで優しい一面も持っている。<br>
-                落ち着き払った自信に満ちていて、自信かつ優雅な態度を保ち、性格は八方巧み。
-            </div>
-        </div>
-        <div class="node large-node">
-            <div class="avatar" style="background-image: url('img/id-severo.jpg')"></div>
-            <div class="label">
-                26歳、容疑者。<br>
-                憂いと苦悩、感傷に満ちた女性として偽装して登場する。<br>
-                
-            </div>
-        </div>
-
-        <div class="node">
-            <div class="avatar"></div>
-            <div class="label">J<br>
-                23歳、Lの養女<br>
-                警察庁高官を母に持つの刑事
-            </div>
-        </div>
-
-        <div class="node">
-            <div class="avatar"></div>
-            <div class="label">K<br>
-                Lの母親の隣人のパートナーの園芸師の姪（？<br>
-                18歳、Lの養女。Lが一番好き。<br>
-                Lへの想いが家族愛か恋愛か自分でもわからない。<br>
-                Lが最近ハマっている手作りスイーツ店に長蛇の列でも並びに行く<br></div>
-        </div>
-        <div class="node">
-            <div class="avatar"></div>
-            <div class="label">X<br>
-                連続殺人事件の真犯人
-                謎の人物
-                <br>
-            </div>
-        </div>
-        <!-- 5 -->
-        <div class="node">
-            <div class="avatar"></div>
-            <div class="label">
-                Y<br>
-                8月14日的死者<br>
-            </div>
-        </div>
-        <!-- 6 -->
-        <div class="node">
-            <div class="avatar"></div>
-            <div class="label">
-                真正的S<br>
-                外交官<br>
-                過去の事件でLと因縁がある<br>
-                第一印象は礼儀正しく、スイーツ作りに万能であり、
-                少しユーモアのある人物。
-            </div>
-        </div>
-    </div>
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SSTEMY36NM"
+    ></script>
     <script>
-        // 连线数据
-        const connections = [
-            {
-                from: 0,
-                to: 1,
-                label: "控えめな探求、飼養、優しくも支配的", // 使用\n换行
-                dashed: false
-            },
-            { from: 0, to: 2, label: "母女、師弟", dashed: true },
-            { from: 0, to: 3, label: "慈しむ、憐憫", dashed: false },
-            { from: 0, to: 4, label: "やり返す", dashed: true },
-            { from: 1, to: 4, label: "厭悪", dashed: true },
-            { from: 3, to: 4, label: "厭悪", dashed: true },
-            { from: 3, to: 2, label: "", dashed: false },
-            // 新增关系
-            { from: 0, to: 6, label: "過去の因縁", dashed: true },  // Leopold → Z
-            { from: 1, to: 6, label: "監視", dashed: true }        // Y → X
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-SSTEMY36NM");
+    </script>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <title>相関図 ドラッグ可能な手がかりボード</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Courier New", Arial, sans-serif;
+        overflow: auto;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        position: relative;
+        background: #f0f0f0;
+      }
+
+      body::before {
+        content: "";
+        background: url("img/bg_full.png") center/contain no-repeat fixed;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        box-shadow: inset 0 0 15rem rgba(0, 0, 0, 0.6);
+        filter: blur(10px); /* 移除 brightness，恢复原始亮度 */
+        transition: filter 0.5s;
+      }
+
+      body.loaded::before {
+        filter: blur(0) !important; /* 移除 brightness */
+      }
+
+      #board {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        pointer-events: none;
+        padding: 15px;
+      }
+
+      #lines {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .node,
+      .large-node {
+        position: absolute;
+        transform: translate(-50%, -50%); /* 恢复标准 transform */
+        pointer-events: auto;
+        transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+        z-index: 3;
+        touch-action: none;
+      }
+
+      .node .avatar,
+      .large-node .avatar {
+        border: 2px solid #ecf0f1;
+        background: url("img/default-avatar.png") top/cover no-repeat;
+        border-radius: 3px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+        margin: 0 auto 8px;
+        display: block;
+      }
+
+      .node .label,
+      .large-node .label {
+        padding: 6px;
+        color: #ecf0f1;
+        border-radius: 3px;
+        line-height: 1.4;
+        word-break: break-word;
+        background: rgba(103, 109, 138, 0.8);
+        backdrop-filter: blur(2px);
+        margin-top: 8px; /* 确保 label 在 avatar 下方 */
+      }
+
+      .relation-line {
+        stroke: #e74c3c;
+        stroke-width: 2;
+        stroke-linecap: round;
+        fill: none;
+        marker-end: url(#arrowhead);
+        transition: all 0.3s ease-out;
+      }
+
+      .dashed-line {
+        stroke-dasharray: 5;
+      }
+
+      #lines text {
+        fill: #ecf0f1;
+        font-family: "MS Gothic", "Courier New", monospace;
+        text-anchor: middle;
+        dominant-baseline: middle;
+        pointer-events: none;
+      }
+
+      #lines tspan {
+        white-space: pre;
+        letter-spacing: 0.05em;
+      }
+
+      #lines rect {
+        fill: rgba(26, 34, 85, 0.9);
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+        z-index: 2;
+      }
+
+      body:not(.loaded) .node,
+      body:not(.loaded) .large-node {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+
+      body.loaded .node,
+      body.loaded .large-node {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      @media (min-width: 992px) {
+        .node {
+          width: 102px;
+        }
+        .node .avatar {
+          width: 102px;
+          height: 133px;
+        }
+        .node .label {
+          max-width: 102px;
+          font-size: 12px;
+        }
+        .large-node {
+          width: 153px;
+        }
+        .large-node .avatar {
+          width: 153px;
+          height: 200px;
+        }
+        .large-node .label {
+          max-width: 153px;
+          font-size: 12px;
+        }
+        #lines text {
+          font-size: 14px;
+        }
+        #lines rect {
+          rx: 5;
+        }
+      }
+
+      @media (max-width: 991px) and (min-width: 577px) {
+        .node {
+          width: 80px;
+        }
+        .node .avatar {
+          width: 80px;
+          height: 104px;
+        }
+        .node .label {
+          max-width: 80px;
+          font-size: 10px;
+        }
+        .large-node {
+          width: 120px;
+        }
+        .large-node .avatar {
+          width: 120px;
+          height: 156px;
+        }
+        .large-node .label {
+          max-width: 120px;
+          font-size: 11px;
+        }
+        #lines text {
+          font-size: 12px;
+        }
+        #lines rect {
+          rx: 4;
+        }
+      }
+
+      @media (max-width: 576px) {
+        #board {
+          padding: 10px;
+        }
+        .node {
+          width: 60px;
+        }
+        .node .avatar {
+          width: 60px;
+          height: 78px;
+        }
+        .node .label {
+          max-width: 60px;
+          font-size: 8px;
+          padding: 4px;
+        }
+        .large-node {
+          width: 90px;
+        }
+        .large-node .avatar {
+          width: 90px;
+          height: 117px;
+        }
+        .large-node .label {
+          max-width: 90px;
+          font-size: 9px;
+          padding: 4px;
+        }
+        #lines text {
+          font-size: 10px;
+        }
+        #lines rect {
+          rx: 3;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="board" class="container-fluid">
+      <svg id="lines">
+        <defs>
+          <marker
+            id="arrowhead"
+            markerWidth="10"
+            markerHeight="7"
+            refX="9"
+            refY="3.5"
+            orient="auto"
+          >
+            <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
+          </marker>
+        </defs>
+      </svg>
+
+      <div class="row justify-content-center g-2">
+        <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
+          <div
+            class="avatar"
+            style="background-image: url('img/id-leopold.jpg')"
+          ></div>
+          <div class="label">
+            警視庁エリート<br />見た目は16～17歳だが、実年齢不明。<br />
+            見た目は優れ、常に世を拗ねるような微笑を浮かべている。<br />
+            好き嫌いが激しく、享楽主義者でもあるが、細やかで優しい一面も持っている。<br />
+            落ち着き払った自信に満ちていて、自信かつ優雅な態度を保ち、性格は八方巧み。
+          </div>
+        </div>
+        <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
+          <div
+            class="avatar"
+            style="background-image: url('img/id-severo.jpg')"
+          ></div>
+          <div class="label">
+            26歳、容疑者。<br />
+            憂いと苦悩、感傷に満ちた女性として偽装して登場する。<br />
+            第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。
+          </div>
+        </div>
+        <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+          <div class="avatar"></div>
+          <div class="label">
+            J<br />23歳、Lの養女<br />警察庁高官を母に持つの刑事
+          </div>
+        </div>
+        <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+          <div class="avatar"></div>
+          <div class="label">
+            K<br />Lの母親の隣人のパートナーの園芸師の姪（？<br />
+            18歳、Lの養女。Lが一番好き。<br />
+            Lへの想いが家族愛か恋愛か自分でもわからない。<br />
+            Lが最近ハマっている手作りスイーツ店に長蛇の列でも並びに行く
+          </div>
+        </div>
+        <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+          <div class="avatar"></div>
+          <div class="label">X<br />連続殺人事件の真犯人 謎の人物</div>
+        </div>
+        <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+          <div class="avatar"></div>
+          <div class="label">Y<br />8月14日的死者</div>
+        </div>
+        <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+          <div class="avatar"></div>
+          <div class="label">
+            真正的S<br />外交官<br />過去の事件でLと因縁がある<br />
+            第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--    0 [0, 0],      // Leopold
+   1 [2, 0.4],    // Severo
+   2 [-2.3, 0.5], // Jin
+   3 [-1.4, -0.5],// ji
+   4 [2.6, -1],   // X
+   5 [-1.0, 1.5], // Y
+   6 [1, 1.5]     // ZS -->
+
+    <script>
+      const connections = [
+        {
+          from: 0,
+          to: 1,
+          label: "控えめな探求、飼養",
+          dashed: false,
+        },
+        { from: 0, to: 2, label: "有意培养为继承人", dashed: true },
+        { from: 0, to: 3, label: "慈しむ、憐憫", dashed: false },
+        { from: 0, to: 4, label: "やり返す", dashed: true },
+        { from: 1, to: 4, label: "厭悪", dashed: true },
+        { from: 0, to: 6, label: "過去の因縁", dashed: true },
+        { from: 1, to: 6, label: "杀害、取代", dashed: true },
+      ];
+
+      const state = {
+        dragging: false,
+        nodes: [],
+        resizeTimer: null,
+      };
+
+      function initLayout() {
+        const board = document.getElementById("board");
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = Math.max(
+          document.documentElement.clientHeight,
+          window.innerHeight || 0
+        );
+        const boardHeight = Math.max(board.scrollHeight, viewportHeight);
+        const isMobile = viewportWidth <= 576;
+        const baseRadius = isMobile
+          ? Math.min(viewportWidth, viewportHeight) * 0.4
+          : Math.min(viewportWidth, viewportHeight) * 0.25;
+
+        const positions = [
+          [0, 0.5], // Leopold
+          [1.6, 0.9], // Severo
+          [-1.0, 1.2], // J
+          [-1.4, -0.5], // j
+          [2.6, -1], // X
+          [-2.3, 0.5], // Y
+          [1.2, -0.8], // ZS
         ];
 
-        // 系统状态管理
-        const state = {
-            dragging: false,
-            nodes: [],
-            resizeTimer: null
+        state.nodes.forEach((node, index) => {
+          const avatar = node.querySelector(".avatar"); // 获取头像元素
+          const [dx, dy] = positions[index];
+          const x = viewportWidth / 2 + dx * baseRadius;
+          const y = boardHeight / 2 + dy * baseRadius;
+          Object.assign(node.style, {
+            left: `${x}px`,
+            top: `${y}px`,
+            transform: "translate(-50%, -50%)", // 恢复标准的 transform
+            transition: state.dragging
+              ? "none"
+              : "all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
+          });
+        });
+
+        board.style.minHeight = `${boardHeight}px`;
+        document
+          .getElementById("lines")
+          .setAttribute("viewBox", `0 0 ${viewportWidth} ${boardHeight}`);
+      }
+
+      function drawLines() {
+        const svg = document.getElementById("lines");
+        const defs = svg.querySelector("defs");
+        svg.innerHTML = "";
+        svg.appendChild(defs);
+
+        connections.forEach((conn) => {
+          if (conn.from >= state.nodes.length || conn.to >= state.nodes.length)
+            return;
+
+          const fromNode = state.nodes[conn.from];
+          const toNode = state.nodes[conn.to];
+          const fromAvatar = fromNode.querySelector(".avatar"); // 获取头像元素
+          const toAvatar = toNode.querySelector(".avatar"); // 获取头像元素
+          const fromRect = fromAvatar.getBoundingClientRect(); // 使用头像的边界框
+          const toRect = toAvatar.getBoundingClientRect(); // 使用头像的边界框
+          const boardRect = document
+            .getElementById("board")
+            .getBoundingClientRect();
+
+          const start = {
+            x: fromRect.left + fromRect.width / 2 - boardRect.left,
+            y: fromRect.top + fromRect.height / 2 - boardRect.top,
+          };
+          const end = {
+            x: toRect.left + toRect.width / 2 - boardRect.left,
+            y: toRect.top + toRect.height / 2 - boardRect.top,
+          };
+
+          const path = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "path"
+          );
+          path.classList.add("relation-line");
+          if (conn.dashed) path.classList.add("dashed-line");
+
+          const isReverse = connections.some(
+            (c) =>
+              c.from === conn.to && c.to === conn.from && c.label !== conn.label
+          );
+
+          if (isReverse) {
+            const curvature = 0.3;
+            const ctrl = {
+              x: (start.x + end.x) / 2 + curvature * (end.y - start.y),
+              y: (start.y + end.y) / 2 + curvature * (start.x - end.x),
+            };
+            path.setAttribute(
+              "d",
+              `M ${start.x} ${start.y} Q ${ctrl.x} ${ctrl.y} ${end.x} ${end.y}`
+            );
+          } else {
+            path.setAttribute(
+              "d",
+              `M ${start.x} ${start.y} L ${end.x} ${end.y}`
+            );
+          }
+
+          const textGroup = createConnectionLabel(
+            conn.label,
+            start,
+            end,
+            isReverse
+          );
+          svg.appendChild(path);
+          svg.appendChild(textGroup);
+        });
+      }
+
+      function createConnectionLabel(text, start, end, isCurve) {
+        const group = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "g"
+        );
+        const padding = 6;
+
+        const lines = text.split(/[、\n]/);
+        const angle = Math.atan2(end.y - start.y, end.x - start.x);
+        const labelPos = {
+          x: (start.x + end.x) / 2 + Math.cos(angle) * (isCurve ? 10 : 0),
+          y: (start.y + end.y) / 2 + Math.sin(angle) * (isCurve ? 10 : -5),
         };
 
-        // 初始化布局
-        // 修改初始化布局函数
-        function initLayout() {
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-            const isMobile = viewportWidth <= 768;
+        const textEl = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "text"
+        );
+        textEl.setAttribute("x", labelPos.x);
+        textEl.setAttribute("y", labelPos.y);
+        textEl.setAttribute("text-anchor", "middle");
+        textEl.setAttribute("dominant-baseline", "middle");
+        textEl.setAttribute("fill", "#ecf0f1");
+        textEl.setAttribute(
+          "font-size",
+          window.innerWidth <= 576 ? "10px" : "14px"
+        );
 
-            // 调试信息
-            console.log(`Viewport: ${viewportWidth}x${viewportHeight}`);
-            console.log(`Is Mobile: ${isMobile}`);
+        lines.forEach((line, index) => {
+          if (!line) return;
+          const tspan = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "tspan"
+          );
+          tspan.setAttribute("x", labelPos.x);
+          tspan.setAttribute("dy", index === 0 ? "0" : "1.2em");
+          tspan.textContent = line;
+          textEl.appendChild(tspan);
+        });
 
-            // 动态半径计算
-            const baseRadius = isMobile
-                ? Math.min(viewportWidth, viewportHeight) * 0.15
-                : Math.min(viewportWidth, viewportHeight) * 0.25;
+        const tempSvg = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "svg"
+        );
+        tempSvg.style.position = "absolute";
+        tempSvg.style.visibility = "hidden";
+        document.body.appendChild(tempSvg);
+        tempSvg.appendChild(textEl);
+        const bbox = textEl.getBBox();
+        document.body.removeChild(tempSvg);
 
-            // 调试信息
-            console.log(`Base Radius: ${baseRadius}`);
+        const rect = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "rect"
+        );
+        rect.setAttribute("x", bbox.x - padding);
+        rect.setAttribute("y", bbox.y - padding);
+        rect.setAttribute("width", bbox.width + padding * 2);
+        rect.setAttribute("height", bbox.height + padding * 2);
+        rect.setAttribute("fill", "rgba(26, 34, 85, 0.9)");
+        rect.setAttribute("rx", window.innerWidth <= 576 ? "3" : "5");
 
-            // 统一坐标系统
-            const positions = [
-                [0, 0.3],      // Leopold (中心)
-                [2, 0.4],    // Severo
-                [-2.3, 0.5],   // J
-                [-1.4, -0.5],  // K
-                [2.6, -1],    // X
-                [-1.0, 1.5],   // Y (新角色1)
-                [1, 1.5]   // ZS
-            ];
+        group.appendChild(rect);
+        group.appendChild(textEl);
+        return group;
+      }
 
-            state.nodes.forEach((node, index) => {
-                const [dx, dy] = positions[index];
+      function initDragSystem() {
+        let dragInfo = null;
 
-                // 调试信息
-                console.log(`Node ${index} Position: [${dx}, ${dy}]`);
+        state.nodes.forEach((node) => {
+          node.addEventListener("mousedown", startDrag);
+          node.addEventListener(
+            "touchstart",
+            (e) => {
+              e.preventDefault();
+              startDrag(e.touches[0]);
+            },
+            { passive: false }
+          );
+        });
 
-                // 统一坐标计算公式
-                const x = viewportWidth / 2 + dx * baseRadius;
-                const y = viewportHeight / 2 + dy * baseRadius;
+        function startDrag(e) {
+          state.dragging = true;
+          const targetNode = e.target.closest(".node, .large-node");
+          const rect = targetNode.getBoundingClientRect();
+          dragInfo = {
+            node: targetNode,
+            offsetX: e.clientX - rect.left,
+            offsetY: e.clientY - rect.top,
+          };
 
-                // 调试信息
-                console.log(`Node ${index} Calculated Position: [${x}, ${y}]`);
-
-                Object.assign(node.style, {
-                    left: `${x}px`,
-                    top: `${y}px`,
-                    transition: state.dragging ? 'none' : 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)'
-                });
-            });
-
-            // 调试信息
-            console.log('Layout initialized');
+          document.addEventListener("mousemove", onDrag);
+          document.addEventListener("mouseup", onDragEnd);
+          document.addEventListener("touchmove", onTouchDrag, {
+            passive: false,
+          });
+          document.addEventListener("touchend", onDragEnd);
         }
 
-        // 修改初始化流程
-        function initialize() {
-            // 确保节点正确获取
-            state.nodes = Array.from(document.querySelectorAll('.node'));
-            if (state.nodes.length === 0) {
-                console.error('No nodes found!');
-                return;
-            }
+        function onDrag(e) {
+          updatePosition(e.clientX, e.clientY);
+        }
 
-            // 调试信息
-            console.log(`Found ${state.nodes.length} nodes`);
+        function onTouchDrag(e) {
+          e.preventDefault();
+          updatePosition(e.touches[0].clientX, e.touches[0].clientY);
+        }
 
-            // 强制清除残留样式
-            state.nodes.forEach(node => {
-                node.style.removeProperty('left');
-                node.style.removeProperty('top');
-            });
+        function updatePosition(clientX, clientY) {
+          if (!dragInfo) return;
+          const { node, offsetX, offsetY } = dragInfo;
+          const avatar = node.querySelector(".avatar"); // 获取头像元素
+          const boardRect = document
+            .getElementById("board")
+            .getBoundingClientRect();
+          const newX = clientX - offsetX - boardRect.left;
+          const newY = clientY - offsetY - boardRect.top;
 
-            // 主初始化流程
+          const viewportWidth = window.innerWidth;
+          const viewportHeight = Math.max(
+            document.documentElement.clientHeight,
+            window.innerHeight || 0
+          );
+          const avatarWidth = avatar.offsetWidth;
+          const avatarHeight = avatar.offsetHeight;
+
+          const boundedX = Math.max(
+            avatarWidth / 2,
+            Math.min(newX, viewportWidth - avatarWidth / 2 - boardRect.left)
+          );
+          const boundedY = Math.max(
+            avatarHeight / 2,
+            Math.min(newY, viewportHeight - avatarHeight / 2)
+          );
+
+          Object.assign(node.style, {
+            left: `${boundedX}px`,
+            top: `${boundedY}px`,
+            transform: "translate(-50%, -50%)", // 保持标准的 transform
+            transition: "none",
+          });
+
+          requestAnimationFrame(drawLines);
+        }
+
+        function onDragEnd() {
+          state.dragging = false;
+          dragInfo = null;
+          document.removeEventListener("mousemove", onDrag);
+          document.removeEventListener("mouseup", onDragEnd);
+          document.removeEventListener("touchmove", onTouchDrag);
+          document.removeEventListener("touchend", onDragEnd);
+        }
+      }
+
+      function initResponsive() {
+        window.addEventListener("resize", () => {
+          clearTimeout(state.resizeTimer);
+          state.resizeTimer = setTimeout(() => {
             initLayout();
-            initDragSystem();
-            initResponsive();
             drawLines();
-
-            // 调试信息
-            console.log('Initialization completed');
-        }
-        // 连线绘制
-        // 修改drawLines函数
-        function drawLines() {
-            const svg = document.getElementById('lines');
-            svg.innerHTML = '';
-
-            connections.forEach(conn => {
-                // 校验连接有效性
-                if (conn.from >= state.nodes.length || conn.to >= state.nodes.length) {
-                    console.error(`无效连接索引：${conn.from}→${conn.to}`);
-                    return;
-                }
-
-                // 获取实际坐标（考虑滚动位置）
-                const fromRect = state.nodes[conn.from].getBoundingClientRect();
-                const toRect = state.nodes[conn.to].getBoundingClientRect();
-
-                const start = {
-                    x: fromRect.left + fromRect.width / 2 + window.scrollX,
-                    y: fromRect.top + fromRect.height / 2 + window.scrollY
-                };
-                const end = {
-                    x: toRect.left + toRect.width / 2 + window.scrollX,
-                    y: toRect.top + toRect.height / 2 + window.scrollY
-                };
-
-                // 创建路径
-                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path.classList.add('relation-line');
-                if (conn.dashed) path.classList.add('dashed-line');
-
-                // 智能曲线检测
-                const isReverse = connections.some(c =>
-                    c.from === conn.to && c.to === conn.from &&
-                    c.label !== conn.label // 防止相同标签干扰
-                );
-
-                if (isReverse) {
-                    const curvature = 0.3;
-                    const ctrl = {
-                        x: (start.x + end.x) / 2 + curvature * (end.y - start.y),
-                        y: (start.y + end.y) / 2 + curvature * (start.x - end.x)
-                    };
-                    path.setAttribute('d', `M ${start.x} ${start.y} Q ${ctrl.x} ${ctrl.y} ${end.x} ${end.y}`);
-                } else {
-                    path.setAttribute('d', `M ${start.x} ${start.y} L ${end.x} ${end.y}`);
-                }
-
-                // 创建标签组（修复z-index问题）
-                const textGroup = createConnectionLabel(conn.label, start, end, isReverse);
-
-                // 添加顺序：先线后字
-                svg.appendChild(path);
-                svg.appendChild(textGroup);
-            });
-        }
-        // 创建连线标签
-        // 修复布局问题（十字形布局）
-        // 增强连线绘制功能
-        function createConnectionLabel(text, start, end, isCurve) {
-    const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    const padding = 8; // 从 4 增加到 8，增加文字与背景框的间距
-    const lineHeight = 18;
-
-    // 拆分多行文本
-    const lines = text.split(/[、\n]/);
-
-    // 计算标签位置
-    const angle = Math.atan2(end.y - start.y, end.x - start.x);
-    const labelPos = {
-        x: (start.x + end.x) / 2 + Math.cos(angle) * (isCurve ? 15 : 0),
-        y: (start.y + end.y) / 2 + Math.sin(angle) * (isCurve ? 15 : -5)
-    };
-
-    // 创建文本容器
-    const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    textEl.setAttribute('x', labelPos.x);
-    textEl.setAttribute('y', labelPos.y);
-    textEl.setAttribute('text-anchor', 'middle');
-    textEl.setAttribute('dominant-baseline', 'middle');
-    textEl.setAttribute('fill', '#ecf0f1');
-    textEl.setAttribute('font-size', '13px');
-
-    // 添加多行 tspan
-    lines.forEach((line, index) => {
-        if (!line) return;
-        const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
-        tspan.setAttribute('x', labelPos.x);
-        tspan.setAttribute('dy', index === 0 ? '0' : '1.2em');
-        tspan.textContent = line;
-        textEl.appendChild(tspan);
-    });
-
-    // 临时添加到文档以计算尺寸
-    const tempContainer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    document.body.appendChild(tempContainer);
-    tempContainer.appendChild(textEl);
-
-    const bbox = textEl.getBBox();
-    document.body.removeChild(tempContainer);
-
-    // 创建背景框
-    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    rect.setAttribute('x', bbox.x - padding); // 增加 padding
-    rect.setAttribute('y', bbox.y - padding);
-    rect.setAttribute('width', bbox.width + padding * 2);
-    rect.setAttribute('height', bbox.height + padding * 2);
-    rect.setAttribute('fill', 'rgba(26, 34, 85, 0.9)');
-    rect.setAttribute('rx', '5'); // 增大圆角，与 CSS 一致
-    rect.setAttribute('stroke', '#2c3e50');
-    rect.setAttribute('stroke-width', '1');
-
-    // 确保层级顺序：先背景后文字
-    group.appendChild(rect);
-    group.appendChild(textEl);
-
-    return group;
-}
-        // 拖拽系统
-        function initDragSystem() {
-            let dragInfo = null;
-
-            document.querySelectorAll('.node').forEach(node => {
-                // 鼠标事件
-                node.addEventListener('mousedown', startDrag);
-                // 触摸事件
-                node.addEventListener('touchstart', e => {
-                    e.preventDefault();
-                    startDrag(e.touches[0]);
-                });
-            });
-
-            function startDrag(e) {
-                state.dragging = true;
-                const rect = e.target.closest('.node').getBoundingClientRect();
-                dragInfo = {
-                    node: e.target.closest('.node'),
-                    offsetX: e.clientX - rect.left,
-                    offsetY: e.clientY - rect.top
-                };
-
-                // 添加事件监听
-                document.addEventListener('mousemove', onDrag);
-                document.addEventListener('mouseup', onDragEnd);
-                document.addEventListener('touchmove', onTouchDrag, { passive: false });
-                document.addEventListener('touchend', onDragEnd);
-            }
-
-            function onDrag(e) {
-                updatePosition(e.clientX, e.clientY);
-            }
-
-            function onTouchDrag(e) {
-                e.preventDefault();
-                updatePosition(e.touches[0].clientX, e.touches[0].clientY);
-            }
-
-            function updatePosition(clientX, clientY) {
-                if (!dragInfo) return;
-
-                const { node, offsetX, offsetY } = dragInfo;
-                const newX = clientX - offsetX;
-                const newY = clientY - offsetY;
-
-                // 边界检查
-                const viewportWidth = window.innerWidth;
-                const viewportHeight = window.innerHeight;
-                const nodeWidth = node.offsetWidth;
-                const nodeHeight = node.offsetHeight;
-
-                const boundedX = Math.max(nodeWidth / 2, Math.min(newX, viewportWidth - nodeWidth / 2));
-                const boundedY = Math.max(nodeHeight / 2, Math.min(newY, viewportHeight - nodeHeight / 2));
-
-                Object.assign(node.style, {
-                    left: `${boundedX}px`,
-                    top: `${boundedY}px`,
-                    transition: 'none'
-                });
-
-                requestAnimationFrame(drawLines);
-            }
-
-            function onDragEnd() {
-                state.dragging = false;
-                dragInfo = null;
-                // 移除所有事件监听
-                document.removeEventListener('mousemove', onDrag);
-                document.removeEventListener('mouseup', onDragEnd);
-                document.removeEventListener('touchmove', onTouchDrag);
-                document.removeEventListener('touchend', onDragEnd);
-            }
-        }
-        // 自适应系统
-        function initResponsive() {
-            window.addEventListener('resize', () => {
-                clearTimeout(state.resizeTimer);
-                state.resizeTimer = setTimeout(() => {
-                    initLayout();
-                    drawLines();
-                }, 200);
-            });
-        }
-        // 增强版初始化函数
-        function initialize() {
-            // 验证节点存在
-            state.nodes = Array.from(document.querySelectorAll('.node'));
-            if (state.nodes.length === 0) {
-                console.error('未找到任何角色节点!');
-                return;
-            }
-
-            // 强制清晰化机制
-            const forceClear = () => {
-                document.body.classList.add('loaded');
-                console.log('强制清晰化已触发');
-            };
-
-            // 图片加载监控
-            const bgImage = new Image();
-            bgImage.src = 'img/bg_full.png';
-
-            bgImage.onload = () => {
-                console.log('背景图加载成功');
-                document.body.classList.add('loaded');
-            };
-
-            bgImage.onerror = (e) => {
-                console.error('背景图加载失败:', e);
-                forceClear();
-            };
-
-            // 主初始化流程
-            try {
-                initLayout();
-                initDragSystem();
-                initResponsive();
-                drawLines();
-                console.log('系统初始化完成');
-            } catch (error) {
-                console.error('初始化过程中发生错误:', error);
-                forceClear();
-            }
-
-            // 最终保障
-            setTimeout(forceClear, 3000);
-        }
-
-        // 单一入口的加载监听
-        window.addEventListener('load', () => {
-            console.log('窗口load事件触发');
-            initialize();
+          }, 200);
         });
-        // 添加触摸事件支持在移动设备上正常使用
-        node.addEventListener('touchstart', e => {
-            e.preventDefault();
-            const touch = e.touches[0];
-            // ...类似鼠标事件的逻辑
-        });
+      }
+
+      function initialize() {
+        state.nodes = Array.from(
+          document.querySelectorAll(".node, .large-node")
+        );
+        if (state.nodes.length === 0) return;
+
+        const bgImage = new Image();
+        bgImage.src = "img/bg_full.png";
+        bgImage.onload = () => document.body.classList.add("loaded");
+        bgImage.onerror = () => document.body.classList.add("loaded");
+
+        initLayout();
+        initDragSystem();
+        initResponsive();
+        drawLines();
+        setTimeout(() => document.body.classList.add("loaded"), 3000);
+      }
+
+      window.addEventListener("load", initialize);
     </script>
     <script type="module">
-        // 导入 Firebase SDK
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        serverTimestamp,
+      } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
 
-        // Firebase 配置
-        const firebaseConfig = {
-            apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
-            authDomain: "fangkeshuju.firebaseapp.com",
-            projectId: "fangkeshuju",
-            storageBucket: "fangkeshuju.firebasestorage.app",
-            messagingSenderId: "1043722790851",
-            appId: "1:1043722790851:web:01cca5afff820eb202ff76",
-            measurementId: "G-MGC7KEWX53"
-        };
+      const firebaseConfig = {
+        apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
+        authDomain: "fangkeshuju.firebaseapp.com",
+        projectId: "fangkeshuju",
+        storageBucket: "fangkeshuju.firebasestorage.app",
+        messagingSenderId: "1043722790851",
+        appId: "1:1043722790851:web:01cca5afff820eb202ff76",
+        measurementId: "G-MGC7KEWX53",
+      };
 
-        // 初始化 Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const db = getFirestore(app);
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
 
-        // 记录页面访问事件并保存到 Firestore
-        async function logPageView() {
-            try {
-                await addDoc(collection(db, 'page_views'), {
-                    page_title: document.title,
-                    page_location: window.location.href,
-                    page_path: window.location.pathname,
-                    timestamp: serverTimestamp()
-                });
-                console.log('Page view saved to Firestore');
-            } catch (error) {
-                console.error('Error saving page view: ', error);
-            }
+      async function logPageView() {
+        try {
+          await addDoc(collection(db, "page_views"), {
+            page_title: document.title,
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+            timestamp: serverTimestamp(),
+          });
+          console.log("Page view logged successfully");
+        } catch (error) {
+          console.error("Error saving page view: ", error);
         }
+      }
 
-        // 调用函数
-        logPageView();
-
-        // 追踪图片查看行为
-        const images = document.querySelectorAll('img.trackable');
-        images.forEach(img => {
-            let startTime = null;
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        startTime = Date.now();
-                    } else if (startTime) {
-                        const duration = (Date.now() - startTime) / 1000;
-                        saveImageView(img.src, duration);
-                        startTime = null;
-                    }
-                });
-            });
-
-            observer.observe(img);
-        });
-
-        // 保存图片查看行为到 Firestore
-        async function saveImageView(imageSrc, duration) {
-            try {
-                await addDoc(collection(db, 'image_views'), {
-                    image_src: imageSrc,
-                    view_duration: duration,
-                    timestamp: serverTimestamp()
-                });
-                console.log('Image view saved to Firestore');
-            } catch (error) {
-                console.error('Error saving image view: ', error);
-            }
-        }
+      logPageView();
     </script>
-</body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W78LXJT"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  <noscript
+    ><iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-5W78LXJT"
+      height="0"
+      width="0"
+      style="display: none; visibility: hidden"
+    ></iframe
+  ></noscript>
 </html>
