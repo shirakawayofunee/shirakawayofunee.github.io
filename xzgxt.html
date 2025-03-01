@@ -209,6 +209,141 @@
             letter-spacing: 0.05em;
             /* 日文间距优化 */
         }
+        /* 角色节点基础样式 */
+.node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+    width: 102px; /* 默认宽度为小尺寸角色 */
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+    z-index: 3;
+    touch-action: none;
+}
+
+/* 大尺寸角色 (L 和 S) */
+.large-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+    width: 153px; /* 大尺寸宽度 */
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+    z-index: 3;
+    touch-action: none;
+}
+
+/* 默认尺寸的证件照 */
+.node .avatar {
+    width: 102px;
+    height: 133px;
+    border: 2px solid #ecf0f1;
+    background: url('img/default-avatar.png') top/cover;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+/* 大尺寸的证件照 */
+.large-node .avatar {
+    width: 153px;
+    height: 200px;
+    border: 2px solid #ecf0f1;
+    background: url('img/default-avatar.png') top/cover;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+/* 默认尺寸的文字标签 */
+.node .label {
+    max-width: 102px; /* 与默认尺寸匹配 */
+    padding: 8px;
+    color: #ecf0f1;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 1.4;
+    word-break: break-word;
+    z-index: 3;
+    position: relative;
+    background: rgba(44, 62, 80, 0.8) !important;
+    backdrop-filter: blur(2px);
+}
+
+/* 大尺寸的文字标签 */
+.large-node .label {
+    max-width: 153px; /* 与大尺寸匹配 */
+    padding: 8px;
+    color: #ecf0f1;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 1.4;
+    word-break: break-word;
+    z-index: 3;
+    position: relative;
+    background: rgba(44, 62, 80, 0.8) !important;
+    backdrop-filter: blur(2px);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    #board {
+        width: 200vw;
+        height: 200vh;
+    }
+
+    /* 默认尺寸移动端 */
+    .node {
+        transform: translate(-50%, -50%) !important;
+        will-change: transform;
+        width: 70px; /* 缩小比例 */
+        max-width: 25vw !important;
+    }
+
+    .node .avatar {
+        width: 70px;
+        height: 91px; /* 按比例缩小 */
+        max-width: 28vw;
+        height: 37vw;
+    }
+
+    .node .label {
+        max-width: 70px;
+        font-size: 10px;
+        padding: 4px;
+        line-height: 1.3;
+    }
+
+    /* 大尺寸移动端 */
+    .large-node {
+        transform: translate(-50%, -50%) !important;
+        will-change: transform;
+        width: 105px; /* 按比例缩小 */
+        max-width: 25vw !important;
+    }
+
+    .large-node .avatar {
+        width: 105px;
+        height: 137px; /* 按比例缩小 */
+        max-width: 28vw;
+        height: 37vw;
+    }
+
+    .large-node .label {
+        max-width: 105px;
+        font-size: 10px;
+        padding: 4px;
+        line-height: 1.3;
+    }
+}
     </style>
 </head>
 
@@ -224,7 +359,7 @@
         </svg>
 
         <!-- 人物节点 -->
-        <div class="node">
+        <div class="node large-node">
             <div class="avatar" style="background-image: url('img/id-leopold.jpg')"></div>
             <div class="label">
                 警視庁エリート
@@ -234,12 +369,12 @@
                 落ち着き払った自信に満ちていて、自信かつ優雅な態度を保ち、性格は八方巧み。
             </div>
         </div>
-        <div class="node">
+        <div class="node large-node">
             <div class="avatar" style="background-image: url('img/id-severo.jpg')"></div>
             <div class="label">
                 26歳、容疑者。<br>
                 憂いと苦悩、感傷に満ちた女性として偽装して登場する。<br>
-                第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。
+                
             </div>
         </div>
 
@@ -263,7 +398,27 @@
             <div class="avatar"></div>
             <div class="label">X<br>
                 連続殺人事件の真犯人
+                謎の人物
                 <br>
+            </div>
+        </div>
+        <!-- 5 -->
+        <div class="node">
+            <div class="avatar"></div>
+            <div class="label">
+                Y<br>
+                8月14日的死者<br>
+            </div>
+        </div>
+        <!-- 6 -->
+        <div class="node">
+            <div class="avatar"></div>
+            <div class="label">
+                真正的S<br>
+                外交官<br>
+                過去の事件でLと因縁がある<br>
+                第一印象は礼儀正しく、スイーツ作りに万能であり、
+                少しユーモアのある人物。
             </div>
         </div>
     </div>
@@ -282,6 +437,9 @@
             { from: 1, to: 4, label: "厭悪", dashed: true },
             { from: 3, to: 4, label: "厭悪", dashed: true },
             { from: 3, to: 2, label: "", dashed: false },
+            // 新增关系
+            { from: 0, to: 6, label: "過去の因縁", dashed: true },  // Leopold → Z
+            { from: 1, to: 6, label: "監視", dashed: true }        // Y → X
         ];
 
         // 系统状态管理
@@ -312,11 +470,13 @@
 
             // 统一坐标系统
             const positions = [
-                [0, 0],     // Leopold (中心)
-                [1.3, 0.5],   // Severo
-                [-2.3, 0.5],  // J
-                [-1.4, -0.5], // K
-                [2.6, -1]   // X
+                [0, 0],      // Leopold (中心)
+                [2, 0.4],    // Severo
+                [-2.3, 0.5],   // J
+                [-1.4, -0.5],  // K
+                [2.6, -1],    // X
+                [-1.0, 1.5],   // Y (新角色1)
+                [1, 1.5]   // ZS
             ];
 
             state.nodes.forEach((node, index) => {
