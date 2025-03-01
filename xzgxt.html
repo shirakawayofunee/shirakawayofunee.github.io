@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-SSTEMY36NM"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SSTEMY36NM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("config", "G-SSTEMY36NM");
     </script>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes" />
     <title>相関図 ドラッグ可能な手がかりボード</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
       body {
         margin: 0;
@@ -39,7 +28,7 @@
 
       body::before {
         content: "";
-        background: url("img/bg_full.png") center/contain no-repeat fixed;
+        background: url("img/bg_full.png") center/cover no-repeat fixed;
         position: fixed;
         top: 0;
         left: 0;
@@ -47,12 +36,11 @@
         height: 100%;
         z-index: -1;
         box-shadow: inset 0 0 15rem rgba(0, 0, 0, 0.6);
-        filter: blur(10px); /* 移除 brightness，恢复原始亮度 */
         transition: filter 0.5s;
       }
 
       body.loaded::before {
-        filter: blur(0) !important; /* 移除 brightness */
+        filter: blur(0);
       }
 
       #board {
@@ -73,10 +61,9 @@
         z-index: 1;
       }
 
-      .node,
-      .large-node {
+      .node, .large-node {
         position: absolute;
-        transform: translate(-50%, -50%); /* 恢复标准 transform */
+        transform: translate(-50%, -50%);
         pointer-events: auto;
         transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
@@ -84,8 +71,7 @@
         touch-action: none;
       }
 
-      .node .avatar,
-      .large-node .avatar {
+      .node .avatar, .large-node .avatar {
         border: 2px solid #ecf0f1;
         background: url("img/default-avatar.png") top/cover no-repeat;
         border-radius: 3px;
@@ -95,8 +81,7 @@
         display: block;
       }
 
-      .node .label,
-      .large-node .label {
+      .node .label, .large-node .label {
         padding: 6px;
         color: #ecf0f1;
         border-radius: 3px;
@@ -104,7 +89,7 @@
         word-break: break-word;
         background: rgba(103, 109, 138, 0.8);
         backdrop-filter: blur(2px);
-        margin-top: 8px; /* 确保 label 在 avatar 下方 */
+        margin-top: 8px;
       }
 
       .relation-line {
@@ -139,114 +124,56 @@
         z-index: 2;
       }
 
-      body:not(.loaded) .node,
-      body:not(.loaded) .large-node {
+      body:not(.loaded) .node, body:not(.loaded) .large-node {
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.8);
       }
 
-      body.loaded .node,
-      body.loaded .large-node {
+      body.loaded .node, body.loaded .large-node {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
       }
 
       @media (min-width: 992px) {
-        .node {
-          width: 102px;
-        }
-        .node .avatar {
-          width: 102px;
-          height: 133px;
-        }
-        .node .label {
-          max-width: 102px;
-          font-size: 12px;
-        }
-        .large-node {
-          width: 153px;
-        }
-        .large-node .avatar {
-          width: 153px;
-          height: 200px;
-        }
-        .large-node .label {
-          max-width: 153px;
-          font-size: 12px;
-        }
-        #lines text {
-          font-size: 14px;
-        }
-        #lines rect {
-          rx: 5;
-        }
+        .node { width: 102px; }
+        .node .avatar { width: 102px; height: 133px; }
+        .node .label { max-width: 102px; font-size: 12px; }
+        .large-node { width: 153px; }
+        .large-node .avatar { width: 153px; height: 200px; }
+        .large-node .label { max-width: 153px; font-size: 12px; }
+        #lines text { font-size: 14px; }
+        #lines rect { rx: 5; }
       }
 
       @media (max-width: 991px) and (min-width: 577px) {
-        .node {
-          width: 80px;
-        }
-        .node .avatar {
-          width: 80px;
-          height: 104px;
-        }
-        .node .label {
-          max-width: 80px;
-          font-size: 10px;
-        }
-        .large-node {
-          width: 120px;
-        }
-        .large-node .avatar {
-          width: 120px;
-          height: 156px;
-        }
-        .large-node .label {
-          max-width: 120px;
-          font-size: 11px;
-        }
-        #lines text {
-          font-size: 12px;
-        }
-        #lines rect {
-          rx: 4;
-        }
+        .node { width: 80px; }
+        .node .avatar { width: 80px; height: 104px; }
+        .node .label { max-width: 80px; font-size: 10px; }
+        .large-node { width: 120px; }
+        .large-node .avatar { width: 120px; height: 156px; }
+        .large-node .label { max-width: 120px; font-size: 11px; }
+        #lines text { font-size: 12px; }
+        #lines rect { rx: 4; }
       }
 
       @media (max-width: 576px) {
         #board {
           padding: 10px;
+          overflow-x: hidden;
         }
-        .node {
-          width: 60px;
+        body::before {
+          background-size: cover;
+          background-position: center;
+          filter: blur(5px);
         }
-        .node .avatar {
-          width: 60px;
-          height: 78px;
-        }
-        .node .label {
-          max-width: 60px;
-          font-size: 8px;
-          padding: 4px;
-        }
-        .large-node {
-          width: 90px;
-        }
-        .large-node .avatar {
-          width: 90px;
-          height: 117px;
-        }
-        .large-node .label {
-          max-width: 90px;
-          font-size: 9px;
-          padding: 4px;
-        }
-        #lines text {
-          font-size: 10px;
-        }
-        #lines rect {
-          rx: 3;
-        }
+        .node { width: 60px; }
+        .node .avatar { width: 60px; height: 78px; }
+        .node .label { max-width: 60px; font-size: 8px; padding: 4px; }
+        .large-node { width: 90px; }
+        .large-node .avatar { width: 90px; height: 117px; }
+        .large-node .label { max-width: 90px; font-size: 9px; padding: 4px; }
+        #lines text { font-size: 10px; }
+        #lines rect { rx: 3; }
       }
     </style>
   </head>
@@ -255,92 +182,68 @@
     <div id="board" class="container-fluid">
       <svg id="lines">
         <defs>
-          <marker
-            id="arrowhead"
-            markerWidth="10"
-            markerHeight="7"
-            refX="9"
-            refY="3.5"
-            orient="auto"
-          >
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
             <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
           </marker>
         </defs>
       </svg>
 
       <div class="row justify-content-center g-2">
-        <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
-          <div
-            class="avatar"
-            style="background-image: url('img/id-leopold.jpg')"
-          ></div>
-          <div class="label">
-            警視庁エリート<br />見た目は16～17歳だが、実年齢不明。<br />
-            見た目は優れ、常に世を拗ねるような微笑を浮かべている。<br />
-            好き嫌いが激しく、享楽主義者でもあるが、細やかで優しい一面も持っている。<br />
-            落ち着き払った自信に満ちていて、自信かつ優雅な態度を保ち、性格は八方巧み。
+        <div class="col-lg-8 col-md-10 col-sm-12">
+          <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="avatar" style="background-image: url('img/id-leopold.jpg')"></div>
+            <div class="label">
+              警視庁エリート<br />見た目は16～17歳だが、実年齢不明。<br />
+              見た目は優れ、常に世を拗ねるような微笑を浮かべている。<br />
+              好き嫌いが激しく、享楽主義者でもあるが、細やかで優しい一面も持っている。<br />
+              落ち着き払った自信に満ちていて、自信かつ優雅な態度を保ち、性格は八方巧み。
+            </div>
           </div>
-        </div>
-        <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
-          <div
-            class="avatar"
-            style="background-image: url('img/id-severo.jpg')"
-          ></div>
-          <div class="label">
-            26歳、容疑者。<br />
-            憂いと苦悩、感傷に満ちた女性として偽装して登場する。<br />
-            第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。
+          <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="avatar" style="background-image: url('img/id-severo.jpg')"></div>
+            <div class="label">
+              26歳、容疑者。<br />
+              憂いと苦悩、感傷に満ちた女性として偽装して登場する。<br />
+              第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。
+            </div>
           </div>
-        </div>
-        <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-          <div class="avatar"></div>
-          <div class="label">
-            J<br />23歳、Lの養女<br />警察庁高官を母に持つの刑事
+          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="avatar"></div>
+            <div class="label">J<br />23歳、Lの養女<br />警察庁高官を母に持つの刑事</div>
           </div>
-        </div>
-        <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-          <div class="avatar"></div>
-          <div class="label">
-            K<br />Lの母親の隣人のパートナーの園芸師の姪（？<br />
-            18歳、Lの養女。Lが一番好き。<br />
-            Lへの想いが家族愛か恋愛か自分でもわからない。<br />
-            Lが最近ハマっている手作りスイーツ店に長蛇の列でも並びに行く
+          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="avatar"></div>
+            <div class="label">
+              K<br />Lの母親の隣人のパートナーの園芸師の姪（？<br />
+              18歳、Lの養女。Lが一番好き。<br />
+              Lへの想いが家族愛か恋愛か自分でもわからない。<br />
+              Lが最近ハマっている手作りスイーツ店に長蛇の列でも並びに行く
+            </div>
           </div>
-        </div>
-        <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-          <div class="avatar"></div>
-          <div class="label">X<br />連続殺人事件の真犯人 謎の人物</div>
-        </div>
-        <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-          <div class="avatar"></div>
-          <div class="label">Y<br />8月14日的死者</div>
-        </div>
-        <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-          <div class="avatar"></div>
-          <div class="label">
-            真正的S<br />外交官<br />過去の事件でLと因縁がある<br />
-            第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。
+          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="avatar"></div>
+            <div class="label">X<br />連続殺人事件の真犯人 謎の人物</div>
+          </div>
+          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="avatar"></div>
+            <div class="label">Y<br />8月14日的死者</div>
+          </div>
+          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="avatar"
+            style="background-image: url('img/id-severoz.jpg')"
+            ></div>
+            <div class="label">
+              真正的S<br />外交官<br />過去の事件でLと因縁がある<br />
+              第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!--    0 [0, 0],      // Leopold
-   1 [2, 0.4],    // Severo
-   2 [-2.3, 0.5], // Jin
-   3 [-1.4, -0.5],// ji
-   4 [2.6, -1],   // X
-   5 [-1.0, 1.5], // Y
-   6 [1, 1.5]     // ZS -->
-
     <script>
       const connections = [
-        {
-          from: 0,
-          to: 1,
-          label: "控えめな探求、飼養",
-          dashed: false,
-        },
+        { from: 0, to: 1, label: "控えめな探求、飼養", dashed: false },
         { from: 0, to: 2, label: "有意培养为继承人", dashed: true },
         { from: 0, to: 3, label: "慈しむ、憐憫", dashed: false },
         { from: 0, to: 4, label: "やり返す", dashed: true },
@@ -365,7 +268,7 @@
         const boardHeight = Math.max(board.scrollHeight, viewportHeight);
         const isMobile = viewportWidth <= 576;
         const baseRadius = isMobile
-          ? Math.min(viewportWidth, viewportHeight) * 0.4
+          ? Math.min(viewportWidth, viewportHeight) * 0.35
           : Math.min(viewportWidth, viewportHeight) * 0.25;
 
         const positions = [
@@ -379,24 +282,20 @@
         ];
 
         state.nodes.forEach((node, index) => {
-          const avatar = node.querySelector(".avatar"); // 获取头像元素
+          const avatar = node.querySelector(".avatar");
           const [dx, dy] = positions[index];
-          const x = viewportWidth / 2 + dx * baseRadius;
-          const y = boardHeight / 2 + dy * baseRadius;
+          const x = Math.max(60, Math.min(viewportWidth - 60, viewportWidth / 2 + dx * baseRadius));
+          const y = Math.max(80, Math.min(viewportHeight - 80, viewportHeight / 2 + dy * baseRadius));
           Object.assign(node.style, {
             left: `${x}px`,
             top: `${y}px`,
-            transform: "translate(-50%, -50%)", // 恢复标准的 transform
-            transition: state.dragging
-              ? "none"
-              : "all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
+            transform: "translate(-50%, -50%)",
+            transition: state.dragging ? "none" : "all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
           });
         });
 
         board.style.minHeight = `${boardHeight}px`;
-        document
-          .getElementById("lines")
-          .setAttribute("viewBox", `0 0 ${viewportWidth} ${boardHeight}`);
+        document.getElementById("lines").setAttribute("viewBox", `0 0 ${viewportWidth} ${boardHeight}`);
       }
 
       function drawLines() {
@@ -406,18 +305,15 @@
         svg.appendChild(defs);
 
         connections.forEach((conn) => {
-          if (conn.from >= state.nodes.length || conn.to >= state.nodes.length)
-            return;
+          if (conn.from >= state.nodes.length || conn.to >= state.nodes.length) return;
 
           const fromNode = state.nodes[conn.from];
           const toNode = state.nodes[conn.to];
-          const fromAvatar = fromNode.querySelector(".avatar"); // 获取头像元素
-          const toAvatar = toNode.querySelector(".avatar"); // 获取头像元素
-          const fromRect = fromAvatar.getBoundingClientRect(); // 使用头像的边界框
-          const toRect = toAvatar.getBoundingClientRect(); // 使用头像的边界框
-          const boardRect = document
-            .getElementById("board")
-            .getBoundingClientRect();
+          const fromAvatar = fromNode.querySelector(".avatar");
+          const toAvatar = toNode.querySelector(".avatar");
+          const fromRect = fromAvatar.getBoundingClientRect();
+          const toRect = toAvatar.getBoundingClientRect();
+          const boardRect = document.getElementById("board").getBoundingClientRect();
 
           const start = {
             x: fromRect.left + fromRect.width / 2 - boardRect.left,
@@ -428,16 +324,12 @@
             y: toRect.top + toRect.height / 2 - boardRect.top,
           };
 
-          const path = document.createElementNS(
-            "http://www.w3.org/2000/svg",
-            "path"
-          );
+          const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
           path.classList.add("relation-line");
           if (conn.dashed) path.classList.add("dashed-line");
 
           const isReverse = connections.some(
-            (c) =>
-              c.from === conn.to && c.to === conn.from && c.label !== conn.label
+            (c) => c.from === conn.to && c.to === conn.from && c.label !== conn.label
           );
 
           if (isReverse) {
@@ -446,33 +338,19 @@
               x: (start.x + end.x) / 2 + curvature * (end.y - start.y),
               y: (start.y + end.y) / 2 + curvature * (start.x - end.x),
             };
-            path.setAttribute(
-              "d",
-              `M ${start.x} ${start.y} Q ${ctrl.x} ${ctrl.y} ${end.x} ${end.y}`
-            );
+            path.setAttribute("d", `M ${start.x} ${start.y} Q ${ctrl.x} ${ctrl.y} ${end.x} ${end.y}`);
           } else {
-            path.setAttribute(
-              "d",
-              `M ${start.x} ${start.y} L ${end.x} ${end.y}`
-            );
+            path.setAttribute("d", `M ${start.x} ${start.y} L ${end.x} ${end.y}`);
           }
 
-          const textGroup = createConnectionLabel(
-            conn.label,
-            start,
-            end,
-            isReverse
-          );
+          const textGroup = createConnectionLabel(conn.label, start, end, isReverse);
           svg.appendChild(path);
           svg.appendChild(textGroup);
         });
       }
 
       function createConnectionLabel(text, start, end, isCurve) {
-        const group = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "g"
-        );
+        const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
         const padding = 6;
 
         const lines = text.split(/[、\n]/);
@@ -482,36 +360,24 @@
           y: (start.y + end.y) / 2 + Math.sin(angle) * (isCurve ? 10 : -5),
         };
 
-        const textEl = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "text"
-        );
+        const textEl = document.createElementNS("http://www.w3.org/2000/svg", "text");
         textEl.setAttribute("x", labelPos.x);
         textEl.setAttribute("y", labelPos.y);
         textEl.setAttribute("text-anchor", "middle");
         textEl.setAttribute("dominant-baseline", "middle");
         textEl.setAttribute("fill", "#ecf0f1");
-        textEl.setAttribute(
-          "font-size",
-          window.innerWidth <= 576 ? "10px" : "14px"
-        );
+        textEl.setAttribute("font-size", window.innerWidth <= 576 ? "10px" : "14px");
 
         lines.forEach((line, index) => {
           if (!line) return;
-          const tspan = document.createElementNS(
-            "http://www.w3.org/2000/svg",
-            "tspan"
-          );
+          const tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
           tspan.setAttribute("x", labelPos.x);
           tspan.setAttribute("dy", index === 0 ? "0" : "1.2em");
           tspan.textContent = line;
           textEl.appendChild(tspan);
         });
 
-        const tempSvg = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "svg"
-        );
+        const tempSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         tempSvg.style.position = "absolute";
         tempSvg.style.visibility = "hidden";
         document.body.appendChild(tempSvg);
@@ -519,10 +385,7 @@
         const bbox = textEl.getBBox();
         document.body.removeChild(tempSvg);
 
-        const rect = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "rect"
-        );
+        const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
         rect.setAttribute("x", bbox.x - padding);
         rect.setAttribute("y", bbox.y - padding);
         rect.setAttribute("width", bbox.width + padding * 2);
@@ -540,14 +403,10 @@
 
         state.nodes.forEach((node) => {
           node.addEventListener("mousedown", startDrag);
-          node.addEventListener(
-            "touchstart",
-            (e) => {
-              e.preventDefault();
-              startDrag(e.touches[0]);
-            },
-            { passive: false }
-          );
+          node.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            startDrag(e.touches[0]);
+          }, { passive: false });
         });
 
         function startDrag(e) {
@@ -562,9 +421,7 @@
 
           document.addEventListener("mousemove", onDrag);
           document.addEventListener("mouseup", onDragEnd);
-          document.addEventListener("touchmove", onTouchDrag, {
-            passive: false,
-          });
+          document.addEventListener("touchmove", onTouchDrag, { passive: false });
           document.addEventListener("touchend", onDragEnd);
         }
 
@@ -580,34 +437,27 @@
         function updatePosition(clientX, clientY) {
           if (!dragInfo) return;
           const { node, offsetX, offsetY } = dragInfo;
-          const avatar = node.querySelector(".avatar"); // 获取头像元素
-          const boardRect = document
-            .getElementById("board")
-            .getBoundingClientRect();
-          const newX = clientX - offsetX - boardRect.left;
-          const newY = clientY - offsetY - boardRect.top;
-
+          const avatar = node.querySelector(".avatar");
+          const boardRect = document.getElementById("board").getBoundingClientRect();
+          
           const viewportWidth = window.innerWidth;
-          const viewportHeight = Math.max(
-            document.documentElement.clientHeight,
-            window.innerHeight || 0
-          );
-          const avatarWidth = avatar.offsetWidth;
-          const avatarHeight = avatar.offsetHeight;
+          const viewportHeight = window.innerHeight;
+          const nodeWidth = node.offsetWidth;
+          const nodeHeight = node.offsetHeight;
 
-          const boundedX = Math.max(
-            avatarWidth / 2,
-            Math.min(newX, viewportWidth - avatarWidth / 2 - boardRect.left)
-          );
-          const boundedY = Math.max(
-            avatarHeight / 2,
-            Math.min(newY, viewportHeight - avatarHeight / 2)
-          );
+          const newX = Math.max(nodeWidth / 2, Math.min(
+            clientX - offsetX,
+            viewportWidth - nodeWidth / 2
+          ));
+          const newY = Math.max(nodeHeight / 2, Math.min(
+            clientY - offsetY,
+            viewportHeight - nodeHeight / 2
+          ));
 
           Object.assign(node.style, {
-            left: `${boundedX}px`,
-            top: `${boundedY}px`,
-            transform: "translate(-50%, -50%)", // 保持标准的 transform
+            left: `${newX}px`,
+            top: `${newY}px`,
+            transform: "translate(-50%, -50%)",
             transition: "none",
           });
 
@@ -635,9 +485,7 @@
       }
 
       function initialize() {
-        state.nodes = Array.from(
-          document.querySelectorAll(".node, .large-node")
-        );
+        state.nodes = Array.from(document.querySelectorAll(".node, .large-node"));
         if (state.nodes.length === 0) return;
 
         const bgImage = new Image();
@@ -657,12 +505,7 @@
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
-      import {
-        getFirestore,
-        collection,
-        addDoc,
-        serverTimestamp,
-      } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+      import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
 
       const firebaseConfig = {
         apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
@@ -696,12 +539,5 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
-  <noscript
-    ><iframe
-      src="https://www.googletagmanager.com/ns.html?id=GTM-5W78LXJT"
-      height="0"
-      width="0"
-      style="display: none; visibility: hidden"
-    ></iframe
-  ></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W78LXJT" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
 </html>
