@@ -28,7 +28,7 @@
 
         body::before {
             content: '';
-            background: url('img/bg_full.png') center/cover no-repeat fixed;
+            background: url('img/bg_full.png') center/contain no-repeat fixed;
             position: fixed;
             top: 0;
             left: 0;
@@ -36,12 +36,12 @@
             height: 100%;
             z-index: -1;
             box-shadow: inset 0 0 15rem rgba(0, 0, 0, 0.6);
-            filter: blur(10px) brightness(0.9);
+            filter: blur(10px); /* 移除 brightness，恢复原始亮度 */
             transition: filter 0.5s;
         }
 
         body.loaded::before {
-            filter: blur(0) !important;
+            filter: blur(0) !important; /* 移除 brightness */
         }
 
         #board {
@@ -140,7 +140,6 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
-        /* 响应式调整 */
         @media (min-width: 992px) {
             .node { width: 102px; }
             .node .avatar { width: 102px; height: 133px; }
@@ -259,8 +258,9 @@
             const board = document.getElementById('board');
             const viewportWidth = window.innerWidth;
             const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-            const boardHeight = Math.max(board.offsetHeight, viewportHeight);
-            const baseRadius = Math.min(viewportWidth, viewportHeight) * 0.25;
+            const boardHeight = Math.max(board.scrollHeight, viewportHeight);
+            const isMobile = viewportWidth <= 576;
+            const baseRadius = isMobile ? Math.min(viewportWidth, viewportHeight) * 0.4 : Math.min(viewportWidth, viewportHeight) * 0.25;
 
             const positions = [
                 [0, 0],      // Leopold
@@ -269,7 +269,7 @@
                 [-1.4, -0.5],// K
                 [2.6, -1],   // X
                 [-1.0, 1.5], // Y
-                [1, 1.5]     // ZS
+                [1, 1.5]     // S
             ];
 
             state.nodes.forEach((node, index) => {
@@ -298,8 +298,10 @@
 
                 const fromNode = state.nodes[conn.from];
                 const toNode = state.nodes[conn.to];
-                const fromRect = fromNode.getBoundingClientRect();
-                const toRect = toNode.getBoundingClientRect();
+                const fromAvatar = fromNode.querySelector('.avatar'); // 获取头像元素
+                const toAvatar = toNode.querySelector('.avatar');     // 获取头像元素
+                const fromRect = fromAvatar.getBoundingClientRect();  // 使用头像的边界框
+                const toRect = toAvatar.getBoundingClientRect();      // 使用头像的边界框
                 const boardRect = document.getElementById('board').getBoundingClientRect();
 
                 const start = {
@@ -364,7 +366,14 @@
                 textEl.appendChild(tspan);
             });
 
+            const tempSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            tempSvg.style.position = 'absolute';
+            tempSvg.style.visibility = 'hidden';
+            document.body.appendChild(tempSvg);
+            tempSvg.appendChild(textEl);
             const bbox = textEl.getBBox();
+            document.body.removeChild(tempSvg);
+
             const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
             rect.setAttribute('x', bbox.x - padding);
             rect.setAttribute('y', bbox.y - padding);
@@ -427,8 +436,8 @@
                 const nodeWidth = node.offsetWidth;
                 const nodeHeight = node.offsetHeight;
 
-                const boundedX = Math.max(nodeWidth / 2, Math.min(newX + boardRect.left, viewportWidth - nodeWidth / 2)) - boardRect.left;
-                const boundedY = Math.max(nodeHeight / 2, Math.min(newY + boardRect.top, viewportHeight - nodeHeight / 2)) - boardRect.top;
+                const boundedX = Math.max(nodeWidth / 2, Math.min(newX, viewportWidth - nodeWidth / 2 - boardRect.left));
+                const boundedY = Math.max(nodeHeight / 2, Math.min(newY, boardRect.height - nodeHeight / 2));
 
                 Object.assign(node.style, {
                     left: `${boundedX}px`,
@@ -504,6 +513,7 @@
                     page_path: window.location.pathname,
                     timestamp: serverTimestamp()
                 });
+                console.log('Page view logged successfully');
             } catch (error) {
                 console.error('Error saving page view: ', error);
             }
