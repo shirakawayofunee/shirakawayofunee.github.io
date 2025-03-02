@@ -288,9 +288,8 @@ l {
 }
 
 .part2 .part-content {
-  height: 66rem;
-  /* margin: 1rem 0 3rem; */
-  transform-origin: center center;
+  height: auto; /* 改为auto以适应内容高度 */
+  padding: 1rem 0; /* 使用padding替代margin，提供间距 */
 }
 
 .part2 .switch-tips {
@@ -310,12 +309,11 @@ l {
 }
 
 .part2 .wrap-switch {
-  position: absolute;
-  right: 24rem;
-  top: 9.35rem;
+  position: relative; /* 移除绝对定位，适应网格布局 */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem; /* 添加上边距 */
 }
 
 .part2 .wrap-switch .switch {
@@ -348,10 +346,10 @@ l {
 }
 
 .part2 .wrap-media {
-  position: absolute;
-  right: 14.5rem;
-  top: 36rem;
+  position: relative; /* 移除绝对定位，适应网格布局 */
   display: flex;
+  justify-content: center; /* 居中对齐 */
+  margin-top: 1rem; /* 添加上边距 */
 }
 
 .part2 .wrap-media .media-audio,
@@ -416,18 +414,18 @@ l {
 }
 
 .part2 .wrap-state {
-  position: absolute;
-  top: 15rem;
-  right: 1.5rem;
-  width: 40.3125rem;
+  position: relative; /* 移除绝对定位，适应网格布局 */
+  width: 100%; /* 改为100%宽度，响应式调整 */
+  max-width: 40.3125rem; /* 设置最大宽度，保持原有设计 */
   pointer-events: none;
+  margin: 1rem auto; /* 居中并添加间距 */
 }
 
 .part2 .wrap-tab {
-  position: absolute;
-  left: 18rem;
-  width: 11.6875rem;
-  top: 7.5rem;
+  position: relative; /* 移除绝对定位，适应网格布局 */
+  width: 100%; /* 改为100%宽度，响应式调整 */
+  max-width: 11.6875rem; /* 设置最大宽度，保持原有设计 */
+  margin: 1rem auto; /* 居中并添加间距 */
 }
 
 .part2 .wrap-tab .tab {
@@ -613,4 +611,37 @@ l {
 .pop-video video {
   width: 1000px;
   margin: 0 auto;
+}
+
+/* 响应式调整 */
+@media (min-width: 992px) { /* lg及以上屏幕 */
+  .part2 .part-content {
+    height: 66rem; /* 恢复大屏幕高度 */
+  }
+  
+  .part2 .wrap-rookie {
+    background-position: 38% 0rem; /* 恢复大屏幕背景位置 */
+  }
+  
+  .part2 .wrap-switch {
+    margin-top: 0; /* 移除额外边距 */
+  }
+  
+  .part2 .wrap-state {
+    margin: 0; /* 移除额外边距 */
+  }
+  
+  .part2 .wrap-media {
+    margin-top: 0; /* 移除额外边距 */
+  }
+    
+  .part2 .wrap-tab {
+    margin: 0; /* 移除额外边距 */
+  }
+}
+
+@media (max-width: 991.98px) { /* 小屏幕调整 */
+  .part2 .col-12 {
+    margin-bottom: 1.5rem; /* 列间垂直间距 */
+  }
 }

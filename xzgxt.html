@@ -244,12 +244,11 @@
     <script>
       const connections = [
         { from: 0, to: 1, label: "控えめな探求、飼養", dashed: false },
-        { from: 0, to: 2, label: "有意培养为继承人", dashed: true },
+        { from: 0, to: 2, label: "母女、意図的に後継者として育成する", dashed: true },
         { from: 0, to: 3, label: "慈しむ、憐憫", dashed: false },
-        { from: 0, to: 4, label: "やり返す", dashed: true },
-        { from: 1, to: 4, label: "厭悪", dashed: true },
-        { from: 0, to: 6, label: "過去の因縁", dashed: true },
-        { from: 1, to: 6, label: "杀害、取代", dashed: true },
+        { from: 0, to: 4, label: "やり返す、敵であり味方", dashed: true },
+        { from: 0, to: 6, label: "前世の妻", dashed: true },
+        { from: 1, to: 6, label: "殺害し、乗っ取る", dashed: true },
       ];
 
       const state = {
@@ -276,9 +275,9 @@
           [1.6, 0.9], // Severo
           [-1.0, 1.2], // J
           [-1.4, -0.5], // j
-          [2.6, -1], // X
+          [-2.9, 1.2], // X
           [-2.3, 0.5], // Y
-          [1.2, -0.8], // ZS
+          [2.5, -0.8], // ZS
         ];
 
         state.nodes.forEach((node, index) => {
