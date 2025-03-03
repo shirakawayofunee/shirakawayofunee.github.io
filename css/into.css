@@ -1,0 +1,325 @@
+/* 父容器，用于控制外边距 */
+.into_wrapper {
+    height: 100vh; /* 占满屏幕高度 */
+    padding: 2%; /* 外边距为 2% */
+    box-sizing: border-box; /* 确保 padding 不影响高度 */
+    display: flex;
+    flex-direction: column; /* 垂直排列导航和主容器 */
+    background-color: #e0e0e0; /* 外层背景颜色 */
+}
+
+/* 主容器 */
+.into_container {
+    font-family: 'Arial', sans-serif;
+    max-width: 1900px;
+    width: 100%; /* 确保宽度占满父容器 */
+    background-color: #f5f5f5;
+    border: 1.5px solid #000; /* 边框粗细 */
+    border-radius: 20px; /* 圆角边框 */
+    flex: 1; /* 占满剩余空间 */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2%;
+    margin-top: 40px; /* 为导航留出空间 */
+    align-self: center; /* 居中对齐 */
+}
+
+/* 顶部导航 */
+.into_nav {
+    padding: 10px 0;
+    position: relative; /* 用于定位横线 */
+    max-width: 1900px; /* 与主容器宽度保持一致 */
+    width: 100%;
+    align-self: center; /* 在父容器中居中 */
+}
+
+.into_nav-left,
+.into_nav-right {
+    position: absolute; /* 脱离文档流，放置在主容器边框外 */
+    top: 0;
+}
+
+.into_nav-left {
+    left: 0;
+}
+
+.into_nav-right {
+    right: 0;
+}
+
+.into_nav-box {
+    border: 1.5px solid #000; /* 边框粗细 */
+    padding: 3px 8px; /* 内边距 */
+    margin-right: 5px; /* 外边距 */
+    font-size: 12px; /* 字体大小 */
+    background-color: #e0e0e0; /* 背景色与外层背景一致 */
+}
+
+.into_date {
+    margin-right: 5px; /* 间距 */
+    font-size: 12px;
+}
+
+.into_dots {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.into_xxxx {
+    margin-left: 5px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* 元素之间的间距 */
+}
+
+.into_xxxx-line {
+    width: 20px; /* 横线长度 */
+    height: 1.5px; /* 横线粗细 */
+    background-color: #000;
+}
+
+.into_xxxx-dots {
+    font-size: 12px;
+}
+
+/* 导航中间的横线 */
+.into_nav::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20%; /* 调整横线长度 */
+    right: 20%;
+    height: 1.5px; /* 横线粗细 */
+    background-color: #000;
+}
+
+/* 主要内容 */
+.into_main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: row; /* 水平排列左边块和右边块 */
+    gap: 15px;
+}
+
+/* 左边大块 */
+.into_left-block {
+    flex: 2; /* 占 2/3 的宽度 */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 标题和卡片之间的间距 */
+}
+
+/* 右边大块 */
+.into_right-block {
+    flex: 1; /* 占 1/3 的宽度 */
+    display: flex;
+}
+
+/* 标题部分 */
+.into_title-section {
+    text-align: center;
+    margin-bottom: 0; /* 移除底部间距，交给父容器控制 */
+    margin-top: 10px; /* 减少顶部间距 */
+}
+
+.into_title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 90px; /* 标题大小 */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.into_tagline {
+    font-size: 14px; /* 字体大小 */
+    margin-bottom: 2px; /* 与标签之间的间距 */
+}
+
+.into_tagline span {
+    border: 1.5px solid #000; /* 边框粗细 */
+    padding: 3px 8px; /* 内边距 */
+    border-radius: 10px;
+}
+
+.into_star {
+    margin: 0 8px;
+    font-size: 18px;
+    border: 1.5px solid #000; /* 边框粗细 */
+    border-radius: 50%; /* 圆形边框 */
+    padding: 2px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.into_tags {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* 标签间距 */
+    margin-top: 2px; /* 与上方的间距 */
+}
+
+.into_tags span {
+    font-size: 12px; /* 字体大小 */
+    border: 1.5px solid #000; /* 边框粗细 */
+    padding: 3px 10px; /* 内边距 */
+    border-radius: 15px;
+}
+
+/* 左边卡片部分（左边卡片和中间卡片垂直排列） */
+.into_cards-left-section {
+    flex: 1; /* 占满剩余空间 */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.into_card-left,
+.into_card-middle {
+    border: 1.5px solid #000; /* 边框粗细 */
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 15px; /* 内边距 */
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* 平均分配高度 */
+}
+
+.into_card-right {
+    border: 1.5px solid #000; /* 边框粗细 */
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 15px; /* 内边距 */
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* 占满右边块 */
+}
+
+.into_card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.into_card-header h2 {
+    font-size: 18px; /* 字体大小 */
+    font-weight: bold;
+    margin: 0;
+}
+
+.into_card-id {
+    font-size: 14px;
+    border: 1.5px solid #000; /* 边框粗细 */
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.into_card-body {
+    margin-bottom: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: row; /* 水平排列 */
+    gap: 15px; /* 占位框和文字之间的间距 */
+    align-items: flex-start; /* 顶部对齐 */
+}
+
+.into_card-middle .into_card-body {
+    flex-direction: row-reverse; /* 中间卡片反转顺序 */
+}
+
+.into_placeholder-box {
+    width: 100px; /* 占位框尺寸 */
+    height: 100px;
+    background-color: #e0e0e0;
+    flex-shrink: 0; /* 防止占位框被压缩 */
+    border-radius: 10px; /* 占位框圆角 */
+}
+
+.into_card-body p {
+    font-size: 14px;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.into_card-footer {
+    font-size: 12px;
+    text-align: center;
+    border: 1.5px solid #000; /* 边框粗细 */
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin-top: auto; /* 确保按钮在卡片底部 */
+}
+
+/* 轮播图样式 */
+.into_carousel-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    border-radius: 15px; /* 与卡片圆角一致 */
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none; /* 隐藏轮播控件 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .into_main-content {
+        flex-direction: column; /* 小屏幕上改为垂直排列 */
+    }
+
+    .into_left-block,
+    .into_right-block {
+        flex: 1; /* 小屏幕上取消比例 */
+    }
+
+    .into_cards-left-section {
+        flex-direction: column; /* 小屏幕上保持垂直排列 */
+    }
+
+    .into_card-left,
+    .into_card-middle,
+    .into_card-right {
+        flex: 1;
+        min-height: 300px;
+    }
+
+    .into_title {
+        font-size: 60px; /* 小屏幕上缩小标题 */
+    }
+
+    .into_card-body {
+        flex-direction: column; /* 小屏幕上改为垂直排列 */
+    }
+
+    .into_card-middle .into_card-body {
+        flex-direction: column; /* 小屏幕上取消反转 */
+    }
+
+    .into_nav-left,
+    .into_nav-right {
+        position: static; /* 小屏幕上恢复正常布局 */
+    }
+
+    .into_nav::after {
+        display: none; /* 小屏幕上隐藏横线 */
+    }
+
+    .into_container {
+        margin-top: 20px; /* 小屏幕上减少顶部间距 */
+    }
+}
