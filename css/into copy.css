@@ -29,7 +29,7 @@
 .into_main-content {
     flex: 1;
     display: flex;
-    flex-direction: row; /* 水平排列左边块和右边块 */
+    flex-direction: row; /* 水平排列左、中、右大块 */
     gap: 15px;
     width: 100%; /* 确保不超过父容器 */
     overflow: hidden; /* 防止子元素溢出 */
@@ -37,17 +37,44 @@
 
 /* 左边大块 */
 .into_left-block {
-    flex: 1.2; /* 占 55% 的宽度 */
+    flex: 1.2; /* 占 55% 的宽度，保持不变 */
     display: flex;
     flex-direction: column;
-    gap: 10px; /* 减少图片和标题之间的间距 */
+    gap: 4%; /* 图片之间的间距 */
     max-height: 100%; /* 限制高度不超过父容器 */
     overflow-y: auto; /* 垂直方向溢出时显示滚动条 */
 }
 
+/* 中间大块 */
+.into_middle-block {
+    flex: 0.5; /* 从右边大块中扣除一部分，占剩余空间的 1/2 */
+    display: flex;
+    max-height: 100%; /* 限制高度不超过父容器 */
+    overflow: hidden; /* 防止溢出 */
+}
+
+/* 中间大块内容样式（占位符） */
+.middle-block-content {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1.5px solid #000;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.middle-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+}
+
 /* 右边大块 */
 .into_right-block {
-    flex: 1; /* 占 45% 的宽度 */
+    flex: 0.5; /* 剩余空间的 1/2，与中间大块平分右边空间 */
     display: flex;
     max-height: 100%; /* 限制高度不超过父容器 */
     overflow: hidden; /* 防止轮播图溢出 */
@@ -55,75 +82,11 @@
 
 /* 左边大块的图片样式 */
 .left-block-image {
-    width: 66.67%; /* 宽度占三分之二 */
     max-width: 100%; /* 防止宽度溢出 */
-    max-height: 40vh; /* 限制图片最大高度为视口的40%，可调整 */
+    max-height: 40vh; /* 限制图片最大高度为视口的40% */
     height: auto; /* 高度自适应 */
     object-fit: contain; /* 确保图片完整显示，不裁剪 */
     align-self: flex-start;
-}
-
-/* 标题部分 */
-.into_title-section {
-    display: flex;
-    flex-direction: column;
-    gap: 5px; /* 控制标题部分内部元素的间距 */
-    flex-shrink: 0; /* 防止标题部分被压缩 */
-}
-
-/* 이달의 A X O 이달의 B ✦ */
-.into_tagline {
-    font-size: 14px; /* 字体大小 */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* 靠右对齐 */
-}
-
-.into_tagline span {
-    border: 1.5px solid #000; /* 边框粗细 */
-    padding: 3px 8px; /* 内边距 */
-    border-radius: 0; /* 直角边框 */
-}
-
-.into_star {
-    margin-left: 8px; /* 星形符号与文本之间的间距 */
-    font-size: 18px;
-    border: 1.5px solid #000; /* 边框粗细 */
-    border-radius: 50%; /* 圆形边框 */
-    padding: 2px;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Pairname 标题 */
-.into_title {
-    font-family: 'Dancing Script', cursive;
-    font-size: 90px; /* 标题大小 */
-    font-weight: bold;
-    text-align: center; /* 标题居中 */
-    margin: 0; /* 移除默认外边距 */
-}
-
-/* #키워드 标签 */
-.into_tags {
-    display: flex;
-    justify-content: flex-end; /* 靠右对齐 */
-}
-
-/* 新增的容器样式 */
-.tags-container {
-    display: flex;
-    gap: 5px; /* 标签之间的间距 */
-    border: 1.5px solid #000; /* 统一边框 */
-    padding: 3px 10px; /* 内边距 */
-    border-radius: 0; /* 直角边框 */
-}
-
-.into_tags span {
-    font-size: 12px; /* 字体大小 */
 }
 
 /* 右边卡片（轮播图区域） */
@@ -167,24 +130,13 @@
     }
 
     .into_left-block,
+    .into_middle-block,
     .into_right-block {
         flex: 1; /* 小屏幕上取消比例 */
     }
 
-    .into_title {
-        font-size: 60px; /* 小屏幕上缩小标题 */
-    }
-
     .into_container {
         margin-top: 20px; /* 小屏幕上减少顶部间距 */
-    }
-
-    .into_tagline {
-        justify-content: center; /* 小屏幕上居中对齐 */
-    }
-
-    .into_tags {
-        justify-content: center; /* 小屏幕上居中对齐 */
     }
 
     .left-block-image {
