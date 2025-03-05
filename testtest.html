@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キャラクターカード</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自定义 CSS -->
+    <style>
+        .L-container {
+            font-family: 'Noto Sans JP', sans-serif; /* 使用日文常见的字体 */
+            background-color: #f8f9fa;
+        }
+        .L-tag-bar {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px 5px 0 0; /* 顶部圆角，底部无圆角以无缝衔接 */
+            margin-bottom: 0; /* 移除底部间隙 */
+        }
+        .L-tag {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .L-tag-circle {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .L-character-card {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 0 0 10px 10px; /* 顶部无圆角，底部圆角 */
+            padding: 20px;
+            position: relative;
+        }
+        .L-character-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .L-character-info {
+            padding-left: 20px;
+            position: relative;
+        }
+        .L-character-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #dc3545; /* 红色标题 */
+            margin-bottom: 10px;
+        }
+        .L-character-subtitle {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+        .L-character-attributes {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        .L-character-attributes div {
+            text-align: center;
+        }
+        .L-character-good {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .L-character-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .L-share-button {
+            background-color: #d1ecf1;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .L-cat-image-top {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 80px;
+            z-index: 10; /* 确保悬浮在其他内容之上 */
+        }
+        .L-cat-image-bottom {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 80px;
+            z-index: 10; /* 确保悬浮在其他内容之上 */
+        }
+    </style>
+</head>
+<body>
+    <div class="L-container container mt-4">
+        <!-- 顶部标签栏 -->
+        <div class="L-tag-bar">
+            <span class="L-tag">
+                <span class="L-tag-circle" style="background-color: #d3d3d3;"></span>
+                #上位若者#Dom
+            </span>
+            <span class="L-tag">
+                <span class="L-tag-circle" style="background-color: #dc3545;"></span>
+                #楽し#務め#襲い#親愛系
+            </span>
+            <span class="L-tag">
+                <span class="L-tag-circle" style="background-color: #343a40;"></span>
+                #強気主#視聴で酒戦力#経路#スバダリ
+            </span>
+        </div>
+
+        <!-- 角色卡片 -->
+        <div class="L-character-card row">
+            <!-- 左侧图片 -->
+            <div class="col-md-5">
+                <img src="character-image.jpg" alt="キャラクター画像" class="L-character-image">
+            </div>
+            <!-- 右侧信息 -->
+            <div class="col-md-7 L-character-info">
+                <!-- 标题 -->
+                <h1 class="L-character-title">LEOPOLD</h1>
+                <div class="L-character-subtitle">年齢不明 | Dom | 178cm | 花の魔女</div>
+
+                <!-- 属性列表 -->
+                <div class="L-character-attributes">
+                    <div>
+                        <div class="L-character-good">趣味...</div>
+                        実学、「読書」
+                    </div>
+                    <div>
+                        <div class="L-character-good">死神</div>
+                        特技
+                    </div>
+                    <div>
+                        <div class="L-character-good">好きなもの...</div>
+                        赤ワイン、花、月
+                    </div>
+                    <div>
+                        <div class="L-character-good">良いなもの</div>
+                        自由が制限される、無意味な権権性
+                    </div>
+                    <div>
+                        <div class="L-character-good">一人称</div>
+                        ボク
+                    </div>
+                </div>
+
+                <!-- 描述文字 -->
+                <p class="L-character-description">
+                    犯罪組織の主導者であり、部下たちからは慕われている。同時に美青年的存在。
+                    兄元は目をかけられて育てられたが、兄元が死に神として引き起こす。死を嫌い、
+                    死を嫌い、享楽主義者で美男美人を好む。細かいことで腹を立てない。
+                    落ち着きを持った自分に誇りを感じ、性格はハナウチ。
+                </p>
+
+                <!-- 分享按钮 -->
+                <button class="L-share-button">自分の猫を主役に据えて半分シェア</button>
+            </div>
+
+            <!-- 右上角猫咪（悬浮） -->
+            <img src="cat-image-top.jpg" alt="猫画像上" class="L-cat-image-top">
+            <!-- 右下角猫咪（悬浮） -->
+            <img src="cat-image-bottom.jpg" alt="猫画像下" class="L-cat-image-bottom">
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
