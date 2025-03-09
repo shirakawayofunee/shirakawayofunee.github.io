@@ -96,28 +96,16 @@
       <div class="h-con-right pc" data-mouse="mid">
         <div class="h-con-right-l" data-mouse="mid">
           <div class="div-center div-centerpc" onclick="changeBanner(0)" id="banner0" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">ホーム</div>
-            <div class="div-head-text-en" data-mouse="mid">HOME</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(1)" id="banner1" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">ニュース</div>
-            <div class="div-head-text-en" data-mouse="mid">NEWS</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(2)" id="banner2" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">登場人物</div>
             <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
           </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(3)" id="banner3" data-mouse="mid">
+          <div class="div-center div-centerpc" onclick="changeBanner(1)" id="banner1" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">世界観</div>
             <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
           </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(4)" id="banner4" data-mouse="mid">
+          <div class="div-center div-centerpc" onclick="changeBanner(2)" id="banner2" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">美術館</div>
             <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
-          </div>
-          <div class="div-center div-center-mobile" onclick="openPayment()" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">チャージセンター</div>
-            <div class="div-head-text-en" data-mouse="mid">Official Top-up</div>
           </div>
         </div>
         <div class="h-con-right-r">
@@ -136,96 +124,6 @@
     </div>
     <!-- head -->
     <div class="swiper-wrapper" data-mouse="small">
-      <!-- pc首页 -->
-      <div class="swiper-slide pc first" data-mouse="small" id="slide1">
-        <!-- <img src="./img/01.jpg" alt="" class="first-bg animate__animated animate__fadeIn"> -->
-        <video src="#" style="width:100%;" muted autoplay loop id="kvPc" poster="kv/p.jpg" data-mouse="small"></video>
-        <img src="img/first/1.png" alt="" class="first-1" data-mouse="small">
-        <img src="img/first/2.png" alt="" class="first-2" data-mouse="small">
-        <img src="img/first/3.webp" alt="" class="first-3" data-mouse="small">
-        <div class="first-zhe" data-mouse="small">
-
-        </div>
-        <div class="first-4 animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
-          <!-- <div class="first-4-1" data-mouse="mid">
-              <img src="" alt="" id="imgQR">
-            </div> -->
-          <div class="first-4-2">
-            <div class="first-4-2-con">
-              <a href="#" id="iosDownload" class="app-store-link" download target="_blank"
-                onclick="sendGA('OfficialLaunch_apple_pc_button')"><img src="img/first/appstore.png" alt=""
-                  data-type="ios"></a>
-              <a href="#" id="androidDownload" class="google-pay-link" download="" target="_blank"
-                onclick="sendGA('OfficialLaunch_google_pc_button')"><img src="img/first/google.png" alt=""
-                  data-type="android"></a>
-              <!-- <a href="" id="mumuDownload" class="mumu-load-link" target="_blank" ><img src="./img/first/bluestacks.png" alt=""  data-type="mumuDownload"></a> -->
-            </div>
-          </div>
-          <div class="first-4-mumu" data-mouse="mid">
-            <div class="first-4-2-con">
-              <a href="#" id="pcDownload" class="pc-load-link" download target="_blank"
-                onclick="sendGA('OfficialLaunch_pc_download')"><img src="img/first/pc.png" alt="" data-type="pc"></a>
-            </div>
-          </div>
-          <div class="first-4-3 pageVideo" data-mouse="mid" onclick="showYoutubeVideo(this);sendGA('playpv_pc_button')">
-            <img src="img/first/play.webp" alt="" class="first-4-3-bg">
-          </div>
-        </div>
-        <div class="first-yuyue animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
-          <img src="img/first/yu.png" alt="" class="first-yuyue-img" onclick="showYuyue()">
-          <div data-mouse="mid" class="pageVideo" onclick="showYoutubeVideo(this)">
-            <img src="img/first/play.webp" alt="" class="first-yuyue-play">
-          </div>
-        </div>
-      </div>
-      <!-- pc资讯 -->
-      <div class="swiper-slide news pc" data-mouse="small" id="slide2">
-        <div class="news-left animate__animated animate__fadeInLeft" data-mouse="small" id="newsLeft">
-          <div class="swiper-wrapper new-left-swiper" id="imgNews">
-            <!-- <div class="swiper-slide news-left-con">Slide 1</div>
-                  <div class="swiper-slide news-left-con">Slide 2</div>
-                  <div class="swiper-slide news-left-con">Slide 3</div>                  -->
-          </div>
-          <div class="news-left-con-page" data-mouse="small" id="newsPage">
-
-          </div>
-        </div>
-        <div class="news-right" data-mouse="small">
-          <div class="news-right-head">
-            <div class="news-right-head-img animate__animated animate__fadeInUp">
-              <img src="img/News.png" alt="" class="news-icon">
-            </div>
-            <div class="news-right-head-bg animate__animated animate__fadeInUp">
-              <div class="news-right-head-bg-list" onclick="changeNews(0)" id="news0" data-mouse="mid">最新</div>
-              <div class="news-right-head-bg-list" onclick="changeNews(1)" id="news1" data-mouse="mid">お知らせ</div>
-              <div class="news-right-head-bg-list" onclick="changeNews(2)" id="news2" data-mouse="mid">イベント</div>
-              <div class="news-right-head-bg-list" onclick="changeNews(3)" id="news3" data-mouse="mid">ニュース</div>
-            </div>
-          </div>
-          <div class="news-right-con animate__animated animate__fadeInUp">
-            <!-- 遍历获取数据 setNews -->
-            <!-- <div class="news-right-con-list" data-news="0" onclick="goNews(this)">
-                    <div class="news-right-con-list-left">
-                      <div class="news-right-con-list-left-icon">
-                        <img src="./img/see.png" alt="">
-                      </div>
-                      <div class="news-right-con-list-left-type">新闻</div>
-                      <div class="news-right-con-list-left-title">即使是可能萨克斯888888888888888888</div>
-                    </div>
-                    <div>11111111111111</div>
-                  </div>
-                  <div class="news-right-con-list">2</div>
-                  <div class="news-right-con-list">3</div>
-                  <div class="news-right-con-list">4</div>
-                  <div class="news-right-con-list">5</div> -->
-          </div>
-          <div class="news-right-foot animate__animated animate__fadeInUp" data-mouse="mid">
-            <div class="news-right-foot-button" onclick="goToMore()" data-mouse="mid">
-              <img src="img/jian.png" alt="" data-mouse="mid">
-            </div>
-          </div>
-        </div>
-      </div>
       <!-- 角色pc -->
       <div class="swiper-slide character pc" data-mouse="small" id="slide3">
         <div class="character-left animate__animated animate__fadeInLeft" data-mouse="small" data-swiper="no"
@@ -654,20 +552,13 @@
           <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
         </div>
         <div class="div-center div-center-mobile" onclick="changeBannerMobile(4)" id="bannerM4" data-type="share">
-          <div class="div-head-text" data-mouse="mid">展示場</div>
+          <div class="div-head-text" data-mouse="mid">美術館</div>
           <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
         </div>
         <div class="div-center div-center-mobile" onclick="openPayment()" data-type="share">
           <div class="div-head-text" data-mouse="mid">チャージセンター</div>
           <div class="div-head-text-en" data-mouse="mid">Official Top-up</div>
         </div>
-      </div>
-      <div class="mobile h-con-bottom">
-        <div class="share-content-tw" data-type="share" onclick="sendGA('SNS_m_twitter');goTo('t')"></div>
-        <div class="share-content-yt" data-type="share" onclick="sendGA('SNS_m_youtube');goTo('y')"></div>
-        <div class="share-content-ln" data-type="share" onclick="sendGA('SNS_m_line');goTo('line')"></div>
-        <div class="share-content-tt" data-type="share" onclick="sendGA('SNS_m_tiktok');goTo('tiktok')"></div>
-        <div class="share-content-dc" data-type="share" onclick="sendGA('SNS_m_discord');goTo('discord')"></div>
       </div>
       <div class="h-con-right-r">
         <div class="h-con-right-r-con">
@@ -696,28 +587,6 @@
   <!-- 手机端声明 -->
   <div class="statementMobile mobile" style="display: none;"></div>
   <!-- pc分享 -->
-  <div class="share-content pc animate__animated animate__fadeIn" id="share" data-mouse="mid" data-type="share">
-    <div data-mouse="mid" class="share-content-item" data-type="share">
-      <div class="share-content-twitter" data-mouse="mid" data-type="share"
-        onclick="sendGA('SNS_top_twitter');goTo('t')"></div>
-    </div>
-    <div data-mouse="mid" class="share-content-item" data-type="share">
-      <div class="share-content-youtube" data-mouse="mid" data-type="share"
-        onclick="sendGA('SNS_top_youtube');goTo('y')"></div>
-    </div>
-    <div data-mouse="mid" class="share-content-item" data-type="share">
-      <div class="share-content-line" data-mouse="mid" data-type="share" onclick="sendGA('SNS_top_line');goTo('line')">
-      </div>
-    </div>
-    <div data-mouse="mid" class="share-content-item" data-type="share">
-      <div class="share-content-tiktok" data-mouse="mid" data-type="share"
-        onclick="sendGA('SNS_top_tiktok');goTo('tiktok')"></div>
-    </div>
-    <div data-mouse="mid" class="share-content-item" data-type="share">
-      <div class="share-content-discord" data-mouse="mid" data-type="share"
-        onclick="sendGA('SNS_top_discord');goTo('discord')"></div>
-    </div>
-  </div>
   <div class="mask"></div>
   <!-- pc图集详情 -->
   <div class="pc papermaskDetail animate__animated animate__fadeInUp" id="papermaskDetail" data-mouse="small">
