@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会話例</title>
+    <!-- 引入 Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 页面框架样式 */
+        .page-frame {
+            padding: 7%;
+            /* 设置页面边距为 7% */
+            min-height: 100vh;
+            /* 确保页面至少占满视口高度 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 标题区域样式 */
+        .header-section {
+            height: 20vh;
+            /* 占页面高度的五分之一 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* 垂直居中 */
+            align-items: center;
+            /* 水平居中 */
+        }
+
+        /* 调整标题和副标题的间距 */
+        .header-section h1 {
+            margin-bottom: 10px;
+            /* 减小底部间距 */
+        }
+
+        .header-section p {
+            margin-bottom: 0;
+            /* 移除副标题的底部间距 */
+        }
+
+        /* 对话区域包装器 */
+        .chat-wrapper {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* 调整下拉菜单样式 */
+        .dropdown {
+            padding: 10px 20px;
+            border-bottom: 1.5px solid #0F0F11;
+        }
+
+        /* 确保下拉菜单按钮与容器背景融合 */
+        .dropdown .btn {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+        }
+
+        /* 自定义对话框样式 */
+        .chat-container {
+            padding: 0 20px 20px;
+            background-color: #f8f9fa;
+            border-radius: 0 0 10px 10px;
+            height: 400px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #6c757d #f8f9fa;
+        }
+
+        /* 通用对话框样式 */
+        .message {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            word-wrap: break-word;
+            width: fit-content;
+            min-width: 100px;
+            max-width: 80%;
+        }
+
+        /* 角色1 (Leopold) 的对话框样式 - 靠左 */
+        .character1 {
+            background-color: #863730;
+            color: #fff;
+            margin-right: auto;
+        }
+
+        /* 角色2 (Severo) 的对话框样式 - 靠右 */
+        .character2 {
+            background-color: #94A000;
+            color: black;
+            margin-left: auto;
+        }
+
+        /* 旁白样式 - 居中 */
+        .narration {
+            background-color: #ced4da;
+            color: #333;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* 为未来添加更多角色预留样式 */
+        .character3 {
+            background-color: #28a745;
+            color: white;
+            margin-right: auto;
+        }
+
+        .character4 {
+            background-color: #17a2b8;
+            color: white;
+            margin-left: auto;
+        }
+
+        .character5 {
+            background-color: #dc3545;
+            color: white;
+            margin-right: auto;
+        }
+
+        /* 角色简介样式 */
+        .profile-card {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #fff;
+            height: 400px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* 头像区域样式 */
+        .profile-avatar-container {
+            border: 1.5px solid #0F0F11;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 100%;
+            height: 150px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        /* 关键词区域样式 */
+        .keywords-container {
+            border: 1.5px solid #0F0F11;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+            background-color: #e9ecef;
+        }
+
+        .keywords {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        /* 简介区域样式 */
+        .profile-description {
+            border: 1.5px solid #0F0F11;
+            border-radius: 5px;
+            padding: 10px;
+            flex-grow: 1;
+        }
+
+        /* 滚动条美化（Webkit 浏览器） */
+        .chat-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-container::-webkit-scrollbar-track {
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .chat-container::-webkit-scrollbar-thumb {
+            background: #6c757d;
+            border-radius: 5px;
+        }
+
+        .chat-container::-webkit-scrollbar-thumb:hover {
+            background: #5a6268;
+        }
+
+        /* 确保三个块在同一行 */
+        .row {
+            align-items: stretch;
+        }
+
+        /* 对话内容容器 */
+        .conversation {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-frame">
+        <div class="container mt-5">
+            <div class="header-section">
+                <h1 class="text-center mb-4">社員マニュアル</h1>
+                <p class="text-center text-muted">会話例</p>
+            </div>
+            <div class="row">
+                <!-- 角色1 (Leopold) 简介 -->
+                <div class="col-md-3">
+                    <div class="profile-card">
+                        <!-- 上部：角色头像 -->
+                        <div class="profile-avatar-container">
+                            <img src="img/dh-leopold.jpg" alt="Leopold 头像" class="profile-avatar">
+                        </div>
+                        <!-- 中部：关键词/标签 -->
+                        <div class="keywords-container">
+                            <h6>Keyword</h6>
+                            <span class="keywords">冷静, 可靠, 善于思考</span>
+                        </div>
+                        <!-- 下部：简介 -->
+                        <div class="profile-description">
+                            <h5>Leopold 简介</h5>
+                            <p>Leopold 是一个沉稳内敛的人，总是能提供理性的建议，喜欢在关键时刻站出来解决问题。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 对话区域 -->
+                <div class="col-md-6">
+                    <div class="chat-wrapper">
+                        <!-- 切换菜单 -->
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                选择对话
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">01
+                                        社員マニュアル</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">02</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="chat-container" id="chat-container">
+                            <!-- 会話例 1 -->
+                            <div id="conversation1" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        そういうことです。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        彼女が白状したのはこうだった——美味しい山菜を採りに行き、うっかりマムシの尾を踏んでしまったという。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        だから、脚を『ちょっと』舐められたとでも？
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        Leopoldは呆れた表情で言う：舌に牙でも生えてるの？
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        いや、君の方は痛くないの？
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        Severoは少し考えて答えた：あまり感じませんでした。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        ……そうであることを祈るわ。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        隠してたのもわざとじゃない、と？
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        ちゃんと薬は塗りましたよ。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        わざとじゃないの？
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        ……わざとです。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        私が服を脱がせないとでも思ったの？
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        少しでも時間を稼げればいいかなと。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        時間を稼いで、何か良いことでもあるの？
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        知るのが一刻でも遅ければ、殿の心配も一刻減るでしょう？
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        Leopoldは彼女の耳を軽くつまむ：何その屁理屈。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        Severoは素直に首を傾げる：効けばそれでいいんです。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        これから野外に行くときは、もっともっと気をつけなさい。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        『Severoの山菜採り禁止』って社員マニュアルに書き込まないんだ。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        Leopoldは驚いたふりをしながら言った：どうしてそんなふうに思った？
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        そう言いながらSeveroは胸元を探り、小さな薄い冊子を取り出し、ゆっくり広げてLの目の前に差し出した。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        そのページの第36条にはこう書かれている——「Severoの生食禁止」
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        まだそのことを気にしてるの……
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        でも、さすがに過ぎません？
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        そのまま気にしていなさい。変えるつもりはないわ。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        今回はマニュアルを更新しないなんて、殿も随分お慈悲深い。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        悪いことじゃない限り、Severoがやりたいことはやればいいのよ。
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 会話例 2 -->
+                            <div id="conversation2" class="conversation" style="display: none;">
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        ---
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        ---
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        ---
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 角色2 (Severo) 简介 -->
+                <div class="col-md-3">
+                    <div class="profile-card">
+                        <!-- 上部：角色头像 -->
+                        <div class="profile-avatar-container">
+                            <img src="img/dh-severo.jpg" alt="Severo 头像" class="profile-avatar">
+                        </div>
+                        <!-- 中部：关键词/标签 -->
+                        <div class="keywords-container">
+                            <h6>Keyword</h6>
+                            <span class="keywords">活泼, 乐观, 好奇心旺盛</span>
+                        </div>
+                        <!-- 下部：简介 -->
+                        <div class="profile-description">
+                            <h5>Severo 简介</h5>
+                            <p>Severo 充满活力，喜欢尝试新事物，总是能带来欢乐的气氛。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入 Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showConversation(conversationId) {
+            // 隐藏所有对话
+            document.querySelectorAll('.conversation').forEach(function (conv) {
+                conv.style.display = 'none';
+            });
+            // 显示选中的对话
+            document.getElementById(conversationId).style.display = 'block';
+            // 滚动到顶部
+            document.getElementById('chat-container').scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
