@@ -83,7 +83,7 @@
         border-radius: 10px;
         overflow: hidden;
         border: 1.7px solid #0F0F11;
-        height: 580px; /* 固定高度 */
+        height: 600px; /* 固定高度 */
         display: flex;
         flex-direction: column; /* 确保内容垂直排列 */
     }
@@ -195,13 +195,14 @@
         border: none;
         border-radius: 10px;
         background-color: #fff;
-        height: 580px; /* 固定高度 */
+        height: 600px; /* 固定高度 */
         overflow-y: auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start; /* 改为顶部对齐，避免多余空间 */
         scrollbar-width: thin;
         scrollbar-color: #6c757d #f8f9fa;
+        margin: 0
     }
 
         /* 头像区域样式 */
@@ -313,7 +314,7 @@
             /* 确保三个块在同一行并等高 */
     .row {
         align-items: stretch;
-        height: 580px; /* 强制行高 */
+        height: 600px; /* 强制行高 */
     }
 
     .col-md-3, .col-md-6 {
