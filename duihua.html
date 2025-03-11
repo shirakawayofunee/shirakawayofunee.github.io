@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,35 +11,34 @@
         @font-face {
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W8.ttf') format('truetype');
-            font-weight: 200; /* 较细 */
+            font-weight: 200;
             font-style: normal;
         }
     
         @font-face {
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W12.ttf') format('truetype');
-            font-weight: 300; /* 中等粗细 */
+            font-weight: 300;
             font-style: normal;
         }
     
         @font-face {
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W16.ttf') format('truetype');
-            font-weight: 400; /* 正常粗细 */
+            font-weight: 400;
             font-style: normal;
         }
     
         @font-face {
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W27.ttf') format('truetype');
-            font-weight: 900; /* 最粗 */
+            font-weight: 900;
             font-style: normal;
         }
     
         /* 全局应用字体 */
         body {
             font-family: 'DreamHanSansJP', sans-serif;
-
         }
     
         /* 确保所有文本区域继承字体 */
@@ -49,92 +47,91 @@
         }
     
         /* 不同粗细的类 */
-        .w8 { font-weight: 200; }  /* 较细 */
-        .w12 { font-weight: 300; } /* 中等粗细 */
-        .w16 { font-weight: 400; } /* 正常粗细 */
-        .w27 { font-weight: 900; } /* 最粗 */
+        .w8 { font-weight: 200; }
+        .w12 { font-weight: 300; }
+        .w16 { font-weight: 400; }
+        .w27 { font-weight: 900; }
     </style>
     <style>
-            /* 全局盒模型设置 */
-    * {
-        box-sizing: border-box; /* 确保内边距和边框包含在高度中 */
-    }
+        /* 全局盒模型设置 */
+        * {
+            box-sizing: border-box;
+        }
+
         /* 页面框架样式 */
         .page-frame {
             min-height: 100vh;
-            /* 确保页面至少占满视口高度 */
             padding: 1%;
             display: flex;
             flex-direction: column;
         }
 
-    /* 标题区域样式 */
-    .header-section {
-        height: 5vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 14px;
-    }
+        /* 标题区域样式 */
+        .header-section {
+            height: 5vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 14px;
+        }
 
-    /* 对话区域包装器 */
-    .chat-wrapper {
-        background-color: #f8f9fa;
-        border-radius: 15px;
-        overflow: hidden;
-        border: 1.7px solid #0F0F11;
-        height: 600px; /* 固定高度 */
-        display: flex;
-        flex-direction: column; /* 确保内容垂直排列 */
-    }
+        /* 对话区域包装器 */
+        .chat-wrapper {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1.7px solid #0F0F11;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
 
         /* 调整下拉菜单样式 */
         .dropdown {
-        padding: 0; /* 移除默认内边距 */
-        border-bottom: 1.5px solid #0F0F11; /* 保持原有边框样式 */
-    }
+            padding: 0;
+            border-bottom: 1.5px solid #0F0F11;
+        }
 
-    /* 确保下拉菜单按钮与容器背景融合 */
-    .dropdown .btn {
-        background-color: #f8f9fa;
-        color: #495057;
-        border: none;
-        font-size: 0.875rem;
-        padding: 0 10px;
-        height: 30px;
-        line-height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0;
-    }
+        .dropdown .btn {
+            background-color: #f8f9fa;
+            color: #495057;
+            border: none;
+            font-size: 0.875rem;
+            padding: 0 10px;
+            height: 30px;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+        }
 
-    .dropdown .btn:hover, .dropdown .btn:focus {
-        background-color: #e9ecef; /* 悬停时轻微变化 */
-        color: #495057;
-        box-shadow: none; /* 移除默认阴影 */
-    }
+        .dropdown .btn:hover, .dropdown .btn:focus {
+            background-color: #e9ecef;
+            color: #495057;
+            box-shadow: none;
+        }
 
-    .dropdown .dropdown-toggle::after {
-        display: none; /* 移除默认的下拉箭头 */
-    }
+        .dropdown .dropdown-toggle::after {
+            display: none;
+        }
 
-    .dropdown-menu {
-        font-family: 'DreamHanSansJP', sans-serif; /* 继承全局字体 */
-        font-size: 0.8rem; /* 匹配按钮字体大小 */
-    }
+        .dropdown-menu {
+            font-family: 'DreamHanSansJP', sans-serif;
+            font-size: 0.8rem;
+        }
 
-    /* 自定义对话框样式 */
-    .chat-container {
-        padding: 0 20px 20px; /* 仅底部有内边距，避免顶部影响高度 */
-        background-color: #f8f9fa;
-        border-radius: 0 0 10px 10px;
-        flex: 1; /* 填充剩余高度 */
-        overflow-y: auto;
-        scrollbar-width: thin;
-        scrollbar-color: #6c757d #f8f9fa;
-    }
+        /* 自定义对话框样式 */
+        .chat-container {
+            padding: 0 20px 20px;
+            background-color: #f8f9fa;
+            border-radius: 0 0 10px 10px;
+            flex: 1;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #6c757d #f8f9fa;
+        }
 
         /* 通用对话框样式 */
         .message {
@@ -145,6 +142,11 @@
             width: fit-content;
             min-width: 100px;
             max-width: 80%;
+        }
+
+        /* 为每个对话的第一个消息添加顶部间距 */
+        .conversation .mb-3:first-child {
+            margin-top: 20px;
         }
 
         /* 角色1 (Leopold) 的对话框样式 - 靠左 */
@@ -190,36 +192,28 @@
             margin-right: auto;
         }
 
-    /* 角色简介样式 */
-    .profile-card {
-        padding-top: 0; /* 移除顶部 padding */
-    padding-bottom: 0; /* 移除底部 padding */
-    padding-left: 10px; /* 保留左侧 padding，保持内部间距 */
-    padding-right: 10px; /* 保留右侧 padding，保持内部间距 */
-    margin: 0; /* 确保无额外外边距 */
-        border: none;
-        border-radius: 15px;
-        background-color: #fff;
-        height: 600px; /* 固定高度 */
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; /* 改为顶部对齐，避免多余空间 */
-        scrollbar-width: thin;
-        scrollbar-color: #6c757d #f8f9fa;
-        margin: 0
-    }
+        /* 角色简介样式 */
+        .profile-card {
+            padding: 0; /* 移除所有内边距 */
+            margin: 0; /* 移除所有外边距 */
+            border: none;
+            border-radius: 15px;
+            background-color: #fff;
+            height: 600px; /* 固定高度 */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow-y: hidden; /* 暂时禁用滚动条，方便调试 */
+        }
 
         /* 头像区域样式 */
         .profile-avatar-container {
             border: 1.7px solid #0F0F11;
             border-radius: 15px;
-            padding: 0px;
+            padding: 0;
             text-align: center;
-            flex: 0 0 calc(0.47 * 100%);
-            /* 头像长度比例 */
-            margin-bottom: calc(0.02 * 100%);
-            /* 相等间距 */
+            height: 282px; /* 直接设置固定高度，282 / 600 ≈ 47% */
+            margin-bottom: 12px; /* 固定间距，12 / 600 = 2% */
         }
 
         .profile-avatar {
@@ -231,103 +225,107 @@
 
         /* 关键词区域样式 */
         .keywords-container {
-        border: 1.7px solid #0F0F11;
-        border-radius: 5px;
-        padding: 0; /* 移除外边距，让背景贴近边框 */
-        background-color: #e9ecef;
-        flex: 0 0 calc(0.0488 * 100%); /* 关键词长度比例 */
-        margin-bottom: calc(0.02 * 100%);/* 相等间距 */
-        display: flex; /* 使用flex布局使内容在一行 */
-        align-items: stretch; /* 拉伸以填充高度 */
-        justify-content: space-between; /* 左右对齐 */
-        overflow: hidden; /* 确保背景不溢出 */
-    }
+            border: 1.7px solid #0F0F11;
+            border-radius: 5px;
+            padding: 0;
+            background-color: #e9ecef;
+            height: 29px; /* 固定高度，29 / 600 ≈ 4.88% */
+            margin-bottom: 12px; /* 固定间距，12 / 600 = 2% */
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            overflow: hidden;
+        }
 
-    .keywords-container h6 {
-        margin: 0;
-        font-size: 0.9rem; /* 调整字体大小 */
-        font-weight: bold;
-        background-color: #000; /* 黑色背景 */
-        color: white; /* 白色文字 */
-        padding: 5px 8px; /* 调整内边距以完全填充 */
-        border-radius: 3px 0 0 3px; /* 左侧圆角，右侧直角 */
-        line-height: 1; /* 确保背景高度贴合文字 */
-        display: flex; /* 使用flex确保内容居中 */
-        align-items: center; /* 垂直居中 */
-        flex-shrink: 0; /* 防止缩小 */
-    }
+        .keywords-container h6 {
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: bold;
+            background-color: #000;
+            color: white;
+            padding: 5px 8px;
+            border-radius: 3px 0 0 3px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
 
-    .keywords {
-        font-size: 0.7rem; /* 调整关键词字体大小 */
-        color: #5C5C5C;
-        padding: 5px 8px; /* 与h6保持一致的内边距 */
-        display: flex;
-        align-items: center; /* 垂直居中 */
-        flex-grow: 1; /* 填充剩余空间 */
-    }
+        .keywords {
+            font-size: 0.7rem;
+            color: #5C5C5C;
+            padding: 5px 8px;
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
 
         /* 简介区域样式 */
         .profile-description {
-        border: 1.7px solid #0F0F11;
-        border-radius: 5px;
-        padding: 20px; /* 调整为固定内边距，避免百分比导致高度变化 */
-        flex: 0 0 calc(0.49 * 100%);
-        font-size: 0.9rem;
-        margin: 0;
-    }
+            border: 1.7px solid #0F0F11;
+            border-radius: 5px;
+            padding: 10px; /* 减少内边距，防止高度溢出 */
+            height: 261px; /* 剩余高度：600 - 282 - 29 - 12 - 12 - 3.4（边框）* 3 = 261px */
+            font-size: 0.9rem;
+            margin: 0;
+            overflow-y: auto; /* 如果简介内容过长，允许滚动 */
+            scrollbar-width: thin;
+            scrollbar-color: #6c757d #f8f9fa;
+        }
 
         .profile-description h5 {
             margin: 0 0 5px 0;
-            /* 调整标题间距 */
             font-size: 1rem;
-            /* 调整标题字体大小 */
         }
 
         .profile-description p {
             margin: 0;
-            /* 移除多余间距 */
         }
 
         /* 滚动条美化（Webkit 浏览器） */
-        .chat-container::-webkit-scrollbar {
+        .chat-container::-webkit-scrollbar,
+        .profile-description::-webkit-scrollbar {
             width: 8px;
         }
 
-        .chat-container::-webkit-scrollbar-track {
+        .chat-container::-webkit-scrollbar-track,
+        .profile-description::-webkit-scrollbar-track {
             background: #f8f9fa;
             border-radius: 5px;
         }
 
-        .chat-container::-webkit-scrollbar-thumb {
+        .chat-container::-webkit-scrollbar-thumb,
+        .profile-description::-webkit-scrollbar-thumb {
             background: #6c757d;
             border-radius: 5px;
         }
 
-        .chat-container::-webkit-scrollbar-thumb:hover {
+        .chat-container::-webkit-scrollbar-thumb:hover,
+        .profile-description::-webkit-scrollbar-thumb:hover {
             background: #5a6268;
         }
 
-            /* 确保三个块在同一行并等高 */
-    .row {
-        align-items: stretch;
-        height: 600px;
-    }
+        /* 确保三个块在同一行并等高 */
+        .row {
+            align-items: stretch;
+            height: 600px;
+        }
 
-    .col-md-3, .col-md-6 {
-        padding-top: 0; /* 移除顶部 padding */
-    padding-bottom: 0; /* 移除底部 padding */
-    padding-left: 15px; /* 保留左侧 padding，与 Bootstrap 默认值一致 */
-    padding-right: 15px; /* 保留右侧 padding，与 Bootstrap 默认值一致 */
-        display: flex;
-        flex-direction: column;
-        height: 100%; /* 确保列高度匹配 */
-    }
+        .col-md-3, .col-md-6 {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
 
-    /* 对话内容容器 */
-    .conversation {
-        display: block;
-        flex: 1; /* 填充剩余空间 */
-    }
+        /* 对话内容容器 */
+        .conversation {
+            display: block;
+            flex: 1;
+        }
     </style>
 </head>
 
@@ -341,16 +339,13 @@
                 <!-- 角色1 (Leopold) 简介 -->
                 <div class="col-md-3">
                     <div class="profile-card">
-                        <!-- 上部：角色头像 -->
                         <div class="profile-avatar-container">
                             <img src="img/dh-leopold.jpg" alt="Leopold" class="profile-avatar">
                         </div>
-                        <!-- 中部：关键词/标签 -->
                         <div class="keywords-container">
                             <h6 class="w16">Keyword</h6>
                             <span class="keywords w12">無愛想だが非常に頼もしい死神</span>
                         </div>
-                        <!-- 下部：简介 -->
                         <div class="profile-description">
                             <h5 class="w12">一人称：私<br>二人称：お前、君</h5>
                             <p class="w8">数日内に追加の内容をアップします。</p>
@@ -358,320 +353,317 @@
                     </div>
                 </div>
 
-                <!-- 对话区域 -->
-                <div class="col-md-6">
-                    <div class="chat-wrapper">
-                        <!-- 切换菜单 -->
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                選べる会話例
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">01
-                                        針</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">02 社員マニュアル
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+<!-- 会話例 -->
+<div class="col-md-6">
+    <div class="chat-wrapper">
+        <!-- 選べる会話例 -->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                選べる会話例
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">01
+                        針</a></li>
+                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">02 社員マニュアル
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-                        <div class="chat-container" id="chat-container">
-                            <!-- 会話例 1 -->
-                            <div id="conversation1" class="conversation">
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        これはもできるのか？
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        子供のころ、家が貧乏で、近所さん家でよくご飯を食べてくれたんだ……眠くなって、目を開けると、近所のおばあさんが油灯の下で私の服を縫っていた。私にそれをかけて、家まで送ってくれた。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        安心できる話だね。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        うん、とても安心できた。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        あの時は色々とわからなかったけど。ただ、服を縫うことが、農作業や炊事とあまり変わらないんじゃないかって思った。他の人が幸せを感じられるなら、それでいいんじゃないかって。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        私もちょっとやってみたけど、別の新しいことに気を取られて、結局忘れてしまったんだ。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        まあ、最後はできたよね？
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        できたかもしれないし、できなかったかもしれない。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        かもしれない？
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        Sは尋ねる：殿下、聞きたい？
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        聞きたいわ。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        マラリアが流行した後、私が最後に帰ったのは……彼女たちの遺体を埋葬するためだった……昼夜を問わず、そこにいる間、毎日、みんなのために墓を立て、碑を立てた。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message narration">
-                                        LeopoldはSeveroの手を握った。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message narration">
-                                        赤い瞳はじっと動かず、まるで洗い清められたように輝いている。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        Sは続けた：一つ一つ、遺体に着る服を縫った。手が不器用だったけど、何度もやっているうちに上手くなった。昔はよく針を通せるようになったらどうするかって想像したけど、まさか、最初に他の人のために服を縫うことになるとは、こんな状況だとは思わなかった。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        Lは尋ねる：痛かったの？苦しかったの？
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        Sは答える：あの時は目があまり良くなくて、針を使うのも不器用で、傷ついていくつかの血穴も開けた……でも今は、もう過ぎたことだから、何も感じないよ。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message narration">
-                                        少女は指先でSeveroの頬をそっと触れた。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message narration">
-                                        Severoは今、自分がどんな表情をしているのか分からなかった。ただ、少女の温もりがゆっくりと伝わってくるのを感じながら、口を噤んだ。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        天国のご先祖様も、きっと今のお前を見て安心できたわ。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        殿下がそう言うなら、信じます。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        私は嘘を言わない、信じていいのよ。
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 会話例 2 -->
-                            <div id="conversation2" class="conversation">
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        そういうことです。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message narration">
-                                        彼女が白状したのはこうだった——美味しい山菜を採りに行き、うっかりマムシの尾を踏んでしまったという。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        だから、脚を『ちょっと』舐められたとでも？
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        Leopoldは呆れた表情で言う：舌に牙でも生えてるの？
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        いや、君の方は痛くないの？
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        Severoは少し考えて答えた：あまり感じませんでした。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        ……そうであることを祈るわ。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        隠してたのもわざとじゃない、と？
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        ちゃんと薬は塗りましたよ。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        わざとじゃないの？
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        ……わざとです。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        私が服を脱がせないとでも思ったの？
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        少しでも時間を稼げればいいかなと。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        時間を稼いで、何か良いことでもあるの？
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        知るのが一刻でも遅ければ、殿の心配も一刻減るでしょう？
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        Leopoldは彼女の耳を軽くつまむ：何その屁理屈。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        Severoは素直に首を傾げる：効けばそれでいいんです。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        これから野外に行くときは、もっともっと気をつけなさい。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        『Severoの山菜採り禁止』って社員マニュアルに書き込まないんだ。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        Leopoldは驚いたふりをしながら言った：どうしてそんなふうに思った？
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message narration">
-                                        そう言いながらSeveroは胸元を探り、小さな薄い冊子を取り出し、ゆっくり広げてLの目の前に差し出した。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message narration">
-                                        そのページの第36条にはこう書かれている——「Severoの生食禁止」
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        まだそのことを気にしてるの……
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        でも、さすがに過ぎません？
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        そのまま気にしていなさい。変えるつもりはないわ。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        今回はマニュアルを更新しないなんて、殿も随分お慈悲深い。
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="message character1 w12">
-                                        悪いことじゃない限り、Severoがやりたいことはやればいいのよ。
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+        <div class="chat-container" id="chat-container">
+            <!-- 会話例 1 -->
+            <div id="conversation1" class="conversation">
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        これはもできるのか？
                     </div>
                 </div>
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        子供のころ、家が貧乏で、近所さん家でよくご飯を食べてくれたんだ……眠くなって、目を開けると、近所のおばあさんが油灯の下で私の服を縫っていた。私にそれをかけて、家まで送ってくれた。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        安心できる話だね。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        うん、とても安心できた。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        あの時は色々とわからなかったけど。ただ、服を縫うことが、農作業や炊事とあまり変わらないんじゃないかって思った。他の人が幸せを感じられるなら、それでいいんじゃないかって。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        私もちょっとやってみたけど、別の新しいことに気を取られて、結局忘れてしまったんだ。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        まあ、最後はできたよね？
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        できたかもしれないし、できなかったかもしれない。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        かもしれない？
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        Sは尋ねる：殿下、聞きたい？
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        聞きたいわ。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        マラリアが流行した後、私が最後に帰ったのは……彼女たちの遺体を埋葬するためだった……昼夜を問わず、そこにいる間、毎日、みんなのために墓を立て、碑を立てた。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message narration">
+                        LeopoldはSeveroの手を握った。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message narration">
+                        赤い瞳はじっと動かず、まるで洗い清められたように輝いている。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        Sは続けた：一つ一つ、遺体に着る服を縫った。手が不器用だったけど、何度もやっているうちに上手くなった。昔はよく針を通せるようになったらどうするかって想像したけど、まさか、最初に他の人のために服を縫うことになるとは、こんな状況だとは思わなかった。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        Lは尋ねる：痛かったの？苦しかったの？
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        Sは答える：あの時は目があまり良くなくて、針を使うのも不器用で、傷ついていくつかの血穴も開けた……でも今は、もう過ぎたことだから、何も感じないよ。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message narration">
+                        少女は指先でSeveroの頬をそっと触れた。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message narration">
+                        Severoは今、自分がどんな表情をしているのか分からなかった。ただ、少女の温もりがゆっくりと伝わってくるのを感じながら、口を噤んだ。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        天国のご先祖様も、きっと今のお前を見て安心できたわ。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        殿下がそう言うなら、信じます。
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        私は嘘を言わない、信じていいのよ。
+                    </div>
+                </div>
+            </div>
+            <!-- 会話例 2 -->
+            <div id="conversation2" class="conversation">
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        そういうことです。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message narration">
+                        彼女が白状したのはこうだった——美味しい山菜を採りに行き、うっかりマムシの尾を踏んでしまったという。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        だから、脚を『ちょっと』舐められたとでも？
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        Leopoldは呆れた表情で言う：舌に牙でも生えてるの？
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        いや、君の方は痛くないの？
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        Severoは少し考えて答えた：あまり感じませんでした。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        ……そうであることを祈るわ。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        隠してたのもわざとじゃない、と？
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        ちゃんと薬は塗りましたよ。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        わざとじゃないの？
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        ……わざとです。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        私が服を脱がせないとでも思ったの？
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        少しでも時間を稼げればいいかなと。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        時間を稼いで、何か良いことでもあるの？
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        知るのが一刻でも遅ければ、殿の心配も一刻減るでしょう？
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        Leopoldは彼女の耳を軽くつまむ：何その屁理屈。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        Severoは素直に首を傾げる：効けばそれでいいんです。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        これから野外に行くときは、もっともっと気をつけなさい。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        『Severoの山菜採り禁止』って社員マニュアルに書き込まないんだ。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        Leopoldは驚いたふりをしながら言った：どうしてそんなふうに思った？
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message narration">
+                        そう言いながらSeveroは胸元を探り、小さな薄い冊子を取り出し、ゆっくり広げてLの目の前に差し出した。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message narration">
+                        そのページの第36条にはこう書かれている——「Severoの生食禁止」
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        まだそのことを気にしてるの……
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        でも、さすがに過ぎません？
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        そのまま気にしていなさい。変えるつもりはないわ。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character2 w12">
+                        今回はマニュアルを更新しないなんて、殿も随分お慈悲深い。
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="message character1 w12">
+                        悪いことじゃない限り、Severoがやりたいことはやればいいのよ。
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
                 <!-- 角色2 (Severo) 简介 -->
                 <div class="col-md-3">
                     <div class="profile-card">
-                        <!-- 上部：角色头像 -->
                         <div class="profile-avatar-container">
                             <img src="img/dh-severo.png" alt="Severo" class="profile-avatar">
                         </div>
-                        <!-- 中部：关键词/标签 -->
                         <div class="keywords-container">
                             <h6>Keyword</h6>
                             <span class="keywords">可憐ぶる信者、でも実際可哀想。</span>
                         </div>
-                        <!-- 下部：简介 -->
                         <div class="profile-description">
                             <h5 class="w12">一人称：私 / 二人称：あなた</h5>
                             <p class="w8">数日内に追加の内容をアップします。</p>
@@ -686,16 +678,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function showConversation(conversationId) {
-            // 隐藏所有对话
             document.querySelectorAll('.conversation').forEach(function (conv) {
                 conv.style.display = 'none';
             });
-            // 显示选中的对话
             document.getElementById(conversationId).style.display = 'block';
-            // 滚动到顶部
             document.getElementById('chat-container').scrollTop = 0;
         }
     </script>
 </body>
-
 </html>
