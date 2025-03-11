@@ -652,12 +652,7 @@
                             <div id="conversation3" class="conversation" style="display: none;">
                                 <div class="mb-3">
                                     <div class="message character2 w12">
-                                        まるで二つ目の月である。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        堂々と天界に輝くのが二つ目でありこちらの月が本当であると思う。
+                                        まるで二つ目の月である。堂々と天界に輝くのが二つ目でありこちらの月が本当であると思う。
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -667,12 +662,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="message character2 w12">
-                                        照りつけて、
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message character2 w12">
-                                        焼き尽くして欲しいのだ。
+                                        照りつけて、焼き尽くして欲しいのだ。
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -740,6 +730,10 @@
             document.getElementById(conversationId).style.display = 'block';
             document.getElementById('chat-container').scrollTop = 0;
         }
+                // 默认显示第一个会话
+                document.addEventListener('DOMContentLoaded', function () {
+            showConversation('conversation3');
+        });
     </script>
 </body>
 </html>
