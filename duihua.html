@@ -216,7 +216,7 @@
             border-radius: 15px;
             padding: 0px;
             text-align: center;
-            flex: 0 0 calc(0.4683 * 100%);
+            flex: 0 0 calc(0.47 * 100%);
             /* 头像长度比例 */
             margin-bottom: calc(0.02 * 100%);
             /* 相等间距 */
@@ -271,8 +271,9 @@
         border: 1.7px solid #0F0F11;
         border-radius: 5px;
         padding: 20px; /* 调整为固定内边距，避免百分比导致高度变化 */
-        flex: 0 0 calc(0.4439 * 100%);
+        flex: 0 0 calc(0.49 * 100%);
         font-size: 0.9rem;
+        margin: 0;
     }
 
         .profile-description h5 {
@@ -306,19 +307,10 @@
             background: #5a6268;
         }
 
-        /* 确保三个块在同一行 */
-        .row {
-            align-items: stretch;
-        }
-
-        /* 对话内容容器 */
-        .conversation {
-            display: block;
-        }
-
             /* 确保三个块在同一行并等高 */
     .row {
         align-items: stretch;
+        height: 600px;
     }
 
     .col-md-3, .col-md-6 {
