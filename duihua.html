@@ -8,109 +8,18 @@
     <!-- 引入 Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* 声明DreamHanSansJP字体，分别定义每个粗细 */
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W1.ttf') format('truetype');
-            font-weight: 100; /* 最细 */
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W2.ttf') format('truetype');
-            font-weight: 120; /* 线性映射 */
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W3.ttf') format('truetype');
-            font-weight: 140;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W4.ttf') format('truetype');
-            font-weight: 160;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W5.ttf') format('truetype');
-            font-weight: 180;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W6.ttf') format('truetype');
-            font-weight: 200;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W7.ttf') format('truetype');
-            font-weight: 220;
-            font-style: normal;
-        }
-    
+        /* 声明DreamHanSansJP字体，仅加载常用粗细 */
         @font-face {
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W8.ttf') format('truetype');
-            font-weight: 240;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W9.ttf') format('truetype');
-            font-weight: 260;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W10.ttf') format('truetype');
-            font-weight: 280;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W11.ttf') format('truetype');
-            font-weight: 300;
+            font-weight: 200; /* 较细 */
             font-style: normal;
         }
     
         @font-face {
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W12.ttf') format('truetype');
-            font-weight: 320;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W13.ttf') format('truetype');
-            font-weight: 340;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W14.ttf') format('truetype');
-            font-weight: 360;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W15.ttf') format('truetype');
-            font-weight: 380;
+            font-weight: 300; /* 中等粗细 */
             font-style: normal;
         }
     
@@ -118,76 +27,6 @@
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W16.ttf') format('truetype');
             font-weight: 400; /* 正常粗细 */
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W17.ttf') format('truetype');
-            font-weight: 420;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W18.ttf') format('truetype');
-            font-weight: 440;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W19.ttf') format('truetype');
-            font-weight: 460;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W20.ttf') format('truetype');
-            font-weight: 480;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W21.ttf') format('truetype');
-            font-weight: 500;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W22.ttf') format('truetype');
-            font-weight: 600;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W23.ttf') format('truetype');
-            font-weight: 700; /* 粗体 */
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W24.ttf') format('truetype');
-            font-weight: 750;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W25.ttf') format('truetype');
-            font-weight: 800;
-            font-style: normal;
-        }
-    
-        @font-face {
-            font-family: 'DreamHanSansJP';
-            src: url('fonts/DreamHanSansJP-W26.ttf') format('truetype');
-            font-weight: 850;
             font-style: normal;
         }
     
@@ -209,33 +48,10 @@
         }
     
         /* 不同粗细的类 */
-        .w1 { font-weight: 100; }  /* 对应W1，最细 */
-        .w2 { font-weight: 120; }
-        .w3 { font-weight: 140; }
-        .w4 { font-weight: 160; }
-        .w5 { font-weight: 180; }
-        .w6 { font-weight: 200; }
-        .w7 { font-weight: 220; }
-        .w8 { font-weight: 240; }
-        .w9 { font-weight: 260; }
-        .w10 { font-weight: 280; }
-        .w11 { font-weight: 300; }
-        .w12 { font-weight: 320; }
-        .w13 { font-weight: 340; }
-        .w14 { font-weight: 360; }
-        .w15 { font-weight: 380; }
-        .w16 { font-weight: 400; } /* 对应W16，正常粗细 */
-        .w17 { font-weight: 420; }
-        .w18 { font-weight: 440; }
-        .w19 { font-weight: 460; }
-        .w20 { font-weight: 480; }
-        .w21 { font-weight: 500; }
-        .w22 { font-weight: 600; }
-        .w23 { font-weight: 700; } /* 对应W23，粗体 */
-        .w24 { font-weight: 750; }
-        .w25 { font-weight: 800; }
-        .w26 { font-weight: 850; }
-        .w27 { font-weight: 900; } /* 对应W27，最粗 */
+        .w8 { font-weight: 200; }  /* 较细 */
+        .w12 { font-weight: 300; } /* 中等粗细 */
+        .w16 { font-weight: 400; } /* 正常粗细 */
+        .w27 { font-weight: 900; } /* 最粗 */
     </style>
     <style>
         /* 页面框架样式 */
@@ -270,16 +86,39 @@
 
         /* 调整下拉菜单样式 */
         .dropdown {
-            padding: 10px 20px;
-            border-bottom: 1.7px solid #0F0F11;
-        }
+        padding: 0; /* 移除默认内边距 */
+        border-bottom: 1.5px solid #0F0F11; /* 保持原有边框样式 */
+    }
 
         /* 确保下拉菜单按钮与容器背景融合 */
         .dropdown .btn {
-            background-color: #6c757d;
-            color: white;
-            border: none;
-        }
+        background-color: #f8f9fa; /* 与容器背景完全融合 */
+        color: #495057; /* 文字颜色与容器协调 */
+        border: none; /* 移除默认边框 */
+        font-size: 0.875rem; /* 调整字体大小以适应高度 */
+        padding: 0 10px; /* 水平内边距 */
+        height: 30px; 
+        line-height: 30px; /* 确保文字垂直居中 */
+        display: flex; /* 使用flex布局 */
+        align-items: center; /* 垂直居中 */
+        justify-content: center; /* 水平居中 */
+        border-radius: 0; /* 移除默认圆角 */
+    }
+
+    .dropdown .btn:hover, .dropdown .btn:focus {
+        background-color: #e9ecef; /* 悬停时轻微变化 */
+        color: #495057;
+        box-shadow: none; /* 移除默认阴影 */
+    }
+
+    .dropdown .dropdown-toggle::after {
+        display: none; /* 移除默认的下拉箭头 */
+    }
+
+    .dropdown-menu {
+        font-family: 'DreamHanSansJP', sans-serif; /* 继承全局字体 */
+        font-size: 0.875rem; /* 匹配按钮字体大小 */
+    }
 
         /* 自定义对话框样式 */
         .chat-container {
@@ -493,13 +332,13 @@
                         </div>
                         <!-- 中部：关键词/标签 -->
                         <div class="keywords-container">
-                            <h6>Keyword</h6>
-                            <span class="keywords">冷静, 可靠, 善于思考</span>
+                            <h6 class="w16">Keyword</h6>
+                            <span class="keywords w12">無愛想だが非常に頼りになる死神</span>
                         </div>
                         <!-- 下部：简介 -->
                         <div class="profile-description">
-                            <h5>一人称：私<br>二人称：お前、君</h5>
-                            <p>Leopold 是一个沉稳内敛的人，总是能提供理性的建议，喜欢在关键时刻站出来解决问题。</p>
+                            <h5 class="w12">一人称：私<br>二人称：お前、君</h5>
+                            <p class="w8">数日内に追加の内容をアップします。</p>
                         </div>
                     </div>
                 </div>
@@ -511,7 +350,7 @@
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                选择对话
+                                会話を選ぶ
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">01
@@ -526,7 +365,7 @@
                             <!-- 会話例 1 -->
                             <div id="conversation1" class="conversation">
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         そういうことです。
                                     </div>
                                 </div>
@@ -538,109 +377,109 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         だから、脚を『ちょっと』舐められたとでも？
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         Leopoldは呆れた表情で言う：舌に牙でも生えてるの？
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         いや、君の方は痛くないの？
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         Severoは少し考えて答えた：あまり感じませんでした。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         ……そうであることを祈るわ。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         隠してたのもわざとじゃない、と？
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         ちゃんと薬は塗りましたよ。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         わざとじゃないの？
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         ……わざとです。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         私が服を脱がせないとでも思ったの？
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         少しでも時間を稼げればいいかなと。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         時間を稼いで、何か良いことでもあるの？
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         知るのが一刻でも遅ければ、殿の心配も一刻減るでしょう？
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         Leopoldは彼女の耳を軽くつまむ：何その屁理屈。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         Severoは素直に首を傾げる：効けばそれでいいんです。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         これから野外に行くときは、もっともっと気をつけなさい。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         『Severoの山菜採り禁止』って社員マニュアルに書き込まないんだ。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         Leopoldは驚いたふりをしながら言った：どうしてそんなふうに思った？
                                     </div>
                                 </div>
@@ -658,31 +497,31 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         まだそのことを気にしてるの……
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         でも、さすがに過ぎません？
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         そのまま気にしていなさい。変えるつもりはないわ。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         今回はマニュアルを更新しないなんて、殿も随分お慈悲深い。
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         悪いことじゃない限り、Severoがやりたいことはやればいいのよ。
                                     </div>
                                 </div>
@@ -691,62 +530,62 @@
                             <!-- 会話例 2 -->
                             <div id="conversation2" class="conversation" style="display: none;">
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         これはもできるのか？
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         子供のころ、家が貧乏で、近所さん家でよくご飯を食べてくれたんだ……眠くなって、目を開けると、近所のおばあさんが油灯の下で私の服を縫っていた。私にそれをかけて、家まで送ってくれた。
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         安心できる話だね。
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         うん、とても安心できた。
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         あの時は色々とわからなかったけど。ただ、服を縫うことが、農作業や炊事とあまり変わらないんじゃないかって思った。他の人が幸せを感じられるなら、それでいいんじゃないかって。
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         私もちょっとやってみたけど、別の新しいことに気を取られて、結局忘れてしまったんだ。
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         まあ、最後はできたよね？
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         できたかもしれないし、できなかったかもしれない。
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         かもしれない？
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         Sは尋ねる：殿下、聞きたい？
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         聞きたいわ。
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         マラリアが流行した後、私が最後に帰ったのは……彼女たちの遺体を埋葬するためだった……昼夜を問わず、そこにいる間、毎日、みんなのために墓を立て、碑を立てた。
                                     </div>
                                 </div>
@@ -761,17 +600,17 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         Sは続けた：一つ一つ、遺体に着る服を縫った。手が不器用だったけど、何度もやっているうちに上手くなった。昔はよく針を通せるようになったらどうするかって想像したけど、まさか、最初に他の人のために服を縫うことになるとは、こんな状況だとは思わなかった。
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         Lは尋ねる：痛かったの？苦しかったの？
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         Sは答える：あの時は目があまり良くなくて、針を使うのも不器用で、傷ついていくつかの血穴も開けた……でも今は、もう過ぎたことだから、何も感じないよ。
                                     </div>
                                 </div>
@@ -786,17 +625,17 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         天国のご先祖様も、きっと今のお前を見て安心できたわ。
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character2">
+                                    <div class="message character2 w12">
                                         殿下がそう言うなら、信じます。
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="message character1">
+                                    <div class="message character1 w12">
                                         私は嘘を言わない、信じていいのよ。
                                     </div>
                                 </div>
@@ -819,8 +658,8 @@
                         </div>
                         <!-- 下部：简介 -->
                         <div class="profile-description">
-                            <h5>一人称：私 / 二人称：あなた</h5>
-                            <p></p>
+                            <h5 class="w12">一人称：私 / 二人称：あなた</h5>
+                            <p class="w8">数日内に追加の内容をアップします。</p>
                         </div>
                     </div>
                 </div>
