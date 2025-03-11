@@ -54,6 +54,10 @@
         .w27 { font-weight: 900; } /* 最粗 */
     </style>
     <style>
+            /* 全局盒模型设置 */
+    * {
+        box-sizing: border-box; /* 确保内边距和边框包含在高度中 */
+    }
         /* 页面框架样式 */
         .page-frame {
             min-height: 100vh;
@@ -63,26 +67,26 @@
             flex-direction: column;
         }
 
-        /* 标题区域样式 */
-        .header-section {
-            height: 5vh;
-            /* 占页面高度的五分之一 */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            /* 垂直居中 */
-            align-items: center;
-            /* 水平居中 */
-            margin-bottom: 14px;
-        }
+    /* 标题区域样式 */
+    .header-section {
+        height: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 14px;
+    }
 
-        /* 对话区域包装器 */
-        .chat-wrapper {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1.7px solid #0F0F11;
-        }
+    /* 对话区域包装器 */
+    .chat-wrapper {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1.7px solid #0F0F11;
+        height: 580px; /* 固定高度 */
+        display: flex;
+        flex-direction: column; /* 确保内容垂直排列 */
+    }
 
         /* 调整下拉菜单样式 */
         .dropdown {
@@ -90,19 +94,19 @@
         border-bottom: 1.5px solid #0F0F11; /* 保持原有边框样式 */
     }
 
-        /* 确保下拉菜单按钮与容器背景融合 */
-        .dropdown .btn {
-        background-color: #f8f9fa; /* 与容器背景完全融合 */
-        color: #495057; /* 文字颜色与容器协调 */
-        border: none; /* 移除默认边框 */
-        font-size: 0.875rem; /* 调整字体大小以适应高度 */
-        padding: 0 10px; /* 水平内边距 */
-        height: 30px; 
-        line-height: 30px; /* 确保文字垂直居中 */
-        display: flex; /* 使用flex布局 */
-        align-items: center; /* 垂直居中 */
-        justify-content: center; /* 水平居中 */
-        border-radius: 0; /* 移除默认圆角 */
+    /* 确保下拉菜单按钮与容器背景融合 */
+    .dropdown .btn {
+        background-color: #f8f9fa;
+        color: #495057;
+        border: none;
+        font-size: 0.875rem;
+        padding: 0 10px;
+        height: 30px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
     }
 
     .dropdown .btn:hover, .dropdown .btn:focus {
@@ -117,19 +121,19 @@
 
     .dropdown-menu {
         font-family: 'DreamHanSansJP', sans-serif; /* 继承全局字体 */
-        font-size: 0.875rem; /* 匹配按钮字体大小 */
+        font-size: 0.8rem; /* 匹配按钮字体大小 */
     }
 
-        /* 自定义对话框样式 */
-        .chat-container {
-            padding: 0 20px 20px;
-            background-color: #f8f9fa;
-            border-radius: 0 0 10px 10px;
-            height: 560px;
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: #6c757d #f8f9fa;
-        }
+    /* 自定义对话框样式 */
+    .chat-container {
+        padding: 0 20px 20px; /* 仅底部有内边距，避免顶部影响高度 */
+        background-color: #f8f9fa;
+        border-radius: 0 0 10px 10px;
+        flex: 1; /* 填充剩余高度 */
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #6c757d #f8f9fa;
+    }
 
         /* 通用对话框样式 */
         .message {
@@ -185,24 +189,20 @@
             margin-right: auto;
         }
 
-        /* 角色简介样式 */
-        .profile-card {
-            padding: 10px;
-            /* 减小外边距以更贴近图1 */
-            border: none;
-            border-radius: 10px;
-            background-color: #fff;
-            height: 560px;
-            /* 与对话区域同等长度 */
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            scrollbar-width: thin;
-            /* 滚动条宽度 */
-            scrollbar-color: #6c757d #f8f9fa;
-            /* 滚动条颜色 */
-        }
+    /* 角色简介样式 */
+    .profile-card {
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: #fff;
+        height: 580px; /* 固定高度 */
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        scrollbar-width: thin;
+        scrollbar-color: #6c757d #f8f9fa;
+    }
 
         /* 头像区域样式 */
         .profile-avatar-container {
@@ -262,15 +262,12 @@
 
         /* 简介区域样式 */
         .profile-description {
-            border: 1.7px solid #0F0F11;
-            border-radius: 5px;
-            padding: 10%;
-            /* 调整内边距以贴近图1 */
-            flex: 0 0 calc(0.4439 * 100%);
-            /* 简介长度比例 */
-            font-size: 0.9rem;
-            /* 调整字体大小 */
-        }
+        border: 1.7px solid #0F0F11;
+        border-radius: 5px;
+        padding: 20px; /* 调整为固定内边距，避免百分比导致高度变化 */
+        flex: 0 0 calc(0.4439 * 100%);
+        font-size: 0.9rem;
+    }
 
         .profile-description h5 {
             margin: 0 0 5px 0;
@@ -312,6 +309,24 @@
         .conversation {
             display: block;
         }
+
+            /* 确保三个块在同一行并等高 */
+    .row {
+        align-items: stretch;
+        height: 580px; /* 强制行高 */
+    }
+
+    .col-md-3, .col-md-6 {
+        display: flex;
+        flex-direction: column;
+        height: 100%; /* 确保列高度匹配 */
+    }
+
+    /* 对话内容容器 */
+    .conversation {
+        display: block;
+        flex: 1; /* 填充剩余空间 */
+    }
     </style>
 </head>
 
@@ -349,7 +364,7 @@
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                会話を選ぶ
+                                選べる会話例
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">01
