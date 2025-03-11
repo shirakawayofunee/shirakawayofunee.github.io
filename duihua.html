@@ -8,19 +8,248 @@
     <!-- 引入 Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* 声明DreamHanSansJP字体，分别定义每个粗细 */
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W1.ttf') format('truetype');
+            font-weight: 100; /* 最细 */
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W2.ttf') format('truetype');
+            font-weight: 120; /* 线性映射 */
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W3.ttf') format('truetype');
+            font-weight: 140;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W4.ttf') format('truetype');
+            font-weight: 160;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W5.ttf') format('truetype');
+            font-weight: 180;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W6.ttf') format('truetype');
+            font-weight: 200;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W7.ttf') format('truetype');
+            font-weight: 220;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W8.ttf') format('truetype');
+            font-weight: 240;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W9.ttf') format('truetype');
+            font-weight: 260;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W10.ttf') format('truetype');
+            font-weight: 280;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W11.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W12.ttf') format('truetype');
+            font-weight: 320;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W13.ttf') format('truetype');
+            font-weight: 340;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W14.ttf') format('truetype');
+            font-weight: 360;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W15.ttf') format('truetype');
+            font-weight: 380;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W16.ttf') format('truetype');
+            font-weight: 400; /* 正常粗细 */
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W17.ttf') format('truetype');
+            font-weight: 420;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W18.ttf') format('truetype');
+            font-weight: 440;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W19.ttf') format('truetype');
+            font-weight: 460;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W20.ttf') format('truetype');
+            font-weight: 480;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W21.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W22.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W23.ttf') format('truetype');
+            font-weight: 700; /* 粗体 */
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W24.ttf') format('truetype');
+            font-weight: 750;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W25.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W26.ttf') format('truetype');
+            font-weight: 850;
+            font-style: normal;
+        }
+    
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W27.ttf') format('truetype');
+            font-weight: 900; /* 最粗 */
+            font-style: normal;
+        }
+    
+        /* 全局应用字体 */
+        body {
+            font-family: 'DreamHanSansJP', sans-serif; /* 全局使用DreamHanSansJP */
+        }
+    
+        /* 确保所有文本区域继承字体 */
+        .message, .profile-description, .keywords-container h6, .keywords, h1, h5, p, span {
+            font-family: 'DreamHanSansJP', sans-serif;
+        }
+    
+        /* 不同粗细的类 */
+        .w1 { font-weight: 100; }  /* 对应W1，最细 */
+        .w2 { font-weight: 120; }
+        .w3 { font-weight: 140; }
+        .w4 { font-weight: 160; }
+        .w5 { font-weight: 180; }
+        .w6 { font-weight: 200; }
+        .w7 { font-weight: 220; }
+        .w8 { font-weight: 240; }
+        .w9 { font-weight: 260; }
+        .w10 { font-weight: 280; }
+        .w11 { font-weight: 300; }
+        .w12 { font-weight: 320; }
+        .w13 { font-weight: 340; }
+        .w14 { font-weight: 360; }
+        .w15 { font-weight: 380; }
+        .w16 { font-weight: 400; } /* 对应W16，正常粗细 */
+        .w17 { font-weight: 420; }
+        .w18 { font-weight: 440; }
+        .w19 { font-weight: 460; }
+        .w20 { font-weight: 480; }
+        .w21 { font-weight: 500; }
+        .w22 { font-weight: 600; }
+        .w23 { font-weight: 700; } /* 对应W23，粗体 */
+        .w24 { font-weight: 750; }
+        .w25 { font-weight: 800; }
+        .w26 { font-weight: 850; }
+        .w27 { font-weight: 900; } /* 对应W27，最粗 */
+    </style>
+    <style>
         /* 页面框架样式 */
         .page-frame {
-            padding: 7%;
-            /* 设置页面边距为 7% */
             min-height: 100vh;
             /* 确保页面至少占满视口高度 */
+            padding: 1%;
             display: flex;
             flex-direction: column;
         }
 
         /* 标题区域样式 */
         .header-section {
-            height: 20vh;
+            height: 5vh;
             /* 占页面高度的五分之一 */
             display: flex;
             flex-direction: column;
@@ -28,31 +257,21 @@
             /* 垂直居中 */
             align-items: center;
             /* 水平居中 */
-        }
-
-        /* 调整标题和副标题的间距 */
-        .header-section h1 {
-            margin-bottom: 10px;
-            /* 减小底部间距 */
-        }
-
-        .header-section p {
-            margin-bottom: 0;
-            /* 移除副标题的底部间距 */
+            margin-bottom: 14px;
         }
 
         /* 对话区域包装器 */
         .chat-wrapper {
             background-color: #f8f9fa;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            border: 1.7px solid #0F0F11;
         }
 
         /* 调整下拉菜单样式 */
         .dropdown {
             padding: 10px 20px;
-            border-bottom: 1.5px solid #0F0F11;
+            border-bottom: 1.7px solid #0F0F11;
         }
 
         /* 确保下拉菜单按钮与容器背景融合 */
@@ -67,7 +286,7 @@
             padding: 0 20px 20px;
             background-color: #f8f9fa;
             border-radius: 0 0 10px 10px;
-            height: 400px;
+            height: 520px;
             overflow-y: auto;
             scrollbar-width: thin;
             scrollbar-color: #6c757d #f8f9fa;
@@ -86,15 +305,15 @@
 
         /* 角色1 (Leopold) 的对话框样式 - 靠左 */
         .character1 {
-            background-color: #863730;
-            color: #fff;
+            background-color: #ECEBF3;
+            color: #1a1113;
             margin-right: auto;
         }
 
         /* 角色2 (Severo) 的对话框样式 - 靠右 */
         .character2 {
-            background-color: #94A000;
-            color: black;
+            background-color: #676DB9;
+            color: #fbfbfb;
             margin-left: auto;
         }
 
@@ -129,53 +348,102 @@
 
         /* 角色简介样式 */
         .profile-card {
-            padding: 15px;
+            padding: 10px;
+            /* 减小外边距以更贴近图1 */
             border: none;
             border-radius: 10px;
             background-color: #fff;
-            height: 400px;
+            height: 600px;
+            /* 与对话区域同等长度 */
             overflow-y: auto;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            scrollbar-width: thin;
+            /* 滚动条宽度 */
+            scrollbar-color: #6c757d #f8f9fa;
+            /* 滚动条颜色 */
         }
 
         /* 头像区域样式 */
         .profile-avatar-container {
-            border: 1.5px solid #0F0F11;
+            border: 1.7px solid #0F0F11;
             border-radius: 5px;
-            padding: 5px;
+            padding: 0px;
             text-align: center;
+            flex: 0 0 calc(0.4683 * 100%);
+            /* 头像长度比例 */
+            margin-bottom: calc(0.02 * 100%);
+            /* 相等间距 */
         }
 
         .profile-avatar {
             width: 100%;
-            height: 150px;
+            height: 100%;
             border-radius: 5px;
             object-fit: cover;
         }
 
         /* 关键词区域样式 */
         .keywords-container {
-            border: 1.5px solid #0F0F11;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-            text-align: center;
-            background-color: #e9ecef;
-        }
+        border: 1.7px solid #0F0F11;
+        border-radius: 5px;
+        padding: 0; /* 移除外边距，让背景贴近边框 */
+        background-color: #e9ecef;
+        flex: 0 0 calc(0.0488 * 100%); /* 关键词长度比例 */
+        margin-bottom: calc(0.02 * 100%);/* 相等间距 */
+        display: flex; /* 使用flex布局使内容在一行 */
+        align-items: stretch; /* 拉伸以填充高度 */
+        justify-content: space-between; /* 左右对齐 */
+        overflow: hidden; /* 确保背景不溢出 */
+    }
 
-        .keywords {
-            font-weight: bold;
-            color: #495057;
-        }
+    .keywords-container h6 {
+        margin: 0;
+        font-size: 0.9rem; /* 调整字体大小 */
+        font-weight: bold;
+        background-color: #000; /* 黑色背景 */
+        color: white; /* 白色文字 */
+        padding: 5px 8px; /* 调整内边距以完全填充 */
+        border-radius: 3px 0 0 3px; /* 左侧圆角，右侧直角 */
+        line-height: 1; /* 确保背景高度贴合文字 */
+        display: flex; /* 使用flex确保内容居中 */
+        align-items: center; /* 垂直居中 */
+        flex-shrink: 0; /* 防止缩小 */
+    }
+
+    .keywords {
+        font-size: 0.85rem; /* 调整关键词字体大小 */
+        font-weight: bold;
+        color: #495057;
+        padding: 5px 8px; /* 与h6保持一致的内边距 */
+        display: flex;
+        align-items: center; /* 垂直居中 */
+        flex-grow: 1; /* 填充剩余空间 */
+    }
 
         /* 简介区域样式 */
         .profile-description {
-            border: 1.5px solid #0F0F11;
+            border: 1.7px solid #0F0F11;
             border-radius: 5px;
-            padding: 10px;
-            flex-grow: 1;
+            padding: 10%;
+            /* 调整内边距以贴近图1 */
+            flex: 0 0 calc(0.4439 * 100%);
+            /* 简介长度比例 */
+            font-size: 0.9rem;
+            /* 调整字体大小 */
+        }
+
+        .profile-description h5 {
+            margin: 0 0 5px 0;
+            /* 调整标题间距 */
+            font-size: 1rem;
+            /* 调整标题字体大小 */
+        }
+
+        .profile-description p {
+            margin: 0;
+            /* 移除多余间距 */
         }
 
         /* 滚动条美化（Webkit 浏览器） */
@@ -213,8 +481,7 @@
     <div class="page-frame">
         <div class="container mt-5">
             <div class="header-section">
-                <h1 class="text-center mb-4">社員マニュアル</h1>
-                <p class="text-center text-muted">会話例</p>
+                <h4 class="text-center mb-4">会話例</h4>
             </div>
             <div class="row">
                 <!-- 角色1 (Leopold) 简介 -->
@@ -222,7 +489,7 @@
                     <div class="profile-card">
                         <!-- 上部：角色头像 -->
                         <div class="profile-avatar-container">
-                            <img src="img/dh-leopold.jpg" alt="Leopold 头像" class="profile-avatar">
+                            <img src="img/dh-leopold.png" alt="Leopold" class="profile-avatar">
                         </div>
                         <!-- 中部：关键词/标签 -->
                         <div class="keywords-container">
@@ -231,7 +498,7 @@
                         </div>
                         <!-- 下部：简介 -->
                         <div class="profile-description">
-                            <h5>Leopold 简介</h5>
+                            <h5>一人称：私<br>二人称：お前、君</h5>
                             <p>Leopold 是一个沉稳内敛的人，总是能提供理性的建议，喜欢在关键时刻站出来解决问题。</p>
                         </div>
                     </div>
@@ -249,7 +516,8 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">01
                                         社員マニュアル</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">02</a>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">02
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -424,17 +692,112 @@
                             <div id="conversation2" class="conversation" style="display: none;">
                                 <div class="mb-3">
                                     <div class="message character1">
-                                        ---
+                                        これはもできるのか？
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message character2">
-                                        ---
+                                        子供のころ、家が貧乏で、近所さん家でよくご飯を食べてくれたんだ……眠くなって、目を開けると、近所のおばあさんが油灯の下で私の服を縫っていた。私にそれをかけて、家まで送ってくれた。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        安心できる話だね。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        うん、とても安心できた。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        あの時は色々とわからなかったけど。ただ、服を縫うことが、農作業や炊事とあまり変わらないんじゃないかって思った。他の人が幸せを感じられるなら、それでいいんじゃないかって。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        私もちょっとやってみたけど、別の新しいことに気を取られて、結局忘れてしまったんだ。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        まあ、最後はできたよね？
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        できたかもしれないし、できなかったかもしれない。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        かもしれない？
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        Sは尋ねる：殿下、聞きたい？
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        聞きたいわ。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        マラリアが流行した後、私が最後に帰ったのは……彼女たちの遺体を埋葬するためだった……昼夜を問わず、そこにいる間、毎日、みんなのために墓を立て、碑を立てた。
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message narration">
-                                        ---
+                                        LeopoldはSeveroの手を握った。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        赤い瞳はじっと動かず、まるで洗い清められたように輝いている。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        Sは続けた：一つ一つ、遺体に着る服を縫った。手が不器用だったけど、何度もやっているうちに上手くなった。昔はよく針を通せるようになったらどうするかって想像したけど、まさか、最初に他の人のために服を縫うことになるとは、こんな状況だとは思わなかった。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        Lは尋ねる：痛かったの？苦しかったの？
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        Sは答える：あの時は目があまり良くなくて、針を使うのも不器用で、傷ついていくつかの血穴も開けた……でも今は、もう過ぎたことだから、何も感じないよ。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        少女は指先でSeveroの頬をそっと触れた。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        Severoは今、自分がどんな表情をしているのか分からなかった。ただ、少女の温もりがゆっくりと伝わってくるのを感じながら、口を噤んだ。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        天国のご先祖様も、きっと今のお前を見て安心できたわ。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character2">
+                                        殿下がそう言うなら、信じます。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message character1">
+                                        私は嘘を言わない、信じていいのよ。
                                     </div>
                                 </div>
                             </div>
@@ -456,8 +819,8 @@
                         </div>
                         <!-- 下部：简介 -->
                         <div class="profile-description">
-                            <h5>Severo 简介</h5>
-                            <p>Severo 充满活力，喜欢尝试新事物，总是能带来欢乐的气氛。</p>
+                            <h5>一人称：私 / 二人称：あなた</h5>
+                            <p></p>
                         </div>
                     </div>
                 </div>
