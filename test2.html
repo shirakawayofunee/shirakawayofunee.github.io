@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tulle 5th Anniversary Anthology 2023</title>
+    <!-- 引入 Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -81,6 +83,9 @@
             border: 2px solid #333;
             font-size: 18px;
             z-index: 1;
+            width: 200px;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         }
         .decorations {
             position: absolute;
@@ -98,76 +103,189 @@
             font-size: 24px;
             color: #ff0000;
         }
+        .marriage-note {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            z-index: 2;
+            white-space: nowrap;
+        }
+        /* 自定义 survey-grid 样式 */
         .survey-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
             margin-top: 20px;
         }
         .survey-card {
             border: 2px solid #333;
-            padding: 15px;
-            text-align: center;
+            padding: 10px;
             background-color: #fff;
             position: relative;
+            margin-bottom: 15px;
+        }
+        .survey-card h2 {
+            position: absolute; /* 改为绝对定位 */
+            top: -20px; /* 悬浮在卡片上方 */
+            left: 10px; /* 靠左对齐，留出一些边距 */
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 18px;
+            margin: 0;
+            z-index: 1; /* 确保标题在卡片上方 */
+        }
+        .survey-card .dialogue-row {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            min-height: 80px;
+            padding-top: 15px; /* 增加顶部内边距，避免内容被标题遮挡 */
+            align-items: center; /* 垂直居中 */
+        }
+        .survey-card .dialogue-row::after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: calc(100% - 5px);
+            width: 1px;
+            border-left: 1px dashed #ccc;
+        }
+        .survey-card .dialogue-col {
+            flex: 1;
+            padding: 0 5px;
+            text-align: center; /* 水平居中 */
+            font-size: 14px;
+            line-height: 1.5;
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+        }
+        /* 为角色定义不同颜色 */
+        .dialogue-col .kichou {
+            color: #ff6347; 
+        }
+        .dialogue-col .matsuta {
+            color: #0F2F9F; /* 钢蓝，用于真特 */
+        }
+        .dialogue-col .yuann {
+            color: #32cd32; /* 酸橙绿，用于尤安·路特 */
+        }
+        /* 跨列卡片的样式 */
+        .survey-card.span-2 {
+            grid-column: span 2;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="title-ribbon">タレドラマトゥルク</div>
+        <div class="title-ribbon">クソデカ感情</div>
         <div class="decorations" style="top: 10px; left: 10px;"></div>
         <div class="decorations" style="top: 10px; right: 10px; transform: rotate(180deg);"></div>
         <h1 class="header">柳瀬せの<br>Tulle 5th Anniversary Anthology 2023</h1>
         <div class="character-grid">
             <div class="character-card">
                 <div class="image-placeholder">[此处为左侧角色插图占位符]</div>
-                <p>道若户大模的王者拉爾加<br>机香 & 真特</p>
+                <p><strong>机香 & 真特</strong><br>道若户大模的王者拉爾加</p>
             </div>
             <div class="character-card">
                 <div class="image-placeholder">[此处为右侧角色插图占位符]</div>
-                <p>冷酷美型的军人<br>尤安·萨特</p>
+                <p><strong>尤安·路特</strong><br>冷酷美型的军人</p>
             </div>
         </div>
-        <h1>※以上回答的都正确之後</h1>
-        <div class="survey-grid">
-            <div class="survey-card">
-                <h2>1. 調製出對彼此的第一印象</h2>
-                <p>机香: 弥不茶园。</p>
-                <p>真特: 感觉超甜甜的。</p>
+        <div class="marriage-note">※以上回答时间在二人结婚之後</div>
+        <div class="survey-grid row row-cols-2 g-2">
+            <div class="col">
+                <div class="survey-card">
+                    <h2>1. お互いの第一印象は?</h2>
+                    <div class="dialogue-row">
+                        <div class="dialogue-col">
+                            <p class="kichou">弥不茶园。可哀想な子よ</p>
+                        </div>
+                        <div class="dialogue-col">
+                            <p class="matsuta">若いですね…？</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="survey-card">
-                <h2>2. 喜歡万的問題地方？</h2>
-                <p>机香: 温柔贴心的。</p>
-                <p>真特: 會摸头发的。</p>
+            <div class="col">
+                <div class="survey-card">
+                    <h2>2. 喜歡對方的哪些地方？</h2>
+                    <div class="dialogue-row">
+                        <div class="dialogue-col">
+                            <p class="kichou">温柔贴心的。</p>
+                        </div>
+                        <div class="dialogue-col">
+                            <p class="matsuta">會摸头发的。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="survey-card">
-                <h2>3. 最喜欢的邦国皇爺部位？</h2>
-                <p>机香: 尾巴。</p>
-                <p>真特: 耳朵。</p>
+            <div class="col">
+                <div class="survey-card">
+                    <h2>3. 喜歡對方的哪個身體部位？（top3)</h2>
+                    <div class="dialogue-row">
+                        <div class="dialogue-col">
+                            <p class="kichou">耳朵。</p>
+                        </div>
+                        <div class="dialogue-col">
+                            <p class="matsuta">1. 顔面<br>
+                                2. 柔らかい肌 頬肉<br>
+                                3. 太ももの内側</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="survey-card">
-                <h2>4. 渴望献上一吻近</h2>
-                <p>机香:?</p>
-                <p>真特: 发出低吼。</p>
+            <div class="col">
+                <div class="survey-card">
+                    <h2>4. 对方做什么会让自己感到没辙</h2>
+                    <div class="dialogue-row">
+                        <div class="dialogue-col">
+                            <p class="kichou">?</p>
+                        </div>
+                        <div class="dialogue-col">
+                            <p class="matsuta">发出低吼。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="survey-card" style="grid-column: span 2;">
-                <h2>5. - 語摸括</h2>
-                <h2>覺得睡覺喜歡地方？</h2>
-                <p>机香 & 真特: 软绵。</p>
-                <p>真特: 因為有打喷</p>
-                <p>好舒服要仙啊，</p>
-                <p>所以睡意更浓吧。</p>
+            <div class="col-12">
+                <div class="survey-card span-2">
+                    <h2>5. この関係に対する態度は？</h2>
+                    <div class="dialogue-row">
+                        <div class="dialogue-col">
+                            <p class="kichou">色欲とは言えないが、ただ興味深かった。<br>
+                                Lはただ、ひびだらけのSの殻を思い切り叩き割って、中身が何なのかを見てみたいだけだ。<br>
+                                しかし、実際に叩く機会があっても、それが惜しくなってしまう。<br>叩きすぎたら本当に壊れてしまいそうな気がするからだ。</p>
+                        </div>
+                        <div class="dialogue-col">
+                            <p class="matsuta">「私の未来を表す二つの言葉があります。<br>
+                                それは「死」と「地獄」<br>
+                                ――彼女を失えば、生きることが地獄となるのです。」</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="survey-card">
+                    <h2>6. 爱情表达方式？</h2>
+                    <div class="dialogue-row">
+                        <div class="dialogue-col">
+                            <p class="kichou">A：直白</p>
+                        </div>
+                        <div class="dialogue-col">
+                            <p class="matsuta">B：实际</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="image-placeholder" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            [此处为页面中心的角色插图占位符]
-        </div>
-        <div class="heart">♡ この3人は</div>
-        <div class="heart" style="bottom: -70px;">素敵すぎのは</div>
-        <div class="heart" style="bottom: -90px;">だも！</div>
     </div>
+    <!-- 引入 Bootstrap 5 JS（可选，如果你需要 Bootstrap 的交互功能） -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
