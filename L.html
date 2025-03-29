@@ -360,26 +360,32 @@
 
         /* 新增瀑布流样式 */
         .gallery-container {
-            column-count: 3; /* 列数，可以根据需要调整 */
-            column-gap: 15px; /* 列间距 */
+            column-count: 3;
+            /* 列数，可以根据需要调整 */
+            column-gap: 15px;
+            /* 列间距 */
             width: 100%;
         }
 
         @media (max-width: 992px) {
             .gallery-container {
-                column-count: 2; /* 中等屏幕显示3列 */
+                column-count: 2;
+                /* 中等屏幕显示3列 */
             }
         }
 
         @media (max-width: 576px) {
             .gallery-container {
-                column-count: 1; /* 小屏幕显示2列 */
+                column-count: 1;
+                /* 小屏幕显示2列 */
             }
         }
 
         .gallery-item {
-            break-inside: avoid; /* 防止图片被分割 */
-            margin-bottom: 15px; /* 图片之间的垂直间距 */
+            break-inside: avoid;
+            /* 防止图片被分割 */
+            margin-bottom: 15px;
+            /* 图片之间的垂直间距 */
         }
 
         .gallery-image {
@@ -419,16 +425,27 @@
         }
     </style>
 </head>
+
 <body>
     <!-- 画廊部分 -->
     <div class="gallery-section mt-5">
         <div class="gallery-header mb-3">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab" aria-controls="gallery" aria-selected="true">gallery</a>
+                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab"
+                        aria-controls="gallery" aria-selected="true">gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="cloakroom-tab" data-bs-toggle="tab" href="#cloakroom" role="tab" aria-controls="cloakroom" aria-selected="false">代表植物：Papaver rhoeas</a>
+                    <a class="nav-link" id="cloakroom-tab" data-bs-toggle="tab" href="#cloakroom" role="tab"
+                        aria-controls="cloakroom" aria-selected="false">代表植物：Papaver rhoeas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sd-tab" data-bs-toggle="tab" href="#sd" role="tab" aria-controls="sd"
+                        aria-selected="false">SD</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="aesthetics-tab" data-bs-toggle="tab" href="#aesthetics" role="tab"
+                        aria-controls="aesthetics" aria-selected="false">审美美学</a>
                 </li>
             </ul>
         </div>
@@ -440,43 +457,59 @@
                 <div class="gallery-container">
                     <!-- 移除 row 和 col 结构，直接用 gallery-item -->
                     <div class="gallery-item">
-                        <img src="img/L/L1.jpg" alt="Gallery Image 1" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L1.jpg" data-index="0">
+                        <img src="img/L/L1.jpg" alt="Gallery Image 1" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L1.jpg" data-index="0">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L2.jpg" alt="Gallery Image 2" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L2.jpg" data-index="1">
+                        <img src="img/L/L2.jpg" alt="Gallery Image 2" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L2.jpg" data-index="1">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L3.jpg" alt="Gallery Image 3" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L3.jpg" data-index="2">
+                        <img src="img/L/L3.jpg" alt="Gallery Image 3" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L3.jpg" data-index="2">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L4.jpg" alt="Gallery Image 4" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L4.jpg" data-index="3">
+                        <img src="img/L/L4.jpg" alt="Gallery Image 4" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L4.jpg" data-index="3">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L5.jpg" alt="Gallery Image 5" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L5.jpg" data-index="4">
+                        <img src="img/L/L5.jpg" alt="Gallery Image 5" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L5.jpg" data-index="4">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L6.jpg" alt="Gallery Image 6" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L6.jpg" data-index="5">
+                        <img src="img/L/L6.jpg" alt="Gallery Image 6" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L6.jpg" data-index="5">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L7.jpg" alt="Gallery Image 7" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L7.jpg" data-index="6">
+                        <img src="img/L/L7.jpg" alt="Gallery Image 7" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L7.jpg" data-index="6">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L8.jpg" alt="Gallery Image 8" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L8.jpg" data-index="7">
+                        <img src="img/L/L8.jpg" alt="Gallery Image 8" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L8.jpg" data-index="7">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L9.jpg" alt="Gallery Image 9" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L9.jpg" data-index="8">
+                        <img src="img/L/L9.jpg" alt="Gallery Image 9" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L9.jpg" data-index="8">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L10.jpg" alt="Gallery Image 10" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L10.jpg" data-index="9">
+                        <img src="img/L/L10.jpg" alt="Gallery Image 10" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L10.jpg" data-index="9">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L11.jpg" alt="Gallery Image 11" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L11.png" data-index="10">
+                        <img src="img/L/L11.jpg" alt="Gallery Image 11" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L11.png"
+                            data-index="10">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L12.png" alt="Gallery Image 12" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L12.png" data-index="11">
+                        <img src="img/L/L12.png" alt="Gallery Image 12" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L12.png"
+                            data-index="11">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/L16.jpg" alt="Gallery Image 12" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L16.jpg" data-index="11">
+                        <img src="img/L/L16.jpg" alt="Gallery Image 12" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L16.jpg"
+                            data-index="11">
                     </div>
                 </div>
             </div>
@@ -485,20 +518,53 @@
             <div class="tab-pane fade" id="cloakroom" role="tabpanel" aria-labelledby="cloakroom-tab">
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="img/L/Papaver rhoeas 図鑑1.jpg" alt="Cloakroom Image 1" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑1.jpg" data-index="0">
+                        <img src="img/L/Papaver rhoeas 図鑑1.jpg" alt="Cloakroom Image 1" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑1.jpg"
+                            data-index="0">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/Papaver rhoeas 図鑑2.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑2.jpg" data-index="1">
+                        <img src="img/L/Papaver rhoeas 図鑑2.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑2.jpg"
+                            data-index="1">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/Papaver rhoeas 図鑑3.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑3.jpg" data-index="1">
+                        <img src="img/L/Papaver rhoeas 図鑑3.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑3.jpg"
+                            data-index="1">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/Papaver rhoeas 図鑑4.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑4.jpg" data-index="1">
+                        <img src="img/L/Papaver rhoeas 図鑑4.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑4.jpg"
+                            data-index="1">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/L/Papaver rhoeas 図鑑5.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑5.jpg" data-index="1">
+                        <img src="img/L/Papaver rhoeas 図鑑5.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑5.jpg"
+                            data-index="1">
                     </div>
+                </div>
+            </div>
+            <!-- SD 画廊 -->
+            <div class="tab-pane fade" id="sd" role="tabpanel" aria-labelledby="sd-tab">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="img/sd/sd1.jpg" alt="SD Image 1" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/sd/sd1.jpg"
+                            data-index="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 审美美学 画廊 -->
+            <div class="tab-pane fade" id="aesthetics" role="tabpanel" aria-labelledby="aesthetics-tab">
+                <div class="gallery-container">
+                    <!-- 这里可以添加审美美学相关的图片 -->
+                    <div class="gallery-item">
+                        <img src="img/aesthetics/aes1.jpg" alt="Aesthetics Image 1" class="img-fluid gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/aesthetics/aes1.jpg"
+                            data-index="0">
+                    </div>
+                    <!-- 可以继续添加更多审美美学图片 -->
                 </div>
             </div>
         </div>
@@ -528,7 +594,9 @@
     </div>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <script>
         // 获取所有画廊图片
@@ -591,4 +659,5 @@
         });
     </script>
 </body>
+
 </html>
