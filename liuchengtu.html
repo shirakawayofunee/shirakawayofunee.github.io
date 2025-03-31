@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小说流程图 - 底特律风格</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: auto;
+        }
+        .container {
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #00ddeb;
+            text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
+            margin-bottom: 30px;
+        }
+        .chapter {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            position: relative;
+        }
+        .chapter h2 {
+            font-size: 1.8em;
+            color: #00ddeb;
+            margin-bottom: 20px;
+        }
+        .node {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background: #415a77;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1em;
+            color: #e0e0e0;
+        }
+        .node.main {
+            background: #00ddeb; /* 主线：蓝色 */
+            color: #0d1b2a;
+        }
+        .node.branch {
+            background: #ffb703; /* 支线：黄色 */
+            color: #0d1b2a;
+        }
+        .node.critical {
+            background: #d00000; /* 关键节点：红色 */
+            color: #e0e0e0;
+        }
+        .node.active {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            transform: scale(1.05);
+        }
+        .node.disabled {
+            background: #2a2a2a;
+            color: #666;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        .sub-nodes {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+        .sub-nodes.active {
+            display: block;
+        }
+        .arrow {
+            position: absolute;
+            border: 1px dashed #00ddeb;
+            z-index: -1;
+            box-sizing: border-box;
+        }
+        .branch {
+            margin-top: 15px;
+            position: relative;
+        }
+        .node:hover .sub-nodes {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>小说流程图</h1>
+
+        <!-- 前世章节 -->
+        <div class="chapter" id="past">
+            <h2>前世</h2>
+            <div class="node main" data-chapter="past" data-id="past-life">前世经历</div>
+            <div class="sub-nodes">
+                <div class="node branch" data-chapter="past" data-id="past-memory">记忆片段</div>
+            </div>
+        </div>
+
+        <!-- 今生章节 -->
+        <div class="chapter" id="present">
+            <h2>今生</h2>
+            <!-- 1. 引子：案件引发的邂逅 -->
+            <div class="node main" data-chapter="present" data-id="encounter">8月14日11:00 - 案件引发的邂逅</div>
+            <div class="sub-nodes">
+                <div class="node branch" data-chapter="present" data-id="alice-observes">有栖川确认他杀</div>
+                <div class="node branch" data-chapter="present" data-id="katagiri-recognizes">片桐认出有栖川</div>
+            </div>
+
+            <!-- 2. 邀请 -->
+            <div class="branch">
+                <div class="node main" data-chapter="present" data-id="interrogation">8月14日13:00 - 有栖川审问片桐</div>
+                <div class="sub-nodes">
+                    <div class="node branch" data-chapter="present" data-id="alice-feels">有栖川回忆猫咪</div>
+                    <div class="node branch" data-chapter="present" data-id="katagiri-plans">片桐计划逃往意大利</div>
+                </div>
+
+                <div class="node main" data-chapter="present" data-id="airport">8月14日17:00 - 片桐前往机场</div>
+                <div class="sub-nodes">
+                    <div class="node branch" data-chapter="present" data-id="alice-stops">有栖川禁止片桐登机</div>
+                    <div class="node branch" data-chapter="present" data-id="katagiri-email">片桐收到匿名邮件</div>
+                </div>
+
+                <div class="node main" data-chapter="present" data-id="hotel">8月14日20:00 - 酒店对峙</div>
+                <div class="sub-nodes">
+                    <div class="node critical" data-chapter="present" data-id="alice-offer">有栖川提议“扮演猫”</div>
+                    <div class="node branch" data-chapter="present" data-id="katagiri-transforms">片桐显露狼耳尾巴</div>
+                    <div class="node branch" data-chapter="present" data-id="alice-heals">有栖川为片桐疗伤</div>
+                </div>
+            </div>
+
+            <!-- 3. 难忘的生日 -->
+            <div class="branch">
+                <div class="node main" data-chapter="present" data-id="birthday">8月14日23:00 - 难忘的生日</div>
+                <div class="sub-nodes">
+                    <div class="node branch" data-chapter="present" data-id="dream">片桐梦见前世</div>
+                    <div class="node branch" data-chapter="present" data-id="cake">分享生日蛋糕</div>
+                    <div class="node critical" data-chapter="present" data-id="burn-evidence">有栖川烧毁犯罪证据</div>
+                    <div class="node branch" data-chapter="present" data-id="hug">片桐请求拥抱</div>
+                </div>
+            </div>
+
+            <!-- 4. 新的开始 -->
+            <div class="branch">
+                <div class="node main" data-chapter="present" data-id="new-start">9月 - 新的开始</div>
+                <div class="sub-nodes">
+                    <div class="node branch" data-chapter="present" data-id="katagiri-role">片桐成为“猫”</div>
+                    <div class="node branch" data-chapter="present" data-id="alice-supports">有栖川支持片桐及妹妹</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 死后章节 -->
+        <div class="chapter" id="after">
+            <h2>死后</h2>
+            <div class="node main" data-chapter="after" data-id="afterlife">死后命运</div>
+            <div class="sub-nodes">
+                <div class="node branch" data-chapter="after" data-id="after-reincarnation">轮回转世</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const nodes = document.querySelectorAll('.node');
+        let activeNodes = new Set();
+
+        // 动态箭头绘制
+        function drawArrows() {
+            // 移除旧箭头
+            document.querySelectorAll('.arrow').forEach(arrow => arrow.remove());
+
+            // 绘制章节之间的箭头
+            const chapters = document.querySelectorAll('.chapter');
+            chapters.forEach((chapter, index) => {
+                if (index < chapters.length - 1) {
+                    const startNode = chapter.querySelector('.node.main:last-of-type');
+                    const endNode = chapters[index + 1].querySelector('.node.main:first-of-type');
+                    if (startNode && endNode) {
+                        drawArrowBetweenNodes(startNode, endNode);
+                    }
+                }
+            });
+
+            // 绘制今生章节内部的箭头
+            const presentNodes = document.querySelectorAll('#present .node.main');
+            presentNodes.forEach((node, index) => {
+                if (index < presentNodes.length - 1) {
+                    const startNode = node;
+                    const endNode = presentNodes[index + 1];
+                    drawArrowBetweenNodes(startNode, endNode);
+                }
+            });
+        }
+
+        // 绘制两个节点之间的箭头
+        function drawArrowBetweenNodes(startNode, endNode) {
+            const startRect = startNode.getBoundingClientRect();
+            const endRect = endNode.getBoundingClientRect();
+            const containerRect = document.querySelector('.container').getBoundingClientRect();
+
+            // 计算起点和终点的坐标（相对于 container）
+            const x1 = startRect.right - containerRect.left + window.scrollX;
+            const y1 = startRect.top + startRect.height / 2 - containerRect.top + window.scrollY;
+            const x2 = endRect.left - containerRect.left + window.scrollX;
+            const y2 = endRect.top + endRect.height / 2 - containerRect.top + window.scrollY;
+
+            // 计算箭头长度和角度
+            const length = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+            const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+
+            // 创建箭头元素
+            const arrow = document.createElement('div');
+            arrow.classList.add('arrow');
+            arrow.style.width = `${length}px`;
+            arrow.style.left = `${x1}px`;
+            arrow.style.top = `${y1}px`;
+            arrow.style.transform = `rotate(${angle}deg)`;
+            arrow.style.transformOrigin = '0 0';
+
+            // 调整箭头样式，确保线条更细腻
+            arrow.style.borderWidth = '1px';
+            arrow.style.borderStyle = 'dashed';
+            arrow.style.borderColor = '#00ddeb';
+
+            document.querySelector('.container').appendChild(arrow);
+        }
+
+        // 节点点击逻辑
+        nodes.forEach(node => {
+            node.addEventListener('click', () => {
+                const chapter = node.dataset.chapter;
+                const id = node.dataset.id;
+
+                // 互斥逻辑（暂无互斥分支，但可扩展）
+                toggleNode(node);
+
+                // 展开子节点
+                const subNodes = node.nextElementSibling;
+                if (subNodes && subNodes.classList.contains('sub-nodes')) {
+                    subNodes.classList.toggle('active');
+                }
+
+                // 重新绘制箭头
+                drawArrows();
+            });
+        });
+
+        function toggleNode(node, excludeId = null) {
+            const id = node.dataset.id;
+
+            if (activeNodes.has(id)) {
+                activeNodes.delete(id);
+                node.classList.remove('active');
+            } else {
+                activeNodes.add(id);
+                node.classList.add('active');
+
+                if (excludeId) {
+                    const excludeNode = document.querySelector(`[data-id="${excludeId}"]`);
+                    if (excludeNode) {
+                        activeNodes.delete(excludeId);
+                        excludeNode.classList.remove('active');
+                        excludeNode.classList.add('disabled');
+                    }
+                }
+
+                nodes.forEach(n => {
+                    if (n.dataset.id !== excludeId && n.dataset.chapter === node.dataset.chapter) {
+                        n.classList.remove('disabled');
+                    }
+                });
+            }
+        }
+
+        // 窗口调整或滚动时重新绘制箭头
+        window.addEventListener('resize', drawArrows);
+        window.addEventListener('scroll', drawArrows);
+        window.addEventListener('load', drawArrows);
+    </script>
+</body>
+</html>
