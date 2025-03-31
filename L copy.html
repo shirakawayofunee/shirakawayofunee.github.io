@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#F8F7F8">
-    <title>2人雰囲気</title>
+    <title>個人展示 - L</title>
     <meta property="og:type" content="website">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -42,10 +42,16 @@
         <div class="gallery-header mb-3">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab" aria-controls="gallery" aria-selected="true">イラスト</a>
+                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab" aria-controls="gallery" aria-selected="true">gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="dc-tab" data-bs-toggle="tab" href="#dc" role="tab" aria-controls="dc" aria-selected="false">テーマ</a>
+                    <a class="nav-link" id="papaver-tab" data-bs-toggle="tab" href="#papaver" role="tab" aria-controls="papaver" aria-selected="false">Papaver rhoeas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sd-tab" data-bs-toggle="tab" href="#sd" role="tab" aria-controls="sd" aria-selected="false">SD</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="aesthetics-tab" data-bs-toggle="tab" href="#aesthetics" role="tab" aria-controls="aesthetics" aria-selected="false">审美美学</a>
                 </li>
             </ul>
         </div>
@@ -53,8 +59,14 @@
             <div class="tab-pane fade show active" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
                 <div class="gallery-container" id="galleryContainer"></div>
             </div>
-            <div class="tab-pane fade" id="dc" role="tabpanel" aria-labelledby="dc-tab">
-                <div class="gallery-container" id="dcContainer"></div>
+            <div class="tab-pane fade" id="papaver" role="tabpanel" aria-labelledby="papaver-tab">
+                <div class="gallery-container" id="papaverContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="sd" role="tabpanel" aria-labelledby="sd-tab">
+                <div class="gallery-container" id="sdContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="aesthetics" role="tabpanel" aria-labelledby="aesthetics-tab">
+                <div class="gallery-container" id="aestheticsContainer"></div>
             </div>
         </div>
     </div>
@@ -85,66 +97,179 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
         const galleryImages = [
-            { src: "img/SL/SL1.jpg", alt: "Gallery Image 1", description: "这是一幅描绘清晨薄雾的画作，柔和的光线透过树林。" },
-            { src: "img/SL/SL2.jpg", alt: "Gallery Image 2", description: "運命の舞台" },
-            { src: "img/SL/SL3.jpg", alt: "Gallery Image 3", description: "秋天的枫叶，红色与金色的交织。" },
-            { src: "img/SL/SL4.jpg", alt: "Gallery Image 4", description: "孤独的灯塔屹立在暴风雨的海岸边。" },
-            { src: "img/SL/SL5.jpg", alt: "Gallery Image 5", description: "孩子在田野中奔跑，背景是金黄的麦田。" },
-            { src: "img/SL/SL6.jpg", alt: "Gallery Image 6", description: "古老的石桥横跨清澈的溪流。" },
-            { src: "img/SL/SL7.jpg", alt: "Gallery Image 7", description: "雪山下的村庄，炊烟袅袅升起。" },
-            { src: "img/SL/SL8.jpg", alt: "Gallery Image 8", description: "夕阳下的沙漠，沙丘勾勒出优美的曲线。" },
-            { src: "img/SL/SL9.jpg", alt: "Gallery Image 9", description: "雨中的森林，绿意盎然。" },
-            { src: "img/SL/SL10.jpg", alt: "Gallery Image 10", description: "渔船停靠在宁静的港口，晨光初现。" },
-            { src: "img/SL/SL11.jpg", alt: "Gallery Image 11", description: "繁星点点的夜空，银河清晰可见。" },
-            { src: "img/SL/SL12.jpg", alt: "Gallery Image 12", description: "盛开的樱花树下，微风吹落花瓣。" },
-            { src: "img/SL/SL13.jpg", alt: "Gallery Image 13", description: "山间的瀑布，水雾弥漫。" },
-            { src: "img/SL/SL14.jpg", alt: "Gallery Image 14", description: "古老城堡的废墟，夕阳余晖洒落。" },
-            { src: "img/SL/SL15.jpg", alt: "Gallery Image 15", description: "田园风光，牛群悠闲地吃草。" },
-            { src: "img/SL/SL16.jpg", alt: "Gallery Image 16", description: "冰川湖泊，蓝绿色的水面如镜。" },
+            { src: "img/L/gallery/L1.jpg", alt: "Gallery Image 1", description: "" },
+            { src: "img/L/gallery/L2.jpg", alt: "Gallery Image 2", description: "" },
+            { src: "img/L/gallery/L3.jpg", alt: "Gallery Image 3", description: "" },
+            // 预留至 L40
+            // { src: "img/L/gallery/L4.jpg", alt: "Gallery Image 4", description: "" },
+            // { src: "img/L/gallery/L5.jpg", alt: "Gallery Image 5", description: "" },
+            // { src: "img/L/gallery/L6.jpg", alt: "Gallery Image 6", description: "" },
+            // { src: "img/L/gallery/L7.jpg", alt: "Gallery Image 7", description: "" },
+            // { src: "img/L/gallery/L8.jpg", alt: "Gallery Image 8", description: "" },
+            // { src: "img/L/gallery/L9.jpg", alt: "Gallery Image 9", description: "" },
+            // { src: "img/L/gallery/L10.jpg", alt: "Gallery Image 10", description: "" },
+            // { src: "img/L/gallery/L11.jpg", alt: "Gallery Image 11", description: "" },
+            // { src: "img/L/gallery/L12.jpg", alt: "Gallery Image 12", description: "" },
+            // { src: "img/L/gallery/L13.jpg", alt: "Gallery Image 13", description: "" },
+            // { src: "img/L/gallery/L14.jpg", alt: "Gallery Image 14", description: "" },
+            // { src: "img/L/gallery/L15.jpg", alt: "Gallery Image 15", description: "" },
+            // { src: "img/L/gallery/L16.jpg", alt: "Gallery Image 16", description: "" },
+            // { src: "img/L/gallery/L17.jpg", alt: "Gallery Image 17", description: "" },
+            // { src: "img/L/gallery/L18.jpg", alt: "Gallery Image 18", description: "" },
+            // { src: "img/L/gallery/L19.jpg", alt: "Gallery Image 19", description: "" },
+            // { src: "img/L/gallery/L20.jpg", alt: "Gallery Image 20", description: "" },
+            // { src: "img/L/gallery/L21.jpg", alt: "Gallery Image 21", description: "" },
+            // { src: "img/L/gallery/L22.jpg", alt: "Gallery Image 22", description: "" },
+            // { src: "img/L/gallery/L23.jpg", alt: "Gallery Image 23", description: "" },
+            // { src: "img/L/gallery/L24.jpg", alt: "Gallery Image 24", description: "" },
+            // { src: "img/L/gallery/L25.jpg", alt: "Gallery Image 25", description: "" },
+            // { src: "img/L/gallery/L26.jpg", alt: "Gallery Image 26", description: "" },
+            // { src: "img/L/gallery/L27.jpg", alt: "Gallery Image 27", description: "" },
+            // { src: "img/L/gallery/L28.jpg", alt: "Gallery Image 28", description: "" },
+            // { src: "img/L/gallery/L29.jpg", alt: "Gallery Image 29", description: "" },
+            // { src: "img/L/gallery/L30.jpg", alt: "Gallery Image 30", description: "" },
+            // { src: "img/L/gallery/L31.jpg", alt: "Gallery Image 31", description: "" },
+            // { src: "img/L/gallery/L32.jpg", alt: "Gallery Image 32", description: "" },
+            // { src: "img/L/gallery/L33.jpg", alt: "Gallery Image 33", description: "" },
+            // { src: "img/L/gallery/L34.jpg", alt: "Gallery Image 34", description: "" },
+            // { src: "img/L/gallery/L35.jpg", alt: "Gallery Image 35", description: "" },
+            // { src: "img/L/gallery/L36.jpg", alt: "Gallery Image 36", description: "" },
+            // { src: "img/L/gallery/L37.jpg", alt: "Gallery Image 37", description: "" },
+            // { src: "img/L/gallery/L38.jpg", alt: "Gallery Image 38", description: "" },
+            // { src: "img/L/gallery/L39.jpg", alt: "Gallery Image 39", description: "" },
+            // { src: "img/L/gallery/L40.jpg", alt: "Gallery Image 40", description: "" }
         ];
 
-        const dcImages = [
-            { src: "img/DC/DC1.jpg", alt: "DC Image 1", description: "" },
-            { src: "img/DC/DC2.jpg", alt: "DC Image 2", description: "" },
-            { src: "img/DC/DC3.jpg", alt: "DC Image 3", description: "" },
-            { src: "img/DC/DC4.jpg", alt: "DC Image 4", description: "" },
-            { src: "img/DC/DC5.jpg", alt: "DC Image 5", description: "代餐系列：坚果混合，补充每日能量。" },
-            { src: "img/DC/DC6.jpg", alt: "DC Image 6", description: "代餐系列：香蕉奶昔，甜美又营养。" },
-            { src: "img/DC/DC7.jpg", alt: "DC Image 7", description: "代餐系列：全麦三明治，轻食新选择。" },
-            { src: "img/DC/DC8.jpg", alt: "DC Image 8", description: "代餐系列：椰子水，清爽解渴。" },
-            { src: "img/DC/DC9.jpg", alt: "DC Image 9", description: "代餐系列：藜麦沙拉，丰富膳食纤维。" },
-            { src: "img/DC/DC10.jpg", alt: "DC Image 10", description: "代餐系列：蛋白棒，运动后的完美补充。" },
-            { src: "img/DC/DC11.jpg", alt: "DC Image 11", description: "代餐系列：绿茶饮品，抗氧化好选择。" },
-            { src: "img/DC/DC12.jpg", alt: "DC Image 12", description: "代餐系列：烤蔬菜卷，低卡美味。" },
-            { src: "img/DC/DC13.jpg", alt: "DC Image 13", description: "代餐系列：杏仁奶，植物基营养。" },
-            { src: "img/DC/DC14.jpg", alt: "DC Image 14", description: "代餐系列：牛油果吐司，健康早餐首选。" },
-            { src: "img/DC/DC15.jpg", alt: "DC Image 15", description: "代餐系列：奇亚籽布丁，饱腹又养颜。" },
-            { src: "img/DC/DC16.jpg", alt: "DC Image 16", description: "代餐系列：无糖酸奶，清爽低热量。" },
-            // 预留扩展
-            // { src: "img/DC/DC17.jpg", alt: "DC Image 17", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC18.jpg", alt: "DC Image 18", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC19.jpg", alt: "DC Image 19", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC20.jpg", alt: "DC Image 20", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC21.jpg", alt: "DC Image 21", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC22.jpg", alt: "DC Image 22", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC23.jpg", alt: "DC Image 23", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC24.jpg", alt: "DC Image 24", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC25.jpg", alt: "DC Image 25", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC26.jpg", alt: "DC Image 26", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC27.jpg", alt: "DC Image 27", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC28.jpg", alt: "DC Image 28", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC29.jpg", alt: "DC Image 29", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC30.jpg", alt: "DC Image 30", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC31.jpg", alt: "DC Image 31", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC32.jpg", alt: "DC Image 32", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC33.jpg", alt: "DC Image 33", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC34.jpg", alt: "DC Image 34", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC35.jpg", alt: "DC Image 35", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC36.jpg", alt: "DC Image 36", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC37.jpg", alt: "DC Image 37", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC38.jpg", alt: "DC Image 38", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC39.jpg", alt: "DC Image 39", description: "代餐系列：预留图片说明" },
-            // { src: "img/DC/DC40.jpg", alt: "DC Image 40", description: "代餐系列：预留图片说明" }
+        const papaverImages = [
+            { src: "img/L/papaver/P1.jpg", alt: "Papaver Image 1", description: "" },
+            { src: "img/L/papaver/P2.jpg", alt: "Papaver Image 2", description: "" },
+            { src: "img/L/papaver/P3.jpg", alt: "Papaver Image 3", description: "" },
+            // 预留至 P40
+            // { src: "img/L/papaver/P4.jpg", alt: "Papaver Image 4", description: "" },
+            // { src: "img/L/papaver/P5.jpg", alt: "Papaver Image 5", description: "" },
+            // { src: "img/L/papaver/P6.jpg", alt: "Papaver Image 6", description: "" },
+            // { src: "img/L/papaver/P7.jpg", alt: "Papaver Image 7", description: "" },
+            // { src: "img/L/papaver/P8.jpg", alt: "Papaver Image 8", description: "" },
+            // { src: "img/L/papaver/P9.jpg", alt: "Papaver Image 9", description: "" },
+            // { src: "img/L/papaver/P10.jpg", alt: "Papaver Image 10", description: "" },
+            // { src: "img/L/papaver/P11.jpg", alt: "Papaver Image 11", description: "" },
+            // { src: "img/L/papaver/P12.jpg", alt: "Papaver Image 12", description: "" },
+            // { src: "img/L/papaver/P13.jpg", alt: "Papaver Image 13", description: "" },
+            // { src: "img/L/papaver/P14.jpg", alt: "Papaver Image 14", description: "" },
+            // { src: "img/L/papaver/P15.jpg", alt: "Papaver Image 15", description: "" },
+            // { src: "img/L/papaver/P16.jpg", alt: "Papaver Image 16", description: "" },
+            // { src: "img/L/papaver/P17.jpg", alt: "Papaver Image 17", description: "" },
+            // { src: "img/L/papaver/P18.jpg", alt: "Papaver Image 18", description: "" },
+            // { src: "img/L/papaver/P19.jpg", alt: "Papaver Image 19", description: "" },
+            // { src: "img/L/papaver/P20.jpg", alt: "Papaver Image 20", description: "" },
+            // { src: "img/L/papaver/P21.jpg", alt: "Papaver Image 21", description: "" },
+            // { src: "img/L/papaver/P22.jpg", alt: "Papaver Image 22", description: "" },
+            // { src: "img/L/papaver/P23.jpg", alt: "Papaver Image 23", description: "" },
+            // { src: "img/L/papaver/P24.jpg", alt: "Papaver Image 24", description: "" },
+            // { src: "img/L/papaver/P25.jpg", alt: "Papaver Image 25", description: "" },
+            // { src: "img/L/papaver/P26.jpg", alt: "Papaver Image 26", description: "" },
+            // { src: "img/L/papaver/P27.jpg", alt: "Papaver Image 27", description: "" },
+            // { src: "img/L/papaver/P28.jpg", alt: "Papaver Image 28", description: "" },
+            // { src: "img/L/papaver/P29.jpg", alt: "Papaver Image 29", description: "" },
+            // { src: "img/L/papaver/P30.jpg", alt: "Papaver Image 30", description: "" },
+            // { src: "img/L/papaver/P31.jpg", alt: "Papaver Image 31", description: "" },
+            // { src: "img/L/papaver/P32.jpg", alt: "Papaver Image 32", description: "" },
+            // { src: "img/L/papaver/P33.jpg", alt: "Papaver Image 33", description: "" },
+            // { src: "img/L/papaver/P34.jpg", alt: "Papaver Image 34", description: "" },
+            // { src: "img/L/papaver/P35.jpg", alt: "Papaver Image 35", description: "" },
+            // { src: "img/L/papaver/P36.jpg", alt: "Papaver Image 36", description: "" },
+            // { src: "img/L/papaver/P37.jpg", alt: "Papaver Image 37", description: "" },
+            // { src: "img/L/papaver/P38.jpg", alt: "Papaver Image 38", description: "" },
+            // { src: "img/L/papaver/P39.jpg", alt: "Papaver Image 39", description: "" },
+            // { src: "img/L/papaver/P40.jpg", alt: "Papaver Image 40", description: "" }
+        ];
+
+        const sdImages = [
+            { src: "img/L/sd/SD1.jpg", alt: "SD Image 1", description: "" },
+            { src: "img/L/sd/SD2.jpg", alt: "SD Image 2", description: "" },
+            { src: "img/L/sd/SD3.jpg", alt: "SD Image 3", description: "" },
+            // 预留至 SD40
+            // { src: "img/L/sd/SD4.jpg", alt: "SD Image 4", description: "" },
+            // { src: "img/L/sd/SD5.jpg", alt: "SD Image 5", description: "" },
+            // { src: "img/L/sd/SD6.jpg", alt: "SD Image 6", description: "" },
+            // { src: "img/L/sd/SD7.jpg", alt: "SD Image 7", description: "" },
+            // { src: "img/L/sd/SD8.jpg", alt: "SD Image 8", description: "" },
+            // { src: "img/L/sd/SD9.jpg", alt: "SD Image 9", description: "" },
+            // { src: "img/L/sd/SD10.jpg", alt: "SD Image 10", description: "" },
+            // { src: "img/L/sd/SD11.jpg", alt: "SD Image 11", description: "" },
+            // { src: "img/L/sd/SD12.jpg", alt: "SD Image 12", description: "" },
+            // { src: "img/L/sd/SD13.jpg", alt: "SD Image 13", description: "" },
+            // { src: "img/L/sd/SD14.jpg", alt: "SD Image 14", description: "" },
+            // { src: "img/L/sd/SD15.jpg", alt: "SD Image 15", description: "" },
+            // { src: "img/L/sd/SD16.jpg", alt: "SD Image 16", description: "" },
+            // { src: "img/L/sd/SD17.jpg", alt: "SD Image 17", description: "" },
+            // { src: "img/L/sd/SD18.jpg", alt: "SD Image 18", description: "" },
+            // { src: "img/L/sd/SD19.jpg", alt: "SD Image 19", description: "" },
+            // { src: "img/L/sd/SD20.jpg", alt: "SD Image 20", description: "" },
+            // { src: "img/L/sd/SD21.jpg", alt: "SD Image 21", description: "" },
+            // { src: "img/L/sd/SD22.jpg", alt: "SD Image 22", description: "" },
+            // { src: "img/L/sd/SD23.jpg", alt: "SD Image 23", description: "" },
+            // { src: "img/L/sd/SD24.jpg", alt: "SD Image 24", description: "" },
+            // { src: "img/L/sd/SD25.jpg", alt: "SD Image 25", description: "" },
+            // { src: "img/L/sd/SD26.jpg", alt: "SD Image 26", description: "" },
+            // { src: "img/L/sd/SD27.jpg", alt: "SD Image 27", description: "" },
+            // { src: "img/L/sd/SD28.jpg", alt: "SD Image 28", description: "" },
+            // { src: "img/L/sd/SD29.jpg", alt: "SD Image 29", description: "" },
+            // { src: "img/L/sd/SD30.jpg", alt: "SD Image 30", description: "" },
+            // { src: "img/L/sd/SD31.jpg", alt: "SD Image 31", description: "" },
+            // { src: "img/L/sd/SD32.jpg", alt: "SD Image 32", description: "" },
+            // { src: "img/L/sd/SD33.jpg", alt: "SD Image 33", description: "" },
+            // { src: "img/L/sd/SD34.jpg", alt: "SD Image 34", description: "" },
+            // { src: "img/L/sd/SD35.jpg", alt: "SD Image 35", description: "" },
+            // { src: "img/L/sd/SD36.jpg", alt: "SD Image 36", description: "" },
+            // { src: "img/L/sd/SD37.jpg", alt: "SD Image 37", description: "" },
+            // { src: "img/L/sd/SD38.jpg", alt: "SD Image 38", description: "" },
+            // { src: "img/L/sd/SD39.jpg", alt: "SD Image 39", description: "" },
+            // { src: "img/L/sd/SD40.jpg", alt: "SD Image 40", description: "" }
+        ];
+
+        const aestheticsImages = [
+            { src: "img/L/aesthetics/A1.jpg", alt: "Aesthetics Image 1", description: "" },
+            { src: "img/L/aesthetics/A2.jpg", alt: "Aesthetics Image 2", description: "" },
+            { src: "img/L/aesthetics/A3.jpg", alt: "Aesthetics Image 3", description: "" },
+            // 预留至 A40
+            // { src: "img/L/aesthetics/A4.jpg", alt: "Aesthetics Image 4", description: "" },
+            // { src: "img/L/aesthetics/A5.jpg", alt: "Aesthetics Image 5", description: "" },
+            // { src: "img/L/aesthetics/A6.jpg", alt: "Aesthetics Image 6", description: "" },
+            // { src: "img/L/aesthetics/A7.jpg", alt: "Aesthetics Image 7", description: "" },
+            // { src: "img/L/aesthetics/A8.jpg", alt: "Aesthetics Image 8", description: "" },
+            // { src: "img/L/aesthetics/A9.jpg", alt: "Aesthetics Image 9", description: "" },
+            // { src: "img/L/aesthetics/A10.jpg", alt: "Aesthetics Image 10", description: "" },
+            // { src: "img/L/aesthetics/A11.jpg", alt: "Aesthetics Image 11", description: "" },
+            // { src: "img/L/aesthetics/A12.jpg", alt: "Aesthetics Image 12", description: "" },
+            // { src: "img/L/aesthetics/A13.jpg", alt: "Aesthetics Image 13", description: "" },
+            // { src: "img/L/aesthetics/A14.jpg", alt: "Aesthetics Image 14", description: "" },
+            // { src: "img/L/aesthetics/A15.jpg", alt: "Aesthetics Image 15", description: "" },
+            // { src: "img/L/aesthetics/A16.jpg", alt: "Aesthetics Image 16", description: "" },
+            // { src: "img/L/aesthetics/A17.jpg", alt: "Aesthetics Image 17", description: "" },
+            // { src: "img/L/aesthetics/A18.jpg", alt: "Aesthetics Image 18", description: "" },
+            // { src: "img/L/aesthetics/A19.jpg", alt: "Aesthetics Image 19", description: "" },
+            // { src: "img/L/aesthetics/A20.jpg", alt: "Aesthetics Image 20", description: "" },
+            // { src: "img/L/aesthetics/A21.jpg", alt: "Aesthetics Image 21", description: "" },
+            // { src: "img/L/aesthetics/A22.jpg", alt: "Aesthetics Image 22", description: "" },
+            // { src: "img/L/aesthetics/A23.jpg", alt: "Aesthetics Image 23", description: "" },
+            // { src: "img/L/aesthetics/A24.jpg", alt: "Aesthetics Image 24", description: "" },
+            // { src: "img/L/aesthetics/A25.jpg", alt: "Aesthetics Image 25", description: "" },
+            // { src: "img/L/aesthetics/A26.jpg", alt: "Aesthetics Image 26", description: "" },
+            // { src: "img/L/aesthetics/A27.jpg", alt: "Aesthetics Image 27", description: "" },
+            // { src: "img/L/aesthetics/A28.jpg", alt: "Aesthetics Image 28", description: "" },
+            // { src: "img/L/aesthetics/A29.jpg", alt: "Aesthetics Image 29", description: "" },
+            // { src: "img/L/aesthetics/A30.jpg", alt: "Aesthetics Image 30", description: "" },
+            // { src: "img/L/aesthetics/A31.jpg", alt: "Aesthetics Image 31", description: "" },
+            // { src: "img/L/aesthetics/A32.jpg", alt: "Aesthetics Image 32", description: "" },
+            // { src: "img/L/aesthetics/A33.jpg", alt: "Aesthetics Image 33", description: "" },
+            // { src: "img/L/aesthetics/A34.jpg", alt: "Aesthetics Image 34", description: "" },
+            // { src: "img/L/aesthetics/A35.jpg", alt: "Aesthetics Image 35", description: "" },
+            // { src: "img/L/aesthetics/A36.jpg", alt: "Aesthetics Image 36", description: "" },
+            // { src: "img/L/aesthetics/A37.jpg", alt: "Aesthetics Image 37", description: "" },
+            // { src: "img/L/aesthetics/A38.jpg", alt: "Aesthetics Image 38", description: "" },
+            // { src: "img/L/aesthetics/A39.jpg", alt: "Aesthetics Image 39", description: "" },
+            // { src: "img/L/aesthetics/A40.jpg", alt: "Aesthetics Image 40", description: "" }
         ];
 
         function arrangeWaterfall(containerId, imageArray) {
@@ -168,75 +293,4 @@
                 const img = document.createElement('img');
                 img.src = image.src;
                 img.alt = image.alt;
-                img.className = 'img-fluid gallery-image';
-                img.setAttribute('data-bs-toggle', 'modal');
-                img.setAttribute('data-bs-target', '#imageModal');
-                img.setAttribute('data-src', image.src);
-                img.setAttribute('data-index', index);
-                img.setAttribute('data-description', image.description);
-                img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' : 'dc');
-
-                item.appendChild(img);
-                columns[index % columnCount].appendChild(item);
-
-                // 移除旧事件并绑定新事件
-                img.removeEventListener('click', handleImageClick);
-                img.addEventListener('click', handleImageClick);
-            });
-        }
-
-        function handleImageClick() {
-            const src = this.getAttribute('data-src');
-            const description = this.getAttribute('data-description');
-            currentIndex = parseInt(this.getAttribute('data-index'));
-            currentArray = this.getAttribute('data-array');
-            modalImage.src = src;
-            imageDescription.textContent = description || '暂无说明';
-        }
-
-        function initializeTabs() {
-            arrangeWaterfall('galleryContainer', galleryImages);
-            arrangeWaterfall('dcContainer', dcImages);
-        }
-
-        document.addEventListener('DOMContentLoaded', initializeTabs);
-        window.addEventListener('resize', initializeTabs);
-
-        document.querySelectorAll('.nav-link').forEach(tab => {
-            tab.addEventListener('shown.bs.tab', () => {
-                const target = tab.getAttribute('href').substring(1);
-                if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
-                else if (target === 'dc') arrangeWaterfall('dcContainer', dcImages);
-            });
-        });
-
-        const modalImage = document.getElementById('modalImage');
-        const imageDescription = document.getElementById('imageDescription');
-        const prevButton = document.getElementById('prevImage');
-        const nextButton = document.getElementById('nextImage');
-        let currentIndex = 0;
-        let currentArray = 'gallery';
-
-        prevButton.addEventListener('click', function () {
-            const array = currentArray === 'gallery' ? galleryImages : dcImages;
-            currentIndex = (currentIndex - 1 + array.length) % array.length;
-            modalImage.src = array[currentIndex].src;
-            imageDescription.textContent = array[currentIndex].description || '暂无说明';
-        });
-
-        nextButton.addEventListener('click', function () {
-            const array = currentArray === 'gallery' ? dcImages : galleryImages;
-            currentIndex = (currentIndex + 1) % array.length;
-            modalImage.src = array[currentIndex].src;
-            imageDescription.textContent = array[currentIndex].description || '暂无说明';
-        });
-
-        document.addEventListener('keydown', function (event) {
-            if (document.getElementById('imageModal').classList.contains('show')) {
-                if (event.key === 'ArrowLeft') prevButton.click();
-                else if (event.key === 'ArrowRight') nextButton.click();
-            }
-        });
-    </script>
-</body>
-</html>
+                img.className =
