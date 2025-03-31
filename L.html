@@ -1,600 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#F8F7F8">
-    <title>2人 | </title>
+    <title>個人展示 - L</title>
     <meta property="og:type" content="website">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-
-    <!-- 你的现有 head 部分保持不变 -->
     <style>
-        /* 重置样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: #fff;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* 背景图片 */
-        .banner {
-            width: 100%;
-            height: 400px;
-            background: url('https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/banners/89b41936-7fbd-4d16-90e2-e358c1b4daf7.webp') no-repeat center;
-            background-size: cover;
-            position: relative;
-        }
-
-        .banner .solid-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        /* 头像 */
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: url('https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/avatars/4f5102ae-0b4c-4fbe-9599-40b63e92626e.webp') no-repeat center;
-            background-size: cover;
-            position: absolute;
-            top: 300px;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 4px solid #fff;
-            z-index: 2;
-        }
-
-        /* 内容容器 */
-        .content-container {
-            max-width: 1200px;
-            margin: 80px auto 0;
-            padding: 20px;
-        }
-
-        /* 简介部分 */
-        .profile-section {
-            background: #e6f0fa;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            text-align: center;
-            height: 100%;
-        }
-
-        .display-name {
-            font-size: 2em;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .quote-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5em;
-            margin: 10px 0;
-            color: #666;
-        }
-
-        .quote-section svg {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        .introduction-section {
-            font-size: 1em;
-            color: #666;
-            margin: 10px 0;
-            line-height: 1.5;
-        }
-
-        .introduction-section p {
-            margin: 5px 0;
-        }
-
-        .introduction-section span {
-            margin-right: 5px;
-        }
-
-        .fanwork-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .fanwork-buttons button {
-            padding: 8px 16px;
-            font-size: 0.9em;
-        }
-
-        /* 设计参考部分 */
-        .design-section {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-        }
-
-        .concept-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .concept-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: url('https://storage.googleapis.com/vgen-production-storage/uploads/characters/83ab80c9-2667-46f9-bb81-35a673b701fc/avatars/e4045f23-aa00-4bb5-a849-39b502f85523.webp') no-repeat center;
-            background-size: cover;
-        }
-
-        .concept-info h3 {
-            font-size: 1.8em;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .concept-info .tagline {
-            color: #666;
-            font-size: 0.9em;
-            margin: 5px 0;
-        }
-
-        .concept-info .tags {
-            display: flex;
-            gap: 8px;
-        }
-
-        .concept-info .tags .tag {
-            background: #e0e0e0;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.8em;
-        }
-
-        .concept-info .note {
-            font-size: 0.9em;
-            color: #666;
-            margin: 10px 0;
-            white-space: pre-wrap;
-        }
-
-        .design-section hr {
-            border: 0;
-            border-top: 1px solid #eee;
-            margin: 15px 0;
-        }
-
-        /* 折叠部分 */
-        .accordion-button {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #333;
-            background: none;
-            border: none;
-            padding: 10px 0;
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .accordion-button::after {
-            width: 24px;
-            height: 24px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 7.83997L12 12.42L16.59 7.83997L18 9.24997L12 15.25L6 9.24997L7.41 7.83997Z"/></svg>');
-            background-size: contain;
-        }
-
-        .accordion-button:not(.collapsed)::after {
-            transform: rotate(180deg);
-        }
-
-        .accordion-body {
-            padding: 10px 0;
-        }
-
-        /* 子折叠部分 */
-        .sub-accordion-button {
-            font-size: 1.2em;
-            font-weight: 500;
-            color: #666;
-            background: none;
-            border: none;
-            padding: 5px 0;
-        }
-
-        .sub-accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .sub-accordion-button::after {
-            width: 20px;
-            height: 20px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 7.83997L12 12.42L16.59 7.83997L18 9.24997L12 15.25L6 9.24997L7.41 7.83997Z"/></svg>');
-            background-size: contain;
-        }
-
-        .sub-accordion-button:not(.collapsed)::after {
-            transform: rotate(180deg);
-        }
-
-        /* Credits 部分 */
-        .credit-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 10px 0;
-        }
-
-        .credit-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: url('https://storage.googleapis.com/vgen-production-storage/uploads/5408d70c-146e-4839-a838-90ee5302be32/1975d338-6510-4adf-bd11-aad01199d1d5.webp') no-repeat center;
-            background-size: cover;
-        }
-
-        .credit-info p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-
-        .credit-info .name {
-            font-weight: 700;
-        }
-
-        .credit-info .badges img {
-            width: 20px;
-            height: 20px;
-            margin-left: 5px;
-        }
-
-        /* References 部分 */
-        .reference-item {
-            margin: 10px 0;
-        }
-
-        .reference-item img {
-            max-width: 100%;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .reference-item .title {
-            font-size: 1em;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .reference-item .description {
-            font-size: 0.9em;
-            color: #666;
-            margin: 5px 0 0;
-        }
-
-        /* 调色板 */
-        .color-palette {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .color-circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-        .color-details {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .color-detail {
-            text-align: center;
-        }
-
-        .color-detail .color-circle {
-            margin-bottom: 5px;
-        }
-
-        .color-detail p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .color-detail .hex-code {
-            font-weight: 700;
-        }
-
-        /* 画廊部分样式调整为瀑布流 */
-        .gallery-section {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-        }
-
-        .gallery-header .nav-tabs {
-            border-bottom: 2px solid #000;
-        }
-
-        .gallery-header .nav-link {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #ccc;
-            padding: 5px 15px;
-        }
-
-        .gallery-header .nav-link.active {
-            color: #000;
-            border-bottom: 2px solid #000;
-        }
-
-        /* 新增瀑布流样式 */
-        .gallery-container {
-            column-count: 3;
-            /* 列数，可以根据需要调整 */
-            column-gap: 15px;
-            /* 列间距 */
-            width: 100%;
-        }
-
-        @media (max-width: 992px) {
-            .gallery-container {
-                column-count: 2;
-                /* 中等屏幕显示3列 */
-            }
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: #fff; color: #333; overflow-x: hidden; }
+        .gallery-section { background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; }
+        .gallery-header .nav-tabs { border-bottom: 2px solid #000; }
+        .gallery-header .nav-link { font-size: 1.5em; font-weight: 700; color: #ccc; padding: 5px 15px; }
+        .gallery-header .nav-link.active { color: #000; border-bottom: 2px solid #000; }
+        .gallery-container { display: flex; gap: 15px; width: 100%; }
+        .gallery-column { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+        .gallery-item { width: 100%; }
+        .gallery-image { width: 100%; height: auto; border-radius: 5px; object-fit: cover; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+        .gallery-image:hover { transform: scale(1.05); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
+        @media (max-width: 992px) { .gallery-container { display: grid; grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 576px) { .gallery-container { display: block; } .gallery-column { margin-bottom: 15px; } }
+        .image-modal .modal-dialog { max-width: 75%; width: 75%; margin: 0 auto; }
+        .image-modal .modal-content { background: #fff; border-radius: 10px; overflow: hidden; }
+        .image-modal .modal-body { padding: 0; display: flex; flex-direction: column; align-items: center; position: relative; }
+        .image-modal .modal-image { max-height: 70vh; width: 100%; object-fit: contain; }
+        .image-modal .description { padding: 20px; text-align: center; font-size: 1.1em; color: #666; background: #f8f8f8; width: 100%; }
+        .image-modal .modal-header { border-bottom: none; }
+        .image-modal .btn-close { filter: invert(1); }
         @media (max-width: 576px) {
-            .gallery-container {
-                column-count: 1;
-                /* 小屏幕显示2列 */
-            }
-        }
-
-        .gallery-item {
-            break-inside: avoid;
-            /* 防止图片被分割 */
-            margin-bottom: 15px;
-            /* 图片之间的垂直间距 */
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            object-fit: cover;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .gallery-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        /* 模态框样式保持不变 */
-        .modal-body img {
-            max-height: 70vh;
-        }
-
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 5%;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-size: 50%, 50%;
-        }
-
-        .carousel-control-prev:hover,
-        .carousel-control-next:hover {
-            background: rgba(0, 0, 0, 0.5);
+            .image-modal .modal-dialog { max-width: 100%; width: 100%; height: 100vh; margin: 0; }
+            .image-modal .modal-image { max-height: 60vh; }
+            .image-modal .description { font-size: 1em; }
         }
     </style>
 </head>
-
 <body>
-    <!-- 画廊部分 -->
     <div class="gallery-section mt-5">
         <div class="gallery-header mb-3">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab"
-                        aria-controls="gallery" aria-selected="true">gallery</a>
+                        aria-controls="gallery" aria-selected="true">イラスト</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="cloakroom-tab" data-bs-toggle="tab" href="#cloakroom" role="tab"
-                        aria-controls="cloakroom" aria-selected="false">代表植物：Papaver rhoeas</a>
+                    <a class="nav-link" id="aesthetics-tab" data-bs-toggle="tab" href="#aesthetics" role="tab"
+                        aria-controls="aesthetics" aria-selected="false">审美美学</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="sd-tab" data-bs-toggle="tab" href="#sd" role="tab" aria-controls="sd"
                         aria-selected="false">SD</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="aesthetics-tab" data-bs-toggle="tab" href="#aesthetics" role="tab"
-                        aria-controls="aesthetics" aria-selected="false">审美美学</a>
+                    <a class="nav-link" id="papaver-tab" data-bs-toggle="tab" href="#papaver" role="tab" aria-controls="papaver"
+                        aria-selected="false">Papaver rhoeas</a>
                 </li>
             </ul>
         </div>
-
-        <!-- 选项卡内容 -->
         <div class="tab-content" id="galleryTabContent">
-            <!-- Gallery 画廊 -->
             <div class="tab-pane fade show active" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
-                <div class="gallery-container">
-                    <!-- 移除 row 和 col 结构，直接用 gallery-item -->
-                    <div class="gallery-item">
-                        <img src="img/L/L1.jpg" alt="Gallery Image 1" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L1.jpg" data-index="0">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L2.jpg" alt="Gallery Image 2" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L2.jpg" data-index="1">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L3.jpg" alt="Gallery Image 3" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L3.jpg" data-index="2">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L4.jpg" alt="Gallery Image 4" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L4.jpg" data-index="3">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L5.jpg" alt="Gallery Image 5" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L5.jpg" data-index="4">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L6.jpg" alt="Gallery Image 6" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L6.jpg" data-index="5">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L7.jpg" alt="Gallery Image 7" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L7.jpg" data-index="6">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L8.jpg" alt="Gallery Image 8" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L8.jpg" data-index="7">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L9.jpg" alt="Gallery Image 9" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L9.jpg" data-index="8">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L10.jpg" alt="Gallery Image 10" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L10.jpg" data-index="9">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L11.jpg" alt="Gallery Image 11" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L11.png"
-                            data-index="10">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L12.png" alt="Gallery Image 12" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L12.png"
-                            data-index="11">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/L16.jpg" alt="Gallery Image 12" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/L16.jpg"
-                            data-index="11">
-                    </div>
-                </div>
+                <div class="gallery-container" id="galleryContainer"></div>
             </div>
-
-            <!-- Cloakroom 画廊 -->
-            <div class="tab-pane fade" id="cloakroom" role="tabpanel" aria-labelledby="cloakroom-tab">
-                <div class="gallery-container">
-                    <div class="gallery-item">
-                        <img src="img/L/Papaver rhoeas 図鑑1.jpg" alt="Cloakroom Image 1" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑1.jpg"
-                            data-index="0">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/Papaver rhoeas 図鑑2.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑2.jpg"
-                            data-index="1">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/Papaver rhoeas 図鑑3.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑3.jpg"
-                            data-index="1">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/Papaver rhoeas 図鑑4.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑4.jpg"
-                            data-index="1">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/Papaver rhoeas 図鑑5.jpg" alt="Cloakroom Image 2" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/Papaver rhoeas 図鑑5.jpg"
-                            data-index="1">
-                    </div>
-                </div>
+            <div class="tab-pane fade" id="papaver" role="tabpanel" aria-labelledby="papaver-tab">
+                <div class="gallery-container" id="papaverContainer"></div>
             </div>
-            <!-- SD 画廊 -->
             <div class="tab-pane fade" id="sd" role="tabpanel" aria-labelledby="sd-tab">
-                <div class="gallery-container">
-                    <div class="gallery-item">
-                        <img src="img/L/sd/sd1.jpg" alt="SD Image 1" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/sd/sd1.jpg"
-                            data-index="0">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/sd/sd2.jpg" alt="SD Image 1" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/sd/sd2.jpg"
-                            data-index="0">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/L/sd/sd3.jpg" alt="SD Image 1" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/L/sd/sd3.jpg"
-                            data-index="0">
-                    </div>
-                </div>
+                <div class="gallery-container" id="sdContainer"></div>
             </div>
-
-            <!-- 审美美学 画廊 -->
             <div class="tab-pane fade" id="aesthetics" role="tabpanel" aria-labelledby="aesthetics-tab">
-                <div class="gallery-container">
-                    <!-- 这里可以添加审美美学相关的图片 -->
-                    <div class="gallery-item">
-                        <img src="img/aesthetics/aes1.jpg" alt="Aesthetics Image 1" class="img-fluid gallery-image"
-                            data-bs-toggle="modal" data-bs-target="#imageModal" data-src="img/aesthetics/aes1.jpg"
-                            data-index="0">
-                    </div>
-                    <!-- 可以继续添加更多审美美学图片 -->
-                </div>
+                <div class="gallery-container" id="aestheticsContainer"></div>
             </div>
         </div>
     </div>
 
-    <!-- 模态框保持不变 -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal fade image-modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center position-relative">
-                    <button class="carousel-control-prev" type="button" id="prevImage">
+                <div class="modal-body">
+                    <img src="" alt="Preview Image" class="modal-image" id="modalImage">
+                    <div class="description" id="imageDescription"></div>
+                    <button class="carousel-control-prev" id="prevImage">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <img src="" alt="Preview Image" class="img-fluid" id="modalImage">
-                    <button class="carousel-control-next" type="button" id="nextImage">
+                    <button class="carousel-control-next" id="nextImage">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
@@ -603,71 +98,246 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
-        // 获取所有画廊图片
-        const galleryTabs = document.querySelectorAll('.nav-link');
+        const galleryImages = [
+        { src: "img/L/L1.jpg", alt: "Gallery Image 1", description: "" },
+            { src: "img/L/L2.jpg", alt: "Gallery Image 2", description: "" },
+            { src: "img/L/L3.jpg", alt: "Gallery Image 3", description: "" },
+             { src: "img/L/L4.jpg", alt: "Gallery Image 4", description: "" },
+             { src: "img/L/L5.jpg", alt: "Gallery Image 5", description: "" },
+             { src: "img/L/L6.jpg", alt: "Gallery Image 6", description: "" },
+             { src: "img/L/L7.jpg", alt: "Gallery Image 7", description: "" },
+             { src: "img/L/L8.jpg", alt: "Gallery Image 8", description: "" },
+             { src: "img/L/L9.jpg", alt: "Gallery Image 9", description: "" },
+             { src: "img/L/L10.jpg", alt: "Gallery Image 10", description: "" },
+             { src: "img/L/L11.jpg", alt: "Gallery Image 11", description: "" },
+             { src: "img/L/L12.jpg", alt: "Gallery Image 12", description: "" },
+             { src: "img/L/L13.jpg", alt: "Gallery Image 13", description: "" },
+             { src: "img/L/L14.jpg", alt: "Gallery Image 14", description: "" },
+             { src: "img/L/L15.jpg", alt: "Gallery Image 15", description: "" },
+             { src: "img/L/L16.jpg", alt: "Gallery Image 16", description: "" }
+            // { src: "img/L/gallery/L17.jpg", alt: "Gallery Image 17", description: "" },
+            // { src: "img/L/gallery/L18.jpg", alt: "Gallery Image 18", description: "" },
+            // { src: "img/L/gallery/L19.jpg", alt: "Gallery Image 19", description: "" },
+            // { src: "img/L/gallery/L20.jpg", alt: "Gallery Image 20", description: "" },
+            // { src: "img/L/gallery/L21.jpg", alt: "Gallery Image 21", description: "" },
+            // { src: "img/L/gallery/L22.jpg", alt: "Gallery Image 22", description: "" },
+            // { src: "img/L/gallery/L23.jpg", alt: "Gallery Image 23", description: "" },
+            // { src: "img/L/gallery/L24.jpg", alt: "Gallery Image 24", description: "" },
+            // { src: "img/L/gallery/L25.jpg", alt: "Gallery Image 25", description: "" },
+            // { src: "img/L/gallery/L26.jpg", alt: "Gallery Image 26", description: "" },
+            // { src: "img/L/gallery/L27.jpg", alt: "Gallery Image 27", description: "" },
+            // { src: "img/L/gallery/L28.jpg", alt: "Gallery Image 28", description: "" },
+            // { src: "img/L/gallery/L29.jpg", alt: "Gallery Image 29", description: "" },
+            // { src: "img/L/gallery/L30.jpg", alt: "Gallery Image 30", description: "" },
+            // { src: "img/L/gallery/L31.jpg", alt: "Gallery Image 31", description: "" },
+            // { src: "img/L/gallery/L32.jpg", alt: "Gallery Image 32", description: "" },
+            // { src: "img/L/gallery/L33.jpg", alt: "Gallery Image 33", description: "" },
+            // { src: "img/L/gallery/L34.jpg", alt: "Gallery Image 34", description: "" },
+            // { src: "img/L/gallery/L35.jpg", alt: "Gallery Image 35", description: "" },
+            // { src: "img/L/gallery/L36.jpg", alt: "Gallery Image 36", description: "" },
+            // { src: "img/L/gallery/L37.jpg", alt: "Gallery Image 37", description: "" },
+            // { src: "img/L/gallery/L38.jpg", alt: "Gallery Image 38", description: "" },
+            // { src: "img/L/gallery/L39.jpg", alt: "Gallery Image 39", description: "" },
+            // { src: "img/L/gallery/L40.jpg", alt: "Gallery Image 40", description: "" }
+        ];
+
+        const aestheticsImages = [
+            { src: "img/L/aesthetics/A1.jpg", alt: "Aesthetics Image 1", description: "" },
+            { src: "img/L/aesthetics/A2.jpg", alt: "Aesthetics Image 2", description: "" },
+            { src: "img/L/aesthetics/A3.jpg", alt: "Aesthetics Image 3", description: "" },
+            // 预留至 A40
+            // { src: "img/L/aesthetics/A4.jpg", alt: "Aesthetics Image 4", description: "" },
+            // { src: "img/L/aesthetics/A5.jpg", alt: "Aesthetics Image 5", description: "" },
+            // { src: "img/L/aesthetics/A6.jpg", alt: "Aesthetics Image 6", description: "" },
+            // { src: "img/L/aesthetics/A7.jpg", alt: "Aesthetics Image 7", description: "" },
+            // { src: "img/L/aesthetics/A8.jpg", alt: "Aesthetics Image 8", description: "" },
+            // { src: "img/L/aesthetics/A9.jpg", alt: "Aesthetics Image 9", description: "" },
+            // { src: "img/L/aesthetics/A10.jpg", alt: "Aesthetics Image 10", description: "" },
+            // { src: "img/L/aesthetics/A11.jpg", alt: "Aesthetics Image 11", description: "" },
+            // { src: "img/L/aesthetics/A12.jpg", alt: "Aesthetics Image 12", description: "" },
+            // { src: "img/L/aesthetics/A13.jpg", alt: "Aesthetics Image 13", description: "" },
+            // { src: "img/L/aesthetics/A14.jpg", alt: "Aesthetics Image 14", description: "" },
+            // { src: "img/L/aesthetics/A15.jpg", alt: "Aesthetics Image 15", description: "" },
+            // { src: "img/L/aesthetics/A16.jpg", alt: "Aesthetics Image 16", description: "" },
+            // { src: "img/L/aesthetics/A17.jpg", alt: "Aesthetics Image 17", description: "" },
+            // { src: "img/L/aesthetics/A18.jpg", alt: "Aesthetics Image 18", description: "" },
+            // { src: "img/L/aesthetics/A19.jpg", alt: "Aesthetics Image 19", description: "" },
+            // { src: "img/L/aesthetics/A20.jpg", alt: "Aesthetics Image 20", description: "" },
+            // { src: "img/L/aesthetics/A21.jpg", alt: "Aesthetics Image 21", description: "" },
+            // { src: "img/L/aesthetics/A22.jpg", alt: "Aesthetics Image 22", description: "" },
+            // { src: "img/L/aesthetics/A23.jpg", alt: "Aesthetics Image 23", description: "" },
+            // { src: "img/L/aesthetics/A24.jpg", alt: "Aesthetics Image 24", description: "" },
+            // { src: "img/L/aesthetics/A25.jpg", alt: "Aesthetics Image 25", description: "" },
+            // { src: "img/L/aesthetics/A26.jpg", alt: "Aesthetics Image 26", description: "" },
+            // { src: "img/L/aesthetics/A27.jpg", alt: "Aesthetics Image 27", description: "" },
+            // { src: "img/L/aesthetics/A28.jpg", alt: "Aesthetics Image 28", description: "" },
+            // { src: "img/L/aesthetics/A29.jpg", alt: "Aesthetics Image 29", description: "" },
+            // { src: "img/L/aesthetics/A30.jpg", alt: "Aesthetics Image 30", description: "" },
+            // { src: "img/L/aesthetics/A31.jpg", alt: "Aesthetics Image 31", description: "" },
+            // { src: "img/L/aesthetics/A32.jpg", alt: "Aesthetics Image 32", description: "" },
+            // { src: "img/L/aesthetics/A33.jpg", alt: "Aesthetics Image 33", description: "" },
+            // { src: "img/L/aesthetics/A34.jpg", alt: "Aesthetics Image 34", description: "" },
+            // { src: "img/L/aesthetics/A35.jpg", alt: "Aesthetics Image 35", description: "" },
+            // { src: "img/L/aesthetics/A36.jpg", alt: "Aesthetics Image 36", description: "" },
+            // { src: "img/L/aesthetics/A37.jpg", alt: "Aesthetics Image 37", description: "" },
+            // { src: "img/L/aesthetics/A38.jpg", alt: "Aesthetics Image 38", description: "" },
+            // { src: "img/L/aesthetics/A39.jpg", alt: "Aesthetics Image 39", description: "" },
+            // { src: "img/L/aesthetics/A40.jpg", alt: "Aesthetics Image 40", description: "" }
+        ];
+
+        const sdImages = [
+            { src: "img/L/sd/SD1.jpg", alt: "SD Image 1", description: "" },
+            { src: "img/L/sd/SD2.jpg", alt: "SD Image 2", description: "" },
+            { src: "img/L/sd/SD3.jpg", alt: "SD Image 3", description: "" },
+            { src: "img/L/sd/SD4.jpg", alt: "SD Image 4", description: "" },
+             { src: "img/L/sd/SD5.jpg", alt: "SD Image 5", description: "" },
+             { src: "img/L/sd/SD6.jpg", alt: "SD Image 6", description: "" },
+/*              { src: "img/L/sd/SD7.jpg", alt: "SD Image 7", description: "" },
+             { src: "img/L/sd/SD8.jpg", alt: "SD Image 8", description: "" },
+             { src: "img/L/sd/SD9.jpg", alt: "SD Image 9", description: "" },
+             { src: "img/L/sd/SD10.jpg", alt: "SD Image 10", description: "" },
+             { src: "img/L/sd/SD11.jpg", alt: "SD Image 11", description: "" },
+             { src: "img/L/sd/SD12.jpg", alt: "SD Image 12", description: "" },
+             { src: "img/L/sd/SD13.jpg", alt: "SD Image 13", description: "" },
+             { src: "img/L/sd/SD14.jpg", alt: "SD Image 14", description: "" },
+             { src: "img/L/sd/SD15.jpg", alt: "SD Image 15", description: "" },
+             { src: "img/L/sd/SD16.jpg", alt: "SD Image 16", description: "" }, */
+            // { src: "img/L/sd/SD17.jpg", alt: "SD Image 17", description: "" },
+            // { src: "img/L/sd/SD18.jpg", alt: "SD Image 18", description: "" },
+            // { src: "img/L/sd/SD19.jpg", alt: "SD Image 19", description: "" },
+            // { src: "img/L/sd/SD20.jpg", alt: "SD Image 20", description: "" },
+            // { src: "img/L/sd/SD21.jpg", alt: "SD Image 21", description: "" },
+            // { src: "img/L/sd/SD22.jpg", alt: "SD Image 22", description: "" },
+            // { src: "img/L/sd/SD23.jpg", alt: "SD Image 23", description: "" },
+            // { src: "img/L/sd/SD24.jpg", alt: "SD Image 24", description: "" },
+            // { src: "img/L/sd/SD25.jpg", alt: "SD Image 25", description: "" },
+            // { src: "img/L/sd/SD26.jpg", alt: "SD Image 26", description: "" },
+            // { src: "img/L/sd/SD27.jpg", alt: "SD Image 27", description: "" },
+            // { src: "img/L/sd/SD28.jpg", alt: "SD Image 28", description: "" },
+            // { src: "img/L/sd/SD29.jpg", alt: "SD Image 29", description: "" },
+            // { src: "img/L/sd/SD30.jpg", alt: "SD Image 30", description: "" },
+            // { src: "img/L/sd/SD31.jpg", alt: "SD Image 31", description: "" },
+            // { src: "img/L/sd/SD32.jpg", alt: "SD Image 32", description: "" },
+            // { src: "img/L/sd/SD33.jpg", alt: "SD Image 33", description: "" },
+            // { src: "img/L/sd/SD34.jpg", alt: "SD Image 34", description: "" },
+            // { src: "img/L/sd/SD35.jpg", alt: "SD Image 35", description: "" },
+            // { src: "img/L/sd/SD36.jpg", alt: "SD Image 36", description: "" },
+            // { src: "img/L/sd/SD37.jpg", alt: "SD Image 37", description: "" },
+            // { src: "img/L/sd/SD38.jpg", alt: "SD Image 38", description: "" },
+            // { src: "img/L/sd/SD39.jpg", alt: "SD Image 39", description: "" },
+            // { src: "img/L/sd/SD40.jpg", alt: "SD Image 40", description: "" }
+        ];
+        const papaverImages = [
+                { src: "img/L/papaver/P1.jpg", alt: "Papaver Image 1", description: "" },
+                { src: "img/L/papaver/P2.jpg", alt: "Papaver Image 2", description: "" },
+                { src: "img/L/papaver/P3.jpg", alt: "Papaver Image 3", description: "" },
+                { src: "img/L/papaver/P4.jpg", alt: "Papaver Image 4", description: "" },
+                { src: "img/L/papaver/P5.jpg", alt: "Papaver Image 5", description: "" }
+        ];
+
+
+
+        function arrangeWaterfall(containerId, imageArray) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+
+            const width = window.innerWidth;
+            const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+
+            const columns = Array(columnCount).fill().map(() => {
+                const col = document.createElement('div');
+                col.className = 'gallery-column';
+                container.appendChild(col);
+                return col;
+            });
+
+            imageArray.forEach((image, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.alt = image.alt;
+                img.className = 'img-fluid gallery-image';
+                img.setAttribute('data-bs-toggle', 'modal');
+                img.setAttribute('data-bs-target', '#imageModal');
+                img.setAttribute('data-src', image.src);
+                img.setAttribute('data-index', index);
+                img.setAttribute('data-description', image.description);
+                img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
+                    containerId === 'papaverContainer' ? 'papaver' :
+                    containerId === 'sdContainer' ? 'sd' : 'aesthetics');
+
+                item.appendChild(img);
+                columns[index % columnCount].appendChild(item);
+
+                img.removeEventListener('click', handleImageClick);
+                img.addEventListener('click', handleImageClick);
+            });
+        }
+
+        function handleImageClick() {
+            const src = this.getAttribute('data-src');
+            const description = this.getAttribute('data-description');
+            currentIndex = parseInt(this.getAttribute('data-index'));
+            currentArray = this.getAttribute('data-array');
+            modalImage.src = src;
+            imageDescription.textContent = description || '暂无说明';
+        }
+
+        function initializeTabs() {
+            arrangeWaterfall('galleryContainer', galleryImages);
+            arrangeWaterfall('papaverContainer', papaverImages);
+            arrangeWaterfall('sdContainer', sdImages);
+            arrangeWaterfall('aestheticsContainer', aestheticsImages);
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeTabs);
+        window.addEventListener('resize', initializeTabs);
+
+        document.querySelectorAll('.nav-link').forEach(tab => {
+            tab.addEventListener('shown.bs.tab', () => {
+                const target = tab.getAttribute('href').substring(1);
+                if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
+                else if (target === 'papaver') arrangeWaterfall('papaverContainer', papaverImages);
+                else if (target === 'sd') arrangeWaterfall('sdContainer', sdImages);
+                else if (target === 'aesthetics') arrangeWaterfall('aestheticsContainer', aestheticsImages);
+            });
+        });
+
         const modalImage = document.getElementById('modalImage');
+        const imageDescription = document.getElementById('imageDescription');
         const prevButton = document.getElementById('prevImage');
         const nextButton = document.getElementById('nextImage');
         let currentIndex = 0;
-        let currentImages = [];
+        let currentArray = 'gallery';
 
-        // 更新图片数据函数
-        function updateImageData(tabId) {
-            const activePane = document.querySelector(tabId);
-            currentImages = Array.from(activePane.querySelectorAll('.gallery-image')).map(image => ({
-                src: image.getAttribute('data-src'),
-                index: parseInt(image.getAttribute('data-index'))
-            }));
-        }
-
-        // 初始化默认选项卡的图片数据
-        updateImageData('#gallery');
-
-        // 点击图片时更新模态框
-        document.querySelectorAll('.gallery-image').forEach(image => {
-            image.addEventListener('click', function () {
-                const src = this.getAttribute('data-src');
-                currentIndex = parseInt(this.getAttribute('data-index'));
-                modalImage.src = src;
-            });
-        });
-
-        // 切换选项卡时更新图片数据
-        galleryTabs.forEach(tab => {
-            tab.addEventListener('shown.bs.tab', function (e) {
-                const targetTab = e.target.getAttribute('href');
-                updateImageData(targetTab);
-                currentIndex = 0; // 重置索引
-            });
-        });
-
-        // 上一张图片
         prevButton.addEventListener('click', function () {
-            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-            modalImage.src = currentImages[currentIndex].src;
+            const array = currentArray === 'gallery' ? galleryImages :
+                currentArray === 'papaver' ? papaverImages :
+                currentArray === 'sd' ? sdImages : aestheticsImages;
+            currentIndex = (currentIndex - 1 + array.length) % array.length;
+            modalImage.src = array[currentIndex].src;
+            imageDescription.textContent = array[currentIndex].description || '暂无说明';
         });
 
-        // 下一张图片
         nextButton.addEventListener('click', function () {
-            currentIndex = (currentIndex + 1) % currentImages.length;
-            modalImage.src = currentImages[currentIndex].src;
+            const array = currentArray === 'gallery' ? galleryImages :
+                currentArray === 'papaver' ? papaverImages :
+                currentArray === 'sd' ? sdImages : aestheticsImages;
+            currentIndex = (currentIndex + 1) % array.length;
+            modalImage.src = array[currentIndex].src;
+            imageDescription.textContent = array[currentIndex].description || '暂无说明';
         });
 
-        // 键盘导航
         document.addEventListener('keydown', function (event) {
-            if (event.key === 'ArrowLeft' && document.getElementById('imageModal').classList.contains('show')) {
-                prevButton.click();
-            } else if (event.key === 'ArrowRight' && document.getElementById('imageModal').classList.contains('show')) {
-                nextButton.click();
+            if (document.getElementById('imageModal').classList.contains('show')) {
+                if (event.key === 'ArrowLeft') prevButton.click();
+                else if (event.key === 'ArrowRight') nextButton.click();
             }
         });
     </script>
 </body>
-
 </html>

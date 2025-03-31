@@ -42,16 +42,20 @@
         <div class="gallery-header mb-3">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab" aria-controls="gallery" aria-selected="true">イラスト</a>
+                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab"
+                        aria-controls="gallery" aria-selected="true">イラスト</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="papaver-tab" data-bs-toggle="tab" href="#papaver" role="tab" aria-controls="papaver" aria-selected="false">Papaver rhoeas</a>
+                    <a class="nav-link" id="aesthetics-tab" data-bs-toggle="tab" href="#aesthetics" role="tab"
+                        aria-controls="aesthetics" aria-selected="false">审美美学</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="sd-tab" data-bs-toggle="tab" href="#sd" role="tab" aria-controls="sd" aria-selected="false">SD</a>
+                    <a class="nav-link" id="sd-tab" data-bs-toggle="tab" href="#sd" role="tab" aria-controls="sd"
+                        aria-selected="false">SD</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="aesthetics-tab" data-bs-toggle="tab" href="#aesthetics" role="tab" aria-controls="aesthetics" aria-selected="false">审美美学</a>
+                    <a class="nav-link" id="papaver-tab" data-bs-toggle="tab" href="#papaver" role="tab" aria-controls="papaver"
+                        aria-selected="false">Papaver rhoeas</a>
                 </li>
             </ul>
         </div>
@@ -139,93 +143,6 @@
             // { src: "img/L/gallery/L40.jpg", alt: "Gallery Image 40", description: "" }
         ];
 
-        const papaverImages = [
-            { src: "img/L/papaver/P1.jpg", alt: "Papaver Image 1", description: "" },
-            { src: "img/L/papaver/P2.jpg", alt: "Papaver Image 2", description: "" },
-            { src: "img/L/papaver/P3.jpg", alt: "Papaver Image 3", description: "" },
-            // 预留至 P40
-            // { src: "img/L/papaver/P4.jpg", alt: "Papaver Image 4", description: "" },
-            // { src: "img/L/papaver/P5.jpg", alt: "Papaver Image 5", description: "" },
-            // { src: "img/L/papaver/P6.jpg", alt: "Papaver Image 6", description: "" },
-            // { src: "img/L/papaver/P7.jpg", alt: "Papaver Image 7", description: "" },
-            // { src: "img/L/papaver/P8.jpg", alt: "Papaver Image 8", description: "" },
-            // { src: "img/L/papaver/P9.jpg", alt: "Papaver Image 9", description: "" },
-            // { src: "img/L/papaver/P10.jpg", alt: "Papaver Image 10", description: "" },
-            // { src: "img/L/papaver/P11.jpg", alt: "Papaver Image 11", description: "" },
-            // { src: "img/L/papaver/P12.jpg", alt: "Papaver Image 12", description: "" },
-            // { src: "img/L/papaver/P13.jpg", alt: "Papaver Image 13", description: "" },
-            // { src: "img/L/papaver/P14.jpg", alt: "Papaver Image 14", description: "" },
-            // { src: "img/L/papaver/P15.jpg", alt: "Papaver Image 15", description: "" },
-            // { src: "img/L/papaver/P16.jpg", alt: "Papaver Image 16", description: "" },
-            // { src: "img/L/papaver/P17.jpg", alt: "Papaver Image 17", description: "" },
-            // { src: "img/L/papaver/P18.jpg", alt: "Papaver Image 18", description: "" },
-            // { src: "img/L/papaver/P19.jpg", alt: "Papaver Image 19", description: "" },
-            // { src: "img/L/papaver/P20.jpg", alt: "Papaver Image 20", description: "" },
-            // { src: "img/L/papaver/P21.jpg", alt: "Papaver Image 21", description: "" },
-            // { src: "img/L/papaver/P22.jpg", alt: "Papaver Image 22", description: "" },
-            // { src: "img/L/papaver/P23.jpg", alt: "Papaver Image 23", description: "" },
-            // { src: "img/L/papaver/P24.jpg", alt: "Papaver Image 24", description: "" },
-            // { src: "img/L/papaver/P25.jpg", alt: "Papaver Image 25", description: "" },
-            // { src: "img/L/papaver/P26.jpg", alt: "Papaver Image 26", description: "" },
-            // { src: "img/L/papaver/P27.jpg", alt: "Papaver Image 27", description: "" },
-            // { src: "img/L/papaver/P28.jpg", alt: "Papaver Image 28", description: "" },
-            // { src: "img/L/papaver/P29.jpg", alt: "Papaver Image 29", description: "" },
-            // { src: "img/L/papaver/P30.jpg", alt: "Papaver Image 30", description: "" },
-            // { src: "img/L/papaver/P31.jpg", alt: "Papaver Image 31", description: "" },
-            // { src: "img/L/papaver/P32.jpg", alt: "Papaver Image 32", description: "" },
-            // { src: "img/L/papaver/P33.jpg", alt: "Papaver Image 33", description: "" },
-            // { src: "img/L/papaver/P34.jpg", alt: "Papaver Image 34", description: "" },
-            // { src: "img/L/papaver/P35.jpg", alt: "Papaver Image 35", description: "" },
-            // { src: "img/L/papaver/P36.jpg", alt: "Papaver Image 36", description: "" },
-            // { src: "img/L/papaver/P37.jpg", alt: "Papaver Image 37", description: "" },
-            // { src: "img/L/papaver/P38.jpg", alt: "Papaver Image 38", description: "" },
-            // { src: "img/L/papaver/P39.jpg", alt: "Papaver Image 39", description: "" },
-            // { src: "img/L/papaver/P40.jpg", alt: "Papaver Image 40", description: "" }
-        ];
-
-        const sdImages = [
-            { src: "img/L/sd/SD1.jpg", alt: "SD Image 1", description: "" },
-            { src: "img/L/sd/SD2.jpg", alt: "SD Image 2", description: "" },
-            { src: "img/L/sd/SD3.jpg", alt: "SD Image 3", description: "" },
-            { src: "img/L/sd/SD4.jpg", alt: "SD Image 4", description: "" },
-             { src: "img/L/sd/SD5.jpg", alt: "SD Image 5", description: "" },
-             { src: "img/L/sd/SD6.jpg", alt: "SD Image 6", description: "" },
-             { src: "img/L/sd/SD7.jpg", alt: "SD Image 7", description: "" },
-             { src: "img/L/sd/SD8.jpg", alt: "SD Image 8", description: "" },
-             { src: "img/L/sd/SD9.jpg", alt: "SD Image 9", description: "" },
-             { src: "img/L/sd/SD10.jpg", alt: "SD Image 10", description: "" },
-             { src: "img/L/sd/SD11.jpg", alt: "SD Image 11", description: "" },
-             { src: "img/L/sd/SD12.jpg", alt: "SD Image 12", description: "" },
-             { src: "img/L/sd/SD13.jpg", alt: "SD Image 13", description: "" },
-             { src: "img/L/sd/SD14.jpg", alt: "SD Image 14", description: "" },
-             { src: "img/L/sd/SD15.jpg", alt: "SD Image 15", description: "" },
-             { src: "img/L/sd/SD16.jpg", alt: "SD Image 16", description: "" },
-            // { src: "img/L/sd/SD17.jpg", alt: "SD Image 17", description: "" },
-            // { src: "img/L/sd/SD18.jpg", alt: "SD Image 18", description: "" },
-            // { src: "img/L/sd/SD19.jpg", alt: "SD Image 19", description: "" },
-            // { src: "img/L/sd/SD20.jpg", alt: "SD Image 20", description: "" },
-            // { src: "img/L/sd/SD21.jpg", alt: "SD Image 21", description: "" },
-            // { src: "img/L/sd/SD22.jpg", alt: "SD Image 22", description: "" },
-            // { src: "img/L/sd/SD23.jpg", alt: "SD Image 23", description: "" },
-            // { src: "img/L/sd/SD24.jpg", alt: "SD Image 24", description: "" },
-            // { src: "img/L/sd/SD25.jpg", alt: "SD Image 25", description: "" },
-            // { src: "img/L/sd/SD26.jpg", alt: "SD Image 26", description: "" },
-            // { src: "img/L/sd/SD27.jpg", alt: "SD Image 27", description: "" },
-            // { src: "img/L/sd/SD28.jpg", alt: "SD Image 28", description: "" },
-            // { src: "img/L/sd/SD29.jpg", alt: "SD Image 29", description: "" },
-            // { src: "img/L/sd/SD30.jpg", alt: "SD Image 30", description: "" },
-            // { src: "img/L/sd/SD31.jpg", alt: "SD Image 31", description: "" },
-            // { src: "img/L/sd/SD32.jpg", alt: "SD Image 32", description: "" },
-            // { src: "img/L/sd/SD33.jpg", alt: "SD Image 33", description: "" },
-            // { src: "img/L/sd/SD34.jpg", alt: "SD Image 34", description: "" },
-            // { src: "img/L/sd/SD35.jpg", alt: "SD Image 35", description: "" },
-            // { src: "img/L/sd/SD36.jpg", alt: "SD Image 36", description: "" },
-            // { src: "img/L/sd/SD37.jpg", alt: "SD Image 37", description: "" },
-            // { src: "img/L/sd/SD38.jpg", alt: "SD Image 38", description: "" },
-            // { src: "img/L/sd/SD39.jpg", alt: "SD Image 39", description: "" },
-            // { src: "img/L/sd/SD40.jpg", alt: "SD Image 40", description: "" }
-        ];
-
         const aestheticsImages = [
             { src: "img/L/aesthetics/A1.jpg", alt: "Aesthetics Image 1", description: "" },
             { src: "img/L/aesthetics/A2.jpg", alt: "Aesthetics Image 2", description: "" },
@@ -269,6 +186,58 @@
             // { src: "img/L/aesthetics/A39.jpg", alt: "Aesthetics Image 39", description: "" },
             // { src: "img/L/aesthetics/A40.jpg", alt: "Aesthetics Image 40", description: "" }
         ];
+
+        const sdImages = [
+            { src: "img/L/sd/SD1.jpg", alt: "SD Image 1", description: "" },
+            { src: "img/L/sd/SD2.jpg", alt: "SD Image 2", description: "" },
+            { src: "img/L/sd/SD3.jpg", alt: "SD Image 3", description: "" },
+            { src: "img/L/sd/SD4.jpg", alt: "SD Image 4", description: "" },
+             { src: "img/L/sd/SD5.jpg", alt: "SD Image 5", description: "" },
+             { src: "img/L/sd/SD6.jpg", alt: "SD Image 6", description: "" },
+/*              { src: "img/L/sd/SD7.jpg", alt: "SD Image 7", description: "" },
+             { src: "img/L/sd/SD8.jpg", alt: "SD Image 8", description: "" },
+             { src: "img/L/sd/SD9.jpg", alt: "SD Image 9", description: "" },
+             { src: "img/L/sd/SD10.jpg", alt: "SD Image 10", description: "" },
+             { src: "img/L/sd/SD11.jpg", alt: "SD Image 11", description: "" },
+             { src: "img/L/sd/SD12.jpg", alt: "SD Image 12", description: "" },
+             { src: "img/L/sd/SD13.jpg", alt: "SD Image 13", description: "" },
+             { src: "img/L/sd/SD14.jpg", alt: "SD Image 14", description: "" },
+             { src: "img/L/sd/SD15.jpg", alt: "SD Image 15", description: "" },
+             { src: "img/L/sd/SD16.jpg", alt: "SD Image 16", description: "" }, */
+            // { src: "img/L/sd/SD17.jpg", alt: "SD Image 17", description: "" },
+            // { src: "img/L/sd/SD18.jpg", alt: "SD Image 18", description: "" },
+            // { src: "img/L/sd/SD19.jpg", alt: "SD Image 19", description: "" },
+            // { src: "img/L/sd/SD20.jpg", alt: "SD Image 20", description: "" },
+            // { src: "img/L/sd/SD21.jpg", alt: "SD Image 21", description: "" },
+            // { src: "img/L/sd/SD22.jpg", alt: "SD Image 22", description: "" },
+            // { src: "img/L/sd/SD23.jpg", alt: "SD Image 23", description: "" },
+            // { src: "img/L/sd/SD24.jpg", alt: "SD Image 24", description: "" },
+            // { src: "img/L/sd/SD25.jpg", alt: "SD Image 25", description: "" },
+            // { src: "img/L/sd/SD26.jpg", alt: "SD Image 26", description: "" },
+            // { src: "img/L/sd/SD27.jpg", alt: "SD Image 27", description: "" },
+            // { src: "img/L/sd/SD28.jpg", alt: "SD Image 28", description: "" },
+            // { src: "img/L/sd/SD29.jpg", alt: "SD Image 29", description: "" },
+            // { src: "img/L/sd/SD30.jpg", alt: "SD Image 30", description: "" },
+            // { src: "img/L/sd/SD31.jpg", alt: "SD Image 31", description: "" },
+            // { src: "img/L/sd/SD32.jpg", alt: "SD Image 32", description: "" },
+            // { src: "img/L/sd/SD33.jpg", alt: "SD Image 33", description: "" },
+            // { src: "img/L/sd/SD34.jpg", alt: "SD Image 34", description: "" },
+            // { src: "img/L/sd/SD35.jpg", alt: "SD Image 35", description: "" },
+            // { src: "img/L/sd/SD36.jpg", alt: "SD Image 36", description: "" },
+            // { src: "img/L/sd/SD37.jpg", alt: "SD Image 37", description: "" },
+            // { src: "img/L/sd/SD38.jpg", alt: "SD Image 38", description: "" },
+            // { src: "img/L/sd/SD39.jpg", alt: "SD Image 39", description: "" },
+            // { src: "img/L/sd/SD40.jpg", alt: "SD Image 40", description: "" }
+        ];
+        const papaverImages = [
+                { src: "img/L/papaver/P1.jpg", alt: "Papaver Image 1", description: "" },
+                { src: "img/L/papaver/P2.jpg", alt: "Papaver Image 2", description: "" },
+                { src: "img/L/papaver/P3.jpg", alt: "Papaver Image 3", description: "" },
+                { src: "img/L/papaver/P4.jpg", alt: "Papaver Image 4", description: "" },
+                { src: "img/L/papaver/P5.jpg", alt: "Papaver Image 5", description: "" }
+        ];
+
+
 
         function arrangeWaterfall(containerId, imageArray) {
             const container = document.getElementById(containerId);
