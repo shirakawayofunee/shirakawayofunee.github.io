@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,45 +11,167 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; background: #fff; color: #333; overflow-x: hidden; }
-        .gallery-section { background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; }
-        .gallery-header .nav-tabs { border-bottom: 2px solid #000; }
-        .gallery-header .nav-link { font-size: 1.5em; font-weight: 700; color: #ccc; padding: 5px 15px; }
-        .gallery-header .nav-link.active { color: #000; border-bottom: 2px solid #000; }
-        .gallery-container { display: flex; gap: 15px; width: 100%; }
-        .gallery-column { flex: 1; display: flex; flex-direction: column; gap: 15px; }
-        .gallery-item { width: 100%; }
-        .gallery-image { width: 100%; height: auto; border-radius: 5px; object-fit: cover; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
-        .gallery-image:hover { transform: scale(1.05); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
-        @media (max-width: 992px) { .gallery-container { display: grid; grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 576px) { .gallery-container { display: block; } .gallery-column { margin-bottom: 15px; } }
-        .image-modal .modal-dialog { max-width: 75%; width: 75%; margin: 0 auto; }
-        .image-modal .modal-content { background: #fff; border-radius: 10px; overflow: hidden; }
-        .image-modal .modal-body { padding: 0; display: flex; flex-direction: column; align-items: center; position: relative; }
-        .image-modal .modal-image { max-height: 70vh; width: 100%; object-fit: contain; }
-        .image-modal .description { padding: 20px; text-align: center; font-size: 1.1em; color: #666; background: #f8f8f8; width: 100%; }
-        .image-modal .modal-header { border-bottom: none; }
-        .image-modal .btn-close { filter: invert(1); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #fff;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .gallery-section {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .gallery-header .nav-tabs {
+            border-bottom: 2px solid #000;
+        }
+
+        .gallery-header .nav-link {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #ccc;
+            padding: 5px 15px;
+        }
+
+        .gallery-header .nav-link.active {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+
+        .gallery-container {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .gallery-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            width: 100%;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 992px) {
+            .gallery-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 576px) {
-            .image-modal .modal-dialog { max-width: 100%; width: 100%; height: 100vh; margin: 0; }
-            .image-modal .modal-image { max-height: 60vh; }
-            .image-modal .description { font-size: 1em; }
+            .gallery-container {
+                display: block;
+            }
+
+            .gallery-column {
+                margin-bottom: 15px;
+            }
+        }
+
+        .image-modal .modal-dialog {
+            max-width: 75%;
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        .image-modal .modal-content {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .image-modal .modal-body {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .image-modal .modal-image {
+            max-height: 70vh;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .image-modal .description {
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+            background: #f8f8f8;
+            width: 100%;
+        }
+
+        .image-modal .modal-header {
+            border-bottom: none;
+        }
+
+        .image-modal .btn-close {
+            filter: invert(1);
+        }
+
+        @media (max-width: 576px) {
+            .image-modal .modal-dialog {
+                max-width: 100%;
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .image-modal .modal-image {
+                max-height: 60vh;
+            }
+
+            .image-modal .description {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="gallery-section mt-5">
         <div class="gallery-header mb-3">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab" aria-controls="gallery" aria-selected="true">イラスト</a>
+                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab"
+                        aria-controls="gallery" aria-selected="true">イラスト</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="dc-tab" data-bs-toggle="tab" href="#dc" role="tab" aria-controls="dc" aria-selected="false">テーマ</a>
+                    <a class="nav-link" id="dc-tab" data-bs-toggle="tab" href="#dc" role="tab" aria-controls="dc"
+                        aria-selected="false">テーマ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="catdw-tab" data-bs-toggle="tab" href="#catdw" role="tab" aria-controls="catdw" aria-selected="false">拟兽化</a>
+                    <a class="nav-link" id="catdw-tab" data-bs-toggle="tab" href="#catdw" role="tab"
+                        aria-controls="catdw" aria-selected="false">拟兽化</a>
                 </li>
             </ul>
         </div>
@@ -65,7 +188,8 @@
         </div>
     </div>
 
-    <div class="modal fade image-modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal fade image-modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -88,7 +212,9 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script>
         const galleryImages = [
             { src: "img/SL/SL1.jpg", alt: "Gallery Image 1", description: "" },
@@ -153,15 +279,15 @@
             // { src: "img/DC/DC40.jpg", alt: "DC Image 40", description: "" }
         ];
 
-            // 新增图片数组
-            const catdwImages = [
-                { src: "img/SL/cat/dw1.jpg", alt: "Catdw Image 1", description: "" },
-                { src: "img/SL/cat/dw2.jpg", alt: "Catdw Image 1", description: "" },
-                { src: "img/SL/cat/dw3.jpg", alt: "Catdw Image 1", description: "" },
-                { src: "img/SL/cat/dw4.jpg", alt: "Catdw Image 1", description: "" },
-                // 可扩展至更多图片
-                // { src: "img/SL/catdw5.jpg", alt: "Catdw Image 2", description: "" },
-            ];
+        // 新增图片数组
+        const catdwImages = [
+            { src: "img/SL/cat/dw1.jpg", alt: "Catdw Image 1", description: "" },
+            { src: "img/SL/cat/dw2.jpg", alt: "Catdw Image 1", description: "" },
+            { src: "img/SL/cat/dw3.jpg", alt: "Catdw Image 1", description: "" },
+            { src: "img/SL/cat/dw4.jpg", alt: "Catdw Image 1", description: "" },
+            // 可扩展至更多图片
+            // { src: "img/SL/catdw5.jpg", alt: "Catdw Image 2", description: "" },
+        ];
 
         function arrangeWaterfall(containerId, imageArray) {
             const container = document.getElementById(containerId);
@@ -190,7 +316,8 @@
                 img.setAttribute('data-src', image.src);
                 img.setAttribute('data-index', index);
                 img.setAttribute('data-description', image.description);
-                img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' : 'dc');
+                img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
+                    containerId === 'dcContainer' ? 'dc' : 'catdw');
 
                 item.appendChild(img);
                 columns[index % columnCount].appendChild(item);
@@ -212,6 +339,7 @@
         function initializeTabs() {
             arrangeWaterfall('galleryContainer', galleryImages);
             arrangeWaterfall('dcContainer', dcImages);
+            arrangeWaterfall('catdwContainer', catdwImages); // 新增
         }
 
         document.addEventListener('DOMContentLoaded', initializeTabs);
@@ -222,6 +350,7 @@
                 const target = tab.getAttribute('href').substring(1);
                 if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
                 else if (target === 'dc') arrangeWaterfall('dcContainer', dcImages);
+                else if (target === 'catdw') arrangeWaterfall('catdwContainer', catdwImages);
             });
         });
 
@@ -233,14 +362,16 @@
         let currentArray = 'gallery';
 
         prevButton.addEventListener('click', function () {
-            const array = currentArray === 'gallery' ? galleryImages : dcImages;
+            const array = currentArray === 'gallery' ? galleryImages :
+                currentArray === 'dc' ? dcImages : catdwImages; // 新增 catdwImages
             currentIndex = (currentIndex - 1 + array.length) % array.length;
             modalImage.src = array[currentIndex].src;
             imageDescription.textContent = array[currentIndex].description || '暂无说明';
         });
 
         nextButton.addEventListener('click', function () {
-            const array = currentArray === 'gallery' ? galleryImages : dcImages;
+            const array = currentArray === 'gallery' ? galleryImages :
+                currentArray === 'dc' ? dcImages : catdwImages; // 新增 catdwImages
             currentIndex = (currentIndex + 1) % array.length;
             modalImage.src = array[currentIndex].src;
             imageDescription.textContent = array[currentIndex].description || '暂无说明';
@@ -254,4 +385,5 @@
         });
     </script>
 </body>
+
 </html>
