@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,25 +18,29 @@
             align-items: center;
             min-height: 100vh;
         }
+
         .container {
             width: 800px;
             background-color: white;
             border: 2px solid #333;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             position: relative;
         }
+
         .header {
             text-align: center;
             margin-bottom: 20px;
             font-size: 24px;
         }
+
         .character-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin-bottom: 20px;
         }
+
         .character-card {
             border: 2px solid #333;
             padding: 15px;
@@ -43,6 +48,7 @@
             background-color: #fff;
             position: relative;
         }
+
         .character-card::before {
             content: "";
             position: absolute;
@@ -53,6 +59,7 @@
             width: 20px;
             height: 20px;
         }
+
         .character-card::after {
             content: "";
             position: absolute;
@@ -63,6 +70,7 @@
             width: 20px;
             height: 20px;
         }
+
         .image-placeholder {
             width: 200px;
             height: 200px;
@@ -73,6 +81,17 @@
             justify-content: center;
             color: #666;
         }
+
+        /* 让图片与 .image-placeholder 同宽 */
+        .image-placeholder img {
+            width: 100%;
+            /* 与父容器同宽 */
+            height: auto;
+            /* 保持图片比例 */
+            display: block;
+            /* 消除底部间隙 */
+        }
+
         .title-ribbon {
             position: absolute;
             top: -20px;
@@ -85,8 +104,9 @@
             z-index: 1;
             width: 200px;
             text-align: center;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
+
         .decorations {
             position: absolute;
             top: 10px;
@@ -95,6 +115,7 @@
             height: 30px;
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff0000" d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>') no-repeat;
         }
+
         .heart {
             position: absolute;
             bottom: -50px;
@@ -103,6 +124,7 @@
             font-size: 24px;
             color: #ff0000;
         }
+
         .marriage-note {
             position: absolute;
             top: 50%;
@@ -115,10 +137,12 @@
             z-index: 2;
             white-space: nowrap;
         }
+
         /* 自定义 survey-grid 样式 */
         .survey-grid {
             margin-top: 20px;
         }
+
         .survey-card {
             border: 2px solid #333;
             padding: 10px;
@@ -126,25 +150,34 @@
             position: relative;
             margin-bottom: 15px;
         }
+
         .survey-card h2 {
-            position: absolute; /* 改为绝对定位 */
-            top: -20px; /* 悬浮在卡片上方 */
-            left: 10px; /* 靠左对齐，留出一些边距 */
+            position: absolute;
+            /* 改为绝对定位 */
+            top: -20px;
+            /* 悬浮在卡片上方 */
+            left: 10px;
+            /* 靠左对齐，留出一些边距 */
             background-color: #333;
             color: #fff;
             padding: 5px 10px;
             font-size: 18px;
             margin: 0;
-            z-index: 1; /* 确保标题在卡片上方 */
+            z-index: 1;
+            /* 确保标题在卡片上方 */
         }
+
         .survey-card .dialogue-row {
             display: flex;
             justify-content: space-between;
             position: relative;
             min-height: 80px;
-            padding-top: 15px; /* 增加顶部内边距，避免内容被标题遮挡 */
-            align-items: center; /* 垂直居中 */
+            padding-top: 15px;
+            /* 增加顶部内边距，避免内容被标题遮挡 */
+            align-items: center;
+            /* 垂直居中 */
         }
+
         .survey-card .dialogue-row::after {
             content: "";
             position: absolute;
@@ -155,34 +188,45 @@
             width: 1px;
             border-left: 1px dashed #ccc;
         }
+
         .survey-card .dialogue-col {
             flex: 1;
             padding: 0 5px;
-            text-align: center; /* 水平居中 */
+            text-align: center;
+            /* 水平居中 */
             font-size: 14px;
             line-height: 1.5;
             display: flex;
-            justify-content: center; /* 水平居中 */
-            align-items: center; /* 垂直居中 */
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
         }
+
         /* 为角色定义不同颜色 */
         .dialogue-col .leopold {
-            color: #ff6347; 
-            color: #FF4141; 
-            
+            color: #ff6347;
+            color: #FF4141;
+
         }
+
         .dialogue-col .sev {
-            color: #0F2F9F; /* 钢蓝，用于真特 */
+            color: #0F2F9F;
+            /* 钢蓝，用于真特 */
         }
+
         .dialogue-col .yuann {
-            color: #32cd32; /* 酸橙绿，用于尤安·路特 */
+            color: #32cd32;
+            /* 酸橙绿，用于尤安·路特 */
         }
+
         /* 跨列卡片的样式 */
         .survey-card.span-2 {
             grid-column: span 2;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="title-ribbon">クソデカ感情</div>
@@ -191,11 +235,11 @@
         <h1 class="header"><br></h1>
         <div class="character-grid">
             <div class="character-card">
-                <div class="image-placeholder">[此处为左侧角色插图占位符]</div>
+                <div class="image-placeholder"><img src="img/xcms-leopold.jpg"></div>
                 <p><strong>Leopold</strong><br>冷酷美型的死神的人间体</p>
             </div>
             <div class="character-card">
-                <div class="image-placeholder">[此处为右侧角色插图占位符]</div>
+                <div class="image-placeholder"><img src="img/xcms-severo.jpg"></div>
                 <p><strong>Severo</strong><br>本人を乗っ取った人造人間</p>
             </div>
         </div>
@@ -219,7 +263,7 @@
                     <h2>2. 现印象？</h2>
                     <div class="dialogue-row">
                         <div class="dialogue-col">
-                            <p class="leopold">温柔贴心的。</p>
+                            <p class="leopold">温柔贴心</p>
                         </div>
                         <div class="dialogue-col">
                             <p class="sev">會摸头发的。</p>
@@ -242,18 +286,19 @@
             </div>
             <div class="col">
                 <div class="survey-card">
-                    <h2>4. 对方做什么会让自己感到没辙</h2>
+                    <h2>4. 相手に何をされたら仕方なくなる？</h2>
                     <div class="dialogue-row">
                         <div class="dialogue-col">
-                            <p class="leopold">“做什么都不好使”<br>
-                                自称铁石心肠<br>
-                                结果相方一掉眼泪就没辙了（假哭没用，一眼就能识破哈）
+                            <p class="leopold">「何をしても無駄よ」<br>
+                                氷の心の持ち主と自称したが、<br>
+                                涙を見せられるとすぐお手上げ。<br>
+                                （噓泣きは通用しない、一瞬で見抜かれる）
                             </p>
                         </div>
                         <div class="dialogue-col">
-                            <p class="sev">只要对视超过x秒，立马就缴械<br>
-                                但会坚持到对方把自己拽过去「脸贴脸蹭一蹭」这一步才肯投降<br>
-                                （即使被业师说没出息也很开心）</p>
+                            <p class="sev">x秒以上目が合ったら即降参。<br>
+                                でも相手が自分を引き寄せて「頬をぺたっとくっつける」ところまでずっと粘る<br>
+                                （飼い主に情けないと言われても嬉しい）</p>
                         </div>
                     </div>
                 </div>
@@ -266,7 +311,7 @@
                             <p class="leopold">温柔贴心的。</p>
                         </div>
                         <div class="dialogue-col">
-                            <p class="sev">會摸头发的。</p>
+                            <p class="sev">自分のために規則を踏みにじる。</p>
                         </div>
                     </div>
                 </div>
@@ -304,7 +349,7 @@
                         <div class="dialogue-col">
                             <p class="sev"><br>
                                 <br>
-                                </p>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -330,4 +375,5 @@
     <!-- 引入 Bootstrap 5 JS（可选，如果你需要 Bootstrap 的交互功能） -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
