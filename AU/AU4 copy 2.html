@@ -1,0 +1,644 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>金環蝕123</title>
+  <link rel="canonical" href="AU4.html">
+  <link rel="icon" href="img/shared/hp_icon32.png" sizes="32x32" />
+  <link rel="icon" href="../../../img/hp_icon192.png" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="../../../img/hp_icon152.png" />
+  <meta name="msapplication-TileImage" content="../../../img/hp_icon152.png" />
+
+  <style>
+    @charset "UTF-8";
+
+    /* 基础样式 */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Bootstrap网格系统简化版 */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    .col-sm-8 {
+      position: relative;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .col-sm-offset-4 {
+      margin-left: 33.33333333%;
+    }
+
+    @media (min-width: 768px) {
+      .col-sm-8 {
+        flex: 0 0 66.66666667%;
+        max-width: 66.66666667%;
+      }
+    }
+
+    /* 面包屑导航 */
+    .breadcrumb {
+      padding: 8px 15px;
+      margin-bottom: 20px;
+      list-style: none;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+    }
+
+    .breadcrumb li {
+      display: inline;
+      font-size: 14px;
+    }
+
+    .breadcrumb li+li:before {
+      padding: 0 5px;
+      color: #ccc;
+      content: ">";
+    }
+
+    .breadcrumb li a {
+      color: #3C3690;
+      text-decoration: none;
+    }
+
+    .breadcrumb li.active {
+      color: #777;
+    }
+
+    /* 标题 */
+    .c-detail_title {
+      margin: 0 0 20px 6px;
+      line-height: 1.3;
+    }
+
+    .c-detail_title .catch {
+      margin: 10px 0 0;
+      color: #3C3690;
+      font-size: 16px;
+    }
+
+    .c-detail_title .title {
+      margin: 5px 0 0;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .c-detail_title .lang {
+      color: #777;
+      font-size: 12px;
+    }
+
+    /* 封面和信息区域 */
+    .c-detail_wrap {
+      clear: both;
+      margin-bottom: 30px;
+    }
+
+    .c-detail {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .c-detail_main {
+      width: 100%;
+    }
+
+    .c-cover_wrap {
+      margin-bottom: 20px;
+    }
+
+    .c-detail_category {
+      margin: 6px 5px;
+      color: #3C3690;
+      border: 1px solid #3C3690;
+      font-size: 12px;
+      text-align: center;
+      padding: 2px 6px;
+    }
+
+    .c-cover01 img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .c-detail_info {
+      flex: 1;
+      margin-left: 6px;
+    }
+
+    .c-basicdata01 ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+    }
+
+    .c-basicdata01 li {
+      margin: 0 1em 1em 0;
+    }
+
+    .c-basicdata01 li a {
+      color: #59a4f6;
+      text-decoration: none;
+    }
+
+    /* 试读按钮 */
+    .c-trial01 {
+      margin: 0 6px 12px;
+    }
+
+    .c-trial01 .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      color: #3C3690;
+      border: 1px solid #3C3690;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .c-trial01 .btn:hover {
+      color: #fff;
+      background: #002F5D;
+    }
+
+    /* 故事信息 */
+    .c-story {
+      margin: 6px 0 20px;
+    }
+
+    .c-title01 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .c-title01 .sub {
+      display: block;
+      margin: 3px 0 0;
+      color: #555;
+      font-size: 13px;
+    }
+
+    .c-story_vs {
+      width: 96%;
+      margin: 6px auto;
+      padding: 6px;
+      background: #eee;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .c-story_vs::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .c-story_seme,
+    .c-story_uke {
+      float: left;
+      width: 47%;
+      margin-right: 3%;
+    }
+
+    .c-story_uke {
+      margin-left: 3%;
+      margin-right: 0;
+    }
+
+    .c-story_vs dt {
+      margin: 0 0 5px;
+      padding: 7px 5px;
+      background: #fff;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .c-story_vs .type .icon {
+      display: inline-block;
+      padding: 2px;
+      color: #fff;
+      background: #3C3690;
+      border-radius: 3em;
+      font-weight: normal;
+    }
+
+    .c-story_vs dd ul {
+      text-align: center;
+      list-style: none;
+      padding: 0;
+    }
+
+    .c-story_vs dd li {
+      display: inline-block;
+    }
+
+    .c-story_vs dd li+li:before {
+      margin: 0 2px 0 1px;
+      color: #777;
+      content: "/";
+    }
+
+    .c-story_vs dd a {
+      color: #3284CD;
+      text-decoration: underline;
+    }
+
+    .c-story_uke dd a {
+      color: #FF4373;
+    }
+
+    .c-story_tag {
+      display: table;
+      width: 96%;
+      margin: 6px auto 12px;
+    }
+
+    .c-story_tag dl {
+      display: table-cell;
+      width: 25%;
+    }
+
+    .c-story_tag dl+dl {
+      border-left: 1px solid #eee;
+    }
+
+    .c-story_tag dt {
+      padding: 5px 0;
+      color: #fff;
+      background: #777;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .c-story_tag dd {
+      padding: 3px;
+      line-height: 1.4;
+    }
+
+    .c-story_tag a {
+      text-decoration: underline;
+      color: #59a4f6;
+    }
+
+    /* 简介 */
+    .c-synopsis {
+      margin-bottom: 20px;
+    }
+
+    .c-synopsis_text {
+      padding: 10px;
+      line-height: 1.6;
+    }
+
+    /* 响应式设计 */
+    @media (min-width: 768px) {
+      .c-detail {
+        padding-left: 33.33%;
+      }
+
+      .c-detail_main {
+        width: auto;
+      }
+
+      .c-cover_wrap {
+        position: absolute;
+        top: 0;
+        left: 3%;
+        width: 25%;
+      }
+
+      .c-detail_info {
+        margin-left: 0;
+      }
+
+      .c-detail_title {
+        margin: 0 0 20px;
+      }
+
+      .c-detail_title .catch {
+        font-size: 16px;
+      }
+
+      .c-detail_title .title {
+        font-size: 22px;
+      }
+
+      .c-story_vs {
+        padding: 15px 10px;
+      }
+
+      .c-story_vs dt {
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      .c-story_tag dt {
+        font-size: 14px;
+      }
+
+      .c-story_tag dd {
+        padding: 5px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .c-synopsis {
+        margin-bottom: 40px;
+      }
+
+      .c-synopsis_text {
+        padding: 15px 10px 0;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <div id="contents">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html"><span>情報サイト</span></a></li>
+        <li><a href=""><span>AU一覧</span></a></li>
+        <li><a href=""><span>金環蝕</span></a></li>
+        <li class="active"><span>金環蝕 1</span></li>
+      </ol>
+
+      <div class="c-detail_title">
+        <p class="catch">野望の心は清らかではない。それこそ、私は愛の権能を与えるのだ。</p>
+      </div>
+
+      <div class="c-detail_wrap">
+        <div class="c-detail type01">
+          <div class="c-detail_main">
+            <div class="c-cover_wrap">
+              <p class="c-detail_category">Illustration : 足軽足 様</p>
+              <div class="c-cover01" itemscope itemtype="http://schema.org/Book">
+                <img src="img/000.jpg" width="300" height="420" itemprop="image" alt="金環蝕 0" />
+              </div>
+            </div>
+          </div>
+          <div class="c-detail_info">
+            <div class="c-detail_title">
+              <h1 class="title">金環蝕</h1>
+              <p class="lang">kinkan shoku</p>
+            </div>
+            <div class="c-basicdata01" itemscope>
+              <ul>
+                <li><a href="">多错本旨</a></li>
+              </ul>
+            </div>
+            <div class="c-trial01">
+              <div class="try"><a class="btn" href="zanshi.html">試し読み</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row c-block">
+        <div class="col-sm-8 col-sm-offset-4">
+          <!-- 表題作 1 -->
+          <section class="c-story" id="anchor_story">
+            <h2 class="c-title01">表題作<span class="sub">金環蝕 1 『冒涜』</span></h2>
+            <div class="c-story_vs">
+              <dl class="c-story_seme">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">攻</span></span>
+                  <span class="chara">Leopold</span>
+                </dt>
+                <dt class="js-item02"><span class="chara">（実年齢不明）刑事</span></dt>
+                <dt class="js-item02"><span class="chara">特殊事件捜査担当官</span></dt>
+                <dd>
+                  <ul>
+                    <li><a>鬼畜</a></li>
+                    <li><a>腹黒</a></li>
+                    <li><a>少女</a></li>
+                    <li><a>スパダリ</a></li>
+                    <li><a>美しい</a></li>
+                    <li><a>警視庁高官</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <dl class="c-story_uke">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">受</span></span>
+                  <span class="chara">Severo</span>
+                </dt>
+                <dt class="js-item02"><span class="chara">26歳,刺繍家／人狼</span></dt>
+                <dt class="js-item02"><span class="chara">連続殺人の容疑者？</span></dt>
+                <dd>
+                  <ul>
+                    <li><a href="">エフェボフィル</a></li>
+                    <li><a href="">野心家</a></li>
+                    <li><a href="">洗練</a></li>
+                    <li><a href="">気が違う</a></li>
+                    <li><a href="">苦痛快楽者</a></li>
+                    <li><a href="">敬語</a></li>
+                    <li><a href="">陰キャ</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="c-story_tag">
+              <dl>
+                <dt>設定</dt>
+                <dd>
+                  <a>再会</a>
+                  <a>身分差</a>
+                  <a>人外</a>
+                  <a>ファンタジー</a>
+                  <a>トラウマ・精神的負傷</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>トーン</dt>
+                <dd>
+                  <a>シリアス</a>
+                  <a>ダーク</a>
+                  <a>ホラー・オカルト</a>
+                </dd>
+              </dl>
+            </div>
+          </section>
+
+          <!-- あらすじ 1 -->
+          <section class="c-synopsis">
+            <h2 class="c-title01">あらすじ</h2>
+            <div class="c-synopsis_text">
+              警察官Lは、ある日仕事中に証人Sと出会う。Sの目つきで、かつて飼っていた猫を思い出させた。<br /><br />
+              短い調査の後、LはSが犯人だと気づいた。しかし、それを公表せず、密かに神秘的な身分を使ってSを脅し、再会を提案する。<br /><br />
+              Sは口封じのつもりで会いに行ったが、Lに猫の振る舞いを求められた。<br /><br />
+              Sは性的なサービスだと思ったが、Lは本物の猫のように振る舞うことを要求するだけだ。<br /><br />
+              最初は恥ずかしく命令に従うのは難しかったが、愛と訓練の下で、Lの猫として過ごすうちに、Sは奇妙な満足感を感じるようになる——<br /><br />
+              こんな少し歪んだ純愛です……<br />
+            </div>
+          </section>
+
+          <!-- 表題作 2 -->
+          <section class="c-story" id="anchor_story">
+            <h2 class="c-title01">表題作<span class="sub">金環蝕 2</span></h2>
+            <div class="c-story_vs">
+              <dl class="c-story_seme">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">攻希望</span></span>
+                  <span class="chara">Severo</span>
+                </dt>
+                <dt class="js-item02"><span class="chara">27歳,洋裁店店主／人狼</span></dt>
+                <dt class="js-item02"><span class="chara">Lの『猫』→Lの恋人,L屋敷の下宿人</span></dt>
+                <dd>
+                  <ul>
+                    <li><a href="">Sub</a></li>
+                    <li><a href="">元殺し屋</a></li>
+                    <li><a href="">年下</a></li>
+                    <li><a href="">優雅</a></li>
+                    <li><a href="">執着</a></li>
+                    <li><a href="">愛が重い</a></li>
+                    <li><a href="">苦痛快楽者</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <dl class="c-story_uke">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">受？</span></span>
+                  <span class="chara">Leopold</span>
+                </dt>
+                <dt class="js-item02"><span class="chara"></span></dt>
+                <dt class="js-item02"><span class="chara">家族やペットをちゃんと可愛がるいい『主人』</span></dt>
+                <dd>
+                  <ul>
+                    <li><a>Dom</a></li>
+                    <li><a>腹黒</a></li>
+                    <li><a>スパダリ</a></li>
+                    <li><a>溺愛系</a></li>
+                    <li><a>誘い・襲い</a></li>
+                    <li><a>美しい</a></li>
+                    <li><a>富豪</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="c-story_tag">
+              <dl>
+                <dt>設定</dt>
+                <dd>
+                  <a>身分差</a>
+                  <a>年の差</a>
+                  <a>人外</a>
+                  <a>ファンタジー</a>
+                  <a>主従</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>トーン</dt>
+                <dd>
+                  <a>あまあま</a>
+                </dd>
+              </dl>
+            </div>
+          </section>
+
+          <!-- あらすじ 2 -->
+          <section class="c-synopsis">
+            <h2 class="c-title01">あらすじ</h2>
+            <div class="c-synopsis_text">
+              この時期のSは日常生活でLの猫役を担当した。<br /><br />
+              複雑な経緯はなく、ただLの飼い猫が寿命を全うした後、Lが「もう少し寿命の長いペットが欲しい」と思っただけの話だった。
+            </div>
+          </section>
+
+          <!-- 表題作 3 -->
+          <section class="c-story" id="anchor_story">
+            <h2 class="c-title01">表題作<span class="sub">金環蝕 3</span></h2>
+            <div class="c-story_vs">
+              <dl class="c-story_seme">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">攻</span></span>
+                  <span class="chara">Severo</span>
+                </dt>
+                <dt class="js-item02"><span class="chara">36歳,高級料亭オーナー</span></dt>
+                <dt class="js-item02"><span class="chara">官僚の妻</span></dt>
+                <dd>
+                  <ul>
+                    <li><a href="">元殺し屋</a></li>
+                    <li><a href="">優雅</a></li>
+                    <li><a href="">執着</a></li>
+                    <li><a href="">愛が重い</a></li>
+                    <li><a href="">気が違う</a></li>
+                    <li><a href="">年下</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <dl class="c-story_uke">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">受</span></span>
+                  <span class="chara">Leopold</span>
+                </dt>
+                <dt class="js-item02"><span class="chara">年齢不明,官僚</span></dt>
+                <dt class="js-item02"><span class="chara">警視庁の高官</span></dt>
+                <dd>
+                  <ul>
+                    <li><a>元攻め</a></li>
+                    <li><a>スパダリ</a></li>
+                    <li><a>溺愛系</a></li>
+                    <li><a>誘い・襲い</a></li>
+                    <li><a>美しい</a></li>
+                    <li><a>強気</a></li>
+                    <li><a>超然</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="c-story_tag">
+              <dl>
+                <dt>設定</dt>
+                <dd>
+                  <a>人外</a>
+                  <a>ファンタジー</a>
+                  <a>主従</a>
+                  <a>ソフトSM</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>トーン</dt>
+                <dd>
+                  <a>あまあま</a>
+                  <a>シリアス</a>
+                  <a>せつない</a>
+                </dd>
+              </dl>
+            </div>
+          </section>
+
+          <!-- あらすじ 3 -->
+          <section class="c-synopsis">
+            <h2 class="c-title01">あらすじ</h2>
+            <div class="c-synopsis_text">
+              数日内に追加の内容をアップします。
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

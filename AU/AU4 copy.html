@@ -1,0 +1,888 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns#">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SSTEMY36NM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-SSTEMY36NM');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5W78LXJT');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <title>金環蝕123</title>
+  <link rel="canonical" href="AU4.html">
+  <link rel="icon" href="img/shared/hp_icon32.png" sizes="32x32" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="preconnect" href="http://www.googletagmanager.com/" crossorigin />
+  <link rel="preconnect" href="http://www.google-analytics.com/" crossorigin />
+  <link rel="dns-prefetch" href="http://www.googletagmanager.com/" />
+  <link rel="dns-prefetch" href="http://www.google-analytics.com/" />
+
+  <link rel="stylesheet" href="css/style5701.css">
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
+      authDomain: "fangkeshuju.firebaseapp.com",
+      projectId: "fangkeshuju",
+      storageBucket: "fangkeshuju.firebasestorage.app",
+      messagingSenderId: "1043722790851",
+      appId: "1:1043722790851:web:01cca5afff820eb202ff76",
+      measurementId: "G-MGC7KEWX53"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    async function logPageView() {
+      try {
+        await addDoc(collection(db, 'page_views'), {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname,
+          timestamp: serverTimestamp()
+        });
+        console.log('Page view saved to Firestore');
+      } catch (error) {
+        console.error('Error saving page view: ', error);
+      }
+    }
+
+    logPageView();
+
+    const images = document.querySelectorAll('img.trackable');
+    images.forEach(img => {
+      let startTime = null;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startTime = Date.now();
+          } else if (startTime) {
+            const duration = (Date.now() - startTime) / 1000;
+            saveImageView(img.src, duration);
+            startTime = null;
+          }
+        });
+      });
+      observer.observe(img);
+    });
+
+    async function saveImageView(imageSrc, duration) {
+      try {
+        await addDoc(collection(db, 'image_views'), {
+          image_src: imageSrc,
+          view_duration: duration,
+          timestamp: serverTimestamp()
+        });
+        console.log('Image view saved to Firestore');
+      } catch (error) {
+        console.error('Error saving image view: ', error);
+      }
+    }
+  </script>
+  <style>
+    @charset "UTF-8";
+
+/* 作品データベース（詳細ページ） */
+/* Extra small devices (phones, less than 768px) */
+.c-detail_wrap {
+  clear: both;
+}
+
+.c-detail {
+  display: flex;
+  flex-wrap: wrap; /* 小屏幕下垂直排列 */
+  align-items: flex-start;
+  width: 100%;
+}
+
+.c-detail .c-detail_main {
+  flex: 1 1 100%; /* 小屏幕下占满宽度 */
+  max-width: 350px; /* 限制最大宽度 */
+  margin: 0 auto; /* 居中 */
+}
+
+.c-detail.type01 {
+  padding-bottom: 18px;
+}
+
+.c-detail.type01 .c-detail_main {
+  flex: 1 1 100%;
+}
+
+.c-detail .c-detail_category {
+  margin: 6px 0;
+  color: #3C3690;
+  border: 1px solid #3C3690;
+  line-height: 1.3;
+  font-size: 10px;
+  text-align: center;
+  display: inline-block;
+  padding: 2px 8px;
+}
+
+.c-detail .c-cover01 {
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.c-detail .c-cover01_thm {
+  width: 100%;
+  max-width: 300px; /* 限制图片区域 */
+  margin: 0 auto;
+}
+
+.c-detail .c-cover01_thm img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.c-detail .slick-dots {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.c-detail .slick-dots li {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  background: #eee;
+  border: 1px solid #777;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.c-detail .slick-dots li.slick-active {
+  background: #fff;
+}
+
+.c-detail .c-detail_info {
+  flex: 1 1 100%;
+  margin: 10px 0 0;
+  text-align: center; /* 小屏幕下居中 */
+}
+
+.c-detail .c-basicdata01 {
+  padding: 6px;
+  color: #777;
+  border-top: none;
+}
+
+.c-detail .c-basicdata01 a {
+  color: #59a4f6;
+}
+
+.c-detail_title {
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.c-detail_title .catch {
+  margin: 10px 0 0;
+  color: #3C3690;
+  font-size: 12px;
+}
+
+.c-detail_title .title {
+  margin: 5px 0 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.c-detail_title .lang {
+  color: #777;
+  font-size: 12px;
+}
+
+.c-detail.type02 {
+  width: 100%;
+  text-align: center; /* 确保按钮区域居中 */
+}
+
+.c-trial01 {
+  margin: 0 auto 12px;
+  max-width: 200px; /* 限制按钮宽度 */
+}
+
+.c-trial01 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  margin-bottom: 6px;
+  padding: 0 20px;
+  color: #3C3690;
+  border: 1px solid #3C3690;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.c-trial01 .btn:hover {
+  color: #fff;
+  background: #002F5D;
+}
+
+.c-story {
+  margin: 6px 0 20px;
+}
+
+.c-story .c-title01 .sub {
+  display: block;
+  margin: 3px 0 0;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.c-story .c-story_vs {
+  width: 96%;
+  margin: 6px auto;
+  padding: 6px;
+  background: #eee;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c-story .c-story_vs:before,
+.c-story .c-story_vs:after {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  content: "";
+  background: #777;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.c-story .c-story_vs:before {
+  width: 1px;
+  height: 13px;
+  margin-top: -6px;
+}
+
+.c-story .c-story_vs:after {
+  width: 13px;
+  height: 1px;
+  margin-left: -6px;
+}
+
+.c-story .c-story_vs dl {
+  line-height: 1.2;
+}
+
+.c-story .c-story_vs .c-story_seme {
+  float: left;
+  width: 47%;
+  margin-right: 3%;
+}
+
+.c-story .c-story_vs .c-story_seme dd a {
+  color: #3284CD;
+}
+
+.c-story .c-story_vs .c-story_uke {
+  float: left;
+  width: 47%;
+  margin-left: 3%;
+}
+
+.c-story .c-story_vs .c-story_uke dd a {
+  color: #FF4373;
+}
+
+.c-story .c-story_vs dt,
+.c-story .c-story_vs p {
+  margin: 0 0 5px;
+  padding: 7px 5px;
+  background: #fff;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.c-story .c-story_vs dt .type,
+.c-story .c-story_vs p .type {
+  display: table-cell;
+}
+
+.c-story .c-story_vs dt .type .icon,
+.c-story .c-story_vs p .type .icon {
+  display: inline-block;
+  padding: 2px;
+  color: #fff;
+  background: #3C3690;
+  border-radius: 3em;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.c-story .c-story_vs dt .chara,
+.c-story .c-story_vs p .chara {
+  display: table-cell;
+  padding-left: 3px;
+}
+
+.c-story .c-story_vs dd ul {
+  text-align: center;
+}
+
+.c-story .c-story_vs dd li {
+  display: inline-block;
+}
+
+.c-story .c-story_vs dd li+li:before {
+  margin: 0 2px 0 1px;
+  color: #777;
+  content: "/";
+}
+
+.c-story .c-story_tag {
+  display: table;
+  width: 96%;
+  margin: 6px auto 12px;
+}
+
+.c-story .c-story_tag dl {
+  display: table-cell;
+  width: 25%;
+}
+
+.c-story .c-story_tag dl+dl {
+  border-left: 1px solid #eee;
+}
+
+.c-story .c-story_tag dt {
+  padding: 5px 0;
+  color: #fff;
+  background: #777;
+  font-size: 11px;
+  text-align: center;
+}
+
+.c-story .c-story_tag dd {
+  padding: 3px;
+  line-height: 1.4;
+}
+
+.c-synopsis {
+  margin-bottom: 20px;
+}
+
+.c-synopsis .c-synopsis_text {
+  height: auto;
+  padding: 10px;
+  line-height: 1.6;
+}
+
+.c-banner_w728_pc {
+  margin: 20px 0;
+}
+
+.c-cover_wrap {
+  width: 100%;
+  max-width: 300px; /* 限制封面宽度 */
+  margin: 0 auto; /* 居中 */
+  padding: 10px 0;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .c-detail {
+    flex-wrap: nowrap; /* 大屏幕下左右排列 */
+    margin-bottom: 30px;
+  }
+
+  .c-detail.type01 {
+    padding-bottom: 0;
+  }
+
+  .c-detail.type01 .c-detail_main {
+    flex: 0 0 300px; /* 固定封面宽度 */
+    margin: 0;
+  }
+
+  .c-detail .c-detail_info {
+    flex: 1 1 auto;
+    margin-left: 20px;
+    text-align: left; /* 大屏幕下左对齐 */
+  }
+
+  .c-detail .c-detail_category {
+    font-size: 12px;
+  }
+
+  .c-detail .c-cover_wrap {
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .c-detail .c-basicdata01 {
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .c-detail_title {
+    margin: 0 0 20px;
+  }
+
+  .c-detail_title .catch {
+    font-size: 16px;
+  }
+
+  .c-detail_title .title {
+    font-size: 22px;
+  }
+
+  .c-trial01 {
+    margin: 0 0 20px;
+    max-width: 200px;
+  }
+
+  .c-story {
+    margin-bottom: 30px;
+  }
+
+  .c-story .c-title01 .sub {
+    font-size: 14px;
+  }
+
+  .c-story .c-story_vs {
+    padding: 15px 10px;
+  }
+
+  .c-story .c-story_vs:before,
+  .c-story .c-story_vs:after {
+    top: 36px;
+  }
+
+  .c-story .c-story_vs dt,
+  .c-story .c-story_vs p {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .c-story .c-story_vs dt .type .icon,
+  .c-story .c-story_vs p .type .icon {
+    padding: 4px;
+  }
+
+  .c-story .c-story_vs dt .chara,
+  .c-story .c-story_vs p .chara {
+    padding-left: 10px;
+  }
+
+  .c-story .c-story_vs dd {
+    padding: 10px;
+  }
+
+  .c-story .c-story_tag dt {
+    font-size: 14px;
+  }
+
+  .c-story .c-story_tag dd {
+    padding: 5px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .c-synopsis {
+    margin-bottom: 40px;
+  }
+
+  .c-synopsis .c-synopsis_text {
+    padding: 15px 10px 0;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W78LXJT" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header id="header"></header>
+
+  <nav id="gnav_pc" class="hidden-xs">
+    <div class="container">
+      <div class="row">
+        <ul class="gnav_pc">
+          <li class="js-dropdown"><a>作品目録</a></li>
+          <li class="js-dropdown"><a>登場人物</a></li>
+          <li class="js-dropdown"><a>相関図</a></li>
+          <li class="js-dropdown"><a>AU総集編</a></li>
+          <li class="js-dropdown"><a>情報・コラム</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="contents">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html"><span>情報サイト</span></a></li>
+        <li><a href=""><span>AU一覧</span></a></li>
+        <li><a href=""><span>金環蝕</span></a></li>
+        <li class="active"><span>金環蝕 1</span></li>
+      </ol>
+
+      <div class="c-detail_title">
+        <p class="catch">野望の心は清らかではない。それこそ、私は愛の権能を与えるのだ。</p>
+      </div>
+
+      <div class="c-detail_wrap">
+        <div class="c-detail type01">
+          <div class="c-detail_main">
+<!-- 表紙 -->
+<div class="c-cover_wrap">
+  <p class="c-detail_category">Illustration : 足軽足 様</p>
+  <div class="c-cover01" itemscope itemtype="http://schema.org/Book">
+    <div class="c-cover01_thm">
+      <ul class="cover_for" id="js-cover_slick_for">
+        <li><img src="img/000.jpg" itemprop="image" alt="金環蝕 0" class="trackable" /></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+          </div>
+          <div class="c-detail_info">
+            <div class="c-detail_title">
+              <h1 class="title">金環蝕</h1>
+              <p class="lang">kinkan shoku</p>
+            </div>
+            <div class="c-basicdata01" itemscope>
+              <ul>
+                <li><a href="">多错本旨</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="c-detail type02">
+          <div class="c-detail_main">
+            <div class="c-trial01">
+              <div class="try"><a class="btn" href="zanshi.html">試し読み</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row c-block">
+        <div class="col-sm-8 col-sm-offset-4">
+          <section class="c-story" id="anchor_story">
+            <h2 class="c-title01">表題作<span class="sub">金環蝕 1 『冒涜』</span></h2>
+            <div class="c-story_vs clearfix">
+              <dl class="c-story_seme">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">攻</span></span>
+                  <span class="chara">Leopold</span>
+                </dt>
+                <dt class="js-item02"><span class="chara">（実年齢不明）刑事</span></dt>
+                <dt class="js-item02"><span class="chara">特殊事件捜査担当官</span></dt>
+                <dd>
+                  <ul>
+                    <li><a>鬼畜</a></li>
+                    <li><a>腹黒</a></li>
+                    <li><a>少女</a></li>
+                    <li><a>スパダリ</a></li>
+                    <li><a>美しい</a></li>
+                    <li><a>警視庁高官</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <dl class="c-story_uke">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">受</span></span>
+                  <span class="chara">Severo</span>
+                </dt>
+                <dt class="js-item02"><span class="chara">26歳,刺繍家／人狼</span></dt>
+                <dt class="js-item02"><span class="chara">連続殺人の容疑者？</span></dt>
+                <dd>
+                  <ul>
+                    <li><a href="">エフェボフィル</a></li>
+                    <li><a href="">野心家</a></li>
+                    <li><a href="">洗練</a></li>
+                    <li><a href="">気が違う</a></li>
+                    <li><a href="">苦痛快楽者</a></li>
+                    <li><a href="">敬語</a></li>
+                    <li><a href="">陰キャ</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="c-story_tag">
+              <dl>
+                <dt>設定</dt>
+                <dd>
+                  <a>再会</a>
+                  <a>身分差</a>
+                  <a>人外</a>
+                  <a>ファンタジー</a>
+                  <a>トラウマ・精神的負傷</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>トーン</dt>
+                <dd>
+                  <a>シリアス</a>
+                  <a>ダーク</a>
+                  <a>ホラー・オカルト</a>
+                </dd>
+              </dl>
+            </div>
+          </section>
+
+          <section class="c-synopsis">
+            <h2 class="c-title01">あらすじ</h2>
+            <div class="c-synopsis_text js-text_cont">
+              警察官Lは、ある日仕事中に証人Sと出会う。Sの目つきで、かつて飼っていた猫を思い出させた。<br /><br />
+              短い調査の後、LはSが犯人だと気づいた。しかし、それを公表せず、密かに神秘的な身分を使ってSを脅し、再会を提案する。<br /><br />
+              Sは口封じのつもりで会いに行ったが、Lに猫の振る舞いを求められた。<br /><br />
+              Sは性的なサービスだと思ったが、Lは本物の猫のように振る舞うことを要求するだけだ。<br /><br />
+              最初は恥ずかしく命令に従うのは難しかったが、愛と訓練の下で、Lの猫として過ごすうちに、Sは奇妙な満足感を感じるようになる——<br /><br />
+              こんな少し歪んだ純愛です……<br />
+            </div>
+          </section>
+
+          <section class="c-story" id="anchor_story">
+            <h2 class="c-title01">表題作<span class="sub">金環蝕 2</span></h2>
+            <div class="c-story_vs clearfix">
+              <dl class="c-story_seme">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">攻希望</span></span>
+                  <span class="chara">Severo</span>
+                </dt>
+                <dt class="js-item02"><span class="chara">27歳,洋裁店店主／人狼</span></dt>
+                <dt class="js-item02"><span class="chara">Lの『猫』→Lの恋人,L屋敷の下宿人</span></dt>
+                <dd>
+                  <ul>
+                    <li><a href="">Sub</a></li>
+                    <li><a href="">元殺し屋</a></li>
+                    <li><a href="">年下</a></li>
+                    <li><a href="">優雅</a></li>
+                    <li><a href="">執着</a></li>
+                    <li><a href="">愛が重い</a></li>
+                    <li><a href="">苦痛快楽者</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <dl class="c-story_uke">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">受？</span></span>
+                  <span class="chara">Leopold</span>
+                </dt>
+                <dt class="js-item02"><span class="chara"></span></dt>
+                <dt class="js-item02"><span class="chara">家族やペットをちゃんと可愛がるいい『主人』</span></dt>
+                <dd>
+                  <ul>
+                    <li><a>Dom</a></li>
+                    <li><a>腹黒</a></li>
+                    <li><a>スパダリ</a></li>
+                    <li><a>溺愛系</a></li>
+                    <li><a>誘い・襲い</a></li>
+                    <li><a>美しい</a></li>
+                    <li><a>富豪</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="c-story_tag">
+              <dl>
+                <dt>設定</dt>
+                <dd>
+                  <a>身分差</a>
+                  <a>年の差</a>
+                  <a>人外</a>
+                  <a>ファンタジー</a>
+                  <a>主従</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>トーン</dt>
+                <dd>
+                  <a>あまあま</a>
+                </dd>
+              </dl>
+            </div>
+          </section>
+
+          <section class="c-synopsis">
+            <h2 class="c-title01">あらすじ</h2>
+            <div class="c-synopsis_text js-text_cont">
+              この時期のSは日常生活でLの猫役を担当した。<br /><br />
+              複雑な経緯はなく、ただLの飼い猫が寿命を全うした後、Lが「もう少し寿命の長いペットが欲しい」と思っただけの話だった。
+            </div>
+          </section>
+
+          <section class="c-story" id="anchor_story">
+            <h2 class="c-title01">表題作<span class="sub">金環蝕 3</span></h2>
+            <div class="c-story_vs clearfix">
+              <dl class="c-story_seme">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">攻</span></span>
+                  <span class="chara">Severo</span>
+                </dt>
+                <dt class="js-item02"><span class="chara">36歳,高級料亭オーナー</span></dt>
+                <dt class="js-item02"><span class="chara">官僚の妻</span></dt>
+                <dd>
+                  <ul>
+                    <li><a href="">元殺し屋</a></li>
+                    <li><a href="">優雅</a></li>
+                    <li><a href="">執着</a></li>
+                    <li><a href="">愛が重い</a></li>
+                    <li><a href="">気が違う</a></li>
+                    <li><a href="">年下</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <dl class="c-story_uke">
+                <dt class="js-item01">
+                  <span class="type"><span class="icon">受</span></span>
+                  <span class="chara">Leopold</span>
+                </dt>
+                <dt class="js-item02"><span class="chara">年齢不明,官僚</span></dt>
+                <dt class="js-item02"><span class="chara">警視庁の高官</span></dt>
+                <dd>
+                  <ul>
+                    <li><a>元攻め</a></li>
+                    <li><a>スパダリ</a></li>
+                    <li><a>溺愛系</a></li>
+                    <li><a>誘い・襲い</a></li>
+                    <li><a>美しい</a></li>
+                    <li><a>強気</a></li>
+                    <li><a>超然</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="c-story_tag">
+              <dl>
+                <dt>設定</dt>
+                <dd>
+                  <a>人外</a>
+                  <a>ファンタジー</a>
+                  <a>主従</a>
+                  <a>ソフトSM</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>トーン</dt>
+                <dd>
+                  <a>あまあま</a>
+                  <a>シリアス</a>
+                  <a>せつない</a>
+                </dd>
+              </dl>
+            </div>
+          </section>
+
+          <section class="c-synopsis">
+            <h2 class="c-title01">あらすじ</h2>
+            <div class="c-synopsis_text js-text_cont">
+              数日内に追加の内容をアップします。
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="row c-block">
+        <div class="col-md-8 col-md-offset-4">
+          <div class="c-banner_w728_pc hidden-xs">
+            <div class="ban-js" data-ad_space_id="31"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="c-pagetop"><img src="img/pagetop.png" alt="PAGE TOP"></div>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="row c-banner">
+        <div class="c-banner_w728_pc hidden-xs">
+          <div class="ban-js" data-ad_space_id="11"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      $('#js-cover_slick_for').slick({
+        arrows: false,
+        dots: true,
+        fade: true
+      });
+
+      $(".c-story_vs dt").matchHeight();
+      $(".js-item01").matchHeight();
+      $(".js-item02").matchHeight();
+    });
+  </script>
+
+  <script>
+    var ban_url = "https://www2.chil-chil.net/";
+    $(function () {
+      $(".ban-js").each(function (index) {
+        var ad_space_id = $(this).data('ad_space_id');
+        var url = ban_url + "restGetAdBanner/?ad_space_id=" + ad_space_id;
+        $(this).attr('id', '_ban_' + index);
+        $.ajaxSetup({ scriptCharset: 'utf-8', async: true, cache: false });
+        $.ajax({
+          type: "GET",
+          url: url,
+          dataType: "jsonp",
+          success: function (result) {
+            var html = "";
+            if (result && result['state'] == 1) {
+              html = result['content'];
+            }
+            $("div#_ban_" + index).replaceWith(html + "<!-- index:" + index + " -->");
+          },
+          error: function (err) {
+            console.error(err);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
