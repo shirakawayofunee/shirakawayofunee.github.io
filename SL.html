@@ -170,12 +170,12 @@
                         aria-selected="false">テーマ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="mansion-tab" data-bs-toggle="tab" href="#mansion" role="tab" aria-controls="mansion"
-                        aria-selected="false">邸宅</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" id="manga-tab" data-bs-toggle="tab" href="#manga" role="tab"
                         aria-controls="manga" aria-selected="false">漫画</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="mansion-tab" data-bs-toggle="tab" href="#mansion" role="tab" aria-controls="mansion"
+                        aria-selected="false">邸宅</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="catdw-tab" data-bs-toggle="tab" href="#catdw" role="tab"
@@ -195,6 +195,9 @@
             </div>
             <div class="tab-pane fade" id="manga" role="tabpanel" aria-labelledby="manga-tab">
                 <div class="gallery-container" id="mangaContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="mansion" role="tabpanel" aria-labelledby="mansion-tab">
+                <div class="gallery-container" id="mansionContainer"></div>
             </div>
         </div>
     </div>
@@ -301,7 +304,6 @@
             { src: "img/SL/cat/dw4.jpg", alt: "Catdw Image 1", description: "" },
         ];
 
-        // 新增漫画图片数组，预留7张
         const mangaImages = [
             { src: "img/SL/MH/1.jpg", alt: "Manga Image 1", description: "" },
             { src: "img/SL/MH/2.jpg", alt: "Manga Image 2", description: "" },
@@ -312,107 +314,156 @@
                          { src: "img/SL/MH/7.jpg", alt: "Manga Image 7", description: "" }, */
         ];
 
-        function arrangeWaterfall(containerId, imageArray) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '';
+        // 新增邸宅图片数组，预留40张
+const mansionImages = [
+{ src: "img/FZ/1.jpg", alt: "Mansion Image 1", description: "" },
+     { src: "img/FZ/2.jpg", alt: "Mansion Image 2", description: "" },
+     { src: "img/FZ/3.jpg", alt: "Mansion Image 3", description: "庭園" },
+     { src: "img/FZ/4.jpg", alt: "Mansion Image 4", description: "" },
+     { src: "img/FZ/5.jpg", alt: "Mansion Image 5", description: "" },
+     { src: "img/FZ/6.jpg", alt: "Mansion Image 6", description: "" },
+     { src: "img/FZ/7.jpg", alt: "Mansion Image 7", description: "" },
+     { src: "img/FZ/8.jpg", alt: "Mansion Image 8", description: "" },
+     { src: "img/FZ/9.jpg", alt: "Mansion Image 9", description: "" },
+     { src: "img/FZ/10.jpg", alt: "Mansion Image 10", description: "" },
+    // { src: "img/FZ/11.jpg", alt: "Mansion Image 11", description: "" },
+    // { src: "img/FZ/12.jpg", alt: "Mansion Image 12", description: "" },
+    // { src: "img/FZ/13.jpg", alt: "Mansion Image 13", description: "" },
+    // { src: "img/FZ/14.jpg", alt: "Mansion Image 14", description: "" },
+    // { src: "img/FZ/15.jpg", alt: "Mansion Image 15", description: "" },
+    // { src: "img/FZ/16.jpg", alt: "Mansion Image 16", description: "" },
+    // { src: "img/FZ/17.jpg", alt: "Mansion Image 17", description: "" },
+    // { src: "img/FZ/18.jpg", alt: "Mansion Image 18", description: "" },
+    // { src: "img/FZ/19.jpg", alt: "Mansion Image 19", description: "" },
+    // { src: "img/FZ/20.jpg", alt: "Mansion Image 20", description: "" },
+    // { src: "img/FZ/21.jpg", alt: "Mansion Image 21", description: "" },
+    // { src: "img/FZ/22.jpg", alt: "Mansion Image 22", description: "" },
+    // { src: "img/FZ/23.jpg", alt: "Mansion Image 23", description: "" },
+    // { src: "img/FZ/24.jpg", alt: "Mansion Image 24", description: "" },
+    // { src: "img/FZ/25.jpg", alt: "Mansion Image 25", description: "" },
+    // { src: "img/FZ/26.jpg", alt: "Mansion Image 26", description: "" },
+    // { src: "img/FZ/27.jpg", alt: "Mansion Image 27", description: "" },
+    // { src: "img/FZ/28.jpg", alt: "Mansion Image 28", description: "" },
+    // { src: "img/FZ/29.jpg", alt: "Mansion Image 29", description: "" },
+    // { src: "img/FZ/30.jpg", alt: "Mansion Image 30", description: "" },
+    // { src: "img/FZ/31.jpg", alt: "Mansion Image 31", description: "" },
+    // { src: "img/FZ/32.jpg", alt: "Mansion Image 32", description: "" },
+    // { src: "img/FZ/33.jpg", alt: "Mansion Image 33", description: "" },
+    // { src: "img/FZ/34.jpg", alt: "Mansion Image 34", description: "" },
+    // { src: "img/FZ/35.jpg", alt: "Mansion Image 35", description: "" },
+    // { src: "img/FZ/36.jpg", alt: "Mansion Image 36", description: "" },
+    // { src: "img/FZ/37.jpg", alt: "Mansion Image 37", description: "" },
+    // { src: "img/FZ/38.jpg", alt: "Mansion Image 38", description: "" },
+    // { src: "img/FZ/39.jpg", alt: "Mansion Image 39", description: "" },
+    // { src: "img/FZ/40.jpg", alt: "Mansion Image 40", description: "" },
+];
 
-            const width = window.innerWidth;
-            const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+function arrangeWaterfall(containerId, imageArray) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
 
-            const columns = Array(columnCount).fill().map(() => {
-                const col = document.createElement('div');
-                col.className = 'gallery-column';
-                container.appendChild(col);
-                return col;
-            });
+    const width = window.innerWidth;
+    const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
 
-            imageArray.forEach((image, index) => {
-                const item = document.createElement('div');
-                item.className = 'gallery-item';
+    const columns = Array(columnCount).fill().map(() => {
+        const col = document.createElement('div');
+        col.className = 'gallery-column';
+        container.appendChild(col);
+        return col;
+    });
 
-                const img = document.createElement('img');
-                img.src = image.src;
-                img.alt = image.alt;
-                img.className = 'img-fluid gallery-image';
-                img.setAttribute('data-bs-toggle', 'modal');
-                img.setAttribute('data-bs-target', '#imageModal');
-                img.setAttribute('data-src', image.src);
-                img.setAttribute('data-index', index);
-                img.setAttribute('data-description', image.description);
-                img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
-                    containerId === 'dcContainer' ? 'dc' :
-                        containerId === 'catdwContainer' ? 'catdw' : 'manga');
+    imageArray.forEach((image, index) => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
 
-                item.appendChild(img);
-                columns[index % columnCount].appendChild(item);
+        const img = document.createElement('img');
+        img.src = image.src;
+        img.alt = image.alt;
+        img.className = 'img-fluid gallery-image';
+        img.setAttribute('data-bs-toggle', 'modal');
+        img.setAttribute('data-bs-target', '#imageModal');
+        img.setAttribute('data-src', image.src);
+        img.setAttribute('data-index', index);
+        img.setAttribute('data-description', image.description);
+        img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
+            containerId === 'dcContainer' ? 'dc' :
+            containerId === 'catdwContainer' ? 'catdw' :
+            containerId === 'mangaContainer' ? 'manga' : 'mansion');
 
-                img.removeEventListener('click', handleImageClick);
-                img.addEventListener('click', handleImageClick);
-            });
-        }
+        item.appendChild(img);
+        columns[index % columnCount].appendChild(item);
 
-        function handleImageClick() {
-            const src = this.getAttribute('data-src');
-            const description = this.getAttribute('data-description');
-            currentIndex = parseInt(this.getAttribute('data-index'));
-            currentArray = this.getAttribute('data-array');
-            modalImage.src = src;
-            imageDescription.textContent = description || '暂无说明';
-        }
+        img.removeEventListener('click', handleImageClick);
+        img.addEventListener('click', handleImageClick);
+    });
+}
 
-        function initializeTabs() {
-            arrangeWaterfall('galleryContainer', galleryImages);
-            arrangeWaterfall('dcContainer', dcImages);
-            arrangeWaterfall('catdwContainer', catdwImages);
-            arrangeWaterfall('mangaContainer', mangaImages);
-        }
+function handleImageClick() {
+    const src = this.getAttribute('data-src');
+    const description = this.getAttribute('data-description');
+    currentIndex = parseInt(this.getAttribute('data-index'));
+    currentArray = this.getAttribute('data-array');
+    modalImage.src = src;
+    imageDescription.textContent = description || '暂无说明';
+}
 
-        document.addEventListener('DOMContentLoaded', initializeTabs);
-        window.addEventListener('resize', initializeTabs);
+function initializeTabs() {
+    arrangeWaterfall('galleryContainer', galleryImages);
+    arrangeWaterfall('dcContainer', dcImages);
+    arrangeWaterfall('catdwContainer', catdwImages);
+    arrangeWaterfall('mangaContainer', mangaImages);
+    arrangeWaterfall('mansionContainer', mansionImages);
+}
 
-        document.querySelectorAll('.nav-link').forEach(tab => {
-            tab.addEventListener('shown.bs.tab', () => {
-                const target = tab.getAttribute('href').substring(1);
-                if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
-                else if (target === 'dc') arrangeWaterfall('dcContainer', dcImages);
-                else if (target === 'catdw') arrangeWaterfall('catdwContainer', catdwImages);
-                else if (target === 'manga') arrangeWaterfall('mangaContainer', mangaImages);
-            });
-        });
+document.addEventListener('DOMContentLoaded', initializeTabs);
+window.addEventListener('resize', initializeTabs);
 
-        const modalImage = document.getElementById('modalImage');
-        const imageDescription = document.getElementById('imageDescription');
-        const prevButton = document.getElementById('prevImage');
-        const nextButton = document.getElementById('nextImage');
-        let currentIndex = 0;
-        let currentArray = 'gallery';
+document.querySelectorAll('.nav-link').forEach(tab => {
+    tab.addEventListener('shown.bs.tab', () => {
+        const target = tab.getAttribute('href').substring(1);
+        if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
+        else if (target === 'dc') arrangeWaterfall('dcContainer', dcImages);
+        else if (target === 'catdw') arrangeWaterfall('catdwContainer', catdwImages);
+        else if (target === 'manga') arrangeWaterfall('mangaContainer', mangaImages);
+        else if (target === 'mansion') arrangeWaterfall('mansionContainer', mansionImages);
+    });
+});
 
-        prevButton.addEventListener('click', function () {
-            const array = currentArray === 'gallery' ? galleryImages :
-                currentArray === 'dc' ? dcImages :
-                    currentArray === 'catdw' ? catdwImages :
-                        mangaImages;
-            currentIndex = (currentIndex - 1 + array.length) % array.length;
-            modalImage.src = array[currentIndex].src;
-            imageDescription.textContent = array[currentIndex].description || '暂无说明';
-        });
+const modalImage = document.getElementById('modalImage');
+const imageDescription = document.getElementById('imageDescription');
+const prevButton = document.getElementById('prevImage');
+const nextButton = document.getElementById('nextImage');
+let currentIndex = 0;
+let currentArray = 'gallery';
 
-        nextButton.addEventListener('click', function () {
-            const array = currentArray === 'gallery' ? galleryImages :
-                currentArray === 'dc' ? dcImages :
-                    currentArray === 'catdw' ? catdwImages :
-                        mangaImages;
-            currentIndex = (currentIndex + 1) % array.length;
-            modalImage.src = array[currentIndex].src;
-            imageDescription.textContent = array[currentIndex].description || '暂无说明';
-        });
+prevButton.addEventListener('click', function () {
+    const array = currentArray === 'gallery' ? galleryImages :
+        currentArray === 'dc' ? dcImages :
+        currentArray === 'catdw' ? catdwImages :
+        currentArray === 'manga' ? mangaImages :
+        mansionImages;
+    currentIndex = (currentIndex - 1 + array.length) % array.length;
+    modalImage.src = array[currentIndex].src;
+    imageDescription.textContent = array[currentIndex].description || '暂无说明';
+});
 
-        document.addEventListener('keydown', function (event) {
-            if (document.getElementById('imageModal').classList.contains('show')) {
-                if (event.key === 'ArrowLeft') prevButton.click();
-                else if (event.key === 'ArrowRight') nextButton.click();
-            }
-        });
+nextButton.addEventListener('click', function () {
+    const array = currentArray === 'gallery' ? galleryImages :
+        currentArray === 'dc' ? dcImages :
+        currentArray === 'catdw' ? catdwImages :
+        currentArray === 'manga' ? mangaImages :
+        mansionImages;
+    currentIndex = (currentIndex + 1) % array.length;
+    modalImage.src = array[currentIndex].src;
+    imageDescription.textContent = array[currentIndex].description || '暂无说明';
+});
+
+document.addEventListener('keydown', function (event) {
+    if (document.getElementById('imageModal').classList.contains('show')) {
+        if (event.key === 'ArrowLeft') prevButton.click();
+        else if (event.key === 'ArrowRight') nextButton.click();
+    }
+});
     </script>
 </body>
 
