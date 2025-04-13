@@ -66,7 +66,8 @@
             height: 20px;
             line-height: 20px;
             font-size: 0.9em;
-            display: inline-block; /* 自适应文字长度 */
+            display: inline-block;
+            /* 自适应文字长度 */
             white-space: nowrap;
             border: 1px solid #000;
             color: #000;
@@ -79,7 +80,30 @@
             color: #fff;
             font-weight: 700;
             text-align: center;
-            width: fit-content; /* 自适应标题长度 */
+            width: fit-content;
+            /* 自适应标题长度 */
+        }
+
+        /* 针对 Severo 的 introduction-section */
+        .character-block:nth-child(2) .introduction-section {
+            direction: rtl;
+            /* 文字从右向左 */
+            text-align: right !important;
+            /* 强制右对齐 */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            /* 子元素右对齐 */
+        }
+
+        /* 确保 Severo 的简介段落正确显示 */
+        .character-block:nth-child(2) .introduction-section p {
+            text-align: right !important;
+            /* 段落文字右对齐 */
+            direction: rtl;
+            /* 强化从右向左 */
+            width: fit-content;
+            max-width: 100%;
         }
 
         /* 配色方案部分 */
@@ -98,13 +122,16 @@
         .palette-container {
             display: flex;
             justify-content: space-between;
-            gap: 10%; /* 两个配色方案之间的间距为页面宽度的10% */
+            gap: 10%;
+            /* 两个配色方案之间的间距为页面宽度的10% */
         }
 
         .color-details {
             display: flex;
-            gap: 9px; /* 色块间距 */
-            align-items: center; /* 色块居中 */
+            gap: 9px;
+            /* 色块间距 */
+            align-items: center;
+            /* 色块居中 */
             border: 1px solid #000;
             padding: 11px 0px;
             flex-direction: column;
@@ -112,11 +139,13 @@
         }
 
         .color-details.severo {
-            flex-direction: row; /* Severo 从左到右 */
+            flex-direction: row;
+            /* Severo 从左到右 */
         }
 
         .color-details.leopold {
-            flex-direction: row-reverse; /* Leopold 从右到左 */
+            flex-direction: row-reverse;
+            /* Leopold 从右到左 */
         }
 
         .color-square {
@@ -129,7 +158,8 @@
         .character-sections {
             display: flex;
             flex-direction: column;
-            gap: 40px; /* Leopold 和 Severo 之间的间距 */
+            gap: 40px;
+            /* Leopold 和 Severo 之间的间距 */
             margin-bottom: 20px;
         }
 
@@ -253,6 +283,7 @@
         }
 
         @media (max-width: 576px) {
+
             .profile-section,
             .palette-section,
             .gallery-section {
@@ -296,55 +327,55 @@
                     </div>
                 </div>
             </div>
-                        <!-- 合并的配色方案 -->
-                        <div class="palette-section">
-                            <h3>Color Palette</h3>
-                            <div class="palette-container">
-                                <!-- Severo 配色 -->
-                                <div class="color-details severo">
-                                    <div class="color-detail">
-                                        <div class="color-square" style="background-color: #1C2526;"></div>
-                                    </div>
-                                    <div class="color-detail">
-                                        <div class="color-square" style="background-color: #3A4F50;"></div>
-                                    </div>
-                                    <div class="color-detail">
-                                        <div class="color-square" style="background-color: #B91C1C;"></div>
-                                    </div>
-                                    <div class="color-detail">
-                                        <div class="color-square" style="background-color: #4B5563;"></div>
-                                    </div>
-                                    <div class="color-detail">
-                                        <div class="color-square" style="background-color: #111827;"></div>
-                                    </div>
-                                </div>
-                                <!-- Leopold 配色 -->
-                                <div class="color-details leopold">
-                                    <div class="color-detail">
-                                        <div class="color-square" style="background-color: #5A51EC;"></div>
-                                    </div>
-                                    <div class="color-detail">
-                                        <div class="color-square" style="background-color: #F7F7F7;"></div>
-                                    </div>
-                                    <div class="color-detail">
-                                        <div class="color-square" style="background-color: #8ED3FC;"></div>
-                                    </div>
-                                    <div class="color-detail">
-                                        <div class="color-square" style="background-color: #72A1F3;"></div>
-                                    </div>
-                                    <div class="color-detail">
-                                        <div class="color-square" style="background-color: #2B3880;"></div>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- 合并的配色方案 -->
+            <div class="palette-section">
+                <h3>Color Palette</h3>
+                <div class="palette-container">
+                    <!-- Severo 配色 -->
+                    <div class="color-details severo">
+                        <div class="color-detail">
+                            <div class="color-square" style="background-color: #1C2526;"></div>
                         </div>
+                        <div class="color-detail">
+                            <div class="color-square" style="background-color: #3A4F50;"></div>
+                        </div>
+                        <div class="color-detail">
+                            <div class="color-square" style="background-color: #B91C1C;"></div>
+                        </div>
+                        <div class="color-detail">
+                            <div class="color-square" style="background-color: #4B5563;"></div>
+                        </div>
+                        <div class="color-detail">
+                            <div class="color-square" style="background-color: #111827;"></div>
+                        </div>
+                    </div>
+                    <!-- Leopold 配色 -->
+                    <div class="color-details leopold">
+                        <div class="color-detail">
+                            <div class="color-square" style="background-color: #5A51EC;"></div>
+                        </div>
+                        <div class="color-detail">
+                            <div class="color-square" style="background-color: #F7F7F7;"></div>
+                        </div>
+                        <div class="color-detail">
+                            <div class="color-square" style="background-color: #8ED3FC;"></div>
+                        </div>
+                        <div class="color-detail">
+                            <div class="color-square" style="background-color: #72A1F3;"></div>
+                        </div>
+                        <div class="color-detail">
+                            <div class="color-square" style="background-color: #2B3880;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Severo 简介 -->
             <div class="character-block">
                 <div class="profile-section">
                     <div class="avatar-section">
                         <img src="img/bl-severo.jpg" alt="Severo Avatar" class="avatar-image">
                     </div>
-                    <div class="introduction-section">
+                    <div class="introduction-section severo-intro">
                         <p class="intro-heading">Severo</p>
                         <p><span>✦</span> 女 / Sub / 187 cm / 本人を乗っ取った人造人間</p>
                         <p><span>✧</span> 26→36歳、料亭社長兼情報屋、元殺し屋</p>
