@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8F7F8">
+    <title>Character Design Reference</title>
+    <meta property="og:type" content="website">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #ececea;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        /* 简介部分 */
+        .profile-section {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            background: transparent;
+            border: none;
+            padding: 15px;
+            align-items: center;
+        }
+
+        .avatar-section {
+            width: 248px;
+            height: 298px;
+            border: 2px solid #000;
+            flex-shrink: 0;
+        }
+
+        .avatar-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .introduction-section {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .introduction-section p {
+            margin: 0;
+            padding: 0 10px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 0.9em;
+            display: inline-block; /* 自适应文字长度 */
+            white-space: nowrap;
+            border: 1px solid #000;
+            color: #000;
+            text-align: left;
+            background: #fff;
+        }
+
+        .introduction-section .intro-heading {
+            background: #000;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+            width: fit-content; /* 自适应标题长度 */
+        }
+
+        /* 配色方案部分 */
+        .palette-section {
+            padding: 15px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .palette-section h3 {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .color-details {
+            display: flex;
+            flex-direction: column;
+            /* 垂直排列色块 */
+            gap: 9px;
+            /* 色块间距 */
+            align-items: center;
+            /* 色块居中 */
+            border: 1px solid #000;
+            width: 48px;
+            padding: 11px 0px 11px 0px;
+
+        }
+
+        .color-square {
+            width: 29px;
+            height: 29px;
+            border: 1px solid #000;
+        }
+
+        /* 角色区域 */
+        .character-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 40px; /* Leopold 和 Severo 之间的间距 */
+            margin-bottom: 20px;
+        }
+
+        /* 画廊部分 */
+        .gallery-section {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+
+        .gallery-header .nav-tabs {
+            border-bottom: 2px solid #000;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .gallery-header .nav-link {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #ccc;
+            padding: 5px 15px;
+        }
+
+        .gallery-header .nav-link.active {
+            color: #000;
+            border-bottom: 2px solid #000;
+            background: transparent;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery-item {
+            width: 100%;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 模态框 */
+        .image-modal .modal-dialog {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .image-modal .modal-content {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .image-modal .modal-body {
+            padding: 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-modal .modal-image {
+            max-height: 80vh;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .image-modal .carousel-control-prev,
+        .image-modal .carousel-control-next {
+            width: 5%;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        .image-modal .carousel-control-prev:hover,
+        .image-modal .carousel-control-next:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .image-modal .modal-dialog {
+                max-width: 95%;
+            }
+
+            .image-modal .modal-image {
+                max-height: 70vh;
+            }
+
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .gallery-header .nav-link {
+                font-size: 1.2em;
+                padding: 5px 10px;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .avatar-section {
+                width: 100%;
+                height: 298px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .profile-section,
+            .palette-section,
+            .gallery-section {
+                padding: 10px;
+            }
+
+            .color-square {
+                width: 25px;
+                height: 25px;
+            }
+
+            .avatar-section {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-container">
+        <!-- 角色简介和配色方案 -->
+        <div class="character-sections">
+            <!-- Leopold 简介和配色 -->
+            <div class="character-block">
+                <div class="profile-section">
+                    <div class="introduction-section">
+                        <p class="intro-heading">Leopold</p>
+                        <p><span>✦</span> 女 / 178 cm / 死神の人間態</p>
+                        <p><span>✧</span> 冥府之主，有能力让这位朋友想起一切</p>
+                        <p><span>✦</span> ヤクザ並みの手口を使う刑事。部下たちからは畏怖され、同時に崇拝される存在。</p>
+                        <p><span>✧</span> 童顔（不老）、実年齢不明</p>
+                        <p><span>✦</span> 艶やか、常に世を拗ねるような微笑を浮かべている</p>
+                        <p><span>✧</span> 好き嫌いが激しく、享楽主義者で実用も重んじる</p>
+                        <p><span>✦</span> 細やかで優しい一面も持っている</p>
+                        <p><span>✧</span> 落ち着き払った自信に満ちていて、自信かつ優雅な態度を保つ</p>
+                        <p><span>✦</span> 性格は八方巧み。一流の銃術と剣術の使い手</p>
+                    </div>
+                    <div class="avatar-section">
+                        <img src="img/bl-leopold.jpg" alt="Leopold Avatar" class="avatar-image">
+                    </div>
+                </div>
+
+            </div>
+            <div class="palette-section">
+                <h3>Color Palette</h3>
+                <div class="color-details">
+                    <div class="color-detail">
+                        <div class="color-square" style="background-color: #5A51EC;"></div>
+                    </div>
+                    <div class="color-detail">
+                        <div class="color-square" style="background-color: #F7F7F7;"></div>
+                    </div>
+                    <div class="color-detail">
+                        <div class="color-square" style="background-color: #8ED3FC;"></div>
+                    </div>
+                    <div class="color-detail">
+                        <div class="color-square" style="background-color: #72A1F3;"></div>
+                    </div>
+                    <div class="color-detail">
+                        <div class="color-square" style="background-color: #2B3880;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="palette-section">
+                <h3>Color Palette</h3>
+                <div class="color-details">
+                    <div class="color-detail">
+                        <div class="color-square" style="background-color: #1C2526;"></div>
+                    </div>
+                    <div class="color-detail">
+                        <div class="color-square" style="background-color: #3A4F50;"></div>
+                    </div>
+                    <div class="color-detail">
+                        <div class="color-square" style="background-color: #B91C1C;"></div>
+                    </div>
+                    <div class="color-detail">
+                        <div class="color-square" style="background-color: #4B5563;"></div>
+                    </div>
+                    <div class="color-detail">
+                        <div class="color-square" style="background-color: #111827;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Severo 简介和配色 -->
+            <div class="character-block">
+                <div class="profile-section">
+                    <div class="avatar-section">
+                        <img src="img/bl-severo.jpg" alt="Severo Avatar" class="avatar-image">
+                    </div>
+                    <div class="introduction-section">
+                        <p class="intro-heading">Severo</p>
+                        <p><span>✦</span> 女 / Sub / 187 cm / 本人を乗っ取った人造人間</p>
+                        <p><span>✧</span> 26→36歳、料亭社長兼情報屋、元殺し屋</p>
+                        <p><span>✦</span> 第一印象は礼儀正しく、スイーツ作りに万能</p>
+                        <p><span>✧</span> 少しユーモアのある人物</p>
+                        <p><span>✦</span> 穏やかな長女のような雰囲気</p>
+                        <p><span>✧</span> 「L＞森羅万象」という極端な価値観を抱えて生きている</p>
+                        <p><span>✦</span> 家族の風邪を世界中のどんな死亡事故よりも深刻に捉える</p>
+                        <p><span>✧</span> Lへの愛と渇望は遺伝子に刻み込まれている</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 服装画廊 -->
+        <div class="gallery-section">
+            <div class="gallery-header mb-3">
+                <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="l-tab" data-bs-toggle="tab" href="#l" role="tab"
+                            aria-controls="l" aria-selected="true">Leopold</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="s-tab" data-bs-toggle="tab" href="#s" role="tab" aria-controls="s"
+                            aria-selected="false">Severo</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content" id="galleryTabContent">
+                <div class="tab-pane fade show active" id="l" role="tabpanel" aria-labelledby="l-tab">
+                    <div class="gallery-container" id="lContainer"></div>
+                </div>
+                <div class="tab-pane fade" id="s" role="tabpanel" aria-labelledby="s-tab">
+                    <div class="gallery-container" id="sContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal fade image-modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button class="carousel-control-prev" id="prevImage">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <img src="" alt="Preview Image" class="modal-image" id="modalImage">
+                    <button class="carousel-control-next" id="nextImage">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        const galleryImages = {
+            l: [
+                { src: "img/clothes/l/1.jpg", alt: "Leopold Outfit 1" },
+                { src: "img/clothes/l/2.jpg", alt: "Leopold Outfit 2" },
+                { src: "img/clothes/l/3.jpg", alt: "Leopold Outfit 3" },
+                { src: "img/clothes/l/4.jpg", alt: "Leopold Outfit 4" },
+                { src: "img/clothes/l/5.jpg", alt: "Leopold Outfit 5" },
+                { src: "img/clothes/l/6.jpg", alt: "Leopold Outfit 6" },
+                { src: "img/clothes/l/7.jpg", alt: "Leopold Outfit 7" },
+                { src: "img/clothes/l/8.jpg", alt: "Leopold Outfit 8" },
+                { src: "img/clothes/l/9.jpg", alt: "Leopold Outfit 9" },
+                { src: "img/clothes/l/10.jpg", alt: "Leopold Outfit 10" },
+                { src: "img/clothes/l/11.jpg", alt: "Leopold Outfit 11" },
+                { src: "img/clothes/l/12.jpg", alt: "Leopold Outfit 12" },
+                { src: "img/clothes/l/13.jpg", alt: "Leopold Outfit 13" },
+                { src: "img/clothes/l/14.jpg", alt: "Leopold Outfit 14" },
+                { src: "img/clothes/l/15.jpg", alt: "Leopold Outfit 15" },
+                { src: "img/clothes/l/16.jpg", alt: "Leopold Outfit 16" },
+                { src: "img/clothes/l/17.jpg", alt: "Leopold Outfit 17" },
+                { src: "img/clothes/l/18.jpg", alt: "Leopold Outfit 18" },
+                { src: "img/clothes/l/19.jpg", alt: "Leopold Outfit 19" },
+                { src: "img/clothes/l/20.jpg", alt: "Leopold Outfit 20" },
+            ],
+            s: [
+                { src: "img/clothes/s/1.jpg", alt: "Severo Outfit 1" },
+                { src: "img/clothes/s/2.jpg", alt: "Severo Outfit 2" },
+                { src: "img/clothes/s/3.jpg", alt: "Severo Outfit 3" },
+                { src: "img/clothes/s/4.jpg", alt: "Severo Outfit 4" },
+                { src: "img/clothes/s/5.jpg", alt: "Severo Outfit 5" },
+                { src: "img/clothes/s/6.jpg", alt: "Severo Outfit 6" },
+                { src: "img/clothes/s/7.jpg", alt: "Severo Outfit 7" },
+                { src: "img/clothes/s/8.jpg", alt: "Severo Outfit 8" },
+                { src: "img/clothes/s/9.jpg", alt: "Severo Outfit 9" },
+                { src: "img/clothes/s/10.jpg", alt: "Severo Outfit 10" },
+                { src: "img/clothes/s/11.jpg", alt: "Severo Outfit 11" },
+                { src: "img/clothes/s/12.jpg", alt: "Severo Outfit 12" },
+                { src: "img/clothes/s/13.jpg", alt: "Severo Outfit 13" },
+                { src: "img/clothes/s/14.jpg", alt: "Severo Outfit 14" },
+                { src: "img/clothes/s/15.jpg", alt: "Severo Outfit 15" },
+                { src: "img/clothes/s/16.jpg", alt: "Severo Outfit 16" },
+                { src: "img/clothes/s/17.jpg", alt: "Severo Outfit 17" },
+                { src: "img/clothes/s/18.jpg", alt: "Severo Outfit 18" },
+                { src: "img/clothes/s/19.jpg", alt: "Severo Outfit 19" },
+                { src: "img/clothes/s/20.jpg", alt: "Severo Outfit 20" },
+            ],
+        };
+
+        function arrangeGallery(containerId, imageArray) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+
+            imageArray.forEach((image, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.alt = image.alt;
+                img.className = 'img-fluid gallery-image';
+                img.setAttribute('data-bs-toggle', 'modal');
+                img.setAttribute('data-bs-target', '#imageModal');
+                img.setAttribute('data-src', image.src);
+                img.setAttribute('data-index', index);
+                img.setAttribute('data-array', containerId.replace('Container', ''));
+
+                item.appendChild(img);
+                container.appendChild(item);
+            });
+        }
+
+        function initializeTabs() {
+            arrangeGallery('lContainer', galleryImages.l);
+            arrangeGallery('sContainer', galleryImages.s);
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeTabs);
+
+        document.querySelectorAll('.nav-link').forEach(tab => {
+            tab.addEventListener('shown.bs.tab', () => {
+                const target = tab.getAttribute('href').substring(1);
+                if (target === 'l') arrangeGallery('lContainer', galleryImages.l);
+                else if (target === 's') arrangeGallery('sContainer', galleryImages.s);
+            });
+        });
+
+        const modalImage = document.getElementById('modalImage');
+        const prevButton = document.getElementById('prevImage');
+        const nextButton = document.getElementById('nextImage');
+        let currentIndex = 0;
+        let currentArray = 'l';
+
+        document.querySelector('.gallery-section').addEventListener('click', function (e) {
+            if (e.target.classList.contains('gallery-image')) {
+                const src = e.target.getAttribute('data-src');
+                currentIndex = parseInt(e.target.getAttribute('data-index'));
+                currentArray = e.target.getAttribute('data-array');
+                modalImage.src = src;
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            const array = galleryImages[currentArray];
+            currentIndex = (currentIndex - 1 + array.length) % array.length;
+            modalImage.src = array[currentIndex].src;
+        });
+
+        nextButton.addEventListener('click', () => {
+            const array = galleryImages[currentArray];
+            currentIndex = (currentIndex + 1) % array.length;
+            modalImage.src = array[currentIndex].src;
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (document.getElementById('imageModal').classList.contains('show')) {
+                if (event.key === 'ArrowLeft') prevButton.click();
+                else if (event.key === 'ArrowRight') nextButton.click();
+            }
+        });
+    </script>
+</body>
+
+</html>
