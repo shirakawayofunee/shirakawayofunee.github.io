@@ -74,57 +74,82 @@
             /* 行间距 5px */
         }
 
-        .introduction-section p {
-            margin: 0;
-            padding: 0 10px;
-            height: auto;
-            /* 移除固定高度，允许自适应 */
-            line-height: 20px;
-            font-size: 0.9em;
-            overflow: visible;
-            /* 移除溢出隐藏 */
-            text-overflow: initial;
-            /* 移除省略号 */
-            background: #fff;
-            display: inline-block;
-            white-space: normal;
-            /* 允许文字换行 */
-            width: fit-content;
-            /* 宽度根据内容自适应 */
-            max-width: 100%;
-            /* 防止溢出父容器 */
-        }
-
-        .introduction-section .intro-heading {
-            background: #000;
-            /* 第一行黑色背景 */
-            color: #fff;
-            /* 白色文字 */
-            font-weight: 700;
-            text-align: left;
-        }
-
-        .introduction-section p:not(.intro-heading) {
-            border: 1px solid #000;
-            /* 其余行 1px 黑色描边 */
-            color: #000;
-            /* 黑色文字 */
-            text-align: left;
-        }
-
-        .severo-intro {
-    direction: rtl; /* 文字从右向左 */
-    text-align: right; /* 右对齐 */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* 子元素右对齐 */
-}
-
-.severo-intro p {
-    text-align: right; /* 段落文字右对齐 */
-    direction: rtl; /* 强化从右向左 */
+/* 重置 introduction-section 的通用样式 */
+.introduction-section p {
+    margin: 0;
+    padding: 0 10px;
+    height: auto;
+    line-height: 20px;
+    font-size: 0.9em;
+    overflow: visible;
+    text-overflow: initial;
+    background: #fff;
+    display: block;
+    white-space: normal;
     width: fit-content;
     max-width: 100%;
+}
+
+.introduction-section .intro-heading {
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    text-align: left;
+    direction: ltr;
+}
+
+.introduction-section p:not(.intro-heading) {
+    border: 1px solid #000;
+    color: #000;
+    text-align: left;
+    direction: ltr;
+}
+
+/* Severo 的 profile-section 布局 */
+.character-block:nth-child(2) .profile-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* 整体靠右 */
+    gap: 10px;
+}
+
+/* Severo 的 introduction-section 样式 */
+.severo-intro {
+    flex-grow: 0; /* 防止拉伸占满空间 */
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: auto; /* 简介靠右，紧贴头像 */
+    direction: rtl; /* 文字从右向左 */
+    align-items: flex-end; /* 子元素（段落）右对齐 */
+}
+
+/* Severo 的所有段落 */
+.severo-intro p {
+    text-align: right;
+    direction: rtl;
+    width: fit-content;
+    max-width: 100%;
+    padding: 0 10px;
+    background: #fff;
+}
+
+/* Severo 的非标题段落 */
+.severo-intro p:not(.intro-heading) {
+    border: 1px solid #000;
+    color: #000;
+    text-align: right;
+    direction: rtl;
+}
+
+/* Severo 的标题 */
+.severo-intro .intro-heading {
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    text-align: right;
+    direction: rtl;
 }
 
         /* 配色方案部分 */
