@@ -173,7 +173,10 @@
                     <a class="nav-link" id="catdw-tab" data-bs-toggle="tab" href="#catdw" role="tab"
                         aria-controls="catdw" aria-selected="false">ふわふわ</a>
                 </li>
-                
+                <li class="nav-item">
+                    <a class="nav-link" id="manga-tab" data-bs-toggle="tab" href="#manga" role="tab"
+                        aria-controls="manga" aria-selected="false">漫画</a>
+                </li>
             </ul>
         </div>
         <div class="tab-content" id="galleryTabContent">
@@ -185,6 +188,9 @@
             </div>
             <div class="tab-pane fade" id="catdw" role="tabpanel" aria-labelledby="catdw-tab">
                 <div class="gallery-container" id="catdwContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="manga" role="tabpanel" aria-labelledby="manga-tab">
+                <div class="gallery-container" id="mangaContainer"></div>
             </div>
         </div>
     </div>
@@ -257,7 +263,7 @@
             { src: "img/DC/DC14.jpg", alt: "DC Image 14", description: "" },
             { src: "img/DC/DC15.jpg", alt: "DC Image 15", description: "" },
             { src: "img/DC/DC16.jpg", alt: "DC Image 16", description: "" },
-            // 预留扩展
+                        // 预留扩展
             // { src: "img/DC/DC17.jpg", alt: "DC Image 17", description: "" },
             // { src: "img/DC/DC18.jpg", alt: "DC Image 18", description: "" },
             // { src: "img/DC/DC19.jpg", alt: "DC Image 19", description: "" },
@@ -284,14 +290,22 @@
             // { src: "img/DC/DC40.jpg", alt: "DC Image 40", description: "" }
         ];
 
-        // 新增图片数组
         const catdwImages = [
             { src: "img/SL/cat/dw1.jpg", alt: "Catdw Image 1", description: "" },
             { src: "img/SL/cat/dw2.jpg", alt: "Catdw Image 1", description: "" },
             { src: "img/SL/cat/dw3.jpg", alt: "Catdw Image 1", description: "" },
             { src: "img/SL/cat/dw4.jpg", alt: "Catdw Image 1", description: "" },
-            // 可扩展至更多图片
-            // { src: "img/SL/catdw5.jpg", alt: "Catdw Image 2", description: "" },
+        ];
+
+        // 新增漫画图片数组，预留7张
+        const mangaImages = [
+        { src: "img/SL/MH/1.jpg", alt: "Manga Image 1", description: "" },
+             { src: "img/SL/MH/2.jpg", alt: "Manga Image 2", description: "" },
+             { src: "img/SL/MH/3.jpg", alt: "Manga Image 3", description: "" },
+/*              { src: "img/SL/MH/4.jpg", alt: "Manga Image 4", description: "" },
+             { src: "img/SL/MH/5.jpg", alt: "Manga Image 5", description: "" },
+             { src: "img/SL/MH/6.jpg", alt: "Manga Image 6", description: "" },
+             { src: "img/SL/MH/7.jpg", alt: "Manga Image 7", description: "" }, */
         ];
 
         function arrangeWaterfall(containerId, imageArray) {
@@ -322,7 +336,8 @@
                 img.setAttribute('data-index', index);
                 img.setAttribute('data-description', image.description);
                 img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
-                    containerId === 'dcContainer' ? 'dc' : 'catdw');
+                    containerId === 'dcContainer' ? 'dc' :
+                        containerId === 'catdwContainer' ? 'catdw' : 'manga');
 
                 item.appendChild(img);
                 columns[index % columnCount].appendChild(item);
@@ -344,7 +359,8 @@
         function initializeTabs() {
             arrangeWaterfall('galleryContainer', galleryImages);
             arrangeWaterfall('dcContainer', dcImages);
-            arrangeWaterfall('catdwContainer', catdwImages); // 新增
+            arrangeWaterfall('catdwContainer', catdwImages);
+            arrangeWaterfall('mangaContainer', mangaImages);
         }
 
         document.addEventListener('DOMContentLoaded', initializeTabs);
@@ -356,6 +372,7 @@
                 if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
                 else if (target === 'dc') arrangeWaterfall('dcContainer', dcImages);
                 else if (target === 'catdw') arrangeWaterfall('catdwContainer', catdwImages);
+                else if (target === 'manga') arrangeWaterfall('mangaContainer', mangaImages);
             });
         });
 
@@ -368,7 +385,9 @@
 
         prevButton.addEventListener('click', function () {
             const array = currentArray === 'gallery' ? galleryImages :
-                currentArray === 'dc' ? dcImages : catdwImages; // 新增 catdwImages
+                currentArray === 'dc' ? dcImages :
+                    currentArray === 'catdw' ? catdwImages :
+                        mangaImages;
             currentIndex = (currentIndex - 1 + array.length) % array.length;
             modalImage.src = array[currentIndex].src;
             imageDescription.textContent = array[currentIndex].description || '暂无说明';
@@ -376,7 +395,9 @@
 
         nextButton.addEventListener('click', function () {
             const array = currentArray === 'gallery' ? galleryImages :
-                currentArray === 'dc' ? dcImages : catdwImages; // 新增 catdwImages
+                currentArray === 'dc' ? dcImages :
+                    currentArray === 'catdw' ? catdwImages :
+                        mangaImages;
             currentIndex = (currentIndex + 1) % array.length;
             modalImage.src = array[currentIndex].src;
             imageDescription.textContent = array[currentIndex].description || '暂无说明';
