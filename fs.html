@@ -19,7 +19,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: #fff;
+            background: #ececea;
             color: #333;
             overflow-x: hidden;
         }
@@ -32,33 +32,78 @@
 
         /* 简介部分 */
         .profile-section {
-            background: #e6f0fa;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            text-align: center;
-            flex-grow: 1;
-            /* 简介区块灵活拉伸 */
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            /* 内容从顶部开始 */
+            flex-direction: row;
+            gap: 10px;
+            /* 头像和简介之间的间距 10px */
+            background: transparent;
+            /* 移除背景 */
+            border: none;
+            /* 移除描边 */
+            padding: 0;
+            /* 移除内边距 */
+            flex-grow: 1;
+        }
+
+        .avatar-section {
+            width: 248px;
+            height: 298px;
+            border: 2px solid #000;
+            /* 2px 黑色描边 */
+            flex-shrink: 0;
         }
 
         .display-name {
-            font-size: 2em;
+            font-size: 2.5em;
+            /* 加大字体 */
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .avatar-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 确保图片填满区域 */
         }
 
         .introduction-section {
-            text-align: left;
             flex-grow: 1;
-            /* 简介内容拉伸以填充空间 */
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            /* 行间距 5px */
         }
 
         .introduction-section p {
-            margin: 5px 0;
+            margin: 0;
+            padding: 0 10px;
+            height: 20px;
+            /* 每行高度 20px（包括上下间距） */
+            line-height: 20px;
+            /* 文字垂直居中 */
+            font-size: 0.9em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            /* 防止文字换行 */
+        }
+
+        .introduction-section .intro-heading {
+            background: #000;
+            /* 第一行黑色背景 */
+            color: #fff;
+            /* 白色文字 */
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .introduction-section p:not(.intro-heading) {
+            border: 1px solid #000;
+            /* 其余行 1px 黑色描边 */
+            color: #000;
+            /* 黑色文字 */
+            text-align: left;
         }
 
         /* 配色方案部分 */
@@ -259,6 +304,16 @@
                 width: 40px;
                 height: 40px;
             }
+
+            .profile-section {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .avatar-section {
+                width: 100%;
+                height: 298px;
+            }
         }
     </style>
 </head>
@@ -270,8 +325,12 @@
             <!-- L 简介和配色 -->
             <div class="character-block">
                 <div class="profile-section">
-                    <p class="display-name">L</p>
+                    <div class="avatar-section">
+                        <!-- 头像占位，需替换为真实图片路径 -->
+                        <img src="img/bl-l.jpg" alt="S Avatar" class="avatar-image">
+                    </div>
                     <div class="introduction-section">
+                        <p class="intro-heading">Leopold</p>
                         <p><span>✦</span> 女 / 178 cm / 死神の人間態</p>
                         <p><span>✧</span> 冥府之主，有能力让这位朋友想起一切</p>
                         <p><span>✦</span> ヤクザ並みの手口を使う刑事。部下たちからは畏怖され、同時に崇拝される存在。</p>
@@ -316,8 +375,13 @@
             <!-- S 简介和配色 -->
             <div class="character-block">
                 <div class="profile-section">
-                    <p class="display-name">S</p>
+                    <div class="avatar-section">
+                        <!-- 头像占位，需替换为真实图片路径 -->
+                        <img src="img/bl-l.jpg" alt="L Avatar" class="avatar-image">
+                    </div>
                     <div class="introduction-section">
+
+                        <p class="intro-heading">Severo</p>
                         <p><span>✦</span> 女 / Sub / 187 cm / 本人を乗っ取った人造人間</p>
                         <p><span>✧</span> 26→36歳、料亭社長兼情報屋、元殺し屋</p>
                         <p><span>✦</span> 第一印象は礼儀正しく、スイーツ作りに万能</p>
