@@ -122,7 +122,10 @@
     gap: 5px;
     margin-left: auto; /* 简介靠右，紧贴头像 */
     direction: rtl; /* 文字从右向左 */
-    align-items: flex-end; /* 子元素（段落）右对齐 */
+  justify-content: flex-end; /* 子元素靠右 */
+  justify-content: flex-start; /* 子元素靠上 */
+
+    
 }
 
 /* Severo 的所有段落 */
@@ -131,7 +134,8 @@
     direction: rtl;
     width: fit-content;
     max-width: 100%;
-    padding: 0 10px;
+    margin: 0;
+  padding: 0;
     background: #fff;
 }
 
