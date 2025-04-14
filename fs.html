@@ -339,6 +339,14 @@
                 height: 298px;
             }
         }
+        /* 懒加载图片的过渡效果 */
+img.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+img.lazy[src] {
+    opacity: 1;
+}
     </style>
 </head>
 
@@ -430,19 +438,19 @@
                         <!-- 第一组色块 -->
                         <div class="color-details">
                             <div class="color-detail">
-                                <div class="color-square" style="background-color: #1C2526;"></div>
+                                <div class="color-square" style="background-color: #2E2C31;"></div>
                             </div>
                             <div class="color-detail">
-                                <div class="color-square" style="background-color: #3A4F50;"></div>
+                                <div class="color-square" style="background-color: #E9ECEE;"></div>
                             </div>
                             <div class="color-detail">
-                                <div class="color-square" style="background-color: #B91C1C;"></div>
+                                <div class="color-square" style="background-color: #A98FC4;"></div>
                             </div>
                             <div class="color-detail">
-                                <div class="color-square" style="background-color: #4B5563;"></div>
+                                <div class="color-square" style="background-color: #86769D;"></div>
                             </div>
                             <div class="color-detail">
-                                <div class="color-square" style="background-color: #111827;"></div>
+                                <div class="color-square" style="background-color: #ACBCB8;"></div>
                             </div>
                         </div>
                         <!-- 第二组色块（扩展，基于现有配色） -->
@@ -480,6 +488,10 @@
                         <a class="nav-link" id="s-tab" data-bs-toggle="tab" href="#s" role="tab" aria-controls="s"
                             aria-selected="false">S</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="ring-tab" data-bs-toggle="tab" href="#ring" role="tab" aria-controls="ring"
+                            aria-selected="false">婚戒</a>
+                    </li>
                 </ul>
             </div>
             <div class="tab-content" id="galleryTabContent">
@@ -488,6 +500,9 @@
                 </div>
                 <div class="tab-pane fade" id="s" role="tabpanel" aria-labelledby="s-tab">
                     <div class="gallery-container" id="sContainer"></div>
+                </div>
+                <div class="tab-pane fade" id="ring" role="tabpanel" aria-labelledby="ring-tab">
+                    <div class="gallery-container" id="ringContainer"></div>
                 </div>
             </div>
         </div>
@@ -514,6 +529,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
@@ -562,52 +580,100 @@
                 { src: "img/clothes/s/19.jpg", alt: "S Outfit 19" },
                 { src: "img/clothes/s/20.jpg", alt: "S Outfit 20" },
             ],
+            ring: [
+                // 预留 20 张婚戒图片
+                // { src: "img/clothes/ring/1.jpg", alt: "Ring Outfit 1" },
+                // { src: "img/clothes/ring/2.jpg", alt: "Ring Outfit 2" },
+                // { src: "img/clothes/ring/3.jpg", alt: "Ring Outfit 3" },
+                // { src: "img/clothes/ring/4.jpg", alt: "Ring Outfit 4" },
+                // { src: "img/clothes/ring/5.jpg", alt: "Ring Outfit 5" },
+                // { src: "img/clothes/ring/6.jpg", alt: "Ring Outfit 6" },
+                // { src: "img/clothes/ring/7.jpg", alt: "Ring Outfit 7" },
+                // { src: "img/clothes/ring/8.jpg", alt: "Ring Outfit 8" },
+                // { src: "img/clothes/ring/9.jpg", alt: "Ring Outfit 9" },
+                // { src: "img/clothes/ring/10.jpg", alt: "Ring Outfit 10" },
+                // { src: "img/clothes/ring/11.jpg", alt: "Ring Outfit 11" },
+                // { src: "img/clothes/ring/12.jpg", alt: "Ring Outfit 12" },
+                // { src: "img/clothes/ring/13.jpg", alt: "Ring Outfit 13" },
+                // { src: "img/clothes/ring/14.jpg", alt: "Ring Outfit 14" },
+                // { src: "img/clothes/ring/15.jpg", alt: "Ring Outfit 15" },
+                // { src: "img/clothes/ring/16.jpg", alt: "Ring Outfit 16" },
+                // { src: "img/clothes/ring/17.jpg", alt: "Ring Outfit 17" },
+                // { src: "img/clothes/ring/18.jpg", alt: "Ring Outfit 18" },
+                // { src: "img/clothes/ring/19.jpg", alt: "Ring Outfit 19" },
+                // { src: "img/clothes/ring/20.jpg", alt: "Ring Outfit 20" },
+            ]
         };
-
+    
         function arrangeGallery(containerId, imageArray) {
             const container = document.getElementById(containerId);
             container.innerHTML = '';
-
+    
             imageArray.forEach((image, index) => {
                 const item = document.createElement('div');
                 item.className = 'gallery-item';
-
+    
                 const img = document.createElement('img');
-                img.src = image.src;
+                img.setAttribute('data-src', image.src); // 使用 data-src 存储路径
                 img.alt = image.alt;
-                img.className = 'img-fluid gallery-image';
+                img.className = 'img-fluid gallery-image lazy'; // 添加 lazy 类
                 img.setAttribute('data-bs-toggle', 'modal');
                 img.setAttribute('data-bs-target', '#imageModal');
-                img.setAttribute('data-src', image.src);
                 img.setAttribute('data-index', index);
                 img.setAttribute('data-array', containerId.replace('Container', ''));
-
+                // 设置占位符
+                img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+    
                 item.appendChild(img);
                 container.appendChild(item);
             });
+    
+            // 触发懒加载观察
+            lazyLoadImages();
         }
-
+    
+        function lazyLoadImages() {
+            const images = document.querySelectorAll('img.lazy');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.getAttribute('data-src');
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '0px 0px 100px 0px', // 提前 100px 加载
+                threshold: 0.1
+            });
+    
+            images.forEach(img => observer.observe(img));
+        }
+    
         function initializeTabs() {
             arrangeGallery('lContainer', galleryImages.l);
             arrangeGallery('sContainer', galleryImages.s);
+            arrangeGallery('ringContainer', galleryImages.ring);
         }
-
+    
         document.addEventListener('DOMContentLoaded', initializeTabs);
-
+    
         document.querySelectorAll('.nav-link').forEach(tab => {
             tab.addEventListener('shown.bs.tab', () => {
                 const target = tab.getAttribute('href').substring(1);
                 if (target === 'l') arrangeGallery('lContainer', galleryImages.l);
                 else if (target === 's') arrangeGallery('sContainer', galleryImages.s);
+                else if (target === 'ring') arrangeGallery('ringContainer', galleryImages.ring);
             });
         });
-
+    
         const modalImage = document.getElementById('modalImage');
         const prevButton = document.getElementById('prevImage');
         const nextButton = document.getElementById('nextImage');
         let currentIndex = 0;
         let currentArray = 'l';
-
+    
         document.querySelector('.gallery-section').addEventListener('click', function (e) {
             if (e.target.classList.contains('gallery-image')) {
                 const src = e.target.getAttribute('data-src');
@@ -616,19 +682,19 @@
                 modalImage.src = src;
             }
         });
-
+    
         prevButton.addEventListener('click', () => {
             const array = galleryImages[currentArray];
             currentIndex = (currentIndex - 1 + array.length) % array.length;
             modalImage.src = array[currentIndex].src;
         });
-
+    
         nextButton.addEventListener('click', () => {
             const array = galleryImages[currentArray];
             currentIndex = (currentIndex + 1) % array.length;
             modalImage.src = array[currentIndex].src;
         });
-
+    
         document.addEventListener('keydown', (event) => {
             if (document.getElementById('imageModal').classList.contains('show')) {
                 if (event.key === 'ArrowLeft') prevButton.click();
