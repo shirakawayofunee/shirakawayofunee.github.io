@@ -34,13 +34,9 @@
             display: flex;
             flex-direction: row;
             gap: 10px;
-            /* 头像和简介之间的间距 10px */
             background: transparent;
-            /* 移除背景 */
             border: none;
-            /* 移除描边 */
             padding: 0;
-            /* 移除内边距 */
             flex-grow: 1;
         }
 
@@ -48,13 +44,11 @@
             width: 248px;
             height: 298px;
             border: 2px solid #000;
-            /* 2px 黑色描边 */
             flex-shrink: 0;
         }
 
         .display-name {
             font-size: 2.5em;
-            /* 加大字体 */
             font-weight: 700;
             margin-bottom: 15px;
         }
@@ -63,7 +57,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* 确保图片填满区域 */
         }
 
         .introduction-section {
@@ -71,90 +64,82 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
-            /* 行间距 5px */
         }
 
-/* 重置 introduction-section 的通用样式 */
-.introduction-section p {
-    margin: 0;
-    padding: 0 10px;
-    height: auto;
-    line-height: 20px;
-    font-size: 0.9em;
-    overflow: visible;
-    text-overflow: initial;
-    background: #fff;
-    display: block;
-    white-space: normal;
-    width: fit-content;
-    max-width: 100%;
-}
+        .introduction-section p {
+            margin: 0;
+            padding: 0 10px;
+            height: auto;
+            line-height: 20px;
+            font-size: 0.9em;
+            overflow: visible;
+            text-overflow: initial;
+            background: #fff;
+            display: block;
+            white-space: normal;
+            width: fit-content;
+            max-width: 100%;
+        }
 
-.introduction-section .intro-heading {
-    background: #000;
-    color: #fff;
-    font-weight: 700;
-    text-align: left;
-    direction: ltr;
-}
+        .introduction-section .intro-heading {
+            background: #000;
+            color: #fff;
+            font-weight: 700;
+            text-align: left;
+            direction: ltr;
+        }
 
-.introduction-section p:not(.intro-heading) {
-    border: 1px solid #000;
-    color: #000;
-    text-align: left;
-    direction: ltr;
-}
+        .introduction-section p:not(.intro-heading) {
+            border: 1px solid #000;
+            color: #000;
+            text-align: left;
+            direction: ltr;
+        }
 
-/* Severo 的 profile-section 布局 */
-.character-block:nth-child(2) .profile-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end; /* 整体靠右 */
-    gap: 10px;
-}
+        /* Severo 的 profile-section 布局 */
+        .character-block:nth-child(2) .profile-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 10px;
+        }
 
-/* Severo 的 introduction-section 样式 */
-.severo-intro {
-    flex-grow: 0; /* 防止拉伸占满空间 */
-    flex-shrink: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-left: auto; /* 简介靠右，紧贴头像 */
-    direction: rtl; /* 文字从右向左 */
-  justify-content: flex-end; /* 子元素靠右 */
-  justify-content: flex-start; /* 子元素靠上 */
+        /* Severo 的 introduction-section 样式 */
+        .severo-intro {
+            flex-grow: 0;
+            flex-shrink: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-left: auto;
+            direction: rtl;
+            justify-content: flex-start;
+        }
 
-    
-}
+        .severo-intro p {
+            text-align: right;
+            direction: rtl;
+            width: fit-content;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
 
-/* Severo 的所有段落 */
-.severo-intro p {
-    text-align: right;
-    direction: rtl;
-    width: fit-content;
-    max-width: 100%;
-    margin: 0;
-  padding: 0;
-    background: #fff;
-}
+        .severo-intro p:not(.intro-heading) {
+            border: 1px solid #000;
+            color: #000;
+            text-align: right;
+            direction: rtl;
+        }
 
-/* Severo 的非标题段落 */
-.severo-intro p:not(.intro-heading) {
-    border: 1px solid #000;
-    color: #000;
-    text-align: right;
-    direction: rtl;
-}
-
-/* Severo 的标题 */
-.severo-intro .intro-heading {
-    background: #000;
-    color: #fff;
-    font-weight: 700;
-    text-align: right;
-    direction: rtl;
-}
+        .severo-intro .intro-heading {
+            background: #000;
+            color: #fff;
+            font-weight: 700;
+            text-align: right;
+            direction: rtl;
+        }
 
         /* 配色方案部分 */
         .palette-section {
@@ -164,7 +149,6 @@
             padding: 30px;
             text-align: center;
             flex-grow: 1;
-            /* 配色区块灵活拉伸 */
         }
 
         .palette-section h3 {
@@ -173,24 +157,28 @@
             margin-bottom: 20px;
         }
 
+        .color-groups {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 组间间距 */
+            justify-content: center;
+            flex-wrap: wrap; /* 防止溢出，允许换行 */
+        }
+
         .color-details {
             display: flex;
             flex-direction: column;
-            /* 垂直排列色块 */
             gap: 9px;
-            /* 色块间距 */
             align-items: center;
-            /* 色块居中 */
             border: 1px solid #000;
             width: 48px;
-
+            padding: 5px; /* 轻微内边距以美化边框 */
         }
 
         .color-square {
             width: 30px;
             height: 30px;
             border: 1px solid #000;
-            /* 1px 黑色描边 */
         }
 
         .color-detail {
@@ -204,7 +192,6 @@
             gap: 20px;
             margin-bottom: 30px;
             align-items: stretch;
-            /* 确保所有 character-block 等高 */
         }
 
         .character-block {
@@ -212,7 +199,6 @@
             flex-direction: column;
             gap: 20px;
             min-height: 100%;
-            /* 确保每个 character-block 填充父容器高度 */
         }
 
         /* 画廊部分 */
@@ -364,7 +350,6 @@
             <div class="character-block">
                 <div class="profile-section">
                     <div class="avatar-section">
-                        <!-- 头像占位，需替换为真实图片路径 -->
                         <img src="img/bl-leopold.jpg" class="avatar-image">
                     </div>
                     <div class="introduction-section">
@@ -381,21 +366,42 @@
                 </div>
                 <div class="palette-section">
                     <h3>Color Palette</h3>
-                    <div class="color-details">
-                        <div class="color-detail">
-                            <div class="color-square" style="background-color: #5A51EC;"></div>
+                    <div class="color-groups">
+                        <!-- 第一组色块 -->
+                        <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #5A51EC;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #F7F7F7;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #8ED3FC;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #72A1F3;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #2B3880;"></div>
+                            </div>
                         </div>
-                        <div class="color-detail">
-                            <div class="color-square" style="background-color: #F7F7F7;"></div>
-                        </div>
-                        <div class="color-detail">
-                            <div class="color-square" style="background-color: #8ED3FC;"></div>
-                        </div>
-                        <div class="color-detail">
-                            <div class="color-square" style="background-color: #72A1F3;"></div>
-                        </div>
-                        <div class="color-detail">
-                            <div class="color-square" style="background-color: #2B3880;"></div>
+                        <!-- 第二组色块（扩展，基于现有配色） -->
+                        <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #4A41D0;"></div> <!-- 接近 #5A51EC -->
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #E8E8E8;"></div> <!-- 接近 #F7F7F7 -->
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #7EC0E8;"></div> <!-- 接近 #8ED3FC -->
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #628DE0;"></div> <!-- 接近 #72A1F3 -->
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #1F2A6A;"></div> <!-- 接近 #2B3880 -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -415,27 +421,47 @@
                         <p> Lへの愛と渇望は遺伝子に刻み込まれている</p>
                     </div>
                     <div class="avatar-section">
-                        <!-- 头像占位，需替换为真实图片路径 -->
                         <img src="img/bl-severo.jpg" alt="L Avatar" class="avatar-image">
                     </div>
                 </div>
                 <div class="palette-section">
                     <h3>Color Palette</h3>
-                    <div class="color-details">
-                        <div class="color-detail">
-                            <div class="color-square" style="background-color: #1C2526;"></div>
+                    <div class="color-groups">
+                        <!-- 第一组色块 -->
+                        <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #1C2526;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #3A4F50;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #B91C1C;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #4B5563;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #111827;"></div>
+                            </div>
                         </div>
-                        <div class="color-detail">
-                            <div class="color-square" style="background-color: #3A4F50;"></div>
-                        </div>
-                        <div class="color-detail">
-                            <div class="color-square" style="background-color: #B91C1C;"></div>
-                        </div>
-                        <div class="color-detail">
-                            <div class="color-square" style="background-color: #4B5563;"></div>
-                        </div>
-                        <div class="color-detail">
-                            <div class="color-square" style="background-color: #111827;"></div>
+                        <!-- 第二组色块（扩展，基于现有配色） -->
+                        <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #2A3334;"></div> <!-- 接近 #1C2526 -->
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #485E5F;"></div> <!-- 接近 #3A4F50 -->
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #A51515;"></div> <!-- 接近 #B91C1C -->
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #596472;"></div> <!-- 接近 #4B5563 -->
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #1A2334;"></div> <!-- 接近 #111827 -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -454,10 +480,6 @@
                         <a class="nav-link" id="s-tab" data-bs-toggle="tab" href="#s" role="tab" aria-controls="s"
                             aria-selected="false">S</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" id="character3-tab" data-bs-toggle="tab" href="#character3" role="tab"
-                            aria-controls="character3" aria-selected="false">Character 3</a>
-                    </li> -->
                 </ul>
             </div>
             <div class="tab-content" id="galleryTabContent">
@@ -467,9 +489,6 @@
                 <div class="tab-pane fade" id="s" role="tabpanel" aria-labelledby="s-tab">
                     <div class="gallery-container" id="sContainer"></div>
                 </div>
-                <!-- <div class="tab-pane fade" id="character3" role="tabpanel" aria-labelledby="character3-tab">
-                    <div class="gallery-container" id="character3Container"></div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -543,28 +562,6 @@
                 { src: "img/clothes/s/19.jpg", alt: "S Outfit 19" },
                 { src: "img/clothes/s/20.jpg", alt: "S Outfit 20" },
             ],
-            // character3: [
-            //     { src: "img/clothes/character3/1.jpg", alt: "Character 3 Outfit 1" },
-            //     { src: "img/clothes/character3/2.jpg", alt: "Character 3 Outfit 2" },
-            //     { src: "img/clothes/character3/3.jpg", alt: "Character 3 Outfit 3" },
-            //     { src: "img/clothes/character3/4.jpg", alt: "Character 3 Outfit 4" },
-            //     { src: "img/clothes/character3/5.jpg", alt: "Character 3 Outfit 5" },
-            //     { src: "img/clothes/character3/6.jpg", alt: "Character 3 Outfit 6" },
-            //     { src: "img/clothes/character3/7.jpg", alt: "Character 3 Outfit 7" },
-            //     { src: "img/clothes/character3/8.jpg", alt: "Character 3 Outfit 8" },
-            //     { src: "img/clothes/character3/9.jpg", alt: "Character 3 Outfit 9" },
-            //     { src: "img/clothes/character3/10.jpg", alt: "Character 3 Outfit 10" },
-            //     { src: "img/clothes/character3/11.jpg", alt: "Character 3 Outfit 11" },
-            //     { src: "img/clothes/character3/12.jpg", alt: "Character 3 Outfit 12" },
-            //     { src: "img/clothes/character3/13.jpg", alt: "Character 3 Outfit 13" },
-            //     { src: "img/clothes/character3/14.jpg", alt: "Character 3 Outfit 14" },
-            //     { src: "img/clothes/character3/15.jpg", alt: "Character 3 Outfit 15" },
-            //     { src: "img/clothes/character3/16.jpg", alt: "Character 3 Outfit 16" },
-            //     { src: "img/clothes/character3/17.jpg", alt: "Character 3 Outfit 17" },
-            //     { src: "img/clothes/character3/18.jpg", alt: "Character 3 Outfit 18" },
-            //     { src: "img/clothes/character3/19.jpg", alt: "Character 3 Outfit 19" },
-            //     { src: "img/clothes/character3/20.jpg", alt: "Character 3 Outfit 20" },
-            // ],
         };
 
         function arrangeGallery(containerId, imageArray) {
@@ -593,7 +590,6 @@
         function initializeTabs() {
             arrangeGallery('lContainer', galleryImages.l);
             arrangeGallery('sContainer', galleryImages.s);
-            // arrangeGallery('character3Container', galleryImages.character3);
         }
 
         document.addEventListener('DOMContentLoaded', initializeTabs);
@@ -603,7 +599,6 @@
                 const target = tab.getAttribute('href').substring(1);
                 if (target === 'l') arrangeGallery('lContainer', galleryImages.l);
                 else if (target === 's') arrangeGallery('sContainer', galleryImages.s);
-                // else if (target === 'character3') arrangeGallery('character3Container', galleryImages.character3);
             });
         });
 
