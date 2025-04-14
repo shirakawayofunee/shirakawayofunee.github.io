@@ -154,6 +154,15 @@
                 font-size: 1em;
             }
         }
+
+        /* 懒加载图片的过渡效果 */
+img.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+img.lazy[src] {
+    opacity: 1;
+}
     </style>
 </head>
 
@@ -380,12 +389,12 @@ function arrangeWaterfall(containerId, imageArray) {
         item.className = 'gallery-item';
 
         const img = document.createElement('img');
-        img.src = image.src;
+        // 使用 data-src 存储真实图片路径，初始不设置 src
+        img.setAttribute('data-src', image.src);
         img.alt = image.alt;
-        img.className = 'img-fluid gallery-image';
+        img.className = 'img-fluid gallery-image lazy'; // 添加 lazy 类用于标识
         img.setAttribute('data-bs-toggle', 'modal');
         img.setAttribute('data-bs-target', '#imageModal');
-        img.setAttribute('data-src', image.src);
         img.setAttribute('data-index', index);
         img.setAttribute('data-description', image.description);
         img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
@@ -393,12 +402,18 @@ function arrangeWaterfall(containerId, imageArray) {
             containerId === 'catdwContainer' ? 'catdw' :
             containerId === 'mangaContainer' ? 'manga' : 'mansion');
 
+        // 设置占位符（可选：可替换为低分辨率图片或透明像素）
+        img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+
         item.appendChild(img);
         columns[index % columnCount].appendChild(item);
 
         img.removeEventListener('click', handleImageClick);
         img.addEventListener('click', handleImageClick);
     });
+
+    // 在图片添加到 DOM 后，触发懒加载观察
+    lazyLoadImages();
 }
 
 function handleImageClick() {
@@ -416,6 +431,26 @@ function initializeTabs() {
     arrangeWaterfall('catdwContainer', catdwImages);
     arrangeWaterfall('mangaContainer', mangaImages);
     arrangeWaterfall('mansionContainer', mansionImages);
+}
+
+// 懒加载图片的函数
+function lazyLoadImages() {
+    const images = document.querySelectorAll('img.lazy');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.getAttribute('data-src');
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '0px 0px 100px 0px', // 提前100px加载
+        threshold: 0.1
+    });
+
+    images.forEach(img => observer.observe(img));
 }
 
 document.addEventListener('DOMContentLoaded', initializeTabs);

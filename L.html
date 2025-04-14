@@ -21,6 +21,14 @@
         .gallery-item { width: 100%; }
         .gallery-image { width: 100%; height: auto; border-radius: 5px; object-fit: cover; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
         .gallery-image:hover { transform: scale(1.05); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
+        /* 懒加载图片的过渡效果 */
+img.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+img.lazy[src] {
+    opacity: 1;
+}
         @media (max-width: 992px) { .gallery-container { display: grid; grid-template-columns: 1fr 1fr; } }
         @media (max-width: 576px) { .gallery-container { display: block; } .gallery-column { margin-bottom: 15px; } }
         .image-modal .modal-dialog { max-width: 75%; width: 75%; margin: 0 auto; }
@@ -35,6 +43,7 @@
             .image-modal .modal-image { max-height: 60vh; }
             .image-modal .description { font-size: 1em; }
         }
+        
     </style>
 </head>
 <body>
