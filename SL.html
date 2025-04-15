@@ -378,138 +378,153 @@
             // { src: "img/FZ/40.webp", alt: "Mansion Image 40", description: "" },
         ];
 
-        function arrangeWaterfall(containerId, imageArray) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '';
+        const doodleImages = [
+    { src: "img/SL/ty/ty1.webp", alt: "Doodle Image 1", description: "落書き 1" },
+    { src: "img/SL/ty/ty2.webp", alt: "Doodle Image 2", description: "落書き 2" },
+    { src: "img/SL/ty/ty3.webp", alt: "Doodle Image 3", description: "落書き 3" },
+    { src: "img/SL/ty/ty4.webp", alt: "Doodle Image 4", description: "落書き 4" },
+    { src: "img/SL/ty/ty5.webp", alt: "Doodle Image 5", description: "落書き 5" },
+    { src: "img/SL/ty/ty6.webp", alt: "Doodle Image 6", description: "落書き 6" },
+    { src: "img/SL/ty/ty7.webp", alt: "Doodle Image 7", description: "落書き 7" },
+    { src: "img/SL/ty/ty8.webp", alt: "Doodle Image 8", description: "落書き 8" },
+    { src: "img/SL/ty/ty9.webp", alt: "Doodle Image 9", description: "落書き 9" },
+    { src: "img/SL/ty/ty10.webp", alt: "Doodle Image 10", description: "落書き 10" }
+];
 
-            const width = window.innerWidth;
-            const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+function arrangeWaterfall(containerId, imageArray) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
 
-            const columns = Array(columnCount).fill().map(() => {
-                const col = document.createElement('div');
-                col.className = 'gallery-column';
-                container.appendChild(col);
-                return col;
-            });
+    const width = window.innerWidth;
+    const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
 
-            imageArray.forEach((image, index) => {
-                const item = document.createElement('div');
-                item.className = 'gallery-item';
+    const columns = Array(columnCount).fill().map(() => {
+        const col = document.createElement('div');
+        col.className = 'gallery-column';
+        container.appendChild(col);
+        return col;
+    });
 
-                const img = document.createElement('img');
-                // 使用 data-src 存储真实图片路径，初始不设置 src
-                img.setAttribute('data-src', image.src);
-                img.alt = image.alt;
-                img.className = 'img-fluid gallery-image lazy'; // 添加 lazy 类用于标识
-                img.setAttribute('data-bs-toggle', 'modal');
-                img.setAttribute('data-bs-target', '#imageModal');
-                img.setAttribute('data-index', index);
-                img.setAttribute('data-description', image.description);
-                img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
-                    containerId === 'dcContainer' ? 'dc' :
-                        containerId === 'catdwContainer' ? 'catdw' :
-                            containerId === 'mangaContainer' ? 'manga' : 'mansion');
+    imageArray.forEach((image, index) => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
 
-                // 设置占位符（可选：可替换为低分辨率图片或透明像素）
-                img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+        const img = document.createElement('img');
+        img.setAttribute('data-src', image.src);
+        img.alt = image.alt;
+        img.className = 'img-fluid gallery-image lazy';
+        img.setAttribute('data-bs-toggle', 'modal');
+        img.setAttribute('data-bs-target', '#imageModal');
+        img.setAttribute('data-index', index);
+        img.setAttribute('data-description', image.description);
+        img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
+            containerId === 'dcContainer' ? 'dc' :
+            containerId === 'catdwContainer' ? 'catdw' :
+            containerId === 'mangaContainer' ? 'manga' :
+            containerId === 'mansionContainer' ? 'mansion' :
+            containerId === 'doodleContainer' ? 'doodle' : '');
 
-                item.appendChild(img);
-                columns[index % columnCount].appendChild(item);
+        img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 
-                img.removeEventListener('click', handleImageClick);
-                img.addEventListener('click', handleImageClick);
-            });
+        item.appendChild(img);
+        columns[index % columnCount].appendChild(item);
 
-            // 在图片添加到 DOM 后，触发懒加载观察
-            lazyLoadImages();
-        }
+        img.removeEventListener('click', handleImageClick);
+        img.addEventListener('click', handleImageClick);
+    });
 
-        function handleImageClick() {
-            const src = this.getAttribute('data-src');
-            const description = this.getAttribute('data-description');
-            currentIndex = parseInt(this.getAttribute('data-index'));
-            currentArray = this.getAttribute('data-array');
-            modalImage.src = src;
-            imageDescription.textContent = description || '暂无说明';
-        }
+    lazyLoadImages();
+}
 
-        function initializeTabs() {
-            arrangeWaterfall('galleryContainer', galleryImages);
-            arrangeWaterfall('dcContainer', dcImages);
-            arrangeWaterfall('catdwContainer', catdwImages);
-            arrangeWaterfall('mangaContainer', mangaImages);
-            arrangeWaterfall('mansionContainer', mansionImages);
-        }
+function handleImageClick() {
+    const src = this.getAttribute('data-src');
+    const description = this.getAttribute('data-description');
+    currentIndex = parseInt(this.getAttribute('data-index'));
+    currentArray = this.getAttribute('data-array');
+    modalImage.src = src;
+    imageDescription.textContent = description || '暂无说明';
+}
 
-        // 懒加载图片的函数
-        function lazyLoadImages() {
-            const images = document.querySelectorAll('img.lazy');
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.getAttribute('data-src');
-                        img.classList.remove('lazy');
-                        observer.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '0px 0px 100px 0px', // 提前100px加载
-                threshold: 0.1
-            });
+function initializeTabs() {
+    arrangeWaterfall('galleryContainer', galleryImages);
+    arrangeWaterfall('dcContainer', dcImages);
+    arrangeWaterfall('catdwContainer', catdwImages);
+    arrangeWaterfall('mangaContainer', mangaImages);
+    arrangeWaterfall('mansionContainer', mansionImages);
+    arrangeWaterfall('doodleContainer', doodleImages);
+}
 
-            images.forEach(img => observer.observe(img));
-        }
-
-        document.addEventListener('DOMContentLoaded', initializeTabs);
-        window.addEventListener('resize', initializeTabs);
-
-        document.querySelectorAll('.nav-link').forEach(tab => {
-            tab.addEventListener('shown.bs.tab', () => {
-                const target = tab.getAttribute('href').substring(1);
-                if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
-                else if (target === 'dc') arrangeWaterfall('dcContainer', dcImages);
-                else if (target === 'catdw') arrangeWaterfall('catdwContainer', catdwImages);
-                else if (target === 'manga') arrangeWaterfall('mangaContainer', mangaImages);
-                else if (target === 'mansion') arrangeWaterfall('mansionContainer', mansionImages);
-            });
-        });
-
-        const modalImage = document.getElementById('modalImage');
-        const imageDescription = document.getElementById('imageDescription');
-        const prevButton = document.getElementById('prevImage');
-        const nextButton = document.getElementById('nextImage');
-        let currentIndex = 0;
-        let currentArray = 'gallery';
-
-        prevButton.addEventListener('click', function () {
-            const array = currentArray === 'gallery' ? galleryImages :
-                currentArray === 'dc' ? dcImages :
-                    currentArray === 'catdw' ? catdwImages :
-                        currentArray === 'manga' ? mangaImages :
-                            mansionImages;
-            currentIndex = (currentIndex - 1 + array.length) % array.length;
-            modalImage.src = array[currentIndex].src;
-            imageDescription.textContent = array[currentIndex].description || '暂无说明';
-        });
-
-        nextButton.addEventListener('click', function () {
-            const array = currentArray === 'gallery' ? galleryImages :
-                currentArray === 'dc' ? dcImages :
-                    currentArray === 'catdw' ? catdwImages :
-                        currentArray === 'manga' ? mangaImages :
-                            mansionImages;
-            currentIndex = (currentIndex + 1) % array.length;
-            modalImage.src = array[currentIndex].src;
-            imageDescription.textContent = array[currentIndex].description || '暂无说明';
-        });
-
-        document.addEventListener('keydown', function (event) {
-            if (document.getElementById('imageModal').classList.contains('show')) {
-                if (event.key === 'ArrowLeft') prevButton.click();
-                else if (event.key === 'ArrowRight') nextButton.click();
+function lazyLoadImages() {
+    const images = document.querySelectorAll('img.lazy');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.getAttribute('data-src');
+                img.classList.remove('lazy');
+                observer.unobserve(img);
             }
         });
+    }, {
+        rootMargin: '0px 0px 100px 0px',
+        threshold: 0.1
+    });
+
+    images.forEach(img => observer.observe(img));
+}
+
+document.addEventListener('DOMContentLoaded', initializeTabs);
+window.addEventListener('resize', initializeTabs);
+
+document.querySelectorAll('.nav-link').forEach(tab => {
+    tab.addEventListener('shown.bs.tab', () => {
+        const target = tab.getAttribute('href').substring(1);
+        if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
+        else if (target === 'dc') arrangeWaterfall('dcContainer', dcImages);
+        else if (target === 'catdw') arrangeWaterfall('catdwContainer', catdwImages);
+        else if (target === 'manga') arrangeWaterfall('mangaContainer', mangaImages);
+        else if (target === 'mansion') arrangeWaterfall('mansionContainer', mansionImages);
+        else if (target === 'doodle') arrangeWaterfall('doodleContainer', doodleImages);
+    });
+});
+
+const modalImage = document.getElementById('modalImage');
+const imageDescription = document.getElementById('imageDescription');
+const prevButton = document.getElementById('prevImage');
+const nextButton = document.getElementById('nextImage');
+let currentIndex = 0;
+let currentArray = 'gallery';
+
+prevButton.addEventListener('click', function () {
+    const array = currentArray === 'gallery' ? galleryImages :
+        currentArray === 'dc' ? dcImages :
+        currentArray === 'catdw' ? catdwImages :
+        currentArray === 'manga' ? mangaImages :
+        currentArray === 'mansion' ? mansionImages :
+        currentArray === 'doodle' ? doodleImages : [];
+    currentIndex = (currentIndex - 1 + array.length) % array.length;
+    modalImage.src = array[currentIndex].src;
+    imageDescription.textContent = array[currentIndex].description || '暂无说明';
+});
+
+nextButton.addEventListener('click', function () {
+    const array = currentArray === 'gallery' ? galleryImages :
+        currentArray === 'dc' ? dcImages :
+        currentArray === 'catdw' ? catdwImages :
+        currentArray === 'manga' ? mangaImages :
+        currentArray === 'mansion' ? mansionImages :
+        currentArray === 'doodle' ? doodleImages : [];
+    currentIndex = (currentIndex + 1) % array.length;
+    modalImage.src = array[currentIndex].src;
+    imageDescription.textContent = array[currentIndex].description || '暂无说明';
+});
+
+document.addEventListener('keydown', function (event) {
+    if (document.getElementById('imageModal').classList.contains('show')) {
+        if (event.key === 'ArrowLeft') prevButton.click();
+        else if (event.key === 'ArrowRight') nextButton.click();
+    }
+});
     </script>
 </body>
 
