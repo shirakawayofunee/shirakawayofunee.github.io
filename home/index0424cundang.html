@@ -100,14 +100,18 @@
             <div class="div-head-text-en" data-mouse="mid">HOME</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(1)" id="banner1" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">ニュース</div>
+            <div class="div-head-text-en" data-mouse="mid">NEWS</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(2)" id="banner2" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">登場人物</div>
             <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
           </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(2)" id="banner2" data-mouse="mid">
+          <div class="div-center div-centerpc" onclick="changeBanner(3)" id="banner3" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">世界観</div>
             <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
           </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(3)" id="banner3" data-mouse="mid">
+          <div class="div-center div-centerpc" onclick="changeBanner(4)" id="banner4" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">美術館</div>
             <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
           </div>
@@ -167,6 +171,54 @@
           <img src="img/first/yu.png" alt="" class="first-yuyue-img" onclick="showYuyue()">
           <div data-mouse="mid" class="pageVideo" onclick="showYoutubeVideo(this)">
             <img src="img/first/play.webp" alt="" class="first-yuyue-play">
+          </div>
+        </div>
+      </div>
+      <!-- pc资讯 -->
+      <div class="swiper-slide news pc" data-mouse="small" id="slide2">
+        <div class="news-left animate__animated animate__fadeInLeft" data-mouse="small" id="newsLeft">
+          <div class="swiper-wrapper new-left-swiper" id="imgNews">
+            <!-- <div class="swiper-slide news-left-con">Slide 1</div>
+                  <div class="swiper-slide news-left-con">Slide 2</div>
+                  <div class="swiper-slide news-left-con">Slide 3</div>                  -->
+          </div>
+          <div class="news-left-con-page" data-mouse="small" id="newsPage">
+
+          </div>
+        </div>
+        <div class="news-right" data-mouse="small">
+          <div class="news-right-head">
+            <div class="news-right-head-img animate__animated animate__fadeInUp">
+              <img src="img/News.png" alt="" class="news-icon">
+            </div>
+            <div class="news-right-head-bg animate__animated animate__fadeInUp">
+              <div class="news-right-head-bg-list" onclick="changeNews(0)" id="news0" data-mouse="mid">最新</div>
+              <div class="news-right-head-bg-list" onclick="changeNews(1)" id="news1" data-mouse="mid">お知らせ</div>
+              <div class="news-right-head-bg-list" onclick="changeNews(2)" id="news2" data-mouse="mid">イベント</div>
+              <div class="news-right-head-bg-list" onclick="changeNews(3)" id="news3" data-mouse="mid">ニュース</div>
+            </div>
+          </div>
+          <div class="news-right-con animate__animated animate__fadeInUp">
+            <!-- 遍历获取数据 setNews -->
+            <!-- <div class="news-right-con-list" data-news="0" onclick="goNews(this)">
+                    <div class="news-right-con-list-left">
+                      <div class="news-right-con-list-left-icon">
+                        <img src="./img/see.png" alt="">
+                      </div>
+                      <div class="news-right-con-list-left-type">新闻</div>
+                      <div class="news-right-con-list-left-title">即使是可能萨克斯888888888888888888</div>
+                    </div>
+                    <div>11111111111111</div>
+                  </div>
+                  <div class="news-right-con-list">2</div>
+                  <div class="news-right-con-list">3</div>
+                  <div class="news-right-con-list">4</div>
+                  <div class="news-right-con-list">5</div> -->
+          </div>
+          <div class="news-right-foot animate__animated animate__fadeInUp" data-mouse="mid">
+            <div class="news-right-foot-button" onclick="goToMore()" data-mouse="mid">
+              <img src="img/jian.png" alt="" data-mouse="mid">
+            </div>
           </div>
         </div>
       </div>
@@ -415,6 +467,39 @@
 
         <img src="img/login/y.png" alt="" class="yuyue-button" onclick="showYuyue()" style="display: none;">
       </div>
+      <!-- 手机端新闻 -->
+      <div class="swiper-slide moblie newsMobile" id="slideM2">
+        <div class="newsMobile-top animate__animated animate__fadeInUp">
+          <div class="news-left" data-mouse="small" id="newsLeftM">
+            <div class="swiper-wrapper new-left-swiper" id="imgNewsM">
+              <!-- <div class="swiper-slide news-left-con">Slide 1</div>
+                  <div class="swiper-slide news-left-con">Slide 2</div>
+                  <div class="swiper-slide news-left-con">Slide 3</div>                  -->
+            </div>
+            <div class="news-left-con-page" data-mouse="small" id="newsPageM">
+
+            </div>
+          </div>
+        </div>
+        <div class="newsMobile-mid animate__animated animate__fadeInUp">
+          <div class="newsMobile-mid-head">
+            <div class="news-right-head-bg news-right-head-bg-mobile">
+              <div class="news-right-head-bg-list" onclick="changeNewsM(0)" id="newsM0" data-mouse="mid">最新</div>
+              <div class="news-right-head-bg-list" onclick="changeNewsM(1)" id="newsM1" data-mouse="mid">お知らせ</div>
+              <div class="news-right-head-bg-list" onclick="changeNewsM(2)" id="newsM2" data-mouse="mid">イベント</div>
+              <div class="news-right-head-bg-list" onclick="changeNewsM(3)" id="newsM3" data-mouse="mid">ニュース</div>
+            </div>
+          </div>
+          <div class="newsMobile-mid-list">
+
+          </div>
+        </div>
+        <div class="newsMobile-bottom animate__animated animate__fadeInUp">
+          <div class="news-right-foot-button" onclick="goToMoreM()">
+            <img src="img/jian.png" alt="">
+          </div>
+        </div>
+      </div>
       <!-- mobile角色 -->
       <div class="swiper-slide moblie characterMobile" id="slideM3">
         <div class="characterMobile-top" id="roleBgM">
@@ -553,15 +638,19 @@
           <div class="div-head-text-en" data-mouse="mid">HOME</div>
         </div>
         <div class="div-center div-center-mobile" onclick="changeBannerMobile(1)" id="bannerM1" data-type="share">
+          <div class="div-head-text" data-mouse="mid">ニュース</div>
+          <div class="div-head-text-en" data-mouse="mid">NEWS</div>
+        </div>
+        <div class="div-center div-center-mobile" onclick="changeBannerMobile(2)" id="bannerM2" data-type="share">
           <div class="div-head-text" data-mouse="mid">登場人物</div>
           <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
         </div>
-        <div class="div-center div-center-mobile" onclick="changeBannerMobile(2)" id="bannerM2" data-type="share">
+        <div class="div-center div-center-mobile" onclick="changeBannerMobile(3)" id="bannerM3" data-type="share">
           <div class="div-head-text" data-mouse="mid">世界観</div>
           <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
         </div>
-        <div class="div-center div-center-mobile" onclick="changeBannerMobile(3)" id="bannerM3" data-type="share">
-          <div class="div-head-text" data-mouse="mid">美術館</div>
+        <div class="div-center div-center-mobile" onclick="changeBannerMobile(4)" id="bannerM4" data-type="share">
+          <div class="div-head-text" data-mouse="mid">展示場</div>
           <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
         </div>
       </div>
@@ -592,6 +681,35 @@
     <div class="qqPageM fadeInUpSelf">
     </div>
   </div>
+  <!--pc 声明 -->
+  <div class="statement pc">
+
+  </div>
+  <!-- 手机端声明 -->
+  <div class="statementMobile mobile" style="display: none;"></div>
+  <!-- pc分享 -->
+  <div class="share-content pc animate__animated animate__fadeIn" id="share" data-mouse="mid" data-type="share">
+    <div data-mouse="mid" class="share-content-item" data-type="share">
+      <div class="share-content-twitter" data-mouse="mid" data-type="share"
+        onclick="sendGA('SNS_top_twitter');goTo('t')"></div>
+    </div>
+    <div data-mouse="mid" class="share-content-item" data-type="share">
+      <div class="share-content-youtube" data-mouse="mid" data-type="share"
+        onclick="sendGA('SNS_top_youtube');goTo('y')"></div>
+    </div>
+    <div data-mouse="mid" class="share-content-item" data-type="share">
+      <div class="share-content-line" data-mouse="mid" data-type="share" onclick="sendGA('SNS_top_line');goTo('line')">
+      </div>
+    </div>
+    <div data-mouse="mid" class="share-content-item" data-type="share">
+      <div class="share-content-tiktok" data-mouse="mid" data-type="share"
+        onclick="sendGA('SNS_top_tiktok');goTo('tiktok')"></div>
+    </div>
+    <div data-mouse="mid" class="share-content-item" data-type="share">
+      <div class="share-content-discord" data-mouse="mid" data-type="share"
+        onclick="sendGA('SNS_top_discord');goTo('discord')"></div>
+    </div>
+  </div>
   <div class="mask"></div>
   <!-- pc图集详情 -->
   <div class="pc papermaskDetail animate__animated animate__fadeInUp" id="papermaskDetail" data-mouse="small">
@@ -614,6 +732,8 @@
   <div class="mobile papermaskMobileDetail animate__animated animate__fadeInUp" onclick="hidePaperBigM()">
     <img src="#" alt="" data-mouse="small" class="papermaskDetailTop-zoom-mobile" id="papermaskDetailTop-zoom-mobile">
   </div>
+  <!-- pc新闻页 -->
+  <!-- 手机端新闻页 -->
   <!-- 音频 -->
   <div>
     <audio src="mp3/bg/bgm.mp3" loop id="bgm"></audio>
