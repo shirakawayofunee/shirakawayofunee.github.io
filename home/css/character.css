@@ -62,9 +62,10 @@
   }
   
   .character-right-left img {
-    height: 110%;
+    height: 85%;
     object-fit: contain;
     position: absolute;
+    top: 9.5%;
   }
   
   .character-right-left img:nth-child(1) {
