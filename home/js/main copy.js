@@ -42,55 +42,6 @@ all.onmousemove = function (e) {
     // d1.style['animation-duration'] = '0.3s';
   }
 };
-/* all.onmousemove = function (e) {
-  d1.style.top = e.clientY + "px";
-  d1.style.left = e.clientX + "px";
-
-  if (e.target.dataset.mouse == "big") {
-      d1.className = "div div1"; // 使用大光标样式
-      // 如果需要动态图片，可保留以下逻辑
-      if (e.target.dataset.img) {
-          d1.style.background = `url(${e.target.dataset.img}) no-repeat center`;
-          d1.style.backgroundSize = `contain`;
-          d1.style.backgroundPositionX = e.offsetX * -1 + "px";
-          d1.style.backgroundPositionY = e.offsetY * -1 + "px";
-      }
-  } else if (e.target.dataset.mouse == "small") {
-      d1.className = "div div4"; // 使用小光标样式
-      d1.style.background = ""; // 清空动态背景
-  } else if (e.target.dataset.mouse == "mid") {
-      d1.className = "div div3"; // 使用中光标样式
-      d1.style.background = ""; // 清空动态背景
-  } else {
-      d1.className = "div div3"; // 默认中光标
-      d1.style.background = "";
-  }
-}; */
-/* all.onmousemove = function (e) {
-  d1.style.top = e.clientY + "px";
-  d1.style.left = e.clientX + "px";
-
-  if (e.target.dataset.mouse == "big") {
-      d1.className = "div div1"; // 使用大光标样式
-      if (e.target.dataset.img) {
-          // 恢复动态背景和偏移效果
-          d1.style.background = `url(${e.target.dataset.img}) no-repeat center`;
-          d1.style.backgroundSize = `contain`;
-          d1.style.backgroundPositionX = e.offsetX * -1 + "px"; // 偏移效果
-          d1.style.backgroundPositionY = e.offsetY * -1 + "px";
-      }
-  } else if (e.target.dataset.mouse == "small") {
-      d1.className = "div div4"; // 使用小光标样式
-      d1.style.background = ""; // 清空动态背景，使用 CSS 定义的素材图
-  } else if (e.target.dataset.mouse == "mid") {
-      d1.className = "div div3"; // 使用中光标样式
-      d1.style.background = ""; // 清空动态背景，使用 CSS 定义的素材图
-  } else {
-      d1.className = "div div3"; // 默认中光标
-      d1.style.background = "";
-  }
-}; */
-
 all.onclick = function (e) {
   //console.log(e)
 

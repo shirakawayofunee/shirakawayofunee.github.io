@@ -33,40 +33,36 @@
             75% { opacity: 0.2;}
             100% {opacity: 0.5;} 
         }
-/* 基础光标样式 */
-.div {
-    position: absolute;
-    z-index: 1000;
-    pointer-events: none; /* 确保光标不干扰鼠标事件 */
-    border-radius: 50%;
-}
-
-.div1{
-    width: 50px;
-    height:50px;
-    /* background: #b55829 url("1.png") no-repeat ; */
-
-}
-.div2{
-    width: 12px;
-    height:12px;
-    background: #b55829;
-    animation-name: ball;
-    animation-duration: 0.3s;
-}
-
-/* 中光标（data-mouse="mid"） */
-.div3 {
-    width: 36px; /* 根据素材图调整 */
-    height: 36px;
-    background: url('../img/cursor-mid.png') no-repeat center; /* 可使用不同素材图 */
-    background-size: contain;
-}
-
-/* 小光标（data-mouse="small"） */
-.div4 {
-    width: 24px; /* 根据素材图调整 */
-    height: 24px;
-    background: url('../img/cursor-small.png') no-repeat center; /* 可使用不同素材图 */
-    background-size: contain;
-}
+    .div1{
+            width: 50px;
+            height:50px;
+            /* background: #b55829 url("1.png") no-repeat ; */
+        
+        }
+    .div2{
+            width: 12px;
+            height:12px;
+            background: #b55829;
+            animation-name: ball;
+            animation-duration: 0.3s;
+        }
+    .div3{
+            width: 12px;
+            height:12px;
+            background: rgba(226, 97, 11,.5);
+            border: 1px solid rgba(255,255,255,1);
+            
+        }
+        .div4{
+            width: 12px;
+            height:12px;
+            background: rgba(226, 97, 11,.7);
+            border: 1px solid rgba(255,255,255,1);
+        }
+        
+    .div{
+            border-radius: 50%;
+            position: absolute;
+            z-index: 1000;
+            
+        }
