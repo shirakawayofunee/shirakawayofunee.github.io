@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.top-section, .bottom-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.panel {
+    width: 48%;
+    background-color: #fff;
+    border: 2px solid #000;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.image-placeholder {
+    width: 100%;
+    background-color: #ccc;
+    border-bottom: 2px solid #000;
+}
+
+.top-image {
+    height: 200px; /* 上半部分图片占位符高度 */
+}
+
+.bottom-image {
+    height: 300px; /* 下半部分图片占位符高度 */
+}
+
+.text-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.text-content h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.text-content h1::before {
+    content: '✦';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+
+.text-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.footer-text span {
+    border: 1px solid #000;
+    padding: 2px 5px;
+}
+
+.insertable-content {
+    width: 100%;
+    min-height: 200px;
+    background-color: #e0e0e0;
+    border: 1px dashed #000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}

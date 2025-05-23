@@ -155,6 +155,7 @@
             }
         }
 
+        /* 懒加载图片的过渡效果 */
         img.lazy {
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -179,10 +180,6 @@
                         aria-selected="false">テーマ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="death-tab" data-bs-toggle="tab" href="#death" role="tab"
-                        aria-controls="death" aria-selected="false">死后</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" id="manga-tab" data-bs-toggle="tab" href="#manga" role="tab"
                         aria-controls="manga" aria-selected="false">漫画</a>
                 </li>
@@ -191,8 +188,8 @@
                         aria-controls="mansion" aria-selected="false">邸宅</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="doodle-tab" data-bs-toggle="tab" href="#doodle" role="tab"
-                        aria-controls="doodle" aria-selected="false">落書き</a>
+                    <a class="nav-link" id="doodle-tab" data-bs-toggle="tab" href="#doodle" role="tab" aria-controls="doodle"
+                        aria-selected="false">落書き</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="catdw-tab" data-bs-toggle="tab" href="#catdw" role="tab"
@@ -207,8 +204,8 @@
             <div class="tab-pane fade" id="dc" role="tabpanel" aria-labelledby="dc-tab">
                 <div class="gallery-container" id="dcContainer"></div>
             </div>
-            <div class="tab-pane fade" id="death" role="tabpanel" aria-labelledby="death-tab">
-                <div class="gallery-container" id="deathContainer"></div>
+            <div class="tab-pane fade" id="catdw" role="tabpanel" aria-labelledby="catdw-tab">
+                <div class="gallery-container" id="catdwContainer"></div>
             </div>
             <div class="tab-pane fade" id="manga" role="tabpanel" aria-labelledby="manga-tab">
                 <div class="gallery-container" id="mangaContainer"></div>
@@ -218,9 +215,6 @@
             </div>
             <div class="tab-pane fade" id="doodle" role="tabpanel" aria-labelledby="doodle-tab">
                 <div class="gallery-container" id="doodleContainer"></div>
-            </div>
-            <div class="tab-pane fade" id="catdw" role="tabpanel" aria-labelledby="catdw-tab">
-                <div class="gallery-container" id="catdwContainer"></div>
             </div>
         </div>
     </div>
@@ -272,6 +266,11 @@
             { src: "img/SL/SL16.webp", alt: "Gallery Image 16", description: "" },
             { src: "img/SL/SL17.webp", alt: "Gallery Image 17", description: "" },
             { src: "img/SL/SL18.webp", alt: "Gallery Image 18", description: "" },
+/*             { src: "img/SL/SL19.webp", alt: "Gallery Image 19", description: "" },
+            { src: "img/SL/SL20.webp", alt: "Gallery Image 20", description: "" },
+            { src: "img/SL/SL21.webp", alt: "Gallery Image 21", description: "" },
+            { src: "img/SL/SL22.webp", alt: "Gallery Image 22", description: "" },
+            { src: "img/SL/SL23.webp", alt: "Gallery Image 23", description: "" }, */
         ];
 
         const dcImages = [
@@ -318,57 +317,30 @@
             // { src: "img/DC/DC40.webp", alt: "DC Image 40", description: "" }
         ];
 
-        const deathImages = [
-            { src: "img/Death/death1.webp", alt: "Death Image 1", description: "" },
-            { src: "img/Death/death2.webp", alt: "Death Image 2", description: "" },
-            { src: "img/Death/death3.webp", alt: "Death Image 3", description: "" },
-            { src: "img/Death/death4.webp", alt: "Death Image 4", description: "" },
-            { src: "img/Death/death5.webp", alt: "Death Image 5", description: "" },
-            { src: "img/Death/death6.webp", alt: "Death Image 6", description: "" },
-            { src: "img/Death/death7.webp", alt: "Death Image 7", description: "" },
-            { src: "img/Death/death8.webp", alt: "Death Image 8", description: "" },
-            { src: "img/Death/death9.webp", alt: "Death Image 9", description: "" },
-            { src: "img/Death/death10.webp", alt: "Death Image 10", description: "" },
-            { src: "img/Death/death11.webp", alt: "Death Image 11", description: "" },
-            { src: "img/Death/death12.webp", alt: "Death Image 12", description: "" },
-            { src: "img/Death/death13.webp", alt: "Death Image 13", description: "" },
-            { src: "img/Death/death14.webp", alt: "Death Image 14", description: "" },
-            { src: "img/Death/death15.webp", alt: "Death Image 15", description: "" },
-            { src: "img/Death/death16.webp", alt: "Death Image 16", description: "" },
-            { src: "img/Death/death17.webp", alt: "Death Image 17", description: "" },
-            { src: "img/Death/death18.webp", alt: "Death Image 18", description: "" },
-            { src: "img/Death/death19.webp", alt: "Death Image 19", description: "" },
-            { src: "img/Death/death20.webp", alt: "Death Image 20", description: "" },
-            { src: "img/Death/death21.webp", alt: "Death Image 21", description: "" },
-            { src: "img/Death/death22.webp", alt: "Death Image 22", description: "" },
-            { src: "img/Death/death23.webp", alt: "Death Image 23", description: "" },
-            { src: "img/Death/death24.webp", alt: "Death Image 24", description: "" },
-            { src: "img/Death/death25.webp", alt: "Death Image 25", description: "" },
-            { src: "img/Death/death26.webp", alt: "Death Image 26", description: "" },
-            { src: "img/Death/death27.webp", alt: "Death Image 27", description: "" },
-            { src: "img/Death/death28.webp", alt: "Death Image 28", description: "" },
-            { src: "img/Death/death29.webp", alt: "Death Image 29", description: "" },
-            { src: "img/Death/death30.webp", alt: "Death Image 30", description: "" },
-            { src: "img/Death/death31.webp", alt: "Death Image 31", description: "" },
-            { src: "img/Death/death32.webp", alt: "Death Image 32", description: "" },
+        const catdwImages = [
+            { src: "img/SL/cat/dw1.webp", alt: "Catdw Image 1", description: "" },
+            { src: "img/SL/cat/dw2.webp", alt: "Catdw Image 1", description: "" },
+            { src: "img/SL/cat/dw3.webp", alt: "Catdw Image 1", description: "" },
+            { src: "img/SL/cat/dw4.webp", alt: "Catdw Image 1", description: "" },
         ];
 
         const mangaImages = [
-            { src: "img/SL/MH/1.webp", alt: "Manga Image 1", description: "AU7" },
-            { src: "img/SL/MH/2.webp", alt: "Manga Image 2", description: "AU7" },
-            { src: "img/SL/MH/3.webp", alt: "Manga Image 3", description: "AU7" },
+            { src: "img/SL/MH/1.webp", alt: "Manga Image 1", description: "" },
+            { src: "img/SL/MH/2.webp", alt: "Manga Image 2", description: "" },
+            { src: "img/SL/MH/3.webp", alt: "Manga Image 3", description: "" },
             /*              { src: "img/SL/MH/4.webp", alt: "Manga Image 4", description: "" },
-             { src: "img/SL/MH/5.webp", alt: "Manga Image 5", description: "" },
-             { src: "img/SL/MH/6.webp", alt: "Manga Image 6", description: "" },
-             { src: "img/SL/MH/7.webp", alt: "Manga Image 7", description: "" }, */
+                         { src: "img/SL/MH/5.webp", alt: "Manga Image 5", description: "" },
+                         { src: "img/SL/MH/6.webp", alt: "Manga Image 6", description: "" },
+                         { src: "img/SL/MH/7.webp", alt: "Manga Image 7", description: "" }, */
         ];
 
+        // 新增邸宅图片数组，预留40张
         const mansionImages = [
             { src: "img/FZ/1.webp", alt: "Mansion Image 1", description: "" },
             { src: "img/FZ/2.webp", alt: "Mansion Image 2", description: "" },
             { src: "img/FZ/3.webp", alt: "Mansion Image 3", description: "庭園" },
             { src: "img/FZ/4.webp", alt: "Mansion Image 4", description: "" },
-            /*             { src: "img/FZ/5.webp", alt: "Mansion Image 5", description: "" },
+/*             { src: "img/FZ/5.webp", alt: "Mansion Image 5", description: "" },
             { src: "img/FZ/6.webp", alt: "Mansion Image 6", description: "" },
             { src: "img/FZ/7.webp", alt: "Mansion Image 7", description: "" },
             { src: "img/FZ/8.webp", alt: "Mansion Image 8", description: "" },
@@ -406,166 +378,154 @@
             // { src: "img/FZ/40.webp", alt: "Mansion Image 40", description: "" },
         ];
 
-        const doodleImages = [
-            { src: "img/SL/ty/ty1.webp", alt: "Doodle Image 1", description: "落書き 1" },
-            { src: "img/SL/ty/ty2.webp", alt: "Doodle Image 2", description: "落書き 2" },
-            { src: "img/SL/ty/ty3.webp", alt: "Doodle Image 3", description: "落書き 3" },
-            { src: "img/SL/ty/ty4.webp", alt: "Doodle Image 4", description: "眠？" },
-            { src: "img/SL/ty/ty5.webp", alt: "Doodle Image 5", description: "落書き 5" },
-            { src: "img/SL/ty/ty6.webp", alt: "Doodle Image 6", description: "落書き 6" },
-            { src: "img/SL/ty/ty7.webp", alt: "Doodle Image 7", description: "落書き 7" },
-            { src: "img/SL/ty/ty8.webp", alt: "Doodle Image 8", description: "落書き 8" },
-            { src: "img/SL/ty/ty9.webp", alt: "Doodle Image 9", description: "眠る" },
-            { src: "img/SL/ty/ty10.webp", alt: "Doodle Image 10", description: "落書き 10" },
-            { src: "img/SL/ty/ty11.webp", alt: "Doodle Image 11", description: "落書き 11" },
-        ];
+            const doodleImages = [
+                { src: "img/SL/ty/ty1.webp", alt: "Doodle Image 1", description: "落書き 1" },
+                { src: "img/SL/ty/ty2.webp", alt: "Doodle Image 2", description: "落書き 2" },
+                { src: "img/SL/ty/ty3.webp", alt: "Doodle Image 3", description: "落書き 3" },
+                { src: "img/SL/ty/ty4.webp", alt: "Doodle Image 4", description: "眠？" },
+                { src: "img/SL/ty/ty5.webp", alt: "Doodle Image 5", description: "落書き 5" },
+                { src: "img/SL/ty/ty6.webp", alt: "Doodle Image 6", description: "落書き 6" },
+                { src: "img/SL/ty/ty7.webp", alt: "Doodle Image 7", description: "落書き 7" },
+                { src: "img/SL/ty/ty8.webp", alt: "Doodle Image 8", description: "落書き 8" },
+                { src: "img/SL/ty/ty9.webp", alt: "Doodle Image 9", description: "眠る" },
+                { src: "img/SL/ty/ty10.webp", alt: "Doodle Image 10", description: "落書き 10" },
+                { src: "img/SL/ty/ty11.webp", alt: "Doodle Image 11", description: "落書き 11" },
+            ];
 
-        const catdwImages = [
-            { src: "img/SL/cat/dw1.webp", alt: "Catdw Image 1", description: "" },
-            { src: "img/SL/cat/dw2.webp", alt: "Catdw Image 2", description: "" },
-            { src: "img/SL/cat/dw3.webp", alt: "Catdw Image 3", description: "" },
-            { src: "img/SL/cat/dw4.webp", alt: "Catdw Image 4", description: "" },
-        ];
+function arrangeWaterfall(containerId, imageArray) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
 
-        function arrangeWaterfall(containerId, imageArray) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '';
+    const width = window.innerWidth;
+    const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
 
-            const width = window.innerWidth;
-            const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+    const columns = Array(columnCount).fill().map(() => {
+        const col = document.createElement('div');
+        col.className = 'gallery-column';
+        container.appendChild(col);
+        return col;
+    });
 
-            const columns = Array(columnCount).fill().map(() => {
-                const col = document.createElement('div');
-                col.className = 'gallery-column';
-                container.appendChild(col);
-                return col;
-            });
+    imageArray.forEach((image, index) => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
 
-            imageArray.forEach((image, index) => {
-                const item = document.createElement('div');
-                item.className = 'gallery-item';
+        const img = document.createElement('img');
+        img.setAttribute('data-src', image.src);
+        img.alt = image.alt;
+        img.className = 'img-fluid gallery-image lazy';
+        img.setAttribute('data-bs-toggle', 'modal');
+        img.setAttribute('data-bs-target', '#imageModal');
+        img.setAttribute('data-index', index);
+        img.setAttribute('data-description', image.description);
+        img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
+            containerId === 'dcContainer' ? 'dc' :
+            containerId === 'catdwContainer' ? 'catdw' :
+            containerId === 'mangaContainer' ? 'manga' :
+            containerId === 'mansionContainer' ? 'mansion' :
+            containerId === 'doodleContainer' ? 'doodle' : '');
 
-                const img = document.createElement('img');
-                img.setAttribute('data-src', image.src);
-                img.alt = image.alt;
-                img.className = 'img-fluid gallery-image lazy';
-                img.setAttribute('data-bs-toggle', 'modal');
-                img.setAttribute('data-bs-target', '#imageModal');
-                img.setAttribute('data-index', index);
-                img.setAttribute('data-description', image.description);
-                img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
-                    containerId === 'dcContainer' ? 'dc' :
-                        containerId === 'deathContainer' ? 'death' :
-                            containerId === 'mangaContainer' ? 'manga' :
-                                containerId === 'mansionContainer' ? 'mansion' :
-                                    containerId === 'doodleContainer' ? 'doodle' :
-                                        containerId === 'catdwContainer' ? 'catdw' : '');
+        img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 
-                img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+        item.appendChild(img);
+        columns[index % columnCount].appendChild(item);
 
-                item.appendChild(img);
-                columns[index % columnCount].appendChild(item);
+        img.removeEventListener('click', handleImageClick);
+        img.addEventListener('click', handleImageClick);
+    });
 
-                img.removeEventListener('click', handleImageClick);
-                img.addEventListener('click', handleImageClick);
-            });
+    lazyLoadImages();
+}
 
-            lazyLoadImages();
-        }
+function handleImageClick() {
+    const src = this.getAttribute('data-src');
+    const description = this.getAttribute('data-description');
+    currentIndex = parseInt(this.getAttribute('data-index'));
+    currentArray = this.getAttribute('data-array');
+    modalImage.src = src;
+    imageDescription.textContent = description || '暂无说明';
+}
 
-        function handleImageClick() {
-            const src = this.getAttribute('data-src');
-            const description = this.getAttribute('data-description');
-            currentIndex = parseInt(this.getAttribute('data-index'));
-            currentArray = this.getAttribute('data-array');
-            modalImage.src = src;
-            imageDescription.textContent = description || '暂无说明';
-        }
+function initializeTabs() {
+    arrangeWaterfall('galleryContainer', galleryImages);
+    arrangeWaterfall('dcContainer', dcImages);
+    arrangeWaterfall('catdwContainer', catdwImages);
+    arrangeWaterfall('mangaContainer', mangaImages);
+    arrangeWaterfall('mansionContainer', mansionImages);
+    arrangeWaterfall('doodleContainer', doodleImages);
+}
 
-        function initializeTabs() {
-            arrangeWaterfall('galleryContainer', galleryImages);
-            arrangeWaterfall('dcContainer', dcImages);
-            arrangeWaterfall('deathContainer', deathImages);
-            arrangeWaterfall('mangaContainer', mangaImages);
-            arrangeWaterfall('mansionContainer', mansionImages);
-            arrangeWaterfall('doodleContainer', doodleImages);
-            arrangeWaterfall('catdwContainer', catdwImages);
-        }
-
-        function lazyLoadImages() {
-            const images = document.querySelectorAll('img.lazy');
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.getAttribute('data-src');
-                        img.classList.remove('lazy');
-                        observer.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '0px 0px 100px 0px',
-                threshold: 0.1
-            });
-
-            images.forEach(img => observer.observe(img));
-        }
-
-        document.addEventListener('DOMContentLoaded', initializeTabs);
-        window.addEventListener('resize', initializeTabs);
-
-        document.querySelectorAll('.nav-link').forEach(tab => {
-            tab.addEventListener('shown.bs.tab', () => {
-                const target = tab.getAttribute('href').substring(1);
-                if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
-                else if (target === 'dc') arrangeWaterfall('dcContainer', dcImages);
-                else if (target === 'death') arrangeWaterfall('deathContainer', deathImages);
-                else if (target === 'manga') arrangeWaterfall('mangaContainer', mangaImages);
-                else if (target === 'mansion') arrangeWaterfall('mansionContainer', mansionImages);
-                else if (target === 'doodle') arrangeWaterfall('doodleContainer', doodleImages);
-                else if (target === 'catdw') arrangeWaterfall('catdwContainer', catdwImages);
-            });
-        });
-
-        const modalImage = document.getElementById('modalImage');
-        const imageDescription = document.getElementById('imageDescription');
-        const prevButton = document.getElementById('prevImage');
-        const nextButton = document.getElementById('nextImage');
-        let currentIndex = 0;
-        let currentArray = 'gallery';
-
-        prevButton.addEventListener('click', function () {
-            const array = currentArray === 'gallery' ? galleryImages :
-                currentArray === 'dc' ? dcImages :
-                    currentArray === 'death' ? deathImages :
-                        currentArray === 'manga' ? mangaImages :
-                            currentArray === 'mansion' ? mansionImages :
-                                currentArray === 'doodle' ? doodleImages :
-                                    currentArray === 'catdw' ? catdwImages : [];
-            currentIndex = (currentIndex - 1 + array.length) % array.length;
-            modalImage.src = array[currentIndex].src;
-            imageDescription.textContent = array[currentIndex].description || '暂无说明';
-        });
-
-        nextButton.addEventListener('click', function () {
-            const array = currentArray === 'gallery' ? galleryImages :
-                currentArray === 'dc' ? dcImages :
-                    currentArray === 'death' ? deathImages :
-                        currentArray === 'manga' ? mangaImages :
-                            currentArray === 'mansion' ? mansionImages :
-                                currentArray === 'doodle' ? doodleImages :
-                                    currentArray === 'catdw' ? catdwImages : [];
-            currentIndex = (currentIndex + 1) % array.length;
-            modalImage.src = array[currentIndex].src;
-            imageDescription.textContent = array[currentIndex].description || '暂无说明';
-        });
-
-        document.addEventListener('keydown', function (event) {
-            if (document.getElementById('imageModal').classList.contains('show')) {
-                if (event.key === 'ArrowLeft') prevButton.click();
-                else if (event.key === 'ArrowRight') nextButton.click();
+function lazyLoadImages() {
+    const images = document.querySelectorAll('img.lazy');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.getAttribute('data-src');
+                img.classList.remove('lazy');
+                observer.unobserve(img);
             }
         });
+    }, {
+        rootMargin: '0px 0px 100px 0px',
+        threshold: 0.1
+    });
+
+    images.forEach(img => observer.observe(img));
+}
+
+document.addEventListener('DOMContentLoaded', initializeTabs);
+window.addEventListener('resize', initializeTabs);
+
+document.querySelectorAll('.nav-link').forEach(tab => {
+    tab.addEventListener('shown.bs.tab', () => {
+        const target = tab.getAttribute('href').substring(1);
+        if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
+        else if (target === 'dc') arrangeWaterfall('dcContainer', dcImages);
+        else if (target === 'catdw') arrangeWaterfall('catdwContainer', catdwImages);
+        else if (target === 'manga') arrangeWaterfall('mangaContainer', mangaImages);
+        else if (target === 'mansion') arrangeWaterfall('mansionContainer', mansionImages);
+        else if (target === 'doodle') arrangeWaterfall('doodleContainer', doodleImages);
+    });
+});
+
+const modalImage = document.getElementById('modalImage');
+const imageDescription = document.getElementById('imageDescription');
+const prevButton = document.getElementById('prevImage');
+const nextButton = document.getElementById('nextImage');
+let currentIndex = 0;
+let currentArray = 'gallery';
+
+prevButton.addEventListener('click', function () {
+    const array = currentArray === 'gallery' ? galleryImages :
+        currentArray === 'dc' ? dcImages :
+        currentArray === 'catdw' ? catdwImages :
+        currentArray === 'manga' ? mangaImages :
+        currentArray === 'mansion' ? mansionImages :
+        currentArray === 'doodle' ? doodleImages : [];
+    currentIndex = (currentIndex - 1 + array.length) % array.length;
+    modalImage.src = array[currentIndex].src;
+    imageDescription.textContent = array[currentIndex].description || '暂无说明';
+});
+
+nextButton.addEventListener('click', function () {
+    const array = currentArray === 'gallery' ? galleryImages :
+        currentArray === 'dc' ? dcImages :
+        currentArray === 'catdw' ? catdwImages :
+        currentArray === 'manga' ? mangaImages :
+        currentArray === 'mansion' ? mansionImages :
+        currentArray === 'doodle' ? doodleImages : [];
+    currentIndex = (currentIndex + 1) % array.length;
+    modalImage.src = array[currentIndex].src;
+    imageDescription.textContent = array[currentIndex].description || '暂无说明';
+});
+
+document.addEventListener('keydown', function (event) {
+    if (document.getElementById('imageModal').classList.contains('show')) {
+        if (event.key === 'ArrowLeft') prevButton.click();
+        else if (event.key === 'ArrowRight') nextButton.click();
+    }
+});
     </script>
 </body>
 
