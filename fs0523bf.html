@@ -240,7 +240,6 @@
 
         .gallery-item {
             width: 100%;
-            position: relative; /* 添加以支持标题定位 */
         }
 
         .gallery-image {
@@ -255,15 +254,6 @@
         .gallery-image:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .caption {
-            font-size: 14px;
-            color: #666;
-            text-align: center;
-            padding: 8px 0;
-            width: 100%;
-            background: #fff; /* 与画廊背景一致 */
         }
 
         /* 模态框 */
@@ -477,6 +467,23 @@
                                 <div class="color-square" style="background-color: #957ED9;"></div>
                             </div>
                         </div>
+<!--                         <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #C4E5E3;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #A9001F;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #A7C8CF;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #F9EEE8;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #88A3BA;"></div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -495,6 +502,7 @@
                         <p>小物：リボルバー、ベルト、結婚指輪</p>
                         <p>モチーフ：ゴシック、モチーフアスクレピオスの杖、赤い糸</p>
                         <p> レオポルドにしか見えない狼の耳と尾を持っている。</p>
+                        
                     </div>
                     <div class="avatar-section">
                         <img src="img/bl-severo.jpg" alt="L Avatar" class="avatar-image">
@@ -539,6 +547,23 @@
                                 <div class="color-square" style="background-color: #1A2334;"></div>
                             </div>
                         </div>
+<!--                         <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #2A3334;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #485E5F;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #4F525B;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #679F92;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #1A2334;"></div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -616,7 +641,7 @@
     <script>
         const galleryImages = {
             l: [
-                { src: "img/clothes/l/000.webp", alt: "Outfit 1" },
+            { src: "img/clothes/l/000.webp", alt: "Outfit 1" },
                 { src: "img/clothes/l/1.webp", alt: "Outfit 1" },
                 { src: "img/clothes/l/2.webp", alt: "Outfit 2" },
                 { src: "img/clothes/l/3.webp", alt: "Outfit 3" },
@@ -667,6 +692,20 @@
                 { src: "img/clothes/ring/4.webp", alt: "Ring Outfit 4" },
                 { src: "img/clothes/ring/5.webp", alt: "Ring Outfit 5" },
                 { src: "img/clothes/ring/6.webp", alt: "Ring Outfit 6" },
+                                // { src: "img/clothes/ring/7.jpg", alt: "Ring Outfit 7" },
+                // { src: "img/clothes/ring/8.jpg", alt: "Ring Outfit 8" },
+                // { src: "img/clothes/ring/9.jpg", alt: "Ring Outfit 9" },
+                // { src: "img/clothes/ring/10.jpg", alt: "Ring Outfit 10" },
+                // { src: "img/clothes/ring/11.jpg", alt: "Ring Outfit 11" },
+                // { src: "img/clothes/ring/12.jpg", alt: "Ring Outfit 12" },
+                // { src: "img/clothes/ring/13.jpg", alt: "Ring Outfit 13" },
+                // { src: "img/clothes/ring/14.jpg", alt: "Ring Outfit 14" },
+                // { src: "img/clothes/ring/15.jpg", alt: "Ring Outfit 15" },
+                // { src: "img/clothes/ring/16.jpg", alt: "Ring Outfit 16" },
+                // { src: "img/clothes/ring/17.jpg", alt: "Ring Outfit 17" },
+                // { src: "img/clothes/ring/18.jpg", alt: "Ring Outfit 18" },
+                // { src: "img/clothes/ring/19.jpg", alt: "Ring Outfit 19" },
+                // { src: "img/clothes/ring/20.jpg", alt: "Ring Outfit 20" },
             ],
             lYaosu: [
                 { src: "img/clothes/l/yaosu/1.webp", alt: "L Yaosu 1" },
@@ -722,12 +761,7 @@
                 img.setAttribute('data-array', containerId.replace('Container', ''));
                 img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 
-                const caption = document.createElement('div');
-                caption.className = 'caption';
-                caption.textContent = image.alt || '';
-
                 item.appendChild(img);
-                item.appendChild(caption);
                 columns[index % columnCount].appendChild(item);
 
                 img.removeEventListener('click', handleImageClick);

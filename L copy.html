@@ -18,12 +18,17 @@
         .gallery-header .nav-link.active { color: #000; border-bottom: 2px solid #000; }
         .gallery-container { display: flex; gap: 15px; width: 100%; }
         .gallery-column { flex: 1; display: flex; flex-direction: column; gap: 15px; }
-        .gallery-item { width: 100%; position: relative; }
+        .gallery-item { width: 100%; }
         .gallery-image { width: 100%; height: auto; border-radius: 5px; object-fit: cover; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
         .gallery-image:hover { transform: scale(1.05); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
-        .caption { font-size: 14px; color: #666; text-align: center; padding: 8px 0; width: 100%; background: #fff; }
-        img.lazy { opacity: 0; transition: opacity 0.3s ease; }
-        img.lazy[src] { opacity: 1; }
+        /* 懒加载图片的过渡效果 */
+img.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+img.lazy[src] {
+    opacity: 1;
+}
         @media (max-width: 992px) { .gallery-container { display: grid; grid-template-columns: 1fr 1fr; } }
         @media (max-width: 576px) { .gallery-container { display: block; } .gallery-column { margin-bottom: 15px; } }
         .image-modal .modal-dialog { max-width: 75%; width: 75%; margin: 0 auto; }
@@ -38,6 +43,7 @@
             .image-modal .modal-image { max-height: 60vh; }
             .image-modal .description { font-size: 1em; }
         }
+        
     </style>
 </head>
 <body>
@@ -119,7 +125,7 @@
             { src: "img/L/L14.webp", alt: "Gallery Image 14", description: "" },
             { src: "img/L/L15.webp", alt: "Gallery Image 15", description: "" },
             { src: "img/L/L16.webp", alt: "Gallery Image 16", description: "" },
-                        // { src: "img/L/gallery/L17.webp", alt: "Gallery Image 17", description: "" },
+            // { src: "img/L/gallery/L17.webp", alt: "Gallery Image 17", description: "" },
             // { src: "img/L/gallery/L18.webp", alt: "Gallery Image 18", description: "" },
             // { src: "img/L/gallery/L19.webp", alt: "Gallery Image 19", description: "" },
             // { src: "img/L/gallery/L20.webp", alt: "Gallery Image 20", description: "" },
@@ -149,7 +155,7 @@
             { src: "img/L/aesthetics/A1.webp", alt: "Aesthetics Image 1", description: "" },
             { src: "img/L/aesthetics/A2.webp", alt: "Aesthetics Image 2", description: "" },
             { src: "img/L/aesthetics/A3.webp", alt: "Aesthetics Image 3", description: "" },
-                        // { src: "img/L/aesthetics/A4.webp", alt: "Aesthetics Image 4", description: "" },
+            // { src: "img/L/aesthetics/A4.webp", alt: "Aesthetics Image 4", description: "" },
             // { src: "img/L/aesthetics/A5.webp", alt: "Aesthetics Image 5", description: "" },
             // { src: "img/L/aesthetics/A6.webp", alt: "Aesthetics Image 6", description: "" },
             // { src: "img/L/aesthetics/A7.webp", alt: "Aesthetics Image 7", description: "" },
@@ -194,7 +200,7 @@
             { src: "img/L/sd/sd3.webp", alt: "SD Image 3", description: "" },
             { src: "img/L/sd/sd4.webp", alt: "SD Image 4", description: "" },
             { src: "img/L/sd/sd5.webp", alt: "SD Image 5", description: "" },
-                        // { src: "img/L/sd/SD6.webp", alt: "SD Image 6", description: "" },
+            // { src: "img/L/sd/SD6.webp", alt: "SD Image 6", description: "" },
             // { src: "img/L/sd/SD7.webp", alt: "SD Image 7", description: "" },
             // { src: "img/L/sd/SD8.webp", alt: "SD Image 8", description: "" },
             // { src: "img/L/sd/SD9.webp", alt: "SD Image 9", description: "" },
@@ -236,7 +242,7 @@
             { src: "img/L/papaver/P2.webp", alt: "Papaver Image 2", description: "" },
             { src: "img/L/papaver/P3.webp", alt: "Papaver Image 3", description: "" },
             { src: "img/L/papaver/P4.webp", alt: "Papaver Image 4", description: "" },
-            { src: "img/L/papaver/P5.webp", alt: "Papaver Image 5", description: "" },
+            { src: "img/L/papaver/P5.webp", alt: "Papaver Image 5", description: "" }
         ];
     
         function arrangeWaterfall(containerId, imageArray) {
@@ -258,9 +264,10 @@
                 item.className = 'gallery-item';
     
                 const img = document.createElement('img');
+                // 使用 data-src 存储真实图片路径，初始不设置 src
                 img.setAttribute('data-src', image.src);
                 img.alt = image.alt;
-                img.className = 'img-fluid gallery-image lazy';
+                img.className = 'img-fluid gallery-image lazy'; // 添加 lazy 类
                 img.setAttribute('data-bs-toggle', 'modal');
                 img.setAttribute('data-bs-target', '#imageModal');
                 img.setAttribute('data-index', index);
@@ -268,20 +275,18 @@
                 img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
                     containerId === 'papaverContainer' ? 'papaver' :
                     containerId === 'sdContainer' ? 'sd' : 'aesthetics');
+    
+                // 设置占位符（透明像素）
                 img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
     
-                const caption = document.createElement('div');
-                caption.className = 'caption';
-                caption.textContent = image.description || '';
-    
                 item.appendChild(img);
-                item.appendChild(caption);
                 columns[index % columnCount].appendChild(item);
     
                 img.removeEventListener('click', handleImageClick);
                 img.addEventListener('click', handleImageClick);
             });
     
+            // 触发懒加载观察
             lazyLoadImages();
         }
     
@@ -301,6 +306,7 @@
             arrangeWaterfall('aestheticsContainer', aestheticsImages);
         }
     
+        // 懒加载图片的函数
         function lazyLoadImages() {
             const images = document.querySelectorAll('img.lazy');
             const observer = new IntersectionObserver((entries, observer) => {
@@ -313,7 +319,7 @@
                     }
                 });
             }, {
-                rootMargin: '0px 0px 100px 0px',
+                rootMargin: '0px 0px 100px 0px', // 提前 100px 加载
                 threshold: 0.1
             });
     
