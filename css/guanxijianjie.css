@@ -13,15 +13,13 @@ body {
 
 .container {
     width: 100%;
+    height: 100%;
     max-width: 1920px;
     margin: 0 auto;
     padding: 20px;
-}
-
-.top-section, .bottom-section {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .panel {
@@ -29,7 +27,8 @@ body {
     background-color: #fff;
     border: 2px solid #000;
     position: relative;
-    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .image-placeholder {
@@ -39,16 +38,17 @@ body {
 }
 
 .top-image {
-    height: 200px; /* 上半部分图片占位符高度 */
+    height: 200px; /* 上部图片占位符高度 */
 }
 
 .bottom-image {
-    height: 300px; /* 下半部分图片占位符高度 */
+    height: 200px; /* 下部图片占位符高度 */
 }
 
 .text-content {
     padding: 20px;
     text-align: center;
+    flex-grow: 1;
 }
 
 .text-content h1 {
