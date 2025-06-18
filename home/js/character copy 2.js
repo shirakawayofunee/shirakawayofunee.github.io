@@ -1,26 +1,25 @@
 let characterMsg = [
-
-  {
-    bg: "1bg.png",
-    rolem: "1m.png",
-    nocheck: "1.png",
-    check: "1c.png",
-    title: "1t.png",
-    str: "「新しいマシンの実験なんだけど――<br>えー、きみがいない場合のＢプランなんて<br>用意してないよ…」",
-    voice: "./mp3/role/1.mp3",
-    image1: "1-1.png",
-    image2: "1-2.png"
-  },
     {
-      bg: "2bg.png",
-      rolem: "2m.png",
-      nocheck: "2.png",
-      check: "2c.png",
-      title: "2t.png",
-      str: "「背中が痒くて木にこすりつけてたら、<br>引っかかって吊るされた人がいたんだ。<br>…救助隊に電話したのは私だってこと、<br>今でも気付いてないだろうなぁ。」",
-      voice: "./mp3/role/2.mp3",
-      image1: "2-1.png",
-      image2: "2-2.png"
+      bg: "5bg.png",
+      rolem: "5m.png",
+      nocheck: "5.png",
+      check: "5c.png",
+      title: "5t.png",
+      str: "「個人の意思よりも命令。<br>…昔、そう教えられました」",
+      voice: "./mp3/role/5.mp3",
+      image1: "5-1.png",
+      image2: "5-2.png"
+    },
+    {
+      bg: "9bg.png",
+      rolem: "9m.png",
+      nocheck: "9.png",
+      check: "9c.png",
+      title: "9t.png",
+      str: "「う〜ん、回したい！<br>なにをって？ みて、あの太陽！<br>ピッカピカに光ってるレコードに見えない？」",
+      voice: "./mp3/role/9.mp3",
+      image1: "9-1.png",
+      image2: "9-2.png"
     },
     {
       bg: "3bg.png",
@@ -34,26 +33,15 @@ let characterMsg = [
       image2: "3-2.png"
     },
     {
-      bg: "4bg.png",
-      rolem: "4m.png",
-      nocheck: "4.png",
-      check: "4c.png",
-      title: "4t.png",
-      str: "「需要続々、チャンス続々♪<br>死霊もぞくぞく、未来はワクワク♪」",
-      voice: "./mp3/role/4.mp3",
-      image1: "4-1.png",
-      image2: "4-2.png"
-    },
-    {
-      bg: "5bg.png",
-      rolem: "5m.png",
-      nocheck: "5.png",
-      check: "5c.png",
-      title: "5t.png",
-      str: "「個人の意思よりも命令。<br>…昔、そう教えられました」",
-      voice: "./mp3/role/5.mp3",
-      image1: "5-1.png",
-      image2: "5-2.png"
+      bg: "1bg.png",
+      rolem: "1m.png",
+      nocheck: "1.png",
+      check: "1c.png",
+      title: "1t.png",
+      str: "「新しいマシンの実験なんだけど――<br>えー、きみがいない場合のＢプランなんて<br>用意してないよ…」",
+      voice: "./mp3/role/1.mp3",
+      image1: "1-1.png",
+      image2: "1-2.png"
     },
     {
       bg: "6bg.png",
@@ -67,17 +55,6 @@ let characterMsg = [
       image2: "6-2.png"
     },
     {
-      bg: "7bg.png",
-      rolem: "7m.png",
-      nocheck: "7.png",
-      check: "7c.png",
-      title: "7t.png",
-      str: "「——このトーストはオレがもらう。<br>おまえはもう一枚焼け。」",
-      voice: "./mp3/role/7.mp3",
-      image1: "7-1.png",
-      image2: "7-2.png"
-    },
-    {
       bg: "8bg.png",
       rolem: "8m.png",
       nocheck: "8.png",
@@ -89,15 +66,37 @@ let characterMsg = [
       image2: "8-2.png"
     },
     {
-      bg: "9bg.png",
-      rolem: "9m.png",
-      nocheck: "9.png",
-      check: "9c.png",
-      title: "9t.png",
-      str: "「う〜ん、回したい！<br>なにをって？ みて、あの太陽！<br>ピッカピカに光ってるレコードに見えない？」",
-      voice: "./mp3/role/9.mp3",
-      image1: "9-1.png",
-      image2: "9-2.png"
+      bg: "4bg.png",
+      rolem: "4m.png",
+      nocheck: "4.png",
+      check: "4c.png",
+      title: "4t.png",
+      str: "「需要続々、チャンス続々♪<br>死霊もぞくぞく、未来はワクワク♪」",
+      voice: "./mp3/role/4.mp3",
+      image1: "4-1.png",
+      image2: "4-2.png"
+    },
+    {
+      bg: "7bg.png",
+      rolem: "7m.png",
+      nocheck: "7.png",
+      check: "7c.png",
+      title: "7t.png",
+      str: "「——このトーストはオレがもらう。<br>おまえはもう一枚焼け。」",
+      voice: "./mp3/role/7.mp3",
+      image1: "7-1.png",
+      image2: "7-2.png"
+    },
+    {
+      bg: "2bg.png",
+      rolem: "2m.png",
+      nocheck: "2.png",
+      check: "2c.png",
+      title: "2t.png",
+      str: "「背中が痒くて木にこすりつけてたら、<br>引っかかって吊るされた人がいたんだ。<br>…救助隊に電話したのは私だってこと、<br>今でも気付いてないだろうなぁ。」",
+      voice: "./mp3/role/2.mp3",
+      image1: "2-1.png",
+      image2: "2-2.png"
     },
     {
       bg: "10bg.png",
