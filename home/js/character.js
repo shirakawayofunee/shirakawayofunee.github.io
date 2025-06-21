@@ -72,7 +72,7 @@ let characterMsg = [
       nocheck: "7.png",
       check: "7c.png",
       title: "7t.png",
-      str: "「——このトーストはオレがもらう。<br>おまえはもう一枚焼け。」",
+      str: "L的弟子，因为某些原因叛离了组织，",
       voice: "./mp3/role/7.mp3",
       image1: "7-1.png",
       image2: "7-2.png"
@@ -83,7 +83,7 @@ let characterMsg = [
       nocheck: "8.png",
       check: "8c.png",
       title: "8t.png",
-      str: "「おはよう。今、剣先で皿を回す練習をしていた。<br>上手くバランスをとるのがコツだ」",
+      str: "地底，「」的老东家，借刀杀人<br>成员之间似乎就没什么关爱可言，将ta们凝聚起来的是某种夙愿，能为之献身更像是一种荣誉",
       voice: "./mp3/role/8.mp3",
       image1: "8-1.png",
       image2: "8-2.png"
