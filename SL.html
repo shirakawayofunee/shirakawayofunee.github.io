@@ -25,19 +25,24 @@
         }
 
         .gallery-section {
-            background: #161A1F;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            padding: 1%;
+        }
+
+        .gallery-header{
+/*             background: #fff; */
+            padding: 30px 0 0 0;
         }
 
         .gallery-header .nav-tabs {
+            background: #06070D;
             border-bottom: 2px solid #393d45;
         }
 
         .gallery-header .nav-link {
-            font-size: 1em; /* 调整字体大小 */
-    font-weight: 400; /* 正常字体粗细 */
+            font-size: 1.1em;
+            /* 调整字体大小 */
+            font-weight: 400;
+            /* 正常字体粗细 */
             color: #ccc;
             padding: 5px 15px;
         }
@@ -51,6 +56,7 @@
             display: flex;
             gap: 15px;
             width: 100%;
+            background: #06070D;
         }
 
         .gallery-column {
@@ -74,18 +80,13 @@
             cursor: pointer;
         }
 
-        .gallery-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
         .caption {
             font-size: 14px;
             color: #fff;
             text-align: center;
             padding: 8px 0;
             width: 100%;
-            background: #161A1F;
+            background: #06070D;
         }
 
         @media (max-width: 992px) {
@@ -209,8 +210,8 @@
                         aria-controls="mansion" aria-selected="false">邸宅</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="nsfw-tab" data-bs-toggle="tab" href="#nsfw" role="tab"
-                        aria-controls="nsfw" aria-selected="false">NSFW</a>
+                    <a class="nav-link" id="nsfw-tab" data-bs-toggle="tab" href="#nsfw" role="tab" aria-controls="nsfw"
+                        aria-selected="false">NSFW</a>
                 </li>
             </ul>
         </div>
@@ -310,7 +311,7 @@
             { src: "img/DC/DC14.webp", alt: "DC Image 14", description: "" },
             { src: "img/DC/DC15.webp", alt: "DC Image 15", description: "" },
             { src: "img/DC/DC16.webp", alt: "DC Image 16", description: "" },
-                                    // 预留扩展
+            // 预留扩展
             // { src: "img/DC/DC17.webp", alt: "DC Image 17", description: "" },
             // { src: "img/DC/DC18.webp", alt: "DC Image 18", description: "" },
             // { src: "img/DC/DC19.webp", alt: "DC Image 19", description: "" },
@@ -376,10 +377,10 @@
             { src: "img/SL/MH/1.webp", alt: "Manga Image 1", description: "AU7" },
             { src: "img/SL/MH/2.webp", alt: "Manga Image 2", description: "AU7" },
             { src: "img/SL/MH/3.webp", alt: "Manga Image 3", description: "AU7" },
-                                    /*              { src: "img/SL/MH/4.webp", alt: "Manga Image 4", description: "" },
-             { src: "img/SL/MH/5.webp", alt: "Manga Image 5", description: "" },
-             { src: "img/SL/MH/6.webp", alt: "Manga Image 6", description: "" },
-             { src: "img/SL/MH/7.webp", alt: "Manga Image 7", description: "" }, */
+            /*              { src: "img/SL/MH/4.webp", alt: "Manga Image 4", description: "" },
+{ src: "img/SL/MH/5.webp", alt: "Manga Image 5", description: "" },
+{ src: "img/SL/MH/6.webp", alt: "Manga Image 6", description: "" },
+{ src: "img/SL/MH/7.webp", alt: "Manga Image 7", description: "" }, */
         ];
 
         const mansionImages = [
@@ -483,12 +484,12 @@
                 img.setAttribute('data-description', image.description);
                 img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
                     containerId === 'dcContainer' ? 'dc' :
-                    containerId === 'deathContainer' ? 'death' :
-                    containerId === 'mangaContainer' ? 'manga' :
-                    containerId === 'mansionContainer' ? 'mansion' :
-                    containerId === 'doodleContainer' ? 'doodle' :
-                    containerId === 'catdwContainer' ? 'catdw' :
-                    containerId === 'nsfwContainer' ? 'nsfw' : '');
+                        containerId === 'deathContainer' ? 'death' :
+                            containerId === 'mangaContainer' ? 'manga' :
+                                containerId === 'mansionContainer' ? 'mansion' :
+                                    containerId === 'doodleContainer' ? 'doodle' :
+                                        containerId === 'catdwContainer' ? 'catdw' :
+                                            containerId === 'nsfwContainer' ? 'nsfw' : '');
                 img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 
                 const caption = document.createElement('div');
@@ -572,12 +573,12 @@
         prevButton.addEventListener('click', function () {
             const array = currentArray === 'gallery' ? galleryImages :
                 currentArray === 'dc' ? dcImages :
-                currentArray === 'death' ? deathImages :
-                currentArray === 'manga' ? mangaImages :
-                currentArray === 'mansion' ? mansionImages :
-                currentArray === 'doodle' ? doodleImages :
-                currentArray === 'catdw' ? catdwImages :
-                currentArray === 'nsfw' ? nsfwImages : [];
+                    currentArray === 'death' ? deathImages :
+                        currentArray === 'manga' ? mangaImages :
+                            currentArray === 'mansion' ? mansionImages :
+                                currentArray === 'doodle' ? doodleImages :
+                                    currentArray === 'catdw' ? catdwImages :
+                                        currentArray === 'nsfw' ? nsfwImages : [];
             currentIndex = (currentIndex - 1 + array.length) % array.length;
             modalImage.src = array[currentIndex].src;
             imageDescription.textContent = array[currentIndex].description || '暂无说明';
@@ -586,12 +587,12 @@
         nextButton.addEventListener('click', function () {
             const array = currentArray === 'gallery' ? galleryImages :
                 currentArray === 'dc' ? dcImages :
-                currentArray === 'death' ? deathImages :
-                currentArray === 'manga' ? mangaImages :
-                currentArray === 'mansion' ? mansionImages :
-                currentArray === 'doodle' ? doodleImages :
-                currentArray === 'catdw' ? catdwImages :
-                currentArray === 'nsfw' ? nsfwImages : [];
+                    currentArray === 'death' ? deathImages :
+                        currentArray === 'manga' ? mangaImages :
+                            currentArray === 'mansion' ? mansionImages :
+                                currentArray === 'doodle' ? doodleImages :
+                                    currentArray === 'catdw' ? catdwImages :
+                                        currentArray === 'nsfw' ? nsfwImages : [];
             currentIndex = (currentIndex + 1) % array.length;
             modalImage.src = array[currentIndex].src;
             imageDescription.textContent = array[currentIndex].description || '暂无说明';
