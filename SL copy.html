@@ -26,16 +26,16 @@
 
         .gallery-section {
             background: #161A1F;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+/*             border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+            padding: 20px;
         }
 
         .gallery-header .nav-tabs {
     border-bottom: none; /* 移除底部边框 */
     background: #fff; /* 浅灰色背景 */
-    border-radius: 10px 10px 0 0; /* 顶部圆角 */
-    padding: 5px; /* 内边距 */
+/*     border-radius: 10px 10px 0 0; */
+/*     padding: 5px; */
     display: flex; /* 确保水平排列 */
     align-items: center; /* 垂直居中 */
 }
@@ -44,7 +44,7 @@
     font-size: 1em; /* 调整字体大小 */
     font-weight: 400; /* 正常字体粗细 */
     color: #333; /* 深灰色文字 */
-    padding: 8px 15px; /* 内边距 */
+/*     padding: 8px 15px;  */
     margin: 0 5px; /* 标签间距 */
     border: none; /* 移除默认边框 */
     border-radius: 5px 5px 0 0; /* 顶部圆角 */
@@ -53,10 +53,9 @@
 }
 
 .gallery-header .nav-link.active {
-    color: #000; /* 激活时文字颜色 */
-    background: #666666; /* 激活时背景色 */
-    border-bottom: none; /* 移除激活时的底部边框 */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 底部阴影效果 */
+    color: #0000FE; /* 激活时文字颜色 */
+    background: #161A1F; /* 激活时背景色 */
+    border-radius: 0;
 }
 
 .gallery-header .nav-link:hover {
@@ -85,6 +84,7 @@
         .gallery-image {
             width: 100%;
             height: auto;
+            border: 1px;
             border-radius: 5px;
             object-fit: cover;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
