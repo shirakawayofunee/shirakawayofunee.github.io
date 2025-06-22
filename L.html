@@ -10,33 +10,168 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; background: #fff; color: #333; overflow-x: hidden; }
-        .gallery-section { background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; }
-        .gallery-header .nav-tabs { border-bottom: 2px solid #000; }
-        .gallery-header .nav-link { font-size: 1.5em; font-weight: 700; color: #ccc; padding: 5px 15px; }
-        .gallery-header .nav-link.active { color: #000; border-bottom: 2px solid #000; }
-        .gallery-container { display: flex; gap: 15px; width: 100%; }
-        .gallery-column { flex: 1; display: flex; flex-direction: column; gap: 15px; }
-        .gallery-item { width: 100%; position: relative; }
-        .gallery-image { width: 100%; height: auto; border-radius: 5px; object-fit: cover; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
-        .gallery-image:hover { transform: scale(1.05); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
-        .caption { font-size: 14px; color: #666; text-align: center; padding: 8px 0; width: 100%; background: #fff; }
-        img.lazy { opacity: 0; transition: opacity 0.3s ease; }
-        img.lazy[src] { opacity: 1; }
-        @media (max-width: 992px) { .gallery-container { display: grid; grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 576px) { .gallery-container { display: block; } .gallery-column { margin-bottom: 15px; } }
-        .image-modal .modal-dialog { max-width: 75%; width: 75%; margin: 0 auto; }
-        .image-modal .modal-content { background: #fff; border-radius: 10px; overflow: hidden; }
-        .image-modal .modal-body { padding: 0; display: flex; flex-direction: column; align-items: center; position: relative; }
-        .image-modal .modal-image { max-height: 70vh; width: 100%; object-fit: contain; }
-        .image-modal .description { padding: 20px; text-align: center; font-size: 1.1em; color: #666; background: #f8f8f8; width: 100%; }
-        .image-modal .modal-header { border-bottom: none; }
-        .image-modal .btn-close { filter: invert(1); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #06070D;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .gallery-section {
+            padding: 1%;
+        }
+
+        .gallery-header{
+/*             background: #fff; */
+            padding: 30px 0 0 0;
+        }
+
+        .gallery-header .nav-tabs {
+            background: #06070D;
+            border-bottom: 2px solid #393d45;
+        }
+
+        .gallery-header .nav-link {
+            font-size: 1.1em;
+            /* 调整字体大小 */
+            font-weight: 400;
+            /* 正常字体粗细 */
+            color: #ccc;
+            padding: 5px 15px;
+        }
+
+        .gallery-header .nav-link.active {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+
+        .gallery-container {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            background: #06070D;
+        }
+
+        .gallery-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            position: relative;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .caption {
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            padding: 8px 0;
+            width: 100%;
+            background: #06070D;
+        }
+
+        @media (max-width: 992px) {
+            .gallery-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 576px) {
-            .image-modal .modal-dialog { max-width: 100%; width: 100%; height: 100vh; margin: 0; }
-            .image-modal .modal-image { max-height: 60vh; }
-            .image-modal .description { font-size: 1em; }
+            .gallery-container {
+                display: block;
+            }
+
+            .gallery-column {
+                margin-bottom: 15px;
+            }
+        }
+
+        .image-modal .modal-dialog {
+            max-width: 75%;
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        .image-modal .modal-content {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .image-modal .modal-body {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .image-modal .modal-image {
+            max-height: 70vh;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .image-modal .description {
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+            background: #f8f8f8;
+            width: 100%;
+        }
+
+        .image-modal .modal-header {
+            border-bottom: none;
+        }
+
+        .image-modal .btn-close {
+            filter: invert(1);
+        }
+
+        @media (max-width: 576px) {
+            .image-modal .modal-dialog {
+                max-width: 100%;
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .image-modal .modal-image {
+                max-height: 60vh;
+            }
+
+            .image-modal .description {
+                font-size: 1em;
+            }
+        }
+
+        img.lazy {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        img.lazy[src] {
+            opacity: 1;
         }
     </style>
 </head>
