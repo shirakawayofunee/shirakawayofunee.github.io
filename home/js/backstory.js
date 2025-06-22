@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-06-22 23:10:19
+ * @LastEditTime: 2025-06-22 23:46:18
  * @Description:
  * @FilePath: \shirakawayofunee.github.io\home\js\backstory.js
  */
@@ -20,7 +20,7 @@ var backstoryStr = [
     `,
   `花园<span class="cus-key">神秘学家<span class="cus-target2">アルカニスト</span></span>変装と潜入を得意とする謎の組織。メンバーは幼い頃から教育を受け、熟練した戦闘技術を身につけているだけでなく、生花や書道、刺繍などの芸術分野における専門技術を習得している者も多い。
     `,
-  `故事正式发生时，X与上庭人员所居住的度假山荘，周围全是针对「禁闭者」设下的天罗地网。<br>
+  `故事正式发生时，X与上庭人员所居住的度假山荘，周围全是针对「禁闭者」设下的天罗地网。<br>附近的住户、记者、议员、医生、警卫、商贩、裁缝。
     幾度かの産業革命、その実績によって名を馳せた計算科学研究センター。<br>先鋭的な技術力と時代の追い風により、世界最大規模の科学研究施設となっている。<br>
 今、彼らが目指すのは技術と<span class="cus-key">神秘術<span class="cus-target3">アルカナム</span></span>の融合による、第四次産業革命の実現。<br>そして、「ストーム」の発生によりもたらされた、因果律を確信させる理論。<br>
 それに基づいた、時間逆行の原因と人類が未来へと至る可能性の算出である。`,
@@ -29,8 +29,7 @@ var backstoryStr = [
   HE-可可莉克亲自登场救走了加洛法诺。<br>
   BE-加洛法诺死在这里。
     ゆったりと流れていく<span class="cus-key">時間<span class="cus-target2">とき</span></span>の水で、かららと回る糸車は、<span class="cus-key">神秘学家<span class="cus-target2">アルカニスト</span></span>を呼び寄せる。`,
-  `空气中弥漫着淡淡的花香，<br>足以彰显店主的上品。<br>
-    中には無数の扉と窓があり、あらゆる時空へ繋がっている。<br>「ストーム」はそこへは届かず、様々な時代の痕跡が収められている。<br>多くの<span class="cus-key">神秘学家<span class="cus-target2">アルカニスト</span></span>たちはそこにいる。`,
+  `空气中弥漫着淡淡的花香，<br>足以彰显<span class="cus-key">店主<span class="cus-target2">加洛法诺</span></span>的上品。`,
 ];
 var pcbackstory = new Swiper("#pcbackstory", {
   speed: 1000,
