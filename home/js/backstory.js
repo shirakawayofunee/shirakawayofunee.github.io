@@ -29,7 +29,7 @@ var backstoryStr = [
   HE-可可莉克亲自登场救走了加洛法诺。<br>
   BE-加洛法诺死在这里。
     ゆったりと流れていく<span class="cus-key">時間<span class="cus-target2">とき</span></span>の水で、かららと回る糸車は、<span class="cus-key">神秘学家<span class="cus-target2">アルカニスト</span></span>を呼び寄せる。`,
-  `深紫色のハーリキンチェック柄のスーツケース。<br>羽毛より重く、金塊より軽い。<br>それほど複雑でない呪文を唱えると、広い住居へと導いてくれる。<br>
+  `空气中弥漫着淡淡的花香，<br>足以彰显店主的上品。<br>
     中には無数の扉と窓があり、あらゆる時空へ繋がっている。<br>「ストーム」はそこへは届かず、様々な時代の痕跡が収められている。<br>多くの<span class="cus-key">神秘学家<span class="cus-target2">アルカニスト</span></span>たちはそこにいる。`,
 ];
 var pcbackstory = new Swiper("#pcbackstory", {
