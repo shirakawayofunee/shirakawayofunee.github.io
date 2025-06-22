@@ -6,7 +6,7 @@ let characterMsg = [
     nocheck: "1.png",
     check: "1c.png",
     title: "1t.png",
-    str: "「夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是给自己的下属们寻求新的安全居所。<br>えー、きみがいない場合のＢプランなんて<br>用意してないよ…」",
+    str: "夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是给自己的下属们寻求新的安全居所。<br><br>未完成",
     voice: "./mp3/role/1.mp3",
     image1: "1-1.png",
     image2: "1-2.png"
@@ -17,7 +17,7 @@ let characterMsg = [
       nocheck: "2.png",
       check: "2c.png",
       title: "2t.png",
-      str: "「背中が痒くて木にこすりつけてたら、<br>引っかかって吊るされた人がいたんだ。<br>…救助隊に電話したのは私だってこと、<br>今でも気付いてないだろうなぁ。」",
+      str: "<br>未完成",
       voice: "./mp3/role/2.mp3",
       image1: "2-1.png",
       image2: "2-2.png"
@@ -28,7 +28,7 @@ let characterMsg = [
       nocheck: "3.png",
       check: "3c.png",
       title: "3t.png",
-      str: "「時代の波は絶えず起伏し続け、<br>昼夜のように巡っては流れる。<br>永久に止まることはないでしょう」",
+      str: "<br>未完成",
       voice: "./mp3/role/3.mp3",
       image1: "3-1.png",
       image2: "3-2.png"
@@ -39,7 +39,7 @@ let characterMsg = [
       nocheck: "4.png",
       check: "4c.png",
       title: "4t.png",
-      str: "「需要続々、チャンス続々♪<br>死霊もぞくぞく、未来はワクワク♪」",
+      str: "<br>未完成",
       voice: "./mp3/role/4.mp3",
       image1: "4-1.png",
       image2: "4-2.png"
@@ -50,7 +50,7 @@ let characterMsg = [
       nocheck: "5.png",
       check: "5c.png",
       title: "5t.png",
-      str: "26岁，容疑者。伪装成一个充满忧愁、苦闷、伤感郁结的裁缝靠近。「個人の意思よりも命令。明知道，<br>…昔、そう教えられました」",
+      str: "36岁，殺し屋。为了延长寿命的情报，伪装成附近的裁缝接近X。<br>未完成",
       voice: "./mp3/role/5.mp3",
       image1: "5-1.png",
       image2: "5-2.png"
@@ -61,7 +61,7 @@ let characterMsg = [
       nocheck: "6.png",
       check: "6c.png",
       title: "6t.png",
-      str: "「实验品，背叛上庭<br>腹黒く鬼畜で、目的のためには手段を選ばず、自らも含めた犠牲を厭わないほどです。ある計画のために、⚪の側近の重要人物を全て殺害した。計画において⚪は不可欠な存在であった。⚪との戦いの中で感情の亀裂が生じ、再び感情を取り戻し、⚪に恋をする。しかし、最終的には⚪によって殺される。XはLの人柄と行動を高く評価している。",
+      str: "准备背叛上庭<br>腹黒く鬼畜で、目的のためには手段を選ばず、自らも含めた犠牲を厭わないほどです。計画において⚪は不可欠な存在であった。<br>Xは⚪の人柄と行動を高く評価している。<br>未完成",
       voice: "./mp3/role/6.mp3",
       image1: "6-1.png",
       image2: "6-2.png"
@@ -72,7 +72,7 @@ let characterMsg = [
       nocheck: "7.png",
       check: "7c.png",
       title: "7t.png",
-      str: "可可莉克的弟子之一，数年前因为某些原因叛离。<br>现在，外界大乱，以委托人的身份回来恳求可可莉克，希望得到可可莉克的帮助。",
+      str: "可可莉克的弟子之一，数年前因为某些原因叛离。<br>现在，外界大乱，以委托人的身份回来恳求可可莉克，希望得到可可莉克的帮助。<br>未完成",
       voice: "./mp3/role/7.mp3",
       image1: "7-1.png",
       image2: "7-2.png"
@@ -83,7 +83,7 @@ let characterMsg = [
       nocheck: "8.png",
       check: "8c.png",
       title: "8t.png",
-      str: "「上庭」的老对头，「地底」<br>「花园」的大客户之一，<br>成员之间毫无关爱可言，彼此独立，生死自负。将ta们凝聚起来的是某种夙愿，能为之献身更像是一种荣誉。<br>诱骗S去送死的成员名为「シーゲル」",
+      str: "「上庭」的老对头，「地底」<br>「花园」的大客户之一，<br>成员之间毫无关爱可言，彼此独立，生死自负。将ta们凝聚起来的是某种夙愿，能为之献身更像是一种荣誉。<br>诱骗加洛法诺去送死的成员名为「シーゲル」<br>未完成",
       voice: "./mp3/role/8.mp3",
       image1: "8-1.png",
       image2: "8-2.png"
@@ -94,7 +94,7 @@ let characterMsg = [
       nocheck: "9.png",
       check: "9c.png",
       title: "9t.png",
-      str: "「地底」的老对头，「上庭」<br>虚伪、傲慢、狂妄、残忍。道貌岸然，牺牲，「う〜ん、回したい！<br>なにをって？ みて、あの太陽！<br>",
+      str: "「地底」的老对头，「上庭」<br>虚伪、傲慢、狂妄、残忍。道貌岸然的一群人，<br>未完成",
       voice: "./mp3/role/9.mp3",
       image1: "9-1.png",
       image2: "9-2.png"
@@ -105,7 +105,7 @@ let characterMsg = [
       nocheck: "10.png",
       check: "10c.png",
       title: "10t.png",
-      str: "「ハロー、ハロー、ココですヨ。<br>ウチュウからの訪問者、平和をアイするギベオンズアイデス。」",
+      str: "「地底」的实验品，被上庭抢走后投入使用<br>未完成",
       voice: "./mp3/role/10.mp3",
       image1: "10-1.png",
       image2: "10-2.png"
