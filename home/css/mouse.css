@@ -44,13 +44,13 @@
 .div1{
     width: 50px;
     height:50px;
-    /* background: #b55829 url("1.png") no-repeat ; */
+    /* background: #e23b78 url("1.png") no-repeat ; */
 
 }
 .div2{
     width: 12px;
     height:12px;
-    background: #b55829;
+    background: #e23b78;
     animation-name: ball;
     animation-duration: 0.3s;
 }

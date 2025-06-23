@@ -19,7 +19,7 @@ all.onmousemove = function (e) {
   d1.style.left = e.clientX + "px";
   // d1.style.transform="translate(-50%,-50%)";
   if (e.target.dataset.mouse == "big") {
-    d1.style.background = `#b55829 url(${e.target.dataset.img}) no-repeat center`;
+    d1.style.background = `#e23b78 url(${e.target.dataset.img}) no-repeat center`;
     d1.style.backgroundSize = `${e.target.width}px ${e.target.height}px`;
     d1.className = "div div1";
     d1.style["animation-name"] = "ball2";

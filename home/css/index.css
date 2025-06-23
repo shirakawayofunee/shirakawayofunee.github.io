@@ -142,7 +142,7 @@ h1 {
   width: 100%;
 }
 .div-center:hover div {
-  color: #db6f39;
+  color: #e23b78;
   transition: all 0.3s ease;
 }
 .div-head-text {
@@ -169,10 +169,10 @@ h1 {
 .div-head-text-active {
   /* font-size: 1.375rem; */
   font-weight: 600;
-  color: #db6f39;
+  color: #e23b78;
 }
 .div-head-text-en-active {
-  color: #db6f39;
+  color: #e23b78;
   text-align: center;
   width: 100%;
 }
@@ -184,7 +184,7 @@ h1 {
   z-index: 100;
   width: 4.625rem;
   height: 14.6875rem;
-  border-bottom: 1px solid #b55829;
+  border-bottom: 1px solid #e23b78;
   padding: 5px;
   display: none;
 }
@@ -331,7 +331,7 @@ h1 {
   top: 7vh;
   right: 15vw;
   text-align: center;
-  color: #b55829;
+  color: #e23b78;
   display: none;
 }
 .ageword {
@@ -359,7 +359,7 @@ h1 {
   background-size: 100%;
   width: 18.5625rem;
   height: 10.75rem;
-  color: #b55829;
+  color: #e23b78;
   padding: 3rem 1rem;
   box-sizing: border-box;
   display: none;
@@ -379,9 +379,9 @@ h1 {
 .qqPage-list-2 {
   width: 20%;
   text-align: center;
-  color: #b55829;
+  color: #e23b78;
   border-radius: 11px;
-  border: 1px solid #b55829;
+  border: 1px solid #e23b78;
 }
 @keyframes fadeInTop {
   0% {
