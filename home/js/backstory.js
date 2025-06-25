@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-06-23 21:08:26
+ * @LastEditTime: 2025-06-25 08:20:16
  * @Description:
  * @FilePath: \shirakawayofunee.github.io\home\js\backstory.js
  */
@@ -27,11 +27,11 @@ var backstoryStr = [
   `花园、中立組織。<br>変装と潜入を得意とする謎の組織。メンバーは幼い頃から教育を受け、熟練した戦闘技術を身につけているだけでなく、生花や書道、刺繍などの芸術分野における専門技術を習得している者も多い。
     `,
   `故事正式发生时，X与上庭人员所居住的度假山荘，周围全是针对「禁闭者」设下的天罗地网。<br>附近的住户、记者、议员、医生、警卫、商贩、裁缝。`,
-  `加洛法诺最终倒下的地方。<br>
+  `S最终倒下的地方。<br>
   此处产生分支：<br>
-  HE-可可莉克救走了加洛法诺。<br>
-  BE-加洛法诺死在这里。`,
-  `复古的手工匠人之店，空气中弥漫着淡淡的花香，静谧而温馨。<br>足以彰显<span class="cus-key">店主<span class="cus-target2">加洛法诺</span></span>的品味。`,
+  HE-L救走了Severo。<br>
+  BE-Severo死在这里。`,
+  `复古的手工匠人之店，空气中弥漫着淡淡的花香，静谧而温馨。<br>足以彰显<span class="cus-key">店主<span class="cus-target2">Severo</span></span>的品味。`,
 ];
 var pcbackstory = new Swiper("#pcbackstory", {
   speed: 1000,
