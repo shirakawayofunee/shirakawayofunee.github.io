@@ -457,6 +457,11 @@ h1 {
   opacity: 1;
   transition: all 0.3s;
 }
+
+.loadingvideo{
+  
+} 
+
 .loadingImg {
   position: absolute;
   top: 50%;
@@ -464,7 +469,7 @@ h1 {
   transform: translate(-50%, -50%);
 }
 .loadingProgress {
-  color: #bba893;
+  color: #E23A78;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
