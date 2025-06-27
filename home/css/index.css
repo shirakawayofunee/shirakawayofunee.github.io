@@ -149,7 +149,7 @@ h1 {
   font-size: 1.125rem;
   font-family: myFont;
   font-weight: 400;
-  color: #e9dccd;
+  color: #9ea7b4;
   /* display: flex;
         align-items: center;
         vertical-align: middle;
@@ -160,7 +160,7 @@ h1 {
 .div-head-text-en {
   font-size: 0.75rem;
   font-weight: 300;
-  color: #bba893;
+  color: #9ea7b4;
   transform: scale(0.8);
   letter-spacing: .1rem;
   line-height: 1.5;
@@ -322,7 +322,7 @@ h1 {
   width: 5vw;
   border-radius: 45px;
   text-align: center;
-  color: rgba(187, 168, 147);
+  color: #9ea7b4;
   display: none;
 }
 .wxInfo {
@@ -369,7 +369,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #bba893;
+  color: #9ea7b4;
   font-size: 1rem;
   vertical-align: middle;
 }
@@ -440,7 +440,7 @@ h1 {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 20px;
-  background: rgb(124, 65, 32);
+  background: #ff005d;
   -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
 }
 .shareMusic {
@@ -459,7 +459,7 @@ h1 {
 }
 
 .loadingvideo{
-  
+
 } 
 
 .loadingImg {
