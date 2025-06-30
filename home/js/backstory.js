@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-06-30 15:52:14
+ * @LastEditTime: 2025-06-30 22:05:18
  * @Description:
  * @FilePath: \shirakawayofunee.github.io\home\js\backstory.js
  */
@@ -28,7 +28,7 @@ var backstoryStr = [
   <br>【花园】核心成员不过数十人，剩下的大多数外围人员甚至不知道自己在为【花园】服务。
 
   <br>
-  “我跟花园的几个杀手打过交道，她们不是以杀人为乐的疯子。”
+  「私は花園の数人の殺し屋と関わったことがあるけど、彼女たちは殺人を楽しむような狂人じゃないよ。」
     `,
   `故事正式发生时，X与上庭人员所居住的度假山荘，周围全是针对「禁闭者」设下的天罗地网。<br>附近的住户、记者、议员、医生、警卫、商贩、裁缝。`,
   `S最终倒下的地方。<br>
