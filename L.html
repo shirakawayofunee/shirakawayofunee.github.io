@@ -58,6 +58,8 @@
             background: #06070D;
         }
 
+
+
         .gallery-column {
             flex: 1;
             display: flex;
@@ -73,10 +75,13 @@
         .gallery-image {
             width: 100%;
             height: auto;
-            border-radius: 5px;
             object-fit: cover;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+        }
+
+        .gallery-item :hover{
+            border: 1px solid #ff005d;
         }
 
         .caption {
