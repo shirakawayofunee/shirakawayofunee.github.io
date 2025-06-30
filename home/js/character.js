@@ -17,7 +17,7 @@ let characterMsg = [
       nocheck: "2.png",
       check: "2c.png",
       title: "2t.png",
-      str: "<br>未完成",
+      str: "对象称其觉醒成因另有隐情：某些FAC高层要求其父在不知情的状况下运输狂厄污染物，导致其父在家中异变为死役，造成了灭门惨案发生。此后，对象以复仇为动力加入花园，截止目前，对象已对所有涉及此事件的高层完成了复仇。<br>未完成",
       voice: "./mp3/role/2.mp3",
       image1: "2-1.png",
       image2: "2-2.png"
