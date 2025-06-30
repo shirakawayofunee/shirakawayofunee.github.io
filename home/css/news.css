@@ -102,7 +102,7 @@
     padding-right: 1vw;
     font-size: 1rem;  
     font-weight: 300;
-    color: #B55829;
+    color: #E23A78;
     display: flex;
     align-items: center;
     
@@ -173,16 +173,16 @@
     font-size: 1.3725rem;
     border-bottom-width:0px ;
     border-bottom-style:solid ;
-    border-bottom-color: #B55829;
+    border-bottom-color: #E23A78;
     font-weight: 300;
 }
 .news-right-head-bg-list:hover{
-    color: #B55829;
+    color: #E23A78;
     transition: all 0.3s ease;
 }
 .news-right-head-bg-list-active{
-    color: #B55829;
-    border-bottom: 1px solid #B55829;  
+    color: #E23A78;
+    border-bottom: 1px solid #E23A78;  
     border-bottom-width: 1px;
     transition: all 0.3s ease;
     font-weight: 300;
