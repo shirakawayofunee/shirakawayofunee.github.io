@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-07-02 15:26:49
+ * @LastEditTime: 2025-07-02 21:50:20
  * @Description:
  * @FilePath: \shirakawayofunee.github.io\home\js\backstory.js
  */
@@ -48,7 +48,7 @@ var backstoryStr = [
   此处产生分支：<br>
   HE-L救走了Severo。<br>
   BE-Severo死在这里。`,
-  `复古的手工匠人之店，空气中弥漫着淡淡的花香，静谧而温馨。<br>足以彰显<span class="cus-key">店主<span class="cus-target2">Severo</span></span>的品味。`,
+  `复古的手工匠人之店，空气中弥漫着淡淡的花香，静谧而温馨。<br>足以彰显<span class="cus-key">店主<span class="cus-target2">Severo</span></span>的品味与专业性。`,
 ];
 var pcbackstory = new Swiper("#pcbackstory", {
   speed: 1000,
