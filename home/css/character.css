@@ -94,7 +94,7 @@
   }
   
   .character-right-right-title {
-    height: 30%;
+    height: 26%;
     width: 33.5rem;
     padding-top: 10vh;
     box-sizing: border-box;
@@ -106,7 +106,7 @@
   }
   
   .character-right-right-str {
-    height: 28%;
+    height: 55%;
     width: 100%;
     font-size: 1rem;
     font-weight: 300;
@@ -116,7 +116,11 @@
     line-height: 1.875rem;
     padding-left: 2rem;
     box-sizing: border-box;
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch;
   }
+
+
   
   .character-right-right-button {
     display: flex;
