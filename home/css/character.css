@@ -87,16 +87,16 @@
     box-sizing: border-box;
     padding-top: 10vh;
     height: 100%;
-    width: 39rem;
+    width: 40rem;
     position: absolute;
     z-index: 51;
-    right: 2em;
+    right: 3em;
   }
   
   .character-right-right-title {
     height: 26%;
     width: 33.5rem;
-    padding-top: 10vh;
+    padding-top: 8vh;
     box-sizing: border-box;
     text-align: left;
   }
