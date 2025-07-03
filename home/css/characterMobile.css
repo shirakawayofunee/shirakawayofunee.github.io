@@ -43,6 +43,8 @@
     text-shadow: 0 0 10px #000000;
     margin-top: 3vw;
     margin-left: 5vw;
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch;
   }
   .characterMobile-top-con-icon {
     height: 30%;
