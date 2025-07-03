@@ -33,7 +33,7 @@ html,
       }
       a{
         text-decoration: none;
-        color: #BBA893;
+        color: #9ea7b4;
       }
       .swiperMobile {
         width: 100%;
@@ -103,7 +103,7 @@ html,
         text-align: center;
         font-size: 1.5rem;
         font-weight: 500;
-        color: #BBA893;
+        color: #9ea7b4;
       }
       .div-head-text-en{
         font-size: 0.5rem;
@@ -280,7 +280,7 @@ html,
         display: flex;
         align-items: center;
         justify-content: space-between;
-        color: #BBA893;    
+        color: #9ea7b4;    
         font-size: 1rem;
         vertical-align: middle;
        }
@@ -328,7 +328,7 @@ html,
   transform: translate(-50%,-50%);
 } 
 .loadingProgress{
-  color: #BBA893;
+  color: #9ea7b4;
   position: absolute;
   left:50%;
   transform: translateX(-50%);
