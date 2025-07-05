@@ -228,3 +228,55 @@ let characterMsg = [
       img2.src = `./img/role/${v.image2}`;
     });
   }
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const strContainer = document.querySelector('.character-right-right-str');
+  
+    // 鼠标滚轮滚动
+    strContainer.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      const scrollAmount = event.deltaY;
+      strContainer.scrollTop += scrollAmount * 0.5;
+    });
+  
+    // 鼠标拖拽滚动
+    let isDragging = false;
+    let startY = 0;
+    let startScrollTop = 0;
+  
+    strContainer.addEventListener('mousedown', (event) => {
+      isDragging = true;
+      startY = event.clientY;
+      startScrollTop = strContainer.scrollTop;
+      strContainer.style.cursor = 'grabbing';
+    });
+  
+    document.addEventListener('mousemove', (event) => {
+      if (!isDragging) return;
+      event.preventDefault();
+      const deltaY = startY - event.clientY;
+      strContainer.scrollTop = startScrollTop + deltaY;
+    });
+  
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      strContainer.style.cursor = 'default';
+    });
+  
+    // 触摸拖拽滚动
+    let touchStartY = 0;
+    let touchStartScrollTop = 0;
+  
+    strContainer.addEventListener('touchstart', (event) => {
+      touchStartY = event.touches[0].clientY;
+      touchStartScrollTop = strContainer.scrollTop;
+    });
+  
+    strContainer.addEventListener('touchmove', (event) => {
+      event.preventDefault();
+      const touchY = event.touches[0].clientY;
+      const deltaY = touchStartY - touchY;
+      strContainer.scrollTop = touchStartScrollTop + deltaY;
+    });
+  });
