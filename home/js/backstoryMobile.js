@@ -1,3 +1,11 @@
+/*
+ * @Author: DCBZ
+ * @Date: 2025-02-25 08:45:50
+ * @LastEditors: your name
+ * @LastEditTime: 2025-07-05 18:16:19
+ * @Description: 
+ * @FilePath: \shirakawayofunee.github.io\home\js\backstoryMobile.js
+ */
 function backstoryMobileChange(num){
     //console.log(num,6666)
     //console.log($("#backstoryMobileImg").data("index"));
