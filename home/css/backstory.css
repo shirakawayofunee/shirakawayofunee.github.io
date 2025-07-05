@@ -59,7 +59,7 @@
 .backstory-right-str {
   height: 23rem;
   /* background: wheat; */
-  width: 71%;
+  width: 74%;
   color: #9ea7b4;
   font-weight: 300;
   font-size: 1rem;
@@ -69,6 +69,9 @@
   padding-top: 1vh;
   font-family: "myFont";
   line-height: 1.875rem;
+  overflow-y: auto; /* 启用垂直滚动条 */
+  -webkit-overflow-scrolling: touch; /* 优化移动端滚动 */
+  user-select: auto; /* 确保内容可交互 */
 }
 .backstory-right-page {
   height: 5.1875rem;

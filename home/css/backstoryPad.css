@@ -56,4 +56,7 @@
     font-family:"cn" ;
     padding-top: 0;
     box-sizing: border-box;
+    overflow-y: auto; /* 启用垂直滚动条 */
+    -webkit-overflow-scrolling: touch; /* 优化移动端滚动 */
+    user-select: auto; /* 确保内容可交互 */
 }
