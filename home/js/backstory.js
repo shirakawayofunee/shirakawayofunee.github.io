@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-07-05 16:35:13
+ * @LastEditTime: 2025-07-05 17:52:54
  * @Description:
  * @FilePath: \shirakawayofunee.github.io\home\js\backstory.js
  */
@@ -133,3 +133,61 @@ changeBackstory(0);
 function changeBackstoryClick(num) {
   pcbackstory.slideTo(num + 1);
 }
+// 拖拽滚动（PC 端）
+function enableDragScroll(elementId) {
+  const element = document.getElementById(elementId);
+  let isDragging = false;
+  let startY, scrollTop;
+
+  element.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      element.style.cursor = 'grabbing';
+      startY = e.pageY - element.offsetTop;
+      scrollTop = element.scrollTop;
+      e.preventDefault();
+  });
+
+  element.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const y = e.pageY - element.offsetTop;
+      const walk = (startY - y) * 1.5;
+      element.scrollTop = scrollTop + walk;
+  });
+
+  element.addEventListener('mouseup', () => {
+      isDragging = false;
+      element.style.cursor = 'grab';
+  });
+
+  element.addEventListener('mouseleave', () => {
+      isDragging = false;
+      element.style.cursor = 'grab';
+  });
+}
+
+// 触摸滑动（移动端）
+function enableTouchScroll(elementId) {
+  const element = document.getElementById(elementId);
+  let startY, scrollTop;
+
+  element.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].pageY;
+      scrollTop = element.scrollTop;
+  });
+
+  element.addEventListener('touchmove', (e) => {
+      const y = e.touches[0].pageY;
+      const walk = (startY - y) * 1.5;
+      element.scrollTop = scrollTop + walk;
+      e.stopPropagation();
+  });
+}
+
+// 启用拖拽和触摸滚动
+enableDragScroll('backstoryStr');
+enableTouchScroll('backstoryStr');
+
+// 确保滚轮事件不被 Swiper 拦截
+document.getElementById('backstoryStr').addEventListener('wheel', (event) => {
+  event.stopPropagation();
+});

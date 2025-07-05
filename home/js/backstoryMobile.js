@@ -4,9 +4,9 @@ function backstoryMobileChange(num){
     let index=$("#backstoryMobileImg").data("index");
     let data=index*1+num;
     if(data<1){
-        data=8;
+        data=10;
     }
-    if(data>8){
+    if(data>10){
         data=1;
     }
     let str=`./img/backstoryM/${data}.png`;
@@ -32,3 +32,29 @@ function showBigBackstory(e){
     paperShowBigM(url);
 }
 
+// 触摸滑动（移动端）
+function enableTouchScroll(elementId) {
+    const element = document.getElementById(elementId);
+    let startY, scrollTop;
+  
+    element.addEventListener('touchstart', (e) => {
+        startY = e.touches[0].pageY;
+        scrollTop = element.scrollTop;
+    });
+  
+    element.addEventListener('touchmove', (e) => {
+        const y = e.touches[0].pageY;
+        const walk = (startY - y) * 1.5;
+        element.scrollTop = scrollTop + walk;
+        e.stopPropagation();
+    });
+  }
+  
+  // 启用拖拽和触摸滚动
+  enableDragScroll('backstoryStr');
+  enableTouchScroll('backstoryStr');
+  
+  // 确保滚轮事件不被 Swiper 拦截
+  document.getElementById('backstoryStr').addEventListener('wheel', (event) => {
+    event.stopPropagation();
+  });

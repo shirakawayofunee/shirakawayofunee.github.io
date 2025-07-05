@@ -70,9 +70,29 @@
   font-family: "myFont";
   line-height: 1.875rem;
   overflow-y: auto; /* 启用垂直滚动条 */
-  -webkit-overflow-scrolling: touch; /* 优化移动端滚动 */
+  -webkit-overflow-scrolling: touch; /* 优化移动端滚动平滑度 */
   user-select: auto; /* 确保内容可交互 */
+  cursor: grab; /* 鼠标悬停时显示抓手光标，提示可拖拽 */
 }
+
+/* PC 端滚动条样式（Webkit 浏览器，如 Chrome、Safari） */
+.backstory-right-str::-webkit-scrollbar {
+  width: 8px; /* 稍加宽，便于察觉 */
+}
+
+.backstory-right-str::-webkit-scrollbar-track {
+  background: transparent; /* 轨道透明 */
+}
+
+.backstory-right-str::-webkit-scrollbar-thumb {
+  background: rgba(158, 167, 180, 0.3); /* 默认半透明 */
+  border-radius: 4px;
+}
+
+.backstory-right-str:hover::-webkit-scrollbar-thumb {
+  background: rgba(158, 167, 180, 0.8); /* 鼠标悬停时高亮 */
+}
+
 .backstory-right-page {
   height: 5.1875rem;
   /* background: #fff; */
