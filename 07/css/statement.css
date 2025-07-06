@@ -1,0 +1,203 @@
+.statement{
+    height: 22.25rem;
+    position: fixed;
+    z-index: 99;
+    /* background: rgba(0, 0, 0, 1); */
+    width: 100%;
+    bottom: -22.25rem;
+    /* padding: 8.4375rem 0 4rem; */
+    box-sizing: border-box;
+    /* border-top: 1px solid #B55829; */
+    font-family: "Microsoft YaHei";
+}
+
+.statement-word{
+    color: #8C8D8C;
+    font-weight: 400;
+    font-size: 0.75rem;
+    margin-top:2vh;
+    line-height: 1.25rem;
+}
+.statement-icon{
+    /* height: 3rem; */
+    /* width:3rem; */
+    margin: auto;
+    /* background: cadetblue; */
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    text-align: center;
+    margin-top: 7rem;
+    background: #000;
+    padding-top: 3rem;
+    box-sizing: border-box;
+}
+.statement-icon>img{
+    width: 3rem;
+    height: 3rem;
+    margin: 0 1.25rem;
+}
+
+.statement-icon .tw:hover{
+    content: url(../img/statement/-h-Twitter.png);
+}
+.statement-icon .fb:hover{
+    content: url(../img/statement/-h-Facebook.png);
+}
+.statement-icon .yt:hover{
+    content: url(../img/statement/-h-Youtube.png);
+}
+.statement-icon .discord:hover{
+    content: url(../img/statement/-h-Discord.png);
+}
+.statement-icon .rd:hover{
+    content: url(../img/statement/-h-Reddit.png);
+}
+.statement-icon .line:hover{
+    content: url(../img/statement/-h-Line.png);
+}
+.statement-icon .tiktok:hover{
+    content: url(../img/statement/-h-Tiktok.png);
+}
+.statement-bottom{
+    width: 87.5rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.3125rem;
+}
+.statement-logo{
+    width: 24.8125rem;
+    height: 4.0625rem;
+}
+.statement-us{
+    width: 57.25rem;
+    height: 4.6875rem;
+    position: relative;
+    color: rgba(255, 255, 255, 1);
+    font-size: 1rem;
+}
+.statement-a{
+    position: relative;
+    top: .3125rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.statement-a a{
+    text-decoration: none;
+    color: white;
+    cursor: none;
+}
+.statement-a a:hover{
+    filter: brightness(0.7);
+}
+
+.statement-i{
+    position: absolute;
+    bottom: 0;
+    color: #8C8D8C;
+    font-weight: 400;
+    font-size: 0.75rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+}
+.statement-xiang{
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    z-index: 1;
+    cursor: none;
+}
+.statement-xiang img{
+    width: 13.5rem;
+}
+.statement-xiang img:hover{
+    filter: brightness(0.7);
+}
+.statement-la{
+    position: absolute;
+    top: 10.7rem;
+    right: 30rem;
+    width: 8.4375rem;
+    cursor: none;
+}
+.statement-la:hover{
+    filter: brightness(0.7);
+}
+.statement-la img{
+    width: 100%;
+    height: 1.9375rem;
+}
+.statement-choice{
+    position: absolute;
+    top: 3rem;
+    right: 30rem;
+    width: 8.4375rem;
+    background: rgba(0, 0, 0, 1);
+}
+.statement-choice>div{
+    width: 100%;
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+.statement-choice>div:hover{
+    background: rgba(169, 169, 169, 1);
+}
+.statement.pc .button-download {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../img/statement/fixed.png)top/100% no-repeat;
+    width: 100%;
+    height: 7.1875rem;
+    border-bottom: 2px solid #B55829;
+}
+.statement.pc .state-dw-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 39.375rem;
+    position: absolute;
+    left: 53.0625rem;
+    top: 2.5rem;
+}
+.statement.pc .state-dw-box a:hover{
+    filter: brightness(70%);
+}
+.statement.pc .state-dw-btn {
+    width: 13.125rem;
+    height: 3.6875rem;
+    cursor: none;
+}
+.statement.pc .state-app-store{
+    background: url(../img/statement/app_store.png)top/100% no-repeat;
+}
+.statement.pc .state-pc{
+    background: url(../img/statement/pc.png)top/100% no-repeat;
+}
+.statement.pc .state-google{
+    background: url(../img/statement/google.png)top/100% no-repeat;
+}
+.fadeInUpSelf{
+    animation-name: selfFadeInUp;
+    animation-duration:0.5s;
+}
+@keyframes selfFadeInUp {
+    0%{
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
