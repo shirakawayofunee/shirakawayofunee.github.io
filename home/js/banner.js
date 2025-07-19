@@ -165,6 +165,12 @@ function changeBannerCss(num) {
     $(".backstory-right").show();
     cancelAnimationFrame(canvasId);
   }
+  if (num == 4) {
+    console.log("Showing timeline slide");
+    $(".timeline-left").show().addClass("animate__animated animate__fadeInLeft");
+    $(".timeline-right").show().addClass("animate__animated animate__fadeInUp");
+    cancelAnimationFrame(canvasId);
+  }
   if (num == 0) {
     cancelAnimationFrame(canvasId);
   }
