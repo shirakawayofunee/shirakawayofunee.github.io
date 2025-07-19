@@ -108,3 +108,6 @@
 .gallery-top-img-icon{
     width: 100%;
 }
+.gallery-top-bg {
+    transition: all 0.3s ease;
+}
