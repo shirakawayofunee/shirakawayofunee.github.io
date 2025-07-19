@@ -1,12 +1,3 @@
-/*
- * @Author: DCBZ
- * @Date: 2025-02-25 08:45:50
- * @LastEditors: your name
- * @LastEditTime: 2025-07-20 07:10:49
- * @Description: 
- * @FilePath: \shirakawayofunee.github.io\home\js\gallery.js
- */
-
 function openVideomask(){
     window.open(`${allPath}video.html`,'_blank')   
 }
