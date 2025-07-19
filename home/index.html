@@ -41,6 +41,8 @@
   <link rel="stylesheet" href="css/cookie.css" media="(min-device-width:926px)" />
   <link rel="stylesheet" href="css/cookieMobile.css" media="(max-device-width:926px)">
   <link rel="stylesheet" href="css/yuyueMobile.css" media="(max-device-width:926px)">
+  <link rel="stylesheet" href="css/timeline.css" media="(min-device-width:926px)" />
+<link rel="stylesheet" href="css/timelineMobile.css" media="(max-device-width:926px)" />
   <link rel="icon" type="image/x-icon" id="icon">
 </head>
 
@@ -102,6 +104,10 @@
           <div class="div-center div-centerpc" onclick="changeBanner(3)" id="banner3" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">美術館</div>
             <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(4)" id="banner4" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">タイムライン</div>
+            <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
           </div>
         </div>
         <div class="h-con-right-r">
@@ -339,6 +345,34 @@
         </div>
 
       </div>
+      <!-- PC Timeline -->
+<div class="swiper-slide pc timeline" data-mouse="small" id="slide6">
+  <div class="timeline-left animate__animated animate__fadeInLeft" data-mouse="small">
+    <img src="img/timeline/camera.png" alt="Camera" class="timeline-camera" data-mouse="small">
+  </div>
+  <div class="timeline-right" data-mouse="small">
+    <div class="timeline-right-title animate__animated animate__fadeInUp" data-mouse="small">
+      <img src="img/timeline/title.png" alt="Timeline Title" id="timelineTitle">
+    </div>
+    <div class="timeline-right-content" data-mouse="small">
+      <div class="timeline-scrollable" id="timelineScrollable">
+        <div class="timeline-item" data-mouse="small">
+          <span class="timeline-date">1月1日</span>
+          <span class="timeline-text">イベントXが発生しました。</span>
+        </div>
+        <div class="timeline-item" data-mouse="small">
+          <span class="timeline-date">2月1日</span>
+          <span class="timeline-text">イベントYが開始されました。</span>
+        </div>
+        <div class="timeline-item" data-mouse="small">
+          <span class="timeline-date">3月1日</span>
+          <span class="timeline-text">イベントZが記録されました。</span>
+        </div>
+        <!-- Add more timeline items as needed -->
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   </div>
   <!---------------------------------------------------------------mobile--------------------------------------------------------->
@@ -489,6 +523,32 @@
           <img src="img/gallery/txt_3.png" alt="">
         </div>
       </div>
+      <!-- Mobile Timeline -->
+<div class="swiper-slide mobile timelineMobile" id="slideM5">
+  <div class="timelineMobile-top animate__animated animate__fadeInRight" data-mouse="small">
+    <img src="img/timeline/camera.png" alt="Camera" class="timelineMobile-camera">
+  </div>
+  <div class="timelineMobile-title animate__animated animate__fadeInUp" data-mouse="small">
+    <img src="img/timeline/title.png" alt="Timeline Title" id="timelineMobileTitle">
+  </div>
+  <div class="timelineMobile-content" data-mouse="small">
+    <div class="timelineMobile-scrollable" id="timelineMobileScrollable">
+      <div class="timelineMobile-item" data-mouse="small">
+        <span class="timelineMobile-date">1月1日</span>
+        <span class="timelineMobile-text">イベントXが発生しました。</span>
+      </div>
+      <div class="timelineMobile-item" data-mouse="small">
+        <span class="timelineMobile-date">2月1日</span>
+        <span class="timelineMobile-text">イベントYが開始されました。</span>
+      </div>
+      <div class="timelineMobile-item" data-mouse="small">
+        <span class="timelineMobile-date">3月1日</span>
+        <span class="timelineMobile-text">イベントZが記録されました。</span>
+      </div>
+      <!-- Add more timeline items as needed -->
+    </div>
+  </div>
+</div>
     </div>
   </div>
   <!-- <div class="mobile headMobile">
@@ -519,6 +579,10 @@
         <div class="div-center div-center-mobile" onclick="changeBannerMobile(3)" id="bannerM3" data-type="share">
           <div class="div-head-text" data-mouse="mid">美術館</div>
           <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
+        </div>
+        <div class="div-center div-center-mobile" onclick="changeBannerMobile(4)" id="bannerM4" data-type="share">
+          <div class="div-head-text" data-mouse="mid">タイムライン</div>
+          <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
         </div>
       </div>
       <div class="mobile h-con-bottom">
@@ -623,8 +687,5 @@
   }
 
 </script>
-
-
-<!-- Mirrored from re1999.bluepoch.com/jp/home/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2025 23:05:10 GMT -->
-
+<script src="js/timeline.js"></script>
 </html>

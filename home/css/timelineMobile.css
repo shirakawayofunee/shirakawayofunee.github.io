@@ -1,0 +1,94 @@
+.timelineMobile {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.timelineMobile-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vw;
+}
+
+.timelineMobile-camera {
+  width: 60%;
+  max-width: 200px;
+  height: auto;
+}
+
+.timelineMobile-title {
+  text-align: center;
+  margin: 2vw 0;
+}
+
+.timelineMobile-title img {
+  width: 40%;
+  max-width: 150px;
+  height: auto;
+}
+
+.timelineMobile-content {
+  flex-grow: 1;
+  overflow: hidden;
+  padding: 0 5vw;
+}
+
+.timelineMobile-scrollable {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.timelineMobile-scrollable::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.timelineMobile-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4vw;
+  padding-left: 5vw;
+  position: relative;
+}
+
+.timelineMobile-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.timelineMobile-item::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 10px;
+  width: 1px;
+  height: calc(100% - 10px);
+  background-color: #000;
+}
+
+.timelineMobile-item:last-child::after {
+  display: none;
+}
+
+.timelineMobile-date {
+  font-size: 4vw;
+  font-weight: bold;
+  color: #333;
+  width: 25%;
+}
+
+.timelineMobile-text {
+  font-size: 3.5vw;
+  color: #666;
+  width: 75%;
+}
