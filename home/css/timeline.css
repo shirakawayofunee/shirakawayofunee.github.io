@@ -110,6 +110,13 @@
   z-index: 0; /* 确保连接线在图片之下 */
 }
 
+.timeline-item:first-child::after {
+  top: -50vh; /* 向上延伸到 .timeline-scrollable 顶部 */
+  height: calc(100% + 50vh + 1.5vw - 5px); /* 从顶部到下一个项目 */
+  border-left: 1px solid transparent; /* 底部 1px */
+  background: linear-gradient(to top, #c8c8c8 50%, rgba(0, 0, 0, 0.5) 95%, transparent 100%); /* 顶部渐隐，模拟 0.5px 宽度 */
+}
+
 .timeline-item:last-child::after {
   height: calc(100% - 19px); /* 最后一个项目不延伸，保持原高度 */
 }
