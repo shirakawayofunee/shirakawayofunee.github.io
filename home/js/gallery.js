@@ -1,6 +1,11 @@
-function openVideomask(){
+/* function openVideomask(){
     window.open(`${allPath}video.html`,'_blank')   
+} */
+function openVideomask(){
+    window.open('duihua0721.html','_blank')   
 }
+
+
 function openMusicmask(){
     window.open(`${allPath}detail.html#music`,'_blank')
 }
