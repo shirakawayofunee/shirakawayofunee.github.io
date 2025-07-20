@@ -1,10 +1,11 @@
 .timeline {
   display: flex;
-  height: 100vh; /* 占满视口高度 */
+  height: 100vh;
 }
 
 .timeline-left {
   width: 40%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,12 +23,15 @@
   display: flex;
   flex-direction: column;
   padding: 2vw;
-  overflow: hidden; /* 防止外层滚动条 */
+  overflow: hidden;
+  pointer-events: auto;
 }
 
 .timeline-right-title {
+  padding-top: 8vh;
+  max-height: 20vh;
   text-align: center;
-  margin-bottom: 2vw;
+  margin-bottom: 1vw;
 }
 
 .timeline-right-title img {
@@ -37,24 +41,25 @@
 }
 
 .timeline-right-content {
+  max-height: 65vh;
   flex-grow: 1;
-  max-height: 60%;
   overflow: hidden;
 }
 
 .timeline-scrollable {
   height: 100%;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* 移动端平滑滚动 */
   scroll-behavior: smooth;
   cursor: grab;
   user-select: none;
-  touch-action: none; /* 防止触摸设备默认滚动 */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  pointer-events: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .timeline-scrollable::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .timeline-scrollable.grabbing {
@@ -67,7 +72,7 @@
   margin-bottom: 1.5vw;
   padding-left: 2vw;
   position: relative;
-  min-height: 50px; /* 确保内容高度足够 */
+  min-height: 50px;
 }
 
 .timeline-item::before {
@@ -98,7 +103,7 @@
 .timeline-date {
   font-size: 1.2vw;
   font-weight: bold;
-  color: #333;
+  color: #D4C098;
   width: 15%;
   min-width: 100px;
 }
@@ -110,11 +115,11 @@
   min-width: 200px;
 }
 
-/* 响应式设计 */
+/* 响应式 */
 @media (max-width: 768px) {
   .timeline {
     flex-direction: column;
-    height: auto; /* 移动端高度自适应 */
+    height: auto;
   }
 
   .timeline-left,
