@@ -75,7 +75,8 @@
   top: 5px;
   object-fit: contain;
   transform-origin: center;
-  transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease; /* 平滑过渡尺寸和放大效果 */
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out, left 0.3s ease-in-out, top 0.3s ease-in-out; /* 优化过渡时间和缓动 */
+  will-change: transform, width, height, left, top; /* 优化动画性能 */
 }
 
 .timeline-node:hover {
@@ -90,11 +91,11 @@
   min-height: 50px;
   padding-left: 3vw; /* 增加 padding-left，容纳负值 left */
 }
-
-.timeline-item:hover {
-  cursor: pointer; /* 提示整行可交互 */
-  background-color: rgba(151, 161, 172, 0.1); /* 悬停时添加轻微背景高亮 */
-}
+ /* 提示整行可交互 */
+/* .timeline-item:hover {
+  cursor: pointer;
+  background-color: rgba(151, 161, 172, 0.1);
+} */
 
 .timeline-item::after {
   content: '';
@@ -111,9 +112,9 @@
 }
 
 .timeline-date {
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   font-weight: bold;
-  color: #D4C098;
+  color: #d3c394;
   width: 15%;
   min-width: 100px;
 
