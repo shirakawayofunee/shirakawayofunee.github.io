@@ -1,0 +1,60 @@
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            ……谢谢。我丈夫他喜欢康乃馨，他喜欢紫色，说那像我。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            他是FAC的人。本来已经受伤退役几年，偏偏辛迪加出了事，他又被緊急征召。再然后……就是葬礼了。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        女人哽咽了，側頭拭了下眼泪，神情悲切。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            抱歉，刚从墓園回来，我的心情还没調整好。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            我能理解。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            是吗，女士你也遇到過这种事吗？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            看你的制服，也是FAC部队的吧……虽然现在我不能提供服务，但这里的花你可以随意拿去。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            如果你也有想要紀念的人……
+                                        </div>
+                                    </div>
+                                </div>
