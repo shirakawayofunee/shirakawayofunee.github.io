@@ -5,12 +5,11 @@ function openVideomask(){
     window.open('duihua0721.html','_blank')   
 }
 
-
 function openMusicmask(){
-    window.open(`${allPath}detail.html#music`,'_blank')
+    window.open('duihua0721.html','_blank')   
 }
 function openPapermask(){ 
-    window.open(`${allPath}detail.html#wallpaper`,'_blank')     
+    window.open('../SL.html','_blank')  
 }
 // 添加图片切换逻辑
 document.querySelectorAll('.gallery-top-bg').forEach(img => {
