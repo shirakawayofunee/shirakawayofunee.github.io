@@ -68,8 +68,8 @@
 
 /* 新增 timeline-node 样式 */
 .timeline-node {
-  width: 18px; /* node_normal.png 尺寸 */
-  height: 18px;
+  width: 14px; /* node_normal.png 尺寸 */
+  height: 14px;
   position: absolute;
   left: 0;
   top: 5px;
@@ -78,7 +78,7 @@
 }
 
 .timeline-node:hover {
-  transform: scale(1.2);
+  transform: scale(1.0);
 }
 
 .timeline-item {
@@ -149,8 +149,8 @@
 
   .timeline-item:hover .timeline-node,
   .timeline-item.active .timeline-node {
-    width: 32px; /* 移动端缩小 icon_curr.png */
-    height: 32px;
+    width: 24px; /* 移动端缩小 icon_curr.png */
+    height: 24px;
   }
   .timeline-item::after {
     left: 6px; /* 调整连接线位置 */
