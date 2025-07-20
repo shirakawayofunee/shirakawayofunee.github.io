@@ -56,6 +56,7 @@
   pointer-events: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding-left: 1vw; /* 增加左内边距，确保图片不被裁剪 */
 }
 
 .timeline-scrollable::-webkit-scrollbar {
@@ -66,14 +67,14 @@
   cursor: grabbing;
 }
 
-/* 新增 timeline-node 样式 */
 .timeline-node {
-  width: 14px; /* node_normal.png 尺寸 */
+  width: 14px;
   height: 14px;
   position: absolute;
-  left: 0;
+  left: -7px; /* 14px/2，中心对齐连接线 */
   top: 5px;
   object-fit: contain;
+  transform-origin: center;
   transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease; /* 平滑过渡尺寸和放大效果 */
 }
 
@@ -85,9 +86,9 @@
   display: flex;
   align-items: flex-start;
   margin-bottom: 1.5vw;
-  padding-left: 2vw;
   position: relative;
   min-height: 50px;
+  padding-left: 3vw; /* 增加 padding-left，容纳负值 left */
 }
 
 .timeline-item:hover {
@@ -98,10 +99,10 @@
 .timeline-item::after {
   content: '';
   position: absolute;
-  left: 8px; /* 调整以居中对齐 18px 图片 */
-  top: 23px; /* 18px 图片高度 + 5px top */
+  left: 0; /* 连接线居中对齐图片中心 */
+  top: 19px; /* 14px 图片高度 + 5px top */
   width: 2px;
-  height: calc(100% - 23px);
+  height: calc(100% - 19px);
   background-color: #000;
 }
 
@@ -141,27 +142,43 @@
   .timeline-right {
     padding: 4vw;
   }
+
+  .timeline-right-content {
+    overflow: auto;
+  }
+
   .timeline-node {
-        width: 14px; /* 移动端缩小 node_normal.png */
-        height: 14px;
-    top: 4px; /* 微调移动端定位 */
+    width: 12px; /* 移动端 node_normal.png */
+    height: 12px;
+    left: -6px; /* 12px/2，中心对齐 */
+    top: 4px;
+  }
+
+  .timeline-scrollable {
+    padding-left: 2vw; /* 移动端增加左内边距 */
+  }
+
+  .timeline-item {
+    padding-left: 4vw; /* 移动端增加 padding-left */
   }
 
   .timeline-item:hover .timeline-node,
   .timeline-item.active .timeline-node {
     width: 24px; /* 移动端缩小 icon_curr.png */
     height: 24px;
+    left: -12px; /* 24px/2，中心对齐 */
+    top: 0px; /* 调整以保持视觉居中 */
   }
   .timeline-item::after {
-    left: 6px; /* 调整连接线位置 */
-    top: 18px; /* 适配移动端图片高度 */
-    height: calc(100% - 18px);
+    left: 0; /* 连接线居中对齐 */
+    top: 16px; /* 适配移动端图片高度 */
+    height: calc(100% - 16px);
   }
 
   .timeline-date {
     font-size: 3.5vw;
     min-width: 80px;
-    margin-left: 40px; /* 移动端图片空间调整 */
+    margin-left: 30px; /* 移动端图片空间调整 */
   }
 
   .timeline-text {

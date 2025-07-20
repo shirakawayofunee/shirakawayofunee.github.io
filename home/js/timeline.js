@@ -66,34 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Touch move, deltaY:', deltaY);
   }, { passive: false });
 });
-/* document.querySelectorAll('.timeline-node').forEach(node => {
-  node.addEventListener('click', () => {
-    node.src = '../img/timeline/icon_curr.png'; // 切换到高亮图片
-  });
-});
-
-
- */
-/* document.querySelectorAll('.timeline-node').forEach(node => {
-  const originalSrc = './img/timeline/node_normal.png';
-  const hoverSrc = './img/timeline/icon_curr.png';
-
-  // 鼠标悬停事件
-  node.addEventListener('mouseenter', () => {
-    node.src = hoverSrc;
-  });
-
-  // 鼠标离开事件
-  node.addEventListener('mouseleave', () => {
-    node.src = originalSrc;
-  });
-
-  // 点击事件
-  node.addEventListener('click', () => {
-    node.src = hoverSrc; // 点击时切换到 icon_curr.png
-  });
-}); */
-document.querySelectorAll('.timeline-item').forEach(item => {
+/* document.querySelectorAll('.timeline-item').forEach(item => {
   const node = item.querySelector('.timeline-node');
   const originalSrc = './img/timeline/node_normal.png';
   const hoverSrc = './img/timeline/icon_curr.png';
@@ -133,5 +106,67 @@ document.querySelectorAll('.timeline-item').forEach(item => {
     node.src = item.classList.contains('active') ? hoverSrc : originalSrc;
     node.style.width = item.classList.contains('active') ? hoverSize : originalSize;
     node.style.height = item.classList.contains('active') ? hoverSize : originalSize;
+  });
+}); */
+
+document.querySelectorAll('.timeline-item').forEach(item => {
+  const node = item.querySelector('.timeline-node');
+  const originalSrc = './img/timeline/node_normal.png';
+  const hoverSrc = './img/timeline/icon_curr.png';
+  const originalSize = '14px'; /* node_normal.png */
+  const hoverSize = '28px'; /* icon_curr.png */
+  const originalLeft = '-7px'; /* 14px/2 */
+  const hoverLeft = '-14px'; /* 28px/2 */
+  const originalTop = '5px';
+  const hoverTop = '0px'; /* 调整以保持中心对齐 */
+
+  // 移动端尺寸和定位
+  const isMobile = window.innerWidth <= 768;
+  const mobileOriginalSize = '12px';
+  const mobileHoverSize = '24px';
+  const mobileOriginalLeft = '-6px'; /* 12px/2 */
+  const mobileHoverLeft = '-12px'; /* 24px/2 */
+  const mobileOriginalTop = '4px';
+  const mobileHoverTop = '0px';
+
+  // 鼠标悬停事件
+  item.addEventListener('mouseenter', () => {
+    node.src = hoverSrc;
+    node.style.width = isMobile ? mobileHoverSize : hoverSize;
+    node.style.height = isMobile ? mobileHoverSize : hoverSize;
+    node.style.left = isMobile ? mobileHoverLeft : hoverLeft;
+    node.style.top = isMobile ? mobileHoverTop : hoverTop;
+  });
+
+  // 鼠标离开事件
+  item.addEventListener('mouseleave', () => {
+    if (!item.classList.contains('active')) {
+      node.src = originalSrc;
+      node.style.width = isMobile ? mobileOriginalSize : originalSize;
+      node.style.height = isMobile ? mobileOriginalSize : originalSize;
+      node.style.left = isMobile ? mobileOriginalLeft : originalLeft;
+      node.style.top = isMobile ? mobileOriginalTop : originalTop;
+    }
+  });
+
+  // 点击事件
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.timeline-item').forEach(otherItem => {
+      if (otherItem !== item) {
+        otherItem.classList.remove('active');
+        const otherNode = otherItem.querySelector('.timeline-node');
+        otherNode.src = originalSrc;
+        otherNode.style.width = isMobile ? mobileOriginalSize : originalSize;
+        otherNode.style.height = isMobile ? mobileOriginalSize : originalSize;
+        otherNode.style.left = isMobile ? mobileOriginalLeft : originalLeft;
+        otherNode.style.top = isMobile ? mobileOriginalTop : originalTop;
+      }
+    });
+    item.classList.toggle('active');
+    node.src = item.classList.contains('active') ? hoverSrc : originalSrc;
+    node.style.width = item.classList.contains('active') ? (isMobile ? mobileHoverSize : hoverSize) : (isMobile ? mobileOriginalSize : originalSize);
+    node.style.height = item.classList.contains('active') ? (isMobile ? mobileHoverSize : hoverSize) : (isMobile ? mobileOriginalSize : originalSize);
+    node.style.left = item.classList.contains('active') ? (isMobile ? mobileHoverLeft : hoverLeft) : (isMobile ? mobileOriginalLeft : originalLeft);
+    node.style.top = item.classList.contains('active') ? (isMobile ? mobileHoverTop : hoverTop) : (isMobile ? mobileOriginalTop : originalTop);
   });
 });
