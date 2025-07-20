@@ -4,6 +4,7 @@
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+    touch-action: pan-y; /* 允许垂直滑动 */
 }
 .backstoryMobile-top{
     max-height: 28rem;
@@ -88,6 +89,7 @@
     overflow-y: auto; /* 启用垂直滚动条 */
     -webkit-overflow-scrolling: touch; /* 优化移动端滚动 */
     user-select: auto; /* 确保内容可交互 */
+    
 }
 
 .cus-key{
