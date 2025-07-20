@@ -66,3 +66,30 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Touch move, deltaY:', deltaY);
   }, { passive: false });
 });
+/* document.querySelectorAll('.timeline-node').forEach(node => {
+  node.addEventListener('click', () => {
+    node.src = '../img/timeline/icon_curr.png'; // 切换到高亮图片
+  });
+});
+
+
+ */
+document.querySelectorAll('.timeline-node').forEach(node => {
+  const originalSrc = './img/timeline/node_normal.png';
+  const hoverSrc = './img/timeline/icon_curr.png';
+
+  // 鼠标悬停事件
+  node.addEventListener('mouseenter', () => {
+    node.src = hoverSrc;
+  });
+
+  // 鼠标离开事件
+  node.addEventListener('mouseleave', () => {
+    node.src = originalSrc;
+  });
+
+  // 点击事件
+  node.addEventListener('click', () => {
+    node.src = hoverSrc; // 点击时切换到 icon_curr.png
+  });
+});

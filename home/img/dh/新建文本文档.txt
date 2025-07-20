@@ -1,60 +1,265 @@
-                                <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
-                                        <div class="message character-message w12">
-                                            ……谢谢。我丈夫他喜欢康乃馨，他喜欢紫色，说那像我。
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
-                                        <div class="message character-message w12">
-                                            他是FAC的人。本来已经受伤退役几年，偏偏辛迪加出了事，他又被緊急征召。再然后……就是葬礼了。
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message narration">
-                                        女人哽咽了，側頭拭了下眼泪，神情悲切。
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
-                                        <div class="message character-message w12">
-                                            抱歉，刚从墓園回来，我的心情还没調整好。
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message-wrapper character1">
-                                        <div class="message character-message w12">
-                                            我能理解。
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
-                                        <div class="message character-message w12">
-                                            是吗，女士你也遇到過这种事吗？
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
-                                        <div class="message character-message w12">
-                                            看你的制服，也是FAC部队的吧……虽然现在我不能提供服务，但这里的花你可以随意拿去。
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
-                                        <div class="message character-message w12">
-                                            如果你也有想要紀念的人……
-                                        </div>
-                                    </div>
-                                </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline</title>
+  <style>
+    .timeline {
+      display: flex;
+      height: 100vh;
+    }
+
+    .timeline-left {
+      width: 40%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .timeline-camera {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+    }
+
+    .timeline-right {
+      width: 60%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 2vw;
+      overflow: hidden;
+      pointer-events: auto;
+    }
+
+    .timeline-right-title {
+      padding-top: 8vh;
+      max-height: 20vh;
+      text-align: center;
+      margin-bottom: 1vw;
+    }
+
+    .timeline-right-title img {
+      width: 50%;
+      max-width: 300px;
+      height: auto;
+    }
+
+    .timeline-right-content {
+      max-height: 65vh;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    .timeline-scrollable {
+      height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      cursor: grab;
+      user-select: none;
+      pointer-events: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .timeline-scrollable::-webkit-scrollbar {
+      display: none;
+    }
+
+    .timeline-scrollable.grabbing {
+      cursor: grabbing;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5vw;
+      padding-left: 2vw;
+      position: relative;
+      min-height: 50px;
+    }
+
+    .timeline-item:hover {
+      cursor: pointer; /* 提示整行可交互 */
+      background-color: rgba(151, 161, 172, 0.1); /* 悬停时添加轻微背景高亮 */
+    }
+
+    .timeline-node {
+      width: 18px; /* node_normal.png 尺寸 */
+      height: 18px;
+      position: absolute;
+      left: 0;
+      top: 5px;
+      object-fit: contain;
+      transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease; /* 平滑过渡尺寸和放大效果 */
+    }
+
+    .timeline-item:hover .timeline-node {
+      transform: scale(1.2); /* 悬停时放大 */
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 8px; /* 调整以居中对齐 18px 图片 */
+      top: 23px; /* 18px 图片高度 + 5px top */
+      width: 2px;
+      height: calc(100% - 23px);
+      background-color: #000;
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
+    }
+
+    .timeline-date {
+      font-size: 1.2vw;
+      font-weight: bold;
+      color: #D4C098;
+      width: 15%;
+      min-width: 100px;
+      margin-left: 50px; /* 为 42px 图片留出空间 */
+    }
+
+    .timeline-text {
+      font-size: 1vw;
+      color: #97A1AC;
+      width: 85%;
+      min-width: 200px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+      .timeline {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .timeline-left,
+      .timeline-right {
+        width: 100%;
+      }
+
+      .timeline-right {
+        padding: 4vw;
+      }
+
+      .timeline-node {
+        width: 14px; /* 移动端缩小 node_normal.png */
+        height: 14px;
+      }
+
+      .timeline-item:hover .timeline-node,
+      .timeline-item.active .timeline-node {
+        width: 32px; /* 移动端缩小 icon_curr.png */
+        height: 32px;
+      }
+
+      .timeline-item::after {
+        left: 6px; /* 调整连接线位置 */
+        top: 18px; /* 适配移动端图片高度 */
+        height: calc(100% - 18px);
+      }
+
+      .timeline-date {
+        font-size: 3.5vw;
+        min-width: 80px;
+        margin-left: 40px; /* 移动端为较大图片留出空间 */
+      }
+
+      .timeline-text {
+        font-size: 3vw;
+        min-width: 0;
+      }
+
+      .timeline-right-title img {
+        width: 80%;
+        max-width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="timeline">
+    <div class="timeline-left">
+      <img class="timeline-camera" src="placeholder.jpg" alt="Timeline camera">
+    </div>
+    <div class="timeline-right">
+      <div class="timeline-right-title">
+        <img src="title.png" alt="Timeline title">
+      </div>
+      <div class="timeline-right-content">
+        <div class="timeline-scrollable">
+          <div class="timeline-item" data-mouse="small">
+            <img src="../img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+            <div class="timeline-date">N.F.113年</div>
+            <div class="timeline-text">レオポルドは自身の残された時間が少ないことを悟り、事前にセヴェロに後事を託す。セヴェロは大きな衝撃を受け、命を延ばすための情報を必死に探し始める。</div>
+          </div>
+          <div class="timeline-item" data-mouse="small">
+            <img src="../img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+            <div class="timeline-date">N.F.113年<br>6月</div>
+            <div class="timeline-text">BR-079事件後、福音地の勢力は新城から撤退し、東区の混乱事件は減少し、西区が主要な戦場となる。FACは黒環防衛陣線の構築を計画。...</div>
+          </div>
+          <div class="timeline-item" data-mouse="small">
+            <img src="../img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+            <div class="timeline-date">N.F.113年<br>7月16日</div>
+            <div class="timeline-text">シーゲル（福音地の幹事の一人）がセヴェロを見つけ、「花園」と「命の延長」を守ることを餌に、単瞳のルーンを与え、上庭の特使Xの暗殺を依頼する。</div>
+          </div>
+          <div class="timeline-item" data-mouse="small">
+            <img src="../img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+            <div class="timeline-date">N.F.113年<br>7月16日～7月19日</div>
+            <div class="timeline-text">高級官僚が次々と襲撃され、「花園」の暗殺リストに載っていると疑われる。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      const node = item.querySelector('.timeline-node');
+      const originalSrc = '../img/timeline/node_normal.png';
+      const hoverSrc = '../img/timeline/icon_curr.png';
+      const originalSize = '18px';
+      const hoverSize = '42px';
+
+      // 鼠标悬停事件
+      item.addEventListener('mouseenter', () => {
+        node.src = hoverSrc;
+        node.style.width = hoverSize;
+        node.style.height = hoverSize;
+      });
+
+      // 鼠标离开事件
+      item.addEventListener('mouseleave', () => {
+        if (!item.classList.contains('active')) {
+          node.src = originalSrc;
+          node.style.width = originalSize;
+          node.style.height = originalSize;
+        }
+      });
+
+      // 点击事件
+      item.addEventListener('click', () => {
+        // 移除其他项目的 active 类
+        document.querySelectorAll('.timeline-item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            const otherNode = otherItem.querySelector('.timeline-node');
+            otherNode.src = originalSrc;
+            otherNode.style.width = originalSize;
+            otherNode.style.height = originalSize;
+          }
+        });
+        // 切换当前项目的状态
+        item.classList.toggle('active');
+        node.src = item.classList.contains('active') ? hoverSrc : originalSrc;
+        node.style.width = item.classList.contains('active') ? hoverSize : originalSize;
+        node.style.height = item.classList.contains('active') ? hoverSize : originalSize;
+      });
+    });
+  </script>
+</body>
+</html>
