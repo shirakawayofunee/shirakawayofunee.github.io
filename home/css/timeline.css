@@ -112,18 +112,34 @@
 }
 
 .timeline-date {
-  font-size: 1.1vw;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 300;
   color: #d3c394;
-  width: 15%;
-  min-width: 100px;
-
+  text-align: left;
+  font-family: "myFont";
+  line-height: 1.875rem;
+  padding-left: 2rem;
+  box-sizing: border-box;
+  overflow: auto; 
+  -webkit-overflow-scrolling: touch;
+  user-select: auto;
+  width: 26%;
+  min-width: 160px;
 }
 
 
 .timeline-text {
-  font-size: 1vw;
-  color: #97A1AC;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #9ea7b4;
+  text-align: left;
+  font-family: "myFont";
+  line-height: 1.875rem;
+  padding-left: 2rem;
+  box-sizing: border-box;
+  overflow: auto; 
+  -webkit-overflow-scrolling: touch;
+  user-select: auto;
   width: 85%;
   min-width: 200px;
 }
