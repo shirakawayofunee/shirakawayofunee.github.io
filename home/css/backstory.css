@@ -148,6 +148,11 @@
 .backstory-right-page-img8:hover {
   content: url("../img/backstory/8_1.png");
 }
+
+.backstory-right-page-img9:hover {
+  content: url("../img/backstory/9_1.png");
+}
+
 .backstory-border {
   height: 36rem;
 }
