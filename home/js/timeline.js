@@ -66,48 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Touch move, deltaY:', deltaY);
   }, { passive: false });
 });
-/* document.querySelectorAll('.timeline-item').forEach(item => {
-  const node = item.querySelector('.timeline-node');
-  const originalSrc = './img/timeline/node_normal.png';
-  const hoverSrc = './img/timeline/icon_curr.png';
-  const originalSize = '18px';
-  const hoverSize = '42px';
 
-  // 鼠标悬停事件
-  item.addEventListener('mouseenter', () => {
-    node.src = hoverSrc;
-    node.style.width = hoverSize;
-    node.style.height = hoverSize;
-  });
-
-  // 鼠标离开事件
-  item.addEventListener('mouseleave', () => {
-    if (!item.classList.contains('active')) {
-      node.src = originalSrc;
-      node.style.width = originalSize;
-      node.style.height = originalSize;
-    }
-  });
-
-  // 点击事件
-  item.addEventListener('click', () => {
-    // 移除其他项目的 active 类
-    document.querySelectorAll('.timeline-item').forEach(otherItem => {
-      if (otherItem !== item) {
-        otherItem.classList.remove('active');
-        const otherNode = otherItem.querySelector('.timeline-node');
-        otherNode.src = originalSrc;
-        otherNode.style.width = originalSize;
-        otherNode.style.height = originalSize;
-      }
-    });
-    // 切换当前项目的状态
-    item.classList.toggle('active');
-    node.src = item.classList.contains('active') ? hoverSrc : originalSrc;
-    node.style.width = item.classList.contains('active') ? hoverSize : originalSize;
-    node.style.height = item.classList.contains('active') ? hoverSize : originalSize;
-  });
-}); */
 
 document.querySelectorAll('.timeline-item').forEach(item => {
   const node = item.querySelector('.timeline-node');
