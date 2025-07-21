@@ -8,6 +8,7 @@
       overflow-y: auto; /* 允许垂直滚动 */
         -webkit-overflow-scrolling: touch; /* iOS 优化滚动 */
         touch-action: pan-y; /* 允许垂直滑动 */
+        overflow-x: hidden; /* 禁用水平滚动 */
     }
 
     .timelineMobile-top {
