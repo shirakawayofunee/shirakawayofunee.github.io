@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-07-22 04:32:24
+ * @LastEditTime: 2025-07-22 04:35:04
  * @Description:
  * @FilePath: \shirakawayofunee.github.io\home\js\backstory.js
  */
@@ -76,8 +76,6 @@ Lは「花園」を、メンバーそれぞれ自分の目標（復讐、力、�
   <br>工事中
     `,
   `复古的手工匠人之店，空气中弥漫着淡淡的花香，静谧而温馨。<br>足以彰显<span class="cus-key">店主<span class="cus-target2">Severo</span></span>的品味与专业性。<br>工事中`,
-  `用语集
-    `,
     `黒環
     <br>黒環は、██が限界点を超えた時に爆発する深度広域精神汚染領域で、██災変の究極である。
     
@@ -106,7 +104,7 @@ Lは「花園」を、メンバーそれぞれ自分の目標（復讐、力、�
     <br>▍BR-000
     <br>入夜84年に発生した0号黒環、別名「原生黒環」。内海の大爆発によって引き起こされ、内海全域を覆い、87231人の直接死亡と大量の怪物の出現をもたらしました。
     `,
-    `<br>工事中
+    `用语集
     `,
 ];
 var pcbackstory = new Swiper("#pcbackstory", {
