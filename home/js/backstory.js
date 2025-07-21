@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-07-22 04:07:59
+ * @LastEditTime: 2025-07-22 04:32:24
  * @Description:
  * @FilePath: \shirakawayofunee.github.io\home\js\backstory.js
  */
@@ -106,6 +106,8 @@ Lは「花園」を、メンバーそれぞれ自分の目標（復讐、力、�
     <br>▍BR-000
     <br>入夜84年に発生した0号黒環、別名「原生黒環」。内海の大爆発によって引き起こされ、内海全域を覆い、87231人の直接死亡と大量の怪物の出現をもたらしました。
     `,
+    `<br>工事中
+    `,
 ];
 var pcbackstory = new Swiper("#pcbackstory", {
   speed: 1000,
@@ -150,7 +152,7 @@ var pcbackstory = new Swiper("#pcbackstory", {
   },
 });
 function changeBackstory(num) {
-  for (let i = 1; i < 11; i++) {
+  for (let i = 1; i < 10; i++) {
     let strId = `#backstoryImg${i}`;
     $(strId).attr("src", `./img/backstory/${i}.png`);
   }
