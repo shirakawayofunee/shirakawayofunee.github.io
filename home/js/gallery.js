@@ -6,7 +6,7 @@ function openVideomask(){
 }
 
 function openMusicmask(){
-    window.open('duihua0721.html','_blank')   
+    window.open('duihua0722.html','_blank')   
 }
 function openPapermask(){ 
     window.open('../SL.html','_blank')  
