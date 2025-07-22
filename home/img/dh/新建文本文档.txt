@@ -1,385 +1,159 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>对话与章节切换</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* 全局样式 */
-        body {
-            background-color: #f8f9fa;
-            font-family: 'DreamHanSansJP', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        /* 顶部标题 */
-        .header {
-            background-color: #212529;
-            color: #c9c7ca;
-            padding: 10px 20px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        /* 主容器 */
-        .main-container {
-            display: flex;
-            margin-top: 60px; /* 留出顶部标题空间 */
-            height: calc(100vh - 60px);
-        }
-
-        /* 左侧章节图片轮播 */
-        .character-left {
-            width: 20%;
-            background-color: #2b2a2b;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .chapter-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .chapter-image.active {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
-        /* 右侧对话区域 */
-        .chat-container {
-            width: 80%;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            overflow-y: auto;
-        }
-
-        /* 对话框样式 */
-        .message {
-            padding: 10px 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            word-wrap: break-word;
-            width: fit-content;
-            min-width: 100px;
-            max-width: 80%;
-        }
-
-        .message-wrapper {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 10px;
-        }
-
-        .conversation .mb-3:first-child {
-            margin-top: 20px;
-        }
-
-        .character-message {
-            background-color: #252225;
-            color: #c9c7ca;
-            border: 1px solid #656363;
-        }
-
-        .character1 {
-            margin-left: auto;
-        }
-
-        .character1 .message-wrapper {
-            flex-direction: row-reverse;
-        }
-
-        .character2, .character3, .character4, .character5 {
-            margin-right: auto;
-        }
-
-        .character2 .message-wrapper, .character3 .message-wrapper, .character4 .message-wrapper, .character5 .message-wrapper {
-            flex-direction: row;
-        }
-
-        .character2 .avatar, .character3 .avatar, .character4 .avatar, .character5 .avatar {
-            margin-right: 10px;
-        }
-
-        .narration {
-            background-color: #ced4da;
-            color: #333;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            font-style: italic;
-        }
-
-        .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* 选项按钮样式 */
-        .options-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px auto;
-            max-width: 80%;
-        }
-
-        .option-button {
-            background-color: #e9ecef;
-            color: #333;
-            border: 1px solid #656363;
-            border-radius: 8px;
-            padding: 10px 20px;
-            font-family: 'DreamHanSansJP', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 400;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .option-button:hover {
-            background-color: #d3d3d3;
-            transform: scale(1.05);
-        }
-
-        .option-button:active {
-            background-color: #ced4da;
-            transform: scale(0.95);
-        }
-
-        /* 分支对话 */
-        .branch {
-            display: none;
-        }
-
-        .branch.active {
-            display: block;
-        }
-
-        /* 淡入淡出动画 */
-        .fade {
-            opacity: 1;
-            transition: opacity 0.5s ease;
-        }
-
-        .fade-hidden {
-            opacity: 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h2 class="w16" id="header-title">会話例 04 裁縫店の対決</h2>
-    </div>
-    <div class="main-container">
-        <!-- 左侧章节图片轮播 -->
-        <div class="character-left">
-            <img src="img/chapter1.jpg" alt="Chapter 1" class="chapter-image" data-conversation="conversation1">
-            <img src="img/chapter2.jpg" alt="Chapter 2" class="chapter-image" data-conversation="conversation2">
-            <img src="img/chapter3.jpg" alt="Chapter 3" class="chapter-image" data-conversation="conversation3">
-            <img src="img/chapter4.jpg" alt="Chapter 4" class="chapter-image active" data-conversation="conversation4">
-        </div>
-        <!-- 右侧对话区域 -->
-        <div class="chat-container" id="chat-container">
-            <!-- 示例对话：conversation4（裁縫店の対決） -->
-            <div id="conversation4" class="conversation">
-                <div class="mb-3">
-                    <div class="message narration">
-                        袭击过后，商業街的清晨格外安静，警员们集中到瑟琳宅邸附近搜查戒备，周边更远处只派三两个倒霉鬼巡逻。
-                    </div>
-                </div>
-                <!-- ... 以下为 conversation4 的完整对话内容，引用之前的 conversation.html ... -->
-                <div class="mb-3">
-                    <div class="message-wrapper character2">
-                        <img src="img/dh-severo.png" alt="Severo" class="avatar">
-                        <div class="message character-message w12">
-                            只要你有这个心，我能带你去见她。
+                            <div id="conversation3" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        N.F.113年7月23日 23:04<br>X的宅邸地下室
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        （セヴェロの庭園への忠誠は揺るぎない。
+                                        数時間にわたる審問は進展せず、代理人はセヴェロの罵倒以外何も得られなかった。）
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        <br>（そこへXが「生きているセヴェロの方が価値がある」と提案――Xはセヴェロを人質として使い、レオポルドから福音地の重要情報を引き出
+                                        す計画を立てる。代理人はその提案を認める。
+                                        ）
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        （しかし、「レオポルド」の名を耳にした瞬間、セヴェロは福音地から与えられた単瞳のルーンを起動。
+                                        ルーンの力が暴走し、彼女は一瞬で制御を失い、監禁を突破して宅邸から逃走し、大混乱を引き起こす。）
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            ああ――！！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        階下から女の悲鳴が響き、ドアが開く。
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message narration">
+                                        女仆がXの着替えを手伝うために進み出る。ドアを閉める勇気はないが、階下からは悲鳴、罵倒、狂笑が断続的に響き、
+                                    上庭の「代理」がいかに哀れな刺客を審問しているかを思い起こさせる。「代理」が入ってきてから、すべてが変わった。
+                                    女仆は震えが止まらない。
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message narration">
+                                        Xは部屋を出て階下へ向かい、警備されている地下室に入る。
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">準備ができたら出発だ。車は外に用意してある。ここからの仕事は私が引き継ぐ。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/x.png" alt="X" class="avatar">
+                                    <div class="message character-message w12">…了解した。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        彼女は倒れているセヴェロを一瞥する。
+                                    この刺客はすでに瀕死で、しかしその目は不屈と執念に満ちている。少し考えた後、Xが口を開く。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/x.png" alt="X" class="avatar">
+                                    <div class="message character-message w12">こんなに追い詰める必要はない。情報は誰かが持ってくるさ。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">別の情報源があるなら、この殺し屋にはなおさら生きる価値がない。ここで処理する。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/x.png" alt="X" class="avatar">
+                                    <div class="message character-message w12">…彼女には価値があると思う。
                         </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <div class="options-container">
-                        <button class="option-button" onclick="selectBranch('branch1')">加入加洛法诺</button>
-                        <button class="option-button" onclick="selectBranch('branch2')">拒绝加入</button>
-                    </div>
-                </div>
-                <div id="branch1" class="branch">
-                    <div class="mb-3">
-                        <div class="message-wrapper character1">
-                            <div class="message character-message w12">
-                                ……好吧，我愿意跟你去见她。
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="message-wrapper character2">
-                            <img src="img/dh-severo.png" alt="Severo" class="avatar">
-                            <div class="message character-message w12">
-                                真的？太好了！你的决定不会让你失望的。她会给我们指引，带我们走向真正的公道。
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="message narration">
-                            加洛法诺露出真诚的笑容，轻轻握住调查员的手，带着她离开裁缝店，走向未知的未来。
-                        </div>
-                    </div>
-                </div>
-                <div id="branch2" class="branch">
-                    <div class="mb-3">
-                        <div class="message-wrapper character1">
-                            <div class="message character-message w12">
-                                你说的那个人，是你的雇主，还是你们组织的首领？
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ... 继续原 conversation4 的后续对话，保持不变 ... -->
-                </div>
-            </div>
-            <!-- 其他对话 -->
-            <div id="conversation1" class="conversation" style="display: none;">
-                <!-- 填充 conversation1 内容，引用之前的 conversation1 对话 -->
-                <div class="mb-3">
-                    <div class="message-wrapper character1">
-                        <img src="img/dh-leopold.jpg" alt="Leopold" class="avatar">
-                        <div class="message character-message w12">
-                            これはもできるのか？
-                        </div>
-                    </div>
-                </div>
-                <!-- ... 其他 conversation1 对话 ... -->
-            </div>
-            <div id="conversation2" class="conversation" style="display: none;">
-                <!-- 填充 conversation2 内容 -->
-            </div>
-            <div id="conversation3" class="conversation" style="display: none;">
-                <!-- 填充 conversation3 内容 -->
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // 对话数据
-        const conversations = {
-            'conversation1': {
-                title: '会話例 01',
-                images: ['img/chapter1.jpg']
-            },
-            'conversation2': {
-                title: '会話例 02',
-                images: ['img/chapter2.jpg']
-            },
-            'conversation3': {
-                title: '会話例 03',
-                images: ['img/chapter3.jpg']
-            },
-            'conversation4': {
-                title: '会話例 04 裁縫店の対決',
-                images: ['img/chapter4.jpg']
-            }
-        };
-
-        // 切换章节和对话
-        function showConversation(conversationId) {
-            // 更新标题
-            const headerTitle = document.getElementById('header-title');
-            headerTitle.textContent = conversations[conversationId].title;
-
-            // 更新对话显示
-            document.querySelectorAll('.conversation').forEach(conv => {
-                conv.style.display = 'none';
-            });
-            const activeConversation = document.getElementById(conversationId);
-            if (activeConversation) {
-                activeConversation.style.display = 'block';
-                activeConversation.classList.add('fade');
-                setTimeout(() => activeConversation.classList.remove('fade-hidden'), 50);
-            }
-
-            // 更新章节图片高亮
-            document.querySelectorAll('.chapter-image').forEach(img => {
-                img.classList.remove('active');
-                if (img.dataset.conversation === conversationId) {
-                    img.classList.add('active');
-                    img.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            });
-
-            // 重置分支显示
-            document.querySelectorAll('.branch').forEach(branch => {
-                branch.classList.remove('active');
-                branch.style.display = 'none';
-            });
-            document.querySelectorAll('.options-container').forEach(container => {
-                container.style.display = 'block';
-                container.classList.remove('fade-hidden');
-            });
-        }
-
-        // 选项分支选择
-        function selectBranch(branchId) {
-            // 隐藏所有分支和选项
-            document.querySelectorAll('.branch').forEach(branch => {
-                branch.classList.remove('active');
-                branch.style.display = 'none';
-            });
-            document.querySelectorAll('.options-container').forEach(container => {
-                container.classList.add('fade-hidden');
-                setTimeout(() => container.style.display = 'none', 500);
-            });
-
-            // 显示选中的分支
-            const selectedBranch = document.getElementById(branchId);
-            if (selectedBranch) {
-                selectedBranch.style.display = 'block';
-                selectedBranch.classList.add('active');
-                selectedBranch.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // 章节图片点击事件
-        document.querySelectorAll('.chapter-image').forEach(img => {
-            img.addEventListener('click', () => {
-                const conversationId = img.dataset.conversation;
-                showConversation(conversationId);
-            });
-        });
-
-        // 鼠标滚轮切换章节
-        let lastScrollTime = 0;
-        document.querySelector('.character-left').addEventListener('wheel', (e) => {
-            e.preventDefault();
-            const now = Date.now();
-            if (now - lastScrollTime < 500) return; // 防抖，限制切换频率
-            lastScrollTime = now;
-
-            const images = document.querySelectorAll('.chapter-image');
-            let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
-            let nextIndex = currentIndex + (e.deltaY > 0 ? 1 : -1);
-            if (nextIndex < 0) nextIndex = images.length - 1;
-            if (nextIndex >= images.length) nextIndex = 0;
-
-            const nextConversationId = images[nextIndex].dataset.conversation;
-            showConversation(nextConversationId);
-        });
-
-        // 默认显示 conversation4
-        document.addEventListener('DOMContentLoaded', () => {
-            showConversation('conversation4');
-        });
-    </script>
-</body>
-</html>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/x.png" alt="X" class="avatar">
+                                      <div class="message character-message w12">この殺し屋の背後にいる者――雇い主ではなく、首領だ――は、メンバーの命を重んじるかもしれない。彼女は貴重な餌になる。拷問で情報が得られなくても、殺し屋の首領は彼女のために姿を現し、上庭が必要とする情報を交換してくれるかもしれない。セヴェロを生かす理由として十分だろ？</div>
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">…合理的だ。上の…！！</div>
+                                  </div>
+                                </div>
+                                <div class="narration">何かの言葉が彼女を刺激したのか、セヴェロが目を開け、苦痛と憎悪に満ちた目で二人を見上げる。</div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                    <div class="message character-message w12">お前なんかに…絶対に…させない…</div>
+                                  </div>
+                                </div>
+                                <div class="narration">セヴェロの手のひらには単瞳のルーンが握られ、彼女は強大な力を得るが、同時に██に完全に支配される。汚れた棘が彼女の全身から突き出し、</div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/x.png" alt="X" class="avatar">
+                                    <div class="message character-message w12">…これが福音地の最後の手段か。お前を道連れにしろとけしかけたんだな…本当に執拗だ。だからお前は徹底的に利用されたんだ。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/severo6.png" alt="Severo" class="avatar">
+                                    <div class="message character-message w12">彼女たちに…触れるな！！</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">これは福音地の術式か？！下がれ！</div>
+                                  </div>
+                                </div>
+                                <div class="narration">巨大な響きが屋外の警員を引きつけ、彼らが安全責任者に屋内確認の必要性を尋ねようとした瞬間、大門が破られ、一つの人影が飛び出した。濃厚な血の匂いと不吉な気配をまとい、その人物は警衛が反応する前に雨のカーテンに突入し、夜の闇に消えた。その速度は常人のものではない。</div>
+                                <div class="narration">その場にいた全員が呆然とし、振り返ると上庭の「代理」が洋館から出てくる。軽傷を負っているが、感情はますます冷静だ。</div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">A級██脅威、福音地の術式確認。ここの作戦要員は命令を受けろ：この禁閉者を封鎖しろ、殺さず生け捕りにしろ！</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">目標禁閉者は山荘の北東方向へ移動中、そこに彼女の仲間がいる。山荘内の全治安官、全力で彼女を阻止しろ。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/security.png" alt="Security" class="avatar">
+                                    <div class="message character-message w12">で、でも…俺たちの仕事は洋館の安全を守ること、彼女を守ることだ。軍はまだいるだろ？遠くに行ってない、すぐそこにいるんだ、なんで彼らを呼ばない！</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">彼らには別の任務がある。お前たちの仕事はこの山荘内にいる弱った禁閉者を捕まえることだ。逃がすな、死なせるな。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/security.png" alt="Security" class="avatar">
+                                    <div class="message character-message w12">弱ってる…？これを弱ってるって言うのか？</div>
+                                  </div>
+                                </div>
+                                <div class="narration">彼は言葉を失い、花道の向こうから暴走する怪物が自分に向かって突進してくる。咆哮する烈風のような巨大な恐怖が、治安官の理性を一瞬で引き裂いた。</div>
+                              </div>
