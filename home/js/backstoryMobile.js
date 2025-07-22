@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-07-22 21:04:18
+ * @LastEditTime: 2025-07-22 21:06:12
  * @Description: 
  * @FilePath: \shirakawayofunee.github.io\home\js\backstoryMobile.js
  */
@@ -65,3 +65,12 @@ function showBigBackstory(e){
   document.getElementById('backstoryStr').addEventListener('wheel', (event) => {
     event.stopPropagation();
   }); */
+
+/*   function enableTouchScroll(elementId) {
+    const element = document.getElementById(elementId);
+    element.style.overflowY = 'auto';
+}
+ */
+document.getElementById('backstoryStr').addEventListener('wheel', (event) => {
+    event.stopPropagation();
+});
