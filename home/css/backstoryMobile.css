@@ -4,7 +4,7 @@
     box-sizing: border-box;
     position: relative;
     height: 100vh;
-    overflow-y: auto; /* 允许垂直滚动 */
+    overflow-y: hidden;
       -webkit-overflow-scrolling: touch; /* iOS 优化滚动 */
       touch-action: pan-y; /* 允许垂直滑动 */
 }
@@ -74,6 +74,7 @@
 }
 .backstoryMobile-mid{
     height: 45%;
+    max-height: 500px;
     /* padding: 0 3vw; */
     /* background: firebrick; */
     font-size: 1rem;
@@ -88,11 +89,9 @@
     padding: 0 0.5rem;
     max-width: 364px;
     margin: 0 auto;
-    overflow: auto; /* 启用垂直滚动条 */
+    overflow-y: auto !important;
     -webkit-overflow-scrolling: touch; /* 优化移动端滚动 */
-    user-select: auto; /* 确保内容可交互 */
-    touch-action: pan-y; /* 允许垂直滑动 */
-    
+    touch-action: pan-y; /* 允许垂直滑动 */  
 }
 
 .cus-key{
