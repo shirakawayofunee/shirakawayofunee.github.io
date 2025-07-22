@@ -1,0 +1,159 @@
+                            <div id="conversation3" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        N.F.113年7月23日 23:04，X的宅邸地下室
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        （セヴェロの庭園への忠誠は揺るぎない。
+                                        数時間にわたる審問は進展せず、代理人はセヴェロの罵倒以外何も得られなかった。）
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        <br>（そこへXが「生きているセヴェロの方が価値がある」と提案――Xはセヴェロを人質として使い、レオポルドから福音地の重要情報を引き出
+                                        す計画を立てる。代理人はその提案を認める。
+                                        ）
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        （しかし、「レオポルド」の名を耳にした瞬間、セヴェロは福音地から与えられた単瞳のルーンを起動。
+                                        ルーンの力が暴走し、彼女は一瞬で制御を失い、監禁を突破して宅邸から逃走し、大混乱を引き起こす。）
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            ああ――！！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        階下から女の悲鳴が響き、ドアが開く。
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message narration">
+                                        女仆がXの着替えを手伝うために進み出る。ドアを閉める勇気はないが、階下からは悲鳴、罵倒、狂笑が断続的に響き、
+                                    上庭の「代理」がいかに哀れな刺客を審問しているかを思い起こさせる。「代理」が入ってきてから、すべてが変わった。
+                                    女仆は震えが止まらない。
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message narration">
+                                        Xは部屋を出て階下へ向かい、警備されている地下室に入る。
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">準備ができたら出発だ。車は外に用意してある。ここからの仕事は私が引き継ぐ。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/x.png" alt="X" class="avatar">
+                                    <div class="message characterh">…了解した。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        彼女は倒れているセヴェロを一瞥する。
+                                    この刺客はすでに瀕死で、しかしその目は不屈と執念に満ちている。少し考えた後、Xが口を開く。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/x.png" alt="X" class="avatar">
+                                    <div class="message character-message w12">こんなに追い詰める必要はない。情報は誰かが持ってくるさ。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">別の情報源があるなら、この殺し屋にはなおさら生きる価値がない。ここで処理する。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/x.png" alt="X" class="avatar">
+                                    <div class="message character-message w12">…彼女には価値があると思う。
+                        </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper">
+                                      <img src="img/dh/x.png" alt="X" class="avatar">
+                                      <div class="message character-message w12">この殺し屋の背後にいる者――雇い主ではなく、首領だ――は、メンバーの命を重んじるかもしれない。彼女は貴重な餌になる。拷問で情報が得られなくても、殺し屋の首領は彼女のために姿を現し、上庭が必要とする情報を交換してくれるかもしれない。セヴェロを生かす理由として十分だろ？</div>
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">…合理的だ。上の…！！</div>
+                                  </div>
+                                </div>
+                                <div class="narration">何かの言葉が彼女を刺激したのか、セヴェロが目を開け、苦痛と憎悪に満ちた目で二人を見上げる。</div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/severo2.png" alt="Severo" class="avatar">
+                                    <div class="message character-message w12">お前なんかに…絶対に…させない…</div>
+                                  </div>
+                                </div>
+                                <div class="narration">セヴェロの手のひらには単瞳のルーンが握られ、彼女は強大な力を得るが、同時に██に完全に支配される。汚れた棘が彼女の全身から突き出し、</div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/x.png" alt="X" class="avatar">
+                                    <div class="message character-message w12">…これが福音地の最後の手段か。お前を道連れにしろとけしかけたんだな…本当に執拗だ。だからお前は徹底的に利用されたんだ。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/severo2.png" alt="Severo" class="avatar">
+                                    <div class="message character-message w12">彼女たちに…触れるな！！</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">これは福音地の術式か？！下がれ！</div>
+                                  </div>
+                                </div>
+                                <div class="narration">巨大な響きが屋外の警員を引きつけ、彼らが安全責任者に屋内確認の必要性を尋ねようとした瞬間、大門が破られ、一つの人影が飛び出した。濃厚な血の匂いと不吉な気配をまとい、その人物は警衛が反応する前に雨のカーテンに突入し、夜の闇に消えた。その速度は常人のものではない。</div>
+                                <div class="narration">その場にいた全員が呆然とし、振り返ると上庭の「代理」が洋館から出てくる。軽傷を負っているが、感情はますます冷静だ。</div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">A級██脅威、福音地の術式確認。ここの作戦要員は命令を受けろ：この禁閉者を封鎖しろ、殺さず生け捕りにしろ！</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">目標禁閉者は山荘の北東方向へ移動中、そこに彼女の仲間がいる。山荘内の全治安官、全力で彼女を阻止しろ。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/security.png" alt="Security" class="avatar">
+                                    <div class="message character-message w12">で、でも…俺たちの仕事は洋館の安全を守ること、彼女を守ることだ。軍はまだいるだろ？遠くに行ってない、すぐそこにいるんだ、なんで彼らを呼ばない！</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                    <div class="message character-message w12">彼らには別の任務がある。お前たちの仕事はこの山荘内にいる弱った禁閉者を捕まえることだ。逃がすな、死なせるな。</div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper">
+                                    <img src="img/dh/security.png" alt="Security" class="avatar">
+                                    <div class="message character-message w12">弱ってる…？これを弱ってるって言うのか？</div>
+                                  </div>
+                                </div>
+                                <div class="narration">彼は言葉を失い、花道の向こうから暴走する怪物が自分に向かって突進してくる。咆哮する烈風のような巨大な恐怖が、治安官の理性を一瞬で引き裂いた。</div>
+                              </div>
