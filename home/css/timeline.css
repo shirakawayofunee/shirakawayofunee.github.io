@@ -147,6 +147,46 @@
   min-width: 200px;
 }
 
+.timeline-text span{
+color: #e23b78;
+}
+
+/* .pink{
+  color: #e23b78;
+} */
+
+.cus-key {
+  position: relative;
+}
+.cus-target1 {
+  position: absolute;
+  top: -0.85rem;
+  width: 9rem;
+  font-size: 0.6rem;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cus-target2 {
+  position: absolute;
+  top: -0.85rem;
+  width: 9rem;
+  font-size: 0.6rem;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cus-target3 {
+  position: absolute;
+  top: -0.85rem;
+  width: 9rem;
+  font-size: 0.6rem;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
 /* 响应式 */
 @media (max-width: 768px) {
   .timeline {
