@@ -102,6 +102,7 @@
         .chat-wrapper {
             background-color: #383A3E;
             height: 100vh;
+            background-image: url(img/dh/bg.png);
         }
 
         .profile-card {
@@ -116,7 +117,8 @@
 
         .dropdown .btn {
             background-color: #383A3E;
-            color: #495057;
+            color: #fff;
+            background-image: url(img/dh/bg.png);
             border: none;
             font-size: 0.875rem;
             padding: 0 10px;
@@ -129,8 +131,8 @@
         }
 
         .dropdown .btn:hover, .dropdown .btn:focus {
-            background-color: #e9ecef;
-            color: #495057;
+/*             background-color: #e9ecef; */
+            color: #e23b78;
             box-shadow: none;
         }
 
@@ -146,7 +148,8 @@
         /* 自定义对话框样式 */
         .chat-container {
             padding: 0 20px 20px;
-            background-color: #383A3E;
+            /* background-color: #383A3E; */
+            background-image: url(img/dh/bg_full.png);
             border-radius: 0 0 10px 10px;
             flex: 1;
             overflow-y: auto;
@@ -306,27 +309,46 @@
         }
 
         /* 滚动条美化 */
-        .chat-container::-webkit-scrollbar,
-        .profile-description::-webkit-scrollbar {
-            width: 8px;
-        }
+.chat-container::-webkit-scrollbar,
+.profile-description::-webkit-scrollbar {
+    width: 4px; /* 减小宽度，更加纤细 */
+    height: 4px; /* 横向滚动条高度 */
+}
 
-        .chat-container::-webkit-scrollbar-track,
-        .profile-description::-webkit-scrollbar-track {
-            background: #383A3E;
-            border-radius: 5px;
-        }
+.chat-container::-webkit-scrollbar-track,
+.profile-description::-webkit-scrollbar-track {
+    background: transparent; /* 轨道完全透明 */
+    border-radius: 5px;
+}
 
-        .chat-container::-webkit-scrollbar-thumb,
-        .profile-description::-webkit-scrollbar-thumb {
-            background: #6c757d;
-            border-radius: 5px;
-        }
+.chat-container::-webkit-scrollbar-thumb,
+.profile-description::-webkit-scrollbar-thumb {
+    background: rgba(108, 117, 125, 0.2); /* 使用原 thumb 颜色 #6c757d，降低透明度 */
+    border-radius: 5px;
+}
 
-        .chat-container::-webkit-scrollbar-thumb:hover,
-        .profile-description::-webkit-scrollbar-thumb:hover {
-            background: #5a6268;
-        }
+.chat-container::-webkit-scrollbar-thumb:hover,
+.profile-description::-webkit-scrollbar-thumb:hover {
+    background: rgba(90, 98, 104, 0.3); /* 使用原 hover 颜色 #5a6268，略微显现 */
+}
+
+/* Firefox 支持 */
+.chat-container,
+.profile-description {
+    scrollbar-width: thin; /* 细滚动条 */
+    scrollbar-color: rgba(108, 117, 125, 0.2) transparent; /* 透明滑块和轨道 */
+}
+
+/* 可选：完全隐藏滚动条但保留滚动功能 */
+.no-visible-scrollbar {
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 和 Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+    display: none; /* WebKit 浏览器完全隐藏 */
+}
 
         /* 布局样式 */
         .row {

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <title>事件の関係者</title>
+    <link rel="stylesheet" href="script/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/animateSelf.css">
+    <!-- <link rel="stylesheet" href="./JSON/spine-player.css"> -->
+    <link rel="stylesheet" href="css/index.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/mouse.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/news.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/first.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/duihua.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/backstory.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/gallery.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/statement.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/videomaskDetail.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/papermask.css" media="(min-device-width:926px)">
+    <link rel="stylesheet" href="css/papermaskDetail.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/newsDetail.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/index926.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/firstMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/mobileNews.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/characterMobile.css" media="(max-device-width:599px)">
+    <link rel="stylesheet" href="css/characterPad.css" media="(min-width:600px) and (max-width:926px)" />
+    <link rel="stylesheet" href="css/backstoryMobile.css" media="(max-device-width:599px)" />
+    <link rel="stylesheet" href="css/backstoryPad.css" media="(min-width:600px) and (max-width:926px)" />
+    <link rel="stylesheet" href="css/galleryMobile.css" media="(max-device-width:599px)" />
+    <link rel="stylesheet" href="css/galleryPad.css" media="(min-width:600px) and (max-width:926px)">
+    <link rel="stylesheet" href="css/statementMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/musicmaskMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/musicmaskDetailMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/papermaskMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/videomaskMobile.css" media="(max-device-width:926px)" />
+    <link rel="stylesheet" href="css/yuyue.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/cookie.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/cookieMobile.css" media="(max-device-width:926px)">
+    <link rel="stylesheet" href="css/yuyueMobile.css" media="(max-device-width:926px)">
+    <link rel="icon" type="image/x-icon" id="icon">
+    <style>
+      /* 全局样式 */
+      body {
+          background-color: #f8f9fa;
+          font-family: 'DreamHanSansJP', sans-serif;
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+      }
+
+      /* 顶部标题 */
+      .header {
+          background-color: #212529;
+          color: #c9c7ca;
+          padding: 10px 20px;
+          text-align: center;
+          position: fixed;
+          width: 100%;
+          z-index: 1000;
+      }
+
+      /* 主容器 */
+      .main-container {
+          display: flex;
+          margin-top: 60px; /* 留出顶部标题空间 */
+          height: calc(100vh - 60px);
+      }
+
+      /* 左侧章节图片轮播 */
+      .character-left {
+          width: 20%;
+          background-color: #2b2a2b;
+          padding: 20px;
+          overflow-y: auto;
+      }
+
+      .chapter-image {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          opacity: 0.6;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .chapter-image.active {
+          opacity: 1;
+          transform: scale(1.05);
+      }
+
+      /* 右侧对话区域 */
+      .chat-container {
+          width: 80%;
+          padding: 20px;
+          background-color: #f8f9fa;
+          border-radius: 10px;
+          overflow-y: auto;
+      }
+
+      /* 对话框样式 */
+      .message {
+          padding: 10px 15px;
+          margin-bottom: 10px;
+          border-radius: 8px;
+          word-wrap: break-word;
+          width: fit-content;
+          min-width: 100px;
+          max-width: 80%;
+      }
+
+      .message-wrapper {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 10px;
+      }
+
+      .conversation .mb-3:first-child {
+          margin-top: 20px;
+      }
+
+      .character-message {
+          background-color: #252225;
+          color: #c9c7ca;
+          border: 1px solid #656363;
+      }
+
+      .character1 {
+          margin-left: auto;
+      }
+
+      .character1 .message-wrapper {
+          flex-direction: row-reverse;
+      }
+
+      .character2, .character3, .character4, .character5 {
+          margin-right: auto;
+      }
+
+      .character2 .message-wrapper, .character3 .message-wrapper, .character4 .message-wrapper, .character5 .message-wrapper {
+          flex-direction: row;
+      }
+
+      .character2 .avatar, .character3 .avatar, .character4 .avatar, .character5 .avatar {
+          margin-right: 10px;
+      }
+
+      .narration {
+          background-color: #ced4da;
+          color: #333;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          font-style: italic;
+      }
+
+      .avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+      }
+
+      /* 选项按钮样式 */
+      .options-container {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin: 20px auto;
+          max-width: 80%;
+      }
+
+      .option-button {
+          background-color: #e9ecef;
+          color: #333;
+          border: 1px solid #656363;
+          border-radius: 8px;
+          padding: 10px 20px;
+          font-family: 'DreamHanSansJP', sans-serif;
+          font-size: 0.9rem;
+          font-weight: 400;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .option-button:hover {
+          background-color: #d3d3d3;
+          transform: scale(1.05);
+      }
+
+      .option-button:active {
+          background-color: #ced4da;
+          transform: scale(0.95);
+      }
+
+      /* 分支对话 */
+      .branch {
+          display: none;
+      }
+
+      .branch.active {
+          display: block;
+      }
+
+      /* 淡入淡出动画 */
+      .fade {
+          opacity: 1;
+          transition: opacity 0.5s ease;
+      }
+
+      .fade-hidden {
+          opacity: 0;
+      }
+  </style>
+  </head>
+<body id="all">
+  <!-- 鼠标样式 -->
+  <div class="div" id="d1"></div>
+  <!-- 手机端导航 -->
+  <div class="mobile head-mob">
+    <div class="head-mob-left">
+      <img src="img/L/mobile/Menu.png" alt="" style="transform: scale(0.5);" onclick="changeHead(1)" class="menuMobile">
+      <img src="img/L/mobile/Menuc.png" alt="" style="transform: scale(0.5);display: none;" onclick="changeHead(2)" class="menucMobile">
+    </div>
+  </div>
+  <!-- PC导航栏 -->
+  <div class="head pc" data-mouse="small">
+    <div class="h-con-left">
+      <h1 data-mouse="mid">
+        <a href="index.html" style="cursor: none;" data-mouse="mid">
+          <!-- <img src="img/L/logo.png" alt="logo" data-mouse="mid" class="head-logo"> -->
+        </a>
+      </h1>
+    </div>
+    <div class="h-con-right pc" data-mouse="mid">
+      <div class="h-con-right-l" data-mouse="mid">
+        <div class="div-center div-centerpc" id="banner1" data-mouse="mid">
+          <div class="div-head-text div-head-text-active" data-mouse="mid">登場人物</div>
+          <div class="div-head-text-en div-head-text-en-active" data-mouse="mid">CHARACTER</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PC角色 -->
+  <div class="swiper mySwiper swiperBG pc" id="characterSwiper">
+    <div class="swiper-wrapper" data-mouse="small">
+      <div class="swiper-slide character pc" data-mouse="small" id="slide3">
+        <div class="character-left animate__animated animate__fadeInLeft" data-mouse="small" data-swiper="no" onmouseenter="changeAllSwipperAbled(1)" onmouseleave="changeAllSwipperAbled(2)">
+          <div class="swiper characterpc" id="characterpc" data-mouse="small" data-swiper="no">
+            <div class="swiper-wrapper" data-mouse="small" data-swiper="no">
+              <div class="swiper-slide" data-mouse="mid" data-swiper="no">
+                <img src="img/L/character/1.png" alt="" data-mouse="mid" class="character-left-role-r role1" id="role1" data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/L/character/2.png" alt="" data-mouse="mid" class="character-left-role-l role2" id="role2" data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/L/character/3.png" alt="" data-mouse="mid" class="character-left-role-r role3" id="role3" data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/L/character/4.png" alt="" data-mouse="mid" class="character-left-role-l role4" id="role4" data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/L/character/5.png" alt="" data-mouse="mid" class="character-left-role-r role5" id="role5" data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/L/character/6.png" alt="" data-mouse="mid" class="character-left-role-l role6" id="role6" data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/L/character/7.png" alt="" data-mouse="mid" class="character-left-role-r role7" id="role7" data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/L/character/8.png" alt="" data-mouse="mid" class="character-left-role-l role8" id="role8" data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/L/character/9.png" alt="" data-mouse="mid" class="character-left-role-r role9" id="role9" data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/L/character/10.png" alt="" data-mouse="mid" class="character-left-role-l role10" id="role10" data-swiper="no">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+        <div class="character-right">
+<!--           <div class="character-right-left animate__animated animate__fadeIn" id="roleBg">
+            <img src="img/L/role/false.gif" alt="">
+            <img src="#" alt="" id="roleImg">
+          </div> -->
+        </div>
+        <div class="character-right-right animate__animated animate__fadeInRight">
+<!--           <div class="character-right-right-title">
+            <img src="img/L/role/1t.png" alt="" class="characterFadeInRight" id="roleTitle">
+          </div>
+          <div class="character-right-right-str characterFadeInRight" id="roleStr"></div>
+          <div class="character-right-right-button animate__animated" id="roleButton">
+            <div class="character-right-right-button-right">
+              <br>
+              <img src="img/L/d1.png" id="roleSwitch" alt="" onclick="switchCharacterImage()">
+              <img src="img/L/d1c.png" id="roleSwitching" alt="" onclick="switchCharacterImage()" style="display: none;">
+            </div>
+          </div> -->
+                    <!-- 右侧对话区域 -->
+                    <div class="chat-container" id="chat-container">
+                      <!-- 示例对话：conversation4（裁縫店の対決） -->
+                      <div id="conversation4" class="conversation">
+                          <div class="mb-3">
+                              <div class="message narration">
+                                  袭击过后，商業街的清晨格外安静，警员们集中到瑟琳宅邸附近搜查戒备，周边更远处只派三两个倒霉鬼巡逻。
+                              </div>
+                          </div>
+                          <!-- ... 以下为 conversation4 的完整对话内容，引用之前的 conversation.html ... -->
+                          <div class="mb-3">
+                              <div class="message-wrapper character2">
+                                  <img src="img/dh-severo.png" alt="Severo" class="avatar">
+                                  <div class="message character-message w12">
+                                      只要你有这个心，我能带你去见她。
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="mb-3">
+                              <div class="options-container">
+                                  <button class="option-button" onclick="selectBranch('branch1')">加入加洛法诺</button>
+                                  <button class="option-button" onclick="selectBranch('branch2')">拒绝加入</button>
+                              </div>
+                          </div>
+                          <div id="branch1" class="branch">
+                              <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                      <div class="message character-message w12">
+                                          ……好吧，我愿意跟你去见她。
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                      <img src="img/dh-severo.png" alt="Severo" class="avatar">
+                                      <div class="message character-message w12">
+                                          真的？太好了！你的决定不会让你失望的。她会给我们指引，带我们走向真正的公道。
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <div class="message narration">
+                                      加洛法诺露出真诚的笑容，轻轻握住调查员的手，带着她离开裁缝店，走向未知的未来。
+                                  </div>
+                              </div>
+                          </div>
+                          <div id="branch2" class="branch">
+                              <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                      <div class="message character-message w12">
+                                          你说的那个人，是你的雇主，还是你们组织的首领？
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- ... 继续原 conversation4 的后续对话，保持不变 ... -->
+                          </div>
+                      </div>
+                      <!-- 其他对话 -->
+                      <div id="conversation1" class="conversation" style="display: none;">
+                          <!-- 填充 conversation1 内容，引用之前的 conversation1 对话 -->
+                          <div class="mb-3">
+                              <div class="message-wrapper character1">
+                                  <img src="img/dh-leopold.jpg" alt="Leopold" class="avatar">
+                                  <div class="message character-message w12">
+                                      これはもできるのか？
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- ... 其他 conversation1 对话 ... -->
+                      </div>
+                      <div id="conversation2" class="conversation" style="display: none;">
+                          <!-- 填充 conversation2 内容 -->
+                      </div>
+                      <div id="conversation3" class="conversation" style="display: none;">
+                          <!-- 填充 conversation3 内容 -->
+                      </div>
+                  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 手机端角色 -->
+  <div class="swiper mySwiper swiperBG mobile swiperMobile" id="characterSwiperMobile">
+    <div class="swiper-wrapper" data-mouse="small">
+      <div class="swiper-slide moblie characterMobile" id="slideM3">
+        <div class="characterMobile-top" id="roleBgM">
+          <img src="img/L/role/01q.gif" alt="" class="characterMobile-top-quan">
+          <img src="img/L/role/1.png" class="characterMobile-top-role characterFadeInRight" id="roleImgM" alt="">
+          <div class="characterMobile-top-con">
+            <div class="characterMobile-top-con-title">
+              <img src="img/L/role/1t.png" class="characterFadeInRight" alt="" id="roleTitleM">
+            </div>
+            <div class="characterMobile-top-con-str animate__animated animate__fadeInLeft" id="roleStrM"></div>
+            <div class="characterMobile-top-con-icon" id="roleButtonM">
+              <div class="character-right-right-button-right-mobile">
+                <img src="img/L/d1.png" id="roleSwitchM" alt="" onclick="switchCharacterImageM()">
+                <img src="img/L/d1c.png" id="roleSwitchingM" alt="" onclick="switchCharacterImageM()" style="display: none;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="characterMobile-mid animate__animated animate__fadeInLeft" data-mouse="no">
+          <div class="swiper" id="characterM" data-mouse="no">
+            <div class="swiper-wrapper swiper-wrapper-mobileCharacter" data-mouse="no">
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="no">
+                <img src="img/L/character/1.png" alt="" data-mouse="mid" class="character-left-role-r roleM1" id="roleM1">
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/L/character/2.png" alt="" data-mouse="mid" class="character-left-role-l roleM2" id="roleM2">
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/L/character/3.png" alt="" data-mouse="mid" class="character-left-role-r roleM3" id="roleM3">
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/L/character/4.png" alt="" data-mouse="mid" class="character-left-role-l roleM4" id="roleM4">
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/L/character/5.png" alt="" data-mouse="mid" class="character-left-role-r roleM5" id="roleM5">
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/L/character/6.png" alt="" data-mouse="mid" class="character-left-role-l roleM6" id="roleM6">
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/L/character/7.png" alt="" data-mouse="mid" class="character-left-role-r roleM7" id="roleM7">
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/L/character/8.png" alt="" data-mouse="mid" class="character-left-role-l roleM8" id="roleM8">
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/L/character/9.png" alt="" data-mouse="mid" class="character-left-role-r roleM9" id="roleM9">
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/L/character/10.png" alt="" data-mouse="mid" class="character-left-role-l roleM10" id="roleM10">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 手机端导航菜单 -->
+  <div class="mobile headM fadeInUpSelf" onclick="hideHeadM()" style="display: none;">
+    <div class="mobile h-con-right-mobile" data-mouse="mid">
+      <div class="mobile h-con-right-l" data-mouse="mid">
+        <div class="div-center div-center-mobile" id="bannerM1" data-type="share">
+          <div class="div-head-text div-head-text-active" data-mouse="mid">登場人物</div>
+          <div class="div-head-text-en div-head-text-en-active" data-mouse="mid">CHARACTER</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script/jquery-1.11.3.min.js"></script>
+  <script src="script/swiper-bundle.min.js"></script>
+  <script src="js/duihua.js"></script>
+  <script src="js/characterMobile.js"></script>
+  <script src="js/mobile.js"></script>
+  <script>
+    // Initialize Swiper for PC character section
+    var characterSwiper = new Swiper("#characterSwiper", {
+      direction: "vertical",
+      speed: 300,
+      mousewheel: { enabled: false }, // Disable mousewheel since we only have one slide
+      noSwiping: true,
+      noSwipingClass: "swiperBG",
+      on: {
+        init: function () {
+          showCharacter();
+          refreshCharacterSwiper();
+        }
+      }
+    });
+
+    // Initialize Swiper for mobile character section
+    var characterSwiperMobile = new Swiper("#characterSwiperMobile", {
+      direction: "vertical",
+      speed: 300,
+      noSwiping: true,
+      noSwipingClass: "swiperBG",
+      on: {
+        init: function () {
+          // Initialize mobile character functionality
+          if (typeof showCharacterMobile === "function") {
+            showCharacterMobile();
+          }
+        }
+      }
+    });
+
+    // Ensure character section is displayed
+    $(document).ready(function () {
+      $(".character-left").show();
+      $(".character-right").show();
+      $(".character-right-right").show();
+      characterStorage();
+      if (typeof swipreCharacter !== "undefined" && swipreCharacter) {
+        swipreCharacter.destroy(true, true);
+      }
+      showCharacter();
+      refreshCharacterSwiper();
+    });
+  </script>
+</body>
+</html>

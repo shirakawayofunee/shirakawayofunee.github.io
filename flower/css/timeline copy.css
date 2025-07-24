@@ -1,0 +1,210 @@
+.timeline {
+  display: flex;
+  height: 100vh;
+}
+
+.timeline-left {
+  width: 40%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-camera {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.timeline-right {
+  width: 60%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.timeline-right-title {
+  padding-top: 8vh;
+  max-height: 20vh;
+  text-align: center;
+  margin-bottom: 1vw;
+}
+
+.timeline-right-title img {
+  width: 50%;
+  max-width: 300px;
+  height: auto;
+}
+
+.timeline-right-content {
+  max-height: 65vh;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.timeline-scrollable {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* 移动端平滑滚动 */
+  scroll-behavior: smooth;
+  cursor: grab;
+  user-select: none;
+  pointer-events: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-left: 1vw; /* 增加左内边距，确保图片不被裁剪 */
+}
+
+.timeline-scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline-scrollable.grabbing {
+  cursor: grabbing;
+}
+
+.timeline-node {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  left: -7px; /* 14px/2，中心对齐连接线 */
+  top: 5px;
+  object-fit: contain;
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out, left 0.3s ease-in-out, top 0.3s ease-in-out; /* 优化过渡时间和缓动 */
+  will-change: transform, width, height, left, top; /* 优化动画性能 */
+}
+
+.timeline-node:hover {
+  transform: scale(1.0);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5vw;
+  position: relative;
+  min-height: 50px;
+  padding-left: 3vw; /* 增加 padding-left，容纳负值 left */
+}
+ /* 提示整行可交互 */
+/* .timeline-item:hover {
+  cursor: pointer;
+  background-color: rgba(151, 161, 172, 0.1);
+} */
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 0; /* 连接线居中对齐图片中心 */
+  top: 19px; /* 14px 图片高度 + 5px top */
+  width: 2px;
+  height: calc(100% - 19px);
+  background-color: #000;
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+.timeline-date {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #d3c394;
+  text-align: left;
+  font-family: "myFont";
+  line-height: 1.875rem;
+  padding-left: 2rem;
+  box-sizing: border-box;
+  overflow: auto; 
+  -webkit-overflow-scrolling: touch;
+  user-select: auto;
+  width: 26%;
+  min-width: 160px;
+}
+
+
+.timeline-text {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #9ea7b4;
+  text-align: left;
+  font-family: "myFont";
+  line-height: 1.875rem;
+  padding-left: 2rem;
+  box-sizing: border-box;
+  overflow: auto; 
+  -webkit-overflow-scrolling: touch;
+  user-select: auto;
+  width: 85%;
+  min-width: 200px;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .timeline-left,
+  .timeline-right {
+    width: 100%;
+  }
+
+  .timeline-right {
+    padding: 4vw;
+  }
+
+  .timeline-right-content {
+    overflow: auto;
+  }
+
+  .timeline-node {
+    width: 12px; /* 移动端 node_normal.png */
+    height: 12px;
+    left: -6px; /* 12px/2，中心对齐 */
+    top: 4px;
+  }
+
+  .timeline-scrollable {
+    padding-left: 2vw; /* 移动端增加左内边距 */
+  }
+
+  .timeline-item {
+    padding-left: 4vw; /* 移动端增加 padding-left */
+  }
+
+  .timeline-item:hover .timeline-node,
+  .timeline-item.active .timeline-node {
+    width: 24px; /* 移动端缩小 icon_curr.png */
+    height: 24px;
+    left: -12px; /* 24px/2，中心对齐 */
+    top: 0px; /* 调整以保持视觉居中 */
+  }
+  .timeline-item::after {
+    left: 0; /* 连接线居中对齐 */
+    top: 16px; /* 适配移动端图片高度 */
+    height: calc(100% - 16px);
+  }
+
+  .timeline-date {
+    font-size: 3.5vw;
+    min-width: 80px;
+    margin-left: 30px; /* 移动端图片空间调整 */
+  }
+
+  .timeline-text {
+    font-size: 3vw;
+    min-width: 0;
+  }
+
+  .timeline-right-title img {
+    width: 80%;
+    max-width: 200px;
+  }
+}

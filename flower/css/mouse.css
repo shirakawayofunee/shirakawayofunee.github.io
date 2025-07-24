@@ -1,0 +1,72 @@
+@keyframes ball {
+            0% { width: 50px;height: 50px;}
+            25% { width: 40px;height: 40px; }
+            50% { width: 30px; height: 30px;}
+            75% { width: 20px;height: 20px; }
+            100% { width: 20px;height: 20px; } 
+        }
+@keyframes ball2 {
+            0% { width: 20px;height: 20px;}
+            25% { width: 30px;height: 30px; }
+            50% { width: 40px; height: 40px;}
+            75% { width: 50px;height: 50px; }
+            100% { width: 50px;height: 50px; } 
+        }
+ @keyframes ball3 {
+            0% { width: 12px;height: 12px;}
+            25% { width: 14px;height: 14px; }
+            50% { width: 16px; height: 16px;}
+            75% { width: 18px;height: 18px; }
+            100% { width: 20px;height: 20px; } 
+        }
+        @keyframes ball4 {
+            0% { width: 20px;height: 20px;}
+            25% { width: 18px;height: 18px; }
+            50% { width: 16px; height: 16px;}
+            75% { width: 14px;height: 14px; }
+            100% { width: 12px;height: 12px; } 
+        }
+        @keyframes changeOp {
+            0% { opacity: 0.5;}
+            25% { opacity: 0.2;}
+            50% {opacity: 0;}
+            75% { opacity: 0.2;}
+            100% {opacity: 0.5;} 
+        }
+/* 基础光标样式 */
+.div {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none; /* 确保光标不干扰鼠标事件 */
+    border-radius: 50%;
+}
+
+.div1{
+    width: 50px;
+    height:50px;
+    /* background: #e23b78 url("1.png") no-repeat ; */
+
+}
+.div2{
+    width: 12px;
+    height:12px;
+    background: #e23b78;
+    animation-name: ball;
+    animation-duration: 0.3s;
+}
+
+/* 中光标（data-mouse="mid"） */
+.div3 {
+    width: 36px; /* 根据素材图调整 */
+    height: 36px;
+    background: url('../img/cursor-mid.png') no-repeat center; /* 可使用不同素材图 */
+    background-size: contain;
+}
+
+/* 小光标（data-mouse="small"） */
+.div4 {
+    width: 24px; /* 根据素材图调整 */
+    height: 24px;
+    background: url('../img/cursor-small.png') no-repeat center; /* 可使用不同素材图 */
+    background-size: contain;
+}
