@@ -105,7 +105,7 @@ let characterMsg = [
       nocheck: "10.png",
       check: "10c.png",
       title: "10t.png",
-      str: "「福音地」的实验品，被上庭抢走后投入使用<br>工事中",
+      str: "工事中<br>",
       voice: "./mp3/role/10.mp3",
       image1: "10-1.png",
       image2: "10-2.png"
