@@ -5,11 +5,11 @@ function galleryMobileShow(num){
     }
     if(num==2){
         //$("#papermaskMobile").show()
-        window.open('duihua0722.html','_blank')    
+        window.open('../SL.html','_blank')    
     }
     if(num==3){
         //$("#musicmaskMobile").show()
-        window.open('../SL.html','_blank')
+        window.open('duihua0722.html','_blank')
     }
 }
 // 添加图片切换逻辑
