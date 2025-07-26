@@ -1,3 +1,11 @@
+/*
+ * @Author: DCBZ
+ * @Date: 2025-02-25 08:45:50
+ * @LastEditors: your name
+ * @LastEditTime: 2025-07-26 12:47:08
+ * @Description: 
+ * @FilePath: \shirakawayofunee.github.io\home\js\musicControls.js
+ */
 var musicTimer;
 function muteMusic(num){
     //console.log($("#bgm"));

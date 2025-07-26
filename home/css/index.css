@@ -515,3 +515,98 @@ h1 {
   left: 50%;
   transform: translate(-50%,-50%);
 }
+
+
+.title-scroll {
+  height: 14em;
+  opacity: 1;
+  margin-right: 5%;
+  margin-bottom: 0.65%;
+  position: fixed; /* 確保固定定位 */
+  bottom: 0;
+  right: 0;
+  z-index: 1000; /* 高層次顯示 */
+}
+
+.title-scroll:after,
+.title-scroll:before {
+  content: '';
+  width: 0.1em;
+  display: block;
+  position: absolute;
+  left: 0.45em;
+  background-color: #fff;
+}
+
+.title-scroll:before {
+  top: 0;
+  animation: scroll-bar ease-in-out 3s infinite;
+}
+
+.title-scroll:after {
+  bottom: 0;
+  animation: scroll-bar ease-in-out 3s reverse infinite;
+}
+
+.title-scroll-mouse {
+  position: absolute;
+  width: 1em;
+  height: 2em;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAwCAYAAAALiLqjAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+nhxg7wAAAVJJREFUWIXtl7FuwlAMRa0qC+qajSUSI0tHvqESnQjfxQZjpEj9hI7MHbu06gB/QZeCdBiwVTdqyAvKq1qUuwB+9j0GK8hPpNefFZAAD0ABvAN7Ttrr50LPk0vMc2BDmDZAHmo8AEpXvNNO58AYyPR1rvGdyy2BQZP52hUsgbShoVTzTOtaiOv8E5gFfeWv2pnWAZQ/JeSui1bmFYgp9weJG+jqEnPntXKDTyw4dQOt/c2BIXAHDM/kpG7wUwsWGigaulto3qIh75vfjYhM9OzpXGELmc/EACMNvHYEMJ+RAexR/+gIYD6JAaLq/wPa/NU+isiLiLy1IrjHO2tVWO+XmaHINcygB/SAHvBLgIO+v+3I03wOBthqYNwRwHy2BnjWwH1HAPM5+YbuRSGq24vibnZ6EG83dQnxtmtNins/cJA4N5wKKM4drQKJd8vsdV06AtJyuepiZKMbAAAAAElFTkSuQmCC)
+      no-repeat;
+  background-size: 100% 100%;
+  left: 0;
+  top: 0;
+  animation: scroll-mouse ease-in-out 3s infinite;
+}
+
+.title-scroll-mouse:before {
+  color: #fff;
+  content: 'scroll';
+  position: absolute;
+  transform-origin: left top;
+  font-size: 75%;
+  text-transform: uppercase;
+  transform: translateY(-25%) rotateZ(90deg);
+}
+
+@keyframes scroll-mouse {
+  from {
+      top: 0;
+      opacity: 0.5;
+  }
+  25% {
+      opacity: 1;
+  }
+  75% {
+      opacity: 1;
+  }
+  to {
+      opacity: 0.5;
+      top: 12em;
+  }
+}
+
+@keyframes scroll-bar {
+  from {
+      height: 0;
+      opacity: 0.25;
+  }
+  25% {
+      opacity: 1;
+  }
+  75% {
+      opacity: 1;
+  }
+  to {
+      opacity: 0.25;
+      height: 12em;
+  }
+}
+
+/* 隱藏在小屏幕上 */
+@media (max-width: 960px) {
+  .title-scroll {
+      display: none;
+  }
+}
