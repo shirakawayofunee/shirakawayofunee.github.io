@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SL</title>
+  <link rel="stylesheet" href="backstory.css">
+  <style>
+    /* Modal styles for large image view */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      margin: auto;
+      display: block;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Ensure modal doesn't conflict with backstory.css */
+    .modal img {
+      width: auto;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <section class="backstory">
+    <div class="backstory-left">
+      <div class="backstory-left-list">
+        <img class="backstory-img" src="../img/SL/1.png" alt="Image Preview" onclick="openModal(this.src)">
+      </div>
+    </div>
+    <div class="backstory-right">
+      <div class="backstory-right-title">
+        <img src="../img/backstory/title.png" alt="">
+      </div>
+      <div class="backstory-right-str">
+        <p>SLの関係についての私の考え：</p>
+        <p>二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。</p>
+        <p>ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。</p>
+        <p>二人は師弟、主従、母娘、神と信徒、革命の戦友であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。この絆の核心は、単一のラベルを超えた、もっと深い愛にあるのです。</p>
+      </div>
+      <div class="cus-key">
+        <div class="cus-target1">イラスト</div>
+        <div class="cus-target2">テーマ</div>
+        <div class="cus-target3">落書き</div>
+        <a href="javascript:;">
+          <img class="backstory-right-page-img backstory-right-page-img1" src="../img/backstory/1.png" alt="イラスト">
+        </a>
+        <a href="javascript:;">
+          <img class="backstory-right-page-img backstory-right-page-img2" src="../img/backstory/2.png" alt="テーマ">
+        </a>
+        <a href="javascript:;">
+          <img class="backstory-right-page-img backstory-right-page-img3" src="../img/backstory/3.png" alt="落書き">
+        </a>
+        <a href="javascript:;">
+          <img class="backstory-right-page-img backstory-right-page-img4" src="../img/backstory/4.png" alt="漫画">
+        </a>
+        <a href="javascript:;">
+          <img class="backstory-right-page-img backstory-right-page-img5" src="../img/backstory/5.png" alt="死后">
+        </a>
+        <a href="javascript:;">
+          <img class="backstory-right-page-img backstory-right-page-img6" src="../img/backstory/6.png" alt="ふわふわ">
+        </a>
+        <a href="javascript:;">
+          <img class="backstory-right-page-img backstory-right-page-img7" src="../img/backstory/7.png" alt="邸宅">
+        </a>
+        <a href="javascript:;">
+          <img class="backstory-right-page-img backstory-right-page-img8" src="../img/backstory/8.png" alt="NSFW">
+        </a>
+      </div>
+      <div class="backstory-right-page">
+        <div>Image Preview</div>
+        <a href="javascript:;">
+          <img id="backstoryPre" class="backstory-right-page-img" src="../img/backstory/pre.png" alt="Previous">
+        </a>
+        <a href="javascript:;">
+          <img id="backstoryNext" class="backstory-right-page-img" src="../img/backstory/next.png" alt="Next">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for large image -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "flex";
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("imageModal");
+      modal.style.display = "none";
+    }
+
+    // Close modal when clicking outside the image
+    window.onclick = function(event) {
+      const modal = document.getElementById("imageModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
+</body>
+</html>
