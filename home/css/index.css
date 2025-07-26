@@ -2,22 +2,29 @@
   --animate-duration: 800ms;
   --animate-delay: 0;
 }
-/* @font-face {
+@font-face {
   font-family: "SourceHanSerifCN";
   src: url(../font/Serif.ttf);
-} */
-/* @font-face {
+}
+@font-face {
   font-family: "cn";
   src: url(../font/Sans.ttf);
+}
+/* @font-face {
+  font-family: "myFont";
+  src: url(../font/myFont.html);
 } */
 @font-face {
   font-family: "myFont";
-  src: url(../font/myFont.html);
+  src: url("../font/DreamHanSansJP-W10.ttf") format("truetype");
+  font-display: swap;
 }
+
 html,
 body {
   position: relative;
   height: 100%;
+  font-family: 'myFont';
 }
 
 body {
