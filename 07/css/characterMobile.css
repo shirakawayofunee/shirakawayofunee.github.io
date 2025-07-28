@@ -2,8 +2,10 @@
     padding: 2vh 4vw;
     box-sizing: border-box;
     position: relative;
-    height: 100%;
-    overflow: auto;
+    height: 100vh;
+    overflow-y: auto; /* 允许垂直滚动 */
+      -webkit-overflow-scrolling: touch; /* iOS 优化滚动 */
+      touch-action: pan-y; /* 允许垂直滑动 */
   }
   .characterMobile-top {
     height: 100%;
@@ -24,7 +26,7 @@
   .characterMobile-top-con {
     position: absolute;
     width: 50%;
-    height: 40%;
+    height: 30%;
     bottom: 7%;
     left: 0;
   }
@@ -36,6 +38,7 @@
   }
   .characterMobile-top-con-str {
     width: 88vw;
+    height: 10vh;
     font-size: 0.8rem;
     font-weight: 300;
     color: #9ea7b4;
@@ -45,6 +48,7 @@
     margin-left: 5vw;
     overflow-y: auto; 
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-y; /* 允许垂直滑动 */
   }
   .characterMobile-top-con-icon {
     height: 30%;

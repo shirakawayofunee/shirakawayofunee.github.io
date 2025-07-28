@@ -1,0 +1,155 @@
+@media (max-width: 768px) {
+    .timelineMobile {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+/*       height: auto; */
+/*       min-height: 100vh; */
+      touch-action: pan-y; /* 允许垂直滑动 */
+      overflow-y: auto; /* 允许垂直滚动 */
+        -webkit-overflow-scrolling: touch; /* iOS 优化滚动 */
+        touch-action: pan-y; /* 允许垂直滑动 */
+        overflow-x: hidden; /* 禁用水平滚动 */
+    }
+
+    .timelineMobile-top {
+      width: 100%;
+      max-height: 30vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4vw;
+    }
+
+    .timelineMobile-camera {
+      width: 100%;
+      max-height: 27vh;
+      object-fit: contain; /* 确保图片不失真 */
+    }
+
+    .timelineMobile-down {
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 4vw;
+      overflow: auto; /* 避免裁剪图片 */
+      padding-right: 10vh;
+    }
+
+    .timelineMobile-title {
+      max-height: 10vh;
+      text-align: center;
+      margin-bottom: 4vw;
+    }
+
+    .timelineMobile-title img {
+      width: 80%;
+      max-width: 200px;
+      height: auto;
+    }
+
+    .timeline-down-content {
+      max-height: 60vh; /* 调整以适配移动端 */
+      flex-grow: 1;
+      overflow: auto; /* 避免裁剪 */
+    }
+
+    .timeline-scrollable {
+      height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      cursor: grab;
+      user-select: none;
+      pointer-events: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-left: 2vw; /* 确保图片不被裁剪 */
+    }
+
+    .timeline-scrollable::-webkit-scrollbar {
+      display: none;
+    }
+
+    .timeline-scrollable.grabbing {
+      cursor: grabbing;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      padding-left: 4vw;
+      padding-bottom: 3vw; /* 替代 margin-bottom */
+      position: relative;
+      min-height: 50px;
+    }
+
+    .timeline-node {
+      width: 12px; /* 移动端 node_normal.png */
+      height: 12px;
+      position: absolute;
+      left: -6px; /* 12px/2，中心对齐 */
+      top: 4px;
+      object-fit: contain;
+      transform-origin: center;
+      transition: transform 0.25s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out, left 0.25s ease-in-out, top 0.25s ease-in-out;
+      will-change: transform, width, height, left, top;
+      z-index: 10; /* 图片在连接线之上 */
+    }
+
+    .timeline-item:hover .timeline-node,
+    .timeline-item.active .timeline-node {
+      width: 24px; /* 移动端 icon_curr.png */
+      height: 24px;
+      left: -12px; /* 24px/2 */
+      top: 0px;
+      transform: scale(1.2); /* 匹配 PC 端悬停放大 */
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px; /* 12px 图片高度 + 4px top */
+      width: 0; /* 使用 border-left */
+      height: calc(100% + 3vw - 4px); /* 延伸到下一个项目 */
+      border-left: 1px solid #c8c8c8; /* 底部 1px */
+      background: linear-gradient(to top, #c8c8c8 50%, transparent 100%); /* 渐隐效果 */
+      z-index: 0; /* 连接线在图片之下 */
+    }
+
+    .timeline-item:first-child::after {
+      top: -60vh; /* 向上延伸到 .timeline-scrollable 顶部 */
+      height: calc(100% + 60vh + 3vw - 4px); /* 从顶部到下一个项目 */
+      border-left: 1px solid transparent; /* 底部 1px */
+      background: linear-gradient(to top, #c8c8c8 50%, rgba(0, 0, 0, 0.5) 95%, transparent 100%); /* 顶部渐隐，模拟 0.5px 宽度 */
+    }
+
+    .timeline-item:last-child::after {
+      height: calc(100% - 16px); /* 最后一个项目不延伸 */
+      border-left: 1px solid #c8c8c8;
+      background: linear-gradient(to top, #c8c8c8 50%, transparent 100%);
+    }
+
+    .timeline-date {
+      font-size: 3.5vw;
+      font-weight: 300;
+      color: #d3c394;
+      width: 25%;
+      min-width: 80px;
+      margin-left: 30px; /* 为 24px 图片留空间 */
+      font-family: "myFont", "Noto Sans CJK JP", "Source Han Sans", sans-serif; /* 匹配 PC 端字体 */
+      line-height: 1.5; /* 优化行高 */
+    }
+
+    .timeline-text {
+      font-size: 3vw;
+      font-weight: 300;
+      color: #9ea7b4;
+      width: 75%;
+      min-width: 0;
+      font-family: "myFont", "Noto Sans CJK JP", "Source Han Sans", sans-serif; /* 匹配 PC 端字体 */
+      line-height: 1.5; /* 优化行高 */
+    }
+  }

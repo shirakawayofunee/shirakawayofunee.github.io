@@ -2,8 +2,10 @@
     padding: 2vh 4vw;
     box-sizing: border-box;
     position: relative;
-    height: 100%;
-    overflow: hidden;
+    height: 100vh;
+    overflow-y: auto; /* 允许垂直滚动 */
+      -webkit-overflow-scrolling: touch; /* iOS 优化滚动 */
+      touch-action: pan-y; /* 允许垂直滑动 */
   }
   .characterMobile-top {
     height: 100%;

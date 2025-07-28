@@ -1,20 +1,10 @@
-/*
- * @Author: DCBZ
- * @Date: 2025-02-25 08:45:50
- * @LastEditors: your name
- * @LastEditTime: 2025-07-26 00:53:56
- * @Description: 
- * @FilePath: \shirakawayofunee.github.io\home\js\gallery.js
- */
-/* function openVideomask(){
-    window.open(`${allPath}video.html`,'_blank')   
-} */
+
 function openVideomask(){
-    window.open('duihua0721.html','_blank')   
+    window.open('../duihua0721.html','_blank')   
 }
 
 function openMusicmask(){
-    window.open('duihua0722.html','_blank')   
+    window.open('../duihua0722.html','_blank')   
 }
 function openPapermask(){ 
     window.open('../SL.html','_blank')
