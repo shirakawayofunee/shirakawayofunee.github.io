@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-07-05 18:16:19
+ * @LastEditTime: 2025-07-22 21:06:12
  * @Description: 
  * @FilePath: \shirakawayofunee.github.io\home\js\backstoryMobile.js
  */
@@ -41,7 +41,7 @@ function showBigBackstory(e){
 }
 
 // 触摸滑动（移动端）
-function enableTouchScroll(elementId) {
+/* function enableTouchScroll(elementId) {
     const element = document.getElementById(elementId);
     let startY, scrollTop;
   
@@ -56,13 +56,21 @@ function enableTouchScroll(elementId) {
         element.scrollTop = scrollTop + walk;
         e.stopPropagation();
     });
-  }
+  } */
   
   // 启用拖拽和触摸滚动
-  enableDragScroll('backstoryStr');
-  enableTouchScroll('backstoryStr');
+/*   enableDragScroll('backstoryStr'); */
+/*   enableTouchScroll('backstoryStr');
   
-  // 确保滚轮事件不被 Swiper 拦截
   document.getElementById('backstoryStr').addEventListener('wheel', (event) => {
     event.stopPropagation();
-  });
+  }); */
+
+/*   function enableTouchScroll(elementId) {
+    const element = document.getElementById(elementId);
+    element.style.overflowY = 'auto';
+}
+ */
+document.getElementById('backstoryStr').addEventListener('wheel', (event) => {
+    event.stopPropagation();
+});

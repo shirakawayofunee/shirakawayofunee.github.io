@@ -22,16 +22,16 @@ var swiperAll = new Swiper("#allSwiper", {
       }
       wheelIndex = false;
       changeBanner(this.activeIndex);
-      changeBannerCssHide(this.activeIndex);
     },
     touchEnd: function (swiper, event) {},
     slideChangeTransitionEnd: function () {
       bannerIndex = this.activeIndex;
       console.log("Slide transition ended, bannerIndex:", bannerIndex);
-      changeBannerCss(this.activeIndex);
+      changeBannerCss(this.activeIndex); // 统一在 transitionEnd 调用
     },
     slideChangeTransitionStart: function () {
-      if (this.activeIndex != 4) {
+      // 仅更新 bannerIndex，避免干扰显示逻辑
+      if (this.activeIndex != 5) {
         bannerIndex = this.activeIndex;
       }
       if (this.activeIndex != 2) {
@@ -68,35 +68,33 @@ function changeBanner(num) {
 
 changeBanner(0);
 
-// 简化滚轮事件监听，仅处理bannerIndex=4的情况
+// 简化滚轮事件监听，处理 statement（索引5）和时间线（索引4）
 document.onmousewheel = scrollFunc;
 document.onwheel = scrollFunc; // 火狐绑定滚轮
 function scrollFunc(e) {
   e = e || window.event;
-  if (bannerIndex == 4) {
+  if (bannerIndex == 5) { // statement 板块
     wheelIndex = true;
     if (e.wheelDelta) {
       if (e.wheelDelta > 100) {
-        // 当滑轮向上滚动时
         changeStatement(false);
       }
       if (e.wheelDelta < -100) {
-        // 当滑轮向下滚动时
         changeStatement(true);
       }
     } else if (e.detail) {
       if (e.detail > 100) {
-        // 当滑轮向下滚动时
         changeStatement(true);
       }
       if (e.detail < -100) {
-        // 当滑轮向上滚动时
         changeStatement(false);
       }
     }
+  } else if (bannerIndex == 4) {
+    // 时间线板块的滚轮逻辑由 timeline.js 处理
+    wheelIndex = true; // 阻止 Swiper 默认滚轮切换
   } else {
     wheelIndex = false;
-    // 让Swiper的mousewheel处理其他滑块切换
   }
 }
 
@@ -125,83 +123,66 @@ function changeStatement(type) {
   }
 }
 
-// 动效增加
+// 动效增加，统一管理所有板块的显示/隐藏
 function changeBannerCss(num) {
   console.log("Applying CSS for slide:", num);
-  if (num == 4) {
-    $(".gallery-top-1").show();
-    $(".gallery-top-2").show();
-    $(".gallery-top-3").show();
-    $(".gallery-top-4").show();
-    $(".gallery-top-5").show();
-    $(".gallery-top-6").show();
+  // 隐藏所有板块
+  $(".news-left, .news-right-head-img, .news-right-head-bg, .news-right-con, .news-right-foot").hide();
+  $(".character-left, .character-right, .character-right-right").hide();
+  $(".backstory-left, .backstory-right").hide();
+  $(".gallery-top-1, .gallery-top-2, .gallery-top-3, .gallery-top-4, .gallery-top-5, .gallery-top-6").hide();
+  $(".timeline-left, .timeline-right").hide();
+  $(".statement").hide();
+
+  // 显示目标板块并添加动画
+  if (num == 0) {
+    // 首页
     cancelAnimationFrame(canvasId);
   }
   if (num == 1) {
-    // 显示角色模块相关元素
-    $(".character-left").show();
-    $(".character-right").show();
-    $(".character-right-right").show();
+    // 角色
+    $(".character-left").show().addClass("animate__animated animate__fadeInLeft");
+    $(".character-right").show().addClass("animate__animated animate__fadeIn");
+    $(".character-right-right").show().addClass("animate__animated animate__fadeInRight");
     characterStorage();
-    // 重新初始化角色 Swiper
     if (typeof swipreCharacter !== "undefined" && swipreCharacter) {
       console.log("Destroying existing character Swiper");
       swipreCharacter.destroy(true, true);
     }
     showCharacter();
-    refreshCharacterSwiper(); // 强制刷新角色 Swiper
+    refreshCharacterSwiper();
     cancelAnimationFrame(canvasId);
   }
   if (num == 2) {
+    // 世界观
     video.play();
     $(".character").css("background", `url("./img/BG.png") no-repeat bottom`);
     $(".character").css("background-size", "cover");
-    $(".backstory-left").show();
-    $(".backstory-right").show();
+    $(".backstory-left").show().addClass("animate__animated animate__fadeInLeft");
+    $(".backstory-right").show().addClass("animate__animated animate__fadeInUp");
     cancelAnimationFrame(canvasId);
   }
   if (num == 3) {
-    $(".backstory-left").show();
-    $(".backstory-right").show();
+    // 美术馆
+    $(".gallery-top-1").show().addClass("animate__animated animate__fadeInUp");
+    $(".gallery-top-2").show().addClass("animate__animated animate__fadeInUp animate__delay-1.5s");
+    $(".gallery-top-3").show().addClass("animate__animated animate__fadeInUp animate__delay-2s");
+    $(".gallery-top-4").show().addClass("animate__animated animate__fadeIn");
+    $(".gallery-top-5").show().addClass("animate__animated animate__fadeIn");
+    $(".gallery-top-6").show().addClass("animate__animated animate__fadeIn");
     cancelAnimationFrame(canvasId);
   }
   if (num == 4) {
-    console.log("Showing timeline slide");
+    // 时间线
     $(".timeline-left").show().addClass("animate__animated animate__fadeInLeft");
     $(".timeline-right").show().addClass("animate__animated animate__fadeInUp");
     cancelAnimationFrame(canvasId);
   }
-  if (num == 0) {
+  if (num == 5) {
+    // statement
+    $(".statement").show();
     cancelAnimationFrame(canvasId);
   }
 }
 
-// 设置显示隐藏
-function changeBannerCssHide(num) {
-  console.log("Hiding elements for slide:", num);
-  if (num == 1) {
-    $(".news-left").hide();
-    $(".news-right-head-img").hide();
-    $(".news-right-head-bg").hide();
-    $(".news-right-con").hide();
-    $(".news-right-foot").hide();
-  }
-  if (num == 2) {
-    console.log("Hiding character elements");
-    $(".character-left").hide();
-    $(".character-right").hide();
-    $(".character-right-right").hide();
-  }
-  if (num == 3) {
-    $(".backstory-left").hide();
-    $(".backstory-right").hide();
-  }
-  if (num == 4) {
-    $(".gallery-top-1").hide();
-    $(".gallery-top-2").hide();
-    $(".gallery-top-3").hide();
-    $(".gallery-top-4").hide();
-    $(".gallery-top-5").hide();
-    $(".gallery-top-6").hide();
-  }
-}
+// 移除 changeBannerCssHide，合并到 changeBannerCss
