@@ -25,7 +25,7 @@ function papermaskDetailDown() {
   a.click();
   //console.log($(".papermaskDetailTop-zoom")[0].src)
 }
-function paperShowBig(e, str) {
+/* function paperShowBig(e, str) {
   if (str) {
     $("#papermaskDetailTop-zoom").prop("src", `./img/backstory/${str}`);
   } else {
@@ -43,7 +43,25 @@ function paperShowHide() {
     $(".papermaskDetail").removeClass("animate__fadeOutDown");
     $("#papermaskDetail").hide();
   }, 300);
-}
+} */
+function paperShowBig(e, str) {
+    console.log('paperShowBig called: str =', str, 'element =', e);
+    const src = str ? `./img/backstory/${str}` : e.src;
+    console.log('Setting src:', src);
+    const $img = $("#papermaskDetailTop-zoom");
+    if ($img.length === 0) {
+      console.error('papermaskDetailTop-zoom not found');
+      return;
+    }
+    $img.prop("src", src).on("load", () => {
+      console.log('Image loaded:', src);
+    }).on("error", () => {
+      console.error('Image failed to load:', src);
+    });
+    papermaskZoom = 1;
+    console.log('Showing papermaskDetail');
+    $("#papermaskDetail").show();
+  }
 
 let isLoading1 = false;
 // 渲染pc图集
