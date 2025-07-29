@@ -1,4 +1,38 @@
-<!DOCTYPE html>
+<script type="text/javascript">
+  var gk_isXlsx = false;
+  var gk_xlsxFileLookup = {};
+  var gk_fileData = {};
+  function filledCell(cell) {
+    return cell !== '' && cell != null;
+  }
+  function loadFileData(filename) {
+  if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+      try {
+          var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+          var firstSheetName = workbook.SheetNames[0];
+          var worksheet = workbook.Sheets[firstSheetName];
+          var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+          var filteredData = jsonData.filter(row => row.some(filledCell));
+          var headerRowIndex = filteredData.findIndex((row, index) =>
+            row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+          );
+          // Fallback
+          if (headerRowIndex === -1 || headerRowIndex > 25) {
+            headerRowIndex = 0;
+          }
+
+          // Convert filtered JSON back to CSV
+          var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+          csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+          return csv;
+      } catch (e) {
+          console.error(e);
+          return "";
+      }
+  }
+  return gk_fileData[filename] || "";
+  }
+  </script><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -261,10 +295,6 @@ img.lazy[src] {
         aria-selected="false">邸宅</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="r18g-tab" data-bs-toggle="tab" href="#r18g" role="tab" aria-controls="r18g"
-        aria-selected="false">R18-G</a>
-    </li>
-    <li class="nav-item">
       <a class="nav-link" id="nsfw-tab" data-bs-toggle="tab" href="#nsfw" role="tab" aria-controls="nsfw"
         aria-selected="false">NSFW</a>
     </li>
@@ -295,9 +325,6 @@ img.lazy[src] {
   <div class="tab-pane fade" id="nsfw" role="tabpanel" aria-labelledby="nsfw-tab">
     <div class="gallery-container" id="nsfwContainer"></div>
   </div>
-  <div class="tab-pane fade" id="r18g" role="tabpanel" aria-labelledby="r18g-tab">
-    <div class="gallery-container" id="r18gContainer"></div>
-  </div>
 </div>
 </div>
 
@@ -322,41 +349,7 @@ img.lazy[src] {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="js/papermaskDetail.js"></script>
-<script type="text/javascript">
-  var gk_isXlsx = false;
-  var gk_xlsxFileLookup = {};
-  var gk_fileData = {};
-  function filledCell(cell) {
-    return cell !== '' && cell != null;
-  }
-  function loadFileData(filename) {
-  if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-      try {
-          var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-          var firstSheetName = workbook.SheetNames[0];
-          var worksheet = workbook.Sheets[firstSheetName];
-          var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-          var filteredData = jsonData.filter(row => row.some(filledCell));
-          var headerRowIndex = filteredData.findIndex((row, index) =>
-            row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-          );
-          // Fallback
-          if (headerRowIndex === -1 || headerRowIndex > 25) {
-            headerRowIndex = 0;
-          }
-
-          // Convert filtered JSON back to CSV
-          var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-          csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-          return csv;
-      } catch (e) {
-          console.error(e);
-          return "";
-      }
-  }
-  return gk_fileData[filename] || "";
-  }
-
+<script>
 const galleryImages = [
   {
     src: "img/SL/SL1.webp",
@@ -534,12 +527,6 @@ const nsfwImages = [
   { src: "img/SL/nsfw4.webp", alt: "NSFW Image 4", description: "体型華奢" },
 ];
 
-const r18gImages = [
-  { src: "img/SL/g1.webp", alt: "R18-G Image 1", description: "" },
-  { src: "img/SL/g2.webp", alt: "R18-G Image 2", description: "" },
-/*   { src: "img/SL/g3.webp", alt: "R18-G Image 3", description: "" }, */
-];
-
 function arrangeWaterfall(containerId, imageArray) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
@@ -586,8 +573,6 @@ function arrangeWaterfall(containerId, imageArray) {
         ? "catdw"
         : containerId === "nsfwContainer"
         ? "nsfw"
-        : containerId === "r18gContainer"
-        ? "r18g"
         : ""
     );
     img.src =
@@ -629,7 +614,6 @@ function initializeTabs() {
   arrangeWaterfall("doodleContainer", doodleImages);
   arrangeWaterfall("catdwContainer", catdwImages);
   arrangeWaterfall("nsfwContainer", nsfwImages);
-  arrangeWaterfall("r18gContainer", r18gImages);
 }
 
 function lazyLoadImages() {
@@ -675,8 +659,6 @@ document.querySelectorAll(".nav-link").forEach((tab) => {
       arrangeWaterfall("catdwContainer", catdwImages);
     else if (target === "nsfw")
       arrangeWaterfall("nsfwContainer", nsfwImages);
-    else if (target === "r18g")
-      arrangeWaterfall("r18gContainer", r18gImages);
   });
 });
 
@@ -701,8 +683,6 @@ function papermaskDetailChange(direction) {
       ? catdwImages
       : currentArray === "nsfw"
       ? nsfwImages
-      : currentArray === "r18g"
-      ? r18gImages
       : [];
   if (direction === 1) {
     currentIndex = (currentIndex + 1) % array.length;
