@@ -88,19 +88,19 @@
 }
 .galleryMobile-4{
     position: absolute;
-    right: 0;
+    right: 20%;
     top:20%;
     transform: scale(0.5);
 }
 .galleryMobile-5{
     position: absolute;
-    left: -10%;
+    left: 20%;
     top:50%;
     transform: scale(0.5);
 }
 .galleryMobile-6{
     position: absolute;
-    right: -15%;
+    right: 15%;
     bottom:10%;
     transform: scale(0.5);
 }
