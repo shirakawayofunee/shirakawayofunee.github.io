@@ -89,8 +89,8 @@
 }
 .gallery-top-4{
     position: absolute;
-    bottom: 30vh;
-    left: 14vw;
+    bottom: 41vh;
+    left: 17vw;
     width: 7rem;
 }
 .gallery-top-5{
@@ -101,7 +101,7 @@
 }
 .gallery-top-6{
    position: absolute;
-    top: 50vh;
+    top: 55vh;
     right: 14vw;
     width: 10rem; 
 }
