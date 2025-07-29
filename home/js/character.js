@@ -229,16 +229,15 @@ let characterMsg = [
     });
   }
 
-
   document.addEventListener('DOMContentLoaded', () => {
     const strContainer = document.querySelector('.character-right-right-str');
   
     // 鼠标滚轮滚动
     strContainer.addEventListener('wheel', (event) => {
-      event.preventDefault();
+      event.stopPropagation();
       const scrollAmount = event.deltaY;
       strContainer.scrollTop += scrollAmount * 0.5;
-    });
+    }, { passive: false });
   
     // 鼠标拖拽滚动
     let isDragging = false;
@@ -250,13 +249,14 @@ let characterMsg = [
       startY = event.clientY;
       startScrollTop = strContainer.scrollTop;
       strContainer.style.cursor = 'grabbing';
+      event.preventDefault();
     });
   
     document.addEventListener('mousemove', (event) => {
       if (!isDragging) return;
       event.preventDefault();
       const deltaY = startY - event.clientY;
-      strContainer.scrollTop = startScrollTop + deltaY;
+      strContainer.scrollTop = startScrollTop + deltaY * 1.5;
     });
   
     document.addEventListener('mouseup', () => {
@@ -264,19 +264,24 @@ let characterMsg = [
       strContainer.style.cursor = 'default';
     });
   
-    // 触摸拖拽滚动
+    document.addEventListener('mouseleave', () => {
+      isDragging = false;
+      strContainer.style.cursor = 'default';
+    });
+  
+    // 触摸滑动
     let touchStartY = 0;
     let touchStartScrollTop = 0;
   
     strContainer.addEventListener('touchstart', (event) => {
       touchStartY = event.touches[0].clientY;
       touchStartScrollTop = strContainer.scrollTop;
-    });
+    }, { passive: false });
   
     strContainer.addEventListener('touchmove', (event) => {
-      event.preventDefault();
+      event.stopPropagation();
       const touchY = event.touches[0].clientY;
       const deltaY = touchStartY - touchY;
-      strContainer.scrollTop = touchStartScrollTop + deltaY;
-    });
+      strContainer.scrollTop = touchStartScrollTop + deltaY * 1.5;
+    }, { passive: false });
   });
