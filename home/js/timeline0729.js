@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 鼠标滚轮滚动
   timelineScrollable.addEventListener('wheel', (event) => {
     event.preventDefault();
-    const scrollAmount = event.deltaY * 0.5; // 模仿 character.js 的灵敏度
+    event.stopPropagation(); // 防止 Swiper 拦截
+    const scrollAmount = event.deltaY * 1.5; // 与模板一致的灵敏度
     timelineScrollable.scrollTop += scrollAmount;
     console.log('Wheel scroll triggered, deltaY:', event.deltaY, 'scrollAmount:', scrollAmount);
   }, { passive: false });
@@ -28,18 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   timelineScrollable.addEventListener('mousedown', (event) => {
     isDragging = true;
-    startY = event.clientY; // 模仿 character.js 使用 clientY
+    startY = event.pageY - timelineScrollable.offsetTop; // 使用 pageY，与模板一致
     startScrollTop = timelineScrollable.scrollTop;
     timelineScrollable.style.cursor = 'grabbing';
+    event.preventDefault(); // 防止文本选择
     console.log('Drag start, startY:', startY);
   });
 
   document.addEventListener('mousemove', (event) => {
     if (!isDragging) return;
     event.preventDefault();
-    const deltaY = startY - event.clientY; // 模仿 character.js 的方向
-    timelineScrollable.scrollTop = startScrollTop + deltaY;
-    console.log('Dragging, deltaY:', deltaY);
+    const y = event.pageY - timelineScrollable.offsetTop;
+    const walk = (startY - y) * 1.5; // 与模板一致的灵敏度
+    timelineScrollable.scrollTop = startScrollTop + walk;
+    console.log('Dragging, walk:', walk);
   });
 
   document.addEventListener('mouseup', () => {
@@ -48,43 +51,50 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Drag end');
   });
 
-  // 触摸拖拽滚动
+  document.addEventListener('mouseleave', () => {
+    isDragging = false;
+    timelineScrollable.style.cursor = 'grab';
+    console.log('Mouse leave, drag reset');
+  });
+
+  // 触摸滑动
   let touchStartY = 0;
   let touchStartScrollTop = 0;
 
   timelineScrollable.addEventListener('touchstart', (event) => {
-    touchStartY = event.touches[0].clientY; // 模仿 character.js
+    touchStartY = event.touches[0].pageY; // 使用 pageY，与模板一致
     touchStartScrollTop = timelineScrollable.scrollTop;
     console.log('Touch start, touchStartY:', touchStartY);
   }, { passive: false });
 
   timelineScrollable.addEventListener('touchmove', (event) => {
     event.preventDefault();
-    const touchY = event.touches[0].clientY;
-    const deltaY = touchStartY - touchY; // 模仿 character.js 的方向
-    timelineScrollable.scrollTop = touchStartScrollTop + deltaY;
-    console.log('Touch move, deltaY:', deltaY);
+    event.stopPropagation(); // 防止 Swiper 拦截
+    const touchY = event.touches[0].pageY;
+    const walk = (touchStartY - touchY) * 1.5; // 与模板一致的灵敏度
+    timelineScrollable.scrollTop = touchStartScrollTop + walk;
+    console.log('Touch move, walk:', walk);
   }, { passive: false });
 });
 
-
+// 保留原有的 timeline-item 交互逻辑
 document.querySelectorAll('.timeline-item').forEach(item => {
   const node = item.querySelector('.timeline-node');
   const originalSrc = './img/timeline/node_normal.png';
   const hoverSrc = './img/timeline/icon_curr.png';
-  const originalSize = '14px'; /* node_normal.png */
-  const hoverSize = '28px'; /* icon_curr.png */
-  const originalLeft = '-7px'; /* 14px/2 */
-  const hoverLeft = '-14px'; /* 28px/2 */
+  const originalSize = '14px';
+  const hoverSize = '28px';
+  const originalLeft = '-7px';
+  const hoverLeft = '-14px';
   const originalTop = '5px';
-  const hoverTop = '0px'; /* 调整以保持中心对齐 */
+  const hoverTop = '0px';
 
   // 移动端尺寸和定位
   const isMobile = window.innerWidth <= 768;
   const mobileOriginalSize = '12px';
   const mobileHoverSize = '24px';
-  const mobileOriginalLeft = '-6px'; /* 12px/2 */
-  const mobileHoverLeft = '-12px'; /* 24px/2 */
+  const mobileOriginalLeft = '-6px';
+  const mobileHoverLeft = '-12px';
   const mobileOriginalTop = '4px';
   const mobileHoverTop = '0px';
 
