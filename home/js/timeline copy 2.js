@@ -1,4 +1,4 @@
-window.timelineMsg = [
+let timelineMsg = [
   {
     date: "N.F.113年",
     text: "レオポルドは自分の余命が短いことを悟り、事前にセヴェロに後事を託した。セヴェロは大きな衝撃を受け、命を延ばせるような情報を必死に探し始めた。",
@@ -69,7 +69,7 @@ function renderTimeline() {
   timelineScrollable.innerHTML = '';
 
   // 动态生成 timeline-item
-  window.timelineMsg.forEach(item => {
+  timelineMsg.forEach(item => {
     const timelineItem = document.createElement('div');
     timelineItem.className = 'timeline-item';
     timelineItem.setAttribute('data-mouse', 'small');
