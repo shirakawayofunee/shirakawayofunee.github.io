@@ -41,7 +41,7 @@ window.timelineMsg = [
   },
   {
     date: "N.F.113年7月24日 00:41、「GARDEN」基地",
-    text: "レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。<br>「Blue rain」終了、つづく。",
+    text: "レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。<br>序章「Blue rain」終了、つづく。",
   },
 ];
 
