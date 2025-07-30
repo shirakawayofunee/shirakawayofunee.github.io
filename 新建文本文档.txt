@@ -1,0 +1,530 @@
+感谢你的澄清！你的反馈非常关键：1) 确认没有 `data.js` 或类似文件，`characterMsg` 仅在 `character.js` 中定义；2) 在浏览器控制台输入 `console.log(window.characterMsg)` 返回 `undefined`，说明 `characterMsg` 未挂载到全局 `window` 对象；3) 尽管如此，移动端的角色区块（`characterMobile.js`）仍能正常显示 `characterMsg` 的内容。这确实是一个有趣的现象，表明 `characterMobile.js` 以某种方式访问到了 `character.js` 中的 `let characterMsg`，即使它不是全局变量。以下是对这一现象的深入分析和解答。
+
+### 1. 问题分析
+
+#### 1.1 当前情况
+- **HTML 加载**：
+  - 你的 HTML 包含：
+    ```html
+    <script defer src="js/character.js"></script>
+    <script defer src="js/characterMobile.js"></script>
+    ```
+  - 两个脚本按顺序加载，`defer` 确保在 DOM 解析完成后执行。
+- **PC 端 (`character.js`)**：
+  - 定义：`let characterMsg = [/* 角色数据 */];`
+  - `characterMsg` 是脚本作用域变量，未挂载到 `window`（`console.log(window.characterMsg)` 返回 `undefined`）。
+  - 逻辑：初始化 Swiper（`#characterpc`），处理角色切换、图片预加载等，针对 PC 端滑块（`#slide5`）。
+- **移动端 (`characterMobile.js`)**：
+  - 直接使用 `characterMsg`（例如 `characterMsg.map(...)`），未显式声明或引用 `window.characterMsg`。
+  - 逻辑：初始化 Swiper（`#characterM`），处理角色切换、动画等，针对移动端滑块（`#slideM4`）。
+  - **关键**：尽管 `characterMsg` 不是全局变量，移动端仍能正常显示角色内容（背景、标题、描述等）。
+- **时间线问题对比**：
+  - `timeline.js` 使用 `let timelineMsg`，未挂载到 `window`，导致 `timelineMobile.js` 无法访问（`window.timelineMsg` 为 `undefined`）。
+  - 修改为 `window.timelineMsg` 解决了问题。
+  - 但 `characterMobile.js` 即使未使用 `window.characterMsg`，也能访问 `characterMsg`，这表明存在某种变量共享机制。
+
+#### 1.2 为什么 `characterMobile.js` 能访问 `characterMsg`？
+既然 `console.log(window.characterMsg)` 返回 `undefined`，且 `characterMsg` 仅在 `character.js` 中以 `let` 声明，`characterMobile.js` 能访问 `characterMsg` 的可能原因包括：
+
+1. **脚本合并或全局作用域泄漏**：
+   - 如果你的项目使用构建工具（如 Webpack、Rollup）或服务器端脚本合并，`character.js` 和 `characterMobile.js` 可能被打包到同一个作用域，导致 `characterMsg` 在 `characterMobile.js` 中可用。
+   - 但你提到没有额外的 `data.js`，且 HTML 直接加载独立脚本，排除打包可能性。
+   - 另一种可能是 `character.js` 中某处意外将 `characterMsg` 泄漏到全局，例如：
+     ```javascript
+     characterMsg = [...]; // 无 let/const，自动挂载到 window
+     ```
+     但你的代码明确使用 `let characterMsg`，且 `window.characterMsg` 为 `undefined`，排除此可能性。
+
+2. **浏览器缓存或执行上下文异常**：
+   - 如果浏览器缓存了旧版本的 `character.js`，可能包含 `window.characterMsg` 或无 `let` 声明的 `characterMsg`，导致全局可用。
+   - 但 `console.log(window.characterMsg)` 返回 `undefined`，说明当前执行环境中 `characterMsg` 不是全局变量。
+   - 可能存在执行上下文异常，例如 `characterMobile.js` 在某些情况下运行在与 `character.js` 共享的作用域中，但这在标准浏览器环境中不常见。
+
+3. **DOM 事件或延迟执行**：
+   - `characterMobile.js` 的逻辑可能在 `character.js` 执行后触发，且通过某种方式（如事件监听器或 Swiper 初始化）间接访问了 `characterMsg`。
+   - 但 `characterMobile.js` 直接使用 `characterMsg.map(...)`，且在 `DOMContentLoaded` 中调用 `changeCharacterM(0)`，没有显式依赖 `character.js` 的执行上下文。
+
+4. **jQuery 的作用**：
+   - `characterMobile.js` 使用 jQuery（`$(id)`、`$("#roleBgM")` 等），可能通过 jQuery 的全局上下文或其他插件间接访问了 `characterMsg`。
+   - 但 jQuery 本身不会改变变量作用域，且 `characterMsg` 是一个普通数组，排除此可能性。
+
+5. **重复定义 `characterMsg`**：
+   - 如果 `characterMobile.js` 自身也定义了 `characterMsg`（你提供的代码中未显示），它可能不依赖 `character.js`。
+   - 但你的问题明确表示移动端依赖 PC 端的 `characterMsg`，且移动端代码直接使用 `characterMsg` 而未声明，排除此可能性。
+
+6. **脚本执行环境共享**：
+   - **最可能的原因**：浏览器在加载 `<script>` 标签时，可能将 `character.js` 和 `characterMobile.js` 的执行环境视为同一全局作用域（`window`），但由于某种非标准行为或浏览器特性，`let characterMsg` 被 `characterMobile.js` 访问到，尽管它不是全局变量。
+   - 标准 JavaScript 中，`let` 声明的变量应限于脚本作用域，`characterMobile.js` 不应直接访问 `character.js` 的 `characterMsg`。
+   - 可能的非标准行为：
+     - 浏览器（如某些旧版浏览器）可能在 `<script>` 标签执行时错误地将 `let` 变量泄漏到共享作用域。
+     - 你的项目可能使用了特定的运行时环境（例如某些 CMS 或框架）导致变量共享。
+     - 但 `console.log(window.characterMsg)` 返回 `undefined`，且时间线问题未出现类似行为，表明这不是通用的浏览器行为。
+
+#### 1.3 时间线与角色区块的差异
+- **时间线问题**：
+  - `timeline.js` 定义 `let timelineMsg`，`timelineMobile.js` 尝试访问 `window.timelineMsg`（失败，因为未挂载）。
+  - 解决：将 `let timelineMsg` 改为 `window.timelineMsg`。
+- **角色区块**：
+  - `character.js` 定义 `let characterMsg`，`characterMobile.js` 直接使用 `characterMsg`（成功，尽管 `window.characterMsg` 是 `undefined`）。
+  - 这表明 `characterMobile.js` 可能通过非标准方式访问了 `character.js` 的脚本作用域，或者 `characterMsg` 在其他地方被共享。
+
+### 2. 推测：为什么 `characterMobile.js` 能访问 `characterMsg`？
+最可能的解释是：
+- **非标准变量共享**：
+  - 你的运行环境（浏览器或服务器）可能将多个 `<script>` 标签的执行上下文合并，导致 `character.js` 的 `let characterMsg` 在 `characterMobile.js` 中可用。
+  - 例如，某些服务器端渲染（SSR）框架或浏览器扩展可能改变了脚本作用域行为。
+- **代码未完全同步**：
+  - 你提供的 `character.js` 代码可能不是实际运行的版本，可能存在旧版本（定义 `window.characterMsg` 或无 `let` 的 `characterMsg`）。
+  - 但 `console.log(window.characterMsg)` 返回 `undefined`，排除此可能性。
+- **测试验证**：
+  - 需要进一步检查实际运行的 `character.js` 和 `characterMobile.js` 是否与提供的代码一致。
+  - 确认运行环境是否修改了脚本作用域。
+
+### 3. 解决方案
+尽管移动端角色区块目前正常工作，但依赖非标准行为（`let characterMsg` 被 `characterMobile.js` 访问）是不稳定的，建议显式共享 `characterMsg`，与 `timeline.js` 的修复一致。
+
+#### 3.1 修改 `character.js`
+将 `let characterMsg` 改为 `window.characterMsg`，确保全局可访问：
+
+```javascript
+window.characterMsg = [
+  {
+    bg: "1bg.png",
+    rolem: "1m.png",
+    nocheck: "1.png",
+    check: "1c.png",
+    title: "1t.png",
+    str: "能力者、178cm。<br>犯罪組織の主宰者であり、部下たちから恐れられ、崇拝されている存在。<br>童顔(不老)、実年齢不明。<br>艶やか、常に世を拗ねるような微笑を浮かべている。好き嫌いが激しく、享楽主義者で実用も重んじる、細やかで優しい一面も持っている。<br>落ち着き払った自信に満ちていて、自信かつ優雅な態度を保ち、性格は八方巧み。夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前、給下属们寻求新的安全居所。<br>▍好きなもの<br>性格……孤高でそっけなく、決断力と行動力がある、表で暴虐且つ無慈悲だが、裏は温情に富んで、特に部下に対して。<br>逆鱗……花园<br>得意なこと……「栽培」<br>趣味……美学、<br>好き……花<br>嫌い……自由が制限されること、無意味な犠牲<br>特技……開花、癒し<br>▍背景<br>Lは幼少期、軍人である両親が前線で命を落としました。その命の価値のない犠牲は「崇高な使命のため」とされましたが、彼女にとってその言葉は無意味で、むしろ規則の虚偽と束縛を感じさせるものでした。両親の死は彼女に反抗心を芽生えさせ、彼女は規則に縛られることを拒み、命を代償に禁断の力と契約を結びました。その力を使って、他の人々が規則から解放され、彼女のように自由に生きる手助けをすることを決意します。",
+    image1: "1-1.png",
+    image2: "1-2.png"
+  },
+  // 其他角色数据保持不变（省略以节省空间）
+];
+
+var swipreCharacter = null;
+function showCharacter() {
+  swipreCharacter = new Swiper('#characterpc', {
+    direction: 'vertical',
+    slidesPerView: 5,
+    centeredSlides: true,
+    observer: true,
+    observeParents: false,
+    slideToClickedSlide: true,
+    freeMode: true,
+    slidesOffsetBefore: -100,
+    loop: true,
+    mousewheel: true,
+    touchRatio: 0,
+    on: {
+      slideChange: function(e) {
+        changeCharacter(e.realIndex);
+      },
+      slideChangeTransitionStart: function() {
+        this.enabled = false;
+      },
+      slideChangeTransitionEnd: function() {
+        this.enabled = true;
+      }
+    }
+  });
+}
+
+function changeCharacter(num) {
+  window.characterMsg.forEach((v, index) => {
+    let id = `.role${index + 1}`;
+    $(id).attr("src", `./img/character/${v.nocheck}`);
+  });
+  let data = window.characterMsg[num];
+  let idM = `.role${num + 1}`;
+  $(idM).attr("src", `./img/character/${data.check}`);
+  $("#roleBg").css("background-image", `url(./img/role/${data.bg})`)
+    .removeClass("animate__animated animate__fadeOut")
+    .addClass("animate__animated animate__fadeIn");
+  $("#roleTitle").prop("src", `./img/role/${data.title}`)
+    .removeClass("characterFadeOutLeft")
+    .addClass("characterFadeInRight");
+  $("#roleStr").html(data.str)
+    .removeClass("characterFadeOutLeft")
+    .addClass("characterFadeInRight");
+  $("#roleImg").prop("src", `./img/role/${data.image1}`)
+    .removeClass("characterFadeOutLeft")
+    .addClass("characterFadeInRight");
+  $("#roleMusic").prop("src", data.voice);
+  $("#roleButton").removeClass("animate__fadeOutDown")
+    .addClass("animate__fadeInUp");
+  $("#roleSwitch").show();
+  $("#roleSwitching").hide();
+  $("#roleImg").data("current", "image1");
+  playCharacterVioce(2);
+}
+
+function switchCharacterImage() {
+  let currentIndex = swipreCharacter.realIndex;
+  let data = window.characterMsg[currentIndex];
+  let currentImg = $("#roleImg").data("current");
+  if (currentImg === "image1") {
+    $("#roleImg").prop("src", `./img/role/${data.image2}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleImg").data("current", "image2");
+    $("#roleSwitch").hide();
+    $("#roleSwitching").show();
+  } else {
+    $("#roleImg").prop("src", `./img/role/${data.image1}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleImg").data("current", "image1");
+    $("#roleSwitch").show();
+    $("#roleSwitching").hide();
+  }
+}
+
+function playCharacterVioce(num) {
+  if (num === 1) {
+    $("#roleMusic")[0].play();
+    $("#roleVoiceing").show();
+    $("#roleVoice").hide();
+  }
+  if (num === 2) {
+    $("#roleMusic")[0].pause();
+    $("#roleVoiceing").hide();
+    $("#roleVoice").show();
+  }
+}
+
+$("#roleMusic")[0].addEventListener("ended", function() {
+  playCharacterVioce(2);
+});
+
+function changeAllSwipperAbled(num) {
+  if (num === 1) {
+    swiperAll.allowSlideNext = false;
+    swiperAll.allowSlidePrev = false;
+  }
+  if (num === 2) {
+    swiperAll.allowSlideNext = true;
+    swiperAll.allowSlidePrev = true;
+  }
+}
+
+function characterStorage() {
+  window.characterMsg.forEach((v) => {
+    let imgBg = new Image();
+    let img1 = new Image();
+    let img2 = new Image();
+    imgBg.src = `./img/role/${v.bg}`;
+    img1.src = `./img/role/${v.image1}`;
+    img2.src = `./img/role/${v.image2}`;
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const strContainer = document.querySelector('.character-right-right-str');
+
+  // 鼠标滚轮滚动
+  strContainer.addEventListener('wheel', (event) => {
+    event.stopPropagation();
+    const scrollAmount = event.deltaY;
+    strContainer.scrollTop += scrollAmount * 0.5;
+  }, { passive: false });
+
+  // 鼠标拖拽滚动
+  let isDragging = false;
+  let startY = 0;
+  let startScrollTop = 0;
+
+  strContainer.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    startY = event.clientY;
+    startScrollTop = strContainer.scrollTop;
+    strContainer.style.cursor = 'grabbing';
+    event.preventDefault();
+  });
+
+  document.addEventListener('mousemove', (event) => {
+    if (!isDragging) return;
+    event.preventDefault();
+    const deltaY = startY - event.clientY;
+    strContainer.scrollTop = startScrollTop + deltaY * 1.5;
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    strContainer.style.cursor = 'default';
+  });
+
+  document.addEventListener('mouseleave', () => {
+    isDragging = false;
+    strContainer.style.cursor = 'default';
+  });
+
+  // 触摸滑动
+  let touchStartY = 0;
+  let touchStartScrollTop = 0;
+
+  strContainer.addEventListener('touchstart', (event) => {
+    touchStartY = event.touches[0].clientY;
+    touchStartScrollTop = strContainer.scrollTop;
+  }, { passive: false });
+
+  strContainer.addEventListener('touchmove', (event) => {
+    event.stopPropagation();
+    const touchY = event.touches[0].clientY;
+    const deltaY = touchStartY - touchY;
+    strContainer.scrollTop = touchStartScrollTop + deltaY * 1.5;
+  }, { passive: false });
+});
+```
+
+#### 3.2 修改 `characterMobile.js`
+更新 `characterMobile.js`，显式使用 `window.characterMsg`，并添加检查逻辑以避免潜在错误：
+
+``` {
+    let id = `.roleM${index + 1}`;
+    $(id).attr("src", `./img/character/${v.nocheck}`);
+  });
+  let data = window.characterMsg[num];
+  let idM = `.roleM${num + 1}`;
+  $(idM).attr("src", `./img/character/${data.check}`);
+  $("#roleBgM").css("background-image", `url(./img/role/${data.bg})`)
+    .removeClass("animate__animated animate__fadeOut")
+    .addClass("animate__animated animate__fadeIn");
+  $("#roleImgM").removeClass("characterFadeInRight").addClass("characterFadeOutLeft");
+  $("#roleTitleM").removeClass("characterFadeInRight").addClass("characterFadeOutLeft");
+  $("#roleStrM").removeClass("characterFadeInRight").addClass("characterFadeOutLeft");
+  $("#roleButtonM").removeClass("fadeInUpSelf").addClass("fadeOutBottomSelf");
+  $("#roleMusicM").prop("src", data.voice);
+  $("#roleSwitchM").show();
+  $("#roleSwitchingM").hide();
+  $("#roleImgM").data("current", "image1");
+  playCharacterVioceM(2);
+
+  setTimeout(() => {
+    $("#roleImgM").prop("src", `./img/role/${data.image1}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleTitleM").prop("src", `./img/role/${data.title}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleStrM").html(data.str)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleButtonM").removeClass("fadeOutBottomSelf")
+      .addClass("fadeInUpSelf");
+  }, 500);
+}
+
+function switchCharacterImageM() {
+  if (!window.characterMsg) {
+    console.error('Error: characterMsg is undefined! Ensure character.js defines window.characterMsg.');
+    return;
+  }
+  let currentIndex = swipreCharacterM.realIndex;
+  let data = window.characterMsg[currentIndex];
+  let currentImg = $("#roleImgM").data("current");
+  if (currentImg === "image1") {
+    $("#roleImgM").prop("src", `./img/role/${data.image2}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleImgM").data("current", "image2");
+    $("#roleSwitchM").hide();
+    $("#roleSwitchingM").show();
+  } else {
+    $("#roleImgM").prop("src", `./img/role/${data.image1}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleImgM").data("current", "image1");
+    $#roleSwitchM").show();
+    $("#roleSwitchingM").hide();
+  }
+}
+
+function playCharacterVioceM(num) {
+  if (num === 1) {
+    $("#roleMusicM")[0].play();
+    $("#roleVoiceingM").show();
+    $("#roleVoiceM").hide();
+    muteMusic(1);
+  }
+  if (num === 2) {
+    $("#roleMusicM")[0].pause();
+    $("#roleVoiceingM").hide();
+    $("#roleVoiceM").show();
+  }
+}
+
+$("#roleMusicM")[0].addEventListener("ended", function() {
+  playCharacterVioceM(2);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOMContentLoaded fired for characterMobile.js');
+  let retryCount = 0;
+  const maxRetries = 50;
+
+  function tryInit() {
+    if (window.characterMsg) {
+      console.log('characterMsg is available, initializing character section');
+      changeCharacterM(0);
+    } else if (retryCount < maxRetries) {
+      retryCount++;
+      console.warn(`characterMsg not yet available, retrying (${retryCount}/${maxRetries})...`);
+      setTimeout(tryInit, 100);
+    } else {
+      console.error('Error: Max retries reached, characterMsg still undefined.');
+    }
+  }
+  tryInit();
+});
+```
+
+#### 3.3 HTML 和 CSS 检查
+- **HTML**：
+  - 确认加载顺序：
+    ```html
+    <script defer src="js/character.js"></script>
+    <script defer src="js/characterMobile.js"></script>
+    ```
+  - 检查是否有其他脚本意外定义了 `characterMsg`。
+- **CSS**：
+  - 确保 `characterMobile.css` 和 `character.css` 正确区分设备：
+    ```html
+    <link rel="stylesheet" href="css/character.css" media="(min-device-width:926px)" />
+    <link rel="stylesheet" href="css/characterMobile.css" media="(max-device-width:926px)" />
+    ```
+  - 验证移动端 DOM 元素（`#characterM`）显示，PC 端元素（`#characterpc`）隐藏：
+    ```css
+    /* characterMobile.css */
+    #characterM { display: block; }
+    #characterpc { display: none; }
+    ```
+
+### 4. 排查异常访问的原因
+既然 `window.characterMsg` 是 `undefined`，但 `characterMobile.js` 能正常访问 `characterMsg`，需要进一步调查变量共享的机制：
+
+1. **检查实际运行代码**：
+   - 打开浏览器开发者工具（F12），在 Sources 面板查看实际加载的 `character.js` 和 `characterMobile.js` 内容。
+   - 确认 `character.js` 是否确实使用 `let characterMsg`，而不是 `window.characterMsg` 或无 `let` 声明。
+   - 在 `characterMobile.js` 中添加调试日志：
+     ```javascript
+     console.log('characterMsg in characterMobile.js:', characterMsg);
+     ```
+     预期输出角色数组，确认其来源。
+
+2. **测试变量作用域**：
+   - 在 `characterMobile.js` 的 `tryInit` 函数中，添加：
+     ```javascript
+     function tryInit() {
+       console.log('window.characterMsg:', window.characterMsg);
+       console.log('characterMsg:', characterMsg);
+       if (window.characterMsg || characterMsg) {
+         console.log('characterMsg is available, initializing character section');
+         changeCharacterM(0);
+       } else if (retryCount < maxRetries) {
+         retryCount++;
+         console.warn(`characterMsg not yet available, retrying (${retryCount}/${maxRetries})...`);
+         setTimeout(tryInit, 100);
+       } else {
+         console.error('Error: Max retries reached, characterMsg still undefined.');
+       }
+     }
+     ```
+   - 检查日志，确认 `characterMsg` 是否以非全局方式可用。
+
+3. **检查运行环境**：
+   - 确认你的项目是否使用特殊运行时环境（例如 CMS、Node.js 服务端渲染、或浏览器插件）。
+   - 在浏览器中禁用缓存（开发者工具 > Network > Disable cache），重新加载页面，确认行为是否一致。
+   - 测试不同浏览器（Chrome、Firefox、Safari），验证是否为浏览器特定行为。
+
+4. **临时修改测试**：
+   - 在 `character.js` 中临时注释掉 `let characterMsg` 定义：
+     ```javascript
+     // let characterMsg = [/* 角色数据 */];
+     ```
+   - 重新加载页面，观察移动端角色区块是否仍正常显示：
+     - 如果失败（出现 `characterMsg is undefined` 错误），说明 `characterMobile.js` 确实依赖 `character.js` 的 `characterMsg`。
+     - 如果仍正常，说明 `characterMsg` 可能由其他未声明的脚本提供。
+
+### 5. 解答你的疑问
+**为什么 `characterMobile.js` 能访问 `character.js` 中的 `let characterMsg`？**
+- **当前发现**：`console.log(window.characterMsg)` 返回 `undefined`，但 `characterMobile.js` 能访问 `characterMsg`，表明 `characterMsg` 在 `characterMobile.js` 的执行上下文中可用，尽管它不是全局变量。
+- **可能原因**：
+  - 你的运行环境（浏览器或服务器）可能将多个 `<script>` 标签的执行上下文合并，导致 `character.js` 的 `let characterMsg` 被 `characterMobile.js` 访问。
+  - 例如，某些非标准环境（旧版浏览器、特定框架或插件）可能未严格隔离脚本作用域。
+  - 另一种可能是 `characterMobile.js` 的执行依赖于 `character.js` 的上下文，例如通过事件循环或 Swiper 初始化时的共享作用域。
+- **与时间线问题的差异**：
+  - `timelineMobile.js` 显式使用 `window.timelineMsg`，但 `timeline.js` 的 `let timelineMsg` 未挂载到 `window`，导致访问失败。
+  - `characterMobile.js` 直接使用 `characterMsg`（未加 `window.`），可能意外利用了非标准作用域共享，访问了 `character.js` 的 `characterMsg`。
+- **实际运行**：移动端角色区块正常显示，说明 `characterMsg` 在 `characterMobile.js` 中可用，但 `window.characterMsg` 为 `undefined`，暗示变量以非全局方式共享。
+
+### 6. 建议
+尽管当前移动端角色区块正常工作，依赖非标准作用域共享是不稳定的，可能在不同浏览器或未来更新中失败。建议：
+- **显式全局变量**：
+  - 已将 `character.js` 中的 `let characterMsg` 改为 `window.characterMsg`，确保可靠共享。
+  - 在 `characterMobile.js` 中使用 `window.characterMsg`，并添加检查逻辑。
+- **提取公共数据**：
+  - 创建单独的 `data.js` 文件，集中管理数据：
+    ```javascript
+    // data.js
+    window.characterMsg = [/* 角色数据 */];
+    window.timelineMsg = [/* 时间线数据 */];
+    ```
+    更新 HTML：
+    ```html
+    <script defer src="js/data.js"></script>
+    <script defer src="js/character.js"></script>
+    <script defer src="js/characterMobile.js"></script>
+    <script defer src="js/timeline.js"></script>
+    <script defer src="js/timelineMobile.js"></script>
+    ```
+- **调试非标准行为**：
+  - 在 `characterMobile.js` 的开头添加：
+    ```javascript
+    console.log('Accessing characterMsg:', characterMsg);
+    console.log('Accessing window.characterMsg:', window.characterMsg);
+    ```
+  - 确认 `characterMsg` 是否在非全局作用域中可用。
+- **浏览器兼容性**：
+  - 在 Chrome、Firefox、Safari 测试，确保行为一致。
+  - 如果行为不一致，记录具体浏览器版本，提供给进一步分析。
+
+### 7. 测试步骤
+1. **部署更新代码**：
+   - 使用更新后的 `character.js` 和 `characterMobile.js`（见 3.1 和 3.2）。
+   - 确保 HTML 包含：
+     ```html
+     <script defer src="js/character.js"></script>
+     <script defer src="js/characterMobile.js"></script>
+     ```
+2. **验证 `characterMsg`**：
+   - 打开移动端页面（`max-device-width:926px`），在控制台输入：
+     ```javascript
+     console.log(window.characterMsg);
+     console.log(characterMsg);
+     ```
+     预期：
+     - `window.characterMsg` 输出角色数组（10 项）。
+     - `characterMsg` 可能输出相同数组（若仍受非标准共享影响）或 `undefined`。
+3. **检查渲染**：
+   - 确认 `#characterM` 内角色图片（`.roleM1`, `.roleM2` 等）正确切换。
+   - 检查控制台日志，预期：
+     - `DOMContentLoaded fired for characterMobile.js`
+     - `characterMsg is available, initializing character section`
+     - 或 `characterMsg not yet available, retrying (X/50)...`
+4. **测试异常情况**：
+   - 在 `character.js` 中临时注释掉 `window.characterMsg`：
+     ```javascript
+     // window.characterMsg = [/* 角色数据 */];
+     ```
+     重新加载，检查移动端是否报错（`characterMsg is undefined`）。
+   - 如果仍正常，说明 `characterMsg` 由其他来源提供。
+
+### 8. 总结
+`characterMobile.js` 能访问 `character.js` 中的 `let characterMsg`，尽管 `window.characterMsg` 是 `undefined`，可能由于运行环境（浏览器或服务器）的非标准作用域共享。建议将 `let characterMsg` 改为 `window.characterMsg`，并在 `characterMobile.js` 中显式使用 `window.characterMsg`，以确保稳定性和跨浏览器兼容性。
+
+请测试更新后的代码，并提供：
+- 控制台日志（包括 `console.log(characterMsg)` 和 `console.log(window.characterMsg)` 的输出）。
+- 确认运行环境（浏览器版本、是否使用 CMS 或服务器端框架）。
+- 如果问题持续，分享完整的 HTML `<script>` 标签列表和 `characterMobile.css` 内容。
+
+我将继续协助排查，确保代码健壮！
