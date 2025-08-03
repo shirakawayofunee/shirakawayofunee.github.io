@@ -1,0 +1,46 @@
+.mapMobile{
+    position: relative;
+    overflow: hidden;
+    /* background: firebrick; */
+}
+.mapMobile-bg{
+    position: absolute;
+    z-index: 1;
+    object-fit: cover;
+    width: 100%;
+    overflow: hidden;
+}
+.mapMobile-1{
+    position: absolute;
+    z-index: 2;
+    bottom: 15%;
+    left: 74vw;
+    width: 17vw;
+}
+.mapMobile-2{
+    
+}
+.mobile-allDown{
+    position: absolute;
+    z-index: 2;
+    bottom: 4%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.mobile-allDown img{
+    width: 60vw;
+}
+.m-kv{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.m-slogan{
+    position: absolute;
+    width: 72vw;
+    bottom: 13%;
+    left: 9vw;
+}
