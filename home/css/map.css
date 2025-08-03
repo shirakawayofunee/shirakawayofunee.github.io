@@ -6,6 +6,8 @@
     background-attachment:fixed;
     background-position:center;
     background-size: 100% auto;
+    color: #e23b78;
+    font-size: 14px;
   }
   
   .map-bg{
@@ -26,8 +28,8 @@
   .map-G{
     position: absolute;
     z-index: 2;
-    top: 27%;
-    right: 19.5%;
+    top: 26.5%;
+    right: 26.5%;
 /*     height: 60%; */
     min-height: 15px;
   }
@@ -41,7 +43,9 @@
     position: absolute;
     z-index: 2;
     bottom: 42%;
-    right: 9%;
+    right: 15%;
+    color: #7981b4;
+    font-size: 12px;
   }
   .map-S{
     position: absolute;
@@ -52,14 +56,18 @@
   .map-Y{
     position: absolute;
     z-index: 2;
-    top: 22%;
+    top: 17%;
     left: 26%;
+    color: #7981b4;
+    font-size: 12px;
   }
   .map-B{
     position: absolute;
     z-index: 2;
     bottom: 22%;
-    right: 19%;
+    right: 23%;
+    color: #7981b4;
+    font-size: 12px;
   }
   .map-title{
     height: 60px;
@@ -112,6 +120,14 @@
     align-items: center;
     justify-content: center;
   }
+  .map-4-1 a{
+    background-image: url(../img/map/bg.png);
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .map-4-1>img{
     width: 95%;
   }

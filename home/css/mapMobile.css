@@ -1,6 +1,8 @@
 .mapMobile{
     position: relative;
     overflow: hidden;
+    color: #e23b78;
+    font-size: 12px;
     /* background: firebrick; */
 }
 .mapMobile-bg{
