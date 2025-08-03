@@ -5,19 +5,18 @@
   --base-font-size: 13px;
   --small-font-size: 12px;
 }
-.map {
-  position: relative;
-  overflow: hidden;
-  background: url("../kv/d.jpg") no-repeat fixed center / 100% auto;
-  color: var(--primary-color);
-  font-size: var(--base-font-size);
-}
-
-.map-marker {
-  position: absolute;
-  z-index: 2;
-  min-height: 15px;
-}
+.map{
+    position: relative;
+    overflow: hidden;
+    background-image: url("../kv/d.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+    background-size: 100% auto;
+    color: #e23b78;
+/*     color: #69aaff; */
+    font-size: 13px;
+  }
   
   .map-bg{
     position: absolute;
@@ -34,40 +33,49 @@
     left: 7%;
     height: 80%;
   }
-  .map-G {
+  .map-G{
+    position: absolute;
+    z-index: 2;
     top: 26.5%;
     right: 26.5%;
+/*     height: 60%; */
+    min-height: 15px;
   }
-  
-  .map-X {
+  .map-X{
+    position: absolute;
+    z-index: 2;
     bottom: 50%;
     left: 52%;
   }
-  
-  .map-C {
+  .map-C{
+    position: absolute;
+    z-index: 2;
     bottom: 42%;
     right: 15%;
-    color: var(--secondary-color);
-    font-size: var(--small-font-size);
+    color: #6AADFF;
+    font-size: 12px;
   }
-  
-  .map-S {
+  .map-S{
+    position: absolute;
+    z-index: 2;
     top: 51%;
     left: 31%;
   }
-  
-  .map-Y {
+  .map-Y{
+    position: absolute;
+    z-index: 2;
     top: 17%;
     left: 26%;
-    color: var(--tertiary-color);
-    font-size: var(--small-font-size);
+    color: #7981b4;
+    font-size: 12px;
   }
-  
-  .map-B {
+  .map-B{
+    position: absolute;
+    z-index: 2;
     bottom: 22%;
     right: 23%;
-    color: var(--tertiary-color);
-    font-size: var(--small-font-size);
+    color: #7981b4;
+    font-size: 12px;
   }
   .map-title{
     height: 60px;
