@@ -2124,7 +2124,7 @@
                 }
             }
         };
-    
+
         function showConversation(conversationId) {
             console.log('Switching to:', conversationId); // 调试输出
             // 获取所有需要切换的元素
@@ -2142,26 +2142,26 @@
             const rightDescriptionTitle = document.getElementById('right-description-title');
             const leftDescriptionText = document.getElementById('left-description-text');
             const rightDescriptionText = document.getElementById('right-description-text');
-    
+
             if (!chatContainer || !headerTitle || !leftProfileCard || !rightProfileCard) {
                 console.error('One or more elements not found:', {
                     chatContainer, headerTitle, leftProfileCard, rightProfileCard
                 });
                 return;
             }
-    
+
             // 确保元素可见
             leftProfileCard.style.display = 'flex';
             rightProfileCard.style.display = 'flex';
             chatContainer.style.display = 'block';
             headerTitle.style.display = 'block';
-    
+
             // 添加淡出效果
             leftProfileCard.classList.add('fade-hidden');
             rightProfileCard.classList.add('fade-hidden');
             chatContainer.classList.add('fade-hidden');
             headerTitle.classList.add('fade-hidden');
-    
+
             // 立即更新内容
             console.log('Updating content for:', conversationId); // 调试输出
             document.querySelectorAll('.conversation').forEach(conv => {
@@ -2170,64 +2170,40 @@
             const activeConversation = document.getElementById(conversationId);
             if (activeConversation) {
                 activeConversation.style.display = 'block';
-                // 滚动到对话顶部
-                activeConversation.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
                 console.error('Conversation not found:', conversationId);
             }
-    
-            // 更新标题和角色简介
-            if (conversations[conversationId]) {
-                headerTitle.textContent = conversations[conversationId].title;
-                leftAvatar.src = conversations[conversationId].leftProfile.avatar;
-                leftKeywordTitle.textContent = conversations[conversationId].leftProfile.keywordTitle;
-                leftKeywords.textContent = conversations[conversationId].leftProfile.keywords;
-                leftDescriptionTitle.innerHTML = conversations[conversationId].leftProfile.descriptionTitle;
-                leftDescriptionText.textContent = conversations[conversationId].leftProfile.descriptionText;
-                rightAvatar.src = conversations[conversationId].rightProfile.avatar;
-                rightKeywordTitle.textContent = conversations[conversationId].rightProfile.keywordTitle;
-                rightKeywords.textContent = conversations[conversationId].rightProfile.keywords;
-                rightDescriptionTitle.innerHTML = conversations[conversationId].rightProfile.descriptionTitle;
-                rightDescriptionText.textContent = conversations[conversationId].rightProfile.descriptionText;
-            } else {
-                console.error('Conversation data not found:', conversationId);
-            }
-    
+
+            headerTitle.textContent = conversations[conversationId].title;
+            leftAvatar.src = conversations[conversationId].leftProfile.avatar;
+            leftKeywordTitle.textContent = conversations[conversationId].leftProfile.keywordTitle;
+            leftKeywords.textContent = conversations[conversationId].leftProfile.keywords;
+            leftDescriptionTitle.innerHTML = conversations[conversationId].leftProfile.descriptionTitle;
+            leftDescriptionText.textContent = conversations[conversationId].leftProfile.descriptionText;
+            rightAvatar.src = conversations[conversationId].rightProfile.avatar;
+            rightKeywordTitle.textContent = conversations[conversationId].rightProfile.keywordTitle;
+            rightKeywords.textContent = conversations[conversationId].rightProfile.keywords;
+            rightDescriptionTitle.innerHTML = conversations[conversationId].rightProfile.descriptionTitle;
+            rightDescriptionText.textContent = conversations[conversationId].rightProfile.descriptionText;
+
             // 移除淡出效果，恢复显示
-            setTimeout(() => {
-                leftProfileCard.classList.remove('fade-hidden');
-                rightProfileCard.classList.remove('fade-hidden');
-                chatContainer.classList.remove('fade-hidden');
-                headerTitle.classList.remove('fade-hidden');
-    
-                // 强制恢复样式
-                leftProfileCard.style.opacity = '1';
-                rightProfileCard.style.opacity = '1';
-                chatContainer.style.opacity = '1';
-                headerTitle.style.opacity = '1';
-            }, 10); // 延迟以确保淡入效果
+            leftProfileCard.classList.remove('fade-hidden');
+            rightProfileCard.classList.remove('fade-hidden');
+            chatContainer.classList.remove('fade-hidden');
+            headerTitle.classList.remove('fade-hidden');
+
+            // 强制恢复样式
+            leftProfileCard.style.opacity = '1';
+            rightProfileCard.style.opacity = '1';
+            chatContainer.style.opacity = '1';
+            headerTitle.style.opacity = '1';
         }
-    
-        // 处理 URL 哈希值
-        function handleHashChange() {
-            const hash = window.location.hash; // 例如 #conversation2
-            console.log('Hash detected:', hash); // 调试输出
-            if (hash) {
-                const conversationId = hash.substring(1); // 去掉 #，得到 conversation2
-                if (conversations[conversationId]) {
-                    showConversation(conversationId);
-                } else {
-                    console.error('Invalid conversation ID:', conversationId);
-                    showConversation('conversation4'); // 默认显示 conversation4
-                }
-            } else {
-                showConversation('conversation4'); // 无哈希值时默认显示 conversation4
-            }
-        }
-    
-        // 页面加载和哈希变化时处理
-        document.addEventListener('DOMContentLoaded', handleHashChange);
-        window.addEventListener('hashchange', handleHashChange);
+
+        // 默认显示会话例2
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Page loaded, showing conversation4'); // 调试输出
+            showConversation('conversation4');
+        });
     </script>
 </body>
 

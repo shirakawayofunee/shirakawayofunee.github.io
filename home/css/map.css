@@ -61,6 +61,16 @@
     bottom: 22%;
     right: 19%;
   }
+  .map-title{
+    height: 60px;
+    width: auto;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    top: 22%;
+    left: 31%;
+/*     max-width: 30px; */
+  }
 
   .map-4{
     position: absolute;
