@@ -1,11 +1,15 @@
 .map{
     position: relative;
     overflow: hidden;
+    background-image: url("../kv/d.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+    background-size: 100% auto;
   }
   
   .map-bg{
     position: absolute;
-/*     background-image: url("../kv/d.jpg"); */
     width: 100%;
     
     top:0;
@@ -15,21 +19,49 @@
   .map-1{
     position: absolute;
     z-index: 2;
-    top:45%;
-    left: 4%;
+    top:10%;
+    left: 7%;
+    height: 80%;
   }
-  .map-2{
+  .map-G{
     position: absolute;
     z-index: 2;
-    bottom: 5%;
-    left: 4%;
+    top: 27%;
+    right: 19.5%;
+/*     height: 60%; */
+    min-height: 15px;
   }
-  .map-3{
+  .map-X{
     position: absolute;
     z-index: 2;
-    bottom: 5%;
-    left: 50%;
+    bottom: 50%;
+    left: 52%;
   }
+  .map-C{
+    position: absolute;
+    z-index: 2;
+    bottom: 42%;
+    right: 9%;
+  }
+  .map-S{
+    position: absolute;
+    z-index: 2;
+    top: 51%;
+    left: 31%;
+  }
+  .map-Y{
+    position: absolute;
+    z-index: 2;
+    top: 22%;
+    left: 26%;
+  }
+  .map-B{
+    position: absolute;
+    z-index: 2;
+    bottom: 22%;
+    right: 19%;
+  }
+
   .map-4{
     position: absolute;
     right: 6%;

@@ -36,10 +36,10 @@
   <link rel="stylesheet" href="css/musicmaskDetailMobile.css" media="(max-device-width:926px)" />
   <link rel="stylesheet" href="css/papermaskMobile.css" media="(max-device-width:926px)" />
   <link rel="stylesheet" href="css/videomaskMobile.css" media="(max-device-width:926px)" />
-  <link rel="stylesheet" href="css/yuyue.css" media="(min-device-width:926px)" />
-  <link rel="stylesheet" href="css/cookie.css" media="(min-device-width:926px)" />
-  <link rel="stylesheet" href="css/cookieMobile.css" media="(max-device-width:926px)">
-  <link rel="stylesheet" href="css/yuyueMobile.css" media="(max-device-width:926px)">
+<!--   <link rel="stylesheet" href="css/yuyue.css" media="(min-device-width:926px)" /> -->
+<!--   <link rel="stylesheet" href="css/cookie.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/cookieMobile.css" media="(max-device-width:926px)"> -->
+<!--   <link rel="stylesheet" href="css/yuyueMobile.css" media="(max-device-width:926px)"> -->
   <link rel="stylesheet" href="css/timeline.css" media="(min-device-width:926px)" />
   <link rel="stylesheet" href="css/timelineMobile.css" media="(max-device-width:926px)" />
   <link rel="stylesheet" href="css/map.css" media="(min-device-width:926px)" />
@@ -404,13 +404,48 @@
             <!-- pc地图 -->
             <div class="swiper-slide pc map" data-mouse="small" id="slide1">
               <!-- <img src="./img/01.jpg" alt="" class="map-bg animate__animated animate__fadeIn"> -->
-              <video src="#" style="width:100%;" muted autoplay loop id="kvPc" poster="kv/d.jpg" data-mouse="small"></video>
+              <!-- <video src="#" style="width:100%;" muted autoplay loop id="kvPc" poster="kv/d.jpg" data-mouse="small"></video> -->
               <img src="img/map/1.png" alt="" class="map-1" data-mouse="small">
-              <img src="img/map/2.png" alt="" class="map-2" data-mouse="small">
-              <img src="img/map/3.webp" alt="" class="map-3" data-mouse="small">
-              <div class="map-zhe" data-mouse="small">
-      
-              </div>
+              <img src="img/map/2.png" alt="" class="map-G" data-mouse="small">
+              <img src="img/map/3.png" alt="" class="map-X" data-mouse="small">
+              <img src="img/map/4.png" alt="" class="map-C" data-mouse="small">
+              <img src="img/map/5.png" alt="" class="map-S" data-mouse="small">
+              <img src="img/map/6.png" alt="" class="map-Y" data-mouse="small">
+              <img src="img/map/7.png" alt="" class="map-B" data-mouse="small">
+                <div class="map-4 animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
+                  <div class="map-4-1" data-mouse="mid">
+                    <img src="#" alt="" id="imgQR">
+                  </div>
+                  <div class="map-4-pc" data-mouse="mid">
+                    <a href="#" download target="_blank" data-mouse="mid" id="mumuPcDownload">
+                      <img src="img/map/pc3.png" alt="" class="map-4-pc-main">
+                    </a>
+                    <img src="img/map/pc4.png" alt="" class="map-4-pc-top">
+                  </div>
+                  <div class="map-4-2">
+                    <div class="map-4-2-con">
+                      <a href="#" id="iosDownload" target="_blank"><img src="img/map/ios.png" alt="" data-type="ios"
+                          onclick="uploadShuShu()"></a>
+                      <a href="#" id="androidDownload" download target="_blank"><img src="img/map/android.png" alt=""
+                          data-type="android" onclick="uploadShuShu()"> </a>
+                    </div>
+                  </div>
+                  <div class="map-4-mumu" data-mouse="mid">
+                    <div class="map-4-2-con">
+                      <a href="#" id="mumuDownload" download target="_blank"><img src="img/map/mumu.png" alt=""
+                          data-type="mumu" onclick="uploadShuShu()"></a>
+                      <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank"><img
+                          src="img/map/taptap.png" alt=""></a>
+                    </div>
+        
+                  </div>
+                  <div class="map-4-3" data-mouse="mid" onclick="playFirst(1)">
+                    <img src="img/map/play.webp" alt="" class="map-4-3-bg">
+                  </div>
+                </div>
+              
+              
+              <div class="map-zhe" data-mouse="small"></div>
             </div>
     </div>
   </div>
@@ -787,7 +822,7 @@
 <script src="js/timeline.js"></script>
 <!-- <script src="js/timelineMobile.js"></script> -->
 <script src="js/formatSeconds.js"></script>
-<script src="js/yuyue.js"></script>
+<!-- <script src="js/yuyue.js"></script> -->
 <script>
   $(document).ready(() => {
     console.log('jQuery loaded:', typeof $);
