@@ -10,6 +10,65 @@
     width: 100%;
     overflow: hidden;
 }
+
+.map-1{
+    position: absolute;
+    z-index: 2;
+    top:10%;
+    left: 7%;
+    height: 80%;
+  }
+  .mapMobile-G{
+    position: absolute;
+    z-index: 2;
+    bottom: 29%;
+    right: 17%;
+    min-height: 15px;
+  }
+  .mapMobile-X{
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 35%;
+  }
+  .mapMobile-C{
+    position: absolute;
+    z-index: 2;
+    bottom: 10%;
+    left: 18%;
+  }
+  .mapMobile-S{
+    position: absolute;
+    z-index: 2;
+    top: 11%;
+    left: 31%;
+  }
+  .mapMobile-Y{
+    position: absolute;
+    z-index: 2;
+    top: 22%;
+    left: 26%;
+  }
+  .mapMobile-B{
+    position: absolute;
+    z-index: 2;
+    bottom: 22%;
+    right: 19%;
+  }
+  .mapMobile-title{
+    height: 60px;
+    width: auto;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    top: 22%;
+    left: 31%;
+/*     max-width: 30px; */
+  }
+
+
+
+
 .mapMobile-1{
     position: absolute;
     z-index: 2;
