@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+  <title>多错本旨</title>
+  <link rel="stylesheet" href="script/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/animateSelf.css">
+  <link rel="stylesheet" href="css/index.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/mouse.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/news.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/first.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/character.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/backstory.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/gallery.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/statement.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/videomaskDetail.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/papermask.css" media="(min-device-width:926px)">
+  <link rel="stylesheet" href="css/papermaskDetail.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/newsDetail.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/index926.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/firstMobile.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/mobileNews.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/characterMobile.css" media="(max-device-width:599px)">
+  <link rel="stylesheet" href="css/characterPad.css" media="(min-width:600px) and (max-width:926px)" />
+  <link rel="stylesheet" href="css/backstoryMobile.css" media="(max-device-width:599px)" />
+  <link rel="stylesheet" href="css/backstoryPad.css" media="(min-width:600px) and (max-width:926px)" />
+  <link rel="stylesheet" href="css/galleryMobile.css" media="(max-device-width:599px)" />
+  <link rel="stylesheet" href="css/galleryPad.css" media="(min-width:600px) and (max-width:926px)">
+  <link rel="stylesheet" href="css/statementMobile.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/musicmaskMobile.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/musicmaskDetailMobile.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/papermaskMobile.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/videomaskMobile.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/timeline.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/timelineMobile.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/map.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/mapMobile.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/relationship3.css" media="(min-device-width:926px)" />
+  
+  <link rel="icon" type="image/x-icon" id="icon">
+</head>
+
+<body id="all">
+  <div class="pvVideo" onclick="hideKv()"></div>
+  <!-- 鼠标样式 -->
+  <div class="div" id="d1"></div>
+  <div id="loading" data-mouse="small" class="animate__animated" style="display: none;">
+    <img src="img/loading/loading.gif" alt="" class="loadingImg">
+    <div class="loadingProgress">
+    </div>
+  </div>
+  <div class="pc qqPage animate__animated animate__fadeInDown" data-mouse="small" data-type="share">
+
+  </div>
+  <div class="allAlert" style="display: none;">
+  </div>
+  <!-- 手机端导航 -->
+  <div class="mobile head-mob">
+    <div class="musicmaskDetail-top-mobile">
+      <img src="img/music/hide.png" alt="" onclick="musicmaskDetailHideM(1)">
+    </div>
+    <div class="head-mob-right">
+      <!-- <img src="img/logo.png" alt="" class="head-mob-logo"> -->
+    </div>
+    <div class="head-mob-left">
+      <img src="img/v2.gif" alt="" onclick="muteMusic(1)" class="imgMusicPlay" style="display: none;">
+      <img src="img/v2c.png" alt="" onclick="muteMusic(2)" class="imgMusicStop">
+      <img src="img/mobile/Menu.png" alt="" style="transform: scale(0.5);" onclick="changeHead(1)" class="menuMobile">
+      <img src="img/mobile/Menuc.png" alt="" style="transform: scale(0.5);display: none;" onclick="changeHead(2)"
+        class="menucMobile">
+    </div>
+
+  </div>
+  <!-- pc导航栏 -->
+  <div class="swiper mySwiper swiperBG pc" id="allSwiper">
+    <div class="head pc" data-mouse="small">
+      <div class="h-con-left">
+        <h1 data-mouse="mid">
+          <a href="index.html" style="cursor: none;" data-mouse="mid">
+            <!-- <img src="img/logo.png" alt="logo" data-mouse="mid" class="head-logo"> -->
+          </a>
+        </h1>
+      </div>
+      <div class="h-con-right pc" data-mouse="mid">
+        <div class="h-con-right-l" data-mouse="mid">
+          <div class="div-center div-centerpc" onclick="changeBanner(0)" id="banner0" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">ホーム</div>
+            <div class="div-head-text-en" data-mouse="mid">HOME</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(1)" id="banner1" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">登場人物</div>
+            <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(2)" id="banner2" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">世界観</div>
+            <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(3)" id="banner3" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">物語</div>
+            <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(4)" id="banner4" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">タイムライン</div>
+            <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(5)" id="banner5" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">序章マップ</div>
+            <div class="div-head-text-en" data-mouse="mid">MAPS</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(6)" id="banner6" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">関係性</div>
+            <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
+          </div>
+        </div>
+        <div class="h-con-right-r">
+          <div class="h-con-right-r-con">
+            <div>
+              <img src="img/v2.gif" alt="" onclick="muteMusic(1)" class="imgMusicPlay shareMusic"
+                style="display: none;">
+              <img src="img/v2c.png" alt="" onclick="muteMusic(2)" class="imgMusicStop shareMusic">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- head -->
+    <div class="swiper-wrapper" data-mouse="small">
+      <!-- pc首页 -->
+      <div class="swiper-slide pc first" data-mouse="small" id="slide1">
+        <!-- <img src="./img/01.jpg" alt="" class="first-bg animate__animated animate__fadeIn"> -->
+        <video src="#" style="width:100%;" muted autoplay loop id="kvPc" poster="kv/p.jpg" data-mouse="small"></video>
+        <img src="img/first/1.png" alt="" class="first-1" data-mouse="small">
+        <img src="img/first/2.png" alt="" class="first-2" data-mouse="small">
+        <img src="img/first/3.webp" alt="" class="first-3" data-mouse="small">
+        <div class="first-zhe" data-mouse="small">
+
+        </div>
+      </div>
+      <!-- 角色pc -->
+      <div class="swiper-slide character pc" data-mouse="small" id="slide3">
+        <div class="character-left animate__animated animate__fadeInLeft" data-mouse="small" data-swiper="no"
+          onmouseenter="changeAllSwipperAbled(1)" onmouseleave="changeAllSwipperAbled(2)">
+          <div class="swiper characterpc" id="characterpc" data-mouse="small" data-swiper="no">
+            <div class="swiper-wrapper" data-mouse="small" data-swiper="no">
+              <div class="swiper-slide" data-mouse="mid" data-swiper="no">
+                <img src="img/character/1.png" alt="" data-mouse="mid" class="character-left-role-r role1" id="role1"
+                  data-swiper="no">
+
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/character/2.png" alt="" data-mouse="mid" class="character-left-role-l role2" id="role2"
+                  data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/character/3.png" alt="" data-mouse="mid" class="character-left-role-r role3" id="role3"
+                  data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/character/4.png" alt="" data-mouse="mid" class="character-left-role-l role4" id="role4"
+                  data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/character/5.png" alt="" data-mouse="mid" class="character-left-role-r role5" id="role5"
+                  data-swiper="no">
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/character/6.png" alt="" data-mouse="mid" class="character-left-role-l role6" id="role6"
+                  data-swiper="no">
+
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/character/7.png" alt="" data-mouse="mid" class="character-left-role-r role7" id="role7"
+                  data-swiper="no">
+
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/character/8.png" alt="" data-mouse="mid" class="character-left-role-l role8" id="role8"
+                  data-swiper="no">
+
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/character/9.png" alt="" data-mouse="mid" class="character-left-role-r role9" id="role9"
+                  data-swiper="no">
+
+              </div>
+              <div class="swiper-slide" data-mouse="mid">
+                <img src="img/character/10.png" alt="" data-mouse="mid" class="character-left-role-l role10" id="role10"
+                  data-swiper="no">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="character-right">
+          <div class="character-right-left animate__animated animate__fadeIn" id="roleBg">
+            <img src="img/role/false.gif" alt="">
+            <img src="#" alt="" id="roleImg">
+          </div>
+        </div>
+        <div class="character-right-right animate__animated animate__fadeInRight">
+          <div class="character-right-right-title">
+            <img src="img/role/1t.png" alt="" class="characterFadeInRight" id="roleTitle">
+          </div>
+          <div class="character-right-right-str characterFadeInRight" id="roleStr"></div>
+          <div class="character-right-right-button animate__animated" id="roleButton">
+            <!--             <div class="character-right-right-button-left" data-mouse="mid">
+              <img src="img/yuyin_01.png" alt="" id="roleVoice" onclick="playCharacterVioce(1)">
+              <img src="img/yuyin_02.webp" alt="" id="roleVoiceing" onclick="playCharacterVioce(2)"
+                style="display: none;">
+            </div>
+            <div class="character-right-right-button-right">
+              <img src="img/live2d.png" id="roleLive" alt="" onclick="changeLive(1)">
+              <img src="img/Live2Ding.png" id="roleLiveing" alt="" onclick="changeLive(2)">
+            </div> -->
+            <div class="character-right-right-button-right">
+              <img src="img/d1.png" id="roleSwitch" alt="" onclick="switchCharacterImage()">
+              <img src="img/d1c.png" id="roleSwitching" alt="" onclick="switchCharacterImage()" style="display: none;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- pc世界观 -->
+      <div class="swiper-slide pc backstory" data-mouse="small" id="slide4">
+        <div class="backstory-left animate__animated animate__fadeInLeft" data-mouse="small">
+          <div class="swiper mySwiper backstory-border" id="pcbackstory" data-mouse="small">
+            <div class="swiper-wrapper" data-mouse="small">
+              <!--               <div class="swiper-slide backstory-left-list" data-mouse="small">
+                <img src="img/backstory/p1.png" alt="" data-mouse="big" data-img="./img/backstory/p1c.png"
+                  class="backstory-img slide-inner" onclick="paperShowBig(this,'p1d.png')">
+                <img src="img/backstory/big.png" alt="" class="backstory-left-list-big">
+              </div> -->
+              <div class="swiper-slide backstory-left-list" data-mouse="small">
+                <img src="img/backstory/p1.png" alt="" data-mouse="big" data-img="./img/backstory/p1c.png"
+                  class="backstory-img slide-inner"
+                  onclick="console.log('Clicked p1d.png'); paperShowBig(this,'p1d.png')">
+                <!-- <img src="img/backstory/big.png" alt="" class="backstory-left-list-big"> -->
+              </div>
+              <div class="swiper-slide backstory-left-list">
+                <img src="img/backstory/p2.png" alt="" data-mouse="big" data-img="./img/backstory/p2c.png"
+                  class="backstory-img slide-inner" onclick="paperShowBig(this,'p2d.png')">
+                <!-- <img src="img/backstory/big.png" alt="" class="backstory-left-list-big"> -->
+              </div>
+              <div class="swiper-slide backstory-left-list">
+                <img src="img/backstory/p3.png" alt="" data-mouse="big" data-img="./img/backstory/p3c.png"
+                  class="backstory-img slide-inner" onclick="paperShowBig(this,'p3d.png')">
+                <!-- <img src="img/backstory/big.png" alt="" class="backstory-left-list-big"> -->
+              </div>
+              <div class="swiper-slide backstory-left-list">
+                <img src="img/backstory/p4.png" alt="" data-mouse="big" data-img="./img/backstory/p4c.png"
+                  class="backstory-img slide-inner" onclick="paperShowBig(this,'p4d.png')">
+                <!-- <img src="img/backstory/big.png" alt="" class="backstory-left-list-big"> -->
+              </div>
+              <div class="swiper-slide backstory-left-list">
+                <img src="img/backstory/p5.png" alt="" data-mouse="big" data-img="./img/backstory/p5c.png"
+                  class="backstory-img slide-inner" onclick="paperShowBig(this,'p5d.png')">
+                <!-- <img src="img/backstory/big.png" alt="" class="backstory-left-list-big"> -->
+              </div>
+              <div class="swiper-slide backstory-left-list">
+                <img src="img/backstory/p6.png" alt="" data-mouse="big" data-img="./img/backstory/p6c.png"
+                  class="backstory-img slide-inner" onclick="paperShowBig(this,'p6d.png')">
+                <!-- <img src="img/backstory/big.png" alt="" class="backstory-left-list-big"> -->
+              </div>
+              <div class="swiper-slide backstory-left-list">
+                <img src="img/backstory/p7.png" alt="" data-mouse="big" data-img="./img/backstory/p7c.png"
+                  class="backstory-img slide-inner" onclick="paperShowBig(this,'p7d.png')">
+                <!-- <img src="img/backstory/big.png" alt="" class="backstory-left-list-big"> -->
+              </div>
+              <div class="swiper-slide backstory-left-list">
+                <img src="img/backstory/p8.png" alt="" data-mouse="big" data-img="./img/backstory/p8c.png"
+                  class="backstory-img slide-inner" onclick="paperShowBig(this,'p8d.png')">
+                <!-- <img src="img/backstory/big.png" alt="" class="backstory-left-list-big"> -->
+              </div>
+              <div class="swiper-slide backstory-left-list">
+                <img src="img/backstory/p9.png" alt="" data-mouse="big" data-img="./img/backstory/p9c.png"
+                  class="backstory-img slide-inner" onclick="paperShowBig(this,'p9d.png')">
+              </div>
+            </div>
+
+            <!-- <div class="swiper-pagination"></div> -->
+          </div>
+        </div>
+        <div class="backstory-right" data-mouse="small">
+          <div class="backstory-right-title" data-mouse="small">
+            <img src="img/backstory/t1.png" alt="" data-mouse="small" class="animate__animated animate__fadeInUp"
+              id="backstoryTitle">
+          </div>
+          <div class="backstory-right-str animate__animated animate__fadeInUp" data-mouse="small" id="backstoryStr">
+            元々は「福音地」が育て上げた殺し屋組織で、メンバーは使い捨ての消耗品と見なされていた。
+            Lが「花園」を引き継いだ後、「花園」を率いて「福音地」から独立を果たした。
+            <br>
+            L「よし、今日からもう私たちを縛れる者はいない。処分すべき者は皆殺しだ。もう一線を画いて、バイバイできるんだ～
+            今から、みな、自分の好きな仕事だけを受けて、好きな獲物だけを仕留めて、報酬をもらおう。行きたいところがあれば行け、
+            気が向かなければ離れても構わない。誰かの指図をもう受けなくていい——私の以外はね。
+            恨みは君たちを縛れなくなる、私が自由をやるんだ。自分の命は、好きなように使えばいい——師匠の私が許したんだから。」
+            <br>
+            Lは「花園」を、メンバーそれぞれ自分の目標（復讐、力、居場所など）を追い求める、個性を大胆に表現できる、
+            高層の「大義」や「栄光」に縛られて無理やり犠牲になることのない、Lの理想郷として作り上げた。
+            <br>
+            S「もう二度と家族を失いたくない…」L「花園が君の家だよ。私が家族をあげる。」
+            <br>
+            J「あいつは罰を受けるべきだ！」L「なら、徹底的にやりなさい。その仕方を教えてあげるわ。」
+            <br>
+            T「私はもっと強くなりたい！誰にも踏みにじられないように！」L「なら、私を越すか、殺すかを選んで。」
+            <br>
+            L「実現しなさい、復讐しなさい！私の花よ、私の花園は、自由で、気ままで、縛らずに育つべきだ。邪魔な雑草は、全部刈り取ってしまえばいい。」
+            <br>
+            変装と潜入を得意とする謎の組織。
+            メンバーは幼い頃から教育を受け、熟練した戦闘技術を身につけているだけでなく、生花や書道、刺繍などの芸術分野における専門技術を習得している者も多い。核心成员不过几十人，剩下的大多数外围人员甚至不知道自己在为【花园】服务。
+            <br>
+            X「私は花園の数人の殺し屋と関わったことがあるけど、彼女たちは殺人を楽しむような狂人じゃないよ。」
+          </div>
+          <div class="backstory-right-page animate__animated animate__fadeInUp " data-mouse="mid">
+            <div id="backstoryPre" data-mouse="mid">
+              <img src="img/backstory/pre.png" alt="" data-mouse="mid" style="margin-right: 1vw;">
+            </div>
+            <div data-mouse="mid">
+              <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img1" id="backstoryImg1"
+                onclick="changeBackstoryClick(0)">
+              <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img2" id="backstoryImg2"
+                onclick="changeBackstoryClick(1)">
+              <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img3" id="backstoryImg3"
+                onclick="changeBackstoryClick(2)">
+              <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img4" id="backstoryImg4"
+                onclick="changeBackstoryClick(3)">
+              <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img5" id="backstoryImg5"
+                onclick="changeBackstoryClick(4)">
+              <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img6" id="backstoryImg6"
+                onclick="changeBackstoryClick(5)">
+              <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img7" id="backstoryImg7"
+                onclick="changeBackstoryClick(6)">
+              <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img8" id="backstoryImg8"
+                onclick="changeBackstoryClick(7)">
+              <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img9" id="backstoryImg9"
+                onclick="changeBackstoryClick(8)">
+            </div>
+            <div data-mouse="mid" id="backstoryNext">
+              <img data-mouse="mid" src="img/backstory/next.png" alt="" style="margin-left: 1vw;">
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- pc影音 -->
+      <div class="swiper-slide pc gallery" data-mouse="small" id="slide5">
+        <div class="gallery-top" data-mouse="small">
+          <div class="gallery-top-1 animate__animated animate__fadeInUp" data-mouse="small" onclick="openVideomask()">
+            <!--1-->
+            <img src="img/gallery/01.png" data-mouse="big" data-img="./img/gallery/01d.png" alt=""
+              class="gallery-top-img gallery-top-bg">
+            <!-- <img src="img/gallery/01_GIF.gif" alt="" class="gallery-top-1-icon" data-mouse="small"> -->
+            <img src="img/gallery/01_t.png" alt="" class="gallery-top-1-text" data-mouse="small">
+          </div>
+          <div class="gallery-top-2 animate__animated animate__fadeInUp animate__delay-1.5s" data-mouse="small"
+            onclick="openPapermask()">
+            <!--图集-->
+            <img src="img/gallery/02.png" data-mouse="big" data-img="./img/gallery/02d.png" alt=""
+              class="gallery-top-img gallery-top-bg">
+            <!-- <img src="img/gallery/02_GIF.webp" alt="" class="gallery-top-2-icon" data-mouse="small"> -->
+            <img src="img/gallery/02_t.png" alt="" class="gallery-top-2-text" data-mouse="small">
+          </div>
+          <div class="gallery-top-3 animate__animated animate__fadeInUp animate__delay-2s" data-mouse="small"
+            onclick="openMusicmask()">
+            <!--3-->
+            <img src="img/gallery/03.png" data-mouse="big" data-img="./img/gallery/03d.png" alt=""
+              class="gallery-top-img gallery-top-bg">
+            <!-- img src="img/gallery/mu.png" alt="" class="gallery-top-3-icon music-rotate" data-mouse="small"> -->
+            <!-- <img src="img/gallery/03_G.gif" alt="" class="gallery-top-3-icon" data-mouse="small"> -->
+              <img src="img/gallery/03_t.png" alt="" class="gallery-top-3-text" data-mouse="small">
+          </div>
+          <div class="gallery-top-4 animate__animated animate__fadeIn">
+            <img src="img/gallery/txt_1.png" data-mouse="small" alt="" class="gallery-top-img-icon">
+          </div>
+          <div class="gallery-top-5 animate__animated animate__fadeIn">
+            <img src="img/gallery/txt_2.png" data-mouse="small" alt="" class="gallery-top-img-icon">
+          </div>
+          <div class="gallery-top-6 animate__animated animate__fadeIn">
+            <img src="img/gallery/txt_3.png" data-mouse="small" alt="" class="gallery-top-img-icon">
+          </div>
+        </div>
+
+      </div>
+      <!-- PC Timeline -->
+      <div class="swiper-slide pc timeline" data-mouse="small" id="slide6">
+        <div class="timeline-left animate__animated animate__fadeInLeft" data-mouse="small">
+          <img src="img/timeline/camera.png" alt="Camera" class="timeline-camera" data-mouse="small">
+        </div>
+        <div class="timeline-right" data-mouse="small">
+          <div class="timeline-right-title animate__animated animate__fadeInUp" data-mouse="small">
+            <img src="img/timeline/title.png" alt="Timeline Title" id="timelineTitle">
+          </div>
+          <div class="timeline-right-content" data-mouse="small">
+            <div class="timeline-scrollable" id="timelineScrollable"></div>
+          </div>
+        </div>
+      </div>
+            <!-- pc地图 -->
+            <div class="swiper-slide pc map" data-mouse="small" id="slide1">
+              <img src="img/map/1.png" alt="" class="map-1" data-mouse="small">
+              <div class="map-marker map-G" data-mouse="small">♦公園</div>
+              <div class="map-marker map-X" data-mouse="small">♦X宅</div>
+              <div class="map-marker map-C" data-mouse="small">♦出口</div>
+              <div class="map-marker map-S" data-mouse="small">♦SEVEROの仕立て屋</div>
+              <div class="map-marker map-Y" data-mouse="small">♦ビジネス街</div>
+              <div class="map-marker map-B" data-mouse="small">♦別荘地</div>
+              <div class="map-4-1" data-mouse="mid" style="display: none;">
+                <a href="duihua0722.html#conversation2" data-mouse="mid">
+                  jia
+                  <!-- <img src="img/map/02.png" alt="" class="map-title"> -->
+                </a>
+              </div>
+
+              <!-- style="display: none;" -->
+                <div class="map-4 animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
+
+                  <div class="map-4-pc" data-mouse="mid">
+                    <a href="#" download target="_blank" data-mouse="mid" id="mumuPcDownload">
+                      <img src="img/map/pc3.png" alt="" class="map-4-pc-main">
+                    </a>
+                    <img src="img/map/pc4.png" alt="" class="map-4-pc-top">
+                  </div>
+                  <div class="map-4-2">
+                    <div class="map-4-2-con">
+                      <a href="#" id="iosDownload" target="_blank"><img src="img/map/ios.png" alt="" data-type="ios"
+                          onclick="uploadShuShu()"></a>
+                      <a href="#" id="androidDownload" download target="_blank"><img src="img/map/android.png" alt=""
+                          data-type="android" onclick="uploadShuShu()"> </a>
+                    </div>
+                  </div>
+                  <div class="map-4-mumu" data-mouse="mid">
+                    <div class="map-4-2-con">
+                      <a href="#" id="mumuDownload" download target="_blank"><img src="img/map/mumu.png" alt=""
+                          data-type="mumu" onclick="uploadShuShu()"></a>
+                      <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank"><img
+                          src="img/map/taptap.png" alt=""></a>
+                    </div>
+        
+                  </div>
+                  <div class="map-4-3" data-mouse="mid" onclick="playFirst(1)">
+                    <img src="img/map/play.webp" alt="" class="map-4-3-bg">
+                  </div>
+                </div>
+              
+              
+              <div class="map-zhe" data-mouse="small"></div>
+            </div>
+
+            <!-- PC关系 -->
+
+            <div class="swiper-slide pc relationship" data-mouse="small" id="slide8">
+              <div class="relationship-container">
+                <!-- z-index 1: Coffin Masks -->
+                <div class="z-index-1">
+                    <img src="img/relationship/mask1.png" alt="Mask 1" class="relationship-img slide-inner mask-1" data-mouse="mid">
+                    <img src="img/relationship/mask2.png" alt="Mask 2" class="relationship-img slide-inner mask-2" data-mouse="mid">
+                    <img src="img/relationship/mask3.png" alt="Mask 3" class="relationship-img slide-inner mask-3" data-mouse="mid">
+<!--                     <img src="img/relationship/mask4.png" alt="Mask 4" class="relationship-img slide-inner mask-4" data-mouse="mid"> -->
+                </div>
+                <!-- z-index 2: Three Div Layout -->
+                <div class="z-index-2" style="display: none;">
+                  <div class="relationship-right-title" >
+                    <img src="img/relationship/title.jpg" alt="Title">
+                  </div>
+                  <div class="relationship-right-str" >
+                    <div class="left" style="flex: 1;">Left Text</div>
+                    <div class="center" style="flex: 2;">
+                      <img src="img/relationship/center.jpg" alt="Center Image">
+                    </div>
+                    <div class="right" style="flex: 1;">Right Text</div>
+                  </div>
+                  <div class="relationship-right-page" >
+                    <!-- Placeholder for navigation if needed -->
+                  </div>
+                </div>
+                <!-- z-index 3: Toggle Button -->
+                <div class="z-index-3" >
+                  <img src="img/relationship/btn_rain23_chenge_moon2.png" class="toggle-btn" onclick="toggleNavPanel()">
+
+                </div>
+                <!-- Navigation Panel -->
+                <div class="nav-panel" style="display: none;">
+                  <div class="nav-buttons" >
+                    <img src="img/relationship/nav1.png" class="nav-1" data-content="content1">
+                    <img src="img/relationship/nav2.png" class="nav-2" data-content="content2">
+                    <img src="img/relationship/nav3.png" class="nav-3" data-content="content3">
+                    <img src="img/relationship/nav4.png" class="nav-4" data-content="content4">
+                    <img src="img/relationship/nav5.png" class="nav-5">
+                    <img src="img/relationship/nav6.png" class="nav-6">
+                    <img src="img/relationship/nav7.png" class="nav-7">
+                    <img src="img/relationship/nav8.png" class="nav-8">
+                    <img src="img/relationship/nav9.png" class="nav-9">
+                    <img src="img/relationship/nav10.png" class="nav-10">
+                    <img src="img/relationship/nav11.png" class="nav-11">
+                    <img src="img/relationship/nav12.png" class="nav-12">
+                    <img src="img/relationship/nav13.png" class="nav-13">
+                    <img src="img/relationship/nav14.png" class="nav-14">
+                    <img src="img/relationship/nav15.png" class="nav-15">
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+  <!---------------------------------------------------------------mobile--------------------------------------------------------->
+  <!---------------------------------------------------------------mobile--------------------------------------------------------->
+  <!---------------------------------------------------------------mobile--------------------------------------------------------->
+  <div class="swiper mySwiper swiperBG mobile swiperMobile" id="allSwiperMobile">
+    <!-- mobilehead -->
+    <div class="swiper-wrapper" data-mouse="small">
+      <div class="swiper-slide mobile firstMobile" data-mouse="small" id="slideM1">
+        <!-- <img src="./m/m_00000.jpg" alt="" style="height: 100%;" class="firstMobile-bg" id="kvMobile"> -->
+        <!-- <video src="" style="width:100%;display: none;" muted  loop  id="kvMobile" playsinline="true" poster="./kv/m.jpg" 
+           webkit-playsinline="true" class="mobileFadeIn" ></video> -->
+        <img src="kv/m.jpg" alt="" style="width: 100%;" class="mobileFadeIn m-kv">
+        <img src="kv/slogan.png" class="m-slogan" alt="">
+        <!-- <img src="img/firstMobile/p2.png" alt="" class="firstMobile-1 mobileFadeInDelay pageVideo"
+          onclick="showYoutubeVideoM(this);sendGA('playpv_m_button')" style="display: none;"> -->
+        <!--         <div class="mobile-allDown" style="display: none;">
+          <a href="https://reverse1999jp.onelink.me/XuII/ebqqh579" id="mobileDown" target="_blank">
+            <img src="img/firstMobile/d1.png" alt="" class="firstMobile-2 mobileFadeInDelay" data-type="mobile"
+              onclick="sendGA('OfficialLaunch_download_m_button')">
+          </a>
+        </div> -->
+        <img src="img/login/y.png" alt="" class="yuyue-button" onclick="showYuyue()" style="display: none;">
+      </div>
+      <!-- mobile角色 -->
+      <div class="swiper-slide moblie characterMobile" id="slideM3">
+        <div class="characterMobile-top" id="roleBgM">
+          <img src="img/role/01q.gif" alt="" class="characterMobile-top-quan">
+          <img src="img/role/1.png" class="characterMobile-top-role characterFadeInRight" id="roleImgM" alt="">
+          <div class="characterMobile-top-con">
+            <div class="characterMobile-top-con-title">
+              <img src="img/role/1t.png" class="characterFadeInRight" alt="" id="roleTitleM">
+            </div>
+            <div class="characterMobile-top-con-str animate__animated animate__fadeInLeft" id="roleStrM">
+
+            </div>
+            <div class="characterMobile-top-con-icon" id="roleButtonM">
+              <div class="character-right-right-button-right-mobile">
+                <img src="img/d1.png" id="roleSwitchM" alt="" onclick="switchCharacterImageM()">
+                <img src="img/d1c.png" id="roleSwitchingM" alt="" onclick="switchCharacterImageM()"
+                  style="display: none;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="characterMobile-mid animate__animated animate__fadeInLeft" data-mouse="no">
+          <div class="swiper " id="characterM" data-mouse="no">
+            <div class="swiper-wrapper swiper-wrapper-mobileCharacter" data-mouse="no">
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="no">
+                <img src="img/character/1.png" alt="" data-mouse="mid" class="character-left-role-r roleM1" id="roleM1">
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/character/2.png" alt="" data-mouse="mid" class="character-left-role-l roleM2" id="roleM2">
+
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/character/3.png" alt="" data-mouse="mid" class="character-left-role-r roleM3" id="roleM3">
+
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/character/4.png" alt="" data-mouse="mid" class="character-left-role-l roleM4" id="roleM4">
+
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/character/5.png" alt="" data-mouse="mid" class="character-left-role-r roleM5" id="roleM5">
+
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/character/6.png" alt="" data-mouse="mid" class="character-left-role-l roleM6" id="roleM6">
+
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/character/7.png" alt="" data-mouse="mid" class="character-left-role-r roleM7" id="roleM7">
+
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/character/8.png" alt="" data-mouse="mid" class="character-left-role-l roleM8" id="roleM8">
+
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/character/9.png" alt="" data-mouse="mid" class="character-left-role-r roleM9" id="roleM9">
+
+              </div>
+              <div class="swiper-slide characterMobile-mid-list" data-mouse="mid">
+                <img src="img/character/10.png" alt="" data-mouse="mid" class="character-left-role-l roleM10"
+                  id="roleM10">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--mobile 世界 -->
+      <div class="swiper-slide moblie backstoryMobile">
+        <div class="backstoryMobile-top animate__animated animate__fadeInRight">
+          <img src="img/backstoryM/1.png" alt="" class="backstoryMobile-top-img animate__animated animate__fadeInRight"
+            id="backstoryMobileImg" data-index="1" onclick="showBigBackstory(this)">
+          <img src="img/backstoryM/pre.png" alt="" class="backstoryMobile-top-pre " onclick="backstoryMobileChange(-1)"
+            id="backstoryMobilePre">
+          <img src="img/backstoryM/next.png" alt="" class="backstoryMobile-top-next" onclick="backstoryMobileChange(1)"
+            id="backstoryMobileNext">
+        </div>
+        <img src="img/backstoryM/t1.png" alt="" class="backstoryMobile-top-title animate__animated animate__fadeInUp"
+          id="backstoryMobileTitle">
+        <div class="backstoryMobile-mid animate__animated animate__fadeInUp" id="backstoryMobileStr">
+          元々は「福音地」が育て上げた殺し屋組織で、メンバーは使い捨ての消耗品と見なされていた。
+          Lが「花園」を引き継いだ後、「花園」を率いて「福音地」から独立を果たした。
+          <br>
+          L「よし、今日からもう私たちを縛れる者はいない。処分すべき者は皆殺しだ。もう一線を画いて、バイバイできるんだ～
+          今から、みな、自分の好きな仕事だけを受けて、好きな獲物だけを仕留めて、報酬をもらおう。行きたいところがあれば行け、
+          気が向かなければ離れても構わない。誰かの指図をもう受けなくていい——私の以外はね。
+          恨みは君たちを縛れなくなる、私が自由をやるんだ。自分の命は、好きなように使えばいい——師匠の私が許したんだから。」
+          <br>
+          Lは「花園」を、メンバーそれぞれ自分の目標（復讐、力、居場所など）を追い求める、個性を大胆に表現できる、
+          高層の「大義」や「栄光」に縛られて無理やり犠牲になることのない、Lの理想郷として作り上げた。
+          <br>
+          S「もう二度と家族を失いたくない…」L「花園が君の家だよ。私が家族をあげる。」
+          <br>
+          J「あいつは罰を受けるべきだ！」L「なら、徹底的にやりなさい。その仕方を教えてあげるわ。」
+          <br>
+          T「私はもっと強くなりたい！誰にも踏みにじられないように！」L「なら、私を越すか、殺すかを選んで。」
+          <br>
+          L「実現しなさい、復讐しなさい！私の花よ、私の花園は、自由で、気ままで、縛らずに育つべきだ。邪魔な雑草は、全部刈り取ってしまえばいい。」
+          <br>
+          変装と潜入を得意とする謎の組織。
+          メンバーは幼い頃から教育を受け、熟練した戦闘技術を身につけているだけでなく、生花や書道、刺繍などの芸術分野における専門技術を習得している者も多い。核心成员不过几十人，剩下的大多数外围人员甚至不知道自己在为【花园】服务。
+          <br>
+          X「私は花園の数人の殺し屋と関わったことがあるけど、彼女たちは殺人を楽しむような狂人じゃないよ。」
+        </div>
+      </div>
+      <!-- mobile影音 -->
+      <div class="swiper-slide moblie galleryMobile">
+        <div class="galleryMobile-1 fadeInUpSelf" onclick="galleryMobileShow(1)">
+          <img src="img/gallery/01M.png" alt="" class="galleryMobile-1-img">
+          <!-- <img src="img/gallery/01_GIF.gif" alt="" class="galleryMobile-1-gif"> -->
+          <img src="img/gallery/01_t.png" alt="" class="galleryMobile-1-text" data-mouse="small">
+        </div>
+        <div class="galleryMobile-2 fadeInUpSelf" onclick="galleryMobileShow(2)">
+          <img src="img/gallery/02M.png" alt="" class="galleryMobile-2-img">
+          <!-- <img src="img/gallery/02_GIF.gif" alt="" class="galleryMobile-2-gif"> -->
+          <img src="img/gallery/02_t.png" alt="" class="galleryMobile-2-text">
+        </div>
+        <div class="galleryMobile-3 fadeInUpSelf" onclick="galleryMobileShow(3)">
+          <img src="img/gallery/03M.png" alt="" class="galleryMobile-3-img">
+          <!-- <img src="img/gallery/mu.png" alt="" class="galleryMobile-3-gif music-rotate"> -->
+          <img src="img/gallery/03_t.png" alt="" class="galleryMobile-3-text">
+        </div>
+        <div class="galleryMobile-4">
+          <img src="img/gallery/txt_1.png" alt="">
+        </div>
+        <div class="galleryMobile-5">
+          <img src="img/gallery/txt_2.png" alt="">
+        </div>
+        <div class="galleryMobile-6">
+          <img src="img/gallery/txt_3.png" alt="">
+        </div>
+      </div>
+      <!-- Mobile Timeline -->
+      <div class="swiper-slide mobile timelineMobile" id="slideM5">
+        <div class="timelineMobile-top animate__animated animate__fadeInRight" data-mouse="small">
+          <img src="img/timeline/camera.png" alt="Camera" class="timelineMobile-camera">
+        </div>
+        <div class="timelineMobile-down animate__animated animate__fadeInUp" data-mouse="small">
+          <div class="timelineMobile-title animate__animated animate__fadeInUp" data-mouse="small">
+            <img src="img/timeline/title.png" alt="Timeline Title" id="timelineMobileTitle">
+          </div>
+          <div class="timeline-down-content" data-mouse="small">
+             <div class="timeline-scrollable" id="timelineScrollable">
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年</div>
+                <div class="timeline-text">レオポルドは自分の余命が短いことを悟り、事前にセヴェロに後事を託した。セヴェロは大きな衝撃を受け、命を延ばせるような情報を必死に探し始めた。
+                </div>
+              </div>
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年6月</div>
+                <div class="timeline-text">BR-002事件後、福音地の勢力は新城から撤退し、東区の混乱事件は減少、西区が主要な戦場となる。FACは黒環防衛陣線の構築を計画する。
+                  <br>福音地と上庭は互いにスパイを送り込んた。福音地はスパイを通じて上庭の秘密兵器「HUSH」システムの存在を知り、
+                  能力者組織「GARDEN」にその破壊を依頼するが、首領レオポルドに拒否される――彼女はより有利な介入のタイミングを待っている。
+                  <br>一方、HUSH部隊は福音地を掃除任務を受け、まず福音地と曖昧な関係を持つ能力者組織「GARDEN」を標的にした。HUSH部隊はHUSH-X（以下、X）の指揮下で「GARDEN」への破壊を開始。
+                </div>
+              </div>
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年7月16日</div>
+                <div class="timeline-text">ヒーゲル（福音地の幹事の一人）がセヴェロを見つけ、「GARDEN」と「命の延長」を餌に、単瞳のルーンを与え、上庭特使Xの暗殺を頼んだ。</div>
+              </div>
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年7月16日～7月19日</div>
+                <div class="timeline-text">高級官僚が次々と襲撃され、「GARDEN」の暗殺リストに載っていると疑われる。</div>
+              </div>
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年7月21日 23:37</div>
+                <div class="timeline-text">新城エリカ山荘（Xが一時滞在するリゾート別荘、周辺は「禁閉者」を対象とした天羅地網が張られている）
+                  <br>
+                  刺客<span>（セヴェロ）</span>の襲撃により、X宅が注目を集め、全城に藍雨が48時間降り注ぎ、外部からの大規模襲撃を抑制。
+                </div>
+              </div>
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年7月22日 21:23、「GARDEN」基地</div>
+                <div class="timeline-text">レオポルドはセヴェロの誕生日を祝い、緊張を和らげようとするが、セヴェロが謎で姿を消し、失踪した。</div>
+              </div>
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年7月23日 08:05、セヴェロの仕立て屋</div>
+                <div class="timeline-text">数日間、セヴェロはエリカ山荘の警備員（禁閉者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、調査員が訪ねてくる。 <br>
+                  セヴェロは一瞬心を動かされ、自身と「同じ境遇」に見える調査員を引き込もうとし、「上庭に傷つけられた同類」だと説得、「GARDEN」の首領レオポルドが復讐を助けられると伝えた。しかし、その優しさは強く拒絶され、逆に調査員に裏切られた。最終的にセヴェロは罠に落ち、能力者対策の部隊に制圧され、昏迷状態に陥る。調査員もSan値が限界に達し、一時的に行動不能となる。
+                </div>
+              </div>
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年7月23日 17:10、X宅</div>
+                <div class="timeline-text">上庭の「代理」が現れ、Xに新たな任務を伝え、セヴェロの審問を引き継ぐ。</div>
+              </div>
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年7月23日 23:04、X宅の地下室</div>
+                <div class="timeline-text">
+                  セヴェロが「GARDEN」への忠誠は揺るぎない。数時間にわたる審問は進展せず、代理人はセヴェロの罵倒以外何も得られなかった。そこへXが「生きているセヴェロの方が価値がある」と提案――セヴェロを人質として連れ去れ、レオポルドから福音地の重要情報を引き出すという計画を立てた。代理人はその提案を認める。しかし、「レオポルド」の名を耳にした瞬間、セヴェロは福音地から与えられた単瞳のルーンを起動。ルーンの力が暴走し、彼女は一瞬で制御を失い、監禁を突破して屋敷から逃走し、大混乱を引き起った。
+                </div>
+              </div>
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年7月23日 23:24、山荘内</div>
+                <div class="timeline-text">失血多量と狂厄汚染の二重の打撃により、暴走していたセヴェロがついに倒れた。間一髪のところで、レオポルドが駆けつけ、彼女を救い出す。</div>
+              </div>
+              <div class="timeline-item" data-mouse="small">
+                <img src="img/timeline/node_normal.png" alt="Timeline node" class="timeline-node">
+                <div class="timeline-date">N.F.113年7月24日 00:41、「GARDEN」基地</div>
+                <div class="timeline-text">レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。
+
+                  <br>「Blue rain」終了、つづく。
+                </div>
+              </div>
+            </div>
+            <div class="timeline-scrollable" id="timelineScrollable"></div>
+          </div>
+        </div>
+      </div>
+<!-- Mobile地图 -->
+      <div class="swiper-slide mobile mapMobile" data-mouse="small" id="slideM1">
+        <img src="kv/dm.jpg" alt="" style="width: 100%;" class="mobileFadeIn m-kv">
+        <img src="kv/slogan.png" class="m-slogan" alt="">
+        <div class="map-marker mapMobile-G" data-mouse="small">▲公園</div>
+        <div class="map-marker mapMobile-X" data-mouse="small">▲X宅</div>
+        <div class="map-marker mapMobile-C" data-mouse="small">▲出口</div>
+        <div class="map-marker mapMobile-S" data-mouse="small">▲SEVEROの仕立て屋</div>
+      </div>
+      <!-- <div class="mobile headMobile">
+        <div class="h-con-left">
+          <h1 data-mouse="mid">
+            <a href="./" style="cursor: none;" data-mouse="mid">
+              <img src="./img/logo.png" alt="logo"  data-mouse="mid" class="characterFadeIn">
+            </a>
+          </h1>
+        </div>
+      </div> -->
+      <div class="mobile headM fadeInUpSelf" onclick="hideHeadM()" style="display: none;">
+        <!-- 手机端 -->
+        <div class="mobile h-con-right-mobile" data-mouse="mid">
+          <div class="mobile h-con-right-l " data-mouse="mid">
+            <div class="div-center div-center-mobile" onclick="changeBannerMobile(0)" id="bannerM0" data-type="share">
+              <div class="div-head-text" data-mouse="mid">ホーム</div>
+              <div class="div-head-text-en" data-mouse="mid">HOME</div>
+            </div>
+            <div class="div-center div-center-mobile" onclick="changeBannerMobile(1)" id="bannerM1" data-type="share">
+              <div class="div-head-text" data-mouse="mid">登場人物</div>
+              <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
+            </div>
+            <div class="div-center div-center-mobile" onclick="changeBannerMobile(2)" id="bannerM2" data-type="share">
+              <div class="div-head-text" data-mouse="mid">世界観</div>
+              <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
+            </div>
+            <div class="div-center div-center-mobile" onclick="changeBannerMobile(3)" id="bannerM3" data-type="share">
+              <div class="div-head-text" data-mouse="mid">メインストーリー</div>
+              <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
+            </div>
+            <div class="div-center div-center-mobile" onclick="changeBannerMobile(4)" id="bannerM4" data-type="share">
+              <div class="div-head-text" data-mouse="mid">タイムライン</div>
+              <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
+            </div>
+            <div class="div-center div-center-mobile" onclick="changeBannerMobile(5)" id="bannerM5" data-type="share">
+              <div class="div-head-text" data-mouse="mid">序章マップ</div>
+              <div class="div-head-text-en" data-mouse="mid">MAPS</div>
+            </div>
+          </div>
+          <div class="h-con-right-r">
+            <div class="h-con-right-r-con">
+              <div>
+                <img src="img/v2.gif" alt="" width="1.875rem" height="1.875rem">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+      </div>
+      <!--   <div class="mobile wxAndqq" onclick="changeInfoM(1)">
+    <img src="img/icon/wx.png" alt="" class="wxM fadeInUpSelf">
+    <div class="qqPageM fadeInUpSelf">
+    </div>
+  </div> -->
+      <div class="mask"></div>
+      <!-- pc图集详情 -->
+      <div class="pc papermaskDetail animate__animated animate__fadeInUp" id="papermaskDetail" data-mouse="small">
+        <div class="papermaskDetailTop" data-mouse="small">
+          <img src="#" alt="" data-mouse="small" class="papermaskDetailTop-zoom" id="papermaskDetailTop-zoom">
+        </div>
+        <div class="papermaskDetailBottom" data-mouse="mid">
+          <img src="img/paperDetail/b.png" alt="" onclick="papermaskDetailChange(1)">
+          <img src="img/paperDetail/s.png" alt="" onclick="papermaskDetailChange(-1)">
+          <img src="img/paperDetail/a.png" alt="" onclick="papermaskDetailChange(0)">
+          <img src="img/paperDetail/d.png" alt="" onclick="papermaskDetailDown()">
+        </div>
+        <div class="papermaskDetailClose">
+          <img src="img/paperDetail/c.png" alt="" onclick="paperShowHide()">
+        </div>
+      </div>
+      <!-- 手机端图集 -->
+      <!-- 手机端图片详情 -->
+      <div class="mobile papermaskMobileDetail animate__animated animate__fadeInUp" onclick="hidePaperBigM()">
+        <img src="#" alt="" data-mouse="small" class="papermaskDetailTop-zoom-mobile"
+          id="papermaskDetailTop-zoom-mobile">
+      </div>
+      <!-- 音频 -->
+      <div>
+        <audio src="mp3/bg/bgm.mp3" loop id="bgm"></audio>
+        <audio src="#" id="roleMusic"></audio>
+        <audio src="#" id="roleMusicM"></audio>
+        <audio id="allMusic"></audio>
+      </div>
+      <!-- pc视频播放器 -->
+      <div class="pc videomaskDetail" id="videomaskDetail" data-mouse="mid" onclick="playFirst(2)">
+        <div class="videomaskDetail-con" data-mouse="mid">
+          <video src="#" controls class="videomaskDetail-video" data-mouse="mid" id="videoDetail"></video>
+        </div>
+      </div>
+      <!--手机端播放器-->
+      <div class="mobile videomaskDetail-video-mobile" id="videomaskDetailM" data-mouse="mid" onclick="playFirstM(2)">
+        <div class="videomaskDetail-video-mobile-player" data-mouse="mid">
+          <video src="#" controls class="videomaskDetail-video-mobile-player" data-mouse="mid"
+            id="videoDetailM"></video>
+        </div>
+      </div>
+      <!-- cookie-pop -->
+      <div class="sl-cookie-pop"></div>
+</body>
+<script src="script/jquery-1.11.3.min.js"></script>
+<script src="script/swiper-bundle.min.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/musicControls.js"></script>
+<!-- <script src="./JSON/spine-player.js"></script> -->
+<script src="js/api.js"></script>
+<!-- <script src="./js/zoom.js"></script> -->
+<script src="js/banner.js"></script>
+<script src="js/main.js"></script>
+<script src="js/canvas.js"></script>
+<script src="js/first.js"></script>
+<!-- <script src="js/newsMobile.js"></script>
+<script src="js/news.js"></script> -->
+<script src="js/character.js"></script>
+<script src="js/mobile.js"></script>
+<script src="js/backstory.js"></script>
+<script src="js/papermaskDetail.js"></script>
+<script src="js/router.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/papermaskMobile.js"></script>
+<script src="js/characterMobile.js"></script>
+<script src="js/galleryMobile.js"></script>
+<script src="js/backstoryMobile.js"></script>
+<script src="js/timeline.js"></script>
+
+<script src="js/formatSeconds.js"></script>
+<!-- <script src="js/yuyue.js"></script> -->
+<script src="js/relationship3.js"></script>
+<script>
+  $(document).ready(() => {
+    console.log('jQuery loaded:', typeof $);
+    console.log('paperShowBig defined:', typeof paperShowBig);
+    console.log('papermaskDetail exists:', $("#papermaskDetail").length);
+    console.log('papermaskDetailTop-zoom exists:', $("#papermaskDetailTop-zoom").length);
+  });
+</script>
+
+</html>
