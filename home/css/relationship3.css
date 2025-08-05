@@ -206,6 +206,14 @@
   position: relative; /* 相对定位，覆盖绝对定位 */
 }
 
+.nav-4 {
+  width: 80%;
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translateY(-50%); /* 只垂直居中 */
+}
+
 /* Mobile Styles */
 .relationshipMobile .z-index-1-mobile {
   width: 57%;
