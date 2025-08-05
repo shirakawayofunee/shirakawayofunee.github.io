@@ -20,15 +20,20 @@
   display: flex;
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
+  gap: 10vw; /* 图片之间等距，调整此值以控制间距 */
+  flex-wrap: nowrap;
 }
 
 .mask-1, .mask-2, .mask-3, .mask-4 {
   height: 70vh;
   width: auto;
+  max-width: 20vw; /* 限制图片宽度，避免过大 */
   object-fit: cover;
+  margin: 0; /* 移除 margin */
+  position: static; /* 确保图片不使用绝对定位 */
 }
 
-.mask-1 {
+/* .mask-1 {
   margin: 0 10%; 
 }
 
@@ -42,7 +47,7 @@
 
 .mask-4 {
   margin: 0 70%;
-}
+} */
 
 .z-index-2 {
   width: 100%;
