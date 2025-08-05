@@ -170,9 +170,40 @@
 }
 
 .nav-buttons img {
-  width: 100px;
+/*   max-width: 100%; */
+  width: auto;
   height: auto;
+/*   max-width: 80%; */
   cursor: pointer;
+  
+}
+
+.nav-1{
+  width: 80%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* 只垂直居中 */
+}
+
+.nav-2{
+  width: 80%;
+  position: absolute;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%); /* 只垂直居中 */
+}
+
+.nav-3 {
+  min-width: 1000px; /* 最小宽度为内容宽度 */
+  height: 20px; /* 与背景图片高度一致 */
+  background-image: url('../img/relationship/nav3.png');
+  background-repeat: repeat-x; /* 水平重复背景图片 */
+  background-size: 62px 20px; /* 背景图片原始尺寸 */
+  display: flex;
+  justify-content: center; /* 内容水平居中 */
+  align-items: center; /* 内容垂直居中 */
+  position: relative; /* 相对定位，覆盖绝对定位 */
 }
 
 /* Mobile Styles */
