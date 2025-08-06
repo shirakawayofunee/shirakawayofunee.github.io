@@ -41,7 +41,8 @@
   <link rel="stylesheet" href="css/map.css" media="(min-device-width:926px)" />
   <link rel="stylesheet" href="css/mapMobile.css" media="(max-device-width:926px)" />
   <link rel="stylesheet" href="css/relationship3.css" media="(min-device-width:926px)" />
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/cyfhboard.css" media="(min-device-width:926px)" />
   <link rel="icon" type="image/x-icon" id="icon">
 </head>
 
@@ -114,6 +115,10 @@
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(6)" id="banner6" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">関係性</div>
+            <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(7)" id="banner7" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">関係性補足</div>
             <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
           </div>
         </div>
@@ -413,95 +418,169 @@
                   <!-- <img src="img/map/02.png" alt="" class="map-title"> -->
                 </a>
               </div>
-
+            
               <!-- style="display: none;" -->
-                <div class="map-4 animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
-
-                  <div class="map-4-pc" data-mouse="mid">
-                    <a href="#" download target="_blank" data-mouse="mid" id="mumuPcDownload">
-                      <img src="img/map/pc3.png" alt="" class="map-4-pc-main">
-                    </a>
-                    <img src="img/map/pc4.png" alt="" class="map-4-pc-top">
-                  </div>
-                  <div class="map-4-2">
-                    <div class="map-4-2-con">
-                      <a href="#" id="iosDownload" target="_blank"><img src="img/map/ios.png" alt="" data-type="ios"
-                          onclick="uploadShuShu()"></a>
-                      <a href="#" id="androidDownload" download target="_blank"><img src="img/map/android.png" alt=""
-                          data-type="android" onclick="uploadShuShu()"> </a>
-                    </div>
-                  </div>
-                  <div class="map-4-mumu" data-mouse="mid">
-                    <div class="map-4-2-con">
-                      <a href="#" id="mumuDownload" download target="_blank"><img src="img/map/mumu.png" alt=""
-                          data-type="mumu" onclick="uploadShuShu()"></a>
-                      <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank"><img
-                          src="img/map/taptap.png" alt=""></a>
-                    </div>
-        
-                  </div>
-                  <div class="map-4-3" data-mouse="mid" onclick="playFirst(1)">
-                    <img src="img/map/play.webp" alt="" class="map-4-3-bg">
+              <div class="map-4 animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
+            
+                <div class="map-4-pc" data-mouse="mid">
+                  <a href="#" download target="_blank" data-mouse="mid" id="mumuPcDownload">
+                    <img src="img/map/pc3.png" alt="" class="map-4-pc-main">
+                  </a>
+                  <img src="img/map/pc4.png" alt="" class="map-4-pc-top">
+                </div>
+                <div class="map-4-2">
+                  <div class="map-4-2-con">
+                    <a href="#" id="iosDownload" target="_blank"><img src="img/map/ios.png" alt="" data-type="ios"
+                        onclick="uploadShuShu()"></a>
+                    <a href="#" id="androidDownload" download target="_blank"><img src="img/map/android.png" alt=""
+                        data-type="android" onclick="uploadShuShu()"> </a>
                   </div>
                 </div>
-              
-              
+                <div class="map-4-mumu" data-mouse="mid">
+                  <div class="map-4-2-con">
+                    <a href="#" id="mumuDownload" download target="_blank"><img src="img/map/mumu.png" alt="" data-type="mumu"
+                        onclick="uploadShuShu()"></a>
+                    <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank"><img src="img/map/taptap.png"
+                        alt=""></a>
+                  </div>
+            
+                </div>
+                <div class="map-4-3" data-mouse="mid" onclick="playFirst(1)">
+                  <img src="img/map/play.webp" alt="" class="map-4-3-bg">
+                </div>
+              </div>
+            
+            
               <div class="map-zhe" data-mouse="small"></div>
             </div>
-
-            <!-- PC关系 -->
-
-            <div class="swiper-slide pc relationship" data-mouse="small" id="slide8">
+            
+            
+            <!-- PC关系板 -->
+            <div class="swiper-slide pc cyfhboard" data-mouse="small" id="slide8">
+              <div id="board" class="container-fluid">
+                <svg id="lines">
+                  <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
+                    </marker>
+                  </defs>
+                </svg>
+                <div class="row justify-content-center g-2">
+                  <div class="col-lg-8 col-md-10 col-sm-12">
+                    <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
+                      <div class="avatar">
+                        <img src="img/id/1.png" alt="Leopold Avatar">
+                      </div>
+                      <div class="label">
+                        L<br />
+                      </div>
+                    </div>
+                    <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                      <div class="avatar">
+                        <img src="img/id/2.png" alt="Severo Avatar">
+                      </div>
+                      <div class="label">
+                        36歳、容疑者。<br />
+                        憂いと苦悩、感傷に満ちた女性として偽装して登場する。<br />
+                      </div>
+                    </div>
+                    <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                      <div class="avatar">
+                        <img src="img/id/3.png" alt="J Avatar">
+                      </div>
+                      <div class="label">J<br />23歳、Lの養女<br />警察庁高官を母に持つの刑事</div>
+                    </div>
+                    <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                      <div class="avatar">
+                        <img src="img/id/4.png" alt="K Avatar">
+                      </div>
+                      <div class="label">
+                        K<br />Lの母親の隣人のパートナーの園芸師の姪（？<br />
+                        18歳、Lの養女。Lが一番好き。<br />
+                        Lへの想いが家族愛か恋愛か自分でもわからない。<br />
+                        Lが最近ハマっている手作りスイーツ店に長蛇の列でも並びに行く
+                      </div>
+                    </div>
+                    <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                      <div class="avatar">
+                        <img src="img/id/5.png" alt="X Avatar">
+                      </div>
+                      <div class="label">X<br />連続殺人事件の真犯人<br />謎の人物</div>
+                    </div>
+                    <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                      <div class="avatar">
+                        <img src="img/id/6.png" alt="Y Avatar">
+                      </div>
+                      <div class="label">Y<br />8月14日的死者</div>
+                    </div>
+                    <div class="node small-node col-lg-2 col-md-3 col-sm-4 col-6">
+                      <div class="avatar">
+                        <img src="img/id/7.png" alt="LY Avatar">
+                      </div>
+                      <div class="label">
+                        自分を深淵に突き落としたこの人、長い年月にわたり自分を絡めとったこの者。
+                        <br>さらにLの「GARDEN」にまで手を出そうとした地底のドブネズミ
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- PC关系补足 -->
+            
+            <div class="swiper-slide pc relationship" data-mouse="small" id="slide9">
               <div class="relationship-container">
                 <!-- z-index 1: Coffin Masks -->
                 <div class="z-index-1">
-                    <img src="img/relationship/mask1.png" alt="Mask 1" class="relationship-img slide-inner mask-1" data-mouse="mid">
-                    <img src="img/relationship/mask2.png" alt="Mask 2" class="relationship-img slide-inner mask-2" data-mouse="mid">
-                    <img src="img/relationship/mask3.png" alt="Mask 3" class="relationship-img slide-inner mask-3" data-mouse="mid">
-<!--                     <img src="img/relationship/mask4.png" alt="Mask 4" class="relationship-img slide-inner mask-4" data-mouse="mid"> -->
+                  <!--                     <img src="img/relationship/mask1.png" alt="Mask 1" class="relationship-img slide-inner mask-1" data-mouse="mid">
+                                            <img src="img/relationship/mask2.png" alt="Mask 2" class="relationship-img slide-inner mask-2" data-mouse="mid"> -->
+                  <!--                     <img src="img/relationship/mask3.png" alt="Mask 3" class="relationship-img slide-inner mask-3" data-mouse="mid">
+                                            <img src="img/relationship/mask4.png" alt="Mask 4" class="relationship-img slide-inner mask-4" data-mouse="mid"> -->
+                  <img src="img/relationship/mask5.png" alt="Mask 1" class="relationship-img slide-inner mask-1" data-mouse="mid">
                 </div>
                 <!-- z-index 2: Three Div Layout -->
-                <div class="z-index-2" style="display: none;">
-                  <div class="relationship-right-title" >
-                    <img src="img/relationship/title.jpg" alt="Title">
-                  </div>
-                  <div class="relationship-right-str" >
+                <div class="z-index-2">
+                  <!--                   <div class="relationship-right-title" >
+                                            <img src="img/relationship/title.jpg" alt="Title">
+                                          </div> -->
+                  <div class="relationship-right-str">
                     <div class="left" style="flex: 1;">Left Text</div>
                     <div class="center" style="flex: 2;">
-                      <img src="img/relationship/center.jpg" alt="Center Image">
+                      <!--                       <img src="img/relationship/center.jpg" alt="Center Image"> -->
                     </div>
                     <div class="right" style="flex: 1;">Right Text</div>
                   </div>
-                  <div class="relationship-right-page" >
+                  <div class="relationship-right-page">
                     <!-- Placeholder for navigation if needed -->
                   </div>
                 </div>
                 <!-- z-index 3: Toggle Button -->
-                <div class="z-index-3" >
+                <div class="z-index-3">
                   <img src="img/relationship/btn_rain23_chenge_moon2.png" class="toggle-btn" onclick="toggleNavPanel()">
-
+            
                 </div>
                 <!-- Navigation Panel -->
                 <div class="nav-panel" style="display: none;">
-                  <div class="nav-buttons" >
+                  <div class="nav-buttons">
                     <img src="img/relationship/nav1.png" class="nav-1" data-content="content1">
                     <img src="img/relationship/nav2.png" class="nav-2" data-content="content2">
                     <div class="nav-3" data-content="content3">
                       <img src="img/relationship/nav4.png" class="nav-4" data-content="content4">
                     </div>
-<!--                     <img src="img/relationship/nav3.png" > -->
-                    
+                    <!--                     <img src="img/relationship/nav3.png" > -->
+            
                     <img src="img/relationship/nav5.png" class="nav-5">
-<!--                     <img src="img/relationship/nav6.png" class="nav-6">
-                    <img src="img/relationship/nav7.png" class="nav-7">
-                    <img src="img/relationship/nav8.png" class="nav-8">
-                    <img src="img/relationship/nav9.png" class="nav-9">
-                    <img src="img/relationship/nav10.png" class="nav-10">
-                    <img src="img/relationship/nav11.png" class="nav-11">
-                    <img src="img/relationship/nav12.png" class="nav-12">
-                    <img src="img/relationship/nav13.png" class="nav-13">
-                    <img src="img/relationship/nav14.png" class="nav-14">
-                    <img src="img/relationship/nav15.png" class="nav-15"> -->
+                    <!--                     <img src="img/relationship/nav6.png" class="nav-6">
+                                            <img src="img/relationship/nav7.png" class="nav-7">
+                                            <img src="img/relationship/nav8.png" class="nav-8">
+                                            <img src="img/relationship/nav9.png" class="nav-9">
+                                            <img src="img/relationship/nav10.png" class="nav-10">
+                                            <img src="img/relationship/nav11.png" class="nav-11">
+                                            <img src="img/relationship/nav12.png" class="nav-12">
+                                            <img src="img/relationship/nav13.png" class="nav-13">
+                                            <img src="img/relationship/nav14.png" class="nav-14">
+                                            <img src="img/relationship/nav15.png" class="nav-15"> -->
                   </div>
                 </div>
               </div>
@@ -884,6 +963,8 @@
 <script src="js/formatSeconds.js"></script>
 <!-- <script src="js/yuyue.js"></script> -->
 <script src="js/relationship3.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/cyfhboard.js"></script>
 <script>
   $(document).ready(() => {
     console.log('jQuery loaded:', typeof $);

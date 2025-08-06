@@ -20,12 +20,12 @@
   display: flex;
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
-  gap: 10vw; /* 图片之间等距，调整此值以控制间距 */
+  gap: 6vw; /* 图片之间等距，调整此值以控制间距 */
   flex-wrap: nowrap;
 }
 
 .mask-1, .mask-2, .mask-3, .mask-4 {
-  height: 70vh;
+  max-height: 70vh;
   width: auto;
   max-width: 20vw; /* 限制图片宽度，避免过大 */
   object-fit: cover;
@@ -76,14 +76,14 @@
   height: auto;
 }
 
+
 .relationship-right-str {
-  height: 50%;
-  width: 80%;
+  min-height: 600px; /* 最小高度600px */
+  width: 100%; /* 占满父容器宽度 */
   color: #9ea7b4;
   font-weight: 300;
   font-size: 1rem;
   text-align: left;
-  padding-left: 3vw;
   box-sizing: border-box;
   padding-top: 1vh;
   font-family: "myFont";
@@ -93,14 +93,26 @@
   user-select: auto;
   cursor: grab;
   display: flex;
-  justify-content: space-between; /* 水平分布 */
+  justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
+  gap: 20%; /* left和right之间的间隔为40% */
+  padding: 0 15%; /* 左右内边距，确保内容不贴边 */
 }
 
 .relationship-right-str .left,
 .relationship-right-str .right {
-  flex: 1;
+  flex: 0 0 400px !important; /* 固定宽度400px，防止被覆盖 */
+  flex-shrink: 0; /* 防止收缩 */
+  min-height: 600px; /* 最小高度600px */
+  height: auto; /* 高度随内容自适应 */
   text-align: center; /* 文本居中 */
+  overflow-y: auto; /* 内容过多时可滚动 */
+  -webkit-overflow-scrolling: touch;
+  user-select: auto;
+  cursor: grab;
+  background: rgba(0, 0, 0, 0.1); /* 可选：轻微背景区分 */
+  padding: 10px; /* 内边距，改善内容展示 */
+  box-sizing: border-box;
 }
 
 .relationship-right-str .center {
@@ -115,11 +127,7 @@
   height: auto;
 }
 
-.relationship-right-str .left {
-  width: 700px;
-  overflow: hidden; /* 防止文本溢出 */
-  text-overflow: ellipsis; /* 文本溢出显示省略号 */
-}
+
 
 .relationship-right-str::-webkit-scrollbar {
   width: 8px;
