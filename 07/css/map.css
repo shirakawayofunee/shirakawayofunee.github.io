@@ -1,0 +1,241 @@
+:root {
+  --primary-color: #e23b78;
+  --secondary-color: #6aadff;
+  --tertiary-color: #7981b4;
+  --base-font-size: 13px;
+  --small-font-size: 12px;
+}
+.map {
+  position: relative;
+  overflow: hidden;
+  background: url("../kv/d.jpg") no-repeat fixed center / 100% auto;
+  color: var(--primary-color);
+  font-size: var(--base-font-size);
+}
+
+.map-marker {
+  position: absolute;
+  z-index: 2;
+  min-height: 15px;
+}
+  
+  .map-bg{
+    position: absolute;
+    width: 100%;
+    
+    top:0;
+    left:0;
+    z-index: 1;
+  }
+  .map-1{
+    position: absolute;
+    z-index: 2;
+    top:10%;
+    left: 7%;
+    height: 80%;
+  }
+  .map-G {
+    top: 26.5%;
+    right: 26.5%;
+  }
+  
+  .map-X {
+    bottom: 50%;
+    left: 52%;
+  }
+  
+  .map-C {
+    bottom: 42%;
+    right: 15%;
+    color: var(--secondary-color);
+    font-size: var(--small-font-size);
+  }
+  
+  .map-S {
+    top: 51%;
+    left: 31%;
+  }
+  
+  .map-Y {
+    top: 17%;
+    left: 26%;
+    color: var(--tertiary-color);
+    font-size: var(--small-font-size);
+  }
+  
+  .map-B {
+    bottom: 22%;
+    right: 23%;
+    color: var(--tertiary-color);
+    font-size: var(--small-font-size);
+  }
+  .map-title{
+    height: 60px;
+    width: auto;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    top: 22%;
+    left: 31%;
+/*     max-width: 30px; */
+  }
+
+  .map-4{
+    position: absolute;
+    right: 6%;
+    bottom: 3rem;
+    height: 7rem;
+    width: 33.375rem;
+    z-index: 2;
+    display: flex;
+    max-width: 534px;
+  }
+  .map-4 a{
+    cursor: none;
+    width: 100%;
+  }
+  
+  .map-4>div:nth-child(1){
+    width: 12.5rem;
+    height: 100%;
+  }
+  .map-4>div:nth-child(2){
+    width: 9rem;
+    height: 100%;
+    justify-content: center;
+  }
+  .map-4>div:nth-child(3){
+    width: 8rem;
+    height: 100%;
+  }
+  .map-4>div:nth-child(4){
+    width: 10.875rem;
+    height: 100%;
+  }
+  .map-4 img{
+    width: 7.25rem;
+  }
+  .map-4-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .map-4-1 a{
+    background-image: url(../img/map/bg.png);
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-4-1>img{
+    width: 95%;
+  }
+  .map-4-2{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  
+  }
+  .map-4-2-con{
+    /* height: 3.5rem; */
+    /* background: darkblue; */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+  }
+  .map-4-2 img{
+    width: 100%;
+    transition: all 0.3s;
+  }
+  .map-4-2-con img:hover{
+    filter: brightness(70%);
+  }
+  
+  .map-4-3{
+    position: relative;
+  }
+  .map-4-3:hover .map-4-3-icon{
+    transform: translateX(10px);
+  }
+  .map-4-3-bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+  }
+  .map-4-3-p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+  }
+  .map-4-3>img{
+    width: 100%;
+  }
+  .map-4-3>img:hover{
+    filter: brightness(70%);
+  }
+  .map-4-3-p>img{
+    transition: all 0.5s;
+  }
+  .map-4-3-p>img:hover{
+    transform: scale(1.1);
+  }
+  .map-4-3-icon{
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    z-index: 3;
+    transition: all 0.3s;
+  }
+  .map-zhe{
+    position: absolute;
+    width: 100%;
+    height: 18rem;
+    bottom: 0;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,.7));
+  }
+  .map-4-mumu{
+    height:5.9375rem;
+    display: flex;
+    align-items: center;
+    /* margin: 0 1rem; */
+  }
+  .map-4-mumu img{
+       height: 100%;
+       max-height: 130px;
+       object-fit: contain;
+       margin: 0 auto;
+       display: block;
+  }
+  .map-yuyue{
+    position: absolute;
+    right: 8%;
+    bottom: 0;
+    height: 12rem;
+    width: 26rem;
+    z-index: 2;
+    display: flex;
+    /* background: forestgreen; */
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .map-yuyue-img{
+    width: 18.5rem;
+    height: 4.25rem;
+  }
+  .map-yuyue-play{
+    width: 6.25rem;
+    height: 6.25rem;
+  }
