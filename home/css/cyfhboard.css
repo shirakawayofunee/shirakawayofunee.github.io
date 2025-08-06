@@ -29,7 +29,7 @@
 
 .node, .large-node .small-node {
   position: absolute;
-  transform: translate(-50%, -50%);
+/*   transform: translate(-50%, -50%); */
   pointer-events: auto;
   transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
@@ -51,8 +51,6 @@
   display: block !important; /* 强制显示 */
   opacity: 1 !important; /* 确保不透明 */
 }
-
-
 
 .node .label, .large-node .label .small-node .label{
   font-size: 14px;
@@ -109,15 +107,15 @@
 }
 
 @media (min-width: 992px) {
-  .small-node { width: 102px;}
-  .small-node .avatar{ width: 102px; height: 133px; }
-  .small-node .label{ max-width: 142px; font-size: 12px; }
-  .node { width: 242px; }
-  .node .avatar { width:242px; height: 300px; }
+  .small-node { width: 122px;}
+  .small-node .avatar{ width: 122px; height: 151px; }
+  .small-node .label{ max-width: 122px; font-size: 14px; }
+  .node { width: 220px; }
+  .node .avatar { height: 273px; }
   .node .label { max-width: 240px; font-size: 14px; }
-  .large-node { width: 153px; }
-  .large-node .avatar { width: 323px; height: 400px; }
-  .large-node .label { max-width: 160px; font-size: 14px; }
+  .large-node { width: 323px; }
+  .large-node .avatar { height: 400px; }
+  .large-node .label { max-width: 323px; font-size: 14px; }
   #lines text { font-size: 14px; }
   #lines rect { rx: 5; }
 }

@@ -1,9 +1,10 @@
 const connections = [
-  { from: 0, to: 1, label: "我が子のように大切にする", dashed: false },
-  { from: 0, to: 2, label: "母女、意図的に後継者として育つ", dashed: false },
+  { from: 0, to: 1, label: " .我が子のように大切にする. ", dashed: false },
+  { from: 0, to: 2, label: "野放し", dashed: false },
   { from: 0, to: 3, label: "慈しむ、憐憫", dashed: false },
   { from: 0, to: 4, label: "やり返す、敵であり味方", dashed: true },
   { from: 0, to: 6, label: "反逆", dashed: true },
+  { from: 6, to: 7, label: "リーダー", dashed: false },
 ];
 
 const state = {
@@ -27,12 +28,13 @@ function initLayout() {
 
   const positions = [
     [0, 0], // Leopold
-    [1.4, 0.9], // Severo
-    [-1.0, 1.2], // J
-    [-1.4, -0.5], // j
-    [-3.2, 1.2], // X
-    [-2.3, -0.5], // Y
-    [2.5, -0.8], // ZS
+    [-1.0, 1.2],  // Severo
+    [1.8, 0.9], // Jin
+    [-1.4, -0.9], // Ji
+    [-2.5, 1.0], // X
+    [-3, -0.5], // ST
+    [2.1, -1], // LY
+    [3, 0.3], // DD
   ];
 
   state.nodes.forEach((node, index) => {
