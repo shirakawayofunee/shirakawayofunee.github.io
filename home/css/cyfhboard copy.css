@@ -36,9 +36,14 @@
   margin: 0 auto 8px;
   display: block;
   z-index: 2;
-  background-size: contain;
-  background-position: top;
-  background-repeat: no-repeat;
+}
+
+.node .avatar img, .large-node .avatar img, .small-node .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block !important;
+  opacity: 1 !important;
 }
 
 .node .label, .large-node .label, .small-node .label {
@@ -53,36 +58,8 @@
   margin-top: 8px;
 }
 
-.one {
-  background: url("../img/id/1.png") top/contain no-repeat;
-}
-
-.two {
-  background: url("../img/id/2.png") top/contain no-repeat;
-}
-
-.three {
-  background: url("../img/id/3.png") top/contain no-repeat;
-}
-
-.four {
-  background: url("../img/id/4.png") top/contain no-repeat;
-}
-
-.five {
-  background: url("../img/id/5.png") top/contain no-repeat;
-}
-
-.six {
-  background: url("../img/id/6.png") top/contain no-repeat;
-}
-
-.seven {
-  background: url("../img/id/7.png") top/contain no-repeat;
-}
-
-.eight {
-  background: url("../img/id/8.png") top/contain no-repeat;
+.one{
+  background: url("../img/id/1.png") top/cover no-repeat;
 }
 
 .relation-line {
