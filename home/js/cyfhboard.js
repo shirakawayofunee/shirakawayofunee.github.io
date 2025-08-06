@@ -1,10 +1,15 @@
 const connections = [
-  { from: 0, to: 1, label: " .我が子のように大切にする. ", dashed: false },
-  { from: 0, to: 2, label: "野放し", dashed: false },
-  { from: 0, to: 3, label: "慈しむ、憐憫", dashed: false },
-  { from: 0, to: 4, label: "やり返す、敵であり味方", dashed: true },
-  { from: 0, to: 6, label: "反逆", dashed: true },
-  { from: 6, to: 7, label: "リーダー", dashed: false },
+  { from: 0, to: 1, label: "我が子のように大切にする", color: "#E41900", dashed: false }, // L -> Severo (red)
+  { from: 1, to: 0, label: "（表）忠誠、（裏）劣情", color: "#0000FE", dashed: false }, // Severo -> L (blue)
+  { from: 0, to: 2, label: "野放し", color: "#E41900", dashed: false }, // L -> Jin
+  { from: 2, to: 0, label: "尊敬", color: "#0000FE", dashed: false }, // Jin -> L
+  { from: 0, to: 3, label: "慈しむ、憐憫", color: "#E41900", dashed: false }, // L -> Ji
+  { from: 3, to: 0, label: "家族愛か恋愛か不明", color: "#0000FE", dashed: false }, // Ji -> L
+  { from: 0, to: 4, label: "やり返す、敵であり味方", color: "#E41900", dashed: true }, // L -> X
+  { from: 4, to: 0, label: "複雑な協力関係", color: "#0000FE", dashed: true }, // X -> L
+  { from: 0, to: 6, label: "反逆", color: "#E41900", dashed: true }, // L -> LY
+  { from: 6, to: 0, label: "利用", color: "#0000FE", dashed: true }, // LY -> L
+  { from: 6, to: 7, label: "リーダー", color: "#E41900", dashed: false }, // LY -> DD (red)
 ];
 
 const state = {
@@ -28,10 +33,10 @@ function initLayout() {
 
   const positions = [
     [0, 0], // Leopold
-    [-1.0, 1.2],  // Severo
+    [-1.0, 1.2], // Severo
     [1.8, 0.9], // Jin
     [-1.4, -0.9], // Ji
-    [-2.5, 1.0], // X
+    [-2.8, 1.0], // X
     [-3, -0.5], // ST
     [2.1, -1], // LY
     [3, 0.3], // DD
@@ -47,6 +52,7 @@ function initLayout() {
       top: `${y}px`,
       transform: "translate(-50%, -50%)",
       transition: state.dragging ? "none" : "all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
+      zIndex: 2,
     });
   });
 
@@ -60,7 +66,9 @@ function drawLines() {
   svg.innerHTML = "";
   svg.appendChild(defs);
 
-  connections.forEach((conn) => {
+  // 按from-to和to-from配对分组，确保双向关系按顺序处理
+  const processedPairs = new Set();
+  connections.forEach((conn, index) => {
     if (conn.from >= state.nodes.length || conn.to >= state.nodes.length) return;
 
     const fromNode = state.nodes[conn.from];
@@ -71,49 +79,88 @@ function drawLines() {
     const toRect = toAvatar.getBoundingClientRect();
     const boardRect = document.getElementById("board").getBoundingClientRect();
 
-    const start = {
+    const centerStart = {
       x: fromRect.left + fromRect.width / 2 - boardRect.left,
       y: fromRect.top + fromRect.height / 2 - boardRect.top,
     };
-    const end = {
+    const centerEnd = {
       x: toRect.left + toRect.width / 2 - boardRect.left,
       y: toRect.top + toRect.height / 2 - boardRect.top,
     };
 
+    // 计算箭头起点和终点到avatar边缘
+    const angle = Math.atan2(centerEnd.y - centerStart.y, centerEnd.x - centerStart.x);
+    const fromRadius = fromRect.width / 2 + 10; // 起点偏移到avatar边缘外10像素
+    const toRadius = toRect.width / 2 + 10; // 终点偏移到avatar边缘外10像素
+    const start = {
+      x: centerStart.x + Math.cos(angle) * fromRadius,
+      y: centerStart.y + Math.sin(angle) * fromRadius,
+    };
+    const end = {
+      x: centerEnd.x - Math.cos(angle) * toRadius,
+      y: centerEnd.y - Math.sin(angle) * toRadius,
+    };
+
+    // 为双向关系添加平行偏移
+    let offsetX = 0, offsetY = 0;
+    const pairKey = [Math.min(conn.from, conn.to), Math.max(conn.from, conn.to)].join('-');
+    const isReverse = connections.some(
+      (c, i) => i !== index && c.from === conn.to && c.to === conn.from
+    );
+
+    if (isReverse && !processedPairs.has(pairKey)) {
+      // 处理双向关系的两条线
+      const offset = 65; // 增加平行线间距到15像素
+      const perpAngle = angle + Math.PI / 2;
+      // 第一条线（from < to，例如L到其他角色）
+      if (conn.from < conn.to) {
+        offsetX = Math.cos(perpAngle) * offset;
+        offsetY = Math.sin(perpAngle) * offset;
+      } else {
+        // 第二条线（from > to，例如其他角色到L）
+        offsetX = -Math.cos(perpAngle) * offset;
+        offsetY = -Math.sin(perpAngle) * offset;
+      }
+      processedPairs.add(pairKey);
+    }
+
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.classList.add("relation-line");
     if (conn.dashed) path.classList.add("dashed-line");
+    path.setAttribute("marker-end", `url(#arrowhead-${conn.color.replace("#", "")})`);
+    path.setAttribute("d", `M ${start.x + offsetX} ${start.y + offsetY} L ${end.x + offsetX} ${end.y + offsetY}`);
+    path.style.stroke = conn.color;
+    path.style.zIndex = 3;
 
-    const isReverse = connections.some(
-      (c) => c.from === conn.to && c.to === conn.from && c.label !== conn.label
-    );
+    // 动态创建箭头标记
+    const marker = document.createElementNS("http://www.w3.org/2000/svg", "marker");
+    marker.setAttribute("id", `arrowhead-${conn.color.replace("#", "")}`);
+    marker.setAttribute("markerWidth", "10");
+    marker.setAttribute("markerHeight", "7");
+    marker.setAttribute("refX", "9");
+    marker.setAttribute("refY", "3.5");
+    marker.setAttribute("orient", "auto");
+    const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+    polygon.setAttribute("points", "0 0, 10 3.5, 0 7");
+    polygon.setAttribute("fill", conn.color);
+    marker.appendChild(polygon);
+    defs.appendChild(marker);
 
-    if (isReverse) {
-      const curvature = 0.3;
-      const ctrl = {
-        x: (start.x + end.x) / 2 + curvature * (end.y - start.y),
-        y: (start.y + end.y) / 2 + curvature * (start.x - end.x),
-      };
-      path.setAttribute("d", `M ${start.x} ${start.y} Q ${ctrl.x} ${ctrl.y} ${end.x} ${end.y}`);
-    } else {
-      path.setAttribute("d", `M ${start.x} ${start.y} L ${end.x} ${end.y}`);
-    }
-
-    const textGroup = createConnectionLabel(conn.label, start, end, isReverse);
+    const textGroup = createConnectionLabel(conn.label, start, end, offsetX, offsetY);
     svg.appendChild(path);
     svg.appendChild(textGroup);
   });
 }
 
-function createConnectionLabel(text, start, end, isCurve) {
+function createConnectionLabel(text, start, end, offsetX, offsetY) {
   const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
   const padding = 6;
 
   const lines = text.split(/[、\n]/);
   const angle = Math.atan2(end.y - start.y, end.x - start.x);
   const labelPos = {
-    x: (start.x + end.x) / 2 + Math.cos(angle) * (isCurve ? 10 : 0),
-    y: (start.y + end.y) / 2 + Math.sin(angle) * (isCurve ? 10 : -5),
+    x: (start.x + end.x) / 2 + offsetX,
+    y: (start.y + end.y) / 2 + offsetY - 5,
   };
 
   const textEl = document.createElementNS("http://www.w3.org/2000/svg", "text");
@@ -193,7 +240,6 @@ function initDragSystem() {
   function updatePosition(clientX, clientY) {
     if (!dragInfo) return;
     const { node, offsetX, offsetY } = dragInfo;
-    const avatar = node.querySelector(".avatar");
     const boardRect = document.getElementById("board").getBoundingClientRect();
     
     const viewportWidth = window.innerWidth;
@@ -215,6 +261,7 @@ function initDragSystem() {
       top: `${newY}px`,
       transform: "translate(-50%, -50%)",
       transition: "none",
+      zIndex: 2,
     });
 
     requestAnimationFrame(drawLines);
