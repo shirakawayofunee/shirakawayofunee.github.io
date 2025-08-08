@@ -65,51 +65,56 @@
   width: 100vw; /* 占满父容器宽度 */
   color: #9ea7b4;
   font-weight: 300;
-  font-size: 1rem;
-  text-align: left;
-  box-sizing: border-box;
-  padding-top: 1vh;
-  font-family: "myFont";
+  font-size: calc(0.875rem + 0.2vw);
+/*   line-height: 1.5; */
   line-height: 1.875rem;
-  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 0 15%; /* 左右内边距，确保内容不贴边 */
+  position: relative; /* 作为.left和.right的定位参考 */
+  display: block; /* 移除flex布局，改为常规布局 */
+  overflow-y: auto; /* 内容过多时可滚动 */
   -webkit-overflow-scrolling: touch;
   user-select: auto;
-  cursor: grab;
-  gap: 13%; /* left和right之间的间隔为40% */
-  padding: 0 15%; /* 左右内边距，确保内容不贴边 */
+  font-family: "myFont";
 }
 
 .relationship-right-str .left,
 .relationship-right-str .right {
-  flex: 0 0 35vw !important; /* 使用35vw替代固定像素宽度 */
-  flex-shrink: 0; /* 防止收缩 */
-  height: auto; /* 高度随内容自适应 */
-  max-height: 512px;
+  flex: 0 0 35vw; /* 宽度占视口宽度的35% */
+  aspect-ratio: 1252 / 854; /* 保持背景图片比例 */
+  max-height: 512px; /* 最大高度，防止过大 */
+  height: auto; /* 高度自适应 */
   text-align: center; /* 文本居中 */
   overflow-y: auto; /* 内容过多时可滚动 */
   -webkit-overflow-scrolling: touch;
   user-select: auto;
   cursor: grab;
-  background: url('../img/relationship/bg.png') no-repeat top center / 100% auto;
-  padding: 1.5vw; /* 使用vw单位，动态调整内边距 */
+  background: url('../img/relationship/bg.png') no-repeat center center / 100% auto; /* 宽度100%，高度自适应 */
+  padding: 1.5vw; /* 动态内边距 */
   padding-top: 3%;
-  padding-bottom:1%;
+  padding-bottom: 1%;
   box-sizing: border-box;
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
+  position: absolute; /* 使用绝对定位 */
+  bottom: 0; /* 固定在底部 */
 }
 
-/* .relationship-right-str .left{
-  position: absolute;
-  left: 0;
+.relationship-right-str .left {
+  left: 5%; /* 固定在左边 */
+  bottom: 1%;
 }
- */
+
+.relationship-right-str .right {
+  right: 5%; /* 固定在右边 */
+  top: 0%;
+}
+
 .relationship-right-str .center {
   flex: 2;
   display: flex;
   justify-content: center; /* 图像水平居中 */
   align-items: center; /* 图像垂直居中 */
+  margin: 0 auto; /* 居中显示 */
+  width: 30vw; /* 中心区域宽度，视需要调整 */
 }
 
 .relationship-right-str .center img {
