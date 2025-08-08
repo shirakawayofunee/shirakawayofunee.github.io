@@ -33,6 +33,22 @@
   position: static; /* 确保图片不使用绝对定位 */
 }
 
+/* .mask-1 {
+  margin: 0 10%; 
+}
+
+.mask-2 {
+  margin: 0 30%; 
+}
+
+.mask-3 {
+  margin: 0 50%;
+}
+
+.mask-4 {
+  margin: 0 70%;
+} */
+
 .z-index-2 {
   width: 100%;
   height: 100%;
@@ -60,9 +76,10 @@
   height: auto;
 }
 
+
 .relationship-right-str {
   min-height: 600px; /* 最小高度600px */
-  width: 100vw; /* 占满父容器宽度 */
+  width: 100%; /* 占满父容器宽度 */
   color: #9ea7b4;
   font-weight: 300;
   font-size: 1rem;
@@ -75,36 +92,29 @@
   -webkit-overflow-scrolling: touch;
   user-select: auto;
   cursor: grab;
-  gap: 13%; /* left和right之间的间隔为40% */
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  gap: 20%; /* left和right之间的间隔为40% */
   padding: 0 15%; /* 左右内边距，确保内容不贴边 */
 }
 
 .relationship-right-str .left,
 .relationship-right-str .right {
-  flex: 0 0 35vw !important; /* 使用35vw替代固定像素宽度 */
+  flex: 0 0 400px !important; /* 固定宽度400px，防止被覆盖 */
   flex-shrink: 0; /* 防止收缩 */
+  min-height: 600px; /* 最小高度600px */
   height: auto; /* 高度随内容自适应 */
-  max-height: 512px;
   text-align: center; /* 文本居中 */
   overflow-y: auto; /* 内容过多时可滚动 */
   -webkit-overflow-scrolling: touch;
   user-select: auto;
   cursor: grab;
-  background: url('../img/relationship/bg.png') no-repeat top center / 100% auto;
-  padding: 1.5vw; /* 使用vw单位，动态调整内边距 */
-  padding-top: 3%;
-  padding-bottom:1%;
+  background: rgba(0, 0, 0, 0.1); /* 可选：轻微背景区分 */
+  padding: 10px; /* 内边距，改善内容展示 */
   box-sizing: border-box;
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
 }
 
-/* .relationship-right-str .left{
-  position: absolute;
-  left: 0;
-}
- */
 .relationship-right-str .center {
   flex: 2;
   display: flex;
@@ -116,6 +126,8 @@
   width: 100%;
   height: auto;
 }
+
+
 
 .relationship-right-str::-webkit-scrollbar {
   width: 8px;
@@ -171,12 +183,15 @@
 }
 
 .nav-buttons img {
+/*   max-width: 100%; */
   width: auto;
   height: auto;
+/*   max-width: 80%; */
   cursor: pointer;
+  
 }
 
-.nav-1 {
+.nav-1{
   width: 80%;
   position: absolute;
   left: 0;
@@ -184,7 +199,7 @@
   transform: translateY(-50%); /* 只垂直居中 */
 }
 
-.nav-2 {
+.nav-2{
   width: 80%;
   position: absolute;
   left: 2%;

@@ -57,6 +57,7 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-left: 1vw; /* 增加左内边距，确保图片不被裁剪 */
+  padding-right: 10%; /* 左右内边距，确保内容不贴边 */
 }
 
 .timeline-scrollable::-webkit-scrollbar {
