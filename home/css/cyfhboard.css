@@ -128,12 +128,12 @@
 @media (min-width: 992px) {
   .small-node { width: 122px; }
   .small-node .avatar { width: 122px; height: 151px; }
-  .small-node .label { max-width: 122px; font-size: 14px; }
+  .small-node .label { max-width: 122px; font-size: 12px; }
   .node { width: 220px; }
-  .node .avatar { height: 273px; }
-  .node .label { max-width: 240px; font-size: 14px; }
+  .node .avatar { height: 213px; }
+  .node .label { max-width: 220px; font-size: 13px; }
   .large-node { width: 323px; }
-  .large-node .avatar { height: 400px; }
+  .large-node .avatar { height: 340px; }
   .large-node .label { max-width: 323px; font-size: 14px; }
   #lines text { font-size: 14px; }
   #lines rect { rx: 5; }
