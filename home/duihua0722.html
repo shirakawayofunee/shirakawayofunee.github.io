@@ -1,45 +1,5 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,6 +94,7 @@
         .dropdown {
             padding: 0;
             border-bottom: 1.5px solid #0F0F11;
+            position: relative;
         }
         .dropdown .btn {
             background-color: #383A3E;
@@ -339,7 +300,6 @@
             display: block;
             flex: 1;
         }
-        /* 新增导航按钮样式 */
         .navigation-buttons {
             position: fixed;
             bottom: 5%;
@@ -370,8 +330,21 @@
             cursor: not-allowed;
             opacity: 0.6;
         }
-        span{
+        span {
             color: #e23b78;
+        }
+        .music-controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            display: flex;
+            gap: 5px;
+        }
+        .imgMusicPlay, .imgMusicStop {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
         }
         @media (min-width: 768px) {
             .chat-wrapper,
@@ -406,10 +379,13 @@
                 padding: 6px 15px;
                 font-size: 0.8rem;
             }
+            .music-controls {
+                top: 5px;
+                right: 5px;
+            }
         }
     </style>
 </head>
-
 <body>
     <div class="page-frame swiperBG">
         <div class="container mt-5">
@@ -417,7 +393,6 @@
                 <h4 class="text-center mb-4 fade" id="header-title">会話例</h4>
             </div>
             <div class="row">
-                <!-- 角色1 (Leopold) 简介 -->
                 <div class="col-md-3">
                     <div class="profile-card fade" id="profile-card-left">
                         <div class="profile-avatar-container">
@@ -433,8 +408,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 对话区域 -->
                 <div class="col-md-6">
                     <div class="chat-wrapper">
                         <div class="dropdown">
@@ -2283,8 +2256,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 角色2 简介 -->
                 <div class="col-md-3">
                     <div class="profile-card fade" id="profile-card-right">
                         <div class="profile-avatar-container">
@@ -2302,20 +2273,54 @@
                 </div>
             </div>
         </div>
-        <!-- 新增导航按钮 -->
         <div class="navigation-buttons">
             <button class="nav-btn" id="prev-chapter">前章</button>
             <button class="nav-btn" id="next-chapter">次章</button>
         </div>
+        <div class="music-controls">
+            <img src="img/v2c.png" alt="Play" onclick="muteMusic(1)" class="imgMusicPlay" style="display: none;">
+            <img src="img/v2.gif" alt="Pause" onclick="muteMusic(2)" class="imgMusicStop">
+        </div>
     </div>
-
-    <!-- 引入 Bootstrap JS -->
+    <audio id="bgm-player" loop></audio>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+            return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+            if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+                try {
+                    var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                    var firstSheetName = workbook.SheetNames[0];
+                    var worksheet = workbook.Sheets[firstSheetName];
+                    var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                    var filteredData = jsonData.filter(row => row.some(filledCell));
+                    var headerRowIndex = filteredData.findIndex((row, index) =>
+                        row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                    );
+                    if (headerRowIndex === -1 || headerRowIndex > 25) {
+                        headerRowIndex = 0;
+                    }
+                    var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                    csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                    return csv;
+                } catch (e) {
+                    console.error(e);
+                    return "";
+                }
+            }
+            return gk_fileData[filename] || "";
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // 定义会话数据
         const conversations = {
             'conversation1': {
                 title: 'Blue Rain-000',
+                bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-l1.jpg',
                     keywordTitle: 'Keyword',
@@ -2333,6 +2338,7 @@
             },
             'conversation2': {
                 title: 'Blue Rain-002「家」',
+                bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2350,6 +2356,7 @@
             },
             'conversation3': {
                 title: 'Blue Rain-003「何のために戦うか」',
+                bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2367,6 +2374,7 @@
             },
             'conversation4': {
                 title: 'Blue Rain-004',
+                bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2384,6 +2392,7 @@
             },
             'conversation5': {
                 title: 'Blue Rain-005',
+                bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2401,6 +2410,7 @@
             },
             'conversation6': {
                 title: 'Blue Rain-006',
+                bgm: 'mp3/bg/conversation6.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2418,6 +2428,7 @@
             },
             'conversation7': {
                 title: 'flowers-000「追悼式」',
+                bgm: 'mp3/bg/conversation7.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2435,6 +2446,7 @@
             },
             'conversation8': {
                 title: 'flowers-001「第一現場」',
+                bgm: 'mp3/bg/conversation8.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2451,113 +2463,129 @@
                 }
             },
         };
+        const conversationOrder = ['conversation1', 'conversation2', 'conversation3', 'conversation4', 'conversation5', 'conversation6', 'conversation7', 'conversation8'];
+        let currentBgm = null;
 
-        // 定义会话顺序
-        const conversationOrder = ['conversation1', 'conversation2', 'conversation3', 'conversation4', 'conversation5',  'conversation6',  'conversation7',  'conversation8'];
-
-        function showConversation(conversationId) {
-            console.log('Switching to:', conversationId);
-            const chatContainer = document.getElementById('chat-container');
-            const headerTitle = document.getElementById('header-title');
-            const leftProfileCard = document.getElementById('profile-card-left');
-            const rightProfileCard = document.getElementById('profile-card-right');
-            const leftAvatar = document.getElementById('left-avatar');
-            const rightAvatar = document.getElementById('right-avatar');
-            const leftKeywordTitle = document.getElementById('left-keyword-title');
-            const rightKeywordTitle = document.getElementById('right-keyword-title');
-            const leftKeywords = document.getElementById('left-keywords');
-            const rightKeywords = document.getElementById('right-keywords');
-            const leftDescriptionTitle = document.getElementById('left-description-title');
-            const rightDescriptionTitle = document.getElementById('right-description-title');
-            const leftDescriptionText = document.getElementById('left-description-text');
-            const rightDescriptionText = document.getElementById('right-description-text');
-
-            if (!chatContainer || !headerTitle || !leftProfileCard || !rightProfileCard) {
-                console.error('One or more elements not found:', {
-                    chatContainer, headerTitle, leftProfileCard, rightProfileCard
-                });
-                return;
-            }
-
-            leftProfileCard.style.display = 'flex';
-            rightProfileCard.style.display = 'flex';
-            chatContainer.style.display = 'block';
-            headerTitle.style.display = 'block';
-
-            leftProfileCard.classList.add('fade-hidden');
-            rightProfileCard.classList.add('fade-hidden');
-            chatContainer.classList.add('fade-hidden');
-            headerTitle.classList.add('fade-hidden');
-
-            document.querySelectorAll('.conversation').forEach(conv => {
-                conv.style.display = 'none';
-            });
-            const activeConversation = document.getElementById(conversationId);
-            if (activeConversation) {
-                activeConversation.style.display = 'block';
-                activeConversation.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            } else {
-                console.error('Conversation not found:', conversationId);
-            }
-
-            if (conversations[conversationId]) {
-                headerTitle.textContent = conversations[conversationId].title;
-                leftAvatar.src = conversations[conversationId].leftProfile.avatar;
-                leftKeywordTitle.textContent = conversations[conversationId].leftProfile.keywordTitle;
-                leftKeywords.textContent = conversations[conversationId].leftProfile.keywords;
-                leftDescriptionTitle.innerHTML = conversations[conversationId].leftProfile.descriptionTitle;
-                leftDescriptionText.textContent = conversations[conversationId].leftProfile.descriptionText;
-                rightAvatar.src = conversations[conversationId].rightProfile.avatar;
-                rightKeywordTitle.textContent = conversations[conversationId].rightProfile.keywordTitle;
-                rightKeywords.textContent = conversations[conversationId].rightProfile.keywords;
-                rightDescriptionTitle.innerHTML = conversations[conversationId].rightProfile.descriptionTitle;
-                rightDescriptionText.textContent = conversations[conversationId].rightProfile.descriptionText;
-            } else {
-                console.error('Conversation data not found:', conversationId);
-            }
-
-            setTimeout(() => {
-                leftProfileCard.classList.remove('fade-hidden');
-                rightProfileCard.classList.remove('fade-hidden');
-                chatContainer.classList.remove('fade-hidden');
-                headerTitle.classList.remove('fade-hidden');
-                leftProfileCard.style.opacity = '1';
-                rightProfileCard.style.opacity = '1';
-                chatContainer.style.opacity = '1';
-                headerTitle.style.opacity = '1';
-            }, 10);
-
-            // 更新导航按钮状态
-            updateNavigationButtons(conversationId);
+    function muteMusic(action) {
+        const bgmPlayer = document.getElementById('bgm-player');
+        const playButton = document.querySelector('.imgMusicPlay');
+        const stopButton = document.querySelector('.imgMusicStop');
+        if (action === 1) {
+            bgmPlayer.play().catch(e => console.error('BGM play error:', e));
+            playButton.style.display = 'none';
+            stopButton.style.display = 'inline';
+        } else {
+            bgmPlayer.pause();
+            playButton.style.display = 'inline';
+            stopButton.style.display = 'none';
         }
-
-        // 更新导航按钮的启用/禁用状态
+    }
+    function playBgm(conversationId) {
+        const bgmPlayer = document.getElementById('bgm-player');
+        const playButton = document.querySelector('.imgMusicPlay');
+        const stopButton = document.querySelector('.imgMusicStop');
+        if (conversations[conversationId] && conversations[conversationId].bgm) {
+            if (currentBgm !== conversations[conversationId].bgm) {
+                bgmPlayer.src = conversations[conversationId].bgm;
+                currentBgm = conversations[conversationId].bgm;
+                bgmPlayer.play().catch(e => {
+                    console.error('BGM play error:', e);
+                    // 如果自动播放失败，保持暂停状态
+                    playButton.style.display = 'inline';
+                    stopButton.style.display = 'none';
+                });
+                playButton.style.display = 'none';
+                stopButton.style.display = 'inline';
+            }
+        }
+    }
+    function showConversation(conversationId) {
+        console.log('Switching to:', conversationId);
+        const chatContainer = document.getElementById('chat-container');
+        const headerTitle = document.getElementById('header-title');
+        const leftProfileCard = document.getElementById('profile-card-left');
+        const rightProfileCard = document.getElementById('profile-card-right');
+        const leftAvatar = document.getElementById('left-avatar');
+        const rightAvatar = document.getElementById('right-avatar');
+        const leftKeywordTitle = document.getElementById('left-keyword-title');
+        const rightKeywordTitle = document.getElementById('right-keyword-title');
+        const leftKeywords = document.getElementById('left-keywords');
+        const rightKeywords = document.getElementById('right-keywords');
+        const leftDescriptionTitle = document.getElementById('left-description-title');
+        const rightDescriptionTitle = document.getElementById('right-description-title');
+        const leftDescriptionText = document.getElementById('left-description-text');
+        const rightDescriptionText = document.getElementById('right-description-text');
+        if (!chatContainer || !headerTitle || !leftProfileCard || !rightProfileCard) {
+            console.error('One or more elements not found:', {
+                chatContainer, headerTitle, leftProfileCard, rightProfileCard
+            });
+            return;
+        }
+        leftProfileCard.style.display = 'flex';
+        rightProfileCard.style.display = 'flex';
+        chatContainer.style.display = 'block';
+        headerTitle.style.display = 'block';
+        leftProfileCard.classList.add('fade-hidden');
+        rightProfileCard.classList.add('fade-hidden');
+        chatContainer.classList.add('fade-hidden');
+        headerTitle.classList.add('fade-hidden');
+        document.querySelectorAll('.conversation').forEach(conv => {
+            conv.style.display = 'none';
+        });
+        const activeConversation = document.getElementById(conversationId);
+        if (activeConversation) {
+            activeConversation.style.display = 'block';
+            activeConversation.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            console.error('Conversation not found:', conversationId);
+        }
+        if (conversations[conversationId]) {
+            headerTitle.textContent = conversations[conversationId].title;
+            leftAvatar.src = conversations[conversationId].leftProfile.avatar;
+            leftKeywordTitle.textContent = conversations[conversationId].leftProfile.keywordTitle;
+            leftKeywords.textContent = conversations[conversationId].leftProfile.keywords;
+            leftDescriptionTitle.innerHTML = conversations[conversationId].leftProfile.descriptionTitle;
+            leftDescriptionText.textContent = conversations[conversationId].leftProfile.descriptionText;
+            rightAvatar.src = conversations[conversationId].rightProfile.avatar;
+            rightKeywordTitle.textContent = conversations[conversationId].rightProfile.keywordTitle;
+            rightKeywords.textContent = conversations[conversationId].rightProfile.keywords;
+            rightDescriptionTitle.innerHTML = conversations[conversationId].rightProfile.descriptionTitle;
+            rightDescriptionText.textContent = conversations[conversationId].rightProfile.descriptionText;
+        } else {
+            console.error('Conversation data not found:', conversationId);
+        }
+        setTimeout(() => {
+            leftProfileCard.classList.remove('fade-hidden');
+            rightProfileCard.classList.remove('fade-hidden');
+            chatContainer.classList.remove('fade-hidden');
+            headerTitle.classList.remove('fade-hidden');
+            leftProfileCard.style.opacity = '1';
+            rightProfileCard.style.opacity = '1';
+            chatContainer.style.opacity = '1';
+            headerTitle.style.opacity = '1';
+        }, 10);
+        updateNavigationButtons(conversationId);
+        playBgm(conversationId);
+    }
         function updateNavigationButtons(conversationId) {
             const prevButton = document.getElementById('prev-chapter');
             const nextButton = document.getElementById('next-chapter');
             const currentIndex = conversationOrder.indexOf(conversationId);
-
             prevButton.disabled = currentIndex <= 0;
             nextButton.disabled = currentIndex >= conversationOrder.length - 1;
         }
-
-        // 导航到上一章或下一章
         function navigateChapter(direction) {
             const currentConversation = document.querySelector('.conversation[style*="display: block"]');
             if (!currentConversation) return;
-
             const currentId = currentConversation.id;
             const currentIndex = conversationOrder.indexOf(currentId);
             const newIndex = currentIndex + direction;
-
             if (newIndex >= 0 && newIndex < conversationOrder.length) {
                 const newConversationId = conversationOrder[newIndex];
                 showConversation(newConversationId);
                 history.pushState(null, null, `#${newConversationId}`);
             }
         }
-
-        // 处理 URL 哈希值
         function handleHashChange() {
             const hash = window.location.hash;
             console.log('Hash detected:', hash);
@@ -2569,16 +2597,12 @@
                 showConversation('conversation4');
             }
         }
-
-        // 初始化
         document.addEventListener('DOMContentLoaded', () => {
             handleHashChange();
-            // 绑定导航按钮事件
             document.getElementById('prev-chapter').addEventListener('click', () => navigateChapter(-1));
             document.getElementById('next-chapter').addEventListener('click', () => navigateChapter(1));
         });
         window.addEventListener('hashchange', handleHashChange);
     </script>
 </body>
-
 </html>

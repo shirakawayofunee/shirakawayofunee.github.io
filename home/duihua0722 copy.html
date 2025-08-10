@@ -1,96 +1,74 @@
 <!DOCTYPE html>
 <html lang="zh">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>会話例</title>
-    <!-- 引入 Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* 声明DreamHanSansJP字体，仅加载常用粗细 */
         @font-face {
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W8.ttf') format('truetype');
             font-weight: 200;
             font-style: normal;
         }
-
         @font-face {
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W12.ttf') format('truetype');
             font-weight: 300;
             font-style: normal;
         }
-
         @font-face {
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W16.ttf') format('truetype');
             font-weight: 400;
             font-style: normal;
         }
-
         @font-face {
             font-family: 'DreamHanSansJP';
             src: url('fonts/DreamHanSansJP-W27.ttf') format('truetype');
             font-weight: 900;
             font-style: normal;
         }
-
-        /* 全局应用字体 */
         body {
             font-family: 'DreamHanSansJP', sans-serif;
             margin: 0;
             padding: 0;
         }
-
         .swiperBG {
-  width: 100%;
-  height: 100%;
-  background: url("img/BG2.png") no-repeat bottom;
-  background-size: cover;
-  position: absolute;
-  z-index: 10;
-}
-
-        /* 确保所有文本区域继承字体 */
+            width: 100%;
+            height: 100%;
+            background: url("img/BG2.png") no-repeat bottom;
+            background-size: cover;
+            position: absolute;
+            z-index: 10;
+        }
         .message, .profile-description, .keywords-container h6, .keywords, h1, h5, p, span {
             font-family: 'DreamHanSansJP', sans-serif;
         }
-
-        /* 不同粗细的类 */
         .w8 { font-weight: 200; }
         .w12 { font-weight: 300; }
         .w16 { font-weight: 400; }
         .w27 { font-weight: 900; }
-
-        /* 动画效果 */
         .fade {
             transition: opacity 0.5s ease-in-out;
             opacity: 1;
-            display: block; /* 确保元素始终可见 */
+            display: block;
         }
-
         .fade-hidden {
             opacity: 0;
-            pointer-events: none; /* 防止交互 */
+            pointer-events: none;
         }
-    </style>
-    <style>
-        /* 全局盒模型设置 */
         * {
             box-sizing: border-box;
         }
-
-        /* 页面框架样式 */
         .page-frame {
             min-height: 100vh;
             padding: 1%;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
-
-        /* 标题区域样式 */
         .header-section {
             height: 5vh;
             display: flex;
@@ -99,31 +77,25 @@
             align-items: center;
             margin-bottom: 14px;
         }
-
-        /* 对话区域和简介区域基础样式 */
         .chat-wrapper, .profile-card {
             border-radius: 15px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
-
         .chat-wrapper {
             background-color: #383A3E;
             height: 100vh;
             background-image: url(img/dh/bg.png);
         }
-
         .profile-card {
             background-color: #fff;
         }
-
-        /* 调整下拉菜单样式 */
         .dropdown {
             padding: 0;
             border-bottom: 1.5px solid #0F0F11;
+            position: relative;
         }
-
         .dropdown .btn {
             background-color: #383A3E;
             color: #fff;
@@ -138,87 +110,59 @@
             justify-content: center;
             border-radius: 0;
         }
-
         .dropdown .btn:hover, .dropdown .btn:focus {
-/*             background-color: #e9ecef; */
             color: #e23b78;
             box-shadow: none;
         }
-
         .dropdown .dropdown-toggle::after {
             display: none;
         }
-
         .dropdown-menu {
             font-family: 'DreamHanSansJP', sans-serif;
             font-size: 0.8rem;
         }
-
-        /* 自定义对话框样式 */
         .chat-container {
             padding: 0 20px 20px;
-            /* background-color: #383A3E; */
             background-image: url(img/dh/bg_full.png);
             border-radius: 0 0 10px 10px;
             flex: 1;
             overflow-y: auto;
         }
-
-        /* 通用对话框样式 */
         .message {
             padding: 10px 15px;
             margin-bottom: 10px;
-            /* border-radius: 8px; */
             word-wrap: break-word;
             width: fit-content;
             min-width: 100px;
             max-width: 80%;
-/*             display: flex;
-            align-items: center; */
         }
-
-        /* 对话框和头像容器 */
-.message-wrapper {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-}
-
-        /* 为每个对话的第一个消息添加顶部间距 */
+        .message-wrapper {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
         .conversation .mb-3:first-child {
             margin-top: 20px;
         }
-
-        /* 角色对话框样式 - 统一 */
         .character-message {
             background-color: #252225;
             color: #c9c7ca;
             border: 1.5px solid #848285;
-            
         }
-
-        /* 角色1 (Leopold) - 靠右，头像在右边 */
         .character1 {
             margin-left: auto;
             flex-direction: row-reverse;
         }
-
         .character1 .avatar {
             margin-left: 10px;
         }
-
-        /* 角色2及以上 - 靠左，头像在左边 */
         .character2, .character3, .character4, .character5 {
             margin-right: auto;
         }
-
         .character2 .avatar, .character3 .avatar, .character4 .avatar, .character5 .avatar {
             margin-right: 10px;
         }
-
-        /* 旁白样式 - 居中 */
         .narration {
-/*             background-color: #ced4da; */
             color: #d7d8db;
             margin-left: auto;
             margin-right: auto;
@@ -226,13 +170,10 @@
             font-style: italic;
             width: 80%;
         }
-        
         .narration img {
-    width: 100%;
-    height: auto; /* 保持图片宽高比 */
-}
-
-        /* 选项样式（未来扩展用） */
+            width: 100%;
+            height: auto;
+        }
         .option {
             background-color: #e9ecef;
             color: #333;
@@ -241,20 +182,14 @@
             text-align: center;
             cursor: pointer;
         }
-
         .option:hover {
             background-color: #d3d3d3;
         }
-
-        /* 头像样式 */
         .avatar {
             width: 100px;
             height: 100px;
-            /* border-radius: 50%; */
             object-fit: cover;
         }
-
-        /* 角色简介内部样式 */
         .profile-avatar-container {
             border: 1.7px solid #0F0F11;
             border-radius: 15px;
@@ -262,14 +197,12 @@
             text-align: center;
             margin-bottom: 12px;
         }
-
         .profile-avatar {
             width: 100%;
             height: 100%;
             border-radius: 15px;
             object-fit: cover;
         }
-
         .keywords-container {
             border: 1.7px solid #0F0F11;
             border-radius: 5px;
@@ -281,7 +214,6 @@
             justify-content: space-between;
             overflow: hidden;
         }
-
         .keywords-container h6 {
             margin: 0;
             font-size: 0.9rem;
@@ -295,7 +227,6 @@
             align-items: center;
             flex-shrink: 0;
         }
-
         .keywords {
             font-size: 0.7rem;
             color: #5C5C5C;
@@ -304,7 +235,6 @@
             align-items: center;
             flex-grow: 1;
         }
-
         .profile-description {
             border: 1.7px solid #0F0F11;
             border-radius: 5px;
@@ -313,65 +243,50 @@
             font-size: 0.9rem;
             overflow-y: auto;
         }
-
         .profile-description h5 {
             margin: 0 0 5px 0;
             font-size: 1rem;
         }
-
         .profile-description p {
             margin: 0;
         }
-
-        /* 滚动条美化 */
-.chat-container::-webkit-scrollbar,
-.profile-description::-webkit-scrollbar {
-    width: 4px; /* 减小宽度，更加纤细 */
-    height: 4px; /* 横向滚动条高度 */
-}
-
-.chat-container::-webkit-scrollbar-track,
-.profile-description::-webkit-scrollbar-track {
-    background: transparent; /* 轨道完全透明 */
-    border-radius: 5px;
-}
-
-.chat-container::-webkit-scrollbar-thumb,
-.profile-description::-webkit-scrollbar-thumb {
-    background: rgba(108, 117, 125, 0.2); /* 使用原 thumb 颜色 #6c757d，降低透明度 */
-    border-radius: 5px;
-}
-
-.chat-container::-webkit-scrollbar-thumb:hover,
-.profile-description::-webkit-scrollbar-thumb:hover {
-    background: rgba(90, 98, 104, 0.3); /* 使用原 hover 颜色 #5a6268，略微显现 */
-}
-
-/* Firefox 支持 */
-.chat-container,
-.profile-description {
-    scrollbar-width: thin; /* 细滚动条 */
-    scrollbar-color: rgba(108, 117, 125, 0.2) transparent; /* 透明滑块和轨道 */
-}
-
-/* 可选：完全隐藏滚动条但保留滚动功能 */
-.no-visible-scrollbar {
-    overflow: auto;
-    -ms-overflow-style: none; /* IE 和 Edge */
-    scrollbar-width: none; /* Firefox */
-}
-
-.no-visible-scrollbar::-webkit-scrollbar {
-    display: none; /* WebKit 浏览器完全隐藏 */
-}
-
-        /* 布局样式 */
+        .chat-container::-webkit-scrollbar,
+        .profile-description::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .chat-container::-webkit-scrollbar-track,
+        .profile-description::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 5px;
+        }
+        .chat-container::-webkit-scrollbar-thumb,
+        .profile-description::-webkit-scrollbar-thumb {
+            background: rgba(108, 117, 125, 0.2);
+            border-radius: 5px;
+        }
+        .chat-container::-webkit-scrollbar-thumb:hover,
+        .profile-description::-webkit-scrollbar-thumb:hover {
+            background: rgba(90, 98, 104, 0.3);
+        }
+        .chat-container,
+        .profile-description {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(108, 117, 125, 0.2) transparent;
+        }
+        .no-visible-scrollbar {
+            overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .no-visible-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
         .row {
             align-items: stretch;
             flex: 1;
             min-height: 0;
         }
-
         .col-md-3, .col-md-6 {
             padding-top: 0;
             padding-bottom: 0;
@@ -381,46 +296,96 @@
             flex-direction: column;
             height: 100%;
         }
-
         .conversation {
             display: block;
             flex: 1;
         }
-
-        /* 媒体查询：电脑（屏幕宽度 >= 768px） */
+        .navigation-buttons {
+            position: fixed;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .nav-btn {
+            background-color: #383A3E;
+            color: #fff;
+            border: 1.5px solid #0F0F11;
+            padding: 8px 20px;
+            font-size: 0.875rem;
+            font-family: 'DreamHanSansJP', sans-serif;
+            font-weight: 300;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-btn:hover {
+            background-color: #e23b78;
+            color: #fff;
+        }
+        .nav-btn:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        span {
+            color: #e23b78;
+        }
+        .music-controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            display: flex;
+            gap: 5px;
+        }
+        .imgMusicPlay, .imgMusicStop {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
         @media (min-width: 768px) {
             .chat-wrapper,
             .profile-card {
                 height: 80vh;
             }
         }
-
-        /* 媒体查询：手机（屏幕宽度 < 768px） */
         @media (max-width: 767.98px) {
             .row {
                 flex-direction: column;
                 height: auto;
             }
-
             .col-md-3,
             .col-md-6 {
                 flex: 1 0 100vh;
                 width: 100%;
                 margin-bottom: 15px;
             }
-
             .chat-wrapper,
             .profile-card {
                 height: 100vh;
             }
-
             .chat-wrapper {
                 margin-bottom: 0;
+            }
+            .navigation-buttons {
+                gap: 10px;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .nav-btn {
+                padding: 6px 15px;
+                font-size: 0.8rem;
+            }
+            .music-controls {
+                top: 5px;
+                right: 5px;
             }
         }
     </style>
 </head>
-
 <body>
     <div class="page-frame swiperBG">
         <div class="container mt-5">
@@ -428,7 +393,6 @@
                 <h4 class="text-center mb-4 fade" id="header-title">会話例</h4>
             </div>
             <div class="row">
-                <!-- 角色1 (Leopold) 简介 -->
                 <div class="col-md-3">
                     <div class="profile-card fade" id="profile-card-left">
                         <div class="profile-avatar-container">
@@ -444,8 +408,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 对话区域 -->
                 <div class="col-md-6">
                     <div class="chat-wrapper">
                         <div class="dropdown">
@@ -454,20 +416,14 @@
                                 選べる会話例
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">01
-                                    N.F.113年7月16日</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">02
-                                        N.F.113年7月23日 08:05</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation3')">03
-                                    N.F.113年7月23日 23:04
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation4')">04
-                                    N.F.113年7月23日 23:14
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation5')">05
-                                    N.F.113年7月23日 23:24
-                                    </a></li>
-                            
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">01 N.F.113年7月16日</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">02 N.F.113年7月23日 08:05</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation3')">03 N.F.113年7月23日 23:04</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation4')">04 N.F.113年7月23日 23:14</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation5')">05 N.F.113年7月23日 23:24</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation6')">06 N.F.113年7月24日 00:41</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation7')">07 N.F.113年8月8日 9:00</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation8')">08 N.F.113年8月8日 9:00</a></li>
                             </ul>
                         </div>
                         <div class="chat-container fade" id="chat-container">
@@ -730,7 +686,7 @@
                                 <div class="mb-3">
                                     <div class="message-wrapper character1">
                                         <div class="message character-message w12">
-                                            没必要，都躲过这种攻击了，你的本事足够解释一切。我们交过几次手，刺客小姐，你的身段我念念不忘。
+                                            没必要，都躲过这种攻击了，你的本事足够解释一切。我们交过几次手，殺し屋小姐，你的身段我念念不忘。
                                         </div>
                                     </div>
                                 </div>
@@ -836,7 +792,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="message narration">
-                                        刺客没有趁勢攻撃，相反，她脸上軽浮的笑容漸漸隠去。
+                                        殺し屋没有趁勢攻撃，相反，她脸上軽浮的笑容漸漸隠去。
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -1184,7 +1140,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="message narration">
-                                        調査員皺眉，繼續用力，可女刺客的身體此時却像水般柔軟，所有暴力都像被吸入海綿般，她脸上的笑容変得更深，更讓人不適。
+                                        調査員皺眉，繼續用力，可女殺し屋的身體此時却像水般柔軟，所有暴力都像被吸入海綿般，她脸上的笑容変得更深，更讓人不適。
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -1607,7 +1563,7 @@
                                 <div class="mb-3">
                                     <div class="message narration">
                                         メイドがXの着替えを手伝うために部屋に入ったが、ドアを閉める勇気はなかった。
-                                        階下からは悲鳴、罵倒、狂笑が断続的に響き、上庭の「代理」がいかに哀れな刺客を審問しているかを気づかせる。
+                                        階下からは悲鳴、罵倒、狂笑が断続的に響き、上庭の「代理」がいかに哀れな殺し屋を審問しているかを気づかせる。
                                         「代理」が入ってきてから、すべてが変わった。女仆は震えが止まらない。  
                                     </div>
                                 </div>
@@ -1631,7 +1587,7 @@
                                 <div class="mb-3">
                                     <div class="message narration">
                                         彼女は倒れているセヴェロをちらっと見た。
-                                        この刺客はすでに瀕死で、しかしその目は不屈と執念に満ちている。少し考えた後、Xが口を開く。
+                                        この殺し屋はすでに瀕死で、しかしその目は不屈と執念に満ちている。少し考えた後、Xが口を開く。
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -1773,247 +1729,533 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="message narration">
-                                      <img src="img/cg/br_03.png">
+                                        <img src="img/cg/br_03.png">
                                     </div>
-                                  </div>
-                                <div class="mb-3">
-                                  <div class="message narration">
-                                    藍雨は激しく降り注ぎ、能力者の体を灼きながらも、彼女の足取りを止めることはできない。
-                                  </div>
                                 </div>
                                 <div class="mb-3">
-                                  <div class="message narration">
-                                    単瞳のルーンはますます深く刻まれ、彼女に力を与えると同時に、狂気を植え付ける。Sの体からは、汚染が凝縮した単瞳の怪物が次々と分裂し現れた。そして、遠くの山荘のあちこちから怪異の咆哮が轟き、まるでそこが「██」の培養皿と化しているようだ。
-                                  </div>
-                                </div>
-                                <div class="mb-3">
-                                  <div class="message-wrapper character2">
-                                    <img src="img/dh/security.png" alt="Security" class="avatar">
-                                    <div class="message character-message w12">
-                                      殺さず生け捕りにしろって…こんなの、どうできるというんだ！？なんで俺たちがこんな怪物と戦わなきゃいけないんだ！俺たちはただの人間だ、こんなの無理…軍はどこ！？戻ってこいよ、助けてくれよ！助け——
+                                    <div class="message narration">
+                                        藍雨は激しく降り注ぎ、能力者の体を灼きながらも、彼女の足取りを止めることはできない。
                                     </div>
-                                  </div>
                                 </div>
                                 <div class="mb-3">
-                                  <div class="message narration">
-                                    （Sの脳は瀕死の状態に陥り、生前の記憶が走馬灯のように目の前で駆け巡る。）
-                                  </div>
+                                    <div class="message narration">
+                                        単瞳のルーンはますます深く刻まれ、彼女に力を与えると同時に、狂気を植え付ける。Sの体からは、汚染が凝縮した単瞳の怪物が次々と分裂し現れた。そして、遠くの山荘のあちこちから怪異の咆哮が轟き、まるでそこが「██」の培養皿と化しているようだ。
+                                    </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message-wrapper character2">
-                                      <img src="img/dh/severo10.png" alt="Severo" class="avatar">
-                                      <div class="message character-message w12">Sの中「私はかつて、何の覚悟も持たないまま、すべてを失った。」</div>
+                                        <img src="img/dh/security.png" alt="Security" class="avatar">
+                                        <div class="message character-message w12">
+                                            殺さず生け捕りにしろって…こんなの、どうできるというんだ！？なんで俺たちがこんな怪物と戦わなきゃいけないんだ！俺たちはただの人間だ、こんなの無理…軍はどこ！？戻ってこいよ、助けてくれよ！助け——
+                                        </div>
                                     </div>
-                                  </div>
-
-
-                                <div class="mb-3">
-                                  <div class="message narration">
-                                    （三十年前の惨劇）
-                                  </div>
                                 </div>
                                 <div class="mb-3">
-                                  <div class="message-wrapper character2">
-                                    <img src="img/dh/npc.png" alt="Gospel NPC" class="avatar">
-                                    <div class="message character-message w12">
-                                      可哀そうな子…何もかも失って…私と一緒に来なさい。少なくとも、ここは君の仲間がいる。復讐だってできる。私が教えてあげるわ…
+                                    <div class="message narration">
+                                        （Sの脳は瀕死の状態に陥り、生前の記憶が走馬灯のように目の前で駆け巡る。）
                                     </div>
-                                  </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message-wrapper character2">
-                                      <img src="img/dh/severo10.png" alt="Severo" class="avatar">
-                                      <div class="message character-message w12">Sの中「私は心構えがなく、再びそれらを手に入れた。」</div>
+                                        <img src="img/dh/severo10.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">Sの中「私はかつて、何の覚悟も持たないまま、すべてを失った。」</div>
                                     </div>
-                                  </div>
-                                <div class="mb-3">
-                                  <div class="message-wrapper character2">
-                                    <img src="img/dh/junior.png" alt="Junior" class="avatar">
-                                    <div class="message character-message w12">
-                                      こんな可愛い服、本当に私にくれるの？ありがとう！！Sさん、なんかお母ちゃんみたい！あ、ごめん、姉ちゃんだよ～
-                                    </div>
-                                  </div>
                                 </div>
+                            
+                            
                                 <div class="mb-3">
-                                  <div class="message-wrapper character2">
-                                    <img src="img/dh/j.png" alt="J" class="avatar">
-                                    <div class="message character-message w12">
-                                      姉ちゃんなんて、ちょっと恥ずかしいなぁ…私よりも先にここに来て、たくさんのものを教えてくれた。私の心の中では、ずっと尊敬すべき先輩だと思っているんです…
+                                    <div class="message narration">
+                                        （三十年前の惨劇）
                                     </div>
-                                  </div>
-                                </div>
-                                <div class="mb-3">
-                                  <div class="message-wrapper character2">
-                                    <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
-                                    <div class="message character-message w12">
-                                      よし、今日からもう私たちを縛れる者はいない。処分すべき者は皆殺しだ。もう一線を画いて、バイバイできるんだ～。
-                                    </div>
-                                  </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message-wrapper character2">
-                                      <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
-                                      <div class="message character-message w12">
-                                        今から、みな、自分の好きな仕事だけを受けて、好きな獲物だけを仕留めて、報酬をもらおう。行きたいところがあれば行け、気が向かなければ離れても構わない。
-                                        誰かの指図をもう受けなくていい——私の以外はね。<br>
-                                        恨みは君たちを縛れなくなる、私が自由をやるんだ。自分の命は、好きなように使えばいい——師匠の私が許したんだから。
-                                      </div>
+                                        <img src="img/dh/npc.png" alt="Gospel NPC" class="avatar">
+                                        <div class="message character-message w12">
+                                            可哀そうな子…何もかも失って…私と一緒に来なさい。少なくとも、ここは君の仲間がいる。復讐だってできる。私が教えてあげるわ…
+                                        </div>
                                     </div>
-                                  </div>
-                                  <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                      <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
-                                      <div class="message character-message w12">
-                                        誰かの指図をもう受けなくていい——私の以外はね。<br>
-                                        恨みは君たちを縛れなくなる、私が自由をやるんだ。自分の命は、好きなように使えばいい——師匠の私が許したんだから。
-                                      </div>
-                                    </div>
-                                  </div>
+                                </div>
                                 <div class="mb-3">
                                     <div class="message-wrapper character2">
-                                      <img src="img/dh/severo10.png" alt="Severo" class="avatar">
-                                      <div class="message character-message w12">Sの中「私は自分のために生きている…もう宝物は私の手に入った…彼女たちを傷つけるなんてさせない…誰も私のとこを通させない…」</div>
+                                        <img src="img/dh/severo10.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">Sの中「私は心構えがなく、再びそれらを手に入れた。」</div>
                                     </div>
-                                  </div>
+                                </div>
                                 <div class="mb-3">
-                                  <div class="message narration">
-                                    だが、そんな思いももはや意味がない。「██」が彼女の体内で暴走し、Sの意識を徐々に奪っていく。
-                                  </div>
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/junior.png" alt="Junior" class="avatar">
+                                        <div class="message character-message w12">
+                                            こんな可愛い服、本当に私にくれるの？ありがとう！！Sさん、なんかお母ちゃんみたい！あ、ごめん、姉ちゃんだよ～
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/j.png" alt="J" class="avatar">
+                                        <div class="message character-message w12">
+                                            姉ちゃんなんて、ちょっと恥ずかしいなぁ…私よりも先にここに来て、たくさんのものを教えてくれた。私の心の中では、ずっと尊敬すべき先輩だと思っているんです…
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            よし、今日からもう私たちを縛れる者はいない。処分すべき者は皆殺しだ。もう一線を画いて、バイバイできるんだ～。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            今から、みな、自分の好きな仕事だけを受けて、好きな獲物だけを仕留めて、報酬をもらおう。行きたいところがあれば行け、気が向かなければ離れても構わない。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            誰かの指図をもう受けなくていい——私の以外はね。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            恨みは君たちを縛れなくなる、私が自由をやるんだ。自分の命は、好きなように使えばいい——師匠の私が許したんだから。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo10.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">Sの中「私は自分のために生きている…もう宝物は私の手に入った…彼女たちを傷つけるなんてさせない…誰も私のとこを通させない…」
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        だが、そんな思いももはや意味がない。「██」が彼女の体内で暴走し、Sの意識を徐々に奪っていく。
+                                    </div>
                                 </div>
                             </div>
                             <div id="conversation5" class="conversation">
                                 <div class="mb-3">
-                                  <div class="message narration">
-                                    N.F.113年7月23日<br>23:24、山荘内
-                                  </div>
+                                    <div class="message narration">
+                                        N.F.113年7月23日<br>23:24、山荘内
+                                    </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message narration">
-                                      <img src="img/cg/br_04.png">
+                                        <img src="img/cg/br_04.png">
                                     </div>
-                                  </div>
-                                <div class="mb-3">
-                                    <div class="message narration">
-                                      失血多量と狂厄汚染の二重の打撃により、暴走していたセヴェロがついに倒れた。間一髪のところで、レオポルドが駆けつけ、彼女を救い出す。
-                                    </div>
-                                  </div>
-                                <div class="mb-3">
-                                  <div class="message-wrapper character2">
-                                    <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
-                                    <div class="message character-message w12">
-                                      私の花を、誰がお前なんかに踏みつけていいと言った？
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="mb-3">
-                                  <div class="message narration">
-                                    何かによって彼女は遮られた。庭園の向こう側から、白い流れる光がゆっくりと現れ、闇の中を蛇のように縫うように進んだ。近くで、白い光が数人の治安官を貫き、最初の悲鳴が響く。<br>
-                                    セヴェロがわずかに震えた。闇に飛び散るのは血ではなく、鮮紅の花びら。人体から咲き、すぐに怪異な棘となって代理に向かって突進する。上庭の男が反応しようとした瞬間、貫かれた。他の者は恐怖で後ずさる。
-                                  </div>
-                                </div>
-                                <div class="mb-3">
-                                  <div class="message-wrapper character2">
-                                    <img src="img/dh/x.png" alt="X" class="avatar">
-                                    <div class="message character-message w12">
-                                      …今ごろ来るか。
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="mb-3">
-                                  <div class="message narration">
-                                    さらに多くの棘が藍い雨を突き破り、代理の背後へ、決心の殺意を込めてXに向かって刺した。<br>
-                                    
-                                  </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message narration">
-                                      青い光線が突然場を一掃し、冷光が切り裂くところすべてが破壊された。世界が静まると、藍い雨の音の中、夜に溶け込むような漆黒の物体が静かに浮かんでいる――Xのそばにいつもいる黒石英だ。<br>
-                                      
+                                        失血多量と狂厄汚染の二重の打撃により、暴走していたセヴェロがついに倒れた。間一髪のところで、レオポルドが駆けつけ、彼女を救い出す。
                                     </div>
-                                  </div>
-                                  <div class="mb-3">
-                                    <div class="message narration">
-                                      <br>
-                                      代理がいた場所は空っぽで、セヴェロは連れ去られ、地面には白い布切れだけが残されている。敵はすでに去った。<br>
-                                      だが、問題ない。プログラムは順調に作動し、脅しは解除された。黒石英は待機監視状態に戻り、Xのそばに漂う。
-                                    </div>
-                                  </div>
-                                <div class="mb-3">
-                                  <div class="message-wrapper character2">
-                                    <img src="img/dh/x.png" alt="X" class="avatar">
-                                    <div class="message character-message w12">
-                                      …うん、彼女に会えた。大丈夫、今夜現れたんだから、また必ず来る。
-                                    </div>
-                                  </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message-wrapper character2">
-                                      <img src="img/dh/x.png" alt="X" class="avatar">
-                                      <div class="message character-message w12">
-                                        それに、今の私じゃ追うことすらできないんだ。
-                                      </div>
+                                        <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            私の花を、誰がお前なんかに踏みつけていいと言った？
+                                        </div>
                                     </div>
-                                  </div>
-                                <div class="mb-3">
-                                  <div class="message narration">
-                                    代理とXが重傷を負い、一時的に行動不能に陥る。
-                                  </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message narration">
-                                      ……
+                                        何かによって彼女は遮られた。庭園の向こう側から、白い流れる光がゆっくりと現れ、闇の中を蛇のように縫うように進んだ。近くで、白い光が数人の治安官を貫き、最初の悲鳴が響く。<br>
+                                        セヴェロがわずかに震えた。闇に飛び散るのは血ではなく、鮮紅の花びら。人体から咲き、すぐに怪異な棘となって代理に向かって突進する。上庭の男が反応しようとした瞬間、貫かれた。他の者は恐怖で後ずさる。
                                     </div>
-                                  </div>
+                                </div>
                                 <div class="mb-3">
-                                  <div class="message narration">
-                                    N.F.113年7月24日<br>00:41、「GARDEN」アジト
-                                  </div>
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">
+                                            …今ごろ来るか。
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message narration">
-                                      レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。
+                                        さらに多くの棘が藍い雨を突き破り、代理の背後へ、決心の殺意を込めてXに向かって刺した。<br>
+                            
                                     </div>
-                                  </div>
-                                  <div class="mb-3">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        青い光線が突然場を一掃し、冷光が切り裂くところすべてが破壊された。世界が静まると、藍い雨の音の中、夜に溶け込むような漆黒の物体が静かに浮かんでいる――Xのそばにいつもいる黒石英だ。<br>
+                            
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        <br>
+                                        代理がいた場所は空っぽで、セヴェロは連れ去られ、地面には白い布切れだけが残されている。敵はすでに去った。<br>
+                                        だが、問題ない。プログラムは順調に作動し、脅しは解除された。黒石英は待機監視状態に戻り、Xのそばに漂う。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">
+                                            …うん、彼女に会えた。大丈夫、今夜現れたんだから、また必ず来る。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">
+                                            それに、今の私じゃ追うことすらできないんだ。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        代理とXが重傷を負い、一時的に行動不能に陥る。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        ……
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div id="conversation6" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        N.F.113年7月24日<br>00:41、「GARDEN」アジト
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        概要：レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        <img src="img/cg/br_05.png">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            ただの上庭の犬、私の花を汚すなんて……ふふ
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        <img src="img/cg/br_06.png">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            地下に伝えて、「GARDEN」はこの依頼を受けたと。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            リストをよこせ、私が直接行く。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            君の願い通り、盛大に花を咲かせるわよ。上庭の執行人
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            <span>シャローム</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
                                     <div class="message narration">
                                         序章「Blue rain」終了、つづく。
                                     </div>
+                                </div>
+                            </div>
+                            <!-- 花 -->
+                            <div id="conversation7" class="conversation">
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    N.F.113年8月8日 9:00<br>
+                                    FAC記念墓地<br>
+                                    西区戦没者追悼式
                                   </div>
-                                  <div class="mb-3">
-                                    <div class="message narration">
-                                      <img src="img/cg/br_05.png">
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                        今日、私たちはここに集まり、1423人の戦士、友人、そして同胞を迎えます。
                                     </div>
                                   </div>
-                                  <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                      <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      3月の災変で、彼らはためらうことなく西区へ向かい、突発的な狂厄危機に対抗し、命を捧げました。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      今、災害の影響は抑えられ、反撃の号角がまもなく鳴り響こうとしています。FACはようやく彼らを愛する人々の元へ送り返すことができます。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                        ここに来て、英雄たちを最後の旅路に見送ってくれて、再び感謝を申し上げます。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/mourner.png" alt="追悼者" class="avatar">
+                                    <div class="message character-message w12">
+                                      子、一人で来たの？ご家族は?あっ…ごめんなさい、わたしったら…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/mourner.png" alt="追悼者" class="avatar">
+                                    <div class="message character-message w12">
+                                      ごめんなさいね、きっとお辛いでしょう…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                    <div class="message character-message w12">
+                                      ありがとう…他の人の代わりに来ただけだから、大丈夫だよ。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                    <div class="message character-message w12">
+                                      あたしは強いからね。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/memory_voice.png" alt="記憶の中の声" class="avatar">
+                                    <div class="message character-message w12">
+                                      追悼？ふん、君が行けばいいじゃない。君だって「娘」なんでしょ？養子でも、彼らは君を可愛がってた。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/memory_voice.png" alt="記憶の中の声" class="avatar">
+                                    <div class="message character-message w12">
+                                      私は行かないよ。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      この時代は傷だらけで、長い夜はまだ明けない。でも、信じる者がいて、立ち上がる者がいる。愛する城邦のために戦い、信じた未来のために犠牲になった。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      彼らは闇の中で光を守る英雄、絶望の中で生を取り戻した戦士だ。私たちは決して忘れない。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      そして、英雄たちが帰るのは、君たちのためだ。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/memory_voice.png" alt="記憶の中の声" class="avatar">
+                                    <div class="message character-message w12">
+                                      …なに？慰めに来たの？それとも、私に慰めてほしいの？
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/memory_voice.png" alt="記憶の中の声" class="avatar">
+                                    <div class="message character-message w12">
+                                      私の両親が死んだから、ようやく私と同じになった、共感できるって思ったわけ？
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      この陵園は君たちのため、そして彼らのために建てられた。彼らは君たちが来ることを望んでいる。愛する人たちが無事でいるのを見たいからだ。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      どうか、たびたび彼らに会いに来てくれ。君たちが無事でいること、それがFACの戦いの最大の意味だ。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/grieving_girl.png" alt="悲痛な少女" class="avatar">
+                                    <div class="message character-message w12">
+                                      出てけ！私は君と違う！FACのその綺麗事、受け入れない！こんな英雄、認めない！
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/grieving_girl.png" alt="悲痛な少女" class="avatar">
+                                    <div class="message character-message w12">
+                                      死んだらそれで終わりだよ！彼らは私を置いていった、私を孤児にした！そんな奴らが何の英雄だ！
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/grieving_girl.png" alt="悲痛な少女" class="avatar">
+                                    <div class="message character-message w12">
+                                      うっ…くそくらえの光明と正義…こんなもののために死にに行くなんて…バカすぎる、みんなくそくらえだ…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      …来てくれてありがとう。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      我々の城邦が苦難から遠ざかり、同胞が永遠に平安でありますように。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    藍雨がしとしとと降り続く中、FACの追悼式はいつもこの絶妙な雰囲気に包まれる。BR-002が全城に拡散した汚染を浄化するため、そして逝去した英雄たちを悼むためだ。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    探偵は陵園を出て、誰もいない場所へ歩き、傘を収め、空を見上げた。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    藍雨が彼女の顔に当たり、流れとなって頬を伝い、涙と混ざり合い、狂厄の反応を刻む跡を残す。この痛みが自分を覚醒させてくれることを、彼女はどれほど願ったか。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    突然、電話の着信音が鳴る。彼女はぼんやりと携帯を取り出し、聞き慣れたメロディを認識すると、灰色の瞳が一瞬で輝きを放ち、探偵は飛び上がった。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                    <div class="message character-message w12">
+                                      セリーヌ姉さん！帰ってきたの？うわ…そんな大変だったんだ…もう…え？！地下の連中がまた何か企んでる？「GARDEN」の殺し屋が連続襲撃？なんて卑劣な奴ら、正面で勝てないからって裏で汚い手を使うなんて！
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                    <div class="message character-message w12">
+                                      …え？私が特派調査員？！本当にいいの？！
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
                                       <div class="message character-message w12">
-                                        ただの二匹の犬、私の花を汚すなんて…
+                                        うんうんうん、もちろんだよ！セリーヌ姉さんの依頼なら絶対頑張ってやるよ！名探偵の未来をかけて、今すぐ出発する！
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="mb-3">
-                                      <div class="message-wrapper character2">
-                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
-                                        <div class="message character-message w12">
-                                          ふふ…福音地に伝え。この依頼、「GARDEN」が引き受けた。リストをよこせ、私が直接行く。
-                                        </div>
-                                      </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    電話を切り、彼女は走り出した。数歩走っただけで、3メートルも跳び上がる勢いだ。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                    <div class="message character-message w12">
+                                        お姉様の信頼と!光と正義のために!
                                     </div>
-                                  <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                      <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
-                                      <div class="message character-message w12">
-                                        君の望む通り、花を盛大に咲き誇ろうか。
-                                      </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    N.F.113年8月8日、FAC総司令は西区戦線から新城に戻り、市議会に正式に<span>「BR-002黒環封鎖作戦」</span>の認可申請を提出。目的はBR-002周辺に反狂厄遮断網を構築し、黒環汚染の拡散を制限し、西区の環境を完全に安定させること。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    FACの設立目的はDis城邦の守護であり、西区はDisの一部、西区の民は守られるべきDisの市民である。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    彼らを決して見捨ててはならない。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    この作戦はすでに上庭の支持を暫定的に得ており、資金、人力、組織権限などの具体的事項は、涅槃グループを含む多数の代表者による共同評価を経て、<span>8月15日</span>に最終審査が完了する予定である。
                                   </div>
                                 </div>
                               </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- 角色2 (Severo) 简介 -->
                 <div class="col-md-3">
                     <div class="profile-card fade" id="profile-card-right">
                         <div class="profile-avatar-container">
@@ -2021,7 +2263,7 @@
                         </div>
                         <div class="keywords-container">
                             <h6 class="w16" id="right-keyword-title">Keyword</h6>
-                            <span class="keywords w12" id="right-keywords">可憐ぶる信者、でも実際可哀想。</span>
+                            <span class="keywords w12" id="right-keywords">。</span>
                         </div>
                         <div class="profile-description" id="right-description">
                             <h5 class="w12" id="right-description-title">一人称：私<br>二人称：あなた</h5>
@@ -2031,15 +2273,54 @@
                 </div>
             </div>
         </div>
+        <div class="navigation-buttons">
+            <button class="nav-btn" id="prev-chapter">前章</button>
+            <button class="nav-btn" id="next-chapter">次章</button>
+        </div>
+        <div class="music-controls">
+            <img src="img/v2.gif" alt="Play" onclick="muteMusic(1)" class="imgMusicPlay" style="display: none;">
+            <img src="img/v2c.png" alt="Pause" onclick="muteMusic(2)" class="imgMusicStop">
+        </div>
     </div>
-
-    <!-- 引入 Bootstrap JS -->
+    <audio id="bgm-player" loop></audio>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+            return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+            if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+                try {
+                    var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                    var firstSheetName = workbook.SheetNames[0];
+                    var worksheet = workbook.Sheets[firstSheetName];
+                    var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                    var filteredData = jsonData.filter(row => row.some(filledCell));
+                    var headerRowIndex = filteredData.findIndex((row, index) =>
+                        row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                    );
+                    if (headerRowIndex === -1 || headerRowIndex > 25) {
+                        headerRowIndex = 0;
+                    }
+                    var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                    csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                    return csv;
+                } catch (e) {
+                    console.error(e);
+                    return "";
+                }
+            }
+            return gk_fileData[filename] || "";
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // 定义会话数据
         const conversations = {
             'conversation1': {
-                title: 'Blue Rain-00 ',
+                title: 'Blue Rain-000',
+                bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-l1.jpg',
                     keywordTitle: 'Keyword',
@@ -2056,7 +2337,8 @@
                 }
             },
             'conversation2': {
-                title: 'Blue Rain-02「家」 ',
+                title: 'Blue Rain-002「家」',
+                bgm: 'mp3/bg/conversation2.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2073,7 +2355,8 @@
                 }
             },
             'conversation3': {
-                title: 'Blue Rain-03「何のために戦うか」 ',
+                title: 'Blue Rain-003「何のために戦うか」',
+                bgm: 'mp3/bg/conversation3.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2090,7 +2373,8 @@
                 }
             },
             'conversation4': {
-                title: 'Blue Rain-04',
+                title: 'Blue Rain-004',
+                bgm: 'mp3/bg/conversation4.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2099,7 +2383,7 @@
                     descriptionText: 'Xが意図的に流したセヴェロが上庭に捕まったという情報をたった今受け取り、エリカ山荘に向かう途中…。'
                 },
                 rightProfile: {
-                    avatar: 'img/dh-severo.png',
+                    avatar: 'img/dh/severoBR4.png',
                     keywordTitle: 'Keyword',
                     keywords: 'L的養女、弟子、従者、部下',
                     descriptionTitle: '一人称：私 / 二人称：あなた',
@@ -2107,7 +2391,8 @@
                 }
             },
             'conversation5': {
-                title: 'Blue Rain-05 ',
+                title: 'Blue Rain-005',
+                bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
                     keywordTitle: 'Keyword',
@@ -2122,12 +2407,94 @@
                     descriptionTitle: '一人称：私 / 二人称：あなた',
                     descriptionText: '数日内に追加の内容をアップします。'
                 }
-            }
+            },
+            'conversation6': {
+                title: 'Blue Rain-006',
+                bgm: 'mp3/bg/conversation6.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/severoBR6.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: 'セヴェロは「GARDEN」に戻り体を休養する。'
+                }
+            },
+            'conversation7': {
+                title: 'flowers-000「追悼式」',
+                bgm: 'mp3/bg/conversation7.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan1.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者に近いキャラクターからです。'
+                }
+            },
+            'conversation8': {
+                title: 'flowers-001「第一現場」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan1.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
         };
-
+        const conversationOrder = ['conversation1', 'conversation2', 'conversation3', 'conversation4', 'conversation5', 'conversation6', 'conversation7', 'conversation8'];
+        let currentBgm = null;
+        function muteMusic(action) {
+            const bgmPlayer = document.getElementById('bgm-player');
+            const playButton = document.querySelector('.imgMusicPlay');
+            const stopButton = document.querySelector('.imgMusicStop');
+            if (action === 1) {
+                bgmPlayer.play();
+                playButton.style.display = 'none';
+                stopButton.style.display = 'inline';
+            } else {
+                bgmPlayer.pause();
+                playButton.style.display = 'inline';
+                stopButton.style.display = 'none';
+            }
+        }
+        function playBgm(conversationId) {
+            const bgmPlayer = document.getElementById('bgm-player');
+            const playButton = document.querySelector('.imgMusicPlay');
+            const stopButton = document.querySelector('.imgMusicStop');
+            if (conversations[conversationId] && conversations[conversationId].bgm) {
+                if (currentBgm !== conversations[conversationId].bgm) {
+                    bgmPlayer.src = conversations[conversationId].bgm;
+                    currentBgm = conversations[conversationId].bgm;
+                    bgmPlayer.play().catch(e => console.error('BGM play error:', e));
+                    playButton.style.display = 'none';
+                    stopButton.style.display = 'inline';
+                }
+            }
+        }
         function showConversation(conversationId) {
-            console.log('Switching to:', conversationId); // 调试输出
-            // 获取所有需要切换的元素
+            console.log('Switching to:', conversationId);
             const chatContainer = document.getElementById('chat-container');
             const headerTitle = document.getElementById('header-title');
             const leftProfileCard = document.getElementById('profile-card-left');
@@ -2142,69 +2509,94 @@
             const rightDescriptionTitle = document.getElementById('right-description-title');
             const leftDescriptionText = document.getElementById('left-description-text');
             const rightDescriptionText = document.getElementById('right-description-text');
-
             if (!chatContainer || !headerTitle || !leftProfileCard || !rightProfileCard) {
                 console.error('One or more elements not found:', {
                     chatContainer, headerTitle, leftProfileCard, rightProfileCard
                 });
                 return;
             }
-
-            // 确保元素可见
             leftProfileCard.style.display = 'flex';
             rightProfileCard.style.display = 'flex';
             chatContainer.style.display = 'block';
             headerTitle.style.display = 'block';
-
-            // 添加淡出效果
             leftProfileCard.classList.add('fade-hidden');
             rightProfileCard.classList.add('fade-hidden');
             chatContainer.classList.add('fade-hidden');
             headerTitle.classList.add('fade-hidden');
-
-            // 立即更新内容
-            console.log('Updating content for:', conversationId); // 调试输出
             document.querySelectorAll('.conversation').forEach(conv => {
                 conv.style.display = 'none';
             });
             const activeConversation = document.getElementById(conversationId);
             if (activeConversation) {
                 activeConversation.style.display = 'block';
+                activeConversation.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
                 console.error('Conversation not found:', conversationId);
             }
-
-            headerTitle.textContent = conversations[conversationId].title;
-            leftAvatar.src = conversations[conversationId].leftProfile.avatar;
-            leftKeywordTitle.textContent = conversations[conversationId].leftProfile.keywordTitle;
-            leftKeywords.textContent = conversations[conversationId].leftProfile.keywords;
-            leftDescriptionTitle.innerHTML = conversations[conversationId].leftProfile.descriptionTitle;
-            leftDescriptionText.textContent = conversations[conversationId].leftProfile.descriptionText;
-            rightAvatar.src = conversations[conversationId].rightProfile.avatar;
-            rightKeywordTitle.textContent = conversations[conversationId].rightProfile.keywordTitle;
-            rightKeywords.textContent = conversations[conversationId].rightProfile.keywords;
-            rightDescriptionTitle.innerHTML = conversations[conversationId].rightProfile.descriptionTitle;
-            rightDescriptionText.textContent = conversations[conversationId].rightProfile.descriptionText;
-
-            // 移除淡出效果，恢复显示
-            leftProfileCard.classList.remove('fade-hidden');
-            rightProfileCard.classList.remove('fade-hidden');
-            chatContainer.classList.remove('fade-hidden');
-            headerTitle.classList.remove('fade-hidden');
-
-            // 强制恢复样式
-            leftProfileCard.style.opacity = '1';
-            rightProfileCard.style.opacity = '1';
-            chatContainer.style.opacity = '1';
-            headerTitle.style.opacity = '1';
+            if (conversations[conversationId]) {
+                headerTitle.textContent = conversations[conversationId].title;
+                leftAvatar.src = conversations[conversationId].leftProfile.avatar;
+                leftKeywordTitle.textContent = conversations[conversationId].leftProfile.keywordTitle;
+                leftKeywords.textContent = conversations[conversationId].leftProfile.keywords;
+                leftDescriptionTitle.innerHTML = conversations[conversationId].leftProfile.descriptionTitle;
+                leftDescriptionText.textContent = conversations[conversationId].leftProfile.descriptionText;
+                rightAvatar.src = conversations[conversationId].rightProfile.avatar;
+                rightKeywordTitle.textContent = conversations[conversationId].rightProfile.keywordTitle;
+                rightKeywords.textContent = conversations[conversationId].rightProfile.keywords;
+                rightDescriptionTitle.innerHTML = conversations[conversationId].rightProfile.descriptionTitle;
+                rightDescriptionText.textContent = conversations[conversationId].rightProfile.descriptionText;
+            } else {
+                console.error('Conversation data not found:', conversationId);
+            }
+            setTimeout(() => {
+                leftProfileCard.classList.remove('fade-hidden');
+                rightProfileCard.classList.remove('fade-hidden');
+                chatContainer.classList.remove('fade-hidden');
+                headerTitle.classList.remove('fade-hidden');
+                leftProfileCard.style.opacity = '1';
+                rightProfileCard.style.opacity = '1';
+                chatContainer.style.opacity = '1';
+                headerTitle.style.opacity = '1';
+            }, 10);
+            updateNavigationButtons(conversationId);
+            playBgm(conversationId);
         }
-
-        // 默认显示会话例2
-        document.addEventListener('DOMContentLoaded', function () {
-            console.log('Page loaded, showing conversation4'); // 调试输出
-            showConversation('conversation4');
+        function updateNavigationButtons(conversationId) {
+            const prevButton = document.getElementById('prev-chapter');
+            const nextButton = document.getElementById('next-chapter');
+            const currentIndex = conversationOrder.indexOf(conversationId);
+            prevButton.disabled = currentIndex <= 0;
+            nextButton.disabled = currentIndex >= conversationOrder.length - 1;
+        }
+        function navigateChapter(direction) {
+            const currentConversation = document.querySelector('.conversation[style*="display: block"]');
+            if (!currentConversation) return;
+            const currentId = currentConversation.id;
+            const currentIndex = conversationOrder.indexOf(currentId);
+            const newIndex = currentIndex + direction;
+            if (newIndex >= 0 && newIndex < conversationOrder.length) {
+                const newConversationId = conversationOrder[newIndex];
+                showConversation(newConversationId);
+                history.pushState(null, null, `#${newConversationId}`);
+            }
+        }
+        function handleHashChange() {
+            const hash = window.location.hash;
+            console.log('Hash detected:', hash);
+            const conversationId = hash ? hash.substring(1) : 'conversation4';
+            if (conversations[conversationId]) {
+                showConversation(conversationId);
+            } else {
+                console.error('Invalid conversation ID:', conversationId);
+                showConversation('conversation4');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            handleHashChange();
+            document.getElementById('prev-chapter').addEventListener('click', () => navigateChapter(-1));
+            document.getElementById('next-chapter').addEventListener('click', () => navigateChapter(1));
         });
+        window.addEventListener('hashchange', handleHashChange);
     </script>
 </body>
-
 </html>

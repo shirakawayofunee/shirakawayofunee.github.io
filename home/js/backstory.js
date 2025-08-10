@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-08-09 02:39:51
+ * @LastEditTime: 2025-08-10 18:16:05
  * @Description:
  * @FilePath: \shirakawayofunee.github.io\home\js\backstory.js
  */
