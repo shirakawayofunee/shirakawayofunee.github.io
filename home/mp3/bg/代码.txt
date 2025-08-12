@@ -1,58 +1,118 @@
 <div class="mb-3">
                                     <div class="message-wrapper character2">
-                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
                                         <div class="message character-message w12">
-                                            ハ…ハハハハ…すごい力だね。もう怪物扱いだよ。この姿で、FACはまだお前を必要としてる？殺されるんじゃない？ハハハ――
+                                            対，一起！这不就是必要的犧牲吗，他們會理解的。這樣才更明白機会的重量。
+                                            總有人會交代的，已经有人交代了。这才是機会的正確使用方式，这才是真正的復仇，我可以捨棄一切身下地獄。你呢？
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message-wrapper character2">
-                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
                                         <div class="message character-message w12">
-                                            私の仇はもう報いたよ。誰かが私のために恨みを晴らしてくれて、心の空虚も怒りも癒された。今は新しい家族がいて、新しい人生があって、私は救われたんだ。
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
-                                        <div class="message character-message w12">
-                                            本気でお前を家に連れて帰りたかった。でも、何かを失う者が全部家族になれるわけじゃないみたいだ…お前のおかげで、今ある大切な宝物をますます愛おしく感じるよ…
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
-                                        <div class="message character-message w12">
-                                            もう二度と、誰にも私のものを傷つけさせない。あなたも、あなたが私たちを利用して媚を売ろうとしているあいつも、一人たりとも見逃さない。
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="message-wrapper character2">
-                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
-                                        <div class="message character-message w12">
-                                            かつての私は復讐のためにすべてを捧げた。今は未来を守るため、その倍の力を尽くす。すべてを失ったお前が、どうやって私に勝てるっていうんだ？家を失った野良犬が、目も見えずに吠える以外に何ができる？
+                                            10年了，除了这挥向空气的力量，你还做成了什么？
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message narration">
-                                        調査員は咆哮し、目に見えない狂気の渦を突き破って敵を見つけようとする。だが、さらに多くの弾丸がこの壊れた家に撃ち込まれ、体内で狂厄が荒れ狂う。
+                                        污染毒素放大調査員内心的震動和混乱，她大口喘氣，既痛苦又興奮，竟笑了起来。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ……这不還有你吗？只要撕開你的嘴，就能得到一切了！
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message narration">
-                                        セヴェロはすでに連れ去られ、調査員の耳元にはその女の華奢な声だけがまとわりつく。
+                                        瘋狂的力量如悶火般燃焼，此刻突然引爆，調査員咆哮著站起身，帶著刺穿自己的長針，冲上前一手掐住Severo的脖子，直将她用力砸進牆里。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        幾乎同時，这份暴走的力量觸発警報，刺耳的警鈴響徹山庄，有人鳴槍了。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character3">
+                                        <img src="img/dh/security.png" alt="Safety" class="avatar">
+                                        <div class="message character-message w12">
+                                            能力者！！放開那个女人，你已经失控了，還不住手？！！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character3">
+                                        <img src="img/dh/security.png" alt="Safety" class="avatar">
+                                        <div class="message character-message w12">
+                                            再不投降，我們要開槍了！！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        狙撃的子弾射穿窓戶，射向調査員的太陽穴。她下意識躲开，桎梏敵人的力量也一時松了些。
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="message-wrapper character2">
-                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
                                         <div class="message character-message w12">
-                                            その執着を抱えたまま、過去に溺れなさい。
+                                            哈……哈哈哈哈……了不起的力量，你要被当成怪物了。現在这副模様，FAC還要你吗？他們會殺了你吗？哈哈哈——
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我的仇早就报了。有人帮我了结仇恨，我内心的空洞和怒火都被安抚。我有新的家人，新的人生，我已经得到救赎。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            本来也想把你带回去的，可看来并不是所有被剥夺的人都能成为家人……你让我更珍惜现在仅有的宝物……
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我不会再让任何人伤害我的<span>所有物</span>。你，还有你想利用我们去讨好的家伙，我都不会放过。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            过去我能为复仇倾尽一切，现在也会加倍捍卫我的未来。而在那以后一无所有的你，怎么可能赢我？丧家野狗，除了瞎眼狂吠，你什么都做不到。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        調査員咆哮著，試圖冲破那不可見的瘋狂漩渦找出她的敵人。可更多子弾射入这破屋，体内狂厄席巻。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        SEVERO早已被带走，唯有调查员耳邊糾纏著那个女人纖弱的聲音。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            抱着那点坚持溺死在过去吧。
                                         </div>
                                     </div>
                                 </div>
