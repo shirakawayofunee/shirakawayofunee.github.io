@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="css/mapMobile.css" media="(max-device-width:926px)" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/cyfhboard.css" media="(min-device-width:926px)" />
-  
+  <link rel="stylesheet" href="css/glossary.css" media="(min-device-width:926px)" />
   <link rel="icon" type="image/x-icon" id="icon">
 </head>
 
@@ -522,6 +522,133 @@
           </div>
         </div>
       </div>
+      <!-- pc用语集 -->
+      <div class="swiper-slide pc glossary" data-mouse="small" id="slide4">
+        <div class="glossary-left animate__animated animate__fadeInLeft" data-mouse="small">
+          <div class="swiper mySwiper glossary-border" id="pcglossary" data-mouse="small">
+            <div class="swiper-wrapper" data-mouse="small">
+              <!--               <div class="swiper-slide glossary-left-list" data-mouse="small">
+                <img src="img/glossary/p1.png" alt="" data-mouse="big" data-img="./img/glossary/p1c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p1d.png')">
+                <img src="img/glossary/big.png" alt="" class="glossary-left-list-big">
+              </div> -->
+              <div class="swiper-slide glossary-left-list" data-mouse="small">
+                <img src="img/glossary/p1.png" alt="" data-mouse="big" data-img="./img/glossary/p1c.png"
+                  class="glossary-img slide-inner"
+                  onclick="console.log('Clicked p1d.png'); paperShowBig(this,'p1d.png')">
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
+              </div>
+              <div class="swiper-slide glossary-left-list">
+                <img src="img/glossary/p2.png" alt="" data-mouse="big" data-img="./img/glossary/p2c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p2d.png')">
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
+              </div>
+              <div class="swiper-slide glossary-left-list">
+                <img src="img/glossary/p3.png" alt="" data-mouse="big" data-img="./img/glossary/p3c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p3d.png')">
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
+              </div>
+              <div class="swiper-slide glossary-left-list">
+                <img src="img/glossary/p4.png" alt="" data-mouse="big" data-img="./img/glossary/p4c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p4d.png')">
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
+              </div>
+              <div class="swiper-slide glossary-left-list">
+                <img src="img/glossary/p5.png" alt="" data-mouse="big" data-img="./img/glossary/p5c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p5d.png')">
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
+              </div>
+              <div class="swiper-slide glossary-left-list">
+                <img src="img/glossary/p6.png" alt="" data-mouse="big" data-img="./img/glossary/p6c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p6d.png')">
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
+              </div>
+              <div class="swiper-slide glossary-left-list">
+                <img src="img/glossary/p7.png" alt="" data-mouse="big" data-img="./img/glossary/p7c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p7d.png')">
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
+              </div>
+              <div class="swiper-slide glossary-left-list">
+                <img src="img/glossary/p8.png" alt="" data-mouse="big" data-img="./img/glossary/p8c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p8d.png')">
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
+              </div>
+              <div class="swiper-slide glossary-left-list">
+                <img src="img/glossary/p9.png" alt="" data-mouse="big" data-img="./img/glossary/p9c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p9d.png')">
+              </div>
+              <div class="swiper-slide glossary-left-list">
+                <img src="img/glossary/p10.png" alt="" data-mouse="big" data-img="./img/glossary/p10c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p10d.png')">
+              </div>
+            </div>
+
+            <!-- <div class="swiper-pagination"></div> -->
+          </div>
+        </div>
+        <div class="glossary-right" data-mouse="small">
+          <div class="glossary-right-title" data-mouse="small">
+            <img src="img/glossary/t1.png" alt="" data-mouse="small" class="animate__animated animate__fadeInUp"
+              id="glossaryTitle">
+          </div>
+          <div class="glossary-right-str animate__animated animate__fadeInUp" data-mouse="small" id="glossaryStr">
+            元々は「福音地」が育て上げた殺し屋組織で、メンバーは使い捨ての消耗品と見なされていた。
+            Lが「花園」を引き継いだ後、「花園」を率いて「福音地」から独立を果たした。
+            <br>
+            L「よし、今日からもう私たちを縛れる者はいない。処分すべき者は皆殺しだ。もう一線を画いて、バイバイできるんだ～
+            今から、みな、自分の好きな仕事だけを受けて、好きな獲物だけを仕留めて、報酬をもらおう。行きたいところがあれば行け、
+            気が向かなければ離れても構わない。誰かの指図をもう受けなくていい——私の以外はね。
+            恨みは君たちを縛れなくなる、私が自由をやるんだ。自分の命は、好きなように使えばいい——師匠の私が許したんだから。」
+            <br>
+            Lは「花園」を、メンバーそれぞれ自分の目標（復讐、力、居場所など）を追い求める、個性を大胆に表現できる、
+            高層の「大義」や「栄光」に縛られて無理やり犠牲になることのない、Lの理想郷として作り上げた。
+            <br>
+            S「もう二度と家族を失いたくない…」L「花園が君の家だよ。私が家族をあげる。」
+            <br>
+            J「あいつは罰を受けるべきだ！」L「なら、徹底的にやりなさい。その仕方を教えてあげるわ。」
+            <br>
+            T「私はもっと強くなりたい！誰にも踏みにじられないように！」L「なら、私を越すか、殺すかを選んで。」
+            <br>
+            L「実現しなさい、復讐しなさい！私の花よ、私の花園は、自由で、気ままで、縛らずに育つべきだ。邪魔な雑草は、全部刈り取ってしまえばいい。」
+            <br>
+            変装と潜入を得意とする謎の組織。
+            メンバーは幼い頃から教育を受け、熟練した戦闘技術を身につけているだけでなく、生花や書道、刺繍などの芸術分野における専門技術を習得している者も多い。核心成员不过几十人，剩下的大多数外围人员甚至不知道自己在为【花园】服务。
+            <br>
+            X「私は花園の数人の殺し屋と関わったことがあるけど、彼女たちは殺人を楽しむような狂人じゃないよ。」
+          </div>
+          <div class="glossary-right-page animate__animated animate__fadeInUp " data-mouse="mid">
+            <div id="glossaryPre" data-mouse="mid">
+              <img src="img/glossary/pre.png" alt="" data-mouse="mid" style="margin-right: 1vw;">
+            </div>
+            <div data-mouse="mid">
+              <img data-mouse="mid" class="glossary-right-page-img glossary-right-page-img1" id="glossaryImg1"
+                onclick="changeBackstoryClick(0)">
+              <img data-mouse="mid" class="glossary-right-page-img glossary-right-page-img2" id="glossaryImg2"
+                onclick="changeBackstoryClick(1)">
+              <img data-mouse="mid" class="glossary-right-page-img glossary-right-page-img3" id="glossaryImg3"
+                onclick="changeBackstoryClick(2)">
+              <img data-mouse="mid" class="glossary-right-page-img glossary-right-page-img4" id="glossaryImg4"
+                onclick="changeBackstoryClick(3)">
+              <img data-mouse="mid" class="glossary-right-page-img glossary-right-page-img5" id="glossaryImg5"
+                onclick="changeBackstoryClick(4)">
+              <img data-mouse="mid" class="glossary-right-page-img glossary-right-page-img6" id="glossaryImg6"
+                onclick="changeBackstoryClick(5)">
+              <img data-mouse="mid" class="glossary-right-page-img glossary-right-page-img7" id="glossaryImg7"
+                onclick="changeBackstoryClick(6)">
+              <img data-mouse="mid" class="glossary-right-page-img glossary-right-page-img8" id="glossaryImg8"
+                onclick="changeBackstoryClick(7)">
+              <img data-mouse="mid" class="glossary-right-page-img glossary-right-page-img9" id="glossaryImg9"
+                onclick="changeBackstoryClick(8)">
+              <img data-mouse="mid" class="glossary-right-page-img glossary-right-page-img10" id="glossaryImg10"
+                onclick="changeBackstoryClick(9)">
+            </div>
+            <div data-mouse="mid" id="glossaryNext">
+              <img data-mouse="mid" src="img/glossary/next.png" alt="" style="margin-left: 1vw;">
+            </div>
+          </div>
+
+        </div>
+      </div>
             
 
             
@@ -904,6 +1031,7 @@
 <!-- <script src="js/yuyue.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/cyfhboard.js"></script>
+<script src="js/glossary.js"></script>
 <script>
   $(document).ready(() => {
     console.log('jQuery loaded:', typeof $);
