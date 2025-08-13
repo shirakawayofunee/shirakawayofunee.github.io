@@ -42,7 +42,7 @@
 }
 
 .node .label, .large-node .label, .small-node .label {
-  font-size: 14px;
+/*   font-size: 14px; */
   padding: 6px;
   color: #ecf0f1;
   border-radius: 3px;
@@ -129,13 +129,13 @@
   .small-node { width: 122px; }
   .small-node .avatar { width: 122px; height: 151px; }
   .small-node .label { max-width: 122px; font-size: 12px; }
-  .node { width: 220px; }
-  .node .avatar { height: 213px; }
-  .node .label { max-width: 220px; font-size: 13px; }
-  .large-node { width: 323px; }
-  .large-node .avatar { height: 340px; }
+  .node { width: 200px; }
+  .node .avatar { height: 170px; }
+  .node .label { max-width: 200px; font-size: 13px; }
+  .large-node { width: 300px; }
+  .large-node .avatar { height: 300px; }
   .large-node .label { max-width: 323px; font-size: 14px; }
-  #lines text { font-size: 14px; }
+  #lines text { font-size: 12px; }
   #lines rect { rx: 5; }
 }
 

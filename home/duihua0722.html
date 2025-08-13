@@ -130,10 +130,10 @@
         }
         .message {
             padding: 10px 15px;
-            margin-bottom: 10px;
+/*             margin-bottom: 10px; */
             word-wrap: break-word;
             width: fit-content;
-            min-width: 100px;
+            min-width: 10px;
             max-width: 80%;
         }
         .message-wrapper {
@@ -168,7 +168,7 @@
             margin-right: auto;
             text-align: center;
             font-style: italic;
-            width: 80%;
+            width: 90%;
         }
         .narration img {
             width: 100%;
@@ -421,16 +421,16 @@
                                 選べる会話例
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">Blue Rain-01「招かれざる客」 N.F.113年7月16日</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">Blue Rain-02「穏やかな朝」 N.F.113年7月23日 08:05</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation3')">Blue Rain-03「家」 N.F.113年7月23日 08:15</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation4')">Blue Rain-04「異変」 N.F.113年7月23日 23:04</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation5')">Blue Rain-05「何のために戦うか」 N.F.113年7月23日 23:14</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation6')">Blue Rain-06「大切なこと」 N.F.113年7月23日 23:24</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation7')">Blue Rain-07「参入、登場」 N.F.113年7月24日 00:41</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation8')">flowers-00「追悼式」 N.F.113年8月8日 9:00</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation9')">flowers-01「探偵ゲーム」</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation10')">flowers-02「」 </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">Blue Rain-001「招かれざる客」 N.F.113年7月16日</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">Blue Rain-002「穏やかな朝」 N.F.113年7月23日 08:05</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation3')">Blue Rain-003「家」 N.F.113年7月23日 08:15</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation4')">Blue Rain-004「異変」 N.F.113年7月23日 23:04</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation5')">Blue Rain-005「何のために戦うか」 N.F.113年7月23日 23:14</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation6')">Blue Rain-006「大切なこと」 N.F.113年7月23日 23:24</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation7')">Blue Rain-007「参入、登場」 N.F.113年7月24日 00:41</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation8')">flowers-100「追悼式」 N.F.113年8月8日 9:00</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation9')">flowers-101「探偵ゲーム」</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation10')">flowers-102「」 </a></li>
                             </ul>
                         </div>
                         <div class="chat-container fade" id="chat-container">
@@ -533,6 +533,16 @@
                                       </div>
                                     </div>
                                   </div>
+                                  <div class="mb-3">
+                                    <div class="message narration">
+                                        黒雲が城を覆い、豪雨が迫る。そして、幕を開けるのは……
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        ただ、哀れな数人の滑稽な物語にすぎない。
+                                    </div>
+                                </div>
                               </div>
                               <div id="conversation2" class="conversation">
                                 <div class="mb-3">
@@ -2370,7 +2380,7 @@
     <script>
         const conversations = {
             'conversation1': {
-                title: 'Blue Rain-01「招かれざる客」',
+                title: 'Blue Rain-001「招かれざる客」',
                 bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-l1.jpg',
@@ -2388,7 +2398,7 @@
                 }
             },
             'conversation2': {
-                title: 'Blue Rain-02「穏やかな朝」',
+                title: 'Blue Rain-002「穏やかな朝」',
                 bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh/severoBR2.jpg',
@@ -2406,7 +2416,7 @@
                 }
             },
             'conversation3': {
-                title: 'Blue Rain-03「家」',
+                title: 'Blue Rain-003「家」',
                 bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh/severoBR2.jpg',
@@ -2424,7 +2434,7 @@
                 }
             },
             'conversation4': {
-                title: 'Blue Rain-04「異変」',
+                title: 'Blue Rain-004「異変」',
                 bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
@@ -2442,7 +2452,7 @@
                 }
             },
             'conversation5': {
-                title: 'Blue Rain-05「何のために戦うか」',
+                title: 'Blue Rain-005「何のために戦うか」',
                 bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
@@ -2460,7 +2470,7 @@
                 }
             },
             'conversation6': {
-                title: 'Blue Rain-06「大切なこと」',
+                title: 'Blue Rain-006「大切なこと」',
                 bgm: 'mp3/bg/conversation5.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
@@ -2478,7 +2488,7 @@
                 }
             },
             'conversation7': {
-                title: 'Blue Rain-07「参入、登場」',
+                title: 'Blue Rain-007「参入、登場」',
                 bgm: 'mp3/bg/conversation6.mp3',
                 leftProfile: {
                     avatar: 'img/dh/leopoldBR6.jpg',
@@ -2496,7 +2506,7 @@
                 }
             },
             'conversation8': {
-                title: 'flowers-000「追悼式」',
+                title: 'flowers-100「追悼式」',
                 bgm: 'mp3/bg/conversation7.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',
@@ -2514,7 +2524,7 @@
                 }
             },
             'conversation9': {
-                title: 'flowers-001「第一現場」',
+                title: 'flowers-101「第一現場」',
                 bgm: 'mp3/bg/conversation8.mp3',
                 leftProfile: {
                     avatar: 'img/dh-leopold.jpg',

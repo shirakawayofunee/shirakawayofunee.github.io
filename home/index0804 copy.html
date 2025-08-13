@@ -38,12 +38,12 @@
   <link rel="stylesheet" href="css/videomaskMobile.css" media="(max-device-width:926px)" />
   <link rel="stylesheet" href="css/timeline.css" media="(min-device-width:926px)" />
   <link rel="stylesheet" href="css/timelineMobile.css" media="(max-device-width:926px)" />
-  <link rel="stylesheet" href="css/timelinePad.css" media="(max-device-width:926px)" />
   <link rel="stylesheet" href="css/map.css" media="(min-device-width:926px)" />
   <link rel="stylesheet" href="css/mapMobile.css" media="(max-device-width:926px)" />
+  <link rel="stylesheet" href="css/relationship.css" media="(min-device-width:926px)" />
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/cyfhboard.css" media="(min-device-width:926px)" />
-  
   <link rel="icon" type="image/x-icon" id="icon">
 </head>
 
@@ -107,22 +107,18 @@
             <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(4)" id="banner4" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">相関図</div>
-            <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
+            <div class="div-head-text" data-mouse="mid">タイムライン</div>
+            <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(5)" id="banner5" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">序章マップ</div>
             <div class="div-head-text-en" data-mouse="mid">MAPS</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(6)" id="banner6" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">年表</div>
-            <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
+            <div class="div-head-text" data-mouse="mid">相関図</div>
+            <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(7)" id="banner7" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">用語集</div>
-            <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(8)" id="banner8" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">関係性補足</div>
             <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
           </div>
@@ -289,10 +285,6 @@
                 <img src="img/backstory/p9.png" alt="" data-mouse="big" data-img="./img/backstory/p9c.png"
                   class="backstory-img slide-inner" onclick="paperShowBig(this,'p9d.png')">
               </div>
-              <div class="swiper-slide backstory-left-list">
-                <img src="img/backstory/p10.png" alt="" data-mouse="big" data-img="./img/backstory/p10c.png"
-                  class="backstory-img slide-inner" onclick="paperShowBig(this,'p10d.png')">
-              </div>
             </div>
 
             <!-- <div class="swiper-pagination"></div> -->
@@ -351,8 +343,6 @@
                 onclick="changeBackstoryClick(7)">
               <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img9" id="backstoryImg9"
                 onclick="changeBackstoryClick(8)">
-              <img data-mouse="mid" class="backstory-right-page-img backstory-right-page-img10" id="backstoryImg10"
-                onclick="changeBackstoryClick(9)">
             </div>
             <div data-mouse="mid" id="backstoryNext">
               <img data-mouse="mid" src="img/backstory/next.png" alt="" style="margin-left: 1vw;">
@@ -400,114 +390,6 @@
         </div>
 
       </div>
-<!-- PC关系板 -->
-<div class="swiper-slide pc cyfhboard" data-mouse="small" id="slide8">
-  <div id="board" class="container-fluid">
-    <svg id="lines">
-      <defs>
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-          <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
-        </marker>
-      </defs>
-    </svg>
-    <div class="row justify-content-center g-2">
-      <div class="row justify-content-center g-2">
-        <div class="col-lg-8 col-md-10 col-sm-12">
-          <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar one"></div>
-            <div class="label">L</div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar two"></div>
-            <div class="label">Severo、36歳<br /></div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar three"></div>
-            <div class="label">堇、23歳<br /></div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar four"></div>
-            <div class="label">
-              蓟、19歳<br />
-              菜鸟杀手。Lが一番好き。<br />
-              Lへの想いが家族愛か恋愛か自分でもわからない。<br />
-              Lが最近ハマっている手作りスイーツ店に長蛇の列でも並びに行く
-            </div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar five"></div>
-            <div class="label">X<br /></div>
-          </div>
-          <div class="node small-node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar six"></div>
-            <div class="label">上庭</div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar seven"></div>
-            <div class="label">
-              自分を深淵に突き落としたこの人、長い年月にわたり自分を絡めとったこの者。
-            </div>
-          </div>
-          <div class="node small-node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar eight"></div>
-            <div class="label">福音地</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- pc地图 -->
-<div class="swiper-slide pc map" data-mouse="small" id="slide1">
-  <img src="img/map/1.png" alt="" class="map-1" data-mouse="small">
-  <div class="map-marker map-G" data-mouse="small">♦公園</div>
-  <div class="map-marker map-X" data-mouse="small">♦X宅</div>
-  <div class="map-marker map-C" data-mouse="small">♦出口</div>
-  <div class="map-marker map-S" data-mouse="small">♦SEVEROの仕立て屋</div>
-  <div class="map-marker map-Y" data-mouse="small">♦ビジネス街</div>
-  <div class="map-marker map-B" data-mouse="small">♦別荘地</div>
-  <div class="map-4-1" data-mouse="mid" style="display: none;">
-    <a href="duihua0722.html#conversation2" data-mouse="mid">
-      jia
-      <!-- <img src="img/map/02.png" alt="" class="map-title"> -->
-    </a>
-  </div>
-
-  <!-- style="display: none;" -->
-    <div class="map-4 animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
-
-      <div class="map-4-pc" data-mouse="mid">
-        <a href="#" download target="_blank" data-mouse="mid" id="mumuPcDownload">
-          <img src="img/map/pc3.png" alt="" class="map-4-pc-main">
-        </a>
-        <img src="img/map/pc4.png" alt="" class="map-4-pc-top">
-      </div>
-      <div class="map-4-2">
-        <div class="map-4-2-con">
-          <a href="#" id="iosDownload" target="_blank"><img src="img/map/ios.png" alt="" data-type="ios"
-              onclick="uploadShuShu()"></a>
-          <a href="#" id="androidDownload" download target="_blank"><img src="img/map/android.png" alt=""
-              data-type="android" onclick="uploadShuShu()"> </a>
-        </div>
-      </div>
-      <div class="map-4-mumu" data-mouse="mid">
-        <div class="map-4-2-con">
-          <a href="#" id="mumuDownload" download target="_blank"><img src="img/map/mumu.png" alt=""
-              data-type="mumu" onclick="uploadShuShu()"></a>
-          <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank"><img
-              src="img/map/taptap.png" alt=""></a>
-        </div>
-
-      </div>
-      <div class="map-4-3" data-mouse="mid" onclick="playFirst(1)">
-        <img src="img/map/play.webp" alt="" class="map-4-3-bg">
-      </div>
-    </div>
-  
-  
-  <div class="map-zhe" data-mouse="small"></div>
-</div>
-
       <!-- PC Timeline -->
       <div class="swiper-slide pc timeline" data-mouse="small" id="slide6">
         <div class="timeline-left animate__animated animate__fadeInLeft" data-mouse="small">
@@ -522,9 +404,115 @@
           </div>
         </div>
       </div>
+            <!-- pc地图 -->
+            <div class="swiper-slide pc map" data-mouse="small" id="slide1">
+              <img src="img/map/1.png" alt="" class="map-1" data-mouse="small">
+              <div class="map-marker map-G" data-mouse="small">♦公園</div>
+              <div class="map-marker map-X" data-mouse="small">♦X宅</div>
+              <div class="map-marker map-C" data-mouse="small">♦出口</div>
+              <div class="map-marker map-S" data-mouse="small">♦SEVEROの仕立て屋</div>
+              <div class="map-marker map-Y" data-mouse="small">♦ビジネス街</div>
+              <div class="map-marker map-B" data-mouse="small">♦別荘地</div>
+              <div class="map-4-1" data-mouse="mid" style="display: none;">
+                <a href="duihua0722.html#conversation2" data-mouse="mid">
+                  jia
+                  <!-- <img src="img/map/02.png" alt="" class="map-title"> -->
+                </a>
+              </div>
             
-
+              <!-- style="display: none;" -->
+              <div class="map-4 animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
             
+                <div class="map-4-pc" data-mouse="mid">
+                  <a href="#" download target="_blank" data-mouse="mid" id="mumuPcDownload">
+                    <img src="img/map/pc3.png" alt="" class="map-4-pc-main">
+                  </a>
+                  <img src="img/map/pc4.png" alt="" class="map-4-pc-top">
+                </div>
+                <div class="map-4-2">
+                  <div class="map-4-2-con">
+                    <a href="#" id="iosDownload" target="_blank"><img src="img/map/ios.png" alt="" data-type="ios"
+                        onclick="uploadShuShu()"></a>
+                    <a href="#" id="androidDownload" download target="_blank"><img src="img/map/android.png" alt=""
+                        data-type="android" onclick="uploadShuShu()"> </a>
+                  </div>
+                </div>
+                <div class="map-4-mumu" data-mouse="mid">
+                  <div class="map-4-2-con">
+                    <a href="#" id="mumuDownload" download target="_blank"><img src="img/map/mumu.png" alt="" data-type="mumu"
+                        onclick="uploadShuShu()"></a>
+                    <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank"><img src="img/map/taptap.png"
+                        alt=""></a>
+                  </div>
+            
+                </div>
+                <div class="map-4-3" data-mouse="mid" onclick="playFirst(1)">
+                  <img src="img/map/play.webp" alt="" class="map-4-3-bg">
+                </div>
+              </div>
+            
+            
+              <div class="map-zhe" data-mouse="small"></div>
+            </div>
+            
+            <!-- PC关系补足 -->
+            
+            <div class="swiper-slide pc relationship" data-mouse="small" id="slide9">
+              <div class="relationship-container">
+                <!-- z-index 1: Coffin Masks -->
+                <div class="z-index-1">
+                  <!--                     <img src="img/relationship/mask1.png" alt="Mask 1" class="relationship-img slide-inner mask-1" data-mouse="mid">
+                                            <img src="img/relationship/mask2.png" alt="Mask 2" class="relationship-img slide-inner mask-2" data-mouse="mid"> -->
+                  <!--                     <img src="img/relationship/mask3.png" alt="Mask 3" class="relationship-img slide-inner mask-3" data-mouse="mid">
+                                            <img src="img/relationship/mask4.png" alt="Mask 4" class="relationship-img slide-inner mask-4" data-mouse="mid"> -->
+                  <img src="img/relationship/mask5.png" alt="Mask 1" class="relationship-img slide-inner mask-1" data-mouse="mid">
+                </div>
+                <!-- z-index 2: Three Div Layout -->
+                <div class="z-index-2">
+                  <!--                   <div class="relationship-right-title" >
+                                            <img src="img/relationship/title.jpg" alt="Title">
+                                          </div> -->
+                  <div class="relationship-right-str">
+                    <div class="left" style="flex: 1;">Left Text</div>
+                    <div class="center" style="flex: 2;">
+                      <!--                       <img src="img/relationship/center.jpg" alt="Center Image"> -->
+                    </div>
+                    <div class="right" style="flex: 1;">Right Text</div>
+                  </div>
+                  <div class="relationship-right-page">
+                    <!-- Placeholder for navigation if needed -->
+                  </div>
+                </div>
+                <!-- z-index 3: Toggle Button -->
+                <div class="z-index-3">
+                  <img src="img/relationship/btn_rain23_chenge_moon2.png" class="toggle-btn" onclick="toggleNavPanel()">
+            <span></span>
+                </div>
+                <!-- Navigation Panel -->
+                <div class="nav-panel" style="display: none;">
+                  <div class="nav-buttons">
+                    <img src="img/relationship/nav1.png" class="nav-1" data-content="content1">
+                    <img src="img/relationship/nav2.png" class="nav-2" data-content="content2">
+                    <div class="nav-3" data-content="content3">
+                      <img src="img/relationship/nav4.png" class="nav-4" data-content="content4">
+                    </div>
+                    <!--                     <img src="img/relationship/nav3.png" > -->
+            
+                    <img src="img/relationship/nav5.png" class="nav-5">
+                    <!--                     <img src="img/relationship/nav6.png" class="nav-6">
+                                            <img src="img/relationship/nav7.png" class="nav-7">
+                                            <img src="img/relationship/nav8.png" class="nav-8">
+                                            <img src="img/relationship/nav9.png" class="nav-9">
+                                            <img src="img/relationship/nav10.png" class="nav-10">
+                                            <img src="img/relationship/nav11.png" class="nav-11">
+                                            <img src="img/relationship/nav12.png" class="nav-12">
+                                            <img src="img/relationship/nav13.png" class="nav-13">
+                                            <img src="img/relationship/nav14.png" class="nav-14">
+                                            <img src="img/relationship/nav15.png" class="nav-15"> -->
+                  </div>
+                </div>
+              </div>
+            </div>
     </div>
   </div>
   <!---------------------------------------------------------------mobile--------------------------------------------------------->
@@ -777,15 +765,7 @@
         <div class="map-marker mapMobile-C" data-mouse="small">▲出口</div>
         <div class="map-marker mapMobile-S" data-mouse="small">▲SEVEROの仕立て屋</div>
       </div>
-      <!-- <div class="mobile headMobile">
-        <div class="h-con-left">
-          <h1 data-mouse="mid">
-            <a href="./" style="cursor: none;" data-mouse="mid">
-              <img src="./img/logo.png" alt="logo"  data-mouse="mid" class="characterFadeIn">
-            </a>
-          </h1>
-        </div>
-      </div> -->
+
       <div class="mobile headM fadeInUpSelf" onclick="hideHeadM()" style="display: none;">
         <!-- 手机端 -->
         <div class="mobile h-con-right-mobile" data-mouse="mid">
@@ -813,6 +793,14 @@
             <div class="div-center div-center-mobile" onclick="changeBannerMobile(5)" id="bannerM5" data-type="share">
               <div class="div-head-text" data-mouse="mid">序章マップ</div>
               <div class="div-head-text-en" data-mouse="mid">MAPS</div>
+            </div>
+            <div class="div-center div-center-mobile" onclick="changeBannerMobile(6)" id="bannerM6" data-type="share">
+              <div class="div-head-text" data-mouse="mid">相関図</div>
+              <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
+            </div>
+            <div class="div-center div-center-mobile" onclick="changeBannerMobile(7)" id="bannerM7" data-type="share">
+              <div class="div-head-text" data-mouse="mid">関係性補足</div>
+              <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
             </div>
           </div>
           <div class="h-con-right-r">
@@ -899,9 +887,10 @@
 <script src="js/galleryMobile.js"></script>
 <script src="js/backstoryMobile.js"></script>
 <script src="js/timeline.js"></script>
-<!-- <script src="js/timelineMobile.js"></script> -->
+
 <script src="js/formatSeconds.js"></script>
 <!-- <script src="js/yuyue.js"></script> -->
+<script src="js/relationship.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/cyfhboard.js"></script>
 <script>
