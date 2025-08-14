@@ -85,6 +85,10 @@
   background: url("../img/id/8.png") top/contain no-repeat;
 }
 
+.nine{
+  background: url("../img/id/9.png") top/contain no-repeat;
+}
+
 .relation-line {
   stroke-width: 2;
   stroke-linecap: round;
@@ -131,10 +135,10 @@
   .small-node .label { max-width: 122px; font-size: 12px; }
   .node { width: 200px; }
   .node .avatar { height: 170px; }
-  .node .label { max-width: 200px; font-size: 13px; }
-  .large-node { width: 300px; }
-  .large-node .avatar { height: 300px; }
-  .large-node .label { max-width: 323px; font-size: 14px; }
+  .node .label { max-width: 160px; font-size: 13px; }
+  .large-node { width: 270px; }
+  .large-node .avatar { height: 270px; }
+  .large-node .label { max-width: 183px; font-size: 14px; }
   #lines text { font-size: 12px; }
   #lines rect { rx: 5; }
 }

@@ -5,12 +5,15 @@ const connections = [
   { from: 2, to: 0, label: "尊敬", color: "#0000FE", dashed: false }, // Jin -> L
   { from: 0, to: 3, label: "教導", color: "#0000FE", dashed: false }, // L -> Ji
   { from: 3, to: 0, label: "敬愛", color: "#E41900", dashed: false }, // Ji -> L
-  { from: 0, to: 4, label: "やり返す、敵であり味方", color: "#0000FE", dashed: true }, // L -> X
-  { from: 4, to: 0, label: "複雑な協力関係", color: "#E41900", dashed: true }, // X -> L
-  { from: 0, to: 6, label: "元の上司、反逆", color: "#0000FE", dashed: true }, // L -> LY
+  { from: 0, to: 4, label: "やり返す、敵であり味方、複雑な協力関係", color: "#0000FE", dashed: true }, // L -> X
+  { from: 4, to: 0, label: "钦慕、", color: "#E41900", dashed: true }, // X -> L
+  { from: 0, to: 6, label: "元同僚、今は顧客、反逆", color: "#0000FE", dashed: true }, // L -> LY
   { from: 6, to: 0, label: "利用", color: "#0000FE", dashed: true }, // LY -> L
   { from: 6, to: 7, label: "リーダー", color: "#E41900", dashed: false }, // LY -> DD
   { from: 0, to: 7, label: "元の組織", color: "#000000", dashed: true }, // L -> DD
+  { from: 0, to: 5, label: "嫌悪", color: "#000000", dashed: true }, // L -> ST
+  { from: 0, to: 8, label: "探り", color: "#000000", dashed: true }, // L -> player
+  { from: 4, to: 5, label: "反逆", color: "#000000", dashed: true }, // X -> ST
 ];
 
 const state = {
@@ -41,6 +44,7 @@ function initLayout() {
     [-3, -1.2], // ST
     [2.1, -1], // LY
     [3, 0.3], // DD
+    [-2, 1.2], // Player
   ];
 
   state.nodes.forEach((node, index) => {
