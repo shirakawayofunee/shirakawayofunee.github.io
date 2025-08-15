@@ -33,7 +33,7 @@
 }
 
 .node .avatar, .large-node .avatar, .small-node .avatar {
-  margin: 0 auto 8px;
+  margin: 0 auto 0;
   display: block;
   z-index: 2;
   background-size: contain;
@@ -42,7 +42,6 @@
 }
 
 .node .label, .large-node .label, .small-node .label {
-/*   font-size: 14px; */
   padding: 6px;
   color: #ecf0f1;
   border-radius: 3px;
@@ -50,7 +49,10 @@
   word-break: break-word;
   background: rgba(103, 109, 138, 0.8);
   backdrop-filter: blur(2px);
-  margin-top: 8px;
+  margin: 0 auto 0; /* 水平居中，顶部间距 8px */
+  text-align: center; /* 文字内容水平居中 */
+  display: inline-block; /* 确保文字框宽度自适应内容 */
+  z-index: 7;
 }
 
 .one {

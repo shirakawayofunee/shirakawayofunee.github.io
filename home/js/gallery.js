@@ -9,6 +9,10 @@ function openMusicmask(){
 function openPapermask(){ 
     window.open('../SL.html','_blank')
 }
+function openEventmask(){
+    window.open('duihua0722.html#conversation2','_blank')   
+}
+
 // 添加图片切换逻辑
 document.querySelectorAll('.gallery-top-bg').forEach(img => {
     img.addEventListener('mouseover', function() {

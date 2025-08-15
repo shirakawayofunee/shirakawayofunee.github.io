@@ -1,5 +1,5 @@
 const connections = [
-  { from: 0, to: 1, label: "我が子のように大切にする", color: "#E41900", dashed: false }, // L -> Severo (red)
+  { from: 0, to: 1, label: "我が子のように大切にする、最も愛する部下", color: "#E41900", dashed: false }, // L -> Severo (red)
   { from: 1, to: 0, label: "劣情、湿度高めの激重愛", color: "#E41900", dashed: false }, // Severo -> L (blue)
   { from: 0, to: 2, label: "野放し", color: "#E41900", dashed: false }, // L -> Jin
   { from: 2, to: 0, label: "尊敬", color: "#0000FE", dashed: false }, // Jin -> L
@@ -7,10 +7,10 @@ const connections = [
   { from: 3, to: 0, label: "敬愛", color: "#E41900", dashed: false }, // Ji -> L
   { from: 0, to: 4, label: "やり返す、敵であり味方、複雑な協力関係", color: "#0000FE", dashed: true }, // L -> X
   { from: 4, to: 0, label: "敬慕の愛、利用", color: "#E41900", dashed: true }, // X -> L
-  { from: 0, to: 6, label: "元同僚、今は顧客、反逆", color: "#0000FE", dashed: true }, // L -> LY
+  { from: 0, to: 6, label: "元同僚、今は顧客", color: "#0000FE", dashed: true }, // L -> LY
   { from: 6, to: 0, label: "利用", color: "#0000FE", dashed: true }, // LY -> L
   { from: 6, to: 7, label: "リーダー", color: "#E41900", dashed: false }, // LY -> DD
-  { from: 0, to: 7, label: "元の組織", color: "#000000", dashed: true }, // L -> DD
+  { from: 0, to: 7, label: "元の組織、反逆", color: "#000000", dashed: true }, // L -> DD
   { from: 0, to: 5, label: "嫌悪", color: "#000000", dashed: true }, // L -> ST
   { from: 0, to: 8, label: "探り、GB、女攻め男受け", color: "#000000", dashed: true }, // L -> player
   { from: 4, to: 5, label: "反逆", color: "#000000", dashed: true }, // X -> ST
@@ -38,12 +38,12 @@ function initLayout() {
   const positions = [
     [0, 0], // Leopold
     [-1.3, 1.2], // Severo
-    [1.8, 0.9], // Jin
-    [-1.4, -0.9], // Ji
+    [1.7, 0.9], // Jin
+    [-1.1, -1.2], // Ji
     [-2.7, 0], // X
     [-3, -1.2], // ST
     [2.1, -1], // LY
-    [3, 0.3], // DD
+    [3, 0], // DD
     [-2.9, 1.2], // Player
   ];
 
