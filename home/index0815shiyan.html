@@ -43,8 +43,9 @@
   <link rel="stylesheet" href="css/mapMobile.css" media="(max-device-width:926px)" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/cyfhboard.css" media="(min-device-width:926px)" />
-<!--   <link rel="stylesheet" href="css/glossary.css" media="(min-device-width:926px)" /> -->
+  <link rel="stylesheet" href="css/glossary.css" media="(min-device-width:926px)" />
   <link rel="stylesheet" href="css/intelligence.css" media="(min-device-width:926px)" />
+  
   <link rel="icon" type="image/x-icon" id="icon">
 </head>
 
@@ -100,7 +101,7 @@
             <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(2)" id="banner2" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">勢力と用語集</div>
+            <div class="div-head-text" data-mouse="mid">世界観と勢力</div>
             <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(3)" id="banner3" data-mouse="mid">
@@ -120,12 +121,12 @@
             <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(7)" id="banner7" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">世界観</div>
+            <div class="div-head-text" data-mouse="mid">用語集</div>
             <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(8)" id="banner8" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">物語CG</div>
-            <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
+            <div class="div-head-text" data-mouse="mid">世界観</div>
+            <div class="div-head-text-en" data-mouse="mid">worldview</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(9)" id="banner9" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">関係性補足</div>
@@ -529,50 +530,55 @@
         </div>
       </div>
       <!-- pc用语集 -->
-      <!-- <div class="swiper-slide pc glossary" data-mouse="small" id="slide4">
+      <div class="swiper-slide pc glossary" data-mouse="small" id="slide4">
         <div class="glossary-left animate__animated animate__fadeInLeft" data-mouse="small">
           <div class="swiper mySwiper glossary-border" id="pcglossary" data-mouse="small">
             <div class="swiper-wrapper" data-mouse="small">
+              <!--               <div class="swiper-slide glossary-left-list" data-mouse="small">
+                <img src="img/glossary/p1.png" alt="" data-mouse="big" data-img="./img/glossary/p1c.png"
+                  class="glossary-img slide-inner" onclick="paperShowBig(this,'p1d.png')">
+                <img src="img/glossary/big.png" alt="" class="glossary-left-list-big">
+              </div> -->
               <div class="swiper-slide glossary-left-list" data-mouse="small">
                 <img src="img/glossary/p1.png" alt="" data-mouse="big" data-img="./img/glossary/p1c.png"
                   class="glossary-img slide-inner"
                   onclick="console.log('Clicked p1d.png'); paperShowBig(this,'p1d.png')">
-                
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
               </div>
               <div class="swiper-slide glossary-left-list">
                 <img src="img/glossary/p2.png" alt="" data-mouse="big" data-img="./img/glossary/p2c.png"
                   class="glossary-img slide-inner" onclick="paperShowBig(this,'p2d.png')">
-                
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
               </div>
               <div class="swiper-slide glossary-left-list">
                 <img src="img/glossary/p3.png" alt="" data-mouse="big" data-img="./img/glossary/p3c.png"
                   class="glossary-img slide-inner" onclick="paperShowBig(this,'p3d.png')">
-                
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
               </div>
               <div class="swiper-slide glossary-left-list">
                 <img src="img/glossary/p4.png" alt="" data-mouse="big" data-img="./img/glossary/p4c.png"
                   class="glossary-img slide-inner" onclick="paperShowBig(this,'p4d.png')">
-                
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
               </div>
               <div class="swiper-slide glossary-left-list">
                 <img src="img/glossary/p5.png" alt="" data-mouse="big" data-img="./img/glossary/p5c.png"
                   class="glossary-img slide-inner" onclick="paperShowBig(this,'p5d.png')">
-                
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
               </div>
               <div class="swiper-slide glossary-left-list">
                 <img src="img/glossary/p6.png" alt="" data-mouse="big" data-img="./img/glossary/p6c.png"
                   class="glossary-img slide-inner" onclick="paperShowBig(this,'p6d.png')">
-                
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
               </div>
               <div class="swiper-slide glossary-left-list">
                 <img src="img/glossary/p7.png" alt="" data-mouse="big" data-img="./img/glossary/p7c.png"
                   class="glossary-img slide-inner" onclick="paperShowBig(this,'p7d.png')">
-                
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
               </div>
               <div class="swiper-slide glossary-left-list">
                 <img src="img/glossary/p8.png" alt="" data-mouse="big" data-img="./img/glossary/p8c.png"
                   class="glossary-img slide-inner" onclick="paperShowBig(this,'p8d.png')">
-                
+                <!-- <img src="img/glossary/big.png" alt="" class="glossary-left-list-big"> -->
               </div>
               <div class="swiper-slide glossary-left-list">
                 <img src="img/glossary/p9.png" alt="" data-mouse="big" data-img="./img/glossary/p9c.png"
@@ -583,6 +589,8 @@
                   class="glossary-img slide-inner" onclick="paperShowBig(this,'p10d.png')">
               </div>
             </div>
+
+            <!-- <div class="swiper-pagination"></div> -->
           </div>
         </div>
         <div class="glossary-right" data-mouse="small">
@@ -647,52 +655,54 @@
           </div>
 
         </div>
-      </div> -->
+      </div>
             
-<!-- 新增 intelligence 区块 -->
-<div class="swiper-slide pc intelligence" data-mouse="small" id="slide4">
-  <div class="intelligence-title" data-mouse="small"></div>
-  <div class="intelligence-content" data-mouse="small">
-    <div class="intelligence-event intelligence-edge-000" data-mouse="mid">
-      <div class="intelligence-event-bg"></div>
-      <div class="intelligence-event-title"></div>
-    </div>
-    <div class="intelligence-event intelligence-edge-004" data-mouse="mid">
-      <div class="intelligence-event-bg"></div>
-      <div class="intelligence-event-title"></div>
-    </div>
-    <div class="intelligence-event intelligence-edge-br" data-mouse="mid">
-      <div class="intelligence-event-bg"></div>
-      <div class="intelligence-event-title"></div>
-    </div>
-    <div class="intelligence-event intelligence-edge-zhanzheng" data-mouse="mid">
-      <div class="intelligence-event-bg"></div>
-      <div class="intelligence-event-title"></div>
-    </div>
-    <div class="intelligence-event intelligence-edge-029" data-mouse="mid">
-      <div class="intelligence-event-bg"></div>
-      <div class="intelligence-event-title intelligence-title1"></div>
-      <div class="intelligence-event-title intelligence-title2"></div>
-    </div>
-    <div class="intelligence-event intelligence-edge-sin" data-mouse="mid">
-      <div class="intelligence-event-bg"></div>
-      <div class="intelligence-event-title"></div>
-    </div>
-    <div class="intelligence-event intelligence-edge-warn" data-mouse="mid">
-      <div class="intelligence-event-bg"></div>
-    </div>
-  </div>
-  <div class="intelligence-modal" style="display:none" data-mouse="small">
-    <div class="intelligence-modal-mask" style="background:rgba(0, 0, 0, 0.6);opacity:0;display:none">
-      <div class="intelligence-modal-mask-click"></div>
-      <div class="intelligence-modal-mask-content"></div>
-    </div>
-    <div class="intelligence-modal-wrap">
-      <div class="intelligence-modal-animated-div"></div>
-    </div>
+
+      <!-- 新增 intelligence 区块 -->
+  <div class="swiper-slide pc intelligence" data-mouse="small" id="slide4">
+      <div class="intelligence-title" data-mouse="small"></div>
+      <div class="intelligence-content" data-mouse="small">
+        <div class="intelligence-event intelligence-edge-000" data-mouse="mid">
+          <div class="intelligence-event-bg"></div>
+          <div class="intelligence-event-title"></div>
+        </div>
+        <div class="intelligence-event intelligence-edge-004" data-mouse="mid">
+          <div class="intelligence-event-bg"></div>
+          <div class="intelligence-event-title"></div>
+        </div>
+        <div class="intelligence-event intelligence-edge-br" data-mouse="mid">
+          <div class="intelligence-event-bg"></div>
+          <div class="intelligence-event-title"></div>
+        </div>
+        <div class="intelligence-event intelligence-edge-zhanzheng" data-mouse="mid">
+          <div class="intelligence-event-bg"></div>
+          <div class="intelligence-event-title"></div>
+        </div>
+        <div class="intelligence-event intelligence-edge-029" data-mouse="mid">
+          <div class="intelligence-event-bg"></div>
+          <div class="intelligence-event-title intelligence-title1"></div>
+          <div class="intelligence-event-title intelligence-title2"></div>
+        </div>
+        <div class="intelligence-event intelligence-edge-sin" data-mouse="mid">
+          <div class="intelligence-event-bg"></div>
+          <div class="intelligence-event-title"></div>
+        </div>
+        <div class="intelligence-event intelligence-edge-warn" data-mouse="mid">
+          <div class="intelligence-event-bg"></div>
+        </div>
+      </div>
+      <div class="intelligence-modal" style="display:none" data-mouse="small">
+        <div class="intelligence-modal-mask" style="background:rgba(0, 0, 0, 0.6);opacity:0;display:none">
+          <div class="intelligence-modal-mask-click"></div>
+          <div class="intelligence-modal-mask-content"></div>
+        </div>
+        <div class="intelligence-modal-wrap">
+          <div class="intelligence-modal-animated-div"></div>
+        </div>
+      </div>
+    
   </div>
 
-</div>
             
     </div>
   </div>
