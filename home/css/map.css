@@ -128,6 +128,28 @@
     justify-content: center;
   }
 
+  .map-br-002 {
+    top: 56%;
+    left: 21%;
+  }
+  
+  .map-br-002 .map-event-bg {
+    width: 18.6rem; /* 31.0185185185vh 转换为 rem */
+    height: 15.5rem; /* 25.8333333333vh 转换为 rem */
+    background: url('../img/map/002.png') no-repeat center/contain;
+  }
+  
+  .map-br-002 .map-event-title {
+/*     left: 2.8rem !important;
+    top: -0.8rem !important; */
+    top: 56%;
+    left: 21%;
+    width: 12.6rem; /* 21.0185185185vh 转换为 rem */
+    height: 2.4rem; /* 3.9814814815vh 转换为 rem */
+    background: url('../img/map/002-title.png') no-repeat center/contain;
+  }
+
+
   .map-4-1>img{
     width: 95%;
   }
