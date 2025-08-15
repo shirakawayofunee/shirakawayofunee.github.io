@@ -17,20 +17,10 @@
   height: auto;
 }
 
-.intelligence-title {
-  position: absolute;
-  left: 10.2rem; /* 16.9444444444vh 转换为 rem */
-  top: 10.6rem; /* 17.5925925926vh 转换为 rem */
-  width: 3.8rem; /* 6.3888888889vh 转换为 rem */
-  height: 26.1rem; /* 43.5185185185vh 转换为 rem */
-  background: url('../img/intelligence/title.png') no-repeat center/contain;
-  z-index: 9;
-}
-
 .timeline-left {
   position: relative;
-  width: 82.8rem; /* 137.962962963vh 转换为 rem */
   height: 46rem; /* 76.6666666667vh 转换为 rem */
+  width: 68vw;
   margin: 0 auto;
 }
 
