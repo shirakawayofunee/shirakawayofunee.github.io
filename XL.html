@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#F8F7F8" />
+<title>2人雰囲気 - XL</title>
+<meta property="og:type" content="website" />
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+crossorigin="anonymous"
+/>
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+rel="stylesheet"
+/>
+<link rel="stylesheet" href="css/papermask.css" media="(min-device-width:926px)">
+<link rel="stylesheet" href="css/papermaskDetail.css" media="(min-device-width:926px)" />
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #06070d;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* 浮动div的样式 */
+.floating-text {
+  position: fixed; /* 固定定位，相对于浏览器窗口 */
+  top: 2px; /* 距离顶部20像素 */
+      left: 50%; /* 水平居中起始点 */
+      transform: translateX(-50%); /* 向左偏移自身宽度的一半 */
+  background-color: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+  color: white; /* 文字颜色 */
+  padding: 15px; /* 内边距 */
+  border-radius: 5px; /* 圆角 */
+  z-index: 1000; /* 确保在最上层 */
+  max-width: 1920px; /* 最大宽度 */
+  width: 100vw; /* 宽度与视口同宽 */
+      box-sizing: border-box; /* 确保padding不增加总宽度 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+  text-align: left;
+}
+
+.close-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 0 10px;
+  }
+
+  .close-button:hover {
+      color: #ccc; /* 鼠标悬停时变色 */
+  }
+
+.gallery-section {
+  padding: 1%;
+}
+
+.gallery-header {
+  /*             background: #fff; */
+  padding: 30px 0 0 0;
+}
+
+.gallery-header .nav-tabs {
+  background: #06070d;
+  border-bottom: 2px solid #393d45;
+}
+
+.gallery-header .nav-link {
+  font-size: 1.1em;
+  /* 调整字体大小 */
+  font-weight: 400;
+  /* 正常字体粗细 */
+  color: #ccc;
+  padding: 5px 15px;
+}
+
+.gallery-header .nav-link.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+.gallery-container {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  background: #06070d;
+}
+
+.gallery-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.gallery-item {
+  width: 100%;
+  position: relative;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.gallery-item :hover {
+  border: 1px solid #ff005d;
+}
+
+.caption {
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  width: 100%;
+  background: #06070d;
+}
+
+@media (max-width: 992px) {
+  .gallery-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-container {
+    display: block;
+  }
+
+  .gallery-column {
+    margin-bottom: 15px;
+  }
+}
+
+.image-modal .modal-dialog {
+  max-width: 75%;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.image-modal .modal-content {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image-modal .modal-body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.image-modal .modal-image {
+  max-height: 70vh;
+  width: 100%;
+  object-fit: contain;
+}
+
+.image-modal .description {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.1em;
+  color: #666;
+  background: #f8f8f8;
+  width: 100%;
+}
+
+.image-modal .modal-header {
+  border-bottom: none;
+}
+
+.image-modal .btn-close {
+  filter: invert(1);
+}
+
+@media (max-width: 576px) {
+  .image-modal .modal-dialog {
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .image-modal .modal-image {
+    max-height: 60vh;
+  }
+
+  .image-modal .description {
+    font-size: 1em;
+  }
+}
+
+img.lazy {
+  opacity: 0;
+}
+
+img.lazy[src] {
+  opacity: 1;
+}
+</style>
+</head>
+
+<body>
+<!-- <div class="floating-text" id="floatingText">
+  <span>SLの関係についての私の考え：
+  <br>
+  二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
+  <br>ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。
+  <br>
+  二人は師弟、主従、母娘、神と信徒、革命の戦友であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。
+  この絆の核心は、単一のラベルを超えた、もっと深い愛にあるのです。</span>
+<button class="close-button" onclick="document.getElementById('floatingText').style.display='none'">×</button>
+</div> -->
+
+<div class="gallery-section mt-5">
+<div class="gallery-header mb-3">
+  <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab"
+        aria-controls="gallery" aria-selected="true">イラスト</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="dc-tab" data-bs-toggle="tab" href="#dc" role="tab" aria-controls="dc"
+        aria-selected="false">テーマ</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="doodle-tab" data-bs-toggle="tab" href="#doodle" role="tab" aria-controls="doodle"
+        aria-selected="false">落書き</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="manga-tab" data-bs-toggle="tab" href="#manga" role="tab" aria-controls="manga"
+        aria-selected="false">漫画</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="death-tab" data-bs-toggle="tab" href="#death" role="tab" aria-controls="death"
+        aria-selected="false">死后</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="catdw-tab" data-bs-toggle="tab" href="#catdw" role="tab" aria-controls="catdw"
+        aria-selected="false">ふわふわ</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="mansion-tab" data-bs-toggle="tab" href="#mansion" role="tab" aria-controls="mansion"
+        aria-selected="false">邸宅</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="r18g-tab" data-bs-toggle="tab" href="#r18g" role="tab" aria-controls="r18g"
+        aria-selected="false">R18-G</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="nsfw-tab" data-bs-toggle="tab" href="#nsfw" role="tab" aria-controls="nsfw"
+        aria-selected="false">NSFW</a>
+    </li>
+  </ul>
+</div>
+<div class="tab-content" id="galleryTabContent">
+  <div class="tab-pane fade show active" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
+    <div class="gallery-container" id="galleryContainer"></div>
+  </div>
+  <div class="tab-pane fade" id="dc" role="tabpanel" aria-labelledby="dc-tab">
+    <div class="gallery-container" id="dcContainer"></div>
+  </div>
+  <div class="tab-pane fade" id="death" role="tabpanel" aria-labelledby="death-tab">
+    <div class="gallery-container" id="deathContainer"></div>
+  </div>
+  <div class="tab-pane fade" id="manga" role="tabpanel" aria-labelledby="manga-tab">
+    <div class="gallery-container" id="mangaContainer"></div>
+  </div>
+  <div class="tab-pane fade" id="mansion" role="tabpanel" aria-labelledby="mansion-tab">
+    <div class="gallery-container" id="mansionContainer"></div>
+  </div>
+  <div class="tab-pane fade" id="doodle" role="tabpanel" aria-labelledby="doodle-tab">
+    <div class="gallery-container" id="doodleContainer"></div>
+  </div>
+  <div class="tab-pane fade" id="catdw" role="tabpanel" aria-labelledby="catdw-tab">
+    <div class="gallery-container" id="catdwContainer"></div>
+  </div>
+  <div class="tab-pane fade" id="nsfw" role="tabpanel" aria-labelledby="nsfw-tab">
+    <div class="gallery-container" id="nsfwContainer"></div>
+  </div>
+  <div class="tab-pane fade" id="r18g" role="tabpanel" aria-labelledby="r18g-tab">
+    <div class="gallery-container" id="r18gContainer"></div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade image-modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="papermaskDetailTop" data-mouse="small">
+      <img src="#" alt="" data-mouse="small" class="papermaskDetailTop-zoom" id="papermaskDetailTop-zoom">
+    </div>
+
+    <div class="papermaskDetailBottom" data-mouse="mid">
+      <img src="img/paperDetail/b.png" alt="" onclick="papermaskDetailChange(1)">
+      <img src="img/paperDetail/s.png" alt="" onclick="papermaskDetailChange(-1)">
+      <img src="img/paperDetail/a.png" alt="" onclick="papermaskDetailChange(0)">
+      <img src="img/paperDetail/d.png" alt="" onclick="papermaskDetailDown()">
+    </div>
+    <div class="papermaskDetailClose">
+      <img src="img/paperDetail/c.png" alt="" onclick="paperShowHide()">
+    </div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/papermaskDetail.js"></script>
+<script type="text/javascript">
+  var gk_isXlsx = false;
+  var gk_xlsxFileLookup = {};
+  var gk_fileData = {};
+  function filledCell(cell) {
+    return cell !== '' && cell != null;
+  }
+  function loadFileData(filename) {
+  if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+      try {
+          var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+          var firstSheetName = workbook.SheetNames[0];
+          var worksheet = workbook.Sheets[firstSheetName];
+          var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+          var filteredData = jsonData.filter(row => row.some(filledCell));
+          var headerRowIndex = filteredData.findIndex((row, index) =>
+            row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+          );
+          // Fallback
+          if (headerRowIndex === -1 || headerRowIndex > 25) {
+            headerRowIndex = 0;
+          }
+
+          // Convert filtered JSON back to CSV
+          var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+          csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+          return csv;
+      } catch (e) {
+          console.error(e);
+          return "";
+      }
+  }
+  return gk_fileData[filename] || "";
+  }
+
+const galleryImages = [
+  {
+    src: "img/XL/zhuxian1.webp",alt: "Gallery Image 0",description: "メインストーリー/本編",
+  },
+  {
+    src: "img/XL/zhuxian2.jpg",alt: "Gallery Image 0",description: "メインストーリー/本編",
+  },
+  {
+    src: "img/XL/zhuxian3.jpg",alt: "Gallery Image 0",description: "メインストーリー/本編（猫猫バージョン）",
+  },
+  {
+    src: "img/XL/XL1.jpg",
+    alt: "Gallery Image 1",
+    description: "",
+  },
+  {
+    src: "img/XL/XL2.jpg",
+    alt: "Gallery Image 2",
+    description: "",
+  },
+  {
+    src: "img/XL/XL3.jpg",
+    alt: "Gallery Image 3",
+    description: "吸血鬼貴族とその専属の仕立て屋（WIP）",
+  },
+  {
+    src: "img/XL/XL4.jpg",
+    alt: "Gallery Image 4",
+    description: "お姫様抱っこ",
+  },
+  { src: "img/XL/XL5.jpg", alt: "Gallery Image 5", description: "" },
+  { src: "img/XL/XL6.jpg", alt: "Gallery Image 6", description: "" },
+  { src: "img/XL/XL7.jpg", alt: "Gallery Image 7", description: "手繋ぐ" },
+  { src: "img/XL/XL8.jpg", alt: "Gallery Image 8", description: "" },
+  { src: "img/XL/XL9.jpg", alt: "Gallery Image 9", description: "" },
+  { src: "img/XL/XL10.jpg", alt: "Gallery Image 10", description: "" },
+  { src: "img/XL/XL11.jpg", alt: "Gallery Image 11", description: "" },
+  { src: "img/XL/XL12.jpg", alt: "Gallery Image 12", description: "" },
+  { src: "img/XL/XL13.jpg", alt: "Gallery Image 13", description: "" },
+  { src: "img/XL/XL14.jpg", alt: "Gallery Image 14", description: "" },
+  {
+    src: "img/XL/XL15.jpg",
+    alt: "Gallery Image 15",
+    description: "",
+  },
+  { src: "img/XL/XL16.jpg", alt: "Gallery Image 16", description: "" },
+  {
+    src: "img/XL/XL17.jpg",
+    alt: "Gallery Image 17",
+    description: "",
+  },
+  { src: "img/XL/XL18.jpg", alt: "Gallery Image 18", description: "" },
+  { src: "img/XL/XL19.jpg", alt: "Gallery Image 19", description: "" },
+  { src: "img/XL/XL20.jpg", alt: "Gallery Image 20", description: "" },
+  { src: "img/XL/XL21.jpg", alt: "Gallery Image 21", description: "" },
+  { src: "img/XL/XL22.jpg", alt: "Gallery Image 22", description: "" },
+  { src: "img/XL/XL23.jpg", alt: "Gallery Image 22", description: "" },
+];
+
+const dcImages = [
+  { src: "img/DC/DC1.jpg", alt: "DC Image 1", description: "" },
+  { src: "img/DC/DC2.jpg", alt: "DC Image 2", description: "" },
+  { src: "img/DC/DC3.jpg", alt: "DC Image 3", description: "" },
+  { src: "img/DC/DC4.jpg", alt: "DC Image 4", description: "" },
+  { src: "img/DC/DC5.jpg", alt: "DC Image 5", description: "" },
+  { src: "img/DC/chadui1.jpg", alt: "DC Image 6", description: "" },
+  { src: "img/DC/DC6.jpg", alt: "DC Image 6", description: "" },
+  { src: "img/DC/DC7.jpg", alt: "DC Image 7", description: "" },
+  { src: "img/DC/DC8.jpg", alt: "DC Image 8", description: "" },
+  { src: "img/DC/DC9.jpg", alt: "DC Image 9", description: "" },
+  { src: "img/DC/DC10.jpg", alt: "DC Image 10", description: "" },
+  { src: "img/DC/DC11.jpg", alt: "DC Image 11", description: "" },
+  { src: "img/DC/DC12.jpg", alt: "DC Image 12", description: "" },
+  { src: "img/DC/DC13.jpg", alt: "DC Image 13", description: "" },
+  { src: "img/DC/DC14.jpg", alt: "DC Image 14", description: "" },
+  { src: "img/DC/DC15.jpg", alt: "DC Image 15", description: "" },
+  { src: "img/DC/DC16.jpg", alt: "DC Image 16", description: "" },
+];
+
+const deathImages = [
+  { src: "img/Death/death1.jpg", alt: "Death Image 1", description: "" },
+  {
+    src: "img/Death/death2.jpg",
+    alt: "Death Image 2",
+    description: "Lの登場スタイルは、こんな感じ。",
+  },
+  { src: "img/Death/death3.jpg", alt: "Death Image 3", description: "" },
+  { src: "img/Death/death4.jpg", alt: "Death Image 4", description: "" },
+  { src: "img/Death/death5.jpg", alt: "Death Image 5", description: "" },
+  { src: "img/Death/death6.jpg", alt: "Death Image 6", description: "" },
+  { src: "img/Death/death7.jpg", alt: "Death Image 7", description: "" },
+  { src: "img/Death/death8.jpg", alt: "Death Image 8", description: "" },
+  { src: "img/Death/death9.jpg", alt: "Death Image 9", description: "" },
+];
+
+const mangaImages = [
+  { src: "img/XL/MH/1.jpg", alt: "Manga Image 1", description: "本篇BAD END「They can't hurt you anymore.」①" },
+  { src: "img/XL/MH/2.jpg", alt: "Manga Image 2", description: "本篇BAD END「They can't hurt you anymore.」②" },
+  { src: "img/XL/MH/3.jpg", alt: "Manga Image 3", description: "本篇BAD END「They can't hurt you anymore.」③" },
+  { src: "img/XL/MH/4.jpg", alt: "Manga Image 4", description: "「針」" },
+  { src: "img/XL/MH/5.jpg", alt: "Manga Image 5", description: "「針」" },
+  { src: "img/XL/MH/6.jpg", alt: "Manga Image 6", description: "「針」" },
+  { src: "img/XL/MH/7.jpg", alt: "Manga Image 7", description: "AU7" },
+  { src: "img/XL/MH/8.jpg", alt: "Manga Image 8", description: "AU7" },
+  { src: "img/XL/MH/9.jpg", alt: "Manga Image 9", description: "AU7" },
+];
+
+const mansionImages = [
+  { src: "img/FZ/livingroom1.jpg", alt: "Mansion Image 1", description: "living room" },
+  { src: "img/FZ/bed.jpg", alt: "Mansion Image 2", description: "LのBed" },
+  { src: "img/FZ/tailorshop.jpg", alt: "Mansion Image 3", description: "Sの仕立て屋" },
+  { src: "img/FZ/tailorshop.jpg", alt: "Mansion Image 4", description: "Sの仕立て屋" },
+  { src: "img/FZ/tailorshop.jpg", alt: "Mansion Image 5", description: "Sの仕立て屋" },
+  { src: "img/FZ/1.jpg", alt: "Mansion Image 6", description: "" },
+  { src: "img/FZ/2.jpg", alt: "Mansion Image 7", description: "" },
+  { src: "img/FZ/3.jpg", alt: "Mansion Image 8", description: "庭園" },
+  { src: "img/FZ/4.jpg", alt: "Mansion Image 9", description: "" },
+  { src: "img/FZ/6.jpg", alt: "Mansion Image 10", description: "落ち葉" },
+];
+
+const doodleImages = [
+  {
+    src: "img/XL/ty/ty1.jpg",
+    alt: "Doodle Image 1",
+    description: "お姫様抱っこ",
+  },
+  {
+    src: "img/XL/ty/ty2.jpg",
+    alt: "Doodle Image 2",
+    description: "日常",
+  },
+  {
+    src: "img/XL/ty/ty3.jpg",
+    alt: "Doodle Image 3",
+    description: "小さくなった！？",
+  },
+  {
+    src: "img/XL/ty/ty4.jpg",
+    alt: "Doodle Image 4",
+    description: "眠？イチャイチャ",
+  },
+  { src: "img/XL/ty/ty5.jpg", alt: "Doodle Image 5", description: "" },
+  { src: "img/XL/ty/ty6.jpg", alt: "Doodle Image 6", description: "" },
+  {
+    src: "img/XL/ty/ty7.jpg",
+    alt: "Doodle Image 7",
+    description: "Kiss",
+  },
+  {
+    src: "img/XL/ty/ty8.jpg",
+    alt: "Doodle Image 8",
+    description: "甘噛み",
+  },
+  {
+    src: "img/XL/ty/ty9.jpg",
+    alt: "Doodle Image 9",
+    description: "眠る",
+  },
+  {
+    src: "img/XL/ty/ty10.jpg",
+    alt: "Doodle Image 10",
+    description:
+      "二人の子供時代を埋め合わせるため、LはSを遊園地に連れて行く。",
+  },
+  { src: "img/XL/ty/ty11.jpg", alt: "Doodle Image 11", description: "" },
+  {
+    src: "img/XL/ty/ty12.jpg",
+    alt: "Doodle Image 12",
+    description: "いらないわ～",
+  },
+  { src: "img/XL/ty/ty13.jpg", alt: "Doodle Image 13", description: "" },
+  { src: "img/XL/ty/ty14.jpg", alt: "Doodle Image 14", description: "学パロ" },
+];
+
+const catdwImages = [
+  { src: "img/XL/cat/dw1.jpg", alt: "Catdw Image 1", description: "" },
+  { src: "img/XL/cat/dw2.jpg", alt: "Catdw Image 2", description: "" },
+  { src: "img/XL/cat/dw3.jpg", alt: "Catdw Image 3", description: "" },
+  { src: "img/XL/cat/dw4.jpg", alt: "Catdw Image 4", description: "" },
+  { src: "img/XL/cat/dw5.jpg", alt: "Catdw Image 5", description: "" },
+  { src: "img/XL/cat/dw6.jpg", alt: "Catdw Image 6", description: "" },
+  { src: "img/XL/cat/dw7.jpg", alt: "Catdw Image 7", description: "" },
+  { src: "img/XL/cat/dw8.jpg", alt: "Catdw Image 8", description: "" },
+];
+
+const nsfwImages = [
+  { src: "img/XL/nsfw1.jpg", alt: "NSFW Image 1", description: "" },
+  { src: "img/XL/nsfw2.jpg", alt: "NSFW Image 2", description: "体型の設定に誤りがありますので、参考にしないでください。" },
+  { src: "img/XL/nsfw3.jpg", alt: "NSFW Image 3", description: "体型の設定に誤りがありますので、参考にしないでください。" },
+  { src: "img/XL/nsfw4.jpg", alt: "NSFW Image 4", description: "体型華奢" },
+];
+
+const r18gImages = [
+  { src: "img/XL/g1.jpg", alt: "R18-G Image 1", description: "" },
+  { src: "img/XL/g2.jpg", alt: "R18-G Image 2", description: "" },
+/*   { src: "img/XL/g3.jpg", alt: "R18-G Image 3", description: "" }, */
+];
+
+function arrangeWaterfall(containerId, imageArray) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+
+  const width = window.innerWidth;
+  const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+
+  const columns = Array(columnCount)
+    .fill()
+    .map(() => {
+      const col = document.createElement("div");
+      col.className = "gallery-column";
+      container.appendChild(col);
+      return col;
+    });
+
+  imageArray.forEach((image, index) => {
+    const item = document.createElement("div");
+    item.className = "gallery-item";
+
+    const img = document.createElement("img");
+    img.setAttribute("data-src", image.src);
+    img.alt = image.alt;
+    img.className = "img-fluid gallery-image lazy";
+    img.setAttribute("data-bs-toggle", "modal");
+    img.setAttribute("data-bs-target", "#imageModal");
+    img.setAttribute("data-index", index);
+    img.setAttribute("data-description", image.description);
+    img.setAttribute(
+      "data-array",
+      containerId === "galleryContainer"
+        ? "gallery"
+        : containerId === "dcContainer"
+        ? "dc"
+        : containerId === "deathContainer"
+        ? "death"
+        : containerId === "mangaContainer"
+        ? "manga"
+        : containerId === "mansionContainer"
+        ? "mansion"
+        : containerId === "doodleContainer"
+        ? "doodle"
+        : containerId === "catdwContainer"
+        ? "catdw"
+        : containerId === "nsfwContainer"
+        ? "nsfw"
+        : containerId === "r18gContainer"
+        ? "r18g"
+        : ""
+    );
+    img.src =
+      "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+
+    const caption = document.createElement("div");
+    caption.className = "caption";
+    caption.textContent = image.description || "";
+
+    item.appendChild(img);
+    item.appendChild(caption);
+    columns[index % columnCount].appendChild(item);
+
+    img.removeEventListener("click", handleImageClick);
+    img.addEventListener("click", handleImageClick);
+  });
+
+  lazyLoadImages();
+}
+
+function handleImageClick() {
+  const src = this.getAttribute("data-src");
+  const description = this.getAttribute("data-description");
+  currentIndex = parseInt(this.getAttribute("data-index"));
+  currentArray = this.getAttribute("data-array");
+  const modalImage = document.getElementById("papermaskDetailTop-zoom");
+  modalImage.src = src;
+  if (typeof updatePapermaskDetail === 'function') {
+    updatePapermaskDetail(src, description || "暂无说明");
+  }
+}
+
+function initializeTabs() {
+  arrangeWaterfall("galleryContainer", galleryImages);
+  arrangeWaterfall("dcContainer", dcImages);
+  arrangeWaterfall("deathContainer", deathImages);
+  arrangeWaterfall("mangaContainer", mangaImages);
+  arrangeWaterfall("mansionContainer", mansionImages);
+  arrangeWaterfall("doodleContainer", doodleImages);
+  arrangeWaterfall("catdwContainer", catdwImages);
+  arrangeWaterfall("nsfwContainer", nsfwImages);
+  arrangeWaterfall("r18gContainer", r18gImages);
+}
+
+function lazyLoadImages() {
+  const images = document.querySelectorAll("img.lazy");
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.getAttribute("data-src");
+          img.classList.remove("lazy");
+          observer.unobserve(img);
+        }
+      });
+    },
+    {
+      rootMargin: "0px 0px 100px 0px",
+      threshold: 0.1,
+    }
+  );
+
+  images.forEach((img) => observer.observe(img));
+}
+
+document.addEventListener("DOMContentLoaded", initializeTabs);
+window.addEventListener("resize", initializeTabs);
+
+document.querySelectorAll(".nav-link").forEach((tab) => {
+  tab.addEventListener("shown.bs.tab", () => {
+    const target = tab.getAttribute("href").substring(1);
+    if (target === "gallery")
+      arrangeWaterfall("galleryContainer", galleryImages);
+    else if (target === "dc") arrangeWaterfall("dcContainer", dcImages);
+    else if (target === "death")
+      arrangeWaterfall("deathContainer", deathImages);
+    else if (target === "manga")
+      arrangeWaterfall("mangaContainer", mangaImages);
+    else if (target === "mansion")
+      arrangeWaterfall("mansionContainer", mansionImages);
+    else if (target === "doodle")
+      arrangeWaterfall("doodleContainer", doodleImages);
+    else if (target === "catdw")
+      arrangeWaterfall("catdwContainer", catdwImages);
+    else if (target === "nsfw")
+      arrangeWaterfall("nsfwContainer", nsfwImages);
+    else if (target === "r18g")
+      arrangeWaterfall("r18gContainer", r18gImages);
+  });
+});
+
+let currentIndex = 0;
+let currentArray = "gallery";
+
+function papermaskDetailChange(direction) {
+  const array =
+    currentArray === "gallery"
+      ? galleryImages
+      : currentArray === "dc"
+      ? dcImages
+      : currentArray === "death"
+      ? deathImages
+      : currentArray === "manga"
+      ? mangaImages
+      : currentArray === "mansion"
+      ? mansionImages
+      : currentArray === "doodle"
+      ? doodleImages
+      : currentArray === "catdw"
+      ? catdwImages
+      : currentArray === "nsfw"
+      ? nsfwImages
+      : currentArray === "r18g"
+      ? r18gImages
+      : [];
+  if (direction === 1) {
+    currentIndex = (currentIndex + 1) % array.length;
+  } else if (direction === -1) {
+    currentIndex = (currentIndex - 1 + array.length) % array.length;
+  } else if (direction === 0) {
+    currentIndex = 0;
+  }
+  const modalImage = document.getElementById("papermaskDetailTop-zoom");
+  modalImage.src = array[currentIndex].src;
+  if (typeof updatePapermaskDetail === 'function') {
+    updatePapermaskDetail(array[currentIndex].src, array[currentIndex].description || "暂无说明");
+  }
+}
+
+function papermaskDetailDown() {
+  const modal = bootstrap.Modal.getInstance(document.getElementById("imageModal"));
+  if (modal) {
+    modal.hide();
+  }
+}
+
+function paperShowHide() {
+  const modal = bootstrap.Modal.getInstance(document.getElementById("imageModal"));
+  if (modal) {
+    modal.hide();
+  }
+}
+
+document.addEventListener("keydown", function (event) {
+  if (document.getElementById("imageModal").classList.contains("show")) {
+    if (event.key === "ArrowLeft") {
+      papermaskDetailChange(-1);
+    } else if (event.key === "ArrowRight") {
+      papermaskDetailChange(1);
+    }
+  }
+});
+</script>
+</body>
+</html>
