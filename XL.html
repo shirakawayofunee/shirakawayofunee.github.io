@@ -241,16 +241,8 @@ img.lazy[src] {
         aria-selected="false">テーマ</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="doodle-tab" data-bs-toggle="tab" href="#doodle" role="tab" aria-controls="doodle"
-        aria-selected="false">落書き</a>
-    </li>
-    <li class="nav-item">
       <a class="nav-link" id="manga-tab" data-bs-toggle="tab" href="#manga" role="tab" aria-controls="manga"
         aria-selected="false">漫画</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="death-tab" data-bs-toggle="tab" href="#death" role="tab" aria-controls="death"
-        aria-selected="false">死后</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="catdw-tab" data-bs-toggle="tab" href="#catdw" role="tab" aria-controls="catdw"
@@ -260,14 +252,10 @@ img.lazy[src] {
       <a class="nav-link" id="mansion-tab" data-bs-toggle="tab" href="#mansion" role="tab" aria-controls="mansion"
         aria-selected="false">邸宅</a>
     </li>
-    <li class="nav-item">
+<!--     <li class="nav-item">
       <a class="nav-link" id="r18g-tab" data-bs-toggle="tab" href="#r18g" role="tab" aria-controls="r18g"
         aria-selected="false">R18-G</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="nsfw-tab" data-bs-toggle="tab" href="#nsfw" role="tab" aria-controls="nsfw"
-        aria-selected="false">NSFW</a>
-    </li>
+    </li> -->
   </ul>
 </div>
 <div class="tab-content" id="galleryTabContent">
@@ -375,12 +363,12 @@ const galleryImages = [
   {
     src: "img/XL/XL2.jpg",
     alt: "Gallery Image 2",
-    description: "",
+    description: "死の舞踏",
   },
   {
     src: "img/XL/XL3.jpg",
     alt: "Gallery Image 3",
-    description: "吸血鬼貴族とその専属の仕立て屋（WIP）",
+    description: "IF1",
   },
   {
     src: "img/XL/XL4.jpg",
@@ -388,7 +376,7 @@ const galleryImages = [
     description: "お姫様抱っこ",
   },
   { src: "img/XL/XL5.jpg", alt: "Gallery Image 5", description: "" },
-  { src: "img/XL/XL6.jpg", alt: "Gallery Image 6", description: "" },
+  { src: "img/XL/XL6.jpg", alt: "Gallery Image 6", description: "IF2" },
   { src: "img/XL/XL7.jpg", alt: "Gallery Image 7", description: "手繋ぐ" },
   { src: "img/XL/XL8.jpg", alt: "Gallery Image 8", description: "" },
   { src: "img/XL/XL9.jpg", alt: "Gallery Image 9", description: "" },
@@ -397,46 +385,46 @@ const galleryImages = [
   { src: "img/XL/XL12.jpg", alt: "Gallery Image 12", description: "" },
   { src: "img/XL/XL13.jpg", alt: "Gallery Image 13", description: "" },
   { src: "img/XL/XL14.jpg", alt: "Gallery Image 14", description: "" },
-  {
-    src: "img/XL/XL15.jpg",
-    alt: "Gallery Image 15",
-    description: "",
-  },
-  { src: "img/XL/XL16.jpg", alt: "Gallery Image 16", description: "" },
-  {
-    src: "img/XL/XL17.jpg",
-    alt: "Gallery Image 17",
-    description: "",
-  },
-  { src: "img/XL/XL18.jpg", alt: "Gallery Image 18", description: "" },
-  { src: "img/XL/XL19.jpg", alt: "Gallery Image 19", description: "" },
-  { src: "img/XL/XL20.jpg", alt: "Gallery Image 20", description: "" },
-  { src: "img/XL/XL21.jpg", alt: "Gallery Image 21", description: "" },
-  { src: "img/XL/XL22.jpg", alt: "Gallery Image 22", description: "" },
-  { src: "img/XL/XL23.jpg", alt: "Gallery Image 22", description: "" },
+  { src: "img/XL/Halloween.jpg", alt: "Halloween", description: "Halloween！" },
+  { src: "img/XL/IF1.webp", alt: "DC Image 1", description: "牧師と悪魔が禁断の果実をこっそり味わう" },
+  { src: "img/XL/IF2.webp", alt: "DC Image 2", description: "牧師と悪魔AU" },
+  { src: "img/XL/IF3.jpg", alt: "DC Image 3", description: "" },
+  { src: "img/XL/IF4.jpg", alt: "DC Image 4", description: "" },
+  { src: "img/XL/IF5.jpg", alt: "DC Image 5", description: "" },
+  { src: "img/XL/IF6.jpg", alt: "DC Image 6", description: "" },
+  { src: "img/XL/IF7.jpg", alt: "DC Image 7", description: "" },
+  { src: "img/XL/IF8.jpg", alt: "DC Image 8", description: "" },
+  { src: "img/XL/IF9.jpg", alt: "DC Image 9", description: "" },
+  { src: "img/XL/IF10.jpg", alt: "DC Image 10", description: "" },
+  { src: "img/XL/IF11.jpg", alt: "DC Image 11", description: "" },
+  { src: "img/XL/IF12.jpg", alt: "DC Image 12", description: "" },
+  { src: "img/XL/IF13.jpg", alt: "DC Image 13", description: "" },
+  { src: "img/XL/IF14.jpg", alt: "DC Image 14", description: "" },
+  { src: "img/XL/IF15.jpg", alt: "DC Image 15", description: "" },
+  { src: "img/XL/IF16.jpg", alt: "DC Image 16", description: "" },
+  { src: "img/XL/工事中.jpg", alt: "工事中", description: "工事中" },
 ];
 
 const dcImages = [
-  { src: "img/DC/DC1.jpg", alt: "DC Image 1", description: "" },
-  { src: "img/DC/DC2.jpg", alt: "DC Image 2", description: "" },
-  { src: "img/DC/DC3.jpg", alt: "DC Image 3", description: "" },
-  { src: "img/DC/DC4.jpg", alt: "DC Image 4", description: "" },
-  { src: "img/DC/DC5.jpg", alt: "DC Image 5", description: "" },
-  { src: "img/DC/chadui1.jpg", alt: "DC Image 6", description: "" },
-  { src: "img/DC/DC6.jpg", alt: "DC Image 6", description: "" },
-  { src: "img/DC/DC7.jpg", alt: "DC Image 7", description: "" },
-  { src: "img/DC/DC8.jpg", alt: "DC Image 8", description: "" },
-  { src: "img/DC/DC9.jpg", alt: "DC Image 9", description: "" },
-  { src: "img/DC/DC10.jpg", alt: "DC Image 10", description: "" },
-  { src: "img/DC/DC11.jpg", alt: "DC Image 11", description: "" },
-  { src: "img/DC/DC12.jpg", alt: "DC Image 12", description: "" },
-  { src: "img/DC/DC13.jpg", alt: "DC Image 13", description: "" },
-  { src: "img/DC/DC14.jpg", alt: "DC Image 14", description: "" },
-  { src: "img/DC/DC15.jpg", alt: "DC Image 15", description: "" },
-  { src: "img/DC/DC16.jpg", alt: "DC Image 16", description: "" },
+  { src: "img/XL/IF1.webp", alt: "DC Image 1", description: "" },
+  { src: "img/XL/IF2.jpg", alt: "DC Image 2", description: "" },
+  { src: "img/XL/IF3.jpg", alt: "DC Image 3", description: "" },
+  { src: "img/XL/IF4.jpg", alt: "DC Image 4", description: "" },
+  { src: "img/XL/IF5.jpg", alt: "DC Image 5", description: "" },
+  { src: "img/XL/IF6.jpg", alt: "DC Image 6", description: "" },
+  { src: "img/XL/IF7.jpg", alt: "DC Image 7", description: "" },
+  { src: "img/XL/IF8.jpg", alt: "DC Image 8", description: "" },
+  { src: "img/XL/IF9.jpg", alt: "DC Image 9", description: "" },
+  { src: "img/XL/IF10.jpg", alt: "DC Image 10", description: "" },
+  { src: "img/XL/IF11.jpg", alt: "DC Image 11", description: "" },
+  { src: "img/XL/IF12.jpg", alt: "DC Image 12", description: "" },
+  { src: "img/XL/IF13.jpg", alt: "DC Image 13", description: "" },
+  { src: "img/XL/IF14.jpg", alt: "DC Image 14", description: "" },
+  { src: "img/XL/IF15.jpg", alt: "DC Image 15", description: "" },
+  { src: "img/XL/IF16.jpg", alt: "DC Image 16", description: "" },
 ];
 
-const deathImages = [
+/* const deathImages = [
   { src: "img/Death/death1.jpg", alt: "Death Image 1", description: "" },
   {
     src: "img/Death/death2.jpg",
@@ -450,7 +438,7 @@ const deathImages = [
   { src: "img/Death/death7.jpg", alt: "Death Image 7", description: "" },
   { src: "img/Death/death8.jpg", alt: "Death Image 8", description: "" },
   { src: "img/Death/death9.jpg", alt: "Death Image 9", description: "" },
-];
+]; */
 
 const mangaImages = [
   { src: "img/XL/MH/1.jpg", alt: "Manga Image 1", description: "本篇BAD END「They can't hurt you anymore.」①" },
@@ -464,7 +452,7 @@ const mangaImages = [
   { src: "img/XL/MH/9.jpg", alt: "Manga Image 9", description: "AU7" },
 ];
 
-const mansionImages = [
+/* const mansionImages = [
   { src: "img/FZ/livingroom1.jpg", alt: "Mansion Image 1", description: "living room" },
   { src: "img/FZ/bed.jpg", alt: "Mansion Image 2", description: "LのBed" },
   { src: "img/FZ/tailorshop.jpg", alt: "Mansion Image 3", description: "Sの仕立て屋" },
@@ -475,61 +463,7 @@ const mansionImages = [
   { src: "img/FZ/3.jpg", alt: "Mansion Image 8", description: "庭園" },
   { src: "img/FZ/4.jpg", alt: "Mansion Image 9", description: "" },
   { src: "img/FZ/6.jpg", alt: "Mansion Image 10", description: "落ち葉" },
-];
-
-const doodleImages = [
-  {
-    src: "img/XL/ty/ty1.jpg",
-    alt: "Doodle Image 1",
-    description: "お姫様抱っこ",
-  },
-  {
-    src: "img/XL/ty/ty2.jpg",
-    alt: "Doodle Image 2",
-    description: "日常",
-  },
-  {
-    src: "img/XL/ty/ty3.jpg",
-    alt: "Doodle Image 3",
-    description: "小さくなった！？",
-  },
-  {
-    src: "img/XL/ty/ty4.jpg",
-    alt: "Doodle Image 4",
-    description: "眠？イチャイチャ",
-  },
-  { src: "img/XL/ty/ty5.jpg", alt: "Doodle Image 5", description: "" },
-  { src: "img/XL/ty/ty6.jpg", alt: "Doodle Image 6", description: "" },
-  {
-    src: "img/XL/ty/ty7.jpg",
-    alt: "Doodle Image 7",
-    description: "Kiss",
-  },
-  {
-    src: "img/XL/ty/ty8.jpg",
-    alt: "Doodle Image 8",
-    description: "甘噛み",
-  },
-  {
-    src: "img/XL/ty/ty9.jpg",
-    alt: "Doodle Image 9",
-    description: "眠る",
-  },
-  {
-    src: "img/XL/ty/ty10.jpg",
-    alt: "Doodle Image 10",
-    description:
-      "二人の子供時代を埋め合わせるため、LはSを遊園地に連れて行く。",
-  },
-  { src: "img/XL/ty/ty11.jpg", alt: "Doodle Image 11", description: "" },
-  {
-    src: "img/XL/ty/ty12.jpg",
-    alt: "Doodle Image 12",
-    description: "いらないわ～",
-  },
-  { src: "img/XL/ty/ty13.jpg", alt: "Doodle Image 13", description: "" },
-  { src: "img/XL/ty/ty14.jpg", alt: "Doodle Image 14", description: "学パロ" },
-];
+]; */
 
 const catdwImages = [
   { src: "img/XL/cat/dw1.jpg", alt: "Catdw Image 1", description: "" },
@@ -542,17 +476,16 @@ const catdwImages = [
   { src: "img/XL/cat/dw8.jpg", alt: "Catdw Image 8", description: "" },
 ];
 
-const nsfwImages = [
+/* const nsfwImages = [
   { src: "img/XL/nsfw1.jpg", alt: "NSFW Image 1", description: "" },
   { src: "img/XL/nsfw2.jpg", alt: "NSFW Image 2", description: "体型の設定に誤りがありますので、参考にしないでください。" },
   { src: "img/XL/nsfw3.jpg", alt: "NSFW Image 3", description: "体型の設定に誤りがありますので、参考にしないでください。" },
   { src: "img/XL/nsfw4.jpg", alt: "NSFW Image 4", description: "体型華奢" },
-];
+]; */
 
 const r18gImages = [
   { src: "img/XL/g1.jpg", alt: "R18-G Image 1", description: "" },
   { src: "img/XL/g2.jpg", alt: "R18-G Image 2", description: "" },
-/*   { src: "img/XL/g3.jpg", alt: "R18-G Image 3", description: "" }, */
 ];
 
 function arrangeWaterfall(containerId, imageArray) {
