@@ -445,22 +445,26 @@
                 rootMargin: '0px 0px 100px 0px',
                 threshold: 0.1
             });
-    
-            images.forEach(img => observer.observe(img));
-        }
-    
-        document.addEventListener('DOMContentLoaded', initializeTabs);
-        window.addEventListener('resize', initializeTabs);
-    
-        document.querySelectorAll('.nav-link').forEach(tab => {
-            tab.addEventListener('shown.bs.tab', () => {
-                const target = tab.getAttribute('href').substring(1);
-                if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
-                else if (target === 'papaver') arrangeWaterfall('papaverContainer', papaverImages);
-                else if (target === 'sd') arrangeWaterfall('sdContainer', sdImages);
-                else if (target === 'aesthetics') arrangeWaterfall('aestheticsContainer', aestheticsImages);
-            });
-        });
+                    images.forEach(img => observer.observe(img));
+                }
+                document.addEventListener('DOMContentLoaded', () => {
+                    initializeTabs();
+                    document.querySelectorAll('.nav-link').forEach(tab => {
+                        tab.addEventListener('mouseover', () => {
+                            if (!tab.classList.contains('active')) {
+                                const tabInstance = new bootstrap.Tab(tab);
+                                tabInstance.show();
+                            }
+                        });
+                        tab.addEventListener('shown.bs.tab', () => {
+                            const target = tab.getAttribute('href').substring(1);
+                            if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
+                            else if (target === 'papaver') arrangeWaterfall('papaverContainer', papaverImages);
+                            else if (target === 'sd') arrangeWaterfall('sdContainer', sdImages);
+                            else if (target === 'aesthetics') arrangeWaterfall('aestheticsContainer', aestheticsImages);
+                        });
+                    });
+                });
     
         const modalImage = document.getElementById('modalImage');
         const imageDescription = document.getElementById('imageDescription');

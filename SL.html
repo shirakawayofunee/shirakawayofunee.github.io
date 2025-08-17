@@ -670,29 +670,42 @@ function lazyLoadImages() {
   images.forEach((img) => observer.observe(img));
 }
 
-document.addEventListener("DOMContentLoaded", initializeTabs);
-window.addEventListener("resize", initializeTabs);
+document.addEventListener("DOMContentLoaded", () => {
+  initializeTabs();
+  
+  // 添加鼠标悬停和点击事件以切换选项卡
+  document.querySelectorAll(".nav-link").forEach((tab) => {
+    // 鼠标悬停事件
+    tab.addEventListener("mouseover", () => {
+      // 确保不重复触发当前激活的选项卡
+      if (!tab.classList.contains("active")) {
+        const tabInstance = new bootstrap.Tab(tab);
+        tabInstance.show();
+      }
+    });
 
-document.querySelectorAll(".nav-link").forEach((tab) => {
-  tab.addEventListener("shown.bs.tab", () => {
-    const target = tab.getAttribute("href").substring(1);
-    if (target === "gallery")
-      arrangeWaterfall("galleryContainer", galleryImages);
-    else if (target === "dc") arrangeWaterfall("dcContainer", dcImages);
-    else if (target === "death")
-      arrangeWaterfall("deathContainer", deathImages);
-    else if (target === "manga")
-      arrangeWaterfall("mangaContainer", mangaImages);
-    else if (target === "mansion")
-      arrangeWaterfall("mansionContainer", mansionImages);
-    else if (target === "doodle")
-      arrangeWaterfall("doodleContainer", doodleImages);
-    else if (target === "catdw")
-      arrangeWaterfall("catdwContainer", catdwImages);
-    else if (target === "nsfw")
-      arrangeWaterfall("nsfwContainer", nsfwImages);
-    else if (target === "r18g")
-      arrangeWaterfall("r18gContainer", r18gImages);
+    // 点击切换事件
+    tab.addEventListener("shown.bs.tab", () => {
+      const target = tab.getAttribute("href").substring(1);
+      if (target === "gallery")
+        arrangeWaterfall("galleryContainer", galleryImages);
+      else if (target === "dc")
+        arrangeWaterfall("dcContainer", dcImages);
+      else if (target === "death")
+        arrangeWaterfall("deathContainer", deathImages);
+      else if (target === "manga")
+        arrangeWaterfall("mangaContainer", mangaImages);
+      else if (target === "mansion")
+        arrangeWaterfall("mansionContainer", mansionImages);
+      else if (target === "doodle")
+        arrangeWaterfall("doodleContainer", doodleImages);
+      else if (target === "catdw")
+        arrangeWaterfall("catdwContainer", catdwImages);
+      else if (target === "nsfw")
+        arrangeWaterfall("nsfwContainer", nsfwImages);
+      else if (target === "r18g")
+        arrangeWaterfall("r18gContainer", r18gImages);
+    });
   });
 });
 
