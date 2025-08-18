@@ -9,7 +9,8 @@ let characterMsg = [
     str: "能力者、178cm。<br>犯罪組織の主宰者であり、部下たちから恐れられ、崇拝されている存在。<br>年齢に比してあまりにも<span>若々しい顔立ち</span>、過度に白い肌色虞美人の時間は、遠い遠い昔に完全に止まってしまったかのようだ。実年齢不明、60>？？>36。<br>艶やか、常に世を拗ねるような微笑を浮かべている。好き嫌いが激しく、享楽主義者で実用も重んじる、細やかで優しい一面も持っている。<br>落ち着き払った自信に満ちていて、自信かつ優雅な態度を保ち、性格は八方巧み。夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。<br>▍好きなもの<br>性格……孤高でそっけなく、決断力と行動力がある、表で暴虐且つ無慈悲だが、裏は温情に富んで、特に部下に対して。<br>逆鱗……花园<br>得意なこと……「栽培」、死の芸術、美学<br>趣味……、<br>好き……花<br>嫌い……自由が制限されること、無意味な犠牲<br>特技……開花、癒し<br>▍背景<br>Lは幼少期、軍人である両親が前線で命を落としました。その命の価値のない犠牲は「崇高な使命のため」とされましたが、彼女にとってその言葉は無意味で、むしろ規則の虚偽と束縛を感じさせるものでした。両親の死は彼女に反抗心を芽生えさせ、彼女は規則に縛られることを拒み、命を代償に禁断の力と契約を結びました。その力を使って、他の人々が規則から解放され、彼女のように自由に生きる手助けをすることを決意します。<br>▍会話例<br>S「もう二度と家族を失いたくない…」<br>L「Gardenが君の家だよ。私が家族をあげる。」<br>J「あいつは罰を受けるべきだ！」<br>L「なら、徹底的にやりなさい。その仕方を教えてあげるわ。」<br>T「私はもっと強くなりたい！誰にも踏みにじられないように！」<br>L「なら、私を越すか、殺すかを選んで。」<br>L「実現しなさい、復讐しなさい！私の花よ、私のGardenは、自由で、気ままで、縛らずに育つべきだ。邪魔な雑草は、全部刈り取ってしまえばいい。」",
 /*     voice: "./mp3/role/1.mp3", */
     image1: "1-1.png",
-    image2: "1-2.png"
+    image2: "1-2.png",
+    dialogImg: "1-dialog.png"
   },
     {
       bg: "2bg.png",
@@ -20,7 +21,8 @@ let characterMsg = [
       str: "36歳｜能力者｜187cm<br>第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。<br>穏やかな長女のような雰囲気を持ち、幼少期に経験したショックがその後の人格形成に大きな影響を与え、<br>「L＞森羅万象」という極端な価値観を抱えて生きている。家族の風邪を世界中のどんな死亡事故よりも深刻に捉えるようになった。服のボタンはすべて、亡くなった親友の遺骨を磨いて作られた骨のボタンです。<br>裏稼業…………………殺し屋<br>誕生日と命日…………………7月23日<br>▍好きなもの<br>性格……<br>逆鱗……Leopold<br>得意なこと……手芸、毒物学<br>趣味……<br>好き……Leopold、図書館、家族<br>嫌い……手続き的正義、または、遅れてやって来る正義。<br>特技……狙撃、癒し<br>▍背景<br><br>▍SとLの初対面<br>界隈内で数少ない有能な殺し屋として、Lのもとに弟子入りしたがる者は後を絶たず、みな彼女の名声に惹かれ、立派な後ろ盾を得ようと目論んでいる。だが、実際にLに教えを受ければ、疲れや苦しみ、傷つきから死ぬまで至り、どんな目に遭うかは各々の定め。だから、Lが本気で受け入れた弟子はほんのわずかだ。<br>Lは手を振って、猫や犬を呼ぶように気軽に人を呼び寄せた。Sは素直に従い、丁寧に礼をして「師匠」と呼んだ。<br>Sの謙虚な態度の下に抑えきれない憎しみが宿った瞳を見て、Lは笑った。「今の君の目、気に入ったよ。ストレートで、率直で、生きる欲望に満ち溢れている…惨めだけと運良く、愚かだけどどこか冴えていて、脆くも確固たる情熱を抱いてる。」<br>Lは████の方へ振り返り、「この子、いただくよ」と告げた。<br>(1/3)",
 /*       voice: "./mp3/role/2.mp3", */
       image1: "2-1.png",
-      image2: "2-2.png"
+      image2: "2-2.png",
+      dialogImg: "1-dialog.png"
     },
     {
       bg: "3bg.png",
@@ -140,7 +142,7 @@ let characterMsg = [
     });
   }
   
-  function changeCharacter(num) {
+/*   function changeCharacter(num) {
     characterMsg.forEach((v, index) => {
       let id = `.role${index + 1}`;
       $(id).attr("src", `./img/character/${v.nocheck}`);
@@ -167,8 +169,40 @@ let characterMsg = [
     $("#roleSwitching").hide();
     $("#roleImg").data("current", "image1");
     playCharacterVioce(2);
+  } */
+
+  function changeCharacter(num) {
+    characterMsg.forEach((v, index) => {
+      let id = `.role${index + 1}`;
+      $(id).attr("src", `./img/character/${v.nocheck}`);
+    });
+    let data = characterMsg[num];
+    let idM = `.role${num + 1}`;
+    $(idM).attr("src", `./img/character/${data.check}`);
+    $("#roleBg").css("background-image", `url(./img/role/${data.bg})`)
+      .removeClass("animate__animated animate__fadeOut")
+      .addClass("animate__animated animate__fadeIn");
+    $("#roleTitle").prop("src", `./img/role/${data.title}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleStr").html(data.str)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleImg").prop("src", `./img/role/${data.image1}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#dialogLayerImg").prop("src", `./img/role/${data.dialogImg || 'default-dialog.png'}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight"); // 新增
+    $("#roleMusic").prop("src", data.voice);
+    $("#roleButton").removeClass("animate__fadeOutDown")
+      .addClass("animate__fadeInUp");
+    $("#roleSwitch").show();
+    $("#roleSwitching").hide();
+    $("#roleImg").data("current", "image1");
+    playCharacterVioce(2);
   }
-  
+
   function switchCharacterImage() {
     let currentIndex = swipreCharacter.realIndex;
     let data = characterMsg[currentIndex];
@@ -223,9 +257,11 @@ let characterMsg = [
       let imgBg = new Image();
       let img1 = new Image();
       let img2 = new Image();
+      let imgDialog = new Image(); // 新增
       imgBg.src = `./img/role/${v.bg}`;
       img1.src = `./img/role/${v.image1}`;
       img2.src = `./img/role/${v.image2}`;
+      imgDialog.src = `./img/role/${v.dialogImg || 'default-dialog.png'}`; // 新增
     });
   }
 
