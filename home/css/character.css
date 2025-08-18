@@ -6,6 +6,10 @@
   position: relative;
 }
 
+span{
+  color: #e23b78;
+}
+
 .character-left {
   width: 25%;
   height: 100%;
