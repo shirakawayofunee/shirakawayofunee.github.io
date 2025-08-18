@@ -1,0 +1,567 @@
+<div id="conversation13" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="？？" class="avatar">
+                                        <div class="message character-message w12">
+                                            さっきの叫び声、めっちゃ悲惨だったね。悪夢でも見た？ 安心しなよ、君の体にあった汚染は、慈悲深い私が全部抜いてあげたから。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        探偵は体を起こそうとしたが、失敗した。口の中に溜まった血が呼吸を妨げ、辺りは真っ暗――あるいは、まだ視力が戻っていないだけかもしれない。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        彼女の視界には、手元に散らばる黒い金盞花の破片――いや、金盞花の形をした狂厄の汚染が見えた。それが彼女に悪夢の戦いを思い出させた。崩れた壁の下で、彼女は多くの死役と戦い、汚染された。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        だが今、体の陣痛のような痛みを除けば、あの狂乱の感覚はもうない。誰かが彼女の体の汚染を処理してくれたのか？ こんな……花を咲かせるような方法で？
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        暗闇から聞こえるのは、聞き慣れた声。誰かが彼女をじっと見つめている。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="？？" class="avatar">
+                                        <div class="message character-message w12">
+                                            床、硬いよね。ごめんね、怪我人に膝枕でも貸してあげたいところだけど、君、傷だらけでさ。寄りかかったら私の服が汚れちゃうから。ちょっと我慢してね。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        自分の体から漂う腐臭と血の匂いとは違い、辺りには花の香りが漂い、さらさらと水の流れる音が聞こえる。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ここは……どこ？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopoldmy.jpg" alt="？？" class="avatar">
+                                        <div class="message character-message w12">
+                                            私の「Garden」だよ。敵の大本営に着いちゃったね、小さな探偵さん。
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="mb-3">
+                                                                <div class="message narration">
+                                                                    <img src="img/cg/hua_05.png">
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character2">
+                                                                    <img src="img/dh/leopoldmy.jpg" alt="？？" class="avatar">
+                                                                    <div class="message character-message w12">
+                                                                        私のこと、覚えてる？
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character1">
+                                                                    <div class="message character-message w12">
+                                                                        ……覚えてる。犯人。
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character2">
+                                                                    <img src="img/dh/leopoldmy.jpg" alt="業師" class="avatar">
+                                                                    <div class="message character-message w12">
+                                                                        ぷっ、こんな可愛い童顔なんだから、もっと愛らしいこと言ったら？
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message narration">
+                                                                    探偵にそんな気分はなかった。意識は体と同じく重く、ただ一番大事なものをつかみたかった。
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character1">
+                                                                    <div class="message character-message w12">
+                                                                        君の事件……全部10年前の復讐だ。同態復仇……でも、それだけじゃないよね……
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character1">
+                                                                    <div class="message character-message w12">
+                                                                        事件を通じて、私に何かを調べさせたいんだ。10年前の何かを暴きたいんだ……
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character1">
+                                                                    <div class="message character-message w12">
+                                                                        だったら、直接調べさせてよ！ なんでこんなやり方なの！ あと二句の詩、あと二人の命、ここで終わりにして。私、君が望むものを調べるから、もう――
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message narration">
+                                                                    業師が探偵の言葉を遮った。
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character2">
+                                                                    <img src="img/dh/leopoldmy.jpg" alt="業師" class="avatar">
+                                                                    <div class="message character-message w12">
+                                                                        「Garden」は人生を楽しむ場所なんだから、仕事のつまんない話はなしにしてよ。
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character1">
+                                                                    <div class="message character-message w12">
+                                                                        じゃあ、なんで私をここに連れてきた？ 殺す気？ それとも拷問？
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character2">
+                                                                    <img src="img/dh/leopold3.png" alt="業師" class="avatar">
+                                                                    <div class="message character-message w12">
+                                                                        うーん、考えてみる……あ、そうだ。誰かが君を「Garden」に誘おうって言ってたっけ。
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character1">
+                                                                    <div class="message character-message w12">
+                                                                        は？
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character2">
+                                                                    <img src="img/dh/leopoldmy.jpg" alt="業師" class="avatar">
+                                                                    <div class="message character-message w12">
+                                                                        ふふ、可愛い反応。君もFACの可哀想な子なんだから、ここの仲間と挨拶でもしたら？
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character1">
+                                                                    <div class="message character-message w12">
+                                                                        「も」？
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character2">
+                                                                    <img src="img/dh/leopoldmy.jpg" alt="業師" class="avatar">
+                                                                    <div class="message character-message w12">
+                                                                        何年も経って、FACで死んだ人なんて山ほどいる。君と同じ境遇の子供が「Garden」に加わるなんて、普通でしょ？ 彼女たち、君のこと結構気に入ってるよ。
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message narration">
+                                                                    ……復讐のために「Garden」に加わる。探偵はその気持ちをすぐに理解した。彼女は拳をぎゅっと握った。
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character1">
+                                                                    <div class="message character-message w12">
+                                                                        違う……どんな不当な扱いを受けたって、私は他人を傷つけない。正義を信じてる……
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <div class="message-wrapper character2">
+                                                                    <img src="img/dh/leopoldmy.jpg" alt="業師" class="avatar">
+                                                                    <div class="message character-message w12">
+                                                                        何が違うのさ。8年前、君だって一人で涅槃グループに乗り込んで、上庭の代表を刺したじゃない？
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        探偵の呼吸が止まった。その反応に業師はとても満足そうだった。業師は水の中から立ち上がり、全身に水滴をまとった。周囲の刺客たちが群がり、薄いベールを彼女にかけ、浴槽から出るのを手伝い、彼女は終始楽しそうに笑っていた。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の「Garden」に連れてこられても驚きも騒ぎもしない……やっぱり、慣れてるんだね。君の心はずっと真っ暗なところに閉じ込められてる。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        業師は探偵のそばに歩み寄り、身を屈めて獲物を吟味するように眺めた。長い白髪が探偵の顔を撫で、水滴は冷たかった。動きたくても動けない探偵は、相手の鮮やかな赤い目を見つめるしかなかった。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/smile0.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            あの時、何があったの？ 小さい子がそんな大それたことやっちゃうなんて、どれだけ怒ってたの？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/regret.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            刺殺、成功した？憎しみをぶつけた相手、仕留めた？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        探偵は彼女の視線を避け、歯を食いしばり、苦しげに言葉を絞り出した。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ……そんなんじゃない。君には関係ない。話すつもりもない。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/regret.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            じゃあ、刺殺失敗したんだ。残念だね、君、めっちゃ才能あるのに。禁閉者として覚醒までしてる。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/regret.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            刺客として、復讐者として、怒りに燃えてすべてを焼き尽くす者として。君には暴力と破壊の才能がある。ここにいる子たちと同じだ。だからあの女が君をそばに置いてるのよ。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/regret.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            正義なんてやめなよ。それは君のセリーヌ姉さんがでっち上げた嘘、君を縛る鎖にすぎない。君が扱ってる事件がその証拠でしょ？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/regret.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            アナタニアって女、浅はかで虚栄心の塊。道徳の高いところに立って他人を口汚く罵り、人を傷つけたらビビって魂が抜けたみたいになって、数日後にはまた自己弁護して高みに戻る。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/smile0.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            ネイサンだって、汚い手口のシンジケートの野犬。頭の腐った議員に取り入って、どれだけの人命を背負ってるんだ。10年経っても、私が裁かなかったら、誰が裁くの？ 君の正義はどこにあるの？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        弱った探偵はしばらく黙り、業師の目を見つめ直した。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ……そういうこと言うの、君で何人目だ。「世の中が暗いから、正義なんて存在しない。だからちょっとルールを破ってもいいよね」って。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            世界がひどいから、君の悪は許されるって？ ふざけるな！ 自分がやった悪を軽々しく流すなよ。君だってあいつらと同類、汚い仲間だ！ 君も悪の一部だ！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            この城邦で、どれだけの市民が君たちを恐れてるか、どれだけの極悪人が君たちを真似して無垢な人を傷つけてるか、自分でわかってないの？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        業師は笑うでもなく笑みを浮かべ、突然大げさにため息をつき、首を振った。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold3.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            はぁ……聞いた、蓟？ これが君が必死で助けた「同類」だよ。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        灯りがつき、屏風の向こうに傷ついた刺客が現れた。探偵と同年代くらいで、全身傷だらけ。顔は青ざめたり白くなったり、探偵と似た汚れが体についている。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            これは……？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        業師はもう探偵の質問には答えず、蓟の方を向き、嘲るような顔をした。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/smile0.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            死役の山からこいつをせっかく引っ張り出したのに、同じ境遇なら分かり合えると思ったんだろ？ でも、相手には君がただのクズに見える。せっかくの好意が無駄だったね。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/smile0.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            もしこいつが君の情にほだされて、涙を流して優しい言葉をかけてきたら、君、泣きながら「Garden」の全部を差し出しちゃうつもり？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        蓟は業師を見られず、ただ探偵を恨めしそうに睨み、怒りと羞恥、後悔が目に溢れていた。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/thistle.jpg" alt="蓟" class="avatar">
+                                        <div class="message character-message w12">
+                                            ごめんなさい……業師……許してください……
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        だが、謝罪は業師をさらに怒らせただけだった。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/impatient.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            情けない！ 何度も言ったよね、他人をそんな大事にしないって。今さら泣きわめいて何？ 「あ、大丈夫、許すよ」って私が言えば、気が楽になる？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/impatient.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            勝手な行動で私のルールを破り、敵を本拠地に連れ込み、君の気持ちまで私がケアしろって？ 私が君のママなの？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/impatient.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            ムカつく！ せっかくの休息時間、君とその汚い拾い物に台無しにされた。禁閉行き！ 私が機嫌直すまで出てくんな。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            待って――
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        探偵は叫んだが、それは業師に向けたものではなく、泣き出しそうな「Garden」の刺客に向けたものだった。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        彼女は足を止め、振り返って睨んだ。探偵は一瞬、何を言うべきか迷った。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        君が私を助けてくれた？ ありがとう？ 君の家族もFAC？ ごめん、そういうつもりじゃなかった？ こんな女のそばにいるべきじゃない？ 一緒にここから出よう？
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        考える前に、刺客が先に口を開いた。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/thistle2.jpg" alt="蓟" class="avatar">
+                                        <div class="message character-message w12">
+                                            ……死ねばよかったのに、飼い慣らされたクズ！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        蓟は去った。探偵は地面に倒れ、業師は横で面白そうに見つめていた。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/smile0.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            ほら、彼女もFACの遺族だよ。103年で全てを失った。でも、君みたいな後ろ盾はなかった。正義にすがっても、返ってきたのはビンタの嵐だけ。だから私のところに来た。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            そして……君は彼女を利用した。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            最初は地底、次は君……復讐を口実に、傷ついた人たちを騙して利用してる。一無所有の彼女たちを、傷つける刃に変えたんだ。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            彼女の人生が壊れたとしても、人は強い。少しずつ立ち直って、自分を取り戻せたはずだ。でも、君が彼女を闇に引きずり込んだ。今じゃもう戻れない！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        その言葉が終わると同時に、業師が探偵の腹を強く蹴り、重傷の探偵は横の柱に叩きつけられた。鋭い何かが体に突き刺さり、意識が混濁する。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        何か硬いものが頭に押し付けられ、強く圧迫されるのを感じた。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold2.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            吠えるな。執行人がくれるのは立派な正義で、私が与えるのは憎しみの洗脳だと？ 誰を見下してるの？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold2.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            君がどんな奴か、私にはお見通しだ。この世界に復讐する力がないから、一番空っぽなものを救命胴衣みたいにしがみついてるだけ。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold2.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            君みたいなのが一番騙されやすい、一番間抜けで弱いんだ。蓟の馬鹿を目覚めさせるためじゃなきゃ、君のことなんか見向きもしないよ。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold2.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            「Garden」は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold2.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            私たちを傷つけた奴は、当然私が自分で裁く。そうやって奪われたものを自分の手で取り返すの。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            じゃあ……今やってることは何？ この一連の事件、誰に復讐してるの？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold2.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            私の深い恨みはもう自分で片付けた。私は自由だ。今やってることは、全部私が楽しみたいから。で、私が何をしたいかって？ 君の主人に伝えなよ。彼女に私と遊んでもらおうじゃない。これもきっと、彼女が君を送り込んだ目的でしょ。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold2.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            だって……まさか本当に君に事件を解決できるなんて思ってる人、いるわけないよね。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        突然、数本の細い針が飛んできて、探偵の体に刺さった。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            うっ――！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold2.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            リラックスして。これはただの回復剤に、ほんのちょっと精神薬を混ぜただけ。ここから逃げるのに役立つよ。道さえ覚えなきゃ、君の命は取らない。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold2.png" alt="業師" class="avatar">
+                                        <div class="message character-message w12">
+                                            逃げなよ、道端で死なないでね。いい舞台はまだ終わってない。私、君が幕を開けてくれるの、待ってるから。
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
