@@ -87,7 +87,7 @@ span{
 /* PC 端台词例图片 */
 .character-right-left .dialog-layer-img {
   position: absolute;
-  top: 59.5%;
+  top: 55.5%;
   left: 50%;
   transform: translateX(-50%); /* 水平居中 */
   width: 900px; /* 初始宽度 */
