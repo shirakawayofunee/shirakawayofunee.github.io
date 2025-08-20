@@ -34,7 +34,7 @@ let characterMsg = [
       T「私はもっと強くなりたい！誰にも踏みにじられないように！」<br>
       L「なら、私を越すか、殺すかを選んで。」<br>
       L「実現しなさい、復讐しなさい！私の花よ、私のGardenは、自由で、気ままで、縛らずに育つべきだ。邪魔な雑草は、全部刈り取ってしまえばいい。」<br>
-      <a href="https://example.com/role1" target="_blank">查看更多</a>
+      <a href="./duihua0722.html#conversation13" target="_blank">106「业师」</a>
     `,
     image1: "1-1.png",
     image2: "1-2.png",
