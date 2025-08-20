@@ -1,3 +1,11 @@
+/*
+ * @Author: DCBZ
+ * @Date: 2025-02-25 08:45:50
+ * @LastEditors: your name
+ * @LastEditTime: 2025-08-21
+ * @Description: Enhanced music control with auto-play on Swiper slide change and correct button display
+ * @FilePath: \shirakawayofunee.github.io\home\js\musicControls.js
+ */
 var musicTimer;
 
 function muteMusic(num, src) {
@@ -15,41 +23,20 @@ function muteMusic(num, src) {
         console.log('Pausing BGM');
         bgmPlayer.pause();
         bgmPlayer.currentTime = 0; // 重置到开头
-        if (playButton) {
-            console.log('Showing play button (v2c.png), hiding stop button (v2.gif)');
-            playButton.style.display = 'block';
-        } else {
-            console.warn('Play button (.imgMusicStop) not found');
-        }
-        if (stopButton) {
-            stopButton.style.display = 'none';
-        } else {
-            console.warn('Stop button (.imgMusicPlay) not found');
-        }
+        if (playButton) playButton.style.display = 'block';
+        if (stopButton) stopButton.style.display = 'none';
     } else if (num === 2) {
         console.log('Attempting to play BGM, src:', bgmPlayer.src);
         bgmPlayer.play().then(() => {
             console.log('BGM playing successfully');
-            if (playButton) {
-                console.log('Hiding play button (v2c.png), showing stop button (v2.gif)');
-                playButton.style.display = 'none';
-            } else {
-                console.warn('Play button (.imgMusicStop) not found');
-            }
-            if (stopButton) {
-                stopButton.style.display = 'block';
-            } else {
-                console.warn('Stop button (.imgMusicPlay) not found');
-            }
+            if (playButton) playButton.style.display = 'none';
+            if (stopButton) stopButton.style.display = 'block';
             bgmPlayer.muted = false;
         }).catch(e => {
             console.error('BGM auto-play error:', e);
             bgmPlayer.muted = true;
             bgmPlayer.play().catch(e => console.error('Muted BGM play error:', e));
-            if (playButton) {
-                console.log('Auto-play failed, showing play button (v2c.png)');
-                playButton.style.display = 'block';
-            }
+            if (playButton) playButton.style.display = 'block';
             if (stopButton) stopButton.style.display = 'none';
             showPlayPrompt();
         });
