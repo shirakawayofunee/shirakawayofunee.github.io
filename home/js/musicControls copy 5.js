@@ -1,3 +1,11 @@
+/*
+ * @Author: DCBZ
+ * @Date: 2025-02-25 08:45:50
+ * @LastEditors: your name
+ * @LastEditTime: 2025-08-20 23:59:20
+ * @Description: Enhanced music control with auto-play on Swiper slide change and scroll
+ * @FilePath: \shirakawayofunee.github.io\home\js\musicControls.js
+ */
 var musicTimer;
 
 function muteMusic(num, src) {
@@ -15,41 +23,20 @@ function muteMusic(num, src) {
         console.log('Pausing BGM');
         bgmPlayer.pause();
         bgmPlayer.currentTime = 0; // 重置到开头
-        if (playButton) {
-            console.log('Showing play button (v2c.png), hiding stop button (v2.gif)');
-            playButton.style.display = 'block';
-        } else {
-            console.warn('Play button (.imgMusicStop) not found');
-        }
-        if (stopButton) {
-            stopButton.style.display = 'none';
-        } else {
-            console.warn('Stop button (.imgMusicPlay) not found');
-        }
+        if (playButton) playButton.style.display = 'block';
+        if (stopButton) stopButton.style.display = 'none';
     } else if (num === 2) {
         console.log('Attempting to play BGM, src:', bgmPlayer.src);
         bgmPlayer.play().then(() => {
             console.log('BGM playing successfully');
-            if (playButton) {
-                console.log('Hiding play button (v2c.png), showing stop button (v2.gif)');
-                playButton.style.display = 'none';
-            } else {
-                console.warn('Play button (.imgMusicStop) not found');
-            }
-            if (stopButton) {
-                stopButton.style.display = 'block';
-            } else {
-                console.warn('Stop button (.imgMusicPlay) not found');
-            }
+            if (playButton) playButton.style.display = 'none';
+            if (stopButton) stopButton.style.display = 'block';
             bgmPlayer.muted = false;
         }).catch(e => {
             console.error('BGM auto-play error:', e);
             bgmPlayer.muted = true;
             bgmPlayer.play().catch(e => console.error('Muted BGM play error:', e));
-            if (playButton) {
-                console.log('Auto-play failed, showing play button (v2c.png)');
-                playButton.style.display = 'block';
-            }
+            if (playButton) playButton.style.display = 'block';
             if (stopButton) stopButton.style.display = 'none';
             showPlayPrompt();
         });
@@ -59,10 +46,8 @@ function muteMusic(num, src) {
 function changeGalleryMusic(type) {
     if (type === "play") {
         muteMusic(1);
-        const musicZ = document.querySelector('.music-z');
-        const musicPc = document.querySelector('.music-pc');
-        if (musicZ) musicZ.style.display = 'block';
-        if (musicPc) musicPc.style.display = 'none';
+        document.querySelector('.music-z').style.display = 'block';
+        document.querySelector('.music-pc').style.display = 'none';
         const allMusic = document.getElementById('allMusic');
         if (allMusic) {
             allMusic.play().catch(e => console.error('allMusic play error:', e));
@@ -75,10 +60,8 @@ function changeGalleryMusic(type) {
         if (topRecordMobile) topRecordMobile.classList.add('music-rotate');
         musicTimer = setInterval(changeMusicProgress, 500);
     } else if (type === "stop") {
-        const musicZ = document.querySelector('.music-z');
-        const musicPc = document.querySelector('.music-pc');
-        if (musicZ) musicZ.style.display = 'none';
-        if (musicPc) musicPc.style.display = 'block';
+        document.querySelector('.music-z').style.display = 'none';
+        document.querySelector('.music-pc').style.display = 'block';
         const allMusic = document.getElementById('allMusic');
         if (allMusic) allMusic.pause();
         const leftRecord = document.querySelector('.musicmaskDetail-con-left-record');
@@ -96,10 +79,8 @@ function changeMusicProgress() {
         return;
     }
     if (allMusic.ended) {
-        const musicZ = document.querySelector('.music-z');
-        const musicPc = document.querySelector('.music-pc');
-        if (musicZ) musicZ.style.display = 'none';
-        if (musicPc) musicPc.style.display = 'block';
+        document.querySelector('.music-z').style.display = 'none';
+        document.querySelector('.music-pc').style.display = 'block';
         const leftRecord = document.querySelector('.musicmaskDetail-con-left-record');
         const topRecordMobile = document.querySelector('.musicmaskDetail-con-top-record-mobile');
         if (leftRecord) leftRecord.classList.remove('music-rotate');
