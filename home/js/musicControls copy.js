@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-08-22 03:09:44
+ * @LastEditTime: 2025-08-21
  * @Description: Enhanced music control with auto-play on Swiper slide change and correct button display
  * @FilePath: \shirakawayofunee.github.io\home\js\musicControls.js
  */
@@ -10,40 +10,34 @@ var musicTimer;
 
 function muteMusic(num, src) {
     const bgmPlayer = document.getElementById('bgm');
-    const playButtons = document.querySelectorAll('.imgMusicStop'); // 选择所有播放按钮
-    const stopButtons = document.querySelectorAll('.imgMusicPlay'); // 选择所有暂停按钮
+    const playButton = document.querySelector('.imgMusicStop'); // v2c.png (播放按钮)
+    const stopButton = document.querySelector('.imgMusicPlay'); // v2.gif (暂停按钮)
 
     if (!bgmPlayer) {
         console.error('Audio element #bgm not found');
         return;
     }
-    if (!bgmPlayer.src || bgmPlayer.src === window.location.href) {
-        console.error('Audio source is empty or invalid');
-        return;
-    }
     if (src) bgmPlayer.src = src;
-
-    console.log('muteMusic called with num:', num);
 
     if (num === 1) {
         console.log('Pausing BGM');
         bgmPlayer.pause();
         bgmPlayer.currentTime = 0; // 重置到开头
-        playButtons.forEach(button => button.style.display = 'block');
-        stopButtons.forEach(button => button.style.display = 'none');
+        if (playButton) playButton.style.display = 'block';
+        if (stopButton) stopButton.style.display = 'none';
     } else if (num === 2) {
         console.log('Attempting to play BGM, src:', bgmPlayer.src);
         bgmPlayer.play().then(() => {
             console.log('BGM playing successfully');
-            playButtons.forEach(button => button.style.display = 'none');
-            stopButtons.forEach(button => button.style.display = 'block');
+            if (playButton) playButton.style.display = 'none';
+            if (stopButton) stopButton.style.display = 'block';
             bgmPlayer.muted = false;
         }).catch(e => {
             console.error('BGM auto-play error:', e);
             bgmPlayer.muted = true;
             bgmPlayer.play().catch(e => console.error('Muted BGM play error:', e));
-            playButtons.forEach(button => button.style.display = 'block');
-            stopButtons.forEach(button => button.style.display = 'none');
+            if (playButton) playButton.style.display = 'block';
+            if (stopButton) stopButton.style.display = 'none';
             showPlayPrompt();
         });
     }

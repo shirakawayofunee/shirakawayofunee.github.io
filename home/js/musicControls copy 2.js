@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-08-22 03:09:44
+ * @LastEditTime: 2025-08-22 02:58:18
  * @Description: Enhanced music control with auto-play on Swiper slide change and correct button display
  * @FilePath: \shirakawayofunee.github.io\home\js\musicControls.js
  */
