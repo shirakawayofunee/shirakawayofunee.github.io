@@ -134,8 +134,8 @@
   }
   
   .map-br-004 .map-event-bg {
-    width: 18.6rem; /* 31.0185185185vh 转换为 rem */
-    height: 15.5rem; /* 25.8333333333vh 转换为 rem */
+    height: 27vh;
+    width: 21vw;
     background: url('../img/map/004.png') no-repeat center/contain;
   }
   
@@ -146,8 +146,8 @@
   }
   
   .map-br-006 .map-event-bg {
-    height: 32vh;
-    width: 25vw;
+    height: 28vh;
+    width: 24vw;
     background: url('../img/map/006.png') no-repeat center/contain;
   }
 
