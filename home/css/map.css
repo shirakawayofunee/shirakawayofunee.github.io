@@ -134,12 +134,23 @@
   }
   
   .map-br-002 .map-event-bg {
-    width: 18.6rem; /* 31.0185185185vh 转换为 rem */
-    height: 15.5rem; /* 25.8333333333vh 转换为 rem */
+    width: 30vw;
+    height: 40vh;
     background: url('../img/map/002.png') no-repeat center/contain;
   }
   
-  .map-br-002 .map-event-title {
+  .map-br-004 {
+    top: 56%;
+    left: 21%;
+  }
+  
+  .map-br-004 .map-event-bg {
+    width: 18.6rem; /* 31.0185185185vh 转换为 rem */
+    height: 15.5rem; /* 25.8333333333vh 转换为 rem */
+    background: url('../img/map/004.png') no-repeat center/contain;
+  }
+  
+  .map-br-004 .map-event-title {
 /*     left: 2.8rem !important;
     top: -0.8rem !important; */
     top: 56%;
@@ -148,6 +159,20 @@
     height: 2.4rem; /* 3.9814814815vh 转换为 rem */
     background: url('../img/map/002-title.png') no-repeat center/contain;
   }
+
+
+  .map-br-006 {
+    top: 26%;
+    right: 21%;
+  }
+  
+  .map-br-006 .map-event-bg {
+    width: 30vw;
+    height: 40vh;
+    background: url('../img/map/006.png') no-repeat center/contain;
+  }
+
+  
 
 
   .map-4-1>img{
