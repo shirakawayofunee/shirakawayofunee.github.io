@@ -20,7 +20,7 @@
 .timeline-left {
   position: relative;
   height: 46rem; /* 76.6666666667vh 转换为 rem */
-  width: 68vw;
+  width: 48vw;
   margin: 0 auto;
 }
 
