@@ -1,25 +1,38 @@
-/*
- * @Author: DCBZ
- * @Date: 2025-08-22 17:51:18
- * @LastEditors: your name
- * @LastEditTime: 2025-08-22 17:51:49
- * @Description: 
- * @FilePath: \shirakawayofunee.github.io\home\js\chapter.js
- */
+
 document.addEventListener('DOMContentLoaded', () => {
-    // 预加载背景图
-    const images = [
-      'img/flower/bg1.png', 'img/flower/bg2.png', 'img/flower/bg3.png', 'img/flower/bg4.png',
-      'img/flower/bg1-mobile.png', 'img/flower/bg2-mobile.png', 'img/flower/bg3-mobile.png', 'img/flower/bg4-mobile.png',
-      'img/flower/1-1.png', 'img/flower/1-2.png', 'img/flower/1-3.png',
-      'img/flower/2-1.png', 'img/flower/2-2.png', 'img/flower/2-3.png',
-      'img/flower/3-1.png', 'img/flower/3-2.png', 'img/flower/3-3.png',
-      'img/flower/4-1.png', 'img/flower/4-2.png', 'img/flower/4-3.png'
-    ];
-    images.forEach(src => {
-      new Image().src = src;
+  const images = [
+    'img/flower/bg1.png', 'img/flower/bg2.png', 'img/flower/bg3.png', 'img/flower/bg4.png',
+    'img/flower/bg1-mobile.png', 'img/flower/bg2-mobile.png', 'img/flower/bg3-mobile.png', 'img/flower/bg4-mobile.png',
+    'img/flower/1-1.png', 'img/flower/1-2.png', 'img/flower/1-3.png',
+    'img/flower/2-1.png', 'img/flower/2-2.png', 'img/flower/2-3.png',
+    'img/flower/3-1.png', 'img/flower/3-2.png', 'img/flower/3-3.png',
+    'img/flower/4-1.png', 'img/flower/4-2.png', 'img/flower/4-3.png'
+  ];
+  images.forEach(src => {
+    new Image().src = src;
+  });
+
+  // 使用 requestAnimationFrame 替代 setTimeout，确保 DOM 渲染完成
+  function initializeConnectors() {
+    requestAnimationFrame(() => {
+      const slides = document.querySelectorAll('.chapter-slide, .chapter-slide-mobile');
+      if (!slides.length) {
+        console.warn('No slides found, retrying...');
+        setTimeout(initializeConnectors, 500); // 重试
+        return;
+      }
+      addConnectors('.chapter-slide', '1', 3);
+      addConnectors('.chapter-slide', '2', 3);
+      addConnectors('.chapter-slide', '3', 3);
+      addConnectors('.chapter-slide', '4', 4);
+      addConnectors('.chapter-slide-mobile', '1', 3);
+      addConnectors('.chapter-slide-mobile', '2', 3);
+      addConnectors('.chapter-slide-mobile', '3', 3);
+      addConnectors('.chapter-slide-mobile', '4', 4);
     });
-  
+  }
+
+
     // 初始化 PC 端 Swiper
     const chapterSwiper = new Swiper('#chapterSwiper', {
       loop: true,

@@ -41,10 +41,9 @@ function openEventmask(chapterId) {
       // 大章节1
       'chapter1-1': 'duihua0722.html#conversation8',
       'chapter1-2': 'duihua0722.html#conversation9',
-      'chapter1-3': 'duihua0722.html#conversation10',
-      'chapter1-4': 'duihua0722.html#conversation11',
-      'chapter1-5': 'duihua0722.html#conversation12',
-      'chapter1-6': 'duihua0722.html#conversation13',
+      'chapter1-3': 'duihua0722.html#conversation11',
+      'chapter1-4': 'duihua0722.html#conversation12',
+      'chapter1-5': 'duihua0722.html#conversation13',
       // 大章节2
       'chapter2-1': 'duihua0722.html#conversation14',
       'chapter2-2': 'duihua0722.html#conversation15',
@@ -59,8 +58,8 @@ function openEventmask(chapterId) {
       'chapter3-4': 'duihua0722.html#conversation23',
       'chapter3-5': 'duihua0722.html#conversation24',
       'chapter3-6': 'duihua0722.html#conversation25',
-      'chapter4-1': 'duihua0722.html#conversation26',
-      'chapter4-2': 'duihua0722.html#conversation27',
+      'chapter3-1': 'duihua0722.html#conversation26',
+      'chapter3-2': 'duihua0722.html#conversation27',
       // 大章节4
       'chapter4-1': 'duihua0722.html#conversation28',
       'chapter4-2': 'duihua0722.html#conversation29',
