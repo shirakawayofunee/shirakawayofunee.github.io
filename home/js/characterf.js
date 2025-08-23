@@ -47,6 +47,26 @@ let characterMsg = [
       nocheck: "2.png",
       check: "2c.png",
       title: "2t.png",
+      str: `能力者。廃棄期限まであと一ヶ月しかない人造人は、上庭を裏切る準備をしており、自身を廃棄から免れるための計画を実行中です。<br>
+      腹黒く鬼畜で、目的のためには手段を選ばず、自らも含めた犠牲を厭わないほどです。<br>
+      Lが何十年も育った弟子たちをすべて殺した。なぜなら、Lはその計画において欠かせない、唯一無二の存在だ。<br>
+      Lとの戦いの中で感情の亀裂が生じ、再び感情を取り戻し、Lに恋をする。<br>
+      XはLの人柄と行動を高く評価している。<br>
+      「——使用期限内に、こっそり壊れてしまった道具にすぎないよ。」<br>
+      「これが君が命と引き換えに得た力なんだ。流れるすべての未来を犠牲にして、絶対的な強さと自由を手に入れたんだ。
+      ここまで辿り着けるのは君だけだ。本当に見事だ。君がこれほどまでに強く反骨精神を持っていてくれてありがとう……君なら勝てると分かっていたよ。」
+      <br>工事中",
+      `,
+      image1: "2-1.png",
+      image2: "2-2.png",
+      dialogImg: "2-dialog.png"
+    },
+    {
+      bg: "3bg.png",
+      rolem: "3m.png",
+      nocheck: "3.png",
+      check: "3c.png",
+      title: "3t.png",
       str: `36歳｜能力者｜187cm<br>
       第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。<br>
       穏やかな長女のような雰囲気を持ち、幼少期に経験したショックがその後の人格形成に大きな影響を与え、<br>
@@ -71,27 +91,7 @@ let characterMsg = [
       「今の君の目、気に入ったよ。ストレートで、率直で、生きる欲望に満ち溢れている…惨めだけと運良く、愚かだけどどこか冴えていて、脆くも確固たる情熱を抱いてる。」
       <br>Lは████の方へ振り返り、「この子、いただくよ」と告げた。<br>(1/3)",
       `,
-      /*       voice: "./mp3/role/2.mp3", */
-      image1: "2-1.png",
-      image2: "2-2.png",
-      dialogImg: "2-dialog.png"
-    },
-    {
-      bg: "3bg.png",
-      rolem: "3m.png",
-      nocheck: "3.png",
-      check: "3c.png",
-      title: "3t.png",
-      str: `能力者<br>
-      X「君、ほんと自由に生きてるな。普通の人はこんな風にすぐ仇を討ったりしないよ。敵が増えるのを恐れ、身近な人まで巻き込まれるのを…
-      復讐の代償に怯えるものだ。君は？そんなもの気にしない？君の部下はどうだい？」<br>L「仇を仇で返しあったらきりがないってことか？
-      私に復讐しに来る奴も、復讐を頼む奴も、数え切れないほどいるよ。今さら君が大義を語るつもり？私が正直で善良で大人しくしてたら、私を放っておいてくれるわけ？
-      違うだろ。君たちが遠慮するのは、私が来た奴を容赦なく殺すからだろう。<br>血の償いは血で返す。今から教えてやろうか？」
-      <br>X「ハハ、それは失礼。君のような強者は、確かに好き勝手やる資格があるよ。」
-      <br>Xは両者の激戦中に舞い落ちるLが作り出した結晶の花びらを受け止め、それを軽く揉みながら、どこか愛でるように眺めた。(2/3)
-      <br>工事中
-      `,
-      /*       voice: "./mp3/role/3.mp3", */
+      /*       voice: "./mp3/rolef/3.mp3", */
       image1: "3-1.png",
       image2: "3-2.png",
       dialogImg: "3-dialog.png"
@@ -102,9 +102,16 @@ let characterMsg = [
       nocheck: "4.png",
       check: "4c.png",
       title: "4t.png",
-      str: `能力者<br>「嘲り、貪欲、興味本位…そんな視線なら嫌というほど見てきた。でも、あなたの目は違う。あなたの目には、私が売り物のような道具じゃなく…対等な人間で映ってる。」<br>（2/3)<br>工事中",
-/*       voice: "./mp3/role/4.mp3", */
-`,
+      str: `「福音地」のリーダー。Lの元上司であり、深い関係がある。それはまた別の長い物語だ。<br>
+      人外、七十歳の老婆の姿で地上を歩く（他の年齢の姿もあり）。<br>
+      メンバー同士にケアなど一切なし、互いに独立し、生死は自己責任。<br>
+      彼らを一つに結びつけているのは、ある種の宿願である。それに身を捧げることはむしろ名誉とされている。<br>
+      ▍会話例<br>
+      「また会えて本当に嬉しいよ。君に出会った時もこうやって連れて帰ったんだよね。また一緒に来てくれる？」<br>
+      「君の裏切りに気を悪くした人たちのほとんどはもう犠牲になって、今ならもう一度チャンスをあげられるよ。」<br>
+      L「……いつも私のことわかってるふりしてたでしょう？今さらそんなこと言うの…。」<br>
+      L「地上の人間はみんな自分思いで、己の縄張りを守るのに必死で、せいぜい周りの数人をかばうくらい…。私だってそんなちっぽけな人間だよ。君の壮大な宿願にふさわしくないさ。」",
+      `,
       image1: "4-1.png",
       image2: "4-2.png",
       dialogImg: "4-dialog.png"
@@ -137,7 +144,7 @@ let characterMsg = [
       「これが君が命と引き換えに得た力なんだ。流れるすべての未来を犠牲にして、絶対的な強さと自由を手に入れたんだ。
       ここまで辿り着けるのは君だけだ。本当に見事だ。君がこれほどまでに強く反骨精神を持っていてくれてありがとう……君なら勝てると分かっていたよ。」
       <br>工事中",
-      `,/*       voice: "./mp3/role/6.mp3", */
+      `,
       image1: "6-1.png",
       image2: "6-2.png",
       dialogImg: "6-dialog.png"
@@ -149,7 +156,7 @@ let characterMsg = [
       check: "7c.png",
       title: "7t.png",
       str: `能力者。Lの弟子の一人で、数年前にある理由で離反した。<br>今の外部の大混乱で、依頼人として戻り、Lに助けを懇願している。<br><br>工事中",
-      `,/*       voice: "./mp3/role/7.mp3", */
+      `,/*       voice: "./mp3/rolef/7.mp3", */
       image1: "7-1.png",
       image2: "7-2.png",
       dialogImg: "7-dialog.png"
@@ -228,56 +235,29 @@ let characterMsg = [
     });
   }
   
-/*   function changeCharacter(num) {
-    characterMsg.forEach((v, index) => {
-      let id = `.role${index + 1}`;
-      $(id).attr("src", `./img/character/${v.nocheck}`);
-    });
-    let data = characterMsg[num];
-    let idM = `.role${num + 1}`;
-    $(idM).attr("src", `./img/character/${data.check}`);
-    $("#roleBg").css("background-image", `url(./img/role/${data.bg})`)
-      .removeClass("animate__animated animate__fadeOut")
-      .addClass("animate__animated animate__fadeIn");
-    $("#roleTitle").prop("src", `./img/role/${data.title}`)
-      .removeClass("characterFadeOutLeft")
-      .addClass("characterFadeInRight");
-    $("#roleStr").html(data.str)
-      .removeClass("characterFadeOutLeft")
-      .addClass("characterFadeInRight");
-    $("#roleImg").prop("src", `./img/role/${data.image1}`)
-      .removeClass("characterFadeOutLeft")
-      .addClass("characterFadeInRight");
-    $("#roleMusic").prop("src", data.voice);
-    $("#roleButton").removeClass("animate__fadeOutDown")
-      .addClass("animate__fadeInUp");
-    $("#roleSwitch").show();
-    $("#roleSwitching").hide();
-    $("#roleImg").data("current", "image1");
-    playCharacterVioce(2);
-  } */
+
 
   function changeCharacter(num) {
     characterMsg.forEach((v, index) => {
       let id = `.role${index + 1}`;
-      $(id).attr("src", `./img/character/${v.nocheck}`);
+      $(id).attr("src", `./img/characterf/${v.nocheck}`);
     });
     let data = characterMsg[num];
     let idM = `.role${num + 1}`;
-    $(idM).attr("src", `./img/character/${data.check}`);
-    $("#roleBg").css("background-image", `url(./img/role/${data.bg})`)
+    $(idM).attr("src", `./img/characterf/${data.check}`);
+    $("#roleBg").css("background-image", `url(./img/rolef/${data.bg})`)
       .removeClass("animate__animated animate__fadeOut")
       .addClass("animate__animated animate__fadeIn");
-    $("#roleTitle").prop("src", `./img/role/${data.title}`)
+    $("#roleTitle").prop("src", `./img/rolef/${data.title}`)
       .removeClass("characterFadeOutLeft")
       .addClass("characterFadeInRight");
     $("#roleStr").html(data.str)
       .removeClass("characterFadeOutLeft")
       .addClass("characterFadeInRight");
-    $("#roleImg").prop("src", `./img/role/${data.image1}`)
+    $("#roleImg").prop("src", `./img/rolef/${data.image1}`)
       .removeClass("characterFadeOutLeft")
       .addClass("characterFadeInRight");
-    $("#dialogLayerImg").prop("src", `./img/role/${data.dialogImg || 'default-dialog.png'}`)
+    $("#dialogLayerImg").prop("src", `./img/rolef/${data.dialogImg || 'default-dialog.png'}`)
       .removeClass("characterFadeOutLeft")
       .addClass("characterFadeInRight"); // 新增
     $("#roleMusic").prop("src", data.voice);
@@ -294,14 +274,14 @@ let characterMsg = [
     let data = characterMsg[currentIndex];
     let currentImg = $("#roleImg").data("current");
     if (currentImg === "image1") {
-      $("#roleImg").prop("src", `./img/role/${data.image2}`)
+      $("#roleImg").prop("src", `./img/rolef/${data.image2}`)
         .removeClass("characterFadeOutLeft")
         .addClass("characterFadeInRight");
       $("#roleImg").data("current", "image2");
       $("#roleSwitch").hide();
       $("#roleSwitching").show();
     } else {
-      $("#roleImg").prop("src", `./img/role/${data.image1}`)
+      $("#roleImg").prop("src", `./img/rolef/${data.image1}`)
         .removeClass("characterFadeOutLeft")
         .addClass("characterFadeInRight");
       $("#roleImg").data("current", "image1");
@@ -344,10 +324,10 @@ let characterMsg = [
       let img1 = new Image();
       let img2 = new Image();
       let imgDialog = new Image(); // 新增
-      imgBg.src = `./img/role/${v.bg}`;
-      img1.src = `./img/role/${v.image1}`;
-      img2.src = `./img/role/${v.image2}`;
-      imgDialog.src = `./img/role/${v.dialogImg || 'default-dialog.png'}`; // 新增
+      imgBg.src = `./img/rolef/${v.bg}`;
+      img1.src = `./img/rolef/${v.image1}`;
+      img2.src = `./img/rolef/${v.image2}`;
+      imgDialog.src = `./img/rolef/${v.dialogImg || 'default-dialog.png'}`; // 新增
     });
   }
 
