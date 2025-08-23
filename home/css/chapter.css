@@ -125,6 +125,20 @@
   .chapter-2-3 .chapter-event-bg {
     background-image: url('../img/flower/2-3.png');
   }
+  .chapter-2-4 {
+    top: 50%;
+    left: 50%;
+  }
+  .chapter-2-4 .chapter-event-bg {
+    background-image: url('../img/flower/2-4.png');
+  }
+  .chapter-2-5 {
+    top: 50%;
+    left: 50%;
+  }
+  .chapter-2-5 .chapter-event-bg {
+    background-image: url('../img/flower/2-5.png');
+  }
 
   
   /* 第三章 marker 定位和背景 */
