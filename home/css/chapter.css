@@ -101,8 +101,8 @@
   
   /* 第二章 marker 定位和背景 */
   .chapter-2-1 {
-    top: 45%;
-    left: 10%;
+    top: 41%;
+    left: 21%;
   }
   .chapter-2-1 .chapter-event-bg {
     background-image: url('../img/flower/2-1.png');
@@ -110,40 +110,56 @@
 
   
   .chapter-2-2 {
-    top: 55%;
-    left: 20%;
+    top: 75%;
+    left: 35%;
   }
   .chapter-2-2 .chapter-event-bg {
     background-image: url('../img/flower/2-2.png');
+    height: 44vh;
+    width: 35vw;
   }
 
-  
   .chapter-2-3 {
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    left: 43%;
   }
   .chapter-2-3 .chapter-event-bg {
     background-image: url('../img/flower/2-3.png');
+    height: 44vh;
+    width: 35vw;
   }
   .chapter-2-4 {
-    top: 50%;
-    left: 50%;
+    top: 75%;
+    left: 59%;
   }
   .chapter-2-4 .chapter-event-bg {
     background-image: url('../img/flower/2-4.png');
+    height: 44vh;
+    width: 35vw;
   }
   .chapter-2-5 {
-    top: 50%;
-    left: 50%;
+    top: 27%;
+    left: 64%;
   }
   .chapter-2-5 .chapter-event-bg {
     background-image: url('../img/flower/2-5.png');
+    height: 36vh;
+    width: 33vw;
+  }
+  .chapter-2-6 {
+    top: 55%;
+    left: 83%;
+  }
+  .chapter-2-6 .chapter-event-bg {
+    background-image: url('../img/flower/2-6.png');
+    height: 39vh;
+    width: 31vw;
   }
 
   
   /* 第三章 marker 定位和背景 */
   .chapter-3-1 {
-    top: 40%;
+    top: 30%;
     left: 20%;
   }
   .chapter-3-1 .chapter-event-bg {
@@ -151,21 +167,40 @@
   }
 
   .chapter-3-2 {
-    top: 50%;
+    top: 71%;
     left: 30%;
   }
   .chapter-3-2 .chapter-event-bg {
     background-image: url('../img/flower/3-2.png');
+    height: 44vh;
+    width: 35vw;
   }
 
   
   .chapter-3-3 {
-
-    top: 55%;
+    top: 36%;
     left: 50%;
   }
   .chapter-3-3 .chapter-event-bg {
     background-image: url('../img/flower/3-3.png');
+    height: 42vh;
+    width: 35vw;
+  }
+  .chapter-3-4 {
+    top: 74%;
+    left: 65%;
+  }
+  .chapter-3-4 .chapter-event-bg {
+    background-image: url('../img/flower/3-4.png');
+  }
+  .chapter-3-5 {
+    top: 36%;
+    left: 80%;
+  }
+  .chapter-3-5 .chapter-event-bg {
+    background-image: url('../img/flower/3-5.png');
+    height: 58vh;
+    width: 38vw;
   }
 
   
