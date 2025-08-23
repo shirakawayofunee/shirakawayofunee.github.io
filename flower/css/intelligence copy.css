@@ -1,0 +1,110 @@
+.intelligence-container {
+    display: flex;
+    height: 100vh;
+  }
+  .intelligence-title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 50px;
+    background: url('../img/intelligence/title.png') no-repeat center;
+    background-size: contain;
+  }
+  .intelligence-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    padding: 20px;
+  }
+  .intelligence-event {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .intelligence-event:hover {
+    transform: scale(1.05);
+  }
+  .intelligence-event-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .intelligence-event-title {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  }
+  .intelligence-edge-000 .intelligence-event-bg {
+    background-image: url('../img/intelligence/p2.png');
+  }
+  .intelligence-edge-004 .intelligence-event-bg {
+    background-image: url('../img/intelligence/edge-004.jpg');
+  }
+  .intelligence-edge-br .intelligence-event-bg {
+    background-image: url('../img/intelligence/edge-br.jpg');
+  }
+  .intelligence-edge-mania .intelligence-event-bg {
+    background-image: url('../img/intelligence/edge-mania.jpg');
+  }
+  .intelligence-edge-029 .intelligence-event-bg {
+    background-image: url('../img/intelligence/edge-029.jpg');
+  }
+  .intelligence-edge-sin .intelligence-event-bg {
+    background-image: url('../img/intelligence/edge-sin.jpg');
+  }
+  .intelligence-edge-warn .intelligence-event-bg {
+    background-image: url('../img/intelligence/edge-warn.jpg');
+  }
+  .intelligence-title1, .intelligence-title2 {
+    font-size: 16px;
+    bottom: 30px;
+  }
+  .intelligence-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    display: none;
+  }
+  .intelligence-modal-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    display: none;
+  }
+  .intelligence-modal-wrap {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .intelligence-modal-animated-div {
+    opacity: 0;
+    transform: translate3d(0, -50px, 0) scale(1);
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+    width: 90%;
+  }

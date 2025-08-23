@@ -1,0 +1,336 @@
+.relationship {
+  display: flex;
+  box-sizing: border-box;
+  height: 100vh; /* 确保占满视口高度 */
+}
+
+.relationship-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.z-index-1 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative; /* 改为相对定位，方便子元素居中 */
+  z-index: 1;
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  gap: 6vw; /* 图片之间等距，调整此值以控制间距 */
+  flex-wrap: nowrap;
+}
+
+.mask-1, .mask-2, .mask-3, .mask-4 {
+  max-height: 70vh;
+  width: auto;
+  max-width: 20vw; /* 限制图片宽度，避免过大 */
+  object-fit: cover;
+  margin: 0; /* 移除 margin */
+  position: static; /* 确保图片不使用绝对定位 */
+}
+
+.z-index-2 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中子元素 */
+  align-items: center; /* 水平居中子元素 */
+}
+
+.relationship-right-title {
+  height: 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 图像水平居中 */
+}
+
+.relationship-right-title > img {
+  width: 40.3125rem;
+  height: auto;
+}
+
+.relationship-right-str {
+  min-height: 600px; /* 最小高度600px */
+  width: 100vw; /* 占满父容器宽度 */
+  color: #9ea7b4;
+  font-weight: 300;
+  font-size: 1rem;
+  text-align: left;
+  box-sizing: border-box;
+  padding-top: 1vh;
+  font-family: "myFont";
+  line-height: 1.875rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  user-select: auto;
+  cursor: grab;
+  gap: 13%; /* left和right之间的间隔为13% */
+  padding: 0 15%; /* 左右内边距，确保内容不贴边 */
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.relationship-right-str .left,
+.relationship-right-str .right {
+  flex: 0 0 35vw !important; /* 使用35vw替代固定像素宽度 */
+  flex-shrink: 0; /* 防止收缩 */
+  height: auto; /* 高度随内容自适应 */
+  max-height: 512px;
+  text-align: center; /* 文本居中 */
+  overflow-y: auto; /* 内容过多时可滚动 */
+  -webkit-overflow-scrolling: touch;
+  user-select: auto;
+  cursor: grab;
+  background: url('../img/relationship/bg.png') no-repeat top center / 100% auto;
+  padding: 1.5vw; /* 使用vw单位，动态调整内边距 */
+  padding-top: 3%;
+  padding-bottom:1%;
+  box-sizing: border-box;
+
+}
+
+/* .relationship-right-str .left{
+  position: absolute;
+  left: 0;
+}
+ */
+.relationship-right-str .center {
+  flex: 2;
+  display: flex;
+  justify-content: center; /* 图像水平居中 */
+  align-items: center; /* 图像垂直居中 */
+}
+
+.relationship-right-str .center img {
+  width: 100%;
+  height: auto;
+}
+
+.relationship-right-str::-webkit-scrollbar {
+  width: 8px;
+}
+.relationship-right-str::-webkit-scrollbar-track {
+  background: transparent;
+}
+.relationship-right-str::-webkit-scrollbar-thumb {
+  background: rgba(158, 167, 180, 0.3);
+  border-radius: 4px;
+}
+.relationship-right-str:hover::-webkit-scrollbar-thumb {
+  background: rgba(158, 167, 180, 0.8);
+}
+
+.z-index-3 {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%); /* 只垂直居中 */
+  display: flex;
+  justify-content: flex-end; /* 靠右对齐 */
+  padding-right: 2vw; /* 调整按钮位置 */
+}
+
+.toggle-btn {
+  cursor: pointer;
+  pointer-events: auto;
+  width: auto; /* 适应图像大小 */
+  height: auto;
+}
+
+.nav-panel {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center; /* 按钮水平居中 */
+  align-items: center; /* 按钮垂直居中 */
+}
+
+.nav-buttons img {
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+.nav-1 {
+  width: 80%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* 只垂直居中 */
+}
+
+.nav-2 {
+  width: 80%;
+  position: absolute;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%); /* 只垂直居中 */
+}
+
+.nav-3 {
+  min-width: 1000px; /* 最小宽度为内容宽度 */
+  height: 20px; /* 与背景图片高度一致 */
+  background-image: url('../img/relationship/nav3.png');
+  background-repeat: repeat-x; /* 水平重复背景图片 */
+  background-size: 62px 20px; /* 背景图片原始尺寸 */
+  display: flex;
+  justify-content: center; /* 内容水平居中 */
+  align-items: center; /* 内容垂直居中 */
+  position: relative; /* 相对定位，覆盖绝对定位 */
+}
+
+.nav-4 {
+  width: 80%;
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translateY(-50%); /* 只垂直居中 */
+}
+
+/* Mobile Styles */
+.relationshipMobile .z-index-1-mobile {
+  width: 57%;
+  height: 85%;
+  padding-left: 5vw;
+  overflow: hidden;
+  border-top-right-radius: 50px;
+  margin-top: 2vh;
+}
+
+.relationshipMobile .coffin-mask-mobile {
+  position: relative;
+  height: 100%;
+}
+
+.relationshipMobile .z-index-2-mobile {
+  width: 43%;
+  height: 100%;
+  padding-left: 1vw;
+  padding-top: 5vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.relationshipMobile .relationship-right-title-mobile {
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.relationshipMobile .relationship-right-title-mobile > img {
+  width: 20rem;
+  height: auto;
+}
+
+.relationshipMobile .relationship-right-str-mobile {
+  height: 15rem;
+  width: 74%;
+  color: #9ea7b4;
+  font-weight: 300;
+  font-size: 0.8rem;
+  text-align: left;
+  padding-left: 2vw;
+  box-sizing: border-box;
+  padding-top: 1vh;
+  font-family: "myFont";
+  line-height: 1.5rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  user-select: auto;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.relationshipMobile .relationship-right-str-mobile .left-mobile,
+.relationshipMobile .relationship-right-str-mobile .right-mobile {
+  flex: 1;
+  text-align: center;
+}
+
+.relationshipMobile .relationship-right-str-mobile .center-mobile {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.relationshipMobile .relationship-right-str-mobile .center-mobile img {
+  width: 100%;
+  height: auto;
+}
+
+.relationshipMobile .z-index-3-mobile {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle-btn-mobile {
+  padding: 5px 10px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.nav-panel-mobile {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-buttons-mobile {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  max-width: 90%;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-buttons-mobile img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}

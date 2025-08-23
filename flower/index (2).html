@@ -1,0 +1,118 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><div class="swiper-slide pc relationship" data-mouse="small" id="slide7">
+  <div class="relationship-container" style="position: relative; height: 100vh;">
+    <!-- z-index 1: Coffin Masks -->
+    <div class="z-index-1" style="position: absolute; z-index: 1; width: 100%; height: 100%;">
+      <div class="coffin-mask" style="position: absolute; left: 10%; top: 10%; width: 100px; height: 200px; background: url('coffin-shape.png') no-repeat; background-size: contain;">
+        <img src="image1.jpg" alt="Image 1" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="coffin-mask" style="position: absolute; left: 30%; top: 10%; width: 100px; height: 200px; background: url('coffin-shape.png') no-repeat; background-size: contain;">
+        <img src="image2.jpg" alt="Image 2" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="coffin-mask" style="position: absolute; left: 50%; top: 10%; width: 100px; height: 200px; background: url('coffin-shape.png') no-repeat; background-size: contain;">
+        <img src="image3.jpg" alt="Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="coffin-mask" style="position: absolute; left: 70%; top: 10%; width: 100px; height: 200px; background: url('coffin-shape.png') no-repeat; background-size: contain;">
+        <img src="image4.jpg" alt="Image 4" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+    <!-- z-index 2: Three Div Layout -->
+    <div class="z-index-2" style="position: absolute; z-index: 2; width: 100%; height: 100%; display: flex; justify-content: space-between; padding: 20px;">
+      <div class="left" style="flex: 1;">Left Text</div>
+      <div class="center" style="flex: 2;"><img src="center-image.jpg" alt="Center Image" style="width: 100%; height: auto;"></div>
+      <div class="right" style="flex: 1;">Right Text</div>
+    </div>
+    <!-- z-index 3: Toggle Button -->
+    <div class="z-index-3" style="position: absolute; z-index: 3; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+      <div class="toggle-btn" style="padding: 10px 20px; cursor: pointer; background: #fff; border-radius: 5px;">切换内容</div>
+    </div>
+    <!-- Navigation Panel -->
+    <div class="nav-panel" style="position: absolute; z-index: 4; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+      <div class="nav-buttons" style="display: flex; gap: 10px; flex-wrap: wrap; max-width: 80%;">
+        <img src="nav1.jpg" alt="Nav 1" data-content="content1" style="width: 100px; height: 100px; cursor: pointer;">
+        <img src="nav2.jpg" alt="Nav 2" data-content="content2" style="width: 100px; height: 100px; cursor: pointer;">
+        <img src="nav3.jpg" alt="Nav 3" data-content="content3" style="width: 100px; height: 100px; cursor: pointer;">
+        <img src="nav4.jpg" alt="Nav 4" data-content="content4" style="width: 100px; height: 100px; cursor: pointer;">
+        <!-- Add 11 more images as needed -->
+        <img src="nav5.jpg" alt="Nav 5" style="width: 100px; height: 100px;">
+        <img src="nav6.jpg" alt="Nav 6" style="width: 100px; height: 100px;">
+        <img src="nav7.jpg" alt="Nav 7" style="width: 100px; height: 100px;">
+        <img src="nav8.jpg" alt="Nav 8" style="width: 100px; height: 100px;">
+        <img src="nav9.jpg" alt="Nav 9" style="width: 100px; height: 100px;">
+        <img src="nav10.jpg" alt="Nav 10" style="width: 100px; height: 100px;">
+        <img src="nav11.jpg" alt="Nav 11" style="width: 100px; height: 100px;">
+        <img src="nav12.jpg" alt="Nav 12" style="width: 100px; height: 100px;">
+        <img src="nav13.jpg" alt="Nav 13" style="width: 100px; height: 100px;">
+        <img src="nav14.jpg" alt="Nav 14" style="width: 100px; height: 100px;">
+        <img src="nav15.jpg" alt="Nav 15" style="width: 100px; height: 100px;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="swiper-slide mobile relationshipMobile" data-mouse="small" id="slideM7">
+  <!-- Simplified mobile version, adjust as needed -->
+  <div class="relationship-mobile-container" style="position: relative; height: 100vh;">
+    <div class="z-index-1-mobile" style="position: absolute; z-index: 1;">
+      <div class="coffin-mask-mobile" style="position: absolute; left: 10%; top: 10%; width: 60px; height: 120px; background: url('coffin-shape.png') no-repeat; background-size: contain;">
+        <img src="image1.jpg" alt="Image 1" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <!-- Add more coffin masks as needed -->
+    </div>
+    <div class="z-index-2-mobile" style="position: absolute; z-index: 2; display: flex; flex-direction: column; align-items: center; padding: 10px;">
+      <div class="left-mobile" style="margin-bottom: 10px;">Left Text</div>
+      <div class="center-mobile"><img src="center-image.jpg" alt="Center Image" style="width: 80%; height: auto;"></div>
+      <div class="right-mobile" style="margin-top: 10px;">Right Text</div>
+    </div>
+    <div class="z-index-3-mobile" style="position: absolute; z-index: 3; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+      <div class="toggle-btn-mobile" style="padding: 5px 10px; cursor: pointer; background: #fff; border-radius: 5px;">切换内容</div>
+    </div>
+    <div class="nav-panel-mobile" style="position: absolute; z-index: 4; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+      <div class="nav-buttons-mobile" style="display: flex; gap: 5px; flex-wrap: wrap; max-width: 90%;">
+        <img src="nav1.jpg" alt="Nav 1" data-content="content1" style="width: 60px; height: 60px; cursor: pointer;">
+        <img src="nav2.jpg" alt="Nav 2" data-content="content2" style="width: 60px; height: 60px; cursor: pointer;">
+        <img src="nav3.jpg" alt="Nav 3" data-content="content3" style="width: 60px; height: 60px; cursor: pointer;">
+        <img src="nav4.jpg" alt="Nav 4" data-content="content4" style="width: 60px; height: 60px; cursor: pointer;">
+        <!-- Add more images as needed -->
+      </div>
+    </div>
+  </div>
+</div>

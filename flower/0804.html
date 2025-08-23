@@ -1,0 +1,164 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layered Block Layout</title>
+  <style>
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    .z-index-1 .coffin-mask {
+      position: absolute;
+      width: 100px;
+      height: 200px;
+      background: url('coffin-shape.png') no-repeat;
+      background-size: contain;
+    }
+    .z-index-1 .coffin-mask img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .z-index-2 {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+    .z-index-2 .left, .z-index-2 .right {
+      flex: 1;
+    }
+    .z-index-2 .center {
+      flex: 2;
+    }
+    .z-index-2 .center img {
+      width: 100%;
+      height: auto;
+    }
+    .z-index-3 .toggle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .nav-panel {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .nav-panel.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-panel .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .nav-panel .nav-buttons img {
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="z-index-1" style="z-index: 1;">
+      <div class="coffin-mask" style="left: 10%; top: 10%;"><img src="image1.jpg" alt="Image 1"></div>
+      <div class="coffin-mask" style="left: 30%; top: 10%;"><img src="image2.jpg" alt="Image 2"></div>
+      <div class="coffin-mask" style="left: 50%; top: 10%;"><img src="image3.jpg" alt="Image 3"></div>
+      <div class="coffin-mask" style="left: 70%; top: 10%;"><img src="image4.jpg" alt="Image 4"></div>
+    </div>
+    <div class="z-index-2" style="z-index: 2;">
+      <div class="left">Left Text from JS Array</div>
+      <div class="center"><img src="center-image.jpg" alt="Center Image"></div>
+      <div class="right">Right Text from JS Array</div>
+    </div>
+    <div class="z-index-3" style="z-index: 3;">
+      <div class="toggle-btn">切换内容</div>
+    </div>
+    <div class="nav-panel" style="z-index: 4;">
+      <div class="nav-buttons">
+        <img src="nav1.jpg" alt="Nav 1" data-content="content1">
+        <img src="nav2.jpg" alt="Nav 2" data-content="content2">
+        <img src="nav3.jpg" alt="Nav 3" data-content="content3">
+        <img src="nav4.jpg" alt="Nav 4" data-content="content4">
+        <!-- Add more images as needed -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const navPanel = document.querySelector('.nav-panel');
+    const navButtons = document.querySelectorAll('.nav-buttons img');
+
+    toggleBtn.addEventListener('click', () => {
+      navPanel.classList.toggle('active');
+    });
+
+    navButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.getAttribute('data-content');
+        // Logic to update z-index 1 and 2 content based on content
+        console.log(`Switched to ${content}`);
+        navPanel.classList.remove('active');
+      });
+    });
+
+    // Example JS array for left/right text
+    const textArray = ['Text 1', 'Text 2', 'Text 3'];
+    document.querySelector('.left').textContent = textArray[0];
+    document.querySelector('.right').textContent = textArray[1];
+  </script>
+</body>
+</html>

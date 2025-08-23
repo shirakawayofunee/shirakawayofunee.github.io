@@ -1,0 +1,2615 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会話例</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W8.ttf') format('truetype');
+            font-weight: 200;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W12.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W16.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W27.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+        body {
+            font-family: 'DreamHanSansJP', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .swiperBG {
+            width: 100%;
+            height: 100%;
+            background: url("img/BG2.png") no-repeat bottom;
+            background-size: cover;
+            position: absolute;
+            z-index: 10;
+        }
+        .message, .profile-description, .keywords-container h6, .keywords, h1, h5, p, span {
+            font-family: 'DreamHanSansJP', sans-serif;
+        }
+        .w8 { font-weight: 200; }
+        .w12 { font-weight: 300; }
+        .w16 { font-weight: 400; }
+        .w27 { font-weight: 900; }
+        .fade {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+            display: block;
+        }
+        .fade-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .page-frame {
+            min-height: 100vh;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .header-section {
+            height: 5vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+        .chat-wrapper, .profile-card {
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-wrapper {
+            background-color: #383A3E;
+            height: 100vh;
+            background-image: url(img/dh/bg.png);
+        }
+        .profile-card {
+            background-color: #fff;
+        }
+        .dropdown {
+            padding: 0;
+            border-bottom: 1.5px solid #0F0F11;
+            position: relative;
+        }
+        .dropdown .btn {
+            background-color: #383A3E;
+            color: #fff;
+            background-image: url(img/dh/bg.png);
+            border: none;
+            font-size: 0.875rem;
+            padding: 0 10px;
+            height: 30px;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+        }
+        .dropdown .btn:hover, .dropdown .btn:focus {
+            color: #e23b78;
+            box-shadow: none;
+        }
+        .dropdown .dropdown-toggle::after {
+            display: none;
+        }
+        .dropdown-menu {
+            font-family: 'DreamHanSansJP', sans-serif;
+            font-size: 0.8rem;
+        }
+        .chat-container {
+            padding: 0 20px 20px;
+            background-image: url(img/dh/bg_full.png);
+            border-radius: 0 0 10px 10px;
+            flex: 1;
+            overflow-y: auto;
+        }
+        .message {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+            width: fit-content;
+            min-width: 100px;
+            max-width: 80%;
+        }
+        .message-wrapper {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .conversation .mb-3:first-child {
+            margin-top: 20px;
+        }
+        .character-message {
+            background-color: #252225;
+            color: #c9c7ca;
+            border: 1.5px solid #848285;
+        }
+        .character1 {
+            margin-left: auto;
+            flex-direction: row-reverse;
+        }
+        .character1 .avatar {
+            margin-left: 10px;
+        }
+        .character2, .character3, .character4, .character5 {
+            margin-right: auto;
+        }
+        .character2 .avatar, .character3 .avatar, .character4 .avatar, .character5 .avatar {
+            margin-right: 10px;
+        }
+        .narration {
+            color: #d7d8db;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-style: italic;
+            width: 80%;
+        }
+        .narration img {
+            width: 100%;
+            height: auto;
+        }
+        .option {
+            background-color: #e9ecef;
+            color: #333;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            cursor: pointer;
+        }
+        .option:hover {
+            background-color: #d3d3d3;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        .profile-avatar-container {
+            border: 1.7px solid #0F0F11;
+            border-radius: 15px;
+            padding: 0;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .profile-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        .keywords-container {
+            border: 1.7px solid #0F0F11;
+            border-radius: 5px;
+            padding: 0;
+            background-color: #e9ecef;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .keywords-container h6 {
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: bold;
+            background-color: #000;
+            color: white;
+            padding: 5px 8px;
+            border-radius: 3px 0 0 3px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .keywords {
+            font-size: 0.7rem;
+            color: #5C5C5C;
+            padding: 5px 8px;
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+        .profile-description {
+            border: 1.7px solid #0F0F11;
+            border-radius: 5px;
+            padding: 10px;
+            flex: 1;
+            font-size: 0.9rem;
+            overflow-y: auto;
+        }
+        .profile-description h5 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+        }
+        .profile-description p {
+            margin: 0;
+        }
+        .chat-container::-webkit-scrollbar,
+        .profile-description::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .chat-container::-webkit-scrollbar-track,
+        .profile-description::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 5px;
+        }
+        .chat-container::-webkit-scrollbar-thumb,
+        .profile-description::-webkit-scrollbar-thumb {
+            background: rgba(108, 117, 125, 0.2);
+            border-radius: 5px;
+        }
+        .chat-container::-webkit-scrollbar-thumb:hover,
+        .profile-description::-webkit-scrollbar-thumb:hover {
+            background: rgba(90, 98, 104, 0.3);
+        }
+        .chat-container,
+        .profile-description {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(108, 117, 125, 0.2) transparent;
+        }
+        .no-visible-scrollbar {
+            overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .no-visible-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .row {
+            align-items: stretch;
+            flex: 1;
+            min-height: 0;
+        }
+        .col-md-3, .col-md-6 {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .conversation {
+            display: block;
+            flex: 1;
+        }
+        .navigation-buttons {
+            position: fixed;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .nav-btn {
+            background-color: #383A3E;
+            color: #fff;
+            border: 1.5px solid #0F0F11;
+            padding: 8px 20px;
+            font-size: 0.875rem;
+            font-family: 'DreamHanSansJP', sans-serif;
+            font-weight: 300;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-btn:hover {
+            background-color: #e23b78;
+            color: #fff;
+        }
+        .nav-btn:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        span {
+            color: #e23b78;
+        }
+        .summary{
+            color:#5C5C5C;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+        .music-controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            display: flex;
+            gap: 5px;
+        }
+        .imgMusicPlay, .imgMusicStop {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        @media (min-width: 768px) {
+            .chat-wrapper,
+            .profile-card {
+                height: 80vh;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .row {
+                flex-direction: column;
+                height: auto;
+            }
+            .col-md-3,
+            .col-md-6 {
+                flex: 1 0 100vh;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .chat-wrapper,
+            .profile-card {
+                height: 100vh;
+            }
+            .chat-wrapper {
+                margin-bottom: 0;
+            }
+            .navigation-buttons {
+                gap: 10px;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .nav-btn {
+                padding: 6px 15px;
+                font-size: 0.8rem;
+            }
+            .music-controls {
+                top: 5px;
+                right: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-frame swiperBG">
+        <div class="container mt-5">
+            <div class="header-section">
+                <h4 class="text-center mb-4 fade" id="header-title">会話例</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="profile-card fade" id="profile-card-left">
+                        <div class="profile-avatar-container">
+                            <img src="img/dh-leopold.jpg" alt="Leopold" class="profile-avatar" id="left-avatar">
+                        </div>
+                        <div class="keywords-container">
+                            <h6 class="w16" id="left-keyword-title">Keyword</h6>
+                            <span class="keywords w12" id="left-keywords">無愛想だが非常に頼もしい死神</span>
+                        </div>
+                        <div class="profile-description" id="left-description">
+                            <h5 class="w12" id="left-description-title">余命三ヶ月<br>一人称：私<br>二人称：お前、君</h5>
+                            <p class="w8" id="left-description-text">夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chat-wrapper">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                選べる会話例
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">01 N.F.113年7月16日</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">02 N.F.113年7月23日 08:05</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation3')">03 N.F.113年7月23日 23:04</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation4')">04 N.F.113年7月23日 23:14</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation5')">05 N.F.113年7月23日 23:24</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation6')">06 N.F.113年7月24日 00:41</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation7')">07 N.F.113年8月8日 9:00</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation8')">08 N.F.113年8月8日 9:00</a></li>
+                            </ul>
+                        </div>
+                        <div class="chat-container fade" id="chat-container">
+                            <div id="conversation1" class="conversation">
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    N.F.113年7月16日<br>
+                                    ヒーゲル（福音地の幹事の一人）がセヴェロを見つけ、「GARDEN」と「命の延長」を餌に、単瞳のルーンを与え、上庭特使Xの暗殺を頼んだ。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                    <div class="message character-message w12">
+                                      聞いたよ、君たちの基地が最近襲われたって。上庭が手を出したんだろ？
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/severo10.png" alt="Severo" class="avatar">
+                                    <div class="message character-message w12">
+                                      …お前か、福音地の野郎め…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/severo10.png" alt="Severo" class="avatar">
+                                      <div class="message character-message w12">
+                                        お前たちと上庭の争いに、巻き込む気か。私たちはもうお前たちの道具じゃない。
+                                      </div>
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                    <div class="message character-message w12">
+                                      へっ、足を洗ったってわけ？
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                      <div class="message character-message w12">
+                                        上庭はそんなの知ったこっちゃないよ。一度福音地に染まったら、一生溝のネズミとして扱われるのさ。
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                      <div class="message character-message w12">
+                                        彼らはとっくに君たちをマークしてる…
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                      <div class="message character-message w12">
+                                        この組織を作ったのは私たち、君を救って、君の復讐を果たさせた…君の新生は、私たちの贈り物だよ…
+                                      </div>
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/severo10.png" alt="Severo" class="avatar">
+                                    <div class="message character-message w12">
+                                      違う！違うんだ。復讐は私を救わなかった。私を救ったのは家族、彼女とみんなだった…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                    <div class="message character-message w12">
+                                      もうすぐ全部上庭に排除されるよ、そんもの。君の首領も、家族も、抵抗なんてできないさ…その日はもうすぐ来る、君もわかってるだろ…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                      <div class="message character-message w12">
+                                        だが…取引しないか？今の上庭の執行者、君たちを追い詰めてるリーダーが、尻尾を出したんだ…
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                      <div class="message character-message w12">
+                                        そいつを見つけ出せ…一緒にやらないか…十分な力を与えるよ。君の「新生」を守るんのさ。
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            <div id="conversation2" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        N.F.113年7月23日 08:05<br>セヴェロの仕立て屋
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                      <img src="img/cg/br_01.png">
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                    <div class="message narration summary">
+                                        概要：数日間、セヴェロはエリカ山荘の警備員（能力者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、
+                                    調査員が訪ねてくる。  
+セヴェロは一瞬の情け深き、自身と「同じ境遇」に見える調査員を引き込もうとし、「上庭に傷つけられた同類」だと説得、
+「GARDEN」の首領レオポルドが復讐を助けられると伝えた。しかし、その優しさは強く拒絶され、逆に調査員に裏切られた。最終的にセヴェロは罠に落ち、能力者対策の部隊に制圧され、昏迷状態に陥る。調査員もSan値が限界に達し、一時的に行動不能となる。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        袭击过后，商業街的清晨格外安静，警员们集中到X宅邸附近搜查戒备，周边更远处只派三两个倒霉鬼巡逻。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        微雨薄幕间，一个女人捧着花独自走在僻静的步行街上。路过那几位熟识的警员，她微微颔首致意，也没有过多询问他们的不安。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        就这样，她缓步回到裁縫店。察觉门没锁时，她顿了一下，微笑着合上伞，推门走进自己的裁縫店。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            这么早，我还以为是谁来了，吓了一跳。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            你好，客人。这几天小店不营业，需要定制礼服的话可以过几天再来。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        调査员没有接话，看着女主人将手中的花插入一侧的花瓶中。那是白色康乃馨。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            花很漂亮。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            ……谢谢。我爱人她喜欢康乃馨，她喜欢紫色，说那像我。
+                                           <br>「ありがとう、思う人がですね…カーネーションが好きです、私に似ているからって。」
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            他是FAC的人。本来已经受伤退役几年，偏偏西区出了事，他又被緊急征召。再然后……就是葬礼了。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        女人哽咽了，側頭拭了下眼泪，神情悲切。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            抱歉，刚从墓園回来，我的心情还没調整好。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            我能理解。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            是吗？看你的制服，你也是FAC部队的吧……虽然现在我不能提供服务，但这里的花你可以随意拿去。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            如果你也有想要紀念的人……
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        調査員起身到窗邊，拉上窗帘。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                        你大概不知道，西区局势不怎么好，牺牲者很多，受污染遗体的处理很耗时间。公祭前不久被推迟了，你丈夫如果死在那里，最早也要到下个月才能下葬。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            夫人是在哪里紀念他呢？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo4.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            ……我……啊！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        話音未落，那盾已直冲而來，迎面劈下，一撃砸碎女主人脚下的地板，白色康乃馨散落，花瓣乱飛間，那婦人却已不在原地。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        幾道銀光刺來，調査員用盾一挡，看向攻撃的源頭。在幾个人台背後，那个悲傷的寡婦已经換了一副嗔怪又調笑的面孔。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            唉急性子，这种小問題我明明能解釋清楚的。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            没必要，都躲过这种攻击了，你的本事足够解释一切。我们交过几次手，殺し屋小姐，你的身段我念念不忘。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            呵呵，還會開玩笑了？心情很好嘛保鏢小姐。那保持住，最好一輩子都能保持这笑容……
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            有時候，一輩子一眨眼就過去了。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        女人手中長針一轉，用力刺進假人背後，咔嗒咔嗒——隠藏著的机关同時啟動，向調査員发起攻撃。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            真是的，不都說溫柔有礼是FAC的好伝統嗎，怎麼就你對我这么粗暴呀。我也算你戦友的遺孀，手下留情点，好吗？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            好業餘的殺手。不仅鬼話連篇，廢話也多得可笑。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        她一揮大盾，挑起待客的圓桌向“店主”摔去，那女人閃身躲過，一手拉出幾根弩箭反撃，兩人趁勢拉開距離。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我說的是真話。我宣誓結婚，丈夫愛我，但已死去。这都是我人生真真切切的経歷。
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            西区有了新的黑環，你有多少隊友死在那兒了？我知道这是你們的光榮伝統——FAC最推崇毫無意義、不明就里的偉大犧牲。
+                                            所以說，我們反而該同病相憐，該多聊聊……唉呀！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        她驚叫著躲開第二次攻撃。那是一次貼身突襲，却扑了空。調査員察覚自己的動作変慢了，身體有些不受控制。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        她立刻反應過來発生了什麼。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            你用了神經毒素？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            猜中了，厉害。我了解你们的作战习惯，喜欢跟怪物硬碰硬，打起架来不惧又不躲，总是不惜命地给别人当盾牌。对付你们，最适合用这招。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            哦，別乱動。这毒還帶着一点点狂厄污染，你要是身上有異方晶，安靜地等它淨化比較好。我現在還不想傷害你。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我想跟你聊聊。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        殺し屋没有趁勢攻撃，相反，她脸上軽浮的笑容漸漸隠去。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            4個月來，这个城邦的所有黑環都変得活躍，FAC全主力被投入到正面戦場。你們根本没有餘力応対新城悪性事件，早就把它移交給第九機關了。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            調査員，不，FAC-G47小隊的能力者，你本不該出現在这里。你的上級根本没有下達任何援護命令。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            私自返回新城，強行介入与你無関的案件，找到了線索也不上報，還独自來見我这个“殺手”……就連你这身能力者的本領也來得不乾淨吧？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            身為FAC，服従和忠誠是你的天職，可你却踩了太多紅線。随便一条都够送你上法庭了。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ……呵，你倒查了不少東西。要來威脅我？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            ……不，我理解你，比你想象的更深。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            你参加過内海“蝕月行動”，還是唯一幸存者。你來这里只為復仇。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ？！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            N.F.103年，FAC接到緊急命令，28個中隊受命秘密前往内海，強闖BR-000。在情報和時間都緊缺的情况下，行動没有任何収獲，除了你全員戦死。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            这是個愚蠢的行動。但事後，下達制定戦術的指揮官隠了身，所有損失和黒鍋都由你們FAC背下。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            任誰知道这种事，都不可能甘心。就像我們。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我的父親是FAC後勤部的運輸員。N.F.83年，他在基地，被当时作战带回的異物感染，他到死都不知道那是什麼。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            父親染上狂厄，一片混乱中，他没有経過検測就回了家，在我弟弟妹妹面前変成怪物……
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            跟你一樣，那一晚，我也是可悲的幸存者。我理解你的恨。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            这么多年，你犧牲那么多，変成能力者，一個人強忍仇恨給上庭当狗，却還是摸不到黒幕的一角。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            你脚下这条漆黒又寒冷的路，我也一樣走過。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我們的人生在一瞬間崩塌，被摧毀殆尽。没人還我們公道，我們只能自己討回公道。这世界總還是該講点道理的，不是吗？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        她向調査員伸手，遞出一朵紫色的康乃馨。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我的名字是SEVERO，我不是你的敌人，是同类。你还有很多同类。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            这世上有一個地方能接納我們，有人能理解我們。她會指引你，支撐你走完残酷的復仇。只要你有这个心，我能帶你去見她。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            你說的那個人，是你的雇主，還是你們組織的首領？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            是我好不容易得到的新的家人。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        她的回答很真誠，其中的感情似乎感染了調査員。FAC的戦士沉默半響。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            你說她會幫你復仇……
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            那你釋放出來的污染、那些你帶來的怪物，也是她給的“幫助”吗？用这些幫你“復仇”？这几天死掉的普通人又干了什么恶事？他们要被你这样索命？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        殺手敏鋭察覚到敵意。她眼中閃過一丝遺憾，摸上幾根長針，一边計算毒素的有效時間，一边思考爭取最后的勧說。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            他們都是上庭人。上庭絶不無辜，他們都是敵人，最強大最可怕的敵人。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            你也恨他們，不是吗？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            就像你冒死也要成為能力者，我也必須得到足以対抗他們的力量。我們都必須爭取，也不得不有所捨棄。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            復仇就是傾尽所有，你最明白这点，不是吗？現在你有这个機会，我們能幫你。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ……如果你說的是真話，那我明白了。從来没有“我们”，開什麼玩笑，別把我跟你混為一談。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        她拽下身上的異方晶甩到一旁，猛砸雙盾，体内毒素直接被更劇烈的狂厄中和同化。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            你……替陰溝里的雑碎辦事，濫用狂厄濫殺無辜，拿復仇当借口作悪。你從来不是我的同伴，不過是被人利用的小丑罢了。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            ……真遺憾。我是真的想帶你回家。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        雙方力量差距懸殊，只一瞬間，Severo就被重重撞倒在地戦鬥，緊接着一面大盾用力砸在她身上，将她圧在地板上動弾不得。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            呜……咳咳，好可怕的蛮力……為得到这种力量，你都干了什麼悪事？你親愛的FAC知道吗？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            你背後的家伙是谁？你叫她“家人”，関係一定很好吧。如果我抓了你，她會主動來找吗？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo3.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            ……你想幹什麼？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        她的聲音変得冰冷。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            我想進上庭，上庭有人想要你們，為此我得準備見面礼。你和你背後的人很合适。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            ……原来如此，你們想要的不止是我……
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            來吧，要麼主動交代，要麼等你的“家人”來救你，選一個。不是說她是復仇者的救星吗？那一定會來找你的吧。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            呵呵呵……這麼看來，你還是有当悪鬼的天賦的……別糾結什麼正義了，你早就不適合当FAC了。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            回答問題！我対敵人没有耐心。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        大盾又用力一砸，似乎听到骨折的聲音。Severo吃痛地呻吟著，脸上却露出虚弱且迷醉的笑容。現在，她的眼里再没有善意的邀請，只剩憎悪和殺氣。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            呵呵呵，你都忍了10年，現在著什麼急？東西我早就交給你了……那封花箋，看了吗？看不懂吗？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            直說里面有什麼，我不想跟你玩密碼遊戲。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        調査員皺眉，繼續用力，可女殺し屋的身體此時却像水般柔軟，所有暴力都像被吸入海綿般，她脸上的笑容変得更深，更讓人不適。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            很簡單的，我帶你一步步解開吧。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            培育秋英(TJ)時，需要保証它們接受充足的光照。不同品種的百合(JPT)対環境、光照、濕度有不同的需求。桜花(OJA)的苗木很容易受旱害，最好用草将地表覆蓋，減少水分蒸発。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            秋英、百合、桜花……根据三種花在一年中的花期早晚排序，為桜花→百合→秋英，得到OJAJPTTJ
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            字母換成数字，数字換成字母。怎么样，是不是很簡單？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        （把OJAJPTTJ这串字母中的字母O換成0，其餘字母根据手機九宮格鍵盤得到数字，最後得到結果“05257885”）
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            是通信密令，蝕月行動期間唯一穿透内海黒環的信息編号，通過它給環内的你們下達命令。这个指令來自没人找得到的上庭。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        她悠悠地說著，突然伸手扯住地上近乎隠形的絲線用力一拽。牆面的机关啟動，幾根長針嗖地射出，針上纏著怪異的術式，調査員不願松開大盾，硬生生用上臂接下了这些攻撃。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        这一次針上的不是神經毒素，而是某種……更邪悪、更污穢的東西，像活物一般鑽進調査員的身體意識，她的視野逐漸染紅，敵人的聲音変得遥遠。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            認出來了吗？这通信的另一頭，就是你翻遍Dis十年都没找到的仇人。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        那串夢魘般的数字占據調査員整个大脳，点燃体内沸騰的狂厄。同時喚醒那段從未掙脱的癲狂記憶。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        内海提前漲潮，憑这个臨時防線我們撐不住的，請求撤退！！我們必須撤退！！
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        05257885：障礙突破，超環観測錨点建立，狂厄噪声排除，鏈接已穩定。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        05257885：你們好，FAC蝕月行動全体作戦人員。我是上庭観察者兼聯絡員，已完成数据收集和戦場分析，決定是——行動繼續。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        05257885：目標只有一個，在任務完成前尽最大努力抵挡内海漲潮。我會協助你們重新部署，以環内相対時間計算，剩余戦力還能抵挡約34分鐘。
+                                        我理解大家的精神状態已到達極限，所以還帶來一個好消息。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        05257885：救援部隊已经深入内海。再堅持一下，只要你們能抵挡漲潮，将窗口期延長到44分鐘，他們就會抵達臨時堤壩。
+                                        振作起來。你們所在的地点是憑意志就可能扭転現実的領域，而你們是全城邦最堅定最有勇氣的人。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        05257885：你們能做到。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ……骗人……我們堅持了3小時，根本没有救援……騙我們留下送死……
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        05257885：这次行動意義重大，只能仰賴FAC的各位了。上庭向你們致以最崇高的敬意。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            你讓他們死得毫無意義！！！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            这么激動，在喊誰呢？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        尖鋭的異物猛地刺入調査員鎖骨，借著劇痛，調査員終于摆脱狂乱，竭力睜眼回到現実。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        而Severo早已摆脱大盾的圧制，笑容依旧，虚弱却帶著勝利者的傲慢，她緩緩旋転剛插進調査員身体的長針，将毒和污染更深地送進敵人体内。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            反応真大，見到朝思暮想的仇人了?
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ……你從哪儿得到这个編号的？為什麼知道这么多？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        这个編号是調査員唯一掌握的跟那個人有關的線索，她記了10年，找了10年，從不曾在自己噩夢之外再次見到它。如今这个女人却軽易地吐出那最沉重的秘密，而且比自己这个“唯一幸存者”知道更多这串数字背後的信息。
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            急什麼，我这不正要告訴你吗？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我是在跟狂厄販子打交道，接受他們卑鄙的委托，摳取一点点情報，交換來肮臟的力量。我知道他們不是東西，無所谓。
+                                            只有見不得光的混蛋才摸得到黒幕，他們能撕得開上庭的偽装，給那些不可一世的大人物帶來一点点头疼。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            靠你我这种普通人，做得到吗？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        哧！又一針，刺入調査員另一側肩頭，毒和狂厄侵蝕得更深，瘋狂折磨这个濱臨暴怒的戦士。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我知道自己手臟，被襲撃的上庭人里面，我知道有人無辜——但他們全都有用。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        她抽出第三根針，却没急著扎下，只移到調査員胸口，針尖慢慢描画，像在探查獵物的心臓。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            上庭那幫混蛋從来行踪隠蔽，外人連上庭在哪里都不清楚。可最近，好幾個上庭人空降新城。你我都知道，这幫人來是為了解決西区破事，毫無疑問他們都受重視。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            所以我們在此相遇，都為这難得的突破口，要利用他們打聽上庭，打入上庭。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            你強行介入保護任務，試圖博取信任。做得很不错了，“正直”的FAC。可無論你多努力，那些貴人也不会把狗帶回上庭。想從那幫混蛋嘴里得到情報，你得這麼做——
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        針尖稍用力，割破調査員大衣前襟，口袋中的花箋露了出來。Severo伸手将花箋取下。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            这是預告函，提前發給獵殺名單上的每一個上庭人。聡明的上庭人一定看得懂，不是恐嚇信——是大発慈悲賞他們的一線生機。
+                                            謎題不難，他們全都知道我要什麼，想活命就告訴我。明碼標價，給我情報，換取性命，你猜他們說不說？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            總有人不知道，他們身邊也有毫無関係的人，你連著他們一起——
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            対，一起！这不就是必要的犧牲吗，他們會理解的。這樣才更明白機会的重量。
+                                            總有人會交代的，已经有人交代了。这才是機会的正確使用方式，这才是真正的復仇，我可以捨棄一切身下地獄。你呢？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            10年了，除了这揮向空氣的力量，你還做成了什麼？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        污染毒素放大調査員内心的震動和混乱，她大口喘氣，既痛苦又興奮，竟笑了起来。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                        <div class="message character-message w12">
+                                            ……这不還有你吗？只要撕開你的嘴，就能得到一切了！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        瘋狂的力量如悶火般燃焼，此刻突然引爆，調査員咆哮著站起身，帶著刺穿自己的長針，冲上前一手掐住Severo的脖子，直将她用力砸進牆里。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        幾乎同時，这份暴走的力量觸発警報，刺耳的警鈴響徹山庄，有人鳴槍了。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character3">
+                                        <img src="img/dh/security.png" alt="Safety" class="avatar">
+                                        <div class="message character-message w12">
+                                            能力者！！放開那个女人，你已经失控了，還不住手？！！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character3">
+                                        <img src="img/dh/security.png" alt="Safety" class="avatar">
+                                        <div class="message character-message w12">
+                                            再不投降，我們要開槍了！！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        狙撃的子弾射穿窓戶，射向調査員的太陽穴。她下意識躲开，桎梏敵人的力量也一時松了些。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            哈……哈哈哈哈……了不起的力量，你要被当成怪物了。現在这副模様，FAC還要你吗？他們會殺了你吗？哈哈哈——
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我的仇早就報了。有人幫我了結仇恨，我内心的空洞和怒火都被安撫。我有新的家人，新的人生，我已经得到救贖。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            本来也想把你帶回去的，可看來并不是所有被剥奪的人都能成為家人……你讓我更珍惜現在僅有的宝物……
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            我不会再讓任何人傷害我的所有物。你，還有你想利用我們去討好的家伙，我都不会放過。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            過去我能為復仇傾尽一切，現在也會加倍捍衛我的未來。而在那以後一無所有的你，怎麼可能贏我？喪家野狗，除了瞎眼狂吠，你什麼都做不到。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        調査員咆哮著，試圖冲破那不可見的瘋狂漩渦找出她的敵人。可更多子弾射入这破屋，体内狂厄席巻。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        SEVERO早已被带走，唯有调查员耳邊糾纏著那个女人纖弱的聲音。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo5.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            抱著那点堅持溺死在過去吧。
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 会話例 3 -->
+                            <div id="conversation3" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        N.F.113年7月23日 23:04<br>X宅の地下室
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                      <img src="img/cg/br_02.png">
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                    <div class="message narration summary">
+                                        概要：セヴェロが「GARDEN」への忠誠は揺るぎない。数時間にわたる審問は進展せず、代理人はセヴェロの罵倒以外何も得られなかった。
+                                        そこへXが「生きているセヴェロの方が価値がある」と提案――セヴェロを人質として連れ去れ、
+                                        レオポルドから福音地の重要情報を引き出すという計画を立てた。代理人はその提案を認める。
+                                        しかし、「レオポルド」の名を耳にした瞬間、セヴェロは福音地から与えられた単瞳のルーンを起動。
+                                        ルーンの力が暴走し、彼女は一瞬で制御を失い、監禁を突破して屋敷から逃走し、大混乱を引き起った。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        寝室で、Xは目を開け、ゆっくりと起き上がる。包帯はすべて解かれ、ベッドに乱雑に散らばっているが、
+                                    傷はすべて消えていた。肉体の修復には膨大なエネルギーを消費し、Xは疲労の意を感じた。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        フレンチドアの外では、藍雨がエリカ山荘を覆い、しとしとと降り続けている。彼女が待つ相手はまだ現れない。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo1.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">
+                                            ああ――！！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        階下から女の悲鳴が響き、ドアが開く。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        メイドがXの着替えを手伝うために部屋に入ったが、ドアを閉める勇気はなかった。
+                                        階下からは悲鳴、罵倒、狂笑が断続的に響き、上庭の「代理」がいかに哀れな殺し屋を審問しているかを気づかせる。
+                                        「代理」が入ってきてから、すべてが変わった。女仆は震えが止まらない。  
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        Xは部屋を出て階下へ向かい、警備されている地下室に入る。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                        <div class="message character-message w12">準備ができたら出発だ。車は外に用意してある。ここからの仕事は私が引き継ぐ。</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">…了解した。</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        彼女は倒れているセヴェロをちらっと見た。
+                                        この殺し屋はすでに瀕死で、しかしその目は不屈と執念に満ちている。少し考えた後、Xが口を開く。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">こんなに追い詰める必要はない。情報は誰かが持ってくるさ。</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                        <div class="message character-message w12">別の情報源があるなら、この殺し屋にはなおさら生きる価値がない。ここで処分しよう。</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">…彼女には価値があると思う。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">
+                                            この殺し屋の背後にいる者――雇い主ではなく、首領だ――そいつはメンバーの命を重んじるかもしれない。彼女は貴重な餌になる。  
+                                            拷問で情報が得られなくても、殺し屋の首領は彼女のために姿を現し、上庭が必要とする情報を交換してくれるかもしれない。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">
+                                            セヴェロを生かす理由として十分だろ？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                        <div class="message character-message w12">…一理あるな。後で——!!</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        何かの言葉が彼女を刺激したのか、セヴェロが目を開けて、苦痛と憎悪に満ちた目で彼女を見下ろす二人を睨みつけた。
+                                    </div>
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo9.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">お前なんかに…絶対に…させない…</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        セヴェロの手のひらには単瞳のルーンが握られ、彼女は強大な力を得るが、同時に狂厄に完全に支配される。汚れた棘が彼女の全身から突き出した。
+                                    </div>
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">…それが福音地からもらった最後の手段か。共倒れすると煽られたか…</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">本当に執拗だ。だからきみは徹底的に利用されたんだ。</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo9.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">彼女たちに…触れるな！！</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                        <div class="message character-message w12">これは福音地の術式か？！下がれ！</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        巨大な響きが屋外の守備員を引きつけ、彼らが安全責任者に屋内確認の必要性を尋ねようとした瞬間、門が破られ、一つの人影が飛び出した。濃厚な血の匂いと不吉な気配をまとい、その人は警衛が反応する前に豪雨に突入し、夜の闇の中で消えた。その速度は常人のものではない。
+                                    </div>
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <div class="message narration">その場にいた全員が呆然とし、振り返ると上庭の「代理」が洋館から出てくる。軽傷を負っているが、その感情はますます冷静だものだ。
+                                    </div>
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                        <div class="message character-message w12">A級警告、福音地の術式が確認された。ここにいるすべての作戦要員は命令を受け。
+                                            この能力者を包囲しろ、殺さず生け捕りにしろ！</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                        <div class="message character-message w12">目標能力者は山荘の北東方向へ移動中、そこに彼女の仲間がいる。山荘内の全治安官、全力で彼女を阻止しろ。</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/security.png" alt="Security" class="avatar">
+                                        <div class="message character-message w12">
+                                            で、でも…俺たちの仕事は洋館の安全を守ること、彼女を守ることだ。軍はまだいるだろ？遠くに行ってない、すぐそこにいるんだ、なんで彼らを呼ばない！</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/agent.png" alt="Agent" class="avatar">
+                                        <div class="message character-message w12">彼らには別の任務がある。お前たちの仕事はこの山荘内にいる弱った能力者を捕まえることだ。逃がすな、死なせるな。</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/security.png" alt="Security" class="avatar">
+                                        <div class="message character-message w12">弱ってる…？これを弱ってるって言うのか？</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        彼は言葉を失い、花道の向こうから暴走する怪物が自分に向かって突進してくる。咆哮する烈風のような巨大な恐怖が、治安官の理性を一瞬で引き裂いた。
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="conversation4" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        N.F.113年7月23日 23:14<br>エリカ山荘内
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        <img src="img/cg/br_03.png">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        藍雨は激しく降り注ぎ、能力者の体を灼きながらも、彼女の足取りを止めることはできない。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        単瞳のルーンはますます深く刻まれ、彼女に力を与えると同時に、狂気を植え付ける。Sの体からは、汚染が凝縮した単瞳の怪物が次々と分裂し現れた。そして、遠くの山荘のあちこちから怪異の咆哮が轟き、まるでそこが「狂厄」の培養皿と化しているようだ。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/security.png" alt="Security" class="avatar">
+                                        <div class="message character-message w12">
+                                            殺さず生け捕りにしろって…こんなの、どうできるというんだ！？なんで俺たちがこんな怪物と戦わなきゃいけないんだ！俺たちはただの人間だ、こんなの無理…軍はどこ！？戻ってこいよ、助けてくれよ！助け——
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        （セヴェロの脳は瀕死の状態に陥り、生前の記憶が走馬灯のように目の前で駆け巡る。）
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo10.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">Sの中「私はかつて、何の覚悟も持たないまま、すべてを失った。」</div>
+                                    </div>
+                                </div>
+                            
+                            
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        （三十年前の惨劇）
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/npc.png" alt="Gospel NPC" class="avatar">
+                                        <div class="message character-message w12">
+                                            可哀そうな子…何もかも失って…私と一緒に来なさい。少なくとも、ここは君の仲間がいる。復讐だってできる。私が教えてあげるわ…
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo10.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">Sの中「私は心構えがなく、再びそれらを手に入れた。」</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/junior.png" alt="Junior" class="avatar">
+                                        <div class="message character-message w12">
+                                            こんな可愛い服、本当に私にくれるの？ありがとう！！Sさん、なんかお母ちゃんみたい！あ、ごめん、姉ちゃんだよ～
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/j.png" alt="J" class="avatar">
+                                        <div class="message character-message w12">
+                                            姉ちゃんなんて、ちょっと恥ずかしいなぁ…私よりも先にここに来て、たくさんのものを教えてくれた。私の心の中では、ずっと尊敬すべき先輩だと思っているんです…
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            よし、今日からもう私たちを縛れる者はいない。処分すべき者は皆殺しだ。もう一線を画いて、バイバイできるんだ～。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            今から、みな、自分の好きな仕事だけを受けて、好きな獲物だけを仕留めて、報酬をもらおう。行きたいところがあれば行け、気が向かなければ離れても構わない。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            誰かの指図をもう受けなくていい——私の以外はね。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            恨みは君たちを縛れなくなる、私が自由をやるんだ。自分の命は、好きなように使えばいい——師匠の私が許したんだから。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/severo10.png" alt="Severo" class="avatar">
+                                        <div class="message character-message w12">セヴェロの中「私は自分のために生きている…もう宝物は私の手に入った…彼女たちを傷つけるなんてさせない…誰も私のとこを通させない…」
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        だが、そんな思いももはや意味がない。「狂厄」が彼女の体内で暴走し、セヴェロの意識を徐々に奪っていく。
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="conversation5" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        N.F.113年7月23日<br>23:24、山荘内
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        <img src="img/cg/br_04.png">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration summary">
+                                        概要：失血多量と狂厄汚染の二重の打撃により、暴走していたセヴェロがついに倒れた。間一髪のところで、レオポルドが駆けつけ、彼女を救い出す。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            私の花を、誰がお前なんかに踏みつけていいと言った？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        何かによって彼女は遮られた。庭園の向こう側から、白い流れる光がゆっくりと現れ、闇の中を蛇のように縫うように進んだ。近くで、白い光が数人の治安官を貫き、最初の悲鳴が響く。<br>
+                                        セヴェロがわずかに震えた。闇に飛び散るのは血ではなく、鮮紅の花びら。人体から咲き、すぐに怪異な棘となって代理に向かって突進する。上庭の男が反応しようとした瞬間、貫かれた。他の者は恐怖で後ずさる。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">
+                                            …今ごろ来るか。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        さらに多くの棘が藍い雨を突き破り、代理の背後へ、決心の殺意を込めてXに向かって刺した。<br>
+                            
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        青い光線が突然場を一掃し、冷光が切り裂くところすべてが破壊された。世界が静まると、藍い雨の音の中、夜に溶け込むような漆黒の物体が静かに浮かんでいる――Xのそばにいつもいる黒石英だ。<br>
+                            
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        <br>
+                                        代理がいた場所は空っぽで、セヴェロは連れ去られ、地面には白い布切れだけが残されている。敵はすでに去った。<br>
+                                        だが、問題ない。プログラムは順調に作動し、脅しは解除された。黒石英は待機監視状態に戻り、Xのそばに漂う。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">
+                                            …うん、彼女に会えた。大丈夫、今夜現れたんだから、また必ず来る。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/x.png" alt="X" class="avatar">
+                                        <div class="message character-message w12">
+                                            それに、今の私じゃ追うことすらできないんだ。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        代理とXが重傷を負い、一時的に行動不能に陥る。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        ……
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div id="conversation6" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        N.F.113年7月24日<br>00:41、「GARDEN」アジト
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration summary">
+                                        概要：レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        <img src="img/cg/br_05.png">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            ただの上庭の犬、私の花を汚すなんて……ふふ
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        <img src="img/cg/br_06.png">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            地下に伝えて、「GARDEN」はこの依頼を受けたと。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            リストをよこせ、私が直接行く。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            君の願い通り、盛大に花を咲かせるわよ。上庭の執行人
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/leopold1.png" alt="Leopold" class="avatar">
+                                        <div class="message character-message w12">
+                                            <span>シャローム</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        序章「Blue rain」終了、つづく。
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 花 -->
+                            <div id="conversation7" class="conversation">
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    N.F.113年8月8日 9:00<br>
+                                    FAC記念墓地<br>
+                                    西区戦没者追悼式
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                        今日、私たちはここに集まり、1423人の戦士、友人、そして同胞を迎えます。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      3月の災変で、彼らはためらうことなく西区へ向かい、突発的な狂厄危機に対抗し、命を捧げました。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      今、災害の影響は抑えられ、反撃の号角がまもなく鳴り響こうとしています。FACはようやく彼らを愛する人々の元へ送り返すことができます。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                        ここに来て、英雄たちを最後の旅路に見送ってくれて、再び感謝を申し上げます。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/mourner.png" alt="追悼者" class="avatar">
+                                    <div class="message character-message w12">
+                                      子、一人で来たの？ご家族は?あっ…ごめんなさい、わたしったら…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/mourner.png" alt="追悼者" class="avatar">
+                                    <div class="message character-message w12">
+                                      ごめんなさいね、きっとお辛いでしょう…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                    <div class="message character-message w12">
+                                      ありがとう…他の人の代わりに来ただけだから、大丈夫だよ。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                    <div class="message character-message w12">
+                                      あたしは強いからね。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/memory_voice.png" alt="記憶の中の声" class="avatar">
+                                    <div class="message character-message w12">
+                                      追悼？ふん、君が行けばいいじゃない。君だって「娘」なんでしょ？養子でも、彼らは君を可愛がってた。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/memory_voice.png" alt="記憶の中の声" class="avatar">
+                                    <div class="message character-message w12">
+                                      私は行かないよ。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      この時代は傷だらけで、長い夜はまだ明けない。でも、信じる者がいて、立ち上がる者がいる。愛する城邦のために戦い、信じた未来のために犠牲になった。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      彼らは闇の中で光を守る英雄、絶望の中で生を取り戻した戦士だ。私たちは決して忘れない。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      そして、英雄たちが帰るのは、君たちのためだ。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/memory_voice.png" alt="記憶の中の声" class="avatar">
+                                    <div class="message character-message w12">
+                                      …なに？慰めに来たの？それとも、私に慰めてほしいの？
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/memory_voice.png" alt="記憶の中の声" class="avatar">
+                                    <div class="message character-message w12">
+                                      私の両親が死んだから、ようやく私と同じになった、共感できるって思ったわけ？
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      この陵園は君たちのため、そして彼らのために建てられた。彼らは君たちが来ることを望んでいる。愛する人たちが無事でいるのを見たいからだ。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      どうか、たびたび彼らに会いに来てくれ。君たちが無事でいること、それがFACの戦いの最大の意味だ。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/grieving_girl.png" alt="悲痛な少女" class="avatar">
+                                    <div class="message character-message w12">
+                                      出てけ！私は君と違う！FACのその綺麗事、受け入れない！こんな英雄、認めない！
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/grieving_girl.png" alt="悲痛な少女" class="avatar">
+                                    <div class="message character-message w12">
+                                      死んだらそれで終わりだよ！彼らは私を置いていった、私を孤児にした！そんな奴らが何の英雄だ！
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/grieving_girl.png" alt="悲痛な少女" class="avatar">
+                                    <div class="message character-message w12">
+                                      うっ…くそくらえの光明と正義…こんなもののために死にに行くなんて…バカすぎる、みんなくそくらえだ…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      …来てくれてありがとう。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/fac_commander.png" alt="FAC総司令" class="avatar">
+                                    <div class="message character-message w12">
+                                      我々の城邦が苦難から遠ざかり、同胞が永遠に平安でありますように。
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    藍雨がしとしとと降り続く中、FACの追悼式はいつもこの絶妙な雰囲気に包まれる。BR-002が全城に拡散した汚染を浄化するため、そして逝去した英雄たちを悼むためだ。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    探偵は陵園を出て、誰もいない場所へ歩き、傘を収め、空を見上げた。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    藍雨が彼女の顔に当たり、流れとなって頬を伝い、涙と混ざり合い、狂厄の反応を刻む跡を残す。この痛みが自分を覚醒させてくれることを、彼女はどれほど願ったか。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    突然、電話の着信音が鳴る。彼女はぼんやりと携帯を取り出し、聞き慣れたメロディを認識すると、灰色の瞳が一瞬で輝きを放ち、探偵は飛び上がった。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                    <div class="message character-message w12">
+                                      セリーヌ姉さん！帰ってきたの？うわ…そんな大変だったんだ…もう…え？！地下の連中がまた何か企んでる？「GARDEN」の殺し屋が連続襲撃？なんて卑劣な奴ら、正面で勝てないからって裏で汚い手を使うなんて！
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                    <div class="message character-message w12">
+                                      …え？私が特派調査員？！本当にいいの？！
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character1">
+                                      <div class="message character-message w12">
+                                        うんうんうん、もちろんだよ！セリーヌ姉さんの依頼なら絶対頑張ってやるよ！名探偵の未来をかけて、今すぐ出発する！
+                                      </div>
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    電話を切り、彼女は走り出した。数歩走っただけで、3メートルも跳び上がる勢いだ。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character1">
+                                    <div class="message character-message w12">
+                                        お姉様の信頼と!光と正義のために!
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    N.F.113年8月8日、FAC総司令は西区戦線から新城に戻り、市議会に正式に<span>「BR-002黒環封鎖作戦」</span>の認可申請を提出。目的はBR-002周辺に反狂厄遮断網を構築し、黒環汚染の拡散を制限し、西区の環境を完全に安定させること。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    FACの設立目的はDis城邦の守護であり、西区はDisの一部、西区の民は守られるべきDisの市民である。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    彼らを決して見捨ててはならない。
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message narration">
+                                    この作戦はすでに上庭の支持を暫定的に得ており、資金、人力、組織権限などの具体的事項は、涅槃グループを含む多数の代表者による共同評価を経て、<span>8月15日</span>に最終審査が完了する予定である。
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="profile-card fade" id="profile-card-right">
+                        <div class="profile-avatar-container">
+                            <img src="img/dh-severo.png" alt="Severo" class="profile-avatar" id="right-avatar">
+                        </div>
+                        <div class="keywords-container">
+                            <h6 class="w16" id="right-keyword-title">Keyword</h6>
+                            <span class="keywords w12" id="right-keywords">。</span>
+                        </div>
+                        <div class="profile-description" id="right-description">
+                            <h5 class="w12" id="right-description-title">一人称：私<br>二人称：あなた</h5>
+                            <p class="w8" id="right-description-text">数日内に追加の内容をアップします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-buttons">
+            <button class="nav-btn" id="prev-chapter">前章</button>
+            <button class="nav-btn" id="next-chapter">次章</button>
+        </div>
+        <div class="music-controls">
+            <img src="img/v2c.png" alt="Play" onclick="muteMusic(1)" class="imgMusicPlay" style="display: none;">
+            <img src="img/v2.gif" alt="Pause" onclick="muteMusic(2)" class="imgMusicStop">
+        </div>
+    </div>
+    <audio id="bgm-player" loop></audio>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+            return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+            if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+                try {
+                    var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                    var firstSheetName = workbook.SheetNames[0];
+                    var worksheet = workbook.Sheets[firstSheetName];
+                    var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                    var filteredData = jsonData.filter(row => row.some(filledCell));
+                    var headerRowIndex = filteredData.findIndex((row, index) =>
+                        row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                    );
+                    if (headerRowIndex === -1 || headerRowIndex > 25) {
+                        headerRowIndex = 0;
+                    }
+                    var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                    csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                    return csv;
+                } catch (e) {
+                    console.error(e);
+                    return "";
+                }
+            }
+            return gk_fileData[filename] || "";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const conversations = {
+            'conversation1': {
+                title: 'Blue Rain-000',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-l1.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '犯罪組織の主宰者',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh-severo.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: 'Sが人生で本当に悲しみから涙を流したのは、わずか二度だけです。家が滅び、人を失った時と、Lの命が長くないことを知った時です。それ以外の涙はすべて演技によるものです。'
+                }
+            },
+            'conversation2': {
+                title: 'Blue Rain-002「家」',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '犯罪組織の主宰者',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh-s2.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation3': {
+                title: 'Blue Rain-003「何のために戦うか」',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '犯罪組織の主宰者',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh-severo.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation4': {
+                title: 'Blue Rain-004',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '犯罪組織の主宰者',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: 'Xが意図的に流したセヴェロが上庭に捕まったという情報をたった今受け取り、エリカ山荘に向かう途中…。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/severoBR4.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation5': {
+                title: 'Blue Rain-005',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '犯罪組織の主宰者',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh-severo.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation6': {
+                title: 'Blue Rain-006',
+                bgm: 'mp3/bg/conversation6.mp3',
+                leftProfile: {
+                    avatar: 'img/dh/leopoldBR6.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/severoBR6.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: 'セヴェロは「GARDEN」に戻り体を休養する。'
+                }
+            },
+            'conversation7': {
+                title: 'flowers-000「追悼式」',
+                bgm: 'mp3/bg/conversation7.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan1.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者に近いキャラクターからです。'
+                }
+            },
+            'conversation8': {
+                title: 'flowers-001「第一現場」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan1.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+        };
+        const conversationOrder = ['conversation1', 'conversation2', 'conversation3', 'conversation4', 'conversation5', 'conversation6', 'conversation7', 'conversation8'];
+        let currentBgm = null;
+
+    function muteMusic(action) {
+        const bgmPlayer = document.getElementById('bgm-player');
+        const playButton = document.querySelector('.imgMusicPlay');
+        const stopButton = document.querySelector('.imgMusicStop');
+        if (action === 1) {
+            bgmPlayer.play().catch(e => console.error('BGM play error:', e));
+            playButton.style.display = 'none';
+            stopButton.style.display = 'inline';
+        } else {
+            bgmPlayer.pause();
+            playButton.style.display = 'inline';
+            stopButton.style.display = 'none';
+        }
+    }
+    function playBgm(conversationId) {
+        const bgmPlayer = document.getElementById('bgm-player');
+        const playButton = document.querySelector('.imgMusicPlay');
+        const stopButton = document.querySelector('.imgMusicStop');
+        if (conversations[conversationId] && conversations[conversationId].bgm) {
+            if (currentBgm !== conversations[conversationId].bgm) {
+                bgmPlayer.src = conversations[conversationId].bgm;
+                currentBgm = conversations[conversationId].bgm;
+                bgmPlayer.play().catch(e => {
+                    console.error('BGM play error:', e);
+                    // 如果自动播放失败，保持暂停状态
+                    playButton.style.display = 'inline';
+                    stopButton.style.display = 'none';
+                });
+                playButton.style.display = 'none';
+                stopButton.style.display = 'inline';
+            }
+        }
+    }
+    function showConversation(conversationId) {
+        console.log('Switching to:', conversationId);
+        const chatContainer = document.getElementById('chat-container');
+        const headerTitle = document.getElementById('header-title');
+        const leftProfileCard = document.getElementById('profile-card-left');
+        const rightProfileCard = document.getElementById('profile-card-right');
+        const leftAvatar = document.getElementById('left-avatar');
+        const rightAvatar = document.getElementById('right-avatar');
+        const leftKeywordTitle = document.getElementById('left-keyword-title');
+        const rightKeywordTitle = document.getElementById('right-keyword-title');
+        const leftKeywords = document.getElementById('left-keywords');
+        const rightKeywords = document.getElementById('right-keywords');
+        const leftDescriptionTitle = document.getElementById('left-description-title');
+        const rightDescriptionTitle = document.getElementById('right-description-title');
+        const leftDescriptionText = document.getElementById('left-description-text');
+        const rightDescriptionText = document.getElementById('right-description-text');
+        if (!chatContainer || !headerTitle || !leftProfileCard || !rightProfileCard) {
+            console.error('One or more elements not found:', {
+                chatContainer, headerTitle, leftProfileCard, rightProfileCard
+            });
+            return;
+        }
+        leftProfileCard.style.display = 'flex';
+        rightProfileCard.style.display = 'flex';
+        chatContainer.style.display = 'block';
+        headerTitle.style.display = 'block';
+        leftProfileCard.classList.add('fade-hidden');
+        rightProfileCard.classList.add('fade-hidden');
+        chatContainer.classList.add('fade-hidden');
+        headerTitle.classList.add('fade-hidden');
+        document.querySelectorAll('.conversation').forEach(conv => {
+            conv.style.display = 'none';
+        });
+        const activeConversation = document.getElementById(conversationId);
+        if (activeConversation) {
+            activeConversation.style.display = 'block';
+            activeConversation.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            console.error('Conversation not found:', conversationId);
+        }
+        if (conversations[conversationId]) {
+            headerTitle.textContent = conversations[conversationId].title;
+            leftAvatar.src = conversations[conversationId].leftProfile.avatar;
+            leftKeywordTitle.textContent = conversations[conversationId].leftProfile.keywordTitle;
+            leftKeywords.textContent = conversations[conversationId].leftProfile.keywords;
+            leftDescriptionTitle.innerHTML = conversations[conversationId].leftProfile.descriptionTitle;
+            leftDescriptionText.textContent = conversations[conversationId].leftProfile.descriptionText;
+            rightAvatar.src = conversations[conversationId].rightProfile.avatar;
+            rightKeywordTitle.textContent = conversations[conversationId].rightProfile.keywordTitle;
+            rightKeywords.textContent = conversations[conversationId].rightProfile.keywords;
+            rightDescriptionTitle.innerHTML = conversations[conversationId].rightProfile.descriptionTitle;
+            rightDescriptionText.textContent = conversations[conversationId].rightProfile.descriptionText;
+        } else {
+            console.error('Conversation data not found:', conversationId);
+        }
+        setTimeout(() => {
+            leftProfileCard.classList.remove('fade-hidden');
+            rightProfileCard.classList.remove('fade-hidden');
+            chatContainer.classList.remove('fade-hidden');
+            headerTitle.classList.remove('fade-hidden');
+            leftProfileCard.style.opacity = '1';
+            rightProfileCard.style.opacity = '1';
+            chatContainer.style.opacity = '1';
+            headerTitle.style.opacity = '1';
+        }, 10);
+        updateNavigationButtons(conversationId);
+        playBgm(conversationId);
+    }
+        function updateNavigationButtons(conversationId) {
+            const prevButton = document.getElementById('prev-chapter');
+            const nextButton = document.getElementById('next-chapter');
+            const currentIndex = conversationOrder.indexOf(conversationId);
+            prevButton.disabled = currentIndex <= 0;
+            nextButton.disabled = currentIndex >= conversationOrder.length - 1;
+        }
+        function navigateChapter(direction) {
+            const currentConversation = document.querySelector('.conversation[style*="display: block"]');
+            if (!currentConversation) return;
+            const currentId = currentConversation.id;
+            const currentIndex = conversationOrder.indexOf(currentId);
+            const newIndex = currentIndex + direction;
+            if (newIndex >= 0 && newIndex < conversationOrder.length) {
+                const newConversationId = conversationOrder[newIndex];
+                showConversation(newConversationId);
+                history.pushState(null, null, `#${newConversationId}`);
+            }
+        }
+        function handleHashChange() {
+            const hash = window.location.hash;
+            console.log('Hash detected:', hash);
+            const conversationId = hash ? hash.substring(1) : 'conversation4';
+            if (conversations[conversationId]) {
+                showConversation(conversationId);
+            } else {
+                console.error('Invalid conversation ID:', conversationId);
+                showConversation('conversation4');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            handleHashChange();
+            document.getElementById('prev-chapter').addEventListener('click', () => navigateChapter(-1));
+            document.getElementById('next-chapter').addEventListener('click', () => navigateChapter(1));
+        });
+        window.addEventListener('hashchange', handleHashChange);
+    </script>
+</body>
+</html>

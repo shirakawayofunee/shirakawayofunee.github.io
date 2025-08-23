@@ -4,42 +4,44 @@ var swiperAll = new Swiper("#allSwiper", {
   direction: "vertical",
   speed: 300,
   mousewheel: {
-    enabled: true,
-    sensitivity: 1, // 降低滚轮灵敏度
-    thresholdDelta: 50, // 最小滚轮移动距离
-    thresholdTime: 200, // 滚轮事件防抖时间（ms）
+      enabled: true,
+      sensitivity: 1,
+      thresholdDelta: 50,
+      thresholdTime: 200,
   },
   noSwiping: true,
   noSwipingClass: "swiperBG",
   on: {
-    slideChange: function () {
-      console.log("Slide changed to index:", this.activeIndex);
-      // 防止从bannerIndex=2直接跳到0
-      if (bannerIndex === 2 && this.activeIndex === 0) {
-        console.warn("Detected invalid jump from 2 to 0, correcting to 1");
-        this.slideTo(1, 300, false);
-        return;
-      }
-      wheelIndex = false;
-      changeBanner(this.activeIndex);
-      changeBannerCssHide(this.activeIndex);
-    },
-    touchEnd: function (swiper, event) {},
-    slideChangeTransitionEnd: function () {
-      bannerIndex = this.activeIndex;
-      console.log("Slide transition ended, bannerIndex:", bannerIndex);
-      changeBannerCss(this.activeIndex);
-    },
-    slideChangeTransitionStart: function () {
-      if (this.activeIndex != 4) {
-        bannerIndex = this.activeIndex;
-      }
-      if (this.activeIndex != 2) {
-        $(".character").css("background", ``);
-      }
-    },
+      slideChange: function () {
+          console.log("Slide changed to index:", this.activeIndex);
+          if (bannerIndex === 2 && this.activeIndex === 0) {
+              console.warn("Detected invalid jump from 2 to 0, correcting to 1");
+              this.slideTo(1, 300, false);
+              return;
+          }
+          wheelIndex = false;
+          changeBanner(this.activeIndex);
+          changeBannerCssHide(this.activeIndex);
+          muteMusic(2); // 直接在slideChange中触发播放
+      },
+      touchEnd: function (swiper, event) {},
+      slideChangeTransitionEnd: function () {
+          bannerIndex = this.activeIndex;
+          console.log("Slide transition ended, bannerIndex:", bannerIndex);
+          changeBannerCss(this.activeIndex);
+      },
+      slideChangeTransitionStart: function () {
+          if (this.activeIndex != 4) {
+              bannerIndex = this.activeIndex;
+          }
+          if (this.activeIndex != 2) {
+              $(".character").css("background", ``);
+          }
+      },
   },
 });
+window.mySwiper = swiperAll; // 暴露全局Swiper实例
+enableAutoPlayOnSlideChange(swiperAll); // 绑定音乐播放
 
 function changeBanner(num) {
   console.log("Changing banner to index:", num);

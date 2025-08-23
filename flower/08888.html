@@ -1,0 +1,109 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script>
+        
+<div class="swiper-slide pc relationship" data-mouse="small" id="slide7">
+  <div class="relationship-left animate__animated animate__fadeInLeft" data-mouse="small">
+    <div class="swiper mySwiper relationship-border" id="pcrelationship" data-mouse="small">
+      <div class="swiper-wrapper" data-mouse="small">
+        <div class="swiper-slide relationship-left-list" data-mouse="small">
+          <img src="img/relationship/r1.png" alt="" data-mouse="big" data-img="./img/relationship/r1c.png"
+            class="relationship-img slide-inner" onclick="relationshipShowBig(this,'r1d.png')">
+        </div>
+        <div class="swiper-slide relationship-left-list" data-mouse="small">
+          <img src="img/relationship/r2.png" alt="" data-mouse="big" data-img="./img/relationship/r2c.png"
+            class="relationship-img slide-inner" onclick="relationshipShowBig(this,'r2d.png')">
+        </div>
+        <div class="swiper-slide relationship-left-list" data-mouse="small">
+          <img src="img/relationship/r3.png" alt="" data-mouse="big" data-img="./img/relationship/r3c.png"
+            class="relationship-img slide-inner" onclick="relationshipShowBig(this,'r3d.png')">
+        </div>
+        <div class="swiper-slide relationship-left-list" data-mouse="small">
+          <img src="img/relationship/r4.png" alt="" data-mouse="big" data-img="./img/relationship/r4c.png"
+            class="relationship-img slide-inner" onclick="relationshipShowBig(this,'r4d.png')">
+        </div>
+        <!-- Add more slides as needed -->
+      </div>
+    </div>
+  </div>
+  <div class="relationship-right" data-mouse="small">
+    <div class="relationship-right-title" data-mouse="small">
+      <img src="img/relationship/t1.png" alt="" data-mouse="small" class="animate__animated animate__fadeInUp"
+        id="relationshipTitle">
+    </div>
+    <div class="relationship-right-str animate__animated animate__fadeInUp" data-mouse="small" id="relationshipStr">
+      ここに関係性の説明テキストを挿入してください。
+    </div>
+    <div class="relationship-right-page animate__animated animate__fadeInUp" data-mouse="mid">
+      <div id="relationshipPre" data-mouse="mid">
+        <img src="img/relationship/pre.png" alt="" data-mouse="mid" style="margin-right: 1vw;">
+      </div>
+      <div data-mouse="mid">
+        <img data-mouse="mid" class="relationship-right-page-img relationship-right-page-img1" id="relationshipImg1"
+          onclick="changeRelationshipClick(0)">
+        <img data-mouse="mid" class="relationship-right-page-img relationship-right-page-img2" id="relationshipImg2"
+          onclick="changeRelationshipClick(1)">
+        <img data-mouse="mid" class="relationship-right-page-img relationship-right-page-img3" id="relationshipImg3"
+          onclick="changeRelationshipClick(2)">
+        <img data-mouse="mid" class="relationship-right-page-img relationship-right-page-img4" id="relationshipImg4"
+          onclick="changeRelationshipClick(3)">
+      </div>
+      <div data-mouse="mid" id="relationshipNext">
+        <img data-mouse="mid" src="img/relationship/next.png" alt="" style="margin-left: 1vw;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="swiper-slide mobile relationshipMobile">
+  <div class="relationshipMobile-top animate__animated animate__fadeInRight">
+    <img src="img/relationshipM/1.png" alt="" class="relationshipMobile-top-img animate__animated animate__fadeInRight"
+      id="relationshipMobileImg" data-index="1" onclick="showBigRelationship(this)">
+    <img src="img/relationshipM/pre.png" alt="" class="relationshipMobile-top-pre" onclick="relationshipMobileChange(-1)"
+      id="relationshipMobilePre">
+    <img src="img/relationshipM/next.png" alt="" class="relationshipMobile-top-next" onclick="relationshipMobileChange(1)"
+      id="relationshipMobileNext">
+  </div>
+  <img src="img/relationshipM/t1.png" alt="" class="relationshipMobile-top-title animate__animated animate__fadeInUp"
+    id="relationshipMobileTitle">
+  <div class="relationshipMobile-mid animate__animated animate__fadeInUp" id="relationshipMobileStr">
+    ここに関係性の説明テキストを挿入してください。
+  </div>
+</div>

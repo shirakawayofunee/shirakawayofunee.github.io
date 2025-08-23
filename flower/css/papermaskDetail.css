@@ -1,6 +1,6 @@
 .papermaskDetail{
     position: fixed;
-    z-index: 200;
+    z-index: 10000;
     /* background: dodgerblue; */
     background: rgba(0,0,0,.8);
     width: 100%;
@@ -9,6 +9,9 @@
     overflow: hidden;
     display: none;
 }
+.papermaskDetail.show {
+    display: block !important; /* 强制显示 */
+  }
 .papermaskDetailTop{
     position: absolute;
     width: 100%;

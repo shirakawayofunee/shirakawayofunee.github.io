@@ -99,7 +99,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  padding-left: 2vw;
+  padding-left: 3.2vw;
   width: 80%;
 }
 .backstory-right-page-img {
@@ -151,6 +151,10 @@
 
 .backstory-right-page-img9:hover {
   content: url("../img/backstory/9_1.png");
+}
+
+.backstory-right-page-img10:hover {
+  content: url("../img/backstory/10_1.png");
 }
 
 .backstory-border {

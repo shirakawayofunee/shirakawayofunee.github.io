@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会話例</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W8.ttf') format('truetype');
+            font-weight: 200;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W12.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W16.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'DreamHanSansJP';
+            src: url('fonts/DreamHanSansJP-W27.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+        body {
+            font-family: 'DreamHanSansJP', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .swiperBG {
+            width: 100%;
+            height: 100%;
+            background: url("img/BG2.png") no-repeat bottom;
+            background-size: cover;
+            position: absolute;
+            z-index: 10;
+        }
+        .message, .profile-description, .keywords-container h6, .keywords, h1, h5, p, span {
+            font-family: 'DreamHanSansJP', sans-serif;
+        }
+        .w8 { font-weight: 200; }
+        .w12 { font-weight: 300; }
+        .w16 { font-weight: 400; }
+        .w27 { font-weight: 900; }
+        .fade {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+            display: block;
+        }
+        .fade-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .page-frame {
+            min-height: 100vh;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .header-section {
+            height: 5vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+        .chat-wrapper, .profile-card {
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-wrapper {
+            background-color: #383A3E;
+            height: 100vh;
+            background-image: url(img/dh/bg.png);
+        }
+        .profile-card {
+            background-color: #fff;
+        }
+        .dropdown {
+            padding: 0;
+            border-bottom: 1.5px solid #0F0F11;
+            position: relative;
+        }
+        .dropdown .btn {
+            background-color: #383A3E;
+            color: #fff;
+            background-image: url(img/dh/bg.png);
+            border: none;
+            font-size: 0.875rem;
+            padding: 0 10px;
+            height: 30px;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+        }
+        .dropdown .btn:hover, .dropdown .btn:focus {
+            color: #e23b78;
+            box-shadow: none;
+        }
+        .dropdown .dropdown-toggle::after {
+            display: none;
+        }
+        .dropdown-menu {
+            font-family: 'DreamHanSansJP', sans-serif;
+            font-size: 0.8rem;
+        }
+        .chat-container {
+            padding: 0 20px 20px;
+            background-image: url(img/dh/bg_full.png);
+            border-radius: 0 0 10px 10px;
+            flex: 1;
+            overflow-y: auto;
+        }
+        .message {
+            padding: 10px 15px;
+/*             margin-bottom: 10px; */
+            word-wrap: break-word;
+            width: fit-content;
+            min-width: 10px;
+            max-width: 80%;
+        }
+        .message-wrapper {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .conversation .mb-3:first-child {
+            margin-top: 20px;
+        }
+        .character-message {
+            background-color: #252225;
+            color: #c9c7ca;
+            border: 1.5px solid #848285;
+        }
+        .character1 {
+            margin-left: auto;
+            flex-direction: row-reverse;
+        }
+        .character1 .avatar {
+            margin-left: 10px;
+        }
+        .character2, .character3, .character4, .character5 {
+            margin-right: auto;
+        }
+        .character2 .avatar, .character3 .avatar, .character4 .avatar, .character5 .avatar {
+            margin-right: 10px;
+        }
+        .narration {
+            color: #d7d8db;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-style: italic;
+            width: 90%;
+        }
+        .narration img {
+            width: 100%;
+            height: auto;
+        }
+        .option {
+            background-color: #e9ecef;
+            color: #333;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            cursor: pointer;
+        }
+        .option:hover {
+            background-color: #d3d3d3;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        .profile-avatar-container {
+            border: 1.7px solid #0F0F11;
+            border-radius: 15px;
+            padding: 0;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .profile-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        .keywords-container {
+            border: 1.7px solid #0F0F11;
+            border-radius: 5px;
+            padding: 0;
+            background-color: #e9ecef;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .keywords-container h6 {
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: bold;
+            background-color: #000;
+            color: white;
+            padding: 5px 8px;
+            border-radius: 3px 0 0 3px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .keywords {
+            font-size: 0.7rem;
+            color: #5C5C5C;
+            padding: 5px 8px;
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+        .profile-description {
+            border: 1.7px solid #0F0F11;
+            border-radius: 5px;
+            padding: 10px;
+            flex: 1;
+            font-size: 0.9rem;
+            overflow-y: auto;
+        }
+        .profile-description h5 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+        }
+        .profile-description p {
+            margin: 0;
+        }
+        .chat-container::-webkit-scrollbar,
+        .profile-description::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .chat-container::-webkit-scrollbar-track,
+        .profile-description::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 5px;
+        }
+        .chat-container::-webkit-scrollbar-thumb,
+        .profile-description::-webkit-scrollbar-thumb {
+            background: rgba(108, 117, 125, 0.2);
+            border-radius: 5px;
+        }
+        .chat-container::-webkit-scrollbar-thumb:hover,
+        .profile-description::-webkit-scrollbar-thumb:hover {
+            background: rgba(90, 98, 104, 0.3);
+        }
+        .chat-container,
+        .profile-description {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(108, 117, 125, 0.2) transparent;
+        }
+        .no-visible-scrollbar {
+            overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .no-visible-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .row {
+            align-items: stretch;
+            flex: 1;
+            min-height: 0;
+        }
+        .col-md-3, .col-md-6 {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .conversation {
+            display: block;
+            flex: 1;
+        }
+        .navigation-buttons {
+            position: fixed;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .nav-btn {
+            background-color: #383A3E;
+            color: #fff;
+            border: 1.5px solid #0F0F11;
+            padding: 8px 20px;
+            font-size: 0.875rem;
+            font-family: 'DreamHanSansJP', sans-serif;
+            font-weight: 300;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-btn:hover {
+            background-color: #e23b78;
+            color: #fff;
+        }
+        .nav-btn:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        span {
+            color: #e23b78;
+        }
+        .summary{
+            color:#5C5C5C;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+        .music-controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            display: flex;
+            gap: 5px;
+        }
+        .imgMusicPlay, .imgMusicStop {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        @media (min-width: 768px) {
+            .chat-wrapper,
+            .profile-card {
+                height: 80vh;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .row {
+                flex-direction: column;
+                height: auto;
+            }
+            .col-md-3,
+            .col-md-6 {
+                flex: 1 0 100vh;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .chat-wrapper,
+            .profile-card {
+                height: 100vh;
+            }
+            .chat-wrapper {
+                margin-bottom: 0;
+            }
+            .navigation-buttons {
+                gap: 10px;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .nav-btn {
+                padding: 6px 15px;
+                font-size: 0.8rem;
+            }
+            .music-controls {
+                top: 5px;
+                right: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-frame swiperBG">
+        <div class="container mt-5">
+            <div class="header-section">
+                <h4 class="text-center mb-4 fade" id="header-title">会話例</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="profile-card fade" id="profile-card-left">
+                        <div class="profile-avatar-container">
+                            <img src="img/dh-leopold.jpg" alt="Leopold" class="profile-avatar" id="left-avatar">
+                        </div>
+                        <div class="keywords-container">
+                            <h6 class="w16" id="left-keyword-title">Keyword</h6>
+                            <span class="keywords w12" id="left-keywords">無愛想だが非常に頼もしい死神</span>
+                        </div>
+                        <div class="profile-description" id="left-description">
+                            <h5 class="w12" id="left-description-title">余命三ヶ月<br>一人称：私<br>二人称：お前、君</h5>
+                            <p class="w8" id="left-description-text">夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chat-wrapper">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                選べる会話例
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation1')">Blue Rain-001「招かれざる客」 N.F.113年7月16日</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation2')">Blue Rain-002「穏やかな朝」 N.F.113年7月23日 08:05</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation3')">Blue Rain-003「家」 N.F.113年7月23日 08:15</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation4')">Blue Rain-004「異変」 N.F.113年7月23日 23:04</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation5')">Blue Rain-005「何のために戦うか」 N.F.113年7月23日 23:14</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation6')">Blue Rain-006「大切なこと」 N.F.113年7月23日 23:24</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation7')">Blue Rain-007「登場」 N.F.113年7月24日 00:41</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation8')">flowers-100「追悼式」 N.F.113年8月8日 9:00</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation9')">flowers-101「探偵ゲーム」 N.F.113年8月8日 16:00</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation10')">flowers-102「予告状」</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showConversation('conversation11')">flowers-103「廃墟」 N.F.113年8月9日 N.F.113年8月9日 3:20</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation12')">flowers-104「第二現場」 N.F.113年8月9日 17:36</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation13')">flowers-105「业师」 N.F.113年8月9日 18:30</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation14')">flowers-106「創傷」 N.F.113年8月10日 15:20</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation15')">flowers-107「εἰρήνη」 N.F.113年8月10日 15:25</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation16')">flowers-108「第三現場」 N.F.113年8月11日 7:45</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation17')">flowers-109「第四現場」 N.F.113年8月11日 8:30</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation18')">flowers-110「二人」 N.F.113年8月11日 9:00</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation19')">flowers-111「誘餌」 N.F.113年8月14日 21:25</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation20')">flowers-112「本当の目標」 N.F.113年8月15日 5:25</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation21')">flowers-113「最後通牒」 N.F.113年8月15日 11:32</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation22')">flowers-114「清理人」 N.F.113年8月15日</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation23')">flowers-115「西区作战」 N.F.113年8月17日 下午2:23</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation24')">flowers-116「西区作战」 N.F.113年8月19日 0:00</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation25')">flowers-117「交鋒」 N.F.113年8月23日 7:00</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation26')">flowers-118「失落的正義」 N.F.113年8月23日 17:20</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation27')">flowers-119「第五現場」 N.F.113年8月24日 4:35</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation28')">flowers-120「残花の復仇」 N.F.113年8月26日 2:13</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation29')">flowers-121「委託」 N.F.113年8月26日</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation30')">flowers-122「静默の背叛」 N.F.113年8月25日</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation31')">flowers-123「後日談1」 N.F.113年8月25日</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation32')">flowers-124「後日談2」 N.F.113年9月</a></li>
+    <li><a class="dropdown-item" href="#" onclick="showConversation('conversation33')">弱者-200「」 N.F.113年11月</a></li>
+                            </ul>
+                        </div>
+                        <div class="chat-container fade" id="chat-container">
+                            <div id="conversation1" class="conversation">
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        N.F.113年7月16日
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration summary">
+                                        概要：ヒーゲル（福音地の幹事の一人）がセヴェロを見つけ、「GARDEN」と「命の延長」を餌に、単瞳のルーンを与え、上庭特使Xの暗殺を頼んだ。
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                        <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                        <div class="message character-message w12">
+                                            聞いたよ、君たちの基地が最近襲われたって。上庭が手を出したんだろ？
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/severo3.png" alt="Severo" class="avatar">
+                                    <div class="message character-message w12">
+                                      …お前か、福音地の野郎め…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/severo3.png" alt="Severo" class="avatar">
+                                      <div class="message character-message w12">
+                                        お前たちと上庭の争いに、巻き込む気か。私たちはもうお前たちの道具じゃない。
+                                      </div>
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                    <div class="message character-message w12">
+                                      へっ、足を洗ったってわけ？
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                      <div class="message character-message w12">
+                                        上庭はそんなの知ったこっちゃないよ。一度福音地に染まったら、一生溝のネズミとして扱われるのさ。
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                      <div class="message character-message w12">
+                                        彼らはとっくに君たちをマークしてる…
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                      <div class="message character-message w12">
+                                        この組織を作ったのは私たち、君を救って、君の復讐を果たさせた…君の新生は、私たちの贈り物だよ…
+                                      </div>
+                                    </div>
+                                  </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/severo3.png" alt="Severo" class="avatar">
+                                    <div class="message character-message w12">
+                                      違う！違うんだ。復讐は私を救わなかった。私を救ったのは家族、彼女とみんなだった…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="message-wrapper character2">
+                                    <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                    <div class="message character-message w12">
+                                      もうすぐ全部上庭に排除されるよ、そんもの。君の首領も、家族も、抵抗なんてできないさ…その日はもうすぐ来る、君もわかってるだろ…
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                      <div class="message character-message w12">
+                                        だが…取引しないか？今の上庭の執行者、君たちを追い詰めてるリーダーが、尻尾を出したんだ…
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message-wrapper character2">
+                                      <img src="img/dh/armaf.png" alt="Unknown" class="avatar">
+                                      <div class="message character-message w12">
+                                        そいつを見つけ出せ…一緒にやらないか…十分な力を与えるよ。君の「新生」を守るんのさ。
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <div class="message narration summary">
+                                        ここでは1783文字を省略（調査員、Xの初登場、および調査員とXの対話）。
+                                    </div>
+                                </div>
+                                  <div class="mb-3">
+                                    <div class="message narration">
+                                        黒雲が城を覆い、豪雨が迫る。そして、幕を開けるのは……
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="message narration">
+                                        ただ、哀れな数人の滑稽な物語にすぎない。
+                                    </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="profile-card fade" id="profile-card-right">
+                        <div class="profile-avatar-container">
+                            <img src="img/dh-severo.png" alt="調査員" class="profile-avatar" id="right-avatar">
+                        </div>
+                        <div class="keywords-container">
+                            <h6 class="w16" id="right-keyword-title">Keyword</h6>
+                            <span class="keywords w12" id="right-keywords">。</span>
+                        </div>
+                        <div class="profile-description" id="right-description">
+                            <h5 class="w12" id="right-description-title">一人称：私<br>二人称：あなた</h5>
+                            <p class="w8" id="right-description-text">数日内に追加の内容をアップします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-buttons">
+            <button class="nav-btn" id="prev-chapter">前章</button>
+            <button class="nav-btn" id="next-chapter">次章</button>
+        </div>
+        <div class="music-controls">
+            <img src="img/v2c.png" alt="Play" onclick="muteMusic(1)" class="imgMusicPlay" style="display: none;">
+            <img src="img/v2.gif" alt="Pause" onclick="muteMusic(2)" class="imgMusicStop">
+        </div>
+    </div>
+    <audio id="bgm-player" loop></audio>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+            return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+            if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+                try {
+                    var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                    var firstSheetName = workbook.SheetNames[0];
+                    var worksheet = workbook.Sheets[firstSheetName];
+                    var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                    var filteredData = jsonData.filter(row => row.some(filledCell));
+                    var headerRowIndex = filteredData.findIndex((row, index) =>
+                        row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                    );
+                    if (headerRowIndex === -1 || headerRowIndex > 25) {
+                        headerRowIndex = 0;
+                    }
+                    var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                    csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                    return csv;
+                } catch (e) {
+                    console.error(e);
+                    return "";
+                }
+            }
+            return gk_fileData[filename] || "";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const conversations = {
+            'conversation1': {
+                title: 'Blue Rain-001「招かれざる客」',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-l1.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '犯罪組織の主宰者',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。<br>数日内に追加の内容をアップします。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/severoBR1.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: 'Lと同じ戦線に立つSも、福音地の者たちを決して歓迎しない。<br>数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation2': {
+                title: 'Blue Rain-002「穏やかな朝」',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh/severoBR2.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '殺し屋',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/pc1.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '生き残り、FAC、30代',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation3': {
+                title: 'Blue Rain-003「家」',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh/severoBR2.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '殺し屋',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/pc1.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '生き残り、FAC、30代',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation4': {
+                title: 'Blue Rain-004「異変」',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '犯罪組織の主宰者',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。<br>数日内に追加の内容をアップします。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/severoBR4.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation5': {
+                title: 'Blue Rain-005「何のために戦うか」',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '犯罪組織の主宰者',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: 'Xが意図的に流したセヴェロが上庭に捕まったという情報をたった今受け取り、エリカ山荘に向かう途中…。<br>数日内に追加の内容をアップします。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/severoBR4.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation6': {
+                title: 'Blue Rain-006「大切なこと」',
+                bgm: 'mp3/bg/conversation5.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '犯罪組織の主宰者',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。<br>数日内に追加の内容をアップします。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh-severo.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: '数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation7': {
+                title: 'Blue Rain-007「登場」',
+                bgm: 'mp3/bg/conversation6.mp3',
+                leftProfile: {
+                    avatar: 'img/dh/leopoldBR6.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。<br>数日内に追加の内容をアップします。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/severoBR6.png',
+                    keywordTitle: 'Keyword',
+                    keywords: 'L的養女、弟子、従者、部下',
+                    descriptionTitle: '一人称：私 / 二人称：あなた',
+                    descriptionText: 'セヴェロは「GARDEN」に戻り体を休養する。<br>数日内に追加の内容をアップします。'
+                }
+            },
+            'conversation8': {
+                title: 'flowers-100「追悼式」',
+                bgm: 'mp3/bg/conversation7.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan1.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者に近いキャラクターからです。<br>数日内に追加の内容をアップします。一見、この物語にそぐわないように思えるけど、彼女はこれからの十数日で成長します（笑）😌'
+                }
+            },
+            'conversation9': {
+                title: 'flowers-101「第一現場」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan2.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+            'conversation10': {
+                title: 'flowers-102「予告状」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan2.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+            'conversation11': {
+                title: 'flowers-103「廃墟」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '这章没出场。<br>夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan2.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+            'conversation12': {
+                title: 'flowers-104「第二現場」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan2.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+            'conversation13': {
+                title: 'flowers-105「业师」',
+                bgm: 'mp3/bg/conversation13.mp3',
+                leftProfile: {
+                    avatar: 'img/dh/leopold105.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan3.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+            'conversation14': {
+                title: 'flowers-106「創傷」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh/x106.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '执行人',
+                    descriptionTitle: '<br>一人称：私<br>二人称：きみ',
+                    descriptionText: ''
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan5.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+            'conversation15': {
+                title: 'flowers-107「εἰρήνη」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh/x106.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '执行人',
+                    descriptionTitle: '<br>一人称：私<br>二人称：きみ',
+                    descriptionText: ''
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan2.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+            'conversation16': {
+                title: 'flowers-108「第三現場」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan2.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+            'conversation17': {
+                title: 'flowers-109「第四現場」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan2.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+            'conversation18': {
+                title: 'flowers-110「二人」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan2.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+            'conversation19': {
+                title: 'flowers-111「誘い餌」',
+                bgm: 'mp3/bg/conversation8.mp3',
+                leftProfile: {
+                    avatar: 'img/dh-leopold.jpg',
+                    keywordTitle: 'Keyword',
+                    keywords: '「GARDEN」の主宰者、殺し屋',
+                    descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+                    descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+                },
+                rightProfile: {
+                    avatar: 'img/dh/zhentan2.png',
+                    keywordTitle: 'Keyword',
+                    keywords: '探偵、生き残り',
+                    descriptionTitle: '一人称：あたし / 二人称：あなた',
+                    descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+                }
+            },
+    'conversation20': {
+        title: 'flowers-112「本当の目標」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    },
+    'conversation21': {
+        title: 'flowers-113「最後通牒」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    },
+    'conversation22': {
+        title: 'flowers-114「清理人」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    },
+    'conversation23': {
+        title: 'flowers-115「西区作战」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    },
+    'conversation24': {
+        title: 'flowers-116「西区作战」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    },
+    'conversation25': {
+        title: 'flowers-117「交鋒」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    },
+    'conversation26': {
+        title: 'flowers-118「失落的正義」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底の斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    },
+    'conversation27': {
+        title: 'flowers-119「第五現場」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底の斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    },
+    'conversation28': {
+        title: 'flowers-120「残花の復仇」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底の斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    },
+    'conversation29': {
+        title: 'flowers-121「委託」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底の斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    },
+    'conversation30': {
+        title: 'flowers-122「静默の背叛」',
+        bgm: 'mp3/bg/conversation8.mp3',
+        leftProfile: {
+            avatar: 'img/dh-leopold.jpg',
+            keywordTitle: 'Keyword',
+            keywords: '「GARDEN」の主宰者、殺し屋',
+            descriptionTitle: '余命三ヶ月<br>一人称：私<br>二人称：お前、君',
+            descriptionText: '夹缝中的最强者，将上庭与地底の斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。'
+        },
+        rightProfile: {
+            avatar: 'img/dh/zhentan2.png',
+            keywordTitle: 'Keyword',
+            keywords: '探偵、生き残り',
+            descriptionTitle: '一人称：あたし / 二人称：あなた',
+            descriptionText: '第一章の主な視点は、探索者のような役割に近いキャラクターです。'
+        }
+    }
+        };
+        const conversationOrder = ['conversation1', 'conversation2', 'conversation3', 'conversation4', 'conversation5', 'conversation6', 'conversation7', 'conversation8', 'conversation9', 'conversation10', 'conversation11', 'conversation12', 'conversation13', 'conversation14', 'conversation15', 'conversation16', 'conversation17', 'conversation18', 'conversation19', 'conversation20','conversation21','conversation22','conversation23','conversation24','conversation25','conversation26','conversation27','conversation28','conversation29','conversation30','conversation31','conversation32','conversation33'];
+        let currentBgm = null;
+
+    function muteMusic(action) {
+        const bgmPlayer = document.getElementById('bgm-player');
+        const playButton = document.querySelector('.imgMusicPlay');
+        const stopButton = document.querySelector('.imgMusicStop');
+        if (action === 1) {
+            bgmPlayer.play().catch(e => console.error('BGM play error:', e));
+            playButton.style.display = 'none';
+            stopButton.style.display = 'inline';
+        } else {
+            bgmPlayer.pause();
+            playButton.style.display = 'inline';
+            stopButton.style.display = 'none';
+        }
+    }
+    function playBgm(conversationId) {
+        const bgmPlayer = document.getElementById('bgm-player');
+        const playButton = document.querySelector('.imgMusicPlay');
+        const stopButton = document.querySelector('.imgMusicStop');
+        if (conversations[conversationId] && conversations[conversationId].bgm) {
+            if (currentBgm !== conversations[conversationId].bgm) {
+                bgmPlayer.src = conversations[conversationId].bgm;
+                currentBgm = conversations[conversationId].bgm;
+                bgmPlayer.play().catch(e => {
+                    console.error('BGM play error:', e);
+                    // 如果自动播放失败，保持暂停状态
+                    playButton.style.display = 'inline';
+                    stopButton.style.display = 'none';
+                });
+                playButton.style.display = 'none';
+                stopButton.style.display = 'inline';
+            }
+        }
+    }
+    function showConversation(conversationId) {
+        console.log('Switching to:', conversationId);
+        const chatContainer = document.getElementById('chat-container');
+        const headerTitle = document.getElementById('header-title');
+        const leftProfileCard = document.getElementById('profile-card-left');
+        const rightProfileCard = document.getElementById('profile-card-right');
+        const leftAvatar = document.getElementById('left-avatar');
+        const rightAvatar = document.getElementById('right-avatar');
+        const leftKeywordTitle = document.getElementById('left-keyword-title');
+        const rightKeywordTitle = document.getElementById('right-keyword-title');
+        const leftKeywords = document.getElementById('left-keywords');
+        const rightKeywords = document.getElementById('right-keywords');
+        const leftDescriptionTitle = document.getElementById('left-description-title');
+        const rightDescriptionTitle = document.getElementById('right-description-title');
+        const leftDescriptionText = document.getElementById('left-description-text');
+        const rightDescriptionText = document.getElementById('right-description-text');
+        if (!chatContainer || !headerTitle || !leftProfileCard || !rightProfileCard) {
+            console.error('One or more elements not found:', {
+                chatContainer, headerTitle, leftProfileCard, rightProfileCard
+            });
+            return;
+        }
+        leftProfileCard.style.display = 'flex';
+        rightProfileCard.style.display = 'flex';
+        chatContainer.style.display = 'block';
+        headerTitle.style.display = 'block';
+        leftProfileCard.classList.add('fade-hidden');
+        rightProfileCard.classList.add('fade-hidden');
+        chatContainer.classList.add('fade-hidden');
+        headerTitle.classList.add('fade-hidden');
+        document.querySelectorAll('.conversation').forEach(conv => {
+            conv.style.display = 'none';
+        });
+        const activeConversation = document.getElementById(conversationId);
+        if (activeConversation) {
+            activeConversation.style.display = 'block';
+            activeConversation.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            console.error('Conversation not found:', conversationId);
+        }
+        if (conversations[conversationId]) {
+            headerTitle.textContent = conversations[conversationId].title; // 标题无需HTML解析，保留textContent
+leftAvatar.src = conversations[conversationId].leftProfile.avatar;
+leftKeywordTitle.textContent = conversations[conversationId].leftProfile.keywordTitle; // 关键字标题通常无需HTML
+leftKeywords.innerHTML = conversations[conversationId].leftProfile.keywords; // 使用innerHTML支持可能的HTML标签
+leftDescriptionTitle.innerHTML = conversations[conversationId].leftProfile.descriptionTitle; // 使用innerHTML支持<br>
+leftDescriptionText.innerHTML = conversations[conversationId].leftProfile.descriptionText; // 使用innerHTML支持可能的HTML
+rightAvatar.src = conversations[conversationId].rightProfile.avatar;
+rightKeywordTitle.textContent = conversations[conversationId].rightProfile.keywordTitle; // 关键字标题通常无需HTML
+rightKeywords.innerHTML = conversations[conversationId].rightProfile.keywords; // 使用innerHTML支持可能的HTML标签
+rightDescriptionTitle.innerHTML = conversations[conversationId].rightProfile.descriptionTitle; // 使用innerHTML支持<br>
+rightDescriptionText.innerHTML = conversations[conversationId].rightProfile.descriptionText; // 使用innerHTML支持可能的HTML
+        } else {
+            console.error('Conversation data not found:', conversationId);
+        }
+        setTimeout(() => {
+            leftProfileCard.classList.remove('fade-hidden');
+            rightProfileCard.classList.remove('fade-hidden');
+            chatContainer.classList.remove('fade-hidden');
+            headerTitle.classList.remove('fade-hidden');
+            leftProfileCard.style.opacity = '1';
+            rightProfileCard.style.opacity = '1';
+            chatContainer.style.opacity = '1';
+            headerTitle.style.opacity = '1';
+        }, 10);
+        updateNavigationButtons(conversationId);
+        playBgm(conversationId);
+    }
+        function updateNavigationButtons(conversationId) {
+            const prevButton = document.getElementById('prev-chapter');
+            const nextButton = document.getElementById('next-chapter');
+            const currentIndex = conversationOrder.indexOf(conversationId);
+            prevButton.disabled = currentIndex <= 0;
+            nextButton.disabled = currentIndex >= conversationOrder.length - 1;
+        }
+        function navigateChapter(direction) {
+            const currentConversation = document.querySelector('.conversation[style*="display: block"]');
+            if (!currentConversation) return;
+            const currentId = currentConversation.id;
+            const currentIndex = conversationOrder.indexOf(currentId);
+            const newIndex = currentIndex + direction;
+            if (newIndex >= 0 && newIndex < conversationOrder.length) {
+                const newConversationId = conversationOrder[newIndex];
+                showConversation(newConversationId);
+                history.pushState(null, null, `#${newConversationId}`);
+            }
+        }
+        function handleHashChange() {
+            const hash = window.location.hash;
+            console.log('Hash detected:', hash);
+            const conversationId = hash ? hash.substring(1) : 'conversation2';
+            if (conversations[conversationId]) {
+                showConversation(conversationId);
+            } else {
+                console.error('Invalid conversation ID:', conversationId);
+                showConversation('conversation2');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            handleHashChange();
+            document.getElementById('prev-chapter').addEventListener('click', () => navigateChapter(-1));
+            document.getElementById('next-chapter').addEventListener('click', () => navigateChapter(1));
+        });
+        window.addEventListener('hashchange', handleHashChange);
+    </script>
+</body>
+</html>

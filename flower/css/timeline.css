@@ -17,6 +17,171 @@
   height: auto;
 }
 
+.timeline-left {
+  position: relative;
+  height: 46rem; /* 76.6666666667vh 转换为 rem */
+  width: 48vw;
+  margin: 0 auto;
+}
+
+.timeline-left .intelligence-event {
+  position: absolute;
+  cursor: pointer;
+  filter: brightness(0.7);
+  transition: filter 0.8s;
+}
+
+.timeline-left .intelligence-event:hover {
+  filter: brightness(1);
+}
+
+.timeline-left .intelligence-event .intelligence-event-bg {
+  position: relative;
+}
+
+.timeline-left .intelligence-event .intelligence-event-title {
+  position: absolute;
+}
+
+.timeline-left .intelligence-edge-000 {
+  left: 8.2rem !important; /* 13.7037037037vh 转换为 rem */
+  top: 3.2rem !important; /* 5.3703703704vh 转换为 rem */
+}
+
+.timeline-left .intelligence-edge-000 .intelligence-event-bg {
+  width: 18.6rem; /* 31.0185185185vh 转换为 rem */
+  height: 15.5rem; /* 25.8333333333vh 转换为 rem */
+  background: url('../img/intelligence/000.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-000 .intelligence-event-title {
+  left: 2.8rem !important; /* 4.6296296296vh 转换为 rem */
+  top: -0.8rem !important; /* -1.3888888889vh 转换为 rem */
+  width: 12.6rem; /* 21.0185185185vh 转换为 rem */
+  height: 2.4rem; /* 3.9814814815vh 转换为 rem */
+  background: url('../img/intelligence/000-title.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-004 {
+  top: auto !important;
+  left: 11.4rem !important; /* 19.0740740741vh 转换为 rem */
+  bottom: -1.7rem !important; /* -2.7777777778vh 转换为 rem */
+}
+
+.timeline-left .intelligence-edge-004 .intelligence-event-bg {
+  width: 28.3rem; /* 47.2222222222vh 转换为 rem */
+  height: 19.1rem; /* 31.7592592593vh 转换为 rem */
+  background: url('../img/intelligence/004.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-004 .intelligence-event-title {
+  left: 0;
+  top: 5rem; /* 8.3333333333vh 转换为 rem */
+  width: 8.3rem; /* 13.8888888889vh 转换为 rem */
+  height: 3.9rem; /* 6.5740740741vh 转换为 rem */
+  background: url('../img/intelligence/004-title.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-br {
+  left: 0.9375rem !important;
+  top: 14.6rem !important; /* 24.2592592593vh 转换为 rem */
+}
+
+.timeline-left .intelligence-edge-br .intelligence-event-bg {
+  width: 28.3rem; /* 47.2222222222vh 转换为 rem */
+  height: 19.1rem; /* 31.7592592593vh 转换为 rem */
+  background: url('../img/intelligence/br.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-br .intelligence-event-title {
+  right: -1.9rem; /* -3.2407407407vh 转换为 rem */
+  bottom: 5.6rem; /* 9.2592592593vh 转换为 rem */
+  width: 13.3rem; /* 22.2222222222vh 转换为 rem */
+  height: 2.7rem; /* 4.537037037vh 转换为 rem */
+  background: url('../img/intelligence/br-title.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-029 {
+  left: 28.3rem !important; /* 47.2222222222vh 转换为 rem */
+  top: 0 !important;
+}
+
+.timeline-left .intelligence-edge-029 .intelligence-event-bg {
+  width: 34rem; /* 56.7592592593vh 转换为 rem */
+  height: 24.2rem; /* 40.2777777778vh 转换为 rem */
+  background: url('../img/intelligence/029.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-029 .intelligence-title1 {
+  right: 3.9rem; /* 6.4814814815vh 转换为 rem */
+  bottom: 1.7rem; /* 2.7777777778vh 转换为 rem */
+  width: 13.2rem; /* 21.9444444444vh 转换为 rem */
+  height: 2.4rem; /* 4.0740740741vh 转换为 rem */
+  background: url('../img/intelligence/029-title1.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-029 .intelligence-title2 {
+  left: 3.9rem; /* 6.4814814815vh 转换为 rem */
+  bottom: -2.2rem; /* -3.7037037037vh 转换为 rem */
+  width: 9.5rem; /* 15.8333333333vh 转换为 rem */
+  height: 8rem; /* 13.3333333333vh 转换为 rem */
+  background: url('../img/intelligence/029-title2.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-sin {
+  left: auto !important;
+  right: 2.2rem !important; /* 3.7037037037vh 转换为 rem */
+  top: 2.2rem !important; /* 3.7037037037vh 转换为 rem */
+}
+
+.timeline-left .intelligence-edge-sin .intelligence-event-bg {
+  width: 19.5rem; /* 32.5vh 转换为 rem */
+  height: 23.7rem; /* 39.4444444444vh 转换为 rem */
+  background: url('../img/intelligence/sin.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-sin .intelligence-event-title {
+  right: -3rem;
+  top: 2.8rem; /* 4.6296296296vh 转换为 rem */
+  width: 12.2rem; /* 20.2777777778vh 转换为 rem */
+  height: 2.2rem; /* 3.7037037037vh 转换为 rem */
+  background: url('../img/intelligence/sin-title.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-zhanzheng {
+  left: auto !important;
+  top: auto !important;
+  right: 0 !important;
+  bottom: 5.6rem !important; /* 9.2592592593vh 转换为 rem */
+}
+
+.timeline-left .intelligence-edge-zhanzheng .intelligence-event-bg {
+  width: 32.6rem; /* 54.3518518519vh 转换为 rem */
+  height: 21.7rem; /* 36.2037037037vh 转换为 rem */
+  background: url('../img/intelligence/zhanzheng.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-zhanzheng .intelligence-event-title {
+  right: 3.9rem; /* 6.4814814815vh 转换为 rem */
+  bottom: -4.4rem; /* -7.4074074074vh 转换为 rem */
+  width: 13rem; /* 21.7592592593vh 转换为 rem */
+  height: 12.6rem; /* 20.9259259259vh 转换为 rem */
+  background: url('../img/intelligence/zhanzheng-title.png') no-repeat center/contain;
+}
+
+.timeline-left .intelligence-edge-warn {
+  top: auto !important;
+  left: 32.8rem !important; /* 54.6296296296vh 转换为 rem */
+  bottom: 1.1rem !important; /* 1.8518518519vh 转换为 rem */
+  cursor: default;
+}
+
+.timeline-left .intelligence-edge-warn .intelligence-event-bg {
+  width: 23.6rem; /* 39.2592592593vh 转换为 rem */
+  height: 17.8rem; /* 29.7222222222vh 转换为 rem */
+  background: url('../img/intelligence/warn.png') no-repeat center/contain;
+}
+
 .timeline-right {
   width: 60%;
   height: 100vh;
@@ -57,6 +222,7 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-left: 1vw; /* 增加左内边距，确保图片不被裁剪 */
+  padding-right: 10%; /* 左右内边距，确保内容不贴边 */
 }
 
 .timeline-scrollable::-webkit-scrollbar {
