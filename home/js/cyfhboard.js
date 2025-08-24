@@ -1,9 +1,9 @@
 const connections = [
-  { from: 0, to: 1, label: "我が子のように大切にする、最も愛する部下", color: "#E41900", dashed: false }, // L -> Severo (red)
-  { from: 1, to: 0, label: "劣情、湿度高めの激重愛", color: "#E41900", dashed: false }, // Severo -> L (blue)
-  { from: 0, to: 2, label: "野放し", color: "#E41900", dashed: false }, // L -> Jin
+  { from: 0, to: 1, label: "栽培、我が子のように大切にする、最も愛する部下", color: "#E41900", dashed: false }, // L -> Severo (red)
+  { from: 1, to: 0, label: "劣情、湿度高めの激重愛、求不得苦", color: "#E41900", dashed: false }, // Severo -> L (blue)
+  { from: 0, to: 2, label: "栽培、野放し", color: "#E41900", dashed: false }, // L -> Jin
   { from: 2, to: 0, label: "尊敬", color: "#0000FE", dashed: false }, // Jin -> L
-  { from: 0, to: 3, label: "教導", color: "#0000FE", dashed: false }, // L -> Ji
+  { from: 0, to: 3, label: "栽培、教導", color: "#0000FE", dashed: false }, // L -> Ji
   { from: 3, to: 0, label: "敬愛", color: "#E41900", dashed: false }, // Ji -> L
   { from: 0, to: 4, label: "やり返す、敵であり味方、複雑な協力関係", color: "#0000FE", dashed: true }, // L -> X
   { from: 4, to: 0, label: "敬慕の愛、利用", color: "#E41900", dashed: true }, // X -> L
