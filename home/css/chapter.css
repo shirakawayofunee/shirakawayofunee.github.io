@@ -159,7 +159,7 @@
   
   /* 第三章 marker 定位和背景 */
   .chapter-3-1 {
-    top: 30%;
+    top: 25%;
     left: 20%;
   }
   .chapter-3-1 .chapter-event-bg {
@@ -168,7 +168,7 @@
 
   .chapter-3-2 {
     top: 71%;
-    left: 30%;
+    left: 20%;
   }
   .chapter-3-2 .chapter-event-bg {
     background-image: url('../img/flower/3-2.png');
@@ -178,7 +178,7 @@
 
   
   .chapter-3-3 {
-    top: 36%;
+    top: 45%;
     left: 50%;
   }
   .chapter-3-3 .chapter-event-bg {
