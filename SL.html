@@ -233,6 +233,10 @@ img.lazy[src] {
 <div class="gallery-header mb-3">
   <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
     <li class="nav-item">
+      <a class="nav-link" id="r18g-tab" data-bs-toggle="tab" href="#r18g" role="tab" aria-controls="r18g"
+        aria-selected="false">メインストーリー/本編</a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab"
         aria-controls="gallery" aria-selected="true">イラスト</a>
     </li>
@@ -259,10 +263,6 @@ img.lazy[src] {
     <li class="nav-item">
       <a class="nav-link" id="mansion-tab" data-bs-toggle="tab" href="#mansion" role="tab" aria-controls="mansion"
         aria-selected="false">邸宅</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="r18g-tab" data-bs-toggle="tab" href="#r18g" role="tab" aria-controls="r18g"
-        aria-selected="false">R18-G</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="nsfw-tab" data-bs-toggle="tab" href="#nsfw" role="tab" aria-controls="nsfw"
@@ -357,9 +357,14 @@ integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIe
   return gk_fileData[filename] || "";
   }
 
-const galleryImages = [
-{ src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【公式】メインストーリー/本編" },
+  const r18gImages = [
+  { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【公式】メインストーリー/本編" },
             { src: "img/XL/zhuxian1.jpg",alt: "メインストーリー",description: "【公式】メインストーリー/本編（猫猫バージョン）",},
+  { src: "img/SL/g1.webp", alt: "R18-G Image 1", description: "" },
+  { src: "img/SL/g2.webp", alt: "R18-G Image 2", description: "" },
+/*   { src: "img/SL/g3.webp", alt: "R18-G Image 3", description: "" }, */
+];
+const galleryImages = [
   {
     src: "img/SL/SL1.webp",
     alt: "Gallery Image 1",
@@ -544,11 +549,7 @@ const nsfwImages = [
   { src: "img/SL/nsfw4.webp", alt: "NSFW Image 4", description: "体型華奢" },
 ];
 
-const r18gImages = [
-  { src: "img/SL/g1.webp", alt: "R18-G Image 1", description: "" },
-  { src: "img/SL/g2.webp", alt: "R18-G Image 2", description: "" },
-/*   { src: "img/SL/g3.webp", alt: "R18-G Image 3", description: "" }, */
-];
+
 
 function arrangeWaterfall(containerId, imageArray) {
   const container = document.getElementById(containerId);
