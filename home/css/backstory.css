@@ -255,3 +255,7 @@
   left: 50%;
   transform: translateX(-50%);
 }
+span{
+  color: #e23b78;
+/*   color: #980019; */
+}
