@@ -87,14 +87,14 @@
   /* PC 端台词例图片 */
   .character-right-left .dialog-layer-img {
     position: absolute;
-    top: 55.5%;
+    top: 65.5%;
     left: 50%;
     transform: translateX(-50%); /* 水平居中 */
     width: 900px; /* 初始宽度 */
     height: 195px; /* 初始高度 */
     max-width: 80%; /* 防止过宽 */
     max-height: 20%; /* 防止过高 */
-    opacity: 0.8; /* 半透明效果 */
+    opacity: 0.6; /* 半透明效果 */
     z-index: 9999; /* 确保在最上层 */
     pointer-events: none; /* 防止干扰鼠标事件 */
     object-fit: contain; /* 保持图片比例 */
