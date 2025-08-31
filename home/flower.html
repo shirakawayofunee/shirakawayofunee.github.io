@@ -226,7 +226,22 @@
           <div class="character-right-right-title">
             <img src="img/rolef/1t.png" alt="" class="characterFadeInRight" id="roleTitle">
           </div>
-          <div class="character-right-right-str characterFadeInRight" id="roleStr"></div>
+          <div class="character-right-right-str characterFadeInRight" id="roleStr">
+            <!-- 标签页导航 -->
+            <div class="character-tabs-nav">
+              <div class="character-tab-btn" data-tab="1" onclick="switchTab(1)"><img src="img/tab/tab1.png" alt="Tab 1"></div>
+              <div class="character-tab-btn" data-tab="2" onclick="switchTab(2)"><img src="img/tab/tab2.png" alt="Tab 2"></div>
+              <div class="character-tab-btn" data-tab="3" onclick="switchTab(3)"><img src="img/tab/tab3.png" alt="Tab 3"></div>
+              <div class="character-tab-btn" data-tab="4" onclick="switchTab(4)"><img src="img/tab/tab4.png" alt="Tab 4"></div>
+            </div>
+            <!-- 标签页内容 -->
+            <div class="character-tabs-content">
+              <div class="character-tab-panel" id="tabPanel1"></div>
+              <div class="character-tab-panel" id="tabPanel2"></div>
+              <div class="character-tab-panel" id="tabPanel3"></div>
+              <div class="character-tab-panel" id="tabPanel4"></div>
+            </div>
+          </div>
           <div class="character-right-right-button animate__animated" id="roleButton">
             <div class="character-right-right-button-right">
               <img src="img/d1.png" id="roleSwitch" alt="" onclick="switchCharacterImage()">

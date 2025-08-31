@@ -204,3 +204,52 @@ span{
   left: 50%;
   transform: translateX(-50%);
 }
+/* 250831 */
+.character-tabs-nav {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.character-tab-btn {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.character-tab-btn img {
+  width: 8rem; /* 调整按钮图片大小 */
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.character-tab-btn:hover img {
+  transform: scale(1.1); /* 突出效果：hover 时放大 */
+}
+
+.character-tab-btn.active img {
+  filter: brightness(1.2); /* 活跃标签高亮 */
+}
+
+.character-tabs-content {
+  height: calc(100% - 3rem); /* 适应原有高度 */
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  user-select: auto;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #9ea7b4;
+  line-height: 1.875rem;
+  font-family: "myFont";
+  padding-left: 2rem;
+  box-sizing: border-box;
+}
+
+.character-tab-panel {
+  display: none;
+}
+
+.character-tab-panel.active {
+  display: block;
+  animation: characterFadeInRight 0.5s; /* 保留动画 */
+}
