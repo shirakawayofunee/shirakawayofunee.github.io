@@ -115,17 +115,40 @@
   .map-4 img{
     width: 7.25rem;
   }
-  .map-4-1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  .map-br-002 {
+    top: 56%;
+    left: 15%;
   }
-  .map-4-1 a{
-    background-image: url(../img/map/bg.png);
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  
+  .map-br-002 .map-event-bg {
+    height: 32vh;
+    width: 25vw;
+    background: url('../img/map/002.png') no-repeat center/contain;
+  }
+  
+  .map-br-004 {
+    top: 66%;
+    left: 42%;
+    opacity: 0.8;
+  }
+  
+  .map-br-004 .map-event-bg {
+    height: 27vh;
+    width: 21vw;
+    background: url('../img/map/004.png') no-repeat center/contain;
+  }
+  
+  .map-br-006 {
+    top: 8%;
+    right: 33%;
+    opacity: 0.8;
+  }
+  
+  .map-br-006 .map-event-bg {
+    height: 28vh;
+    width: 24vw;
+    background: url('../img/map/006.png') no-repeat center/contain;
   }
 
   .map-4-1>img{

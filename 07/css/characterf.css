@@ -1,0 +1,254 @@
+.character {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  span{
+    color: #e23b78;
+  /*   color: #980019; */
+  }
+  
+  .character-left {
+    width: 25%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 14vh 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 50;
+    left: 0;
+  }
+  
+  .character-left img {
+    height: 8.8125rem;
+    object-fit: cover;
+  }
+  
+  .character-left-role-r {
+    position: relative;
+    left: 3.125rem;
+    transition: all 0.5s;
+  }
+  
+  .character-left-role-r:hover {
+    transform: translateX(5px);
+  }
+  
+  .character-left-role-l {
+    position: relative;
+    left: -3.125rem;
+    transition: all 0.5s;
+  }
+  
+  .character-left-role-l:hover {
+    transform: translateX(5px);
+  }
+  
+  .character-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+  
+  }
+  
+  .character-right-left {
+    width: 55rem;
+    background-size: 110%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    left: -7rem;
+  }
+  
+  
+  
+  .character-right-left img {
+    height: 85%;
+    object-fit: contain;
+    position: absolute;
+    top: 9.5%;
+  }
+  
+  .character-right-left img:nth-child(1) {
+    width: 60rem;
+    object-fit: cover;
+    position: absolute;
+    left: -30px;
+    top: -56px;
+  }
+  
+  /* PC 端台词例图片 */
+  .character-right-left .dialog-layer-img {
+    position: absolute;
+    top: 65.5%;
+    left: 50%;
+    transform: translateX(-50%); /* 水平居中 */
+    width: 900px; /* 初始宽度 */
+    height: 195px; /* 初始高度 */
+    max-width: 80%; /* 防止过宽 */
+    max-height: 20%; /* 防止过高 */
+    opacity: 0.6; /* 半透明效果 */
+    z-index: 9999; /* 确保在最上层 */
+    pointer-events: none; /* 防止干扰鼠标事件 */
+    object-fit: contain; /* 保持图片比例 */
+  }
+  
+  .character-static-img {
+    height: 100% !important;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .character-right-right {
+    box-sizing: border-box;
+    padding-top: 10vh;
+    height: 100%;
+    width: 40rem;
+    position: absolute;
+    z-index: 51;
+    right: 3em;
+  }
+  
+  .character-right-right-title {
+    height: 26%;
+    width: 33.5rem;
+    padding-top: 8vh;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  
+  .character-right-right-title > img {
+    width: 80%;
+  }
+  
+  .character-right-right-str {
+    height: 55%;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #9ea7b4;
+    text-align: left;
+    font-family: "myFont";
+    line-height: 1.875rem;
+    padding-left: 2rem;
+    box-sizing: border-box;
+    overflow: auto; 
+    -webkit-overflow-scrolling: touch;
+    user-select: auto;
+  }
+  
+  .character-right-right-button {
+    display: flex;
+    padding-left: 2rem;
+  }
+  
+  .character-right-right-button-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2vw;
+  }
+  
+  .character-right-right-button-left > img {
+    width: 5.1875rem;
+  }
+  
+  .character-right-right-button-right > img {
+    width: 8.125rem;
+    cursor: pointer;
+  }
+  
+  #roleVoice:hover,
+  #roleSwitch:hover,
+  #roleVoiceing:hover,
+  #roleSwitching:hover {
+    animation-name: bigIcon;
+    animation-duration: 0.8s;
+  }
+  
+  .cus-key {
+    position: relative;
+  }
+  .cus-target1 {
+    position: absolute;
+    top: -0.85rem;
+    width: 9rem;
+    font-size: 0.6rem;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .cus-target2 {
+    position: absolute;
+    top: -0.85rem;
+    width: 9rem;
+    font-size: 0.6rem;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .cus-target3 {
+    position: absolute;
+    top: -0.85rem;
+    width: 9rem;
+    font-size: 0.6rem;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .character-tabs-nav {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+  
+  .character-tab-btn {
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  
+  .character-tab-btn img {
+    width: 8rem; /* 调整按钮图片大小 */
+    height: auto;
+    transition: transform 0.3s;
+  }
+  
+  .character-tab-btn:hover img {
+    transform: scale(1.1); /* 突出效果：hover 时放大 */
+  }
+  
+  .character-tab-btn.active img {
+    filter: brightness(1.2); /* 活跃标签高亮 */
+  }
+  
+  .character-tabs-content {
+    height: calc(100% - 3rem); /* 适应原有高度 */
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    user-select: auto;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #9ea7b4;
+    line-height: 1.875rem;
+    font-family: "myFont";
+    padding-left: 2rem;
+    box-sizing: border-box;
+  }
+  
+  .character-tab-panel {
+    display: none;
+  }
+  
+  .character-tab-panel.active {
+    display: block;
+    animation: characterFadeInRight 0.5s; /* 保留动画 */
+  }

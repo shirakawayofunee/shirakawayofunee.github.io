@@ -1,0 +1,557 @@
+let characterMsg = [
+  {
+    bg: "1bg.png",
+    rolem: "1m.png",
+    nocheck: "1.png",
+    check: "1c.png",
+    title: "1t.png",
+    str1: `能力者｜178cm<br>
+    裏社会を陰で牛耳る実力者。犯罪組織の<span>主宰者</span>であり、部下たちから恐れられ、崇拝されている存在。<br>
+    年齢と比べてあまりにも<span>若々しい顔立ち</span>、過度に白い肌色――虞美人の時間は、遠い遠い昔に完全に止まってしまったかのようだ。<br>
+    実年齢不明、60>？？>36。<br>
+    艶やか、常に世を拗ねるような微笑を浮かべている。
+    <br>好き嫌いが激しく、享楽主義者で<span>実用</span>も重んじる、細やかで優しい一面も持っている。<br>
+    落ち着き払った自信に満ちていて、自信かつ優雅な態度を保ち、性格は八方巧み。
+    夹缝中的最强者，将上庭与地底的斗争视作狗咬狗。当前的目标是在自己死前，给下属们寻求新的安全居所。<br>
+    ▍人間単体の最強戦力<br>
+    核兵器＞＞＞「L」≈S級能力者＞使徒≥軍隊＞「S」＞一般能力者＞＞力強いたくましい人間＞一般人<br>
+    ▍背景<br>
+    Lは幼少期、軍人である両親が前線で命を落としました。<br>
+    その命の価値のない犠牲は「崇高な使命のため」とされましたが、彼女にとってその言葉は無意味で、むしろ規則の虚偽と束縛を感じさせるものでした。<br>
+    両親の死は彼女に反抗心を芽生えさせ、彼女は規則に縛られることを拒み、命を代償に禁断の力と契約を結びました。<br>
+    その力を使って、他の人々が規則から解放され、彼女のように自由に生きる手助けをすることを決意します。<br>
+    `,
+    str2: `▍メインストーリー（ネタバレ？）<br>
+    工事中
+    `,
+    str3: `▍好きなもの<br>
+    性格……孤高でそっけなく、決断力と行動力がある、表で暴虐且つ無慈悲だが、裏は温情に富んで、特に部下に対して。<br>
+    逆鱗……花园<br>
+    得意なこと……「栽培」、死の芸術、美学<br>
+    趣味……、<br>
+    好き……花、月<br>
+    嫌い……自由が制限されること、無意味な犠牲<br>
+    特技……開花、癒し<br>
+    `,
+    str4: `▍口調<br>
+    戏谑的で冷酷な口調
+    ▍会話例<br>
+    「命を大切に思うことには賛成よ。どんな醜く卑劣な人間でも、美しい花を咲かせられる。肉体も魂も養分となって、花を育て、開花するまで。それこそが本当の純粋な命だ。」
+    S「もう二度と家族を失いたくない…」<br>
+    L「Gardenが君の家だよ。私が家族をあげる。」<br>
+    J「あいつは罰を受けるべきだ！」<br>
+    L「なら、徹底的にやりなさい。その仕方を教えてあげるわ。」<br>
+    T「私はもっと強くなりたい！誰にも踏みにじられないように！」<br>
+    L「なら、私を越すか、殺すかを選んで。」<br>
+    L「実現しなさい、復讐しなさい！私の花よ、私のGardenは、自由で、気ままで、縛らずに育つべきだ。邪魔な雑草は、全部刈り取ってしまえばいい。」<br>
+    <a href="./duihua0722.html#conversation13" target="_blank">106「业师」</a>
+    <a href="./duihua0722.html#conversation24" target="_blank">302「露の世は露の世ながらさりながら」</a>`,
+    tabTitle1: "基本信息",
+    tabTitle2: "メインストーリー（ネタバレ？）",
+    tabTitle3: "好きなもの",
+    tabTitle4: "会話例",
+    image1: "1-1.png",
+    image2: "1-2.png",
+    dialogImg: "1-dialog.png"
+  },
+    {
+      bg: "2bg.png",
+      rolem: "2m.png",
+      nocheck: "2.png",
+      check: "2c.png",
+      title: "2t.png",
+      str: `能力者。廃棄期限まであと一ヶ月しかない人造人は、上庭を裏切る準備をしており、自身を廃棄から免れるための計画を実行中です。<br>
+      腹黒く鬼畜で、目的のためには手段を選ばず、自らも含めた犠牲を厭わないほどです。<br>
+      Lが何十年も育った弟子たちをすべて殺した。なぜなら、Lはその計画において欠かせない、唯一無二の存在だ。<br>
+      Lとの戦いの中で感情の亀裂が生じ、再び感情を取り戻し、Lに恋をする。<br>
+      XはLの人柄と行動を高く評価している。<br>
+      「——使用期限内に、こっそり壊れてしまった道具にすぎないよ。」<br>
+      「これが君が命と引き換えに得た力なんだ。流れるすべての未来を犠牲にして、絶対的な強さと自由を手に入れたんだ。
+      ここまで辿り着けるのは君だけだ。本当に見事だ。君がこれほどまでに強く反骨精神を持っていてくれてありがとう……君なら勝てると分かっていたよ。」
+      <br>工事中",
+      `,
+      str1: `能力者。廃棄期限まであと一ヶ月しかない人造人。<br>上庭を裏切る準備をしており、自身を廃棄から免れるための計画を実行中。`,
+      str2: `腹黒く鬼畜で、目的のためには手段を選ばず、自らも含めた犠牲を厭わない。<br>Lが何十年も育った弟子たちをすべて殺した。
+      なぜなら、Lはその計画において欠かせない、唯一無二の存在だ。`,
+      str3: `Lとの戦いの中で感情の亀裂が生じ、再び感情を取り戻し、Lに恋をする。<br>XはLの人柄と行動を高く評価している。`,
+      str4: `▍会話例<br>「——使用期限内に、こっそり壊れてしまった道具にすぎないよ。」<br>「これが君が命と引き換えに得た力なんだ。
+      流れるすべての未来を犠牲にして、絶対的な強さと自由を手に入れたんだ。ここまで辿り着けるのは君だけだ。本当に見事だ。」`,
+      tabTitle1: "基本信息",
+      tabTitle2: "性格与动机",
+      tabTitle3: "情感转变",
+      tabTitle4: "会話例",
+      image1: "2-1.png",
+      image2: "2-2.png",
+      dialogImg: "2-dialog.png"
+    },
+    {
+      bg: "3bg.png",
+      rolem: "3m.png",
+      nocheck: "3.png",
+      check: "3c.png",
+      title: "3t.png",
+      str1: `36歳｜能力者｜187cm<br>
+      第一印象は礼儀正しく、スイーツ作りに万能であり、少しユーモアのある人物。<br>
+      穏やかな長女のような雰囲気を持ち、幼少期に経験したショックがその後の人格形成に大きな影響を与え、<br>
+      「L＞森羅万象」という極端な価値観を抱えて生きている。家族の風邪を世界中のどんな死亡事故よりも深刻に捉えるようになった。<br>
+      Sは<span>一方的</span>に、Lが彼女の後に受け入れた弟子たちを二人の共通の子供だと思っている。そのため、新人たちはSのことを優しくて親しみやすいと感じる。
+      服のボタンはすべて、亡くなった親友の遺骨を磨いて作られた骨のボタンです。<br>
+      時と場合をわきまえて地獄ネタを言う（＝そうでない時は抑える。）<br>
+
+      裏稼業……殺し屋<br>
+      誕生日と命日……7月23日<br>
+      ▍戦力<br>
+      核兵器＞＞＞「L」≈S級能力者＞使徒≥軍隊＞Severo＞一般能力者＞＞力強いたくましい人間＞一般人<br>
+      （設定外のツッコミ：Lの好感度を上げるための努力は修練に費やしていれば、とっくに出世していただろうに。）
+      ▍背景<br>
+      `,
+      str2: ``,
+      str3: `
+      ▍好きなもの<br>
+      性格……腹黒、独占欲が強い<br>
+      逆鱗……Leopold<br>
+      得意なこと……手芸、毒物学<br>
+      趣味……<br>
+      好き……Leopold、図書館、家族<br>
+      嫌い……手続き的正義、または、遅れてやって来る正義。<br>
+      特技……狙撃<br>
+      
+      <br>`,
+      str4: `
+      ▍序章抜粋1<br>
+      「この世には、私たちを受け入れてくれる場所がある。理解してくれる人がいる。彼女はあなたを導き、残酷な復讐の道を支えてくれる。
+      その気持ちさえあれば、私があなたを彼女に会わせてあげる。」<br>
+      調査員「あなたが言うその人は、あの雇い主？それとも、組織のリーダー？」<br>
+      「それは、私がやっと手に入れた新しい<span>家族</span>だよ。」<br>
+      ▍序章抜粋2<br>
+      「…本当に残念だ。本気で君を家に連れて帰りたかった。」<br>
+      「でも、何かを失う者が全部家族になれるわけじゃないみたいだ…君のおかげで、今ある<span>大切な宝物</span>をますます愛おしく感じるよ…
+      もう二度と、誰にも私のものを傷つけさせない。」<br>
+      「君も、君が媚びようとしている奴も、絶対に許さない。」<br>
+      「かつての私は復讐のためにすべてを捧げた。
+      今は未来を守るため、その倍の力を尽くす。すべてを失った君が、どうやって私に勝てるっていうんだ？」
+      <br>「家を失った野良犬が、目も見えずに吠える以外に何ができる？」
+      <br>「その執着を抱えたまま、過去に溺れて死になよ。」<br>
+      ▍SとLの初対面<br>
+      界隈内で数少ない有能な殺し屋として、Lのもとに弟子入りしたがる者は後を絶たず、みな彼女の名声に惹かれ、立派な後ろ盾を得ようと目論んでいる。
+      だが、実際にLに教えを受ければ、疲れや苦しみ、傷つきから死ぬまで至り、どんな目に遭うかは各々の定め。
+      だから、Lが本気で受け入れた弟子はほんのわずかだ。<br>
+      Lは手を振って、猫や犬を呼ぶように気軽に人を呼び寄せた。Sは素直に従い、丁寧に礼をして「師匠」と呼んだ。<br>
+      Sの謙虚な態度の下に抑えきれない憎しみが宿った瞳を見て、Lは笑った。
+      「今の君の目、気に入ったよ。ストレートで、率直で、生きる欲望に満ち溢れている…惨めだけと運良く、愚かだけどどこか冴えていて、脆くも確固たる情熱を抱いてる。」
+      <br>Lは████の方へ振り返り、「この子、いただくよ」と告げた。<br>
+      ▍<br>
+      「嘲り、貪欲、興味本位…そんな視線なら嫌というほど見てきた。でも、あなたの目は違う。
+      あなたの目には、私が売り物のような道具じゃなく…対等な人間で映ってる。」
+      <br>
+      `,
+      tabTitle1: "基本信息",
+      tabTitle2: "主线",
+      tabTitle3: "喜好性格",
+      tabTitle4: "会話例",
+      image1: "3-1.png",
+      image2: "3-2.png",
+      dialogImg: "3-dialog.png"
+    },
+    {
+      bg: "4bg.png",
+      rolem: "4m.png",
+      nocheck: "4.png",
+      check: "4c.png",
+      title: "4t.png",
+      str: `
+      `,
+      str1: `「福音地」のリーダー。Lの元上司であり、深い関係がある。それはまた別の長い物語だ。<br>
+      人外、七十歳の老婆の姿で地上を歩く（他の年齢の姿もあり）。<br>
+      メンバー同士にケアなど一切なし、互いに独立し、生死は自己責任。<br>
+      彼らを一つに結びつけているのは、ある種の宿願である。それに身を捧げることはむしろ名誉とされている。<br>
+      ▍会話例<br>
+      「また会えて本当に嬉しいよ。君に出会った時もこうやって連れて帰ったんだよね。また一緒に来てくれる？」<br>
+      「君の裏切りに気を悪くした人たちのほとんどはもう犠牲になって、今ならもう一度チャンスをあげられるよ。」<br>
+      L「……いつも私のことわかってるふりしてたでしょう？今さらそんなこと言うの…。」<br>
+      L「地上の人間はみんな自分思いで、己の縄張りを守るのに必死で、せいぜい周りの数人をかばうくらい…。
+      私だってそんなちっぽけな人間だよ。君の壮大な宿願にふさわしくないさ。」
+      `,
+      str2: ``,
+      str3: ``,
+      str4: ``,
+      tabTitle1: "基本信息",
+      tabTitle2: "性格与动机",
+      tabTitle3: "情感转变",
+      tabTitle4: "会話例",
+      image1: "4-1.png",
+      image2: "4-2.png",
+      dialogImg: "4-dialog.png"
+    },
+    {
+      bg: "5bg.png",
+      rolem: "5m.png",
+      nocheck: "5.png",
+      check: "5c.png",
+      title: "5t.png",
+      str: `36岁，殺し屋。能力者。为了延长寿命的情报，伪装成附近的裁缝接近X。
+      <br>对组织首领（Leo）有着近乎信徒般的狂热信仰，<br>「この世には、私たちを受け入れてくれる場所がある。理解してくれる人がいる。彼女はあなたを導き、残酷な復讐の道を支えてくれる。その気持ちさえあれば、私があなたを彼女に会わせてあげる。」<br>H「あなたが言うその人は、あの雇い主？それとも、組織のリーダー？」<br>「それは、私がやっと手に入れた新しい家族だよ。」<br>「もう二度と、誰にも私の大切なものを傷つけさせない。かつての私は復讐のためにすべてを捧げた。今は未来を守るため、その倍の力を尽くす。」<br>(3/3)<br>工事中",
+
+      `,
+      str1: ``,
+      str2: ``,
+      str3: ``,
+      str4: ``,
+      tabTitle1: "基本信息",
+      tabTitle2: "性格与动机",
+      tabTitle3: "情感转变",
+      tabTitle4: "会話例",
+      image1: "5-1.png",
+      image2: "5-2.png",
+      dialogImg: "5-dialog.png"
+    },
+    {
+      bg: "6bg.png",
+      rolem: "6m.png",
+      nocheck: "6.png",
+      check: "6c.png",
+      title: "6t.png",
+      str: `能力者。廃棄期限まであと一ヶ月しかない人造人は、上庭を裏切る準備をしており、自身を廃棄から免れるための計画を実行中です。<br>
+      腹黒く鬼畜で、目的のためには手段を選ばず、自らも含めた犠牲を厭わないほどです。<br>
+      Lが何十年も育った弟子たちをすべて殺した。なぜなら、Lはその計画において欠かせない、唯一無二の存在だ。<br>
+      Lとの戦いの中で感情の亀裂が生じ、再び感情を取り戻し、Lに恋をする。<br>
+      XはLの人柄と行動を高く評価している。<br>
+      「——使用期限内に、こっそり壊れてしまった道具にすぎないよ。」<br>
+      「これが君が命と引き換えに得た力なんだ。流れるすべての未来を犠牲にして、絶対的な強さと自由を手に入れたんだ。
+      ここまで辿り着けるのは君だけだ。本当に見事だ。君がこれほどまでに強く反骨精神を持っていてくれてありがとう……君なら勝てると分かっていたよ。」
+      <br>工事中",
+      `,
+      str1: ``,
+      str2: ``,
+      str3: ``,
+      str4: ``,
+      tabTitle1: "基本信息",
+      tabTitle2: "性格与动机",
+      tabTitle3: "情感转变",
+      tabTitle4: "会話例",
+      image1: "6-1.png",
+      image2: "6-2.png",
+      dialogImg: "6-dialog.png"
+    },
+    {
+      bg: "7bg.png",
+      rolem: "7m.png",
+      nocheck: "7.png",
+      check: "7c.png",
+      title: "7t.png",
+      str: `
+      `,
+      str1: `独立軍第二代総帥、新城邦初の民選議長、FACの創設者であり初代総司令――デレヴァン・スティール。<br>
+      軍人として、彼は揺るぎない信念、果敢な行動力、忠誠心、決して退かない姿勢、そして手段を選ばない覚悟の持ち主。<br>
+      こうした妥協なき戦士だけが、ディスを絶望の淵から導き、勝利へと導くことができた。
+      しかし、これらの特質は政治の舞台では彼の弱点となった。
+      政治には円滑さ、妥協、そして人心を操る術が必要だが、デレヴァンの剛直な性格はそれと相容れなかった。<br>
+      虫たちは権力欲と富で彼の仲間を腐らせ、陰謀と策略で彼の兵士を蝕み、彼の腕は切り落とされ、目を覆われ、権力を奪われ、威信が崩した。彼は孤立させ、
+      誰もが背を向けるように仕向けた。それでもなお妥協を拒み、必死に抗ったが、罠にはまるばかりだった。
+      彼は偏執的な独裁者へと変わり、敵や味方を見分けられなくなり、道を踏み外し、その対策は誘導され、利用されていることに気づかず。
+      正義の軍は不義の戦犯へと堕された。<br>
+      理想を胸に抱いた男は打ち砕かれた。信仰は城邦の腐敗したルールを変えられず、人々の尽きない貪欲を変えられず、繰り返される歴史の法則を変えられなかった。`,
+      str2: `
+      ▍詳細
+      <br><br>
+      新ディスが建国されると、商人、スペキュレーター、政治家たちが我先にと押し寄せ、政治闘争に長けた異邦の勢力がこの若い城邦に潜り込み、経済の命脈を握った。
+      デレヴァンは愛するまちがこのような輩に穢されるのを許せず、戦時だけが彼に一時的な権威を与えられる。<br>
+      内なる矛盾をそらすため、彼は外へ向けて拡張を繰り返し、内部では軍を統治する手法で城邦を治めようとした。
+      だが、この選択は彼の初心を徐々に逸らし、孤立させ、狂気へと追いやった。<br>
+      旧時代の虫たちは、新たな功臣たちに勝利の果実を味わう術を教え、汚濁に染まることを拒んだ者たちは次々と排除された。
+      最初に死んだのはヴィクトール。政治的頭脳はあったが戦は不得手で、前線に送られ、そのまま「戦死」した。<br>
+      結束の要を失い、残された兵士たちは次々と腐敗し、瓦解された。
+      最も清廉潔白だったアドリアンは最後まで信念を貫いたが、意味をなさなかった。信頼されていない忠臣に価値はない。<br>
+      デレヴァンは元来、政治経験に乏しく、一人の力で城邦内部の腐敗の毒瘤に対抗することは到底できない。
+      彼の側近もとっくに分裂された。彼が助け人を求めようと、心に邪念を抱く者たちが寄ってきて、彼を誤った方向へ誘導する。
+      しかし、彼は反対されればされるほど勝とうとした。その性格だった。失敗を認めず、決して妥協しない。だからこそ、彼は死のループに陥ったのだ。
+      `,
+      str3: ``,
+      str4: ``,
+      tabTitle1: "基本信息",
+      tabTitle2: "性格与动机",
+      tabTitle3: "情感转变",
+      tabTitle4: "会話例",
+      image1: "7-1.png",
+      image2: "7-2.png",
+      dialogImg: "7-dialog.png"
+    },
+    {
+      bg: "8bg.png",
+      rolem: "8m.png",
+      nocheck: "8.png",
+      check: "8c.png",
+      title: "8t.png",
+      str: `「福音地」のリーダー。Lの元上司であり、深い関係がある。それはまた別の長い物語だ。<br>
+      人外、七十歳の老婆の姿で地上を歩く（他の年齢の姿もあり）。<br>
+      メンバー同士にケアなど一切なし、互いに独立し、生死は自己責任。<br>
+      彼らを一つに結びつけているのは、ある種の宿願である。それに身を捧げることはむしろ名誉とされている。<br>
+      ▍会話例<br>
+      「また会えて本当に嬉しいよ。君に出会った時もこうやって連れて帰ったんだよね。また一緒に来てくれる？」<br>
+      「君の裏切りに気を悪くした人たちのほとんどはもう犠牲になって、今ならもう一度チャンスをあげられるよ。」<br>
+      L「……いつも私のことわかってるふりしてたでしょう？今さらそんなこと言うの…。」<br>
+      L「地上の人間はみんな自分思いで、己の縄張りを守るのに必死で、せいぜい周りの数人をかばうくらい…。私だってそんなちっぽけな人間だよ。君の壮大な宿願にふさわしくないさ。」",
+      `,
+      str1: `能力者。廃棄期限まであと一ヶ月しかない人造人。<br>上庭を裏切る準備をしており、自身を廃棄から免れるための計画を実行中。`,
+      str2: `腹黒く鬼畜で、目的のためには手段を選ばず、自らも含めた犠牲を厭わない。<br>Lが何十年も育った弟子たちをすべて殺した。
+      なぜなら、Lはその計画において欠かせない、唯一無二の存在だ。`,
+      str3: `Lとの戦いの中で感情の亀裂が生じ、再び感情を取り戻し、Lに恋をする。<br>XはLの人柄と行動を高く評価している。`,
+      str4: `▍会話例<br>「——使用期限内に、こっそり壊れてしまった道具にすぎないよ。」<br>「これが君が命と引き換えに得た力なんだ。
+      流れるすべての未来を犠牲にして、絶対的な強さと自由を手に入れたんだ。ここまで辿り着けるのは君だけだ。本当に見事だ。」`,
+      tabTitle1: "基本信息",
+      tabTitle2: "性格与动机",
+      tabTitle3: "情感转变",
+      tabTitle4: "会話例",
+      image1: "8-1.png",
+      image2: "8-2.png",
+      dialogImg: "8-dialog.png"
+    },
+    {
+      bg: "9bg.png",
+      rolem: "9m.png",
+      nocheck: "9.png",
+      check: "9c.png",
+      title: "9t.png",
+      str: `上庭からXを協力（監視）するために派遣された代理人。<br>Sの尋問中、逃げられてしまった。<br>冷酷で機械的、典型的な上庭の官僚像を体現しており、<br>任務の効率を最優先し、一般人の命や感情を軽視する。",
+      `,
+      str1: `能力者。廃棄期限まであと一ヶ月しかない人造人。<br>上庭を裏切る準備をしており、自身を廃棄から免れるための計画を実行中。`,
+      str2: `腹黒く鬼畜で、目的のためには手段を選ばず、自らも含めた犠牲を厭わない。<br>Lが何十年も育った弟子たちをすべて殺した。
+      なぜなら、Lはその計画において欠かせない、唯一無二の存在だ。`,
+      str3: `Lとの戦いの中で感情の亀裂が生じ、再び感情を取り戻し、Lに恋をする。<br>XはLの人柄と行動を高く評価している。`,
+      str4: `▍会話例<br>「——使用期限内に、こっそり壊れてしまった道具にすぎないよ。」<br>「これが君が命と引き換えに得た力なんだ。
+      流れるすべての未来を犠牲にして、絶対的な強さと自由を手に入れたんだ。ここまで辿り着けるのは君だけだ。本当に見事だ。」`,
+      tabTitle1: "基本信息",
+      tabTitle2: "性格与动机",
+      tabTitle3: "情感转变",
+      tabTitle4: "会話例",
+      image1: "9-1.png",
+      image2: "9-2.png",
+      dialogImg: "9-dialog.png"
+    },
+    {
+      bg: "10bg.png",
+      rolem: "10m.png",
+      nocheck: "10.png",
+      check: "10c.png",
+      title: "10t.png",
+      str: `「福音地」的实验品，被上庭抢走后投入使用<br>工事中",
+      `,
+      str1: ``,
+      str2: ``,
+      str3: ``,
+      str4: ``,
+      tabTitle1: "基本信息",
+      tabTitle2: "性格与动机",
+      tabTitle3: "情感转变",
+      tabTitle4: "会話例",
+      image1: "10-1.png",
+      image2: "10-2.png",
+      dialogImg: "10-dialog.png"
+    }
+  ];
+  
+  var swipreCharacter = null;
+  function showCharacter() {
+    swipreCharacter = new Swiper('#characterpc', {
+      direction: 'vertical',
+      slidesPerView: 5,
+      centeredSlides: true,
+      observer: true,
+      observeParents: false,
+      slideToClickedSlide: true,
+      freeMode: true,
+      slidesOffsetBefore: -100,
+      loop: true,
+      mousewheel: true,
+      touchRatio: 0,
+      on: {
+        slideChange: function(e) {
+          changeCharacter(e.realIndex);
+        },
+        slideChangeTransitionStart: function() {
+          this.enabled = false;
+        },
+        slideChangeTransitionEnd: function() {
+          this.enabled = true;
+        }
+      }
+    });
+  }
+  
+
+
+  function changeCharacter(num) {
+    characterMsg.forEach((v, index) => {
+      let id = `.role${index + 1}`;
+      $(id).attr("src", `./img/characterf/${v.nocheck}`);
+    });
+    let data = characterMsg[num];
+  
+    // 填充标签页内容和标题
+    for (let i = 1; i <= 4; i++) {
+      let panelId = `#tabPanel${i}`;
+      let btn = $(`.character-tab-btn[data-tab="${i}"]`);
+      let title = data[`tabTitle${i}`] || '';
+      let content = data[`str${i}`] || '';
+      if (content) {
+        $(panelId).html(content).removeClass("characterFadeOutLeft").addClass("characterFadeInRight");
+        btn.show().find('img').attr('alt', title); // 更新 alt 为标题
+        // 如果你想用图片显示标题，可以替换按钮图片，例如：
+        // btn.find('img').attr('src', `img/tab/tab${i}_${num}.png`).attr('alt', title);
+      } else {
+        $(panelId).empty();
+        btn.hide(); // 隐藏空标签页
+      }
+    }
+  
+    // 默认显示第一个非空标签页
+    switchTab(1);
+  
+    let idM = `.role${num + 1}`;
+    $(idM).attr("src", `./img/characterf/${data.check}`);
+    $("#roleBg").css("background-image", `url(./img/rolef/${data.bg})`)
+      .removeClass("animate__animated animate__fadeOut")
+      .addClass("animate__animated animate__fadeIn");
+    $("#roleTitle").prop("src", `./img/rolef/${data.title}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleImg").prop("src", `./img/rolef/${data.image1}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#dialogLayerImg").prop("src", `./img/rolef/${data.dialogImg || 'default-dialog.png'}`)
+      .removeClass("characterFadeOutLeft")
+      .addClass("characterFadeInRight");
+    $("#roleMusic").prop("src", data.voice);
+    $("#roleButton").removeClass("animate__fadeOutDown")
+      .addClass("animate__fadeInUp");
+    $("#roleSwitch").show();
+    $("#roleSwitching").hide();
+    $("#roleImg").data("current", "image1");
+    playCharacterVioce(2);
+  }
+
+  function switchTab(tabNum) {
+    $('.character-tab-btn').removeClass('active');
+    $('.character-tab-panel').removeClass('active');
+    $(`.character-tab-btn[data-tab="${tabNum}"]`).addClass('active');
+    $(`#tabPanel${tabNum}`).addClass('active');
+  }
+
+  function switchCharacterImage() {
+    let currentIndex = swipreCharacter.realIndex;
+    let data = characterMsg[currentIndex];
+    let currentImg = $("#roleImg").data("current");
+    if (currentImg === "image1") {
+      $("#roleImg").prop("src", `./img/rolef/${data.image2}`)
+        .removeClass("characterFadeOutLeft")
+        .addClass("characterFadeInRight");
+      $("#roleImg").data("current", "image2");
+      $("#roleSwitch").hide();
+      $("#roleSwitching").show();
+    } else {
+      $("#roleImg").prop("src", `./img/rolef/${data.image1}`)
+        .removeClass("characterFadeOutLeft")
+        .addClass("characterFadeInRight");
+      $("#roleImg").data("current", "image1");
+      $("#roleSwitch").show();
+      $("#roleSwitching").hide();
+    }
+  }
+  
+  function playCharacterVioce(num) {
+    if (num === 1) {
+      $("#roleMusic")[0].play();
+      $("#roleVoiceing").show();
+      $("#roleVoice").hide();
+    }
+    if (num === 2) {
+      $("#roleMusic")[0].pause();
+      $("#roleVoiceing").hide();
+      $("#roleVoice").show();
+    }
+  }
+  
+  $("#roleMusic")[0].addEventListener("ended", function() {
+    playCharacterVioce(2);
+  });
+  
+  function changeAllSwipperAbled(num) {
+    if (num === 1) {
+      swiperAll.allowSlideNext = false;
+      swiperAll.allowSlidePrev = false;
+    }
+    if (num === 2) {
+      swiperAll.allowSlideNext = true;
+      swiperAll.allowSlidePrev = true;
+    }
+  }
+  
+  function characterStorage() {
+    characterMsg.forEach((v) => {
+      let imgBg = new Image();
+      let img1 = new Image();
+      let img2 = new Image();
+      let imgDialog = new Image(); // 新增
+      imgBg.src = `./img/rolef/${v.bg}`;
+      img1.src = `./img/rolef/${v.image1}`;
+      img2.src = `./img/rolef/${v.image2}`;
+      imgDialog.src = `./img/rolef/${v.dialogImg || 'default-dialog.png'}`; // 新增
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const strContainer = document.querySelector('.character-right-right-str');
+  
+    // 鼠标滚轮滚动
+    strContainer.addEventListener('wheel', (event) => {
+      event.stopPropagation();
+      const scrollAmount = event.deltaY;
+      strContainer.scrollTop += scrollAmount * 0.5;
+    }, { passive: false });
+  
+    // 鼠标拖拽滚动
+    let isDragging = false;
+    let startY = 0;
+    let startScrollTop = 0;
+  
+    strContainer.addEventListener('mousedown', (event) => {
+      isDragging = true;
+      startY = event.clientY;
+      startScrollTop = strContainer.scrollTop;
+      strContainer.style.cursor = 'grabbing';
+      event.preventDefault();
+    });
+  
+    document.addEventListener('mousemove', (event) => {
+      if (!isDragging) return;
+      event.preventDefault();
+      const deltaY = startY - event.clientY;
+      strContainer.scrollTop = startScrollTop + deltaY * 1.5;
+    });
+  
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      strContainer.style.cursor = 'default';
+    });
+  
+    document.addEventListener('mouseleave', () => {
+      isDragging = false;
+      strContainer.style.cursor = 'default';
+    });
+  
+    // 触摸滑动
+    let touchStartY = 0;
+    let touchStartScrollTop = 0;
+  
+    strContainer.addEventListener('touchstart', (event) => {
+      touchStartY = event.touches[0].clientY;
+      touchStartScrollTop = strContainer.scrollTop;
+    }, { passive: false });
+  
+    strContainer.addEventListener('touchmove', (event) => {
+      event.stopPropagation();
+      const touchY = event.touches[0].clientY;
+      const deltaY = touchStartY - touchY;
+      strContainer.scrollTop = touchStartScrollTop + deltaY * 1.5;
+    }, { passive: false });
+  });

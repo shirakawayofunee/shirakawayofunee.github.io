@@ -6,6 +6,11 @@
   position: relative;
 }
 
+span{
+  color: #e23b78;
+/*   color: #980019; */
+}
+
 .character-left {
   width: 25%;
   height: 100%;
@@ -62,6 +67,8 @@
   left: -7rem;
 }
 
+
+
 .character-right-left img {
   height: 85%;
   object-fit: contain;
@@ -75,6 +82,22 @@
   position: absolute;
   left: -30px;
   top: -56px;
+}
+
+/* PC 端台词例图片 */
+.character-right-left .dialog-layer-img {
+  position: absolute;
+  top: 55.5%;
+  left: 50%;
+  transform: translateX(-50%); /* 水平居中 */
+  width: 900px; /* 初始宽度 */
+  height: 195px; /* 初始高度 */
+  max-width: 80%; /* 防止过宽 */
+  max-height: 20%; /* 防止过高 */
+  opacity: 0.8; /* 半透明效果 */
+  z-index: 9999; /* 确保在最上层 */
+  pointer-events: none; /* 防止干扰鼠标事件 */
+  object-fit: contain; /* 保持图片比例 */
 }
 
 .character-static-img {
@@ -180,4 +203,53 @@
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
+}
+/* 250831 */
+.character-tabs-nav {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.character-tab-btn {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.character-tab-btn img {
+  width: 8rem; /* 调整按钮图片大小 */
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.character-tab-btn:hover img {
+  transform: scale(1.1); /* 突出效果：hover 时放大 */
+}
+
+.character-tab-btn.active img {
+  filter: brightness(1.2); /* 活跃标签高亮 */
+}
+
+.character-tabs-content {
+  height: calc(100% - 3rem); /* 适应原有高度 */
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  user-select: auto;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #9ea7b4;
+  line-height: 1.875rem;
+  font-family: "myFont";
+  padding-left: 2rem;
+  box-sizing: border-box;
+}
+
+.character-tab-panel {
+  display: none;
+}
+
+.character-tab-panel.active {
+  display: block;
+  animation: characterFadeInRight 0.5s; /* 保留动画 */
 }
