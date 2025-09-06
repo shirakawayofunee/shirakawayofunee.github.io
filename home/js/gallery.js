@@ -1,3 +1,11 @@
+/*
+ * @Author: DCBZ
+ * @Date: 2025-02-25 08:45:50
+ * @LastEditors: your name
+ * @LastEditTime: 2025-09-06 21:12:00
+ * @Description: 
+ * @FilePath: \shirakawayofunee.github.io\home\js\gallery.js
+ */
 
 function openVideomask(){
     window.open('duihua0721.html','_blank')   
@@ -8,6 +16,14 @@ function openMusicmask(){
 }
 function openPapermask(){ 
     window.open('../SL.html','_blank')
+}
+
+function openflowersmask(){ 
+    window.open('flower.html','_self')
+}
+
+function openrainsmask(){ 
+    window.open('index.html','_blank')
 }
 /* function openEventmask(){
     window.open('duihua0722.html#conversation2','_blank')   

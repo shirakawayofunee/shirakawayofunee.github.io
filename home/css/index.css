@@ -117,7 +117,7 @@ h1 {
   align-items: center;
 }
 .h-con-right {
-  width: 73vw;
+  width: 80vw;
   height: 8vh;
   display: flex;
 
@@ -144,7 +144,6 @@ h1 {
 }
 .div-center {
   text-align: center;
-
   width: 100%;
 }
 .div-center:hover div {

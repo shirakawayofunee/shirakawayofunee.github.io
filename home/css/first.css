@@ -20,8 +20,8 @@
   .first-2{
     position: absolute;
     z-index: 2;
-    bottom: 5%;
-    left: 4%;
+    bottom: 7%;
+    right: 0%;
   }
   .first-3{
     position: absolute;
