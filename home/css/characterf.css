@@ -180,8 +180,8 @@
   .cus-target1 {
     position: absolute;
     top: -0.85rem;
-    width: 9rem;
-    font-size: 0.6rem;
+    width: 10rem;
+    font-size: 0.65rem;
     text-align: center;
     left: 50%;
     transform: translateX(-50%);

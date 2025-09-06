@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-09-06 21:12:00
+ * @LastEditTime: 2025-09-06 21:36:14
  * @Description: 
  * @FilePath: \shirakawayofunee.github.io\home\js\gallery.js
  */
@@ -23,7 +23,7 @@ function openflowersmask(){
 }
 
 function openrainsmask(){ 
-    window.open('index.html','_blank')
+    window.open('index.html','_self')
 }
 /* function openEventmask(){
     window.open('duihua0722.html#conversation2','_blank')   
