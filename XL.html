@@ -148,13 +148,14 @@ body {
 }
 
 .image-modal .modal-dialog {
-  max-width: 75%;
-  width: 75%;
-  margin: 0 auto;
+  max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
 }
 
 .image-modal .modal-content {
-  background: #fff;
+/*   background: #fff; */
   border-radius: 10px;
   overflow: hidden;
 }
@@ -178,7 +179,7 @@ body {
   text-align: center;
   font-size: 1.1em;
   color: #666;
-  background: #f8f8f8;
+/*   background: #f8f8f8; */
   width: 100%;
 }
 
@@ -205,6 +206,10 @@ body {
   .image-modal .description {
     font-size: 1em;
   }
+
+  .papermaskDetailTop-zoom {
+    max-height: 60vh;
+  }
 }
 
 img.lazy {
@@ -213,6 +218,34 @@ img.lazy {
 
 img.lazy[src] {
   opacity: 1;
+}
+.papermaskDetailTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden; /* 隐藏滚动条 */
+}
+
+.papermaskDetailTop-zoom {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.papermaskDetailBottom, .papermaskDetailClose {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+/*   background: #f8f8f8; */
+}
+
+.papermaskDetailBottom img, .papermaskDetailClose img {
+  cursor: pointer;  /* 确保按钮可点击 */
+  pointer-events: auto;  /* 防止模态阻止事件 */
 }
 </style>
 </head>
@@ -296,17 +329,17 @@ img.lazy[src] {
     </div>
 
     <div class="papermaskDetailBottom" data-mouse="mid">
-      <img src="img/paperDetail/b.png" alt="" onclick="papermaskDetailChange(1)">
-      <img src="img/paperDetail/s.png" alt="" onclick="papermaskDetailChange(-1)">
-      <img src="img/paperDetail/a.png" alt="" onclick="papermaskDetailChange(0)">
-      <img src="img/paperDetail/d.png" alt="" onclick="papermaskDetailDown()">
+      <img src="img/paperDetail/b.png" alt="放大" onclick="handleZoomChange(1)">
+      <img src="img/paperDetail/s.png" alt="缩小" onclick="handleZoomChange(-1)">
+      <img src="img/paperDetail/a.png" alt="重置" onclick="handleZoomChange(0)">
+      <img src="img/paperDetail/d.png" alt="下载" onclick="handleDownload()">
     </div>
     <div class="papermaskDetailClose">
       <img src="img/paperDetail/c.png" alt="" onclick="paperShowHide()">
     </div>
 </div>
 </div>
-
+<script src="js/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="js/papermaskDetail.js"></script>
@@ -498,17 +531,20 @@ const catdwImages = [
   { src: "img/XL/cat/dw8.jpg", alt: "Catdw Image 8", description: "" }, */
 ];
 
-/* const nsfwImages = [
-  { src: "img/XL/nsfw1.jpg", alt: "NSFW Image 1", description: "" },
-  { src: "img/XL/nsfw2.jpg", alt: "NSFW Image 2", description: "体型の設定に誤りがありますので、参考にしないでください。" },
-  { src: "img/XL/nsfw3.jpg", alt: "NSFW Image 3", description: "体型の設定に誤りがありますので、参考にしないでください。" },
-  { src: "img/XL/nsfw4.jpg", alt: "NSFW Image 4", description: "体型華奢" },
-]; */
-
 const r18gImages = [
   { src: "img/XL/g1.jpg", alt: "R18-G Image 1", description: "" },
   { src: "img/XL/g2.jpg", alt: "R18-G Image 2", description: "" },
 ];
+
+const deathImages = [];
+  const mansionImages = [];
+  const doodleImages = [];
+  const nsfwImages = [];
+
+  // 定义 updatePapermaskDetail（如果需要）
+  function updatePapermaskDetail(src, desc) {
+    console.log(desc); // 或更新DOM显示描述
+  }
 
 function arrangeWaterfall(containerId, imageArray) {
   const container = document.getElementById(containerId);
@@ -579,28 +615,28 @@ function arrangeWaterfall(containerId, imageArray) {
 }
 
 function handleImageClick() {
-  const src = this.getAttribute("data-src");
-  const description = this.getAttribute("data-description");
-  currentIndex = parseInt(this.getAttribute("data-index"));
-  currentArray = this.getAttribute("data-array");
-  const modalImage = document.getElementById("papermaskDetailTop-zoom");
-  modalImage.src = src;
-  if (typeof updatePapermaskDetail === 'function') {
-    updatePapermaskDetail(src, description || "暂无说明");
+    const src = this.getAttribute("data-src");
+    const description = this.getAttribute("data-description");
+    currentIndex = parseInt(this.getAttribute("data-index"));
+    currentArray = this.getAttribute("data-array");
+    const modalImage = document.getElementById("papermaskDetailTop-zoom");
+    modalImage.src = src;
+    // 重置缩放（jQuery版）
+    $(".papermaskDetailTop-zoom").css("transform", "scale(1)");
+    if (typeof updatePapermaskDetail === 'function') {
+      updatePapermaskDetail(src, description || "暂无说明");
+    }
   }
-}
 
+// 单个 initializeTabs（合并）
 function initializeTabs() {
-  arrangeWaterfall("galleryContainer", galleryImages);
-  arrangeWaterfall("dcContainer", dcImages);
-  arrangeWaterfall("deathContainer", deathImages);
-  arrangeWaterfall("mangaContainer", mangaImages);
-  arrangeWaterfall("mansionContainer", mansionImages);
-  arrangeWaterfall("doodleContainer", doodleImages);
-  arrangeWaterfall("catdwContainer", catdwImages);
-  arrangeWaterfall("nsfwContainer", nsfwImages);
-  arrangeWaterfall("r18gContainer", r18gImages);
-}
+    arrangeWaterfall("galleryContainer", galleryImages);
+    arrangeWaterfall("dcContainer", dcImages);
+    arrangeWaterfall("mangaContainer", mangaImages);
+    arrangeWaterfall("catdwContainer", catdwImages);
+    arrangeWaterfall("r18gContainer", r18gImages);
+    // 其他为空数组，不会报错
+  }
 
 function lazyLoadImages() {
   const images = document.querySelectorAll("img.lazy");
@@ -622,14 +658,6 @@ function lazyLoadImages() {
   );
 
   images.forEach((img) => observer.observe(img));
-}
-
-function initializeTabs() {
-  arrangeWaterfall("galleryContainer", galleryImages);
-  arrangeWaterfall("dcContainer", dcImages);
-  arrangeWaterfall("mangaContainer", mangaImages);
-  arrangeWaterfall("catdwContainer", catdwImages);
-  arrangeWaterfall("r18gContainer", r18gImages);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
