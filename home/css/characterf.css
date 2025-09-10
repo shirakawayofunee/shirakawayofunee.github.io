@@ -252,3 +252,16 @@
     display: block;
     animation: characterFadeInRight 0.5s; /* 保留动画 */
   }
+
+  a:link { /* 未访问的链接 */
+    color: #FD0D00; /* 蓝色 */
+}
+a:visited { /* 已访问的链接 */
+    color: #e23b78;
+}
+a:hover { /* 鼠标悬停时的链接 */
+    color: #e23b78;
+}
+a:active { /* 鼠标点击时的链接 */
+    color: #00FF00; /* 绿色 */
+}
