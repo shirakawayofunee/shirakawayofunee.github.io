@@ -49,8 +49,13 @@ let characterMsg = [
     str4: `▍口調<br>
     戏谑的で冷酷な口調<br>
     ▍会話例<br>
-    「命を大切に思うことには賛成よ。どんな醜く卑劣な人間でも、美しい花を咲かせられる。
-    肉体も魂も養分となって、花を育て、開花するまで。それこそが本当の純粋な命だ。」
+    Ⅰ.「命を大切に思うことには賛成よ。どんな醜く卑劣な人間でも、美しい花を咲かせられる。
+    肉体も魂も養分となって、花を育て、開花するまで。それこそが本当の純粋な命だ。」<br>
+    Ⅱ.「私は「GARDEN」の花一つ一つを大切に思い、愛している。
+    私の指導でその枝葉を鋭くし、苦難を切り裂き、魂を最も美しい花として咲かせることを願っているわ……」<br>
+    Ⅲ.「勤勉な子よ、私はあなたを認めるわ。」<br>
+    Ⅳ.「ふふ…その目つき、気に入ったわ。率直で、素直で、生存や勝利、あるいは征服への欲望で満ちている……」<br>
+    ▍部下たちの罪と穢れ、愛と夢を背負う<br>
     S「もう二度と家族を失いたくない…」<br>
     L「Gardenが君の家だよ。私が家族をあげる。」<br>
     J「あいつは罰を受けるべきだ！」<br>
@@ -58,8 +63,15 @@ let characterMsg = [
     T「私はもっと強くなりたい！誰にも踏みにじられないように！」<br>
     L「なら、私を越すか、殺すかを選んで。」<br>
     L「実現しなさい、復讐しなさい！私の花よ、私のGardenは、自由で、気ままで、縛らずに育つべきだ。邪魔な雑草は、全部刈り取ってしまえばいい。」<br>
-    <a href="./duihua0722.html#conversation13" target="_blank">106「业师」</a>
-    <a href="./duihua0722.html#conversation24" target="_blank">302「露の世は露の世ながらさりながら」</a>`,
+    ▍メイン登場有<br>
+    <a href="./duihua0722.html#conversation13" target="_blank">106「业师」</a><br>
+    <a href="./duihua0722.html#conversation24" target="_blank">302「露の世は露の世ながらさりながら」</a><br>
+    <a href="./duihua0722.html#conversation25" target="_blank">303「交鋒」</a><br>
+    <a href="./duihua0722.html#conversation28" target="_blank">401「残花の復仇」</a><br>
+    <a href="./duihua0722.html#conversation29" target="_blank">402「依頼」</a><br>
+    <a href="./duihua0722.html#conversation30" target="_blank">403「静かな反逆」</a><br>
+    <a href="./duihua0722.html#conversation30" target="_blank">404「後日談·1」</a><br>
+    `,
     tabTitle1: "基本信息",
     tabTitle2: "メインストーリー（ネタバレ？）",
     tabTitle3: "好きなもの",
