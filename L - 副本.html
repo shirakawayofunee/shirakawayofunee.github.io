@@ -1,0 +1,460 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8F7F8">
+    <title>個人展示 - L</title>
+    <meta property="og:type" content="website">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/papermask.css" media="(min-device-width:926px)">
+    <link rel="stylesheet" href="css/papermaskDetail.css" media="(min-device-width:926px)" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #06070D;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .gallery-section {
+            padding: 1%;
+        }
+
+        .gallery-header {
+            padding: 30px 0 0 0;
+        }
+
+        .gallery-header .nav-tabs {
+            background: #06070D;
+            border-bottom: 2px solid #393d45;
+        }
+
+        .gallery-header .nav-link {
+            font-size: 1.1em;
+            font-weight: 400;
+            color: #ccc;
+            padding: 5px 15px;
+        }
+
+        .gallery-header .nav-link.active {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+
+        .gallery-container {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            background: #06070D;
+        }
+
+        .gallery-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            position: relative;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item :hover {
+            border: 1px solid #ff005d;
+        }
+
+        .caption {
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            padding: 8px 0;
+            width: 100%;
+            background: #06070D;
+        }
+
+        @media (max-width: 992px) {
+            .gallery-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-container {
+                display: block;
+            }
+
+            .gallery-column {
+                margin-bottom: 15px;
+            }
+        }
+
+        .image-modal .modal-dialog {
+            max-width: 90%;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .image-modal .modal-content {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .image-modal .modal-body {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .papermaskDetailTop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-height: 80vh;
+            overflow: hidden;
+        }
+
+        .papermaskDetailTop-zoom {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .papermaskDetailBottom, .papermaskDetailClose {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .papermaskDetailBottom img, .papermaskDetailClose img {
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 576px) {
+            .image-modal .modal-dialog {
+                max-width: 100%;
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .papermaskDetailTop-zoom {
+                max-height: 60vh;
+            }
+        }
+
+        img.lazy {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        img.lazy[src] {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-section mt-5">
+        <div class="gallery-header mb-3">
+            <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab"
+                        aria-controls="gallery" aria-selected="true">イラスト</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="zhuxian-tab" data-bs-toggle="tab" href="#zhuxian" role="tab"
+                      aria-controls="zhuxian" aria-selected="false">メインストーリー/本編</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="aesthetics-tab" data-bs-toggle="tab" href="#aesthetics" role="tab"
+                        aria-controls="aesthetics" aria-selected="false">テーマ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sd-tab" data-bs-toggle="tab" href="#sd" role="tab" aria-controls="sd"
+                        aria-selected="false">SD</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="papaver-tab" data-bs-toggle="tab" href="#papaver" role="tab" aria-controls="papaver"
+                        aria-selected="false">Papaver rhoeas</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content" id="galleryTabContent">
+            <div class="tab-pane fade show active" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
+                <div class="gallery-container" id="galleryContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="zhuxian" role="tabpanel" aria-labelledby="zhuxian-tab">
+                <div class="zhuxian-container" id="zhuxianContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="papaver" role="tabpanel" aria-labelledby="papaver-tab">
+                <div class="gallery-container" id="papaverContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="sd" role="tabpanel" aria-labelledby="sd-tab">
+                <div class="gallery-container" id="sdContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="aesthetics" role="tabpanel" aria-labelledby="aesthetics-tab">
+                <div class="gallery-container" id="aestheticsContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade image-modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="papermaskDetailTop" data-mouse="small">
+                <img src="#" alt="" data-mouse="small" class="papermaskDetailTop-zoom" id="papermaskDetailTop-zoom">
+            </div>
+            <div class="papermaskDetailBottom" data-mouse="mid">
+                <img src="img/paperDetail/b.png" alt="放大" onclick="handleZoomChange(1)">
+                <img src="img/paperDetail/s.png" alt="缩小" onclick="handleZoomChange(-1)">
+                <img src="img/paperDetail/a.png" alt="重置" onclick="handleZoomChange(0)">
+                <img src="img/paperDetail/d.png" alt="下载" onclick="handleDownload()">
+            </div>
+            <div class="papermaskDetailClose">
+                <img src="img/paperDetail/c.png" alt="" onclick="paperShowHide()">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/papermaskDetail.js"></script>
+    <script>
+        const galleryImages = [
+            { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【公式】メインストーリー/本編" },
+            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【公式】メインストーリー/本編（猫猫バージョン）" },
+            { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "" },
+            { src: "img/L/L2.webp", alt: "Gallery Image 2", description: "危険な関系〜" },
+            { src: "img/L/L3.webp", alt: "Gallery Image 3", description: "" },
+            { src: "img/L/L4.webp", alt: "Gallery Image 4", description: "死と新生" },
+            { src: "img/L/L5.webp", alt: "Gallery Image 5", description: "" },
+            { src: "img/L/L6.webp", alt: "Gallery Image 6", description: "" },
+            { src: "img/L/L7.webp", alt: "Gallery Image 7", description: "「供養」" },
+            { src: "img/L/L8.webp", alt: "Gallery Image 8", description: "「孤独」" },
+            { src: "img/L/L9.webp", alt: "Gallery Image 9", description: "「憤怒」" },
+            { src: "img/L/L10.webp", alt: "Gallery Image 10", description: "" },
+            { src: "img/L/L11.webp", alt: "Gallery Image 11", description: "" },
+            { src: "img/L/L12.webp", alt: "Gallery Image 12", description: "" },
+            { src: "img/L/L13.webp", alt: "Gallery Image 13", description: "" },
+            { src: "img/L/L14.webp", alt: "Gallery Image 14", description: "" },
+            { src: "img/L/L15.webp", alt: "Gallery Image 15", description: "" }
+        ];
+
+        const zhuxianImages = [
+          { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【公式】メインストーリー/本編" },
+          { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【公式】メインストーリー/本編（猫猫バージョン）" },
+          { src: "img/SL/g2.webp", alt: "R18-G Image 2", description: "【BAD END-IF】Xからのご挨拶――Lの中で一番重い存在、その死骸" },
+          { src: "img/SL/g1.webp", alt: "R18-G Image 1", description: "" }
+      ];
+
+        const aestheticsImages = [
+            { src: "img/L/aesthetics/A1.webp", alt: "Aesthetics Image 1", description: "" },
+            { src: "img/L/aesthetics/A2.jpg", alt: "Aesthetics Image 2", description: "（左）【トレギア】優雅で危険な魅力を持つ悪役" },
+            { src: "img/L/aesthetics/A2.webp", alt: "Aesthetics Image 3", description: "" },
+            { src: "img/L/aesthetics/A3.webp", alt: "Aesthetics Image 4", description: "" }
+        ];
+
+        const sdImages = [
+            { src: "img/L/sd/sd1.webp", alt: "SD Image 1", description: "" },
+            { src: "img/L/sd/sd2.webp", alt: "SD Image 2", description: "" },
+            { src: "img/L/sd/sd3.webp", alt: "SD Image 3", description: "" },
+            { src: "img/L/sd/sd4.webp", alt: "SD Image 4", description: "" },
+            { src: "img/L/sd/sd5.webp", alt: "SD Image 5", description: "" },
+            { src: "img/L/sd/sd6.webp", alt: "SD Image 6", description: "" },
+            { src: "img/L/sd/sd7.webp", alt: "SD Image 7", description: "" },
+            { src: "img/L/sd/sd8.webp", alt: "SD Image 8", description: "" },
+            { src: "img/L/sd/sd9.jpg", alt: "SD Image 9", description: "" }
+        ];
+
+        const papaverImages = [
+            { src: "img/L/papaver/P1.webp", alt: "Papaver Image 1", description: "" },
+            { src: "img/L/papaver/P2.webp", alt: "Papaver Image 2", description: "" },
+            { src: "img/L/papaver/P3.webp", alt: "Papaver Image 3", description: "" },
+            { src: "img/L/papaver/P4.webp", alt: "Papaver Image 4", description: "" },
+            { src: "img/L/papaver/P5.webp", alt: "Papaver Image 5", description: "" }
+        ];
+
+        function arrangeWaterfall(containerId, imageArray) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+
+            const width = window.innerWidth;
+            const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+
+            const columns = Array(columnCount).fill().map(() => {
+                const col = document.createElement('div');
+                col.className = 'gallery-column';
+                container.appendChild(col);
+                return col;
+            });
+
+            imageArray.forEach((image, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+
+                const img = document.createElement('img');
+                img.setAttribute('data-src', image.src);
+                img.alt = image.alt;
+                img.className = 'img-fluid gallery-image lazy';
+                img.setAttribute('data-bs-toggle', 'modal');
+                img.setAttribute('data-bs-target', '#imageModal');
+                img.setAttribute('data-index', index);
+                img.setAttribute('data-description', image.description);
+                img.setAttribute('data-array', containerId === 'galleryContainer' ? 'gallery' :
+                    containerId === 'papaverContainer' ? 'papaver' :
+                    containerId === 'zhuxianContainer' ? 'zhuxian' :
+                    containerId === 'sdContainer' ? 'sd' : 'aesthetics'
+                    );
+                    
+                img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+
+                const caption = document.createElement('div');
+                caption.className = 'caption';
+                caption.textContent = image.description || '';
+
+                item.appendChild(img);
+                item.appendChild(caption);
+                columns[index % columnCount].appendChild(item);
+
+                img.removeEventListener('click', handleImageClick);
+                img.addEventListener('click', handleImageClick);
+            });
+
+            lazyLoadImages();
+        }
+
+        function handleImageClick() {
+            const src = this.getAttribute('data-src');
+            const description = this.getAttribute('data-description');
+            currentIndex = parseInt(this.getAttribute('data-index'));
+            currentArray = this.getAttribute('data-array');
+            const modalImage = document.getElementById('papermaskDetailTop-zoom');
+            modalImage.src = src;
+            if (typeof $ !== 'undefined') {
+                $(".papermaskDetailTop-zoom").css("transform", "scale(1)");
+            } else {
+                modalImage.style.transform = 'scale(1)';
+            }
+            papermaskZoom = 1;
+            if (typeof updatePapermaskDetail === 'function') {
+                updatePapermaskDetail(src, description || "暂无说明");
+            }
+        }
+
+        function initializeTabs() {
+            arrangeWaterfall('galleryContainer', galleryImages);
+            arrangeWaterfall('zhuxianContainer', zhuxianImages);
+            arrangeWaterfall('aestheticsContainer', aestheticsImages);
+            arrangeWaterfall('papaverContainer', papaverImages);
+            arrangeWaterfall('sdContainer', sdImages);
+        }
+
+        function lazyLoadImages() {
+            const images = document.querySelectorAll('img.lazy');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.getAttribute('data-src');
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '0px 0px 100px 0px',
+                threshold: 0.1
+            });
+            images.forEach(img => observer.observe(img));
+        }
+
+        let currentIndex = 0;
+        let currentArray = 'gallery';
+
+        function papermaskDetailChange(direction) {
+            const array = currentArray === 'gallery' ? galleryImages :
+                currentArray === 'zhuxian' ? zhuxianImages :
+                currentArray === 'papaver' ? papaverImages :
+                currentArray === 'sd' ? sdImages : aestheticsImages;
+            if (direction === 1) {
+                currentIndex = (currentIndex + 1) % array.length;
+            } else if (direction === -1) {
+                currentIndex = (currentIndex - 1 + array.length) % array.length;
+            } else if (direction === 0) {
+                currentIndex = 0;
+            }
+            const modalImage = document.getElementById('papermaskDetailTop-zoom');
+            if (modalImage) {
+                modalImage.src = array[currentIndex].src;
+                if (typeof $ !== 'undefined') {
+                    $(".papermaskDetailTop-zoom").css("transform", "scale(1)");
+                } else {
+                    modalImage.style.transform = 'scale(1)';
+                }
+                papermaskZoom = 1;
+            }
+            if (typeof updatePapermaskDetail === 'function') {
+                updatePapermaskDetail(array[currentIndex].src, array[currentIndex].description || "暂无说明");
+            }
+        }
+
+        function paperShowHide() {
+            const modal = bootstrap.Modal.getInstance(document.getElementById('imageModal'));
+            if (modal) {
+                modal.hide();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTabs();
+            document.querySelectorAll('.nav-link').forEach(tab => {
+                tab.addEventListener('mouseover', () => {
+                    if (!tab.classList.contains('active')) {
+                        const tabInstance = new bootstrap.Tab(tab);
+                        tabInstance.show();
+                    }
+                });
+                tab.addEventListener('shown.bs.tab', () => {
+                    const target = tab.getAttribute('href').substring(1);
+                    if (target === 'gallery') arrangeWaterfall('galleryContainer', galleryImages);
+                    else if (target === 'papaver') arrangeWaterfall('papaverContainer', papaverImages);
+                    else if (target === 'sd') arrangeWaterfall('sdContainer', sdImages);
+                    else if (target === 'aesthetics') arrangeWaterfall('aestheticsContainer', aestheticsImages);
+                    else if (target === 'zhuxian') arrangeWaterfall('zhuxianContainer', zhuxianImages);
+                });
+            });
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (document.getElementById('imageModal').classList.contains('show')) {
+                if (event.key === 'ArrowLeft') {
+                    papermaskDetailChange(-1);
+                } else if (event.key === 'ArrowRight') {
+                    papermaskDetailChange(1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
