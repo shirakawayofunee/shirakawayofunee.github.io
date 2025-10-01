@@ -565,6 +565,9 @@
             <div class="gallery-header mb-3">
                 <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                     <li class="nav-item">
+                        <a class="nav-link" id="feature-tab" data-bs-toggle="tab" href="#feature" role="tab" aria-controls="feature" aria-selected="false">特徴と今の衣装について</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" id="l-tab" data-bs-toggle="tab" href="#l" role="tab" aria-controls="l" aria-selected="true">L</a>
                     </li>
                     <li class="nav-item">
@@ -579,6 +582,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="ring-tab" data-bs-toggle="tab" href="#ring" role="tab" aria-controls="ring" aria-selected="false">結婚指輪</a>
                     </li>
+
                 </ul>
             </div>
             <div class="tab-content" id="galleryTabContent">
@@ -596,6 +600,9 @@
                 </div>
                 <div class="tab-pane fade" id="ring" role="tabpanel" aria-labelledby="ring-tab">
                     <div class="gallery-container" id="ringContainer"></div>
+                </div>
+                <div class="tab-pane fade" id="feature" role="tabpanel" aria-labelledby="feature-tab">
+                    <div class="gallery-container" id="featureContainer"></div>
                 </div>
             </div>
         </div>
@@ -703,6 +710,33 @@
                 { src: "img/clothes/s/yaosu/8.webp", alt: "S Yaosu 8", description: "Severoモチーフ 8" },
                 { src: "img/clothes/s/yaosu/9.webp", alt: "S Yaosu 9", description: "Severoモチーフ 9" },
                 { src: "img/clothes/s/yaosu/10.webp", alt: "S Yaosu 10", description: "Severoモチーフ 10" }
+            ],
+            feature: [
+            { src: "img/clothes/特征1.png", alt: "Feature Image 1", description: "S残って欲しい顔特徴" },
+            { src: "img/clothes/特征1.png", alt: "Feature Image 1", description: "L残って欲しい顔特徴" },
+            { src: "img/clothes/S雰囲気.jpg", alt: "Feature Image 1", description: "S雰囲気" },
+            { src: "img/clothes/L雰囲気.png", alt: "Feature Image 1", description: "L雰囲気" },
+
+                { src: "img/clothes/1.webp", alt: "Feature Image 1", description: "" },
+                { src: "img/clothes/2.webp", alt: "Feature Image 2", description: "" },
+                { src: "img/clothes/3.webp", alt: "Feature Image 3", description: "" },
+                { src: "img/clothes/4.webp", alt: "Feature Image 4", description: "" },
+                { src: "img/clothes/5.webp", alt: "Feature Image 5", description: "" },
+                { src: "img/clothes/6.webp", alt: "Feature Image 6", description: "" },
+  { src: "img/clothes/7.webp", alt: "Feature Image 7", description: "" },
+  { src: "img/clothes/8.webp", alt: "Feature Image 8", description: "" },
+  { src: "img/clothes/9.webp", alt: "Feature Image 9", description: "" },
+  { src: "img/clothes/10.webp", alt: "Feature Image 10", description: "" },
+  { src: "img/clothes/11.webp", alt: "Feature Image 11", description: "" },
+  { src: "img/clothes/12.webp", alt: "Feature Image 12", description: "" },
+  { src: "img/clothes/13.webp", alt: "Feature Image 13", description: "" },
+  { src: "img/clothes/14.webp", alt: "Feature Image 14", description: "" },
+  { src: "img/clothes/15.webp", alt: "Feature Image 15", description: "" },
+  { src: "img/clothes/16.webp", alt: "Feature Image 16", description: "" },
+  { src: "img/clothes/17.webp", alt: "Feature Image 17", description: "" },
+  { src: "img/clothes/18.webp", alt: "Feature Image 18", description: "" },
+  { src: "img/clothes/19.webp", alt: "Feature Image 19", description: "" },
+  { src: "img/clothes/20.webp", alt: "Feature Image 20", description: "" }
             ]
         };
 
@@ -737,7 +771,8 @@
                     containerId === "lYaosuContainer" ? "lYaosu" :
                     containerId === "sContainer" ? "s" :
                     containerId === "sYaosuContainer" ? "sYaosu" :
-                    containerId === "ringContainer" ? "ring" : "");
+                    containerId === "ringContainer" ? "ring" :
+                    containerId === "featureContainer" ? "feature" : "");
                 img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
 
                 const caption = document.createElement("div");
@@ -779,6 +814,7 @@
             arrangeWaterfall("sContainer", galleryImages.s);
             arrangeWaterfall("sYaosuContainer", galleryImages.sYaosu);
             arrangeWaterfall("ringContainer", galleryImages.ring);
+            arrangeWaterfall("featureContainer", galleryImages.feature);
         }
 
         function lazyLoadImages() {
@@ -812,7 +848,8 @@
                 currentArray === "lYaosu" ? galleryImages.lYaosu :
                 currentArray === "s" ? galleryImages.s :
                 currentArray === "sYaosu" ? galleryImages.sYaosu :
-                currentArray === "ring" ? galleryImages.ring : [];
+                currentArray === "ring" ? galleryImages.ring :
+                currentArray === "feature" ? galleryImages.feature : [];
             if (direction === 1) {
                 currentIndex = (currentIndex + 1) % array.length;
             } else if (direction === -1) {
@@ -851,6 +888,7 @@
                     else if (target === "s") arrangeWaterfall("sContainer", galleryImages.s);
                     else if (target === "s-yaosu") arrangeWaterfall("sYaosuContainer", galleryImages.sYaosu);
                     else if (target === "ring") arrangeWaterfall("ringContainer", galleryImages.ring);
+                    else if (target === "feature") arrangeWaterfall("featureContainer", galleryImages.feature);
                 });
             });
         });
