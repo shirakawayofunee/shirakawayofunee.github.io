@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F8F7F8" />
+    <title>Character Design Reference</title>
+    <meta property="og:type" content="website" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="css/papermask.css" media="(min-device-width:926px)">
+    <link rel="stylesheet" href="css/papermaskDetail.css" media="(min-device-width:926px)" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            background: #ECECEA;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .content-container {
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .floating-text {
+            position: fixed;
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+            max-width: 1920px;
+            width: 100vw;
+            box-sizing: border-box;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 0 10px;
+        }
+
+        .close-button:hover {
+            color: #ccc;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            background: transparent;
+            border: none;
+            padding: 0;
+            flex-grow: 1;
+        }
+
+        .avatar-section {
+            width: 248px;
+            height: 298px;
+            border: 2px solid #000;
+            flex-shrink: 0;
+        }
+
+        .avatar-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .introduction-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .introduction-section p {
+            margin: 0;
+            padding: 0 5px;
+            height: auto;
+            line-height: 20px;
+            font-size: 0.9em;
+            overflow: visible;
+            text-overflow: initial;
+            background: #fff;
+            display: block;
+            white-space: normal;
+            width: fit-content;
+            max-width: 100%;
+        }
+
+        .introduction-section .intro-heading {
+            background: #000;
+            color: #fff;
+            font-weight: 700;
+            text-align: left;
+            direction: ltr;
+        }
+
+        .introduction-section p:not(.intro-heading) {
+            border: 1px solid #000;
+            color: #000;
+            text-align: left;
+            direction: ltr;
+        }
+
+        .character-block:nth-child(2) .profile-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .severo-intro {
+            flex-grow: 0;
+            flex-shrink: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-left: auto;
+            direction: rtl;
+            justify-content: flex-start;
+        }
+
+        .severo-intro p {
+            text-align: right;
+            width: fit-content;
+            max-width: 100%;
+            margin: 0;
+            padding: 0 5px;
+            background: #fff;
+        }
+
+        .severo-intro p:not(.intro-heading) {
+            border: 1px solid #000;
+            color: #000;
+            text-align: right;
+        }
+
+        .severo-intro .intro-heading {
+            background: #000;
+            color: #fff;
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .palette-section {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .palette-section h3 {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .color-groups {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .color-details {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            align-items: center;
+            border: 1px solid #000;
+            width: 48px;
+            padding: 5px;
+        }
+
+        .color-square {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #000;
+        }
+
+        .color-detail {
+            text-align: center;
+        }
+
+        .character-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: stretch;
+        }
+
+        .character-block {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 100%;
+        }
+
+        .gallery-section {
+            padding: 1%;
+        }
+
+        .gallery-header {
+            padding: 30px 0 0 0;
+        }
+
+        .gallery-header .nav-tabs {
+            background: #06070d;
+            border-bottom: 2px solid #393d45;
+        }
+
+        .gallery-header .nav-link {
+            font-size: 1.1em;
+            font-weight: 400;
+            color: #ccc;
+            padding: 5px 15px;
+        }
+
+        .gallery-header .nav-link.active {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+
+        .gallery-container {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            background: #06070d;
+        }
+
+        .gallery-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            position: relative;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .gallery-item :hover {
+            border: 1px solid #ff005d;
+        }
+
+        .caption {
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            padding: 8px 0;
+            width: 100%;
+            background: #06070d;
+        }
+
+        @media (max-width: 992px) {
+            .gallery-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .character-sections {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .avatar-section {
+                width: 100%;
+                height: 298px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-container {
+                display: block;
+            }
+
+            .gallery-column {
+                margin-bottom: 15px;
+            }
+
+            .profile-section,
+            .palette-section,
+            .gallery-section {
+                padding: 20px;
+            }
+
+            .display-name {
+                font-size: 1.5em;
+            }
+
+            .color-square {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .image-modal .modal-dialog {
+            max-width: 90%;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .image-modal .modal-content {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .image-modal .modal-body {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .papermaskDetailTop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-height: 80vh;
+            overflow: hidden;
+        }
+
+        .papermaskDetailTop-zoom {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .papermaskDetailBottom, .papermaskDetailClose {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f8f8f8;
+        }
+
+        .papermaskDetailBottom img, .papermaskDetailClose img {
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 576px) {
+            .image-modal .modal-dialog {
+                max-width: 100%;
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .papermaskDetailTop-zoom {
+                max-height: 60vh;
+            }
+        }
+
+        img.lazy {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        img.lazy[src] {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <div class="character-sections">
+            <div class="character-block">
+                <div class="profile-section">
+                    <div class="avatar-section">
+                        <img src="img/bl-leopold.jpg" class="avatar-image">
+                    </div>
+                    <div class="introduction-section">
+                        <p class="intro-heading">Leopold</p>
+                        <p> 女 / 178cm / 能力者 / 罪人たちの救世主</p>
+                        <p> 裏社会を陰で牛耳る実力者。</p>
+                        <p> 犯罪組織の主宰者、部下たちの罪と穢れ、愛と夢を背負う。</p>
+                        <p> 美しい、見た目は16、7歳で、実年齢不明（60>？？>36）。</p>
+                        <p> 年齢と比べてあまりにも若々しい顔立ち、過度に白い肌色。</p>
+                        <p> 常に世を拗ねるような微笑を浮かべている</p>
+                        <p> 好き嫌いが激しく、享楽主義者で実用も重んじる</p>
+                        <p> 細やかで優しい一面も持っている</p>
+                        <p> 落ち着き払った自信に満ちていて、自信かつ優雅な態度を保つ</p>
+                        <p> 性格は八方巧み。一流の銃術と剣術の使い手である</p>
+                        <p>小物：リボルバー、ベルト、結婚指輪</p>
+                        <p>モチーフ：ゴシック、死神のタロット、蛇</p>
+                    </div>
+                </div>
+                <div class="palette-section">
+                    <h3>Color Palette</h3>
+                    <div class="color-groups">
+                        <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #5A51EC;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #2D2A2B;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #8ED3FC;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #72A1F3;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #2B3880;"></div>
+                            </div>
+                        </div>
+                        <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #F7F5F0;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #f50707;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #ECF2F2;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #11161C;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #CB452B;"></div>
+                            </div>
+                        </div>
+                        <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #C4E5E3;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #A9001F;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #585D61;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #F7F7F7;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #5A51EC;"></div>
+                            </div>
+                        </div>
+                        <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #C4E5E3;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #A9001F;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #1F1F21;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #F7F7F7;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #957ED9;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="character-block">
+                <div class="profile-section">
+                    <div class="introduction-section severo-intro">
+                        <p class="intro-heading">Severo</p>
+                        <p> 女 / 187cm / 能力者 / 飼い慣らされた「野獣」</p>
+                        <p>Lの側近、犯罪組織の幹部、殺し屋。</p>
+                        <p> 表面上物腰穏やかな腹黒い36歳女性。</p>
+                        <p> 頭が切れて、Lに仕え、情報収集・医学・毒性学などに卓越した能力を発揮し、</p>
+                        <p> Lのためなら何でも成し遂げられるよ、ただLの死を覆すこと以外はね。</p>
+                        <p> Sはとても大胆で、Lに対して師弟を超えた湿度高めの激重愛を抱いてる。</p>
+                        <p> 故に、Sは一方的に、Lが彼女の後に受け入れた弟子たちを二人の共に持つ子供だと思っている。</p>
+                        <p> 「L＞森羅万象」という極端な価値観を抱えて生きている</p>
+                        <p> 家族の風邪を世界中のどんな死亡事故よりも深刻に捉えるようになった。</p>
+                        <p>小物：リボルバー、ベルト、結婚指輪</p>
+                        <p>モチーフ：ゴシック、モチーフアスクレピオスの杖、赤い糸</p>
+                        <p> レオポルドにしか見えない狼の耳と尾を持っている。</p>
+                    </div>
+                    <div class="avatar-section">
+                        <img src="img/bl-severo.jpg" alt="S" class="avatar-image">
+                    </div>
+                </div>
+                <div class="palette-section">
+                    <h3>Color scheme</h3>
+                    <div class="color-groups">
+                        <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #2E2C31;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #E9ECEE;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #A98FC4;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #86769D;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #ACBCB8;"></div>
+                            </div>
+                        </div>
+                        <div class="color-details">
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #2A3334;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #485E5F;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #449455;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #1A2334;"></div>
+                            </div>
+                            <div class="color-detail">
+                                <div class="color-square" style="background-color: #1A2334;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-section mt-5">
+            <div class="gallery-header mb-3">
+                <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="l-tab" data-bs-toggle="tab" href="#l" role="tab" aria-controls="l" aria-selected="true">L</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="l-yaosu-tab" data-bs-toggle="tab" href="#l-yaosu" role="tab" aria-controls="l-yaosu" aria-selected="false">Lのモチーフや小物</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="s-tab" data-bs-toggle="tab" href="#s" role="tab" aria-controls="s" aria-selected="false">S</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="s-yaosu-tab" data-bs-toggle="tab" href="#s-yaosu" role="tab" aria-controls="s-yaosu" aria-selected="false">Sのモチーフや小物</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="ring-tab" data-bs-toggle="tab" href="#ring" role="tab" aria-controls="ring" aria-selected="false">結婚指輪</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content" id="galleryTabContent">
+                <div class="tab-pane fade show active" id="l" role="tabpanel" aria-labelledby="l-tab">
+                    <div class="gallery-container" id="lContainer"></div>
+                </div>
+                <div class="tab-pane fade" id="l-yaosu" role="tabpanel" aria-labelledby="l-yaosu-tab">
+                    <div class="gallery-container" id="lYaosuContainer"></div>
+                </div>
+                <div class="tab-pane fade" id="s" role="tabpanel" aria-labelledby="s-tab">
+                    <div class="gallery-container" id="sContainer"></div>
+                </div>
+                <div class="tab-pane fade" id="s-yaosu" role="tabpanel" aria-labelledby="s-yaosu-tab">
+                    <div class="gallery-container" id="sYaosuContainer"></div>
+                </div>
+                <div class="tab-pane fade" id="ring" role="tabpanel" aria-labelledby="ring-tab">
+                    <div class="gallery-container" id="ringContainer"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade image-modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="papermaskDetailTop" data-mouse="small">
+                    <img src="#" alt="" data-mouse="small" class="papermaskDetailTop-zoom" id="papermaskDetailTop-zoom">
+                </div>
+                <div class="papermaskDetailBottom" data-mouse="mid">
+                    <img src="img/paperDetail/b.png" alt="放大" onclick="handleZoomChange(1)">
+                    <img src="img/paperDetail/s.png" alt="缩小" onclick="handleZoomChange(-1)">
+                    <img src="img/paperDetail/a.png" alt="重置" onclick="handleZoomChange(0)">
+                    <img src="img/paperDetail/d.png" alt="下载" onclick="handleDownload()">
+                </div>
+                <div class="papermaskDetailClose">
+                    <img src="img/paperDetail/c.png" alt="关闭" onclick="paperShowHide()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/papermaskDetail.js"></script>
+    <script type="text/javascript">
+        const galleryImages = {
+            l: [
+                { src: "img/clothes/l/000.webp", alt: "Outfit 1", description: "Leopold Outfit 1" },
+                { src: "img/clothes/l/1.webp", alt: "Outfit 1", description: "Leopold Outfit 2" },
+                { src: "img/clothes/l/2.webp", alt: "Outfit 2", description: "Leopold Outfit 3" },
+                { src: "img/clothes/l/2-1.webp", alt: "Outfit 2", description: "Leopold Outfit 3" },
+                { src: "img/clothes/l/3.webp", alt: "Outfit 3", description: "Leopold Outfit 4" },
+                { src: "img/clothes/l/4.webp", alt: "Outfit 4", description: "蛇 BVLGARI" },
+                { src: "img/clothes/l/5.webp", alt: "Outfit 5", description: "蛇 BVLGARI" },
+                { src: "img/clothes/l/6.webp", alt: "Outfit 6", description: "Leopold Outfit 7" },
+                { src: "img/clothes/l/7.webp", alt: "Outfit 7", description: "Leopold Outfit 8" },
+                { src: "img/clothes/l/8.webp", alt: "Outfit 8", description: "Leopold Outfit 9" },
+                { src: "img/clothes/l/9.webp", alt: "Outfit 9", description: "Leopold Outfit 10" },
+                { src: "img/clothes/l/10.webp", alt: "Outfit 10", description: "Leopold Outfit 11" },
+                { src: "img/clothes/l/11.webp", alt: "Outfit 11", description: "Leopold Outfit 12" },
+                { src: "img/clothes/l/12.webp", alt: "Outfit 12", description: "Leopold Outfit 13" },
+                { src: "img/clothes/l/13.webp", alt: "Outfit 13", description: "Leopold Outfit 14" },
+                { src: "img/clothes/l/14.webp", alt: "Outfit 14", description: "Leopold Outfit 15" },
+                { src: "img/clothes/l/15.webp", alt: "Outfit 15", description: "Leopold Outfit 16" },
+                { src: "img/clothes/l/16.webp", alt: "Outfit 16", description: "Leopold Outfit 17" },
+                { src: "img/clothes/l/17.webp", alt: "Outfit 17", description: "Leopold Outfit 18" },
+                { src: "img/clothes/l/18.webp", alt: "Outfit 18", description: "Leopold Outfit 19" },
+                { src: "img/clothes/l/19.webp", alt: "Outfit 19", description: "Leopold Outfit 20" },
+                { src: "img/clothes/l/20.webp", alt: "Outfit 20", description: "Leopold Outfit 21" }
+            ],
+            s: [
+                { src: "img/clothes/s/1.webp", alt: "S Outfit 1", description: "Severo Outfit 1" },
+                { src: "img/clothes/s/1-2.webp", alt: "S Outfit 1", description: "優雅且つ洗練された女性" },
+                { src: "img/clothes/s/1-3.jpg", alt: "S Outfit 1", description: "優雅且つ洗練された女性" },
+                { src: "img/clothes/s/2.webp", alt: "S Outfit 2", description: "green" },
+                { src: "img/clothes/s/3.webp", alt: "S Outfit 3", description: "Severo Outfit 3" },
+                { src: "img/clothes/s/4.webp", alt: "S Outfit 4", description: "Severo Outfit 4" },
+                { src: "img/clothes/s/5.webp", alt: "S Outfit 5", description: "Severo Outfit 5" },
+                { src: "img/clothes/s/6.webp", alt: "S Outfit 6", description: "Severo Outfit 6" },
+                { src: "img/clothes/s/7.webp", alt: "S Outfit 7", description: "Severo Outfit 7" },
+                { src: "img/clothes/s/8.webp", alt: "S Outfit 8", description: "Severo Outfit 8" },
+                { src: "img/clothes/s/9.webp", alt: "S Outfit 9", description: "Severo Outfit 9" },
+                { src: "img/clothes/s/10.webp", alt: "S Outfit 10", description: "Severo Outfit 10" },
+                { src: "img/clothes/s/11.webp", alt: "S Outfit 11", description: "Severo Outfit 11" },
+                { src: "img/clothes/s/12.webp", alt: "S Outfit 12", description: "Severo Outfit 12" },
+                { src: "img/clothes/s/13.webp", alt: "S Outfit 13", description: "Severo Outfit 13" },
+                { src: "img/clothes/s/14.webp", alt: "S Outfit 14", description: "Severo Outfit 14" },
+                { src: "img/clothes/s/15.webp", alt: "S Outfit 15", description: "Severo Outfit 15" },
+                { src: "img/clothes/s/16.webp", alt: "S Outfit 16", description: "Severo Outfit 16" },
+                { src: "img/clothes/s/17.webp", alt: "S Outfit 17", description: "Severo Outfit 17" },
+                { src: "img/clothes/s/18.webp", alt: "S Outfit 18", description: "Severo Outfit 18" },
+                { src: "img/clothes/s/19.webp", alt: "S Outfit 19", description: "Severo Outfit 19" },
+                { src: "img/clothes/s/20.webp", alt: "S Outfit 20", description: "Severo Outfit 20" }
+            ],
+            ring: [
+                { src: "img/clothes/ring/1.webp", alt: "Ring Outfit 1", description: "結婚指輪デザイン 1" },
+                { src: "img/clothes/ring/2.webp", alt: "Ring Outfit 2", description: "結婚指輪デザイン 2" },
+                { src: "img/clothes/ring/3.webp", alt: "Ring Outfit 3", description: "結婚指輪デザイン 3" },
+                { src: "img/clothes/ring/4.webp", alt: "Ring Outfit 4", description: "結婚指輪デザイン 4" },
+                { src: "img/clothes/ring/5.webp", alt: "Ring Outfit 5", description: "結婚指輪デザイン 5" },
+                { src: "img/clothes/ring/6.webp", alt: "Ring Outfit 6", description: "結婚指輪デザイン 6" }
+            ],
+            lYaosu: [
+                { src: "img/clothes/l/yaosu/1.webp", alt: "L Yaosu 1", description: "Leopoldモチーフ 1" },
+                { src: "img/clothes/l/yaosu/2.webp", alt: "L Yaosu 2", description: "Leopoldモチーフ 2" },
+                { src: "img/clothes/l/yaosu/3.webp", alt: "L Yaosu 3", description: "Leopoldモチーフ 3" },
+                { src: "img/clothes/l/yaosu/4.webp", alt: "リボルバー", description: "Leopoldのリボルバー" },
+                { src: "img/clothes/l/yaosu/5.webp", alt: "L Yaosu 5", description: "Leopoldモチーフ 5" },
+                { src: "img/clothes/l/yaosu/6.webp", alt: "L Yaosu 6", description: "Leopoldモチーフ 6" },
+                { src: "img/clothes/l/yaosu/7.webp", alt: "L Yaosu 7", description: "Leopoldモチーフ 7" },
+                { src: "img/clothes/l/yaosu/8.webp", alt: "L Yaosu 8", description: "Leopoldモチーフ 8" },
+                { src: "img/clothes/l/yaosu/9.webp", alt: "L Yaosu 9", description: "Leopoldモチーフ 9" },
+                { src: "img/clothes/l/yaosu/10.webp", alt: "L Yaosu 10", description: "Leopoldモチーフ 10" }
+            ],
+            sYaosu: [
+                { src: "img/clothes/s/yaosu/1.webp", alt: "S Yaosu 1", description: "Severoモチーフ 1" },
+                { src: "img/clothes/s/yaosu/2.webp", alt: "S Yaosu 2", description: "Severoモチーフ 2" },
+                { src: "img/clothes/s/yaosu/3.webp", alt: "S Yaosu 3", description: "Severoモチーフ 3" },
+                { src: "img/clothes/s/yaosu/4.webp", alt: "S Yaosu 4", description: "Severoモチーフ 4" },
+                { src: "img/clothes/s/yaosu/5.webp", alt: "S Yaosu 5", description: "Severoモチーフ 5" },
+                { src: "img/clothes/s/yaosu/6.webp", alt: "S Yaosu 6", description: "Severoモチーフ 6" },
+                { src: "img/clothes/s/yaosu/7.webp", alt: "S Yaosu 7", description: "Severoモチーフ 7" },
+                { src: "img/clothes/s/yaosu/8.webp", alt: "S Yaosu 8", description: "Severoモチーフ 8" },
+                { src: "img/clothes/s/yaosu/9.webp", alt: "S Yaosu 9", description: "Severoモチーフ 9" },
+                { src: "img/clothes/s/yaosu/10.webp", alt: "S Yaosu 10", description: "Severoモチーフ 10" }
+            ]
+        };
+
+        function arrangeWaterfall(containerId, imageArray) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = "";
+
+            const width = window.innerWidth;
+            const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+
+            const columns = Array(columnCount).fill().map(() => {
+                const col = document.createElement("div");
+                col.className = "gallery-column";
+                container.appendChild(col);
+                return col;
+            });
+
+            imageArray.forEach((image, index) => {
+                const item = document.createElement("div");
+                item.className = "gallery-item";
+
+                const img = document.createElement("img");
+                img.setAttribute("data-src", image.src);
+                img.alt = image.alt;
+                img.className = "img-fluid gallery-image lazy";
+                img.setAttribute("data-bs-toggle", "modal");
+                img.setAttribute("data-bs-target", "#imageModal");
+                img.setAttribute("data-index", index);
+                img.setAttribute("data-description", image.description);
+                img.setAttribute("data-array",
+                    containerId === "lContainer" ? "l" :
+                    containerId === "lYaosuContainer" ? "lYaosu" :
+                    containerId === "sContainer" ? "s" :
+                    containerId === "sYaosuContainer" ? "sYaosu" :
+                    containerId === "ringContainer" ? "ring" : "");
+                img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+
+                const caption = document.createElement("div");
+                caption.className = "caption";
+                caption.textContent = image.description || "";
+
+                item.appendChild(img);
+                item.appendChild(caption);
+                columns[index % columnCount].appendChild(item);
+
+                img.removeEventListener("click", handleImageClick);
+                img.addEventListener("click", handleImageClick);
+            });
+
+            lazyLoadImages();
+        }
+
+        function handleImageClick() {
+            const src = this.getAttribute("data-src");
+            const description = this.getAttribute("data-description");
+            currentIndex = parseInt(this.getAttribute("data-index"));
+            currentArray = this.getAttribute("data-array");
+            const modalImage = document.getElementById("papermaskDetailTop-zoom");
+            modalImage.src = src;
+            if (typeof $ !== 'undefined') {
+                $(".papermaskDetailTop-zoom").css("transform", "scale(1)");
+            } else {
+                modalImage.style.transform = 'scale(1)';
+            }
+            papermaskZoom = 1;
+            if (typeof updatePapermaskDetail === 'function') {
+                updatePapermaskDetail(src, description || "暂无说明");
+            }
+        }
+
+        function initializeTabs() {
+            arrangeWaterfall("lContainer", galleryImages.l);
+            arrangeWaterfall("lYaosuContainer", galleryImages.lYaosu);
+            arrangeWaterfall("sContainer", galleryImages.s);
+            arrangeWaterfall("sYaosuContainer", galleryImages.sYaosu);
+            arrangeWaterfall("ringContainer", galleryImages.ring);
+        }
+
+        function lazyLoadImages() {
+            const images = document.querySelectorAll("img.lazy");
+            const observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.getAttribute("data-src");
+                            img.classList.remove("lazy");
+                            observer.unobserve(img);
+                        }
+                    });
+                },
+                {
+                    rootMargin: "0px 0px 100px 0px",
+                    threshold: 0.1
+                }
+            );
+
+            images.forEach((img) => observer.observe(img));
+        }
+
+        let currentIndex = 0;
+        let currentArray = "l";
+
+        function papermaskDetailChange(direction) {
+            const array =
+                currentArray === "l" ? galleryImages.l :
+                currentArray === "lYaosu" ? galleryImages.lYaosu :
+                currentArray === "s" ? galleryImages.s :
+                currentArray === "sYaosu" ? galleryImages.sYaosu :
+                currentArray === "ring" ? galleryImages.ring : [];
+            if (direction === 1) {
+                currentIndex = (currentIndex + 1) % array.length;
+            } else if (direction === -1) {
+                currentIndex = (currentIndex - 1 + array.length) % array.length;
+            } else if (direction === 0) {
+                currentIndex = 0;
+            }
+            const modalImage = document.getElementById("papermaskDetailTop-zoom");
+            if (modalImage) {
+                modalImage.src = array[currentIndex].src;
+                if (typeof $ !== 'undefined') {
+                    $(".papermaskDetailTop-zoom").css("transform", "scale(1)");
+                } else {
+                    modalImage.style.transform = 'scale(1)';
+                }
+                papermaskZoom = 1;
+            }
+            if (typeof updatePapermaskDetail === 'function') {
+                updatePapermaskDetail(array[currentIndex].src, array[currentIndex].description || "暂无说明");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initializeTabs();
+            document.querySelectorAll(".nav-link").forEach((tab) => {
+                tab.addEventListener("mouseover", () => {
+                    if (!tab.classList.contains("active")) {
+                        const tabInstance = new bootstrap.Tab(tab);
+                        tabInstance.show();
+                    }
+                });
+                tab.addEventListener("shown.bs.tab", () => {
+                    const target = tab.getAttribute("href").substring(1);
+                    if (target === "l") arrangeWaterfall("lContainer", galleryImages.l);
+                    else if (target === "l-yaosu") arrangeWaterfall("lYaosuContainer", galleryImages.lYaosu);
+                    else if (target === "s") arrangeWaterfall("sContainer", galleryImages.s);
+                    else if (target === "s-yaosu") arrangeWaterfall("sYaosuContainer", galleryImages.sYaosu);
+                    else if (target === "ring") arrangeWaterfall("ringContainer", galleryImages.ring);
+                });
+            });
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (document.getElementById("imageModal").classList.contains("show")) {
+                if (event.key === "ArrowLeft") {
+                    papermaskDetailChange(-1);
+                } else if (event.key === "ArrowRight") {
+                    papermaskDetailChange(1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
