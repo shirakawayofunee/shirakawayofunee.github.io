@@ -71,7 +71,6 @@
       <img src="img/music/hide.png" alt="" onclick="musicmaskDetailHideM(1)">
     </div>
     <div class="head-mob-right">
-      <!-- <img src="img/logo.png" alt="" class="head-mob-logo"> -->
     </div>
     <div class="head-mob-left">
       <img src="img/v2c.png" alt="" onclick="muteMusic(1)" class="imgMusicPlay" style="display: none;">
@@ -88,7 +87,6 @@
       <div class="h-con-left">
         <h1 data-mouse="mid">
           <a href="index.html" style="cursor: none;" data-mouse="mid">
-            <!-- <img src="img/logo.png" alt="logo" data-mouse="mid" class="head-logo"> -->
           </a>
         </h1>
       </div>
@@ -115,14 +113,21 @@
             <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
           </div>
           <div class="div-center div-centerpc" onclick="changeBanner(5)" id="banner5" data-mouse="mid">
+
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(6)" id="banner6" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">年表</div>
             <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
           </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(6)" id="banner6" data-mouse="mid">
+          <div class="div-center div-centerpc" onclick="changeBanner(7)" id="banner7" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">情報</div>
             <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
           </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(7)" id="banner7" data-mouse="mid">
+          <div class="div-center div-centerpc" onclick="changeBanner(8)" id="banner8" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">物語</div>
+            <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="changeBanner(9)" id="banner9" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">関係性補足工事中</div>
             <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
           </div>
@@ -143,10 +148,13 @@
       <!-- pc首页 -->
       <div class="swiper-slide pc first" data-mouse="small" id="slide1">
         <!-- <img src="./img/01.jpg" alt="" class="first-bg animate__animated animate__fadeIn"> -->
-        <video src="#" style="width:100%;" muted autoplay loop id="kvPc" poster="kv/p.jpg" data-mouse="small"></video>
-        <img src="img/first/1.png" alt="" class="first-1" data-mouse="small">
-        <img src="img/first/2.png" alt="" class="first-2" data-mouse="small">
-        <img src="img/first/3.webp" alt="" class="first-3" data-mouse="small">
+        <video src="#" style="width:100%;" muted autoplay loop id="kvPc" poster="kv/p0.jpg" data-mouse="small"></video>
+        <img src="img/first/1.png" alt="" class="first-1" data-mouse="small" onclick="openflowersmask()">
+        <!-- <img src="img/first/2.png" alt="" class="first-2" data-mouse="small"> -->
+        <!-- <img src="img/first/3.webp" alt="" class="first-3" data-mouse="small"> -->
+        <img src="img/first/slogan.png" alt="" class="first-3" data-mouse="small">
+
+        
         <div class="first-zhe" data-mouse="small">
 
         </div>
@@ -279,8 +287,7 @@
           <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="avatar four"></div>
             <div class="label">
-              J、19歳<br />
-              一般「GARDEN」メンバーの象徴です。
+              蓟、19歳<br />
             </div>
           </div>
           <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
@@ -294,8 +301,8 @@
           <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="avatar seven"></div>
             <div class="label">
-              「牧者」<br>Lの命を延ばせる
-              <br>
+              「牧者」<br>
+              Lの命を延ばせる<br>
               自分を深淵に突き落としたこの人、長い年月にわたり自分を絡めとったこの者。
             </div>
           </div>
@@ -439,9 +446,10 @@
         </div>
       </div>
 <!-- 在 allSwiper 的 swiper-wrapper 中更新 slide9 -->
-<!-- <div class="swiper-slide pc chapter-carousel" data-mouse="small" id="slide9">
+<div class="swiper-slide pc chapter-carousel" data-mouse="small" id="slide9">
   <div class="swiper chapterSwiper" id="chapterSwiper">
     <div class="swiper-wrapper">
+      <!-- 大章节1（6个小章节） -->
       <div class="swiper-slide chapter-slide" data-mouse="small">
         <img src="img/flower/bg1.png" alt="" class="chapter-bg" data-mouse="small">
         <div class="chapter-marker chapter-1-1" data-mouse="mid">
@@ -460,6 +468,7 @@
           <div class="chapter-event-bg" onclick="openEventmask('chapter1-5')"></div>
         </div>
       </div>
+      <!-- 大章节2（6个小章节） -->
       <div class="swiper-slide chapter-slide" data-mouse="small">
         <img src="img/flower/bg2.png" alt="" class="chapter-bg" data-mouse="small">
         <div class="chapter-marker chapter-2-1" data-mouse="mid">
@@ -481,6 +490,7 @@
           <div class="chapter-event-bg" onclick="openEventmask('chapter2-6')"></div>
         </div>
       </div>
+      <!-- 大章节3（6个小章节） -->
       <div class="swiper-slide chapter-slide" data-mouse="small">
         <img src="img/flower/bg3.png" alt="" class="chapter-bg" data-mouse="small">
         <div class="chapter-marker chapter-3-1" data-mouse="mid">
@@ -499,6 +509,7 @@
           <div class="chapter-event-bg" onclick="openEventmask('chapter3-5')"></div>
         </div>
       </div>
+      <!-- 大章节4（4个小章节） -->
       <div class="swiper-slide chapter-slide" data-mouse="small">
         <img src="img/flower/bg4.png" alt="" class="chapter-bg" data-mouse="small">
         <div class="chapter-marker chapter-4-1" data-mouse="mid">
@@ -524,7 +535,7 @@
     <div class="swiper-pagination"></div>
     <div class="swiper-pause-play" data-mouse="mid">Pause</div>
   </div>
-</div> -->
+</div>
 
       <!-- pc序章地图 -->
       <div class="swiper-slide pc map" data-mouse="small" id="slide5">
@@ -595,7 +606,7 @@
       </div>
       
       <!-- 新增 intelligence 区块 -->
-      <!-- <div class="swiper-slide pc intelligence" data-mouse="small" id="slide7">
+      <div class="swiper-slide pc intelligence" data-mouse="small" id="slide7">
         <div class="intelligence-content" data-mouse="small">
           <div class="intelligence-event intelligence-edge-000" data-mouse="mid">
             <div class="intelligence-event-bg"></div>
@@ -636,7 +647,7 @@
           </div>
         </div>
       
-      </div> -->
+      </div>
       
       <!-- pc影音 -->
       <div class="swiper-slide pc gallery" data-mouse="small" id="slide8">
