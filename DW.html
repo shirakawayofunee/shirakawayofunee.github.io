@@ -208,29 +208,14 @@
 </head>
 
 <body>
-    <div class="floating-text" id="floatingText">
-        <span>SLの関係についての私の考え：
-        <br>
-        二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
-        <br>ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。
-        <br>
-        二人は師弟、主従、母娘、神と信徒、革命の戦友であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。
-        この絆の核心は、単一のラベルを超えた、もっと深い愛にあるのです。</span>
-        <button class="close-button" onclick="document.getElementById('floatingText').style.display='none'">×</button>
-    </div>
-
     <div class="gallery-section mt-5">
         <div class="gallery-header mb-3">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" id="r18g-tab" data-bs-toggle="tab" href="#r18g" role="tab" aria-controls="r18g"
-                        aria-selected="false">メインストーリー/本編</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab"
-                        aria-controls="gallery" aria-selected="true">イラスト</a>
+                        aria-controls="gallery" aria-selected="true">ふわふわ</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" id="dc-tab" data-bs-toggle="tab" href="#dc" role="tab" aria-controls="dc"
                         aria-selected="false">テーマ</a>
                 </li>
@@ -265,7 +250,7 @@
                 <li class="nav-item">
                     <a class="nav-link" id="food-tab" data-bs-toggle="tab" href="#food" role="tab" aria-controls="food"
                         aria-selected="false">食べ物</a>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="tab-content" id="galleryTabContent">
@@ -365,29 +350,36 @@
           { src: "img/SL/g1.webp", alt: "R18-G Image 1", description: "" }
       ];
       const galleryImages = [
-          { src: "img/SL/SL1.webp", alt: "Gallery Image 1", description: "「中秋の名月」  犯罪組織の主宰者と部下の殺し屋" },
-          { src: "img/SL/SL2.webp", alt: "Gallery Image 2", description: "「運命の舞台」  死神と信者" },
-          { src: "img/SL/SL3.webp", alt: "Gallery Image 3", description: "吸血鬼貴族とその専属の仕立て屋（WIP）" },
-          { src: "img/SL/SL4.webp", alt: "Gallery Image 4", description: "お姫様抱っこ" },
-          { src: "img/SL/SL5.webp", alt: "Gallery Image 5", description: "" },
-          { src: "img/SL/SL6.webp", alt: "Gallery Image 6", description: "" },
-          { src: "img/SL/SL7.webp", alt: "Gallery Image 7", description: "" },
-          { src: "img/SL/SL8.webp", alt: "Gallery Image 8", description: "" },
-          { src: "img/SL/SL9.webp", alt: "Gallery Image 9", description: "" },
-          { src: "img/SL/SL10.webp", alt: "Gallery Image 10", description: "" },
-          { src: "img/SL/SL11.webp", alt: "Gallery Image 11", description: "" },
-          { src: "img/SL/SL12.webp", alt: "Gallery Image 12", description: "" },
-          { src: "img/SL/SL13.webp", alt: "Gallery Image 13", description: "" },
-          { src: "img/SL/SL14.webp", alt: "Gallery Image 14", description: "" },
-          { src: "img/SL/SL15.webp", alt: "Gallery Image 15", description: "" },
-          { src: "img/SL/SL16.webp", alt: "Gallery Image 16", description: "" },
-          { src: "img/SL/SL17.webp", alt: "Gallery Image 17", description: "" },
-          { src: "img/SL/SL18.webp", alt: "Gallery Image 18", description: "同人誌表紙" },
-          { src: "img/SL/SL19.webp", alt: "Gallery Image 19", description: "" },
-          { src: "img/SL/SL20.webp", alt: "Gallery Image 20", description: "" },
-          { src: "img/SL/SL21.webp", alt: "Gallery Image 21", description: "" },
-          { src: "img/SL/SL22.webp", alt: "Gallery Image 22", description: "" },
-/*           { src: "img/SL/SL23.webp", alt: "Gallery Image 23", description: "" } */
+      { src: "img/SL/animal/animal1.webp", alt: "Gallery Image 1", description: "" },
+  { src: "img/SL/animal/animal2.webp", alt: "Gallery Image 2", description: "" },
+  { src: "img/SL/animal/animal3.webp", alt: "Gallery Image 3", description: "" },
+  { src: "img/SL/animal/animal4.webp", alt: "Gallery Image 4", description: "" },
+  { src: "img/SL/animal/animal5.webp", alt: "Gallery Image 5", description: "" },
+  { src: "img/SL/animal/animal6.webp", alt: "Gallery Image 6", description: "" },
+  { src: "img/SL/animal/animal7.webp", alt: "Gallery Image 7", description: "" },
+  { src: "img/SL/animal/animal8.webp", alt: "Gallery Image 8", description: "" },
+  { src: "img/SL/animal/animal9.webp", alt: "Gallery Image 9", description: "" },
+  { src: "img/SL/animal/animal10.webp", alt: "Gallery Image 10", description: "" },
+  { src: "img/SL/animal/animal11.webp", alt: "Gallery Image 11", description: "" },
+  { src: "img/SL/animal/animal12.webp", alt: "Gallery Image 12", description: "" },
+  { src: "img/SL/animal/animal13.webp", alt: "Gallery Image 13", description: "" },
+  { src: "img/SL/animal/animal14.webp", alt: "Gallery Image 14", description: "" },
+  { src: "img/SL/animal/animal15.webp", alt: "Gallery Image 15", description: "" },
+  { src: "img/SL/animal/animal16.webp", alt: "Gallery Image 16", description: "" },
+  { src: "img/SL/animal/animal17.webp", alt: "Gallery Image 17", description: "" },
+  { src: "img/SL/animal/animal18.webp", alt: "Gallery Image 18", description: "" },
+  { src: "img/SL/animal/animal19.webp", alt: "Gallery Image 19", description: "" },
+  { src: "img/SL/animal/animal20.webp", alt: "Gallery Image 20", description: "" },
+  { src: "img/SL/animal/animal21.webp", alt: "Gallery Image 21", description: "" },
+  { src: "img/SL/animal/animal22.webp", alt: "Gallery Image 22", description: "" },
+  { src: "img/SL/animal/animal23.webp", alt: "Gallery Image 23", description: "" },
+  { src: "img/SL/animal/animal24.webp", alt: "Gallery Image 24", description: "" },
+  { src: "img/SL/animal/animal25.webp", alt: "Gallery Image 25", description: "" },
+  { src: "img/SL/animal/animal26.webp", alt: "Gallery Image 26", description: "" },
+  { src: "img/SL/animal/animal27.webp", alt: "Gallery Image 27", description: "" },
+  { src: "img/SL/animal/animal28.webp", alt: "Gallery Image 28", description: "" },
+  { src: "img/SL/animal/animal29.webp", alt: "Gallery Image 29", description: "" },
+  { src: "img/SL/animal/animal30.webp", alt: "Gallery Image 30", description: "" },
       ];
 
       const dcImages = [
@@ -459,7 +451,7 @@
           { src: "img/FZ/livingroom1.webp", alt: "Mansion Image 4", description: "living room1" },
           { src: "img/FZ/livingroom2.webp", alt: "Mansion Image 5", description: "living room2" },
           { src: "img/FZ/4.webp", alt: "Mansion Image 6", description: "living room3" },
-          { src: "img/FZ/bed.webp", alt: "Mansion Image 7", description: "Lの寝室にある、凝ったデザインのゴシック風ベッド。昔はLだけが寝てたけど、今はSも寝れるし、剥いたザクロを食べながらゴロゴロすることもできる。" },
+          { src: "img/FZ/bed.webp", alt: "Mansion Image 7", description: "LのBed" },
           { src: "img/FZ/tailorshop.webp", alt: "Mansion Image 8", description: "Sの仕立て屋" },
           { src: "img/FZ/garden.webp", alt: "Mansion Image 9", description: "「GARDEN」" },
           { src: "img/FZ/1.webp", alt: "Mansion Image 10", description: "" },
