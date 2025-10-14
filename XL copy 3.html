@@ -251,6 +251,17 @@ img.lazy[src] {
 </head>
 
 <body>
+<!-- <div class="floating-text" id="floatingText">
+  <span>SLの関係についての私の考え：
+  <br>
+  二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
+  <br>ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。
+  <br>
+  二人は師弟、主従、母娘、神と信徒、革命の戦友であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。
+  この絆の核心は、単一のラベルを超えた、もっと深い愛にあるのです。</span>
+<button class="close-button" onclick="document.getElementById('floatingText').style.display='none'">×</button>
+</div> -->
+
 <div class="gallery-section mt-5">
 <div class="gallery-header mb-3">
   <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
@@ -270,10 +281,14 @@ img.lazy[src] {
       <a class="nav-link" id="catdw-tab" data-bs-toggle="tab" href="#catdw" role="tab" aria-controls="catdw"
         aria-selected="false">ふわふわ（擬獣化SD）</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" id="theme-tab" data-bs-toggle="tab" href="#theme" role="tab" aria-controls="theme"
+<!--     <li class="nav-item">
+      <a class="nav-link" id="mansion-tab" data-bs-toggle="tab" href="#mansion" role="tab" aria-controls="mansion"
         aria-selected="false">テーマ</a>
-    </li>
+    </li> -->
+<!--     <li class="nav-item">
+      <a class="nav-link" id="r18g-tab" data-bs-toggle="tab" href="#r18g" role="tab" aria-controls="r18g"
+        aria-selected="false">R18-G</a>
+    </li> -->
   </ul>
 </div>
 <div class="tab-content" id="galleryTabContent">
@@ -303,9 +318,6 @@ img.lazy[src] {
   </div>
   <div class="tab-pane fade" id="r18g" role="tabpanel" aria-labelledby="r18g-tab">
     <div class="gallery-container" id="r18gContainer"></div>
-  </div>
-  <div class="tab-pane fade" id="theme" role="tabpanel" aria-labelledby="theme-tab">
-    <div class="gallery-container" id="themeContainer"></div>
   </div>
 </div>
 </div>
@@ -390,6 +402,51 @@ const galleryImages = [
   {src: "img/XL/Xliwu2.webp",alt: "メインストーリー",description: "【BAD END-IF】",},
   { src: "img/XL/X表情.jpg", alt: "X表情", description: "X表情" },
   { src: "img/XL/工事中.jpg", alt: "工事中", description: "" },
+/*   {
+    src: "img/XL/XL0.jpg",
+    alt: "Gallery Image 1",
+    description: "",
+  },
+
+  {
+    src: "img/XL/XL1.jpg",
+    alt: "Gallery Image 1",
+    description: "",
+  },
+  {
+    src: "img/XL/XL2.jpg",
+    alt: "Gallery Image 2",
+    description: "死の舞踏",
+  },
+  {src: "img/XL/XL3.jpg",alt: "Gallery Image 3",description: "手繋ぐ",},
+  {src: "img/XL/XL4.jpg",alt: "Gallery Image 4",description: "首を絞める",},
+  { src: "img/XL/XL5.jpg", alt: "Gallery Image 5", description: "" },
+  { src: "img/XL/XL6.jpg", alt: "Gallery Image 6", description: "" },
+  { src: "img/XL/XL7.jpg", alt: "Gallery Image 7", description: "共同の出発点（反逆）" },
+  { src: "img/XL/XL8.jpg", alt: "Gallery Image 8", description: "" }, */
+  /* { src: "img/XL/XL9.jpg", alt: "Gallery Image 9", description: "" },
+  { src: "img/XL/XL10.jpg", alt: "Gallery Image 10", description: "" },
+  { src: "img/XL/XL11.jpg", alt: "Gallery Image 11", description: "" },
+  { src: "img/XL/XL12.jpg", alt: "Gallery Image 12", description: "" },
+  { src: "img/XL/XL13.jpg", alt: "Gallery Image 13", description: "" },
+  { src: "img/XL/XL14.jpg", alt: "Gallery Image 14", description: "" }, */
+/*   { src: "img/XL/Halloween.jpg", alt: "Halloween", description: "Halloween！" },
+  { src: "img/XL/可爱.jpg", alt: "Halloween", description: "Halloween！" }, */
+/*   { src: "img/XL/IF10.jpg", alt: "DC Image 10", description: "" },
+  { src: "img/XL/IF11.jpg", alt: "DC Image 11", description: "" },
+  { src: "img/XL/IF12.jpg", alt: "DC Image 12", description: "" },
+  { src: "img/XL/IF13.jpg", alt: "DC Image 13", description: "" },
+  { src: "img/XL/IF14.jpg", alt: "DC Image 14", description: "" },
+  { src: "img/XL/IF15.jpg", alt: "DC Image 15", description: "" },
+  { src: "img/XL/IF16.jpg", alt: "DC Image 16", description: "" }, */
+/*   { src: "img/XL/工事中.jpg", alt: "工事中", description: "工事中" },
+  { src: "img/XL/IF1.webp", alt: "DC Image 1", description: "禁断の果実をこっそり味わう牧師と悪魔" },
+  { src: "img/XL/IF2.webp", alt: "DC Image 2", description: "牧師と悪魔AU" },
+  { src: "img/XL/IF3.jpg", alt: "DC Image 3", description: "" },
+  { src: "img/XL/IF4.jpg", alt: "DC Image 4", description: "" },
+  { src: "img/XL/IF5.jpg", alt: "DC Image 5", description: "" },
+  { src: "img/XL/IF6.jpg", alt: "DC Image 6", description: "" },
+  { src: "img/XL/IF7.jpg", alt: "DC Image 7", description: "" }, */
 ];
 
 const dcImages = [
@@ -428,7 +485,24 @@ const dcImages = [
   { src: "img/XL/可爱.jpg", alt: "Halloween", description: "【SD】DEATH NOTE（？" },
 /*   { src: "img/XL/IF8.jpg", alt: "DC Image 8", description: "" },
   { src: "img/XL/IF9.jpg", alt: "DC Image 9", description: "" }, */
+
 ];
+
+/* const deathImages = [
+  { src: "img/Death/death1.jpg", alt: "Death Image 1", description: "" },
+  {
+    src: "img/Death/death2.jpg",
+    alt: "Death Image 2",
+    description: "Lの登場スタイルは、こんな感じ。",
+  },
+  { src: "img/Death/death3.jpg", alt: "Death Image 3", description: "" },
+  { src: "img/Death/death4.jpg", alt: "Death Image 4", description: "" },
+  { src: "img/Death/death5.jpg", alt: "Death Image 5", description: "" },
+  { src: "img/Death/death6.jpg", alt: "Death Image 6", description: "" },
+  { src: "img/Death/death7.jpg", alt: "Death Image 7", description: "" },
+  { src: "img/Death/death8.jpg", alt: "Death Image 8", description: "" },
+  { src: "img/Death/death9.jpg", alt: "Death Image 9", description: "" },
+]; */
 
 const mangaImages = [
 /*   { src: "img/XL/MH/1.jpg", alt: "Manga Image 1", description: "「○○しないと出られない部屋」①" },
@@ -437,10 +511,24 @@ const mangaImages = [
   { src: "img/XL/MH/4.png", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p4" },
 ];
 
+/* const mansionImages = [
+{ src: "img/DC/ThrillMe/ThrillMe-1.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
+{ src: "img/DC/ThrillMe/ThrillMe-2.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
+{ src: "img/DC/ThrillMe/ThrillMe-3.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
+{ src: "img/DC/ThrillMe/ThrillMe-4.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
+{ src: "img/DC/ThrillMe/ThrillMe-5.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
+{ src: "img/DC/ThrillMe-8.webp", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
+]; */
+
 const catdwImages = [
   { src: "img/XL/cat/dw1.jpg", alt: "Catdw Image 1", description: "気持ち悪がる猫とあざとウサギ" },
   { src: "img/XL/cat/dw2.jpg", alt: "Catdw Image 2", description: "猫の群れでは、地位の高い猫が低い猫の毛づくろぎますが、ウサギの群れでは、毛づくろいされることがより高い地位を象徴している。なので、二人とも自分が上だと思っているのです！" },
   { src: "img/XL/cat/心满意足.jpg", alt: "Catdw Image 3", description: "" },
+/*   { src: "img/XL/cat/dw4.jpg", alt: "Catdw Image 4", description: "" },
+  { src: "img/XL/cat/dw5.jpg", alt: "Catdw Image 5", description: "" }, */
+/*   { src: "img/XL/cat/dw6.jpg", alt: "Catdw Image 6", description: "" },
+  { src: "img/XL/cat/dw7.jpg", alt: "Catdw Image 7", description: "" },
+  { src: "img/XL/cat/dw8.jpg", alt: "Catdw Image 8", description: "" }, */
 ];
 
 const r18gImages = [
@@ -448,18 +536,10 @@ const r18gImages = [
   { src: "img/XL/g2.jpg", alt: "R18-G Image 2", description: "" },
 ];
 
-const themeImages = [
-{ src: "img/DC/ThrillMe/ThrillMe-1.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
-{ src: "img/DC/ThrillMe/ThrillMe-2.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
-{ src: "img/DC/ThrillMe/ThrillMe-3.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
-{ src: "img/DC/ThrillMe/ThrillMe-4.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
-{ src: "img/DC/ThrillMe/ThrillMe-5.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
-];
-
 const deathImages = [];
-const mansionImages = [];
-const doodleImages = [];
-const nsfwImages = [];
+  const mansionImages = [];
+  const doodleImages = [];
+  const nsfwImages = [];
 
   // 定义 updatePapermaskDetail（如果需要）
   function updatePapermaskDetail(src, desc) {
@@ -514,8 +594,6 @@ function arrangeWaterfall(containerId, imageArray) {
         ? "nsfw"
         : containerId === "r18gContainer"
         ? "r18g"
-        : containerId === "themeContainer"
-        ? "theme"
         : ""
     );
     img.src =
@@ -557,7 +635,6 @@ function initializeTabs() {
     arrangeWaterfall("mangaContainer", mangaImages);
     arrangeWaterfall("catdwContainer", catdwImages);
     arrangeWaterfall("r18gContainer", r18gImages);
-    arrangeWaterfall("themeContainer", themeImages);
     // 其他为空数组，不会报错
   }
 
@@ -610,8 +687,6 @@ document.addEventListener("DOMContentLoaded", () => {
         arrangeWaterfall("catdwContainer", catdwImages);
       else if (target === "r18g")
         arrangeWaterfall("r18gContainer", r18gImages);
-      else if (target === "theme")
-        arrangeWaterfall("themeContainer", themeImages);
     });
   });
 });
@@ -639,8 +714,6 @@ function papermaskDetailChange(direction) {
       ? nsfwImages
       : currentArray === "r18g"
       ? r18gImages
-      : currentArray === "theme"
-      ? themeImages
       : [];
   if (direction === 1) {
     currentIndex = (currentIndex + 1) % array.length;
