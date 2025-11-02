@@ -223,12 +223,12 @@
         <div class="gallery-header mb-3">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" id="r18g-tab" data-bs-toggle="tab" href="#r18g" role="tab" aria-controls="r18g"
-                        aria-selected="false">メインストーリー/本編</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link active" id="gallery-tab" data-bs-toggle="tab" href="#gallery" role="tab"
                         aria-controls="gallery" aria-selected="true">イラスト</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="r18g-tab" data-bs-toggle="tab" href="#r18g" role="tab" aria-controls="r18g"
+                        aria-selected="false">メインストーリー/本編</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="dc-tab" data-bs-toggle="tab" href="#dc" role="tab" aria-controls="dc"
@@ -270,6 +270,9 @@
             </ul>
         </div>
         <div class="tab-content" id="galleryTabContent">
+            <div class="tab-pane fade" id="r18g" role="tabpanel" aria-labelledby="r18g-tab">
+                <div class="gallery-container" id="r18gContainer"></div>
+            </div>
             <div class="tab-pane fade show active" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
                 <div class="gallery-container" id="galleryContainer"></div>
             </div>
@@ -294,9 +297,7 @@
             <div class="tab-pane fade" id="nsfw" role="tabpanel" aria-labelledby="nsfw-tab">
                 <div class="gallery-container" id="nsfwContainer"></div>
             </div>
-            <div class="tab-pane fade" id="r18g" role="tabpanel" aria-labelledby="r18g-tab">
-                <div class="gallery-container" id="r18gContainer"></div>
-            </div>
+
             <div class="tab-pane fade" id="travel" role="tabpanel" aria-labelledby="travel-tab">
                 <div class="gallery-container" id="travelContainer"></div>
             </div>
@@ -360,19 +361,19 @@
         }
 
         const r18gImages = [
-        { src: "img/SL/001.jpg", alt: "Gallery Image 1", description: "P1" },
-          { src: "img/SL/002.jpg", alt: "Gallery Image 2", description: "P2" },
-          { src: "img/SL/003.jpg", alt: "Gallery Image 3", description: "P3" },
-          { src: "img/SL/004.jpg", alt: "Gallery Image 4", description: "P4" },
-          { src: "img/SL/005.jpg", alt: "Gallery Image 5", description: "P5" },
-          { src: "img/SL/006.jpg", alt: "Gallery Image 6", description: "P6" },
-          { src: "img/SL/007.jpg", alt: "Gallery Image 7", description: "P7" },
-          { src: "img/SL/008.jpg", alt: "Gallery Image 7", description: "P8" },
-          { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【公式】メインストーリー/本編" },
-          { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【公式】メインストーリー/本編（猫猫バージョン）" },
+        { src: "img/SL/001.jpg", alt: "Gallery Image 1", description: "Blue Rain-005「何のために戦うか」P1" },
+          { src: "img/SL/002.jpg", alt: "Gallery Image 2", description: "「何のために戦うか」P2" },
+          { src: "img/SL/003.jpg", alt: "Gallery Image 3", description: "「何のために戦うか」P3" },
+          { src: "img/SL/004.jpg", alt: "Gallery Image 4", description: "「何のために戦うか」P4" },
+          { src: "img/SL/005.jpg", alt: "Gallery Image 5", description: "「何のために戦うか」P5" },
+          { src: "img/SL/006.jpg", alt: "Gallery Image 6", description: "「何のために戦うか」P6" },
+          { src: "img/SL/007.jpg", alt: "Gallery Image 7", description: "「何のために戦うか」P7" },
+          { src: "img/SL/008.jpg", alt: "Gallery Image 7", description: "「何のために戦うか」P8" },
+          { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "" },
+          { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "（猫猫バージョン）" },
           { src: "img/SL/g2.webp", alt: "R18-G Image 2", description: "【BAD END-IF】Xからのご挨拶――Lの中で一番重い存在、その死骸" },
-          { src: "img/SL/g1.webp", alt: "R18-G Image 1", description: "" },
-          { src: "img/SL/zhuxian3.webp", alt: "Gallery Image 8", description: "" },
+          { src: "img/SL/g1.webp", alt: "R18-G Image 1", description: "【BAD END-IF】" },
+          { src: "img/SL/zhuxian3.webp", alt: "Gallery Image 8", description: "Blue Rain-007「登場」" },
       ];
       const galleryImages = [
           { src: "img/SL/SL1.webp", alt: "Gallery Image 1", description: "「中秋の名月」  犯罪組織の主宰者と部下の殺し屋" },
