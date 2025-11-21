@@ -231,14 +231,6 @@
                         aria-selected="false">メインストーリー/本編</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="lonly-tab" data-bs-toggle="tab" href="#lonly" role="tab" aria-controls="lonly"
-                        aria-selected="false">L</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="sonly-tab" data-bs-toggle="tab" href="#sonly" role="tab" aria-controls="sonly"
-                        aria-selected="false">S</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" id="dc-tab" data-bs-toggle="tab" href="#dc" role="tab" aria-controls="dc"
                         aria-selected="false">テーマ</a>
                 </li>
@@ -275,7 +267,6 @@
                     <a class="nav-link" id="nsfw-tab" data-bs-toggle="tab" href="#nsfw" role="tab" aria-controls="nsfw"
                         aria-selected="false">NSFW</a>
                 </li>
-
             </ul>
         </div>
         <div class="tab-content" id="galleryTabContent">
@@ -312,12 +303,6 @@
             </div>
             <div class="tab-pane fade" id="food" role="tabpanel" aria-labelledby="food-tab">
                 <div class="gallery-container" id="foodContainer"></div>
-            </div>
-            <div class="tab-pane fade" id="lonly" role="tabpanel" aria-labelledby="lonly-tab">
-                <div class="gallery-container" id="lonlyContainer"></div>
-            </div>
-            <div class="tab-pane fade" id="sonly" role="tabpanel" aria-labelledby="sonly-tab">
-                <div class="gallery-container" id="sonlyContainer"></div>
             </div>
         </div>
     </div>
@@ -666,29 +651,6 @@
   { src: "img/SL/food/food40.webp", alt: "Food Image 40", description: "" }
         ];
 
-        const lonlyImages = [
-        { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【公式】メインストーリー/本編" },
-            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【公式】メインストーリー/本編（猫猫バージョン）" },
-            { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "" },
-            { src: "img/L/L2.webp", alt: "Gallery Image 2", description: "危険な関系〜" },
-            { src: "img/L/L3.webp", alt: "Gallery Image 3", description: "" },
-            { src: "img/L/L4.webp", alt: "Gallery Image 4", description: "死と新生" },
-            { src: "img/L/L5.webp", alt: "Gallery Image 5", description: "" },
-            { src: "img/L/L6.webp", alt: "Gallery Image 6", description: "" },
-            { src: "img/L/L7.webp", alt: "Gallery Image 7", description: "「供養」" },
-            { src: "img/L/L8.webp", alt: "Gallery Image 8", description: "「孤独」" },
-            { src: "img/L/L9.webp", alt: "Gallery Image 9", description: "「憤怒」" },
-            { src: "img/L/L10.webp", alt: "Gallery Image 10", description: "" },
-            { src: "img/L/L11.webp", alt: "Gallery Image 11", description: "" },
-            { src: "img/L/L12.webp", alt: "Gallery Image 12", description: "" },
-            { src: "img/L/L13.webp", alt: "Gallery Image 13", description: "" },
-            { src: "img/L/L14.webp", alt: "Gallery Image 14", description: "" },
-            { src: "img/L/L15.webp", alt: "Gallery Image 15", description: "" }
-        ];
-        const sonlyImages = [
-            // 示例：{ src: "img/Sonly/xxx.webp", alt: "", description: "" },
-        ];
-
         function arrangeWaterfall(containerId, imageArray) {
             const container = document.getElementById(containerId);
             container.innerHTML = "";
@@ -774,8 +736,6 @@
             arrangeWaterfall("r18gContainer", r18gImages);
             arrangeWaterfall("travelContainer", travelImages);
             arrangeWaterfall("foodContainer", foodImages);
-            arrangeWaterfall("lonlyContainer", lonlyImages);    // ← 新增
-            arrangeWaterfall("sonlyContainer", sonlyImages);   // ← 新增
         }
 
         function lazyLoadImages() {
@@ -860,8 +820,6 @@
                     else if (target === "r18g") arrangeWaterfall("r18gContainer", r18gImages);
                     else if (target === "travel") arrangeWaterfall("travelContainer", travelImages);
                     else if (target === "food") arrangeWaterfall("foodContainer", foodImages);
-                    else if (target === "lonly") arrangeWaterfall("lonlyContainer", lonlyImages);   // ← 新增
-                    else if (target === "sonly") arrangeWaterfall("sonlyContainer", sonlyImages);   // ← 新增
                 });
             });
         });
