@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-09-06 21:36:14
+ * @LastEditTime: 2025-11-23 13:27:35
  * @Description: 
  * @FilePath: \shirakawayofunee.github.io\home\js\gallery.js
  */
@@ -83,3 +83,17 @@ function openEventmask(chapterId) {
     const targetUrl = urlMap[chapterId] || 'duihua0722.html#default';
     window.open(targetUrl, '_blank');
   }
+
+
+  // 万能切换函数（支持无限个）
+$('.partwan-left .wan-tab').on('click', function () {
+    const index = $(this).data('index');
+    
+    // 左侧高亮切换
+    $('.partwan-left .wan-tab').removeClass('active');
+    $(this).addClass('active');
+    
+    // 右侧内容切换（只显示对应的）
+    $('.partwan-right .wan-content').removeClass('active');
+    $('.partwan-right .wan-content').eq(index).addClass('active');
+  });
