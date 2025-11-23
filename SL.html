@@ -251,6 +251,10 @@
                         aria-selected="false">漫画</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" id="costume-tab" data-bs-toggle="tab" href="#costume" role="tab" aria-controls="costume"
+                        aria-selected="false">衣装</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" id="death-tab" data-bs-toggle="tab" href="#death" role="tab" aria-controls="death"
                         aria-selected="false">死后</a>
                 </li>
@@ -318,6 +322,9 @@
             </div>
             <div class="tab-pane fade" id="sonly" role="tabpanel" aria-labelledby="sonly-tab">
                 <div class="gallery-container" id="sonlyContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="costume" role="tabpanel" aria-labelledby="costume-tab">
+                <div class="gallery-container" id="costumeContainer"></div>
             </div>
         </div>
     </div>
@@ -711,6 +718,23 @@
             { src: "img/S/S19.jpg", alt: "Gallery Image 14", description: "" },
             { src: "img/S/S20.jpg", alt: "Gallery Image 15", description: "" },
         ];
+        const costumeImages = [
+        { src: "img/cloakroom/L01 - 「礼服」（傘のデザイン、すごく好き）.jpg", alt: "Gallery Image 1", description: "L01 - 「礼服」（傘のデザイン、すごく好き）" },
+        { src: "img/cloakroom/L西洋衣装2-1.png", alt: "Gallery Image 1", description: "L02 - 「礼服」（靴のデザインが好き）" },
+        { src: "img/cloakroom/L西洋衣装2-2.png", alt: "Gallery Image 1", description: "L02 - 「礼服」（）" },
+        { src: "img/cloakroom/L03 - 「パジャマ」.png", alt: "Gallery Image 1", description: "L03 - 「パジャマ」" },
+        { src: "img/cloakroom/L04 - 「礼服」.png", alt: "Gallery Image 1", description: "L04 - 「礼服」" },
+        { src: "img/cloakroom/L05 - 「宴の領主」.jpg", alt: "Gallery Image 1", description: "L05 - 「宴の領主」" },
+        { src: "img/cloakroom/L06 - 「和服」.png", alt: "Gallery Image 1", description: "L06 - 「和服」" },
+        { src: "img/cloakroom/S01 - 「仕立て屋に化けた殺し屋」（メインストーリー）.jpg", alt: "Gallery Image 1", description: "S01 - 「仕立て屋に化けた殺し屋」（メインストーリー）" },
+        { src: "img/cloakroom/S02 - 「信者」（jacket）.png", alt: "Gallery Image 1", description: "S02 - 「信者」（jacket）" },
+        { src: "img/cloakroom/S02 - 「信者」.png", alt: "Gallery Image 1", description: "S02 - 「信者」" },
+        { src: "img/cloakroom/S03 - 「幼少期」（たまにはズボンもいいよね）.jpg", alt: "Gallery Image 1", description: "S03 - 「幼少期」（たまにはズボンもいいよね）" },
+        { src: "img/cloakroom/S04「幼少期」.jpg", alt: "Gallery Image 1", description: "S04「幼少期」" },
+        { src: "img/cloakroom/S05 - 「礼服」.png", alt: "Gallery Image 1", description: "S05 - 「礼服」" },
+        { src: "img/cloakroom/S06 - 「和服」.jpg", alt: "Gallery Image 1", description: "S06 - 「和服」" },
+        { src: "img/cloakroom/S06 - 「和服」（additional）.png", alt: "Gallery Image 1", description: "S06 - 「和服」（additional）" },
+        ];
 
         function arrangeWaterfall(containerId, imageArray) {
             const container = document.getElementById(containerId);
@@ -799,6 +823,7 @@
             arrangeWaterfall("foodContainer", foodImages);
             arrangeWaterfall("lonlyContainer", lonlyImages);    // ← 新增
             arrangeWaterfall("sonlyContainer", sonlyImages);   // ← 新增
+            arrangeWaterfall("costumeContainer", costumeImages);  // ← 新增这一行
         }
 
         function lazyLoadImages() {
@@ -885,6 +910,7 @@
                     else if (target === "food") arrangeWaterfall("foodContainer", foodImages);
                     else if (target === "lonly") arrangeWaterfall("lonlyContainer", lonlyImages);   // ← 新增
                     else if (target === "sonly") arrangeWaterfall("sonlyContainer", sonlyImages);   // ← 新增
+                    else if (target === "costume") arrangeWaterfall("costumeContainer", costumeImages);  // ← 新增这一行
                 });
             });
         });

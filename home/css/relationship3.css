@@ -80,7 +80,7 @@
 
 .relationship-right-str .left,
 .relationship-right-str .right {
-  flex: 0 0 35vw; /* 宽度占视口宽度的35% */
+  flex: 0 0 32vw; /* 宽度占视口宽度的35% */
   aspect-ratio: 1252 / 854; /* 保持背景图片比例 */
   max-height: 512px; /* 最大高度，防止过大 */
   height: auto; /* 高度自适应 */
