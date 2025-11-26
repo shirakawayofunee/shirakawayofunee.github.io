@@ -1,0 +1,27 @@
+function switchChapter(id) {
+    console.log("Switching to Chapter: " + id);
+    
+    // 1. 关闭导航板
+    toggleMangaNav();
+    
+    // 2. 加载新数据
+    loadMangaChapter(id);
+
+    // 3. 更新时间轴的高亮状态 (UI同步)
+    // 移除所有 active 类
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        item.classList.remove('active');
+        // 隐藏里面的指示器（因为我在css用了display:none控制，这步其实css做了，但清空类很重要）
+    });
+
+    // 给当前点击的那个添加 active 类
+    // 注意：CSS选择器是 nth-child，这里 id 是 1-5，刚好对应 nth-child(1) 到 (5)
+    // 如果 id 和位置不对应，建议给 div 加 id="tl-node-1" 这种方式查找
+    const activeItem = document.querySelector(`.timeline-container .timeline-item:nth-child(${id})`);
+    if(activeItem) {
+        activeItem.classList.add('active');
+        
+        // 也可以在这里更换图标图片源，比如把 moon_icon.png 换成 moon_active.png
+        // 简单的方法是在 CSS 里控制 opacity 或者 background，或者用 JS 替换 src
+    }
+}

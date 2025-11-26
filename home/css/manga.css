@@ -88,12 +88,214 @@
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.85); /* 深色遮罩 */
+  background: rgba(0, 0, 0, 0.92); /* 深色背景 */
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  font-family: 'Microsoft YaHei', sans-serif; /* 或者你项目原本的字体 */
 }
+
+/* --- 背景装饰层 --- */
+.timeline-bg-layer {
+  position: absolute;
+  width: 100%; height: 100%;
+  pointer-events: none; /* 让鼠标穿透背景 */
+}
+
+.timeline-left-graphic {
+  position: absolute;
+  left: -5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80vh; /* 根据大图实际尺寸调整 */
+  opacity: 0.8;
+}
+
+.timeline-dashed-line {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.timeline-label-date {
+  position: absolute;
+  top: 48%; /* 稍微在线上方 */
+  left: 18%;
+  color: #b71c1c; /* 暗红色 */
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.timeline-bullet {
+  position: absolute;
+  top: 49%;
+  right: 15%;
+  height: 20px;
+  width: auto;
+}
+
+/* --- 核心容器 --- */
+.timeline-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%; /* 控制整体宽度，根据需要调整 */
+  height: 400px;
+  margin-left: 10vw; /* 给左侧大图让位 */
+}
+
+/* --- 单个时间节点 --- */
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  width: 80px;
+  transition: transform 0.3s;
+}
+
+.timeline-item:hover {
+  transform: scale(1.05);
+}
+
+/* --- 图标与线条 --- */
+.tl-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3); /* 默认外圈 */
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+/* 顶部部分 (太阳 + 斜线) */
+.tl-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+.tl-line-down {
+  width: 1px;
+  height: 60px; /* 线条长度 */
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-20deg); /* 模拟斜线效果 */
+  margin-top: 10px;
+}
+
+/* 中间日期数字 */
+.tl-center {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.tl-date-num {
+  color: #b71c1c; /* 红色数字 */
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Impact', sans-serif; /* 选用粗体字体 */
+  position: relative;
+  z-index: 2;
+}
+
+.tl-date-text {
+  position: absolute;
+  top: 50%;
+  left: 100%; /* 放数字右边 */
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-left: 5px;
+  transform: translateY(-50%);
+}
+
+/* 底部部分 (斜线 + 月亮) */
+.tl-bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  position: relative;
+}
+
+.tl-line-up {
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-20deg);
+  margin-bottom: 10px;
+}
+
+/* --- Active 状态 (当前日期) --- */
+/* 高亮月亮图标 */
+.timeline-item.active .active-moon {
+  background: #fff;
+  box-shadow: 0 0 15px rgba(255,255,255, 0.8);
+  border: none;
+  padding: 2px; /* 图片撑满 */
+}
+
+/* 红色小三角 */
+.tl-arrow-indicator {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid #b71c1c;
+  margin-top: 5px;
+  display: none; /* 默认隐藏 */
+}
+.timeline-item.active .tl-arrow-indicator {
+  display: block;
+}
+
+/* "当前日期" 文字 */
+.tl-label-current {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-top: 5px;
+  display: none;
+}
+.timeline-item.active .tl-label-current {
+  display: block;
+}
+
+/* 关闭按钮 */
+.manga-nav-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.manga-nav-close-btn:hover { opacity: 1; }
+
+
+
+
+
+
 
 .manga-nav-content {
   background: transparent;

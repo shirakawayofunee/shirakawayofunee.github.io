@@ -1,8 +1,9 @@
 // --- 漫画数据源 (模拟数据，请替换为真实路径) ---
 const mangaData = {
   1: {
-      title: "第一章：初遇",
-      images: ["img/manga/c0/01.jpg", "img/manga/c0/02.jpg", "img/manga/c0/03.jpg", "img/manga/c0/04.jpg", "img/manga/c0/05.jpg", "img/manga/c0/06.jpg"]
+      title: "「何のために戦うか」",
+      images: ["img/manga/c0/01.jpg", "img/manga/c0/02.jpg", "img/manga/c0/03.jpg", "img/manga/c0/04.jpg", 
+      "img/manga/c0/05.jpg", "img/manga/c0/06.jpg", "img/manga/c0/07（落稿）.jpg", "img/manga/c0/08（落稿）.jpg"]
   },
   2: {
       title: "第二章：觉醒",
@@ -59,9 +60,10 @@ function loadMangaChapter(chapterId) {
       // 确保 HTML 父容器有 dir="rtl"
       slidesPerView: 2,    // 一次显示 2 页
       slidesPerGroup: 2,   // 一次滑 2 页
-      spaceBetween: 0,     // 页间距
+      spaceBetween: 0,   
       speed: 600,
       nested: true,        // 嵌套在主 Swiper 中必须开启
+      centeredSlides: false,
       grabCursor: true,    // 鼠标手势
       keyboard: {
           enabled: true,   // 允许键盘左右键翻页
@@ -100,11 +102,31 @@ function toggleMangaNav() {
 
 // 切换章节点击事件
 function switchChapter(id) {
-  console.log("Switching to Chapter: " + id);
-  // 1. 关闭导航板
-  toggleMangaNav();
-  // 2. 加载新数据
-  loadMangaChapter(id);
+    console.log("Switching to Chapter: " + id);
+    
+    // 1. 关闭导航板
+    toggleMangaNav();
+    
+    // 2. 加载新数据
+    loadMangaChapter(id);
+
+    // 3. 更新时间轴的高亮状态 (UI同步)
+    // 移除所有 active 类
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        item.classList.remove('active');
+        // 隐藏里面的指示器（因为我在css用了display:none控制，这步其实css做了，但清空类很重要）
+    });
+
+    // 给当前点击的那个添加 active 类
+    // 注意：CSS选择器是 nth-child，这里 id 是 1-5，刚好对应 nth-child(1) 到 (5)
+    // 如果 id 和位置不对应，建议给 div 加 id="tl-node-1" 这种方式查找
+    const activeItem = document.querySelector(`.timeline-container .timeline-item:nth-child(${id})`);
+    if(activeItem) {
+        activeItem.classList.add('active');
+        
+        // 也可以在这里更换图标图片源，比如把 moon_icon.png 换成 moon_active.png
+        // 简单的方法是在 CSS 里控制 opacity 或者 background，或者用 JS 替换 src
+    }
 }
 
 // --- 页面加载完成后初始化默认章节 ---
