@@ -1,19 +1,19 @@
 const connections = [
-  { from: 0, to: 1, label: "栽培、我が子のように大切にする、最も愛する部下", color: "#E41900", dashed: false }, // L -> Severo (red)
-  { from: 1, to: 0, label: "劣情、湿度高めの激重愛、求不得苦", color: "#E41900", dashed: false }, // Severo -> L (blue)
-  { from: 0, to: 2, label: "栽培、野放し", color: "#0000FE", dashed: false }, // L -> Jin
-  { from: 2, to: 0, label: "尊敬", color: "#E41900", dashed: false }, // Jin -> L
-  { from: 0, to: 3, label: "栽培、教導", color: "#0000FE", dashed: false }, // L -> Ji
-  { from: 3, to: 0, label: "敬愛", color: "#E41900", dashed: false }, // Ji -> L
-  { from: 0, to: 4, label: "やり返す、敵であり味方、複雑な協力関係", color: "#0000FE", dashed: true }, // L -> X
-  { from: 4, to: 0, label: "敬慕の愛、利用", color: "#E41900", dashed: true }, // X -> L
-  { from: 0, to: 6, label: "元同僚、今は顧客", color: "#0000FE", dashed: true }, // L -> LY
-  { from: 6, to: 0, label: "利用", color: "#0000FE", dashed: true }, // LY -> L
-  { from: 6, to: 7, label: "リーダー", color: "#E41900", dashed: false }, // LY -> DD
-  { from: 0, to: 7, label: "元の組織、反逆", color: "#000000", dashed: true }, // L -> DD
-  { from: 0, to: 5, label: "嫌悪", color: "#000000", dashed: true }, // L -> ST
-  { from: 0, to: 8, label: "探り、GB、女攻め男受け", color: "#000000", dashed: true }, // L -> player
-  { from: 4, to: 5, label: "反逆", color: "#000000", dashed: true }, // X -> ST
+  { from: 0, to: 1, label: "栽培、我が子のように大切にする、最も愛する部下", color: "#c0392b", dashed: false }, // L -> Severo (red)
+  { from: 1, to: 0, label: "劣情、湿度高めの激重愛、求不得苦", color: "#c0392b", dashed: false }, // Severo -> L (blue)
+  { from: 0, to: 2, label: "栽培、野放し", color: "#2980b9", dashed: false }, // L -> Jin
+  { from: 2, to: 0, label: "尊敬", color: "#c0392b", dashed: false }, // Jin -> L
+  { from: 0, to: 3, label: "栽培、教導", color: "#2980b9", dashed: false }, // L -> Ji
+  { from: 3, to: 0, label: "敬愛", color: "#c0392b", dashed: false }, // Ji -> L
+  { from: 0, to: 4, label: "やり返す、敵であり味方、複雑な協力関係", color: "#2980b9", dashed: true }, // L -> X
+  { from: 4, to: 0, label: "敬慕の愛、利用", color: "#c0392b", dashed: true }, // X -> L
+  { from: 0, to: 6, label: "元同僚、今は顧客", color: "#2980b9", dashed: true }, // L -> LY
+  { from: 6, to: 0, label: "利用", color: "#2980b9", dashed: true }, // LY -> L
+  { from: 6, to: 7, label: "リーダー", color: "#c0392b", dashed: false }, // LY -> DD
+  { from: 0, to: 7, label: "元の組織、反逆", color: "#555555", dashed: true }, // L -> DD
+  { from: 0, to: 5, label: "嫌悪", color: "#555555", dashed: true }, // L -> ST
+  { from: 0, to: 8, label: "探り、GB、女攻め男受け", color: "#555555", dashed: true }, // L -> player
+  { from: 4, to: 5, label: "反逆", color: "#555555", dashed: true }, // X -> ST
 ];
 
 const state = {

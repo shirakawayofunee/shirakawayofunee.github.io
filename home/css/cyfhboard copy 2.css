@@ -1,0 +1,249 @@
+.cyfhboard {
+  min-height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+  background: url("../img/bg_full.png") no-repeat fixed center / auto 100%;
+}
+
+#board {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  pointer-events: none;
+  padding: 15px;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.3); 
+}
+
+#lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.3));
+}
+
+.node, .large-node, .small-node {
+  position: absolute;
+  pointer-events: auto;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+  z-index: 2;
+  touch-action: none;
+  transition: top 0.1s, left 0.1s; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node .avatar, .large-node .avatar, .small-node .avatar {
+  margin: 0 auto 0;
+  display: block;
+  z-index: 2;
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.node .label, .large-node .label, .small-node .label {
+  padding: 6px;
+  color: #ecf0f1;
+  border-radius: 3px;
+  line-height: 1.4;
+  word-break: break-word;
+  background: rgba(103, 109, 138, 0.8);
+  backdrop-filter: blur(2px);
+  margin: 0 auto 0; /* 水平居中，顶部间距 8px */
+  text-align: center; /* 文字内容水平居中 */
+  display: inline-block; /* 确保文字框宽度自适应内容 */
+  z-index: 7;
+}
+
+.one {
+  background: url("../img/id/1.png") top/contain no-repeat;
+}
+
+.two {
+  background: url("../img/id/2.png") top/contain no-repeat;
+}
+
+.three {
+  background: url("../img/id/3.png") top/contain no-repeat;
+}
+
+.four {
+  background: url("../img/id/4.png") top/contain no-repeat;
+}
+
+.five {
+  background: url("../img/id/5.png") top/contain no-repeat;
+}
+
+.six {
+  background: url("../img/id/6.png") top/contain no-repeat;
+}
+
+.seven {
+  background: url("../img/id/7.png") top/contain no-repeat;
+}
+
+.eight {
+  background: url("../img/id/8.png") top/contain no-repeat;
+}
+
+.nine{
+  background: url("../img/id/9.png") top/contain no-repeat;
+}
+
+.relation-line {
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+  transition: all 0.3s ease-out;
+  z-index: 3;
+}
+
+.dashed-line {
+  stroke-dasharray: 5;
+}
+
+#lines text {
+  fill: #2c3e50 !important; /* 深灰色墨水字，不要纯黑 */
+  font-family: "Courier New", "Courier", monospace; /* 打字机字体 */
+  font-weight: bold;
+  font-size: 11px;          /* 稍微小一点精致 */
+  letter-spacing: -0.5px;
+}
+
+#lines tspan {
+  white-space: pre;
+  letter-spacing: 0.05em;
+}
+
+#lines rect {
+  fill: rgba(26, 34, 85, 0.9);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  z-index: 2;
+  fill: #fdf6e3 !important; /* 米黄色纸张背景 */
+  stroke: #d3d3d3;          /* 纸张边缘 */
+  stroke-width: 1px;
+  rx: 1 !important;         /* 几乎直角，像剪下来的 */
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+}
+
+.cyfhboard:not(.loaded) .node, .cyfhboard:not(.loaded) .large-node {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.cyfhboard.loaded .node, .cyfhboard.loaded .large-node {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (min-width: 992px) {
+  .small-node { width: 122px; }
+  .small-node .avatar { width: 122px; height: 151px; }
+  .small-node .label { max-width: 122px; font-size: 12px; }
+  .node { width: 200px; }
+  .node .avatar { height: 170px; }
+  .node .label { max-width: 160px; font-size: 13px; }
+  .large-node { width: 270px; }
+  .large-node .avatar { height: 270px; }
+  .large-node .label { max-width: 183px; font-size: 14px; }
+  #lines text { font-size: 12px; }
+  #lines rect { rx: 5; }
+}
+
+@media (max-width: 991px) and (min-width: 577px) {
+  .node { width: 80px; }
+  .node .avatar { width: 80px; height: 104px; }
+  .node .label { max-width: 80px; font-size: 10px; }
+  .large-node { width: 120px; }
+  .large-node .avatar { width: 120px; height: 156px; }
+  .large-node .label { max-width: 120px; font-size: 11px; }
+  #lines text { font-size: 12px; }
+  #lines rect { rx: 4; }
+}
+
+@media (max-width: 576px) {
+  #board {
+    padding: 10px;
+    overflow-x: hidden;
+  }
+  .cyfhboard::before {
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+  }
+  .node { width: 60px; }
+  .node .avatar { width: 60px; height: 78px; }
+  .node .label { max-width: 60px; font-size: 8px; padding: 4px; }
+  .large-node { width: 90px; }
+  .large-node .avatar { width: 90px; height: 117px; }
+  .large-node .label { max-width: 90px; font-size: 9px; padding: 4px; }
+  #lines text { font-size: 10px; }
+  #lines rect { rx: 3; }
+}
+
+.node, .large-node {
+  transition: none;
+}
+
+
+/* --- 核心装饰：大头针 (CSS伪元素) --- */
+.node::before, .large-node::before, .small-node::before {
+  content: '';
+  position: absolute;
+  top: 5px; /* 钉在照片中上部 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  /* 红色大头针的立体质感 */
+  background: radial-gradient(circle at 35% 35%, #ff7675, #d63031);
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.6); /* 针投在照片上的影子 */
+  z-index: 10;
+  pointer-events: none; /* 防止挡住点击 */
+}
+/* 给不同角色换大头针颜色 (可选) */
+.node:nth-child(even)::before {
+    background: radial-gradient(circle at 35% 35%, #74b9ff, #0984e3); /* 蓝色钉子 */
+}
+
+/* 6. 人物下方的文字标签：变成“便签纸” */
+.node .label, .large-node .label, .small-node .label {
+  margin-top: -8px; /* 稍微压住照片底部 */
+  padding: 4px 8px;
+  
+  /* 纸张质感 */
+  background: #fffdf0; /* 浅米色 */
+  color: #333;         /* 深色字 */
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+  
+  /* 字体样式 */
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+  
+  /* 物理效果 */
+  box-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+  z-index: 11;
+  transform: rotate(1deg); /* 标签和照片角度稍微错开 */
+}
+
+/* 8. 交互效果：鼠标悬停或拖拽时 */
+.node:hover .avatar, .large-node:hover .avatar {
+  transform: scale(1.05) rotate(0deg) !important; /* 悬停时摆正并放大 */
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5); /* 影子拉长，感觉浮得更高 */
+  z-index: 20;
+  cursor: grab;
+}
+
+.node.dragging .avatar {
+  cursor: grabbing;
+}
