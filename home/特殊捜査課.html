@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAPAN POLICE DATABASE UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass-bg: rgba(12, 20, 30, 0.65);
+            --glass-border: rgba(100, 220, 255, 0.15);
+            --text-primary: #ffffff;
+            --text-secondary: #a0c0d0;
+            --accent-cyan: #00f2ff;
+            --accent-glow: rgba(0, 242, 255, 0.4);
+            --bg-dark: #05070a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            /* 模拟背景：可以是模糊的办公室或抽象的科技纹理 */
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 40, 60, 0.4) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 20, 30, 0.4) 0%, transparent 40%),
+                linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
+                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-primary);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* 屏幕容器：模拟显示器比例 */
+        .screen-container {
+            width: 95vw;
+            height: 90vh;
+            max-width: 1600px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 40px;
+            position: relative;
+            /* 扫描线效果 */
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            box-shadow: 0 0 100px rgba(0,0,0,0.8) inset;
+            border: 1px solid #333;
+        }
+
+        /* 顶部导航 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+        }
+
+        .header-controls span {
+            font-size: 24px;
+            margin-right: 15px;
+            opacity: 0.7;
+        }
+
+        .header-title {
+            text-align: right;
+        }
+
+        .db-name {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            text-shadow: 0 0 5px var(--accent-glow);
+        }
+
+        .file-number {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: var(--accent-cyan);
+            margin-right: 12px;
+            box-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        /* 主布局 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 4fr 6fr;
+            gap: 30px;
+            height: 100%;
+        }
+
+        /* 通用玻璃面板样式 */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 4px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            padding: 2px; /* For inner border effect */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 左侧面板 */
+        .left-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .photo-box {
+            width: 100%;
+            height: 240px;
+            background-color: #000;
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+            filter: grayscale(80%) contrast(120%);
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 数据行样式 */
+        .data-row {
+            display: flex;
+            margin-bottom: 8px;
+            border: 1px solid var(--glass-border);
+            background: rgba(0,0,0,0.2);
+            align-items: center;
+        }
+
+        .label {
+            width: 100px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            font-size: 12px;
+            color: var(--accent-cyan);
+            border-right: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .value {
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        .restricted {
+            color: #ffaa00; /* Warning color for restricted text */
+        }
+
+        /* 底部按钮组 */
+        .button-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .sys-btn {
+            background: linear-gradient(180deg, rgba(30,50,80,0.6) 0%, rgba(10,20,40,0.8) 100%);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            text-shadow: 0 0 2px rgba(255,255,255,0.5);
+        }
+
+        .sys-btn:hover {
+            background: rgba(0, 242, 255, 0.1);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* 右侧列表 */
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .list-header {
+            background: rgba(0, 242, 255, 0.1);
+            padding: 10px 15px;
+            font-size: 12px;
+            color: var(--accent-cyan);
+            border-bottom: 1px solid var(--glass-border);
+            margin-bottom: 5px;
+        }
+
+        .list-item {
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .list-item:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        /* 装饰性元素：角落对焦框 */
+        .corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--accent-cyan);
+            opacity: 0.6;
+        }
+        .tl { top: 0; left: 0; border-bottom: 0; border-right: 0; }
+        .tr { top: 0; right: 0; border-bottom: 0; border-left: 0; }
+        .bl { bottom: 0; left: 0; border-top: 0; border-right: 0; }
+        .br { bottom: 0; right: 0; border-top: 0; border-left: 0; }
+
+    </style>
+</head>
+<body>
+
+    <div class="screen-container">
+        <!-- 装饰角落 -->
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+
+        <!-- 头部 -->
+        <div class="header">
+            <div class="header-controls">
+                <span>≡</span>
+                <span>↩</span>
+            </div>
+            <div class="header-title">
+                <div class="db-name">関東信越厚生局麻薬取締部特殊捜査課データベース</div>
+                <div class="file-number">第 11366 号</div>
+            </div>
+        </div>
+
+        <div class="section-title">特殊捜査課　職員記録</div>
+
+        <!-- 主要内容区 -->
+        <div class="main-content">
+            
+            <!-- 左侧：个人信息 -->
+            <div class="left-col">
+                <div class="profile-layout">
+                    <!-- 照片 -->
+                    <div class="photo-box">
+                        <!-- 这里的图片使用了占位符，您可以替换为阵内铁平的剧照 -->
+                        <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?q=80&w=1000&auto=format&fit=crop" alt="Profile Photo">
+                    </div>
+
+                    <!-- 表格数据 -->
+                    <div class="data-grid">
+                        <div class="data-row">
+                            <div class="label">所属</div>
+                            <div class="value">関東信越厚生局麻薬 取締部 特殊捜査課</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="label">氏名</div>
+                            <div class="value">陣内　鉄平　　Jinnai Teppei</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="label">年齢</div>
+                            <div class="value">36 歳</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="label">級等</div>
+                            <div class="value">一般行政職 2 級 41 号</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="label">現階級</div>
+                            <div class="value">係員</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="label">滞留年数</div>
+                            <div class="value">7 年 11 ヶ月</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="label" style="color:#ffaa00">特記事項</div>
+                            <div class="value restricted">閲覧者制限中</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 按钮区域 -->
+                <div class="button-grid">
+                    <div class="sys-btn">健康区分</div>
+                    <div class="sys-btn">緊急連絡先</div>
+                    <div class="sys-btn">身上情報</div>
+                    <div class="sys-btn">資格</div>
+                </div>
+            </div>
+
+            <!-- 右侧：经歷列表 -->
+            <div class="glass-panel">
+                <div class="list-header">経歴</div>
+                <div class="history-list">
+                    <div class="list-item">東京大学法学部　卒業</div>
+                    <div class="list-item">国家公務員試験Ⅰ種　合格</div>
+                    <div class="list-item">警察庁　入庁</div>
+                    <div class="list-item">警察大学校　入学</div>
+                    <div class="list-item">警視庁 永田町警察署 警備課　配属</div>
+                    <div class="list-item">警視庁 警備部 特殊急襲部隊 中隊長　着任</div>
+                    <div class="list-item">スタジアムテロ事件制圧の功により警視総監賞 賞詞　受賞</div>
+                    <div class="list-item">警視庁 組織犯罪対策本部 薬物銃器対策課 管理官　着任</div>
+                    <div class="list-item" style="color: #888;">警視庁　辞職</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

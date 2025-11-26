@@ -1,6 +1,6 @@
 // ==================== 漫画数据源 ====================
 const mangaData = {
-    1: { title: "「何のために戦うか」", images: ["img/manga/c0/01.jpg","img/manga/c0/02.jpg","img/manga/c0/03.jpg","img/manga/c0/04.jpg",
+    1: { title: "「何のために戦うか」「大切なこと」", images: ["img/manga/c0/01.jpg","img/manga/c0/02.jpg","img/manga/c0/03.jpg","img/manga/c0/04.jpg",
     "img/manga/c0/05.jpg","img/manga/c0/06.jpg","img/manga/c0/07（落稿）.jpg","img/manga/c0/08（落稿）.jpg"] },
     2: { title: "BAD END③「They can't hurt you anymore.」",         
     images: ["img/manga/c1/01.jpg","img/manga/c1/02.jpg","img/manga/c1/03.jpg"]},

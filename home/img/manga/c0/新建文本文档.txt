@@ -1,1 +1,0 @@
-2: { title: "BAD END③「They can't hurt you anymore.」",         images: ["img/manga/c1/01.jpg","img/manga/c1/02.jpg","img/manga/c1/03.jpg" },
