@@ -27,74 +27,58 @@ const mangaData = {
 var mangaSwiper = null;
 
 // --- 初始化或加载章节 ---
-// 修改加载逻辑，改为“物理双页”
 function loadMangaChapter(chapterId) {
-    const data = mangaData[chapterId];
-    if (!data) return;
+  const data = mangaData[chapterId];
+  if (!data) return;
 
-    // 更新标题
-    document.getElementById("headerChapterNum").innerText = "CHAPTER 0" + chapterId;
-    document.getElementById("headerChapterTitle").innerText = data.title;
-    document.getElementById("mangaTotal").innerText = data.images.length; // 总页数还是按张数算
+  const wrapper = document.getElementById("mangaWrapper");
+  
+  // 1. 更新标题
+  document.getElementById("headerChapterNum").innerText = "CHAPTER 0" + chapterId;
+  document.getElementById("headerChapterTitle").innerText = data.title;
+  document.getElementById("mangaTotal").innerText = data.images.length;
 
-    const wrapper = document.getElementById("mangaWrapper");
-    let slidesHtml = "";
+  // 2. 生成 Slide HTML
+  let slidesHtml = "";
+  data.images.forEach((imgSrc, index) => {
+      // data-swiper-parallax 可以增加滑动视差感，不需要可去掉
+      slidesHtml += `
+          <div class="swiper-slide">
+              <img src="${imgSrc}" alt="Page ${index + 1}" data-mouse="mid">
+          </div>
+      `;
+  });
 
-    // --- 核心算法：两两分组 ---
-    const images = data.images;
-    // 每次 i 加 2
-    for (let i = 0; i < images.length; i += 2) {
-        // 右边的图 (漫画第一页在右)
-        let rightImg = images[i];
-        // 左边的图 (漫画第二页在左)，如果总数是奇数，这就可能是 undefined
-        let leftImg = images[i + 1];
+  // 3. 销毁旧实例 (如果有) 并清空 DOM
+  if (mangaSwiper) {
+      mangaSwiper.destroy(true, true);
+  }
+  wrapper.innerHTML = slidesHtml;
 
-        slidesHtml += `<div class="swiper-slide">`;
-        
-        // 注意：CSS用了 flex-direction: row-reverse
-        // 所以 DOM 顺序依然是：[img1, img2]
-        // 视觉上会变成：[img2] [img1] (符合漫画逻辑)
-        
-        if (rightImg) {
-            slidesHtml += `<img src="${rightImg}" class="manga-page-img" data-mouse="mid">`;
-        }
-        if (leftImg) {
-            slidesHtml += `<img src="${leftImg}" class="manga-page-img" data-mouse="mid">`;
-        }
-        
-        slidesHtml += `</div>`;
-    }
-
-    // 销毁旧实例
-    if (mangaSwiper) {
-        mangaSwiper.destroy(true, true);
-    }
-    wrapper.innerHTML = slidesHtml;
-
-    // 初始化 Swiper
-    mangaSwiper = new Swiper(".mangaSwiper", {
-        // 因为我们自己处理了双页，Swiper 只需要认为这是 1 个 Slide 即可
-        slidesPerView: 1, 
-        spaceBetween: 0,
-        speed: 600,
-        nested: true,
-        allowTouchMove: true, // 允许拖动
-        navigation: {
-            // RTL漫画逻辑：点左箭头(Next)去下一页(视觉上的左边)
-            // 但因为我们是一个Slide包两张图，所以逻辑是正常的 Slide Next
-            nextEl: ".manga-btn-prev", 
-            prevEl: ".manga-btn-next", 
-        },
-        on: {
-            slideChange: function(swiper) {
-                // 更新页码：当前Slide索引 * 2 + 1
-                let current = (swiper.activeIndex * 2) + 1;
-                let total = data.images.length;
-                document.getElementById("mangaCurrent").innerText = current + "-" + Math.min(current+1, total);
-            }
-        }
-    });
+  // 4. 重新初始化 Swiper (关键配置：双页 + RTL)
+  mangaSwiper = new Swiper(".mangaSwiper", {
+      // 确保 HTML 父容器有 dir="rtl"
+      slidesPerView: 2,    // 一次显示 2 页
+      slidesPerGroup: 2,   // 一次滑 2 页
+      spaceBetween: 0,   
+      speed: 600,
+      nested: true,        // 嵌套在主 Swiper 中必须开启
+      centeredSlides: false,
+      grabCursor: true,    // 鼠标手势
+      keyboard: {
+          enabled: true,   // 允许键盘左右键翻页
+      },
+      navigation: {
+          nextEl: ".manga-btn-prev", // RTL模式下，逻辑Next是视觉上的左边(Prev按钮)
+          prevEl: ".manga-btn-next", // 反之亦然，这里如果发现反了，互换类名即可
+      },
+      on: {
+          init: updatePageCount,
+          slideChange: updatePageCount
+      }
+  });
 }
+
 // 更新页码显示 (1/10 -> 3/10)
 function updatePageCount(swiper) {
   // 真实索引+1 (如果是双页，swiper.activeIndex 是左边那一页的索引)
