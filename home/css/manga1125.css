@@ -37,12 +37,13 @@
 }
 
 .mangaSwiper .swiper-slide {
-  width: 100% !important; /* Slide 本身占满屏幕 */
+  width: 100% !important;
+  height: 100%;
   display: flex;
-  justify-content: center; /* 整体居中 */
+  flex-direction: row; /* 标准从左到右 */
+  justify-content: center;
   align-items: center;
-  flex-direction: row-reverse; /* 【关键】实现漫画右向左阅读：左边放P2，右边放P1 */
-  gap: 0; /* 这里控制两页之间的距离！你想近一点就设为 0 或 10px */
+  gap: 0; /* 控制两页间距 */
 }
 
 .manga-page-img {
@@ -52,6 +53,27 @@
   /* 简单的书脊阴影 */
   box-shadow: -5px 0 15px rgba(0,0,0,0.5); 
 }
+
+/* 强制定义左右页容器，防止错位 */
+.manga-page-left, .manga-page-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* 左容器靠右对齐图片，右容器靠左对齐图片 -> 形成中间紧凑 */
+.manga-page-left { justify-content: flex-end; }
+.manga-page-right { justify-content: flex-start; }
+
+.manga-page-img {
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+
 
 /* 自定义翻页按钮 (覆盖Swiper默认蓝色箭头) */
 .manga-btn-prev, .manga-btn-next {
@@ -91,6 +113,17 @@
   align-items: center;
   overflow: hidden;
   font-family: 'Microsoft YaHei', sans-serif; /* 或者你项目原本的字体 */
+}
+
+/* --- 1. 左侧大图与 Bar (绝对定位 Left 0) --- */
+.nav-date-group {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0; /* 贴紧左侧 */
+  display: flex;
+  align-items: center;
+  z-index: 5;
 }
 
 /* --- 背景装饰层 --- */
@@ -290,60 +323,171 @@
 
 
 
-
-
-
-.manga-nav-content {
-  background: transparent;
-  text-align: center;
-  width: 80%;
+/* --- 1. 虚线背景 (修改点1) --- */
+.nav-dashed-bg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 1000px;
+  height: 14px;
+  background-image: url('../img/relationship/nav3.png'); 
+  background-repeat: repeat-x;
+  background-size: 62px 20px;
+  opacity: 0.3;
+  z-index: 1;
 }
 
-.manga-nav-close {
-  color: #fff;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-bottom: 30px;
-  letter-spacing: 2px;
-  border: 1px solid rgba(255,255,255,0.3);
-  display: inline-block;
-  padding: 5px 20px;
-  border-radius: 20px;
-  transition: 0.3s;
+/* --- 3. 左侧大图与 DATE条 (修改点2) --- */
+.nav-big-red-bg {
+  height: 90vh; /* 调整高度以匹配设计稿 */
+  width: auto;
+  display: block;
 }
-.manga-nav-close:hover { background: #e74c3c; border-color: #e74c3c; }
 
-/* 横向排列 5 个选项 */
-.nav-buttons {
+.nav-date-bar {
+  width: 354px;
+  height: 25px;
+  margin-left: -354px;
+  position: relative;
+  z-index: 6;
+}
+
+/* --- 3. 装饰元素 (子弹 + 烟火) --- */
+.nav-decor-group {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-49%);
   display: flex;
-  justify-content: center;
-  align-items: flex-end; /* 底部对齐 */
-  gap: 20px; /* 间距 */
-  flex-wrap: wrap;
+  align-items: center;
+  z-index: 4;
 }
 
-.nav-item {
+.decor-bullet {
+  height: 84px; /* 根据实际调整 */
+  width: auto;
+  transform: scale(0.6); 
+  transform-origin: right center;
+/*   margin-right: 10px; */
+}
+
+.decor-spark {
+  width: 507px;
+  height: 304px;
+  /* 缩放一下，不然太大 */
+  transform: scale(0.6); 
+  transform-origin: right center;
+}
+
+/* --- 4. 节点列表容器 --- */
+.nav-nodes-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* 关键：计算左侧大图占用的空间，往右推 */
+  left: 34vw; 
+  display: flex;
+  gap: 3vw;
+  z-index: 10;
+}
+
+.nav-node-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 120px;
+}
+
+/* --- 上下部分 (可点击) --- */
+.node-part-top, .node-part-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.3s;
-  width: 150px; /* 限制每个选项宽度 */
+  transition: transform 0.2s;
 }
-.nav-item:hover { transform: translateY(-10px); }
+.node-part-top:hover, .node-part-bottom:hover {
+  transform: scale(1.1); /* 鼠标悬停放大 */
+  filter: brightness(1.2);
+}
 
-.nav-img {
-  width: 100%;
-  max-width: 120px;
+/* 图片尺寸定义 (修改点3, 4, 5) */
+.node-icon {
+  width: 110px; /* 原图167太大了，这里缩小显示，或者设为 167px */
   height: auto;
-  margin-bottom: 10px;
-  /* 如果图片是透明PNG，这里可以加个发光效果 */
-  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+  /* object-fit: contain; */
 }
 
-.nav-item span {
-  color: #9ea7b4;
-  font-family: "Microsoft YaHei";
-  font-size: 0.9rem;
+.node-line {
+  width: 30px; /* 原图60太宽了，建议缩小，或者设为 60px */
+  height: 90px; /* 原图182太高了，建议缩小，或者设为 182px */
+  margin: -10px 0; /* 让线插入到球和数字里面去一点 */
 }
-.nav-item:hover span { color: #fff; }
+
+.node-line {
+  width: 25px; /* 缩小原图宽度 */
+  height: 80px; /* 缩小原图高度 */
+  margin: -15px 0; /* 插入感 */
+}
+
+.node-num {
+  width: 111px; /* 用户指定尺寸 */
+  height: 88px;
+  z-index: 10; /* 数字层级最高，遮住线头 */
+}
+
+.line-top {
+/*   transform: skewX(25deg);  */
+  transform: scaleY(-1); /* 镜像翻转，如果需要的话 */
+}
+
+.line-bottom {
+/*   transform: skewX(-25deg); */
+}
+
+/* --- 中间部分 (数字 + Span) --- */
+.node-part-center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  z-index: 12;
+}
+
+.node-num {
+  width: 80px; /* 适当缩小 */
+  height: auto;
+}
+
+/* Active 状态 */
+.nav-node-item.active .node-num {
+  filter: drop-shadow(0 0 10px #b71c1c); /* 简单发光 */
+}
+
+/* 日期 Span 文字 */
+.node-date-text {
+  position: absolute;
+  /* 放在数字图片的右侧 */
+  left: 80%; 
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Impact', sans-serif; /* 假设字体 */
+  color: #fff; /* 默认白色 */
+  font-size: 1rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  opacity: 0.6;
+}
+
+/* Active 状态示例 */
+.nav-node-item.active .node-num {
+  filter: drop-shadow(0 0 8px #e74c3c);
+}
+.nav-node-item.active .node-date-text {
+  color: #e74c3c;
+  opacity: 1;
+  font-weight: bold;
+}

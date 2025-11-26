@@ -44,23 +44,27 @@ function loadMangaChapter(chapterId) {
     const images = data.images;
     // 每次 i 加 2
     for (let i = 0; i < images.length; i += 2) {
-        // 右边的图 (漫画第一页在右)
-        let rightImg = images[i];
-        // 左边的图 (漫画第二页在左)，如果总数是奇数，这就可能是 undefined
-        let leftImg = images[i + 1];
+        // 漫画逻辑（RTL）：
+        // i 是较小的页码（Page 1），应该在右边 (Right)
+        // i+1 是较大的页码（Page 2），应该在左边 (Left)
+        let rightImgSrc = images[i]; 
+        let leftImgSrc = images[i + 1]; 
 
         slidesHtml += `<div class="swiper-slide">`;
         
-        // 注意：CSS用了 flex-direction: row-reverse
-        // 所以 DOM 顺序依然是：[img1, img2]
-        // 视觉上会变成：[img2] [img1] (符合漫画逻辑)
-        
-        if (rightImg) {
-            slidesHtml += `<img src="${rightImg}" class="manga-page-img" data-mouse="mid">`;
+        // 1. 左侧容器 (放 Page 2)
+        slidesHtml += `<div class="manga-page-left">`;
+        if (leftImgSrc) {
+            slidesHtml += `<img src="${leftImgSrc}" class="manga-page-img" data-mouse="mid">`;
         }
-        if (leftImg) {
-            slidesHtml += `<img src="${leftImg}" class="manga-page-img" data-mouse="mid">`;
+        slidesHtml += `</div>`;
+
+        // 2. 右侧容器 (放 Page 1)
+        slidesHtml += `<div class="manga-page-right">`;
+        if (rightImgSrc) {
+            slidesHtml += `<img src="${rightImgSrc}" class="manga-page-img" data-mouse="mid">`;
         }
+        slidesHtml += `</div>`;
         
         slidesHtml += `</div>`;
     }

@@ -4,12 +4,12 @@
   position: relative;
   overflow: hidden;
 }
-
 .manga-container {
   width: 100%;
   height: 100%;
   position: relative;
 }
+.animate__animated { animation-duration: 0.8s; }
 
 /* --- 顶部栏 --- */
 .manga-header {
@@ -23,256 +23,223 @@
   align-items: center;
   padding: 0 3vw;
   color: #fff;
-  pointer-events: none; /* 让鼠标穿透，不遮挡翻页点击 */
+  pointer-events: none;
 }
 .manga-title { font-size: 1.1rem; letter-spacing: 1px; text-shadow: 0 2px 4px black; }
 .chapter-num { color: #e74c3c; margin-right: 10px; font-weight: bold; }
 .manga-pagination-text { font-family: sans-serif; opacity: 0.8; }
 
-/* --- Swiper 设定 (双页核心) --- */
+/* --- Swiper 核心 --- */
 .mangaSwiper {
   width: 100%;
   height: 100vh;
   z-index: 1;
 }
-
 .mangaSwiper .swiper-slide {
-  width: 100% !important; /* Slide 本身占满屏幕 */
+  width: 100% !important;
+  height: 100%;
   display: flex;
-  justify-content: center; /* 整体居中 */
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  flex-direction: row-reverse; /* 【关键】实现漫画右向左阅读：左边放P2，右边放P1 */
-  gap: 0; /* 这里控制两页之间的距离！你想近一点就设为 0 或 10px */
 }
+
+/* 双页布局 */
+.manga-page-left, .manga-page-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.manga-page-left  { justify-content: flex-end; }
+.manga-page-right { justify-content: flex-start; }
 
 .manga-page-img {
-  height: 100%; /* 高度撑满 */
-  max-width: 50%; /* 宽度最大一半，保证不溢出 */
+  height: 100%;
+  max-width: 100%;
   object-fit: contain;
-  /* 简单的书脊阴影 */
-  box-shadow: -5px 0 15px rgba(0,0,0,0.5); 
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* 自定义翻页按钮 (覆盖Swiper默认蓝色箭头) */
+/* 自定义翻页按钮 */
 .manga-btn-prev, .manga-btn-next {
   color: #fff !important;
   opacity: 0.5;
   transition: 0.3s;
 }
-.manga-btn-prev:hover, .manga-btn-next:hover { opacity: 1; background: rgba(0,0,0,0.3); border-radius: 5px;}
+.manga-btn-prev:hover, .manga-btn-next:hover {
+  opacity: 1;
+  background: rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
 
-/* --- 3. 右侧悬浮开关 (复用你的 z-index-3 逻辑) --- */
+/* --- 右侧悬浮开关 --- */
 .manga-nav-trigger {
   position: absolute;
   top: 50%;
-  right: 2vw; /* 距离右边2vw */
+  right: 2vw;
   transform: translateY(-50%);
-  z-index: 50; /* 保证在最上层 */
+  z-index: 50;
   cursor: pointer;
 }
 .manga-nav-trigger img {
-  width: 60px; /* 根据图片实际大小调整 */
+  width: 60px;
   height: auto;
   transition: transform 0.3s;
 }
-.manga-nav-trigger:hover img {
-  transform: scale(1.1);
-}
+.manga-nav-trigger:hover img { transform: scale(1.1); }
 
-/* --- 4. 导航面板 (Horizontal) --- */
+/* --- 新版时间轴导航面板 --- */
 .manga-nav-panel {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.92); /* 深色背景 */
+  background: rgba(0, 0, 0, 0.92);
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  font-family: 'Microsoft YaHei', sans-serif; /* 或者你项目原本的字体 */
+  font-family: 'Microsoft YaHei', sans-serif;
 }
 
-/* --- 背景装饰层 --- */
-.timeline-bg-layer {
+/* 虚线背景 */
+.nav-dashed-bg {
   position: absolute;
-  width: 100%; height: 100%;
-  pointer-events: none; /* 让鼠标穿透背景 */
-}
-
-.timeline-left-graphic {
-  position: absolute;
-  left: -5vw;
   top: 50%;
   transform: translateY(-50%);
-  height: 80vh; /* 根据大图实际尺寸调整 */
-  opacity: 0.8;
+  left: 354px;
+  min-width: 1000px;
+  height: 14px;
+  background: url('../img/relationship/nav3.png') repeat-x;
+  background-size: 62px 20px;
+  opacity: 0.3;
+  z-index: 1;
 }
 
-.timeline-dashed-line {
+/* 左侧大红图 + DATE条 */
+.nav-date-group {
   position: absolute;
   top: 50%;
-  left: 10%;
-  width: 80%;
-  height: 1px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.3);
-}
-
-.timeline-label-date {
-  position: absolute;
-  top: 48%; /* 稍微在线上方 */
-  left: 18%;
-  color: #b71c1c; /* 暗红色 */
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
-
-.timeline-bullet {
-  position: absolute;
-  top: 49%;
-  right: 15%;
-  height: 20px;
-  width: auto;
-}
-
-/* --- 核心容器 --- */
-.timeline-container {
-  position: relative;
+  left: 0;
+  transform: translateY(-50%);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 60%; /* 控制整体宽度，根据需要调整 */
-  height: 400px;
-  margin-left: 10vw; /* 给左侧大图让位 */
+  z-index: 5;
+}
+.nav-big-red-bg { height: 80vh; width: auto; }
+.nav-date-bar {
+  width: 354px;
+  height: 25px;
+  margin-left: -354px;
+  position: relative;
+  z-index: 6;
 }
 
-/* --- 单个时间节点 --- */
-.timeline-item {
+/* 右侧装饰：子弹 + 烟火 */
+.nav-decor-group {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-49%);
+  display: flex;
+  align-items: center;
+  z-index: 4;
+}
+.decor-bullet {
+  height: 84px;
+  transform: scale(0.6);
+  transform-origin: right center;
+}
+.decor-spark {
+  width: 507px;
+  height: 304px;
+  transform: scale(0.6);
+  transform-origin: right center;
+}
+
+/* 节点容器 */
+.nav-nodes-container {
+  position: absolute;
+  top: 50%;
+  left: 25vw;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 3vw;
+  z-index: 10;
+}
+.nav-node-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  width: 120px;
+}
+
+/* 可点击的上下部分 */
+.node-part-top,
+.node-part-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+.node-part-top:hover,
+.node-part-bottom:hover {
+/*   transform: scale(1.1); */
+  filter: brightness(1.2);
+}
+
+/* 图标与线条 */
+.node-icon { 
+  width: 110px; 
+  height: auto; 
+  margin:-15px 0px -20px -25px;
+}
+.node-line {
+  width: 25px;
+  height: 80px;
+  margin: -15px 0;
+}
+.line-top   { transform: scaleY(-1); }   /* 如果需要上下翻转 */
+
+/* 数字 + 日期文字 */
+.node-part-center {
   position: relative;
-  width: 80px;
-  transition: transform 0.3s;
-}
-
-.timeline-item:hover {
-  transform: scale(1.05);
-}
-
-/* --- 图标与线条 --- */
-.tl-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.3); /* 默认外圈 */
-  padding: 8px;
-  box-sizing: border-box;
-  transition: 0.3s;
-}
-
-/* 顶部部分 (太阳 + 斜线) */
-.tl-top {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 10px;
-}
-
-.tl-line-down {
-  width: 1px;
-  height: 60px; /* 线条长度 */
-  background: rgba(255,255,255,0.3);
-  transform: skewX(-20deg); /* 模拟斜线效果 */
-  margin-top: 10px;
-}
-
-/* 中间日期数字 */
-.tl-center {
-  height: 60px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 2;
+  z-index: 12;
 }
-
-.tl-date-num {
-  color: #b71c1c; /* 红色数字 */
-  font-size: 2.5rem;
-  font-weight: bold;
-  font-family: 'Impact', sans-serif; /* 选用粗体字体 */
-  position: relative;
-  z-index: 2;
+.node-num {
+  width: 111px;
+  height: 88px;
+  z-index: 10;
+  transform: scale(0.6);
+/*   transform-origin: right center; */
 }
-
-.tl-date-text {
+.node-date-text {
   position: absolute;
+  left: 80%;
   top: 50%;
-  left: 100%; /* 放数字右边 */
-  font-size: 0.8rem;
-  color: #aaa;
-  margin-left: 5px;
   transform: translateY(-50%);
+  font-family: 'Impact', sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  opacity: 0.6;
 }
 
-/* 底部部分 (斜线 + 月亮) */
-.tl-bottom {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 10px;
-  position: relative;
+/* Active 高亮状态 */
+.nav-node-item.active .node-num {
+  filter: drop-shadow(0 0 8px #e74c3c);
 }
-
-.tl-line-up {
-  width: 1px;
-  height: 60px;
-  background: rgba(255,255,255,0.3);
-  transform: skewX(-20deg);
-  margin-bottom: 10px;
-}
-
-/* --- Active 状态 (当前日期) --- */
-/* 高亮月亮图标 */
-.timeline-item.active .active-moon {
-  background: #fff;
-  box-shadow: 0 0 15px rgba(255,255,255, 0.8);
-  border: none;
-  padding: 2px; /* 图片撑满 */
-}
-
-/* 红色小三角 */
-.tl-arrow-indicator {
-  width: 0; 
-  height: 0; 
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 8px solid #b71c1c;
-  margin-top: 5px;
-  display: none; /* 默认隐藏 */
-}
-.timeline-item.active .tl-arrow-indicator {
-  display: block;
-}
-
-/* "当前日期" 文字 */
-.tl-label-current {
-  font-size: 0.8rem;
-  color: #ccc;
-  margin-top: 5px;
-  display: none;
-}
-.timeline-item.active .tl-label-current {
-  display: block;
+.nav-node-item.active .node-date-text {
+  color: #e74c3c;
+  opacity: 1;
+  font-weight: bold;
 }
 
 /* 关闭按钮 */
@@ -286,184 +253,3 @@
   opacity: 0.6;
 }
 .manga-nav-close-btn:hover { opacity: 1; }
-
-
-
-
-/* --- 1. 虚线背景 (修改点1) --- */
-.nav-dashed-bg {
-  position: absolute;
-  /* 垂直居中 */
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  width: 100%;
-  height: 20px; /* 用户指定高度 */
-  
-  /* 背景图设置 */
-  background-image: url('../img/timeline2/nav3.png'); /* 你的虚线图 */
-  background-repeat: repeat-x;
-  background-size: 62px 20px; /* 用户指定尺寸 */
-  opacity: 0.5;
-  z-index: 1; /* 在最底层 */
-}
-
-/* --- 2. 内容层 --- */
-.nav-content-layer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-}
-
-/* --- 3. 左侧大图与 DATE条 (修改点2) --- */
-.nav-date-decor {
-  position: absolute;
-  left: 5vw;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-}
-
-.nav-big-red-bg {
-  height: 80vh; /* 红色大图高度，按需调 */
-  width: auto;
-}
-
-.nav-date-bar {
-  width: 590px;
-  height: 35px;
-  margin-left: -50px; /* 根据设计图，可能需要跟大图重叠一点 */
-}
-
-/* --- 4. 节点列表容器 --- */
-.nav-nodes-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 35vw; /* 调整此值以避开左侧大图 */
-  gap: 2vw;   /* 节点之间的间距 */
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* --- 5. 单个节点 (Flex Column 布局) --- */
-.nav-node-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.3s;
-  position: relative;
-  /* 关键：因为中间的数字要在虚线上，所以我们需要把整个列垂直对齐 */
-}
-
-.nav-node-item:hover {
-  transform: scale(1.05);
-}
-
-/* 图片尺寸定义 (修改点3, 4, 5) */
-.node-icon {
-  width: 80px; /* 原图167太大了，这里缩小显示，或者设为 167px */
-  height: auto;
-  /* object-fit: contain; */
-}
-
-.node-line {
-  width: 30px; /* 原图60太宽了，建议缩小，或者设为 60px */
-  height: 90px; /* 原图182太高了，建议缩小，或者设为 182px */
-  margin: -10px 0; /* 让线插入到球和数字里面去一点 */
-}
-
-.node-num {
-  width: 111px; /* 用户指定尺寸 */
-  height: 88px;
-  z-index: 10; /* 数字层级最高，遮住线头 */
-}
-
-/* 布局微调：让线倒过来或者旋转? 
- 假设你的线图片是竖直的。
- 如果是斜线，可能需要 transform: rotate(...) 
-*/
-
-.line-top {
-  /* 假如上面的线需要调整位置 */
-}
-
-.line-bottom {
-  /* 下面的线 */
-  transform: scaleY(-1); /* 镜像翻转，如果需要的话 */
-}
-
-/* Active 状态 */
-.nav-node-item.active .node-num {
-  filter: drop-shadow(0 0 10px #b71c1c); /* 简单发光 */
-}
-
-
-
-
-
-
-
-
-
-.manga-nav-content {
-  background: transparent;
-  text-align: center;
-  width: 80%;
-}
-
-.manga-nav-close {
-  color: #fff;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-bottom: 30px;
-  letter-spacing: 2px;
-  border: 1px solid rgba(255,255,255,0.3);
-  display: inline-block;
-  padding: 5px 20px;
-  border-radius: 20px;
-  transition: 0.3s;
-}
-.manga-nav-close:hover { background: #e74c3c; border-color: #e74c3c; }
-
-/* 横向排列 5 个选项 */
-.nav-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; /* 底部对齐 */
-  gap: 20px; /* 间距 */
-  flex-wrap: wrap;
-}
-
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.3s;
-  width: 150px; /* 限制每个选项宽度 */
-}
-.nav-item:hover { transform: translateY(-10px); }
-
-.nav-img {
-  width: 100%;
-  max-width: 120px;
-  height: auto;
-  margin-bottom: 10px;
-  /* 如果图片是透明PNG，这里可以加个发光效果 */
-  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
-}
-
-.nav-item span {
-  color: #9ea7b4;
-  font-family: "Microsoft YaHei";
-  font-size: 0.9rem;
-}
-.nav-item:hover span { color: #fff; }
