@@ -1,23 +1,25 @@
 /* 1. 全局禁止选中文字/图片 */
 /* 1127 */
-.manga-reader-block, .manga-reader-block * {
+.manga-reader-block {
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none;    /* Firefox */
   -ms-user-select: none;     /* IE/Edge */
   user-select: none;         /* 标准 */
-  -webkit-touch-callout: none; /* iOS 禁止长按弹出菜单 */
+  -webkit-touch-callout: none; /* iOS 禁止长按菜单 */
 }
 
-/* 2. 禁止图片被拖拽 (防止拖到桌面保存) */
+/* 禁止图片拖拽 (防保存) + 禁止图片响应鼠标 (防右键) */
 .manga-page-img {
   -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
   user-drag: none;
-  pointer-events: none; 
+  pointer-events: none; /* 图片不响应鼠标，鼠标事件会穿透给 Swiper 容器，保证能拖动翻页 */
 }
 
+/* 确保按钮依然可以点击 (因为上面全局禁选可能影响交互) */
+.manga-btn-prev, .manga-btn-next, .manga-nav-trigger, .nav-node-item, .node-part-top, .node-part-bottom {
+  pointer-events: auto; 
+  cursor: pointer;
+}
 
 /* --- 漫画阅读器基础 --- */
 .manga-reader-block {
