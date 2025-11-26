@@ -83,7 +83,7 @@
   cursor: pointer;
 }
 .manga-nav-trigger img {
-  width: 60px;
+  width: 110px; 
   height: auto;
   transition: transform 0.3s;
 }
@@ -109,11 +109,11 @@
   top: 50%;
   transform: translateY(-50%);
   left: 354px;
-  min-width: 1000px;
+  min-width: 820px;
   height: 14px;
   background: url('../img/relationship/nav3.png') repeat-x;
   background-size: 62px 20px;
-  opacity: 0.3;
+/*   opacity: 0.3; */
   z-index: 1;
 }
 
@@ -141,7 +141,7 @@
   position: absolute;
   top: 50%;
   right: 0;
-  transform: translateY(-49%);
+  transform: translateY(-48%);
   display: flex;
   align-items: center;
   z-index: 4;
@@ -150,12 +150,17 @@
   height: 84px;
   transform: scale(0.6);
   transform-origin: right center;
+  margin-right: -222px; 
+  position: relative;
+  z-index: 5; /* 保证子弹在烟火上面 */
 }
 .decor-spark {
   width: 507px;
   height: 304px;
   transform: scale(0.6);
   transform-origin: right center;
+  position: relative;
+  z-index: 4;
 }
 
 /* 节点容器 */
@@ -184,24 +189,26 @@
   cursor: pointer;
   transition: transform 0.2s;
 }
-.node-part-top:hover,
-.node-part-bottom:hover {
-/*   transform: scale(1.1); */
-  filter: brightness(1.2);
-}
+
 
 /* 图标与线条 */
 .node-icon { 
   width: 110px; 
   height: auto; 
-  margin:-15px 0px -20px -25px;
+  margin:-15px 0px -20px -75px;
+  position: relative;
+  z-index: 5;
 }
 .node-line {
-  width: 25px;
-  height: 80px;
-  margin: -15px 0;
+  width: 35px;
+  height: auto;
+/*   margin: -15px; */
+  margin: -15px 30px -15px 0;
+  position: relative;
+  z-index: 5; /* 在数字(z-index 10)下面 */
 }
 .line-top   { transform: scaleY(-1); }   /* 如果需要上下翻转 */
+
 
 /* 数字 + 日期文字 */
 .node-part-center {
@@ -217,9 +224,9 @@
   height: 88px;
   z-index: 10;
   transform: scale(0.6);
-/*   transform-origin: right center; */
+  transform-origin: center center; 
 }
-.node-date-text {
+/* .node-date-text {
   position: absolute;
   left: 80%;
   top: 50%;
@@ -230,16 +237,21 @@
   letter-spacing: 1px;
   white-space: nowrap;
   opacity: 0.6;
-}
+} */
 
-/* Active 高亮状态 */
-.nav-node-item.active .node-num {
-  filter: drop-shadow(0 0 8px #e74c3c);
-}
-.nav-node-item.active .node-date-text {
-  color: #e74c3c;
-  opacity: 1;
-  font-weight: bold;
+.node-date-text {
+  position: absolute;
+  /* 居中定位 */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px; /* 根据实际视觉效果微调这个负值 */
+  font-family: 'Impact', sans-serif;
+  color: #fff;
+  font-size: 1rem; /* 稍微调小一点，以免太抢眼 */
+  letter-spacing: 1px;
+  white-space: nowrap;
+  pointer-events: none; /* 防止遮挡点击 */
+  z-index: 200;
 }
 
 /* 关闭按钮 */
@@ -253,3 +265,60 @@
   opacity: 0.6;
 }
 .manga-nav-close-btn:hover { opacity: 1; }
+
+
+/* --- 指示器容器 --- */
+.active-indicator {
+  position: absolute;
+  left: 0%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  pointer-events: none;
+  white-space: nowrap;
+  margin-left: -6px; 
+}
+
+/* 只有当父级 (node-part-top 或 node-part-bottom) 拥有 active 类时显示 */
+.node-part-top.active .active-indicator,
+.node-part-bottom.active .active-indicator {
+  display: flex; 
+/*   animation: fadeInDown 0.3s ease-out; */
+}
+
+.node-part-top .active-indicator {
+  top: 80px; /* 保持原样，刚好在太阳图标下面 */
+}
+
+.node-part-bottom .active-indicator {
+  top: auto;       /* 取消顶部定位 */
+  bottom: -46px;   /* 从底部往下推，数值越大越往下 */
+}
+
+/* --- 红色小箭头 --- */
+.tl-arrow-indicator {
+  width: 0; 
+  height: 0; 
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid #B32626; /* 红色箭头向上指 */
+  margin-bottom: 2px;
+}
+
+/* --- 当前日期文字 --- */
+.tl-label-current {
+  font-size: 18px; 
+  color: #ccc;
+  font-family: "Microsoft YaHei", sans-serif;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  margin-top: 4px; 
+}
+
+/* --- 调整父容器定位 --- */
+/* 为了让 absolute 的指示器能相对于图标定位，我们需要确保父级是 relative */
+.node-part-top, .node-part-bottom {
+  position: relative; 
+  /* 之前的 flex 布局保持不变 */
+}

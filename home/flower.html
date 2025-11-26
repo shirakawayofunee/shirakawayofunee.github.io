@@ -744,6 +744,211 @@
         </div>
       
       </div>
+
+      <!-- 漫画阅读器区块 (双页RTL版 + 章节导航) -->
+<div class="swiper-slide pc manga-reader-block" data-mouse="small" id="slideManga">
+    
+  <!-- 1. 背景与主容器 -->
+  <div class="manga-container animate__animated animate__fadeIn">
+
+      <!-- 顶部标题栏 -->
+      <div class="manga-header">
+          <div class="manga-title">
+              <span class="chapter-num" id="headerChapterNum">CHAPTER 00</span>
+              <span class="chapter-name" id="headerChapterTitle">「何のために戦うか」</span>
+          </div>
+          <div class="manga-pagination-text">
+              <span id="mangaCurrent">1</span> / <span id="mangaTotal">--</span>
+          </div>
+      </div>
+
+      <!-- 2. 漫画 Swiper 核心 (增加 dir="rtl") -->
+      <!-- dir="rtl" 让 Slide 1 出现在右侧，符合漫画阅读习惯 -->
+      <div class="swiper mangaSwiper" dir="rtl">
+          <div class="swiper-wrapper" id="mangaWrapper">
+              <!-- 图片将由 JS 动态插入，这里留空或放 loading -->
+          </div>
+          
+          <!-- 翻页按钮 (Swiper原生) -->
+          <!-- 注意：在 RTL 模式下，Next 会指向左边，Prev 指向右边，符合逻辑 -->
+          <div class="swiper-button-next manga-btn-next" data-mouse="mid"></div>
+          <div class="swiper-button-prev manga-btn-prev" data-mouse="mid"></div>
+      </div>
+
+      <!-- 3. 右侧悬浮开关 (复用你的结构) -->
+      <div class="manga-nav-trigger z-index-3">
+           <!-- 点击触发 toggleMangaNav() -->
+          <img src="img/timeline2/icon_moon_active.png" class="toggle-btn" onclick="openMangaNav()" data-mouse="mid">
+      </div>
+
+<!-- 4. 新版时间轴导航面板 -->
+<div class="manga-nav-panel" id="mangaNavPanel" style="display: none;" onclick="closeMangaNav(event)">
+    
+  <!-- 1. 虚线背景 (保持原样) -->
+  <div class="nav-dashed-bg"></div>
+
+  <!-- 2. 左侧组合：红色大图 + DATE条 -->
+  <div class="nav-date-group">
+      <!-- 红色大图 (left:0) -->
+      <img src="img/timeline2/left_big_graphic.png" class="nav-big-red-bg" alt="">
+      <!-- DATE 条 (紧接大图) -->
+      <img src="img/timeline2/date_bar.png" class="nav-date-bar" alt="">
+  </div>
+
+  <!-- 3. 装饰元素：子弹 + 烟火 -->
+  <div class="nav-decor-group">
+      <img src="img/timeline2/bullet.png" class="decor-bullet" alt="">
+      <img src="img/timeline2/spark.png" class="decor-spark" alt="">
+  </div>
+
+  <!-- 4. 核心节点容器 -->
+  <div class="nav-nodes-container">
+      
+      <!-- 节点 1: 7/19 -->
+      <div class="nav-node-item">
+        <!-- 上半部：太阳 + 线 -->
+        <div class="node-part-top" onclick="switchChapter(1)">
+          <!-- 点击切换到第一章白天 -->
+          <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
+          <img src="img/timeline2/line_connect.png" class="node-line line-top">
+          <!-- 新增：高亮指示器 (默认隐藏) -->
+          <div class="active-indicator">
+            <div class="tl-arrow-indicator"></div>
+            <span class="tl-label-current">現在の日付</span>
+          </div>
+        </div>
+          
+          <!-- 中间：数字图片 + 日期文字 -->
+          <div class="node-part-center">
+              <img src="img/timeline2/num_01.png" class="node-num"> <!-- 00 -->
+              <span class="node-date-text">7/19</span>
+          </div>
+
+          <!-- 下半部：线 + 月亮 -->
+          <div class="node-part-bottom" onclick="switchChapter(2)">
+            <!-- 点击切换到第一章晚上 -->
+            <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
+            <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
+            <!-- 新增：高亮指示器 (默认隐藏) -->
+            <div class="active-indicator">
+              <div class="tl-arrow-indicator"></div>
+              <span class="tl-label-current">現在の日付</span>
+            </div>
+          </div>
+      </div>
+
+      <!-- 节点 2: 7/20 -->
+      <div class="nav-node-item">
+          <div class="node-part-top" onclick="switchChapter(3)">
+              <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
+              <img src="img/timeline2/line_connect.png" class="node-line line-top">
+                        <!-- 新增：高亮指示器 (默认隐藏) -->
+          <div class="active-indicator">
+            <div class="tl-arrow-indicator"></div>
+            <span class="tl-label-current">現在の日付</span>
+          </div>
+          </div>
+          <div class="node-part-center">
+              <img src="img/timeline2/num_02.png" class="node-num">
+              <span class="node-date-text">7/20</span>
+          </div>
+          <div class="node-part-bottom" onclick="switchChapter(4)">
+              <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
+              <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
+                          <!-- 新增：高亮指示器 (默认隐藏) -->
+            <div class="active-indicator">
+              <div class="tl-arrow-indicator"></div>
+              <span class="tl-label-current">現在の日付</span>
+            </div>
+          </div>
+      </div>
+
+      <!-- 节点 3: 7/21 -->
+      <div class="nav-node-item">
+          <div class="node-part-top" onclick="switchChapter(5)">
+              <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
+              <img src="img/timeline2/line_connect.png" class="node-line line-top">
+                        <!-- 新增：高亮指示器 (默认隐藏) -->
+          <div class="active-indicator">
+            <div class="tl-arrow-indicator"></div>
+            <span class="tl-label-current">現在の日付</span>
+          </div>
+          </div>
+          <div class="node-part-center">
+              <img src="img/timeline2/num_03.png" class="node-num">
+              <span class="node-date-text">7/21</span>
+          </div>
+          <div class="node-part-bottom" onclick="switchChapter(6)">
+              <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
+              <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
+                          <!-- 新增：高亮指示器 (默认隐藏) -->
+            <div class="active-indicator">
+              <div class="tl-arrow-indicator"></div>
+              <span class="tl-label-current">現在の日付</span>
+            </div>
+          </div>
+      </div>
+
+      <!-- 节点 4: 7/22 -->
+      <div class="nav-node-item">
+          <div class="node-part-top" onclick="switchChapter(7)">
+              <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
+              <img src="img/timeline2/line_connect.png" class="node-line line-top">
+                        <!-- 新增：高亮指示器 (默认隐藏) -->
+          <div class="active-indicator">
+            <div class="tl-arrow-indicator"></div>
+            <span class="tl-label-current">現在の日付</span>
+          </div>
+          </div>
+          <div class="node-part-center">
+              <img src="img/timeline2/num_04.png" class="node-num">
+              <span class="node-date-text">7/22</span>
+          </div>
+          <div class="node-part-bottom" onclick="switchChapter(8)">
+              <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
+              <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
+                          <!-- 新增：高亮指示器 (默认隐藏) -->
+            <div class="active-indicator">
+              <div class="tl-arrow-indicator"></div>
+              <span class="tl-label-current">現在の日付</span>
+            </div>
+          </div>
+      </div>
+
+       <!-- 节点 5: 7/23 -->
+       <div class="nav-node-item">
+          <div class="node-part-top" onclick="switchChapter(14, 5, 'sun')">
+              <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
+              <img src="img/timeline2/line_connect.png" class="node-line line-top">
+                        <!-- 新增：高亮指示器 (默认隐藏) -->
+          <div class="active-indicator">
+            <div class="tl-arrow-indicator"></div>
+            <span class="tl-label-current">現在の日付</span>
+          </div>
+          </div>
+          <div class="node-part-center">
+              <img src="img/timeline2/num_05.png" class="node-num">
+              <span class="node-date-text">7/23</span>
+          </div>
+          <div class="node-part-bottom" onclick="switchChapter(1, 5, 'moon')">
+              <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
+              <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
+                          <!-- 新增：高亮指示器 (默认隐藏) -->
+            <div class="active-indicator">
+              <div class="tl-arrow-indicator"></div>
+              <span class="tl-label-current">現在の日付</span>
+            </div>
+          </div>
+      </div>
+
+  </div>
+
+  <!-- 关闭按钮 -->
+  <div class="manga-nav-close-btn" onclick="closeMangaNav()">×</div>
+</div>
+
+  </div>
+</div>
       
       <!-- pc影音 -->
       <div class="swiper-slide pc gallery" data-mouse="small" id="slide8">

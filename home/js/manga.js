@@ -47,19 +47,17 @@ function loadMangaChapter(chapterId) {
         // 漫画逻辑（RTL）：
         // i 是较小的页码（Page 1），应该在右边 (Right)
         // i+1 是较大的页码（Page 2），应该在左边 (Left)
-        let rightImgSrc = images[i]; 
-        let leftImgSrc = images[i + 1]; 
+        let leftImgSrc = images[i];       // P1 (images[0]) -> 放入左容器(视觉右)
+        let rightImgSrc = images[i + 1];  // P2 (images[1]) -> 放入右容器(视觉左)
 
         slidesHtml += `<div class="swiper-slide">`;
         
-        // 1. 左侧容器 (放 Page 2)
         slidesHtml += `<div class="manga-page-left">`;
         if (leftImgSrc) {
             slidesHtml += `<img src="${leftImgSrc}" class="manga-page-img" data-mouse="mid">`;
         }
         slidesHtml += `</div>`;
 
-        // 2. 右侧容器 (放 Page 1)
         slidesHtml += `<div class="manga-page-right">`;
         if (rightImgSrc) {
             slidesHtml += `<img src="${rightImgSrc}" class="manga-page-img" data-mouse="mid">`;
@@ -120,6 +118,21 @@ function toggleMangaNav() {
   }
 }
 
+function openMangaNav() {
+    document.getElementById('mangaNavPanel').style.display = 'flex';
+}
+
+// 关闭 (支持点击背景关闭)
+function closeMangaNav(e) {
+    // e.target 是用户实际点击的元素
+    // e.currentTarget 是绑定了事件的元素 (即 #mangaNavPanel)
+    
+    // 只有当点击的是“黑色背景蒙版”或者“关闭按钮”时，才执行关闭
+    // 这样点击内部的节点、图片时，不会触发关闭
+    if (e.target.id === 'mangaNavPanel' || e.target.classList.contains('manga-nav-close-btn')) {
+        document.getElementById('mangaNavPanel').style.display = 'none';
+    }
+}
 // 切换章节点击事件
 function switchChapter(id) {
     console.log("Switching to Chapter: " + id);
@@ -153,4 +166,75 @@ function switchChapter(id) {
 $(document).ready(function() {
   // 默认加载第1章
   loadMangaChapter(1);
+});
+
+function switchChapter(chapterId, nodeIndex, type) {
+    console.log(`Switching to Ch:${chapterId}, Node:${nodeIndex}, Type:${type}`);
+    
+    // 1. 关闭导航板
+    document.getElementById('mangaNavPanel').style.display = 'none';
+    
+    // 2. 加载数据
+    loadMangaChapter(chapterId);
+
+    // 3. 更新高亮 UI
+    updateNavHighlight(nodeIndex, type);
+}
+
+// 单独抽离 UI 更新函数，方便初始化时调用
+function updateNavHighlight(nodeIndex, type) {
+    // 1. 重置所有状态 (清空类 + 恢复图片 src)
+    
+    // A. 移除所有节点的数字高亮
+    document.querySelectorAll('.nav-node-item').forEach(el => el.classList.remove('active-day'));
+    
+    // B. 移除所有日/月部分的 active 类 (隐藏指示器)
+    document.querySelectorAll('.node-part-top, .node-part-bottom').forEach(el => {
+        el.classList.remove('active');
+    });
+
+    // C. 恢复所有图片为普通版 (icon_sun.png / icon_moon.png)
+    document.querySelectorAll('.node-icon.icon-sun').forEach(img => {
+        img.src = 'img/timeline2/icon_sun.png'; 
+    });
+    document.querySelectorAll('.node-icon.icon-moon').forEach(img => {
+        img.src = 'img/timeline2/icon_moon.png'; 
+    });
+
+
+    // 2. 设置新的高亮状态
+    
+    // 找到目标节点 (注意 nth-child 从1开始)
+    const targetNode = document.querySelector(`.nav-nodes-container .nav-node-item:nth-child(${nodeIndex})`);
+    
+    if (targetNode) {
+        // A. 亮数字
+        targetNode.classList.add('active-day');
+        
+        // B. 亮图标 + 换图片 + 显示指示器
+        if (type === 'sun') {
+            const sunPart = targetNode.querySelector('.node-part-top');
+            const sunImg = sunPart.querySelector('.node-icon');
+            
+            if(sunPart) sunPart.classList.add('active'); // 显示 CSS 箭头
+            if(sunImg)  sunImg.src = 'img/timeline2/icon_sun_active.png'; // 换图
+            
+        } else if (type === 'moon') {
+            const moonPart = targetNode.querySelector('.node-part-bottom');
+            const moonImg = moonPart.querySelector('.node-icon');
+            
+            if(moonPart) moonPart.classList.add('active'); // 显示 CSS 箭头
+            if(moonImg)  moonImg.src = 'img/timeline2/icon_moon_active.png'; // 换图
+        }
+    }
+}
+
+// --- 3. 初始化默认状态 ---
+$(document).ready(function() {
+    // 默认加载：第一章 (chapterId=1)
+    // 对应节点：7/23 (nodeIndex=5)
+    // 对应时段：晚上 (type='moon')
+    
+    loadMangaChapter(1); // 载入漫画内容
+    updateNavHighlight(5, 'moon'); // 仅更新UI高亮，不重复加载
 });
