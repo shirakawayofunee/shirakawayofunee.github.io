@@ -49,6 +49,7 @@
   <link rel="stylesheet" href="css/chapter.css" media="(min-device-width:926px)" />
   <link rel="stylesheet" href="css/chapterMobile.css" media="(max-device-width:926px)" />
   <link rel="stylesheet" href="css/relationship3.css" media="(min-device-width:926px)" />
+  <link rel="stylesheet" href="css/manga.css" media="(min-device-width:926px)" />
   <link rel="icon" type="image/x-icon" id="icon">
 </head>
 
@@ -825,7 +826,7 @@
           </div>
 
           <!-- 下半部：线 + 月亮 -->
-          <div class="node-part-bottom" onclick="switchChapter(2)">
+          <div class="node-part-bottom"  onclick="switchChapter(2, 5, 'moon')">
             <!-- 点击切换到第一章晚上 -->
             <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
             <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
@@ -949,7 +950,7 @@
 
   </div>
 </div>
-      
+
       <!-- pc影音 -->
       <div class="swiper-slide pc gallery" data-mouse="small" id="slide8">
         <div class="gallery-top" data-mouse="small">
@@ -1374,6 +1375,7 @@
 <script src="js/intelligence.js"></script>
 <script src="js/chapter.js"></script>
 <script src="js/relationship3.js"></script>
+<script src="js/manga.js"></script>
 <script>
   $(document).ready(() => {
     console.log('jQuery loaded:', typeof $);
