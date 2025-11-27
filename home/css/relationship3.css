@@ -112,7 +112,7 @@
 }
 
 /* 左右两栏：恢复你原来的绝对定位 + 完整背景图 */
-.partwan-right .wan-content.active .relationship-right-str .left,
+/* .partwan-right .wan-content.active .relationship-right-str .left,
 .partwan-right .wan-content.active .relationship-right-str .right {
   position: absolute;
   width: 30vw;
@@ -128,7 +128,68 @@
   color: #9ea7b4;
   overflow-y: auto;
   backdrop-filter: blur(2px);
+} */
+
+/* 左右两栏：修改为细长布局 */
+
+/* ====================== 回退版本：Border-Image Fill 切割 ====================== */
+
+.partwan-right .wan-content.active .relationship-right-str .left,
+.partwan-right .wan-content.active .relationship-right-str .right {
+  position: absolute;
+  
+  /* 1. 细长尺寸设置 */
+  width: 22vw;
+  max-width: 450px;
+  height: 65vh;
+  min-height: 600px;
+  
+  /* 2. 必须清除原来的 background，否则会有双重背景 */
+  background: none;
+  aspect-ratio: auto; /* 解除比例锁定 */
+  
+  /* 3. 核心：Border-Image 九宫格切割 */
+  /* 设置边框厚度：上64px(标题栏)，左右下4px */
+  border-style: solid;
+  border-color: transparent;
+  border-width: 30px 2px 2px 2px;
+  
+  /* 引入图片 */
+  border-image-source: url('../img/relationship/bg.png');
+  
+  /* 切割位置：对应原图像素 */
+  /* "fill" 关键字保留图片中间的背景 */
+  border-image-slice: 64 4 4 4 fill;
+  
+  /* 拉伸模式：恢复为 stretch，这是最稳妥的填充方式 */
+  border-image-repeat: stretch;
+  
+  /* 4. 内容排版 */
+  /* 左右加 padding 防止文字贴边 */
+  padding: 0 1rem 1rem 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  
+  /* 5. 文字样式 */
+  font-family: "myFont";
+  font-weight: 300;
+  font-size: calc(0.85rem + 0.1vw);
+  line-height: 2.1;
+  color: #9ea7b4;
+  
+  /* 保留你要求的左对齐 */
+  text-align: left;
+  
+  /* 尝试让像素点稍微清晰一点 */
+  image-rendering: pixelated; 
 }
+
+/* 隐藏滚动条 */
+.partwan-right .wan-content.active .relationship-right-str .left::-webkit-scrollbar,
+.partwan-right .wan-content.active .relationship-right-str .right::-webkit-scrollbar {
+  display: none;
+}
+
 
 /* 左栏：靠左，但不会撞到左侧小图 */
 .partwan-right .wan-content.active .relationship-right-str .left {
