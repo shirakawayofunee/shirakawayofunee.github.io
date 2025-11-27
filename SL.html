@@ -119,9 +119,10 @@
            3. 同级页面跳转指引 (Peer Nav - Monolens Style)
            ========================================= */
         .peer-nav-section {
-            padding: 40px 5vw;
+            /* padding: 40px 5vw; */
             background-color: #000;
             border-bottom: 1px solid #222;
+            padding: 25px 5vw 25px 5vw;
         }
 
         .peer-title-group {
@@ -159,7 +160,8 @@
         .roll-link-card {
             display: block;
             text-decoration: none;
-            margin-bottom: 50px;
+/*             margin-bottom: 50px; */
+/*             有第二行再添加 */
             transition: opacity 0.3s;
         }
         .roll-link-card:hover {
@@ -241,63 +243,6 @@
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* 平滑过渡动画 */
             max-height: 2000px; /* 初始状态：足够大的高度 */
             opacity: 1;
-        }
-
-        /* 收起状态的样式 (由 JS 切换此类名) */
-        .peer-nav-section.collapsed {
-            max-height: 20px;   /* 你要求的 20px */
-            padding-top: 0;
-            padding-bottom: 0;
-            border-bottom: 3px solid var(--main-pink); /* 收起时底部留一条粉线提示 */
-            background: #111;
-            cursor: pointer; /* 变为手型，提示可点击 */
-        }
-        
-        /* 收起时隐藏内部的标题和链接，防止穿帮 */
-        .peer-nav-section.collapsed .peer-title-group,
-        .peer-nav-section.collapsed .peer-links-grid {
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s;
-        }
-
-        /* 按钮样式 */
-        .peer-toggle-btn {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 20px; /* 按钮高度 */
-            background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            color: #666;
-            transition: all 0.3s;
-        }
-        
-        .peer-toggle-btn:hover {
-            color: #fff;
-            background: rgba(226, 59, 120, 0.2); /* 悬停微粉色 */
-        }
-
-        .btn-icon {
-            font-size: 12px;
-            transition: transform 0.5s;
-            display: block;
-        }
-
-        /* 收起状态下，按钮的样式调整 */
-        .peer-nav-section.collapsed .peer-toggle-btn {
-            height: 100%; /* 占满那 20px */
-            background: transparent;
-        }
-        
-        /* 箭头倒转 */
-        .peer-nav-section.collapsed .btn-icon {
-            transform: rotate(180deg); /* 箭头向下 */
         }
 
         /* =========================================
@@ -531,7 +476,7 @@
             <a href="XL.html" class="roll-link-card">
                 <div class="roll-header">
                     <span class="roll-badge">ROLL #042</span>
-                    <span class="roll-badge" style="background:none; border:none; color:#666;">2人雰囲気 - SL</span>
+                    <span class="roll-badge" style="background:none; border:none; color:#666;">2人雰囲気 - XL</span>
                     <span class="roll-name">Summer in Kyoto</span>
                     <span class="roll-count">🥀🪡</span>
                 </div>
@@ -560,26 +505,6 @@
                     <div class="film-frame empty"></div>
                 </div>
             </a>
-            <!-- 新增的并列链接 3 -->
-<!--             <a href="#" class="roll-link-card">
-                <div class="roll-header">
-                    <span class="roll-badge">ROLL #038</span>
-                    <span class="roll-badge" style="background:none; border:none; color:#666;">CINESTILL 800T</span>
-                    <span class="roll-name">Urban Geometry</span>
-                    <span class="roll-count">10 EXP</span>
-                </div>
-                <div class="film-strip-container">
-                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/550000/fff?text=RED" alt=""></div>
-                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/005500/fff?text=GRN" alt=""></div>
-                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/000055/fff?text=BLU" alt=""></div>
-                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/555500/fff?text=YEL" alt=""></div>
-                    <div class="film-frame empty"></div>
-                </div>
-            </a> -->
-            <div class="peer-toggle-btn" onclick="togglePeerNav()" title="Toggle View">
-                <span class="btn-icon">▲</span>
-            </div>
-
         </div> <!-- grid 结束 -->
 
     </div>
@@ -596,7 +521,7 @@
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doodle">落書き</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">漫画</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#costume">衣装</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#death">死后</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#death">死後</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">ふわふわ（擬獣化とSD）</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mansion">邸宅</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#travel">両生還後の旅行</a></li>
@@ -1142,21 +1067,6 @@
                 arrangeWaterfall(containerId, array);
             });
         });
-
-        // [新增] 切换 Peer Nav 收起/展开
-        function togglePeerNav() {
-            const section = document.getElementById('peerNavSection');
-            section.classList.toggle('collapsed');
-            
-            // 如果处于收起状态，也可以点击整个区域展开（防止按钮太小不好点）
-            if (section.classList.contains('collapsed')) {
-                section.onclick = function(e) {
-                    // 防止点击事件冒泡导致立刻又收起，这里简单处理：只要点就展开
-                    section.classList.remove('collapsed');
-                    section.onclick = null; // 移除点击整个区域的事件
-                };
-            }
-        }
     </script>
 </body>
 </html>

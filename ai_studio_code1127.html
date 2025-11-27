@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
-    <title>2人雰囲気 - THE VAULT</title>
-    
+    <title>2人雰囲気 - SL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <style>
-        /* ================= 1. 全局设置 ================= */
+        /* =========================================
+           1. 字体与全局设置
+           ========================================= */
         :root {
             --main-pink: #e23b78;
             --bg-color: #000;
             --text-gray: #9ea7b4;
-            --border-hover: #B55829;
+            --border-hover: #e23b78; /* 来自 papermask.css */
         }
 
         @font-face {
@@ -33,28 +33,32 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            padding-top: 6.25rem; /* 对应 Header 高度 */
+            /* 为顶部固定导航栏留出空间 */
+            padding-top: 6.25rem; 
         }
 
+        /* 滚动条样式 */
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: #06070d; }
         ::-webkit-scrollbar-thumb { border-radius: 4px; background: #333; }
         ::-webkit-scrollbar-thumb:hover { background: var(--main-pink); }
 
-        /* ================= 2. 顶部导航栏 (修复导航项缺失) ================= */
-        .head {
+        /* =========================================
+           2. 顶部主导航栏
+           ========================================= */
+           .head {
             position: fixed;
             top: 0;
             left: 0;
             background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 90%);
-            background-color: #000;
+            background-color: #000; 
             width: 100%;
             height: 6.25rem;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2vw; /* 稍微减小内边距以容纳更多菜单 */
+            padding: 0 5vw;
             box-sizing: border-box;
             border-bottom: 1px solid #1a1a1a;
         }
@@ -72,211 +76,465 @@
             align-items: center;
             height: 100%;
         }
+
         .h-con-right-l {
             display: flex;
-            gap: 15px; /* 间距稍微调小，防止菜单换行 */
-            margin-right: 20px;
+            gap: 20px;
+            margin-right: 10px;
         }
+
         .div-center {
             cursor: pointer;
             text-align: center;
-            padding: 5px 5px;
+            padding: 5px 10px;
             transition: all 0.3s ease;
-            min-width: 60px; /* 保证最小点击区域 */
         }
-        .div-head-text { font-size: 0.9rem; color: #9ea7b4; transition: color 0.3s; white-space: nowrap; }
-        .div-head-text-en { font-size: 0.6rem; color: #555; letter-spacing: 0.05rem; text-transform: uppercase; margin-top: 2px; }
-        
-        .div-center:hover .div-head-text, 
-        .div-center:hover .div-head-text-en { color: var(--main-pink); }
-        
-        .h-con-right-r-con img {
-            width: 24px; height: 24px; cursor: pointer; margin-left: 10px;
-            filter: invert(1) brightness(2); transition: transform 0.3s;
-        }
-        .h-con-right-r-con img:hover { transform: scale(1.1); }
 
-        /* ================= 3. Peer Nav (修复收缩功能) ================= */
+        .div-head-text {
+            font-size: 0.95rem;
+            color: #9ea7b4;
+            font-family: 'myFont', sans-serif;
+            transition: color 0.3s;
+        }
+
+        .div-head-text-en {
+            font-size: 0.65rem;
+            color: #555;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+            margin-top: 2px;
+        }
+        .div-center:hover .div-head-text, .div-center:hover .div-head-text-en { color: var(--main-pink); }
+        .h-con-right-r-con img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            margin-left: 15px;
+            filter: invert(1) brightness(2); /* 图标反白 */
+            transition: transform 0.3s;
+        }
+
+        /* =========================================
+           3. 同级页面跳转指引 (Peer Nav - Monolens Style)
+           ========================================= */
         .peer-nav-section {
-            position: relative;
-            padding: 40px 5vw;
+            /* padding: 40px 5vw; */
             background-color: #000;
             border-bottom: 1px solid #222;
+            padding: 25px 5vw 40px 5vw;
+        }
+
+        .peer-title-group {
+            margin-bottom: 40px;
+        }
+        .peer-title-group h2 {
+            font-size: 2.5rem;
+            color: #eee;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .peer-title-icon {
+            font-size: 1.5rem;
+            border: 2px solid #eee;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .peer-subtitle {
+            font-family: 'Roboto', monospace;
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* 胶卷条链接卡片 */
+        .roll-link-card {
+            display: block;
+            text-decoration: none;
+            margin-bottom: 50px;
+            transition: opacity 0.3s;
+        }
+        .roll-link-card:hover {
+            opacity: 0.8;
+        }
+
+        .roll-header {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 10px;
+            font-family: 'Roboto', monospace;
+            color: #fff;
+        }
+        .roll-badge {
+            background: #000;
+            color: #eee;
+            border: 1px solid #444;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .roll-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #eee;
+            margin-right: auto; /* 推到左边 */
+        }
+        .roll-count {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        /* 胶卷图片条 */
+        .film-strip-container {
+            display: flex;
+            width: 100%;
+            height: 120px; /* 固定高度，制造胶卷感 */
+            background: #111;
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            max-height: 2000px;
+            border: 1px solid #222;
+        }
+        .film-frame {
+            flex: 1; /* 平分宽度 */
+            border-right: 2px solid #000; /* 胶卷间隔 */
+            overflow: hidden;
+            position: relative;
+        }
+        .film-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%);
+            transition: filter 0.3s;
+        }
+        .roll-link-card:hover .film-frame img {
+            filter: grayscale(0%);
+        }
+        .film-frame.empty {
+            background: #151515; /* 最后一格黑色占位 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* 鼠标手势 */
+        .cursor-pointer-icon {
+            width: 20px;
+            height: 20px;
+            background: url('img/icon/pointer.png') no-repeat center/contain; /* 示例图标 */
+            opacity: 0.5;
+        }
+
+        /* =========================================
+           [新增] Peer Nav 收起/展开样式
+           ========================================= */
+           .peer-nav-section {
+            position: relative; /* 必须保留，作为按钮的定位基准 */
+            overflow: hidden;   /* 收起时隐藏多余内容 */
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* 平滑过渡动画 */
+            max-height: 2000px; /* 初始状态：足够大的高度 */
             opacity: 1;
         }
-        /* 收缩后的状态 */
+
+        /* 收起状态的样式 (由 JS 切换此类名) */
         .peer-nav-section.collapsed {
-            max-height: 20px;
+            max-height: 20px;   /* 你要求的 20px */
             padding-top: 0;
             padding-bottom: 0;
-            border-bottom: 2px solid var(--main-pink);
+            border-bottom: 3px solid var(--main-pink); /* 收起时底部留一条粉线提示 */
             background: #111;
-            cursor: pointer;
+            cursor: pointer; /* 变为手型，提示可点击 */
         }
+        
+        /* 收起时隐藏内部的标题和链接，防止穿帮 */
         .peer-nav-section.collapsed .peer-title-group,
         .peer-nav-section.collapsed .peer-links-grid {
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.2s;
         }
-        /* 标题样式 */
-        .peer-title-group { margin-bottom: 40px; }
-        .peer-title-group h2 {
-            font-size: 2.5rem; color: #eee; font-weight: bold; letter-spacing: 2px;
-            margin-bottom: 5px; display: flex; align-items: center; gap: 10px;
-        }
-        .peer-title-icon {
-            font-size: 1.5rem; border: 2px solid #eee; border-radius: 50%;
-            width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
-        }
-        .peer-subtitle { font-family: 'Roboto', monospace; font-size: 0.9rem; color: #666; letter-spacing: 1px; text-transform: uppercase; }
 
-        /* 双列 Grid */
-        .peer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
-        
-        /* 胶卷卡片样式 */
-        .roll-link-card { display: block; text-decoration: none; margin-bottom: 10px; transition: opacity 0.3s; }
-        .roll-link-card:hover { opacity: 0.8; }
-        .roll-header { display: flex; align-items: baseline; margin-bottom: 10px; font-family: 'Roboto', monospace; color: #fff; }
-        .roll-badge { background: #000; color: #eee; border: 1px solid #444; padding: 2px 8px; font-size: 0.75rem; margin-right: 10px; font-weight: bold; }
-        .roll-name { font-size: 1.2rem; font-weight: bold; color: #eee; margin-right: auto; }
-        .roll-count { font-size: 0.75rem; color: #666; }
-        .film-strip-container { display: flex; width: 100%; height: 120px; background: #111; border: 1px solid #222; }
-        .film-frame { flex: 1; border-right: 2px solid #000; overflow: hidden; position: relative; }
-        .film-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(30%); transition: filter 0.3s; }
-        .roll-link-card:hover .film-frame img { filter: grayscale(0%); }
-        .film-frame.empty { background: #151515; display: flex; align-items: center; justify-content: center; }
-
-        /* 收缩按钮 */
+        /* 按钮样式 */
         .peer-toggle-btn {
-            position: absolute; bottom: 0; left: 0; width: 100%; height: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px; /* 按钮高度 */
             background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
-            display: flex; align-items: center; justify-content: center; cursor: pointer;
-            z-index: 10; color: #666; transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            color: #666;
+            transition: all 0.3s;
         }
-        .peer-toggle-btn:hover { color: #fff; background: rgba(226, 59, 120, 0.2); }
-        .btn-icon { font-size: 12px; transition: transform 0.5s; display: block; }
-        /* 收缩后的按钮变化 */
-        .peer-nav-section.collapsed .peer-toggle-btn { height: 100%; background: transparent; }
-        .peer-nav-section.collapsed .btn-icon { transform: rotate(180deg); } /* 箭头向下 */
+        
+        .peer-toggle-btn:hover {
+            color: #fff;
+            background: rgba(226, 59, 120, 0.2); /* 悬停微粉色 */
+        }
 
-        /* ================= 4. 选项卡 & 悬浮文本 ================= */
-        .secondary-menu-container {
-            position: sticky; top: 6.25rem; background-color: rgba(0,0,0,0.95);
-            z-index: 990; padding: 10px 0; border-bottom: 1px solid #333; border-top: 1px solid #222;
+        .btn-icon {
+            font-size: 12px;
+            transition: transform 0.5s;
+            display: block;
         }
-        .gallery-header .nav-tabs { border-bottom: none; justify-content: center; flex-wrap: wrap; gap: 5px; }
+
+        /* 收起状态下，按钮的样式调整 */
+        .peer-nav-section.collapsed .peer-toggle-btn {
+            height: 100%; /* 占满那 20px */
+            background: transparent;
+        }
+        
+        /* 箭头倒转 */
+        .peer-nav-section.collapsed .btn-icon {
+            transform: rotate(180deg); /* 箭头向下 */
+        }
+
+        /* =========================================
+           4. 二级菜单 (Tabs) - 紧贴 Peer Nav
+           ========================================= */
+        .secondary-menu-container {
+            position: sticky; /* 吸顶效果 */
+            top: 6.25rem; /* 对应 header 高度 */
+            background-color: rgba(0,0,0,0.95);
+            z-index: 990;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+            border-top: 1px solid #222;
+        }
+        .gallery-header .nav-tabs {
+            border-bottom: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
         .gallery-header .nav-link {
-            border: none; color: #666; font-family: 'myFont', sans-serif; font-size: 0.9rem;
-            background: transparent !important; padding: 5px 15px; transition: all 0.3s;
+            border: none;
+            color: #666;
+            font-family: 'myFont', sans-serif;
+            font-size: 0.9rem;
+            background: transparent !important;
+            padding: 5px 15px;
+            transition: all 0.3s;
         }
         .gallery-header .nav-link:hover { color: #fff; }
-        .gallery-header .nav-link.active { color: #fff !important; font-weight: bold; border-bottom: 2px solid var(--main-pink); }
-
-        .floating-text {
-            position: relative; margin: 0 auto 30px auto;
-            background-color: rgba(20, 20, 20, 0.8); border: 1px solid #333;
-            color: #aaa; padding: 20px; max-width: 1200px; width: 95%;
-            border-left: 3px solid var(--main-pink);
+        .gallery-header .nav-link.active {
+            color: #fff !important;
+            font-weight: bold;
+            border-bottom: 2px solid var(--main-pink);
         }
-        .close-button { float: right; background: none; border: none; color: #666; font-size: 20px; cursor: pointer; }
+        /* =========================================
+           [新增] Peer Nav 网格布局 (一行两个)
+           ========================================= */
+           .peer-links-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 两列等宽 */
+            gap: 20px; /* 卡片之间的间距 */
+            width: 100%;
+        }
 
-        /* ================= 5. 正文画廊 (修复跳动) ================= */
+        /* 移动端仍然保持单列，防止太挤 */
+        @media (max-width: 768px) {
+            .peer-links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* =========================================
+           5. 正文画廊 (整合 papermask.css 样式)
+           ========================================= */
+
+                   /* 悬浮文本框 */
+        .floating-text {
+            position: relative; /* 改为相对定位或固定在特定区域 */
+            margin: 0 auto 30px auto;
+            background-color: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            color: #aaa;
+            padding: 20px;
+            max-width: 1200px;
+            width: 95%;
+            border-left: 3px solid var(--main-pink); /* 左侧粉色条装饰 */
+        }
+        
+        .floating-text span {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .close-button {
+            float: right;
+            background: none;
+            border: none;
+            color: #666;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .close-button:hover { color: #fff; }
         .gallery-section {
             padding: 20px 5vw;
-            min-height: 100vh; /* 防止切换时底部跳动 */
+            min-height: 120vh;
         }
-        .gallery-container {
-            display: flex; gap: 15px;
-            /* 关键：给容器一个最小高度，防止图片未加载时高度为0导致闪烁 */
-            min-height: 80vh; 
-        }
-        .gallery-column { flex: 1; display: flex; flex-direction: column; gap: 15px; }
-        .gallery-item { margin-bottom: 10px; }
         
+        /* 复刻 papermask.css 的边框 Hover 效果 */
         .holder-img {
-            width: 100%; height: auto; display: block; border: 1px solid rgba(0,0,0,0);
-            box-sizing: border-box; transition: border 0.3s ease; cursor: pointer;
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid rgba(0,0,0,0); /* 默认透明边框 */
+            box-sizing: border-box;
+            transition: border 0.3s ease;
+            cursor: pointer;
         }
-        .holder-img:hover { border: 1px solid var(--border-hover); }
-        .caption { margin-top: 5px; font-size: 12px; color: #666; text-align: center; }
+        .holder-img:hover {
+            border: 1px solid var(--border-hover); /* #e23b78 */
+        }
 
-        /* ================= 6. 图片详情 Modal ================= */
+        /* 瀑布流布局 */
+        .gallery-container {
+            display: flex;
+            gap: 15px;
+        }
+        .gallery-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .gallery-item {
+            margin-bottom: 10px;
+        }
+        .caption {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+
+        /* =========================================
+           6. 图片详情 Modal (整合 papermaskDetail.css)
+           ========================================= */
         .papermaskDetail {
-            position: fixed; z-index: 2000; background: rgba(0,0,0,0.95);
-            width: 100%; height: 100%; top: 0; left: 0; overflow: hidden; display: none;
+            position: fixed;
+            z-index: 2000; /* 确保在最上层 */
+            background: rgba(0,0,0,0.95);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            display: none; /* 默认隐藏 */
         }
         .papermaskDetailTop {
-            position: absolute; width: 100%; height: 100%; top: 0; overflow: hidden;
-            box-sizing: border-box; display: flex; align-items: center; justify-content: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            overflow: hidden; /* 防止溢出 */
+            box-sizing: border-box;
+            /* padding: 50px; */ /* 稍微调整padding以免图片太小 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .papermaskDetailTop-zoom { max-height: 90vh; max-width: 90vw; object-fit: contain; transition: transform 0.2s ease-out; }
+        .papermaskDetailTop-zoom {
+            max-height: 90vh;
+            max-width: 90vw;
+            object-fit: contain;
+            transition: transform 0.2s ease-out;
+            cursor: grab;
+        }
         .papermaskDetailBottom {
-            position: absolute; bottom: 5vh; left: 50%; transform: translateX(-50%);
-            width: 300px; height: 50px; display: flex; align-items: center; justify-content: space-around;
-            border-radius: 25px; background: #131818; border: 1px solid #333;
+            position: absolute;
+            bottom: 5vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px; /* 固定宽度，防止太窄 */
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 25px;
+            background: #131818;
+            border: 1px solid #333;
         }
-        .papermaskDetailBottom img { width: 24px; height: 24px; cursor: pointer; filter: invert(1); transition: transform 0.2s; }
-        .papermaskDetailBottom img:hover { transform: scale(1.2); }
-        .papermaskDetailClose { position: absolute; top: 3vh; right: 3vw; cursor: pointer; z-index: 2001; }
-        .papermaskDetailClose img { width: 30px; filter: invert(1); }
+        .papermaskDetailBottom img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            filter: invert(1); /* 黑色图标转白色 */
+            transition: transform 0.2s;
+        }
+        .papermaskDetailBottom img:hover { transform: scale(1.1); }
+        .papermaskDetailClose {
+            position: absolute;
+            top: 3vh;
+            right: 3vw;
+            cursor: pointer;
+            z-index: 2001;
+        }
+        .papermaskDetailClose img {
+            width: 30px;
+            filter: invert(1);
+        }
 
-        @media (max-width: 992px) {
-            .peer-links-grid { grid-template-columns: 1fr; }
-            .h-con-right-l { display: none; } /* 移动端暂时隐藏导航项 */
+        /* 响应式 */
+        @media (max-width: 768px) {
             .gallery-container { display: block; }
             .gallery-column { margin-bottom: 15px; }
+            .head { padding: 0 10px; }
+            .film-strip-container { height: 80px; }
+            .papermaskDetailBottom { width: 80%; bottom: 2vh; }
         }
     </style>
 </head>
-
 <body>
-
-    <!-- 1. 顶部主导航栏 (已补全所有选项) -->
+    <!-- 1. 顶部主导航栏 (Head PC) -->
     <div class="head pc">
       <div class="h-con-left">
-        <h1><a href="index.html">MONOLENS</a></h1>
+        <h1>
+          <a href="index.html">GALLERY</a>
+        </h1>
       </div>
       <div class="h-con-right">
         <div class="h-con-right-l">
-          <div class="div-center" onclick="changeBanner(0)"><div class="div-head-text">序章ホーム</div><div class="div-head-text-en">HOME</div></div>
-          <div class="div-center" onclick="changeBanner(1)"><div class="div-head-text">登場人物</div><div class="div-head-text-en">CHARACTER</div></div>
-          <div class="div-center" onclick="changeBanner(2)"><div class="div-head-text">相関図</div><div class="div-head-text-en">RELATIONSHIP</div></div>
-          <div class="div-center" onclick="changeBanner(3)"><div class="div-head-text">関係性補足</div><div class="div-head-text-en">RELATIONSHIP</div></div>
-          <div class="div-center" onclick="changeBanner(4)"><div class="div-head-text">世界観</div><div class="div-head-text-en">BACKSTORY</div></div>
-          <div class="div-center" onclick="changeBanner(5)"><div class="div-head-text">第一章</div><div class="div-head-text-en">MAIN STORY</div></div>
-          <div class="div-center" onclick="changeBanner(6)"><div class="div-head-text">序章マップ</div><div class="div-head-text-en">MAIN STORY</div></div>
-          <div class="div-center" onclick="changeBanner(7)"><div class="div-head-text">年表</div><div class="div-head-text-en">TIMELINE</div></div>
-          <div class="div-center" onclick="changeBanner(8)"><div class="div-head-text">情報</div><div class="div-head-text-en">BACKSTORY</div></div>
-          <div class="div-center" onclick="changeBanner(9)"><div class="div-head-text">物語</div><div class="div-head-text-en">RELATIONSHIP</div></div>
-        </div>
+            <div class="div-center" onclick="changeBanner(0)"><div class="div-head-text">序章ホーム</div><div class="div-head-text-en">HOME</div></div>
+            <div class="div-center" onclick="changeBanner(1)"><div class="div-head-text">登場人物</div><div class="div-head-text-en">CHARACTER</div></div>
+            <div class="div-center" onclick="changeBanner(2)"><div class="div-head-text">相関図</div><div class="div-head-text-en">RELATIONSHIP</div></div>
+            <div class="div-center" onclick="changeBanner(3)"><div class="div-head-text">関係性補足</div><div class="div-head-text-en">RELATIONSHIP</div></div>
+            <div class="div-center" onclick="changeBanner(4)"><div class="div-head-text">世界観</div><div class="div-head-text-en">BACKSTORY</div></div>
+            <div class="div-center" onclick="changeBanner(5)"><div class="div-head-text">第一章</div><div class="div-head-text-en">MAIN STORY</div></div>
+            <div class="div-center" onclick="changeBanner(6)"><div class="div-head-text">序章マップ</div><div class="div-head-text-en">MAIN STORY</div></div>
+            <div class="div-center" onclick="changeBanner(7)"><div class="div-head-text">年表</div><div class="div-head-text-en">TIMELINE</div></div>
+            <div class="div-center" onclick="changeBanner(8)"><div class="div-head-text">物語</div><div class="div-head-text-en">BACKSTORY</div></div>
+          </div>
         <div class="h-con-right-r-con">
-            <img src="img/v2c.png" alt="Music" onclick="muteMusic(2)">
+            <img src="img/v2c.png" alt="Music">
         </div>
       </div>
     </div>
 
-    <!-- 2. 同级页面跳转指引 (修复收缩功能 & 补全 ID) -->
+    <!-- 2. 同级页面跳转指引 (Peer Nav) -->
     <div class="peer-nav-section" id="peerNavSection">
-        <div class="peer-title-group">
-            <h2><span class="peer-title-icon">◎</span> THE VAULT</h2>
-            <div class="peer-subtitle">
-                PHYSICAL ARCHIVE<br>
-                Curated exposures organized by roll.
-            </div>
-        </div>
-
         <div class="peer-links-grid">
-            <!-- 链接 A -->
-            <a href="C.html" class="roll-link-card">
+            
+            <!-- 原有的链接 1 -->
+            <a href="XL.html" class="roll-link-card">
                 <div class="roll-header">
                     <span class="roll-badge">ROLL #042</span>
-                    <span class="roll-badge" style="background:none; border:none; color:#666;">KODAK PORTRA 400</span>
+                    <span class="roll-badge" style="background:none; border:none; color:#666;">2人雰囲気 - SL</span>
                     <span class="roll-name">Summer in Kyoto</span>
-                    <span class="roll-count">24 EXP</span>
+                    <span class="roll-count">🥀🪡</span>
                 </div>
                 <div class="film-strip-container">
                     <div class="film-frame"><img src="https://via.placeholder.com/200x120/222/555?text=IMG1" alt=""></div>
@@ -286,8 +544,9 @@
                     <div class="film-frame empty"></div>
                 </div>
             </a>
-            <!-- 链接 B -->
-            <a href="D.html" class="roll-link-card">
+
+            <!-- 原有的链接 2 -->
+            <a href="L.html" class="roll-link-card">
                 <div class="roll-header">
                     <span class="roll-badge">ROLL #041</span>
                     <span class="roll-badge" style="background:none; border:none; color:#666;">KODAK EKTAR 100</span>
@@ -302,56 +561,76 @@
                     <div class="film-frame empty"></div>
                 </div>
             </a>
-        </div>
+            <!-- 新增的并列链接 3 -->
+<!--             <a href="#" class="roll-link-card">
+                <div class="roll-header">
+                    <span class="roll-badge">ROLL #038</span>
+                    <span class="roll-badge" style="background:none; border:none; color:#666;">CINESTILL 800T</span>
+                    <span class="roll-name">Urban Geometry</span>
+                    <span class="roll-count">10 EXP</span>
+                </div>
+                <div class="film-strip-container">
+                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/550000/fff?text=RED" alt=""></div>
+                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/005500/fff?text=GRN" alt=""></div>
+                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/000055/fff?text=BLU" alt=""></div>
+                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/555500/fff?text=YEL" alt=""></div>
+                    <div class="film-frame empty"></div>
+                </div>
+            </a> -->
+            <div class="peer-toggle-btn" onclick="togglePeerNav()" title="Toggle View">
+                <span class="btn-icon">▲</span>
+            </div>
 
-        <!-- 收缩按钮 (绑定了正确的 onclick) -->
-        <div class="peer-toggle-btn" onclick="togglePeerNav()" title="Toggle View">
-            <span class="btn-icon">▲</span>
-        </div>
+        </div> <!-- grid 结束 -->
+
     </div>
 
-    <!-- 3. 二级菜单 (找回丢失的落書き Tab) -->
+    <!-- 3. 二级菜单 (Tabs) -->
     <div class="secondary-menu-container">
         <div class="gallery-header">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#gallery">イラスト</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#r18g">メインストーリー</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#r18g">メインストーリー/本編</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#lonly">L</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#sonly">S</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dc">テーマ</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doodle">落書き</a></li> <!-- 已找回 -->
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doodle">落書き</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">漫画</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#costume">衣装</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">ふわふわ</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#death">死後</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">ふわふわ（擬獣化とSD）</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mansion">邸宅</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#travel">旅行</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#travel">両生還後の旅行</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#food">食べ物</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#nsfw">NSFW</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- 4. 悬浮文本 (保持不变) -->
-    <div class="floating-text" id="floatingText">
-        <button class="close-button" onclick="document.getElementById('floatingText').style.display='none'">×</button>
-        <span>
-            <strong>SLの関係についての私の考え：</strong><br>
-            二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
-            <br>ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。
-        </span>
-    </div>
+        <!-- 悬浮说明文字 -->
+        <div class="floating-text" id="floatingText">
+            <button class="close-button" onclick="document.getElementById('floatingText').style.display='none'">×</button>
+            <span>
+                <strong>SLの関係についての私の考え：</strong><br>
+                二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、
+                さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
+                <br>ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。
+            </span>
+        </div>
+    <!-- 4. 正文内容区 (Gallery Section) -->
 
-    <!-- 5. 正文内容区 -->
     <div class="gallery-section">
         <div class="tab-content">
+            <!-- 容器 id 对应上面的 href -->
             <div class="tab-pane fade show active" id="gallery"><div class="gallery-container" id="galleryContainer"></div></div>
             <div class="tab-pane fade" id="r18g"><div class="gallery-container" id="r18gContainer"></div></div>
             <div class="tab-pane fade" id="lonly"><div class="gallery-container" id="lonlyContainer"></div></div>
             <div class="tab-pane fade" id="sonly"><div class="gallery-container" id="sonlyContainer"></div></div>
             <div class="tab-pane fade" id="dc"><div class="gallery-container" id="dcContainer"></div></div>
-            <div class="tab-pane fade" id="doodle"><div class="gallery-container" id="doodleContainer"></div></div> <!-- 已找回 -->
+            <div class="tab-pane fade" id="doodle"><div class="gallery-container" id="doodleContainer"></div></div>
             <div class="tab-pane fade" id="manga"><div class="gallery-container" id="mangaContainer"></div></div>
             <div class="tab-pane fade" id="costume"><div class="gallery-container" id="costumeContainer"></div></div>
+            <div class="tab-pane fade" id="death"><div class="gallery-container" id="deathContainer"></div></div>
             <div class="tab-pane fade" id="catdw"><div class="gallery-container" id="catdwContainer"></div></div>
             <div class="tab-pane fade" id="mansion"><div class="gallery-container" id="mansionContainer"></div></div>
             <div class="tab-pane fade" id="travel"><div class="gallery-container" id="travelContainer"></div></div>
@@ -360,50 +639,49 @@
         </div>
     </div>
 
-    <!-- 6. 图片详情 Modal -->
+    <!-- 5. 自定义图片详情 Modal (恢复 papermaskDetail 结构) -->
     <div class="papermaskDetail" id="customDetailModal">
+        <!-- 顶部图片区域 -->
         <div class="papermaskDetailTop">
             <img src="#" alt="" class="papermaskDetailTop-zoom" id="papermaskDetailTop-zoom">
         </div>
+        
+        <!-- 底部控制栏 -->
         <div class="papermaskDetailBottom">
-            <img src="img/paperDetail/b.png" alt="放大" onclick="handleZoomChange(1)">
-            <img src="img/paperDetail/s.png" alt="缩小" onclick="handleZoomChange(-1)">
-            <img src="img/paperDetail/a.png" alt="重置" onclick="handleZoomChange(0)">
-            <img src="img/paperDetail/d.png" alt="下载" onclick="handleDownload()">
+            <!-- 按钮图片路径注意检查，如果图标是黑色的，CSS里的 filter: invert(1) 会把它们变白 -->
+            <img src="img/paperDetail/b.png" alt="放大" onclick="handleZoomChange(1)" title="Zoom In">
+            <img src="img/paperDetail/s.png" alt="缩小" onclick="handleZoomChange(-1)" title="Zoom Out">
+            <img src="img/paperDetail/a.png" alt="重置" onclick="handleZoomChange(0)" title="Reset">
+            <img src="img/paperDetail/d.png" alt="下载" onclick="handleDownload()" title="Download">
         </div>
+
+        <!-- 关闭按钮 -->
         <div class="papermaskDetailClose">
             <img src="img/paperDetail/c.png" alt="关闭" onclick="paperShowHide()">
         </div>
     </div>
 
+    <!-- 脚本部分 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 嵌入你的 papermaskDetail.js 逻辑 -->
     <script>
-        // === Peer Nav 收缩逻辑 ===
-        function togglePeerNav() {
-            const section = document.getElementById('peerNavSection');
-            section.classList.toggle('collapsed');
-            
-            // 收缩后点击黑色区域展开
-            if (section.classList.contains('collapsed')) {
-                section.onclick = function(e) {
-                    if(section.classList.contains('collapsed')) {
-                        section.classList.remove('collapsed');
-                        section.onclick = null; // 展开后移除该事件
-                    }
-                };
-            }
-        }
-
-        // === PaperMask Detail 逻辑 ===
         var papermaskZoom = 1;
+
+        // 缩放功能
         function handleZoomChange(num) {
             if (num == 1) papermaskZoom += 0.1;
             if (num == -1) papermaskZoom -= 0.1;
             if (num == 0) papermaskZoom = 1;
+            
+            // 限制缩放范围
             if (papermaskZoom > 4) papermaskZoom = 4;
             if (papermaskZoom < 0.1) papermaskZoom = 0.1;
+            
             $(".papermaskDetailTop-zoom").css("transform", `scale(${papermaskZoom})`);
         }
+
+        // 下载功能
         function handleDownload() {
             var imgSrc = $(".papermaskDetailTop-zoom")[0].src;
             if (imgSrc) {
@@ -416,21 +694,22 @@
                 document.body.removeChild(a);
             }
         }
+
+        // 关闭 Modal
         function paperShowHide() {
             papermaskZoom = 1;
             $(".papermaskDetailTop-zoom").css("transform", `scale(1)`);
-            $(".papermaskDetail").fadeOut(200);
+            $(".papermaskDetail").fadeOut(200); // 使用淡出效果
         }
+
+        // 打开 Modal (自定义函数)
         function openDetailModal(src) {
             $("#papermaskDetailTop-zoom").attr("src", src);
             papermaskZoom = 1;
             $(".papermaskDetailTop-zoom").css("transform", `scale(1)`);
-            $(".papermaskDetail").fadeIn(200).css("display", "flex");
+            $(".papermaskDetail").fadeIn(200);
+            $(".papermaskDetail").css("display", "flex"); // 确保 flex 布局以居中
         }
-
-        // === 导航栏占位函数 ===
-        function changeBanner(index) { console.log("Nav to " + index); }
-        function muteMusic(type) { console.log("Music " + type); }
 
         // ================= 数据定义 (请务必保留完整数据) =================
         const r18gImages = [
@@ -786,7 +1065,8 @@
         { src: "img/cloakroom/S06 - 「和服」.jpg", alt: "Gallery Image 1", description: "S06 - 「和服」" },
         { src: "img/cloakroom/S06 - 「和服」（additional）.png", alt: "Gallery Image 1", description: "S06 - 「和服」（additional）" },
         ];
-
+        
+        // 辅助函数：根据名称获取数组
         function getArrayByName(name) {
              const map = {
                  "gallery": galleryImages, "r18g": r18gImages, "lonly": lonlyImages,
@@ -798,19 +1078,16 @@
              return map[name] || [];
         }
 
-        // === 瀑布流逻辑 ===
+        // 瀑布流生成逻辑
         function arrangeWaterfall(containerId, imageArray) {
             const container = document.getElementById(containerId);
             if(!container) return;
-            
-            // 关键修改：如果已经有内容，不要清空，避免闪烁。
-            // 但如果是初始化或者 Tab 切换，必须清空旧的。
-            // 为了解决闪烁，我们在 CSS 加了 min-height。
             container.innerHTML = "";
 
             const width = window.innerWidth;
             const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
 
+            // 创建列
             const columns = Array(columnCount).fill().map(() => {
                 const col = document.createElement("div");
                 col.className = "gallery-column";
@@ -823,37 +1100,42 @@
             imageArray.forEach((image, index) => {
                 const item = document.createElement("div");
                 item.className = "gallery-item";
+
                 const img = document.createElement("img");
-                img.src = image.src; 
+                img.src = image.src; // 简化处理，直接加载，如果需要懒加载可加 lazy 逻辑
                 img.alt = image.alt;
+                
+                // === 关键：应用 papermask.css 的类名 .holder-img ===
                 img.className = "holder-img"; 
-                img.onclick = function() { openDetailModal(image.src); };
+                
+                // 绑定点击事件，打开自定义 Modal
+                img.onclick = function() {
+                    openDetailModal(image.src);
+                };
+
                 const caption = document.createElement("div");
                 caption.className = "caption";
                 caption.textContent = image.description || "";
+
                 item.appendChild(img);
                 item.appendChild(caption);
                 columns[index % columnCount].appendChild(item);
             });
         }
 
-        // === 初始化 ===
+        // 初始化
         $(document).ready(function() {
+            // 默认加载第一个 tab
             arrangeWaterfall("galleryContainer", galleryImages);
-
-            // Tab 切换防抖
-            let switchTimeout;
+          
+            // [新增] 鼠标悬停(Hover)切换 Tab 功能
+            // 这里使用了 Bootstrap 的 Tab 实例方法来实现更丝滑的切换
             $('.nav-link').on('mouseenter', function() {
-                const triggerEl = this;
-                clearTimeout(switchTimeout);
-                switchTimeout = setTimeout(function() {
-                    var tabTrigger = new bootstrap.Tab(triggerEl);
-                    tabTrigger.show();
-                }, 200); 
-            }).on('mouseleave', function() {
-                clearTimeout(switchTimeout);
+                var tabTrigger = new bootstrap.Tab(this);
+                tabTrigger.show();
             });
 
+            // Tab 切换监听
             $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
                 const targetId = $(e.target).attr("href").substring(1);
                 const containerId = targetId + "Container";
@@ -861,6 +1143,21 @@
                 arrangeWaterfall(containerId, array);
             });
         });
+
+        // [新增] 切换 Peer Nav 收起/展开
+        function togglePeerNav() {
+            const section = document.getElementById('peerNavSection');
+            section.classList.toggle('collapsed');
+            
+            // 如果处于收起状态，也可以点击整个区域展开（防止按钮太小不好点）
+            if (section.classList.contains('collapsed')) {
+                section.onclick = function(e) {
+                    // 防止点击事件冒泡导致立刻又收起，这里简单处理：只要点就展开
+                    section.classList.remove('collapsed');
+                    section.onclick = null; // 移除点击整个区域的事件
+                };
+            }
+        }
     </script>
 </body>
 </html>
