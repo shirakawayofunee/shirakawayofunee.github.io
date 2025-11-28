@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollow Camera & Draggable Polaroids</title>
+    <style>
+        /* --- 基础设置 --- */
+        :root {
+            --bg-color: #111413;
+            --text-color: #f0f0f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            user-select: none; /* 防止拖拽时选中文字 */
+        }
+
+        /* --- 左侧区域 --- */
+        .left-panel {
+            width: 45%;
+            padding: 40px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            z-index: 2;
+            pointer-events: none; /* 让左侧不阻挡照片飞过来后的拖拽 */
+        }
+        .lyrics {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 20px;
+            font-style: italic;
+            pointer-events: auto;
+        }
+        .lyrics strong {
+            display: block;
+            color: #fff;
+            margin-bottom: 15px;
+            font-style: normal;
+        }
+        .static-polaroid {
+            position: absolute;
+            top: 10%; left: 15%; width: 220px;
+            padding: 10px 10px 40px 10px;
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transform: rotate(-15deg);
+            z-index: 1;
+            pointer-events: auto;
+        }
+        .static-polaroid img { width: 100%; display: block; background: #333; }
+        
+        .static-polaroid-2 {
+            position: absolute; bottom: 30%; left: 50%; width: 160px;
+            padding: 8px 8px 30px 8px;
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transform: rotate(5deg);
+            z-index: 1;
+            pointer-events: auto;
+        }
+        .static-polaroid-2 img { width: 100%; background: #555; }
+
+        /* --- 右侧区域 (操作台) --- */
+        .right-panel {
+            width: 55%;
+            height: 100%;
+            position: relative;
+            background: #000;
+            overflow: hidden; /* 照片只在右侧生成，但拖拽可以超出视觉边界 */
+        }
+
+        /* 动态背景层 (即“取景器”看到的内容) */
+        #viewfinder-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+            z-index: 0;
+        }
+        /* 给背景加一层遮罩，让相机看起来更突出，同时模拟暗室氛围 */
+        #viewfinder-bg::after {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+            pointer-events: none;
+        }
+
+        .top-text {
+            position: absolute; top: 40px; right: 40px;
+            text-align: right; font-size: 14px; max-width: 400px;
+            z-index: 2; text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            pointer-events: none;
+        }
+
+        /* --- 动态生成的拍立得照片样式 --- */
+        .polaroid-item {
+            position: absolute;
+            width: 200px;
+            padding: 10px 10px 50px 10px;
+            background: #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            cursor: grab;
+            transition: transform 0.1s, box-shadow 0.2s; /* 拖拽时的微动效 */
+            z-index: 100;
+            /* 初始生成的动画效果 */
+            animation: popOut 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .polaroid-item:active {
+            cursor: grabbing;
+            transform: scale(1.05) !important; /* 抓起时稍微变大 */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            z-index: 1000 !important; /* 抓起时置顶 */
+        }
+        .polaroid-item img {
+            width: 100%;
+            height: 180px; /* 固定图片高度 */
+            object-fit: cover;
+            display: block;
+            pointer-events: none; /* 防止拖拽图片本身干扰容器拖拽 */
+        }
+        .polaroid-text {
+            position: absolute; bottom: 15px; right: 15px;
+            color: #333; font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 12px; transform: rotate(-3deg);
+            pointer-events: none;
+        }
+
+        @keyframes popOut {
+            0% {
+                bottom: 150px; right: 150px; /* 从相机位置出发 */
+                transform: scale(0.1) rotate(0deg);
+                opacity: 0;
+            }
+            100% {
+                /* 动画结束位置由 JS 动态计算或设为固定中间值，这里设为稍微偏左 */
+                bottom: 40%; right: 50%;
+                transform: scale(1) rotate(-10deg);
+                opacity: 1;
+            }
+        }
+
+        /* --- 相机容器 --- */
+        .camera-container {
+            position: absolute;
+            bottom: 50px; right: 50px;
+            width: 500px; height: 320px;
+            z-index: 50; /* 在背景之上，但在飞出的照片之下(刚开始) */
+            /* 禁止选中相机本身 */
+            pointer-events: none; 
+        }
+
+        /* 允许点击相机上的按钮 */
+        .camera-interactive {
+            pointer-events: auto;
+        }
+
+        .camera-body {
+            width: 100%; height: 100%;
+            background-color: #d0d0d0;
+            border-radius: 12px;
+            position: relative;
+            box-shadow: 5px 10px 30px rgba(0,0,0,0.6);
+            border: 2px solid #555;
+            
+            /* 纹理 */
+            background-image: radial-gradient(#222 25%, transparent 26%);
+            background-size: 4px 4px;
+
+            /* !!! 核心修改：挖空屏幕区域 !!! */
+            /* 使用 Mask Composite 切掉中间矩形 */
+            /* 屏幕位置计算: bottom 30px, left 40px, w 320, h 220 */
+            /* 对应 top = 320 - 30 - 220 = 70px */
+            -webkit-mask-image: 
+                linear-gradient(#fff, #fff), /* 底层全白 */
+                linear-gradient(#fff, #fff); /* 顶层矩形 */
+            -webkit-mask-position: 
+                0 0, 
+                40px 70px; /* 挖空位置 */
+            -webkit-mask-size: 
+                100% 100%, 
+                320px 220px; /* 挖空大小 */
+            -webkit-mask-repeat: no-repeat;
+            /* xor: 重叠部分透明 */
+            -webkit-mask-composite: xor; 
+            mask-composite: exclude; 
+        }
+
+        .camera-top-plate {
+            position: absolute; top: 0; left: 0; width: 100%; height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+            border-radius: 12px 12px 0 0;
+            pointer-events: none;
+        }
+
+        /* 取景器目镜 */
+        .viewfinder-eyepiece {
+            position: absolute; top: 30px; left: 40px; width: 60px; height: 60px;
+            background: #111; border-radius: 50%; border: 4px solid #444;
+            box-shadow: inset 2px 2px 5px rgba(255,255,255,0.2);
+        }
+
+        /* 屏幕框 (虽然中间挖空了，但要有边框和UI) */
+        .camera-screen-frame {
+            width: 320px; height: 220px;
+            position: absolute; bottom: 30px; left: 40px;
+            border: 8px solid #222; /* 实心边框 */
+            border-radius: 4px;
+            pointer-events: none; /* 让鼠标穿透边框点击下面的图（如果需要） */
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8); /* 内阴影增加深度 */
+        }
+        
+        /* 屏幕上的UI文字 */
+        .screen-ui {
+            position: absolute; top: 10px; right: 10px;
+            color: #0f0; font-family: monospace; font-size: 12px;
+            text-shadow: 0 0 2px #0f0;
+            z-index: 5;
+        }
+        .screen-ui span { display: block; margin-bottom: 4px; text-align: right; }
+        
+        /* 屏幕对焦框 */
+        .focus-box {
+            position: absolute; top: 50%; left: 50%;
+            width: 40px; height: 40px;
+            border: 1px solid rgba(0,255,0,0.7);
+            transform: translate(-50%, -50%);
+        }
+        .focus-box::before, .focus-box::after {
+            content: ''; position: absolute; background: #0f0;
+        }
+        .focus-box::before { top: 50%; left: 50%; width: 4px; height: 1px; transform: translate(-50%, -50%); }
+        .focus-box::after { top: 50%; left: 50%; width: 1px; height: 4px; transform: translate(-50%, -50%); }
+
+        /* 按钮区域 */
+        .controls-area {
+            position: absolute; right: 20px; top: 60px; bottom: 20px;
+            width: 100px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 25px;
+        }
+        .cam-btn {
+            width: 12px; height: 12px; background: #111; border-radius: 50%;
+            position: relative; cursor: pointer; box-shadow: 0 1px 2px rgba(255,255,255,0.1);
+        }
+        .cam-btn::after {
+            content: attr(data-label); position: absolute; left: -40px; top: -2px;
+            width: 35px; text-align: right; font-size: 9px; color: #fff; opacity: 0.8;
+        }
+        .cam-btn:active { transform: scale(0.9); }
+
+        .d-pad {
+            width: 40px; height: 40px; border-radius: 50%; background: #1a1a1a;
+            border: 1px solid #444; position: relative; margin-top: 10px; cursor: pointer;
+        }
+        .d-pad-center {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 14px; height: 14px; background: #000; border-radius: 50%;
+        }
+
+        /* 快门 */
+        .shutter-trigger {
+            position: absolute; top: -15px; right: 60px;
+            width: 40px; height: 20px;
+            background: linear-gradient(#333, #000);
+            border-radius: 4px 4px 0 0; cursor: pointer; z-index: -1;
+            transition: transform 0.1s;
+        }
+        .shutter-trigger:active { transform: translateY(2px); }
+        .shutter-btn-cap {
+            width: 26px; height: 6px; background: #888;
+            margin: 0 auto; border-radius: 2px; margin-top: -3px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="left-panel">
+        <div class="static-polaroid">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Static 1">
+        </div>
+
+        <div class="lyrics">
+            <strong>"One, two, three, four!</strong>
+            <br>
+            So tell me, tell me if you're over it<br>
+            Think about you, we can call it quits<br>
+            So come on, come on baby we should go<br>
+            And take you somewhere we can be alone<br>
+            <br>
+            Tie your shoes up<br>
+            We're gonna go all night<br>
+            I only wanna dance with you"
+        </div>
+
+        <div class="static-polaroid-2">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Static 2">
+        </div>
+    </div>
+
+    <div class="right-panel" id="drop-zone">
+        <!-- 动态背景 (取景器内容) -->
+        <div id="viewfinder-bg"></div>
+
+        <div class="top-text">
+            Pero cuando la luz entra por tu ventana no te pongas en la sombra.<br>
+            No temas la vida, o la locura porque todos estamos locos.
+        </div>
+
+        <!-- 这里是存放动态生成照片的容器 -->
+        <div id="polaroid-container"></div>
+
+        <!-- 相机主体 -->
+        <div class="camera-container">
+            <div class="shutter-trigger camera-interactive" onclick="takePhoto()">
+                <div class="shutter-btn-cap"></div>
+            </div>
+
+            <div class="camera-body">
+                <div class="camera-top-plate"></div>
+                <div class="viewfinder-eyepiece"></div>
+                
+                <!-- 挖空区域的边框和UI -->
+                <div class="camera-screen-frame">
+                    <div class="screen-ui">
+                        <span>ISO 400</span>
+                        <span>[ 1/125 ]</span>
+                        <span style="color:#ff3333">REC ●</span>
+                    </div>
+                    <div class="focus-box"></div>
+                </div>
+
+                <div class="controls-area camera-interactive">
+                    <div class="cam-btn" data-label="MENU"></div>
+                    <div class="cam-btn" data-label="AE-L"></div>
+                    <div class="cam-btn" data-label="PLAY"></div>
+                    <div class="d-pad">
+                        <div class="d-pad-center"></div>
+                    </div>
+                    <div class="cam-btn" data-label="DISP" style="margin-top: 10px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 图片库 (你可以填入任意数量的图片URL)
+        const photoGallery = [
+            "https://images.unsplash.com/photo-1504194921103-f8b80c338d47?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // 绿色霓虹
+            "https://images.unsplash.com/photo-1495539406979-bf61750d38ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // 温暖室内
+            "https://images.unsplash.com/photo-1520690214124-2405c5217036?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // 城市
+            "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // 赛博朋克
+            "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"  // 星空
+        ];
+
+        let currentIndex = 0;
+        let zIndexCounter = 100;
+
+        const bgElement = document.getElementById('viewfinder-bg');
+        const container = document.getElementById('polaroid-container');
+
+        // 初始化背景
+        function updateBackground() {
+            bgElement.style.backgroundImage = `url('${photoGallery[currentIndex]}')`;
+        }
+        updateBackground();
+
+        // 点击拍照
+        function takePhoto() {
+            // 1. 获取当前背景图 (即要“打印”的照片)
+            const capturedImage = photoGallery[currentIndex];
+            
+            // 2. 切换背景图到下一张 (模拟取景变化)
+            currentIndex = (currentIndex + 1) % photoGallery.length;
+            updateBackground();
+
+            // 3. 创建拍立得 DOM
+            createPolaroid(capturedImage);
+        }
+
+        function createPolaroid(imgUrl) {
+            const div = document.createElement('div');
+            div.className = 'polaroid-item';
+            
+            // 设置初始位置和动画终点 (通过 CSS animation 控制，这里只需创建结构)
+            div.innerHTML = `
+                <img src="${imgUrl}" draggable="false">
+                <div class="polaroid-text">#${zIndexCounter - 99} Memory</div>
+            `;
+            
+            // 添加到页面
+            container.appendChild(div);
+
+            // 绑定拖拽事件
+            makeDraggable(div);
+
+            // 动画结束后，如果不拖动，保持位置
+            // 这里我们依赖 CSS animation-fill-mode: forwards，但拖拽需要读取实时位置
+            // 为了平滑过渡，我们在动画结束后把 CSS 动画移除，转为 inline styles
+            div.addEventListener('animationend', () => {
+                const rect = div.getBoundingClientRect();
+                div.style.animation = 'none';
+                div.style.left = rect.left + 'px';
+                div.style.top = rect.top + 'px';
+                div.style.bottom = 'auto';
+                div.style.right = 'auto';
+                div.style.transform = 'rotate(-10deg)'; // 保持结束时的旋转
+            });
+        }
+
+        // 通用拖拽函数
+        function makeDraggable(element) {
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+            element.onmousedown = dragMouseDown;
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                
+                // 提升 z-index，让当前拖拽的在最上面
+                zIndexCounter++;
+                element.style.zIndex = zIndexCounter;
+
+                // 获取鼠标初始位置
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                
+                // 计算位移
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+
+                // 更新元素位置
+                element.style.top = (element.offsetTop - pos2) + "px";
+                element.style.left = (element.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                // 停止移动
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+</html>
