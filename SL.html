@@ -532,6 +532,8 @@
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#travel">両生還後の旅行</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#food">食べ物</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#nsfw">NSFW</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#pose">ポーズ</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#female">女性審美補足</a></li>
             </ul>
         </div>
     </div>
@@ -565,6 +567,8 @@
             <div class="tab-pane fade" id="travel"><div class="gallery-container" id="travelContainer"></div></div>
             <div class="tab-pane fade" id="food"><div class="gallery-container" id="foodContainer"></div></div>
             <div class="tab-pane fade" id="nsfw"><div class="gallery-container" id="nsfwContainer"></div></div>
+            <div class="tab-pane fade" id="pose"><div class="gallery-container" id="poseContainer"></div></div>
+<div class="tab-pane fade" id="female"><div class="gallery-container" id="femaleContainer"></div></div>
         </div>
     </div>
 
@@ -686,8 +690,8 @@
       const dcImages = [
           { src: "img/DC/DC1.webp", alt: "DC Image 1", description: "主従" },
           { src: "img/DC/DC2.webp", alt: "DC Image 2", description: "" },
-          { src: "img/DC/风声.jpg", alt: "DC Image 3", description: "戦友——映画『风声』" },
-          { src: "img/DC/DC3.webp", alt: "DC Image 3", description: "" },
+          { src: "img/DC/风声.jpg", alt: "DC Image 3", description: "戦友——映画『风声』（2009）" },
+          { src: "img/DC/DC3.webp", alt: "DC Image 3", description: "师弟——映画『Memoirs of a Geisha』（2005）" },
           { src: "img/DC/DC4.jpg", alt: "DC Image 4", description: "聖母憐子像" },
           { src: "img/DC/DC4-2.jpg", alt: "DC Image 5", description: "" },
           { src: "img/DC/chadui2.jpg", alt: "DC Image 5", description: "" },
@@ -843,8 +847,8 @@
 
       const nsfwImages = [
           { src: "img/SL/nsfw1.webp", alt: "NSFW Image 1", description: "" },
-          { src: "img/SL/nsfw2.webp", alt: "NSFW Image 2", description: "体型の設定に誤りがありますので、参考にしないでください。" },
-          { src: "img/SL/nsfw3.webp", alt: "NSFW Image 3", description: "体型の設定に誤りがありますので、参考にしないでください。" },
+          { src: "img/SL/nsfw2.webp", alt: "NSFW Image 2", description: "「Sの要望１」体型の設定に誤りがありますので、参考にしないでください。" },
+          { src: "img/SL/nsfw3.webp", alt: "NSFW Image 3", description: "「Sの要望２」体型の設定に誤りがありますので、参考にしないでください。" },
           { src: "img/SL/nsfw4.webp", alt: "NSFW Image 4", description: "体型華奢" },
           { src: "img/SL/nsfw5.webp", alt: "NSFW Image 4", description: "S体型参考" },
       ];
@@ -938,13 +942,12 @@
         ];
 
         const lonlyImages = [
-        { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【公式】メインストーリー/本編" },
+        { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【メインストーリー/本編】" },
         { src: "img/L/L0.jpg", alt: "Gallery Image 1", description: "嵐を呼ぶ" },
-            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【公式】メインストーリー/本編（猫猫バージョン）" },
+            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【メインストーリー/本編（猫猫バージョン）】" },
             { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "" },
-            
             { src: "img/L/L2.webp", alt: "Gallery Image 2", description: "危険な関系〜" },
-            { src: "img/L/L3.webp", alt: "Gallery Image 3", description: "" },
+            { src: "img/L/L3.webp", alt: "Gallery Image 3", description: "高天の孤月" },
             { src: "img/L/L4.webp", alt: "Gallery Image 4", description: "死と新生" },
             { src: "img/L/L5.webp", alt: "Gallery Image 5", description: "" },
             { src: "img/L/L6.webp", alt: "Gallery Image 6", description: "" },
@@ -955,7 +958,9 @@
             { src: "img/L/L11.webp", alt: "Gallery Image 11", description: "" },
             { src: "img/L/L12.webp", alt: "Gallery Image 12", description: "" },
             { src: "img/L/L13.webp", alt: "Gallery Image 13", description: "" },
+            { src: "img/L/L14.webp", alt: "Gallery Image 13", description: "" },
             { src: "img/L/L16.jpg", alt: "Gallery Image 14", description: "" },
+            { src: "img/L/zangli.webp", alt: "Gallery Image 14", description: "N.F.76年" },
             { src: "img/L/L15.webp", alt: "Gallery Image 15", description: "" }
         ];
         const sonlyImages = [
@@ -998,6 +1003,15 @@
         { src: "img/cloakroom/S06 - 「和服」.jpg", alt: "Gallery Image 1", description: "S06 - 「和服」" },
         { src: "img/cloakroom/S06 - 「和服」（additional）.png", alt: "Gallery Image 1", description: "S06 - 「和服」（additional）" },
         ];
+
+        const poseImages = [
+    // 在这里填入图片数据，例如：
+    // { src: "img/pose/1.jpg", alt: "Pose 1", description: "说明文字" },
+];
+
+const femaleImages = [
+    // { src: "img/female/1.jpg", alt: "Female 1", description: "说明文字" },
+];
         
         // 辅助函数：根据名称获取数组
         function getArrayByName(name) {
@@ -1006,7 +1020,8 @@
                  "sonly": sonlyImages, "dc": dcImages, "doodle": doodleImages,
                  "manga": mangaImages, "costume": costumeImages, "death": deathImages,
                  "catdw": catdwImages, "mansion": mansionImages, "travel": travelImages,
-                 "food": foodImages, "nsfw": nsfwImages
+                 "food": foodImages, "nsfw": nsfwImages,"pose": poseImages,
+         "female": femaleImages
              };
              return map[name] || [];
         }

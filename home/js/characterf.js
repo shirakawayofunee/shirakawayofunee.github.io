@@ -6,12 +6,13 @@ let characterMsg = [
     check: "1c.png",
     title: "1t.png",
     str1: `能力者｜女｜178cm<br>
-    ▍画像資料<br>
+    ▍画像資料：
     <a href="../L.html" target="_blank">gallery</a><br>
-    裏社会を陰で牛耳る実力者。<br>
-    犯罪組織「GARDEN」の<span>主宰者</span>であり、部下たちから恐れられ、崇拝され、<span>安心感</span>を与える存在。
-    部下たちの<span>罪</span>と<span>穢</span>れ、<span>愛</span>と夢を<span>背負</span>う。<br>
-    年齢と比べてあまりにも<span>若々しい顔</span>立ち、過度に白い肌色――<span>少女の殻</span>に、永遠に囚われた魂。
+    裏社会を陰で牛耳る実力者。
+    秘密組織「GARDEN」の<span>主宰者</span>であり、部下たちから恐れられ、崇拝され、<span>安心感</span>を与える存在。<br>
+    部下たちの<span>罪</span>と穢れ、愛と<span>未来</span>を<span>背負</span>う。<br>正邪の境が曖昧で、善にも悪にも転びうる雰囲気を持つこと。
+    年齢と比べてあまりにも<span>若々しい顔</span>立ち、過度に白い肌色――<span>少女の殻</span>に、永遠に<span>囚</span>われた魂。
+    
     （見た目は16、7歳で、実年齢不明、60>？？>36）<br>
     彼女は<span>月</span>のような印象を人に与える。<span>美しい</span>だが、破壊的だ。<br>
     常に世を拗ねるような微笑を浮かべている。表向きは悠然と落ち着いた様子だが、実際には秘密の重荷を背負って歩んでいる。<br>

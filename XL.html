@@ -515,6 +515,10 @@
         <div class="gallery-header">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#gallery">メインストーリー/本編</a></li>
+                <!-- 新增 L 和 X 选项卡 -->
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#L">L</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#X">X</a></li>
+                <!-- 结束新增 -->
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dc">イラスト</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">○○しないと出られない部屋</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">ふわふわ（擬獣化SD）</a></li>
@@ -528,6 +532,10 @@
     <div class="gallery-section">
         <div class="tab-content">
             <div class="tab-pane fade show active" id="gallery"><div class="gallery-container" id="galleryContainer"></div></div>
+            <!-- 新增 L 和 X 内容容器 -->
+            <div class="tab-pane fade" id="L"><div class="gallery-container" id="LContainer"></div></div>
+            <div class="tab-pane fade" id="X"><div class="gallery-container" id="XContainer"></div></div>
+            <!-- 结束新增 -->
             <div class="tab-pane fade" id="dc"><div class="gallery-container" id="dcContainer"></div></div>
             <div class="tab-pane fade" id="manga"><div class="gallery-container" id="mangaContainer"></div></div>
             <div class="tab-pane fade" id="catdw"><div class="gallery-container" id="catdwContainer"></div></div>
@@ -598,6 +606,31 @@
             { src: "img/XL/X表情.jpg", alt: "X表情", description: "X表情" },
             { src: "img/XL/工事中.jpg", alt: "工事中", description: "" }
         ];
+        
+        // 新增 L 和 X 的图片数组 (目前为空，可自行添加数据)
+        const LImages = [        { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【メインストーリー/本編】" },
+        { src: "img/L/L0.jpg", alt: "Gallery Image 1", description: "嵐を呼ぶ" },
+            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【メインストーリー/本編（猫猫バージョン）】" },
+            { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "" },
+            
+            { src: "img/L/L2.webp", alt: "Gallery Image 2", description: "危険な関系〜" },
+            { src: "img/L/L3.webp", alt: "Gallery Image 3", description: "" },
+            { src: "img/L/L4.webp", alt: "Gallery Image 4", description: "死と新生" },
+            { src: "img/L/L5.webp", alt: "Gallery Image 5", description: "" },
+            { src: "img/L/L6.webp", alt: "Gallery Image 6", description: "" },
+            { src: "img/L/L7.webp", alt: "Gallery Image 7", description: "「供養」" },
+            { src: "img/L/L8.webp", alt: "Gallery Image 8", description: "「孤独」" },
+            { src: "img/L/L9.webp", alt: "Gallery Image 9", description: "「憤怒」" },
+            { src: "img/L/L10.webp", alt: "Gallery Image 10", description: "" },
+            { src: "img/L/L11.webp", alt: "Gallery Image 11", description: "" },
+            { src: "img/L/L12.webp", alt: "Gallery Image 12", description: "" },
+            { src: "img/L/L13.webp", alt: "Gallery Image 13", description: "" },
+            { src: "img/L/L14.webp", alt: "Gallery Image 13", description: "" },
+            { src: "img/L/L16.jpg", alt: "Gallery Image 14", description: "" },
+            { src: "img/L/zangli.webp", alt: "Gallery Image 14", description: "N.F.76年" },
+            { src: "img/L/L15.webp", alt: "Gallery Image 15", description: "" }]; 
+        const XImages = [];
+
         const dcImages = [
             { src: "img/XL/00.jpg", alt: "Gallery Image 5", description: "" },
             { src: "img/XL/XL0.jpg", alt: "Gallery Image 1", description: "" },
@@ -642,7 +675,16 @@
         ];
 
         function getArrayByName(name) {
-            const map = { "gallery": galleryImages, "dc": dcImages, "manga": mangaImages, "catdw": catdwImages, "theme": themeImages, "r18g": r18gImages };
+            const map = { 
+                "gallery": galleryImages, 
+                "L": LImages,     // 新增映射
+                "X": XImages,     // 新增映射
+                "dc": dcImages, 
+                "manga": mangaImages, 
+                "catdw": catdwImages, 
+                "theme": themeImages, 
+                "r18g": r18gImages 
+            };
             return map[name] || [];
         }
 
