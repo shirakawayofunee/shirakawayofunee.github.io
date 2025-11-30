@@ -175,10 +175,10 @@
 
 
 /* 隐藏滚动条 */
-.partwan-right .wan-content.active .relationship-right-str .left::-webkit-scrollbar,
+/* .partwan-right .wan-content.active .relationship-right-str .left::-webkit-scrollbar,
 .partwan-right .wan-content.active .relationship-right-str .right::-webkit-scrollbar {
   display: none;
-}
+} */
 
 
 /* 左栏：靠左，但不会撞到左侧小图 */
@@ -201,7 +201,7 @@
 /* 左边文字框：稍微上浮 */
 .partwan-right .wan-content.active .relationship-right-str .left {
   /* 假设原本是居中的，我们让它往上偏一点 */
-  top: 45% !important; 
+  top: 22% !important; 
   transform: translateY(-50%);
   /* 或者用 margin-top: -5vh; */
 }
@@ -209,60 +209,10 @@
 /* 右边文字框：稍微下沉 */
 .partwan-right .wan-content.active .relationship-right-str .right {
   /* 让它往下偏一点 */
-  top: 55% !important; 
+  top: 23% !important; 
   transform: translateY(-50%);
   /* 或者用 margin-top: 5vh; */
 }
-
-
-/* 左侧框的连接线 */
-.partwan-right .wan-content.active .relationship-right-str .left::after {
-  content: '';
-  position: absolute;
-  top: 64px; /* 从标题栏下方伸出来 */
-  right: -50px; /* 伸出盒子右侧 */
-  width: 50px;
-  height: 1px;
-  background: linear-gradient(to right, #7b88ff, transparent); /* 渐变消失 */
-  opacity: 0.7;
-}
-/* 为了增加细节，可以在线头加个小圆点 */
-.partwan-right .wan-content.active .relationship-right-str .left::before {
-  content: '';
-  position: absolute;
-  top: 62px; 
-  right: -4px; /* 贴着边框 */
-  width: 5px;
-  height: 5px;
-  background-color: #7b88ff;
-  border-radius: 50%;
-  box-shadow: 0 0 5px #7b88ff;
-}
-
-/* 右侧框的连接线 (镜像) */
-.partwan-right .wan-content.active .relationship-right-str .right::after {
-  content: '';
-  position: absolute;
-  top: 64px;
-  left: -50px; /* 伸出盒子左侧 */
-  width: 50px;
-  height: 1px;
-  background: linear-gradient(to left, #7b88ff, transparent);
-  opacity: 0.7;
-}
-.partwan-right .wan-content.active .relationship-right-str .right::before {
-  content: '';
-  position: absolute;
-  top: 62px;
-  left: -4px;
-  width: 5px;
-  height: 5px;
-  background-color: #7b88ff;
-  border-radius: 50%;
-  box-shadow: 0 0 5px #7b88ff;
-}
-
-
 
 
 @keyframes glitch-in {

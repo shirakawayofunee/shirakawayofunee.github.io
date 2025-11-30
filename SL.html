@@ -523,6 +523,7 @@
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#lonly">L</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#sonly">S</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dc">テーマ</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#otherChar">「他作品の〇〇ってキャラのイメージ」</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doodle">落書き</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">漫画</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#costume">衣装</a></li>
@@ -533,7 +534,7 @@
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#food">食べ物</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#nsfw">NSFW</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#pose">ポーズ</a></li>
-<li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#female">女性審美補足</a></li>
+<!-- <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#female">女性審美補足</a></li> -->
             </ul>
         </div>
     </div>
@@ -566,9 +567,18 @@
             <div class="tab-pane fade" id="mansion"><div class="gallery-container" id="mansionContainer"></div></div>
             <div class="tab-pane fade" id="travel"><div class="gallery-container" id="travelContainer"></div></div>
             <div class="tab-pane fade" id="food"><div class="gallery-container" id="foodContainer"></div></div>
-            <div class="tab-pane fade" id="nsfw"><div class="gallery-container" id="nsfwContainer"></div></div>
-            <div class="tab-pane fade" id="pose"><div class="gallery-container" id="poseContainer"></div></div>
-<div class="tab-pane fade" id="female"><div class="gallery-container" id="femaleContainer"></div></div>
+            <div class="tab-pane fade" id="nsfw">
+                <div class="gallery-container" id="nsfwContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="pose">
+                <div class="gallery-container" id="poseContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="female">
+                <div class="gallery-container" id="femaleContainer"></div>
+            </div>
+            <div class="tab-pane fade" id="otherChar">
+                <div class="gallery-container" id="otherCharContainer"></div>
+            </div>
         </div>
     </div>
 
@@ -1012,6 +1022,29 @@
 const femaleImages = [
     // { src: "img/female/1.jpg", alt: "Female 1", description: "说明文字" },
 ];
+
+const otherCharImages = [
+{ src: "img/sutong/01.webp", alt: "Gallery Image 1", description: "" },
+          { src: "img/sutong/02.webp", alt: "Gallery Image 2", description: "" },
+          { src: "img/sutong/03.webp", alt: "Gallery Image 3", description: "" },
+          { src: "img/sutong/04.webp", alt: "Gallery Image 4", description: "" },
+          { src: "img/sutong/05.webp", alt: "Gallery Image 5", description: "" },
+          { src: "img/sutong/06.webp", alt: "Gallery Image 6", description: "" },
+          { src: "img/sutong/07.webp", alt: "Gallery Image 7", description: "" },
+          { src: "img/sutong/08.webp", alt: "Gallery Image 8", description: "" },
+          { src: "img/sutong/09.webp", alt: "Gallery Image 9", description: "" },
+          { src: "img/sutong/10.webp", alt: "Gallery Image 10", description: "" },
+          { src: "img/sutong/11.webp", alt: "Gallery Image 11", description: "" },
+          { src: "img/sutong/12.webp", alt: "Gallery Image 12", description: "" },
+          { src: "img/sutong/13.webp", alt: "Gallery Image 13", description: "" },
+          { src: "img/sutong/14.webp", alt: "Gallery Image 14", description: "" },
+          { src: "img/sutong/15.webp", alt: "Gallery Image 15", description: "" },
+          { src: "img/sutong/16.webp", alt: "Gallery Image 16", description: "" },
+          { src: "img/sutong/17.webp", alt: "Gallery Image 17", description: "" },
+          { src: "img/sutong/18.webp", alt: "Gallery Image 18", description: "" },
+          { src: "img/sutong/19.webp", alt: "Gallery Image 19", description: "" },
+          { src: "img/sutong/20.webp", alt: "Gallery Image 20", description: "" }
+];
         
         // 辅助函数：根据名称获取数组
         function getArrayByName(name) {
@@ -1021,7 +1054,7 @@ const femaleImages = [
                  "manga": mangaImages, "costume": costumeImages, "death": deathImages,
                  "catdw": catdwImages, "mansion": mansionImages, "travel": travelImages,
                  "food": foodImages, "nsfw": nsfwImages,"pose": poseImages,
-         "female": femaleImages
+         "female": femaleImages,"otherChar": otherCharImages
              };
              return map[name] || [];
         }
