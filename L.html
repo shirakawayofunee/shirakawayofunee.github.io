@@ -123,7 +123,18 @@
             /* padding: 40px 5vw; */
             background-color: #000;
             border-bottom: 1px solid #222;
-            padding: 25px 5vw 25px 5vw;
+            padding: 15px 5vw 15px 5vw;
+        }
+
+                /* =========================================
+           [新增] Peer Nav 收起/展开样式
+           ========================================= */
+           .peer-nav-section {
+            position: relative; /* 必须保留，作为按钮的定位基准 */
+            overflow: hidden;   /* 收起时隐藏多余内容 */
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* 平滑过渡动画 */
+            max-height: 2000px; /* 初始状态：足够大的高度 */
+            opacity: 1;
         }
 
         /* 胶卷条链接卡片 */
@@ -135,16 +146,82 @@
             transition: opacity 0.3s;
         }
         .roll-link-card:hover {
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         .roll-header {
             display: flex;
-            align-items: baseline;
-            margin-bottom: 10px;
+            flex-direction: column; /* 关键：垂直堆叠 */
+            margin-bottom: 8px; /* 标题和胶卷之间的距离 */
             font-family: 'Roboto', monospace;
             color: #fff;
         }
+
+/* 第一行：标签和元数据 */
+.roll-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px; /* 标签和标题之间的距离 */
+            font-size: 0.7rem;
+        }
+
+                /* 黑色白字标签 */
+                .roll-badge {
+            background: #000;
+            color: #eee;
+            border: 1px solid #444;
+            padding: 2px 6px;
+            margin-right: 10px;
+            font-weight: bold;
+            border-radius: 2px; /* 稍微一点圆角 */
+        }
+
+        /* 灰色辅助文字 (原 style="background:none...") */
+        .roll-info {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-right: auto; /* 将右侧的图标推到最右边 */
+            font-weight: 500;
+        }
+
+        /* 计数图标 */
+        .roll-count {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* 第二行：大标题 */
+        .roll-title {
+            font-size: 1.2rem; /* 增大字号 */
+            font-weight: 700;  /* 更加粗体 */
+            color: #fff;       /* 纯白 */
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            /* 模仿参考图的字体感觉，如果支持 Helvetica 也可以加 */
+            font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        /* 胶卷图片条 (保持原样，微调边框) */
+        .film-strip-container {
+            display: flex;
+            width: 100%;
+            height: 120px;
+            background: #111;
+            overflow: hidden;
+            border: 3px solid #111; /* 加厚边框模仿胶卷外壳 */
+            border-radius: 2px;
+        }
+
+
+
+
+
+
+
+
+
+
         .roll-badge {
             background: #000;
             color: #eee;
@@ -190,12 +267,6 @@
         .roll-link-card:hover .film-frame img {
             filter: grayscale(0%);
         }
-        .film-frame.empty {
-            background: #151515; /* 最后一格黑色占位 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
         /* 鼠标手势 */
         .cursor-pointer-icon {
             width: 20px;
@@ -204,16 +275,7 @@
             opacity: 0.5;
         }
 
-        /* =========================================
-           [新增] Peer Nav 收起/展开样式
-           ========================================= */
-           .peer-nav-section {
-            position: relative; /* 必须保留，作为按钮的定位基准 */
-            overflow: hidden;   /* 收起时隐藏多余内容 */
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* 平滑过渡动画 */
-            max-height: 2000px; /* 初始状态：足够大的高度 */
-            opacity: 1;
-        }
+
 
         /* =========================================
            4. 二级菜单 (Tabs) - 紧贴 Peer Nav
@@ -271,7 +333,7 @@
                    /* 悬浮文本框 */
         .floating-text {
             position: relative; /* 改为相对定位或固定在特定区域 */
-            margin: 0 auto 30px auto;
+            margin: 0 auto 5px auto;
             background-color: rgba(20, 20, 20, 0.8);
             border: 1px solid #333;
             color: #aaa;
@@ -488,30 +550,45 @@
         <div class="peer-links-grid">
             <a href="SL.html" class="roll-link-card">
                 <div class="roll-header">
-                    <span class="roll-badge">GALLERY #SL</span>
-                    <span class="roll-badge" style="background:none; border:none; color:#666;">2人雰囲気 - SL</span>
-                    <span class="roll-name">Main Gallery</span>
+                    <!-- 第一行：标签信息 -->
+                    <div class="roll-meta">
+                        <span class="roll-badge">GALLERY #SL</span>
+                        <span class="roll-info">2人雰囲気 - SL</span>
+                    </div>
+                    <!-- 第二行：大标题 -->
+                    <div class="roll-title">
+                        心が通じ合い、死生を共にし、決して裏切らない。
+                    </div>
                 </div>
+        
                 <div class="film-strip-container">
-                    <div class="film-frame"><img src="img/SL/SL2.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/SL/SL4.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/SL/SL18.webp" alt=""></div>
-                    <div class="film-frame empty"></div>
+                    <div class="film-frame"><img src="img/SL/SL1.webp" alt=""></div>
+                    <div class="film-frame"><img src="img/SL/SL3.webp" alt=""></div>
+                    <div class="film-frame"><img src="img/SL/SL6.webp" alt=""></div>
                 </div>
             </a>
+        
+            <!-- 链接 2: XL (短标题) -->
             <a href="XL.html" class="roll-link-card">
                 <div class="roll-header">
-                    <span class="roll-badge">GALLERY #XL</span>
-                    <span class="roll-badge" style="background:none; border:none; color:#666;">2人雰囲気 - XL</span>
-                    <span class="roll-name">Summer in Kyoto</span>
+                    <!-- 第一行：标签信息 -->
+                    <div class="roll-meta">
+                        <span class="roll-badge">GALLERY #XL</span>
+                        <span class="roll-info">2人雰囲気 - XL</span>
+                    </div>
+                    <!-- 第二行：大标题 -->
+                    <div class="roll-title">
+                        反逆
+                    </div>
                 </div>
+        
                 <div class="film-strip-container">
+                    <!-- 这里有5张图，flex布局会自动让它们平分宽度 -->
                     <div class="film-frame"><img src="img/XL/00.jpg" alt=""></div>
                     <div class="film-frame"><img src="img/XL/XL1.jpg" alt=""></div>
                     <div class="film-frame"><img src="img/XL/zhuxian2.webp" alt=""></div>
                     <div class="film-frame"><img src="img/XL/XL5.jpg" alt=""></div>
                     <div class="film-frame"><img src="img/XL/XL2.jpg" alt=""></div>
-<!--                     <div class="film-frame empty"></div> -->
                 </div>
             </a>
         </div>
@@ -592,7 +669,7 @@
         const galleryImages = [
         { src: "img/L/L0.jpg", alt: "Gallery Image 1", description: "嵐を呼ぶ" },
             { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【公式】メインストーリー/本編" },
-            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【公式】メインストーリー/本編（猫猫バージョン）" },
+            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "簡単に希望と平和をもたらす救世主なんて存在しない。いるのは、ただひたすら先を歩く先駆者たちだけだ。" },
             { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "" },
             { src: "img/L/L2.webp", alt: "Gallery Image 2", description: "危険な関系〜" },
             { src: "img/L/L3.webp", alt: "Gallery Image 3", description: "" },
