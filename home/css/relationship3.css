@@ -21,7 +21,7 @@
 /* ====================== 左侧：三张小图（你已经调到完美，不动）====================== */
 .partwan-left {
   position: absolute !important;
-  left: 5rem;
+  left: 2rem;
   top: 50%;
   transform: translateY(-63%) !important;   /* 你调好的值，保持 */
   width: 18rem;
@@ -63,14 +63,15 @@
 /* ====================== 右侧：所有内容区块 ====================== */
 .partwan-right {
   position: relative;
-  width: 100%;
+  width: 70rem;
   height: 100%;
 }
 
 /* 每个内容区块（互斥显示） */
 .partwan-right .wan-content.relationship {
   position: absolute;
-  top: 0; left: 0;
+  top: 0; 
+  left: 18rem;
   width: 100%;
   height: 100%;
   display: none;
@@ -86,7 +87,7 @@
 .partwan-right .wan-content.active .z-index-1 {
   position: absolute;
   top: 21vh;                    /* 距离顶部 8vh（可调 5~12） */
-  left: 54%;
+  left: 57.5%;
   transform: translateX(-50%);
   width: 21vw;
   max-width: 900px;
@@ -113,7 +114,7 @@
 /* 文字区：恢复你原本最帅的绝对定位 + bg.png 背景图布局 */
 .partwan-right .wan-content.active .relationship-right-str {
   position: absolute;
-  top: 41vh;                   /* 整体下移，让面具在上方压场（可调 48~58） */
+  top: 37vh;                   /* 整体下移，让面具在上方压场（可调 48~58） */
   left: 50%;
   transform: translateX(-50%);
   width: 71vw;
