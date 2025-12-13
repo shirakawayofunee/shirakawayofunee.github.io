@@ -85,10 +85,10 @@
 /* 大面具：在上方巨大居中，像标题一样 */
 .partwan-right .wan-content.active .z-index-1 {
   position: absolute;
-  top: 8vh;                    /* 距离顶部 8vh（可调 5~12） */
+  top: 21vh;                    /* 距离顶部 8vh（可调 5~12） */
   left: 54%;
   transform: translateX(-50%);
-  width: 42vw;
+  width: 21vw;
   max-width: 900px;
   z-index: 10;
   pointer-events: none;
