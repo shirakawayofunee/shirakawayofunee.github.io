@@ -102,7 +102,7 @@
       filter: drop-shadow(0 0 15px rgba(123, 136, 255, 0.4));
     
       /* 增加缓慢的浮动动画 */
-      animation: floating 6s ease-in-out infinite;
+      animation: floating 7s ease-in-out infinite;
 }
 
 @keyframes floating {
@@ -114,7 +114,7 @@
 /* 文字区：恢复你原本最帅的绝对定位 + bg.png 背景图布局 */
 .partwan-right .wan-content.active .relationship-right-str {
   position: absolute;
-  top: 37vh;                   /* 整体下移，让面具在上方压场（可调 48~58） */
+  top: 17vh;
   left: 50%;
   transform: translateX(-50%);
   width: 71vw;
@@ -122,27 +122,6 @@
   height: auto;
   min-height: 560px;
 }
-
-/* 左右两栏：恢复你原来的绝对定位 + 完整背景图 */
-/* .partwan-right .wan-content.active .relationship-right-str .left,
-.partwan-right .wan-content.active .relationship-right-str .right {
-  position: absolute;
-  width: 30vw;
-  max-width: 620px;
-  aspect-ratio: 1252 / 854;
-  background: url('../img/relationship/bg.png') no-repeat center center / 100% 100%;
-  padding: 2vw 1vw;
-  box-sizing: border-box;
-  font-family: "myFont";
-  font-weight: 300;
-  font-size: calc(0.875rem + 0.1vw);
-  line-height: 2.3;
-  color: #9ea7b4;
-  overflow-y: auto;
-  backdrop-filter: blur(2px);
-} */
-
-/* 左右两栏：修改为细长布局 */
 
 /* ====================== 回退版本：Border-Image Fill 切割 ====================== */
 
@@ -163,215 +142,82 @@
   border-image-repeat: stretch;
   padding: 0.5rem 1rem 1rem 1rem;
   box-sizing: border-box;
-  overflow-y: auto;
+  overflow-y: scroll;
   font-family: "myFont";
   font-weight: 300;
   font-size: calc(0.85rem + 0.1vw);
   line-height: 2.1;
   color: #9ea7b4;
   text-align: justify;
+  text-justify: inter-ideograph; 
+  overflow-wrap: anywhere; 
+  word-break: break-all;
   image-rendering: pixelated; 
   text-justify: inter-ideograph; 
-  word-break: break-all; 
+
 }
 
 
+/* ====================== 修正：让左右两栏绝对高度一致 ====================== */
 
-/* 隐藏滚动条 */
-/* .partwan-right .wan-content.active .relationship-right-str .left::-webkit-scrollbar,
-.partwan-right .wan-content.active .relationship-right-str .right::-webkit-scrollbar {
-  display: none;
-} */
-
-
-/* 左栏：靠左，但不会撞到左侧小图 */
+/* 左栏：顶部对齐，取消任何垂直错位 */
 .partwan-right .wan-content.active .relationship-right-str .left {
-  left: 5vw;
-  bottom: 25vh;         /* 保持贴底 */
-  top: auto;         /* 加上这行防止被 top:0 覆盖 */
-  transform: translateY(-20px); 
+  left: 5vw;      /* 保持原来的水平位置 */
+  top: 0;         /* 统一靠顶 */
+  bottom: auto;   /* 清除底部定位干扰 */
+  transform: none; /* 清除之前的上下浮动错位 */
 }
 
-/* 右栏：靠右 */
+/* 右栏：顶部对齐，取消任何垂直错位 */
 .partwan-right .wan-content.active .relationship-right-str .right {
-  right: -4vw;
-  top: -5vh;         /* 关键：往上提 5vh，比左栏明显高出一截！ */
-  
-  bottom: auto;      /* 取消 bottom:0 */
-  transform: translateY(20px);
-}
-
-/* 左边文字框：稍微上浮 */
-.partwan-right .wan-content.active .relationship-right-str .left {
-  /* 假设原本是居中的，我们让它往上偏一点 */
-  top: 22% !important; 
-  transform: translateY(-50%);
-  /* 或者用 margin-top: -5vh; */
-}
-
-/* 右边文字框：稍微下沉 */
-.partwan-right .wan-content.active .relationship-right-str .right {
-  /* 让它往下偏一点 */
-  top: 23% !important; 
-  transform: translateY(-50%);
-  /* 或者用 margin-top: 5vh; */
+  right: -4vw;    /* 保持原来的水平位置 */
+  top: 0;         /* 统一靠顶，和左边一样 */
+  bottom: auto;   /* 清除底部定位干扰 */
+  transform: none; /* 清除之前的上下浮动错位 */
 }
 
 
-@keyframes glitch-in {
-  0% {
-      opacity: 0;
-      transform: translateY(-40%) scaleY(0.1); /* 扁的 */
-      filter: blur(5px);
-  }
-  50% {
-      opacity: 1;
-      transform: translateY(-50%) scaleY(1.1); /* 稍微拉长 */
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(-50%) scaleY(1); /* 恢复正常 */
-      filter: blur(0);
-  }
-}
 
-/* 应用动画 */
+
+
+
+/* ====================== 自定义滚动条样式 ====================== */
+
+/* 1. 确保内容区域开启滚动 */
 .partwan-right .wan-content.active .relationship-right-str .left,
 .partwan-right .wan-content.active .relationship-right-str .right {
-  /* 保持原来的定位属性... */
-  /* 添加动画：0.4秒完成，以 ease-out 结束 */
-  animation: glitch-in 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  /* 确保开启垂直滚动 */
+  overflow-y: auto;
+  /* 针对 Firefox 的样式 */
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(158, 167, 180, 0.3) transparent; 
 }
 
-/* 让左右两边稍微错开一点时间出现，更有层次感 */
-.partwan-right .wan-content.active .relationship-right-str .right {
-  animation-delay: 0.1s; /* 右边晚0.1秒出现 */
-  opacity: 0; /* 初始隐藏，防止闪烁 */
-  animation-fill-mode: forwards; /* 动画结束后保持状态 */
+/* 2. Webkit (Chrome/Edge/Safari) 滚动条整体设置 */
+.partwan-right .wan-content.active .relationship-right-str .left::-webkit-scrollbar,
+.partwan-right .wan-content.active .relationship-right-str .right::-webkit-scrollbar {
+  width: 2px; /* 宽度设为 4px，很细 */
+  display: block; /* 确保显示 */
+}
+
+/* 3. 滚动条轨道 (背景) */
+.partwan-right .wan-content.active .relationship-right-str .left::-webkit-scrollbar-track,
+.partwan-right .wan-content.active .relationship-right-str .right::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 4. 滚动滑块 (平时状态) */
+.partwan-right .wan-content.active .relationship-right-str .left::-webkit-scrollbar-thumb,
+.partwan-right .wan-content.active .relationship-right-str .right::-webkit-scrollbar-thumb {
+  background-color: rgba(158, 167, 180, 0.3);
+  border-radius: 2px;
+}
+
+/* 5. 滚动滑块 (鼠标悬停/经过时) - 你要求的 #6677cc */
+.partwan-right .wan-content.active .relationship-right-str .left::-webkit-scrollbar-thumb:hover,
+.partwan-right .wan-content.active .relationship-right-str .right::-webkit-scrollbar-thumb:hover {
+  background-color: #6677cc;
+  cursor: pointer;
 }
 
 
-
-
-
-
-
-/* ====================== 装饰元素样式 ====================== */
-
-/* 1. 巨大的背景数字 (参考图1/图3) */
-/* 让画面不空洞，增加层级感 */
-.deco-bg-text {
-  position: absolute;
-  font-family: "Impact", "Arial Black", sans-serif; /* 选用粗字体 */
-  font-size: 12rem;
-  line-height: 1;
-  color: rgba(123, 136, 255, 0.08); /* 极淡的 #7b88ff */
-  z-index: -1; /* 放在最底层 */
-  pointer-events: none;
-  user-select: none;
-}
-.deco-bg-text.left-bg {
-  top: -60px;
-  left: -40px;
-}
-.deco-bg-text.right-bg {
-  bottom: -40px;
-  right: -20px;
-}
-
-/* 2. 装饰组容器定位 */
-.deco-group {
-  position: absolute;
-  z-index: 10; /* 在文字框之上或旁边 */
-  pointer-events: none;
-}
-/* 左侧装饰定位：贴在左文字框的右上方 */
-.deco-group.left-deco {
-  top: 15%; /* 根据你的布局微调 */
-  left: 23vw; /* 稍微在文字框右边一点 */
-}
-/* 右侧装饰定位：贴在右文字框的左下方 */
-.deco-group.right-deco {
-  bottom: 25%;
-  right: 23vw;
-}
-
-/* 3. 科技连接线 (Visual Connector) */
-.deco-group .tech-line {
-  width: 100px; /* 线的长度 */
-  height: 1px;
-  background: linear-gradient(90deg, #7b88ff, transparent);
-  position: relative;
-}
-.deco-group.right-deco .tech-line {
-  background: linear-gradient(-90deg, #7b88ff, transparent);
-  margin-left: auto; /* 让线靠右 */
-}
-/* 在线头加个小圆点 */
-.deco-group .tech-line::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: #7b88ff;
-  border-radius: 50%;
-  top: -1.5px;
-  box-shadow: 0 0 8px #7b88ff;
-}
-.deco-group.left-deco .tech-line::after { left: 0; }
-.deco-group.right-deco .tech-line::after { right: 0; }
-
-/* 4. 数据标签 (参考图3/图4) */
-.deco-group .data-tag {
-  font-family: "Courier New", monospace; /* 等宽字体很有科技感 */
-  font-size: 0.75rem;
-  color: #7b88ff;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 2px 6px;
-  border: 1px solid #7b88ff;
-  margin-top: 5px;
-  display: inline-block;
-  letter-spacing: 1px;
-}
-
-/* 5. 装饰条形码 (参考图4) */
-.deco-group .barcode {
-  width: 80px;
-  height: 10px;
-  margin-top: 5px;
-  /* 用渐变模拟条形码 */
-  background: repeating-linear-gradient(
-    90deg,
-    #7b88ff,
-    #7b88ff 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  opacity: 0.7;
-}
-
-/* 6. 十字准星 (参考图1) */
-.deco-group .crosshair {
-  font-family: monospace;
-  color: #fff;
-  font-size: 1.5rem;
-  opacity: 0.5;
-  position: absolute;
-  right: -20px;
-  top: -20px;
-}
-
-/* ====================== 现有文字框的微调 ====================== */
-/* 稍微给文字框加一点“错位”感，不要完全对齐 (参考图1) */
-
-/* 左框：稍微靠上 */
-.partwan-right .wan-content.active .relationship-right-str .left {
-  /* 保持你原本的样式，只加这行 */
-  transform: translateY(-20px); 
-}
-
-/* 右框：稍微靠下 */
-.partwan-right .wan-content.active .relationship-right-str .right {
-  /* 保持你原本的样式，只加这行 */
-  transform: translateY(20px);
-}
