@@ -859,7 +859,20 @@
 
         $(document).ready(function() {
             arrangeWaterfall("galleryContainer", galleryImages);
-            $('.nav-link').on('mouseenter', function() { var tabTrigger = new bootstrap.Tab(this); tabTrigger.show(); });
+                // [修改] 鼠标悬停(Hover)切换 Tab 功能 - 加入延迟防抖
+    $('.nav-link').on('mouseenter', function() {
+        var _this = this; // 保存当前的 tab 元素上下文
+        
+        // 设定 500 毫秒 (0.5秒) 后执行切换
+        hoverTimeout = setTimeout(function() {
+            var tabTrigger = new bootstrap.Tab(_this);
+            tabTrigger.show();
+        }, 300); 
+
+    }).on('mouseleave', function() {
+        // 如果在 0.5 秒内鼠标移出了，就取消这个定时器，不进行切换
+        clearTimeout(hoverTimeout);
+    });
             $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
                 const targetId = $(e.target).attr("href").substring(1);
                 arrangeWaterfall(targetId + "Container", getArrayByName(targetId));

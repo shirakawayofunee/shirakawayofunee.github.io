@@ -762,18 +762,17 @@
       const galleryImages = [
           { src: "img/SL/SL1.webp", alt: "Gallery Image 1", description: "「中秋の名月」  犯罪組織の主宰者と部下の殺し屋" },
           { src: "img/SL/SL2.webp", alt: "Gallery Image 2", description: "「運命の舞台」  死神と信者" },
-          { src: "img/SL/SL3.webp", alt: "Gallery Image 3", description: "吸血鬼貴族とその専属の仕立て屋（WIP）" },
-          { src: "img/SL/SL4.webp", alt: "Gallery Image 4", description: "&お姫様抱っこ" },
+          { src: "img/SL/SL3.webp", alt: "Gallery Image 3", description: "" },
+          { src: "img/SL/SL4.webp", alt: "Gallery Image 4", description: "太もものサイズを測る&お姫様抱っこ" },
           { src: "img/SL/SL5.webp", alt: "Gallery Image 5", description: "" },
           { src: "img/SL/SL6.webp", alt: "Gallery Image 6", description: "" },
           { src: "img/SL/SL7.webp", alt: "Gallery Image 7", description: "" },
           { src: "img/SL/SL8.webp", alt: "Gallery Image 7", description: "" },
-          { src: "img/SL/SL9.webp", alt: "Gallery Image 9", description: "" },
+          { src: "img/SL/SL9.webp", alt: "Gallery Image 9", description: "吸血鬼貴族とその専属の仕立て屋（WIP）" },
           { src: "img/SL/SL10.webp", alt: "Gallery Image 10", description: "" },
           { src: "img/SL/SL11.webp", alt: "Gallery Image 11", description: "" },
           { src: "img/SL/SL12.webp", alt: "Gallery Image 12", description: "" },
           { src: "img/SL/SL13.webp", alt: "Gallery Image 13", description: "" },
-          { src: "img/SL/SL13.jpg", alt: "Gallery Image 13", description: "" },
           { src: "img/SL/SL14.webp", alt: "Gallery Image 14", description: "" },
           { src: "img/SL/SL15.webp", alt: "Gallery Image 15", description: "" },
           { src: "img/SL/SL16.webp", alt: "Gallery Image 16", description: "" },
@@ -784,7 +783,7 @@
           { src: "img/SL/SL21.webp", alt: "Gallery Image 21", description: "同人誌表紙风" },
           { src: "img/SL/SL22.webp", alt: "Gallery Image 22", description: "" },
           { src: "img/SL/SL23.webp", alt: "Gallery Image 23", description: "" },
-          { src: "img/SL/SL24.webp", alt: "Gallery Image 23", description: "" },
+          { src: "img/SL/SL24.webp", alt: "Gallery Image 24", description: "" },
       ];
 
       const dcImages = [
@@ -1164,7 +1163,7 @@ const otherCharImages = [
           { src: "img/sutong/09.webp", alt: "Gallery Image 9", description: "" },
           { src: "img/sutong/10.webp", alt: "Gallery Image 10", description: "" },
           { src: "img/sutong/11.webp", alt: "Gallery Image 11", description: "" },
-          { src: "img/sutong/12.webp", alt: "Gallery Image 12", description: "" },
+/*           { src: "img/sutong/12.webp", alt: "Gallery Image 12", description: "" },
           { src: "img/sutong/13.webp", alt: "Gallery Image 13", description: "" },
           { src: "img/sutong/14.webp", alt: "Gallery Image 14", description: "" },
           { src: "img/sutong/15.webp", alt: "Gallery Image 15", description: "" },
@@ -1172,7 +1171,7 @@ const otherCharImages = [
           { src: "img/sutong/17.webp", alt: "Gallery Image 17", description: "" },
           { src: "img/sutong/18.webp", alt: "Gallery Image 18", description: "" },
           { src: "img/sutong/19.webp", alt: "Gallery Image 19", description: "" },
-          { src: "img/sutong/20.webp", alt: "Gallery Image 20", description: "" }
+          { src: "img/sutong/20.webp", alt: "Gallery Image 20", description: "" } */
 ];
         
         // 辅助函数：根据名称获取数组
@@ -1238,12 +1237,23 @@ const otherCharImages = [
             // 默认加载第一个 tab
             arrangeWaterfall("galleryContainer", galleryImages);
           
-            // [新增] 鼠标悬停(Hover)切换 Tab 功能
-            // 这里使用了 Bootstrap 的 Tab 实例方法来实现更丝滑的切换
-            $('.nav-link').on('mouseenter', function() {
-                var tabTrigger = new bootstrap.Tab(this);
-                tabTrigger.show();
-            });
+    // [修改] 定义一个变量来存储定时器 ID
+    var hoverTimeout;
+
+    // [修改] 鼠标悬停(Hover)切换 Tab 功能 - 加入延迟防抖
+    $('.nav-link').on('mouseenter', function() {
+        var _this = this; // 保存当前的 tab 元素上下文
+        
+        // 设定 500 毫秒 (0.5秒) 后执行切换
+        hoverTimeout = setTimeout(function() {
+            var tabTrigger = new bootstrap.Tab(_this);
+            tabTrigger.show();
+        }, 300); 
+
+    }).on('mouseleave', function() {
+        // 如果在 0.5 秒内鼠标移出了，就取消这个定时器，不进行切换
+        clearTimeout(hoverTimeout);
+    });
 
             // Tab 切换监听
             $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
