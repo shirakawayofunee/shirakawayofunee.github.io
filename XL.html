@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
-    <title>2人雰囲気 - XL</title>
+    <title>賢者の心を知るのは賢者のみ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -565,7 +565,7 @@
                 <div class="film-strip-container">
                     <div class="film-frame"><img src="img/SL/SL1【本編】「中秋の名月」.webp" alt=""></div>
                     <div class="film-frame"><img src="img/SL/SL2.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/SL/SL5.webp" alt=""></div>
+                    <div class="film-frame"><img src="img/SL/SL3「Fall」.webp" alt=""></div>
                     <div class="film-frame"><img src="img/SL/SL6.webp" alt=""></div>
                 </div>
             </a>
@@ -602,13 +602,11 @@
         <div class="gallery-header">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
                 <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#gallery">メインストーリー/本編</a></li>
-                <!-- 新增 L 和 X 选项卡 -->
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#L">L</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#X">X</a></li>
-                <!-- 结束新增 -->
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dc">イラスト</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">○○しないと出られない部屋</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">ふわふわ（擬獣化とSD）</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">擬獣化/メインストーリー後平和な日常(？</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#theme">テーマ</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#r18g">他作品の〇〇ってキャラのイメージ</a></li>
             </ul>
@@ -619,10 +617,8 @@
     <div class="gallery-section">
         <div class="tab-content">
             <div class="tab-pane fade show active" id="gallery"><div class="gallery-container" id="galleryContainer"></div></div>
-            <!-- 新增 L 和 X 内容容器 -->
             <div class="tab-pane fade" id="L"><div class="gallery-container" id="LContainer"></div></div>
             <div class="tab-pane fade" id="X"><div class="gallery-container" id="XContainer"></div></div>
-            <!-- 结束新增 -->
             <div class="tab-pane fade" id="dc"><div class="gallery-container" id="dcContainer"></div></div>
             <div class="tab-pane fade" id="manga"><div class="gallery-container" id="mangaContainer"></div></div>
             <div class="tab-pane fade" id="catdw"><div class="gallery-container" id="catdwContainer"></div></div>
@@ -680,7 +676,6 @@
             $(".papermaskDetail").css("display", "flex");
         }
 
-        // Data Sources (from original XL.html)
         const galleryImages = [
             { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【猫猫バージョン】Lの過去 P1-P6" },
             { src: "img/XL/zhuxian2.webp", alt: "メインストーリー", description: "【メインストーリー/本編】「瞳に映るキミ」" },
@@ -694,7 +689,6 @@
             { src: "img/XL/工事中.jpg", alt: "工事中", description: "" }
         ];
         
-        // 新增 L 和 X 的图片数组 (目前为空，可自行添加数据)
         const LImages = [        
         { src: "img/L/L0.jpg", alt: "Gallery Image 1", description: "嵐を呼ぶ" },
         { src: "img/L/L1.jpg", alt: "Gallery Image 1", description: "" },
@@ -760,9 +754,7 @@
             { src: "img/XL/IF2.webp", alt: "DC Image 2", description: "牧師と悪魔AU" },
             { src: "img/XL/IF3.jpg", alt: "DC Image 3", description: "" },
             { src: "img/XL/IF4.jpg", alt: "DC Image 4", description: "（笑）" },
-            { src: "img/XL/IF5.jpg", alt: "DC Image 5", description: "" },
             { src: "img/XL/掐脖子2.jpg", alt: "Gallery Image 8", description: "首を絞める" },
-            { src: "img/XL/IF6.jpg", alt: "DC Image 6", description: "" },
         ];
         const mangaImages = [
             { src: "img/XL/MH/4.png", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p4" },
@@ -780,6 +772,10 @@
             { src: "img/XL/cat/心满意足.jpg", alt: "Catdw Image 3", description: "" },
             { src: "img/XL/IF7.jpg", alt: "DC Image 7", description: "【SD】" },
             { src: "img/L/sd/浇水3.jpg", alt: "Catdw Image 3", description: "サボテン3" },
+            { src: "img/XL/IF5.jpg", alt: "DC Image 5", description: "" },
+            { src: "img/XL/IF6.jpg", alt: "DC Image 6", description: "" },
+            { src: "img/XL/IF8.webp", alt: "DC Image 6", description: "（？）" },
+
         ];
         const r18gImages = [
         { src: "img/sutong/XL/01.jpg", alt: "Gallery Image 1", description: "" },
