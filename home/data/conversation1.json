@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Blue Rain-001「招かれざる客」",
+    "bgm": "mp3/bg/conversation1.mp3"
+  },
+  
+  "infoPanel": {
+    "glossary": [
+      { 
+        "term": "上庭 (Paradeisos)", 
+        "desc": "人类文明的最高统治机构，位于天空之上。" 
+      },
+      { 
+        "term": "GARDEN", 
+        "desc": "位于灰色地带的杀手组织，由Leopold领导。" 
+      }
+    ],
+    "characters": [
+      {
+        "name": "Leopold",
+        "avatar": "img/dh-leopold.jpg",
+        "note": "Garden的首领。虽然看似冷酷，实则在为部下寻找生路。"
+      }
+    ],
+    "synopsis": "故事的开端。一位不速之客闯入了平静的日常。",
+    "relatedLink": {
+      "text": "下一话",
+      "targetId": "conversation2"
+    }
+  },
+
+  "script": [
+    {
+      "type": "narration", 
+      "text": "N.F.113年7月16日<br>GARDEN 本部"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/leopold.png", 
+      "name": "Leopold",
+      "text": "……へ、なんだ、今さら<span>上庭</span>を裏切るって？"
+    },
+    {
+      "type": "dialogue",
+      "position": "right",
+      "avatar": "img/dh/pc1.jpg",
+      "name": "访问者",
+      "text": "我是来谈条件的。"
+    }
+  ]
+}

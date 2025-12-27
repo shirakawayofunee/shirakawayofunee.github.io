@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Blue Rain-003「家」",
+    "bgm": "mp3/bg/conversation2.mp3",
+    "date": "N.F.113年7月23日"
+  },
+  
+  "infoPanel": {
+    "glossary": [
+      { 
+        "term": "s)", 
+        "desc": "拥有最高科技与武力，蔑视地表一切生命。" 
+      },
+      { 
+        "term": "黑环 (Black Ring)", 
+        "desc": "普通人进入即死或变异。" 
+      }
+    ],
+    "characters": [
+      {
+        "name": "Leopold",
+        "avatar": "img/dh-leopold.jpg",
+        "note": "本章中她试图掩盖自己的虚弱"
+      },
+      {
+        "name": "侦探",
+        "avatar": "img/dh/pc1.jpg",
+        "note": "FAC幸存者，此时尚不知道L的真实意图，满腔怒火。"
+      }
+    ],
+    "synopsis": "上一章，侦探在废墟中醒来。本章讲述两人初次正面交锋。<br>L试图通过言语激怒侦探。",
+    "relatedLink": {
+      "text": "回顾：Blue Rain-002",
+      "targetId": "conversation2"
+    }
+  },
+
+  "script": [
+    {
+      "type": "narration", 
+      "text": "N.F.113年7月23日 08:05<br>セヴェロの仕立て屋"
+    },
+    {
+      "type": "image",
+      "src": "img/cg/br_01.png"
+    },
+    {
+      "type": "narration",
+      "text": "概要：数日間、セヴェロはエリカ山荘の警備員与正面冲突..."
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/severo5.png", 
+      "name": "Severo",
+      "text": "もう、FACの伝統って優しく礼儀正しいことじゃなかった？"
+    },
+    {
+      "type": "dialogue",
+      "position": "right",
+      "avatar": "img/dh/pc1.jpg",
+      "name": "侦探",
+      "text": "めっちゃ下手な殺し屋だね。嘘八百ならまだしも。"
+    },
+    {
+      "type": "narration",
+      "text": "彼女は大盾を振り上げ、接客用の丸テーブルを「店主」めがけて投げる。"
+    },
+    {
+      "type": "dialogue",
+      "position": "left",
+      "avatar": "img/dh/severo3.png", 
+      "name": "Severo",
+      "text": "これらはすべて私の人生で実際に経験したことです。<span>西区</span>に新しい黑环ができたよね。"
+    }
+  ]
+}
