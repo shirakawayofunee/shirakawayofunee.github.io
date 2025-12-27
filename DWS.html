@@ -34,7 +34,7 @@
             padding: 0;
             overflow-x: hidden;
             /* 为顶部固定导航栏留出空间 */
-            padding-top: 6.25rem; 
+            padding-top: 4rem; 
         }
 
         /* 滚动条样式 */
@@ -53,7 +53,7 @@
             background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 90%);
             background-color: #000; 
             width: 100%;
-            height: 6.25rem;
+            height: 4rem;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
@@ -91,7 +91,7 @@
         }
 
         .div-head-text {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             color: #9ea7b4;
             font-family: 'myFont', sans-serif;
             transition: color 0.3s;
@@ -122,7 +122,18 @@
             /* padding: 40px 5vw; */
             background-color: #000;
             border-bottom: 1px solid #222;
-            padding: 25px 5vw 25px 5vw;
+            padding: 15px 5vw 15px 5vw;
+        }
+
+                /* =========================================
+           [新增] Peer Nav 收起/展开样式
+           ========================================= */
+           .peer-nav-section {
+            position: relative; /* 必须保留，作为按钮的定位基准 */
+            overflow: hidden;   /* 收起时隐藏多余内容 */
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* 平滑过渡动画 */
+            max-height: 2000px; /* 初始状态：足够大的高度 */
+            opacity: 1;
         }
 
         /* 胶卷条链接卡片 */
@@ -134,16 +145,82 @@
             transition: opacity 0.3s;
         }
         .roll-link-card:hover {
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         .roll-header {
             display: flex;
-            align-items: baseline;
-            margin-bottom: 10px;
+            flex-direction: column; /* 关键：垂直堆叠 */
+            margin-bottom: 8px; /* 标题和胶卷之间的距离 */
             font-family: 'Roboto', monospace;
             color: #fff;
         }
+
+/* 第一行：标签和元数据 */
+.roll-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px; /* 标签和标题之间的距离 */
+            font-size: 0.7rem;
+        }
+
+                /* 黑色白字标签 */
+                .roll-badge {
+            background: #000;
+            color: #eee;
+            border: 1px solid #444;
+            padding: 2px 6px;
+            margin-right: 10px;
+            font-weight: bold;
+            border-radius: 2px; /* 稍微一点圆角 */
+        }
+
+        /* 灰色辅助文字 (原 style="background:none...") */
+        .roll-info {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-right: auto; /* 将右侧的图标推到最右边 */
+            font-weight: 500;
+        }
+
+        /* 计数图标 */
+        .roll-count {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* 第二行：大标题 */
+        .roll-title {
+            font-size: 1.2rem; /* 增大字号 */
+            font-weight: 700;  /* 更加粗体 */
+            color: #fff;       /* 纯白 */
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            /* 模仿参考图的字体感觉，如果支持 Helvetica 也可以加 */
+            font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        /* 胶卷图片条 (保持原样，微调边框) */
+        .film-strip-container {
+            display: flex;
+            width: 100%;
+            height: 120px;
+            background: #111;
+            overflow: hidden;
+            border: 3px solid #111; /* 加厚边框模仿胶卷外壳 */
+            border-radius: 2px;
+        }
+
+
+
+
+
+
+
+
+
+
         .roll-badge {
             background: #000;
             color: #eee;
@@ -197,23 +274,14 @@
             opacity: 0.5;
         }
 
-        /* =========================================
-           [新增] Peer Nav 收起/展开样式
-           ========================================= */
-           .peer-nav-section {
-            position: relative; /* 必须保留，作为按钮的定位基准 */
-            overflow: hidden;   /* 收起时隐藏多余内容 */
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* 平滑过渡动画 */
-            max-height: 2000px; /* 初始状态：足够大的高度 */
-            opacity: 1;
-        }
+
 
         /* =========================================
            4. 二级菜单 (Tabs) - 紧贴 Peer Nav
            ========================================= */
         .secondary-menu-container {
             position: sticky; /* 吸顶效果 */
-            top: 6.25rem; /* 对应 header 高度 */
+            top: 4rem; /* 对应 header 高度 */
             background-color: rgba(0,0,0,0.95);
             z-index: 990;
             padding: 10px 0;
@@ -230,7 +298,7 @@
             border: none;
             color: #666;
             font-family: 'myFont', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.83rem;
             background: transparent !important;
             padding: 5px 15px;
             transition: all 0.3s;
@@ -264,7 +332,7 @@
                    /* 悬浮文本框 */
         .floating-text {
             position: relative; /* 改为相对定位或固定在特定区域 */
-            margin: 0 auto 30px auto;
+            margin: 0 auto 5px auto;
             background-color: rgba(20, 20, 20, 0.8);
             border: 1px solid #333;
             color: #aaa;
@@ -408,52 +476,126 @@
 <body>
     <!-- 1. 顶部主导航栏 (Head PC) -->
     <div class="head pc">
-      <div class="h-con-left"><h1><a href="index.html">GALLERY</a></h1></div>
-      <div class="h-con-right">
-           <!-- 导航菜单省略，可按需添加 -->
-          <div class="h-con-right-r-con"><img src="/home/img/v2c.png" alt="Music"></div>
+        <div class="h-con-left">
+          <h1>
+            <a href="index.html">GALLERY</a>
+          </h1>
+        </div>
+        <div class="h-con-right">
+            <div class="h-con-right-l">
+              <!-- 1. ホーム -> /home/flower.html -->
+              <div class="div-center" onclick="window.location.href='/home/flower.html'">
+                <div class="div-head-text">ホーム</div>
+                <div class="div-head-text-en">HOME</div>
+              </div>
+              
+              <!-- 2. 登場人物 -> #2 -->
+              <div class="div-center" onclick="window.location.href='/home/flower.html#1'">
+                <div class="div-head-text">登場人物</div>
+                <div class="div-head-text-en">CHARACTER</div>
+              </div>
+              
+              <!-- 3. 相関図 -> #3 -->
+              <div class="div-center" onclick="window.location.href='/home/flower.html#2'">
+                <div class="div-head-text">相関図</div>
+                <div class="div-head-text-en">RELATIONSHIP</div>
+              </div>
+              
+              <!-- 4. 関係性補足 -> #4 -->
+              <div class="div-center" onclick="window.location.href='/home/flower.html#3'">
+                <div class="div-head-text">関係性補足</div>
+                <div class="div-head-text-en">RELATIONSHIP</div>
+              </div>
+              
+              <!-- 5. 世界観 -> #5 -->
+              <div class="div-center" onclick="window.location.href='/home/flower.html#4'">
+                <div class="div-head-text">世界観</div>
+                <div class="div-head-text-en">BACKSTORY</div>
+              </div>
+              
+              <!-- 6. 第一章 -> #6 -->
+              <div class="div-center" onclick="window.location.href='/home/flower.html#6'">
+                <div class="div-head-text">第一章</div>
+                <div class="div-head-text-en">MAIN STORY</div>
+              </div>
+              
+              <!-- 7. 序章マップ -> #7 -->
+              <div class="div-center" onclick="window.location.href='/home/flower.html#7'">
+                <div class="div-head-text">序章マップ</div>
+                <div class="div-head-text-en">MAIN STORY</div>
+              </div>
+              
+              <!-- 8. 年表 -> #8 -->
+              <div class="div-center" onclick="window.location.href='/home/flower.html#8'">
+                <div class="div-head-text">年表</div>
+                <div class="div-head-text-en">TIMELINE</div>
+              </div>
+              
+              <!-- 9. 情報 -> #9 -->
+              <div class="div-center" onclick="window.location.href='/home/flower.html#9'">
+                  <div class="div-head-text">物語</div>
+                <div class="div-head-text-en">BACKSTORY</div>
+              </div>
+  
+            </div>
+          <div class="h-con-right-r-con">
+              <img src="/home/img/v2c.png" alt="Music">
+          </div>
+        </div>
       </div>
-  </div>
-    <!-- 2. 同级页面跳转指引 (Peer Nav) -->
-    <div class="peer-nav-section">
-        <div class="peer-links-grid">
-            
-            <!-- 原有的链接 1 -->
-            <a href="XL.html" class="roll-link-card">
-                <div class="roll-header">
-                    <span class="roll-badge">GALLERY #XL</span>
-                    <span class="roll-badge" style="background:none; border:none; color:#666;">2人雰囲気 - XL</span>
-                    <span class="roll-name">Summer in Kyoto</span>
-                    <span class="roll-count">🥀🪡</span>
+  
+      <!-- Peer Nav (链接到 SL 和 L) -->
+      <div class="peer-nav-section">
+          <div class="peer-links-grid">
+          
+              <a href="SL.html" class="roll-link-card">
+                  <div class="roll-header">
+                      <!-- 上半部分：元数据/标签 -->
+                      <div class="roll-meta">
+                          <span class="roll-badge">GALLERY #SL</span>
+                          <span class="roll-info">2人雰囲気 - SL</span>
+                          <span class="roll-count">🥀🪡</span>
+                      </div>
+                      <!-- 下半部分：大标题 -->
+                      <div class="roll-title">
+                          心が通じ合い、死生を共にし、決して裏切らない。
+                      </div>
+                  </div>
+  
+                  <div class="film-strip-container">
+                    <div class="film-frame"><img src="img/SL/SL1【本編】「中秋の名月」.webp" alt=""></div>
+                    <div class="film-frame"><img src="img/SL/SL2「Fall」.webp" alt=""></div>
+                    <div class="film-frame"><img src="img/SL/SL3.webp" alt=""></div>
+                    <div class="film-frame"><img src="img/SL/SL6.webp" alt=""></div>
                 </div>
-                <div class="film-strip-container">
-                    <div class="film-frame"><img src="img/XL/zhuxian1.jpg" alt=""></div>
-                    <div class="film-frame"><img src="img/XL/zhuxian2.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/XL/XL2.jpg" alt=""></div>
-                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/555/888?text=IMG4" alt=""></div>
-                    
-                </div>
-            </a>
-
-            <!-- 原有的链接 2 -->
-            <a href="L.html" class="roll-link-card">
-                <div class="roll-header">
-                    <span class="roll-badge">GALLERY #041</span>
-                    <span class="roll-badge" style="background:none; border:none; color:#666;">KODAK EKTAR 100</span>
-                    <span class="roll-name">Pacific Coast Highway</span>
-                    <span class="roll-count">36 EXP</span>
-                </div>
-                <div class="film-strip-container">
-                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/2a2a2a/555?text=FRAME1" alt=""></div>
-                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/3a3a3a/666?text=FRAME2" alt=""></div>
-                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/4a4a4a/777?text=FRAME3" alt=""></div>
-                    <div class="film-frame"><img src="https://via.placeholder.com/200x120/5a5a5a/888?text=FRAME4" alt=""></div>
-                    
-                </div>
-            </a>
-        </div> <!-- grid 结束 -->
-
-    </div>
+              </a>
+          
+              <!-- 链接 2: Solo Exhibition -->
+              <a href="L.html" class="roll-link-card">
+                  <div class="roll-header">
+                      <!-- 上半部分：元数据/标签 -->
+                      <div class="roll-meta">
+                          <span class="roll-badge">GALLERY #L</span>
+                          <span class="roll-info"></span>
+                          <span class="roll-count">ART</span>
+                      </div>
+                      <!-- 下半部分：大标题 -->
+                      <div class="roll-title">
+                          罪人たちの救世主
+                      </div>
+                  </div>
+          
+                  <div class="film-strip-container">
+                      <div class="film-frame"><img src="img/L/L-1.jpg" alt=""></div>
+                      <div class="film-frame"><img src="img/L/L2.webp" alt=""></div>
+                      <div class="film-frame"><img src="img/L/L3.webp" alt=""></div>
+                      <div class="film-frame"><img src="img/L/L4.webp" alt=""></div>
+                  </div>
+              </a>
+          
+          </div>
+  
+      </div>
 
     <!-- 3. 二级菜单 (Tabs) -->
     <div class="secondary-menu-container">
