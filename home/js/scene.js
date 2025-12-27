@@ -295,6 +295,7 @@ function initTabs() {
     });
 }
 // --- 2. 渲染章节列表 (更新 HTML 结构) ---
+// --- 2. 渲染章节列表 (适配 Grid 布局 + SVG 箭头) ---
 function renderList(searchText = "") {
     const listContainer = document.getElementById('chapter-list');
     listContainer.innerHTML = '';
@@ -316,21 +317,27 @@ function renderList(searchText = "") {
         }
 
         // 修改点：
-        // 1. 左侧 div.chap-info: 放置 Title 和 Subtitle (Series)
-        // 2. 右侧 div.chap-meta: 放置 箭头(放在上) 和 时间(放在下)
-        // 3. 箭头使用 SVG 或字符，这里用字符 '→' 配合 CSS 旋转
+        // 1. 使用 SVG 绘制短箭头。viewBox="0 0 10 10" 
+        //    路径：M2,5 L8,5 (短横线) + L5,2 (上翼) + L5,8 (没有下翼？不对，是箭头)
+        //    正确的右箭头路径：横线(0,5 to 8,5) + 箭头头(5,2 to 8,5 to 5,8)
+        //    为了看起来像您描述的“短身体”，我把横线缩短。
+        
+        // 这里的 Grid 结构是扁平的，不需要 .chap-info 包裹
         el.innerHTML = `
-            <div class="chap-info">
-                <span class="chap-title">${item.title}</span>
-                <span class="chap-subtitle">${item.subtitle}</span>
+            <span class="chap-title">${item.title}</span>
+            
+            <div class="chap-arrow-box">
+                <svg class="custom-arrow" viewBox="0 0 12 12">
+                    <!-- 身体：从 x=4 到 x=10 (非常短) -->
+                    <line x1="3" y1="6" x2="10" y2="6" stroke-linecap="round"></line>
+                    <!-- 箭头头：指向右侧 -->
+                    <polyline points="7 3 10 6 7 9" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                </svg>
             </div>
             
-            <div class="chap-meta">
-                <div class="arrow-box">
-                    <span class="arrow-icon">→</span>
-                </div>
-                <span class="chap-date">${item.dateLabel}</span>
-            </div>
+            <span class="chap-subtitle">${item.subtitle}</span>
+            
+            <span class="chap-date">${item.dateLabel}</span>
         `;
 
         el.onclick = () => {
