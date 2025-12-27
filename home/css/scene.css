@@ -1,0 +1,355 @@
+/* --- 全局设置 --- */
+@font-face {
+    font-family: "myFont";
+    src: url("../font/DreamHanSansJP-W10.ttf") format("truetype");
+    font-display: swap;
+}
+
+body {
+    font-family: 'myFont', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    height: 100vh;
+    overflow: hidden; /* PC端防止整个页面滚动，只让栏目滚动 */
+}
+
+/* 背景图处理 */
+.bg-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../img/BG2.png") no-repeat center bottom;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* --- PC端布局 (Grid) --- */
+.main-container {
+    display: grid;
+    /* 核心需求：19% - 62% - 19% */
+    grid-template-columns: 19fr 62fr 19fr; 
+    height: 100vh;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 通用面板样式 */
+.panel {
+    background-color: rgba(56, 58, 62, 0.9); /* 半透明背景 */
+    border: 1px solid #0F0F11;
+    border-radius: 10px;
+    overflow-y: auto; /* 允许内部滚动 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 滚动条美化 */
+.panel::-webkit-scrollbar {
+    width: 6px;
+}
+.panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+.panel::-webkit-scrollbar-thumb {
+    background: rgba(226, 59, 120, 0.5);
+    border-radius: 3px;
+}
+
+/* --- 左侧：目录栏 --- */
+.directory-panel {
+    padding: 15px;
+}
+.chapter-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #555;
+    color: #ccc;
+    padding: 10px 5px;
+    text-align: left;
+    font-family: 'myFont';
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.chapter-btn:hover {
+    color: #e23b78;
+    padding-left: 10px;
+}
+.chapter-btn.active {
+    color: #e23b78;
+    font-weight: bold;
+    border-left: 3px solid #e23b78;
+    padding-left: 10px;
+}
+
+/* --- 中间：正文栏 --- */
+.script-panel {
+    background-image: url("../img/dh/bg_full.png"); /* 保留原有纹理 */
+    background-size: cover;
+    position: relative;
+}
+.script-content {
+    padding: 40px;
+    flex: 1;
+}
+
+/* 对话框样式 */
+.message-row {
+    display: flex;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+/* 头像 */
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* 气泡 */
+.message-bubble {
+    background-color: #252225;
+    color: #c9c7ca;
+    border: 1.5px solid #848285;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 80%;
+    position: relative;
+    font-weight: 300;
+    line-height: 1.6;
+}
+/* 强调色 */
+.message-bubble span {
+    color: #e23b78;
+    font-weight: bold;
+}
+
+/* 站位逻辑 */
+/* 左侧站位 (NPC/敌人) */
+.pos-left {
+    flex-direction: row;
+}
+.pos-left .avatar {
+    margin-right: 15px;
+}
+
+/* 右侧站位 (玩家/主角) */
+.pos-right {
+    flex-direction: row-reverse;
+}
+.pos-right .avatar {
+    margin-left: 15px;
+}
+.pos-right .message-bubble {
+    background-color: #302d30; /* 稍微深一点以此区分 */
+}
+
+/* 旁白 */
+.narration {
+    text-align: center;
+    color: #d7d8db;
+    font-style: italic;
+    margin: 30px auto;
+    width: 90%;
+    font-size: 0.95rem;
+}
+.cg-image {
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 1px solid #333;
+}
+
+/* 底部按钮 */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+}
+.nav-buttons button {
+    background-color: #383A3E;
+    color: white;
+    border: 1.5px solid #0F0F11;
+    padding: 8px 30px;
+    cursor: pointer;
+    font-family: 'myFont';
+}
+.nav-buttons button:hover:not(:disabled) {
+    background-color: #e23b78;
+}
+.nav-buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* --- 右侧：信息栏 --- */
+.info-panel {
+    padding: 15px;
+    font-size: 0.9rem;
+}
+.info-section {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+.info-title {
+    margin-top: 0;
+    color: #e23b78;
+    border-left: 3px solid #e23b78;
+    padding-left: 8px;
+    margin-bottom: 10px;
+}
+
+/* 名词解释 (手风琴) */
+.glossary-item {
+    margin-bottom: 8px;
+}
+.glossary-term {
+    background: #2b2b2b;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+}
+.glossary-term:hover {
+    background: #444;
+}
+.glossary-desc {
+    display: none; /* 默认折叠 */
+    padding: 8px;
+    color: #aaa;
+    font-size: 0.85rem;
+    background: #222;
+    border-left: 2px solid #555;
+    margin-top: 2px;
+}
+.glossary-item.active .glossary-desc {
+    display: block; /* 展开 */
+}
+.glossary-item.active .glossary-term {
+    color: #e23b78;
+}
+
+/* 角色卡片 */
+.char-card {
+    display: flex;
+    margin-bottom: 15px;
+    background: #e9ecef; /* 保持原设计的白底风格 */
+    color: #333;
+    border-radius: 5px;
+    padding: 10px;
+}
+.char-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.char-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+.char-info strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+}
+
+/* 前情提要按钮 */
+.link-btn {
+    background: #2b2b2b;
+    color: #e23b78;
+    border: 1px solid #e23b78;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 5px;
+    display: inline-block;
+}
+.link-btn:hover {
+    background: #e23b78;
+    color: white;
+}
+
+/* 音乐控制 */
+.music-controls {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 100;
+}
+.music-btn {
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+/* --- 移动端适配 --- */
+@media (max-width: 926px) {
+    body {
+        overflow: auto; /* 移动端允许整体滚动 */
+        height: auto;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+        gap: 0;
+    }
+    .panel {
+        border-radius: 0;
+        border: none;
+    }
+    
+    /* 1. 目录：高度约20vh (或者固定高度) */
+    .directory-panel {
+        height: 20vh;
+        border-bottom: 2px solid #000;
+    }
+    
+    /* 2. 正文：最小高度80vh */
+    .script-panel {
+        min-height: 80vh;
+        overflow: visible; /* 让内容撑开 */
+    }
+    .script-content {
+        padding: 15px; /* 移动端减小内边距 */
+    }
+    .message-bubble {
+        max-width: 85%;
+        font-size: 0.95rem;
+    }
+    .avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* 3. 信息栏：排在最后 */
+    .info-panel {
+        min-height: auto;
+        background-color: #222;
+        padding-bottom: 50px; /* 留出底部空间 */
+    }
+}
