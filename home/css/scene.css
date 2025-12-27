@@ -6,27 +6,34 @@
 }
 
 :root {
-    --bg-color: #0b0c15;         /* 深蓝黑背景 */
-    --panel-bg: rgba(18, 20, 28, 0.95); /* 面板背景 */
-    --text-gold: #d4af37;        /* 金色高亮 */
-    --text-grey: #5c6b7f;        /* 灰蓝辅助色 */
-    --text-white: #e0e0e0;       /* 正文白 */
-    --accent-color: #1a2a3a;     /* 选中态背景 */
-    --border-color: #2a3b4c;     /* 边框色 */
-    --highlight-red: #e23b78;    /* 原有的红色强调 */
+    /* 左侧面板：黑白工业风 */
+    --panel-bg: #f2f2f2;
+    --list-bg: #ffffff;
+    --border-line: 2px solid #000000;
+    --text-main: #000000;
+    --text-sub: #666666;
+    --highlight-bg: #e0e0e0;
+    
+    /* 中右侧面板：暗黑风格 */
+    --dark-bg-color: #0b0c15;
+    --dark-panel-bg: rgba(18, 20, 28, 0.95);
+    --dark-text-white: #e0e0e0;
+    --dark-text-grey: #5c6b7f;
+    --dark-accent-color: #1a2a3a;
+    --dark-border-color: #2a3b4c;
+    --highlight-red: #e23b78;
 }
 
 body {
-    font-family: 'myFont', "Times New Roman", serif; /* 优先使用衬线体营造文学感 */
+    font-family: 'myFont', "Times New Roman", serif;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-white);
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-white);
     height: 100vh;
-    overflow: hidden; /* PC端锁定，内容区内部滚动 */
+    overflow: hidden;
 }
 
-/* 简单的背景纹理 */
 .bg-layer {
     position: fixed;
     top: 0;
@@ -37,151 +44,246 @@ body {
     z-index: -1;
 }
 
-/* 去除所有圆角 */
 * {
     border-radius: 0 !important;
     box-sizing: border-box;
 }
 
-/* --- 布局 (Grid) --- */
+/* --- 布局：19-62-19 --- */
 .main-container {
     display: grid;
-    /* 19% - 62% - 19% */
     grid-template-columns: 19fr 62fr 19fr;
     height: 100vh;
-    gap: 2px; /* 极细的分割线 */
-    background-color: #000; /* 缝隙颜色 */
+    gap: 2px;
+    background-color: #000;
 }
 
-/* 通用面板 */
 .panel {
-    background-color: var(--panel-bg);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid var(--border-color);
 }
-.panel::-webkit-scrollbar { width: 5px; }
-.panel::-webkit-scrollbar-thumb { background: var(--text-grey); }
+
+.panel::-webkit-scrollbar { width: 6px; }
+.panel::-webkit-scrollbar-thumb { background: #555; }
 .panel::-webkit-scrollbar-track { background: #000; }
 
 /* --- 左侧：目录栏 (Directory) --- */
 .directory-panel {
-    border-right: 1px solid var(--text-gold); /* 金色分割线 */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--panel-bg);
+    border-right: var(--border-line);
+    padding: 0;
 }
 
-/* 顶部标题 */
+/* 头部 */
 .dir-header {
-    padding: 20px 15px;
-    border-bottom: 1px solid var(--border-color);
-    background: linear-gradient(to bottom, #151820, #0b0c15);
+    flex-shrink: 0;
+    padding: 15px 10px;
+    background-color: var(--panel-bg);
+    border-bottom: 2px solid #000;
+    position: relative;
 }
-.main-title {
-    margin: 0;
-    font-size: 1.5rem;
-    color: var(--text-gold);
-    letter-spacing: 1px;
+.header-box {
+    border: 1px dashed #555;
+    padding: 5px 2px;
+    text-align: center;
+    position: relative;
+    animation: pulse-opacity 4s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@keyframes pulse-opacity {
+    0% { opacity: 0.767151; }
+    50% { opacity: 0.999936; }
+    100% { opacity: 0.767151; }
+}
+.header-box::before {
+    content: "[ FATE_SYS ]";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--panel-bg);
+    padding: 0 5px;
+    font-size: 0.55rem;
+    color: #666;
+    font-family: 'Courier New', monospace;
     font-weight: bold;
 }
+.main-title {
+    font-family: 'myFont', "Arial Black", sans-serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -2px;
+    white-space: nowrap;
+}
 .sub-title {
-    margin: 5px 0 0;
-    font-size: 0.8rem;
-    color: var(--text-grey);
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: 700;
     font-style: italic;
+    color: #888;
+    margin-top: 0px;
+    display: block;
+    letter-spacing: -0.5px;
+    transform: scaleX(0.9);
 }
 
 /* 搜索框 */
 .search-box {
-    padding: 10px 15px;
-    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+    height: 38px;
+    padding: 0 10px;
+    border-bottom: 2px solid #000;
     display: flex;
     align-items: center;
-    background-color: #08090d;
+    background-color: var(--list-bg);
 }
-.search-icon { color: var(--text-grey); margin-right: 8px; }
+.search-icon {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    margin-right: 4px;
+    padding: 0;
+}
 #chapter-search {
-    background: transparent;
     border: none;
-    color: var(--text-white);
+    background: transparent;
     width: 100%;
+    height: 100%;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+    color: var(--text-main);
     outline: none;
-    font-family: 'myFont';
 }
+#chapter-search::placeholder { font-size: 0.8rem; letter-spacing: 1px; }
 
 /* 分类 Tabs */
 .category-tabs {
+    flex-shrink: 0;
+    padding: 0;
+    border-bottom: 2px solid #000;
+    background-color: var(--panel-bg);
     display: flex;
-    flex-wrap: wrap; /* 允许换行 */
-    padding: 5px;
-    background-color: #0f1116;
-    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
 }
 .tab-btn {
+    border: none;
     background: transparent;
-    border: 1px solid transparent;
-    color: var(--text-grey);
-    padding: 5px 10px;
-    font-size: 0.85rem;
+    color: var(--text-sub);
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 10px 12px;
     cursor: pointer;
-    margin: 2px;
-    flex-grow: 1; /* 自动填满宽度 */
+    border-right: 1px solid #999;
+    flex-grow: 1;
     text-align: center;
     transition: all 0.2s;
+    height: 38px;
+    line-height: 18px;
 }
-.tab-btn:hover { color: var(--text-white); background: #1a2a3a; }
-.tab-btn.active {
+.tab-btn:hover, .tab-btn.active {
+    background-color: #000;
     color: #fff;
-    background-color: #23354a;
-    border: 1px solid var(--text-grey);
 }
 
-/* 章节列表项 */
+/* 章节列表 */
+.chapter-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--list-bg);
+}
+.chapter-list::-webkit-scrollbar { width: 6px; background: var(--list-bg); }
+.chapter-list::-webkit-scrollbar-thumb { background: #000; }
+
 .chapter-item {
-    padding: 12px 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 15px 10px;
+    border-bottom: 1px dashed #aaa;
     cursor: pointer;
     transition: background 0.2s;
-    display: flex;
-    justify-content: space-between; /* 左右分布 */
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 4px 5px;
     align-items: center;
 }
-.chapter-item:hover {
-    background-color: rgba(212, 175, 55, 0.05); /* 淡淡的金色背景 */
-}
-.chapter-item.active {
-    background-color: var(--accent-color);
-    border-left: 3px solid var(--text-gold);
-}
+.chapter-item:hover { background-color: var(--highlight-bg); }
+.chapter-item.active { background-color: #000; border-bottom-style: solid; }
 
-/* 列表项内部文字 */
-.chap-info {
-    display: flex;
-    flex-direction: column;
-}
 .chap-title {
-    color: #ccc;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     font-size: 0.95rem;
-    margin-bottom: 4px;
-    font-weight: normal;
+    font-weight: 800;
+    color: var(--text-main);
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    width: 100%;
+    display: block;
 }
-.chap-item.active .chap-title { color: var(--text-gold); font-weight: bold; }
+.chap-arrow-box {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custom-arrow {
+    width: 100%;
+    height: 100%;
+    stroke: var(--text-main);
+    stroke-width: 2px;
+    fill: none;
+    transform: rotate(-45deg);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
 .chap-subtitle {
-    color: var(--text-grey);
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
     font-size: 0.75rem;
-    font-style: italic;
+    font-family: 'Courier New', monospace;
+    color: var(--text-sub);
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 .chap-date {
-    font-size: 0.7rem;
-    color: #4a5b6c;
-    text-align: right;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: end;
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    color: var(--text-sub);
+    font-weight: bold;
     white-space: nowrap;
-    margin-left: 10px;
 }
-.chapter-item.active .chap-date { color: var(--text-gold); }
+
+.chapter-item.active .chap-title,
+.chapter-item.active .chap-subtitle,
+.chapter-item.active .chap-date {
+    color: #fff;
+}
+.chapter-item.active .custom-arrow,
+.chapter-item:hover .custom-arrow {
+    transform: rotate(0deg);
+}
+.chapter-item.active .custom-arrow { stroke: #fff; }
 
 /* --- 中间：剧本正文 (Script) --- */
 .script-panel {
-    background-image: url("../img/dh/bg_full.png"); /* 保留原有纹理 */
+    background-color: var(--dark-panel-bg);
+    background-image: url("../img/dh/bg_full.png");
     background-size: cover;
     background-attachment: local;
 }
@@ -189,10 +291,8 @@ body {
     padding: 50px 60px;
     flex: 1;
     max-width: 900px;
-    margin: 0 auto; /* 居中 */
+    margin: 0 auto;
 }
-
-/* 消息气泡 & 头像 */
 .message-row {
     display: flex;
     margin-bottom: 30px;
@@ -201,11 +301,10 @@ body {
 .avatar {
     width: 90px;
     height: 90px;
-    border: 1px solid #444; /* 直角边框 */
+    border: 1px solid #444;
     object-fit: cover;
     flex-shrink: 0;
 }
-
 .message-bubble {
     background-color: rgba(37, 34, 37, 0.95);
     color: #c9c7ca;
@@ -219,7 +318,6 @@ body {
 }
 .message-bubble span { color: var(--highlight-red); font-weight: bold; }
 
-/* 站位 */
 .pos-left { flex-direction: row; }
 .pos-left .avatar { margin-right: 20px; }
 .pos-right { flex-direction: row-reverse; }
@@ -229,7 +327,6 @@ body {
     border-color: #777;
 }
 
-/* 旁白 & CG */
 .narration {
     text-align: center;
     color: #8a9bb8;
@@ -240,18 +337,17 @@ body {
 }
 .cg-image {
     max-width: 100%;
-    border: 1px solid var(--text-gold);
+    border: 1px solid var(--dark-border-color);
     margin: 10px 0;
 }
 
-/* 底部按钮 */
 .nav-buttons {
     display: flex;
     justify-content: center;
-    gap: 0; /* 连在一起 */
+    gap: 0;
     padding: 20px;
     background: rgba(0,0,0,0.4);
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--dark-border-color);
 }
 .nav-buttons button {
     background: #2a2a2a;
@@ -274,7 +370,8 @@ body {
 
 /* --- 右侧：信息栏 (Info) --- */
 .info-panel {
-    border-left: 1px solid var(--border-color);
+    background-color: var(--dark-panel-bg);
+    border-left: 1px solid #000;
     padding: 20px;
     font-size: 0.9rem;
 }
@@ -282,19 +379,17 @@ body {
     margin-bottom: 30px;
 }
 .info-title {
-    color: var(--text-gold);
-    border-bottom: 1px solid var(--text-gold);
+    color: var(--highlight-red);
+    border-bottom: 1px solid var(--highlight-red);
     padding-bottom: 5px;
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1rem;
     letter-spacing: 1px;
 }
-
-/* 名词解释手风琴 */
 .glossary-item { margin-bottom: 5px; }
 .glossary-term {
-    background: #1a1e26;
+    background: var(--dark-accent-color);
     padding: 8px 10px;
     cursor: pointer;
     color: #ddd;
@@ -302,7 +397,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.glossary-term:hover { color: var(--text-gold); border-color: var(--text-gold); }
+.glossary-term:hover { color: var(--highlight-red); border-color: var(--highlight-red); }
 .glossary-desc {
     display: none;
     padding: 10px;
@@ -316,26 +411,24 @@ body {
 .glossary-item.active .glossary-desc { display: block; }
 .glossary-item.active .glossary-term span { transform: rotate(180deg); }
 
-/* 角色卡片 */
 .char-card {
     display: flex;
     margin-bottom: 15px;
-    background: #e9ecef; /* 保持原案的亮色卡片，形成反差 */
-    color: #000;
+    background: rgba(233, 236, 239, 0.1); /* 暗色背景下的半透明卡片 */
+    color: var(--dark-text-white);
     padding: 10px;
-    border: 1px solid #000;
+    border: 1px solid var(--dark-border-color);
 }
 .char-card img {
     width: 60px;
     height: 60px;
     object-fit: cover;
     margin-right: 10px;
-    border: 1px solid #000;
+    border: 1px solid var(--dark-border-color);
 }
 .char-info strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
-.char-info p { margin: 0; font-size: 0.8rem; line-height: 1.3; color: #333; }
+.char-info p { margin: 0; font-size: 0.8rem; line-height: 1.3; color: #aaa; }
 
-/* 前情提要 */
 .synopsis-text {
     color: #aaa;
     line-height: 1.5;
@@ -345,18 +438,18 @@ body {
     width: 100%;
     margin-top: 10px;
     background: transparent;
-    border: 1px solid var(--text-grey);
-    color: var(--text-grey);
+    border: 1px solid var(--dark-text-grey);
+    color: var(--dark-text-grey);
     padding: 8px;
     cursor: pointer;
     text-align: center;
 }
 .link-btn:hover {
-    border-color: var(--text-gold);
-    color: var(--text-gold);
+    border-color: var(--highlight-red);
+    color: var(--highlight-red);
 }
 
-/* 音乐开关 */
+/* --- 其他 --- */
 .music-controls {
     position: fixed;
     top: 15px;
@@ -365,8 +458,8 @@ body {
 }
 .music-btn {
     background: black;
-    color: var(--text-gold);
-    border: 1px solid var(--text-gold);
+    color: var(--highlight-red);
+    border: 1px solid var(--highlight-red);
     padding: 5px 15px;
     font-family: 'myFont';
     cursor: pointer;
@@ -374,7 +467,7 @@ body {
 }
 .music-btn:hover { opacity: 1; }
 
-/* --- 移动端适配 (单列布局) --- */
+/* --- 移动端适配 --- */
 @media (max-width: 926px) {
     body { overflow: auto; height: auto; }
     .main-container {
@@ -383,589 +476,16 @@ body {
         height: auto;
     }
     
-    /* 1. 目录栏 */
     .directory-panel {
         height: auto;
-        max-height: 40vh; /* 限制高度，允许内部滚动 */
-        border-bottom: 2px solid var(--text-gold);
+        max-height: 40vh;
+        border-bottom: 2px solid #000;
     }
-    .search-box { padding: 5px 10px; }
     
-    /* 2. 剧本正文 */
     .script-panel { min-height: 100vh; overflow: visible; }
     .script-content { padding: 20px 15px; }
     .message-bubble { max-width: 85%; font-size: 0.95rem; }
     .avatar { width: 60px; height: 60px; }
     
-    /* 3. 信息栏 */
     .info-panel { background: #000; padding-bottom: 50px; }
-}
-
-/* --- 1. 更新配色变量 (改为参考图的黑白工业风) --- */
-:root {
-    /* 左侧面板背景：参考图左侧的浅灰 */
-    --panel-bg: #f2f2f2; 
-    /* 列表背景：参考图右侧的白色 */
-    --list-bg: #ffffff; 
-    /* 线条颜色：纯黑 */
-    --border-line: 2px solid #000000; 
-    /* 文字颜色 */
-    --text-main: #000000;
-    --text-sub: #666666;
-    --highlight-bg: #e0e0e0; /* 鼠标悬停色 */
-}
-
-/* --- 2. 目录面板布局 (修复滚动条问题) --- */
-.directory-panel {
-    display: flex;          /* 启用 Flex 布局 */
-    flex-direction: column; /* 垂直排列 */
-    height: 100%;           /* 占满高度 */
-    overflow: hidden;       /* 禁止整个面板滚动 */
-    background-color: var(--panel-bg);
-    border-right: var(--border-line);
-    padding: 0;             /* 清除内边距，靠线条分割 */
-}
-
-/* 头部区域：固定高度，不滚动 */
-.dir-header {
-    flex-shrink: 0; /* 防止被压缩 */
-    padding: 20px;
-    background-color: var(--panel-bg);
-    border-bottom: var(--border-line);
-}
-
-.main-title {
-    font-family: 'Arial', sans-serif; /* 改为无衬线体更符合参考图 */
-    font-weight: 900;
-    font-size: 2.5rem; /* 巨大的标题 */
-    line-height: 0.9;
-    color: var(--text-main);
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.sub-title {
-    font-family: 'myFont', serif; /* 副标题保留一点文艺感 */
-    font-size: 1.2rem;
-    color: #999; /* 浅灰色大字 */
-    font-weight: bold;
-}
-
-/* 搜索框：固定 */
-.search-box {
-    flex-shrink: 0;
-    padding: 0;
-    border-bottom: var(--border-line);
-    display: flex;
-    background-color: var(--list-bg);
-}
-
-.search-icon {
-    padding: 15px;
-    font-size: 1.2rem;
-    color: var(--text-main);
-    border-right: var(--border-line); /* 图标和输入框之间也加线 */
-}
-
-#chapter-search {
-    border: none;
-    background: transparent;
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--text-main);
-    outline: none;
-}
-#chapter-search::placeholder { color: #ccc; }
-
-/* 分类标签：固定 */
-.category-tabs {
-    flex-shrink: 0;
-    padding: 0;
-    border-bottom: var(--border-line);
-    background-color: var(--panel-bg);
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.tab-btn {
-    border: none;
-    background: transparent;
-    color: var(--text-sub);
-    font-weight: bold;
-    padding: 12px 15px;
-    cursor: pointer;
-    border-right: var(--border-line); /* 按钮之间加线 */
-    flex-grow: 1;
-    text-align: left; /* 参考图文字是靠左的 */
-    transition: all 0.2s;
-}
-
-.tab-btn:hover, .tab-btn.active {
-    background-color: var(--text-main);
-    color: #fff; /* 选中变黑底白字 */
-}
-
-/* --- 3. 章节列表 (唯一可滚动的区域) --- */
-.chapter-list {
-    flex-grow: 1;    /* 占据剩余所有空间 */
-    overflow-y: auto;/* 只有这里出现滚动条 */
-    background-color: var(--list-bg);
-}
-
-/* 列表滚动条样式调整 (为了匹配风格) */
-.chapter-list::-webkit-scrollbar { width: 6px; background: var(--list-bg); }
-.chapter-list::-webkit-scrollbar-thumb { background: #000; }
-
-/* 列表项样式 (完全复刻参考图) */
-.chapter-item {
-    padding: 20px;
-    border-bottom: var(--border-line); /* 每行之间的一条线 */
-    cursor: pointer;
-    transition: background 0.1s;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: relative;
-}
-
-.chapter-item:hover {
-    background-color: var(--highlight-bg);
-}
-
-/* 选中状态 */
-.chapter-item.active {
-    background-color: #000;
-}
-.chapter-item.active .chap-title,
-.chapter-item.active .chap-subtitle,
-.chapter-item.active .chap-arrow {
-    color: #fff;
-}
-
-/* 左侧文字容器 */
-.chap-info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px; /* 标题和副标题的间距 */
-}
-
-/* 标题 (对应图中的 02 SMART AUTOMATION) */
-.chap-title {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--text-main);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* 副标题 (对应图中的描述文字) */
-.chap-subtitle {
-    font-size: 0.85rem;
-    color: var(--text-sub);
-    line-height: 1.4;
-    max-width: 90%;
-}
-
-/* 右上角箭头 (参考图的右上角箭头) */
-.chap-arrow {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--text-main);
-}
-
-/* --- 左侧面板：机械终端风格重构 --- */
-
-/* 1. 头部区域：机械高级感 */
-.dir-header {
-    flex-shrink: 0;
-    padding: 15px; /* 稍微减小内边距 */
-    background-color: var(--panel-bg);
-    border-bottom: 2px solid #000; /* 实线底边 */
-    font-family: 'Courier New', Courier, monospace; /* 使用等宽字体营造终端感 */
-    position: relative;
-}
-
-/* 模拟参考图的虚线框设计 */
-.header-box {
-    border: 1px dashed #666; /* 虚线框 */
-    padding: 15px 10px;
-    text-align: center;
-    position: relative;
-}
-
-/* 顶部的小标签装饰 [ SYSTEM ] */
-.header-box::before {
-    content: "[ FATE_SYS ]";
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--panel-bg);
-    padding: 0 10px;
-    font-size: 0.7rem;
-    color: #666;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.main-title {
-    font-family: 'Arial Black', sans-serif;
-    font-weight: 900;
-    font-size: 1.8rem;
-    color: var(--text-main);
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    margin: 5px 0;
-}
-
-.sub-title {
-    font-family: 'myFont', serif;
-    font-size: 0.8rem;
-    color: var(--text-sub);
-    margin-top: 5px;
-    display: block;
-}
-/* 装饰性的闪烁光标 */
-.sub-title::after {
-    content: "_";
-    animation: blink 1s infinite;
-}
-@keyframes blink { 50% { opacity: 0; } }
-
-
-/* 2. 搜索框：极简、超薄 (占比 3%-4%) */
-.search-box {
-    flex-shrink: 0;
-    height: 36px; /* 强制固定高度，非常扁 */
-    padding: 0 10px;
-    border-bottom: 2px solid #000;
-    display: flex;
-    align-items: center;
-    background-color: var(--list-bg);
-}
-
-.search-icon {
-    font-size: 0.8rem; /* 图标变小 */
-    color: var(--text-sub);
-    margin-right: 8px;
-}
-
-#chapter-search {
-    border: none;
-    background: transparent;
-    width: 100%;
-    height: 100%; /* 填满容器 */
-    font-size: 0.85rem;
-    font-family: 'Courier New', monospace; /* 搜索文字也用等宽字 */
-    color: var(--text-main);
-    outline: none;
-}
-#chapter-search::placeholder { font-size: 0.8rem; letter-spacing: 1px; }
-
-
-/* 3. 章节列表项：布局调整与动画 */
-.chapter-item {
-    padding: 18px 15px; /* 保持舒适的点击区域 */
-    border-bottom: 1px dashed #999; /* 改为虚线分割，增加机械感 */
-    cursor: pointer;
-    transition: background 0.2s;
-    display: grid;
-    /* 网格布局：左边文字(自适应) | 右边数据(固定宽度) */
-    grid-template-columns: 1fr auto; 
-    align-items: center;
-    gap: 10px;
-}
-
-/* 悬停效果：背景变深色 */
-.chapter-item:hover {
-    background-color: #e6e6e6;
-}
-/* 选中效果：黑底白字 */
-.chapter-item.active {
-    background-color: #000;
-    border-bottom: 1px solid #000;
-}
-
-/* 左侧信息块 */
-.chap-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.chap-title {
-    font-size: 1rem;
-    font-weight: 800;
-    color: var(--text-main);
-    margin-bottom: 4px;
-    line-height: 1.2;
-}
-
-.chap-subtitle {
-    font-size: 0.8rem;
-    color: var(--text-sub);
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* 右侧信息块 (箭头+时间) */
-.chap-meta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* 靠右对齐 */
-    justify-content: center;
-    text-align: right;
-}
-
-/* 箭头容器 */
-.arrow-box {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--text-main);
-    line-height: 1;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 20px;
-    height: 20px;
-}
-
-/* 箭头的核心动画 */
-.arrow-icon {
-    display: inline-block;
-    /* 默认状态：→ 旋转 -45度 (即 ↗) */
-    transform: rotate(-45deg);
-    /* 贝塞尔曲线：丝滑的机械运动感 */
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/* 悬停或选中时：旋转回 0度 (即 →) */
-.chapter-item:hover .arrow-icon,
-.chapter-item.active .arrow-icon {
-    transform: rotate(0deg);
-}
-
-/* 时间显示 (移到箭头下方) */
-.chap-date {
-    font-size: 0.65rem;
-    color: #888;
-    font-family: 'Courier New', monospace;
-    letter-spacing: -0.5px;
-    white-space: nowrap; /* 不换行 */
-}
-
-/* 选中状态下的颜色反转 */
-.chapter-item.active .chap-title,
-.chapter-item.active .chap-subtitle,
-.chapter-item.active .arrow-box,
-.chapter-item.active .chap-date {
-    color: #fff;
-}
-
-/* --- 左侧面板：机械终端风格 (优化版) --- */
-
-/* 1. 头部区域 */
-.dir-header {
-    flex-shrink: 0;
-    padding: 15px;
-    background-color: var(--panel-bg);
-    border-bottom: 2px solid #000;
-    position: relative;
-}
-
-.header-box {
-    border: 1px dashed #444;
-    padding: 10px; /* 稍微减小高度 */
-    text-align: center;
-    position: relative;
-}
-
-.header-box::before {
-    content: "[ FATE_SYS ]";
-    position: absolute;
-    top: -9px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--panel-bg);
-    padding: 0 8px;
-    font-size: 0.6rem;
-    color: #666;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-}
-
-.main-title {
-    font-family: 'Arial Black', sans-serif;
-    font-weight: 900;
-    font-size: 1.6rem;
-    color: #ffffff; /* 修改点：改为纯白色 */
-    text-transform: uppercase;
-    margin: 5px 0 2px 0;
-    letter-spacing: -1px;
-}
-
-.sub-title {
-    font-family: 'Courier New', monospace;
-    font-size: 0.75rem;
-    color: #888; /* 暗淡的终端代码色 */
-    margin-top: 2px;
-    display: block;
-    letter-spacing: 1px;
-}
-
-/* 2. 搜索框：保持扁平 */
-.search-box {
-    flex-shrink: 0;
-    height: 38px; /* 设定基准高度 */
-    padding: 0 10px;
-    border-bottom: 2px solid #000;
-    display: flex;
-    align-items: center;
-    background-color: var(--list-bg);
-}
-/* ... .search-icon 和 #chapter-search 样式保持之前的不变 ... */
-
-
-/* 3. 分类标签：高度压缩 */
-.category-tabs {
-    flex-shrink: 0;
-    padding: 0;
-    border-bottom: 2px solid #000;
-    background-color: var(--panel-bg);
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.tab-btn {
-    border: none;
-    background: transparent;
-    color: var(--text-sub);
-    font-weight: bold;
-    font-size: 0.8rem;
-    /* 修改点：减少 Padding，使高度接近搜索框 (38px左右) */
-    padding: 10px 12px; 
-    cursor: pointer;
-    border-right: 1px solid #999; /* 细线分割 */
-    flex-grow: 1;
-    text-align: center;
-    transition: all 0.2s;
-    height: 38px; /* 强制高度匹配 */
-    line-height: 18px; /* 垂直居中辅助 */
-}
-
-.tab-btn:hover, .tab-btn.active {
-    background-color: #000;
-    color: #fff;
-}
-
-
-/* 4. 章节列表项：Grid 布局 (解决对齐和换行问题) */
-.chapter-item {
-    padding: 15px;
-    border-bottom: 1px dashed #aaa;
-    cursor: pointer;
-    transition: background 0.2s;
-    
-    /* 修改点：使用 Grid 2x2 布局 */
-    display: grid;
-    /* 第一列自适应，第二列内容撑开 */
-    grid-template-columns: 1fr auto; 
-    /* 两行 */
-    grid-template-rows: auto auto; 
-    /* 列间距10px，行间距4px */
-    gap: 4px 10px; 
-    align-items: center;
-}
-
-.chapter-item:hover { background-color: #e6e6e6; }
-.chapter-item.active { background-color: #000; border-bottom-style: solid; }
-
-/* --- 区域 A: 标题 (左上) --- */
-.chap-title {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    
-    font-size: 0.95rem;
-    font-weight: 800;
-    color: var(--text-main);
-    
-    /* 修改点：单行显示，超长省略 */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* --- 区域 B: 箭头 (右上) --- */
-.chap-arrow-box {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    justify-self: end; /* 靠右对齐 */
-    
-    width: 14px;
-    height: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* SVG 箭头样式 */
-.custom-arrow {
-    width: 100%;
-    height: 100%;
-    stroke: var(--text-main);
-    stroke-width: 2px;
-    fill: none;
-    
-    /* 默认状态：旋转 -45度 (指向右上) */
-    transform: rotate(-45deg);
-    /* 修改点：动画减慢至 0.8s */
-    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* --- 区域 C: 副标题 (左下) --- */
-.chap-subtitle {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    
-    font-size: 0.75rem;
-    font-family: 'Courier New', monospace;
-    color: var(--text-sub);
-    font-weight: bold;
-    text-transform: uppercase;
-    
-    /* 同样防止超长 */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* --- 区域 D: 时间 (右下) --- */
-.chap-date {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    justify-self: end; /* 靠右对齐 */
-    
-    font-size: 0.65rem;
-    color: #888;
-    font-family: 'Courier New', monospace;
-    letter-spacing: -0.5px;
-}
-
-/* 选中状态反色 */
-.chapter-item.active .chap-title,
-.chapter-item.active .chap-subtitle,
-.chapter-item.active .chap-date {
-    color: #fff;
-}
-.chapter-item.active .custom-arrow {
-    stroke: #fff;
-    /* 选中时：旋转回 0度 (指向正右) */
-    transform: rotate(0deg);
-}
-.chapter-item:hover .custom-arrow {
-    transform: rotate(0deg);
 }
