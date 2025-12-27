@@ -223,18 +223,14 @@ body {
 .chapter-list::-webkit-scrollbar-thumb { background: #000; }
 
 .chapter-item {
-    padding: 15px 10px;
+    padding: 15px 10px 15px 12px;
     border-bottom: 1px dashed #aaa;
     cursor: pointer;
     transition: background 0.2s;
     display: grid;
-    /* 修改点：
-       1fr: 左侧标题区，自动占据剩余空间
-       max-content: 右侧信息区，根据内容（日期和箭头）自动算宽度，不会被压缩
-    */
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-rows: auto auto;
-    gap: 4px 10px;
+    gap: 4px 8px;
     align-items: center;
     /* 确保盒子不超出父容器 */
     width: 100%;
@@ -254,8 +250,8 @@ body {
     overflow: visible;
     justify-self: start;
     text-overflow: clip;
+    min-width: 0;
     width: 100%;
-    display: block;
 }
 
 .chap-arrow-box {

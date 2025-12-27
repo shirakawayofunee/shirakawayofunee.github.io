@@ -302,52 +302,63 @@ function initTabs() {
     container.appendChild(btn);
   });
 }
-// --- 2. 渲染章节列表 (关键：扁平化结构以适配 CSS Grid) ---
+// --- 2. 渲染章节列表 (更新 HTML 结构) ---
+// --- 2. 渲染章节列表 (适配 Grid 布局 + SVG 箭头) ---
 function renderList(searchText = "") {
-    const listContainer = document.getElementById('chapter-list');
-    listContainer.innerHTML = '';
+  const listContainer = document.getElementById("chapter-list");
+  listContainer.innerHTML = "";
 
-    const filtered = chapterList.filter(item => {
-        const matchCategory = currentCategory === 'all' || item.category === currentCategory;
-        const matchText = item.title.toLowerCase().includes(searchText.toLowerCase()) ||
-                          item.subtitle.toLowerCase().includes(searchText.toLowerCase());
-        return matchCategory && matchText;
-    });
+  const filtered = chapterList.filter((item) => {
+    const matchCategory =
+      currentCategory === "all" || item.category === currentCategory;
+    const matchText =
+      item.title.toLowerCase().includes(searchText.toLowerCase()) ||
+      item.subtitle.toLowerCase().includes(searchText.toLowerCase());
+    return matchCategory && matchText;
+  });
 
-    filtered.forEach(item => {
-        const el = document.createElement('div');
-        el.className = 'chapter-item';
-        el.dataset.id = item.id;
-        
-        if (window.location.hash.substring(1) === item.id) {
-            el.classList.add('active');
-        }
+  filtered.forEach((item) => {
+    const el = document.createElement("div");
+    el.className = "chapter-item";
+    el.dataset.id = item.id;
 
-        // 修改点：必须使用这种“扁平”结构，不能有额外的 div 包裹
-        // 这样 CSS 里的 grid-column: 1/2 才能生效
-        el.innerHTML = `
-            <span class="chap-title">${item.title}</span>
+    if (window.location.hash.substring(1) === item.id) {
+      el.classList.add("active");
+    }
+
+    // 修改点：
+    // 1. 使用 SVG 绘制短箭头。viewBox="0 0 10 10"
+    //    路径：M2,5 L8,5 (短横线) + L5,2 (上翼) + L5,8 (没有下翼？不对，是箭头)
+    //    正确的右箭头路径：横线(0,5 to 8,5) + 箭头头(5,2 to 8,5 to 5,8)
+    //    为了看起来像您描述的“短身体”，我把横线缩短。
+
+    // 这里的 Grid 结构是扁平的，不需要 .chap-info 包裹
+    // --- 修改点：在 innerHTML 中调整 SVG 坐标 ---
+    el.innerHTML = `
+    <span class="chap-title">${item.title}</span>
+    
+    <div class="chap-arrow-box">
+        <svg class="custom-arrow" viewBox="0 0 12 12">
+            <!-- 修改点：箭身加长 -->
+            <!-- 之前是 x1="3"，现在改为 x1="0.5"，几乎占满整个 viewBox -->
+            <line x1="0.5" y1="6" x2="10" y2="6" stroke-linecap="round"></line>
             
-            <div class="chap-arrow-box">
-                <svg class="custom-arrow" viewBox="0 0 12 12">
-                    <!-- 身体：从 0.5 到 10，长箭头 -->
-                    <line x1="0.5" y1="6" x2="10" y2="6" stroke-linecap="round"></line>
-                    <!-- 头部 -->
-                    <polyline points="7 3 10 6 7 9" stroke-linecap="round" stroke-linejoin="round"></polyline>
-                </svg>
-            </div>
-            
-            <span class="chap-subtitle">${item.subtitle}</span>
-            
-            <span class="chap-date">${item.dateLabel}</span>
-        `;
+            <!-- 箭头头部保持不变 -->
+            <polyline points="7 3 10 6 7 9" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+    </div>
+    
+    <span class="chap-subtitle">${item.subtitle}</span>
+    
+    <span class="chap-date">${item.dateLabel}</span>
+`;
 
-        el.onclick = () => {
-            window.location.hash = item.id;
-        };
+    el.onclick = () => {
+      window.location.hash = item.id;
+    };
 
-        listContainer.appendChild(el);
-    });
+    listContainer.appendChild(el);
+  });
 }
 
 // --- 3. 路由处理 ---
