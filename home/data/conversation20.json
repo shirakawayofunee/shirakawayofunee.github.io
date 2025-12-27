@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Blue Rain-001「招かれざる客」",
-    "bgm": "mp3/bg/conversation1.mp3"
+    "title": "flowers-207「本当の目標」",
+    "bgm": "mp3/bg/conversation20.mp3"
   },
   
   "infoPanel": {
@@ -32,104 +32,132 @@
   "script": [
     {
       "type": "narration", 
-      "text": "N.F.113年7月16日"
+      "text": "N.F.113年8月15日 5:25<br>FAC-HUSH合同行動組 臨時指揮部"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/x2.png", 
+      "name": "シャーローム",
+      "text": "犯人が臨時指揮部を襲撃し、輸送車で総司令を拉致して逃走した。車両番号DS-3864H。車は錆びた川を通過し、今、新都市方面に向かっている。"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/x2.png", 
+      "name": "シャーローム",
+      "text": "生命体徴監視によると、司令はまだ生きている。敵がこんな正確な情報を得られたのは、福音地がFAC内部にすでに浸透している証拠だ。"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/x3.png", 
+      "name": "シャーローム",
+      "text": "今回の救援任務は<span>上庭HUSH部隊</span>が引き受ける。作戦時間、2時間13分。予定の会議開始時間より前に司令官を奪還し、パニックになるのを避ける。"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/x3.png", 
+      "name": "シャーローム",
+      "text": "FAC本隊は動かず、一切の情報を漏らすな。司令が予定通り到着すると伝えろ。この間、異常行動、恐怖を煽る行為、司令の行方を追う者はすべて福音地のスパイの可能性がある。第九機関が厳密に追跡する。"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/x4.png", 
+      "name": "シャーローム",
+      "text": "福音地が前哨戦の招待状を送ってきた。これは我々のチャンスでもある。西区作戦は必ず許可される。大戦が来る前に内通者とスパイを排除したまえ。"
     },
     {
       "type": "narration", 
-      "text": "概要：ヒーゲル（福音地の幹事の一人）がセヴェロを見つけ、「GARDEN」と「命の延長」を餌に、単瞳のルーンを与え、上庭特使Xの暗殺を頼んだ。"
-    },
-    {
-      "type": "image",
-      "src": "img/cg/br_01.png"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/armaf.png", 
-      "name": "Unknown",
-      "text": "聞いたよ、君たちの基地が最近襲われたって。上庭が手を出したんだろ？"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/severo3.png", 
-      "name": "Severo",
-      "text": "…お前か、福音地の野郎め…"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/severo3.png", 
-      "name": "Severo",
-      "text": "お前たちと上庭の争いに、巻き込む気か。私たちはもうお前たちの道具じゃない。"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/armaf.png", 
-      "name": "Unknown",
-      "text": "へっ、足を洗ったってわけ？"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/armaf.png", 
-      "name": "Unknown",
-      "text": "上庭はそんなの知ったこっちゃないよ。一度福音地に染まったら、一生溝のネズミとして扱われるのさ。"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/armaf.png", 
-      "name": "Unknown",
-      "text": "彼らはとっくに君たちをマークしてる…"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/armaf.png", 
-      "name": "Unknown",
-      "text": "この組織を作ったのは私たち、君を救って、君の復讐を果たさせた…君の新生は、私たちの贈り物だよ…"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/severo3.png", 
-      "name": "Severo",
-      "text": "違う！違うんだ。復讐は私を救わなかった。私を救ったのは家族、彼女とみんなだった…"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/armaf.png", 
-      "name": "Unknown",
-      "text": "もうすぐ全部上庭に排除されるよ、そんもの。君の首領も、家族も、抵抗なんてできないさ…その日はもうすぐ来る、君もわかってるだろ…"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/armaf.png", 
-      "name": "Unknown",
-      "text": "だが…取引しないか？今の上庭の執行者、君たちを追い詰めてるリーダーが、尻尾を出したんだ…"
-    },
-    {
-      "type": "dialogue",
-      "position": "left", 
-      "avatar": "img/dh/armaf.png", 
-      "name": "Unknown",
-      "text": "そいつを見つけ出せ…一緒にやらないか…十分な力を与えるよ。君の「新生」を守るんのさ。"
+      "text": "（……）"
     },
     {
       "type": "narration", 
-      "text": "ここでは1783文字を省略（調査員、Xの初登場、および調査員とXの対話）。"
+      "text": "探偵が目を覚ますと、辺りは真っ暗だった。空間が揺れ、まるで車の中にいるようだ。探偵は手探りで周囲を確認すると、驚くことに、そばには多くの人が積み重なっていた。"
     },
     {
       "type": "narration", 
-      "text": "黒雲が城を覆い、豪雨が迫る。そして、幕を開けるのは……"
+      "text": "携帯は奪われ、外部と連絡が取れない。探偵は小さな懐中電灯を取り出し、照らした。"
     },
     {
       "type": "narration", 
-      "text": "ただ、哀れな数人の滑稽な物語にすぎない。"
+      "text": "周囲には衛兵、文官、そして名前もわからない高級幹部たちがいたが、皆、完全に意識を失い、体には小さな「花」が咲いていた。"
+    },
+    {
+      "type": "dialogue",
+      "position": "right", 
+      "avatar": "", 
+      "name": "探偵",
+      "text": "……あいつの仕業だ。"
+    },
+    {
+      "type": "narration", 
+      "text": "彼女は急いで見える全員を調べた。幸い、開花の程度はどれも浅い。これは業師が人を操る手段にすぎないようだ。"
+    },
+    {
+      "type": "narration", 
+      "text": "だが、その中に少し異なる人物を見つけた。年老いても頑強で、白髪交じりの髪、傷だらけの体、体の多くの部分が機械に置き換えられ、通常よりも強い自由制限を受け、深い昏睡状態にあった。"
+    },
+    {
+      "type": "dialogue",
+      "position": "right", 
+      "avatar": "", 
+      "name": "探偵",
+      "text": "……FAC総司令？"
+    },
+    {
+      "type": "narration", 
+      "text": "探偵はすぐに自分の状況を理解した――歳暮至、茫茫覆枯井、且独行。これが四句目の詩に対応する本当の第四の現場。そして、彼女自身も昨夜の襲撃で「被害者」の一人としてここに連れてこられたのだ。"
+    },
+    {
+      "type": "narration", 
+      "text": "探偵まで被害者の位置に置かれたということは、犯人はもう彼女を必要としていないということだ。"
+    },
+    {
+      "type": "narration", 
+      "text": "探偵は両頬を強く叩き、顔を真っ赤にした。"
+    },
+    {
+      "type": "dialogue",
+      "position": "right", 
+      "avatar": "", 
+      "name": "探偵",
+      "text": "まだ間に合う！あんたの思い通りにはさせない！この車がどこに行くかわからないけど、早く――"
+    },
+    {
+      "type": "narration", 
+      "text": "彼女は意識のない司令を懸命に動かそうとしたが、すぐに男の体にぞっとする装置を見つけた。"
+    },
+    {
+      "type": "dialogue",
+      "position": "right", 
+      "avatar": "", 
+      "name": "探偵",
+      "text": "これ……汚染爆弾？"
+    },
+    {
+      "type": "narration", 
+      "text": "その時、暗闇の向こうからジジッと電流音が響いた。"
+    },
+    {
+      "type": "dialogue",
+      "position": "right", 
+      "avatar": "", 
+      "name": "探偵",
+      "text": "車内に……トランシーバー？"
+    },
+    {
+      "type": "narration", 
+      "text": "トランシーバーの向こうから、聞き慣れた声がした。"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/assassin.jpg", 
+      "name": "業師",
+      "text": "こんにちは、探偵ちゃん。"
     }
   ]
 }

@@ -294,7 +294,7 @@ function initTabs() {
         container.appendChild(btn);
     });
 }
-// --- 2. 渲染章节列表 (更新 HTML 结构) ---
+// --- 2. 渲染章节列表 (仅修改了 .chapter-item 的内部 HTML 结构) ---
 function renderList(searchText = "") {
     const listContainer = document.getElementById('chapter-list');
     listContainer.innerHTML = '';
@@ -315,22 +315,18 @@ function renderList(searchText = "") {
             el.classList.add('active');
         }
 
-        // 修改点：
-        // 1. 左侧 div.chap-info: 放置 Title 和 Subtitle (Series)
-        // 2. 右侧 div.chap-meta: 放置 箭头(放在上) 和 时间(放在下)
-        // 3. 箭头使用 SVG 或字符，这里用字符 '→' 配合 CSS 旋转
+        // 修改点：加入了右上角的箭头 (↗)，并将时间放在了 title 里展示或者单独处理
+        // 这里的排版是为了模仿参考图：
+        // 左边：标题(粗体) + 换行 + 副标题(描述)
+        // 右边：箭头图标
         el.innerHTML = `
             <div class="chap-info">
                 <span class="chap-title">${item.title}</span>
-                <span class="chap-subtitle">${item.subtitle}</span>
+                <span class="chap-subtitle">
+                    ${item.dateLabel} · ${item.subtitle}
+                </span>
             </div>
-            
-            <div class="chap-meta">
-                <div class="arrow-box">
-                    <span class="arrow-icon">→</span>
-                </div>
-                <span class="chap-date">${item.dateLabel}</span>
-            </div>
+            <div class="chap-arrow">↗</div>
         `;
 
         el.onclick = () => {
