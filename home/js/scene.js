@@ -2,11 +2,11 @@
 
 // 1. 分类配置 (随时可添加新篇章)
 const categories = [
-  { id: "all", name: "全部脚本" },
+  { id: "all", name: "脚本集" },
   { id: "bluerain", name: "Blue Rain" },
   { id: "flower", name: "繁花" },
   { id: "weak", name: "弱者" },
-  { id: "extra", name: "番外" },
+  { id: "extra", name: "番外編" },
 ];
 
 // 2. 章节数据库 (请在这里录入所有章节信息)
