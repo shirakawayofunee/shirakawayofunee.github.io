@@ -7,9 +7,6 @@
     <title>心が通じ合い、死生を共にし、決して裏切らない。</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/glitch.css">
     <style>
@@ -470,134 +467,6 @@
             filter: invert(1);
         }
 
-        /* --- Terminal 移植样式 --- */
-
-/* 容器布局 */
-.cmd-wrapper {
-    max-width: 56rem; /* 对应 max-w-4xl */
-    margin: 0 auto;
-    padding: 0 1.5rem; /* 对应 px-6 */
-    box-sizing: border-box;
-}
-
-#terminal-wrapper {
-    max-width: 56rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    box-sizing: border-box;
-    /* 添加淡出动画效果，关闭时更自然 */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* 终端主窗口 */
-.cmd-window {
-    background-color: #0f0f12; /* bg-[#0f0f12] */
-    border: 1px solid #2a2a3a; /* border-border */
-    border-radius: 0.5rem 0.5rem 0 0; /* rounded-t-lg */
-    overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
-    font-family: 'JetBrains Mono', monospace; /* 默认字体 */
-    background-image: 
-        linear-gradient(rgba(0, 255, 136, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 136, 0.02) 1px, transparent 1px);
-    background-size: 3px 3px; /* 网格大小，越小越密 */
-}
-
-/* 顶部标题栏 */
-.cmd-header {
-    background-color: #1c1c2e; /* bg-[#1c1c2e] */
-    padding: 0.5rem 1rem; /* px-4 py-2 */
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; /* gap-2 */
-    border-bottom: 1px solid #2a2a3a; /* border-b border-border */
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 136, 0.02) 1px, transparent 1px);
-    background-size: 3px 3px; /* 网格大小，越小越密 */
-}
-
-/* 标题栏按钮组 */
-.cmd-buttons {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.cmd-btn {
-    width: 0.75rem; /* w-3 */
-    height: 0.75rem; /* h-3 */
-    border-radius: 9999px; /* rounded-full */
-}
-
-.cmd-btn.red { background-color: #ef4444; }
-.cmd-btn.yellow { background-color: #eab308; }
-.cmd-btn.green { background-color: #22c55e; }
-
-/* 标题文字 */
-.cmd-title {
-    flex-grow: 1;
-    text-align: center;
-    font-family: 'Share Tech Mono', monospace; /* font-ui */
-    font-size: 0.75rem; /* text-xs */
-    color: #9ca3af; /* text-gray-400 */
-    letter-spacing: 0.1em; /* 稍微加宽一点 */
-}
-
-.cmd-close-action {
-    margin-left: auto; /* 这行代码会把它推到最右边 */
-    color: #6b7280;
-    cursor: pointer;
-    font-family: sans-serif; /* 用无衬线体显示叉号更干净 */
-    font-size: 1.25rem;
-    line-height: 1;
-    padding: 0 4px;
-    transition: color 0.2s;
-}
-.cmd-close-action:hover {
-    color: #ef4444; /* 悬停变红 */
-}
-
-/* 内容区域 */
-.cmd-body {
-    padding: 1.5rem; /* p-6 */
-    font-family: 'JetBrains Mono', monospace; /* font-mono */
-    font-size: 0.875rem; /* text-sm */
-    color: #d1d5db; /* text-gray-300 */
-    /* [调整] 减小最小高度 (之前是 300px) */
-    min-height: 180px; 
-    /* [调整] 更美观的排版 */
-    line-height: 1.7; /* 增加行高，阅读更舒适 */
-    letter-spacing: 0.09em; /* 增加微小的字间距 */
-}
-
-/* 响应式调整：中等屏幕以上字体稍大 */
-@media (min-width: 768px) {
-    .cmd-body { font-size: 0.95rem; }
-}
-
-/* 命令行提示符样式 */
-.prompt-line { margin-bottom: 0.5rem; }
-.text-green { color: #22c55e; }
-.text-blue { color: #60a5fa; }
-.text-gray { color: #9ca3af; }
-
-/* 打字机文本容器 */
-#cmd-typewriter {
-    white-space: pre-wrap; /* 保留换行符 */
-}
-
-/* 光标闪烁动画 */
-.cmd-cursor::after {
-    content: "█";
-    margin-left: 4px;
-    color: #00ff88; /* 你的强调色 */
-    animation: cmd-blink 1s step-end infinite;
-}
-
-@keyframes cmd-blink {
-    50% { opacity: 0; }
-}
-
         /* 响应式 */
         @media (max-width: 768px) {
             .gallery-container { display: block; }
@@ -745,40 +614,20 @@
         </div>
     </div>
 
-        <!-- 给最外层加了 id="terminal-wrapper" 方便关闭 -->
-<div id="terminal-wrapper" class="cmd-wrapper">
-    <div class="cmd-window">
-        <!-- Header -->
-        <div class="cmd-header">
-            <div class="cmd-buttons">
-                <div class="cmd-btn red"></div>
-                <div class="cmd-btn yellow"></div>
-                <div class="cmd-btn green"></div>
-            </div>
-            <div class="cmd-title">config.sys</div>
-            
-            <!-- [新增] 关闭按钮 (X) -->
-            <!-- 点击后，直接隐藏 wrapper -->
-            <div class="cmd-close-action" onclick="document.getElementById('terminal-wrapper').style.display='none'" title="Close Terminal">
-                &times;
-            </div>
+        <!-- 悬浮说明文字 -->
+        <div class="floating-text" id="floatingText">
+            <button class="close-button" onclick="document.getElementById('floatingText').style.display='none'">×</button>
+            <span>
+                <strong>SLの関係についての私の考え：</strong><br>
+                二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、
+                さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
+                <br>ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。
+                <br>
+                二人は師弟、主従、母娘、神と信徒、革命の戦友であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。
+                この絆の核心は、単一のラベルを超えた、もっと深い愛にあるのです。
+            </span>
         </div>
-        
-        <!-- Body -->
-        <div class="cmd-body">
-            <div class="prompt-line">
-                <span class="text-green">➜</span> 
-                <span class="text-blue">~</span> 
-                <span class="text-gray">SLの関係についての私の考え：</span>
-            </div>
-            
-            <div id="cmd-typewriter"></div>
-            <span class="cmd-cursor"></span>
-        </div>
-    </div>
-</div>
     <!-- 4. 正文内容区 (Gallery Section) -->
-
 
     <div class="gallery-section">
         <div class="tab-content">
@@ -1395,48 +1244,6 @@ const otherCharImages = [
                 arrangeWaterfall(containerId, array);
             });
         });
-
-        (function() {
-    const textContent = `二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
-ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。
-二人は師弟、主従、母娘、神と信徒、革命の戦友であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。
-この絆の核心は、単一のラベルを超えた、もっと深い愛にあるのです。`;
-
-    const typewriterEl = document.getElementById('cmd-typewriter');
-    let charIndex = 0;
-    let isTyping = false;
-
-    function type() {
-        if (charIndex < textContent.length) {
-            typewriterEl.textContent += textContent.charAt(charIndex);
-            charIndex++;
-            
-            // [调整] 速度优化：原本是 30~80ms，现在改为 10~50ms，整体快了约 1.5 倍
-            // 遇到逗号或句号时，稍微停顿一下，模拟人类思考
-            let delay = Math.random() * 40 + 10;
-            const char = textContent.charAt(charIndex - 1);
-            if (char === '。' || char === '、') {
-                delay += 100; // 标点符号处额外停顿
-            }
-            
-            setTimeout(type, delay);
-        }
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !isTyping) {
-                isTyping = true;
-                type();
-            }
-        });
-    }, { threshold: 0.1 });
-
-    const wrapper = document.getElementById('terminal-wrapper');
-    if (wrapper) {
-        observer.observe(wrapper);
-    }
-})();
     </script>
 </body>
 </html>
