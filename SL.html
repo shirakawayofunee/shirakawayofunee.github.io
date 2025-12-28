@@ -756,9 +756,6 @@
                 <div class="cmd-btn green"></div>
             </div>
             <div class="cmd-title">config.sys</div>
-            
-            <!-- [新增] 关闭按钮 (X) -->
-            <!-- 点击后，直接隐藏 wrapper -->
             <div class="cmd-close-action" onclick="document.getElementById('terminal-wrapper').style.display='none'" title="Close Terminal">
                 &times;
             </div>
@@ -1380,7 +1377,7 @@ const otherCharImages = [
         hoverTimeout = setTimeout(function() {
             var tabTrigger = new bootstrap.Tab(_this);
             tabTrigger.show();
-        }, 300); 
+        }, 250); 
 
     }).on('mouseleave', function() {
         // 如果在 0.5 秒内鼠标移出了，就取消这个定时器，不进行切换

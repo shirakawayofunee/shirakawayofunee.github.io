@@ -553,21 +553,21 @@
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "ふぅ……やっと振り切った……"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "上庭のHUSH部隊……西区から新都市まで、ずっと邪魔してくる。まるで私たちを見透かしてるみたい……指揮してるのはあの能力者、シャーローム……"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "やっかいなことになった……"
     },
@@ -586,42 +586,42 @@
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "私たちが外から少しずつ力を掘り起こしてる間に、上庭はすでに狂厄の深部に入る方法を見つけてる……集団観測、最低でも第8層……"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "いや……そんな深い力を使えるはずがない。さもないと、すべて終わってた。私たちが勝てるわけない……"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "今は観測と連絡だけ……狂厄の世界で集団意志の変動を観測したから、3月にあんな正確な誘導ができた……10年前の内海横断行動も、上庭の直接指揮があった……"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "でも、観測だって長くは続けられない……どんな方法でも、観測者は必ず侵蝕される。つまり……上庭には予備の観測者がいる……彼らの技術、こんなレベルまで来てるの？"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "もしすべてがあの執行人の観測後の計算なら、もし彼女が本当に何らかの方法で狂厄の深層領域に潜入してるなら……彼女が見るもの、彼女がすることは、福音地には想像もつかない。"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "上庭はどんな技術でこんな怪物を手なずけてる？その技術は□□□に効くのか？"
     },
@@ -632,7 +632,7 @@
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "どんなことがあっても……阻止しないと、抹殺しないと……執行人……さもないと、BR-002が……"
     },
@@ -643,28 +643,28 @@
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/leopold.png",
+        "avatar": "img/dh/leopold2.png",
         "name": "レオポルド",
         "text": "おや、シーゲルじゃない？数日ぶりなのに、なんでこんなボロボロなの。死なないでよ、私の「Garden」、お前の小細工で隠れてるんだから。"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "へっ……それは私の力じゃない。地下の力だよ。もうお前に専属だ。私、報酬を前払いしたのに、見たところ……お前、依頼を果たしてないね。"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "むしろ……私たち全員を暴露させた。"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/leopold.png",
+        "avatar": "img/dh/smile0.png",
         "name": "レオポルド",
         "text": "そ？なら、ほんと・ご・め・ん。"
     },
@@ -675,56 +675,56 @@
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "ぐっ――！！"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/leopold.png",
+        "avatar": "img/dh/impatient.png",
         "name": "レオポルド",
         "text": "セヴェロを騙したのはお前だろ……彼女に死にに行く情報と、あの気色悪いルーンを渡した。"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/leopold.png",
+        "avatar": "img/dh/impatient.png",
         "name": "レオポルド",
         "text": "自分の福音地の仲間より私に助けを求めに来るなんて、捨てられたんだね。最後のご利用、ありがと……"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/leopold.png",
+        "avatar": "img/dh/impatient.png",
         "name": "レオポルド",
         "text": "これから、私の「Garden」は福音地と一切関係ないよ。"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "咳……へっ、へへ……ふふふ……お前の実力なら、福音地に従わなくても、どうにもできないさ……"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "いいよ……私の使命はもう果たした……"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "お前がなぜこうしてるか、わかってるよ……この力と何を交換したか、裏切った理由、全部知ってる……"
     },
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "シーゲル",
         "text": "うあああ――！！"
     },
@@ -739,7 +739,7 @@
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/leopold.png",
+        "avatar": "img/dh/impatient.png",
         "name": "レオポルド",
         "text": "だって、私がその気だったから。"
     },
@@ -754,7 +754,7 @@
     {
         "type": "dialogue",
         "position": "left",
-        "avatar": "img/dh/armaf.png",
+        "avatar": "img/dh/armaf2.png",
         "name": "蠢く花の泥",
         "text": "……大丈夫、行って……お前が助けてくれる……"
     }
