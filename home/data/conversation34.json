@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "title": "Blue Rain-001「招かれざる客」",
+    "bgm": "mp3/bg/conversation1.mp3"
+  },
+  
+  "infoPanel": {
+    "glossary": [
+      { 
+        "term": "上庭 (Paradeisos)", 
+        "desc": "人类文明的最高统治机构，位于天空之上。" 
+      },
+      { 
+        "term": "GARDEN", 
+        "desc": "位于灰色地带的杀手组织，由Leopold领导。" 
+      }
+    ],
+    "characters": [
+      {
+        "name": "Leopold",
+        "avatar": "img/dh-leopold.jpg",
+        "note": "Garden的首领。虽然看似冷酷，实则在为部下寻找生路。"
+      }
+    ],
+    "synopsis": "故事的开端。一位不速之客闯入了平静的日常。",
+    "relatedLink": {
+      "text": "下一话",
+      "targetId": "conversation2"
+    }
+  },
+
+  "script": [
+    {
+      "type": "narration", 
+      "text": "N.F.113年7月16日"
+    },
+    {
+      "type": "narration", 
+      "text": "概要：ヒーゲル（福音地の幹事の一人）がセヴェロを見つけ、「GARDEN」と「命の延長」を餌に、単瞳のルーンを与え、上庭特使Xの暗殺を頼んだ。"
+    },
+    {
+      "type": "image",
+      "src": "img/cg/br_01.png"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/armaf.png", 
+      "name": "Unknown",
+      "text": "聞いたよ、君たちの基地が最近襲われたって。上庭が手を出したんだろ？"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/severo3.png", 
+      "name": "Severo",
+      "text": "…お前か、福音地の野郎め…"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/severo3.png", 
+      "name": "Severo",
+      "text": "お前たちと上庭の争いに、巻き込む気か。私たちはもうお前たちの道具じゃない。"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/armaf.png", 
+      "name": "Unknown",
+      "text": "へっ、足を洗ったってわけ？"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/armaf.png", 
+      "name": "Unknown",
+      "text": "上庭はそんなの知ったこっちゃないよ。一度福音地に染まったら、一生溝のネズミとして扱われるのさ。"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/armaf.png", 
+      "name": "Unknown",
+      "text": "彼らはとっくに君たちをマークしてる…"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/armaf.png", 
+      "name": "Unknown",
+      "text": "この組織を作ったのは私たち、君を救って、君の復讐を果たさせた…君の新生は、私たちの贈り物だよ…"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/severo3.png", 
+      "name": "Severo",
+      "text": "違う！違うんだ。復讐は私を救わなかった。私を救ったのは家族、彼女とみんなだった…"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/armaf.png", 
+      "name": "Unknown",
+      "text": "もうすぐ全部上庭に排除されるよ、そんもの。君の首領も、家族も、抵抗なんてできないさ…その日はもうすぐ来る、君もわかってるだろ…"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/armaf.png", 
+      "name": "Unknown",
+      "text": "だが…取引しないか？今の上庭の執行者、君たちを追い詰めてるリーダーが、尻尾を出したんだ…"
+    },
+    {
+      "type": "dialogue",
+      "position": "left", 
+      "avatar": "img/dh/armaf.png", 
+      "name": "Unknown",
+      "text": "そいつを見つけ出せ…一緒にやらないか…十分な力を与えるよ。君の「新生」を守るんのさ。"
+    },
+    {
+      "type": "narration", 
+      "text": "ここでは1783文字を省略（調査員、Xの初登場、および調査員とXの対話）。"
+    },
+    {
+      "type": "narration", 
+      "text": "黒雲が城を覆い、豪雨が迫る。そして、幕を開けるのは……"
+    },
+    {
+      "type": "narration", 
+      "text": "ただ、哀れな数人の滑稽な物語にすぎない。"
+    }
+  ]
+}
