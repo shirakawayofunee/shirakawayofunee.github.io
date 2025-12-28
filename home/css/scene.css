@@ -35,6 +35,10 @@ body {
     overflow: hidden;
 }
 
+span {
+    color: #e23b78;
+}
+
 /* 背景装饰层 (暂时隐藏，因为新风格不需要) */
 .bg-layer {
     position: fixed;
@@ -324,9 +328,9 @@ body {
 }
 
 .script-content {
-    padding: 50px 60px;
+    padding: 40px;
     flex: 1;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -364,9 +368,9 @@ body {
 .narration {
     text-align: center;
     color: #808080;
-    margin: 40px auto;
+    margin: 10px auto;
     font-style: italic;
-    width: 85%;
+    width: 100%;
     line-height: 1.5;
 }
 .cg-image {

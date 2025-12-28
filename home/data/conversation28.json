@@ -7,24 +7,41 @@
   "infoPanel": {
     "glossary": [
       { 
-        "term": "上庭 (Paradeisos)", 
-        "desc": "人类文明的最高统治机构，位于天空之上。" 
+        "term": "上庭", 
+        "desc": "人类文明的最高统治机构。" 
       },
       { 
         "term": "GARDEN", 
         "desc": "位于灰色地带的杀手组织，由Leopold领导。" 
+      },
+      { 
+        "term": "工事中", 
+        "desc": "工事中" 
+      },
+      { 
+        "term": "工事中", 
+        "desc": "工事中" 
+      },
+      { 
+        "term": "工事中", 
+        "desc": "工事中" 
       }
     ],
     "characters": [
       {
-        "name": "Leopold",
-        "avatar": "img/dh-leopold.jpg",
-        "note": "Garden的首领。虽然看似冷酷，实则在为部下寻找生路。"
+        "name": "L",
+        "avatar": "img/dh/leopold402.png",
+        "note": "工事中"
+      },
+      {
+        "name": "X",
+        "avatar": "img/dh/x402.png",
+        "note": "廃棄期限まであと一ヶ月しかない道具"
       }
     ],
     "synopsis": "工事中",
     "relatedLink": {
-      "text": "下一话",
+      "text": "次章",
       "targetId": "conversation2"
     }
   },
@@ -313,12 +330,17 @@
             "text": "シャーロームは何もせず、空中で灰と化した黒石英を、胸から溢れる結晶の花を、上庭の封鎖がすべて破壊されるのを見ていた。"
         },
         {
+            "type": "image",
+            "src": "img/cg/fl_401_2.png"
+          },
+
+        {
             "type": "narration",
             "text": "そして、<span>倒せない者を倒した</span>のは、闇の中で一瞬の花を咲かせる、燃えるような能力者だった。"
         },
         {
             "type": "narration",
-            "text": "シャーロームの顔に、ついに<span>満足</span>の笑みが浮かんだ。"
+            "text": "シャーロームの顔に、<span>ついに心からの笑</span>みが浮かんだ。"
         },
         {
             "type": "dialogue",
@@ -332,7 +354,7 @@
             "position": "left",
             "avatar": "img/dh/x7.png",
             "name": "シャーローム",
-            "text": "ここまで辿り着けるのは君だけだ。本当に見事だ。"
+            "text": "ここまで辿り着けるのは君だけだ。本当に<span>見事</span>だ。"
         },
         {
             "type": "dialogue",

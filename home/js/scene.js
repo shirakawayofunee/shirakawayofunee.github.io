@@ -464,7 +464,7 @@ function renderInfo(info) {
   if (info.relatedLink) {
     const btn = document.createElement("button");
     btn.className = "link-btn";
-    btn.textContent = `次章${info.relatedLink.text}`;
+    btn.textContent = `${info.relatedLink.text}`;
     btn.onclick = () => (window.location.hash = info.relatedLink.targetId);
     synDiv.appendChild(btn);
   }
