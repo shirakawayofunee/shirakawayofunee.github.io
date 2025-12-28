@@ -59,7 +59,7 @@ span {
 /* --- 布局 (Grid) --- */
 .main-container {
     display: grid;
-    grid-template-columns: 19fr 62fr 19fr;
+    grid-template-columns: 21fr 58fr 21fr;
     height: 100vh;
     gap: 2px;
     background-color: #000;
