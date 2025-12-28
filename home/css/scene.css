@@ -484,23 +484,27 @@ body {
 }
 .link-btn:hover { background: #000; color: #fff; }
 
-/* --- 音乐开关 --- */
+/* --- 音乐开关 (图片版) --- */
 .music-controls {
     position: fixed;
     top: 15px;
     right: 20px;
     z-index: 100;
+    /* 移除之前的背景和边框设置，只保留定位 */
 }
-.music-btn {
-    background: #000;
-    color: #fff;
-    border: none;
-    padding: 5px 15px;
-    font-family: 'myFont';
+
+.music-icon {
+    width: 30px;  /* 根据您的图片实际大小调整，建议 30-50px */
+    height: 30px; 
+    object-fit: contain;
     cursor: pointer;
-    opacity: 0.8;
+    /* 给个轻微的点击反馈 */
+    transition: transform 0.1s;
 }
-.music-btn:hover { opacity: 1; }
+
+.music-icon:active {
+    transform: scale(0.9);
+}
 
 /* --- 移动端适配 --- */
 @media (max-width: 926px) {

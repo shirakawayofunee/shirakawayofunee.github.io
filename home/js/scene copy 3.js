@@ -265,10 +265,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 按钮监听
-  document.getElementById('btn-play').addEventListener('click', () => toggleMusic('play'));
-    
-  // 点击动图(v2) -> 触发暂停
-  document.getElementById('btn-pause').addEventListener('click', () => toggleMusic('pause'));
+  document
+    .getElementById("music-toggle")
+    .addEventListener("click", toggleMusic);
+  document
+    .getElementById("btn-prev")
+    .addEventListener("click", () => navigate(-1));
+  document
+    .getElementById("btn-next")
+    .addEventListener("click", () => navigate(1));
 });
 
 // --- 1. 初始化分类标签 ---
@@ -488,58 +493,16 @@ function playBgm(src) {
     if (isMusicPlaying) bgmPlayer.play().catch(() => {});
   }
 }
-// --- 音乐控制 (新版：图片切换 + 自动播放) ---
-
-// 播放音乐的核心函数
-// src: 音乐路径
-// forcePlay: 是否强制尝试播放 (用于切章节时自动播放)
-function playBgm(src, forcePlay = false) {
-  // 如果切歌了，或者不仅没切歌但强制要求播放
-  if (!bgmPlayer.src.includes(src)) {
-      bgmPlayer.src = src;
-  }
-
-  if (forcePlay || isMusicPlaying) {
-      // 尝试播放
-      const playPromise = bgmPlayer.play();
-
-      if (playPromise !== undefined) {
-          playPromise.then(() => {
-              // 播放成功：更新状态为播放中
-              updateMusicUI(true);
-          }).catch(error => {
-              // 自动播放被浏览器拦截：更新状态为暂停
-              console.log("Auto-play blocked by browser. User interaction needed.");
-              updateMusicUI(false);
-          });
-      }
-  }
-}
-
-// 切换播放/暂停状态 (绑定到图片点击事件)
-function toggleMusic(action) {
-  if (action === 'play') {
-      bgmPlayer.play();
-      updateMusicUI(true);
+function toggleMusic() {
+  isMusicPlaying = !isMusicPlaying;
+  const btn = document.getElementById("music-toggle");
+  if (isMusicPlaying) {
+    bgmPlayer.play();
+    btn.textContent = "♪ 暂停音乐";
+    btn.style.color = "#fff";
   } else {
-      bgmPlayer.pause();
-      updateMusicUI(false);
-  }
-}
-
-// 更新 UI 图片显示
-function updateMusicUI(playing) {
-  isMusicPlaying = playing;
-  const btnPlay = document.getElementById('btn-play'); // v2c.png
-  const btnPause = document.getElementById('btn-pause'); // v2.gif
-
-  if (playing) {
-      // 正在播放：隐藏静止图，显示动图
-      btnPlay.style.display = 'none';
-      btnPause.style.display = 'block';
-  } else {
-      // 停止/暂停：显示静止图，隐藏动图
-      btnPlay.style.display = 'block';
-      btnPause.style.display = 'none';
+    bgmPlayer.pause();
+    btn.textContent = "♪ 播放音乐";
+    btn.style.color = "#d4af37";
   }
 }
