@@ -37,42 +37,42 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "ほら、ドアを叩くのやめなよ。これはFACの超装甲車だよ、いつもぶっ壊してる金庫じゃないんだから。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "まあ、ムキにならないでよ。君たちだって汚い手で私の人を縛ったじゃない？"
     },
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "私をどうしようがいいから、総司令を解放して！"
     },
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "今回の西区作戦はめっちゃ大事だよ。BR-002を封鎖できれば、西区は救われる。たくさんの無垢な人が城邦に見捨てられずに済む！今はあんたが気まぐれ起こす時じゃない！"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "ふん、知ってるよ。私がそんなの気にしないってこと、君もわかってるでしょ。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "連絡先を教えてよ。君の大好きな執行人お姉さんに電話かけたいな。"
     },
@@ -83,21 +83,21 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "おっと、必要なくなった。彼女から君にかけてきたよ。"
     },
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "あたしの携帯、盗んだな？！"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "しっ、大人が話してるんだから、子供は口出ししない。君、ミュートにしたよ。"
     },
@@ -119,7 +119,7 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "どうも、執行人さん。君の大事な子が私の手にいるけど、まるで驚いてないみたいね。"
     },
@@ -133,7 +133,7 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "ふーん、変ね。私が彼女を拉致してから何時間も経ってるのに、なんで今さら電話してきたの？"
     },
@@ -144,7 +144,7 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "自分の部下を利用して私の位置を特定するつもり? ひどいわね、彼女の心が傷つくじゃない。"
     },
@@ -165,42 +165,42 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "ふっ、君のHUSH部隊なら、6月から私の邪魔をしていたじゃない。そんなつれないことを言わないでよ。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "君の指揮に従うために電話に出たわけじゃないわ。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "聞きなさい、上庭の執行人。この車には君たちの総司令、交渉の重要人物十数人、そして君たちが大嫌いな福音地の狂厄爆弾がある。新都市に向かってる。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "運転してるのは福音地の傀儡造物。狙撃しても無駄よ。この道中で何かあって車が減速したら、爆弾は即爆発する。その時、半径1キロのM値は2000超えるよ。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "爆弾を解除する唯一の方法は、起動装置を直接外すこと。それは老いぼれの体についてる。老いぼれは君の小犬のそばにいるよ。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "彼女にその能力があるかどうか……ふ、君も私もわかってるよね。"
     },
@@ -214,14 +214,14 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "今は昼の11時32分。あと30分もしないうちに、この車は新都市の最初の人口密集地に着く。私は君と違って、条件は話さない。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "これは君の自業自得よ。"
     },
@@ -246,7 +246,7 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "……ふん、君たちごときで。"
     },
@@ -257,14 +257,14 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "ほら、小娘、しょげないで。見ず知らずの人間に眼中に入れられてないだけだろ。君のシャーロームお姉さんがHUSH部隊をよこしたけど、君を助けに来たんじゃないよ。当然、彼らじゃ私を止められない。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "遊び方は教えてやった。君の探偵ゲーム、まだ終わってないよ。続ける？"
     },
@@ -275,14 +275,14 @@
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "私が勝つ。絶対にあんたの思い通りにはさせない。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "ハハハハハ！いいね、じゃあ君の正義をしっかり見せてよ。"
     },
@@ -297,7 +297,7 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "その正義がどれだけ笑えるか、見せてよ。"
     },
@@ -308,7 +308,7 @@
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "解けた！"
     },
@@ -331,35 +331,35 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "11時56分，もうすぐだよ。"
     },
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "爆弾はもう解除した！あんた――"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "お、ほんと？よくやったね。褒めてほしい？"
     },
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "ふざけないで！あんなの簡単な仕掛けだよ、私みたいな素人でも簡単に解けた。あんた、そもそもそれで殺す気なんてなかったでしょ！総司令を殺すのが目的じゃないなら、最後の標的は誰？なんでこんなことしてるの？"
     },
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "何を伝えたいの？"
     },
@@ -370,28 +370,28 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "HUSHはもうこの車への強攻を諦めたよ。私には手も足も出ないみたいね。代わりに最後通告を残してきた。1分後、危険区域に入る前に、車ごと定点爆破するって。"
     },
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "この！携帯を返して！彼女たちに、爆弾はもう解除したって、問題ないって伝える！車を止めるだけでいい、最悪、燃料が尽きるまで走らせてやる！"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "言ったよ。"
     },
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "え？"
     },
@@ -412,7 +412,7 @@
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "……何だって……"
     },
@@ -430,7 +430,7 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "ほら、あれ、君の正義の光じゃない？"
     },
@@ -441,7 +441,7 @@
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "……シャーローム……姉さん？"
     },
@@ -452,14 +452,14 @@
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "やったよ……私は彼女を止めた、信じて……お願い……"
     },
     {
       "type": "dialogue",
       "position": "right", 
-      "avatar": "", 
+      
       "name": "探偵",
       "text": "それを使わないで……やめて……"
     },
@@ -470,21 +470,21 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "ついでに言うと、老いぼれはそう簡単には死なないよ。でなきゃ、福音地の連中が私にこんな仕事を頼むわけない。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "でも、この車にいる他の人はそうじゃない。"
     },
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "君も含めてね。"
     },
@@ -499,7 +499,7 @@
     {
       "type": "dialogue",
       "position": "left", 
-      "avatar": "img/dh/leopold113.png", 
+      "avatar": "img/dh/leopold2.png", 
       "name": "業師",
       "text": "じゃあね、正義の使者。"
     },
