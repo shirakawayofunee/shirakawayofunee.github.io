@@ -22,7 +22,7 @@
         "note": "Garden的首领。虽然看似冷酷，实则在为部下寻找生路。"
       },
       {
-        "name": "X",
+        "name": "Shalom（執行人、X）",
         "avatar": "img/dh/x4.png",
         "note": "工"
       },
@@ -42,7 +42,7 @@
   "script": [
     {
       "type": "narration", 
-      "text": "N.F.113年8月17日11:32<br>FAC黒環封鎖行動合同指揮部"
+      "text": "N.F.113年8月15日11:32<br>FAC黒環封鎖行動合同指揮部"
     },
     {
       "type": "dialogue",

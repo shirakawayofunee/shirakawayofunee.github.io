@@ -378,9 +378,6 @@ function handleHashChange() {
 // --- 4. 加载 JSON 数据 ---
 async function loadChapter(chapterId) {
   const scriptDiv = document.getElementById("script-content");
-  document.getElementById("header-title").textContent = "LOADING DATA...";
-  document.getElementById("header-summary").textContent = "ACCESSING ARCHIVES...";
-  
   scriptDiv.innerHTML = '<div class="narration">運命を読み取り中……</div>';
 
   try {
@@ -397,8 +394,6 @@ async function loadChapter(chapterId) {
     // 渲染右侧信息
     renderInfo(data.infoPanel);
 
-    updateHeaderFromJSON(chapterId, data);
-
     // 滚回顶部
     document.getElementById("script-panel").scrollTop = 0;
   } catch (err) {
@@ -406,39 +401,6 @@ async function loadChapter(chapterId) {
     scriptDiv.innerHTML = `<div class="narration" style="color:#e23b78">无法打开卷宗: ${chapterId}</div>`;
   }
 }
-
-// --- 新增：更新顶部 UI 的函数 ---
-function updateHeaderFromJSON(chapterId, data) {
-  // 1. 获取 JSON 中的数据
-  const jsonTitle = data.meta ? data.meta.title : "UNKNOWN TITLE";
-  // 注意：根据你的JSON结构，synopsis 在 infoPanel 里
-  const jsonSynopsis = (data.infoPanel && data.infoPanel.synopsis) ? data.infoPanel.synopsis : "NO DATA";
-
-  // 2. 获取静态列表中的数据 (主要为了日期，因为你的JSON里好像没有日期)
-  // 如果 JSON 里以后加了 date，也可以优先读 JSON
-  const staticInfo = chapterList.find(c => c.id === chapterId);
-  const dateLabel = staticInfo ? staticInfo.dateLabel : "N.F.???";
-
-  // 3. 更新 DOM
-  const elTitle = document.getElementById("header-title");
-  const elSummary = document.getElementById("header-summary");
-  const elDate = document.getElementById("header-date");
-  const elId = document.getElementById("header-id");
-
-  // 带有简单的打字机淡入效果 (可选，直接赋值也可以)
-  elTitle.style.opacity = 0;
-  elTitle.textContent = jsonTitle;
-  
-  elSummary.textContent = jsonSynopsis;
-  
-  elDate.textContent = dateLabel;
-  elId.textContent = chapterId.toUpperCase(); // 显示 ID 如 CONVERSATION33
-
-  // 简单的淡入动画
-  setTimeout(() => elTitle.style.opacity = 1, 50);
-  elTitle.style.transition = "opacity 0.5s";
-}
-
 
 // --- 5. 渲染正文 ---
 function renderScript(script) {

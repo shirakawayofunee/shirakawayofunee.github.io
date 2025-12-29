@@ -26,216 +26,6 @@ const chapterList = [
     dateLabel: "N.F.113/7/23/08:05",
   },
   {
-    id: "conversation3",
-    category: "bluerain",
-    title: "003「家」",
-    subtitle: "Blue Rain",
-    dateLabel: "N.F.113/7/23/08:15",
-  },
-  {
-    id: "conversation4",
-    category: "bluerain",
-    title: "004「異変」",
-    subtitle: "Blue Rain",
-    dateLabel: "N.F.113/7/23/23:04",
-  },
-  {
-    id: "conversation5",
-    category: "bluerain",
-    title: "005「何のために戦うか」",
-    subtitle: "Blue Rain",
-    dateLabel: "N.F.113/7/23/23:14",
-  },
-  {
-    id: "conversation6",
-    category: "bluerain",
-    title: "006「大切なこと」",
-    subtitle: "Blue Rain",
-    dateLabel: "N.F.113/7/23/23:24",
-  },
-  {
-    id: "conversation7",
-    category: "bluerain",
-    title: "007「登場」",
-    subtitle: "Blue Rain",
-    dateLabel: "N.F.113/7/24/00:41",
-  },
-  {
-    id: "conversation8",
-    category: "flower",
-    title: "101「追悼式」",
-    subtitle: "Flora Part.Ⅰ",
-    dateLabel: "N.F.113/8/8/09:00",
-  },
-  {
-    id: "conversation9",
-    category: "flower",
-    title: "102「探偵ゲーム」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/8/16:00",
-  },
-  {
-    id: "conversation10",
-    category: "flower",
-    title: "103「暗殺予告」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/8/16:13",
-  },
-  {
-    id: "conversation11",
-    category: "flower",
-    title: "104「廃墟」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/9/03:20",
-  },
-  {
-    id: "conversation12",
-    category: "flower",
-    title: "105「第二現場」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/9/17:36",
-  },
-  {
-    id: "conversation13",
-    category: "flower",
-    title: "106「业师」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/9/18:30",
-  },
-  {
-    id: "conversation14",
-    category: "flower",
-    title: "201「創傷」",
-    subtitle: "Flora Part.Ⅱ",
-    dateLabel: "N.F.113/8/10/15:20",
-  },
-  {
-    id: "conversation15",
-    category: "flower",
-    title: "202「εἰρήνη」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/10/15:25",
-  },
-  {
-    id: "conversation16",
-    category: "flower",
-    title: "203「第三現場」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/11/07:45",
-  },
-  {
-    id: "conversation17",
-    category: "flower",
-    title: "204「第四現場」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/11/08:30",
-  },
-  {
-    id: "conversation18",
-    category: "flower",
-    title: "205「二人目」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/11/09:00",
-  },
-  {
-    id: "conversation19",
-    category: "flower",
-    title: "206「誘餌」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/14/21:25",
-  },
-  {
-    id: "conversation20",
-    category: "flower",
-    title: "207「本当の目標」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/15/05:25",
-  },
-  {
-    id: "conversation21",
-    category: "flower",
-    title: "208「最後通牒」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/15/11:30",
-  },
-  {
-    id: "conversation22",
-    category: "flower",
-    title: "209「執行人」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/15/12:00",
-  },
-  {
-    id: "conversation23",
-    category: "flower",
-    title: "301「西区作战」",
-    subtitle: "Flora Part.Ⅲ",
-    dateLabel: "N.F.113/8/17/14:23",
-  },
-  {
-    id: "conversation24",
-    category: "flower",
-    title: "302「露の世は露の世ながらさりながら」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/17/14:23",
-  },
-  {
-    id: "conversation25",
-    category: "flower",
-    title: "303「対決」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/23/07:00",
-  },
-  {
-    id: "conversation26",
-    category: "flower",
-    title: "304「失った正義」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/23/17:20",
-  },
-  {
-    id: "conversation27",
-    category: "flower",
-    title: "305「第五現場」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/24/04:35",
-  },
-  {
-    id: "conversation28",
-    category: "flower",
-    title: "401「残花の復仇」",
-    subtitle: "Flora Part.Ⅳ",
-    dateLabel: "N.F.113/8/26/02:13",
-  },
-  {
-    id: "conversation29",
-    category: "flower",
-    title: "402「依頼」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/26",
-  },
-  {
-    id: "conversation30",
-    category: "flower",
-    title: "403「満開」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/26",
-  },
-  {
-    id: "conversation31",
-    category: "flower",
-    title: "404「静黙の反逆」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/26",
-  },
-  {
-    id: "conversation32",
-    category: "flower",
-    title: "405「後日談1」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/26",
-  },
-  {
     id: "conversation33",
     category: "flower",
     title: "406「後日談2」",
@@ -378,9 +168,6 @@ function handleHashChange() {
 // --- 4. 加载 JSON 数据 ---
 async function loadChapter(chapterId) {
   const scriptDiv = document.getElementById("script-content");
-  document.getElementById("header-title").textContent = "LOADING DATA...";
-  document.getElementById("header-summary").textContent = "ACCESSING ARCHIVES...";
-  
   scriptDiv.innerHTML = '<div class="narration">運命を読み取り中……</div>';
 
   try {
@@ -397,8 +184,6 @@ async function loadChapter(chapterId) {
     // 渲染右侧信息
     renderInfo(data.infoPanel);
 
-    updateHeaderFromJSON(chapterId, data);
-
     // 滚回顶部
     document.getElementById("script-panel").scrollTop = 0;
   } catch (err) {
@@ -406,39 +191,6 @@ async function loadChapter(chapterId) {
     scriptDiv.innerHTML = `<div class="narration" style="color:#e23b78">无法打开卷宗: ${chapterId}</div>`;
   }
 }
-
-// --- 新增：更新顶部 UI 的函数 ---
-function updateHeaderFromJSON(chapterId, data) {
-  // 1. 获取 JSON 中的数据
-  const jsonTitle = data.meta ? data.meta.title : "UNKNOWN TITLE";
-  // 注意：根据你的JSON结构，synopsis 在 infoPanel 里
-  const jsonSynopsis = (data.infoPanel && data.infoPanel.synopsis) ? data.infoPanel.synopsis : "NO DATA";
-
-  // 2. 获取静态列表中的数据 (主要为了日期，因为你的JSON里好像没有日期)
-  // 如果 JSON 里以后加了 date，也可以优先读 JSON
-  const staticInfo = chapterList.find(c => c.id === chapterId);
-  const dateLabel = staticInfo ? staticInfo.dateLabel : "N.F.???";
-
-  // 3. 更新 DOM
-  const elTitle = document.getElementById("header-title");
-  const elSummary = document.getElementById("header-summary");
-  const elDate = document.getElementById("header-date");
-  const elId = document.getElementById("header-id");
-
-  // 带有简单的打字机淡入效果 (可选，直接赋值也可以)
-  elTitle.style.opacity = 0;
-  elTitle.textContent = jsonTitle;
-  
-  elSummary.textContent = jsonSynopsis;
-  
-  elDate.textContent = dateLabel;
-  elId.textContent = chapterId.toUpperCase(); // 显示 ID 如 CONVERSATION33
-
-  // 简单的淡入动画
-  setTimeout(() => elTitle.style.opacity = 1, 50);
-  elTitle.style.transition = "opacity 0.5s";
-}
-
 
 // --- 5. 渲染正文 ---
 function renderScript(script) {

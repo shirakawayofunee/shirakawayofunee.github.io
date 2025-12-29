@@ -1,3 +1,11 @@
+<!--
+ * @Author: DCBZ
+ * @Date: 2025-12-28 00:45:58
+ * @LastEditors: your name
+ * @LastEditTime: 2025-12-30 03:52:46
+ * @Description: 
+ * @FilePath: \shirakawayofunee.github.io\home\duihua0722.html
+-->
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -41,47 +49,24 @@
         </aside>
 
         <!-- 中间：剧本正文 (Script) -->
-<!-- 中间：剧本主容器 (Wrapper) -->
-<main class="panel script-wrapper">
-    
-    <!-- 1. 顶部固定层 (原本是header，现在改用div) -->
-    <!-- 注意：这里的数据只是占位符，JS加载后会立即替换 -->
-    <div class="script-header-layer">
-        <div class="header-decoration">
-            <span class="deco-text">LOG_ID: <span id="header-id">UNKNOWN</span> // <span id="header-date">N.F.000</span></span>
-            <div class="deco-line"></div>
-        </div>
-        <div class="header-main-content">
-            <!-- 对应 json.meta.title -->
-            <h2 class="chapter-big-title" id="header-title">LOADING...</h2>
-            <!-- 对应 json.infoPanel.synopsis -->
-            <p class="chapter-summary" id="header-summary">WAITING FOR STREAM...</p>
-        </div>
-    </div>
-
-    <!-- 2. 剧本正文滚动区 (保留 id="script-panel" 兼容原有逻辑) -->
-    <div class="script-scroll-area" id="script-panel">
-        <div class="script-content" id="script-content">
-            <div class="loading-text">運命を読み取り中……</div>
-        </div>
-        <!-- 底部占位，防止文字被悬浮按钮挡住 -->
-        <div style="height: 120px;"></div> 
-    </div>
-
-    <!-- 3. 永久悬浮导航按钮层 -->
-    <div class="floating-nav-layer">
-        <button id="float-btn-prev" class="neo-float-btn prev-btn" onclick="navigate(-1)">
-            <span class="btn-icon">◀</span>
-            <span class="btn-text">PREV</span>
-        </button>
-        
-        <button id="float-btn-next" class="neo-float-btn next-btn" onclick="navigate(1)">
-            <span class="btn-text">NEXT</span>
-            <span class="btn-icon">▶</span>
-        </button>
-    </div>
-
-</main>
+        <main class="panel script-panel" id="script-panel">
+            <div class="script-content" id="script-content">
+                <div class="loading-text">運命を読み取り中……</div>
+            </div>
+            
+            <!-- 底部导航 -->
+<!--             <div class="nav-buttons">
+                <button id="btn-prev" disabled>◀ 前章</button>
+                <button id="btn-next" disabled>次章 ▶</button>
+                <button class="neo-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                    次章 ▶
+                </button>
+            </div> -->
+        </main>
 
         <!-- 右侧：信息栏 (Info) -->
         <aside class="panel info-panel">
