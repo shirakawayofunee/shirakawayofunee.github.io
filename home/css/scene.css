@@ -123,6 +123,7 @@ span {
     font-size: 3rem;
     line-height: 1.1;
     color: #B8050E; /* 文字改为黑色，在高对比度下更清晰 */
+    color: #D40F30;
     margin: 0;
     letter-spacing: -1px;
     white-space: nowrap;
