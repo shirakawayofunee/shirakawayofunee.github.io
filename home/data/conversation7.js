@@ -1,92 +1,88 @@
 export default {
   meta: {
-    "title": `Blue Rain-007「登場」`,
-    "bgm": `mp3/bg/conversation7.mp3`,
-    "summary": `这里可以直接
-    换行写概要，
-    不用加 br 标签。`
+    title: `Blue Rain-007「登場」`,
+    bgm: `mp3/bg/conversation7.mp3`,
+    summary: ``
   },
-
   infoPanel: {
-    "glossary": [
+    glossary: [
       {
-        "term": `上庭 (Paradeisos)`,
-        "desc": `人类文明的最高统治机构，位于天空之上。`
+        term: `上庭 (Paradeisos)`,
+        desc: `人类文明的最高统治机构，位于天空之上。`
       },
       {
-        "term": `GARDEN`,
-        "desc": `位于灰色地带的杀手组织，由Leopold领导。`
+        term: `GARDEN`,
+        desc: `位于灰色地带的杀手组织，由Leopold领导。`
       }
     ],
-    "characters": [
+    characters: [
       {
-        "name": `Leopold`,
-        "avatar": `img/dh-leopold.jpg`,
-        "note": `Garden的首领。虽然看似冷酷，实则在为部下寻找生路。`
+        name: `Leopold`,
+        avatar: `img/dh-leopold.jpg`,
+        note: `Garden的首领。虽然看似冷酷，实则在为部下寻找生路。`
       }
     ],
-    "synopsis": `工事中`,
-    "relatedLink": {
-      "text": `次章`,
-      "targetId": `conversation8`
+    synopsis: `工事中`,
+    relatedLink: {
+      text: `次章`,
+      targetId: `conversation8`
     }
   },
-
   script: [
     {
-      "type": `narration`,
-      "text": `N.F.113年7月24日<br>00:41、「GARDEN」アジト`
+      type: `narration`,
+      text: `N.F.113年7月24日<br>00:41、「GARDEN」アジト`
     },
     {
-      "type": `narration`,
-      "text": `概要：レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。`
+      type: `narration`,
+      text: `概要：レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。`
     },
     {
-      "type": `image`,
-      "src": `img/cg/br_05.png`
+      type: `image`,
+      src: `img/cg/br_05.png`
     },
     {
-      "type": `dialogue`,
-      "position": `left`,
-      "avatar": `img/dh/leopold1.png`,
-      "name": `レオポルド`,
-      "text": `ただの上庭の犬、私の花を汚すなんて……ふふ`
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold1.png`,
+      name: `レオポルド`,
+      text: `ただの上庭の犬、私の花を汚すなんて……ふふ`
     },
     {
-      "type": `image`,
-      "src": `img/cg/br_06.png`
+      type: `image`,
+      src: `img/cg/br_06.png`
     },
     {
-      "type": `dialogue`,
-      "position": `left`,
-      "avatar": `img/dh/leopold1.png`,
-      "name": `レオポルド`,
-      "text": `地下に伝えて、「GARDEN」はこの依頼を受けたと。`
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold1.png`,
+      name: `レオポルド`,
+      text: `地下に伝えて、「GARDEN」はこの依頼を受けたと。`
     },
     {
-      "type": `dialogue`,
-      "position": `left`,
-      "avatar": `img/dh/leopold1.png`,
-      "name": `レオポルド`,
-      "text": `リストをよこせ、私が直接行く。`
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold1.png`,
+      name: `レオポルド`,
+      text: `リストをよこせ、私が直接行く。`
     },
     {
-      "type": `dialogue`,
-      "position": `left`,
-      "avatar": `img/dh/leopold1.png`,
-      "name": `レオポルド`,
-      "text": `君の願い通り、盛大に花を咲かせるわよ。上庭の執行人`
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold1.png`,
+      name: `レオポルド`,
+      text: `君の願い通り、盛大に花を咲かせるわよ。上庭の執行人`
     },
     {
-      "type": `dialogue`,
-      "position": `left`,
-      "avatar": `img/dh/leopold1.png`,
-      "name": `レオポルド`,
-      "text": `<span>シャーローム</span>`
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold1.png`,
+      name: `レオポルド`,
+      text: `<span>シャーローム</span>`
     },
     {
-      "type": `narration`,
-      "text": `序章「Blue rain」終了、つづく。`
+      type: `narration`,
+      text: `序章「Blue rain」終了、つづく。`
     }
   ]
-}
+};
