@@ -376,7 +376,6 @@ function handleHashChange() {
 }
 
 // --- 4. 加载 JSON 数据 ---
-// --- 4. 加载 JSON 数据 ---
 async function loadChapter(chapterId) {
   const scriptDiv = document.getElementById("script-content");
   
@@ -389,9 +388,8 @@ async function loadChapter(chapterId) {
   scriptDiv.innerHTML = '<div class="narration">運命を読み取り中……</div>';
 
   try {
-    const res = await fetch(`data/${chapterId}.json`);
-    if (!res.ok) throw new Error("File not found");
-    const data = await res.json();
+    const module = await import(`../data/${chapterId}.js`);
+    const data = module.default;
 
     // 设置 BGM
     if (data.meta && data.meta.bgm) {

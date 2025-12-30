@@ -1,0 +1,127 @@
+export default {
+  meta: {
+    title: `Blue Rain-006「探求の終点」`,
+    bgm: `mp3/bg/conversation5.mp3`,
+    summary: `エリカ山荘の嵐は去ったが、遠くの黒雲はまだどんよりとした山のようで、天と地では何かが蠢いている。`
+  },
+
+  infoPanel: {
+    glossary: [
+      { 
+        term: `上庭 (Paradeisos)`, 
+        desc: `人类文明的最高统治机构，位于天空之上。` 
+      },
+      { 
+        term: `GARDEN`, 
+        desc: `位于灰色地带的杀手组织，由Leopold领导。` 
+      }
+    ],
+    characters: [
+      {
+        name: `Leopold`,
+        avatar: `img/dh-leopold.jpg`,
+        note: `Garden的首领。虽然看似冷酷，实则在为部下寻找生路。`
+      }
+    ],
+    synopsis: `工事中`,
+    relatedLink: {
+      text: `次章`,
+      targetId: `conversation7`
+    }
+  },
+
+  script: [
+    {
+      type: `narration`,
+      text: `N.F.113年7月23日<br>23:24、山荘内`
+    },
+    {
+      type: `image`,
+      src: `img/cg/br_04.png`
+    },
+    {
+      type: `narration`,
+      text: `概要：失血多量と狂厄汚染の二重の打撃により、暴走していたセヴェロがついに倒れた。間一髪のところで、レオポルドが駆けつけ、彼女を救い出す。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
+      name: `レオポルド`,
+      text: `私の花を、誰がお前なんかに踏みつけていいと言った？`
+    },
+    {
+      type: `narration`,
+      text: `何かによって彼女は遮られた。庭園の向こう側から、白い流れる光がゆっくりと現れ、闇の中を蛇のように縫うように進んだ。近くで、白い光が数人の治安官を貫き、最初の悲鳴が響く。<br>セヴェロがわずかに震えた。闇に飛び散るのは血ではなく、鮮紅の花びら。人体から咲き、すぐに怪異な棘となって代理に向かって突進する。上庭の男が反応しようとした瞬間、貫かれた。他の者は恐怖で後ずさる。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `…今ごろ来るか。`
+    },
+    {
+      type: `narration`,
+      text: `さらに多くの棘が藍い雨を突き破り、代理の背後へ、決心の殺意を込めてXに向かって刺した。`
+    },
+    {
+      type: `narration`,
+      text: `青い光線が突然場を一掃し、冷光が切り裂くところすべてが破壊された。世界が静まると、藍い雨の音の中、夜に溶け込むような漆黒の物体が静かに浮かんでいる――Xのそばにいつもいる黒石英だ。`
+    },
+    {
+      type: `narration`,
+      text: `代理がいた場所は空っぽで、セヴェロは連れ去られ、地面には白い布切れだけが残されている。敵はすでに去った。<br>だが、問題ない。プログラムは順調に作動し、脅しは解除された。黒石英は待機監視状態に戻り、Xのそばに漂う。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `…うん、彼女に会えた。大丈夫、今夜現れたんだから、また必ず来る。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `それに、今の私じゃ追うことすらできないんだ。`
+    },
+    {
+      type: `narration`,
+      text: `代理とXが重傷を負い、一時的に行動不能に陥る。`
+    },
+    {
+      type: `narration`,
+      text: `（ここでは2434文字を省略：Xが上庭との対話を終え、自宅の別荘に戻って自身を修復し状態を整える中、新キャラクターの探偵が登場する。）`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `上庭に挑む組織、その名は「Garden」。かつて福音地で飼い慣らされた能力者たちの殺し屋集団だった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `今、彼女たちは福音地から離れたかもしれないし、なおも繋がりを保っているかもしれない。それは重要ではない。重要なのは、その中に福音地の入口を知る者が必ずいるということだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `彼らの首領を見つけ出すか、あるいは彼女が来るのを覚悟して待つべきだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `噂で「業師」と呼ばれるあの能力者が、必ず現れる。`
+    }
+  ]
+}

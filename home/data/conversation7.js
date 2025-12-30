@@ -47,7 +47,7 @@ export default {
     },
     {
       "type": `dialogue`,
-      "position": `right`,
+      "position": `left`,
       "avatar": `img/dh/leopold1.png`,
       "name": `レオポルド`,
       "text": `ただの上庭の犬、私の花を汚すなんて……ふふ`
@@ -58,28 +58,28 @@ export default {
     },
     {
       "type": `dialogue`,
-      "position": `right`,
+      "position": `left`,
       "avatar": `img/dh/leopold1.png`,
       "name": `レオポルド`,
       "text": `地下に伝えて、「GARDEN」はこの依頼を受けたと。`
     },
     {
       "type": `dialogue`,
-      "position": `right`,
+      "position": `left`,
       "avatar": `img/dh/leopold1.png`,
       "name": `レオポルド`,
       "text": `リストをよこせ、私が直接行く。`
     },
     {
       "type": `dialogue`,
-      "position": `right`,
+      "position": `left`,
       "avatar": `img/dh/leopold1.png`,
       "name": `レオポルド`,
       "text": `君の願い通り、盛大に花を咲かせるわよ。上庭の執行人`
     },
     {
       "type": `dialogue`,
-      "position": `right`,
+      "position": `left`,
       "avatar": `img/dh/leopold1.png`,
       "name": `レオポルド`,
       "text": `<span>シャーローム</span>`

@@ -891,3 +891,15 @@ span {
     }
     .neo-float-btn { flex: 1; padding: 0; font-size: 0.9rem; }
 }
+
+/* 让正文和气泡支持读取文本中的换行符 */
+.message-bubble, 
+.narration {
+    white-space: pre-line; /* 关键：识别换行符，但合并多余空格 */
+    word-wrap: break-word; /* 防止太长不换行 */
+}
+
+/* 概要部分也支持换行 */
+.chapter-summary {
+    white-space: pre-line;
+}

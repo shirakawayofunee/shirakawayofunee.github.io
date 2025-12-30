@@ -1,0 +1,495 @@
+{
+  "meta": {
+    "title": "flowers-303「交鋒」",
+    "bgm": "mp3/bg/conversation13.mp3",
+    "summary": "" 
+  },
+  
+  "infoPanel": {
+    "glossary": [
+      { 
+        "term": "上庭 (Paradeisos)", 
+        "desc": "人类文明的最高统治机构，位于天空之上。" 
+      },
+      { 
+        "term": "GARDEN", 
+        "desc": "位于灰色地带的杀手组织，由Leopold领导。" 
+      }
+    ],
+    "characters": [
+      {
+        "name": "Leopold",
+        "avatar": "img/dh-leopold.jpg",
+        "note": "Garden的首领。虽然看似冷酷，实则在为部下寻找生路。"
+      }
+    ],
+    "synopsis": "工事中",
+    "relatedLink": {
+      "text": "次章",
+      "targetId": "conversation26"
+    }
+  },
+
+    "script": [
+        {
+            "type": "narration",
+            "text": "N.F.113年8月23日午前7:00<br>FAC黒環封鎖行動合同指揮部"
+        },
+        {
+            "type": "narration",
+            "text": "黒石英が通信機能を担い、シャーロームは静かに向こう側からの報告を聞いていた。第一陣の重要拠点の占領が完了し、核心反狂厄基駅の建設が急ピッチで進んでいる。案の定、妨害があり、大量の狂厄怪物が陣線に押し寄せていた。"
+        },
+        {
+            "type": "narration",
+            "text": "だが、上庭の観測者Xが予測した通り、戦前に巧妙な情報操作で敵を誤導し、誤った拠点分布図を掴ませ、準備済みの罠に誘い込んだ。"
+        },
+        {
+            "type": "narration",
+            "text": "これで先遣部隊は貴重な先機を握った。士気は高揚し、陣線の構築は順調に進んでいる。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "そう……それは本当に良かった。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "過分な誉め言葉だよ。血と汗を流し、身を挺して敵と戦う君たちこそが真の英雄だ。上庭から与えられた私の仕事は、君たちを最大限に支援すること。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "核心基駅は安定し、防御網の計画も無事に展開された。もう情報操作の余地はあまりない。次は正面戦だ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "これから、地下勢力が動き出す。それが本当の激戦だ。そして、私にも果たさねばならない別の仕事がある。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "ディスの英雄たち、すべてがうまくいくことを祈ってるよ。"
+        },
+        {
+            "type": "narration",
+            "text": "通信が切れた。黒石英は彼女のそばで静かに浮かび、青い光が点滅している。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/black_quartz.jpg",
+            "name": "黒石英",
+            "text": "効率的だ。他の部署の手配も完了。次は――"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/black_quartz.jpg",
+            "name": "黒石英",
+            "text": "SHP-13の処理だ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "もちろん。この機会に彼を完全に「信頼できる」者に作り変えるか、潜在的脅威として徹底的に排除するか……上庭は福音地に気づかれる前に彼を見つけ出さねばならない。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "FAC、MBCC、第九機関、HUSHでさえ直接手を出すのはダメだ。目的が明らかすぎれば、福音地に必ずバレる。彼らは正面戦に集中すればいい。8月戦役は我々の最高のカバーだ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "あとは私に任せて。私は誰に頼めばいいか知ってる。方案はすでにできてる。彼を回収するよ。これを私の最後の完璧な任務にしよう。"
+        },
+        {
+            "type": "narration",
+            "text": "そう話していると、客がやってきた。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "おっと、大作戦は無事に終わった？"
+        },
+        {
+            "type": "narration",
+            "text": "業師が背後の闇から現れた。手にした花剣はすでに獲物の残滓で覆われている。彼女は最も厳重な警戒線を突破し、一切の警報を鳴らさず、静かに執行人の前に立っていた。"
+        },
+        {
+            "type": "narration",
+            "text": "シャーロームは振り返らず、黒石英はすでに彼女の背後に浮かび、最高警戒態勢に入った。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "ようこそ、業師。あの地下の女を見つけたよ。彼女の体に恐ろしい花が咲いてた。君の仕業だね？"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "ふん、礼はいらないよ。感謝すべきことは山ほどあるけどね。私が優しく教えてあげなかったら、FACの総司令も、あのちっちゃい指揮官たちも、戦場に立つ命なんてなかったんだから。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "今回のなんちゃら西区防衛作戦、最大の勲章は私にくれるべきでしょ？"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "その通り。君は本当に素晴らしい。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "福音地の最重要任務を引き受け、両陣営の戦場が最も激しい場所に飛び込み、派手に暴れた後、こっそり火種を依頼主に返し……最終的に、君たちの首を絞めていた鎖を完全に断ち切った。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "綱渡りなんて簡単じゃない。福音地と上庭の間を何年も渡り歩き、こんな自由を保てるなんて、さすがだ。"
+        },
+        {
+            "type": "narration",
+            "text": "シャーロームはレオポルドを見て、穏やかな笑みを浮かべた。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "福音地と完全に決裂したなら……私の側に来ない？"
+        },
+        {
+            "type": "narration",
+            "text": "レオポルドは驚いたように見せかけた。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "マジ？いいの？私を許して、受け入れてくれるの？"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "うーん、やっぱ無理、演技しきれねえ。"
+        },
+        {
+            "type": "narration",
+            "text": "電光石火の瞬間、赤い花剣と黒石英のレーザーが激しくぶつかり合った。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "君、ほんと自由に生きてるな。普通の人はこんな風にすぐ仇を討ったりしないよ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "敵が増えるのを恐れ、身近な人まで巻き込まれるのを…復讐の代償に怯えるものだ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "君は？そんなもの気にしない？君の「Garden」はどうだい？"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "ふふ……憎しみの連鎖、因果応報、いつ終わるかって？今を大切にしろ、だろ？"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "私は殺し屋組織の頭だよ。仇を求めてくる奴も、復讐を頼む奴も数え切れない。お前が私に道徳を語る？私が正直で善良だからって、邪魔しないって？お前が遠慮するのは、私が来る奴を殺すからだろ。理解なんて強者の特権だ。私が無視できないほど強くなる前、誰も私の声に耳を貸さなかった。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "この世界は、私が大人しく慎重に生きても優しくなんてしてくれない。自由に生きるには力が必要だ。そして――血には血で償うしかない。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "そのくらい、今教える必要ある？"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "ふふ、失礼した。君のような強者は、確かに好き勝手やる資格があるよ。"
+        },
+        {
+            "type": "narration",
+            "text": "シャーロームは両者の激戦中に舞い落ちるレオポルドが作り出した結晶の花びらを受け止め、それを軽く揉みながら、どこか愛でるように眺めた。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "上庭も福音地も、君の強さと狂気を恐れる。君が代償を求めに来るのを恐れる……君が生きている限り、「Garden」も君の花も踏みにじられる心配はない。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "私が君なら、もっと泰然と、安心して生きるよ。昔の君みたいに……君は両者の間をずっとうまく渡り歩いてきた。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "なのに、なぜ急に焦り始めたの？"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "両陣営が大戦を控えてるのに、君は避けるどころか飛び込み、福音地の依頼を受けて上庭に挑み、上庭の刀を振り回して福音地を刺した。「Garden」のすべての鎖を焼き切るように、玉石俱焚の覚悟で……"
+        },
+        {
+            "type": "narration",
+            "text": "シャーロームはレオポルドを見、若すぎる顔と白すぎる肌を見た――虞美人の時間は遠い昔に止まったようだった。"
+        },
+        {
+            "type": "narration",
+            "text": "シャーロームは納得したように微笑んだ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "その異常な強さは、命と引き換えだよね。業師、あと何日残ってる？"
+        },
+        {
+            "type": "narration",
+            "text": "空気が急に静まり返った。"
+        },
+        {
+            "type": "narration",
+            "text": "レオポルドは上庭の執行人を睨み、長い間、新たな花剣を抜き、冗談の余地を完全に消した。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "……私の死を呪ってる？礼儀知らずな奴。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "ただ聞いてみただけ。偶然、正解だった？"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "あのヒゲルって地下の女、覚えてる。追跡作戦中、彼女だけがHUSHの追跡を何度も逃れた。報告書だと、空間異能か、福音地の狂厄術式を握ってたらしい。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "それが君が依頼を受けて得た報酬だろ？依頼を果たせば、福音地は「Garden」の基地を完全に隠す方法を渡す。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "好きに推測しろよ。当たってもお前にはどうしようもない。福音地の秘術、解けないだろ？でなきゃ、何年も探して、福音地の入口すら見つけられない廃物だろ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "その通り。上庭は福音地みたいに狂厄を熟知してないから、「Garden」も見つけられない。何より、君の花たちは隠匿の術をしっかり学んでる。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "限られた命の中で、君は彼女たちのために全力で道を切り開いた。業師、君は繊細で、思ったより情深い。尊敬するよ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "気持ち悪いな。私は自分のためだけだ。「Garden」を引き受けたのだって、彼女たちがいい世話してくれるから、私が楽しくなるからだ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "君の言う通り、彼女たちは君を深く愛してる。君が思う以上にね。"
+        },
+        {
+            "type": "narration",
+            "text": "その言葉にレオポルドは鳥肌が立った。その瞬間、彼女が無数の敗者から引き抜いた結晶の武器が、青い光に撃ち砕かれた。"
+        },
+        {
+            "type": "narration",
+            "text": "攻撃を放ったのは、シャーロームそばで冷たく光る黒石英。小さな三角形が体を開き、戦場の中心にゆっくり浮かんだ。"
+        },
+        {
+            "type": "narration",
+            "text": "レオポルドは覚えている。その攻撃は狂厄に極めて強い破壊力を持つ。誘拐事件では、突然降り注いだ光の雨が福音地の狂厄爆弾を一車分丸ごと破壊した。能力者にとって、これは上庭の人造死神だ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/black_quartz.jpg",
+            "name": "黒石英",
+            "text": "君の予測は正しかった。福音地は確かに極めて危険な能力者を育て上げた。何年も上庭が彼女を排除できなかったのも納得だ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/black_quartz.jpg",
+            "name": "黒石英",
+            "text": "だが、彼女の命は狂厄に深く消耗され、恐れるに足りない。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/black_quartz.jpg",
+            "name": "黒石英",
+            "text": "破壊しろ、X。君の任務のため、福音地の妨害の可能性を断ち切れ。"
+        },
+        {
+            "type": "narration",
+            "text": "シャーロームは死神を越え、レオポルドを見た。その女は黒石英を前に微動だにせず、新たな花剣を抜いていた。この道のりで相当な力を「準備」したのだろう。"
+        },
+        {
+            "type": "narration",
+            "text": "君たちは彼女を過小評価してる……彼女はただ心に迷いがあり、死を避ける方法を無意識に探してるだけ……別の場所で死にたいと願ってる。でも、それは無理だよ、レオポルド……全力を出さなきゃ、君の花は咲く前に揉み潰される。"
+        },
+        {
+            "type": "narration",
+            "text": "シャーロームは手元の花びらを揉み潰し、ゆっくり口を開いた。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "エリカ荘園で、君の話題が出るたび、君のカーネーションは迷わず洋館に飛び込んだ。用意した偽情報の中で、彼女が一番気にしたのは、狂厄を制御して命を延ばす技術だった。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "今、彼女たちはもっと焦ってるだろうね。今回の行動、彼女たちに詳細を話した？最後に会いに行ったのはいつ？"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "私が君の情報を少し漏らしただけで、馬鹿な子が我先にと追いかけてきたよ……"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/leopold.png",
+            "name": "レオポルド",
+            "text": "……それは？"
+        },
+        {
+            "type": "narration",
+            "text": "シャーロームは懐から青い水晶の花を数輪取り出した。三色堇、カーネーション、秋桜、百合……"
+        },
+        {
+            "type": "narration",
+            "text": "それを見た瞬間、レオポルドの瞳が急に縮んだ。その反応を、シャーロームは微笑みながらすべて見届けた。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "君も知ってるよね、彼女たちも君を守りたいんだ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "君一人じゃ、彼女たちを一生守れない。あることは運命だ。"
+        },
+        {
+            "type": "dialogue",
+            "position": "left",
+            "avatar": "img/dh/x4.png",
+            "name": "シャーローム",
+            "text": "さあ、「Garden」の主はどうする？どこまでできる？"
+        }
+    ]
+}

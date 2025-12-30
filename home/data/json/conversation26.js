@@ -1,0 +1,521 @@
+export default {
+  meta: {
+    title: `flowers-304「失った正義」`,
+    bgm: `mp3/bg/conversation8.mp3`,
+    summary: `混乱に陥ったクリスティナは、つまずきながら、正義を追求し始めた……`
+  },
+  infoPanel: {
+    glossary: [
+      {
+        term: `伝送術式`,
+        desc: `「登録」された花園のメンバーは、任意のものを媒体にし、単瞳フォーマット式な伝送ドアを開け、花園本部へ戻れる。ただし、ドアはすぐさま閉じないため、Sは誰かが隠れて本部に侵入するのを防ぎ、この術式を使わなかった。`
+      },
+      {
+        term: `GARDEN`,
+        desc: `位于灰色地带的杀手组织，由Leopold领导。`
+      }
+    ],
+    characters: [
+      {
+        name: `Leopold`,
+        avatar: `img/dh-leopold.jpg`,
+        note: `Garden的首领。虽然看似冷酷，实则在为部下寻找生路。`
+      }
+    ],
+    synopsis: `工事中`,
+    relatedLink: {
+      text: `次章`,
+      targetId: `conversation27`
+    }
+  },
+  script: [
+    {
+      type: `narration`,
+      text: `N.F.113年8月23日17:20<br>新城・班彦医学院第一附属病院 特別病棟`
+    },
+    {
+      type: `narration`,
+      text: `ドイル探長は私心からクリスを残し、病院で治療が終わるまで待つと言った。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/doyle.jpg`,
+      name: `ドイル`,
+      text: `お前のことなんて大した問題じゃない。俺が証明してやる。`
+    },
+    {
+      type: `narration`,
+      text: `クリスの病床前で、ドイル探長は不器用にリンゴを切っていた。人を世話するのは苦手で、大きさバラバラの欠片をいくつか切り、危うく手を削ぎそうになった。`
+    },
+    {
+      type: `narration`,
+      text: `少女はぼんやりと何の反応も示さず、数日でずいぶん痩せ、かつて輝いていた瞳も曇っていた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/doyle.jpg`,
+      name: `ドイル`,
+      text: `特別管理局が認めた。どんなことがあっても、傷が癒えるまで逮捕しないって。この間、重案組がお前の安定性を証明する資料を用意する。FACのあの親父もあちこち手を回してる。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/doyle.jpg`,
+      name: `ドイル`,
+      text: `誰がこんな命令出したのか知らんが、俺たちはお前がいい奴だって知ってる……`
+    },
+    {
+      type: `narration`,
+      text: `話が終わらないうちに、仕事の電話が震えた。探長は低く数語を交わし、眉をひそめて立ち上がった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/doyle.jpg`,
+      name: `ドイル`,
+      text: `仕事が入った。行かなきゃ。ちゃんと食べて、まず体を大事にしろ。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `探長。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/doyle.jpg`,
+      name: `ドイル`,
+      text: `ん？どうした？何か欲しいか？`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `……正義って、存在すると思う？`
+    },
+    {
+      type: `narration`,
+      text: `ドイルは鼻がツンとし、リンゴを一気に皿に切り、つまようじを刺し、クリスの手に渡した。病室を出ようと振り返ったが、ドアで立ち止まり、拳でドア枠を強く叩いた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/doyle.jpg`,
+      name: `ドイル`,
+      text: `諦めるな、クリス。お前はいつも他人のために正義を叫んできた。今、お前が正義を必要としてる時、俺たちがお前に公正を返す。`
+    },
+    {
+      type: `narration`,
+      text: `病室を出ると、ドアがすぐに閉鎖された。クリスは半軟禁状態で、ぼんやりと病室に立ち、窓の外を眺めた。`
+    },
+    {
+      type: `narration`,
+      text: `（……）`
+    },
+    {
+      type: `narration`,
+      text: `夕陽が沈み、空が暗くなった。`
+    },
+    {
+      type: `narration`,
+      text: `彼女はベッドから起き上がり、隠していた包帯の束を取り出した。腰に巻き、片方をベッドの頭に結んだ。長さを確認し、窓の外の屋根やパイプを確認した。`
+    },
+    {
+      type: `narration`,
+      text: `洗面所に入り、探長が残した果物ナイフを手に取り、溜めていたアルコールで拭き、耳の後ろを浅く切り、位置追跡装置を取り出した。出てきて、点滴スタンドを膝で折り、使いやすい長さにし、腰に挿した。`
+    },
+    {
+      type: `narration`,
+      text: `出る前、ひどく不揃いな黄色いリンゴの皿を見つけ、一つ口に運んだが、置いた。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `存在するのかな……`
+    },
+    {
+      type: `narration`,
+      text: `赤くなった目を擦り、窓から飛び出した。`
+    },
+    {
+      type: `narration`,
+      text: `30分後、病院中に警報が響き、すぐに新城の半分に広がった。`
+    },
+    {
+      type: `narration`,
+      text: `N.F.113年8月24日午前1:24<br>クリス＆ミリアの家`
+    },
+    {
+      type: `narration`,
+      text: `ドンドンドン――乱暴なノックにミリアが目を覚まし、苛立って車椅子でドアを開けた。だが、目の前に現れたのは予想もしなかった顔だった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `治安官`,
+      text: `お前がクリスの妹、ミリアか？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `治安官`,
+      text: `お前の姉さんは能力者として、安全性と服従度が閾値を下回り、高危険級と評価された。即刻逮捕だ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `治安官`,
+      text: `どけ！徹底的に捜索する！`
+    },
+    {
+      type: `narration`,
+      text: `ミリアは無表情で道を譲り、彼らが乱暴に引き出しをひっくり返し、奇妙な器具で探るのを見ていた。しばらくして、彼女は家に入り、クリスの引き出しから手書きの手紙の束を取り出した。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `ミリア`,
+      text: `見ても無駄よ。私とあいつは血縁じゃないし、仲も悪い。あいつはここに逃げてこない。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `ミリア`,
+      text: `ほら、これ。あいつが「助けた」バカな連中のうち、似たようなバカが何人かいる。誰かがかくまうなら、絶対この中にいるよ。`
+    },
+    {
+      type: `narration`,
+      text: `治安官は疑いながら手紙を受け取り、数通を開いて読み、嘲笑うように笑った。ミリアに頷いた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `治安官`,
+      text: `危険な能力者を告発するなんて、立派な正義市民だな。`
+    },
+    {
+      type: `narration`,
+      text: `「正義」という言葉に、元々陰鬱な少女の眉がピクリと動き、嫌悪の表情を浮かべた。`
+    },
+    {
+      type: `narration`,
+      text: `N.F.113年8月24日午前2:03<br>FAC第五公共陵園`
+    },
+    {
+      type: `narration`,
+      text: `クリスは墓碑の間に一人立ち、最初に思いついた隠れ場所だったが、雨を避ける場所はなかった。青い雨が全身を濡らし、狂厄の反応が体と意識を灼いた。`
+    },
+    {
+      type: `narration`,
+      text: `遠くに人の声が聞こえたが、逃げる力はもうなかった。振り返ると、誰かが近づき、乱暴に叫んでいたが、聞き取れなかった。`
+    },
+    {
+      type: `narration`,
+      text: `その人が駆け寄り、手を掴むまで、車椅子に乗った妹だとわかった。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `ミリア`,
+      text: `ここで何バカやってんの！？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `クリス`,
+      text: `……ミリア？どうして……`
+    },
+    {
+      type: `narration`,
+      text: `ミリアは黒いレインコートを引っ張り、クリスの頭にかぶせて青い雨を遮った。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `ミリア`,
+      text: `あの連中、うちまで来た。名簿で少しは引きつけられるけど、すぐバレる。追跡されてるか、来るかもわかんない。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `ミリア`,
+      text: `これからどうする？どこに逃げる？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `クリス`,
+      text: `……逃げる……いや……裏に何かある。調べなきゃ……真相を……見つけなきゃ……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `クリス`,
+      text: `……何が起きたの？`
+    },
+    {
+      type: `narration`,
+      text: `答えを待たず、ミリアは嫌悪の表情を浮かべ、持っていたものをクリスの胸に押し付けた。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `ミリア`,
+      text: `またあの女のせい？あいつに問題があるって言ったのに、お前だけが自分を騙してた。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `ミリア`,
+      text: `あいつとずっと走り回って、とうに見抜けたはずだろ。真相に直面するのがそんなに難しいか、探偵！？ちっ、もういい。今の状態でも、お前には何か考えがあるんだろ。どうせ止められない。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `ミリア`,
+      text: `これ、持ってけ。お前、治安警学校も受かったし、事件も解決した。それ、全部あいつの手引きじゃない。いなくたって、お前は探長だ。廃物みたいになるな。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `ミリア`,
+      text: `うちに来た時のゾッとする姿を思い出せ。あんなとこから這い出せたんだ、今、しっかりしろ！`
+    },
+    {
+      type: `narration`,
+      text: `クリスは渡されたものをつかんだ。予備の杖、捜査道具などだった。顔を上げ、レインコートのフードを被り直した。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `クリス`,
+      text: `……行くよ……来てくれて、ありがとう。`
+    },
+    {
+      type: `narration`,
+      text: `N.F.113年8月24日午前4:21<br>新城治安总局特別事務室`
+    },
+    {
+      type: `narration`,
+      text: `W区の隠された牢房で、昏迷中の「Garden」の殺し屋・蓟が警報で目を覚ました。`
+    },
+    {
+      type: `narration`,
+      text: `侵入警告、侵入警告、E-2区が破壊され、収容者脱走、侵入警告――`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `……E-2……私のとこじゃない……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `だろ……あいつがまだ……`
+    },
+    {
+      type: `narration`,
+      text: `考えていると、壁が轟音とともに破られた。蓟は目を瞠った。「Garden」の仲間でこんな無粋な真似をする奴はいない。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `見つけた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `！？お前――`
+    },
+    {
+      type: `narration`,
+      text: `探偵は一言も発せず、杖で蓟の四肢の拘束具を叩き壊した。高精度の暗号錠も、探偵の暴力の前では一秒で解かれた。探偵は蓟を掴んで外へ突進した。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `放せ！何する気だ！？`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `「Garden」に連れてけ、早く。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `ふざけんな、もう二度と――`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `この5日、レオポルドが死ぬって噂が飛び交ってる。驚くなよ、八割がたお前らを騙す罠だ。同じ手にかかったろ？`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `さっき、HUSH部隊が完全武装で出ていくのを見た。道がわかるなら、近道で戻れ。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `動かなきゃ、お前の家がなくなるぞ！`
+    },
+    {
+      type: `narration`,
+      text: `その言葉に蓟は焦り、探偵の手首を掴み、前を塞ぐ治安官を避け、廊下の奥へ突進した。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `壁を壊せ！`
+    },
+    {
+      type: `narration`,
+      text: `暴力探偵は杖を振り、コンクリート壁に大穴を開けた。殺し屋は探偵を引っ張り、十数階の高さから飛び降りた！`
+    },
+    {
+      type: `narration`,
+      text: `落下の風音の中、殺し屋は手首を切り、浅い傷が柳葉型に裂け、中央が瞳のように光り、狂厄の痕が縁に広がった。`
+    },
+    {
+      type: `narration`,
+      text: `直後、落下する先に黒い円孔が開き、二人はそこに突っ込んだ。探偵が叫んだ瞬間、音が一変した。`
+    },
+    {
+      type: `narration`,
+      text: `ディス城の喧騒が遮断され、暗いドームのような空間にいた。静寂で、陰鬱で、世と隔絶されたようだった。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `……何の能力？ここはどこ？`
+    },
+    {
+      type: `narration`,
+      text: `蓟は答えず、探偵を引き離し、警戒しながら二人がいた黒い円を凝視した。手には炎のような刃が凝縮していた。`
+    },
+    {
+      type: `narration`,
+      text: `まず、弾丸が下から垂直に撃ち上がり、しばらくして、頭のようなものが黒い穴から半分覗いた。蓟は怒号を上げ、炎の刃を突き刺し、侵入者が姿を現す前に押し戻した。`
+    },
+    {
+      type: `narration`,
+      text: `黒い円は急速に閉じ、消えた。まるで地面に存在しなかったかのように。蓟は後ろに倒れ、大きく息をついた。すべてが終わったようだった。`
+    },
+    {
+      type: `narration`,
+      text: `探偵は周囲を見回し、遠くに隠された建物が見えた。灯りがともるが、静かで、何の兆しかわからなかった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `……早く……「Garden」に……`
+    },
+    {
+      type: `narration`,
+      text: `N.F.113年8月24日午前4:30<br>空間術式-？？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `これが……最後の基地。「登録」した「Garden」のメンバーが入口を開けるけど、開けた後、閉じるまで時間がかかる。さっきみたいに。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `バカな連中で助かった……もし追跡装置を投げ込まれたら、また……`
+    },
+    {
+      type: `narration`,
+      text: `探偵は黙って蓟を支え、二人でやっと一人の能力者として、遠くの建物に向かった。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `これがお前らの能力？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `違う。業師は言った。これは報酬……最後の依頼の報酬だ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `彼女はついに、誰も邪魔しない「Garden」を手に入れる。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `つまり、福音地が与えた避難所。さっきのは空間技術？`
+    },
+    {
+      type: `narration`,
+      text: `そう考えながら、二人は静かな建物に近づいた。近づくにつれ、不吉な予感が湧き、会話が止まった。`
+    },
+    {
+      type: `narration`,
+      text: `近づくと、目を瞠った。`
+    },
+    {
+      type: `narration`,
+      text: `探偵は瞬時に反応し、蓟に麻酔を打ち、崩れるのを止めた。これは病院でこっそり手に入れたもの。蓟の看守を処理した後、まだ残っていた。`
+    },
+    {
+      type: `narration`,
+      text: `探偵は慣れたもので、悪いことの手段もかなり学んでいた。`
+    },
+    {
+      type: `narration`,
+      text: `昏迷した殺し屋を脇に支え、探偵は目の前の光景に向き合った。こめかみが激しく脈打った。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `行け、探偵……これが第一現場だ……真相を調べるんだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリス`,
+      text: `自分で……証明しないと……`
+    }
+  ]
+};

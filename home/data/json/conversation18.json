@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "title": "flowers-205「二人目」",
+    "bgm": "mp3/bg/conversation12.mp3",
+    "summary": "" 
+  },
+  
+  "infoPanel": {
+    "glossary": [
+      { 
+        "term": "上庭 (Paradeisos)", 
+        "desc": "人类文明的最高统治机构，位于天空之上。" 
+      },
+      { 
+        "term": "GARDEN", 
+        "desc": "位于灰色地带的杀手组织，由Leopold领导。" 
+      }
+    ],
+    "characters": [
+      {
+        "name": "Leopold",
+        "avatar": "img/dh-leopold.jpg",
+        "note": "Garden的首领。虽然看似冷酷，实则在为部下寻找生路。"
+      }
+    ],
+    "synopsis": "工事中",
+    "relatedLink": {
+      "text": "次章",
+      "targetId": "conversation19"
+    }
+  },
+
+  "script": [
+    {
+        "type": "narration",
+        "text": "探偵は少し安堵していた。2つの事件現場がそれほど離れていないからだ。もし彼女の推理が正しければ……ユウツは業師の手で死んだわけではないかもしれない。"
+    },
+    {
+        "type": "dialogue",
+        "position": "right",
+        "avatar": "img/dh/pc1.png",
+        "name": "探偵",
+        "text": "あの業師、めっちゃ頭使って、自分の原則まで破って、3番目の現場の後にわざわざ4番目を作り上げた。全部その事実を隠すためだよ。"
+    },
+    {
+        "type": "dialogue",
+        "position": "right",
+        "avatar": "img/dh/pc1.png",
+        "name": "探偵",
+        "text": "犯人が隠したいものがあるなら、私たちがそれを暴かなきゃ！"
+    },
+    {
+        "type": "narration",
+        "text": "彼女は会議室に飛び込み、3番目の事件現場に戻った。今度は、嘘の下に隠された嘘を解き明かす。"
+    },
+    {
+        "type": "narration",
+        "text": "凶手の布局を理解した探偵は、虚実入り混じるその手口を見抜いた。明らかな破綻は、実は相手がわざと残したメッセージで、一見隠されている偽装には――もう一層の意図があるかもしれない。"
+    },
+    {
+        "type": "narration",
+        "text": "探偵は中央の壁画を操作し、右端まで移動させた後、起動音を無視してさらに右の凹みを強く押した。"
+    },
+    {
+        "type": "narration",
+        "text": "仕掛けがゆっくり動き、新たな壁画が目の前に現れた。"
+    },
+    {
+        "type": "narration",
+        "text": "これこそ、事件発生時に3番目の現場で展示されていた本当の壁画だ。焦げたような刀の痕跡は、別の凶手が存在したことを示している。このあからさまな攻撃は、業師の一貫した犯行手口とは全く異なる。"
+    },
+    {
+        "type": "narration",
+        "text": "この秘密を隠すため、業師はさまざまな謎を巧妙に仕掛けただけでなく、予告状のルールまで破った……"
+    },
+    {
+        "type": "narration",
+        "text": "密室に入ると、強制的にロックされた保管庫を見つけた。"
+    },
+    {
+        "type": "narration",
+        "text": "探偵はすでに業師の謎を解いていた。もう何の結果も恐れず、斧を振り上げ、赤く光る保管庫を力ずくで切り開いた。"
+    },
+    {
+        "type": "narration",
+        "text": "中には一枚の花笺だけがあった。かつて受け取ったものと全く同じ。"
+    },
+    {
+        "type": "narration",
+        "text": "「小さな子、謎解きもっと早くしてね～」"
+    },
+    {
+        "type": "narration",
+        "text": "初めてここに来たなら、探偵はこのメッセージにイラっとしたかもしれない。でも今は……蛇足にしか思えない。"
+    },
+    {
+        "type": "narration",
+        "text": "さっき見つけた焦げた刀の痕跡――それは明らかに業師の力ではなく、別の能力だ。"
+    },
+    {
+        "type": "narration",
+        "text": "そして、どこにもユウツの花が見つからないことが一つを示していた。業師が訪れた時、彼はもう完全な「花」を咲かせられなかった。"
+    },
+    {
+        "type": "narration",
+        "text": "すでに誰かに息を止めさせられていたのだ。"
+    },
+    {
+        "type": "dialogue",
+        "position": "right",
+        "avatar": "img/dh/pc1.png",
+        "name": "探偵",
+        "text": "ユウツは別の殺し屋に殺された……業師があんなに手を尽くしたのは、全部を隠すためだ。あの人物も「Garden」の能力者で、しかも、かなり弱い。"
+    },
+    {
+        "type": "dialogue",
+        "position": "right",
+        "avatar": "img/dh/pc1.png",
+        "name": "探偵",
+        "text": "これはチャンスだよ。"
+    },
+    {
+        "type": "dialogue",
+        "position": "right",
+        "avatar": "img/dh/pc1.png",
+        "name": "探偵",
+        "text": "業師の意志に逆らって犯行に及び、現場にこんなに破綻を残して、自意識過剰な業師に完璧な計画を捨てさせてまで現場を隠させた……ユウツを襲った犯人は、想像以上に簡単に倒せるはず。"
+    },
+    {
+        "type": "dialogue",
+        "position": "right",
+        "avatar": "img/dh/pc1.png",
+        "name": "探偵",
+        "text": "彼女が突破口になる。でも……どうすればいい？"
+    },
+    {
+        "type": "narration",
+        "text": "その時、電話が鳴った。"
+    },
+    {
+        "type": "dialogue",
+        "position": "left",
+        "avatar": "img/dh/x.png",
+        "name": "シャーローム",
+        "text": "よくやった、クリス。後は私に任せて。"
+    }
+]
+}

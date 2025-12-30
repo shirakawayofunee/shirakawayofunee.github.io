@@ -1,0 +1,391 @@
+export default {
+  meta: {
+    title: `flowers-206「誘い餌」`,
+    bgm: `mp3/bg/conversation24.mp3`,
+    summary: ``
+  },
+  infoPanel: {
+    glossary: [
+      {
+        term: `上庭 (Paradeisos)`,
+        desc: `人类文明的最高统治机构，位于天空之上。`
+      },
+      {
+        term: `GARDEN`,
+        desc: `位于灰色地带的杀手组织，由Leopold领导。`
+      }
+    ],
+    characters: [
+      {
+        name: `Leopold`,
+        avatar: `img/dh-leopold.jpg`,
+        note: `Garden的首领。虽然看似冷酷，实则在为部下寻找生路。`
+      }
+    ],
+    synopsis: `工事中`,
+    relatedLink: {
+      text: `次章`,
+      targetId: `conversation20`
+    }
+  },
+  script: [
+    {
+      type: `narration`,
+      text: `ニュース：未来基金会スキャンダル再び波紋：中心人物ユウツの生存疑惑、世論を沸騰させる`
+    },
+    {
+      type: `narration`,
+      text: `最新情報によると、未来基金会は長年にわたり違法な手段で軍属撫恤金を10億ディス幣も横領していた。<br>この資金は本来、犠牲となった軍人の家族を支援するためのものだった。中心人物ユウツの生存疑惑と<br>新都市の大ホテルでの惨劇の複雑な内幕が、再び世間の注目を集めている。`
+    },
+    {
+      type: `narration`,
+      text: `スキャンダルの核心：10億の軍属撫恤金横領`
+    },
+    {
+      type: `narration`,
+      text: `未来基金会（FAC）は、長年にわたり10億ディス幣の軍属撫恤金を違法に横領していたと非難されている。これらの資金は、犠牲軍人の家族への経済支援を目的としていたが、基金会内部の人間によって私腹を肥やされ、社会の強い憤りを引き起こした。内部情報筋によると、基金会内部に高級幹部の「内通者」が存在し、撫恤金が組織的に横領された可能性があり、具体的な金の流れは依然として不明だ。`
+    },
+    {
+      type: `narration`,
+      text: `新都市大ホテル惨劇：清算か陰謀か？`
+    },
+    {
+      type: `narration`,
+      text: `新都市大ホテルの惨劇は、未来基金会の中心メンバーを対象とした「清算行動」と見られている。噂では、謎の人物が重建が基金会の高級幹部たちを致命的に襲撃し、複数の中心人物がその夜の晩餐会で命を落とした。この行動は一部で「悪を裁く正義」と見なされている。しかし、内部情報筋によると、スキャンダルの黒幕である基金会の重要人物ユウツは大ホテル惨劇で死なず、別の殺人事件に巻き込まれたが最終的に救命されたという。基金会は複雑な手段で真相を隠し、中心人物を守ったのか？`
+    },
+    {
+      type: `narration`,
+      text: `現在、ユウツの生存やFACスキャンダルの詳細は公式に確認されていないが、真相を求める世間の声は日増しに高まり、関係当局に対し未来基金会スキャンダルと大ホテル惨劇の全貌を徹底調査し、軍属撫恤金の正当な使用を確保するよう求める声が上がっている。`
+    },
+    {
+      type: `narration`,
+      text: `N.F.113年8月14日 21:25<br>新都市第三大道 - 未来基金療養院`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/reporter_a.jpg`,
+      name: `記者`,
+      text: `探長！説明してください！ユウツが生きてるって本当ですか？なんで情報を隠してるんですか？もしかして殺し屋なんかいなくて、全部ユウツの自作自演じゃないですか！当時のスキャンダル清算の話を聞いて、金蝉脱殻を企んだんじゃないですか！`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/reporter_b.jpg`,
+      name: `記者`,
+      text: `みんなに説明してください！注目度がどんどん高まってます、隠しきれませんよ！療養院で本人を見ました！`
+    },
+    {
+      type: `narration`,
+      text: `噂を聞きつけた記者たちが未来基金療養院の正門を水漏れしないほど塞ぎ、所谓の「確かな情報」を手に、生き延びた基金会の責任者ユウツに名乗り出て白状しろと叫んだ。一時、騒音が響き渡った。`
+    },
+    {
+      type: `narration`,
+      text: `人混みの向こう側で、細い人影が長い間立ち尽くした後、くるりと踵を返した。`
+    },
+    {
+      type: `narration`,
+      text: `彼女は巧みに顔を隠し、音もなく歩き、目立たぬように、しかしだんだん速くなり、路地裏に飛び込むと、溢れる憎しみを抱えて走り出した。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle2.jpg`,
+      name: `隠れた人影`,
+      text: `……私のミスだ。自分でこの始末をつけないと。追い出されてもいい、もう業師に迷惑かけられない……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle2.jpg`,
+      name: `隠れた人影`,
+      text: `クソくらえ……クソくらえ！確かに刺した、能力も発動した、確認したんだ！`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle2.jpg`,
+      name: `隠れた人影`,
+      text: `あのゴミが生きてるのに、アイツに殺された人たちがなんで生きられない！`
+    },
+    {
+      type: `narration`,
+      text: `彼女は確認済みだった。あの男は北東の極秘高級病棟にいる、3日前に緊急移送された。写真の男は絶対に間違えない、彼女の人生を壊したあのクソくらえだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle2.jpg`,
+      name: `蓟`,
+      text: `殺してやる、何度でも殺してやる！自分の手で殺してやる！`
+    },
+    {
+      type: `narration`,
+      text: `彼女は影の側門に飛び込んだが、そこにはすでに待ち人がいた。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `……やっぱり来たね。禁閉解除された？シャーローム姉さんの言う通り、業師を飛び越えて勝手に動くような執着心の強い新人暗殺者、業師に尻拭いをさせるような後輩は、2度目の失敗を絶対に許せないよね。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `殺したい気持ちが強すぎて、こんな罠にかかったんだ。`
+    },
+    {
+      type: `narration`,
+      text: `暗殺者の声が震え、両目が赤く染まった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/thistle2.jpg`,
+      name: `蓟`,
+      text: `あの時、お前を殺すべきだった！`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `復讐を口実に悪を働くのはやめなよ！今、ユウツ殺害の罪で逮捕する。観念して、真相を話して！これが最後の猶予だよ！`
+    },
+    {
+      type: `narration`,
+      text: `この待ち伏せ戦はあっさり終わった。暗殺者はすぐに安全屋に移され、第九機関から派遣された催眠専門家が調査を補助した。`
+    },
+    {
+      type: `narration`,
+      text: `探偵は審問の傍聴を断られ、仕事が終わった彼女は休息室に座り、ぼんやりとした気分に陥った。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `業師に「開花」された身体は、すべての正常な生理反応が止まる。でも、ユウツの実際の死亡時刻は8月9日だと思う。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `あの夜、「Garden」の新人が私を助けた夜。彼女はユウツを心底恨んでたから、「Garden」のルールを無視して自分で復讐したんだ……業師を怒らせる覚悟で。`
+    },
+    {
+      type: `narration`,
+      text: `「あの時、お前を殺すべきだった！」`
+    },
+    {
+      type: `narration`,
+      text: `探偵はソファに寄りかかり、疲れ果てた顔で天井を見上げた。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `……大仇を報いた帰り道、彼女、初めて迷ったんじゃないかな。だから、敵である私を助けた……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/doyle.jpg`,
+      name: `ドイル`,
+      text: `考えすぎだ。少なくとも、お前は彼女を捕まえた。大仇を報いて「Garden」に戻ったなら、彼女は本物の暗殺者になって、もっと多くの命を奪い、迷いから無感覚になってただけだ。今のままがいいよ、少なくとも彼女はお前を生き生きと恨んでる。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/doyle.jpg`,
+      name: `ドイル`,
+      text: `全員を幸せにできなくても、全員に好かれることもない。でも、お前は自分が正しいと思うことをやってる。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/doyle.jpg`,
+      name: `ドイル`,
+      text: `初めての大事件、よくやった。期待以上の活躍だったよ。ゆっくり休め。`
+    },
+    {
+      type: `narration`,
+      text: `うなずきながら、探偵は心身ともに疲れ果てていた。すべてが終わってほしい。彼女はスマホでニュースを開き、イヤホンを付けた。`
+    },
+    {
+      type: `narration`,
+      text: `画面には、無数のカメラとマイクに囲まれた冷徹で毅然とした老人が映っていた。探偵は彼を認識した。蝕月行動後に就任した現FAC総司令官だ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/reporter_a.jpg`,
+      name: `記者`,
+      text: `FACの撫恤金事件とこの事件の関係は？能力者が関与してるんですか？総司令の帰還と関係ありますか？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/reporter_b.jpg`,
+      name: `記者`,
+      text: `こんな治安事件にFACが絡むのはなぜですか？管轄内ですか？今回の作戦計画に何か裏があるんですか？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/reporter_c.jpg`,
+      name: `記者`,
+      text: `説明してください！`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander.png`,
+      name: `FAC総司令`,
+      text: `……隠すつもりはない。FACのすべての計画は城邦を守るためだ。こんな小さなことで作戦が挫折することはない。私は作戦計画を進めるために戻っただけだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander.png`,
+      name: `FAC総司令`,
+      text: `せっかくのインタビューだ、犯人たちに一言言わせてくれ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander.png`,
+      name: `FAC総司令`,
+      text: `一般人に矛先を向けるな。FACが標的なら、正面から来い。戦場で会おう。`
+    },
+    {
+      type: `narration`,
+      text: `新都市治安局大楼を後にし、探偵は静かな路地を一人歩いた。`
+    },
+    {
+      type: `narration`,
+      text: `予告詩と連続事件はすべて終わった。あの女は次に何をするつもりだ？`
+    },
+    {
+      type: `narration`,
+      text: `蓟がこっそり「Garden」を抜け出せたなら、業師は今、基地にいない可能性が高い。じゃあ、どこにいる？`
+    },
+    {
+      type: `narration`,
+      text: `依頼人に会いに行った？それとも次の花を咲かせる？`
+    },
+    {
+      type: `narration`,
+      text: `どうせ最初から私なんか眼中になかった。探偵はそれをつくづく理解し、突然、強く彼女に会いたくなった。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `業師に聞きたい。このすべては何のためだ？そんな大事な作戦を邪魔する必要があるのか？地下の側に立つ必要があるのか？西区を救う機会を犠牲にして得た復讐が、「Garden」を満足させるのか？`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `……私、経験不足で、雑で、つい頭に血が上ってめちゃくちゃやっちゃう……でも、直感が言うんだ。暗殺予告詩はまだ全部終わってない。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `あの女の派手な性格なら、こんな静かに……終わるはずがない。`
+    },
+    {
+      type: `narration`,
+      text: `そう話していると、突然、首の後ろに鋭い何かが刺さり、驚く間もなく、探偵は意識を失った。`
+    },
+    {
+      type: `narration`,
+      text: `（……）`
+    },
+    {
+      type: `narration`,
+      text: `暗殺者の審問結果が執行人の手に渡った。`
+    },
+    {
+      type: `narration`,
+      text: `催眠専門家の暗示の下、「Garden」の暗殺者は知っているすべての情報を話した。限られた情報だ。もっと深い内容には逆暗示がかかっており、今は聞き出せない。`
+    },
+    {
+      type: `narration`,
+      text: `彼女は業師が邪悪な者の依頼を受けたことを心配していた。長いリストをちらっと見たことがある。業師が何らかの理由で危険な取引をしたことも知っていた。`
+    },
+    {
+      type: `narration`,
+      text: `彼女は業師の計画を壊したことを深く後悔していた。`
+    },
+    {
+      type: `narration`,
+      text: `シャーロームは静かに報告書をめくった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `シャーローム`,
+      text: `秋膏盛、酒肉錯金銀、歡宴起……歳暮至、茫茫覆枯井、且独行。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `シャーローム`,
+      text: `下手くそだけど得意げな文章。作者はきっとこれを誇りに思い、完璧に計画を実行したかったはずだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `シャーローム`,
+      text: `でも、計画は結局乱された。彼女はもう一人の小さな暗殺者を庇うために、2つの現場に分けざるを得なかった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `シャーローム`,
+      text: `2つの現場は本質的に一句の詩、「歡宴起」。じゃあ、「歳暮至……且独行」の本当の標的は……`
+    },
+    {
+      type: `narration`,
+      text: `シャーロームは微笑んだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `シャーローム`,
+      text: `盛大に花を咲かせるなら、これで終わりじゃないよね……業師……`
+    },
+    {
+      type: `narration`,
+      text: `（……）`
+    },
+    {
+      type: `narration`,
+      text: `内部警報`
+    },
+    {
+      type: `narration`,
+      text: `全員集合！総司令が襲撃された！総司令が襲撃された！`
+    },
+    {
+      type: `narration`,
+      text: `犯人は「Garden」の暗殺者だ！`
+    }
+  ]
+};
