@@ -4,16 +4,15 @@ export default {
     bgm: `mp3/bg/conversation5.mp3`,
     summary: `雨粒が音を立てる中で、Sは昔の光景を思い出した。`
   },
-
   infoPanel: {
     glossary: [
-      { 
-        term: `藍雨`, 
-        desc: `能力者に一定のダメージを与え、制限をかけられる人工降雨。ただし、強力な能力者には焼け石に水程度の効果しかない。` 
+      {
+        term: `藍雨`,
+        desc: `能力者に一定のダメージを与え、制限をかけられる人工降雨。ただし、強力な能力者には焼け石に水程度の効果しかない。`
       },
-      { 
-        term: `GARDEN`, 
-        desc: `位于灰色地带的杀手组织，由Leopold领导。` 
+      {
+        term: `GARDEN`,
+        desc: `位于灰色地带的杀手组织，由Leopold领导。`
       }
     ],
     characters: [
@@ -29,10 +28,9 @@ export default {
       targetId: `conversation6`
     }
   },
-
   script: [
     {
-      type: `narration`, 
+      type: `narration`,
       text: `N.F.113年7月23日 23:14<br>エリカ山荘内`
     },
     {
@@ -40,101 +38,101 @@ export default {
       src: `img/cg/br_03.png`
     },
     {
-      type: `narration`, 
+      type: `narration`,
       text: `藍雨は激しく降り注ぎ、能力者の体を灼きながらも、彼女の足取りを止めることはできない。`
     },
     {
-      type: `narration`, 
+      type: `narration`,
       text: `単瞳のルーンはますます深く刻まれ、彼女に力を与えると同時に、狂気を植え付ける。Sの体からは、汚染が凝縮した単瞳の怪物が次々と分裂し現れた。そして、遠くの山荘のあちこちから怪異の咆哮が轟き、まるでそこが「狂厄」の培養皿と化しているようだ。`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/security.png`, 
+      position: `left`,
+      avatar: `img/dh/security.png`,
       name: `Security`,
       text: `殺さず生け捕りにしろって…こんなの、どうできるというんだ！？なんで俺たちがこんな怪物と戦わなきゃいけないんだ！俺たちはただの人間だ、こんなの無理…軍はどこ！？戻ってこいよ、助けてくれよ！助け——`
     },
     {
-      type: `narration`, 
+      type: `narration`,
       text: `（セヴェロの脳は瀕死の状態に陥り、生前の記憶が走馬灯のように目の前で駆け巡る。）`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/severo10.png`, 
+      position: `left`,
+      avatar: `img/dh/severo10.png`,
       name: `Severo`,
       text: `Sの中「私はかつて、何の覚悟も持たないまま、すべてを失った。」`
     },
     {
-      type: `narration`, 
+      type: `narration`,
       text: `（三十年前の惨劇）`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/npc.png`, 
+      position: `left`,
+      avatar: `img/dh/npc.png`,
       name: `Gospel NPC`,
       text: `可哀そうな子…何もかも失って…私と一緒に来なさい。少なくとも、ここは君の仲間がいる。復讐だってできる。私が教えてあげるわ…`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/severo10.png`, 
+      position: `left`,
+      avatar: `img/dh/severo10.png`,
       name: `Severo`,
       text: `Sの中「私は心構えがなく、再びそれらを手に入れた。」`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/junior.png`, 
+      position: `left`,
+      avatar: `img/dh/junior.png`,
       name: `Junior`,
       text: `こんな可愛い服、本当に私にくれるの？ありがとう！！Sさん、なんかお母ちゃんみたい！あ、ごめん、姉ちゃんだよ～`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/j.png`, 
+      position: `left`,
+      avatar: `img/dh/j.png`,
       name: `J`,
       text: `姉ちゃんなんて、ちょっと恥ずかしいなぁ…私よりも先にここに来て、たくさんのものを教えてくれた。私の心の中では、ずっと尊敬すべき先輩だと思っているんです…`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/leopold.png`, 
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
       name: `Leopold`,
       text: `よし、今日からもう私たちを縛れる者はいない。処分すべき者は皆殺しだ。もう一線を画いて、バイバイできるんだ～。`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/leopold.png`, 
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
       name: `Leopold`,
       text: `今から、みな、自分の好きな仕事だけを受けて、好きな獲物だけを仕留めて、報酬をもらおう。行きたいところがあれば行け、気が向かなければ離れても構わない。`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/leopold.png`, 
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
       name: `Leopold`,
       text: `誰かの指図をもう受けなくていい——私の以外はね。`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/leopold.png`, 
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
       name: `Leopold`,
       text: `恨みは君たちを縛れなくなる、私が自由をやるんだ。自分の命は、好きなように使えばいい——師匠の私が許したんだから。`
     },
     {
       type: `dialogue`,
-      position: `left`, 
-      avatar: `img/dh/severo10.png`, 
+      position: `left`,
+      avatar: `img/dh/severo10.png`,
       name: `Severo`,
       text: `セヴェロの中「私は自分のために生きている…もう宝物は私の手に入った…彼女たちを傷つけるなんてさせない…誰も私のとこを通させない…」`
     },
     {
-      type: `narration`, 
+      type: `narration`,
       text: `だが、そんな思いももはや意味がない。「狂厄」が彼女の体内で暴走し、セヴェロの意識を徐々に奪っていく。`
     }
   ]
-}
+};

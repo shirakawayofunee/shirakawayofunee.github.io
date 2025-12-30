@@ -4,16 +4,15 @@ export default {
     bgm: `mp3/bg/conversation5.mp3`,
     summary: `エリカ山荘の嵐は去ったが、遠くの黒雲はまだどんよりとした山のようで、天と地では何かが蠢いている。`
   },
-
   infoPanel: {
     glossary: [
-      { 
-        term: `上庭 (Paradeisos)`, 
-        desc: `人类文明的最高统治机构，位于天空之上。` 
+      {
+        term: `上庭 (Paradeisos)`,
+        desc: `人类文明的最高统治机构，位于天空之上。`
       },
-      { 
-        term: `GARDEN`, 
-        desc: `位于灰色地带的杀手组织，由Leopold领导。` 
+      {
+        term: `GARDEN`,
+        desc: `位于灰色地带的杀手组织，由Leopold领导。`
       }
     ],
     characters: [
@@ -29,7 +28,6 @@ export default {
       targetId: `conversation7`
     }
   },
-
   script: [
     {
       type: `narration`,
@@ -124,4 +122,4 @@ export default {
       text: `噂で「業師」と呼ばれるあの能力者が、必ず現れる。`
     }
   ]
-}
+};
