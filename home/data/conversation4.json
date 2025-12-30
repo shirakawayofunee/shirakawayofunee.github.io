@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Blue Rain-004「異変」",
+    "title": "Blue Rain-004「大切なこと」",
     "bgm": "mp3/bg/conversation2.mp3",
-    "summary": "" 
+    "summary": "暴走した能力者たちが束縛を解き、危機が迫る。" 
   },
   
   "infoPanel": {
@@ -18,9 +18,19 @@
     ],
     "characters": [
       {
-        "name": "Leopold",
-        "avatar": "img/dh-leopold.jpg",
-        "note": "Garden的首领。虽然看似冷酷，实则在为部下寻找生路。"
+        "name": "S",
+        "avatar": "img/dh/severo10.png",
+        "note": "Garden的"
+      },
+      {
+        "name": "X",
+        "avatar": "img/dh/x.png",
+        "note": "「上庭」の七代目執行人、極端に理性的で<span>人間味のない</span>道具。"
+      },
+      {
+        "name": "代理人",
+        "avatar": "img/dh/agent.png",
+        "note": "上庭からXを協力（監視）するために派遣された代理人。<br>冷酷で機械的、典型的な上庭の官僚像を体現しており、<br>任務の効率を最優先し、一般人の命や感情を軽視する。"
       }
     ],
     "synopsis": "工事中",

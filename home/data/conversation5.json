@@ -1,14 +1,15 @@
 {
   "meta": {
     "title": "Blue Rain-005「何のために戦うか」",
-    "bgm": "mp3/bg/conversation5.mp3"
+    "bgm": "mp3/bg/conversation5.mp3",
+    "summary": "雨粒が音を立てる中で、Sは昔の光景を思い出した。" 
   },
   
   "infoPanel": {
     "glossary": [
       { 
-        "term": "上庭 (Paradeisos)", 
-        "desc": "人类文明的最高统治机构，位于天空之上。" 
+        "term": "藍雨", 
+        "desc": "能力者に一定のダメージを与え、制限をかけられる人工降雨。ただし、強力な能力者には焼け石に水程度の効果しかない。" 
       },
       { 
         "term": "GARDEN", 

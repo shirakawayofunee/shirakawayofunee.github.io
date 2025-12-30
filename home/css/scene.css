@@ -14,15 +14,7 @@
     --text-sub: #666666;
     --highlight-bg: #e0e0e0;
     
-    /* 中右侧面板：暗黑风格 */
-/*     --dark-bg-color: #0b0c15;
-    --dark-panel-bg: rgba(18, 20, 28, 0.95);
-    --dark-text-white: #e0e0e0;
-    --dark-text-grey: #5c6b7f;
-    --dark-accent-color: #1a2a3a;
-    --dark-border-color: #2a3b4c;
-    --highlight-red: #e23b78; */
-    --highlight-red: #e23b78; /* 保留剧本中的红色强调 */
+    --highlight-red: #D40F30;
 }
 
 body {
@@ -36,7 +28,7 @@ body {
 }
 
 span {
-    color: #e23b78;
+    color: #D40F30;
 }
 
 /* 背景装饰层 (暂时隐藏，因为新风格不需要) */
@@ -122,7 +114,6 @@ span {
     font-weight: 900;
     font-size: 3rem;
     line-height: 1.1;
-    color: #B8050E; /* 文字改为黑色，在高对比度下更清晰 */
     color: #D40F30;
     margin: 0;
     letter-spacing: -1px;

@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "flowers-102「探偵ゲーム」",
-    "bgm": "mp3/bg/conversation9.mp3"
+    "bgm": "mp3/bg/conversation9.mp3",
+    "summary": "" 
   },
   
   "infoPanel": {
