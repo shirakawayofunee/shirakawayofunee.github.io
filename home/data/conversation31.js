@@ -7,31 +7,32 @@ export default {
   infoPanel: {
     glossary: [
       {
-        term: `s)`,
-        desc: `拥有最高科技与武力，蔑视地表一切生命。`
+        term: `上庭`,
+        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
+    現在は再編を経て7人のメンバーによって構成されている。`
       },
       {
-        term: `黑环 (Black Ring)`,
-        desc: `普通人进入即死或变异。`
+        term: `福音地`,
+        desc: `工事中`
+      },
+      {
+        term: `GARDEN`,
+        desc: `工事中`
       }
     ],
     characters: [
       {
-        name: `Leopold`,
-        avatar: `img/dh-leopold.jpg`,
-        note: `本章中她试图掩盖自己的虚弱`
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
       },
       {
-        name: `侦探`,
-        avatar: `img/dh/pc1.jpg`,
-        note: `FAC幸存者，此时尚不知道L的真实意图，满腔怒火。`
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
       }
     ],
-    synopsis: ``,
-    relatedLink: {
-      text: `次章`,
-      targetId: `conversation32`
-    }
+    synopsis: ``
   },
   script: [
     {

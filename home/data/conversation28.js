@@ -8,7 +8,8 @@ export default {
     glossary: [
       {
         term: `上庭`,
-        desc: `人类文明的最高统治机构。`
+        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
+    現在は再編を経て7人のメンバーによって構成されている。`
       },
       {
         term: `GARDEN`,
