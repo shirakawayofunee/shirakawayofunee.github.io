@@ -43,20 +43,19 @@
         <!-- 中间：剧本正文 (Script) -->
 <!-- 中间：剧本主容器 (Wrapper) -->
 <main class="panel script-wrapper">
-    
-    <!-- 1. 顶部固定层 (原本是header，现在改用div) -->
-    <!-- 注意：这里的数据只是占位符，JS加载后会立即替换 -->
-    <div class="script-header-layer">
-        <div class="header-decoration">
-            <span class="deco-text">LOG_ID: <span id="header-id">UNKNOWN</span> // <span id="header-date">N.F.000</span></span>
-            <div class="deco-line"></div>
+
+    <!-- 1. 顶部固定层 (精简版：只显示概要) -->
+    <div class="script-header-layer" id="script-header">
+
+        <!-- 概要容器 -->
+        <div class="header-summary-box">
+            <p class="chapter-summary" id="header-summary">WAITING FOR INPUT...</p>
         </div>
-        <div class="header-main-content">
-            <!-- 对应 json.meta.title -->
-            <h2 class="chapter-big-title" id="header-title">LOADING...</h2>
-            <!-- 对应 json.infoPanel.synopsis -->
-            <p class="chapter-summary" id="header-summary">WAITING FOR STREAM...</p>
-        </div>
+
+        <!-- 沉浸模式开关 (保留) -->
+        <button class="immersive-btn" onclick="enableImmersiveMode()" title="Immersive Mode">
+            <span class="immersive-icon">⛶</span>
+        </button>
     </div>
 
     <!-- 2. 剧本正文滚动区 (保留 id="script-panel" 兼容原有逻辑) -->
@@ -72,11 +71,11 @@
     <div class="floating-nav-layer">
         <button id="float-btn-prev" class="neo-float-btn prev-btn" onclick="navigate(-1)">
             <span class="btn-icon">◀</span>
-            <span class="btn-text">PREV</span>
+            <span class="btn-text">前</span>
         </button>
         
         <button id="float-btn-next" class="neo-float-btn next-btn" onclick="navigate(1)">
-            <span class="btn-text">NEXT</span>
+            <span class="btn-text">次</span>
             <span class="btn-icon">▶</span>
         </button>
     </div>
