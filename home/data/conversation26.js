@@ -11,22 +11,32 @@ export default {
         desc: `「登録」された花園のメンバーは、任意のものを媒体にし、単瞳フォーマット式な伝送ドアを開け、花園本部へ戻れる。ただし、ドアはすぐさま閉じないため、Sは誰かが隠れて本部に侵入するのを防ぎ、この術式を使わなかった。`
       },
       {
+        term: `上庭`,
+        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
+    現在は再編を経て7人のメンバーによって構成されている。`
+      },
+      {
+        term: `福音地`,
+        desc: `工事中`
+      },
+      {
         term: `GARDEN`,
-        desc: `位于灰色地带的杀手组织，由Leopold领导。`
+        desc: `工事中`
       }
     ],
     characters: [
       {
-        name: `Leopold`,
-        avatar: `img/dh-leopold.jpg`,
-        note: `Garden的首领。虽然看似冷酷，实则在为部下寻找生路。`
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
+      },
+      {
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
       }
     ],
-    synopsis: `工事中`,
-    relatedLink: {
-      text: `次章`,
-      targetId: `conversation27`
-    }
+    synopsis: `工事中`
   },
   script: [
     {

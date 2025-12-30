@@ -7,26 +7,32 @@ export default {
   infoPanel: {
     glossary: [
       {
-        term: `上庭 (Paradeisos)`,
-        desc: `人类文明的最高统治机构，位于天空之上。`
+        term: `上庭`,
+        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
+    現在は再編を経て7人のメンバーによって構成されている。`
       },
       {
-        term: `単瞳の刻印`,
-        desc: `福音地の数多く「██」の技術を操る「賢者」が特別に作り上げた邪悪で秘法儀式のような神秘的な術式で、用途は多岐にわたる。ウイルス本源と繋がっており、汚染を拡散することも、一時的に個人の力を増強することもできるが、人体に甚大なダメージを与える。わかりやすく説明すると、福音地技術のロゴのようなもので、その派手で大胆なやり方を象徴している。`
+        term: `福音地`,
+        desc: `工事中`
+      },
+      {
+        term: `GARDEN`,
+        desc: `工事中`
       }
     ],
     characters: [
       {
-        name: `Leopold`,
-        avatar: `img/dh-leopold.jpg`,
-        note: `Garden的首领。虽然看似冷酷，实则在为部下寻找生路。`
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
+      },
+      {
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
       }
     ],
-    synopsis: `工事中`,
-    relatedLink: {
-      text: `次章`,
-      targetId: `conversation24`
-    }
+    synopsis: `工事中`
   },
   script: [
     {

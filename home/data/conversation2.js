@@ -7,26 +7,32 @@ export default {
   infoPanel: {
     glossary: [
       {
-        term: `上庭 (Paradeisos)`,
-        desc: `人类文明的最高统治机构，位于天空之上。`
+        term: `上庭`,
+        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
+    現在は再編を経て7人のメンバーによって構成されている。`
+      },
+      {
+        term: `福音地`,
+        desc: `工事中`
       },
       {
         term: `GARDEN`,
-        desc: `位于灰色地带的杀手组织，由Leopold领导。`
+        desc: `工事中`
       }
     ],
     characters: [
       {
-        name: `Leopold`,
-        avatar: `img/dh-leopold.jpg`,
-        note: `Garden的首领。虽然看似冷酷，实则在为部下寻找生路。`
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
+      },
+      {
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
       }
     ],
-    synopsis: `エノリカ山荘にはほとんどの場所に罠が仕掛けられており、いつ襲撃を受けてもおかしくない暗殺の戦場と化している。数日間、セヴェロはエノリカ山荘の警備員（能力者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、調査員が訪ねてくる。`,
-    relatedLink: {
-      text: `次章`,
-      targetId: `conversation3`
-    }
+    synopsis: `エノリカ山荘にはほとんどの場所に罠が仕掛けられており、いつ襲撃を受けてもおかしくない暗殺の戦場と化している。数日間、セヴェロはエノリカ山荘の警備員（能力者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、調査員が訪ねてくる。`
   },
   script: [
     {

@@ -7,35 +7,32 @@ export default {
   infoPanel: {
     glossary: [
       {
-        term: `FAC (Black Ring)`,
-        desc: `高浓度的狂厄污染区域，普通人进入即死或变异。`
+        term: `上庭`,
+        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
+    現在は再編を経て7人のメンバーによって構成されている。`
       },
       {
-        term: `上庭 (Paradeisos)`,
-        desc: `世界的统治中心，拥有最高科技与武力，蔑视地表一切生命。`
+        term: `福音地`,
+        desc: `工事中`
       },
       {
-        term: `黑环 (Black Ring)`,
-        desc: `高浓度的狂厄污染区域，普通人进入即死或变异。`
+        term: `GARDEN`,
+        desc: `工事中`
       }
     ],
     characters: [
       {
-        name: `Leopold`,
-        avatar: `img/dh-leopold.jpg`,
-        note: `本章中她试图掩盖自己的虚弱，对S展现出强硬的一面，实则是为了保护对方。`
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
       },
       {
-        name: `侦探`,
-        avatar: `img/dh/pc1.jpg`,
-        note: `FAC幸存者，此时尚不知道L的真实意图，满腔怒火。`
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
       }
     ],
-    synopsis: `上一章，侦探在废墟中醒来。本章讲述两人初次正面交锋。<br>L试图通过言语激怒侦探。`,
-    relatedLink: {
-      text: `次章`,
-      targetId: `conversation4`
-    }
+    synopsis: `上一章，侦探在废墟中醒来。本章讲述两人初次正面交锋。<br>L试图通过言语激怒侦探。`
   },
   script: [
     {
