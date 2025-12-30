@@ -9,35 +9,27 @@ export default {
       {
         term: `上庭`,
         desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
-        現在は再編を経て7人のメンバーによって構成されている。`
+    現在は再編を経て7人のメンバーによって構成されている。`
       },
       {
         term: `福音地`,
-        desc: ``
-      },
-      {
-        term: `藍雨`,
-        desc: `能力者に一定のダメージを与え、制限をかけられる人工降雨。ただし、強力な能力者には焼け石に水程度の効果しかない。`
+        desc: `工事中`
       },
       {
         term: `GARDEN`,
-        desc: `位于灰色地带的杀手组织，由Leopold领导。`
-      },
-      {
-        term: `GARDEN`,
-        desc: `位于灰色地带的杀手组织，由Leopold领导。`
+        desc: `工事中`
       }
     ],
     characters: [
       {
-        name: `S`,
-        avatar: `img/dh/severo5.png`,
-        note: `Lと同じ戦線に立つSも、福音地の者たちを決して歓迎しない。`
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
       },
       {
-        name: `シーゲル`,
-        avatar: `img/dh/armaf.png`,
-        note: `福音地の司祭。`
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
       }
     ],
     synopsis: `エノリカ山荘にはほとんどの場所に罠が仕掛けられており、いつ襲撃を受けてもおかしくない暗殺の戦場と化している。`
