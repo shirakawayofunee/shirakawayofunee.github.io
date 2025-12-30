@@ -92,57 +92,45 @@ span {
 /* 头部区域 */
 .dir-header {
     flex-shrink: 0;
-    padding: 15px 10px;
+    height: 13%; 
+    min-height: 80px; 
     background-color: var(--panel-bg);
     border-bottom: var(--border-line);
     position: relative;
+    display: flex;
+    align-items: center;     /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    padding: 0 10px;         /* 左右留点缝隙 */
 }
 
 .header-box {
-    border: 1px dashed #555;
-    padding: 5px 2px;
+    width: 100%;
+    border: none; 
+    padding: 0;
     text-align: center;
     position: relative;
-    animation: pulse-opacity 4s ease-in-out infinite;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-@keyframes pulse-opacity {
-    0% { opacity: 0.767151; }
-    50% { opacity: 0.999936; }
-    100% { opacity: 0.767151; }
-}
-
-.header-box::before {
-    content: "[ FATE_SYS ]";
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--panel-bg);
-    padding: 0 5px;
-    font-size: 0.55rem;
-    color: #666;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-}
 
 .main-title {
     font-family: 'myFont', "Arial Black", sans-serif;
     font-weight: 900;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     line-height: 1.1;
-    color: rgb(242, 0, 0); /* 文字改为黑色，在高对比度下更清晰 */
+    color: #000; /* 文字改为黑色，在高对比度下更清晰 */
     margin: 0;
     letter-spacing: -2px;
     white-space: nowrap;
+    min-height: 1.2em;
 }
 
 .sub-title {
     font-family: 'Courier New', monospace;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     font-style: italic;
     color: #555;
@@ -150,12 +138,13 @@ span {
     display: block;
     letter-spacing: -0.5px;
     transform: scaleX(0.9);
+    min-height: 1.2em; 
 }
 
 /* 搜索框 */
 .search-box {
     flex-shrink: 0;
-    height: 38px;
+    height: 36px;
     padding: 0 10px;
     border-bottom: var(--border-line);
     display: flex;
@@ -204,7 +193,7 @@ span {
     flex-grow: 1;
     text-align: center;
     transition: all 0.2s;
-    height: 38px;
+    height: 36px;
     line-height: 18px;
 }
 .tab-btn:last-child { border-right: none; }

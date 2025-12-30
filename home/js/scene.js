@@ -590,3 +590,54 @@ function enableImmersiveMode() {
       // .script-scroll-area (flex: 1) 会自动向上延伸填满空间。
   }
 }
+
+
+
+// ==================== 视觉特效 ====================
+
+// --- 打字机效果 (用于左侧 Header) ---
+document.addEventListener("DOMContentLoaded", () => {
+  initTypewriter();
+});
+
+function initTypewriter() {
+  // 1. 定义目标和内容
+  const subtitleEl = document.querySelector('.dir-header .sub-title');
+  if (!subtitleEl) return;
+
+  // 原始文本 (如果 HTML 里写了，就读取 HTML 的，否则用默认值)
+  // 这里的逻辑是：先读 HTML 里的文本作为目标文本，然后清空 HTML，再打字
+  const rawText = subtitleEl.textContent.trim() || ">./USER_LOGS.EXE";
+  subtitleEl.textContent = ""; // 清空，准备开始打字
+  
+  // 添加光标效果 (可选)
+  subtitleEl.style.borderRight = "2px solid #555";
+  
+  let charIndex = 0;
+
+  // 2. 打字逻辑
+  function type() {
+      if (charIndex < rawText.length) {
+          subtitleEl.textContent += rawText.charAt(charIndex);
+          charIndex++;
+          // 随机速度 (30ms - 100ms) 让它看起来更像人在输入
+          setTimeout(type, Math.random() * 70 + 30);
+      } else {
+          // 打字结束，闪烁光标几次后移除边框 (或者一直保留)
+          // 这里我们让光标闪烁
+          let blinkCount = 0;
+          const blinkInterval = setInterval(() => {
+              subtitleEl.style.borderRightColor = 
+                  (subtitleEl.style.borderRightColor === 'transparent') ? '#555' : 'transparent';
+              blinkCount++;
+              if (blinkCount > 10) { // 闪几次后停止，或者一直闪
+                   clearInterval(blinkInterval);
+                   subtitleEl.style.borderRight = "none"; // 移除光标
+              }
+          }, 500);
+      }
+  }
+
+  // 延迟一点点启动，更有仪式感
+  setTimeout(type, 500);
+}
