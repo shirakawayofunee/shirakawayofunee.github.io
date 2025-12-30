@@ -119,11 +119,11 @@ span {
 .main-title {
     font-family: 'myFont', "Arial Black", sans-serif;
     font-weight: 900;
-    font-size: 2.5rem;
+    font-size: 3.7rem;
     line-height: 1.1;
     color: #000; /* 文字改为黑色，在高对比度下更清晰 */
     margin: 0;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     white-space: nowrap;
     min-height: 1.2em;
 }
@@ -366,34 +366,6 @@ span {
     max-width: 100%;
     border: 1px solid var(--dark-border-color);
     margin: 10px 0;
-}
-
-.nav-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    padding: 15px;
-    background: rgba(0,0,0,0.4);
-    border-top: 2px solid #000;
-    border-top: 1px solid var(--dark-border-color);
-}
-.nav-buttons button {
-    background: #333;
-    color: #fff;
-    border: 1px solid #555;
-    padding: 8px 30px;
-    cursor: pointer;
-    font-family: 'myFont';
-    transition: background 0.2s;
-}
-.nav-buttons button:hover:not(:disabled) {
-    background: var(--highlight-red);
-    border-color: var(--highlight-red);
-}
-.nav-buttons button:disabled {
-    background: #111;
-    color: #555;
-    cursor: default;
 }
 
 /* --- 右侧：信息栏 (Info) --- */
@@ -890,14 +862,14 @@ span {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 3.5rem;
+    height: 3rem;
     padding: 0 1.5rem;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 0.85rem;
     background-color: #fff; 
     color: #000;            
-    border: 3px solid #000; 
+    border: 2px solid #000; 
     box-shadow: 6px 6px 0px 0px #000; /* 硬阴影 */
     cursor: pointer;
     transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);

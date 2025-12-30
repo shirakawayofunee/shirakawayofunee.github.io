@@ -512,10 +512,21 @@ function navigate(dir) {
     window.location.hash = chapterList[newIdx].id;
   }
 }
+// --- 修改后的按钮状态更新函数 ---
 function updateNavButtons() {
-  document.getElementById("btn-prev").disabled = currentChapterIndex <= 0;
-  document.getElementById("btn-next").disabled =
-    currentChapterIndex >= chapterList.length - 1;
+  // 1. 获取新版 HTML 中的悬浮按钮 ID
+  const btnPrev = document.getElementById("float-btn-prev");
+  const btnNext = document.getElementById("float-btn-next");
+
+  // 2. 加上安全检查，防止找不到元素报错
+  if (btnPrev && btnNext) {
+      // 3. 根据当前章节索引判断是否禁用
+      // 如果是第一章 (index <= 0)，禁用“前”
+      btnPrev.disabled = currentChapterIndex <= 0;
+      
+      // 如果是最后一章 (index >= 总数-1)，禁用“次”
+      btnNext.disabled = currentChapterIndex >= chapterList.length - 1;
+  }
 }
 function playBgm(src) {
   if (!bgmPlayer.src.includes(src)) {
@@ -600,44 +611,65 @@ document.addEventListener("DOMContentLoaded", () => {
   initTypewriter();
 });
 
+// --- 序列化打字机效果 ---
 function initTypewriter() {
-  // 1. 定义目标和内容
-  const subtitleEl = document.querySelector('.dir-header .sub-title');
-  if (!subtitleEl) return;
-
-  // 原始文本 (如果 HTML 里写了，就读取 HTML 的，否则用默认值)
-  // 这里的逻辑是：先读 HTML 里的文本作为目标文本，然后清空 HTML，再打字
-  const rawText = subtitleEl.textContent.trim() || ">./USER_LOGS.EXE";
-  subtitleEl.textContent = ""; // 清空，准备开始打字
+  const titleEl = document.querySelector('.main-title');
+  const subEl = document.querySelector('.sub-title');
   
-  // 添加光标效果 (可选)
-  subtitleEl.style.borderRight = "2px solid #555";
-  
-  let charIndex = 0;
+  if (!titleEl || !subEl) return;
 
-  // 2. 打字逻辑
-  function type() {
-      if (charIndex < rawText.length) {
-          subtitleEl.textContent += rawText.charAt(charIndex);
-          charIndex++;
-          // 随机速度 (30ms - 100ms) 让它看起来更像人在输入
-          setTimeout(type, Math.random() * 70 + 30);
-      } else {
-          // 打字结束，闪烁光标几次后移除边框 (或者一直保留)
-          // 这里我们让光标闪烁
-          let blinkCount = 0;
-          const blinkInterval = setInterval(() => {
-              subtitleEl.style.borderRightColor = 
-                  (subtitleEl.style.borderRightColor === 'transparent') ? '#555' : 'transparent';
-              blinkCount++;
-              if (blinkCount > 10) { // 闪几次后停止，或者一直闪
-                   clearInterval(blinkInterval);
-                   subtitleEl.style.borderRight = "none"; // 移除光标
-              }
-          }, 500);
+  // 1. 定义内容
+  const titleText = "運命の織機";
+  const subText = ">./USER_LOGS.EXE";
+
+  // 2. 清空内容
+  titleEl.textContent = "";
+  subEl.textContent = "";
+
+  // 3. 通用打字函数 (带光标)
+  // element: 目标元素
+  // text: 文本
+  // speed: 打字速度 [基准, 随机波动]
+  // cursorColor: 光标颜色
+  // callback: 打完后的回调
+  function typeString(element, text, speed, cursorColor, callback) {
+      let i = 0;
+      // 添加光标
+      element.style.borderRight = `3px solid ${cursorColor}`;
+      
+      function step() {
+          if (i < text.length) {
+              element.textContent += text.charAt(i);
+              i++;
+              // 随机延迟
+              setTimeout(step, Math.random() * speed[1] + speed[0]);
+          } else {
+              // 打完了
+              element.style.borderRight = "none"; // 移除光标
+              if (callback) callback();
+          }
       }
+      step();
   }
 
-  // 延迟一点点启动，更有仪式感
-  setTimeout(type, 500);
+  // 4. 执行序列
+  // 第一步：打主标题 (稍慢，庄重一点)
+  setTimeout(() => {
+      // 使用红色光标打主标题
+      typeString(titleEl, titleText, [320, 80], "#e23b78", () => {
+          
+          // 第二步：主标题打完后，打副标题 (稍快，像机器指令)
+          // 使用灰色光标
+          typeString(subEl, subText, [120, 30], "#555", () => {
+              
+              // 全部结束，给副标题留一个闪烁光标作为待机状态
+              subEl.style.borderRight = "2px solid #555";
+              setInterval(() => {
+                   const currentColor = subEl.style.borderRightColor;
+                   subEl.style.borderRightColor = (currentColor === 'transparent') ? '#555' : 'transparent';
+              }, 500);
+          });
+          
+      });
+  }, 200); // 页面加载后延迟 0.5秒开始
 }
