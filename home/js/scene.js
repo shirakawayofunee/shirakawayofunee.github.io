@@ -376,9 +376,15 @@ function handleHashChange() {
 }
 
 // --- 4. 加载 JSON 数据 ---
+// --- 4. 加载 JSON 数据 ---
 async function loadChapter(chapterId) {
   const scriptDiv = document.getElementById("script-content");
-  document.getElementById("header-summary").textContent = "ACCESSING ARCHIVES...";
+  
+  // Header 状态重置
+  const summaryEl = document.getElementById("header-summary");
+  if (summaryEl) {
+      summaryEl.textContent = "ACCESSING ARCHIVES...";
+  }
   
   scriptDiv.innerHTML = '<div class="narration">運命を読み取り中……</div>';
 
@@ -390,16 +396,25 @@ async function loadChapter(chapterId) {
     // 设置 BGM
     if (data.meta && data.meta.bgm) {
       playBgm(data.meta.bgm, true); 
-  }
+    }
+    
     // 渲染正文
     renderScript(data.script);
-    // 渲染右侧信息
-    renderInfo(data.infoPanel);
+    
+    // ============================================
+    // 修改点：只传 infoPanel，让它去读 synopsis
+    // ============================================
+    renderInfo(data.infoPanel); 
 
+    // ============================================
+    // 确保 Header 独立读取 meta.summary
+    // ============================================
     updateHeaderFromJSON(chapterId, data);
 
     // 滚回顶部
-    document.getElementById("script-panel").scrollTop = 0;
+    const scrollPanel = document.getElementById("script-panel");
+    if (scrollPanel) scrollPanel.scrollTop = 0;
+    
   } catch (err) {
     console.error(err);
     scriptDiv.innerHTML = `<div class="narration" style="color:#e23b78">无法打开卷宗: ${chapterId}</div>`;
@@ -408,13 +423,11 @@ async function loadChapter(chapterId) {
 
 // --- 新增：更新顶部 UI 的函数 ---
 function updateHeaderFromJSON(chapterId, data) {
-  // 1. 获取概要数据 (优先 meta.summary，其次 infoPanel.synopsis)
-  // 如果都没有，显示默认占位符
+  // 修改点：只读取 meta.summary，如果没有则显示默认占位符，不再去读 synopsis
   const jsonSummary = (data.meta && data.meta.summary) 
                       ? data.meta.summary 
-                      : ((data.infoPanel && data.infoPanel.synopsis) ? data.infoPanel.synopsis : "NO DATA");
+                      : "NO SUMMARY DATA"; 
 
-  // 2. 更新 DOM
   const elSummary = document.getElementById("header-summary");
   
   if (elSummary) {
@@ -495,14 +508,8 @@ function renderInfo(info) {
 
   // 前情提要
   const synDiv = document.getElementById("synopsis-container");
+  // 只渲染文本内容，删除了之前在这里追加 <button> 的代码
   synDiv.innerHTML = info.synopsis || "暂无记录";
-  if (info.relatedLink) {
-    const btn = document.createElement("button");
-    btn.className = "link-btn";
-    btn.textContent = `${info.relatedLink.text}`;
-    btn.onclick = () => (window.location.hash = info.relatedLink.targetId);
-    synDiv.appendChild(btn);
-  }
 }
 
 // --- 辅助功能 ---
