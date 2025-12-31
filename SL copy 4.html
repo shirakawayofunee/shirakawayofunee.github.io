@@ -481,53 +481,40 @@
 }
 
 #terminal-wrapper {
-    position: fixed;            /* 关键：悬浮在屏幕上，不占位 */
-    bottom: 30px;               /* 距离底部距离 */
-    right: 30px;                /* 距离右侧距离 */
-    z-index: 9999;              /* 确保在最顶层 */
-    width: 100%;
-    max-width: 500px;           /* 限制最大宽度，防止太宽 */
-    margin: 0;                  /* 去除原有 margin */
-    
-    /* 动画：淡入淡出 */
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    /* 添加淡出动画效果，关闭时更自然 */
     transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 1;
 }
 
 /* 终端主窗口 */
 .cmd-window {
-    /* 背景色：黑色半透明 (调整最后一个数字 0.75 可改变透明度) */
-    background-color: rgba(30, 30, 30, 0.65); 
-    
-    /* 关键：高斯模糊背景 */
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    
-    /* 边框：细微的亮色边框，增加立体感 */
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    
-    /* 圆角：参考 iOS 风格的大圆角 */
-    border-radius: 20px; 
-    
-    /* 阴影：深邃的阴影让它浮起来 */
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-    
+    background-color: #0f0f12; /* bg-[#0f0f12] */
+    border: 1px solid #2a2a3a; /* border-border */
+    border-radius: 0.5rem 0.5rem 0 0; /* rounded-t-lg */
     overflow: hidden;
-    font-family: 'JetBrains Mono', monospace;
-    
-    /* 去除原本的网格背景图，保持干净 */
-    background-image: none;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+    font-family: 'JetBrains Mono', monospace; /* 默认字体 */
+    background-image: 
+        linear-gradient(rgba(0, 255, 136, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 136, 0.02) 1px, transparent 1px);
+    background-size: 3px 3px; /* 网格大小，越小越密 */
 }
 
 /* 顶部标题栏 */
 .cmd-header {
-    /* 稍微深一点的半透明，区分头部 */
-    background-color: rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 12px 16px;
+    background-color: #1c1c2e; /* bg-[#1c1c2e] */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5rem; /* gap-2 */
+    border-bottom: 1px solid #2a2a3a; /* border-b border-border */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 136, 0.02) 1px, transparent 1px);
+    background-size: 3px 3px; /* 网格大小，越小越密 */
 }
 
 /* 标题栏按钮组 */
@@ -539,9 +526,7 @@
 .cmd-btn {
     width: 0.75rem; /* w-3 */
     height: 0.75rem; /* h-3 */
-    border-radius: 50%;
-    /* 稍微降低饱和度，显得更高级 */
-    opacity: 0.9; 
+    border-radius: 9999px; /* rounded-full */
 }
 
 .cmd-btn.red { background-color: #ef4444; }
@@ -615,13 +600,6 @@
 
         /* 响应式 */
         @media (max-width: 768px) {
-            #terminal-wrapper {
-        right: 5%;
-        left: 5%;
-        bottom: 20px;
-        width: 90%;
-        max-width: none;
-    }
             .gallery-container { display: block; }
             .gallery-column { margin-bottom: 15px; }
             .head { padding: 0 10px; }
@@ -767,14 +745,12 @@
         <!-- Header -->
         <div class="cmd-header">
             <div class="cmd-buttons">
-                <!-- 装饰性按钮 -->
                 <div class="cmd-btn red"></div>
                 <div class="cmd-btn yellow"></div>
                 <div class="cmd-btn green"></div>
             </div>
-            
-            <!-- 关闭按钮 -->
-            <div class="cmd-close-action" onclick="document.getElementById('terminal-wrapper').style.opacity='0'; setTimeout(()=>{document.getElementById('terminal-wrapper').style.display='none'}, 300);" title="Close">
+            <!-- <div class="cmd-title">SLの関係についての私の考え</div> -->
+            <div class="cmd-close-action" onclick="document.getElementById('terminal-wrapper').style.display='none'" title="Close Terminal">
                 &times;
             </div>
         </div>
@@ -901,383 +877,68 @@
         // ================= 数据定义 (请务必保留完整数据) =================
         const r18gImages = [
         { src: "img/SL/001.jpg", alt: "Gallery Image 1", description: "Blue Rain-005「何のために戦うか」P1" },
-          { src: "img/SL/002.jpg", alt: "Gallery Image 2", description: "「何のために戦うか」P2" },
-          { src: "img/SL/003.jpg", alt: "Gallery Image 3", description: "「何のために戦うか」P3" },
-          { src: "img/SL/004.jpg", alt: "Gallery Image 4", description: "「何のために戦うか」P4" },
-          { src: "img/SL/005.jpg", alt: "Gallery Image 5", description: "「何のために戦うか」P5" },
-          { src: "img/SL/006.jpg", alt: "Gallery Image 6", description: "「何のために戦うか」P6" },
-          { src: "img/SL/007.jpg", alt: "Gallery Image 7", description: "「何のために戦うか」P7" },
-          { src: "img/SL/008.jpg", alt: "Gallery Image 7", description: "「何のために戦うか」P8" },
-          { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【メインストーリー/本編】Lの過去 P1-P7" },
-          { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【猫猫バージョン】Lの過去 P1-P6" },
-          { src: "img/SL/g2.webp", alt: "R18-G Image 2", description: "【BAD END-IF】Xからのご挨拶――Lの中で一番重い存在、その死骸" },
-          { src: "img/SL/g1.webp", alt: "R18-G Image 1", description: "【BAD END-IF】" },
-          { src: "img/SL/zhuxian3.webp", alt: "Gallery Image 8", description: "Blue Rain-007「登場」" },
-          { src: "img/SL/SL10.webp", alt: "Gallery Image 10", description: "" },
+
       ];
       const galleryImages = [
           { src: "img/SL/SL1【本編】「中秋の名月」.webp", alt: "Gallery Image 1", description: "【本編】「中秋の名月」  犯罪組織の主宰者と部下の殺し屋" },
-          { src: "img/SL/SL2「Fall」.webp", alt: "Gallery Image 3", description: "" },
-          { src: "img/SL/SL3.webp", alt: "Gallery Image 2", description: "「運命の舞台」  死神と信者" },
-          /* { src: "img/SL/SL3「赤い糸」.webp", alt: "Gallery Image 3", description: "" }, */
-          { src: "img/SL/SL4.webp", alt: "Gallery Image 4", description: "【本編】太もものサイズを測る&お姫様抱っこ" },
-          { src: "img/SL/SL5「運輸」.webp", alt: "Gallery Image 5", description: "05「運輸」" },
-          { src: "img/SL/SL6.webp", alt: "Gallery Image 6", description: "" },
-          { src: "img/SL/SL7.webp", alt: "Gallery Image 7", description: "" },
-          { src: "img/SL/SL8.webp", alt: "Gallery Image 7", description: "" },
-          { src: "img/SL/SL9.webp", alt: "Gallery Image 9", description: "吸血鬼貴族とその専属の仕立て屋（WIP）" },
-          { src: "img/SL/SL10.webp", alt: "Gallery Image 10", description: "" },
-          { src: "img/SL/SL11.webp", alt: "Gallery Image 11", description: "" },
-          { src: "img/SL/SL12.webp", alt: "Gallery Image 12", description: "" },
-          { src: "img/SL/SL13.webp", alt: "Gallery Image 13", description: "【本編】" },
-          { src: "img/SL/SL14.webp", alt: "Gallery Image 14", description: "" },
-          { src: "img/SL/SL15.webp", alt: "Gallery Image 15", description: "" },
-          { src: "img/SL/SL16.webp", alt: "Gallery Image 16", description: "【本編】" },
-          { src: "img/SL/SL17.webp", alt: "Gallery Image 17", description: "" },
-          { src: "img/SL/SL18.webp", alt: "Gallery Image 18", description: "" },
-          { src: "img/SL/SL19.webp", alt: "Gallery Image 19", description: "" },
-          { src: "img/SL/SL20.webp", alt: "Gallery Image 20", description: "同人誌表紙风" },
-          { src: "img/SL/SL21.webp", alt: "Gallery Image 21", description: "" },
-          { src: "img/SL/SL22.webp", alt: "Gallery Image 22", description: "【本編】" },
-          { src: "img/SL/SL23.webp", alt: "Gallery Image 23", description: "" },
-          { src: "img/SL/SL24.webp", alt: "Gallery Image 24", description: "" },
+
       ];
 
       const dcImages = [
           { src: "img/DC/DC1.webp", alt: "DC Image 1", description: "主従" },
-          { src: "img/DC/DC2.webp", alt: "DC Image 2", description: "" },
-          { src: "img/DC/风声.jpg", alt: "DC Image 3", description: "戦友——映画『风声』（2009）" },
-          { src: "img/DC/DC3.webp", alt: "DC Image 3", description: "师弟——映画『Memoirs of a Geisha』（2005）" },
-          { src: "img/DC/DC4.jpg", alt: "DC Image 4", description: "聖母憐子像" },
-          { src: "img/DC/DC4-2.jpg", alt: "DC Image 5", description: "" },
-          { src: "img/DC/chadui2.jpg", alt: "DC Image 5", description: "" },
-          { src: "img/DC/DecisiontoLeave1.jpg", alt: "DC Image 5", description: "共犯——映画『Decision to Leave』(2022)" },
-          { src: "img/DC/末路狂花1.jpg", alt: "DC Image 5", description: "映画『Thelma & Louise』（1991）" },
-          { src: "img/DC/Dolores.Claiborne1.jpg", alt: "DC Image 5", description: "映画『Dolores Claiborne』(1995)" },
-          { src: "img/DC/Dolores.Claiborne2.jpg", alt: "DC Image 5", description: "映画『Dolores Claiborne』(1995)" },
-          { src: "img/DC/DC5.webp", alt: "DC Image 5", description: "母女————映画『Pearl』(2022)" },
-          { src: "img/DC/Cracks.jpg", alt: "DC Image 5", description: "映画『Cracks』" },
-          { src: "img/DC/水下.jpg", alt: "DC Image 5", description: "曖昧な" },
-          { src: "img/DC/chadui1.jpg", alt: "DC Image 6", description: "" },
-          { src: "img/DC/DC5-2.webp", alt: "DC Image 5", description: "主従" },
-          { src: "img/DC/DC5-3.webp", alt: "DC Image 5", description: "" },
-          { src: "img/DC/DC6.jpg", alt: "DC Image 6", description: "映画『Bedevilled』(2010)" },
-          { src: "img/DC/ThrillMe-8.webp", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" },
-          { src: "img/DC/DC7.webp", alt: "DC Image 7", description: "" },
-          { src: "img/DC/DC7.jpg", alt: "DC Image 7", description: "" },
-          { src: "img/DC/火报纸2.webp", alt: "DC Image 7", description: "" },
-          { src: "img/DC/DC8.webp", alt: "DC Image 8", description: "" },
-          { src: "img/DC/DC9.webp", alt: "DC Image 9", description: "" },
-          { src: "img/DC/DC10.webp", alt: "DC Image 10", description: "" },
-          { src: "img/DC/DC11.webp", alt: "DC Image 11", description: "" },
-          { src: "img/DC/DC12.webp", alt: "DC Image 12", description: "" },
-          { src: "img/DC/DC12-2.webp", alt: "DC Image 12", description: "雪の花を手のひらに留めておきたいが、溶けるのを早めてしまうだけだな。" },
-          { src: "img/DC/DC13.webp", alt: "DC Image 13", description: "" },
-          { src: "img/DC/DC13-2.webp", alt: "DC Image 13", description: "" },
-          { src: "img/DC/DC14.webp", alt: "DC Image 14", description: "" },
-          { src: "img/DC/DC15.webp", alt: "DC Image 15", description: "" },
-          { src: "img/DC/DC16.webp", alt: "DC Image 16", description: "" },
-          { src: "img/DC/DC17.jpg", alt: "DC Image 17", description: "" },
-          { src: "img/DC/DC18.webp", alt: "DC Image 18", description: "" },
-          { src: "img/DC/DC19.webp", alt: "DC Image 19", description: "" },
-          { src: "img/DC/OriginalSin.jpg", alt: "DC Image 19", description: "映画『Original Sin』(2001)" },
-          { src: "img/DC/DC20.jpg", alt: "DC Image 19", description: "" },
-          { src: "img/DC/DC21.jpg", alt: "DC Image 19", description: "" },
+
       ];
 
       const deathImages = [
           { src: "img/Death/death1.webp", alt: "Death Image 1", description: "" },
-          { src: "img/Death/death2.webp", alt: "Death Image 2", description: "Lの登場スタイルは、こんな感じ。" },
-          { src: "img/Death/death3.webp", alt: "Death Image 3", description: "" },
-          { src: "img/Death/death4.webp", alt: "Death Image 4", description: "" },
-          { src: "img/Death/death5.webp", alt: "Death Image 5", description: "" },
-          { src: "img/Death/death6.webp", alt: "Death Image 6", description: "" },
-          { src: "img/Death/death7.webp", alt: "Death Image 7", description: "" },
-          { src: "img/Death/death8.webp", alt: "Death Image 8", description: "" },
-          { src: "img/Death/death9.webp", alt: "Death Image 9", description: "" }
+
       ];
 
       const mangaImages = [
       { src: "img/SL/001.jpg", alt: "Gallery Image 1", description: "Blue Rain-005「何のために戦うか」P1" },
-          { src: "img/SL/002.jpg", alt: "Gallery Image 2", description: "「何のために戦うか」P2" },
-          { src: "img/SL/003.jpg", alt: "Gallery Image 3", description: "「何のために戦うか」P3" },
-          { src: "img/SL/004.jpg", alt: "Gallery Image 4", description: "「何のために戦うか」P4" },
-          { src: "img/SL/005.jpg", alt: "Gallery Image 5", description: "「何のために戦うか」P5" },
-          { src: "img/SL/006.jpg", alt: "Gallery Image 6", description: "「何のために戦うか」P6" },
-          { src: "img/SL/007.jpg", alt: "Gallery Image 7", description: "「何のために戦うか」P7" },
-          { src: "img/SL/008.jpg", alt: "Gallery Image 7", description: "「何のために戦うか」P8" },
-          { src: "img/SL/MH/1.webp", alt: "Manga Image 1", description: "本編BAD END「They can't hurt you anymore.」①" },
-          { src: "img/SL/MH/2.webp", alt: "Manga Image 2", description: "本編BAD END「They can't hurt you anymore.」②" },
-          { src: "img/SL/MH/3.webp", alt: "Manga Image 3", description: "本編BAD END「They can't hurt you anymore.」③" },
-          { src: "img/SL/MH/4.webp", alt: "Manga Image 4", description: "AU2「針」" },
-          { src: "img/SL/MH/5.webp", alt: "Manga Image 5", description: "AU2「針」" },
-          { src: "img/SL/MH/6.webp", alt: "Manga Image 6", description: "AU2「針」" },
-          { src: "img/SL/MH/7.webp", alt: "Manga Image 7", description: "AU7" },
-          { src: "img/SL/MH/8.webp", alt: "Manga Image 8", description: "AU7" },
-          { src: "img/SL/MH/9.webp", alt: "Manga Image 9", description: "AU7" }
+
       ];
 
       const mansionImages = [
 
           { src: "img/FZ/livingroom1.webp", alt: "Mansion Image 4", description: "living room1" },
-          { src: "img/FZ/livingroom2.webp", alt: "Mansion Image 5", description: "living room2" },
-          { src: "img/FZ/4.webp", alt: "Mansion Image 6", description: "living room3" },
-          { src: "img/FZ/bed.webp", alt: "Mansion Image 7", description: "Lの寝室にある、凝ったデザインのゴシック風ベッド。昔はLだけが寝てたけど、今はSも寝れるし、剥いたザクロを食べながらゴロゴロすることもできる。" },
-          { src: "img/FZ/tailorshop.webp", alt: "Mansion Image 8", description: "Sの仕立て屋" },
-          { src: "img/FZ/garden.webp", alt: "Mansion Image 9", description: "「GARDEN」" },
-          { src: "img/FZ/1.webp", alt: "Mansion Image 10", description: "" },
-          { src: "img/FZ/2.webp", alt: "Mansion Image 11", description: "" },
-          { src: "img/FZ/3.webp", alt: "Mansion Image 12", description: "庭園" },
-          { src: "img/FZ/4.webp", alt: "Mansion Image 13", description: "" },
-          { src: "img/FZ/5.webp", alt: "Mansion Image 14", description: "" },
-          { src: "img/FZ/6.webp", alt: "Mansion Image 15", description: "落ち葉" },
-          { src: "img/FZ/closet1.webp", alt: "Mansion Image 10", description: "closet" },
-  { src: "img/FZ/closet1.webp", alt: "Mansion Image 1", description: "closet" },
-  { src: "img/FZ/closet2.webp", alt: "Mansion Image 2", description: "closet" },
-  { src: "img/FZ/closet3.webp", alt: "Mansion Image 3", description: "closet" },
-  { src: "img/FZ/closet4.webp", alt: "Mansion Image 4", description: "closet" },
-  { src: "img/FZ/closet5.webp", alt: "Mansion Image 5", description: "closet" },
-  { src: "img/FZ/closet6.webp", alt: "Mansion Image 6", description: "closet" },
-  { src: "img/FZ/closet7.webp", alt: "Mansion Image 7", description: "closet" },
-  { src: "img/FZ/closet8.webp", alt: "Mansion Image 8", description: "closet" },
-  { src: "img/FZ/closet9.webp", alt: "Mansion Image 9", description: "closet" },
-  { src: "img/FZ/closet10.webp", alt: "Mansion Image 10", description: "closet" },
-  { src: "img/FZ/DD1.jpg", alt: "Mansion Image 1", description: "" },
-          { src: "img/FZ/DD2.jpg", alt: "Mansion Image 2", description: "" },
-          { src: "img/FZ/DD3.jpg", alt: "Mansion Image 3", description: "" },
+
       ];
 
       const doodleImages = [
       { src: "img/SL/ty/01.webp", alt: "Image 1", description: "01「小さくなった!」" },
-{ src: "img/SL/ty/02「お姫様抱っこ」.webp", alt: "Image 2", description: "02「お姫様抱っこ」" },
-{ src: "img/SL/ty/03「眠？イチャイチャ」.webp", alt: "Image 7", description: "03「眠？イチャイチャ」" },
-{ src: "img/SL/ty/04.jpg", alt: "Image 4", description: "04 「最近冷えるので 暖かく してください」" },
-{ src: "img/SL/ty/05.jpg", alt: "Image 5", description: "05 " },
-{ src: "img/SL/ty/06.jpg", alt: "Image 6", description: "06 舞" },
-{ src: "img/SL/ty/07.webp", alt: "Image 3", description: "07 " },
-{ src: "img/SL/ty/08.jpg", alt: "Image 8", description: "08 「Kissing Hands」" },
-{ src: "img/SL/ty/09.webp", alt: "Image 9", description: "09「束の間の平和」" },
-{ src: "img/SL/ty/10.jpg", alt: "Image 10", description: "10「お姫様抱っこ」" },
-{ src: "img/SL/ty/11.webp", alt: "Image 11", description: "11「お風呂」" },
-{ src: "img/SL/ty/12.webp", alt: "Image 12", description: "12「お世話」" },
-{ src: "img/SL/ty/13.webp", alt: "Image 13", description: "13「日常」" },
-{ src: "img/SL/ty/14.webp", alt: "Image 14", description: "14「" },
-{ src: "img/SL/ty/15.jpg", alt: "Image 15", description: "15「Lが出張する時、Lのベッドで寝ることがある（Lにバレたことがあって、その後Sは同型のマットレスをワンセットもらった）」" },
-{ src: "img/SL/ty/16.webp", alt: "Image 16", description: "16「」" },
-{ src: "img/SL/ty/17.webp", alt: "Image 17", description: "17「甘噛み」" },
-{ src: "img/SL/ty/18.webp", alt: "Image 18", description: "18「眠る」" },
-{ src: "img/SL/ty/19.jpg", alt: "Image 19", description: "19「幼少期」" },
-{ src: "img/SL/ty/20.webp", alt: "Image 20", description: "20「" },
-{ src: "img/SL/ty/21.webp", alt: "Image 21", description: "21「" },
-{ src: "img/SL/ty/22.webp", alt: "Image 22", description: "22「二人の子供時代を埋め合わせるため、LはSを遊園地に連れて行く。」" },
-{ src: "img/SL/ty/23.webp", alt: "Image 22", description: "23" },
-{ src: "img/SL/ty/24.webp", alt: "Image 24", description: "24" },
-{ src: "img/SL/ty/25.webp", alt: "Image 25", description: "25" },
+
       ];
 
       const catdwImages = [
           { src: "img/SL/cat/dw1.webp", alt: "Catdw Image 1", description: "猫と狼" },
           { src: "img/SL/cat/dw2.webp", alt: "Catdw Image 2", description: "猫猫大家族" },
-          { src: "img/SL/cat/dw3.webp", alt: "Catdw Image 3", description: "猫と狼" },
-          { src: "img/SL/cat/dw4.webp", alt: "Catdw Image 4", description: "猫" },
-          { src: "img/SL/cat/dw5.webp", alt: "Catdw Image 5", description: "" },
-          { src: "img/SL/cat/dw6.webp", alt: "Catdw Image 6", description: "猫猫ジェンガ" },
-          { src: "img/SL/cat/dw7.jpg", alt: "Catdw Image 6", description: "猫猫LOVE" },
-          { src: "img/SL/cat/DC7.jpg", alt: "Catdw Image 7", description: "" },
-          { src: "img/SL/cat/DC8.jpg", alt: "Catdw Image 8", description: "" },
-          { src: "img/SL/cat/dw8.jpg", alt: "Catdw Image 8", description: "九尾の狐と虎" },
-          { src: "img/SL/cat/DC9.jpg", alt: "Catdw Image 8", description: "" },
-          { src: "img/SL/cat/dw7.webp", alt: "Catdw Image 7", description: "" },
-          { src: "img/L/sd/sd9.webp", alt: "SD Image 9", description: "" },
-          { src: "img/SL/cat/dw8.webp", alt: "Catdw Image 8", description: "猫と九尾の狐" },
-          { src: "img/SL/cat/DC6.webp", alt: "Catdw Image 9", description: "" },
-          { src: "img/SL/cat/shiyuanshou.gif", alt: "Catdw Image 9", description: "噬元獣（フラーケン） キャプテン・マーベル(映画)" },
-          { src: "img/SL/cat/cat2.jpg", alt: "L Image 8", description: "" },
-          { src: "img/SL/cat/娃娃1.jpg", alt: "SD Image 1", description: "" },
-          { src: "img/SL/cat/娃娃2.jpg", alt: "SD Image 1", description: "" },
-          { src: "img/SL/cat/娃娃3.jpg", alt: "SD Image 1", description: "" },
-          { src: "img/SL/cat/3033847.png", alt: "SD Image 1", description: "" },
-          { src: "img/L/sd/sd1.webp", alt: "SD Image 1", description: "" },
-            { src: "img/L/sd/sd2.webp", alt: "SD Image 2", description: "" },
-            { src: "img/L/sd/sd3.webp", alt: "SD Image 3", description: "" },
-            { src: "img/L/sd/sd4.webp", alt: "SD Image 4", description: "" },
-            { src: "img/L/sd/sd5.jpg", alt: "SD Image 5", description: "" },
-            { src: "img/L/sd/sd5.webp", alt: "SD Image 5", description: "" },
-            { src: "img/L/sd/06.jpg", alt: "SD Image 5", description: "花妖にくっつかれ" },
-            { src: "img/L/sd/sd6.png", alt: "SD Image 7", description: "" },
-            { src: "img/L/sd/sd6.webp", alt: "SD Image 6", description: "" },
-            { src: "img/L/sd/sd7.webp", alt: "SD Image 7", description: "" },
-            { src: "img/L/sd/sd8.webp", alt: "SD Image 8", description: "" },
 
-            { src: "img/L/sd/tiger1.jpg", alt: "SD Image 8", description: "" },
       ];
 
       const nsfwImages = [
-          { src: "img/SL/nsfw1.webp", alt: "NSFW Image 1", description: "" },
-          { src: "img/SL/nsfw2.webp", alt: "NSFW Image 2", description: "「Sの要望１」体型の設定に誤りがありますので、参考にしないでください。" },
-          { src: "img/SL/nsfw2.webp", alt: "NSFW Image 2", description: "「Sの要望１」体型の設定に誤りがありますので、参考にしないでください。" },
-          { src: "img/SL/nsfw3.webp", alt: "NSFW Image 3", description: "「Sの要望２」体型の設定に誤りがありますので、参考にしないでください。" },
-          { src: "img/SL/nsfw4.webp", alt: "NSFW Image 4", description: "L体型華奢" },
-          { src: "img/SL/nsfw5.webp", alt: "NSFW Image 4", description: "S体型参考" },
-          { src: "img/SL/nsfw6.jpg", alt: "NSFW Image 4", description: "S体型参考" },
-          { src: "img/SL/nsfw7.webp", alt: "NSFW Image 4", description: "S体型参考" },
+
       ];
         const travelImages = [
         { src: "img/SL/travel/001.webp", alt: "Travel Image 1", description: "" },
-        { src: "img/SL/travel/002.jpg", alt: "Travel Image 1", description: "" },
-        { src: "img/SL/travel/003.webp", alt: "Travel Image 1", description: "" },
 
-  { src: "img/SL/travel/travel1.webp", alt: "Travel Image 1", description: "イタリア BGM：Mystery of Love" },
-  { src: "img/SL/travel/travel1-2.webp", alt: "Travel Image 1", description: "" },
-  { src: "img/SL/travel/travel1-3.webp", alt: "Travel Image 1", description: "" },
-  { src: "img/SL/travel/travel2.webp", alt: "Travel Image 2", description: "海" },
-  { src: "img/SL/travel/travel3.webp", alt: "Travel Image 3", description: "イタリア" },
-  { src: "img/SL/travel/travel4.webp", alt: "Travel Image 4", description: "" },
-  { src: "img/SL/travel/travel5.webp", alt: "Travel Image 5", description: "フィンランド" },
-  { src: "img/SL/travel/travel6.jpg", alt: "Travel Image 6", description: "水" },
-  { src: "img/SL/travel/travel17.jpg", alt: "Travel Image 17", description: "" },
-  { src: "img/SL/travel/travel7.jpg", alt: "Travel Image 7", description: "ブルースの夜" },
-  { src: "img/SL/travel/travel6.webp", alt: "Travel Image 5", description: "" },
-  { src: "img/SL/travel/travel8.webp", alt: "Travel Image 8", description: "冬のロンドン" },
-  { src: "img/SL/travel/travel9.webp", alt: "Travel Image 9", description: "" },
-  { src: "img/SL/travel/travel10.webp", alt: "Travel Image 10", description: "" },
-  { src: "img/SL/travel/travel11.webp", alt: "Travel Image 11", description: "" },
-  { src: "img/SL/travel/travel12.webp", alt: "Travel Image 12", description: "" },
-  { src: "img/SL/travel/travel13.webp", alt: "Travel Image 13", description: "" },
-  { src: "img/SL/travel/travel14.webp", alt: "Travel Image 14", description: "" },
-  { src: "img/SL/travel/travel15.webp", alt: "Travel Image 15", description: "" },
-  { src: "img/SL/travel/travel16.jpg", alt: "Travel Image 16", description: "" },
-  { src: "img/SL/travel/travel18.webp", alt: "Travel Image 18", description: "" },
-  { src: "img/SL/travel/travel19.webp", alt: "Travel Image 19", description: "" },
-  { src: "img/SL/travel/travel20.webp", alt: "Travel Image 20", description: "" },
-  { src: "img/SL/travel/travel21.webp", alt: "Travel Image 21", description: "" },
-  { src: "img/SL/travel/travel22.webp", alt: "Travel Image 22", description: "" },
-  { src: "img/SL/travel/travel23.webp", alt: "Travel Image 23", description: "" },
-  { src: "img/SL/travel/travel24.webp", alt: "Travel Image 24", description: "" },
-  { src: "img/SL/travel/travel25.webp", alt: "Travel Image 25", description: "" },
-  { src: "img/SL/travel/travel26.webp", alt: "Travel Image 26", description: "" },
-  { src: "img/SL/travel/travel27.webp", alt: "Travel Image 27", description: "" },
-  { src: "img/SL/travel/travel28.webp", alt: "Travel Image 28", description: "" },
-  { src: "img/SL/travel/travel29.webp", alt: "Travel Image 29", description: "" },
-  { src: "img/SL/travel/travel30.webp", alt: "Travel Image 30", description: "" },
-  { src: "img/SL/travel/travel31.webp", alt: "Travel Image 31", description: "" },
-  { src: "img/SL/travel/travel32.webp", alt: "Travel Image 32", description: "" },
-  { src: "img/SL/travel/travel33.webp", alt: "Travel Image 33", description: "" },
-  { src: "img/SL/travel/travel34.webp", alt: "Travel Image 34", description: "" },
-  { src: "img/SL/travel/travel35.webp", alt: "Travel Image 35", description: "" },
-  { src: "img/SL/travel/travel36.webp", alt: "Travel Image 36", description: "" },
-  { src: "img/SL/travel/travel37.webp", alt: "Travel Image 37", description: "" },
-  { src: "img/SL/travel/travel38.webp", alt: "Travel Image 38", description: "" },
-  { src: "img/SL/travel/travel39.webp", alt: "Travel Image 39", description: "" },
-  { src: "img/SL/travel/travel40.webp", alt: "Travel Image 40", description: "" }
         ];
         const foodImages = [
   { src: "img/SL/food/food1.webp", alt: "Food Image 1", description: "アイスクリーム" },
-  { src: "img/SL/food/food2.webp", alt: "Food Image 2", description: "" },
-  { src: "img/SL/food/food3.webp", alt: "Food Image 3", description: "" },
-  { src: "img/SL/food/food4.webp", alt: "Food Image 4", description: "" },
-  { src: "img/SL/food/クリーム抹茶オレオのミルフィーユケーキ.webp", alt: "Food Image 2", description: "クリーム抹茶オレオのミルフィーユケーキ" },
-  { src: "img/SL/food/food5.webp", alt: "Food Image 5", description: "" },
-  { src: "img/SL/food/food6.webp", alt: "Food Image 6", description: "" },
-  { src: "img/SL/food/food7.webp", alt: "Food Image 7", description: "" },
-  { src: "img/SL/food/food8.webp", alt: "Food Image 8", description: "" },
-  { src: "img/SL/food/food9.webp", alt: "Food Image 9", description: "ベリーとチョコのアイスクリーム" },
-  { src: "img/SL/food/food10.webp", alt: "Food Image 10", description: "" },
-  { src: "img/SL/food/food11.webp", alt: "Food Image 11", description: "" },
-  { src: "img/SL/food/food12.webp", alt: "Food Image 12", description: "" },
-  { src: "img/SL/food/food13.webp", alt: "Food Image 13", description: "" },
-  { src: "img/SL/food/food14.webp", alt: "Food Image 14", description: "" },
-  { src: "img/SL/food/food15.webp", alt: "Food Image 15", description: "" },
-  { src: "img/SL/food/food16.webp", alt: "Food Image 16", description: "" },
-  { src: "img/SL/food/food17.webp", alt: "Food Image 17", description: "" },
-  { src: "img/SL/food/food18.webp", alt: "Food Image 18", description: "" },
-  { src: "img/SL/food/food19.webp", alt: "Food Image 19", description: "" },
-  { src: "img/SL/food/food20.webp", alt: "Food Image 20", description: "" },
-  { src: "img/SL/food/food21.webp", alt: "Food Image 21", description: "" },
-  { src: "img/SL/food/food22.webp", alt: "Food Image 22", description: "" },
-  { src: "img/SL/food/food23.webp", alt: "Food Image 23", description: "" },
-  { src: "img/SL/food/food24.webp", alt: "Food Image 24", description: "" },
-  { src: "img/SL/food/food25.webp", alt: "Food Image 25", description: "" },
-  { src: "img/SL/food/food26.webp", alt: "Food Image 26", description: "" },
-  { src: "img/SL/food/food27.webp", alt: "Food Image 27", description: "" },
-  { src: "img/SL/food/food28.webp", alt: "Food Image 28", description: "" },
-  { src: "img/SL/food/food29.webp", alt: "Food Image 29", description: "" },
-  { src: "img/SL/food/food30.webp", alt: "Food Image 30", description: "" },
-  { src: "img/SL/food/food31.webp", alt: "Food Image 31", description: "" },
-  { src: "img/SL/food/food32.webp", alt: "Food Image 32", description: "" },
-  { src: "img/SL/food/food33.webp", alt: "Food Image 33", description: "" },
-  { src: "img/SL/food/food34.webp", alt: "Food Image 34", description: "" },
-  { src: "img/SL/food/food35.webp", alt: "Food Image 35", description: "" },
-  { src: "img/SL/food/food36.webp", alt: "Food Image 36", description: "" },
-  { src: "img/SL/food/food37.webp", alt: "Food Image 37", description: "" },
-  { src: "img/SL/food/food38.webp", alt: "Food Image 38", description: "" },
-  { src: "img/SL/food/food39.webp", alt: "Food Image 39", description: "" },
-  { src: "img/SL/food/food40.webp", alt: "Food Image 40", description: "" }
+
         ];
 
         const lonlyImages = [
         { src: "img/L/L0.jpg", alt: "Gallery Image 1", description: "嵐を呼ぶ、鮮烈な人" },
-        { src: "img/L/L1.jpg", alt: "Gallery Image 1", description: "" },
-            { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【本編】メインストーリー" },
-            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "簡単に希望と平和をもたらす救世主なんて存在しない。いるのは、ただひたすら先を歩く先駆者たちだけだ。" },
-            { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "" },
-            { src: "img/L/L2.webp", alt: "Gallery Image 2", description: "危険な関系〜" },
-            { src: "img/L/L3.webp", alt: "Gallery Image 3", description: "" },
-            { src: "img/L/L4.webp", alt: "Gallery Image 4", description: "死と新生" },
-            { src: "img/L/L5.webp", alt: "Gallery Image 5", description: "" },
-            { src: "img/L/L6.webp", alt: "Gallery Image 6", description: "" },
-            { src: "img/L/L7.webp", alt: "Gallery Image 7", description: "「供養」" },
-            { src: "img/L/L8.webp", alt: "Gallery Image 8", description: "「孤独」" },
-            { src: "img/L/L9.webp", alt: "Gallery Image 9", description: "「憤怒」" },
-            { src: "img/L/L10.webp", alt: "Gallery Image 10", description: "" },
-            { src: "img/L/L11.webp", alt: "Gallery Image 11", description: "" },
-            { src: "img/L/L12.webp", alt: "Gallery Image 12", description: "" },
-            { src: "img/L/L13.webp", alt: "Gallery Image 13", description: "" },
-            { src: "img/L/L14.webp", alt: "Gallery Image 14", description: "" },
-            { src: "img/L/L15.webp", alt: "Gallery Image 15", description: "" },
-            { src: "img/L/L16.jpg", alt: "Gallery Image 15", description: "" },
-            { src: "img/L/zangli.webp", alt: "Gallery Image 14", description: "N.F.76年" },
+
         ];
         const sonlyImages = [
             { src: "img/S/S0.jpg", alt: "Gallery Image 1", description: "優雅、洗練" },
-            { src: "img/S/S00.jpg", alt: "Gallery Image 1", description: "「何のために戦うか」" },
-            { src: "img/S/S1.jpg", alt: "Gallery Image 1", description: "" },
-            { src: "img/S/S2.jpg", alt: "Gallery Image 2", description: "" },
-            { src: "img/S/S3.jpg", alt: "Gallery Image 3", description: "" },
-            { src: "img/S/S4.jpg", alt: "Gallery Image 4", description: "" },
-            { src: "img/S/S5.jpg", alt: "Gallery Image 5", description: "" },
-            { src: "img/S/S6.jpg", alt: "Gallery Image 6", description: "" },
-            { src: "img/S/S7.jpg", alt: "Gallery Image 7", description: "" },
-            { src: "img/S/S8.webp", alt: "Gallery Image 8", description: "落書き" },
-            { src: "img/S/S9.jpg", alt: "Gallery Image 9", description: "" },
-            { src: "img/S/S10.jpg", alt: "Gallery Image 10", description: "" },
-            { src: "img/S/S11.jpg", alt: "Gallery Image 11", description: "落書き" },
-            { src: "img/S/S12.jpg", alt: "Gallery Image 12", description: "落書き" },
-            { src: "img/S/S13.webp", alt: "Gallery Image 13", description: "落書き" },
-            { src: "img/S/S14.jpg", alt: "Gallery Image 14", description: "ペルセポネー" },
-            { src: "img/S/S15.jpg", alt: "Gallery Image 15", description: "" },
-            { src: "img/S/S16.jpg", alt: "Gallery Image 11", description: "" },
-            { src: "img/S/S17.png", alt: "Gallery Image 12", description: "" },
-            { src: "img/S/S18.jpg", alt: "Gallery Image 13", description: "" },
-            /* { src: "img/S/S19.jpg", alt: "Gallery Image 14", description: "" },
-            { src: "img/S/S20.jpg", alt: "Gallery Image 15", description: "" }, */
+
         ];
         const costumeImages = [
         { src: "img/cloakroom/L01 - 「礼服」（傘のデザイン、すごく好き）.jpg", alt: "Gallery Image 1", description: "L01 - 「礼服」（傘のデザイン、すごく好き）" },
-        { src: "img/cloakroom/L西洋衣装2-1.png", alt: "Gallery Image 1", description: "L02 - 「礼服」（靴のデザインが好き）" },
-        { src: "img/cloakroom/L西洋衣装2-2.png", alt: "Gallery Image 1", description: "L02 - 「礼服」（）" },
-        { src: "img/cloakroom/L03 - 「パジャマ」.png", alt: "Gallery Image 1", description: "L03 - 「パジャマ」" },
-        { src: "img/cloakroom/L04 - 「礼服」.png", alt: "Gallery Image 1", description: "L04 - 「礼服」" },
-        { src: "img/cloakroom/L05 - 「宴の領主」.jpg", alt: "Gallery Image 1", description: "L05 - 「宴の領主」" },
-        { src: "img/cloakroom/L06 - 「和服」.png", alt: "Gallery Image 1", description: "L06 - 「和服」" },
-        { src: "img/cloakroom/S01 - 「仕立て屋に化けた殺し屋」（メインストーリー）.jpg", alt: "Gallery Image 1", description: "S01 - 「仕立て屋に化けた殺し屋」（メインストーリー）" },
-        { src: "img/cloakroom/S02 - 「信者」（jacket）.png", alt: "Gallery Image 1", description: "S02 - 「信者」（jacket）" },
-        { src: "img/cloakroom/S02 - 「信者」.png", alt: "Gallery Image 1", description: "S02 - 「信者」" },
-        { src: "img/cloakroom/S03 - 「幼少期」（たまにはズボンもいいよね）.jpg", alt: "Gallery Image 1", description: "S03 - 「幼少期」（たまにはズボンもいいよね）" },
-        { src: "img/cloakroom/S04「幼少期」.jpg", alt: "Gallery Image 1", description: "S04「幼少期」" },
-        { src: "img/cloakroom/S05 - 「礼服」.png", alt: "Gallery Image 1", description: "S05 - 「礼服」" },
-        { src: "img/cloakroom/S06 - 「和服」.jpg", alt: "Gallery Image 1", description: "S06 - 「和服」" },
-        { src: "img/cloakroom/S06 - 「和服」（additional）.png", alt: "Gallery Image 1", description: "S06 - 「和服」（additional）" },
+
         ];
 
         const poseImages = [
@@ -1292,35 +953,7 @@ const femaleImages = [
 const otherCharImages = [
 { src: "img/sutong/01.webp", alt: "Gallery Image 1", description: "" },
           { src: "img/sutong/02.webp", alt: "Gallery Image 2", description: "正しい方向に最短で辿り着く外道の手法" },
-          { src: "img/sutong/L/忍冬.png", alt: "Gallery Image 2", description: "Vulpisfoglia" },
-        { src: "img/sutong/L/忍冬表情差分.webp", alt: "Gallery Image 2", description: "忍冬表情差分" },
-          { src: "img/sutong/se.jpg", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/se2.jpg", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/se3.jpg", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/e-teru01.jpg", alt: "Gallery Image 2", description: "蓬莱山輝夜八意永琳　えーてる「東方永夜抄」" },
-          
-          { src: "img/sutong/fovopobo00.webp", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/fovopobo01.jpg", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/fovopobo02.webp", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/fovopobo03.webp", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/03.webp", alt: "Gallery Image 3", description: "" },
-          { src: "img/sutong/04.webp", alt: "Gallery Image 4", description: "" },
-          { src: "img/sutong/05.webp", alt: "Gallery Image 5", description: "" },
-          { src: "img/sutong/06.webp", alt: "Gallery Image 6", description: "" },
-          { src: "img/sutong/07.webp", alt: "Gallery Image 7", description: "" },
-          { src: "img/sutong/08.webp", alt: "Gallery Image 8", description: "" },
-          { src: "img/sutong/09.webp", alt: "Gallery Image 9", description: "" },
-          { src: "img/sutong/10.webp", alt: "Gallery Image 10", description: "" },
-          { src: "img/sutong/11.webp", alt: "Gallery Image 11", description: "" },
-/*           { src: "img/sutong/12.webp", alt: "Gallery Image 12", description: "" },
-          { src: "img/sutong/13.webp", alt: "Gallery Image 13", description: "" },
-          { src: "img/sutong/14.webp", alt: "Gallery Image 14", description: "" },
-          { src: "img/sutong/15.webp", alt: "Gallery Image 15", description: "" },
-          { src: "img/sutong/16.webp", alt: "Gallery Image 16", description: "" },
-          { src: "img/sutong/17.webp", alt: "Gallery Image 17", description: "" },
-          { src: "img/sutong/18.webp", alt: "Gallery Image 18", description: "" },
-          { src: "img/sutong/19.webp", alt: "Gallery Image 19", description: "" },
-          { src: "img/sutong/20.webp", alt: "Gallery Image 20", description: "" } */
+
 ];
         
         // 辅助函数：根据名称获取数组
