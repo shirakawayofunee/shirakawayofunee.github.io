@@ -21,7 +21,7 @@
             /* 终端专用点缀色 */
             --term-green: #50fa7b;
             --term-blue: #8be9fd;
-            --term-btn-red: #ff5f56;
+            --term-btn-red: #FF3D00;
             --term-btn-yellow: #ffbd2e;
             --term-btn-green: #27c93f;
 
@@ -43,7 +43,6 @@
             --text-lvl-2: #eeeeee;          /* 次亮白 (Badge/正文) */
             --text-lvl-3: #666666;          /* 灰色 (说明/计数/辅助) */
             --text-lvl-4: #555555;          /* 深灰 (英文小字) */
-            --text-lvl-5: #404040;          /* 暗灰 (原 --text-gray，用于特定正文) */
             
             /* 终端专用文字 */
             --text-term-body: #e0e0e0;
@@ -68,7 +67,7 @@
         /* 基础设置 */
         body {
             background: var(--bg-page);
-            color: var(--text-lvl-5);
+            color: var(--text-lvl-3);
             font-family: 'myFont', "Roboto", sans-serif;
             margin: 0;
             padding: 0;
@@ -129,7 +128,7 @@
         }
         .div-head-text {
             font-size: 0.88rem;
-            color: var(--text-lvl-5); /* #404040 */
+            color: var(--text-lvl-3); /* #404040 */
             font-family: 'myFont', sans-serif;
             transition: color 0.3s;
         }
@@ -171,10 +170,11 @@
         .roll-link-card {
             display: block;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s, transform 0.3s;
         }
         .roll-link-card:hover {
-            opacity: 0.9;
+            opacity: 1;
+            transform: translateY(-2px); /* 轻微上浮 */
         }
 
         .roll-header {
@@ -274,11 +274,18 @@
         .secondary-menu-container {
             position: sticky;
             top: 4rem;
-            background-color: var(--bg-menu-trans);
+            background-color: transparent; /* 先设为透明 */
+    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.6));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+    
+    /* 建议：稍微调整边框颜色使其更柔和，如果你的变量里有 --border-dark 可替换 */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 990;
             padding: 10px 0;
-            border-bottom: 1px solid #333;
-            border-top: 1px solid var(--border-dark);
+/*             border-bottom: 1px solid #333;
+            border-top: 1px solid var(--border-dark); */
         }
         .gallery-header .nav-tabs {
             border-bottom: none;
@@ -345,7 +352,7 @@
             width: 100%;
             height: auto;
             display: block;
-            border: 1px solid var(--text-lvl-5); /* #404040 */
+            border: 1px solid var(--text-lvl-3); /* #404040 */
             box-sizing: border-box;
             cursor: pointer;
         }
@@ -460,7 +467,7 @@
             right: 30px;                /* 距右 */
             z-index: 9999;              /* 最顶层 */
             width: 100%;
-            max-width: 480px;
+            max-width: 580px;
             margin: 0;
             transition: opacity 0.3s ease, transform 0.3s ease;
             opacity: 1;
@@ -485,7 +492,7 @@
         .cmd-header {
             background-color: rgba(255, 255, 255, 0.02);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px 16px;
+            padding: 8px 16px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -497,8 +504,8 @@
         }
 
         .cmd-btn {
-            width: 0.75rem;
-            height: 0.75rem;
+            width: 0.7rem;
+            height: 0.7rem;
             border-radius: 50%;
             opacity: 0.9;
         }
@@ -532,7 +539,7 @@
 
         /* 内容区 */
         .cmd-body {
-            padding: 1.5rem;
+            padding: 1rem 1.3rem;
             font-size: 0.8rem;
             color: var(--text-term-body);
             min-height: 150px;
