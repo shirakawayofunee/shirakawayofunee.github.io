@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `flowers-101「追悼式」`,
     bgm: `mp3/bg/conversation8.mp3`,
-    summary: ``
+    summary: `FAC記念墓地では、空が静かに泣いているかのように、青い雨が降ってきた。`
   },
   infoPanel: {
     glossary: [
@@ -17,10 +17,24 @@ export default {
     ],
     characters: [
       {
-        name: `Chris`,
+        name: `Chris｜未来の名探偵（自称）`,
         avatar: `img/dh/zhentan1.png`,
-        note: `19歳｜能力者｜未来の名探偵（自称）<br>警察学校の一年生。憧れの「シャーローム姉さん」（上庭の執行人）に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
-      }
+        note: `19歳、能力者、警察学校の一年生。憧れの「シャーローム姉さん」（上庭の執行人）に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
+      },
+      {
+        name: `Mireya｜探偵の妹`,
+        avatar: `img/dh/Mireya.png`,
+        note: `探偵の養父母の実の娘。人を見る目がある人<br>
+        両脚に障害があるが、それゆえに自立心が強く、賢く、気丈である。
+        姉妹の間ではよく口げんかをするが、実は探偵のことを深く心配している。`
+      },
+      {
+        name: `Adrien`,
+        avatar: `img/dh/fac_commander.png`,
+        note: `FAC総司令官、最前線で四十有余年、奮闘し続けている。`
+      },
+
+
     ],
     synopsis: `工事中`,
     relatedLink: {
@@ -92,14 +106,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/memory_voice.png`,
+      avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
       text: `追悼？ふん、君が行けばいいじゃない。君だって「娘」なんでしょ？養子でも、彼らは君を可愛がってた。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/memory_voice.png`,
+      avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
       text: `私は行かないよ。`
     },
@@ -120,14 +134,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/memory_voice.png`,
+      avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
       text: `…なに？慰めに来たの？それとも、私に慰めてほしいの？`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/memory_voice.png`,
+      avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
       text: `私の両親が死んだから、ようやく私と同じになった、共感できるって思ったわけ？`
     },
@@ -148,21 +162,21 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/grieving_girl.png`,
+      avatar: `img/dh/Mireya.png`,
       name: `悲痛な少女`,
       text: `出てけ！私は君と違う！FACのその綺麗事、受け入れない！こんな英雄、認めない！`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/grieving_girl.png`,
+      avatar: `img/dh/Mireya.png`,
       name: `悲痛な少女`,
       text: `死んだらそれで終わりだよ！彼らは私を置いていった、私を孤児にした！そんな奴らが何の英雄だ！`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/grieving_girl.png`,
+      avatar: `img/dh/Mireya.png`,
       name: `悲痛な少女`,
       text: `うっ…くそくらえの光明と正義…こんなもののために死にに行くなんて…バカすぎる、みんなくそくらえだ…`
     },

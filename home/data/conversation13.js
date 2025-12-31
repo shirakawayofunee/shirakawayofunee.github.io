@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `flowers-106「业师」`,
     bgm: `mp3/bg/conversation13.mp3`,
-    summary: ``
+    summary: `探偵が目を覚ましたのは、優雅な庭園だった。そこは伝説の暗殺組織 「Garden」の拠点だ。`
   },
   infoPanel: {
     glossary: [
@@ -23,14 +23,14 @@ export default {
     characters: [
       {
         name: `工事中`,
-        avatar: `img/dh/`,
+        avatar: `img/dh/leopoldmy.jpg`,
         note: `工事中`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
-      }
+        name: `Chris｜未来の名探偵（自称）`,
+        avatar: `img/dh/pc4.png`,
+        note: `19歳、能力者、警察学校の一年生。憧れの「シャーローム姉さん」（上庭の執行人）に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
+      },
     ],
     synopsis: `工事中`
   },
@@ -38,9 +38,9 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
-      text: `さっきの叫び声、めっちゃ悲惨だったね。悪夢でも見た？安心しなよ、君の体にあった汚染は、慈悲深い私が全部抜いてあげたから。`
+      text: `さっきの叫び声、めっちゃ悲惨だったね。悪夢でも見た？安心して、君の体にあった汚染は、慈悲深い私が全部抜いてあげたから。`
     },
     {
       type: `narration`,
@@ -61,13 +61,17 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
       text: `床、硬いよね。ごめんね、怪我人に膝枕でも貸してあげたいところだけど、君、傷だらけでさ。寄りかかったら私の服が汚れちゃうから。ちょっと我慢してね。`
     },
     {
       type: `narration`,
       text: `自分の体から漂う腐臭と血の匂いとは違い、辺りには花の香りが漂い、さらさらと水の流れる音が聞こえる。`
+    },
+    {
+      type: `image`,
+      src: `img/cg/hua_05.png`
     },
     {
       type: `dialogue`,
@@ -81,12 +85,9 @@ export default {
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
-      text: `私の「Garden」だよ。敵の大本営に着いちゃったね、小さな探偵さん。`
+      text: `私の「Garden」。敵の牙城よ、刑事ちゃん。`
     },
-    {
-      type: `image`,
-      src: `img/cg/hua_05.png`
-    },
+
     {
       type: `dialogue`,
       position: `left`,
@@ -99,14 +100,14 @@ export default {
       position: `right`,
       avatar: `img/dh/detective.png`,
       name: `探偵`,
-      text: `……覚えてる。犯人。`
+      text: `……覚えてるよ、殺人犯。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
-      text: `ぷっ、こんな可愛い童顔なんだから、もっと愛らしいこと言ったら？`
+      text: `ぷっ。ベビーフェイスなのに、もっと可愛い言葉を話しなさいよ。`
     },
     {
       type: `narration`,
@@ -117,21 +118,22 @@ export default {
       position: `right`,
       avatar: `img/dh/detective.png`,
       name: `探偵`,
-      text: `君の事件……全部10年前の復讐だ。同態復仇……でも、それだけじゃないよね……`
+      text: `君の事件……全部10年前の復讐だ。同様の復讐……でも、それは君の本当の狙いじゃない……`
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/detective.png`,
       name: `探偵`,
-      text: `事件を通じて、私に何かを調べさせたいんだ。10年前の何かを暴きたいんだ……`
+      text: `……君はこの事件で、あたしに何かを調べさせたいんだ。10年前の何かを暴きたいんだよね……`
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/detective.png`,
       name: `探偵`,
-      text: `だったら、直接調べさせてよ！なんでこんなやり方なの！あと二句の詩、あと二人の命、ここで終わりにして。私、君が望むものを調べるから、もう――`
+      text: `なら、素直にあたしに調べさせてよ! どうしてこんな酷いことをするの! 俳句はあと二つ、 それは二人分の命。
+      ここまでにしようよ。君の欲しい物を調べに行ってあげるから、これ以上は―――`
     },
     {
       type: `narration`,
@@ -140,7 +142,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopoldmy.jpg`,
+      avatar: `img/dh/regret.png`,
       name: `業師`,
       text: `「Garden」は人生を楽しむ場所なんだから、仕事のつまんない話はなしにしてよ。`
     },
@@ -156,7 +158,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold3.png`,
       name: `業師`,
-      text: `うーん、考えてみる……あ、そうだ。誰かが君を「Garden」に誘おうって言ってたっけ。`
+      text: `そうね……ああ、そう言えばあなたを「Garden」に推薦した人がいるわね。`
     },
     {
       type: `dialogue`,
@@ -536,7 +538,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
-      text: `逃げなよ、道端で死なないでね。いい舞台はまだ終わってない。私、君が幕を開けてくれるの、待ってるから。`
+      text: `逃げなさい、道端で死なないでね。芝居はまだ終わっていないの。私、君が幕を開けてくれるの、待ってるから。`
     }
   ]
 };

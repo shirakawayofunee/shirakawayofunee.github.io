@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `flowers-102「探偵ゲーム」`,
     bgm: `mp3/bg/conversation9.mp3`,
-    summary: ``
+    summary: `犯行現場では女性が水に浮かんでおり、真っ赤な死装束のように、身体の上に花が咲き乱れていた。`
   },
   infoPanel: {
     glossary: [
@@ -23,14 +23,20 @@ export default {
     characters: [
       {
         name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        avatar: `img/dh/leopold.jpg`,
+        note: `事件現場で治安官に偽装した容疑者`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
-      }
+        name: `Chris｜未来の名探偵（自称）`,
+        avatar: `img/dh/pc2.png`,
+        note: `19歳、能力者、警察学校の一年生。憧れの「シャーローム姉さん」（上庭の執行人）に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
+      },
+      {
+        name: `Doyle｜刑事`,
+        avatar: `img/dh/doyle.jpg`,
+        note: `支局の刑事で、花庭園による一連の暗殺事件を担当してるよ。生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`
+      },
+
     ],
     synopsis: `工事中`
   },

@@ -37,7 +37,7 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年7月23日<br>23:24、山荘内`
+      text: `N.F.113年7月22日<br>23:24、山荘内`
     },
     {
       type: `image`,
@@ -98,6 +98,10 @@ export default {
     {
       type: `narration`,
       text: `（ここでは2434文字を省略：Xが上庭との対話を終え、自宅の別荘に戻って自身を修復し状態を整える中、新キャラクターの探偵が登場する。）`
+    },
+    {
+      type: `narration`,
+      text: `N.F.113年7月23日00:41`
     },
     {
       type: `dialogue`,

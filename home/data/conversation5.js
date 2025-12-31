@@ -38,7 +38,7 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年7月23日 23:14<br>エリカ山荘内`
+      text: `N.F.113年7月22日 23:14<br>エリカ山荘内`
     },
     {
       type: `image`,

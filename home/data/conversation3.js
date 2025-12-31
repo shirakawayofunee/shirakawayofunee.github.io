@@ -37,7 +37,7 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年7月23日 08:05<br>セヴェロの仕立て屋`
+      text: `N.F.113年7月22日 08:05<br>セヴェロの仕立て屋`
     },
     {
       type: `image`,

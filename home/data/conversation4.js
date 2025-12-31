@@ -41,7 +41,7 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年7月23日 23:04<br>X宅の地下室`
+      text: `N.F.113年7月22日 23:04<br>X宅の地下室`
     },
     {
       type: `image`,

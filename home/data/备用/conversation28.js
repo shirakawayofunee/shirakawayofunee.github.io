@@ -12,27 +12,39 @@ export default {
     現在は再編を経て7人のメンバーによって構成されている。`
       },
       {
-        term: `福音地`,
+        term: `GARDEN`,
+        desc: `位于灰色地带的杀手组织，由Leopold领导。`
+      },
+      {
+        term: `工事中`,
         desc: `工事中`
       },
       {
-        term: `GARDEN`,
+        term: `工事中`,
+        desc: `工事中`
+      },
+      {
+        term: `工事中`,
         desc: `工事中`
       }
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
+        name: `L`,
+        avatar: `img/dh/leopold402.png`,
         note: `工事中`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `X`,
+        avatar: `img/dh/x402.png`,
+        note: `廃棄期限まであと一ヶ月しかない道具`
       }
     ],
-    synopsis: `工事中`
+    synopsis: `工事中`,
+    relatedLink: {
+      text: `次章`,
+      targetId: `conversation29`
+    }
   },
   script: [
     {

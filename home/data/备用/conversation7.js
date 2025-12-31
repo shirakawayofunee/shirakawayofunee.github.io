@@ -9,7 +9,7 @@ export default {
       {
         term: `上庭`,
         desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
-    現在は再編を経て7人のメンバーによって構成されている。`
+        現在は再編を経て7人のメンバーによって構成されている。`
       },
       {
         term: `福音地`,
@@ -30,9 +30,9 @@ export default {
         name: `工事中`,
         avatar: `img/dh/`,
         note: `工事中`
-      }
+      },
     ],
-    synopsis: `工事中`
+    synopsis: `工事中`,
   },
   script: [
     {

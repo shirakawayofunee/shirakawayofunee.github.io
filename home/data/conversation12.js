@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `flowers-105「第二現場」`,
     bgm: `mp3/bg/conversation12.mp3`,
-    summary: ``
+    summary: `花が咲いたレンガの壁の下には、どんな秘密が隠されているのだろうか？`
   },
   infoPanel: {
     glossary: [
@@ -23,14 +23,19 @@ export default {
     characters: [
       {
         name: `工事中`,
-        avatar: `img/dh/`,
+        avatar: `img/dh/leopold.png`,
         note: `工事中`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
-      }
+        name: `Chris｜未来の名探偵（自称）`,
+        avatar: `img/dh/pc4.png`,
+        note: `19歳、能力者、警察学校の一年生。憧れの「シャーローム姉さん」（上庭の執行人）に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
+      },
+      {
+        name: `Doyle｜刑事`,
+        avatar: `img/dh/doyle.jpg`,
+        note: `支局の刑事で、花庭園による一連の暗殺事件を担当してるよ。生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`
+      },
     ],
     synopsis: `工事中`
   },
@@ -373,7 +378,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `一天前――`
+      text: `1天前――`
     },
     {
       type: `dialogue`,

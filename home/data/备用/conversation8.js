@@ -7,32 +7,26 @@ export default {
   infoPanel: {
     glossary: [
       {
-        term: `上庭`,
-        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
-    現在は再編を経て7人のメンバーによって構成されている。`
-      },
-      {
-        term: `福音地`,
+        term: `工事中`,
         desc: `工事中`
       },
       {
-        term: `GARDEN`,
+        term: `工事中`,
         desc: `工事中`
       }
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
-      },
-      {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `Chris｜未来の名探偵（自称）`,
+        avatar: `img/dh/zhentan1.png`,
+        note: `19歳｜能力者｜未来の名探偵（自称）<br>警察学校の一年生。憧れの「シャーローム姉さん」（上庭の執行人）に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
       }
     ],
-    synopsis: `工事中`
+    synopsis: `工事中`,
+    relatedLink: {
+      text: `次章`,
+      targetId: `conversation9`
+    }
   },
   script: [
     {

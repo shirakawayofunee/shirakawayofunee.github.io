@@ -22,15 +22,22 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `Shalom｜X`,
+        avatar: `img/dh/x201.png`,
+        note: `「上庭」の七代目執行人、`
       },
       {
         name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
-      }
+        avatar: `img/dh/pc201.png`,
+        note: `Xに頼まれて、最近の一連の暗殺事件の特別調査員を務めさせてもらうことになった。`
+      },
+      {
+        name: `Mireya｜探偵の妹`,
+        avatar: `img/dh/Mireya.png`,
+        note: `探偵の養父母の実の娘。人を見る目がある人<br>
+        両脚に障害があるが、それゆえに自立心が強く、賢く、気丈である。
+        姉妹の間ではよく口げんかをするが、実は探偵のことを深く心配している。`
+      },
     ],
     synopsis: `工事中`
   },
@@ -391,7 +398,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/miria.jpg`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `ちっ。`
     },
@@ -409,14 +416,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/miria.jpg`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `お前が死んだって聞いて、書類にサインしに来た。まだ生きてるじゃん。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/miria.jpg`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `正義のために死ぬつもりなら、事前に言っとけよ。面倒かけんな。`
     },
@@ -434,7 +441,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/miria.jpg`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `……あれが、お前が言う「すごい人」？`
     },
@@ -455,14 +462,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/miria.jpg`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `……あの女、最初から最後まで私をまともに見てなかった。彼女の目には、私なんか<span>透明</span>なんだ。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/miria.jpg`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `気をつけなよ。どうやって死ぬか分からないよ。`
     },

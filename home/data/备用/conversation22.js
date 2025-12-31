@@ -1,0 +1,403 @@
+export default {
+  meta: {
+    title: `flowers-209「執行人」`,
+    bgm: `mp3/bg/conversation20.mp3`,
+    summary: ``
+  },
+  infoPanel: {
+    glossary: [
+      {
+        term: `上庭`,
+        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
+    現在は再編を経て7人のメンバーによって構成されている。`
+      },
+      {
+        term: `福音地`,
+        desc: `工事中`
+      },
+      {
+        term: `GARDEN`,
+        desc: `工事中`
+      }
+    ],
+    characters: [
+      {
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
+      },
+      {
+        name: `工事中`,
+        avatar: `img/dh/`,
+        note: `工事中`
+      }
+    ],
+    synopsis: `工事中`
+  },
+  script: [
+    {
+      type: `narration`,
+      text: `N.F.113年8月15日12:23<br>FAC黒環封鎖行動合同指揮部-公路中段`
+    },
+    {
+      type: `image`,
+      src: `img/cg/fl_22.png`
+    },
+    {
+      type: `narration`,
+      text: `火海と廃墟の間を、執行人がゆっくりと焦げた路面を歩き、老者を見つけた。`
+    },
+    {
+      type: `narration`,
+      text: `彼の制服は破れ、機械義肢が大きく露出していた。心臓部には微かな光が脈打ち、体の少なくとも半分は衝撃で破壊されていなかった。鉄のように不屈だった。`
+    },
+    {
+      type: `narration`,
+      text: `数人の医療スタッフが駆けつけ、強心剤や機械マッサージを施すと、老人は突然目を開け、深く息を吸った。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x3.png`,
+      name: `シャーローム`,
+      text: `ご無事で何より、司令。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander2.png`,
+      name: `司令`,
+      text: `執行……人……`
+    },
+    {
+      type: `narration`,
+      text: `彼は息を切らし、言葉もろくに話せなかったが、シャーロームをじっと睨みつけた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander2.png`,
+      name: `司令`,
+      text: `まだ生きてる……まさか、お前……私に…あれを…使ったんじゃ……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `ご安心を。あの力をあなたに使うには上からの許可が必要ですが、絶対に認められません。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander2.png`,
+      name: `司令`,
+      text: `……他の者は、どこだ……`
+    },
+    {
+      type: `narration`,
+      text: `彼は首を傾け、輸送車の方向を見た。大型車はすでに横転していた。汚染浄化部隊が狂厄爆弾の残渣を調べ――もう処理の必要はなかった。`
+    },
+    {
+      type: `narration`,
+      text: `黒石英の攻撃がすべての汚染を直接浄化した。いや……それはもっと上位からの、致命的な一撃だった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `車内には大量の5級狂厄汚染物がありました。あなたは衝撃には耐えられても、汚染には絶対に耐えられません。上庭が直接浄化するのが最も確実な方法で、代償も最小です。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander2.png`,
+      name: `司令`,
+      text: `……代償が最小？ふん……3月の西区でのお前のやり方と同じか？BR-002、2回だ。お前が言う「代償が最小」ってやつか？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `はい。福音地が動き出しています。時間は限られ、私の任務は明確です。どんな代償を払っても。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander2.png`,
+      name: `司令`,
+      text: `……これが上庭の計算結果なら、信じるしかない。`
+    },
+    {
+      type: `narration`,
+      text: `総司令は呟き、差し出された執行人の手を振り払い、苦労しながら立ち上がった。全身の金属器官がぎっしり音を立て、ようやく立った。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander3.png`,
+      name: `司令`,
+      text: `一人の老人を殺すのにこんな大袈裟なことは必要ない。これは煙幕だ。連中のこれまでの連続事件と同じで、注意を逸らし、次の行動を進めるためだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander3.png`,
+      name: `司令`,
+      text: `あの女、暗殺リストを握ってる。今回の作戦の要、FACの骨干だ。行方をすでに掴んでる者もいれば、まだの者もいる。私の口を割らせようとしたんだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander3.png`,
+      name: `司令`,
+      text: `あのゴミどもはよくわかってる。私一人殺しただけじゃ足りない。FACには勇士がいくらでもいる。作戦を止めるには全員殺す必要がある。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander3.png`,
+      name: `司令`,
+      text: `そんな美夢、見させてたまるか！`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander3.png`,
+      name: `司令`,
+      text: `戻れ、私に時間を無駄にするな。内部に潜むスパイ、襲ってくる間諜をすべて一網打尽にしろ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander3.png`,
+      name: `司令`,
+      text: `福音地がこんな行動に出たってことは、今回の作戦がすでに実質的な脅威になってる証拠だ。絶対に最後まで進める。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander3.png`,
+      name: `司令`,
+      text: `FACは狂厄の戦場で死ぬべきだ、こんな小人の手にかかるんじゃない。元の戦いを続けろ、連中に報いを！`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `もちろんです。第九機関とHUSHはすでに動いています。あなたを殺せなかった以上、敵の計画は完全に露呈します。`
+    },
+    {
+      type: `narration`,
+      text: `数人の戦士が駆けつけ、老人を支えて去った。車に乗る前、彼は最後にもう一度振り返った。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander2.png`,
+      name: `司令`,
+      text: `ある捜査員、能力者だ。爆発前に運転席をロックし、2割の火力を防いだ。彼女が無事であってほしい……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander2.png`,
+      name: `司令`,
+      text: `お前の部下か？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `私の部下です。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/fac_commander2.png`,
+      name: `司令`,
+      text: `……なら、お前は本当に人間性がないな。`
+    },
+    {
+      type: `narration`,
+      text: `FACの専用車が走り去った。シャーロームは運転席に向かった。医療スタッフが探偵に緊急処置を施していた。`
+    },
+    {
+      type: `narration`,
+      text: `探偵は天からの衝撃波で直接引き裂かれなかったが、溶けた金属が腰を貫いていた。`
+    },
+    {
+      type: `narration`,
+      text: `動けないまま、失血で意識が朦朧とする中、血の霧越しに、探偵は来る者を見定められなかったが、聞き慣れた足音を捉えた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `私がやる。`
+    },
+    {
+      type: `narration`,
+      text: `彼女は身をかがめ、探偵の手を握った。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `司令は……他の人は……`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `……私は仕掛けを解除した……やったよ、別にやらなくても……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `誰もが君のようには純粋じゃない。あの女はもっと残酷な罠を仕掛けたことがある。このリスクは無視できない。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `じゃあ……確認してくれる？私が……本当にやれたのか……知りたい……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `その必要はない。`
+    },
+    {
+      type: `narration`,
+      text: `彼女の右目に淡い三角形が浮かび、同時に探偵は魂に何かが触れるのを感じた。`
+    },
+    {
+      type: `narration`,
+      text: `――白い光の触手、ぼやけた巨大な影。吐き気がする、侵入され圧迫される感覚。肉体の痛みは軽減したが、心の嫌悪感は消えず、彼女はもがき、叫び、答えを求めた。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `……教えて……`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `司令がさっき言ってた、BR-002、3月の西区の暴動……あなた、関わったの？`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `2回って何？104年のBR-002は？これと関係あるの？調査中だって言ってなかった？`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `シャーローム姉さん……あなたは何をしたの？それって本当に……正義なの？`
+    },
+    {
+      type: `narration`,
+      text: `長い沈黙の後、嫌悪感が消えた。シャーロームは探偵の手を離し、きっぱりとした。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `もういい。`
+    },
+    {
+      type: `narration`,
+      text: `シャーロームは立ち上がり、黒石英のそばに戻った。探偵は目を見開き、ようやく目の前の人を見定めた。彼女は高みから冷淡に、探偵を見下ろし、淡々と背を向けた。`
+    },
+    {
+      type: `narration`,
+      text: `探偵のすべての勇気と不満は、その突然の冷淡さに一瞬で打ち砕かれた。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `あ……待って、ただ……知りたかっただけ……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `普通の救急で十分だ。連れていけ。もう必要ない。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: ``,
+      name: `探偵`,
+      text: `違うよ、ただ知りたかっただけ……ごめん、シャーローム姉さん、ただ……`
+    },
+    {
+      type: `narration`,
+      text: `……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
+      text: `西区作戦計画、全票で可決。防御網構築が確定、資金、資源、人員は即座に準備完了。内部調査と戦術会議を直ちに開始。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
+      text: `福音地は黙って見過ごさない。準備しろ、X、今回のFAC作戦で、君にはもっと重要な本当の任務がある。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `シャーローム`,
+      text: `要求は受け取った。すべて実現する、いつものように。`
+    },
+    {
+      type: `narration`,
+      text: `遠く、軽やかに逃げ出した業師は、錆びた川の対岸を愉快そうに見つめた。FACの臨時作戦指揮部は鋭い警報音を響かせていた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
+      name: `業師`,
+      text: `あらら、依頼失敗しちゃって、しかもバレちゃった～次はどうしようかな～`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
+      name: `業師`,
+      text: `面倒がやってくるよ。親愛なる依頼人さんたち、どうするつもり～？`
+    }
+  ]
+};

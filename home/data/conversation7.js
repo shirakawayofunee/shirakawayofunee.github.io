@@ -37,7 +37,7 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年7月24日<br>00:41、「GARDEN」アジト`
+      text: `N.F.113年7月23日00:41<br>「GARDEN」アジト`
     },
     {
       type: `narration`,

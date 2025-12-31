@@ -7,32 +7,36 @@ export default {
   infoPanel: {
     glossary: [
       {
-        term: `上庭`,
-        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
-    現在は再編を経て7人のメンバーによって構成されている。`
+        term: `FAC`,
+        desc: `。`
       },
       {
-        term: `福音地`,
-        desc: `工事中`
-      },
-      {
-        term: `GARDEN`,
-        desc: `工事中`
+        term: `M値`,
+        desc: `。`
       }
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `Leopold（業師）`,
+        avatar: `img/dh/leopold1.png`,
+        note: `Garden的首领。虽然看似冷酷，实则在为部下寻找生路。`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `Shalom（執行人、X）`,
+        avatar: `img/dh/x4.png`,
+        note: `工`
+      },
+      {
+        name: `Chris（探偵）`,
+        avatar: `img/dh/pc208.png`,
+        note: `探偵服を着て、大きい斧を武器にする少女、犬系（別に本物の犬ではない）。`
       }
     ],
-    synopsis: `Xは偽の情報を流し、Lの部下を拉致した。報復としてLは軍総司令、複数の軍高官、そしてXが最も信頼を寄せる部下（探偵役）を拘束し、爆弾を積んだ車両に全員を乗せ、郊外から市街地中心へ移動した。`
+    synopsis: `Xは偽の情報を流し、Lの部下を拉致した。報復としてLは軍総司令、複数の軍高官、そしてXが最も信頼を寄せる部下（探偵役）を拘束し、爆弾を積んだ車両に全員を乗せ、郊外から市街地中心へ移動した。`,
+    relatedLink: {
+      text: `次章`,
+      targetId: `conversation22`
+    }
   },
   script: [
     {

@@ -22,14 +22,14 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `Shalom（X）`,
+        avatar: `img/dh/x201.png`,
+        note: `「上庭」の七代目執行人、`
       },
       {
         name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        avatar: `img/dh/pc201.png`,
+        note: `Xに頼まれて、最近の一連の暗殺事件の特別調査員を務めさせてもらうことになった。`
       }
     ],
     synopsis: `工事中`
@@ -38,14 +38,14 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `父は英雄だった。彼は正義と光が永遠に存在すると言い、そのために戦った。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `でも、たくさんの英雄たちが、10年前の遠征であまりにも簡単に死にました。何の意味もなく。`
     },
@@ -56,42 +56,42 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `FACは世間から激しい非難を浴び、地位は急落。市議会や涅槃グループでさえFACを操るようになった。私の父も笑いものにされた。人々は口では彼を英雄と呼び、心では「バカな奴」と呼んだ。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `私は尋ねた。パパや叔父叔母たちは、正義のために戦い、城邦を守るために死んだ。なぜこんな結果に？みんな、正義なんて要らないの？`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `彼らは黙り、嘲笑し、または嫌悪感を込めて顔を背けた。最後にある人が言った。「あのバカな奴らは最初から最後まで真相が見えなかったからだ。真相は、正義なんて嘘っぱちだ」と。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `この時代、人は簡単に奪われ、悪はなんの罰も受けずに済む。現実は霧と陰謀に満ち、利益や憎しみ、欲望が正義を凌駕する。盲目的にそれを信じるのは愚かで、死にに行くのも自業自得だ。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `私は大声で反論したかったけど、言葉が出なかった。疑い始めると、悪いことが次から次へと起きた。嫌な予感がして、すべてを悪い方向に考えてしまう。もっと怖いのは……その予感が、ほとんどいつも当たってしまうこと。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `もし正義が存在するなら、この瞬間、どこにある？なぜ出てこない？世界が崩れ、こんな大きな黒い穴が腐り落ちているのに、なぜ無視する？なぜ誰もその穴を埋めようとしない？`
     },
@@ -102,7 +102,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `黒い穴はどんどん大きくなり、私はそこから抜け出せない。何かしないと。私の世界がその穴と一緒に崩れるのを、ただ見ているわけにはいかない……何かしないと、私は――`
     },
@@ -116,21 +116,21 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `W-31は事故なんかじゃない。作為的なものだ。彼らの資産移動を調べた。全部怪しい点だらけ。直感が教えてくれる。これは悪だ。パパたちが遭遇したものと同じ、彼らはみな悪だ。誰も裁かないなら、私がやる。私が行かなきゃ！`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `上庭の人間が涅槃に行くって聞いて、私は涅槃本部の近くで待ち伏せした。撃たれた。たくさんの人が私を殴り、捕まえ、能力者だと叫んだ。でも構わない、命がけで一人を刺した。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc201.png`,
       name: `探偵`,
       text: `――でも、彼女が銃弾の雨から私を守ってくれた。がけで一人を刺した。`
     },

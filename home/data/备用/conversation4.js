@@ -7,32 +7,36 @@ export default {
   infoPanel: {
     glossary: [
       {
-        term: `上庭`,
-        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
-    現在は再編を経て7人のメンバーによって構成されている。`
-      },
-      {
-        term: `福音地`,
-        desc: `工事中`
+        term: `上庭 (Paradeisos)`,
+        desc: `人类文明的最高统治机构，位于天空之上。`
       },
       {
         term: `GARDEN`,
-        desc: `工事中`
+        desc: `位于灰色地带的杀手组织，由Leopold领导。`
       }
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `S`,
+        avatar: `img/dh/severo10.png`,
+        note: `Garden的`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `X`,
+        avatar: `img/dh/x.png`,
+        note: `「上庭」の七代目執行人、極端に理性的で<span>人間味のない</span>道具。`
+      },
+      {
+        name: `代理人`,
+        avatar: `img/dh/agent.png`,
+        note: `上庭からXを協力（監視）するために派遣された代理人。<br>冷酷で機械的、典型的な上庭の官僚像を体現しており、<br>任務の効率を最優先し、一般人の命や感情を軽視する。`
       }
     ],
-    synopsis: `工事中`
+    synopsis: `工事中`,
+    relatedLink: {
+      text: `次章`,
+      targetId: `conversation5`
+    }
   },
   script: [
     {

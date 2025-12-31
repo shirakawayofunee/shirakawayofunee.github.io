@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `flowers-103「暗殺予告」`,
     bgm: `mp3/bg/conversation10.mp3`,
-    summary: ``
+    summary: `……103年に何があった？`
   },
   infoPanel: {
     glossary: [
@@ -23,14 +23,14 @@ export default {
     characters: [
       {
         name: `工事中`,
-        avatar: `img/dh/`,
+        avatar: `img/dh/leopold.jpg`,
         note: `工事中`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
-      }
+        name: `Chris｜未来の名探偵（自称）`,
+        avatar: `img/dh/pc2.png`,
+        note: `19歳、能力者、警察学校の一年生。憧れの「シャーローム姉さん」（上庭の執行人）に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
+      },
     ],
     synopsis: `工事中`
   },
