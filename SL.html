@@ -13,9 +13,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/glitch.css">
     <style>
-        /* =========================================
-           1. 字体与全局设置
-           ========================================= */
         :root {
             --main-pink: #FF3D00;
             --bg-color: #0A0A0A;;
@@ -544,9 +541,12 @@
     opacity: 0.9; 
 }
 
-.cmd-btn.red { background-color: #ef4444; }
+/* .cmd-btn.red { background-color: #ef4444; }
 .cmd-btn.yellow { background-color: #eab308; }
-.cmd-btn.green { background-color: #22c55e; }
+.cmd-btn.green { background-color: #22c55e; } */
+.cmd-btn.red { background-color: #ff5f56; box-shadow: 0 0 5px rgba(255, 95, 86, 0.4); }
+.cmd-btn.yellow { background-color: #ffbd2e; }
+.cmd-btn.green { background-color: #27c93f; }
 
 /* 标题文字 */
 .cmd-title {
@@ -558,43 +558,55 @@
     letter-spacing: 0.1em; /* 稍微加宽一点 */
 }
 
-.cmd-close-action {
-    margin-left: auto; /* 这行代码会把它推到最右边 */
+/* .cmd-close-action {
+    margin-left: auto;
     color: #6b7280;
     cursor: pointer;
-    font-family: sans-serif; /* 用无衬线体显示叉号更干净 */
+    font-family: sans-serif;
     font-size: 1.25rem;
     line-height: 1;
     padding: 0 4px;
     transition: color 0.2s;
-}
-.cmd-close-action:hover {
-    color: #ef4444; /* 悬停变红 */
+} */
+
+.cmd-close-action {
+    margin-left: auto;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 0.8;
+    transition: all 0.2s;
 }
 
-/* 内容区域 */
+.cmd-close-action:hover {
+    color: #ef4444;
+    transform: scale(1.1);
+    text-shadow: 0 0 8px rgba(237, 63, 63, 0.88);
+}
+
 .cmd-body {
-    padding: 1.5rem; /* p-6 */
-    font-family: 'JetBrains Mono', monospace; /* font-mono */
-    font-size: 0.875rem; /* text-sm */
-    color: #d1d5db; /* text-gray-300 */
-    /* [调整] 减小最小高度 (之前是 300px) */
-    min-height: 180px; 
-    /* [调整] 更美观的排版 */
-    line-height: 1.7; /* 增加行高，阅读更舒适 */
-    letter-spacing: 0.09em; /* 增加微小的字间距 */
+    padding: 1.5rem;
+    font-size: 0.8rem;
+    color: #e0e0e0; /* 亮灰色字体，保证在深色背景上的可读性 */
+    min-height: 150px;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
 
 /* 响应式调整：中等屏幕以上字体稍大 */
 @media (min-width: 768px) {
-    .cmd-body { font-size: 0.95rem; }
+    .cmd-body { font-size: 0.9rem; }
 }
 
 /* 命令行提示符样式 */
 .prompt-line { margin-bottom: 0.5rem; }
-.text-green { color: #22c55e; }
+/* .text-green { color: #22c55e; }
 .text-blue { color: #60a5fa; }
-.text-gray { color: #9ca3af; }
+.text-gray { color: #9ca3af; } */
+.text-green { color: #50fa7b; text-shadow: 0 0 5px rgba(80, 250, 123, 0.4); }
+.text-blue { color: #8be9fd; }
+.text-gray { color: #abb2bf; font-weight: bold; }
 
 /* 打字机文本容器 */
 #cmd-typewriter {
@@ -603,9 +615,9 @@
 
 /* 光标闪烁动画 */
 .cmd-cursor::after {
-    content: "█";
-    margin-left: 4px;
-    color: #00ff88; /* 你的强调色 */
+    content: "▋";
+    margin-left: 2px;
+    color: #50fa7b;
     animation: cmd-blink 1s step-end infinite;
 }
 
