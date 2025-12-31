@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `flowers-206「誘い餌」`,
     bgm: `mp3/bg/conversation24.mp3`,
-    summary: ``
+    summary: `未来慈善財団にはまだ生き残りがいるという噂が流れた。陰で何者かが動き始めている……`
   },
   infoPanel: {
     glossary: [

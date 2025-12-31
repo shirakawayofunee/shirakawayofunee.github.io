@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `flowers-402「依頼」`,
     bgm: `mp3/bg/conversation7.mp3`,
-    summary: ``
+    summary: `嘘も偽装も雑味もない。すべてを計算し尽くした末に、費やした苦心と労力が、ただの「依頼」に過ぎなかったとは……`
   },
   infoPanel: {
     glossary: [

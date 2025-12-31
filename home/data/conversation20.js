@@ -1,8 +1,8 @@
 export default {
   meta: {
-    title: `flowers-207「本当の目標」`,
+    title: `flowers-207「本当のターゲット」`,
     bgm: `mp3/bg/conversation20.mp3`,
-    summary: ``
+    summary: `暗殺者が真のターゲットFAC総司令官を誘拐した。人質を移動させる兵員輸送車は錆の川を出発し、高速でニューシティに向かっている。`
   },
   infoPanel: {
     glossary: [

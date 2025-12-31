@@ -2,7 +2,8 @@ export default {
   meta: {
     title: `flowers-404「静かな反逆」`,
     bgm: `mp3/bg/conversation28.mp3`,
-    date: `N.F.113年7月23日`
+    summary: `無数の光が触手へと凝縮し、無数の感情が怒りの波として集まった。
+    それらは隙間の向こうから、現実と狂厄を隔てるギャップを引き裂き、怒涛のように押し寄せる。`
   },
   infoPanel: {
     glossary: [

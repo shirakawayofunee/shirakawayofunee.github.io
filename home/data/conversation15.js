@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `flowers-202「εἰρήνη」`,
     bgm: `mp3/bg/conversation14.mp3`,
-    summary: ``
+    summary: `花庭園から逃げ出した探偵は、病院で夢から覚めた。彼女が唯一安心したのは、Shalomが再び傍にいてくれたことだった。`
   },
   infoPanel: {
     glossary: [
