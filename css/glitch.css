@@ -81,14 +81,14 @@
 
 .cyber-glitch:before {
     left: 2px;
-    text-shadow: -1px 0 #ff00ff;
+    text-shadow: -1px 0 #D0120F;
     clip-path: inset(0 0 0 0);
     animation: glitch-anim-1 2s infinite linear alternate-reverse
 }
 
 .cyber-glitch:after {
     left: -2px;
-    text-shadow: -1px 0 #00d4ff;
+    text-shadow: -1px 0 #50fa7b;
     clip-path: inset(0 0 0 0);
     animation: glitch-anim-2 3s infinite linear alternate-reverse
 }

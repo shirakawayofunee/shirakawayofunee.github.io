@@ -548,111 +548,6 @@
             text-shadow: 0 1px 2px rgba(0,0,0,0.6);
         }
 
-        /* =========================================
-   [新增] 图片切换按钮与动画样式
-   ========================================= */
-
-/* 1. 左右切换按钮 */
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(30, 30, 30, 0.6); /* 半透明黑底 */
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 2002; /* 必须高于图片 */
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
-}
-
-.nav-btn:hover {
-    background: rgba(255, 61, 0, 0.8); /* 悬停变为主题色 */
-    color: #fff;
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 61, 0, 0.4);
-}
-
-.nav-btn.prev { left: 20px; }
-.nav-btn.next { right: 20px; }
-
-.nav-btn svg {
-    width: 30px;
-    height: 30px;
-}
-
-/* 2. 图片容器与定位 */
-.papermaskDetailTop {
-    position: relative; /* 关键：作为绝对定位图片的父容器 */
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-/* 图片通用样式 */
-.detail-img {
-    position: absolute; /* 绝对定位，实现双图重叠动画 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* 保持比例 */
-    transition: transform 0.2s ease-out; /* 缩放时的过渡 */
-    will-change: transform, opacity;
-}
-
-/* 3. 核心动画：推拉门效果 (Slide Transitions) */
-
-/* 向左滑出 (旧图去左边) */
-.slide-out-left {
-    animation: slideOutLeft 0.5s cubic-bezier(0.2, 0, 0.2, 1) forwards;
-}
-/* 从右滑入 (新图从右边来) */
-.slide-in-right {
-    animation: slideInRight 0.5s cubic-bezier(0.2, 0, 0.2, 1) forwards;
-}
-
-/* 向右滑出 (旧图去右边) */
-.slide-out-right {
-    animation: slideOutRight 0.5s cubic-bezier(0.2, 0, 0.2, 1) forwards;
-}
-/* 从左滑入 (新图从左边来) */
-.slide-in-left {
-    animation: slideInLeft 0.5s cubic-bezier(0.2, 0, 0.2, 1) forwards;
-}
-
-/* Keyframes 定义 */
-@keyframes slideOutLeft {
-    0% { transform: translateX(0) scale(1); opacity: 1; }
-    100% { transform: translateX(-100px) scale(0.9); opacity: 0; }
-}
-@keyframes slideInRight {
-    0% { transform: translateX(100px) scale(1.1); opacity: 0; }
-    100% { transform: translateX(0) scale(1); opacity: 1; }
-}
-
-@keyframes slideOutRight {
-    0% { transform: translateX(0) scale(1); opacity: 1; }
-    100% { transform: translateX(100px) scale(0.9); opacity: 0; }
-}
-@keyframes slideInLeft {
-    0% { transform: translateX(-100px) scale(1.1); opacity: 0; }
-    100% { transform: translateX(0) scale(1); opacity: 1; }
-}
-
-/* 移动端适配：调整按钮大小 */
-@media (max-width: 768px) {
-    .nav-btn { width: 40px; height: 40px; }
-    .nav-btn.prev { left: 10px; }
-    .nav-btn.next { right: 10px; }
-}
-
         @media (min-width: 768px) {
             .cmd-body { font-size: 0.9rem; }
         }
@@ -888,157 +783,77 @@
         </div>
     </div>
 
-<!-- 5. 自定义图片详情 Modal -->
-<div class="papermaskDetail" id="customDetailModal">
+    <!-- 5. 自定义图片详情 Modal (恢复 papermaskDetail 结构) -->
+    <div class="papermaskDetail" id="customDetailModal">
+        <!-- 顶部图片区域 -->
+        <div class="papermaskDetailTop">
+            <img src="#" alt="" class="papermaskDetailTop-zoom" id="papermaskDetailTop-zoom">
+        </div>
+        
+        <!-- 底部控制栏 -->
+        <div class="papermaskDetailBottom">
+            <!-- 按钮图片路径注意检查，如果图标是黑色的，CSS里的 filter: invert(1) 会把它们变白 -->
+            <img src="img/paperDetail/b.png" alt="放大" onclick="handleZoomChange(1)" title="Zoom In">
+            <img src="img/paperDetail/s.png" alt="缩小" onclick="handleZoomChange(-1)" title="Zoom Out">
+            <img src="img/paperDetail/a.png" alt="重置" onclick="handleZoomChange(0)" title="Reset">
+            <img src="img/paperDetail/d.png" alt="下载" onclick="handleDownload()" title="Download">
+        </div>
 
-    <!-- [新增] 左切换按钮 -->
-    <div class="nav-btn prev" onclick="navigateImage(-1)">
-        <svg viewBox="0 0 24 24">
-            <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-        </svg>
+        <!-- 关闭按钮 -->
+        <div class="papermaskDetailClose">
+            <img src="img/paperDetail/c.png" alt="关闭" onclick="paperShowHide()">
+        </div>
     </div>
-
-    <!-- 顶部图片区域 (容器) -->
-    <div class="papermaskDetailTop" id="imageContainer">
-        <!-- 图片将通过 JS 动态插入在这里，不再写死 img 标签 -->
-    </div>
-
-    <!-- [新增] 右切换按钮 -->
-    <div class="nav-btn next" onclick="navigateImage(1)">
-        <svg viewBox="0 0 24 24">
-            <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-        </svg>
-    </div>
-
-    <!-- 底部控制栏 (保持不变) -->
-    <div class="papermaskDetailBottom">
-        <img src="img/paperDetail/b.png" alt="放大" onclick="handleZoomChange(1)" title="Zoom In">
-        <img src="img/paperDetail/s.png" alt="缩小" onclick="handleZoomChange(-1)" title="Zoom Out">
-        <img src="img/paperDetail/a.png" alt="重置" onclick="handleZoomChange(0)" title="Reset">
-        <img src="img/paperDetail/d.png" alt="下载" onclick="handleDownload()" title="Download">
-    </div>
-
-    <!-- 关闭按钮 (保持不变) -->
-    <div class="papermaskDetailClose">
-        <img src="img/paperDetail/c.png" alt="关闭" onclick="paperShowHide()">
-    </div>
-</div>
 
     <!-- 脚本部分 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- 嵌入你的 papermaskDetail.js 逻辑 -->
     <script>
-    var papermaskZoom = 1;
-    var currentImgList = []; // 当前查看的图片数组
-    var currentImgIndex = 0; // 当前查看的图片索引
-    var isAnimating = false; // 防止快速点击导致动画冲突
+        var papermaskZoom = 1;
 
-    // 1. 打开 Modal (入口函数)
-    // 注意：需要修改 arrangeWaterfall 里的调用方式，见下方说明
-    function openDetailModal(imgList, index) {
-        currentImgList = imgList;
-        currentImgIndex = index;
-        papermaskZoom = 1;
-
-        // 清空容器，直接插入当前图片
-        const container = document.getElementById("imageContainer");
-        container.innerHTML = ""; 
-        
-        const img = document.createElement("img");
-        img.src = currentImgList[currentImgIndex].src;
-        img.className = "detail-img";
-        img.id = "activeDetailImg"; // 给当前图片一个ID方便缩放
-        
-        container.appendChild(img);
-
-        $(".papermaskDetail").fadeIn(200);
-        $(".papermaskDetail").css("display", "flex");
-    }
-
-    // 2. 切换图片 (核心动画逻辑)
-    function navigateImage(direction) {
-        if (isAnimating) return; // 动画中禁止点击
-        if (!currentImgList || currentImgList.length === 0) return;
-
-        // 计算新索引
-        let newIndex = currentImgIndex + direction;
-        
-        // 循环播放逻辑 (可选，不喜欢循环就把下面的if改成return)
-        if (newIndex >= currentImgList.length) newIndex = 0; // 到最后一张回到第一张
-        if (newIndex < 0) newIndex = currentImgList.length - 1; // 到第一张回到最后一张
-
-        const container = document.getElementById("imageContainer");
-        const oldImg = container.querySelector("img"); // 获取当前旧图
-        
-        // 创建新图
-        const newImg = document.createElement("img");
-        newImg.src = currentImgList[newIndex].src;
-        newImg.className = "detail-img";
-        newImg.id = "activeDetailImg"; // 新图继承ID
-        
-        // 重置缩放
-        papermaskZoom = 1;
-
-        // 设置动画 Class
-        isAnimating = true;
-
-        if (direction === 1) { // 下一张 (向左滑)
-            if(oldImg) oldImg.classList.add("slide-out-left");
-            newImg.classList.add("slide-in-right");
-        } else { // 上一张 (向右滑)
-            if(oldImg) oldImg.classList.add("slide-out-right");
-            newImg.classList.add("slide-in-left");
+        // 缩放功能
+        function handleZoomChange(num) {
+            if (num == 1) papermaskZoom += 0.1;
+            if (num == -1) papermaskZoom -= 0.1;
+            if (num == 0) papermaskZoom = 1;
+            
+            // 限制缩放范围
+            if (papermaskZoom > 4) papermaskZoom = 4;
+            if (papermaskZoom < 0.1) papermaskZoom = 0.1;
+            
+            $(".papermaskDetailTop-zoom").css("transform", `scale(${papermaskZoom})`);
         }
 
-        container.appendChild(newImg); // 插入新图
-
-        // 动画结束后清理旧图
-        setTimeout(() => {
-            if(oldImg) oldImg.remove();
-            newImg.classList.remove("slide-in-right", "slide-in-left"); // 移除动画类保持纯净
-            isAnimating = false;
-        }, 500); // 对应 CSS 动画时间 0.5s
-
-        currentImgIndex = newIndex;
-    }
-
-    // 3. 缩放功能 (修改为操作 id="activeDetailImg")
-    function handleZoomChange(num) {
-        if (num == 1) papermaskZoom += 0.2; // 放大稍微快一点
-        if (num == -1) papermaskZoom -= 0.2;
-        if (num == 0) papermaskZoom = 1;
-        
-        if (papermaskZoom > 4) papermaskZoom = 4;
-        if (papermaskZoom < 0.5) papermaskZoom = 0.5;
-        
-        // 只缩放当前激活的图片
-        const activeImg = document.getElementById("activeDetailImg");
-        if(activeImg) {
-            activeImg.style.transform = `scale(${papermaskZoom})`;
+        // 下载功能
+        function handleDownload() {
+            var imgSrc = $(".papermaskDetailTop-zoom")[0].src;
+            if (imgSrc) {
+                var a = document.createElement("a");
+                a.href = imgSrc;
+                a.download = imgSrc.split('/').pop() || 'image.jpg';
+                a.style.display = "none";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
         }
-    }
 
-    // 4. 下载功能
-    function handleDownload() {
-        if (!currentImgList[currentImgIndex]) return;
-        var imgSrc = currentImgList[currentImgIndex].src;
-        var a = document.createElement("a");
-        a.href = imgSrc;
-        a.download = imgSrc.split('/').pop() || 'image.jpg';
-        a.style.display = "none";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    }
+        // 关闭 Modal
+        function paperShowHide() {
+            papermaskZoom = 1;
+            $(".papermaskDetailTop-zoom").css("transform", `scale(1)`);
+            $(".papermaskDetail").fadeOut(200); // 使用淡出效果
+        }
 
-    // 5. 关闭 Modal
-    function paperShowHide() {
-        $(".papermaskDetail").fadeOut(200);
-        setTimeout(() => {
-             document.getElementById("imageContainer").innerHTML = ""; // 清理内存
-        }, 200);
-    }
+        // 打开 Modal (自定义函数)
+        function openDetailModal(src) {
+            $("#papermaskDetailTop-zoom").attr("src", src);
+            papermaskZoom = 1;
+            $(".papermaskDetailTop-zoom").css("transform", `scale(1)`);
+            $(".papermaskDetail").fadeIn(200);
+            $(".papermaskDetail").css("display", "flex"); // 确保 flex 布局以居中
+        }
 
         // ================= 数据定义 (请务必保留完整数据) =================
         const r18gImages = [
@@ -1480,54 +1295,49 @@ const otherCharImages = [
 
         // 瀑布流生成逻辑
         function arrangeWaterfall(containerId, imageArray) {
-        const container = document.getElementById(containerId);
-        if(!container) return;
-        container.innerHTML = "";
+            const container = document.getElementById(containerId);
+            if(!container) return;
+            container.innerHTML = "";
 
-        const width = window.innerWidth;
-        const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+            const width = window.innerWidth;
+            const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
 
-        const columns = Array(columnCount).fill().map(() => {
-            const col = document.createElement("div");
-            col.className = "gallery-column";
-            container.appendChild(col);
-            return col;
-        });
+            // 创建列
+            const columns = Array(columnCount).fill().map(() => {
+                const col = document.createElement("div");
+                col.className = "gallery-column";
+                container.appendChild(col);
+                return col;
+            });
 
-        if(!imageArray) return;
+            if(!imageArray) return;
 
-        imageArray.forEach((image, index) => {
-            const item = document.createElement("div");
-            item.className = "gallery-item";
+            imageArray.forEach((image, index) => {
+                const item = document.createElement("div");
+                item.className = "gallery-item";
 
-            const img = document.createElement("img");
-            img.src = image.src; 
-            img.alt = image.alt;
-            img.className = "holder-img"; 
-            
-            // [核心修改] 点击时，传递整个数组和当前索引
-            img.onclick = function() {
-                openDetailModal(imageArray, index);
-            };
+                const img = document.createElement("img");
+                img.src = image.src; // 简化处理，直接加载，如果需要懒加载可加 lazy 逻辑
+                img.alt = image.alt;
+                
+                // === 关键：应用 papermask.css 的类名 .holder-img ===
+                img.className = "holder-img"; 
+                
+                // 绑定点击事件，打开自定义 Modal
+                img.onclick = function() {
+                    openDetailModal(image.src);
+                };
 
-            const caption = document.createElement("div");
-            caption.className = "caption";
-            caption.textContent = image.description || "";
+                const caption = document.createElement("div");
+                caption.className = "caption";
+                caption.textContent = image.description || "";
 
-            item.appendChild(img);
-            item.appendChild(caption);
-            columns[index % columnCount].appendChild(item);
-        });
-    }
-
-    // 键盘支持 (可选：按左右键切换，ESC关闭)
-    document.addEventListener('keydown', function(e) {
-        if ($(".papermaskDetail").is(":visible")) {
-            if (e.key === "ArrowLeft") navigateImage(-1);
-            if (e.key === "ArrowRight") navigateImage(1);
-            if (e.key === "Escape") paperShowHide();
+                item.appendChild(img);
+                item.appendChild(caption);
+                columns[index % columnCount].appendChild(item);
+            });
         }
-    });
+
         // 初始化
         $(document).ready(function() {
             // 默认加载第一个 tab
