@@ -22,15 +22,32 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `Leopold（業師）`,
+        avatar: `img/dh/leopold1.png`,
+        note: `裏社会を陰で牛耳る実力者。
+        秘密組織「GARDEN」の主宰者
+        <br>表の犯行動機：
+        <br>①福音地から受けた任務の遂行
+        <br>②ディスシティで混乱を引き起こし、FACの兵力を引きつける
+        <br>③103年の事件における真の被害者のための復讐
+        <br>真の目的：
+        <br>子供たちのために障害と隐患を排除しておくこと。自分がもういなくなっても、子供たちが安全に歩き続けられるようにする。`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
-      }
+        name: `Shalom（執行人、X）`,
+        avatar: `img/dh/x4.png`,
+        note: `廃棄期限まであと一ヶ月しかない道具。他人の苦しみと命を代償に、自分のかすかな希望を買う?`
+      },
+      {
+        name: `Chris（探偵）`,
+        avatar: `img/dh/pc208.png`,
+        note: `探偵服を着て、大きい斧を武器にする少女、犬系（<span>別に本物の犬ではない</span>）。`
+      },
+      {
+        name: `Adrien`,
+        avatar: `img/dh/fac_commander.png`,
+        note: `FAC総司令官、最前線で四十有余年、奮闘し続けている。Lは司令の人柄を認めた。だから殺さない選択をした。`
+      },
     ],
     synopsis: `工事中`
   },
