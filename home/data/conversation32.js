@@ -246,9 +246,9 @@ export default {
       name: `シャーローム`,
       text: `たとえ人に折られても、自由に…`
     },
-    {
+/*     {
       type: `narration`,
       text: `第一章「Flowers」終了、つづく。`
-    }
+    } */
   ]
 };

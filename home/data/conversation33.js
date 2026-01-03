@@ -96,6 +96,10 @@ export default {
     {
       type: `narration`,
       text: `無数の「英雄」の名を冠した人々に囲まれながら、少女は夜明けの最初の光を迎えた。`
+    },
+    {
+      type: `narration`,
+      text: `第一章「Flowers」終了、つづく。`
     }
   ]
 };
