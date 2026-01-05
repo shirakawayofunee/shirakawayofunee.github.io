@@ -249,6 +249,28 @@ const chapterList = [
     subtitle: "The Weak",
     dateLabel: "N.F.113/11/",
   },
+  {
+    id: "side01",
+    category: "extra",
+    title: "「サボテン」",
+    subtitle: "Side Story",
+     dateLabel: "N.F.113/11/",
+  },
+
+  {
+    id: "side02",
+    category: "extra",
+    title: "「腹黑」",
+    subtitle: "Side Story",
+     dateLabel: "N.F.113/11/",
+  },
+  {
+    id: "side03",
+    category: "extra",
+    title: "「母熊と図書室」",
+    subtitle: "Side Story",
+     dateLabel: "N.F.113/11/",
+  },
 ];
 
 // ==================== 核心逻辑 ====================
