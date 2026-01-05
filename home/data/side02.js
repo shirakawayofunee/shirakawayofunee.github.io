@@ -55,7 +55,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `ガロファノ、そういえばここに来た時「ブラウン夫人」という偽の身分を使っていたな。`
     },
     {
@@ -69,7 +69,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `実は、ちょっと気になることがある……`
     },
     {
@@ -83,7 +83,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `いや、そういうことではない。ただ、あなたは偽の身分をいくつ持っているんだ？そこまで完璧な偽装を、いったいどうやって？`
     },
     {
@@ -108,7 +108,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `そういえば、確かに覚えてはいないな……いや待て、ナイチンゲールが片思いしている相手だと！？`
     },
     {
@@ -122,7 +122,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `確かにそうだな……いや、それより、ナイチンゲールは……`
     },
     {
@@ -150,7 +150,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局长`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `そういうことか……それで、ナイチンゲールのことなのだが……`
     },
     {

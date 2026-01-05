@@ -2,9 +2,9 @@
  * @Author: DCBZ
  * @Date: 2026-01-03 18:16:00
  * @LastEditors: your name
- * @LastEditTime: 2026-01-04 16:19:55
+ * @LastEditTime: 2026-01-05 13:20:06
  * @Description: 
- * @FilePath: \shirakawayofunee.github.io\home\data\side01.js
+ * @FilePath: \shirakawayofunee.github.io\home\data\side03.js
  */
 export default {
   meta: {
@@ -55,7 +55,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `あぶない！離れろ！`
     },
     {
@@ -77,7 +77,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `これは……`
     },
     {
@@ -91,7 +91,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `まぁ、意外とイメージに合っているような気も……`
     },
     {
@@ -105,7 +105,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `何か違う気がするが、深く考えないことにしよう……`
     }
   ]  

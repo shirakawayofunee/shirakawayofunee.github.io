@@ -64,7 +64,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `ん?あれは......コクリコ？彼女と曜が楽しげに話しているということは、曜は彼女のために温室に来たのだろうか？`
     },
     {
@@ -75,7 +75,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `曜、コクリコ、ここで何をしているんだ？それは......先月届いたサボテン？花が咲くのか？`
     },
     {
@@ -96,7 +96,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `なるほど......だから曜が毎日温室に来てずっと座っていたんだな。適切な温度と光を提供するために。`
     },
     {
@@ -117,7 +117,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `局長`,
-      avatar: `juzhang01.png`,
+      avatar: `img/dh/juzhang01.png`,
       text: `そうなのか......では曜は今後も温室を避けることなく、もっと頻繁に散歩に来ても良さそうだな。`
     },
   ]

@@ -254,7 +254,7 @@ const chapterList = [
     category: "extra",
     title: "「サボテン」",
     subtitle: "Side Story",
-     dateLabel: "N.F.113/11/",
+     dateLabel: "N.F.114/？/？",
   },
 
   {
@@ -262,14 +262,14 @@ const chapterList = [
     category: "extra",
     title: "「腹黑」",
     subtitle: "Side Story",
-     dateLabel: "N.F.113/11/",
+     dateLabel: "N.F.114/？/？",
   },
   {
     id: "side03",
     category: "extra",
     title: "「母熊と図書室」",
     subtitle: "Side Story",
-     dateLabel: "N.F.113/11/",
+     dateLabel: "N.F.114/？/？",
   },
 ];
 
