@@ -636,10 +636,9 @@
         }
 
         .prompt-line { margin-bottom: 0.5rem; }
-        .text-green { color: var(--term-green); text-shadow: 0 0 5px rgba(80, 250, 123, 0.2); }
+        .text-green { color: var(--term-green); text-shadow: 0 0 5px rgba(80, 250, 123, 0.4); }
         .text-blue { color: var(--term-blue); }
         .text-gray { color: var(--text-term-cursor); font-weight: bold; }
-        .text-red { color: var(--term-btn-red); }
 
         #cmd-typewriter { white-space: pre-wrap; }
 
@@ -1579,81 +1578,47 @@ const otherCharImages = [
         });
 
         (function() {
-            const textContent = `二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
+    const textContent = `二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
 ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。
-二人は師弟、主従、母娘、神と信徒、革命の<span class="text-blue">戦友</span>であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。
-この絆の核心は、単一のラベルを超えた、もっと深い愛にあるのです。
-それに、Lという人は<span class="text-blue">自由</span>すぎてカッコよすぎる。誰とでも一期一会でパッと火花散らせるけど、誰のそばにも長くは留まらない。愛だってLを縛れない。
-`;
+それに、Lって人はほんと自由すぎてカッコよすぎる。誰とでも一期一会でパッと火花散らせるけど、誰のそばにも長くは留まらない。愛だってLを縛れない。
+二人は師弟、主従、母娘、神と信徒、革命の戦友であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。
+この絆の核心は、単一のラベルを超えた、もっと深い愛にあるのです。`;
 
-            const typewriterEl = document.getElementById('cmd-typewriter');
-            let charIndex = 0;
-            let isTyping = false;
+    const typewriterEl = document.getElementById('cmd-typewriter');
+    let charIndex = 0;
+    let isTyping = false;
+
+    function type() {
+        if (charIndex < textContent.length) {
+            typewriterEl.textContent += textContent.charAt(charIndex);
+            charIndex++;
             
-            // [新增] 定义一个变量，专门用来存储当前已经打出的 HTML 字符串
-            let currentHTML = ''; 
-
-            function type() {
-                if (charIndex < textContent.length) {
-                    const char = textContent.charAt(charIndex);
-
-                    // 1. HTML 标签检测逻辑
-                    if (char === '<') {
-                        const closingIndex = textContent.indexOf('>', charIndex);
-                        if (closingIndex !== -1) {
-                            // 提取完整标签 (如 <span...>)
-                            const htmlTag = textContent.substring(charIndex, closingIndex + 1);
-                            
-                            // [修改] 存入缓冲区，而不是直接操作 innerHTML
-                            currentHTML += htmlTag;
-                            typewriterEl.innerHTML = currentHTML;
-                            
-                            charIndex = closingIndex + 1;
-                            type(); // 递归继续
-                            return;
-                        }
-                    }
-
-                    // 2. 普通文字处理
-                    // [修改] 存入缓冲区
-                    currentHTML += char;
-                    
-                    // [关键] 将整个缓冲区的内容赋给 DOM
-                    // 此时浏览器解析例如 "<span...>自" 时，会自动在末尾补全 </span>，
-                    // 从而让 "自" 处于 span 内部，显示出颜色。
-                    typewriterEl.innerHTML = currentHTML;
-                    
-                    charIndex++;
-                    
-                    // 3. 打字速度控制
-                    let delay = Math.random() * 40 + 10;
-                    const prevChar = textContent.charAt(charIndex - 1);
-                    if (prevChar === '。' || prevChar === '、') {
-                        delay += 100; 
-                    }
-                    
-                    setTimeout(type, delay);
-                }
+            // [调整] 速度优化：原本是 30~80ms，现在改为 10~50ms，整体快了约 1.5 倍
+            // 遇到逗号或句号时，稍微停顿一下，模拟人类思考
+            let delay = Math.random() * 40 + 10;
+            const char = textContent.charAt(charIndex - 1);
+            if (char === '。' || char === '、') {
+                delay += 100; // 标点符号处额外停顿
             }
+            
+            setTimeout(type, delay);
+        }
+    }
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !isTyping) {
-                        isTyping = true;
-                        // 重置
-                        typewriterEl.innerHTML = '';
-                        currentHTML = ''; 
-                        type();
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            const wrapper = document.getElementById('terminal-wrapper');
-            if (wrapper) {
-                observer.observe(wrapper);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !isTyping) {
+                isTyping = true;
+                type();
             }
-        })();
-        
+        });
+    }, { threshold: 0.1 });
+
+    const wrapper = document.getElementById('terminal-wrapper');
+    if (wrapper) {
+        observer.observe(wrapper);
+    }
+})();
     </script>
 </body>
 </html>
