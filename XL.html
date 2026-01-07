@@ -697,6 +697,8 @@
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#L">L</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#X">X</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dc">イラスト</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mansion">世界観</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doodle">落書き</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">○○しないと出られない部屋</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">擬獣化/メインストーリー後平和な日常(？</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#theme">テーマ</a></li>
@@ -716,6 +718,7 @@
             <div class="tab-pane fade" id="catdw"><div class="gallery-container" id="catdwContainer"></div></div>
             <div class="tab-pane fade" id="theme"><div class="gallery-container" id="themeContainer"></div></div>
             <div class="tab-pane fade" id="r18g"><div class="gallery-container" id="r18gContainer"></div></div>
+            <div class="tab-pane fade" id="mansion"><div class="gallery-container" id="mansionContainer"></div></div>
         </div>
     </div>
 
@@ -904,6 +907,29 @@
             { src: "img/DC/ThrillMe/ThrillMe-5.jpg", alt: "DC Image 5", description: "ミュージカル『Thrill Me』" }
         ];
 
+        const mansionImages = [
+        { src: "img/FZ/001.webp", alt: "Mansion Image 01", description: "" },
+{ src: "img/FZ/002.webp", alt: "Mansion Image 02", description: "" },
+{ src: "img/FZ/003.webp", alt: "Mansion Image 03", description: "" },
+{ src: "img/FZ/004.webp", alt: "Mansion Image 04", description: "" },
+{ src: "img/FZ/005.webp", alt: "Mansion Image 05", description: "" },
+{ src: "img/FZ/006.webp", alt: "Mansion Image 06", description: "" },
+{ src: "img/FZ/007.webp", alt: "Mansion Image 07", description: "" },
+{ src: "img/FZ/008.webp", alt: "Mansion Image 08", description: "" },
+{ src: "img/FZ/009.webp", alt: "Mansion Image 09", description: "" },
+{ src: "img/FZ/010.webp", alt: "Mansion Image 10", description: "" },
+{ src: "img/FZ/011.webp", alt: "Mansion Image 11", description: "" },
+{ src: "img/FZ/012.webp", alt: "Mansion Image 12", description: "" },
+{ src: "img/FZ/013.webp", alt: "Mansion Image 13", description: "" },
+{ src: "img/FZ/014.webp", alt: "Mansion Image 14", description: "" },
+{ src: "img/FZ/015.webp", alt: "Mansion Image 15", description: "" },
+{ src: "img/FZ/016.webp", alt: "Mansion Image 16", description: "" },
+{ src: "img/FZ/017.webp", alt: "Mansion Image 17", description: "" },
+{ src: "img/FZ/018.webp", alt: "Mansion Image 18", description: "" },
+{ src: "img/FZ/019.webp", alt: "Mansion Image 19", description: "" },
+{ src: "img/FZ/020.webp", alt: "Mansion Image 20", description: "" },
+];
+
         function getArrayByName(name) {
             const map = { 
                 "gallery": galleryImages, 
@@ -913,7 +939,8 @@
                 "manga": mangaImages, 
                 "catdw": catdwImages, 
                 "theme": themeImages, 
-                "r18g": r18gImages 
+                "r18g": r18gImages, 
+                "mansion": mansionImages,
             };
             return map[name] || [];
         }
