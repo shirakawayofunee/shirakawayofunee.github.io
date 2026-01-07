@@ -963,10 +963,10 @@
     <div class="secondary-menu-container">
         <div class="gallery-header">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#gallery">メインストーリー/本編</a></li>
+                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#gallery">イラスト</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#L">L</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#X">X</a></li>
-                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#dc">イラスト</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dc">メインストーリー/本編</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mansion">世界観/背景</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doodle">落書き</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">○○しないと出られない部屋</a></li>
@@ -977,36 +977,8 @@
         </div>
     </div>
 
-    <!-- 给最外层加了 id="terminal-wrapper" 方便关闭 -->
-<!--     <div id="terminal-wrapper" class="cmd-wrapper">
-        <div class="cmd-window">
-            <div class="cmd-header">
-                <div class="cmd-buttons">
-                    <div class="cmd-btn red"></div>
-                    <div class="cmd-btn yellow"></div>
-                    <div class="cmd-btn green"></div>
-                </div>
-                <div class="cmd-close-action"
-                    onclick="document.getElementById('terminal-wrapper').style.opacity='0'; setTimeout(()=>{document.getElementById('terminal-wrapper').style.display='none'}, 300);"
-                    title="Close">
-                    &times;
-                </div>
-            </div>
-            <div class="cmd-body">
-                <div class="prompt-line">
-                    <span class="text-green">➜</span>
-                    <span class="text-blue">~</span>
-                    <span class="text-gray">SLの関係についての私の考え：</span>
-                </div>
 
-                <div id="cmd-typewriter"></div>
-                <span class="cmd-cursor"></span>
-            </div>
-        </div>
-    </div> -->
     <!-- 4. 正文内容区 (Gallery Section) -->
-
-
     <div class="gallery-section">
         <div class="tab-content">
             <div class="tab-pane fade show active" id="gallery"><div class="gallery-container" id="galleryContainer"></div></div>
@@ -1204,8 +1176,9 @@
         }
 
         // ================= 数据定义 (请务必保留完整数据) =================
-        const galleryImages = [
-            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【猫猫バージョン】Lの過去 P1-P6" },
+
+        const dcImages = [
+        { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【猫猫バージョン】Lの過去 P1-P6" },
             { src: "img/XL/zhuxian2.webp", alt: "メインストーリー", description: "【メインストーリー/本編】「瞳に映るキミ」" },
             { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【メインストーリー/本編】Lの過去 P1-P7" },
             { src: "img/XL/zhuxian3.jpg", alt: "メインストーリー", description: "【メインストーリー/本編】（猫猫バージョン）" },
@@ -1215,6 +1188,26 @@
             { src: "img/XL/Xliwu2.webp", alt: "メインストーリー", description: "【BAD END-IF】" },
             { src: "img/XL/X表情.jpg", alt: "X表情", description: "X表情" },
             { src: "img/XL/工事中.jpg", alt: "工事中", description: "" }
+        ];
+
+        const galleryImages = [
+            { src: "img/XL/00.jpg", alt: "Gallery Image 5", description: "波を起こす者と海面下の者" },
+            { src: "img/XL/XL0.jpg", alt: "Gallery Image 1", description: "「N.F.113年8月26日」  401「残花の復仇」" },
+            { src: "img/XL/XL1.jpg", alt: "Gallery Image 1", description: "" },
+            { src: "img/XL/XL2.jpg", alt: "Gallery Image 2", description: "死の舞踏" },
+            { src: "img/XL/XL3.jpg", alt: "Gallery Image 3", description: "手繋ぐ" },
+            { src: "img/XL/XL4.jpg", alt: "Gallery Image 4", description: "首を絞める" },
+            { src: "img/XL/XL5.jpg", alt: "Gallery Image 5", description: "" },
+            { src: "img/XL/XL6.jpg", alt: "Gallery Image 6", description: "" },
+            { src: "img/XL/XL7.jpg", alt: "Gallery Image 7", description: "共同の出発点（反逆）" },
+            { src: "img/XL/XL8.jpg", alt: "Gallery Image 8", description: "" },
+            { src: "img/XL/XL9.jpg", alt: "Gallery Image 8", description: "" },
+            { src: "img/XL/XL9-2.jpg", alt: "Gallery Image 8", description: "" },
+            { src: "img/XL/IF1.webp", alt: "DC Image 1", description: "禁断の果実をこっそり味わう牧師と悪魔" },
+            { src: "img/XL/IF2.webp", alt: "DC Image 2", description: "牧師と悪魔AU" },
+            { src: "img/XL/IF3.jpg", alt: "DC Image 3", description: "" },
+            { src: "img/XL/IF4.jpg", alt: "DC Image 4", description: "（笑）" },
+            { src: "img/XL/掐脖子2.jpg", alt: "Gallery Image 8", description: "首を絞める" },
         ];
         
         const LImages = [        
@@ -1265,25 +1258,7 @@
 
         ];
 
-        const dcImages = [
-            { src: "img/XL/00.jpg", alt: "Gallery Image 5", description: "波を起こす者と海面下の者" },
-            { src: "img/XL/XL0.jpg", alt: "Gallery Image 1", description: "「N.F.113年8月26日」  401「残花の復仇」" },
-            { src: "img/XL/XL1.jpg", alt: "Gallery Image 1", description: "" },
-            { src: "img/XL/XL2.jpg", alt: "Gallery Image 2", description: "死の舞踏" },
-            { src: "img/XL/XL3.jpg", alt: "Gallery Image 3", description: "手繋ぐ" },
-            { src: "img/XL/XL4.jpg", alt: "Gallery Image 4", description: "首を絞める" },
-            { src: "img/XL/XL5.jpg", alt: "Gallery Image 5", description: "" },
-            { src: "img/XL/XL6.jpg", alt: "Gallery Image 6", description: "" },
-            { src: "img/XL/XL7.jpg", alt: "Gallery Image 7", description: "共同の出発点（反逆）" },
-            { src: "img/XL/XL8.jpg", alt: "Gallery Image 8", description: "" },
-            { src: "img/XL/XL9.jpg", alt: "Gallery Image 8", description: "" },
-            { src: "img/XL/XL9-2.jpg", alt: "Gallery Image 8", description: "" },
-            { src: "img/XL/IF1.webp", alt: "DC Image 1", description: "禁断の果実をこっそり味わう牧師と悪魔" },
-            { src: "img/XL/IF2.webp", alt: "DC Image 2", description: "牧師と悪魔AU" },
-            { src: "img/XL/IF3.jpg", alt: "DC Image 3", description: "" },
-            { src: "img/XL/IF4.jpg", alt: "DC Image 4", description: "（笑）" },
-            { src: "img/XL/掐脖子2.jpg", alt: "Gallery Image 8", description: "首を絞める" },
-        ];
+
         const mangaImages = [
         { src: "img/XL/MH/1.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p1" },
         { src: "img/XL/MH/2.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p2" },
