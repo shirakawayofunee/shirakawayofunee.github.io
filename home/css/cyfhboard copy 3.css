@@ -50,23 +50,17 @@
 }
 
 .node .label, .large-node .label, .small-node .label {
-  padding: 8px 10px; /* 稍微增加内边距，呼吸感更强 */
-  color: #ffffff;    /* 纯白文字更清晰 */
+  padding: 6px;
+  color: #ecf0f1;
+  border-radius: 3px;
   line-height: 1.4;
   word-break: break-word;
-  text-align: center;
-  display: inline-block;
+  background: rgba(103, 109, 138, 0.8);
+  backdrop-filter: blur(2px);
+  margin: 0 auto 0; /* 水平居中，顶部间距 8px */
+  text-align: center; /* 文字内容水平居中 */
+  display: inline-block; /* 确保文字框宽度自适应内容 */
   z-index: 7;
-  background: rgba(60, 65, 85, 0.45); /* 低透明度的深色背景，适配深色底图 */
-  backdrop-filter: blur(12px) saturate(180%); /* 强模糊 + 饱和度提升，典型的 iOS 效果 */
-  -webkit-backdrop-filter: blur(12px) saturate(180%); /* 兼容 Safari */
-  
-  border-radius: 12px; /* 更圆润的圆角 */
-  border: 1px solid rgba(255, 255, 255, 0.15); /* 极细的半透明白色边框，营造玻璃边缘感 */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25); /* 柔和的弥散阴影，增加层次感 */
-  font-weight: 500;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  margin: 0 auto 0;
 }
 
 .one {
@@ -118,11 +112,10 @@
 }
 
 #lines text {
-/*   fill: #ecf0f1; */
-  fill: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 使用系统字体，更像 iOS */
-  font-weight: 500;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  fill: #ecf0f1;
+  font-family: "MS Gothic", "Courier New", monospace;
+  text-anchor: middle;
+  dominant-baseline: middle;
   pointer-events: none;
 }
 
@@ -132,12 +125,8 @@
 }
 
 #lines rect {
-  fill: rgba(40, 45, 70, 0.6); /* 半透明填充 */
-  /* SVG 元素在某些浏览器不支持 backdrop-filter，所以这里主要靠透明度和描边 */
-  stroke: rgba(255, 255, 255, 0.15);
-  stroke-width: 1px;
-  rx: 8px; /* 圆角增加 */
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  fill: rgba(26, 34, 85, 0.9);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
   z-index: 2;
 }
 
