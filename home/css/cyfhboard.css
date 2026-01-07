@@ -1,8 +1,15 @@
-.cyfhboard {
+/* .cyfhboard {
   min-height: 100vh;
   display: flex;
   box-sizing: border-box;
   background: url("../img/bg_full.png") no-repeat fixed center / auto 100%;
+} */
+
+.cyfhboard {
+  min-height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+  background: url("../kv/main_bg.jpg") no-repeat fixed center / 100% auto;
 }
 
 #board {
