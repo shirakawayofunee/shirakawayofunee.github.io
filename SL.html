@@ -1082,14 +1082,15 @@
           /* { src: "img/SL/SL3「赤い糸」.webp", alt: "Gallery Image 3", description: "" }, */
           { src: "img/SL/SL4.webp", alt: "Gallery Image 4", description: "【本編】余裕しゃくしゃく" },
           { src: "img/SL/SL5「運輸」.webp", alt: "Gallery Image 5", description: "05「運輸」" },
-          { src: "img/SL/SL6.webp", alt: "Gallery Image 2", description: "「運命の舞台」  死神と信者" },
-          { src: "img/SL/SL7.webp", alt: "Gallery Image 7", description: "" },
-          { src: "img/SL/SL8.webp", alt: "Gallery Image 7", description: "" },
           { src: "img/L/L7.webp", alt: "Gallery Image 7", description: "「供養」" },
+          
+          { src: "img/SL/SL7.webp", alt: "Gallery Image 7", description: "" },
+          { src: "img/SL/SL8.webp", alt: "Gallery Image 7", description: "【金環蝕AU】" },
+          { src: "img/SL/SL6.webp", alt: "Gallery Image 2", description: "「運命の舞台」  死神と信者" },
           { src: "img/SL/SL9.webp", alt: "Gallery Image 9", description: "" },
           { src: "img/SL/SL10.webp", alt: "Gallery Image 10", description: "" },
           { src: "img/SL/SL11.webp", alt: "Gallery Image 11", description: "" },
-          { src: "img/SL/SL12.webp", alt: "Gallery Image 12", description: "" },
+          { src: "img/SL/SL12.webp", alt: "Gallery Image 12", description: "【金環蝕AU】" },
           { src: "img/SL/SL13.webp", alt: "Gallery Image 13", description: "【本編】" },
           { src: "img/SL/SL14.webp", alt: "Gallery Image 14", description: "" },
           { src: "img/SL/SL15.webp", alt: "Gallery Image 15", description: "" },
@@ -1588,9 +1589,9 @@ const otherCharImages = [
 
         (function() {
             const textContent = `二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
-ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。
-二人は<span class="text-pink1">師</span><span class="text-Purple">弟</span>、<span class="text-pink1">主</span><span class="text-Purple">従</span>、<span class="text-pink1">母</span><span class="text-Purple">娘</span>、<span class="text-pink1">神</span>と<span class="text-Purple">信徒</span>、革命の<span class="text-blue">戦友</span>であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。この絆の核心は、単一のラベルを超えた、もっと深い愛にあるのです。
-それに、Lという人は<span class="text-blue">自由</span>すぎてカッコよすぎる。誰とでも一期一会でパッと火花散らせるけど、誰のそばにも長くは留まらない。愛だってLを縛れない。
+ただ、本家の設定においては、SLは恋愛関係ではないが確かにそこに愛があることは間違いないです。
+二人は<span class="text-pink1">師</span><span class="text-Purple">弟</span>、<span class="text-pink1">主</span><span class="text-Purple">従</span>、<span class="text-pink1">母</span><span class="text-Purple">娘</span>、<span class="text-pink1">神</span>と<span class="text-Purple">信徒</span>、革命の<span class="text-blue">戦友</span>であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。<span class="text-blue">愛</span>って言葉じゃ正確じゃないけど、<span class="text-blue">この絆を表すなら愛しか出てこない。</span>
+それに、Lという人は<span class="text-blue">自由</span>すぎてカッコよすぎる。誰とでも一期一会でパッと火花散らせるけど、誰のそばにも長くは留まらない。<span class="text-blue">愛だってLを縛れない。</span>
 `;
 
             const typewriterEl = document.getElementById('cmd-typewriter');
@@ -1621,19 +1622,14 @@ const otherCharImages = [
                         }
                     }
 
-                    // 2. 普通文字处理
-                    // [修改] 存入缓冲区
+
                     currentHTML += char;
-                    
-                    // [关键] 将整个缓冲区的内容赋给 DOM
-                    // 此时浏览器解析例如 "<span...>自" 时，会自动在末尾补全 </span>，
-                    // 从而让 "自" 处于 span 内部，显示出颜色。
                     typewriterEl.innerHTML = currentHTML;
                     
                     charIndex++;
                     
                     // 3. 打字速度控制
-                    let delay = Math.random() * 40 + 10;
+                    let delay = Math.random() * 30 + 10;
                     const prevChar = textContent.charAt(charIndex - 1);
                     if (prevChar === '。' || prevChar === '、') {
                         delay += 100; 
