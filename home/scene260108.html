@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5W78LXJT');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運命の織機</title>
+    <link rel="stylesheet" href="css/scene.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSTEMY36NM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SSTEMY36NM');
+</script>
+<body>
+
+    <!-- 背景装饰层 -->
+    <div class="bg-layer"></div>
+
+    <div class="main-container">
+        
+        <!-- 左侧：c (Directory) -->
+        <aside class="panel directory-panel">
+    <!-- 修改点：增加了 header-box 容器 -->
+    <div class="dir-header">
+        <div class="header-box">
+            <h1 class="main-title">運命の織機</h1>
+            <p class="sub-title">>./USER_LOGS.EXE</p>
+        </div>
+    </div>
+
+            <!-- 搜索框 -->
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="chapter-search" placeholder="検索">
+            </div>
+
+            <!-- 分类标签 (Tabs) -->
+            <div class="category-tabs" id="category-tabs">
+                <!-- JS 动态生成 -->
+            </div>
+
+            <!-- 章节列表 -->
+            <div class="chapter-list" id="chapter-list">
+                <!-- JS 动态生成 -->
+            </div>
+        </aside>
+
+        <!-- 中间：剧本正文 (Script) -->
+<!-- 中间：剧本主容器 (Wrapper) -->
+<main class="panel script-wrapper">
+
+    <!-- 1. 顶部固定层 (精简版：只显示概要) -->
+    <div class="script-header-layer" id="script-header">
+
+        <!-- 概要容器 -->
+        <div class="header-summary-box">
+            <p class="chapter-summary" id="header-summary">WAITING FOR INPUT...</p>
+        </div>
+
+        <!-- 沉浸模式开关 (保留) -->
+        <button class="immersive-btn" onclick="enableImmersiveMode()" title="Immersive Mode">
+            <!-- <span class="immersive-icon">⛶</span> -->
+            ×
+        </button>
+    </div>
+
+    <!-- 2. 剧本正文滚动区 (保留 id="script-panel" 兼容原有逻辑) -->
+    <div class="script-scroll-area" id="script-panel">
+        <div class="script-content" id="script-content">
+            <div class="loading-text">運命を読み取り中……</div>
+        </div>
+        <!-- 底部占位，防止文字被悬浮按钮挡住 -->
+        <div style="height: 120px;"></div> 
+    </div>
+
+
+
+</main>
+
+    <!-- 3. 永久悬浮导航按钮层 -->
+    <div class="floating-nav-layer">
+        <button id="float-btn-prev" class="neo-float-btn prev-btn" onclick="navigate(-1)">
+            前章
+        </button>
+        
+        <button id="float-btn-next" class="neo-float-btn next-btn" onclick="navigate(1)">
+            次章
+        </button>
+    </div>
+        <!-- 右侧：信息栏 (Info) -->
+        <aside class="panel info-panel">
+            <!-- 1. 用語解説 -->
+            <div class="info-section">
+                <h4 class="info-title">用語解説</h4>
+                <div id="glossary-container"></div>
+            </div>
+
+            <!-- 2. 出场角色 -->
+            <div class="info-section">
+                <h4 class="info-title">登場人物</h4>
+                <div id="characters-container"></div>
+            </div>
+
+            <!-- 3. あらすじ -->
+            <div class="info-section">
+                <h4 class="info-title">あらすじ</h4>
+                <div id="synopsis-container" class="synopsis-text"></div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- BGM 控制 -->
+    <div class="music-controls">
+        <img src="img/v2c.png" id="btn-play" class="music-icon" alt="Play" style="display: block;">
+        <img src="img/v2.gif" id="btn-pause" class="music-icon" alt="Pause" style="display: none;">
+    </div>
+    <audio id="bgm-player" loop></audio>
+
+    <script src="js/scene.js"></script>
+</body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W78LXJT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDlcorBh1IJUnelC_8-5bf2i4h--P4q7nE",
+      authDomain: "fangkeshuju.firebaseapp.com",
+      databaseURL: "https://fangkeshuju-default-rtdb.firebaseio.com",
+      projectId: "fangkeshuju",
+      storageBucket: "fangkeshuju.firebasestorage.app",
+      messagingSenderId: "1043722790851",
+      appId: "1:1043722790851:web:0f18cdd909c9512c02ff76",
+      measurementId: "G-4T3124FZB5"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</html>
