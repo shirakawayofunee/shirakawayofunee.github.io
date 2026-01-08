@@ -32,7 +32,7 @@ export default {
         note: `工事中`
       }
     ],
-    synopsis: `上一章，侦探在废墟中醒来。本章讲述两人初次正面交锋。<br>L试图通过言语激怒侦探。`
+    synopsis: `工事中`
   },
   script: [
     {
