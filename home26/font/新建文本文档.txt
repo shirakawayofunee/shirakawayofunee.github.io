@@ -1,0 +1,50 @@
+// ... 原有代码 ...
+
+// --- 4. 加载 JSON 数据 ---
+async function loadChapter(chapterId) {
+  const scriptDiv = document.getElementById("script-content");
+  
+  // ... (省略中间代码) ...
+  
+  scriptDiv.innerHTML = '<div class="narration">運命を読み取り中……</div>';
+
+  try {
+    const module = await import(`../data/${chapterId}.js`);
+    const data = module.default;
+
+    // ... (省略渲染代码: set BGM, renderScript, renderInfo, updateHeader ...) ...
+    
+    // 设置 BGM
+    if (data.meta && data.meta.bgm) {
+      playBgm(data.meta.bgm, true); 
+    }
+    
+    renderScript(data.script);
+    renderInfo(data.infoPanel); 
+    updateHeaderFromJSON(chapterId, data);
+
+    const scrollPanel = document.getElementById("script-panel");
+    if (scrollPanel) scrollPanel.scrollTop = 0;
+
+    // ============================================
+    // 【新增】向 GTM 发送自定义事件
+    // ============================================
+    
+    // 1. 从你的 chapterList 配置中查找当前章节的详细信息（标题、分类等）
+    const currentChapInfo = chapterList.find(item => item.id === chapterId);
+
+    // 2. 推送数据层 (Data Layer)
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'chapter_read',          // 自定义事件名称，GTM 将监听这个名字
+      'chapter_id': chapterId,          // 例如: conversation1
+      'chapter_title': currentChapInfo ? currentChapInfo.title : 'Unknown', // 例如: 001「招かれざる客」
+      'chapter_category': currentChapInfo ? currentChapInfo.category : 'Unknown' // 例如: bluerain
+    });
+    // ============================================
+
+  } catch (err) {
+    console.error(err);
+    scriptDiv.innerHTML = `<div class="narration" style="color:#e23b78">无法打开卷宗: ${chapterId}</div>`;
+  }
+}

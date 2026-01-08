@@ -434,18 +434,6 @@ async function loadChapter(chapterId) {
     // 滚回顶部
     const scrollPanel = document.getElementById("script-panel");
     if (scrollPanel) scrollPanel.scrollTop = 0;
-
-    const currentChapInfo = chapterList.find(item => item.id === chapterId);
-
-    // 2. 推送数据层 (Data Layer)
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'chapter_read',          // 自定义事件名称，GTM 将监听这个名字
-      'chapter_id': chapterId,          // 例如: conversation1
-      'chapter_title': currentChapInfo ? currentChapInfo.title : 'Unknown', // 例如: 001「招かれざる客」
-      'chapter_category': currentChapInfo ? currentChapInfo.category : 'Unknown' // 例如: bluerain
-    });
-    // ============================================
     
   } catch (err) {
     console.error(err);
