@@ -2,9 +2,9 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-11-23 13:27:35
+ * @LastEditTime: 2026-01-09 19:45:06
  * @Description: 
- * @FilePath: \shirakawayofunee.github.io\home\js\gallery.js
+ * @FilePath: \shirakawayofunee.github.io\home26\js\gallery.js
  */
 
 function openVideomask(){
@@ -12,14 +12,14 @@ function openVideomask(){
 }
 
 function openMusicmask(){
-    window.open('duihua0722.html','_blank')   
+    window.open('scene260108.html','_blank')   
 }
 function openPapermask(){ 
     window.open('../SL.html','_blank')
 }
 
 function openflowersmask(){ 
-    window.open('flower.html','_self')
+    window.open('flowers.html','_self')
 }
 
 function openrainsmask(){ 

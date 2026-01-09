@@ -1,6 +1,11 @@
 <script>
     // ... (保留你原有的 gallery 逻辑代码) ...
 
+有两个问题，那就是从A网页导航栏跳转到B网页后，从B网页的导航栏再跳转回A网页，“ギャラリー”导航消失了。第二个问题是页面中，首屏是有一个视频播放的，我确认本地文件名没错，为什么视频播放不了“<video src="kv/1.mp4" style="width:100%;" muted autoplay loop id="kvPc" poster="kv/p.jpg" data-mouse="small"></video>”，
+
+我找到问题所在了，不知道为什么，可能是JS文件里定义了什么，视频文件必须是p.mp4才能播放。现在的问题是，我另一个HTML跟这个HTML是同系列的（代码都是同一份文件改出来的）那个HTML的首屏也变成p.mp4了，我要怎么不让那个HTML播放视频（也就是B页面播放A页面不播放显示p0.jpg<video src="kv/rain.mp4" style="width:100%;" muted autoplay loop id="kvPc" poster="kv/p0.jpg" data-mouse="small"></video>）
+
+
     // ================== BGM 控制逻辑 (移植版) ==================
     
     // 音乐控制函数

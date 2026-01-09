@@ -230,33 +230,6 @@ function changeImgKv() {
   //requestAnimationFrame(changeImg)
 }
 
-function goTo(type) {
-  if (type == "t") {
-    window.open("https://reverse1999jp.onelink.me/XuII/betgngfo");
-  }
-  if (type == "f") {
-    window.open("https://twitter.com/Reverse1999_GL");
-  }
-  if (type == "d") {
-    window.open("https://discord.com/invite/dBXhAG9S8f");
-  }
-  if (type == "y") {
-    window.open("https://www.youtube.com/@Reverse1999_JP");
-  }
-  if (type == "r") {
-    window.open("https://www.reddit.com/r/Reverse1999");
-  }
-  if (type == "line") {
-    window.open("https://lin.ee/RrWFNM8E");
-  }
-  if (type == "tiktok") {
-    window.open("https://www.tiktok.com/@reverse1999_jp");
-  }
-  if (type == "discord") {
-    window.open("https://discord.gg/MuDhemaDwX");
-  }
-}
-
 function sendGA(str) {
   gtag("event", str);
 }
@@ -296,7 +269,7 @@ function showKv(video) {
   $(".pvVideo").show(); //显示视频
   $(".pvVideo").html(
     `
-        <iframe width="1280" height="720" src="https://www.youtube.com/embed/${video}" title="リバース：1999 公式サイト" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="1280" height="720" src="" title="リバース：1999 公式サイト" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         `
   );
 }
@@ -307,7 +280,7 @@ function showKvM(video) {
   $(".pvVideo").show(); //显示视频
   $(".pvVideo").html(
     `
-        <iframe width="375px" height="210px" src="https://www.youtube.com/embed/${video}" title="リバース：1999 公式サイト" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="375px" height="210px" src="" title="リバース：1999 公式サイト" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         `
   );
 }
