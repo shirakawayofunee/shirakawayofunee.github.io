@@ -1,50 +1,63 @@
-// ... 原有代码 ...
+<script>
+    // ... (保留你原有的 gallery 逻辑代码) ...
 
-// --- 4. 加载 JSON 数据 ---
-async function loadChapter(chapterId) {
-  const scriptDiv = document.getElementById("script-content");
-  
-  // ... (省略中间代码) ...
-  
-  scriptDiv.innerHTML = '<div class="narration">運命を読み取り中……</div>';
-
-  try {
-    const module = await import(`../data/${chapterId}.js`);
-    const data = module.default;
-
-    // ... (省略渲染代码: set BGM, renderScript, renderInfo, updateHeader ...) ...
+    // ================== BGM 控制逻辑 (移植版) ==================
     
-    // 设置 BGM
-    if (data.meta && data.meta.bgm) {
-      playBgm(data.meta.bgm, true); 
+    // 音乐控制函数
+    function muteMusic(num) {
+        var bgmPlayer = document.getElementById('bgm');
+        // 获取所有的播放(动图)和停止(静止)按钮
+        var playButtons = document.querySelectorAll('.imgMusicPlay'); // 播放状态显示的图
+        var stopButtons = document.querySelectorAll('.imgMusicStop'); // 停止状态显示的图
+
+        if (!bgmPlayer) {
+            console.error('未找到 id="bgm" 的音频元素');
+            return;
+        }
+
+        if (num === 1) {
+            // 操作：暂停音乐
+            console.log('Pause BGM');
+            bgmPlayer.pause();
+            
+            // 界面：隐藏动图，显示静止图
+            playButtons.forEach(btn => btn.style.display = 'none');
+            stopButtons.forEach(btn => btn.style.display = 'block');
+            
+        } else if (num === 2) {
+            // 操作：播放音乐
+            console.log('Play BGM');
+            var playPromise = bgmPlayer.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // 播放成功
+                    bgmPlayer.muted = false;
+                    // 界面：显示动图，隐藏静止图
+                    playButtons.forEach(btn => btn.style.display = 'block');
+                    stopButtons.forEach(btn => btn.style.display = 'none');
+                }).catch(error => {
+                    console.error('自动播放被阻止，等待用户交互:', error);
+                    // 如果播放失败（通常是因为浏览器策略），保持静止图标显示
+                });
+            }
+        }
     }
-    
-    renderScript(data.script);
-    renderInfo(data.infoPanel); 
-    updateHeaderFromJSON(chapterId, data);
 
-    const scrollPanel = document.getElementById("script-panel");
-    if (scrollPanel) scrollPanel.scrollTop = 0;
-
-    // ============================================
-    // 【新增】向 GTM 发送自定义事件
-    // ============================================
-    
-    // 1. 从你的 chapterList 配置中查找当前章节的详细信息（标题、分类等）
-    const currentChapInfo = chapterList.find(item => item.id === chapterId);
-
-    // 2. 推送数据层 (Data Layer)
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'chapter_read',          // 自定义事件名称，GTM 将监听这个名字
-      'chapter_id': chapterId,          // 例如: conversation1
-      'chapter_title': currentChapInfo ? currentChapInfo.title : 'Unknown', // 例如: 001「招かれざる客」
-      'chapter_category': currentChapInfo ? currentChapInfo.category : 'Unknown' // 例如: bluerain
+    // 页面加载完成后尝试自动播放（可选）
+    // 注意：现代浏览器通常会阻止没有用户交互的自动播放
+    document.addEventListener('DOMContentLoaded', function () {
+        // 尝试触发一次播放，如果失败则静音播放或等待用户点击
+        var bgmPlayer = document.getElementById('bgm');
+        if(bgmPlayer) {
+            // 绑定一次点击事件，用户点击页面任何位置时尝试播放（解决浏览器限制）
+            document.addEventListener('click', function tryAutoPlay() {
+                if (bgmPlayer.paused) {
+                    muteMusic(2);
+                }
+                // 移除监听，避免重复触发
+                document.removeEventListener('click', tryAutoPlay);
+            }, { once: true });
+        }
     });
-    // ============================================
-
-  } catch (err) {
-    console.error(err);
-    scriptDiv.innerHTML = `<div class="narration" style="color:#e23b78">无法打开卷宗: ${chapterId}</div>`;
-  }
-}
+</script>
