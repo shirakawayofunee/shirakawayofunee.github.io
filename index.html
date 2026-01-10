@@ -18,41 +18,102 @@
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>404</title>
-  <script>
-    (function (win, doc) {
-      if (!win.addEventListener) return;
-      var html = document.documentElement;
-
-      function setFont() {
-        if (/iPhone|iPad|iPod|Android/gi.test(navigator.userAgent)) {
-          var cliWidth = html.clientWidth;
-          var size = 16 * (cliWidth / 750);
-          if (size > 16) size = 16;
-          html.style.fontSize = size + "px";
-        } else {
-          var cliWidth = html.clientWidth;
-          html.style.fontSize = 16 * (cliWidth / 1920) + "px";
+  <style>
+    body {
+      background: #333;
+    }
+    
+    .spinner {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+      
+      .blob {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+        border: 2px solid #fff;
+        
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        
+        &.top {
+          top: 0;
+          animation: blob-top 1s infinite ease-in;
+        }
+        &.bottom {
+          top: 100%;
+           animation: blob-bottom 1s infinite ease-in;
+        }
+        &.left {
+          left: 0;
+          animation: blob-left 1s infinite ease-in;
         }
       }
-      win.addEventListener("resize", setFont, false);
-      setFont();
-    })(window, document);
-    /* 额外检测 F12 模拟器的特征 */
-    function setFont() {
-      var cliWidth = html.clientWidth;
-      var isMobileUA = /iPhone|iPad|iPod|Android/gi.test(navigator.userAgent);
-      var isMobileSimulator = cliWidth <= 768 && !/Windows|Macintosh/gi.test(navigator.userAgent); // 模拟器可能没有桌面特征
-      if (isMobileUA || isMobileSimulator) {
-        var size = 16 * (cliWidth / 750);
-        if (size > 16) size = 16;
-        html.style.fontSize = size + "px";
-      } else {
-        html.style.fontSize = 16 * (cliWidth / 1920) + "px";
+      
+      .move-blob {
+        background: #fff;
+        top: 0;
+        
+        animation: blob-spinner-mover 1s infinite ease-in;
       }
     }
-    win.addEventListener("resize", setFont, false);
-    setFont();
-  </script>
+    
+    @keyframes blob-bottom {
+      25%, 50%, 75% {
+        top: 50%;
+        left: 100%;
+      }
+      100% {
+        top: 0;
+        left: 50%;
+      }
+    }
+    @keyframes blob-left {
+      25% {
+        top: 50%;
+        left: 0;
+      }
+      50%, 100% {
+        top: 100%;
+        left: 50%;
+      }
+    }
+    @keyframes blob-top {
+      50% {
+        top: 0;
+        left: 50%;
+      }
+      75%, 100% {
+        top: 50%;
+        left: 0;
+      }
+    }
+    
+    @keyframes blob-spinner-mover {
+      0%, 100% {
+        top: 0;
+        left: 50%;
+      }
+      25% {
+        top: 50%;
+        left: 100%;
+      }
+      50% {
+        top: 100%;
+        left: 50%;
+      }
+      75% {
+        top: 50%;
+        left: 0;
+      }
+    }</style>
 </head>
 
 <body>
@@ -60,6 +121,12 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W78LXJT"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-  404
+    <div class="spinner">
+      <div class="blob top"></div>
+      <div class="blob bottom"></div>
+      <div class="blob left"></div>
+      
+      <div class="blob move-blob"></div>
+    </div>
 </body>
 </html>
