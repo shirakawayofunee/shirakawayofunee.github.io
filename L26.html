@@ -167,7 +167,7 @@
         .peer-nav-section {
             background-color: var(--bg-page);
             border-bottom: 1px solid var(--border-dark); /* #222 */
-            padding: 15px 5vw 15px 5vw;
+            padding: 15px 2vw 15px 2vw;
             position: relative;
             overflow: hidden;
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
@@ -258,14 +258,14 @@
             overflow: hidden;
             position: relative;
         }
-        .film-frame img {
+        .film-strip-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             filter: grayscale(30%);
             transition: filter 0.3s;
         }
-        .roll-link-card:hover .film-frame img {
+        .roll-link-card:hover .film-strip-container img {
             filter: grayscale(0%);
         }
         
@@ -671,10 +671,7 @@
                 </div>
         
                 <div class="film-strip-container">
-                    <div class="film-frame"><img src="img/SL/SL1【本編】「中秋の名月」.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/SL/SL2「Fall」.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/SL/SL3.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/SL/SL6.webp" alt=""></div>
+                    <img src="img/SL/tab.png">
                 </div>
             </a>
         
@@ -693,11 +690,7 @@
                 </div>
         
                 <div class="film-strip-container">
-                    <!-- 这里有5张图，flex布局会自动让它们平分宽度 -->
-                    <div class="film-frame"><img src="img/XL/00.jpg" alt=""></div>
-                    <div class="film-frame"><img src="img/XL/XL1.jpg" alt=""></div>
-                    <div class="film-frame"><img src="img/XL/zhuxian2.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/XL/XL5.jpg" alt=""></div>
+                    <img src="img/XL/tab1.png">
                 </div>
             </a>
         </div>
