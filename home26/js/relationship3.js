@@ -32,19 +32,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ====================== 251213新增：解决文本框滚轮冲突 ======================
   // 获取所有可能需要滚动的文本容器
-  const scrollableContainers = document.querySelectorAll('.partwan-right .wan-content .relationship-right-str .left, .partwan-right .wan-content .relationship-right-str .right');
+// ====================== 260117更新：解决文本框滚轮冲突（兼容旧版和新版Browser） ======================
+  // 1. 获取所有的左侧 Tab 按钮
+  const tabs = document.querySelectorAll('.partwan-left .wan-tab');
+  // 2. 获取所有的右侧内容块
+  const contents = document.querySelectorAll('.partwan-right .wan-content.relationship');
+
+  // Tab 切换逻辑保持不变...
+  tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+          const targetIndex = this.getAttribute('data-index');
+          tabs.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          contents.forEach(content => content.classList.remove('active'));
+          if (contents[targetIndex]) {
+              contents[targetIndex].classList.add('active');
+          }
+      });
+  });
+
+  // --- 重点修改部分：滚动条防冲突逻辑 ---
+  
+  // 这里的 selector 增加了 '.content-scroll-area' 以匹配新的浏览器窗口结构
+  const scrollableSelector = '.partwan-right .wan-content .relationship-right-str .left, ' + 
+                             '.partwan-right .wan-content .relationship-right-str .right, ' + 
+                             '.content-scroll-area';
+
+  const scrollableContainers = document.querySelectorAll(scrollableSelector);
 
   scrollableContainers.forEach(container => {
-    // 1. 阻止滚轮事件冒泡到 Swiper
+    // 阻止滚轮事件冒泡到 Swiper (当内容确实很长需要滚动时)
     container.addEventListener('wheel', function(e) {
-      // 只有当内容确实需要滚动时（内容高度 > 容器高度），才阻止 Swiper
+      // 判断是否具备滚动条件 (内容高度 > 容器高度)
       if (this.scrollHeight > this.clientHeight) {
-        e.stopPropagation(); // 阻止事件传给 Swiper
+        // 阻止冒泡，让 Swiper 不要动，只滚动文本
+        e.stopPropagation(); 
       }
     }, { passive: false });
 
-    // 2. 针对 Swiper 的 class 隔离 (防止鼠标拖拽翻页)
-    // Swiper 默认识别 'swiper-no-swiping' 类名来停止拖拽
+    // 添加 swiper-no-swiping 类，防止鼠标点击拖拽时触发翻页
     container.classList.add('swiper-no-swiping');
   });
 
@@ -52,3 +78,119 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+  /* ============================================================
+ *  关系数值配置 (在这里修改数值即可，范围 0-100)
+ * ============================================================ */
+const dataSet1 = [
+  { label: "愛情", left: 99, right: 30 },
+  { label: "理性", left: 20, right: 80 },
+  { label: "親情", left: 100, right: 80 },
+  { label: "友情", left: 60, right: 70 },
+  { label: "信頼度", left: 97, right: 65 },
+  { label: "忠誠度", left: 100, right: 0}, /* 这里的 isDark: true 会让条变成黑色(如果CSS支持) */
+  { label: "依存度", left: 90, right: 25 },
+  { label: "保護欲", left: 100, right: 100 },
+  { label: "征服欲", left: 25, right: 10 },
+  { label: "独占欲", left: 85, right: 30 },
+  { label: "優越感", left: 0, right: 2 },
+  { label: "功利性", left: 0, right: 0 },
+  { label: "娯楽性", left: 15, right: 30 },
+  { label: "献身", left: 99, right: 85 },
+  { label: "欲求", left: 60, right: 20 },
+  { label: "偏愛", left: 100, right: 90 },
+  { label: "支配", left: 10, right: 40 },
+  { label: "服従", left: 95, right: 1 },
+  { label: "崇拝", left: 80, right: 0 },
+  { label: "同情", left: 15, right: 70 },
+  { label: "歓楽", left: 100, right: 60 },
+  { label: "苦痛", left: 15, right: 0 },
+  { label: "情欲", left: 80, right: 20 },
+  { label: "敵意", left: 0, right: 0 },
+  { label: "悪意", left: 0, right: 0 }
+];
+
+
+const dataSet2 = [
+  { label: "愛情", left: 60, right: 5 }, // 比如相爱相杀
+  { label: "理性", left: 80, right: 80 },
+  { label: "殺意", left: 0, right: 10}, // 双方都很想杀对方
+  { label: "執着", left: 80, right: 90 },
+  { label: "理解", left: 100, right: 100 }, // 最理解彼此的敌人
+  { label: "共鳴", left: 90, right: 90 },
+  { label: "信頼", left: 10, right: 10 },   // 虽然理解但不信任
+  { label: "利益", left: 100, right: 80 }, // 利益一致
+  { label: "嫌悪", left: 0, right: 15 }
+];
+
+const dataSet3 = [
+  { label: "愛情", left: 50, right: 50 }, // 比如相爱相杀
+  { label: "殺意", left: 100, right: 100, isDark: true }, // 双方都很想杀对方
+  { label: "執着", left: 80, right: 90 },
+  { label: "理解", left: 100, right: 100 }, // 最理解彼此的敌人
+  { label: "共鳴", left: 90, right: 90 },
+  { label: "信頼", left: 50, right: 50 },   // 虽然理解但不信任
+  { label: "利益", left: 100, right: 100 }, // 利益一致
+  { label: "嫌悪", left: 20, right: 30 }
+];
+
+/* ============================================================
+*  自动渲染逻辑 (无需修改)
+* ============================================================ */
+function renderMetrics(containerId, data) {
+  const container = document.getElementById(containerId);
+  
+  // 找不到容器时静默失败，不要报错
+  if (!container) return; 
+
+  let htmlContent = '';
+
+  data.forEach(item => {
+      // 判断是否需要特殊颜色 (比如忠诚度全黑)
+      // 假设 isDark 为 true 时，背景色设为黑色(#000)，否则保持 CSS 默认
+      const leftStyle = item.isDark ? 'background-color: #000;' : ''; 
+      // 如果你需要右边也变黑，可以在 rightStyle 里加逻辑
+
+      htmlContent += `
+          <div class="metric-row">
+              <div class="metric-label-group">
+                  <span>${item.label}</span>
+                  <span>${item.label}</span>
+              </div>
+              <div class="bar-container">
+                  <!-- 左侧条 (S) -->
+                  <div class="bar-side left">
+                      <div class="bar-track">
+                          <div class="bar-fill" style="width: ${item.left}%; ${leftStyle}"></div>
+                      </div>
+                  </div>
+                  
+                  <!-- 中间分割线 -->
+                  <div class="bar-divider"></div>
+                  
+                  <!-- 右侧条 (L) -->
+                  <div class="bar-side right">
+                      <div class="bar-track">
+                          <div class="bar-fill" style="width: ${item.right}%;"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      `;
+  });
+
+  container.innerHTML = htmlContent;
+}
+
+// 确保页面加载后执行
+document.addEventListener('DOMContentLoaded', () => {
+  // 渲染第 1 个窗口 (请确保 HTML 里有 id="metrics-container-1")
+  renderMetrics('metrics-container-1', dataSet1);
+
+  // 渲染第 2 个窗口 (请确保 HTML 里有 id="metrics-container-2")
+  renderMetrics('metrics-container-2', dataSet2);
+  
+  // 如果以后有第 3 个窗口，就在这里加一行：
+  renderMetrics('metrics-container-3', dataSet3);
+});

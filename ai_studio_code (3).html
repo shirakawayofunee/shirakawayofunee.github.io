@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Embedded Side Layout</title>
+    <style>
+        /* 
+         * =========================================
+         * 命名空间：add_
+         * 作用：防止与主站 CSS 冲突
+         * =========================================
+         */
+
+        /* 布局外层容器：用于排布 [你的左侧导航] 和 [右侧瀑布流] */
+        .add_layout_wrapper {
+            display: flex;
+            width: 100%;
+            height: 100vh; /* 实际项目中可以根据父容器高度自适应，这里设为100vh仅供演示 */
+            background-color: #f5f5f7; /* 演示背景，实际可去掉 */
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* 左侧导航占位符 (25%) */
+        .add_sidebar_placeholder {
+            width: 25%;
+            min-width: 200px; /* 防止过窄 */
+            background-color: #e5e5e5; /* 示意颜色 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            border-right: 1px solid #d1d1d6;
+        }
+
+        /* 右侧核心区域 (自适应剩余宽度) */
+        .add_browser_component {
+            flex: 1; /* 自动填满剩余空间 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* 给浏览器窗口留点呼吸空间 */
+            overflow: hidden;
+        }
+
+        /* --- 模拟浏览器窗口本身 --- */
+        .add_browser_window {
+            background-color: #1e1e1e; /* 窗口背景深色 */
+            width: 100%;
+            height: 100%; /* 填满父容器分配的高度 */
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #333;
+            color: #d1d1d6; /* 默认文字颜色 */
+        }
+
+        /* 顶部 Header */
+        .add_window_header {
+            background-color: #2c2c2e;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid #3a3a3c;
+            flex-shrink: 0; /* 防止头部被压缩 */
+        }
+
+        .add_traffic_lights { display: flex; gap: 8px; }
+        .add_dot { width: 12px; height: 12px; border-radius: 50%; }
+        .add_bg_red { background-color: #ff5f57; }
+        .add_bg_yellow { background-color: #febc2e; }
+        .add_bg_green { background-color: #28c840; }
+
+        .add_address_bar {
+            flex-grow: 1;
+            background-color: #1c1c1e;
+            color: #98989d;
+            text-align: center;
+            padding: 6px;
+            border-radius: 6px;
+            font-size: 13px;
+            border: 1px solid #3a3a3c;
+            /* 限制地址栏最大宽度，保持美观 */
+            max-width: 90%; 
+            margin: 0 auto;
+        }
+
+        .add_window_actions {
+            color: #98989d;
+            font-size: 14px;
+            min-width: 40px;
+            text-align: right;
+        }
+
+        /* 滚动区域 */
+        .add_content_scroll_area {
+            overflow-y: auto;
+            padding: 40px;
+            flex-grow: 1;
+        }
+
+        /* --- 瀑布流布局核心 --- */
+        .add_waterfall_container {
+            column-count: 3; 
+            column-gap: 40px; 
+            width: 100%;
+        }
+
+        /* 响应式调整：因为这个组件现在只占屏幕的 75%，所以断点需要更灵敏 */
+        @media (max-width: 1200px) {
+            .add_waterfall_container { column-count: 2; }
+        }
+        @media (max-width: 800px) {
+            .add_waterfall_container { column-count: 1; }
+        }
+
+        /* 卡片通用样式 */
+        .add_card {
+            break-inside: avoid; /* 防止内容被打断 */
+            margin-bottom: 40px;
+            /* 强制重置盒模型，防止外部 CSS 干扰 */
+            box-sizing: border-box; 
+        }
+
+        /* 防止外部 CSS 污染内部排版，明确指定后代选择器 */
+        .add_card h2 {
+            font-size: 28px;
+            line-height: 1.2;
+            margin: 0 0 16px 0;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .add_card h3 {
+            font-size: 18px;
+            margin: 10px 0 8px 0;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .add_card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #a1a1a6;
+            margin: 0 0 12px 0;
+        }
+
+        .add_date {
+            font-size: 11px;
+            font-weight: 600;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 8px;
+            display: block;
+        }
+
+        /* 模拟分割线 */
+        .add_divider {
+            border: 0;
+            border-top: 1px solid #3a3a3c;
+            margin: 24px 0;
+            width: 100%;
+        }
+
+        /* 链接交互 */
+        .add_card a { text-decoration: none; color: inherit; }
+        .add_card a:hover { color: #fff; text-decoration: underline; }
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. 整体布局外框 (Flex Row) -->
+    <div class="add_layout_wrapper">
+        
+        <!-- 2. 左侧：你已经写好的导航栏 (25%) -->
+        <div class="add_sidebar_placeholder">
+            <!-- 这里放你的 Side Nav 代码 -->
+            <p>Your Nav (25%)</p>
+        </div>
+
+        <!-- 3. 右侧：Webkit 风格的瀑布流组件 (自适应剩余宽度) -->
+        <div class="add_browser_component">
+            
+            <div class="add_browser_window">
+                <!-- 窗口头部 -->
+                <div class="add_window_header">
+                    <div class="add_traffic_lights">
+                        <div class="add_dot add_bg_red"></div>
+                        <div class="add_dot add_bg_yellow"></div>
+                        <div class="add_dot add_bg_green"></div>
+                    </div>
+                    <div class="add_address_bar">
+                        localhost/optimization
+                    </div>
+                    <div class="add_window_actions">
+                        <span>+</span>
+                    </div>
+                </div>
+
+                <!-- 滚动内容区 -->
+                <div class="add_content_scroll_area">
+                    <div class="add_waterfall_container">
+
+                        <!-- [Card 1] 大标题 -->
+                        <div class="add_card">
+                            <h2>Optimizing WebKit & Safari for Speedometer 3.0</h2>
+                            <p>The introduction of Speedometer 3.0 is a major step forward in making the web faster for all, and allowing Web developers to make websites and web apps that were not previously possible.</p>
+                            <p>In this article, we explore ways the WebKit team made performance optimizations in WebKit and Safari based on the Speedometer 3.0 benchmark.</p>
+                            <span class="add_date">April 10, 2024</span>
+                        </div>
+
+                        <!-- [Card 2] -->
+                        <div class="add_card">
+                            <h3>Speedometer 3.0: The Best Way Yet to Measure Browser Performance</h3>
+                            <p>As announced on browserbench.org today, in collaboration with other browser engine developers, Apple’s WebKit team is excited to introduce Speedometer 3.0.</p>
+                            <span class="add_date">Mar 11, 2024</span>
+                        </div>
+
+                        <!-- [Card 3] -->
+                        <div class="add_card">
+                            <h3>Introducing Natural Input for WebXR in Apple Vision Pro</h3>
+                            <p>Apple Vision Pro is here, and with it, a lot of excitement about the possibilities for WebXR in visionOS. Support is in progress, where you can test it today.</p>
+                            <span class="add_date">Mar 19, 2024</span>
+                        </div>
+
+                        <!-- [Card 4] -->
+                        <div class="add_card">
+                            <h3>Implementing Vertical Form Controls</h3>
+                            <p>Setting written text vertically is commonly observed in East Asian languages. For example, Chinese, Japanese, and Korean (CJK) may be written vertically and read top-to-bottom.</p>
+                            <span class="add_date">Mar 18, 2024</span>
+                        </div>
+
+                        <!-- [Card 5] -->
+                        <div class="add_card">
+                            <h3>The web just gets better with Interop 2024</h3>
+                            <p>The web is amazing. It makes collaborating, learning, and connecting easy for billions of people, because it's intentionally designed to run on radically different devices.</p>
+                            <span class="add_date">Feb 1, 2024</span>
+                        </div>
+
+                        <!-- [Card 6] 密集列表 -->
+                        <div class="add_card">
+                            <h3>Bringing Back Horizontal Rules</h3>
+                            <p>In September 2023, Safari 17.0 on macOS shipped a small but interesting change to the select element.</p>
+                            <span class="add_date">Jan 25, 2024</span>
+
+                            <hr class="add_divider">
+
+                            <h3>WebKit Features in Safari 17.3</h3>
+                            <p>Last month, Safari 17.2 brought our biggest December release of web technology ever.</p>
+                            <span class="add_date">Jan 23, 2024</span>
+                            
+                            <hr class="add_divider">
+
+                            <h3>Announcing MotionMark 1.3</h3>
+                            <p>We are glad to announce an update to MotionMark, Apple's graphics benchmark for web browsers.</p>
+                            <span class="add_date">Jan 10, 2024</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

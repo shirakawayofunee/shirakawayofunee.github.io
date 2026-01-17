@@ -1,14 +1,5 @@
 /* ====================== partwan 专属完整样式（直接替换你原来的 partwan 所有样式）====================== */
 
-.metric-label-group span{
-color:#fff;
-}
-
-.pink{
-  color:#000;
-  }
-
-
 .sl-part.partwan {
   width: 100%;
   height: 100vh;
@@ -21,9 +12,9 @@ color:#fff;
   position: relative;
   width: 100%;
   height: 100%;
-/*   max-width: 1920px; */
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 5rem;
   box-sizing: border-box;
 }
 
@@ -34,7 +25,7 @@ color:#fff;
   top: 50%;
   transform: translateY(-63%) !important;   /* 你调好的值，保持 */
   width: 18rem;
-  height: 100vh;
+  height: 78vh;
   min-height: 600px;
   max-height: 900px;
   display: flex;
@@ -72,7 +63,7 @@ color:#fff;
 /* ====================== 右侧：所有内容区块 ====================== */
 .partwan-right {
   position: relative;
-  width: 92rem;
+  width: 70rem;
   height: 100%;
 }
 
@@ -81,7 +72,7 @@ color:#fff;
   position: absolute;
   top: 0; 
   left: 18rem;
-  top: 2.5rem;
+  top: 5rem;
   width: 100%;
   height: 100%;
   display: none;
@@ -240,33 +231,59 @@ color:#fff;
  * =========================================
  */
 
+/* 布局外层容器：用于排布 [你的左侧导航] 和 [右侧瀑布流] */
+.add_layout_wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* 实际项目中可以根据父容器高度自适应，这里设为100vh仅供演示 */
+    background-color: #f5f5f7; /* 演示背景，实际可去掉 */
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 左侧导航占位符 (25%) */
+.add_sidebar_placeholder {
+    width: 25%;
+    min-width: 200px; /* 防止过窄 */
+    background-color: #e5e5e5; /* 示意颜色 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-right: 1px solid #d1d1d6;
+}
+
+/* 右侧核心区域 (自适应剩余宽度) */
+.add_browser_component {
+    flex: 1; /* 自动填满剩余空间 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* 给浏览器窗口留点呼吸空间 */
+    overflow: hidden;
+}
+
 /* --- 模拟浏览器窗口本身 --- */
 .add_browser_window {
-    background-color: #151516; /* 窗口背景深色 */
+    background-color: #1e1e1e; /* 窗口背景深色 */
     width: 100%;
-    height: auto;            /* 高度自动，不再强制 100% */
-    aspect-ratio: 16 / 9;    /* 强制锁定宽高比为 14:9 */
-    max-height: 100vh;        /* 防止在小屏幕上高度溢出屏幕 */
-/*     border-radius: 12px; */
+    height: 100%; /* 填满父容器分配的高度 */
+    border-radius: 12px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     overflow: hidden;
     border: 1px solid #333;
     color: #d1d1d6; /* 默认文字颜色 */
-    margin: 0 auto;          /* 确保居中 */
-    position: relative;
-    z-index: 20;             /* 确保层级高于背景修饰 */
 }
 
 /* 顶部 Header */
 .add_window_header {
     background-color: #2c2c2e;
-    padding: 8px 20px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
     border-bottom: 1px solid #3a3a3c;
     flex-shrink: 0; /* 防止头部被压缩 */
 }
@@ -292,48 +309,29 @@ color:#fff;
 }
 
 .add_window_actions {
-/*     color: #98989d;
+    color: #98989d;
     font-size: 14px;
     min-width: 40px;
-    text-align: right; */
-
-    overflow-y: scroll;
-    font-family: "myFont";
-    font-weight: 300;
-    font-size: calc(0.85rem + 0.1vw);
-    line-height: 2.1;
-    color: #9ea7b4;
-    text-align: justify;
-    text-justify: inter-ideograph; 
-    overflow-wrap: anywhere; 
-    word-break: break-all;
-    image-rendering: pixelated; 
-    text-justify: inter-ideograph; 
+    text-align: right;
 }
 
 /* 滚动区域 */
 .add_content_scroll_area {
     overflow-y: auto;
-    padding: 30px;
+    padding: 40px;
     flex-grow: 1;
-    min-height: 0;    
-    scrollbar-width: thin;
-    scrollbar-color: #444 transparent;
 }
 
 /* --- 瀑布流布局核心 --- */
 .add_waterfall_container {
-    column-count: 4; 
-    column-gap: 20px; 
+    column-count: 3; 
+    column-gap: 40px; 
     width: 100%;
 }
 
 /* 响应式调整：因为这个组件现在只占屏幕的 75%，所以断点需要更灵敏 */
-@media (max-width: 1600px) {
-  .add_waterfall_container { column-count: 4; }
-}
 @media (max-width: 1200px) {
-    .add_waterfall_container { column-count: 3; }
+    .add_waterfall_container { column-count: 2; }
 }
 @media (max-width: 800px) {
     .add_waterfall_container { column-count: 1; }
@@ -349,40 +347,25 @@ color:#fff;
 
 /* 防止外部 CSS 污染内部排版，明确指定后代选择器 */
 .add_card h2 {
-  font-family: "myFont";
-    font-size: 24px;
+    font-size: 28px;
     line-height: 1.2;
     margin: 0 0 16px 0;
     color: #ffffff;
     font-weight: 700;
-
-
 }
 
 .add_card h3 {
-  font-family: "myFont";
-    font-size: 16px;
+    font-size: 18px;
     margin: 10px 0 8px 0;
     color: #ffffff;
     font-weight: 600;
 }
 
 .add_card p {
-/*     font-size: 14px;
+    font-size: 14px;
     line-height: 1.6;
     color: #a1a1a6;
-    margin: 0 0 12px 0; */
-    font-family: "myFont";
-    font-weight: 300;
-    font-size: calc(0.86rem + 0.1vw);
-    line-height: 1.8;
-    color: #9ea7b4;
-    text-align: justify;
-    text-justify: inter-ideograph; 
-    overflow-wrap: anywhere; 
-    word-break: break-all;
-    image-rendering: pixelated; 
-    text-justify: inter-ideograph; 
+    margin: 0 0 12px 0;
 }
 
 .add_date {
@@ -399,7 +382,7 @@ color:#fff;
 .add_divider {
     border: 0;
     border-top: 1px solid #3a3a3c;
-    margin: 12px 0;
+    margin: 24px 0;
     width: 100%;
 }
 
@@ -409,193 +392,10 @@ color:#fff;
 
 
 
-/* =========================================
-* 2. 核心组件：双向数值条 (Relationship Metrics)
-* =========================================
-*/
-
-/* 卡片微调 */
-.metric-card {
-  padding: 15px 12px; /* 稍微减少内边距以节省空间 */
-}
-
-/* 每一行的容器 */
-.metric-row {
-  margin-bottom: 12px;
-  width: 100%;
-}
-
-/* 标签组 (左一个字，右一个字) */
-.metric-label-group {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2px;
-  font-size: 11px;
-  color: #ccc;
-  font-weight: 500;
-}
-
-/* 条形图的主容器 */
-.bar-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 12px; /* 条形的高度 */
-  border: 1px solid #444; /* 外边框 */
-  background: #000; /* 条形槽的背景色 (黑色) */
-  position: relative;
-}
-
-/* 左右两侧的容器 */
-.bar-side {
-  flex: 1; /* 左右平分宽度 */
-  height: 100%;
-  position: relative;
-}
-
-/* 中间分割线 */
-.bar-divider {
-  width: 1px;
-  height: 100%;
-  background-color: #666;
-  z-index: 2;
-}
-
-/* 进度条轨道 (用来定位fill) */
-.bar-track {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-/* 实际的填充条 */
-.bar-fill {
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
-
-/* --- 左侧样式 (S) --- */
-.bar-side.left .bar-fill {
-  right: 0; /* 靠右对齐 (从中间向左生长) */
-  background-color:#0031dc ;
-  /* 如果想完全还原样图的黑条，可以用 background-color: #000; 但背景要改白 */
-}
-
-/* --- 右侧样式 (L) --- */
-.bar-side.right .bar-fill {
-  left: 0; /* 靠左对齐 (从中间向右生长) */
-  background-color: #e0e0e5;
-}
-
-/* 特殊处理：如果是 100% 满的情况，可以加圆角微调，这里暂不加保持方正 */
 
 
 
 
-/* =========================================
- * 布局调整：手动控制的 5 列布局
- * =========================================
- */
-
-/* 1. 大容器：变成 Flex Row (横向排列列) */
-.add_waterfall_container {
-  display: flex;             /* 开启 Flex 布局 */
-  flex-direction: row;       /* 确保是横向排列 */
-  align-items: flex-start;   /* 让每一列从顶部对齐 */
-  gap: 30px;                 /* 列之间的间距 */
-  width: 100%;
-}
-
-/* 2. 每一列的容器 */
-.add_column {
-  flex: 1;                   /* 每一列宽度均分 (自动计算 100% / 5) */
-  display: flex;             /* 列内部也是 Flex */
-  flex-direction: column;    /* 但是是纵向排列 (卡片垂直堆叠) */
-  gap: 10px;                 /* 卡片之间的垂直间距 */
-  min-width: 0;              /* 防止内容过宽撑爆布局 */
-}
-
-/* 3. 卡片样式微调 (防止手动布局后样式跑偏) */
-.add_card {
-  margin-bottom: 0;          /* 取消之前的 margin，改用 gap 控制间距 */
-  width: 100%;               /* 确保卡片填满列宽 */
-}
-
-/* 4. 响应式：屏幕变窄时自动折行 */
-/* 小于 1400px 时，变成 3 列 */
-@media (max-width: 1400px) {
-  .add_waterfall_container {
-      flex-wrap: wrap;       /* 允许换行 */
-  }
-  .add_column {
-      flex: 1 1 30%;         /* 每列占 30% 宽度 (一行3个) */
-      min-width: 250px;      /* 最小宽度限制 */
-  }
-}
-
-/* 小于 800px 时，变成 1 列 */
-@media (max-width: 800px) {
-  .add_column {
-      flex: 1 1 100%;        /* 占满全宽 */
-  }
-}
 
 
 
-/* =========================================
- *  数值条上的数字样式 (智能版)
- * =========================================
- */
-
-/* 轨道：确保超出轨道的文字被切掉 */
-.bar-track {
-  overflow: hidden; 
-}
-
-/* 填充条：允许文字溢出显示 (关键) */
-.bar-fill {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  
-  /* 字体样式 */
-  font-size: 10px;      
-  font-weight: 700;
-  font-family: "Menlo", "Consolas", monospace;
-  white-space: nowrap;  /* 防止换行 */
-  transition: width 0.3s ease; /* 加个动画更顺滑 */
-}
-
-/* --- 左侧条 (浅色) --- */
-.bar-side.left .bar-fill {
-  right: 0; /* 靠右对齐 (向左生长) */
-  
-  /* 核心逻辑：文字默认在条的"左头" */
-  justify-content: flex-start; 
-  padding-left: 6px; 
-  
-  /* 默认文字颜色 (在浅色条上用深色字) */
-  color: #333; 
-}
-
-/* --- 右侧条 (深色) --- */
-.bar-side.right .bar-fill {
-  left: 0; /* 靠左对齐 (向右生长) */
-  
-  /* 核心逻辑：文字默认在条的"右头" */
-  justify-content: flex-end; 
-  padding-right: 6px; 
-  
-  /* 默认文字颜色 (在深色条上用浅色字) */
-  color: #fff; 
-}
-
-/* --- 特殊状态类 (由 JS 添加) --- */
-
-/* 当左边条很短(露出黑色背景)时，文字变白 */
-.bar-fill.text-on-black {
-  color: #fff !important; 
-}
-
-/* 当右边条很短(露出黑色背景)时，文字本来就是白的，不用改 */
