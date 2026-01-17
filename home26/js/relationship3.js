@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * ============================================================ */
 const dataSet1 = [
   { label: "愛情", left: 99, right: 30 },
-  { label: "理性", left: 20, right: 80 },
+  { label: "理性", left: 40, right: 80 },
   { label: "親情", left: 100, right: 80 },
   { label: "友情", left: 60, right: 70 },
   { label: "信頼度", left: 97, right: 65 },
@@ -115,24 +115,25 @@ const dataSet1 = [
 const dataSet2 = [
   { label: "愛情", left: 60, right: 5 }, // 比如相爱相杀
   { label: "理性", left: 80, right: 80 },
-  { label: "殺意", left: 0, right: 10}, // 双方都很想杀对方
-  { label: "執着", left: 80, right: 90 },
-  { label: "理解", left: 100, right: 100 }, // 最理解彼此的敌人
+  { label: "執着", left: 80, right: 30 },
+  { label: "理解", left: 90, right: 90 }, // 最理解彼此的敌人
   { label: "共鳴", left: 90, right: 90 },
-  { label: "信頼", left: 10, right: 10 },   // 虽然理解但不信任
-  { label: "利益", left: 100, right: 80 }, // 利益一致
-  { label: "嫌悪", left: 0, right: 15 }
+  { label: "同情", left: 70, right: 30 },
+  { label: "信頼", left: 60, right: 30 },   // 虽然理解但不信任
+  { label: "利益", left: 80, right: 80 }, // 利益一致
+  { label: "嫌悪", left: 0, right: 15 },
+  { label: "利用", left: 70, right: 40 },
 ];
 
 const dataSet3 = [
-  { label: "愛情", left: 50, right: 50 }, // 比如相爱相杀
-  { label: "殺意", left: 100, right: 100, isDark: true }, // 双方都很想杀对方
+  { label: "愛情", left: 50, right: 10 }, // 比如相爱相杀
+  { label: "理性", left: 80, right: 80 },
+  { label: "友情", left: 70, right: 65 },
+  { label: "信頼", left: 55, right: 50 },
+  { label: "依存", left: 0, right: 0 },
   { label: "執着", left: 80, right: 90 },
-  { label: "理解", left: 100, right: 100 }, // 最理解彼此的敌人
-  { label: "共鳴", left: 90, right: 90 },
-  { label: "信頼", left: 50, right: 50 },   // 虽然理解但不信任
-  { label: "利益", left: 100, right: 100 }, // 利益一致
-  { label: "嫌悪", left: 20, right: 30 }
+  { label: "理解", left: 80, right: 80 }, // 最理解彼此的敌人
+  { label: "共鳴", left: 80, right: 80 },
 ];
 
 /* ============================================================
@@ -140,17 +141,19 @@ const dataSet3 = [
 * ============================================================ */
 function renderMetrics(containerId, data) {
   const container = document.getElementById(containerId);
-  
-  // 找不到容器时静默失败，不要报错
   if (!container) return; 
 
   let htmlContent = '';
 
   data.forEach(item => {
-      // 判断是否需要特殊颜色 (比如忠诚度全黑)
-      // 假设 isDark 为 true 时，背景色设为黑色(#000)，否则保持 CSS 默认
-      const leftStyle = item.isDark ? 'background-color: #000;' : ''; 
-      // 如果你需要右边也变黑，可以在 rightStyle 里加逻辑
+      // --- 智能颜色逻辑 ---
+      
+      // 左侧 (浅色条)：如果数值 < 20%，说明条很短，字会显示在黑色背景上
+      // 此时需要加 'text-on-black' 类，把字变白。
+      // 否则(条很长)，字显示在浅灰条上，维持 CSS 默认的深色字。
+      const leftClass = item.left < 20 ? 'text-on-black' : '';
+      
+      // 右侧 (深色条)：字一直是白的，黑色背景上也是白的，所以不用特殊处理。
 
       htmlContent += `
           <div class="metric-row">
@@ -159,20 +162,24 @@ function renderMetrics(containerId, data) {
                   <span>${item.label}</span>
               </div>
               <div class="bar-container">
-                  <!-- 左侧条 (S) -->
+                  <!-- 左侧条 -->
                   <div class="bar-side left">
                       <div class="bar-track">
-                          <div class="bar-fill" style="width: ${item.left}%; ${leftStyle}"></div>
+                          <div class="bar-fill ${leftClass}" style="width: ${item.left}%;">
+                              ${item.left}%
+                          </div>
                       </div>
                   </div>
                   
                   <!-- 中间分割线 -->
                   <div class="bar-divider"></div>
                   
-                  <!-- 右侧条 (L) -->
+                  <!-- 右侧条 -->
                   <div class="bar-side right">
                       <div class="bar-track">
-                          <div class="bar-fill" style="width: ${item.right}%;"></div>
+                          <div class="bar-fill" style="width: ${item.right}%;">
+                              ${item.right}%
+                          </div>
                       </div>
                   </div>
               </div>

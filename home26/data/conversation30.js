@@ -434,14 +434,14 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `君の命が尽きてなかったら、もっと穏やかな方案を選びたかった。でも、私たちには時間がない。`
+      text: `君の命が尽きてなかったら、もっと穏やかな方案を選びたかった。でも、その時間はもうない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `だから、思う存分抗って……私は全部理解する、全部受け入れる。`
+      text: `だから、思う存分抗って……私は全部理解している、全部受け入れるつもりだ。`
     },
     {
       type: `dialogue`,

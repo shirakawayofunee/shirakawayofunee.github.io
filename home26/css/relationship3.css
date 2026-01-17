@@ -576,7 +576,7 @@ color:#fff;
   padding-left: 6px; 
   
   /* 默认文字颜色 (在浅色条上用深色字) */
-  color: #333; 
+  color: rgb(255, 255, 255); 
 }
 
 /* --- 右侧条 (深色) --- */
@@ -588,7 +588,7 @@ color:#fff;
   padding-right: 6px; 
   
   /* 默认文字颜色 (在深色条上用浅色字) */
-  color: #fff; 
+  color: rgb(0, 0, 0); 
 }
 
 /* --- 特殊状态类 (由 JS 添加) --- */
