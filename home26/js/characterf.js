@@ -87,13 +87,13 @@ Lは復讐を誓い、福音地に身を投じた。<br>
     L「なら、私を越すか、殺すかを選んで。」<br>
     L「実現しなさい、復讐しなさい！私の花よ、私のGardenは、自由で、気ままで、縛らずに育つべきだ。邪魔な雑草は、全部刈り取ってしまえばいい。」<br>
     ▍メイン登場有<br>
-    <a href="./duihua0722.html#conversation13" target="_blank">106「业师」</a><br>
-    <a href="./duihua0722.html#conversation24" target="_blank">302「露の世は露の世ながらさりながら」</a><br>
-    <a href="./duihua0722.html#conversation25" target="_blank">303「交鋒」</a><br>
-    <a href="./duihua0722.html#conversation28" target="_blank">401「残花の復仇」</a><br>
-    <a href="./duihua0722.html#conversation29" target="_blank">402「依頼」</a><br>
-    <a href="./duihua0722.html#conversation30" target="_blank">403「静かな反逆」</a><br>
-    <a href="./duihua0722.html#conversation30" target="_blank">404「後日談·1」</a><br>
+    <a href="./scene260108.html#conversation13" target="_blank">106「业师」</a><br>
+    <a href="./scene260108.html#conversation24" target="_blank">302「露の世は露の世ながらさりながら」</a><br>
+    <a href="./scene260108.html#conversation25" target="_blank">303「交鋒」</a><br>
+    <a href="./scene260108.html#conversation28" target="_blank">401「残花の復仇」</a><br>
+    <a href="./scene260108.html#conversation29" target="_blank">402「依頼」</a><br>
+    <a href="./scene260108.html#conversation30" target="_blank">403「静かな反逆」</a><br>
+    <a href="./scene260108.html#conversation30" target="_blank">404「後日談·1」</a><br>
     `,
     tabTitle1: "基本信息",
     tabTitle2: "メインストーリー（ネタバレ？）",
@@ -190,8 +190,8 @@ Lは復讐を誓い、福音地に身を投じた。<br>
       `,
       str4: `
       ▍メイン登場有<br>
-      <a href="./duihua0722.html#conversation2" target="_blank">002「穏やかな朝」</a>
-      <a href="./duihua0722.html#conversation3" target="_blank">003「家」</a>
+      <a href="./scene260108.html#conversation2" target="_blank">002「穏やかな朝」</a>
+      <a href="./scene260108.html#conversation3" target="_blank">003「家」</a>
       <br>
       ▍序章抜粋1<br>
       「この世には、私たちを受け入れてくれる場所がある。理解してくれる人がいる。彼女はあなたを導き、残酷な復讐の道を支えてくれる。

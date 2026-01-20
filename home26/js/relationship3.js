@@ -108,7 +108,12 @@ const dataSet1 = [
   { label: "苦痛", left: 15, right: 0 },
   { label: "情欲", left: 80, right: 20 },
   { label: "敵意", left: 0, right: 0 },
-  { label: "悪意", left: 0, right: 0 }
+  { label: "悪意", left: 0, right: 0 },
+  { label: "慈愛", left: 20, right: 90 },
+  { label: "敬愛", left: 60, right: 0 },
+  { label: "母性愛", left: 70, right: 80 },
+  { label: "性愛", left: 75, right: 0 },
+  { label: "家族愛", left: 100, right: 90 },
 ];
 
 
