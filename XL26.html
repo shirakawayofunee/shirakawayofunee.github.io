@@ -982,6 +982,8 @@
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">擬獣化/メインストーリー後平和な日常(？</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#theme">テーマ</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#r18g">他作品の〇〇ってキャラのイメージ</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab1">N.F.113/7/22/23:14</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab2">2</a></li> -->
             </ul>
         </div>
     </div>
@@ -999,6 +1001,9 @@
             <div class="tab-pane fade" id="theme"><div class="gallery-container" id="themeContainer"></div></div>
             <div class="tab-pane fade" id="r18g"><div class="gallery-container" id="r18gContainer"></div></div>
             <div class="tab-pane fade" id="mansion"><div class="gallery-container" id="mansionContainer"></div></div>
+            <div class="tab-pane fade" id="tab1"><div class="gallery-container" id="tab1Container"></div></div>
+            <div class="tab-pane fade" id="tab2"><div class="gallery-container" id="tab2Container"></div></div>
+            <div class="tab-pane fade" id="doodle"><div class="gallery-container" id="doodleContainer"></div></div>
         </div>
     </div>
 
@@ -1199,6 +1204,7 @@
             { src: "img/XL/zhuxian3.jpg", alt: "メインストーリー", description: "【メインストーリー/本編】（猫猫バージョン）" },
             { src: "img/XL/zhuxian4.webp", alt: "メインストーリー", description: "【メインストーリー/本編】FIN" },
             { src: "img/XL/zhuxian5.jpg", alt: "メインストーリー", description: "【メインストーリー/本編】「後日談」" },
+            
             { src: "img/XL/Xliwu.webp", alt: "メインストーリー", description: "【BAD END-IF】Xからのご挨拶――Lの中で一番重い存在、その死骸" },
             { src: "img/XL/Xliwu2.webp", alt: "メインストーリー", description: "" },
             
@@ -1359,6 +1365,28 @@
 { src: "img/FZ/020.webp", alt: "Mansion Image 20", description: "" }, */
 ];
 
+
+const tab1Images = [
+{ src: "img/SL/001.jpg", alt: "Gallery Image 1", description: "Blue Rain-005「何のために戦うか」P1" },
+          { src: "img/SL/002.jpg", alt: "Gallery Image 2", description: "N.F.113年7月22日 23:14" },
+          { src: "img/SL/003.jpg", alt: "Gallery Image 3", description: "「何のために戦うか」P3" },
+          { src: "img/SL/004.jpg", alt: "Gallery Image 4", description: "「何のために戦うか」P4" },
+          { src: "img/SL/005.jpg", alt: "Gallery Image 5", description: "「何のために戦うか」P5" },
+          { src: "img/SL/006.jpg", alt: "Gallery Image 6", description: "「何のために戦うか」P6" },
+          { src: "img/SL/007.jpg", alt: "Gallery Image 7", description: "「何のために戦うか」P7 wip" },
+          { src: "img/SL/008.jpg", alt: "Gallery Image 7", description: "「何のために戦うか」P8 wip" },
+        ];
+
+        const tab2Images = [
+            // 在这里添加图片数据
+        ];
+
+        const doodleImages = [
+
+      ];
+
+
+
         function getArrayByName(name) {
             const map = { 
                 "gallery": galleryImages, 
@@ -1370,6 +1398,9 @@
                 "theme": themeImages, 
                 "r18g": r18gImages, 
                 "mansion": mansionImages,
+                "tab1": tab1Images,
+                "tab2": tab2Images,
+                "doodle": doodleImages,
             };
             return map[name] || [];
         }
