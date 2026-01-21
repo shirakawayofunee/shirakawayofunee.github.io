@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="zh-cn">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
@@ -63,10 +62,11 @@
   <link rel="stylesheet" href="css/manga.css" media="(min-device-width:926px)" />
   <link rel="icon" type="image/x-icon" id="icon">
 </head>
+
 <body id="all">
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W78LXJT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W78LXJT" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div class="pvVideo" onclick="hideKv()"></div>
   <!-- 鼠标样式 -->
@@ -139,21 +139,21 @@
             <div class="div-head-text" data-mouse="mid">序章マップ</div>
             <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
           </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='timeline.html'" id="banner7" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">年表</div>
-            <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(8)" id="banner8" data-mouse="mid">
+          <div class="div-center div-centerpc" onclick="changeBanner(7)" id="banner7" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">情報</div>
             <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
           </div>
-          <div class="div-center div-centerpc" onclick="changeBanner(9)" id="banner9" data-mouse="mid">
+          <div class="div-center div-centerpc" onclick="changeBanner(8)" id="banner8" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">物語</div>
             <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
           </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='../SL26.html'" id="banner10" data-mouse="mid">
+          <div class="div-center div-centerpc" onclick="window.location.href='timeline.html'" data-mouse="mid">
+            <div class="div-head-text" data-mouse="mid">年表</div>
+            <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
+          </div>
+          <div class="div-center div-centerpc" onclick="window.location.href='../SL26.html'" data-mouse="mid">
             <div class="div-head-text" data-mouse="mid">ギャラリー</div> <!-- 日文标题 -->
-            <div class="div-head-text-en" data-mouse="mid">GALLERY</div>   <!-- 英文标题 -->
+            <div class="div-head-text-en" data-mouse="mid">GALLERY</div> <!-- 英文标题 -->
           </div>
         </div>
         <div class="h-con-right-r">
@@ -178,7 +178,7 @@
         <!-- <img src="img/first/3.webp" alt="" class="first-3" data-mouse="small"> -->
         <img src="img/first/slogan.png" alt="" class="first-3" data-mouse="small">
 
-        
+
         <div class="first-zhe" data-mouse="small">
 
         </div>
@@ -243,7 +243,7 @@
             <img src="img/role/false.gif" alt="">
             <img src="#" alt="" id="roleImg">
             <!-- 新增台词例图片 -->
-          <img id="dialogLayerImg" class="dialog-layer-img" src="img/role/default-dialog.png" alt="">
+            <img id="dialogLayerImg" class="dialog-layer-img" src="img/role/default-dialog.png" alt="">
           </div>
         </div>
         <div class="character-right-right animate__animated animate__fadeInRight">
@@ -253,10 +253,14 @@
           <div class="character-right-right-str characterFadeInRight" id="roleStr">
             <!-- 标签页导航 -->
             <div class="character-tabs-nav">
-              <div class="character-tab-btn" data-tab="1" onclick="switchTab(1)"><img src="img/tab/tab1.png" alt="Tab 1"></div>
-              <div class="character-tab-btn" data-tab="2" onclick="switchTab(2)"><img src="img/tab/tab2.png" alt="Tab 2"></div>
-              <div class="character-tab-btn" data-tab="3" onclick="switchTab(3)"><img src="img/tab/tab3.png" alt="Tab 3"></div>
-              <div class="character-tab-btn" data-tab="4" onclick="switchTab(4)"><img src="img/tab/tab4.png" alt="Tab 4"></div>
+              <div class="character-tab-btn" data-tab="1" onclick="switchTab(1)"><img src="img/tab/tab1.png"
+                  alt="Tab 1"></div>
+              <div class="character-tab-btn" data-tab="2" onclick="switchTab(2)"><img src="img/tab/tab2.png"
+                  alt="Tab 2"></div>
+              <div class="character-tab-btn" data-tab="3" onclick="switchTab(3)"><img src="img/tab/tab3.png"
+                  alt="Tab 3"></div>
+              <div class="character-tab-btn" data-tab="4" onclick="switchTab(4)"><img src="img/tab/tab4.png"
+                  alt="Tab 4"></div>
             </div>
             <!-- 标签页内容 -->
             <div class="character-tabs-content">
@@ -285,63 +289,63 @@
       </div>
       <!-- PC关系板 -->
       <div class="swiper-slide pc cyfhboard" data-mouse="small" id="slide3">
-  <div id="board" class="container-fluid">
-    <svg id="lines">
-      <defs>
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-          <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
-        </marker>
-      </defs>
-    </svg>
-    <div class="row justify-content-center g-2">
-      <div class="row justify-content-center g-2">
-        <div class="col-lg-8 col-md-10 col-sm-12">
-          <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar one"></div>
-            <div class="label">L<br>余命三ヶ月</div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar two"></div>
-            <div class="label">Severo、36歳<br /></div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar three"></div>
-            <div class="label">堇、23歳<br /></div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar four"></div>
-            <div class="label">
-              蓟、19歳<br />
+        <div id="board" class="container-fluid">
+          <svg id="lines">
+            <defs>
+              <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
+              </marker>
+            </defs>
+          </svg>
+          <div class="row justify-content-center g-2">
+            <div class="row justify-content-center g-2">
+              <div class="col-lg-8 col-md-10 col-sm-12">
+                <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="avatar one"></div>
+                  <div class="label">L<br>余命三ヶ月</div>
+                </div>
+                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="avatar two"></div>
+                  <div class="label">Severo、36歳<br /></div>
+                </div>
+                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="avatar three"></div>
+                  <div class="label">堇、23歳<br /></div>
+                </div>
+                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="avatar four"></div>
+                  <div class="label">
+                    蓟、19歳<br />
+                  </div>
+                </div>
+                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="avatar five"></div>
+                  <div class="label">X<br>Lの命を延ばせる</div>
+                </div>
+                <div class="node small-node col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="avatar six"></div>
+                  <div class="label">上庭</div>
+                </div>
+                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="avatar seven"></div>
+                  <div class="label">
+                    「牧者」<br>
+                    Lの命を延ばせる<br>
+                    自分を深淵に突き落としたこの人、長い年月にわたり自分を絡めとったこの者。
+                  </div>
+                </div>
+                <div class="node small-node col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="avatar eight"></div>
+                  <div class="label">福音地</div>
+                </div>
+                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
+                  <div class="avatar nine"></div>
+                  <div class="label">Shp-13<br>Lの命を延ばせる</div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar five"></div>
-            <div class="label">X<br>Lの命を延ばせる</div>
-          </div>
-          <div class="node small-node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar six"></div>
-            <div class="label">上庭</div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar seven"></div>
-            <div class="label">
-              「牧者」<br>
-              Lの命を延ばせる<br>
-              自分を深淵に突き落としたこの人、長い年月にわたり自分を絡めとったこの者。
-            </div>
-          </div>
-          <div class="node small-node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar eight"></div>
-            <div class="label">福音地</div>
-          </div>
-          <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-            <div class="avatar nine"></div>
-            <div class="label">Shp-13<br>Lの命を延ばせる</div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
       </div>
 
       <!-- PC关系补足 -->
@@ -351,23 +355,23 @@
           <div class="partwan-left">
             <ul class="wan-tabs">
               <li class="wan-tab active" data-index="0">
-                <img src="img/wan/1c.png"  class="img-bright" alt="">  <!-- 高亮图 -->
-                <img src="img/wan/1n.png"  class="img-gray"   alt="">  <!-- 置灰图 -->
+                <img src="img/wan/1c.png" class="img-bright" alt=""> <!-- 高亮图 -->
+                <img src="img/wan/1n.png" class="img-gray" alt=""> <!-- 置灰图 -->
               </li>
               <li class="wan-tab" data-index="1">
-                <img src="img/wan/2c.png"  class="img-bright" alt="">
-                <img src="img/wan/2n.png"  class="img-gray"   alt="">
+                <img src="img/wan/2c.png" class="img-bright" alt="">
+                <img src="img/wan/2n.png" class="img-gray" alt="">
               </li>
               <li class="wan-tab" data-index="2">
                 <img src="img/wan/3c.png" class="img-bright" alt="">
-                <img src="img/wan/3n.png" class="img-gray"   alt="">
+                <img src="img/wan/3n.png" class="img-gray" alt="">
               </li>
               <!-- 以后加第4个、第5个直接复制上面这整个 <li>...</li> 即可 -->
             </ul>
           </div>
           <!-- 右侧：所有内容区块（默认显示第一个） -->
           <div class="partwan-right">
-          
+
             <!-- ==================== 第 1 个区块：关系数值分析 (包含新移植的图表) ==================== -->
             <div class="wan-content relationship active" id="content-0">
               <div class="add_browser_window">
@@ -383,36 +387,36 @@
                   </div>
                   <div class="add_window_actions"><span>+</span></div>
                 </div>
-          
+
                 <!-- 滚动内容区 -->
                 <!-- 滚动内容区 -->
                 <div class="add_content_scroll_area">
-          
+
                   <!-- 这是一个 Flex 容器，横向排列 5 个列 -->
                   <div class="add_waterfall_container manual-layout">
-          
+
                     <!-- ==================== 第 1 列 ==================== -->
                     <div class="add_column">
                       <!-- 卡片 1.1: 介绍 -->
                       <div class="add_card">
                         <h2>工事中</h2>
                         <p>工事中</p>
-          
+
                       </div>
                       <hr class="add_divider">
                       <!-- 卡片 1.2: 那个超长的双向数值条 (Metrics) -->
-      <!-- [Card] 关系数值分析 (由 JS 自动生成) -->
-      <div class="add_card metric-card">
-        <!-- 这里可以写你的标题，如果不需要可以删掉 -->
-        <!-- <h3>Relationship Metrics</h3> -->
-        
-        <!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
-        <div id="metrics-container-1" class="metric-wrapper"></div>
-        
-        <span class="add_date">S (Left) vs L (Right)</span>
-      </div>
+                      <!-- [Card] 关系数值分析 (由 JS 自动生成) -->
+                      <div class="add_card metric-card">
+                        <!-- 这里可以写你的标题，如果不需要可以删掉 -->
+                        <!-- <h3>Relationship Metrics</h3> -->
+
+                        <!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
+                        <div id="metrics-container-1" class="metric-wrapper"></div>
+
+                        <span class="add_date">S (Left) vs L (Right)</span>
+                      </div>
                     </div>
-          
+
                     <!-- ==================== 第 2 列 ==================== -->
                     <div class="add_column">
                       <!-- 卡片 2.1: S口调 -->
@@ -430,9 +434,9 @@
                           け止め、その傷を<span>癒</span>し、そして本当に進むべき道を示してくれる。」</p>
                       </div>
                     </div>
-          
+
                     <!-- ==================== 第 3 列 ==================== -->
-          
+
                     <div class="add_column">
                       <!-- 卡片 4.1: 技术文章填充 -->
                       <div class="add_card">
@@ -456,7 +460,7 @@
                         <p>ようやく十分な力を得た二人は、Lが組織の本質を見抜き、皆を率いて新しい未来を約束する中で、一緒にその場を離れた。
                           心の底からLを最も大切な存在と認めていたSは、迷うことなくLに従い、共にそのじゃきょう組織を叛離することを選んだ。</p>
                         <span class="add_date">N.F.93-N.F.103</span>
-          
+
                         <hr class="add_divider">
                         <!-- 卡片 3.3: 时间线3 -->
                         <h3>三番目の十年</h3>
@@ -464,12 +468,12 @@
                         <span class="add_date">N.F.103-N.F.113</span>
                       </div>
                     </div>
-          
+
                   </div>
                 </div>
               </div>
             </div>
-          
+
             <!-- ==================== 第 2 个区块 (保持不变) ==================== -->
             <div class="wan-content relationship" id="content-1">
               <div class="add_browser_window">
@@ -485,36 +489,36 @@
                   </div>
                   <div class="add_window_actions"><span>+</span></div>
                 </div>
-          
+
                 <!-- 滚动内容区 -->
                 <!-- 滚动内容区 -->
                 <div class="add_content_scroll_area">
-          
+
                   <!-- 这是一个 Flex 容器，横向排列 5 个列 -->
                   <div class="add_waterfall_container manual-layout">
-          
+
                     <!-- ==================== 第 1 列 ==================== -->
                     <div class="add_column">
                       <!-- 卡片 1.1: 介绍 -->
                       <div class="add_card">
                         <h2>激しく燃え上がる運命のロマンス関係</h2>
                         <p>正邪曖昧なキャラ×2　黒幕×2　アンチヒーロー×2  </p>
-          
+
                       </div>
                       <hr class="add_divider">
                       <!-- 卡片 1.2: 那个超长的双向数值条 (Metrics) -->
-      <!-- [Card] 关系数值分析 (由 JS 自动生成) -->
-      <div class="add_card metric-card">
-        <!-- 这里可以写你的标题，如果不需要可以删掉 -->
-        <!-- <h3>Relationship Metrics</h3> -->
-        
-        <!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
-        <div id="metrics-container-2" class="metric-wrapper"></div>
-        
-        <span class="add_date">X (Left) vs L (Right)</span>
-      </div>
+                      <!-- [Card] 关系数值分析 (由 JS 自动生成) -->
+                      <div class="add_card metric-card">
+                        <!-- 这里可以写你的标题，如果不需要可以删掉 -->
+                        <!-- <h3>Relationship Metrics</h3> -->
+
+                        <!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
+                        <div id="metrics-container-2" class="metric-wrapper"></div>
+
+                        <span class="add_date">X (Left) vs L (Right)</span>
+                      </div>
                     </div>
-          
+
                     <!-- ==================== 第 2 列 ==================== -->
                     <div class="add_column">
                       <!-- 卡片 2.1: S口调 -->
@@ -525,21 +529,21 @@
                         <hr class="add_divider">
                         <p>「これが君が命と引き換えに得た力なんだ。流れるすべての未来を犠牲にして、
                           絶対的な強さと自由を手に入れたんだ。ここまで辿り着けるのは君だけだ。
-        本当に<span>見事</span>だ……君なら勝てると分かっていたよ。」</p>
-        <hr class="add_divider">
+                          本当に<span>見事</span>だ……君なら勝てると分かっていたよ。」</p>
+                        <hr class="add_divider">
                         <p>「別の可能性を見たくない？このバカげた流れを拒絶したくない？」</p>
                         <hr class="add_divider">
                         <p>「君が受け入れないのはわかってた。君たちの感情はあまりにも熱烈で、裸のまま輝いてる。
                           君の命が尽きてなかったら、もっと穏やかな方案を選びたかった。でも、その時間はもうない。
                           だから、思う存分抗って……私は全部理解している、全部受け入れるつもりだ。
                           私が触れた花は枯れる運命でも、<span>君を生かさなきゃいけない。</span>」</p>
-                          <hr class="add_divider">
-                        
+                        <hr class="add_divider">
+
                       </div>
                     </div>
-          
+
                     <!-- ==================== 第 3 列 ==================== -->
-          
+
                     <div class="add_column">
                       <!-- 卡片 4.1: 技术文章填充 -->
                       <div class="add_card">
@@ -562,33 +566,33 @@
                         <h3>幕開け</h3>
                         <p>お互いに探り合う知恵比べの中で、Xはずっと曖昧な態度を崩さず、Lの心を煽り立てようとしてくる。<br>
                           一方Lは昔から、こういう自分のことよくわかってる風の偽善的な奴が大嫌いだ。<br>
-                          
+
                           二人はただ自分の計画を押し進みたいだけ。LにとってXは過去最大級に凶悪で厄介な対戦相手で、XにとってLは計画を委ねる理想の器。</p>
                         <span class="add_date">N.F.113/07</span>
-          
+
                         <hr class="add_divider">
                         <!-- 卡片 3.3: 时间线3 -->
                         <h3>全生還後</h3>
                         <p>LはXの陰謀を粉砕した。その過程で、二人は互いに本気の力を出し切り、XはLに対して本心をさらけ出した。欣赏も、利用も、傷つけも、愛も、すべてが真実だった。<br>
-      
+
                           LとXは似たような出発点と境遇を持ち、同じ問題に直面しながらも正反対の答えを選んだ存在。互いにとって、人生で最も欠かせない一片のピースだ。<br>
-                          
+
                           Xは心からLの人柄を認め、Lと弟子たちの「絆」を理解した。だからこそ弟子たちに手加減した。
                           その僅かな優しさが、LにXの努力を認めさせた瞬間だった。それ以来、LはXを初めて本当の同格の相手として見据えるようになった。<br>
-                          
+
                           そしてLはXのために、ある封印を破壊し、Xが最も大切にしていたものを取り戻させた。<br>
-                          
+
                           二人は複雑な協力関係に変わり、共に結末を塗り替える。</p>
                         <span class="add_date">N.F.113</span>
                       </div>
                     </div>
-          
+
                   </div>
                 </div>
               </div>
-          
+
             </div>
-          
+
             <!-- ==================== 第 3 个区块 (保持不变) ==================== -->
             <div class="wan-content relationship" id="content-2">
               <div class="add_browser_window">
@@ -604,36 +608,36 @@
                   </div>
                   <div class="add_window_actions"><span>+</span></div>
                 </div>
-          
+
                 <!-- 滚动内容区 -->
                 <!-- 滚动内容区 -->
                 <div class="add_content_scroll_area">
-          
+
                   <!-- 这是一个 Flex 容器，横向排列 5 个列 -->
                   <div class="add_waterfall_container manual-layout">
-          
+
                     <!-- ==================== 第 1 列 ==================== -->
                     <div class="add_column">
                       <!-- 卡片 1.1: 介绍 -->
                       <div class="add_card">
                         <h2>縁の下の力持ち（L）と、表舞台で輝く英雄。</h2>
                         <p>工事中</p>
-          
+
                       </div>
                       <hr class="add_divider">
                       <!-- 卡片 1.2: 那个超长的双向数值条 (Metrics) -->
-      <!-- [Card] 关系数值分析 (由 JS 自动生成) -->
-      <div class="add_card metric-card">
-        <!-- 这里可以写你的标题，如果不需要可以删掉 -->
-        <!-- <h3>Relationship Metrics</h3> -->
-        
-        <!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
-        <div id="metrics-container-3" class="metric-wrapper"></div>
-        
-        <span class="add_date">L (Left) vs N (Right)</span>
-      </div>
+                      <!-- [Card] 关系数值分析 (由 JS 自动生成) -->
+                      <div class="add_card metric-card">
+                        <!-- 这里可以写你的标题，如果不需要可以删掉 -->
+                        <!-- <h3>Relationship Metrics</h3> -->
+
+                        <!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
+                        <div id="metrics-container-3" class="metric-wrapper"></div>
+
+                        <span class="add_date">L (Left) vs N (Right)</span>
+                      </div>
                     </div>
-          
+
                     <!-- ==================== 第 2 列 ==================== -->
                     <div class="add_column">
                       <!-- 卡片 2.1: S口调 -->
@@ -645,9 +649,9 @@
                         <p>工事中</p>
                       </div>
                     </div>
-          
+
                     <!-- ==================== 第 3 列 ==================== -->
-          
+
                     <div class="add_column">
                       <!-- 卡片 4.1: 技术文章填充 -->
                       <div class="add_card">
@@ -673,12 +677,12 @@
                         <p></p>
                       </div>
                     </div>
-          
+
                   </div>
                 </div>
               </div>
             </div>
-          
+
           </div>
         </div>
       </div>
@@ -695,7 +699,8 @@
                     </div> -->
               <div class="swiper-slide backstory-left-list" data-mouse="small">
                 <img src="img/backstory/p1.png" alt="" data-mouse="big" data-img="./img/backstory/p1c.png"
-                  class="backstory-img slide-inner" onclick="console.log('Clicked p1d.png'); paperShowBig(this,'p1d.png')">
+                  class="backstory-img slide-inner"
+                  onclick="console.log('Clicked p1d.png'); paperShowBig(this,'p1d.png')">
                 <!-- <img src="img/backstory/big.png" alt="" class="backstory-left-list-big"> -->
               </div>
               <div class="swiper-slide backstory-left-list">
@@ -742,7 +747,7 @@
                   class="backstory-img slide-inner" onclick="paperShowBig(this,'p10d.png')">
               </div>
             </div>
-      
+
             <!-- <div class="swiper-pagination"></div> -->
           </div>
         </div>
@@ -806,100 +811,100 @@
               <img data-mouse="mid" src="img/backstory/next.png" alt="" style="margin-left: 1vw;">
             </div>
           </div>
-      
+
         </div>
       </div>
-<!-- 在 allSwiper 的 swiper-wrapper 中更新 slide9 -->
-<div class="swiper-slide pc chapter-carousel" data-mouse="small" id="slide9">
-  <div class="swiper chapterSwiper" id="chapterSwiper">
-    <div class="swiper-wrapper">
-      <!-- 大章节1（6个小章节） -->
-      <div class="swiper-slide chapter-slide" data-mouse="small">
-        <img src="img/flower/bg1.png" alt="" class="chapter-bg" data-mouse="small">
-        <div class="chapter-marker chapter-1-1" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter1-1')"></div>
-        </div>
-        <div class="chapter-marker chapter-1-2" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter1-2')"></div>
-        </div>
-        <div class="chapter-marker chapter-1-3" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter1-3')"></div>
-        </div>
-        <div class="chapter-marker chapter-1-4" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter1-4')"></div>
-        </div>
-        <div class="chapter-marker chapter-1-5" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter1-5')"></div>
+      <!-- 在 allSwiper 的 swiper-wrapper 中更新 slide9 -->
+      <div class="swiper-slide pc chapter-carousel" data-mouse="small" id="slide9">
+        <div class="swiper chapterSwiper" id="chapterSwiper">
+          <div class="swiper-wrapper">
+            <!-- 大章节1（6个小章节） -->
+            <div class="swiper-slide chapter-slide" data-mouse="small">
+              <img src="img/flower/bg1.png" alt="" class="chapter-bg" data-mouse="small">
+              <div class="chapter-marker chapter-1-1" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter1-1')"></div>
+              </div>
+              <div class="chapter-marker chapter-1-2" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter1-2')"></div>
+              </div>
+              <div class="chapter-marker chapter-1-3" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter1-3')"></div>
+              </div>
+              <div class="chapter-marker chapter-1-4" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter1-4')"></div>
+              </div>
+              <div class="chapter-marker chapter-1-5" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter1-5')"></div>
+              </div>
+            </div>
+            <!-- 大章节2（6个小章节） -->
+            <div class="swiper-slide chapter-slide" data-mouse="small">
+              <img src="img/flower/bg2.png" alt="" class="chapter-bg" data-mouse="small">
+              <div class="chapter-marker chapter-2-1" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter2-1')"></div>
+              </div>
+              <div class="chapter-marker chapter-2-2" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter2-2')"></div>
+              </div>
+              <div class="chapter-marker chapter-2-3" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter2-3')"></div>
+              </div>
+              <div class="chapter-marker chapter-2-4" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter2-4')"></div>
+              </div>
+              <div class="chapter-marker chapter-2-5" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter2-5')"></div>
+              </div>
+              <div class="chapter-marker chapter-2-6" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter2-6')"></div>
+              </div>
+            </div>
+            <!-- 大章节3（6个小章节） -->
+            <div class="swiper-slide chapter-slide" data-mouse="small">
+              <img src="img/flower/bg3.png" alt="" class="chapter-bg" data-mouse="small">
+              <div class="chapter-marker chapter-3-1" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter3-1')"></div>
+              </div>
+              <div class="chapter-marker chapter-3-2" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter3-2')"></div>
+              </div>
+              <div class="chapter-marker chapter-3-3" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter3-3')"></div>
+              </div>
+              <div class="chapter-marker chapter-3-4" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter3-4')"></div>
+              </div>
+              <div class="chapter-marker chapter-3-5" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter3-5')"></div>
+              </div>
+            </div>
+            <!-- 大章节4（4个小章节） -->
+            <div class="swiper-slide chapter-slide" data-mouse="small">
+              <img src="img/flower/bg4.png" alt="" class="chapter-bg" data-mouse="small">
+              <div class="chapter-marker chapter-4-1" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter4-1')"></div>
+              </div>
+              <div class="chapter-marker chapter-4-2" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter4-2')"></div>
+              </div>
+              <div class="chapter-marker chapter-4-3" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter4-3')"></div>
+              </div>
+              <div class="chapter-marker chapter-4-4" data-mouse="mid">
+                <div class="chapter-event-bg" onclick="openEventmask('chapter4-4')"></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev" data-mouse="mid">
+            <img src="img/flower/btn_flower23_bag_next.png" alt="Previous" class="swiper-button-img">
+          </div>
+          <div class="swiper-button-next" data-mouse="mid">
+            <img src="img/flower/btn_flower23_bag_next.png" alt="Next" class="swiper-button-img">
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-pause-play" data-mouse="mid">Pause</div>
         </div>
       </div>
-      <!-- 大章节2（6个小章节） -->
-      <div class="swiper-slide chapter-slide" data-mouse="small">
-        <img src="img/flower/bg2.png" alt="" class="chapter-bg" data-mouse="small">
-        <div class="chapter-marker chapter-2-1" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter2-1')"></div>
-        </div>
-        <div class="chapter-marker chapter-2-2" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter2-2')"></div>
-        </div>
-        <div class="chapter-marker chapter-2-3" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter2-3')"></div>
-        </div>
-        <div class="chapter-marker chapter-2-4" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter2-4')"></div>
-        </div>
-        <div class="chapter-marker chapter-2-5" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter2-5')"></div>
-        </div>
-        <div class="chapter-marker chapter-2-6" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter2-6')"></div>
-        </div>
-      </div>
-      <!-- 大章节3（6个小章节） -->
-      <div class="swiper-slide chapter-slide" data-mouse="small">
-        <img src="img/flower/bg3.png" alt="" class="chapter-bg" data-mouse="small">
-        <div class="chapter-marker chapter-3-1" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter3-1')"></div>
-        </div>
-        <div class="chapter-marker chapter-3-2" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter3-2')"></div>
-        </div>
-        <div class="chapter-marker chapter-3-3" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter3-3')"></div>
-        </div>
-        <div class="chapter-marker chapter-3-4" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter3-4')"></div>
-        </div>
-        <div class="chapter-marker chapter-3-5" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter3-5')"></div>
-        </div>
-      </div>
-      <!-- 大章节4（4个小章节） -->
-      <div class="swiper-slide chapter-slide" data-mouse="small">
-        <img src="img/flower/bg4.png" alt="" class="chapter-bg" data-mouse="small">
-        <div class="chapter-marker chapter-4-1" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter4-1')"></div>
-        </div>
-        <div class="chapter-marker chapter-4-2" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter4-2')"></div>
-        </div>
-        <div class="chapter-marker chapter-4-3" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter4-3')"></div>
-        </div>
-        <div class="chapter-marker chapter-4-4" data-mouse="mid">
-          <div class="chapter-event-bg" onclick="openEventmask('chapter4-4')"></div>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-button-prev" data-mouse="mid">
-      <img src="img/flower/btn_flower23_bag_next.png" alt="Previous" class="swiper-button-img">
-    </div>
-    <div class="swiper-button-next" data-mouse="mid">
-      <img src="img/flower/btn_flower23_bag_next.png" alt="Next" class="swiper-button-img">
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-pause-play" data-mouse="mid">Pause</div>
-  </div>
-</div>
 
       <!-- pc序章地图 -->
       <div class="swiper-slide pc map" data-mouse="small" id="slide5">
@@ -919,10 +924,10 @@
         <div class="map-marker map-br-006" data-mouse="mid">
           <div class="map-event-bg" onclick="openEventmask('chapter0-6')"></div>
         </div>
-      
+
         <!-- style="display: none;" -->
         <div class="map-4 animate__animated animate__fadeIn" data-mouse="small" style="display: none;">
-      
+
           <div class="map-4-pc" data-mouse="mid">
             <a href="#" download target="_blank" data-mouse="mid" id="mumuPcDownload">
               <img src="img/map/pc3.png" alt="" class="map-4-pc-main">
@@ -941,17 +946,17 @@
             <div class="map-4-2-con">
               <a href="#" id="mumuDownload" download target="_blank"><img src="img/map/mumu.png" alt="" data-type="mumu"
                   onclick="uploadShuShu()"></a>
-              <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank"><img src="img/map/taptap.png"
-                  alt=""></a>
+              <a href="https://l.taptap.cn/ABRmaGpd?channel=rep-rep_agdwqnggohs" target="_blank"><img
+                  src="img/map/taptap.png" alt=""></a>
             </div>
-      
+
           </div>
           <div class="map-4-3" data-mouse="mid" onclick="playFirst(1)">
             <img src="img/map/play.webp" alt="" class="map-4-3-bg">
           </div>
         </div>
-      
-      
+
+
         <div class="map-zhe" data-mouse="small"></div>
       </div>
 
@@ -996,213 +1001,213 @@
             <div class="intelligence-modal-animated-div"></div>
           </div>
         </div>
-      
-      </div>
-      
-<!-- 漫画阅读器区块 (双页RTL版 + 章节导航) -->
-<div class="swiper-slide pc manga-reader-block" data-mouse="small" id="slideManga">
-    
-  <!-- 1. 背景与主容器 -->
-  <div class="manga-container animate__animated animate__fadeIn">
 
-      <!-- 顶部标题栏 -->
-      <div class="manga-header">
-          <div class="manga-title">
+      </div>
+
+      <!-- 漫画阅读器区块 (双页RTL版 + 章节导航) -->
+      <div class="swiper-slide pc manga-reader-block" data-mouse="small" id="slideManga">
+
+        <!-- 1. 背景与主容器 -->
+        <div class="manga-container animate__animated animate__fadeIn">
+
+          <!-- 顶部标题栏 -->
+          <div class="manga-header">
+            <div class="manga-title">
               <span class="chapter-num" id="headerChapterNum">CHAPTER 00</span>
               <span class="chapter-name" id="headerChapterTitle">「何のために戦うか」</span>
-          </div>
-          <div class="manga-pagination-text">
+            </div>
+            <div class="manga-pagination-text">
               <span id="mangaCurrent">1</span> / <span id="mangaTotal">--</span>
+            </div>
           </div>
-      </div>
 
-      <!-- 2. 漫画 Swiper 核心 (增加 dir="rtl") -->
-      <!-- dir="rtl" 让 Slide 1 出现在右侧，符合漫画阅读习惯 -->
-      <div class="swiper mangaSwiper" dir="rtl">
-          <div class="swiper-wrapper" id="mangaWrapper">
+          <!-- 2. 漫画 Swiper 核心 (增加 dir="rtl") -->
+          <!-- dir="rtl" 让 Slide 1 出现在右侧，符合漫画阅读习惯 -->
+          <div class="swiper mangaSwiper" dir="rtl">
+            <div class="swiper-wrapper" id="mangaWrapper">
               <!-- 图片将由 JS 动态插入，这里留空或放 loading -->
+            </div>
+
+            <!-- 翻页按钮 (Swiper原生) -->
+            <!-- 注意：在 RTL 模式下，Next 会指向左边，Prev 指向右边，符合逻辑 -->
+            <div class="swiper-button-next manga-btn-next" data-mouse="mid"></div>
+            <div class="swiper-button-prev manga-btn-prev" data-mouse="mid"></div>
           </div>
-          
-          <!-- 翻页按钮 (Swiper原生) -->
-          <!-- 注意：在 RTL 模式下，Next 会指向左边，Prev 指向右边，符合逻辑 -->
-          <div class="swiper-button-next manga-btn-next" data-mouse="mid"></div>
-          <div class="swiper-button-prev manga-btn-prev" data-mouse="mid"></div>
-      </div>
 
-      <!-- 3. 右侧悬浮开关 (复用你的结构) -->
-      <div class="manga-nav-trigger z-index-3">
-           <!-- 点击触发 toggleMangaNav() -->
-          <img src="img/timeline2/icon_moon_active.png" class="toggle-btn" onclick="openMangaNav()" data-mouse="mid">
-      </div>
-
-<!-- 4. 新版时间轴导航面板 -->
-<div class="manga-nav-panel" id="mangaNavPanel" style="display: none;" onclick="closeMangaNav(event)">
-    
-  <!-- 1. 虚线背景 (保持原样) -->
-  <div class="nav-dashed-bg"></div>
-
-  <!-- 2. 左侧组合：红色大图 + DATE条 -->
-  <div class="nav-date-group">
-      <!-- 红色大图 (left:0) -->
-      <img src="img/timeline2/left_big_graphic.png" class="nav-big-red-bg" alt="">
-      <!-- DATE 条 (紧接大图) -->
-      <img src="img/timeline2/date_bar.png" class="nav-date-bar" alt="">
-  </div>
-
-  <!-- 3. 装饰元素：子弹 + 烟火 -->
-  <div class="nav-decor-group">
-      <img src="img/timeline2/bullet.png" class="decor-bullet" alt="">
-      <img src="img/timeline2/spark.png" class="decor-spark" alt="">
-  </div>
-
-  <!-- 4. 核心节点容器 -->
-  <div class="nav-nodes-container">
-      
-      <!-- 节点 1: 7/19 -->
-      <div class="nav-node-item">
-        <!-- 上半部：太阳 + 线 -->
-        <div class="node-part-top" onclick="switchChapter(1)">
-          <!-- 点击切换到第一章白天 -->
-          <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
-          <img src="img/timeline2/line_connect.png" class="node-line line-top">
-          <!-- 新增：高亮指示器 (默认隐藏) -->
-          <div class="active-indicator">
-            <div class="tl-arrow-indicator"></div>
-            <span class="tl-label-current">現在の日付</span>
+          <!-- 3. 右侧悬浮开关 (复用你的结构) -->
+          <div class="manga-nav-trigger z-index-3">
+            <!-- 点击触发 toggleMangaNav() -->
+            <img src="img/timeline2/icon_moon_active.png" class="toggle-btn" onclick="openMangaNav()" data-mouse="mid">
           </div>
+
+          <!-- 4. 新版时间轴导航面板 -->
+          <div class="manga-nav-panel" id="mangaNavPanel" style="display: none;" onclick="closeMangaNav(event)">
+
+            <!-- 1. 虚线背景 (保持原样) -->
+            <div class="nav-dashed-bg"></div>
+
+            <!-- 2. 左侧组合：红色大图 + DATE条 -->
+            <div class="nav-date-group">
+              <!-- 红色大图 (left:0) -->
+              <img src="img/timeline2/left_big_graphic.png" class="nav-big-red-bg" alt="">
+              <!-- DATE 条 (紧接大图) -->
+              <img src="img/timeline2/date_bar.png" class="nav-date-bar" alt="">
+            </div>
+
+            <!-- 3. 装饰元素：子弹 + 烟火 -->
+            <div class="nav-decor-group">
+              <img src="img/timeline2/bullet.png" class="decor-bullet" alt="">
+              <img src="img/timeline2/spark.png" class="decor-spark" alt="">
+            </div>
+
+            <!-- 4. 核心节点容器 -->
+            <div class="nav-nodes-container">
+
+              <!-- 节点 1: 7/19 -->
+              <div class="nav-node-item">
+                <!-- 上半部：太阳 + 线 -->
+                <div class="node-part-top" onclick="switchChapter(1)">
+                  <!-- 点击切换到第一章白天 -->
+                  <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
+                  <img src="img/timeline2/line_connect.png" class="node-line line-top">
+                  <!-- 新增：高亮指示器 (默认隐藏) -->
+                  <div class="active-indicator">
+                    <div class="tl-arrow-indicator"></div>
+                    <span class="tl-label-current">現在の日付</span>
+                  </div>
+                </div>
+
+                <!-- 中间：数字图片 + 日期文字 -->
+                <div class="node-part-center">
+                  <img src="img/timeline2/num_01.png" class="node-num"> <!-- 00 -->
+                  <span class="node-date-text">7/19</span>
+                </div>
+
+                <!-- 下半部：线 + 月亮 -->
+                <div class="node-part-bottom" onclick="switchChapter(2, 5, 'moon')">
+                  <!-- 点击切换到第一章晚上 -->
+                  <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
+                  <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
+                  <!-- 新增：高亮指示器 (默认隐藏) -->
+                  <div class="active-indicator">
+                    <div class="tl-arrow-indicator"></div>
+                    <span class="tl-label-current">現在の日付</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 节点 2: 7/20 -->
+              <div class="nav-node-item">
+                <div class="node-part-top" onclick="switchChapter(3)">
+                  <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
+                  <img src="img/timeline2/line_connect.png" class="node-line line-top">
+                  <!-- 新增：高亮指示器 (默认隐藏) -->
+                  <div class="active-indicator">
+                    <div class="tl-arrow-indicator"></div>
+                    <span class="tl-label-current">現在の日付</span>
+                  </div>
+                </div>
+                <div class="node-part-center">
+                  <img src="img/timeline2/num_02.png" class="node-num">
+                  <span class="node-date-text">7/20</span>
+                </div>
+                <div class="node-part-bottom" onclick="switchChapter(4)">
+                  <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
+                  <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
+                  <!-- 新增：高亮指示器 (默认隐藏) -->
+                  <div class="active-indicator">
+                    <div class="tl-arrow-indicator"></div>
+                    <span class="tl-label-current">現在の日付</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 节点 3: 7/21 -->
+              <div class="nav-node-item">
+                <div class="node-part-top" onclick="switchChapter(5)">
+                  <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
+                  <img src="img/timeline2/line_connect.png" class="node-line line-top">
+                  <!-- 新增：高亮指示器 (默认隐藏) -->
+                  <div class="active-indicator">
+                    <div class="tl-arrow-indicator"></div>
+                    <span class="tl-label-current">現在の日付</span>
+                  </div>
+                </div>
+                <div class="node-part-center">
+                  <img src="img/timeline2/num_03.png" class="node-num">
+                  <span class="node-date-text">7/21</span>
+                </div>
+                <div class="node-part-bottom" onclick="switchChapter(6)">
+                  <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
+                  <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
+                  <!-- 新增：高亮指示器 (默认隐藏) -->
+                  <div class="active-indicator">
+                    <div class="tl-arrow-indicator"></div>
+                    <span class="tl-label-current">現在の日付</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 节点 4: 7/22 -->
+              <div class="nav-node-item">
+                <div class="node-part-top" onclick="switchChapter(7)">
+                  <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
+                  <img src="img/timeline2/line_connect.png" class="node-line line-top">
+                  <!-- 新增：高亮指示器 (默认隐藏) -->
+                  <div class="active-indicator">
+                    <div class="tl-arrow-indicator"></div>
+                    <span class="tl-label-current">現在の日付</span>
+                  </div>
+                </div>
+                <div class="node-part-center">
+                  <img src="img/timeline2/num_04.png" class="node-num">
+                  <span class="node-date-text">7/22</span>
+                </div>
+                <div class="node-part-bottom" onclick="switchChapter(8)">
+                  <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
+                  <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
+                  <!-- 新增：高亮指示器 (默认隐藏) -->
+                  <div class="active-indicator">
+                    <div class="tl-arrow-indicator"></div>
+                    <span class="tl-label-current">現在の日付</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 节点 5: 7/23 -->
+              <div class="nav-node-item">
+                <div class="node-part-top" onclick="switchChapter(14, 5, 'sun')">
+                  <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
+                  <img src="img/timeline2/line_connect.png" class="node-line line-top">
+                  <!-- 新增：高亮指示器 (默认隐藏) -->
+                  <div class="active-indicator">
+                    <div class="tl-arrow-indicator"></div>
+                    <span class="tl-label-current">現在の日付</span>
+                  </div>
+                </div>
+                <div class="node-part-center">
+                  <img src="img/timeline2/num_05.png" class="node-num">
+                  <span class="node-date-text">7/23</span>
+                </div>
+                <div class="node-part-bottom" onclick="switchChapter(1, 5, 'moon')">
+                  <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
+                  <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
+                  <!-- 新增：高亮指示器 (默认隐藏) -->
+                  <div class="active-indicator">
+                    <div class="tl-arrow-indicator"></div>
+                    <span class="tl-label-current">現在の日付</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 关闭按钮 -->
+            <div class="manga-nav-close-btn" onclick="closeMangaNav()">×</div>
+          </div>
+
         </div>
-          
-          <!-- 中间：数字图片 + 日期文字 -->
-          <div class="node-part-center">
-              <img src="img/timeline2/num_01.png" class="node-num"> <!-- 00 -->
-              <span class="node-date-text">7/19</span>
-          </div>
-
-          <!-- 下半部：线 + 月亮 -->
-          <div class="node-part-bottom"  onclick="switchChapter(2, 5, 'moon')">
-            <!-- 点击切换到第一章晚上 -->
-            <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
-            <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
-            <!-- 新增：高亮指示器 (默认隐藏) -->
-            <div class="active-indicator">
-              <div class="tl-arrow-indicator"></div>
-              <span class="tl-label-current">現在の日付</span>
-            </div>
-          </div>
       </div>
-
-      <!-- 节点 2: 7/20 -->
-      <div class="nav-node-item">
-          <div class="node-part-top" onclick="switchChapter(3)">
-              <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
-              <img src="img/timeline2/line_connect.png" class="node-line line-top">
-                        <!-- 新增：高亮指示器 (默认隐藏) -->
-          <div class="active-indicator">
-            <div class="tl-arrow-indicator"></div>
-            <span class="tl-label-current">現在の日付</span>
-          </div>
-          </div>
-          <div class="node-part-center">
-              <img src="img/timeline2/num_02.png" class="node-num">
-              <span class="node-date-text">7/20</span>
-          </div>
-          <div class="node-part-bottom" onclick="switchChapter(4)">
-              <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
-              <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
-                          <!-- 新增：高亮指示器 (默认隐藏) -->
-            <div class="active-indicator">
-              <div class="tl-arrow-indicator"></div>
-              <span class="tl-label-current">現在の日付</span>
-            </div>
-          </div>
-      </div>
-
-      <!-- 节点 3: 7/21 -->
-      <div class="nav-node-item">
-          <div class="node-part-top" onclick="switchChapter(5)">
-              <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
-              <img src="img/timeline2/line_connect.png" class="node-line line-top">
-                        <!-- 新增：高亮指示器 (默认隐藏) -->
-          <div class="active-indicator">
-            <div class="tl-arrow-indicator"></div>
-            <span class="tl-label-current">現在の日付</span>
-          </div>
-          </div>
-          <div class="node-part-center">
-              <img src="img/timeline2/num_03.png" class="node-num">
-              <span class="node-date-text">7/21</span>
-          </div>
-          <div class="node-part-bottom" onclick="switchChapter(6)">
-              <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
-              <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
-                          <!-- 新增：高亮指示器 (默认隐藏) -->
-            <div class="active-indicator">
-              <div class="tl-arrow-indicator"></div>
-              <span class="tl-label-current">現在の日付</span>
-            </div>
-          </div>
-      </div>
-
-      <!-- 节点 4: 7/22 -->
-      <div class="nav-node-item">
-          <div class="node-part-top" onclick="switchChapter(7)">
-              <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
-              <img src="img/timeline2/line_connect.png" class="node-line line-top">
-                        <!-- 新增：高亮指示器 (默认隐藏) -->
-          <div class="active-indicator">
-            <div class="tl-arrow-indicator"></div>
-            <span class="tl-label-current">現在の日付</span>
-          </div>
-          </div>
-          <div class="node-part-center">
-              <img src="img/timeline2/num_04.png" class="node-num">
-              <span class="node-date-text">7/22</span>
-          </div>
-          <div class="node-part-bottom" onclick="switchChapter(8)">
-              <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
-              <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
-                          <!-- 新增：高亮指示器 (默认隐藏) -->
-            <div class="active-indicator">
-              <div class="tl-arrow-indicator"></div>
-              <span class="tl-label-current">現在の日付</span>
-            </div>
-          </div>
-      </div>
-
-       <!-- 节点 5: 7/23 -->
-       <div class="nav-node-item">
-          <div class="node-part-top" onclick="switchChapter(14, 5, 'sun')">
-              <img src="img/timeline2/icon_sun.png" class="node-icon icon-sun">
-              <img src="img/timeline2/line_connect.png" class="node-line line-top">
-                        <!-- 新增：高亮指示器 (默认隐藏) -->
-          <div class="active-indicator">
-            <div class="tl-arrow-indicator"></div>
-            <span class="tl-label-current">現在の日付</span>
-          </div>
-          </div>
-          <div class="node-part-center">
-              <img src="img/timeline2/num_05.png" class="node-num">
-              <span class="node-date-text">7/23</span>
-          </div>
-          <div class="node-part-bottom" onclick="switchChapter(1, 5, 'moon')">
-              <img src="img/timeline2/line_connect.png" class="node-line line-bottom">
-              <img src="img/timeline2/icon_moon.png" class="node-icon icon-moon">
-                          <!-- 新增：高亮指示器 (默认隐藏) -->
-            <div class="active-indicator">
-              <div class="tl-arrow-indicator"></div>
-              <span class="tl-label-current">現在の日付</span>
-            </div>
-          </div>
-      </div>
-
-  </div>
-
-  <!-- 关闭按钮 -->
-  <div class="manga-nav-close-btn" onclick="closeMangaNav()">×</div>
-</div>
-
-  </div>
-</div>
 
       <!-- pc影音 -->
       <div class="swiper-slide pc gallery" data-mouse="small" id="slide8">
@@ -1241,12 +1246,12 @@
             <img src="img/gallery/txt_3.png" data-mouse="small" alt="" class="gallery-top-img-icon">
           </div>
         </div>
-      
+
       </div>
 
     </div>
   </div>
-  
+
   <!---------------------------------------------------------------mobile--------------------------------------------------------->
   <!---------------------------------------------------------------mobile--------------------------------------------------------->
   <!---------------------------------------------------------------mobile--------------------------------------------------------->
@@ -1403,7 +1408,7 @@
         </div>
       </div>
 
-<!-- Mobile地图 -->
+      <!-- Mobile地图 -->
       <div class="swiper-slide mobile mapMobile" data-mouse="small" id="slideM1">
         <img src="kv/dm.jpg" alt="" style="width: 100%;" class="mobileFadeIn m-kv">
         <img src="kv/slogan.png" class="m-slogan" alt="">
