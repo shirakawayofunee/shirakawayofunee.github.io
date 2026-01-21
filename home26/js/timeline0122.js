@@ -1,8 +1,56 @@
-// ================= 1. 数据源 (你的完整数据) =================
-// 提示：如果要插图，可以在数组中插入: { type: "image", src: "图片路径", span: 4 }
+// ================= 1. 数据源 =================
 window.timelineMsg = [
   {
-    date: "N.F.元年<br>12月12日隕星事件",
+    date: "N.F.元年", // 大标题背景字
+    title: "12.12隕星事件", // 样式A需要标题
+    text: "隕星の落下で死の禁域（そのうち内海と呼ばれる）が生まれ、世界各地で超自然災害発生。",
+    isMajor: true // 【样式A】开关
+  },
+  {
+    type: "image",
+    src: "./img/timeline/001212.jpg", 
+    span: 6 
+},
+  {
+    date: "N.F.21年",
+    text: "チラン博士が内海を調査するため、科学者を中心とした連合調査隊を組織する。内海突入から312分後、調査隊の反応はロストする。"
+    // 没有 isMajor，默认【样式B】
+  },
+  {
+    date: "N.F.23年",
+    text: "唯一の生存者であるチラン博士が死域から脱出、「YFJ」という災いを制御できる戦略物資を持ち帰った。"
+  },
+  {
+      type: "image",
+      src: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop", 
+      span: 5 
+  },
+  {
+    date: "N.F.24年<br>ディス建設",
+    text: "5つの宗主市が出資し、共同で内海周辺にディスを立ち上げた。しかし、YFJの管理支配は全く宗主市の元に把握され、科学者たちはチラン博士の率いて<span>上庭</span>を秘かに成立。<br>各国はＥ.Ｄ.Ｇ.Ｅ.協定に調印し、ディスとYFJ貿易を行う。"
+  },
+  {
+    date: "N.F.25年",
+    text: "五つの宗主市は輸出を引き続き独占し、食糧の値上げなどの手段でディス本土の富を奪い取った。<br>宗主市内部での衝突もアップし、妥協として共に<span>涅槃集団</span>を設立した。"
+  },
+  {
+    date: "N.F.66",
+    title: "核爆 涅槃港",
+    text: "宗主連合軍が警告なしに戦術核暖冬で涅槃の港を攻撃した。数十万人が即死、全都市が震撼。",
+    isMajor: true // 【样式A】
+  },
+  {
+    date: "N.F.66年",
+    text: "ブローク上尉は独立を訴える演説を行い、ディス独立軍の結成を正式に宣言しました。同日夜、ブローク上尉は2ヶ月前に受けた放射能汚染により不帰の客となり、<span>デレヴァン・スティール</span>が独立軍の統帥権を引き継ぎました。"
+  },
+  {
+    date: "N.F.72",
+    title: "ディス独立",
+    text: "ディス独立戦争が勝利を収めた。独立軍の統率者デレヴァンの宣言のもと、ディスは正式に独立を果たしました。",
+    isMajor: true // 【样式A】
+  },
+  {
+    date: "N.F.（ナイトフォール）元年<br>12月12日隕星事件",
     text: "隕星の落下で死の禁域（そのうち内海と呼ばれる）が生まれ、世界各地で超自然災害発生。"
   },
   {
@@ -12,12 +60,6 @@ window.timelineMsg = [
   {
     date: "N.F.23年",
     text: "唯一の生存者であるチラン博士が死域から脱出、「YFJ」という災いを制御できる戦略物資を持ち帰った。"
-  },
-  // --- 演示：在这里插入一张图片，打破纯文字的节奏 ---
-  {
-    type: "image",
-    src: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop", // 替换为你本地图片
-    span: 5 // 占据5行高
   },
   {
     date: "N.F.24年<br>都市「ディス」の建設",
@@ -82,12 +124,6 @@ window.timelineMsg = [
   {
     date: "N.F.103年10月",
     text: "69歳のデレヴァンは████によって殺害されました。第二代FAC総司令にはアドリアン・スターリングが就任しました。████はディス旧軍を率いてディスを離れ。"
-  },
-  // --- 演示：插入图片 ---
-  {
-    type: "image",
-    src: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
-    span: 6 // 占6行
   },
   {
     date: "N.F.113年",
@@ -169,186 +205,215 @@ window.timelineMsg = [
     date: "N.F.113年8月26日、上庭内部会议",
     text: "工事中"
   },
+
+  {
+    date: "N.F.72年～84年",
+    text: "デレヴァンは城邦議長の職を長く務め続け、権力の譲渡を拒否し、選挙を操作して強引に再選を重ねました。これにより、彼はディス史上最も長期間統治した独裁者となりました。"
+  },
+  {
+    date: "N.F.81年",
+    text: "都市の拡大に伴い、ディスは東西二区に分割された。鉱業の大部分は西区に集中している。"
+  },
+  {
+    date: "N.F.83年",
+    text: "幼少期の<span>レオポルド</span>は軍人だった両親が政治闘争に巻き込まれ、戦場で無駄死した後、親族や友人の養子縁組の申し出をすべて拒否し、復讐を誓って福音地に身を投じました。"
+  },
+  {
+    date: "N.F.84",
+    title: "内海大爆発",
+    text: "ディスがある実験の失敗により内海大爆発を引き起こした。最初の黒環<span>BR-000</span>が誕生。死者数は87231人に上った。",
+    isMajor: true // 【样式A】
+  },
+  {
+    date: "N.F.84年",
+    text: "わずか6歳の<span>セヴェロ</span>は家族を失い、行き場を失った末に福音地に拾われ、<span>レオポルドを師と仰ぎました</span>。"
+  },
+  // ... 后续内容保持原样即可 ...
 ];
 
-// ================= 2. 自动布局算法 (关键) =================
+// ================= 2. 自动布局算法 =================
 function generateLayout(data) {
-    const X_START = window.innerWidth * 0.15; // 初始留白
-    let currentX = X_START;
-    
-    return data.map((item, index) => {
-        // --- 算法：行号计算 ---
-        // 利用正弦波+取整，让行号在 2 到 7 之间波动 (避开顶部导航和底部)
-        // 这样事件就会像钢琴音符一样上下起伏
-        const wave = Math.sin(index * 0.9) * 2.5;
-        let row = Math.floor(4 + wave); 
-        
-        // 限制范围 (第2行 - 第7行)
-        if (row < 2) row = 2;
-        if (row > 7) row = 7;
+  const X_START = window.innerWidth * 0.15;
+  let currentX = X_START;
+  
+  return data.map((item, index) => {
+      // --- 1. 行号 (Row) 计算 ---
+      // 波浪线排布，避开顶部(0-1)和底部(9)
+      const wave = Math.sin(index * 0.9) * 2.5;
+      let row = Math.floor(4 + wave); 
+      if (row < 2) row = 2;
+      if (row > 7) row = 7;
 
-        // --- 算法：高度/宽度计算 ---
-        let span = 3; // 默认占3行
-        let widthFactor = 350; // 默认宽度
+      // --- 2. 尺寸 (Span & Width) 计算 ---
+      let span = 3; 
+      let widthFactor = 350; 
 
-        // 如果是图片
-        if (item.type === 'image') {
-            span = item.span || 5; // 图片通常更高
-            row = 2; // 图片尽量靠上展示
-            widthFactor = span * 100; // 图片宽度随高度变化
-        } 
-        // 如果是文字
-        else {
-            // 根据字数决定格子高度
-            const textLen = item.text.length;
-            if (textLen > 150) { span = 5; widthFactor = 450; }
-            else if (textLen > 80) { span = 4; widthFactor = 400; }
-            else { span = 3; widthFactor = 320; }
-        }
+      if (item.type === 'image') {
+          span = item.span || 5; 
+          row = 2; 
+          widthFactor = span * 100;
+      } 
+      else if (item.isMajor) {
+          // ★【关键】如果是重点事件，强制变大，并尽量往中间放
+          span = 5; 
+          widthFactor = 500; // 宽度更宽
+          row = Math.max(2, row - 1); // 稍微上移一点
+      }
+      else {
+          // 普通文字
+          const textLen = item.text.length;
+          if (textLen > 150) { span = 5; widthFactor = 450; }
+          else if (textLen > 80) { span = 4; widthFactor = 400; }
+          else { span = 3; widthFactor = 320; }
+      }
 
-        // 防止溢出底部 (共10行，index 0-9)
-        if (row + span > 9) row = 9 - span;
+      // 防止溢出底部
+      if (row + span > 9) row = 9 - span;
 
-        // 保存当前X，并为下一个元素增加距离
-        const myX = currentX;
-        currentX += widthFactor + 60; // 60px 间隙
+      const myX = currentX;
+      currentX += widthFactor + 80; // 间距
 
-        return {
-            ...item,
-            x: myX,
-            row: row,
-            span: span,
-            width: widthFactor
-        };
-    });
+      return {
+          ...item,
+          x: myX,
+          row: row,
+          span: span,
+          width: widthFactor
+      };
+  });
 }
 
 // ================= 3. 核心执行逻辑 =================
 document.addEventListener("DOMContentLoaded", () => {
-    const container = document.getElementById('timelineContainer');
-    
-    // 1. 生成带坐标的数据
-    const items = generateLayout(window.timelineMsg);
-    
-    // 2. 计算总宽度 (最后一个元素的右边缘 + 一屏宽度缓冲)
-    const lastItem = items[items.length - 1];
-    const totalWidth = lastItem.x + lastItem.width + window.innerWidth;
-    container.style.width = `${totalWidth}px`;
+  const container = document.getElementById('timelineContainer');
+  const items = generateLayout(window.timelineMsg);
+  
+  // 计算容器总宽
+  const lastItem = items[items.length - 1];
+  const totalWidth = lastItem.x + lastItem.width + window.innerWidth;
+  container.style.width = `${totalWidth}px`;
 
-    // 3. 渲染 DOM
-    items.forEach((item, index) => {
-        const div = document.createElement('div');
-        div.className = `event-item item-${index}`;
-        
-        // 核心布局样式 (vh 单位)
-        div.style.left = `${item.x}px`;
-        div.style.top = `${item.row * 10}vh`; 
-        div.style.height = `${item.span * 10}vh`;
-        div.style.width = `${item.width}px`;
+  // 渲染 DOM
+  items.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.className = `event-item item-${index}`;
+      
+      // 样式 A (IsMajor) 需要额外 class
+      if (item.isMajor) div.classList.add('is-major');
 
-        if (item.type === 'image') {
-            div.classList.add('is-image');
-            div.innerHTML = `<img src="${item.src}">`;
-        } else {
-            // 文字：允许 HTML 标签渲染
-            div.innerHTML = `
-                <div class="event-date">${item.date}</div>
-                <div class="event-text">${item.text}</div>
-            `;
-        }
-        container.appendChild(div);
-    });
+      div.style.left = `${item.x}px`;
+      div.style.top = `${item.row * 10}vh`; 
+      div.style.height = `${item.span * 10}vh`;
+      div.style.width = `${item.width}px`;
 
-    // 4. GSAP 动画
-    gsap.registerPlugin(ScrollTrigger);
+      if (item.type === 'image') {
+          // 图片模式
+          div.classList.add('is-image');
+          div.innerHTML = `<img src="${item.src}">`;
+      } 
+      else if (item.isMajor) {
+          // ★【样式 A】: 重点事件 (大背景字 + 黑标题)
+          div.innerHTML = `
+              <div class="major-bg-year">${item.date}</div>
+              <div class="major-title">${item.title}</div>
+              <div class="major-desc">${item.text}</div>
+          `;
+      } 
+      else {
+          // ★【样式 B】: 普通事件 (蓝日期 + 文字高亮)
+          div.innerHTML = `
+              <div class="event-date">${item.date}</div>
+              <div class="event-text">${item.text}</div>
+          `;
+      }
+      container.appendChild(div);
+  });
 
-    // [横向滚动]
-    const scrollTween = gsap.to(container, {
-        x: - (totalWidth - window.innerWidth),
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".wrapper",
-            pin: true,
-            scrub: 0.2, // 降低数值，响应更跟手
-            end: () => `+=${totalWidth}`,
-            onUpdate: (self) => {
-                // 更新底部进度条位置
-                const p = self.progress * 100;
-                document.querySelector('.diamond-cursor').style.left = `${p}%`;
-                
-                // 更新年份提示
-                const currentIdx = Math.floor(self.progress * items.length);
-                const currentItem = items[Math.min(currentIdx, items.length-1)];
-                if(currentItem && currentItem.date) {
-                    // 提取 N.F. 年份
-                    const match = currentItem.date.match(/N\.F\.\d+/);
-                    if(match) document.querySelector('.cursor-label').innerText = match[0];
-                }
-            }
-        }
-    });
+  // GSAP 动画
+  gsap.registerPlugin(ScrollTrigger);
 
-    // [元素入场] 拒绝弹跳，使用优雅的 Fade & Wipe
-    items.forEach((item, index) => {
-        const target = document.querySelector(`.item-${index}`);
-        const startTrigger = "left 92%"; // 刚进入屏幕边缘即触发
+  const scrollTween = gsap.to(container, {
+      x: - (totalWidth - window.innerWidth),
+      ease: "none",
+      scrollTrigger: {
+          trigger: ".wrapper",
+          pin: true,
+          scrub: 0.2, 
+          end: () => `+=${totalWidth}`,
+          onUpdate: (self) => {
+              // 进度条
+              const p = self.progress * 100;
+              document.querySelector('.diamond-cursor').style.left = `${p}%`;
+              
+              // 年份更新
+              const currentIdx = Math.floor(self.progress * items.length);
+              const currentItem = items[Math.min(currentIdx, items.length-1)];
+              if(currentItem && currentItem.date) {
+                  const cleanDate = currentItem.date.replace(/<br>/g, ' ').split(' ')[0];
+                  document.querySelector('.cursor-label').innerText = cleanDate;
+              }
+          }
+      }
+  });
 
-        if (item.type === 'image') {
-            const img = target.querySelector('img');
-            // 图片：遮罩拉开 (Wipe Effect)
-            gsap.to(img, {
-                clipPath: "inset(0 0% 0 0)", 
-                duration: 1.2,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: target,
-                    containerAnimation: scrollTween,
-                    start: startTrigger,
-                    toggleActions: "play none none none"
-                }
-            });
-        } else {
-            // 文字：透明度上浮 (Fade Up)
-            const date = target.querySelector('.event-date');
-            const text = target.querySelector('.event-text');
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: target,
-                    containerAnimation: scrollTween,
-                    start: startTrigger,
-                    toggleActions: "play none none none"
-                }
-            });
-            
-            // 简单的淡入，没有夸张位移
-            tl.fromTo(date, { opacity:0, y:10 }, { opacity:1, y:0, duration:0.5 })
-              .to(text, { opacity:1, duration:0.8 }, "-=0.2");
-        }
-    });
+  // 元素入场
+  items.forEach((item, index) => {
+      const target = document.querySelector(`.item-${index}`);
+      const startTrigger = "left 92%";
 
-    // 5. Lenis 物理滚动 (关键：手感调整)
-    const lenis = new Lenis({
-        duration: 1.5,        // 惯性停止时间 (越大越滑)
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-        wheelMultiplier: 4.5, // 滚轮倍率：设为 4.5 左右，接近你想要的 "一滚走20%" 的感觉
-        smooth: true,
-    });
+      if (item.type === 'image') {
+          // 图片 Wipe
+          gsap.to(target.querySelector('img'), {
+              clipPath: "inset(0 0% 0 0)", 
+              duration: 1.2,
+              ease: "power2.out",
+              scrollTrigger: {
+                  trigger: target,
+                  containerAnimation: scrollTween,
+                  start: startTrigger,
+                  toggleActions: "play none none none"
+              }
+          });
+      } 
+      else if (item.isMajor) {
+          // ★【样式 A 动画】: 大字先出，标题弹入
+          const tl = gsap.timeline({
+              scrollTrigger: { trigger: target, containerAnimation: scrollTween, start: startTrigger, toggleActions: "play none none none" }
+          });
+          tl.from(target.querySelector('.major-bg-year'), { x: -50, opacity: 0, duration: 0.8 })
+            .from(target.querySelector('.major-title'), { scaleX: 0, transformOrigin:"left", duration: 0.5 }, "-=0.6")
+            .from(target.querySelector('.major-desc'), { y: 20, opacity: 0, duration: 0.5 }, "-=0.3");
+      }
+      else {
+          // ★【样式 B 动画】: 简单的上浮
+          const tl = gsap.timeline({
+              scrollTrigger: { trigger: target, containerAnimation: scrollTween, start: startTrigger, toggleActions: "play none none none" }
+          });
+          tl.fromTo(target.querySelector('.event-date'), { opacity:0, x:-20 }, { opacity:1, x:0, duration:0.5 })
+            .to(target.querySelector('.event-text'), { opacity:1, duration:0.8 }, "-=0.3");
+      }
+  });
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+  // Lenis 设置
+  const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+      wheelMultiplier: 4.5, 
+      smooth: true,
+  });
 
-    // 底部跳转
-    document.querySelector('.progress-line').addEventListener('click', (e) => {
-        const rect = e.target.getBoundingClientRect();
-        const p = (e.clientX - rect.left) / rect.width;
-        lenis.scrollTo((totalWidth - window.innerWidth) * p);
-    });
+  function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // 底部跳转
+  document.querySelector('.progress-line').addEventListener('click', (e) => {
+      const rect = e.target.getBoundingClientRect();
+      const p = (e.clientX - rect.left) / rect.width;
+      lenis.scrollTo((totalWidth - window.innerWidth) * p);
+  });
 });
 
-// 导航栏点击逻辑
-function changeBanner(id) {
-    console.log("Nav to: " + id);
-}
+function changeBanner(id) { console.log("Nav: " + id); }

@@ -1,12 +1,13 @@
-/* --- 基础定义 --- */
+/* --- 全局变量与重置 --- */
 :root {
-    --bg-color: #F5F5F5;
-    --fg-color: #111;
-    --line-color: #dcdcdc; /* 轨道线颜色 */
-    --accent-color: #0022AA; /* 重点色 */
-    --track-height: 10vh;  /* 核心：每一行的高度占屏幕 10% */
-    --font-base: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    --bg-color: #fbfbfb;
+    --fg-color: #111111;
+    --line-color: #dcdcdc;
+    --accent-color: #0022AA; /* 样式B的日期颜色 */
+    --font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     --font-mono: "Courier New", monospace;
+    --font-impact: "Impact", "Arial Black", sans-serif; /* 样式A的大字体 */
+    --track-height: 10vh;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,128 +15,132 @@
 body {
     background-color: var(--bg-color);
     color: var(--fg-color);
-    font-family: var(--font-base);
+    font-family: var(--font-main);
     width: 100vw; height: 100vh;
-    overflow: hidden; /* 隐藏原生滚动条 */
+    overflow: hidden;
 }
 
-/* --- 1. 导航栏 (10vh 高度) --- */
+/* --- 1. 导航栏 (保持不变) --- */
 .h-con-right {
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    height: var(--track-height); /* 严格占一行 */
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid var(--fg-color);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed; top: 0; left: 0; width: 100%; height: var(--track-height);
+    background: rgba(255,255,255,0.95); border-bottom: 1px solid var(--fg-color);
+    z-index: 1000; display: flex; justify-content: center; align-items: center;
 }
-
-.h-con-right-l {
-    display: flex;
-    gap: 1vw;
-    height: 100%;
-    align-items: center;
-}
-
-.div-centerpc {
-    cursor: pointer;
-    text-align: center;
-    padding: 0 15px;
-    height: 60%; /* 按钮高度 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: all 0.3s;
-    border: 1px solid transparent;
-}
-
-.div-centerpc:hover, .div-centerpc.active {
-    background: var(--fg-color);
-    border: 1px solid var(--fg-color);
-}
-
-.div-centerpc:hover .div-head-text, 
-.div-centerpc:hover .div-head-text-en,
-.div-centerpc.active .div-head-text,
-.div-centerpc.active .div-head-text-en {
-    color: #fff;
-}
-
+/* ...导航栏内部样式同上一版，此处省略以节省篇幅... */
+.h-con-right-l { display: flex; gap: 1vw; height: 100%; align-items: center; }
+.div-centerpc { cursor: pointer; text-align: center; padding: 0 15px; height: 60%; display: flex; flex-direction: column; justify-content: center; transition: all 0.3s; border: 1px solid transparent; }
+.div-centerpc:hover, .div-centerpc.active { background: var(--fg-color); border: 1px solid var(--fg-color); }
+.div-centerpc:hover .div-head-text, .div-centerpc:hover .div-head-text-en, .div-centerpc.active .div-head-text, .div-centerpc.active .div-head-text-en { color: #fff; }
 .div-head-text { font-size: 12px; font-weight: bold; color: var(--fg-color); white-space: nowrap; }
 .div-head-text-en { font-size: 10px; font-family: var(--font-mono); letter-spacing: 1px; color: #666; }
-
 .h-con-right-r { position: absolute; right: 30px; }
-.music-icon {
-    width: 24px; height: 24px; background: #000;
-    mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>') no-repeat center;
-    -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>') no-repeat center;
-}
 
-/* --- 2. 背景轨道 (Visual Grid) --- */
+/* --- 2. 背景轨道 --- */
 .bg-tracks {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;
-    /* 10条横线 */
     background-image: repeating-linear-gradient(to bottom, var(--line-color) 0, var(--line-color) 1px, transparent 1px, transparent var(--track-height));
 }
-.bg-tracks::after { /* 中轴线 */
-    content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: var(--fg-color); opacity: 0.2;
-}
+.bg-tracks::after { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: var(--fg-color); opacity: 0.3; }
 
 /* --- 3. 内容容器 --- */
 .wrapper { width: 100%; height: 100%; }
 .horizontal-content { position: relative; height: 100%; will-change: transform; margin-left: 10vw; }
 
-/* --- 4. 事件块 (Events) --- */
+/* --- 4. 事件块核心样式 --- */
 .event-item {
     position: absolute;
-    padding: 15px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    /* 视觉样式 */
+    justify-content: center;
+    /* 默认样式 B */
     border-left: 2px solid var(--fg-color);
-    background: rgba(255,255,255,0.6); /* 稍微透一点背景线 */
-    backdrop-filter: blur(2px);
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(3px);
     overflow: hidden;
 }
 
-/* 钢琴块填充感：给不同事件加上轻微的背景色块差异 */
-.event-item:nth-child(odd) { background: rgba(255,255,255,0.9); }
-
-/* 图片类型样式 */
-.event-item.is-image {
-    padding: 0;
-    border: 1px solid var(--fg-color);
-    background: #000;
-}
-.event-item.is-image img {
-    width: 100%; height: 100%; object-fit: cover;
-    clip-path: inset(0 100% 0 0); /* 初始遮罩状态 */
-}
-
-/* 文字样式 */
+/* ================== 样式 B：普通节点 (默认) ================== */
 .event-date {
     font-family: var(--font-mono);
     font-weight: 900;
-    font-size: 1.1rem;
-    color: var(--accent-color);
-    margin-bottom: 12px;
-    line-height: 1.4;
+    font-size: 1.4rem;
+    color: var(--accent-color); /* 蓝色日期 */
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 .event-text {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.8;
     color: #222;
     font-weight: 500;
-    opacity: 0; /* 初始隐藏 */
+    text-align: justify;
 }
-/* JSON 内嵌 HTML 样式 */
-.event-text span { background: #000; color: #fff; padding: 0 4px; }
-.cus-key { font-weight: bold; border-bottom: 1px solid #000; }
-.cus-target2 { color: var(--accent-color); }
+/* 样式 B 中的高亮重点 (黑底白字) */
+.event-text span {
+    background: var(--fg-color);
+    color: #fff;
+    padding: 2px 6px;
+    margin: 0 2px;
+    font-weight: bold;
+    display: inline-block; /* 稍微撑开一点 */
+}
+
+/* ================== 样式 A：关键节点 (IsMajor) ================== */
+.event-item.is-major {
+    border-left: 4px solid var(--fg-color); /* 加粗边框 */
+    background: transparent; /* 去掉背景，让灰色大字透出来 */
+    overflow: visible; /* 允许大字溢出一点 */
+    justify-content: flex-start;
+    padding-top: 4vh;
+}
+
+/* 背景大字年份 */
+.major-bg-year {
+    position: absolute;
+    top: -10%; 
+    left: 0;
+    font-family: var(--font-impact);
+    font-size: 7rem; /* 巨大字体 */
+    color: #E6E6E6; /* 浅灰 */
+    line-height: 1;
+    z-index: -1; /* 在底层 */
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* 黑底白字大标题 */
+.major-title {
+    background: var(--fg-color);
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 900;
+    padding: 5px 15px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 20px;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+    transform: translateX(-10px); /* 稍微突出一点 */
+}
+
+/* 下方描述文字 */
+.major-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    background: #fff; /* 给文字加个白底保证可读性 */
+    padding: 10px;
+    border: 1px solid #eee;
+}
+
+
+/* 图片样式 */
+.event-item.is-image {
+    padding: 0; border: 1px solid var(--fg-color); background: #000;
+}
+.event-item.is-image img {
+    width: 100%; height: 100%; object-fit: cover; clip-path: inset(0 100% 0 0);
+}
 
 /* --- 5. 底部进度条 --- */
 .bottom-nav {
@@ -148,16 +153,13 @@ body {
 .diamond-cursor {
     position: absolute; top: 50%; left: 0; width: 14px; height: 14px;
     background: var(--fg-color); border: 2px solid #fff;
-    transform: translate(-50%, -50%) rotate(45deg);
-    transition: transform 0.2s;
+    transform: translate(-50%, -50%) rotate(45deg); transition: transform 0.2s;
 }
 .diamond-cursor:hover { transform: translate(-50%, -50%) rotate(45deg) scale(1.5); }
 .cursor-label {
     position: absolute; top: -35px; left: 50%;
     transform: translateX(-50%) rotate(-45deg);
-    background: var(--fg-color); color: #fff;
-    padding: 3px 6px; font-size: 10px; font-family: var(--font-mono);
-    white-space: nowrap; pointer-events: none;
-    opacity: 0; transition: opacity 0.3s;
+    background: var(--fg-color); color: #fff; padding: 3px 6px; font-size: 10px; font-family: var(--font-mono);
+    white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.3s;
 }
 .progress-line:hover .cursor-label { opacity: 1; }
