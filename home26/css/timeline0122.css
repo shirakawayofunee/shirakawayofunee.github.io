@@ -55,9 +55,15 @@ body {
     justify-content: center;
     /* 默认样式 B */
     border-left: 2px solid var(--fg-color);
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(3px);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(5px);
     overflow: hidden;
+    z-index: 1; /* 默认层级 */
+    transition: transform 0.3s, z-index 0s;
+}
+
+.event-item:hover {
+    z-index: 10;
 }
 
 /* ================== 样式 B：普通节点 (默认) ================== */
@@ -139,6 +145,15 @@ body {
     background: #fff; /* 给文字加个白底保证可读性 */
     padding: 10px;
     border: 1px solid #eee;
+}
+
+.major-desc span {
+    background: var(--fg-color);
+    color: #fff;
+    padding: 2px 6px;
+    margin: 0 2px;
+    font-weight: bold;
+    display: inline-block; /* 稍微撑开一点 */
 }
 
 
