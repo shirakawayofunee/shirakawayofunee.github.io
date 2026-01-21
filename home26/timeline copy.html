@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y2K Timeline - Piano Track Layout</title>
+    
+    <!-- 核心库 -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <style>
+        /* --- 1. 全局定义 --- */
+        :root {
+            --bg-color: #F7F7F7;       
+            --fg-color: #111111;       
+            --line-color: #d4d4d4;     
+            --accent-color: #0000FF;   /* Y2K 蓝 */
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-mono: 'Courier New', Courier, monospace; 
+            --track-height: 10vh;      /* 核心：每一行的高度 */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--fg-color);
+            font-family: var(--font-main);
+            overflow: hidden; 
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* --- 2. 顶部导航栏 (保留你的结构，增加 Y2K 样式) --- */
+        .h-con-right {
+            position: fixed;
+            top: 0; right: 0; left: 0;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--fg-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: center; /* 居中 */
+            align-items: center;
+        }
+
+        .h-con-right-l {
+            display: flex;
+            gap: 2vw;
+        }
+
+        .div-centerpc {
+            cursor: pointer;
+            text-align: center;
+            padding: 0 10px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .div-centerpc:hover {
+            background: var(--fg-color);
+        }
+        .div-centerpc:hover .div-head-text,
+        .div-centerpc:hover .div-head-text-en {
+            color: #fff;
+        }
+
+        .div-head-text {
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--fg-color);
+        }
+        .div-head-text-en {
+            font-size: 10px;
+            font-family: var(--font-mono);
+            letter-spacing: 1px;
+            color: #666;
+        }
+
+        /* 音乐控制区 */
+        .h-con-right-r {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .shareMusic {
+            width: 24px; height: 24px; cursor: pointer;
+        }
+
+        /* --- 3. 背景轨道系统 (Piano Keys) --- */
+        .bg-tracks {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* 利用渐变画出 10 条横线 */
+            background-image: repeating-linear-gradient(
+                to bottom,
+                var(--line-color) 0,
+                var(--line-color) 1px,
+                transparent 1px,
+                transparent var(--track-height)
+            );
+            z-index: -1;
+            pointer-events: none;
+        }
+        /* 中轴线加粗 */
+        .bg-tracks::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 0; width: 100%; height: 2px;
+            background: var(--fg-color);
+        }
+
+        /* --- 4. 横向滚动容器 --- */
+        .wrapper {
+            /* 只要足够长即可，不用设死，JS会计算 */
+            width: 100%; 
+            height: 100%;
+        }
+        .horizontal-content {
+            display: block; /* 改为 block，因为内部用 absolute 定位 */
+            position: relative;
+            height: 100%;
+            will-change: transform;
+        }
+
+        /* --- 5. 事件元素 (分离的图片与文字) --- */
+        .item-container {
+            position: absolute;
+            /* 边框风格：极细黑线 */
+            border: 1px solid var(--fg-color);
+            background: #fff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 图片类型 */
+        .item-container.type-img {
+            background: #000; /* 图片背景黑 */
+        }
+        .item-container.type-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 初始状态：被遮罩遮住 (Mask Wipe 效果) */
+            clip-path: inset(0 100% 0 0); 
+            transform: scale(1.2); /* 初始放大 */
+            transition: none; /* 交给 GSAP 控制 */
+        }
+        
+        /* 窗口装饰头 (仅图片显示) */
+        .window-header {
+            position: absolute;
+            top: 0; left: 0; width: 100%;
+            height: 20px;
+            background: var(--fg-color);
+            color: #fff;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            line-height: 20px;
+            padding: 0 5px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 文字类型 */
+        .item-container.type-text {
+            border: none; /* 纯文字不需要外框，或者保留看喜好 */
+            background: transparent;
+            padding: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .text-year {
+            font-family: 'Impact', sans-serif;
+            font-size: 4rem;
+            color: #e0e0e0; /* 浅色背景字 */
+            position: absolute;
+            top: -20px; left: 0;
+            z-index: -1;
+            line-height: 1;
+        }
+        .text-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            background: var(--fg-color);
+            color: #fff;
+            padding: 0 10px;
+            /* 初始隐藏 */
+            opacity: 0;
+            transform: translateX(-20px); 
+        }
+        .text-desc {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            background: #fff;
+            /* 初始隐藏 */
+            opacity: 0;
+        }
+
+        /* --- 6. 底部进度条 --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 30px;
+            left: 5%; width: 90%;
+            height: 40px;
+            z-index: 100;
+            display: flex; align-items: center;
+        }
+        .progress-line {
+            width: 100%; height: 1px; background: var(--fg-color); position: relative;
+        }
+        .diamond-cursor {
+            position: absolute; top: 50%; left: 0;
+            width: 16px; height: 16px;
+            background: var(--fg-color);
+            transform: translate(-50%, -50%) rotate(45deg);
+            cursor: grab;
+            transition: transform 0.2s;
+        }
+        .diamond-cursor:hover { transform: translate(-50%, -50%) rotate(45deg) scale(1.3); }
+        .cursor-label {
+            position: absolute; top: -35px; left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+            background: #fff; border: 1px solid #000;
+            padding: 2px 6px; font-size: 12px; font-family: var(--font-mono);
+            opacity: 0; transition: opacity 0.2s; white-space: nowrap;
+        }
+        .diamond-cursor:hover .cursor-label { opacity: 1; }
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. 导航栏 (完全复刻结构) -->
+    <div class="h-con-right pc">
+        <div class="h-con-right-l">
+          <div class="div-center div-centerpc" id="banner0">
+            <div class="div-head-text">序章ホーム</div>
+            <div class="div-head-text-en">HOME</div>
+          </div>
+          <div class="div-center div-centerpc" id="banner1">
+            <div class="div-head-text">登場人物</div>
+            <div class="div-head-text-en">CHARACTER</div>
+          </div>
+          <div class="div-center div-centerpc" id="banner2">
+            <div class="div-head-text">相関図</div>
+            <div class="div-head-text-en">RELATIONSHIP</div>
+          </div>
+          <!-- 选中状态：大事件页面 -->
+          <div class="div-center div-centerpc" style="background:var(--fg-color);">
+            <div class="div-head-text" style="color:#fff">年表</div>
+            <div class="div-head-text-en" style="color:#fff">TIMELINE</div>
+          </div>
+          <div class="div-center div-centerpc" id="banner9">
+            <div class="div-head-text">物語</div>
+            <div class="div-head-text-en">STORY</div>
+          </div>
+          <div class="div-center div-centerpc" id="banner10">
+            <div class="div-head-text">ギャラリー</div> 
+            <div class="div-head-text-en">GALLERY</div>   
+          </div>
+        </div>
+        <div class="h-con-right-r">
+            <img src="https://placehold.co/24x24/black/white?text=♪" alt="" class="imgMusicStop shareMusic">
+        </div>
+    </div>
+
+    <!-- 2. 背景轨道 (10行线) -->
+    <div class="bg-tracks"></div>
+
+    <!-- 3. 底部进度条 -->
+    <div class="bottom-nav">
+        <div class="progress-line">
+            <div class="diamond-cursor">
+                <div class="cursor-label">START</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. 内容容器 -->
+    <div class="wrapper">
+        <div class="horizontal-content" id="timelineContainer">
+            <!-- JS 动态生成 -->
+        </div>
+    </div>
+
+    <script>
+        // --- 配置区：最关键的数据结构 ---
+        // Unit: 横向坐标的单位 (像素)
+        const X_UNIT = 120; 
+        
+        // 数据：模拟“钢琴块”布局
+        // x: 横向格数 (时间)
+        // row: 起始行 (0-9，0在最顶上，9在最底下)
+        // span: 占据几行高度
+        // type: 'img' | 'text'
+        const timelineData = [
+            // 第一组：核爆事件 (图片在下，文字在上)
+            { type: 'text', x: 2,  row: 1, span: 3, year: 'N.F.66', title: '核爆 涅槃港', desc: '宗主联合军在无警告的情况下发动战术核打击。' },
+            { type: 'img',  x: 2,  row: 4, span: 5, src: 'https://images.unsplash.com/photo-1626262983793-1b94689255be?q=80&w=1000&auto=format&fit=crop', link: '#page1' },
+
+            // 第二组：独立宣言 (图片超大，跨6行)
+            { type: 'img',  x: 10, row: 2, span: 6, src: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop', link: '#page2' },
+            { type: 'text', x: 15, row: 5, span: 3, year: 'N.F.66', title: '独立宣言', desc: '布洛克上尉发表独立演说，迪斯独立军正式结成。' },
+
+            // 第三组：纯文字背景设定 (窄长条)
+            { type: 'text', x: 22, row: 4, span: 2, year: 'N.F.72', title: '胜利', desc: '德列万·斯蒂尔就任新迪斯首代议长。' },
+
+            // 第四组：错落布局 (图片在上，文字在下)
+            { type: 'img',  x: 28, row: 0, span: 4, src: 'https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=1000&auto=format&fit=crop' },
+            { type: 'text', x: 28, row: 5, span: 4, year: 'N.F.81', title: '东西分裂', desc: '伴随都市扩张，迪斯正式分割为东西二区。矿业集中于西区。' },
+
+            // 第五组：智械危机 (全屏高图片)
+            { type: 'text', x: 38, row: 3, span: 2, year: 'N.F.84', title: '智械危机', desc: '全面反噬。' },
+            { type: 'img',  x: 40, row: 1, span: 8, src: 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=1000&auto=format&fit=crop' },
+
+            // 占位符，撑开长度
+            { type: 'text', x: 55, row: 4, span: 2, year: 'END', title: 'TO BE CONTINUED', desc: '更多数据解密中...' }
+        ];
+
+        // --- 初始化 DOM ---
+        const container = document.getElementById('timelineContainer');
+        
+        // 1. 生成 DOM 元素
+        timelineData.forEach((item, index) => {
+            const div = document.createElement('div');
+            
+            // 计算位置样式
+            const styleLeft = item.x * X_UNIT + 'px';
+            const styleTop = (item.row * 10) + 'vh'; // 10vh 一行
+            const styleHeight = (item.span * 10) + 'vh';
+            const styleWidth = (item.type === 'img') ? (item.span * 10 * 0.7) + 'vh' : '400px'; // 图片大概保持比例，文字固定宽
+
+            div.className = `item-container type-${item.type} item-${index}`;
+            div.style.left = styleLeft;
+            div.style.top = styleTop;
+            div.style.height = styleHeight;
+            div.style.width = styleWidth;
+
+            if (item.type === 'img') {
+                div.innerHTML = `
+                    <div class="window-header">FILE_${index}.LOG <span style="cursor:pointer">[+]</span></div>
+                    <img src="${item.src}" alt="event">
+                `;
+                // 图片点击跳转
+                if(item.link) {
+                    div.style.cursor = 'pointer';
+                    div.onclick = () => window.location.href = item.link;
+                }
+            } else {
+                div.innerHTML = `
+                    <div class="text-year">${item.year}</div>
+                    <div class="text-title">${item.title}</div>
+                    <div class="text-desc">${item.desc}</div>
+                `;
+            }
+
+            container.appendChild(div);
+        });
+
+        // 设定容器总宽度 (最后一个元素的 left + width + 余量)
+        const lastItem = timelineData[timelineData.length - 1];
+        const totalWidth = (lastItem.x * X_UNIT) + 800 + window.innerWidth;
+        container.style.width = totalWidth + 'px';
+
+
+        // --- GSAP 动画逻辑 ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. 横向滚动 (Fake Horizontal Scroll)
+        const scrollTween = gsap.to(container, {
+            x: - (totalWidth - window.innerWidth),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".wrapper",
+                pin: true,
+                scrub: 0.5, // 这里的 scrub 不要太大，让 Lenis 接管平滑
+                end: () => "+=" + (totalWidth - window.innerWidth),
+                onUpdate: (self) => {
+                    // 更新底部菱形进度条
+                    const p = self.progress * 100;
+                    document.querySelector('.diamond-cursor').style.left = p + '%';
+                }
+            }
+        });
+
+        // 2. 元素入场动画 (Wipe & Stagger)
+        timelineData.forEach((item, index) => {
+            const target = document.querySelector(`.item-${index}`);
+            
+            // 触发点：当元素进入视口右侧 85% 时
+            const startTrigger = "left 85%";
+
+            if (item.type === 'img') {
+                // 图片动画：Clip-path Wipe + Scale Restore
+                const img = target.querySelector('img');
+                
+                gsap.to(img, {
+                    clipPath: "inset(0 0% 0 0)", // 遮罩完全打开
+                    scale: 1,                    // 缩放归位
+                    duration: 1.2,
+                    ease: "power4.out",          // 这种缓动非常有质感，先快后慢
+                    scrollTrigger: {
+                        trigger: target,
+                        containerAnimation: scrollTween,
+                        start: startTrigger,
+                        toggleActions: "play none none none" // 只播放一次
+                    }
+                });
+            } else {
+                // 文字动画：错落浮现
+                const title = target.querySelector('.text-title');
+                const desc = target.querySelector('.text-desc');
+                
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: target,
+                        containerAnimation: scrollTween,
+                        start: startTrigger,
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                tl.to(title, { opacity: 1, x: 0, duration: 0.6, ease: "back.out(1.7)" }) // 弹跳出现
+                  .to(desc, { opacity: 1, duration: 0.8 }, "-=0.4");
+            }
+        });
+
+
+        // --- 物理滚动 (Lenis 配置) ---
+        // 这里调整“手感”
+        const lenis = new Lenis({
+            duration: 1.5,        // 持续时间：越长越滑 (默认 1.2)
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+            wheelMultiplier: 1.8, // 滚轮力度：越大，稍微一滚跑得越远 (默认 1)
+            smooth: true,
+            touchMultiplier: 2,   // 触摸屏力度
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 底部进度条点击跳转
+        document.querySelector('.bottom-nav').addEventListener('click', (e) => {
+            const width = window.innerWidth * 0.9;
+            const clickX = e.clientX - (window.innerWidth * 0.05);
+            const progress = clickX / width;
+            const targetScroll = (totalWidth - window.innerWidth) * progress;
+            lenis.scrollTo(targetScroll);
+        });
+
+        // 导航栏简单交互示例
+        function changeBanner(id) {
+            console.log("Nav to " + id);
+            // 这里可以写跳转逻辑
+        }
+
+    </script>
+</body>
+</html>

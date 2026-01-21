@@ -1,0 +1,210 @@
+/* --- 全局变量与重置 --- */
+:root {
+    --bg-color: #F4F4F4;       /* 灰白背景 */
+    --fg-color: #1a1a1a;       /* 深黑主色 */
+    --line-color: #dcdcdc;     /* 轨道线颜色 */
+    --accent-color: #0033CC;   /* 链接/高亮色 */
+    --font-main: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    --font-mono: 'Courier New', monospace;
+    --track-height: 10vh;      /* 核心：将屏幕切分为10行 */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-family: var(--font-main);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* 隐藏默认滚动条 */
+}
+
+/* --- 1. 导航栏 (基于你的代码优化) --- */
+.h-con-right {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    height: var(--track-height); /* 刚好占据第1行 (10%) */
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--fg-color);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center;
+    padding: 0 40px;
+}
+
+.h-con-right-l {
+    display: flex;
+    gap: 1.5vw;
+    height: 100%;
+    align-items: center;
+}
+
+.div-centerpc {
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 12px;
+    transition: all 0.3s;
+    border: 1px solid transparent; /* 预留边框位置，防止跳动 */
+}
+
+.div-centerpc:hover, .div-centerpc.active {
+    background: var(--fg-color);
+    border: 1px solid var(--fg-color);
+}
+
+.div-centerpc:hover .div-head-text, 
+.div-centerpc:hover .div-head-text-en,
+.div-centerpc.active .div-head-text,
+.div-centerpc.active .div-head-text-en {
+    color: #fff;
+}
+
+.div-head-text {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--fg-color);
+    white-space: nowrap;
+}
+
+.div-head-text-en {
+    font-size: 10px;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+    color: #888;
+}
+
+/* --- 2. 背景轨道系统 (Visual Grid) --- */
+.bg-tracks {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    /* 利用渐变绘制 10 条等距横线 */
+    background-image: repeating-linear-gradient(
+        to bottom,
+        var(--line-color) 0,
+        var(--line-color) 1px,
+        transparent 1px,
+        transparent var(--track-height)
+    );
+}
+/* 增加一条显眼的中轴线 */
+.bg-tracks::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 0; width: 100%; height: 2px;
+    background: var(--fg-color);
+    opacity: 0.3;
+}
+
+/* --- 3. 横向滚动容器 --- */
+.wrapper {
+    width: 100%; height: 100%;
+}
+.horizontal-content {
+    position: relative;
+    height: 100%;
+    will-change: transform;
+    /* 初始左边距，避免内容贴着左边 */
+    margin-left: 20vw;
+}
+
+/* --- 4. 事件块 (Events) --- */
+.event-item {
+    position: absolute;
+    /* Y2K 风格边框 */
+    border-left: 2px solid var(--fg-color);
+    padding: 15px 20px;
+    background: rgba(255,255,255,0.8); /* 轻微半透明背景，防止文字重叠 */
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; /* 防止内容溢出 */
+}
+
+/* 日期样式 */
+.event-date {
+    font-family: var(--font-mono); /* 等宽字体，像代码 */
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    line-height: 1.2;
+}
+
+/* 正文样式 */
+.event-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 500;
+}
+/* 高亮标签样式 (对应 JSON 里的 <span>) */
+.event-text span, .cus-key, .cus-target2 {
+    background: var(--fg-color);
+    color: #fff;
+    padding: 0 4px;
+    font-size: 0.9em;
+}
+
+/* 装饰性：每个事件块左上角的角标 */
+.event-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 10px; height: 10px;
+    background: var(--fg-color);
+}
+
+/* --- 5. 底部进度条 (Fixed) --- */
+.bottom-nav {
+    position: fixed;
+    bottom: 4vh; /* 稍微离底一点 */
+    left: 5vw; width: 90vw;
+    height: 40px;
+    z-index: 100;
+    display: flex; align-items: center;
+    pointer-events: none; /* 轨道本身不阻挡点击，只有游标阻挡 */
+}
+.progress-line {
+    width: 100%; height: 2px;
+    background: var(--line-color);
+    position: relative;
+    pointer-events: auto; /* 线可以点 */
+    cursor: pointer;
+}
+/* 菱形游标 */
+.diamond-cursor {
+    position: absolute; top: 50%; left: 0;
+    width: 14px; height: 14px;
+    background: var(--fg-color);
+    border: 2px solid #fff; /* 白色描边增加层次 */
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: width 0.2s, height 0.2s;
+}
+.diamond-cursor:hover {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.5);
+    background: var(--accent-color);
+}
+/* 游标上的文字提示 */
+.cursor-label {
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    background: var(--fg-color);
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+.progress-line:hover .diamond-cursor .cursor-label {
+    opacity: 1;
+}
