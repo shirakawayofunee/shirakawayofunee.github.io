@@ -4,30 +4,25 @@ window.timelineMsg = [
     date: "N.F.元年", // 大标题背景字
     title: "12.12隕星事件", // 样式A需要标题
     text: "隕星の落下で死の禁域（そのうち内海と呼ばれる）が生まれ、世界各地で超自然災害発生。",
-    isMajor: true, // 【样式A】开关
-    customRow: 3,
+    isMajor: true // 【样式A】开关
   },
   {
     type: "image",
     src: "./img/timeline/001212.jpg", 
-    span: 6 ,
-    customRow: 4,
+    span: 6 
 },
   {
     date: "N.F.21年",
     text: "チラン博士が内海を調査するため、科学者を中心とした連合調査隊を組織する。内海突入から312分後、調査隊の反応はロストする。"
-    
   },
   {
     date: "N.F.23年",
-    text: "唯一の生存者であるチラン博士が死域から脱出、「YFJ」という災いを制御できる戦略物資を持ち帰った。",
-    customRow: 2,
+    text: "唯一の生存者であるチラン博士が死域から脱出、「YFJ」という災いを制御できる戦略物資を持ち帰った。"
   },
   {
       type: "image",
       src: "./img/timeline/YFJ.png", 
-      customRow: 4,
-      span: 2
+      span: 1 
   },
   {
     date: "N.F.24年<br>ディス建設",
@@ -236,61 +231,46 @@ window.timelineMsg = [
 ];
 
 // ================= 2. 自动布局算法 =================
-// ================= 2. 自动布局算法 (升级版：自然随机 + 手动支持) =================
 function generateLayout(data) {
   const X_START = window.innerWidth * 0.15;
   let currentX = X_START;
   
-  // 记录上一个元素的行号，用于"随机漫步"算法
-  let lastRow = 4; 
-
   return data.map((item, index) => {
-      // --- 1. 尺寸计算 ---
+      // --- 1. 行号 (Row) 计算 ---
+      // 波浪线排布，避开顶部(0-1)和底部(9)
+      const wave = Math.sin(index * 0.9) * 2.5;
+      let row = Math.floor(4 + wave); 
+      if (row < 2) row = 2;
+      if (row > 7) row = 7;
+
+      // --- 2. 尺寸 (Span & Width) 计算 ---
       let span = 3; 
       let widthFactor = 350; 
 
       if (item.type === 'image') {
           span = item.span || 5; 
+          row = 2; 
           widthFactor = span * 100;
       } 
       else if (item.isMajor) {
+          // ★【关键】如果是重点事件，强制变大，并尽量往中间放
           span = 5; 
-          widthFactor = 500; 
+          widthFactor = 500; // 宽度更宽
+          row = Math.max(2, row - 1); // 稍微上移一点
       }
       else {
+          // 普通文字
           const textLen = item.text.length;
           if (textLen > 150) { span = 5; widthFactor = 450; }
           else if (textLen > 80) { span = 4; widthFactor = 400; }
           else { span = 3; widthFactor = 320; }
       }
 
-      // --- 2. 行号 (Row) 计算：核心修改 ---
-      let row;
-
-      // 【功能新增】如果你在数据里写了 customRow，就完全听你的
-      if (item.customRow !== undefined) {
-          row = item.customRow;
-      } else {
-          // 【算法优化】随机漫步
-          // 不再是机械的波浪，而是根据上一个位置随机 +/- 1 到 2 行
-          // 这样两个相邻的事件更有可能靠在一起，而不是一个天一个地
-          const step = Math.floor(Math.random() * 5) - 2; // 结果为 -2, -1, 0, 1, 2
-          row = lastRow + step;
-      }
-
-      // 越界保护 (限制在第 1 行到第 8 行之间，留出顶底空间)
-      if (row < 1) row = 1;
-      // 如果该元素高度(span)加上起始行(row)超过了第9行，就把它往上顶
+      // 防止溢出底部
       if (row + span > 9) row = 9 - span;
 
-      // 更新 lastRow，供下一个元素参考
-      lastRow = row;
-
-      // --- 3. 横向坐标 ---
       const myX = currentX;
-      // 间距稍微随机一点点，让它不那么死板
-      const randomGap = 50 + Math.random() * 50; 
-      currentX += widthFactor + randomGap;
+      currentX += widthFactor + 80; // 间距
 
       return {
           ...item,
