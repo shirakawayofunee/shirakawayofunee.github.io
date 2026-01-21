@@ -14,7 +14,6 @@ window.timelineMsg = [
   {
     date: "N.F.21年",
     text: "チラン博士が内海を調査するため、科学者を中心とした連合調査隊を組織する。内海突入から312分後、調査隊の反応はロストする。"
-    // 没有 isMajor，默认【样式B】
   },
   {
     date: "N.F.23年",
@@ -22,8 +21,8 @@ window.timelineMsg = [
   },
   {
       type: "image",
-      src: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop", 
-      span: 5 
+      src: "./img/timeline/YFJ.png", 
+      span: 1 
   },
   {
     date: "N.F.24年<br>ディス建設",
@@ -315,8 +314,10 @@ document.addEventListener("DOMContentLoaded", () => {
           // ★【样式 A】: 重点事件 (大背景字 + 黑标题)
           div.innerHTML = `
               <div class="major-bg-year">${item.date}</div>
-              <div class="major-title">${item.title}</div>
-              <div class="major-desc">${item.text}</div>
+              <div class="major-content-wrap">
+                    <div class="major-title">${item.title}</div>
+                    <div class="major-desc">${item.text}</div>
+                </div>
           `;
       } 
       else {

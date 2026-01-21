@@ -88,11 +88,20 @@ body {
 
 /* ================== 样式 A：关键节点 (IsMajor) ================== */
 .event-item.is-major {
-    border-left: 4px solid var(--fg-color); /* 加粗边框 */
+    border-left: none; /* 确保没有边框 */
     background: transparent; /* 去掉背景，让灰色大字透出来 */
     overflow: visible; /* 允许大字溢出一点 */
     justify-content: flex-start;
     padding-top: 4vh;
+}
+
+.major-content-wrap {
+    border-left: 5px solid var(--fg-color); /* 边框移到这里 */
+    padding-left: 15px; /* 文字和线的间距 */
+    display: flex;
+    flex-direction: column;
+    /* 关键：让高度自适应内容，而不是撑满格子 */
+    height: fit-content; 
 }
 
 /* 背景大字年份 */
@@ -121,7 +130,6 @@ body {
     width: fit-content;
     margin-bottom: 20px;
     box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
-    transform: translateX(-10px); /* 稍微突出一点 */
 }
 
 /* 下方描述文字 */
@@ -144,8 +152,15 @@ body {
 
 /* --- 5. 底部进度条 --- */
 .bottom-nav {
-    position: fixed; bottom: 5vh; left: 5vw; width: 90vw; height: 40px; z-index: 100;
+    position: fixed;
+    /* 改用 top 定位，95vh 正好是第10行(90-100)的中间 */
+    top: 95vh; 
+    left: 5vw; width: 90vw;
+    height: 40px;
+    z-index: 100;
     display: flex; align-items: center; pointer-events: none;
+    /* 通过 translateY 修正自身高度的一半，确保绝对垂直居中 */
+    transform: translateY(-50%);
 }
 .progress-line {
     width: 100%; height: 2px; background: var(--fg-color); position: relative; pointer-events: auto; cursor: pointer;
