@@ -418,21 +418,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (item.isMajor) div.classList.add("is-major");
 
     div.style.left = `${item.x}px`;
-        div.style.top = `${item.row * 10}vh`; 
-        div.style.height = `${item.span * 10}vh`; 
-        
-        div.style.width = `${item.width}px`;
+    div.style.top = `${item.row * 10}vh`; 
+    // 无论什么类型，高度都由算法算出的 span 决定 (20vh, 30vh, 40vh...)
+    // 这样底部永远对齐背景的灰线
+    div.style.height = `${item.span * 10}vh`; 
+    div.style.width = `${item.width}px`;
 
-    // 如果是【图片】或【大事件】，保持原来的霸气高度（填满格子）
-    if (item.type === 'image' || item.isMajor) {
-        div.style.height = `${item.span * 10}vh`;
-    } 
-    // 如果是【普通文字】，高度设为 auto，让它随内容收缩
-    else {
-        div.style.height = 'auto'; 
-        div.style.minHeight = '10vh'; // 给一个最小高度，避免内容太少时缩成一条线不好看
-        div.style.paddingBottom = '30px'; // 底部留一点呼吸感，不要切到文字
-      }
     if (item.type === "image") {
       // 图片模式
       div.classList.add("is-image");
