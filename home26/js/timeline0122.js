@@ -1,6 +1,5 @@
-// ================= 1. 数据源 (你的原始数据) =================
-// 注意：我在个别条目加了 type: 'image' 占位符作为演示，
-// 你可以在数组里任意位置插入 { type: 'image', src: '图片地址' } 来添加图片事件
+// ================= 1. 数据源 (你的完整数据) =================
+// 提示：如果要插图，可以在数组中插入: { type: "image", src: "图片路径", span: 4 }
 window.timelineMsg = [
   {
     date: "N.F.元年<br>12月12日隕星事件",
@@ -14,11 +13,11 @@ window.timelineMsg = [
     date: "N.F.23年",
     text: "唯一の生存者であるチラン博士が死域から脱出、「YFJ」という災いを制御できる戦略物資を持ち帰った。"
   },
-  // ... 这里为了演示插入一张图 ...
+  // --- 演示：在这里插入一张图片，打破纯文字的节奏 ---
   {
-      type: "image",
-      src: "https://images.unsplash.com/photo-1614726365723-49faaa5646d7?q=80&w=1000&auto=format&fit=crop", // 替换为你本地的 img/xxx.jpg
-      caption: "内海調査記録 FILE.01"
+    type: "image",
+    src: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop", // 替换为你本地图片
+    span: 5 // 占据5行高
   },
   {
     date: "N.F.24年<br>都市「ディス」の建設",
@@ -84,10 +83,11 @@ window.timelineMsg = [
     date: "N.F.103年10月",
     text: "69歳のデレヴァンは████によって殺害されました。第二代FAC総司令にはアドリアン・スターリングが就任しました。████はディス旧軍を率いてディスを離れ。"
   },
+  // --- 演示：插入图片 ---
   {
-      type: "image",
-      src: "https://images.unsplash.com/photo-1519608487953-e999c9dc2968?q=80&w=1000&auto=format&fit=crop",
-      caption: "レオポルド FILE.02"
+    type: "image",
+    src: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
+    span: 6 // 占6行
   },
   {
     date: "N.F.113年",
@@ -172,200 +172,183 @@ window.timelineMsg = [
 ];
 
 // ================= 2. 自动布局算法 (关键) =================
-// 这个函数会遍历你的长文本，自动分配 x 坐标和行号，形成钢琴块布局
 function generateLayout(data) {
-  const X_START = 100; // 起始X偏移
-  const X_GAP = 350;   // 每个事件之间的横向距离 (越小越紧凑)
-  let currentX = X_START;
-  
-  // 行号逻辑：我们希望它在 2-8 行之间波动，避开顶部导航(0-1)和底部(9)
-  // 简单的正弦波波动，让它看起来有起伏
-  const items = data.map((item, index) => {
-      // 计算行号：利用 Math.sin 让行号产生波浪形变化 (2,3,4,5,6,7,6,5...)
-      // 并加入一点随机性
-      const wave = Math.sin(index * 0.8) * 2.5; 
-      let row = Math.floor(4 + wave); 
-      
-      // 限制行号范围 (第2行到第8行)
-      if (row < 2) row = 2;
-      if (row > 7) row = 7;
+    const X_START = window.innerWidth * 0.15; // 初始留白
+    let currentX = X_START;
+    
+    return data.map((item, index) => {
+        // --- 算法：行号计算 ---
+        // 利用正弦波+取整，让行号在 2 到 7 之间波动 (避开顶部导航和底部)
+        // 这样事件就会像钢琴音符一样上下起伏
+        const wave = Math.sin(index * 0.9) * 2.5;
+        let row = Math.floor(4 + wave); 
+        
+        // 限制范围 (第2行 - 第7行)
+        if (row < 2) row = 2;
+        if (row > 7) row = 7;
 
-      // 计算高度 (Span)：根据文字长度决定
-      // 如果是图片，默认跨 4 行
-      let span = 3;
-      if (item.type === 'image') {
-          span = 5;
-          row = 2; // 图片尽量靠上一点
-      } else {
-          // 文字越长，格子越高
-          const len = item.text.length;
-          if (len > 100) span = 5;
-          else if (len > 50) span = 4;
-          else span = 3;
-      }
+        // --- 算法：高度/宽度计算 ---
+        let span = 3; // 默认占3行
+        let widthFactor = 350; // 默认宽度
 
-      // 确保不要溢出底部 (总共10行)
-      if (row + span > 9) row = 9 - span;
+        // 如果是图片
+        if (item.type === 'image') {
+            span = item.span || 5; // 图片通常更高
+            row = 2; // 图片尽量靠上展示
+            widthFactor = span * 100; // 图片宽度随高度变化
+        } 
+        // 如果是文字
+        else {
+            // 根据字数决定格子高度
+            const textLen = item.text.length;
+            if (textLen > 150) { span = 5; widthFactor = 450; }
+            else if (textLen > 80) { span = 4; widthFactor = 400; }
+            else { span = 3; widthFactor = 320; }
+        }
 
-      // 横向坐标
-      const myX = currentX;
-      // 下一个元素的距离：如果是简单文本，紧凑点；如果是大段文本，宽一点
-      const widthFactor = (item.type === 'image') ? 500 : 400;
-      currentX += widthFactor + 50; // 50是间隙
+        // 防止溢出底部 (共10行，index 0-9)
+        if (row + span > 9) row = 9 - span;
 
-      return {
-          ...item,
-          x: myX,
-          row: row,
-          span: span,
-          width: widthFactor
-      };
-  });
+        // 保存当前X，并为下一个元素增加距离
+        const myX = currentX;
+        currentX += widthFactor + 60; // 60px 间隙
 
-  return { items, totalWidth: currentX };
+        return {
+            ...item,
+            x: myX,
+            row: row,
+            span: span,
+            width: widthFactor
+        };
+    });
 }
 
-// ================= 3. 初始化渲染与动画 =================
+// ================= 3. 核心执行逻辑 =================
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById('timelineContainer');
-  
-  // 1. 生成布局数据
-  const { items, totalWidth } = generateLayout(window.timelineMsg);
-  
-  // 设置容器总宽度 (加上窗口宽度以便滑到底)
-  const finalWidth = totalWidth + window.innerWidth * 0.5;
-  container.style.width = `${finalWidth}px`;
+    const container = document.getElementById('timelineContainer');
+    
+    // 1. 生成带坐标的数据
+    const items = generateLayout(window.timelineMsg);
+    
+    // 2. 计算总宽度 (最后一个元素的右边缘 + 一屏宽度缓冲)
+    const lastItem = items[items.length - 1];
+    const totalWidth = lastItem.x + lastItem.width + window.innerWidth;
+    container.style.width = `${totalWidth}px`;
 
-  // 2. 渲染 DOM
-  items.forEach((item, index) => {
-      const div = document.createElement('div');
-      div.className = `event-item item-${index}`;
-      
-      // 计算 CSS 样式
-      // top 和 height 用 vh (视口高度百分比) 实现 10行 栅格
-      div.style.left = `${item.x}px`;
-      div.style.top = `${item.row * 10}vh`; 
-      div.style.height = `${item.span * 10}vh`;
-      div.style.width = `${item.width}px`;
+    // 3. 渲染 DOM
+    items.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = `event-item item-${index}`;
+        
+        // 核心布局样式 (vh 单位)
+        div.style.left = `${item.x}px`;
+        div.style.top = `${item.row * 10}vh`; 
+        div.style.height = `${item.span * 10}vh`;
+        div.style.width = `${item.width}px`;
 
-      if (item.type === 'image') {
-          // 图片卡片
-          div.style.padding = '0';
-          div.style.border = '1px solid #000';
-          div.innerHTML = `
-              <img src="${item.src}" style="width:100%; height:100%; object-fit:cover; clip-path: inset(0 100% 0 0);">
-              <div style="position:absolute; bottom:0; left:0; background:#000; color:#fff; padding:2px 5px; font-size:10px;">${item.caption || 'IMAGE'}</div>
-          `;
-      } else {
-          // 文字卡片
-          div.innerHTML = `
-              <div class="event-date">${item.date}</div>
-              <div class="event-text">${item.text}</div>
-          `;
-      }
+        if (item.type === 'image') {
+            div.classList.add('is-image');
+            div.innerHTML = `<img src="${item.src}">`;
+        } else {
+            // 文字：允许 HTML 标签渲染
+            div.innerHTML = `
+                <div class="event-date">${item.date}</div>
+                <div class="event-text">${item.text}</div>
+            `;
+        }
+        container.appendChild(div);
+    });
 
-      container.appendChild(div);
-  });
+    // 4. GSAP 动画
+    gsap.registerPlugin(ScrollTrigger);
 
-  // 3. GSAP 动画设置
-  gsap.registerPlugin(ScrollTrigger);
+    // [横向滚动]
+    const scrollTween = gsap.to(container, {
+        x: - (totalWidth - window.innerWidth),
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".wrapper",
+            pin: true,
+            scrub: 0.2, // 降低数值，响应更跟手
+            end: () => `+=${totalWidth}`,
+            onUpdate: (self) => {
+                // 更新底部进度条位置
+                const p = self.progress * 100;
+                document.querySelector('.diamond-cursor').style.left = `${p}%`;
+                
+                // 更新年份提示
+                const currentIdx = Math.floor(self.progress * items.length);
+                const currentItem = items[Math.min(currentIdx, items.length-1)];
+                if(currentItem && currentItem.date) {
+                    // 提取 N.F. 年份
+                    const match = currentItem.date.match(/N\.F\.\d+/);
+                    if(match) document.querySelector('.cursor-label').innerText = match[0];
+                }
+            }
+        }
+    });
 
-  // 定义横向滚动 (Fake Horizontal Scroll)
-  const scrollTween = gsap.to(container, {
-      x: - (finalWidth - window.innerWidth),
-      ease: "none",
-      scrollTrigger: {
-          trigger: ".wrapper",
-          pin: true,
-          scrub: 0.5, // 这里的数值越大，跟随越慢(越滑)
-          end: () => `+=${finalWidth}`,
-          onUpdate: (self) => {
-              // 更新底部菱形进度条文字
-              const p = Math.round(self.progress * 100);
-              document.querySelector('.diamond-cursor').style.left = `${self.progress * 100}%`;
-              
-              // 找出当前最接近屏幕中间的年份 (简单估算)
-              const currentIdx = Math.floor(self.progress * items.length);
-              const currentItem = items[Math.min(currentIdx, items.length-1)];
-              if(currentItem && currentItem.date) {
-                  // 提取年份数字作为标签 (正则提取 N.F.数字)
-                  const match = currentItem.date.match(/N\.F\.\d+/);
-                  const yearLabel = match ? match[0] : 'TIMELINE';
-                  document.querySelector('.cursor-label').innerText = yearLabel;
-              }
-          }
-      }
-  });
+    // [元素入场] 拒绝弹跳，使用优雅的 Fade & Wipe
+    items.forEach((item, index) => {
+        const target = document.querySelector(`.item-${index}`);
+        const startTrigger = "left 92%"; // 刚进入屏幕边缘即触发
 
-  // 元素入场动画 (无弹跳，使用优雅的 Wipe 和 Fade)
-  items.forEach((item, index) => {
-      const target = document.querySelector(`.item-${index}`);
-      const startTrigger = "left 90%"; // 进入屏幕右侧 10% 处触发
+        if (item.type === 'image') {
+            const img = target.querySelector('img');
+            // 图片：遮罩拉开 (Wipe Effect)
+            gsap.to(img, {
+                clipPath: "inset(0 0% 0 0)", 
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: target,
+                    containerAnimation: scrollTween,
+                    start: startTrigger,
+                    toggleActions: "play none none none"
+                }
+            });
+        } else {
+            // 文字：透明度上浮 (Fade Up)
+            const date = target.querySelector('.event-date');
+            const text = target.querySelector('.event-text');
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: target,
+                    containerAnimation: scrollTween,
+                    start: startTrigger,
+                    toggleActions: "play none none none"
+                }
+            });
+            
+            // 简单的淡入，没有夸张位移
+            tl.fromTo(date, { opacity:0, y:10 }, { opacity:1, y:0, duration:0.5 })
+              .to(text, { opacity:1, duration:0.8 }, "-=0.2");
+        }
+    });
 
-      if (item.type === 'image') {
-          const img = target.querySelector('img');
-          gsap.to(img, {
-              clipPath: "inset(0 0% 0 0)", // 遮罩从右向左拉开
-              duration: 1.5,
-              ease: "power2.out",
-              scrollTrigger: {
-                  trigger: target,
-                  containerAnimation: scrollTween,
-                  start: startTrigger,
-                  toggleActions: "play none none none"
-              }
-          });
-      } else {
-          // 文字逐行显现 (Staggered Reveal)
-          const date = target.querySelector('.event-date');
-          const text = target.querySelector('.event-text');
-          
-          const tl = gsap.timeline({
-              scrollTrigger: {
-                  trigger: target,
-                  containerAnimation: scrollTween,
-                  start: startTrigger,
-                  toggleActions: "play none none none"
-              }
-          });
+    // 5. Lenis 物理滚动 (关键：手感调整)
+    const lenis = new Lenis({
+        duration: 1.5,        // 惯性停止时间 (越大越滑)
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+        wheelMultiplier: 4.5, // 滚轮倍率：设为 4.5 左右，接近你想要的 "一滚走20%" 的感觉
+        smooth: true,
+    });
 
-          // 先显示日期，再显示正文
-          tl.fromTo(date, 
-              { opacity: 0, x: -20 }, 
-              { opacity: 1, x: 0, duration: 0.5 }
-          ).fromTo(text, 
-              { opacity: 0 }, 
-              { opacity: 1, duration: 0.8 }, 
-              "-=0.3"
-          );
-      }
-  });
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
-  // 4. Lenis 物理滚动配置 (关键手感调整)
-  const lenis = new Lenis({
-      duration: 1.5,        // 惯性持续时间 (越长越滑)
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-      wheelMultiplier: 3.5, // 核心修改：滚轮力度倍率 (3.5倍意味着滚一下走很远)
-      smooth: true,
-  });
-
-  function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  // 底部进度条点击跳转
-  document.querySelector('.progress-line').addEventListener('click', (e) => {
-      const rect = e.target.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      const progress = clickX / rect.width;
-      const targetScroll = (finalWidth - window.innerWidth) * progress;
-      lenis.scrollTo(targetScroll); // Lenis 处理平滑跳转
-  });
+    // 底部跳转
+    document.querySelector('.progress-line').addEventListener('click', (e) => {
+        const rect = e.target.getBoundingClientRect();
+        const p = (e.clientX - rect.left) / rect.width;
+        lenis.scrollTo((totalWidth - window.innerWidth) * p);
+    });
 });
 
+// 导航栏点击逻辑
 function changeBanner(id) {
-  console.log("Switch to Banner: " + id);
-  // 这里添加你的页面跳转逻辑，例如 window.location.href = ...
+    console.log("Nav to: " + id);
 }
