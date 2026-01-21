@@ -294,80 +294,110 @@ window.timelineMsg = [
   },
 ];
 
-// ================= 2. 自动布局算法 (修复版：优先级链条) =================
+
+// ================= 2. 自动布局算法 (最终版：智能防撞 + 图片上下呼应) =================
+// ================= 2. 自动布局算法 (精准高度版) =================
 function generateLayout(data) {
   const X_START = window.innerWidth * 0.15;
   let currentX = X_START;
-  let lastRow = 4;
+  
+  let lastRow = 4; 
   let lastSpan = 3;
+  let lastWidth = 0; 
+  let lastType = ''; 
 
   return data.map((item, index) => {
-    // --- 1. 尺寸计算 ---
-    let span = 3;
-    let widthFactor = 300; 
+      // --- 1. 尺寸计算 (精准匹配内容量) ---
+      let span = 3; 
+      let widthFactor = 300; 
 
-    if (item.type === "image") {
-      span = item.span || 5;
-      widthFactor = item.customWidth || span * 80;
-    } else if (item.isMajor) {
-      span = 5;
-      widthFactor = 480;
-    } else {
-      const textLen = item.text.length;
-      if (textLen > 150) { span = 5; widthFactor = 400; } 
-      else if (textLen > 80) { span = 4; widthFactor = 360; } 
-      else { span = 3; widthFactor = 280; } 
-    }
+      // 如果你在数据里手动指定了 span (比如 span: 4)，绝对优先听你的
+      if (item.span) {
+          span = item.span;
+          widthFactor = item.customWidth || (item.type === 'image' ? span * 80 : 320);
+      }
+      else if (item.type === 'image') {
+          span = 5; 
+          widthFactor = item.customWidth || (span * 80); 
+      } 
+      else if (item.isMajor) {
+          span = 5; 
+          widthFactor = 550; 
+      }
+      else {
+          // ★★★ 核心修改：文本分级更细致 ★★★
+          const textLen = item.text.length; // 获取字数
+          
+          // 极长文本 (>180字)：给6格 (60vh)
+          if (textLen > 180) { 
+              span = 6; widthFactor = 420; 
+          }
+          // 长文本 (100-180字)：给5格 (50vh)
+          else if (textLen > 100) { 
+              span = 5; widthFactor = 380; 
+          }
+          // 中等文本 (50-100字)：给4格 (40vh)
+          else if (textLen > 50) { 
+              span = 4; widthFactor = 340; 
+          }
+          // 短文本 (30-50字)：给3格 (30vh)
+          else if (textLen > 30) { 
+              span = 3; widthFactor = 300; 
+          }
+          // ★ 极短文本 (<30字)：给2格 (20vh) —— 解决“三行字占50vh”的问题
+          else { 
+              span = 2; widthFactor = 280; 
+          }
+      }
 
-    // --- 2. 行号 (Row) 计算 ---
-    let row;
-    if (item.customRow !== undefined) {
-      row = item.customRow;
-    } else {
-      const step = Math.floor(Math.random() * 5) - 2;
-      row = lastRow + step;
-    }
+      // --- 2. 行号计算 ---
+      let row;
+      if (item.customRow !== undefined) {
+          row = item.customRow;
+      } else {
+          const step = Math.floor(Math.random() * 5) - 2; 
+          row = lastRow + step;
+      }
 
-    if (row < 1) row = 1;
-    if (row + span > 9) row = 9 - span;
+      // 越界保护 (1-8行)
+      if (row < 1) row = 1;
+      if (row + span > 9) row = 9 - span; // 确保底部不会溢出
 
-    // --- 3. ★★★ 核心修复：将逻辑合并为一个完整的链条 ★★★ ---
-    const rowDiff = Math.abs(row - lastRow);
-    let gap = 20; // 默认基础间距
+      // --- 3. 坐标与间距策略 ---
+      const rowDiff = Math.abs(row - lastRow); 
+      let gap = 50; 
 
-    // 【优先级 1】大事件绝对避让 (最高权重)
-    if (item.isMajor) {
-      gap = 120; 
-    } 
-    // 【优先级 2】如果前一个是图片，不要贴太近 (保护图片)
-    else if (data[index - 1] && data[index - 1].type === "image") {
-      gap = 60; 
-    }
-    // 【优先级 3】图片类型尝试轻微重叠
-    else if (item.type === "image" && rowDiff > 1) {
-      gap = -10;
-    }
-    // 【优先级 4】普通文字尝试深度重叠 (必须垂直距离够远)
-    else if (index > 0 && rowDiff > 2) {
-      gap = -120; 
-    }
-    // 【默认情况】保持 gap = 40
+      if (data[index-1] && data[index-1].isMajor) {
+          gap = 120; 
+      }
+      else if (item.isMajor) {
+          gap = 150;
+      }
+      else if (item.type === 'image' && lastType === 'image' && rowDiff > 2) {
+          gap = -lastWidth + 30; 
+      }
+      else if (item.type !== 'image' && lastType !== 'image' && rowDiff > 2) {
+          gap = -80; 
+      }
 
-    let myX = currentX + gap;
-    currentX = myX + widthFactor;
+      let myX = currentX + gap;
+      currentX = myX + widthFactor;
 
-    lastRow = row;
-    lastSpan = span;
+      lastRow = row;
+      lastSpan = span;
+      lastWidth = widthFactor;
+      lastType = item.isMajor ? 'major' : item.type || 'text'; 
 
-    return {
-      ...item,
-      x: myX,
-      row: row,
-      span: span,
-      width: widthFactor,
-    };
+      return {
+          ...item,
+          x: myX,
+          row: row,
+          span: span, // 这里的 span 现在是计算好的整数 (2, 3, 4, 5...)
+          width: widthFactor
+      };
   });
 }
+
 
 // ================= 3. 核心执行逻辑 =================
 document.addEventListener("DOMContentLoaded", () => {
@@ -388,10 +418,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (item.isMajor) div.classList.add("is-major");
 
     div.style.left = `${item.x}px`;
-    div.style.top = `${item.row * 10}vh`;
-    div.style.height = `${item.span * 10}vh`;
-    div.style.width = `${item.width}px`;
+        div.style.top = `${item.row * 10}vh`; 
+        div.style.height = `${item.span * 10}vh`; 
+        
+        div.style.width = `${item.width}px`;
 
+    // 如果是【图片】或【大事件】，保持原来的霸气高度（填满格子）
+    if (item.type === 'image' || item.isMajor) {
+        div.style.height = `${item.span * 10}vh`;
+    } 
+    // 如果是【普通文字】，高度设为 auto，让它随内容收缩
+    else {
+        div.style.height = 'auto'; 
+        div.style.minHeight = '10vh'; // 给一个最小高度，避免内容太少时缩成一条线不好看
+        div.style.paddingBottom = '30px'; // 底部留一点呼吸感，不要切到文字
+      }
     if (item.type === "image") {
       // 图片模式
       div.classList.add("is-image");

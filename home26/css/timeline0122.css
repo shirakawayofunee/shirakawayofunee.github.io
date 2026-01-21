@@ -52,8 +52,8 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* 默认样式 B */
+    justify-content: flex-start; 
+    padding-top: 25px;
     border-left: 2px solid var(--fg-color);
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(5px);
