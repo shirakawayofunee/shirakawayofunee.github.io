@@ -12,7 +12,7 @@ window.timelineMsg = [
     title: "12.12隕星事件", // 样式A需要标题
     text: "隕星の落下で死の禁域（そのうち内海と呼ばれる）が生まれ、世界各地で超自然災害発生。",
     isMajor: true, // 【样式A】开关
-    customRow: 4,
+    customRow: 3,
   },
   {
     type: "image",
@@ -25,11 +25,13 @@ window.timelineMsg = [
     date: "N.F.21年",
     text: "チラン博士が内海を調査するため、科学者を中心とした連合調査隊を組織する。内海突入から312分後、調査隊の反応はロストする。",
     customRow: 6,
+    span: 3,
   },
   {
     date: "N.F.23年",
     text: "唯一の生存者であるチラン博士が死域から脱出、「YFJ」という災いを制御できる戦略物資を持ち帰った。",
     customRow: 2,
+    span: 2,
   },
   {
     type: "image",
@@ -70,6 +72,7 @@ window.timelineMsg = [
   {
     date: "N.F.61.12.26",
     text: "ディス初の民選議長ダモンは暗殺され、ディス戌衛軍団第八連の上尉ブローク・フランシスは逃亡し、砂海遊撃隊を結成宗主市と対抗。",
+    span: 3,
     customRow: 6,
   },
   {
@@ -77,7 +80,8 @@ window.timelineMsg = [
     title: "核爆 涅槃港",
     text: "宗主連合軍が警告なしに戦術核暖冬で涅槃の港を攻撃した。<br>貿易中心が核攻撃を受け、数十万人が即死、全都市が震撼。",
     isMajor: true, // 【样式A】
-    customRow: 2,
+    span: 4,
+    customRow: 1.5,
   },
   {
     type: "image",
@@ -90,10 +94,11 @@ window.timelineMsg = [
     date: "N.F.66.8.27",
     text: "ブローク上尉は独立を訴える演説を行い、ディス独立軍の結成を正式に宣言しました。同日夜、ブローク上尉は2ヶ月前に受けた放射能汚染により不帰の客となり、<span>デレヴァン・スティール</span>が独立軍の統帥権を引き継ぎました。",
     customRow: 2,
+    span: 3,
   },
   {
     date: "N.F.72.12.26",
-    title: "「ディス」独立",
+    title: "ディス独立",
     text: "ディス独立戦争が勝利を収めた。独立軍の統率者デレヴァンの宣言のもと、ディスは正式に独立を果たしました。彼自身も新ディスの初代議長の職務を引き受けました。",
     isMajor: true,
     customRow: 7,
@@ -102,11 +107,13 @@ window.timelineMsg = [
     date: "N.F.72年～84年",
     text: "デレヴァンは城邦議長の職を長く務め続け、権力の譲渡を拒否し、選挙を操作して強引に再選を重ねました。これにより、彼はディス史上最も長期間統治した独裁者となりました。彼の統治下では、対外的には狂気的な拡張と略奪を繰り返し。国内では異分子を高圧的に弾圧し、至るところで腐敗がはびこりました。城邦は次第に腐敗の一途をたどりました。",
     customRow: 7,
+    span: 4,
   },
   {
     date: "N.F.81年",
     text: "都市の拡大に伴い、ディスは東西二区に分割された。鉱業の大部分は西区に集中している。",
-    customRow: 1,
+    customRow: 2,
+    span: 2,
   },
   {
     type: "image",
@@ -125,6 +132,8 @@ window.timelineMsg = [
   {
     date: "N.F.83年",
     text: "幼少期の<span>レオポルド</span>は軍人だった両親が政治闘争に巻き込まれ、戦場で無駄死した後、親族や友人の養子縁組の申し出をすべて拒否し、復讐を誓って福音地に身を投じました。それ以来、レオポルドは福音地において<span>最も鋭い刃</span>となりました。",
+    span: 3,
+    customRow: 2,
   },
   {
     type: "image",
@@ -137,21 +146,25 @@ window.timelineMsg = [
     date: "N.F.84年",
     text: "ディスがある実験の失敗により<span>内海大爆発</span>を引き起こした。これにより、最初の黒環<span>BR-000</span>が誕生。内海大爆発と合わせ、直接的な死者数は87231人に上った。YFJの生産量を急減させ、国外へのYFJ輸出が大幅に減少した。",
     customRow: 6,
+    span: 3,
   },
   {
     date: "N.F.84年12月22日",
     text: "内海大爆発事件後、ディス旧軍の権威体制は完全に崩壊した。EDGE-01の説得を受け、残存する軍政体系が<span>FAC</span>に再構築されるデレヴァンが初代総司令を兼任し、FACの主力を狂厄への抵抗へと大きくシフトさせた。",
-    customRow: 1,
+    customRow: 2,
+    span: 3,
   },
   {
     date: "N.F.84年",
     text: "わずか6歳の<span>セヴェロ</span>は家族を失い、行き場を失った末に福音地に拾われ、<span>レオポルドを師と仰ぎました</span>。",
     customRow: 6,
+    span: 2,
   },
   {
     date: "N.F.89年6月27日",
     text: "BR-001爆発。行方不明者は3万人を超え、史上初めて、<span>能力者</span>の存在が公表される。",
     customRow: 2,
+    span: 2,
   },
   {
     type: "image",
@@ -164,6 +177,7 @@ window.timelineMsg = [
     date: "N.F.103年",
     text: "<span>HUSH-X</span>は、上庭の第七代執行人に就任しました。",
     customRow: 7,
+    span: 2,
   },
   {
     date: "N.F.103", // 大标题背景字
@@ -176,6 +190,7 @@ window.timelineMsg = [
     date: "N.F.103年10月",
     text: "69歳のデレヴァンは████によって殺害されました。第二代FAC総司令にはアドリアン・スターリングが就任しました。████はディス旧軍を率いてディスを離れ。",
     customRow: 7,
+    span: 3,
   },
   {
     date: "N.F.104", // 大标题背景字
@@ -194,7 +209,9 @@ window.timelineMsg = [
   {
     date: "N.F.113年",
     text: "レオポルドは自分の余命が短いことを悟り、事前にセヴェロに後事を託した。セヴェロは大きな衝撃を受け、命を延ばせるような情報を必死に探し始めた。",
+    span: 3,
   },
+  
   {
     date: "N.F.113.3", // 大标题背景字
     title: "BR-002再爆発", // 样式A需要标题
@@ -212,7 +229,7 @@ window.timelineMsg = [
   {
     date: "N.F.113年6月",
     text: "BR-002事件後、福音地の勢力は新城から撤退し、東区の混乱事件は減少、西区が主要な戦場となる。FACは黒環防衛陣線の構築を計画する。<br>福音地と上庭は互いにスパイを送り込んた。福音地はスパイを通じて上庭の秘密兵器「HUSH」システムの存在を知り、能力者組織「GARDEN」にその破壊を依頼するが、首領レオポルドに拒否される――彼女はより有利な介入のタイミングを待っている。<br>一方、HUSH部隊は福音地を掃除任務を受け、まず福音地と曖昧な関係を持つ能力者組織「GARDEN」を標的にした。HUSH部隊はHUSH-X（以下、X）の指揮下で「GARDEN」への破壊を開始。",
-    customRow: 1,
+    customRow: 2,
   },
   {
     date: "N.F.113.7.16",
@@ -224,6 +241,7 @@ window.timelineMsg = [
   {
     date: "N.F.113年7月16日～7月19日",
     text: "高級官僚が次々と襲撃され、「GARDEN」の暗殺リストに載っていると疑われる。",
+    customRow: 7,
   },
   {
     date: "N.F.113年7月20日 23:37",
@@ -294,24 +312,22 @@ window.timelineMsg = [
   },
 ];
 
-
-// ================= 2. 自动布局算法 (最终版：智能防撞 + 图片上下呼应) =================
-// ================= 2. 自动布局算法 (精准高度版) =================
+// ================= 2. 自动布局算法 (最终修正版) =================
 function generateLayout(data) {
   const X_START = window.innerWidth * 0.15;
   let currentX = X_START;
   
+  // 状态记录
   let lastRow = 4; 
   let lastSpan = 3;
-  let lastWidth = 0; 
-  let lastType = ''; 
+  let lastWidth = 0; // 记录上一个宽度，用于计算回退
+  let lastType = ''; // 记录上一个类型
 
   return data.map((item, index) => {
-      // --- 1. 尺寸计算 (精准匹配内容量) ---
+      // --- 1. 尺寸计算 ---
       let span = 3; 
       let widthFactor = 300; 
 
-      // 如果你在数据里手动指定了 span (比如 span: 4)，绝对优先听你的
       if (item.span) {
           span = item.span;
           widthFactor = item.customWidth || (item.type === 'image' ? span * 80 : 320);
@@ -325,29 +341,13 @@ function generateLayout(data) {
           widthFactor = 550; 
       }
       else {
-          // ★★★ 核心修改：文本分级更细致 ★★★
-          const textLen = item.text.length; // 获取字数
-          
-          // 极长文本 (>180字)：给6格 (60vh)
-          if (textLen > 180) { 
-              span = 6; widthFactor = 420; 
-          }
-          // 长文本 (100-180字)：给5格 (50vh)
-          else if (textLen > 100) { 
-              span = 5; widthFactor = 380; 
-          }
-          // 中等文本 (50-100字)：给4格 (40vh)
-          else if (textLen > 50) { 
-              span = 4; widthFactor = 340; 
-          }
-          // 短文本 (30-50字)：给3格 (30vh)
-          else if (textLen > 30) { 
-              span = 3; widthFactor = 300; 
-          }
-          // ★ 极短文本 (<30字)：给2格 (20vh) —— 解决“三行字占50vh”的问题
-          else { 
-              span = 2; widthFactor = 280; 
-          }
+          // 文本自动分级
+          const textLen = item.text.length;
+          if (textLen > 180) { span = 6; widthFactor = 420; }
+          else if (textLen > 100) { span = 5; widthFactor = 380; }
+          else if (textLen > 50) { span = 4; widthFactor = 340; }
+          else if (textLen > 30) { span = 3; widthFactor = 300; }
+          else { span = 2; widthFactor = 280; }
       }
 
       // --- 2. 行号计算 ---
@@ -359,23 +359,28 @@ function generateLayout(data) {
           row = lastRow + step;
       }
 
-      // 越界保护 (1-8行)
       if (row < 1) row = 1;
-      if (row + span > 9) row = 9 - span; // 确保底部不会溢出
+      if (row + span > 9) row = 9 - span;
 
-      // --- 3. 坐标与间距策略 ---
+      // --- 3. 坐标与间距策略 (核心修复) ---
       const rowDiff = Math.abs(row - lastRow); 
-      let gap = 50; 
+      let gap = 50; // 默认
 
+      // 【优先级1】如果前一个是大事件，强制推远，防止重叠
       if (data[index-1] && data[index-1].isMajor) {
           gap = 120; 
       }
+      // 【优先级2】当前是大事件，也保持距离
       else if (item.isMajor) {
           gap = 150;
       }
+      // 【优先级3】★ 图片重叠 (上下呼应) ★
+      // 条件：当前是图 + 前一个是图 + 垂直距离大(>2)
       else if (item.type === 'image' && lastType === 'image' && rowDiff > 2) {
-          gap = -lastWidth + 30; 
+          // 倒车！回到上一张图的位置，稍微错开一点点
+          gap = -lastWidth + 50; 
       }
+      // 【优先级4】普通文字紧凑
       else if (item.type !== 'image' && lastType !== 'image' && rowDiff > 2) {
           gap = -80; 
       }
@@ -383,21 +388,21 @@ function generateLayout(data) {
       let myX = currentX + gap;
       currentX = myX + widthFactor;
 
+      // 更新状态
       lastRow = row;
       lastSpan = span;
-      lastWidth = widthFactor;
-      lastType = item.isMajor ? 'major' : item.type || 'text'; 
+      lastWidth = widthFactor; // 记下当前宽度供下一个参考
+      lastType = item.type || (item.isMajor ? 'major' : 'text');
 
       return {
           ...item,
           x: myX,
           row: row,
-          span: span, // 这里的 span 现在是计算好的整数 (2, 3, 4, 5...)
+          span: span, // 这里的 span 是计算好的整数
           width: widthFactor
       };
   });
 }
-
 
 // ================= 3. 核心执行逻辑 =================
 document.addEventListener("DOMContentLoaded", () => {
