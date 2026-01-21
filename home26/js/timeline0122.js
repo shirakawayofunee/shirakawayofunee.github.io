@@ -10,8 +10,9 @@ window.timelineMsg = [
   {
     type: "image",
     src: "./img/timeline/001212.jpg", 
-    span: 6 ,
+    span: 5 ,
     customRow: 4,
+    customWidth: 700 
 },
   {
     date: "N.F.21年",
@@ -251,7 +252,14 @@ function generateLayout(data) {
 
       if (item.type === 'image') {
           span = item.span || 5; 
-          widthFactor = span * 100;
+
+          if (item.customWidth) {
+            widthFactor = item.customWidth;
+        } else {
+            // 默认宽度算法，可能不准，所以导致 cover 裁切
+            widthFactor = span * 100; 
+        }
+
       } 
       else if (item.isMajor) {
           span = 5; 
