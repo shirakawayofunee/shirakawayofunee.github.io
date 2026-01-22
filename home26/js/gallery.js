@@ -8,14 +8,14 @@
  */
 
 function openVideomask(){
-    window.open('duihua0721.html','_blank')   
+    window.open('scene260108.html','_blank')   
 }
 
 function openMusicmask(){
     window.open('scene260108.html','_blank')   
 }
 function openPapermask(){ 
-    window.open('../SL.html','_blank')
+    window.open('../SL26.html','_blank')
 }
 
 function openflowersmask(){ 

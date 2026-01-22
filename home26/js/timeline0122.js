@@ -310,6 +310,13 @@ window.timelineMsg = [
     date: "N.F.113年8月26日、上庭内部会议",
     text: "工事中",
   },
+  {
+    date: "FIN",
+    title: "TO BE CONTINUED",
+    text: "つづく",
+    isMajor: true, // 【样式A】开关
+    customRow: 4,
+  },
 ];
 
 // ================= 2. 自动布局算法 (最终修正版) =================
