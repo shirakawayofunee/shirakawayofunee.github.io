@@ -33,7 +33,7 @@ body.dark-mode {
     --card-bg: rgba(40,40,40,0.85); 
     
     /* Major大字背景色 (深灰) */
-    --major-text-bg: #333333;
+    --major-text-bg: #cecece;
     
     /* Major描述文字背景色 (深灰) */
     --major-desc-bg: #2a2a2a;
@@ -63,10 +63,26 @@ body {
 }
 /* ...导航栏内部样式同上一版，此处省略以节省篇幅... */
 .h-con-right-l { display: flex; gap: 1vw; height: 100%; align-items: center; }
-.div-centerpc { cursor: pointer; text-align: center; padding: 0 15px; height: 60%; display: flex; flex-direction: column; justify-content: center; transition: all 0.3s; border: 1px solid transparent; }
-.div-centerpc:hover, .div-centerpc.active { background: var(--fg-color); border: 1px solid var(--fg-color); }
-.div-centerpc:hover .div-head-text, .div-centerpc:hover .div-head-text-en, .div-centerpc.active .div-head-text, .div-centerpc.active .div-head-text-en { color: #fff; }
-.div-head-text { font-size: 12px; font-weight: bold; color: var(--fg-color); white-space: nowrap; }
+.div-centerpc { cursor: pointer; text-align: center; padding: 0 15px; height: 100%; display: flex; flex-direction: column; justify-content: center; transition: all 0.3s; border: 1px solid transparent; }
+.div-centerpc:hover,
+.div-centerpc.active {
+    background: var(--fg-color);
+    border: 1px solid var(--fg-color);
+}
+
+.div-centerpc:hover .div-head-text,
+.div-centerpc:hover .div-head-text-en,
+.div-centerpc.active .div-head-text,
+.div-centerpc.active .div-head-text-en {
+    color: #fff;
+}
+
+.div-head-text {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--fg-color);
+    white-space: nowrap;
+}
 .div-head-text-en { font-size: 10px; font-family: var(--font-mono); letter-spacing: 1px; color: #666; }
 .h-con-right-r { position: absolute; right: 30px; }
 
