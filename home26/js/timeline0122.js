@@ -568,6 +568,88 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+// ... (在 lenis 初始化代码之后， RAF 循环附近) ...
+
+    // ================= 6. 进度条拖拽功能 (新增) =================
+// ... (代码位置：在 lenis 初始化之后，requestAnimationFrame 之前) ...
+
+    // ================= 6. 进度条拖拽功能 (修正版：相对拖拽 + 精准映射) =================
+    const cursor = document.querySelector('.diamond-cursor');
+    const progressLine = document.querySelector('.progress-line');
+    
+    let isDragging = false;
+    let startMouseX = 0; // 按下时的鼠标 X
+    let startCursorPercent = 0; // 按下时的进度百分比
+
+    // 1. 按下 (Mousedown)
+    cursor.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        cursor.classList.add('is-dragging');
+        document.body.classList.add('is-dragging-mode');
+        e.preventDefault(); // 防止选中文本
+
+        // ★ 关键：记录按下瞬间的初始状态
+        startMouseX = e.clientX;
+        
+        // 获取当前游标的 left 百分比 (例如 10% 即 0.1)
+        // parseFloat 把 "10.5%" 变成 10.5
+        const currentLeft = parseFloat(cursor.style.left) || 0;
+        startCursorPercent = currentLeft / 100;
+    });
+
+    // 2. 移动 (Mousemove)
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        const rect = progressLine.getBoundingClientRect();
+        
+        // 计算鼠标移动了多少像素
+        const deltaX = e.clientX - startMouseX;
+        
+        // 将移动的像素转换为百分比的变化量
+        // 例如：移动了 100px，总条宽 1000px，那就是移动了 0.1 (10%)
+        const deltaPercent = deltaX / rect.width;
+
+        // 新的进度 = 初始进度 + 变化进度
+        let newPercent = startCursorPercent + deltaPercent;
+
+        // 限制在 0 到 1 之间 (0% - 100%)
+        newPercent = Math.max(0, Math.min(1, newPercent));
+
+        // --- 执行滚动 ---
+        // 1. 更新页面滚动位置
+        const targetScroll = (finalWidth - window.innerWidth) * newPercent;
+        lenis.scrollTo(targetScroll, { immediate: true }); // immediate: true 保证无延迟跟手
+
+        // 2. 强制同步游标位置 (视觉反馈)
+        cursor.style.left = `${newPercent * 100}%`;
+    });
+
+    // 3. 松开 (Mouseup)
+    window.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            cursor.classList.remove('is-dragging');
+            document.body.classList.remove('is-dragging-mode');
+        }
+    });
+
+    // 4. 点击轨道跳转 (保留)
+    progressLine.addEventListener('click', (e) => {
+        // 如果点在游标上，不算点击跳转
+        if (e.target.closest('.diamond-cursor')) return;
+        
+        const rect = progressLine.getBoundingClientRect();
+        const p = (e.clientX - rect.left) / rect.width;
+        const targetScroll = (finalWidth - window.innerWidth) * p;
+        lenis.scrollTo(targetScroll);
+    });
+
+    // ... (requestAnimationFrame 代码) ...
+
+
+
 function changeBanner(id) {
   console.log("Nav: " + id);
 }
