@@ -235,9 +235,6 @@ body.is-dragging-mode {
     cursor: grabbing !important;
 }
 
-
-
-
 .cursor-label {
     position: absolute;
     top: -35px;
@@ -251,19 +248,11 @@ body.is-dragging-mode {
     white-space: nowrap;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.3s;
 }
 
 .diamond-cursor:hover .cursor-label,
 .diamond-cursor.is-dragging .cursor-label {
     opacity: 1;
     transform: translateX(-50%) rotate(0deg);
+    top: -35px;
 }
-
-.diamond-cursor.is-dragging .cursor-label {
-    /* 核心：rotate(0deg) */
-    transform: translateX(-50%) rotate(0deg);
-    top: -45px; /* 图片变大了，文字稍微往上提一点 */
-}
-
-.progress-line:hover .cursor-label { opacity: 1; }
