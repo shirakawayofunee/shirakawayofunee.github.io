@@ -12,13 +12,13 @@ window.timelineMsg = [
     title: "12.12隕星事件", // 样式A需要标题
     text: "隕星の落下で死の禁域（そのうち内海と呼ばれる）が生まれ、世界各地で超自然災害発生。",
     isMajor: true, // 【样式A】开关
-    customRow: 3,
+    customRow: 2.5,
   },
   {
     type: "image",
     src: "./img/timeline/00.jpg",
     span: 4,
-    customRow: 2,
+    customRow: 5,
     customWidth: 500,
   },
   {
