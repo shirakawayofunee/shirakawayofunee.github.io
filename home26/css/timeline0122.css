@@ -1,13 +1,45 @@
 /* --- 全局变量与重置 --- */
 :root {
-    --bg-color: #fbfbfb;
-    --fg-color: #111111;
-    --line-color: #dcdcdc;
-    --accent-color: #0022AA; /* 样式B的日期颜色 */
+    --bg-color: #fbfbfb;       /* 背景色 */
+    --fg-color: #111111;       /* 前景色(文字/线/边框) */
+    --line-color: #dcdcdc;     /* 轨道线 */
+    --nav-bg: rgba(255,255,255,0.95); /* 导航栏背景 */
+    
+    /* ★ 新增：卡片半透明背景 (白底模式下是半透明白) */
+    --card-bg: rgba(255,255,255,0.85); 
+    
+    /* ★ 新增：Major事件的大字背景色 (浅灰) */
+    --major-text-bg: #E6E6E6;
+    
+    /* ★ 新增：Major描述文字的背景色 */
+    --major-desc-bg: #fff;
+    
+    --accent-color: #0022AA;
     --font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     --font-mono: "Courier New", monospace;
     --font-impact: "Impact", "Arial Black", sans-serif; /* 样式A的大字体 */
     --track-height: 10vh;
+}
+/* ★★★ 新增：暗黑模式变量覆盖 ★★★ */
+body.dark-mode {
+    --bg-color: #1b1b1b;       /* 深黑底 */
+    --fg-color: #f0f0f0;       /* 亮白字 */
+    --line-color: #333333;     /* 深灰线 */
+    
+    /* 导航栏背景 (黑底模式下是半透明黑) */
+    --nav-bg: rgba(27,27,27,0.95); 
+    
+    /* 卡片背景 (黑底模式下是半透明黑) */
+    --card-bg: rgba(40,40,40,0.85); 
+    
+    /* Major大字背景色 (深灰) */
+    --major-text-bg: #333333;
+    
+    /* Major描述文字背景色 (深灰) */
+    --major-desc-bg: #2a2a2a;
+    
+    /* 蓝色稍微提亮 */
+    --accent-color: #4d79ff; 
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,10 +54,11 @@ body {
 
 
 
+
 /* --- 1. 导航栏 (保持不变) --- */
 .h-con-right {
     position: fixed; top: 0; left: 0; width: 100%; height: var(--track-height);
-    background: rgba(255,255,255,0.95); border-bottom: 1px solid var(--fg-color);
+    background: var(--nav-bg);  border-bottom: 1px solid var(--fg-color);
     z-index: 1000; display: flex; justify-content: center; align-items: center;
 }
 /* ...导航栏内部样式同上一版，此处省略以节省篇幅... */
@@ -36,6 +69,26 @@ body {
 .div-head-text { font-size: 12px; font-weight: bold; color: var(--fg-color); white-space: nowrap; }
 .div-head-text-en { font-size: 10px; font-family: var(--font-mono); letter-spacing: 1px; color: #666; }
 .h-con-right-r { position: absolute; right: 30px; }
+
+/* --- 3. 新增：模式切换按钮样式 --- */
+.theme-btn {
+    cursor: pointer;
+    border: 1px solid var(--fg-color);
+    background: transparent;
+    color: var(--fg-color);
+    padding: 5px 15px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 20px; /* 和右边的音乐图标拉开距离 */
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.theme-btn:hover {
+    background: var(--fg-color);
+    color: var(--bg-color); /* 悬停反色 */
+}
 
 /* --- 2. 背景轨道 --- */
 .bg-tracks {
@@ -56,7 +109,7 @@ body {
     flex-direction: column;
     justify-content: flex-start; 
     border-left: 2px solid var(--fg-color);
-    background: rgba(255,255,255,0.85);
+    background: var(--card-bg);
     /* backdrop-filter: blur(5px); */
     overflow: hidden;
     z-index: 1; /* 默认层级 */
@@ -79,14 +132,14 @@ body {
 .event-text {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: #222;
+    color: var(--fg-color); 
     font-weight: 500;
     text-align: justify;
 }
 /* 样式 B 中的高亮重点 (黑底白字) */
 .event-text span {
     background: var(--fg-color);
-    color: #fff;
+    color: var(--bg-color); 
     padding: 2px 6px;
     margin: 0 2px;
     font-weight: bold;
@@ -118,7 +171,7 @@ body {
     left: 0;
     font-family: var(--font-impact);
     font-size: 7rem; /* 巨大字体 */
-    color: #E6E6E6; /* 浅灰 */
+    color: var(--major-text-bg); 
     line-height: 1;
     z-index: -1; /* 在底层 */
     white-space: nowrap;
@@ -129,7 +182,7 @@ body {
 /* 黑底白字大标题 */
 .major-title {
     background: var(--fg-color);
-    color: #fff;
+    color: var(--bg-color); 
     font-size: 2.2rem;
     font-weight: 900;
     padding: 5px 15px;
@@ -143,14 +196,18 @@ body {
 .major-desc {
     font-size: 1rem;
     line-height: 1.6;
-    background: #fff; /* 给文字加个白底保证可读性 */
+
     padding: 10px;
-    border: 1px solid #eee;
+
+    background: var(--major-desc-bg); 
+    /* 如果有边框颜色，建议也改变量，或者去掉边框 */
+    border: 1px solid var(--line-color); 
+    color: var(--fg-color);
 }
 
 .major-desc span {
     background: var(--fg-color);
-    color: #fff;
+    color: var(--bg-color); 
     padding: 2px 6px;
     margin: 0 2px;
     font-weight: bold;
@@ -229,7 +286,7 @@ body.is-dragging-mode {
     left: 50%;
     transform: translateX(-50%);
     background: var(--fg-color);
-    color: #fff;
+    color: var(--bg-color); 
     padding: 3px 6px;
     font-size: 10px;
     font-family: var(--font-mono);

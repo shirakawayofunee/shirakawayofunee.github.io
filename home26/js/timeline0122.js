@@ -635,6 +635,24 @@ document.addEventListener("DOMContentLoaded", () => {
         lenis.scrollTo(targetScroll);
     });
 
+    // ... (在 document.addEventListener 内部的末尾)
+
+    // ================= 7. 明暗模式切换 =================
+    const modeBtn = document.getElementById('modeSwitch');
+    
+    modeBtn.addEventListener('click', () => {
+        // 1. 切换 body 的类名
+        document.body.classList.toggle('dark-mode');
+        
+        // 2. 更改按钮文字
+        if (document.body.classList.contains('dark-mode')) {
+            modeBtn.innerText = "Dark";
+        } else {
+            modeBtn.innerText = "Light";
+        }
+    });
+
+
 
 function changeBanner(id) {
   console.log("Nav: " + id);
