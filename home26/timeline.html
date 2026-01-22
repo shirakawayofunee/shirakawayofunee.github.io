@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadow Bling | Timeline</title>
-    
+
     <!-- 引入样式 -->
     <link rel="stylesheet" href="css/timeline0122.css">
 
@@ -13,61 +14,73 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 </head>
+
 <body>
 
     <!-- 1. 导航栏 (高度锁定 10vh) -->
     <div class="h-con-right pc" data-mouse="mid">
         <div class="h-con-right-l" data-mouse="mid">
-          <div class="div-center div-centerpc" onclick="window.location.href='flowers.html'" id="banner0" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">ホーム</div>
-            <div class="div-head-text-en" data-mouse="mid">HOME</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#1'" id="banner1" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">登場人物</div>
-            <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#2'" id="banner2" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">相関図</div>
-            <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#3'" id="banner3" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">関係性補足工事中</div>
-            <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#4'" id="banner4" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">世界観</div>
-            <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#5'" id="banner5" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">第一章</div>
-            <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#6'" id="banner6" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">序章マップ</div>
-            <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
-          </div>
-          <!-- 选中状态 -->
-          <div class="div-center div-centerpc active" onclick="changeBanner(7)" id="banner7" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">年表</div>
-            <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#7'"  id="banner8" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">情報</div>
-            <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#8'"  id="banner9" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">物語</div>
-            <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
-          </div>
-          <div class="div-center div-centerpc" onclick="window.location.href='../SL26.html'" id="banner10" data-mouse="mid">
-            <div class="div-head-text" data-mouse="mid">ギャラリー</div>
-            <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
-          </div>
+            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html'" id="banner0"
+                data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">ホーム</div>
+                <div class="div-head-text-en" data-mouse="mid">HOME</div>
+            </div>
+            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#1'" id="banner1"
+                data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">登場人物</div>
+                <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
+            </div>
+            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#2'" id="banner2"
+                data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">相関図</div>
+                <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
+            </div>
+            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#3'" id="banner3"
+                data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">関係性補足工事中</div>
+                <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
+            </div>
+            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#4'" id="banner4"
+                data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">世界観</div>
+                <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
+            </div>
+            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#5'" id="banner5"
+                data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">第一章</div>
+                <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
+            </div>
+            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#6'" id="banner6"
+                data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">序章マップ</div>
+                <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
+            </div>
+
+            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#7'" id="banner8"
+                data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">情報</div>
+                <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
+            </div>
+            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#8'" id="banner9"
+                data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">物語</div>
+                <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
+            </div>
+            <div class="div-center div-centerpc" onclick="window.location.href='../SL26.html'" id="banner10"
+                data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">ギャラリー</div>
+                <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
+            </div>
+            <!-- 选中状态 -->
+            <div class="div-center div-centerpc active" data-mouse="mid">
+                <div class="div-head-text" data-mouse="mid">年表</div>
+                <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
+            </div>
         </div>
-        
+
         <!-- 音乐图标占位 (CSS生成) -->
         <div class="h-con-right-r">
-          <div class="music-icon"></div>
+            <div class="music-icon"></div>
         </div>
     </div>
 
@@ -93,4 +106,5 @@
     <!-- 引入逻辑 -->
     <script src="js/timeline0122.js"></script>
 </body>
+
 </html>
