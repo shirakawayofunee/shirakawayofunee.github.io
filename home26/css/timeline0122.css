@@ -188,45 +188,33 @@ body {
 /* --- 修改部分：底部进度条滑块 --- */
 .diamond-cursor {
     position: absolute; top: 50%; left: 0;
+    width: 24px; 
+    height: 24px;
+
+    /* 2. 始终显示图片 (去掉黑色背景和边框) */
+    background-color: transparent;
+    border: none;
+    background-image: url('../img/timeline/icon_curr.png'); /* 确保路径正确 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     
-    /* === 状态 A：平时 (黑色菱形) === */
-    width: 14px; height: 14px;
-    background-color: var(--fg-color);
-    border: 2px solid #fff;
-    background-image: none; /* 平时无图 */
-    
-    /* 几何旋转 45度 */
-    transform: translate(-50%, -50%) rotate(45deg);
+    /* 3. 定位 (图片直接摆正，不需要旋转) */
+    transform: translate(-50%, -50%);
     
     cursor: grab;
     z-index: 101;
     
-    /* ★★★ 核心修改：只过渡 尺寸和背景，不要过渡 transform ★★★ */
-    /* 这样从 45度 变 0度 时，会瞬间切换，不会看到旋转过程 */
-    transition: width 0.2s, height 0.2s, background-color 0.2s, border 0.2s;
+    /* 交互缩放动画 */
+    transition: transform 0.2s ease;
 }
 
 /* === 状态 B：拖动/悬停时 (显示图片，不旋转) === */
 .diamond-cursor.is-dragging,
 .diamond-cursor:hover {
     cursor: grabbing;
-    
-    /* 尺寸变大 */
-    width: 30px; height: 30px;
-    
-    /* 去掉几何样式 */
-    background-color: transparent; 
-    border: 2px solid transparent; /* 边框变透明 */
-    
-    /* 显示图片 */
-    background-image: url('../img/timeline/icon_curr.png'); /* 请确保路径正确 */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    
-    /* ★★★ 角度归零，不旋转 ★★★ */
-    /* 因为上面禁用了 transform 过渡，这里会瞬间摆正 */
-    transform: translate(-50%, -50%) rotate(0deg); 
+    /* 只需要稍微放大一点点，表示“捏住了” */
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 /* 为了防止拖动时选中页面文字，给 body 加个全局样式 */
@@ -239,7 +227,7 @@ body.is-dragging-mode {
     position: absolute;
     top: -35px;
     left: 50%;
-    transform: translateX(-50%) rotate(-45deg);
+    transform: translateX(-50%);
     background: var(--fg-color);
     color: #fff;
     padding: 3px 6px;
@@ -253,6 +241,6 @@ body.is-dragging-mode {
 .diamond-cursor:hover .cursor-label,
 .diamond-cursor.is-dragging .cursor-label {
     opacity: 1;
-    transform: translateX(-50%) rotate(0deg);
-    top: -35px;
+/*     transform: translateX(-50%) rotate(0deg);
+    top: -35px; */
 }
