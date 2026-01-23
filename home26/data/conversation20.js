@@ -37,7 +37,7 @@ export default {
     ],
     characters: [
       {
-        name: `Leopold（業師）`,
+        name: `Leopold（「業師」）`,
         avatar: `img/dh/leopold1.png`,
         note: `裏社会を陰で牛耳る実力者。
         秘密組織「GARDEN」の主宰者
@@ -126,7 +126,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は急いで見える全員を調べた。幸い、開花の程度はどれも浅い。これは業師が人を操る手段にすぎないようだ。`
+      text: `彼女は急いで見える全員を調べた。幸い、開花の程度はどれも浅い。これは「業師」が人を操る手段にすぎないようだ。`
     },
     {
       type: `narration`,
@@ -188,7 +188,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `こんにちは、探偵ちゃん。`
     }
   ]

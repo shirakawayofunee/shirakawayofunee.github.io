@@ -24,7 +24,7 @@ export default {
     ],
     characters: [
       {
-        name: `Leopold（業師）`,
+        name: `Leopold（「業師」）`,
         avatar: `img/dh/leopold1.png`,
         note: `裏社会を陰で牛耳る実力者。
         秘密組織「GARDEN」の主宰者
@@ -55,20 +55,20 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年8月15日11:32<br>FAC黒環封鎖行動合同指揮部`
+      text: `N.F.113年8月15日11:32<br>車内`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `ほら、ドアを叩くのやめなよ。これはFACの超装甲車だよ、いつもぶっ壊してる金庫じゃないんだから。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `まあ、ムキにならないでよ。君たちだって汚い手で私の人を縛ったじゃない？`
     },
     {
@@ -89,14 +89,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `ふん、知ってるよ。私がそんなの気にしないってこと、君もわかってるでしょ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `連絡先を教えてよ。君の大好きな執行人お姉さんに電話かけたいな。`
     },
     {
@@ -107,7 +107,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `おっと、必要なくなった。彼女から君にかけてきたよ。`
     },
     {
@@ -121,29 +121,29 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `しっ、大人が話してるんだから、子供は口出ししない。君、ミュートにしたよ。`
     },
     {
       type: `narration`,
-      text: `業師は探偵の怒鳴り声を無視し、携帯の着信を直接つなぎ、スピーカーをオンにした。`
+      text: `「業師」は探偵の怒鳴り声を無視し、携帯の着信を直接つなぎ、スピーカーをオンにした。`
     },
     {
       type: `narration`,
-      text: `運転席の向こうでは、小娘が明らかにキレていて、必死にドアを叩き、電話の相手の注意を引こうとしていた。業師はのんびり携帯をトランシーバーと自分の間に提げた。車は猛スピードで走り、騒音が少しうるさい。`
+      text: `運転席の向こうでは、小娘が明らかにキレていて、必死にドアを叩き、電話の相手の注意を引こうとしていた。「業師」はのんびり携帯をトランシーバーと自分の間に提げた。車は猛スピードで走り、騒音が少しうるさい。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `こんにちは、業師。`
+      text: `こんにちは、「業師」。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `どうも、執行人さん。君の大事な子が私の手にいるけど、まるで驚いてないみたいね。`
     },
     {
@@ -157,18 +157,18 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `ふーん、変ね。私が彼女を拉致してから何時間も経ってるのに、なんで今さら電話してきたの？`
     },
     {
       type: `narration`,
-      text: `業師はドアを叩く音がピタリと止まったのに気づき、冷笑して電話に集中した。`
+      text: `「業師」はドアを叩く音がピタリと止まったのに気づき、冷笑して電話に集中した。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `自分の部下を利用して私の位置を特定するつもり? ひどいわね、彼女の心が傷つくじゃない。`
     },
     {
@@ -183,48 +183,48 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `今ならまだ交渉する余地があるよ、業師。`
+      text: `今ならまだ交渉する余地があるよ、「業師」。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `ふっ、君のHUSH部隊なら、6月から私の邪魔をしていたじゃない。そんなつれないことを言わないでよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `君の指揮に従うために電話に出たわけじゃないわ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `聞きなさい、上庭の執行人。この車には君たちの総司令、交渉の重要人物十数人、そして君たちが大嫌いな福音地の狂厄爆弾がある。新都市に向かってる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `運転してるのは福音地の傀儡造物。狙撃しても無駄よ。この道中で何かあって車が減速したら、爆弾は即爆発する。その時、半径1キロのM値は2000超えるよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `爆弾を解除する唯一の方法は、起動装置を直接外すこと。それは老いぼれの体についてる。老いぼれは君の小犬のそばにいるよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `彼女にその能力があるかどうか……ふ、君も私もわかってるよね。`
     },
     {
@@ -238,14 +238,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `今は昼の11時32分。あと30分もしないうちに、この車は新都市の最初の人口密集地に着く。私は君と違って、条件は話さない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `これは君の自業自得よ。`
     },
     {
@@ -270,25 +270,25 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `……ふん、君たちごときで。`
     },
     {
       type: `narration`,
-      text: `業師は電話を切り、ついでにトランシーバーのミュートを解除したが、向こうは静まり返っていた。`
+      text: `「業師」は電話を切り、ついでにトランシーバーのミュートを解除したが、向こうは静まり返っていた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `ほら、小娘、しょげないで。見ず知らずの人間に眼中に入れられてないだけだろ。君のシャーロームお姉さんがHUSH部隊をよこしたけど、君を助けに来たんじゃないよ。当然、彼らじゃ私を止められない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `遊び方は教えてやった。君の探偵ゲーム、まだ終わってないよ。続ける？`
     },
     {
@@ -306,12 +306,12 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `ハハハハハ！いいね、じゃあ君の正義をしっかり見せてよ。`
     },
     {
       type: `narration`,
-      text: `福音地の狂厄傀儡機械が車を運転し、業師は手を伸ばしてその体内に突き刺し、漆黒の硬い花剣を引き抜き、窓を叩き割り、自身が車の上に飛び乗った。`
+      text: `福音地の狂厄傀儡機械が車を運転し、「業師」は手を伸ばしてその体内に突き刺し、漆黒の硬い花剣を引き抜き、窓を叩き割り、自身が車の上に飛び乗った。`
     },
     {
       type: `narration`,
@@ -321,7 +321,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `その正義がどれだけ笑えるか、見せてよ。`
     },
     {
@@ -349,13 +349,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `顔を上げると、業師がいつの間にか車のボンネットに座り、探偵に背を向け、髪が割れたフロントガラスを通って探偵の視界を乱した。`
+      text: `顔を上げると、「業師」がいつの間にか車のボンネットに座り、探偵に背を向け、髪が割れたフロントガラスを通って探偵の視界を乱した。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `11時56分，もうすぐだよ。`
     },
     {
@@ -369,7 +369,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `お、ほんと？よくやったね。褒めてほしい？`
     },
     {
@@ -394,7 +394,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `HUSHはもうこの車への強攻を諦めたよ。私には手も足も出ないみたいね。代わりに最後通牒を残してきた。1分後、危険区域に入る前に、車ごと定点爆破するって。`
     },
     {
@@ -408,7 +408,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold3.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `言ったよ。`
     },
     {
@@ -422,14 +422,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `君が仕掛けを解く5分前に、君ならできるってわかってた。執行人にメッセージ送ったよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `まだ返信がない。見なかったのかな？それとも信じなかった？`
     },
     {
@@ -443,7 +443,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `それとも……`
     },
     {
@@ -454,12 +454,12 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `ほら、あれ、君の正義の光じゃない？`
     },
     {
       type: `narration`,
-      text: `探偵はもう業師の挑発を聞いていなかった。彼女は浮かび上がる、ゆっくりと開く黒い死神――「黒石英」と呼ばれる上庭の武器を見た。`
+      text: `探偵はもう「業師」の挑発を聞いていなかった。彼女は浮かび上がる、ゆっくりと開く黒い死神――「黒石英」と呼ばれる上庭の武器を見た。`
     },
     {
       type: `dialogue`,
@@ -494,21 +494,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `ついでに言うと、老いぼれはそう簡単には死なないよ。でなきゃ、福音地の連中が私にこんな仕事を頼むわけない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `でも、この車にいる他の人はそうじゃない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `君も含めてね。`
     },
     {
@@ -517,13 +517,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師は鼻で笑い、車の上に戻り、去る前に最後の言葉を残した。`
+      text: `「業師」は鼻で笑い、車の上に戻り、去る前に最後の言葉を残した。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `「業師」`,
       text: `じゃあね、正義の使者。`
     },
     {
