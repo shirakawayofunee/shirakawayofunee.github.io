@@ -98,7 +98,7 @@ const chapterList = [
   {
     id: "conversation13",
     category: "flower",
-    title: "106「业师」",
+    title: "106「業師」",
     subtitle: "Flora",
     dateLabel: "N.F.113/8/9/18:30",
   },
@@ -168,7 +168,7 @@ const chapterList = [
   {
     id: "conversation23",
     category: "flower",
-    title: "301「西区作战」",
+    title: "301「西区作戦」",
     subtitle: "Flora Part.Ⅲ",
     dateLabel: "N.F.113/8/17/14:23",
   },

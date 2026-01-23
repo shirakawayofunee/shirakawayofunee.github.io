@@ -20,16 +20,6 @@ window.timelineMsg = [
     span: 4,
     customRow: 5,
     customWidth: 500,
-    forceCompact: true,
-  },
-  {
-    type: "image",
-    src: "./img/timeline/YFJ.png",
-    customRow: 2,
-    span: 2,
-    customWidth: 200,
-    forceCompact: true,
-    caption: " " 
   },
   {
     date: "N.F.21年",
@@ -43,7 +33,13 @@ window.timelineMsg = [
     customRow: 2,
     span: 2,
   },
-
+  {
+    type: "image",
+    src: "./img/timeline/YFJ.png",
+    customRow: 6,
+    span: 2,
+    customWidth: 200,
+  },
   {
     date: "N.F.24年", // 大标题背景字
     title: "都市「ディス」の建設", // 样式A需要标题
@@ -57,7 +53,6 @@ window.timelineMsg = [
     span: 6,
     customRow: 4,
     customWidth: 700,
-    caption: "FILE_REC_07_DIS"
   },
   {
     date: "N.F.25～60",
@@ -73,7 +68,6 @@ window.timelineMsg = [
     span: 6,
     customRow: 4,
     customWidth: 700,
-    caption: "涅槃港"
   },
   {
     date: "N.F.61.12.26",
@@ -88,7 +82,6 @@ window.timelineMsg = [
     isMajor: true, // 【样式A】
     span: 4,
     customRow: 1.5,
-    forceCompact: true,
   },
   {
     type: "image",
@@ -96,7 +89,6 @@ window.timelineMsg = [
     span: 6,
     customRow: 3,
     customWidth: 700,
-    caption: "涅槃港_N.F.66.6.13"
   },
   {
     date: "N.F.66.8.27",
@@ -129,7 +121,6 @@ window.timelineMsg = [
     span: 3,
     customRow: 2,
     customWidth: 700,
-    caption: "新都市（东区）"
   },
   {
     type: "image",
@@ -137,7 +128,6 @@ window.timelineMsg = [
     span: 3,
     customRow: 6,
     customWidth: 700,
-    caption: "西区"
   },
   {
     date: "N.F.83年",
@@ -331,88 +321,103 @@ window.timelineMsg = [
   },
 ];
 
-// ================= 2. 自动布局算法 (修正版) =================
+// ================= 2. 自动布局算法 (最终修正版) =================
 function generateLayout(data) {
   const X_START = window.innerWidth * 0.15;
   let currentX = X_START;
-  let lastRow = 4;
+  
+  // 状态记录
+  let lastRow = 4; 
   let lastSpan = 3;
-  let lastWidth = 0; 
-  let lastType = ''; 
+  let lastWidth = 0; // 记录上一个宽度，用于计算回退
+  let lastType = ''; // 记录上一个类型
 
   return data.map((item, index) => {
-    // --- 1. 尺寸计算 ---
-    let span = 3;
-    let widthFactor = 300;
+      // --- 1. 尺寸计算 ---
+      let span = 3; 
+      let widthFactor = 300; 
 
-    if (item.span) {
-        span = item.span;
-        widthFactor = item.customWidth || (item.type === 'image' ? span * 80 : 320);
-    }
-    else if (item.type === "image") {
-      span = 5;
-      widthFactor = item.customWidth || span * 80;
-    } else if (item.isMajor) {
-      span = 5;
-      widthFactor = 550;
-    } else {
-      const textLen = item.text.length;
-      if (textLen > 180) { span = 6; widthFactor = 420; }
-      else if (textLen > 100) { span = 5; widthFactor = 380; }
-      else if (textLen > 50) { span = 4; widthFactor = 340; }
-      else if (textLen > 30) { span = 3; widthFactor = 300; }
-      else { span = 2; widthFactor = 280; }
-    }
+      if (item.span) {
+          span = item.span;
+          widthFactor = item.customWidth || (item.type === 'image' ? span * 80 : 320);
+      }
+      else if (item.type === 'image') {
+          span = 5; 
+          widthFactor = item.customWidth || (span * 80); 
+      } 
+      else if (item.isMajor) {
+          span = 5; 
+          widthFactor = 550; 
+      }
+      else {
+          // 文本自动分级
+          const textLen = item.text.length;
+          if (textLen > 180) { span = 6; widthFactor = 420; }
+          else if (textLen > 100) { span = 5; widthFactor = 380; }
+          else if (textLen > 50) { span = 4; widthFactor = 340; }
+          else if (textLen > 30) { span = 3; widthFactor = 300; }
+          else { span = 2; widthFactor = 280; }
+      }
 
-    // --- 2. 行号 ---
-    let row;
-    if (item.customRow !== undefined) {
-      row = item.customRow;
-    } else {
-      const step = Math.floor(Math.random() * 5) - 2;
-      row = lastRow + step;
-    }
+      // --- 2. 行号计算 ---
+      let row;
+      if (item.customRow !== undefined) {
+          row = item.customRow;
+      } else {
+          const step = Math.floor(Math.random() * 5) - 2; 
+          row = lastRow + step;
+      }
 
-    if (row < 1) row = 1;
-    if (row + span > 9) row = 9 - span;
+      if (row < 1) row = 1;
+      if (row + span > 9) row = 9 - span;
 
-    // --- 3. 间距逻辑 (已修复优先级) ---
-    const rowDiff = Math.abs(row - lastRow);
-    let gap = 50;
+      // --- 3. 坐标与间距策略 (核心修复) ---
+      const rowDiff = Math.abs(row - lastRow); 
+      let gap = 50; // 默认
 
-    // ★★★ 这里的 if-else if 链条必须是连贯的 ★★★
-    if (item.forceCompact) {
-        // 强制紧凑：如果是上下错开的，大幅倒车；否则小幅倒车
-        gap = (rowDiff > 2) ? -200 : -20;
-    } 
-    else if (data[index - 1] && data[index - 1].isMajor) {
-      gap = 120; // 避让大事件
-    } 
-    else if (item.isMajor) {
-      gap = 150; // 大事件自身边距
-    } 
-    else if (item.type === "image" && lastType === "image" && rowDiff > 2) {
-      gap = -lastWidth + 50; // 图片重叠
-    } 
-    else if (item.type !== "image" && lastType !== "image" && rowDiff > 2) {
-      gap = -80; // 普通文字紧凑
-    }
+// 【超级优先级】手动强制紧凑 (Force Compact)
+        // 只要数据里写了 forceCompact: true，就无视一切规则，强行倒车
+        if (item.forceCompact) {
+          // 如果是上下错开的 (rowDiff > 0)，倒车幅度大一点，形成重叠
+          // 如果是同一行的，倒车幅度小一点，形成紧挨
+          gap = (rowDiff > 2) ? -150 : -20; 
+      }
 
-    let myX = currentX + gap;
-    currentX = myX + widthFactor;
+      // 【优先级1】如果前一个是大事件，强制推远，防止重叠
+      if (data[index-1] && data[index-1].isMajor) {
+          gap = 120; 
+      }
+      // 【优先级2】当前是大事件，也保持距离
+      else if (item.isMajor) {
+          gap = 150;
+      }
+      // 【优先级3】★ 图片重叠 (上下呼应) ★
+      // 条件：当前是图 + 前一个是图 + 垂直距离大(>2)
+      else if (item.type === 'image' && lastType === 'image' && rowDiff > 2) {
+          // 倒车！回到上一张图的位置，稍微错开一点点
+          gap = -lastWidth + 50; 
+      }
+      // 【优先级4】普通文字紧凑
+      else if (item.type !== 'image' && lastType !== 'image' && rowDiff > 2) {
+          gap = -80; 
+      }
 
-    lastRow = row;
-    lastSpan = span;
-    lastWidth = widthFactor;
-    lastType = item.type || (item.isMajor ? 'major' : 'text');
+      let myX = currentX + gap;
+      currentX = myX + widthFactor;
 
-    return {
-      ...item,
-      x: myX,
-      row: row,
-      span: span,
-      width: widthFactor,
-    };
+      // 更新状态
+      lastRow = row;
+      lastSpan = span;
+      lastWidth = widthFactor; // 记下当前宽度供下一个参考
+      lastType = item.type || (item.isMajor ? 'major' : 'text');
+
+      return {
+          ...item,
+          x: myX,
+          row: row,
+          span: span, // 这里的 span 是计算好的整数
+          width: widthFactor
+      };
   });
 }
 
@@ -421,31 +426,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("timelineContainer");
   const items = generateLayout(window.timelineMsg);
 
+  // 计算容器总宽
   const lastItem = items[items.length - 1];
   const totalWidth = lastItem.x + lastItem.width + window.innerWidth;
   container.style.width = `${totalWidth}px`;
 
+  // 渲染 DOM
   items.forEach((item, index) => {
     const div = document.createElement("div");
     div.className = `event-item item-${index}`;
 
+    // 样式 A (IsMajor) 需要额外 class
     if (item.isMajor) div.classList.add("is-major");
 
     div.style.left = `${item.x}px`;
-    div.style.top = `${item.row * 10}vh`;
-    // 强制整数高度对齐
+    div.style.top = `${item.row * 10}vh`; 
+    // 无论什么类型，高度都由算法算出的 span 决定 (20vh, 30vh, 40vh...)
+    // 这样底部永远对齐背景的灰线
     div.style.height = `${item.span * 10}vh`; 
     div.style.width = `${item.width}px`;
 
     if (item.type === "image") {
+      // 图片模式
       div.classList.add("is-image");
-      const labelText = item.caption || `FILE_REC_${index < 10 ? '0'+index : index}`;
-      
-      div.innerHTML = `
-          <div class="img-file-tag">${labelText}</div>
-          <img src="${item.src}">
-      `;
+      div.innerHTML = `<img src="${item.src}">`;
     } else if (item.isMajor) {
+      // ★【样式 A】: 重点事件 (大背景字 + 黑标题)
       div.innerHTML = `
               <div class="major-bg-year">${item.date}</div>
               <div class="major-content-wrap">
@@ -454,6 +460,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
           `;
     } else {
+      // ★【样式 B】: 普通事件 (蓝日期 + 文字高亮)
       div.innerHTML = `
               <div class="event-date">${item.date}</div>
               <div class="event-text">${item.text}</div>
@@ -474,7 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: 0.2,
       end: () => `+=${totalWidth}`,
       onUpdate: (self) => {
-        // 进度条跟随
+        // 进度条
         const p = self.progress * 100;
         document.querySelector(".diamond-cursor").style.left = `${p}%`;
 
@@ -482,7 +489,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentIdx = Math.floor(self.progress * items.length);
         const currentItem = items[Math.min(currentIdx, items.length - 1)];
         if (currentItem && currentItem.date) {
-          const cleanDate = currentItem.date.replace(/<br>/g, " ").split(" ")[0];
+          const cleanDate = currentItem.date
+            .replace(/<br>/g, " ")
+            .split(" ")[0];
           document.querySelector(".cursor-label").innerText = cleanDate;
         }
       },
@@ -495,6 +504,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startTrigger = "left 92%";
 
     if (item.type === "image") {
+      // 图片 Wipe
       gsap.to(target.querySelector("img"), {
         clipPath: "inset(0 0% 0 0)",
         duration: 1.2,
@@ -507,6 +517,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
     } else if (item.isMajor) {
+      // ★【样式 A 动画】: 大字先出，标题弹入
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: target,
@@ -515,10 +526,23 @@ document.addEventListener("DOMContentLoaded", () => {
           toggleActions: "play none none none",
         },
       });
-      tl.from(target.querySelector(".major-bg-year"), { x: -50, opacity: 0, duration: 0.8 })
-        .from(target.querySelector(".major-title"), { scaleX: 0, transformOrigin: "left", duration: 0.5 }, "-=0.6")
-        .from(target.querySelector(".major-desc"), { y: 20, opacity: 0, duration: 0.5 }, "-=0.3");
+      tl.from(target.querySelector(".major-bg-year"), {
+        x: -50,
+        opacity: 0,
+        duration: 0.8,
+      })
+        .from(
+          target.querySelector(".major-title"),
+          { scaleX: 0, transformOrigin: "left", duration: 0.5 },
+          "-=0.6"
+        )
+        .from(
+          target.querySelector(".major-desc"),
+          { y: 20, opacity: 0, duration: 0.5 },
+          "-=0.3"
+        );
     } else {
+      // ★【样式 B 动画】: 简单的上浮
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: target,
@@ -527,8 +551,15 @@ document.addEventListener("DOMContentLoaded", () => {
           toggleActions: "play none none none",
         },
       });
-      tl.fromTo(target.querySelector(".event-date"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5 })
-        .to(target.querySelector(".event-text"), { opacity: 1, duration: 0.8 }, "-=0.3");
+      tl.fromTo(
+        target.querySelector(".event-date"),
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.5 }
+      ).to(
+        target.querySelector(".event-text"),
+        { opacity: 1, duration: 0.8 },
+        "-=0.3"
+      );
     }
   });
 
@@ -546,65 +577,99 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   requestAnimationFrame(raf);
 
-  // ================= 6. 进度条拖拽功能 (终极版：全屏投影映射) =================
-  const cursor = document.querySelector('.diamond-cursor');
-  const progressLine = document.querySelector('.progress-line');
-  
-  let isDragging = false;
-
-  // 1. 按下
-  cursor.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      cursor.classList.add('is-dragging');
-      document.body.classList.add('is-dragging-mode');
-      e.preventDefault();
+  // 底部跳转
+  document.querySelector(".progress-line").addEventListener("click", (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const p = (e.clientX - rect.left) / rect.width;
+    lenis.scrollTo((totalWidth - window.innerWidth) * p);
   });
-
-  // 2. 全局移动
-  window.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-
-      const rect = progressLine.getBoundingClientRect();
-      let p = (e.clientX - rect.left) / rect.width;
-      p = Math.max(0, Math.min(1, p));
-
-      const targetScroll = (totalWidth - window.innerWidth) * p;
-      lenis.scrollTo(targetScroll, { immediate: true });
-      cursor.style.left = `${p * 100}%`;
-  });
-
-  // 3. 全局松开
-  window.addEventListener('mouseup', () => {
-      if (isDragging) {
-          isDragging = false;
-          cursor.classList.remove('is-dragging');
-          document.body.classList.remove('is-dragging-mode');
-      }
-  });
-
-  // 4. 点击跳转
-  progressLine.addEventListener('click', (e) => {
-      if (e.target.closest('.diamond-cursor')) return;
-      const rect = progressLine.getBoundingClientRect();
-      const p = (e.clientX - rect.left) / rect.width;
-      const targetScroll = (totalWidth - window.innerWidth) * p;
-      lenis.scrollTo(targetScroll);
-  });
-
-  // ================= 7. 明暗模式切换 =================
-  const modeBtn = document.getElementById('modeSwitch');
-  // 检查是否存在按钮（防止报错）
-  if (modeBtn) {
-      modeBtn.addEventListener('click', () => {
-          document.body.classList.toggle('dark-mode');
-          if (document.body.classList.contains('dark-mode')) {
-              modeBtn.innerText = "Dark";
-          } else {
-              modeBtn.innerText = "Light";
-          }
-      });
-  }
 });
+
+
+// ... (在 lenis 初始化代码之后， RAF 循环附近) ...
+
+    // ================= 6. 进度条拖拽功能 (新增) =================
+// ... (代码位置：在 lenis 初始化之后，requestAnimationFrame 之前) ...
+
+    // ================= 6. 进度条拖拽功能 (修正版：相对拖拽 + 精准映射) =================
+// ... (代码位置：在 lenis 初始化之后) ...
+
+    // ================= 6. 进度条拖拽功能 (终极版：全屏投影映射) =================
+    const cursor = document.querySelector('.diamond-cursor');
+    const progressLine = document.querySelector('.progress-line');
+    
+    let isDragging = false;
+
+    // 1. 按下 (Mousedown)
+    cursor.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        cursor.classList.add('is-dragging');
+        document.body.classList.add('is-dragging-mode');
+        e.preventDefault();
+        // 既然要瞬间响应，按下的时候也可以触发一次位置更新（可选）
+    });
+
+    // 2. 全局移动 (Window Mousemove)
+    // 只要鼠标动，就算你移到了屏幕外面，只要没松手，都算
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        // 获取进度条这根线的物理位置信息
+        const rect = progressLine.getBoundingClientRect();
+        
+        // ★★★ 核心算法：鼠标X坐标在进度条里的相对位置 ★★★
+        // 逻辑：(鼠标当前X - 进度条最左边X) / 进度条总宽
+        // 这样不管鼠标在垂直方向离得多远，只看横向投影
+        let p = (e.clientX - rect.left) / rect.width;
+
+        // 限制边界：不能小于0，不能大于1
+        p = Math.max(0, Math.min(1, p));
+
+        // --- 执行滚动 ---
+        // 1. 页面滚动 (immediate: true 让它像视频进度条一样跟手)
+        const targetScroll = (finalWidth - window.innerWidth) * p;
+        lenis.scrollTo(targetScroll, { immediate: true });
+
+        // 2. 游标位置同步
+        cursor.style.left = `${p * 100}%`;
+    });
+
+    // 3. 全局松开 (Window Mouseup)
+    window.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            cursor.classList.remove('is-dragging');
+            document.body.classList.remove('is-dragging-mode');
+        }
+    });
+
+    // 4. 点击轨道跳转 (保持不变)
+    progressLine.addEventListener('click', (e) => {
+        if (e.target.closest('.diamond-cursor')) return;
+        const rect = progressLine.getBoundingClientRect();
+        const p = (e.clientX - rect.left) / rect.width;
+        const targetScroll = (finalWidth - window.innerWidth) * p;
+        lenis.scrollTo(targetScroll);
+    });
+
+    // ... (在 document.addEventListener 内部的末尾)
+
+    // ================= 7. 明暗模式切换 =================
+    const modeBtn = document.getElementById('modeSwitch');
+    
+    modeBtn.addEventListener('click', () => {
+        // 1. 切换 body 的类名
+        document.body.classList.toggle('dark-mode');
+        
+        // 2. 更改按钮文字
+        if (document.body.classList.contains('dark-mode')) {
+            modeBtn.innerText = "Dark";
+        } else {
+            modeBtn.innerText = "Light";
+        }
+    });
+
+
 
 function changeBanner(id) {
   console.log("Nav: " + id);

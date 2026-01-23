@@ -317,3 +317,48 @@ body.is-dragging-mode {
 /*     transform: translateX(-50%) rotate(0deg);
     top: -35px; */
 }
+
+
+/* --- 新增：图片左上角文件标注 --- */
+.img-file-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;       /* 占据30%宽度 */
+    height: 24px;     /* 高度约20px (24px方便垂直居中) */
+    
+    /* 颜色逻辑：跟随主色调，自动反色 */
+    background-color: var(--fg-color); 
+    color: var(--bg-color);
+    
+    /* 排版 */
+    display: flex;
+    align-items: center;
+    padding-left: 10px; /* 文字左缩进 */
+    
+    /* 字体风格 */
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* 层级 */
+    z-index: 5; /* 保证在图片上面 */
+    pointer-events: none; /* 不影响点击图片 */
+    
+    /* 装饰：防止文字溢出 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 装饰细节：给标签加一个小角标或者线条，更有科技感 (可选) */
+.img-file-tag::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top: 24px solid var(--fg-color);
+    border-right: 10px solid transparent; /* 切角效果 */
+}
