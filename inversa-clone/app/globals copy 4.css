@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #13140e;
+  color: #f4f3e8;
+  overflow-x: hidden;
+}
+
+/* --- Mask Layer (Applied to Day Layer) --- */
+.mask-layer {
+  /* 确保 mask.svg 是实心填充的形状 */
+  -webkit-mask-image: url('/mask.svg');
+  mask-image: url('/mask.svg');
+  
+  -webkit-mask-position: center;
+  mask-position: center;
+  
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  
+  /* 初始大小交给 GSAP (300%) */
+  
+  /* 这一层不需要背景色，因为里面有 img */
+}
+
+/* --- Hotspots 动效 --- */
+.pulse-hotspots {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+/* SVG 调亮 */
+.grid-svg, .hotspots-svg {
+  filter: brightness(200%) drop-shadow(0 0 5px rgba(235, 252, 114, 0.5));
+}

@@ -13,10 +13,8 @@ export default function Home() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   
   // Refs
-  const nightLayerRef = useRef<HTMLDivElement>(null);   // Z-0: 黑夜底图
-  const dayMaskLayerRef = useRef<HTMLDivElement>(null); // Z-10: 白天 (带遮罩)
-  const techLayerRef = useRef<HTMLDivElement>(null);    // Z-20: Grid & Hotspots (最上层)
-  
+  const dayMaskLayerRef = useRef<HTMLDivElement>(null); // 顶层：白天+遮罩
+  const nightLayerRef = useRef<HTMLDivElement>(null);   // 底层：黑夜+SVG
   const gridRef = useRef<HTMLImageElement>(null);
   const hotspotsRef = useRef<HTMLImageElement>(null);
   
@@ -36,17 +34,18 @@ export default function Home() {
       }
     });
 
-    // === 1. 初始状态 ===
+    // === 1. 初始状态 (Initial State) ===
     
-    // [Z-20] Tech Layer (Grid/Hotspots) - 放在最上面
-    tl.set(techLayerRef.current, { zIndex: 20 });
+    // [底层] Night Layer + SVG
+    // 按照您的要求：平时透明度为0，且放大一点等待缩放效果
+    tl.set(nightLayerRef.current, { zIndex: 0 }); 
     tl.set([gridRef.current, hotspotsRef.current], { 
       autoAlpha: 0, 
-      scale: 1.5 // 初始放大，等待缩放进场
+      scale: 0.4 // 初始放大，制造"落下去"的视差
     });
 
-    // [Z-10] Day Layer (Mask)
-    // 初始 Mask 300% -> 白天全屏
+    // [顶层] Day Layer (Mask)
+    // 初始 Mask 极大(300%)，意味着白天图全屏可见
     tl.set(dayMaskLayerRef.current, { 
       zIndex: 10,
       webkitMaskSize: "300% 300%",
@@ -54,50 +53,49 @@ export default function Home() {
       autoAlpha: 1
     });
 
-    // [Z-0] Night Layer - 永远垫底
-    tl.set(nightLayerRef.current, { zIndex: 0 });
-
     // 文字状态
     tl.set(text1Ref.current, { autoAlpha: 1 });
     tl.set([text2Ref.current, text3Ref.current], { autoAlpha: 0 });
 
 
-    // === 2. 动画流程 ===
+    // === 2. 动画流程 (Timeline) ===
 
     // --- Phase 1: 文字1 离场 ---
     tl.to(text1Ref.current, { y: -50, autoAlpha: 0, duration: 2 });
 
-    // --- Phase 2: 天黑 & 科技层覆盖 (30% - 50%) ---
+    // --- Phase 2: 天黑/钻入 (Mask 缩小 -> 露出 Night) ---
     
-    // 1. Day Layer 遮罩缩小 (300% -> 0%) -> 白天消失，露出黑夜
+    // 1. Day Layer 的遮罩缩小 (300% -> 0%)
+    // 视觉上：白天缩成了一个点然后消失
     tl.to(dayMaskLayerRef.current, {
-      webkitMaskSize: "90% 90%",
-      maskSize: "90% 90%",
+      webkitMaskSize: "85% 85%",
+      maskSize: "85% 85%",
       duration: 8,
       ease: "power2.inOut"
     }, "+=0.5");
 
-    // 2. [顶层] Tech SVG 浮现 + 缩放归位
-    // 因为在最上层，所以它会覆盖在正在缩小的白天图层之上
+    // 2. [底层] SVG 浮现 + 缩放 (配合 Day 层的消失)
+    // 视觉上：随着白天消失，绿色的网格和红点浮现出来，并有一个缩放定位的感觉
     tl.to([gridRef.current, hotspotsRef.current], {
-      autoAlpha: 1,
-      scale: 0.76,
+      autoAlpha: 1,  // 变亮
+      scale: 0.9,      // 回到正常大小
       duration: 8,
       ease: "power2.out"
     }, "<");
 
-    // 3. 文字2 出现
+    // 3. 文字2 (Tech) 浮现
     tl.to(text2Ref.current, { y: 0, autoAlpha: 1, duration: 2 }, "-=3");
 
-    // --- Phase 3: 停留展示 ---
+    // --- Phase 3: 停留展示 (Hold) ---
     tl.to({}, { duration: 4 });
 
-    // --- Phase 4: 天亮 & 科技层消失 (60% - 100%) ---
+    // --- Phase 4: 天亮/恢复 (Mask 变大 -> 盖住 Night) ---
     
     // 1. 文字2 消失
     tl.to(text2Ref.current, { y: -50, autoAlpha: 0, duration: 2 });
 
-    // 2. Day Layer 遮罩变大 (0% -> 300%) -> 白天回归
+    // 2. Day Layer 的遮罩重新变大 (0% -> 300%)
+    // 视觉上：白天重新扩散开来，覆盖黑夜
     tl.to(dayMaskLayerRef.current, {
       webkitMaskSize: "300% 300%",
       maskSize: "300% 300%",
@@ -105,7 +103,8 @@ export default function Home() {
       ease: "power2.inOut"
     }, "+=0.5");
 
-    // 3. [顶层] Tech SVG 淡出 + 缩小
+    // 3. [底层] SVG 淡出 + 缩小
+    // 视觉上：网格退远并消失
     tl.to([gridRef.current, hotspotsRef.current], {
       autoAlpha: 0,
       scale: 0.8,
@@ -125,37 +124,39 @@ export default function Home() {
       <div ref={container} className="home-hero relative h-[400vh] bg-[#13140e]">
         <div ref={wrapperRef} className="sticky-wrapper sticky top-0 h-screen w-full overflow-hidden flex justify-center items-center">
           
-          {/* === LAYER 0 (底层): 黑夜 === */}
-          <div ref={nightLayerRef} className="absolute inset-0 w-full h-full">
-             <img src="/hero-night.png" alt="Night" className="w-full h-full object-cover opacity-80" />
-          </div>
-
-          {/* === LAYER 10 (中层): 白天 + Mask === */}
-          <div ref={dayMaskLayerRef} className="mask-layer absolute inset-0 w-full h-full pointer-events-none">
-            <img src="/hero-day.png" alt="Day" className="w-full h-full object-cover" />
-          </div>
-
-          {/* === LAYER 20 (顶层): Tech SVG (Grid + Hotspots) === */}
-          {/* 独立出来放在所有图层之上 */}
-          <div ref={techLayerRef} className="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
+          {/* === LAYER 0 (底层): 黑夜 + SVG === */}
+          {/* 这层永远在底部，本身不透明，全靠顶层 Day 把它挡住 */}
+          <div ref={nightLayerRef} className="absolute inset-0 w-full h-full flex items-center justify-center">
+             
+             {/* 黑夜底图 */}
+             <img src="/hero-night.png" alt="Night" className="absolute inset-0 w-full h-full object-cover opacity-80" />
+             
+             {/* SVG 元素 (初始 opacity 0) */}
              <div className="relative w-full h-full flex items-center justify-center">
                 <img 
                   ref={gridRef}
                   src="/grid.svg" 
-                  className="absolute w-[90%] h-auto object-contain" 
+                  className="absolute w-full h-full object-cover" 
                   alt="Grid" 
                 />
                 <img 
                   ref={hotspotsRef}
                   src="/hotspots.svg" 
-                  className="absolute w-[90%] h-auto object-contain pulse-hotspots" 
+                  className="absolute w-full h-full object-cover pulse-hotspots" 
                   alt="Hotspots" 
                 />
              </div>
           </div>
 
-          {/* === LAYER 30 (UI): 文字 === */}
-          <div className="slides-container absolute inset-0 z-30 pointer-events-none w-full h-full px-12">
+          {/* === LAYER 10 (顶层): 白天 === */}
+          {/* 这一层应用了 mask-layer，Mask控制它的可见区域 */}
+          <div ref={dayMaskLayerRef} className="mask-layer absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
+            {/* 白天底图 */}
+            <img src="/hero-day.png" alt="Day" className="w-full h-full object-cover" />
+          </div>
+
+          {/* === LAYER 20 (UI): 文字 === */}
+          <div className="slides-container absolute inset-0 z-20 pointer-events-none w-full h-full px-12">
              <div ref={text1Ref} className="absolute top-1/2 right-20 -translate-y-1/2 text-right max-w-lg">
                 <h3 className="text-[#ebfc72] text-xl tracking-widest mb-4">DAMAGED ECOSYSTEMS</h3>
                 <p className="text-[#f4f3e8] text-2xl font-light">Invasive species degrade ecosystems...</p>
