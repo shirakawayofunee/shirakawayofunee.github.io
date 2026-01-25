@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-black: #13140e;
+  --color-creme: #f4f3e8;
+  --color-yellow: #ebfc72;
+  --color-red: #f1664d;
+}
+
+body {
+  background: var(--color-black);
+  color: var(--color-creme);
+}
+
+/* --- 核心 Mask 样式 --- */
+.mask-layer {
+  /* 使用您的本地 mask.svg */
+  mask-image: url('/mask.svg');
+  -webkit-mask-image: url('/mask.svg');
+  
+  mask-position: center;
+  -webkit-mask-position: center;
+  
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  
+  /* 初始值设为0，由 GSAP 控制变大变小 */
+  mask-size: 0% 0%;
+  -webkit-mask-size: 0% 0%;
+  
+  /* 确保黑夜层/科技层背景不透光，模拟黑色扫描 */
+  /* 如果您想要 mask 区域内是纯黑背景而不是透视 Grid，取消下面这行注释 */
+  /* background-color: rgba(0,0,0,0.5); */
+}
+
+/* --- Hotspots 独立呼吸动效 --- */
+/* 这个动画负责让红点/GPS一直闪烁，增加活跃感 */
+.pulse-hotspots {
+  animation: pulse-scale 3s infinite ease-in-out;
+}
+
+@keyframes pulse-scale {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1); 
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.02); 
+    opacity: 1;
+  }
+}
+
+/* 确保 SVG 居中 */
+.grid-svg, .hotspots-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

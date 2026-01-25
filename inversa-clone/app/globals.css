@@ -2,214 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-black: #13140e;
-  --color-creme: #f4f3e8;
-  --color-yellow: #ebfc72;
-  --color-red: #f1664d;
-}
-
 body {
-  background: var(--color-black);
-  color: var(--color-creme);
-  margin: 0;
+  background: #13140e;
+  color: #f4f3e8;
+  overflow-x: hidden;
 }
 
-/* --- 核心布局 --- */
-.home-hero {
-  position: relative;
-  height: 400vh; /* 400vh 确保有足够的滚动距离 */
-  width: 100%;
-}
-
-.sticky-wrapper {
-  position: sticky; /* 关键：粘性定位 */
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* --- 层级堆叠 --- */
-
-/* 层级 1: 底图 */
-.layer-damaged {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-.layer-damaged img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* 模拟原站的冷色调/反色感 */
-  filter: grayscale(20%) contrast(1.1); 
-}
-
-/* 层级 2: 遮罩层 (科技) */
-.mask-container {
-  position: absolute;
-  inset: 0;
-  z-index: 10; /* 在底图之上 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #181813; /* 遮罩内背景色 */
-  
-  /* 遮罩定义 */
-  mask-image: url('/mask.svg');
+/* --- Mask Layer --- */
+.mask-layer {
+  /* 必须确保这里引用的 mask.svg 是实心形状（如黑色填充的圆） */
   -webkit-mask-image: url('/mask.svg');
+  mask-image: url('/mask.svg');
   
-  mask-position: center;
   -webkit-mask-position: center;
+  mask-position: center;
   
-  mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   
-  /* 初始大小由 GSAP 设置，这里可以留空或设为 0 */
-  /* mask-size: 0% 0%; */
 }
 
-/* 遮罩内部容器，用于做视差 */
-.mask-inner-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* --- Hotspots 动效 --- */
+.pulse-hotspots {
+  animation: pulse 2s infinite ease-in-out;
 }
 
-/* SVG 元素定位 */
-.grid-svg, .hotspots-svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%; /* 或根据 SVG 实际尺寸调整 */
-  height: auto;
-  min-height: 100vh; /* 确保覆盖全屏 */
-  object-fit: cover;
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
 }
 
-/* 层级 3: 顶图 (恢复) */
-.layer-restored {
-  position: absolute;
-  inset: 0;
-  z-index: 20; /* 最高层 */
-  opacity: 0; /* 初始不可见 */
-  background-color: var(--color-black); /* 防止图片加载慢时透视 */
-}
-.layer-restored img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* --- Slides 文字层 --- */
-.slides-container {
-  position: absolute;
-  inset: 0;
-  z-index: 30;
-  pointer-events: none; /* 让鼠标事件穿透到下一节 */
-}
-
-.slide {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  /* 默认隐藏，交给 GSAP 的 autoAlpha 处理 */
-  opacity: 0; 
-  visibility: hidden;
-}
-
-/* 文字位置定位 (模拟原站布局) */
-.slide-1 { 
-  align-items: flex-end; 
-  padding-bottom: 5rem;
-  padding-left: 5rem;
-}
-.slide-2 { 
-  justify-content: flex-end; 
-  align-items: center; 
-  padding-right: 8rem;
-}
-.slide-3 { 
-  justify-content: center; 
-  align-items: center; 
-  text-align: center;
-}
-
-.content-box {
-  max-width: 600px;
-}
-
-/* 字体样式 */
-.heading-large {
-  font-family: sans-serif; /* 换回您的字体 */
-  font-size: 5rem;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  margin-bottom: 2rem;
-  color: var(--color-creme);
-}
-
-.title-highlight {
-  font-family: monospace;
-  color: var(--color-yellow);
-  text-transform: uppercase;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  letter-spacing: 0.1em;
-}
-
-.title-highlight::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-yellow);
-  margin-right: 10px;
-  /* 简单的闪烁动画 */
-  animation: blink 1s step-start infinite; 
-}
-
-.text-body {
-  font-size: 1.5rem;
-  line-height: 1.4;
-  font-weight: 300;
-}
-
-.base-button {
-  padding: 1rem 2rem;
-  border: 1px solid var(--color-yellow);
-  color: var(--color-yellow);
-  text-transform: uppercase;
-  font-family: monospace;
-  background: transparent;
-  cursor: pointer;
-  pointer-events: auto; /* 按钮可点击 */
-  transition: all 0.3s ease;
-}
-.base-button:hover {
-  background: var(--color-yellow);
-  color: var(--color-black);
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-.next-section-placeholder {
-  height: 100vh;
-  background: #222;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* 确保 SVG 有亮度 */
+/* 如果你的 grid.svg 是黑色的，这段 CSS 会强制把它转白，防止在黑夜背景下看不见 */
+.grid-svg {
+  filter: brightness(200%) drop-shadow(0 0 5px rgba(235, 252, 114, 0.5));
 }
