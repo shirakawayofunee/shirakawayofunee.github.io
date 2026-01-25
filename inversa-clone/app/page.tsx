@@ -42,7 +42,7 @@ export default function Home() {
     tl.set(techLayerRef.current, { zIndex: 20 });
     tl.set([gridRef.current, hotspotsRef.current], { 
       autoAlpha: 0, 
-      scale: 1.5 // 初始放大，等待缩放进场
+      scale: 0.76 // 初始放大，等待缩放进场
     });
 
     // [Z-10] Day Layer (Mask)
