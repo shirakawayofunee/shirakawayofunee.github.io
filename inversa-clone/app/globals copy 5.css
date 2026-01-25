@@ -8,24 +8,25 @@ body {
   overflow-x: hidden;
 }
 
-/* --- 核心 Mask 样式 --- */
+/* --- Mask Layer (应用在 Day Layer 上) --- */
 .mask-layer {
-  /* 1. 引用 mask.svg */
+  /* 
+     原理：Mask 图片中黑色/不透明的部分 = 内容可见。
+     Mask 图片中透明的部分 = 内容被挖空。
+     
+     所以当 mask-size 很大(300%)时，整个屏幕都在 Mask 黑色区域内 -> 白天图全显。
+     当 mask-size 很小(0%)时，屏幕上没有 Mask 区域 -> 白天图不显 -> 露出底下的黑夜。
+  */
   -webkit-mask-image: url('/mask.svg');
   mask-image: url('/mask.svg');
   
-  /* 2. 居中 */
   -webkit-mask-position: center;
   mask-position: center;
   
-  /* 3. 不重复 */
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   
-  /* 4. 初始 Size (虽然 GSAP 会覆盖，但 CSS 写上以防闪烁) */
-  /* 按照您的要求：初始 300% */
-  -webkit-mask-size: 300% 300%;
-  mask-size: 300% 300%;
+  /* 不需要在这里写 size，GSAP 接管了 */
 }
 
 /* --- Hotspots 动效 --- */
@@ -38,7 +39,7 @@ body {
   50% { opacity: 1; transform: scale(1.02); }
 }
 
-/* 加亮 SVG (防止黑色不可见) */
+/* 强制 SVG 加亮，防止黑夜背景吞掉 SVG */
 .grid-svg, .hotspots-svg {
   filter: brightness(150%) drop-shadow(0 0 5px rgba(235, 252, 114, 0.3));
 }

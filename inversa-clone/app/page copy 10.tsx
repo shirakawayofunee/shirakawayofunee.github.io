@@ -12,14 +12,15 @@ export default function Home() {
   const container = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   
-  // === DOM Refs ===
-  const dayLayerRef = useRef<HTMLDivElement>(null);      // Layer 1
-  const nightMaskLayerRef = useRef<HTMLDivElement>(null); // Layer 2 (应用 CSS Mask)
-  const techLayerRef = useRef<HTMLDivElement>(null);     // Layer 3 (Grid/SVG, 无 Mask)
+  // Refs
+  const nightLayerRef = useRef<HTMLDivElement>(null);   // Z-0: 黑夜底图
+  const dayMaskLayerRef = useRef<HTMLDivElement>(null); // Z-10: 白天 (带遮罩)
+  const techLayerRef = useRef<HTMLDivElement>(null);    // Z-20: Grid & Hotspots (最上层)
   
   const gridRef = useRef<HTMLImageElement>(null);
   const hotspotsRef = useRef<HTMLImageElement>(null);
   
+  // Text Refs
   const text1Ref = useRef<HTMLDivElement>(null);
   const text2Ref = useRef<HTMLDivElement>(null);
   const text3Ref = useRef<HTMLDivElement>(null);
@@ -35,104 +36,84 @@ export default function Home() {
       }
     });
 
-    // ==========================================
-    // 1. 初始状态 (Init)
-    // ==========================================
-
-    // Layer 1: 白天 (Z-0)
-    tl.set(dayLayerRef.current, { zIndex: 0 });
-
-    // Layer 2: 黑夜 + Mask (Z-10)
-    // 初始不可见 (Opacity 0)
-    // Mask 初始巨大 (300%)，准备做缩小动画
-    tl.set(nightMaskLayerRef.current, { 
-      zIndex: 10,
-      autoAlpha: 0, 
-      webkitMaskSize: "300% 300%",
-      maskSize: "300% 300%"
-    });
-
-    // Layer 3: Grid (Z-20)
-    // 位于最上方，初始不可见
+    // === 1. 初始状态 ===
+    
+    // [Z-20] Tech Layer (Grid/Hotspots) - 放在最上面
     tl.set(techLayerRef.current, { zIndex: 20 });
     tl.set([gridRef.current, hotspotsRef.current], { 
-      autoAlpha: 0,
-      scale: 1.2 // 稍微放大一点，增加层次感
+      autoAlpha: 0, 
+      scale: 0.76 // 初始放大，等待缩放进场
     });
 
-    // 文字
+    // [Z-10] Day Layer (Mask)
+    // 初始 Mask 300% -> 白天全屏
+    tl.set(dayMaskLayerRef.current, { 
+      zIndex: 10,
+      webkitMaskSize: "300% 300%",
+      maskSize: "300% 300%",
+      autoAlpha: 1
+    });
+
+    // [Z-0] Night Layer - 永远垫底
+    tl.set(nightLayerRef.current, { zIndex: 0 });
+
+    // 文字状态
     tl.set(text1Ref.current, { autoAlpha: 1 });
     tl.set([text2Ref.current, text3Ref.current], { autoAlpha: 0 });
 
 
-    // ==========================================
-    // 2. 动画流程 (Timeline)
-    // ==========================================
+    // === 2. 动画流程 ===
 
     // --- Phase 1: 文字1 离场 ---
     tl.to(text1Ref.current, { y: -50, autoAlpha: 0, duration: 2 });
 
-    // --- Phase 2: 白天 -> 黑夜 (1.png -> 2.png) ---
-    // 只是单纯的透明度切换，此时 Mask 很大(300%)，所以看起来是全屏变黑
-    tl.to(nightMaskLayerRef.current, { 
-      autoAlpha: 1, 
-      duration: 3 
-    }, "+=0.5");
-
-    // --- Phase 3: 聚焦 & Grid入场 ---
+    // --- Phase 2: 天黑 & 科技层覆盖 (30% - 50%) ---
     
-    // 1. Mask 缩小 (300% -> 90%)
-    // 视觉：黑夜区域收缩，Grid 区域聚焦
-    tl.to(nightMaskLayerRef.current, {
+    // 1. Day Layer 遮罩缩小 (300% -> 0%) -> 白天消失，露出黑夜
+    tl.to(dayMaskLayerRef.current, {
       webkitMaskSize: "90% 90%",
       maskSize: "90% 90%",
-      duration: 6,
+      duration: 8,
       ease: "power2.inOut"
-    }, "<"); // 与黑夜淡入稍微重叠或接续
+    }, "+=0.5");
 
-    // 2. Grid 显现 (Opacity 0 -> 1)
-    // 位于最上层，不受 Mask 影响，直接浮现
+    // 2. [顶层] Tech SVG 浮现 + 缩放归位
+    // 因为在最上层，所以它会覆盖在正在缩小的白天图层之上
     tl.to([gridRef.current, hotspotsRef.current], {
       autoAlpha: 1,
-      scale: 1,
-      duration: 6,
+      scale: 0.76,
+      duration: 8,
       ease: "power2.out"
     }, "<");
 
     // 3. 文字2 出现
-    tl.to(text2Ref.current, { y: 0, autoAlpha: 1, duration: 2 }, "-=2");
+    tl.to(text2Ref.current, { y: 0, autoAlpha: 1, duration: 2 }, "-=3");
 
-    // --- Phase 4: 停留展示 (Hold) ---
+    // --- Phase 3: 停留展示 ---
     tl.to({}, { duration: 4 });
 
-    // --- Phase 5: 退场 (原路返回) ---
-
+    // --- Phase 4: 天亮 & 科技层消失 (60% - 100%) ---
+    
     // 1. 文字2 消失
     tl.to(text2Ref.current, { y: -50, autoAlpha: 0, duration: 2 });
 
-    // 2. Mask 变大 (90% -> 300%)
-    tl.to(nightMaskLayerRef.current, {
+    // 2. Day Layer 遮罩变大 (0% -> 300%) -> 白天回归
+    tl.to(dayMaskLayerRef.current, {
       webkitMaskSize: "300% 300%",
       maskSize: "300% 300%",
-      duration: 5,
+      duration: 6,
       ease: "power2.inOut"
     }, "+=0.5");
 
-    // 3. Grid 消失
+    // 3. [顶层] Tech SVG 淡出 + 缩小
     tl.to([gridRef.current, hotspotsRef.current], {
       autoAlpha: 0,
       scale: 0.8,
-      duration: 5
+      duration: 6
     }, "<");
 
-    // 4. 黑夜层淡出 (回到白天)
-    tl.to(nightMaskLayerRef.current, { 
-      autoAlpha: 0, 
-      duration: 3 
-    }, "<"); 
-
-    // 5. 文字3 出现
-    tl.to(text3Ref.current, { y: 0, autoAlpha: 1, duration: 2 }, "-=1");
+    // 4. 文字3 出现
+    tl.to(text3Ref.current, { y: 0, autoAlpha: 1, duration: 2 }, "-=2");
 
     // 缓冲
     tl.to({}, { duration: 2 });
@@ -144,29 +125,18 @@ export default function Home() {
       <div ref={container} className="home-hero relative h-[400vh] bg-[#13140e]">
         <div ref={wrapperRef} className="sticky-wrapper sticky top-0 h-screen w-full overflow-hidden flex justify-center items-center">
           
-          {/* === LAYER 1 (Z-0): 白天底图 === */}
-          <div ref={dayLayerRef} className="absolute inset-0 w-full h-full">
-             <img src="/hero-day.png" alt="Day" className="w-full h-full object-cover" />
+          {/* === LAYER 0 (底层): 黑夜 === */}
+          <div ref={nightLayerRef} className="absolute inset-0 w-full h-full">
+             <img src="/hero-night.png" alt="Night" className="w-full h-full object-cover opacity-80" />
           </div>
 
-          {/* === LAYER 2 (Z-10): 黑夜 + Mask === */}
-          {/* 
-              mask-layer 类应用 CSS mask-image。
-              GSAP 控制它的 mask-size (300% -> 90% -> 300%)。
-              opacity 控制它的淡入淡出。
-          */}
-          <div 
-            ref={nightMaskLayerRef} 
-            className="mask-layer absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center"
-          >
-            <img src="/hero-night.png" alt="Night" className="w-full h-full object-cover" />
+          {/* === LAYER 10 (中层): 白天 + Mask === */}
+          <div ref={dayMaskLayerRef} className="mask-layer absolute inset-0 w-full h-full pointer-events-none">
+            <img src="/hero-day.png" alt="Day" className="w-full h-full object-cover" />
           </div>
 
-          {/* === LAYER 3 (Z-20): Grid/SVG (Grid上方) === */}
-          {/* 
-              完全独立于 Mask 层。
-              只做 Opacity 动画。
-          */}
+          {/* === LAYER 20 (顶层): Tech SVG (Grid + Hotspots) === */}
+          {/* 独立出来放在所有图层之上 */}
           <div ref={techLayerRef} className="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
              <div className="relative w-full h-full flex items-center justify-center">
                 <img 
@@ -184,7 +154,7 @@ export default function Home() {
              </div>
           </div>
 
-          {/* === UI 文字 === */}
+          {/* === LAYER 30 (UI): 文字 === */}
           <div className="slides-container absolute inset-0 z-30 pointer-events-none w-full h-full px-12">
              <div ref={text1Ref} className="absolute top-1/2 right-20 -translate-y-1/2 text-right max-w-lg">
                 <h3 className="text-[#ebfc72] text-xl tracking-widest mb-4">DAMAGED ECOSYSTEMS</h3>
