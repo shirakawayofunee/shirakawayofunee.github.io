@@ -1,0 +1,7 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 这是一模一样的形状，但是只有线条 -->
+  <path d="M100 50H150V0H250V50H300V100H350V200H300V250H250V300H150V250H100V200H50V100H100V50Z" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <!-- 内部网格线 -->
+  <path d="M150 50V250 M200 0V300 M250 0V300 M300 50V250" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <path d="M50 150H350 M100 100H300 M100 200H300" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+</svg>
