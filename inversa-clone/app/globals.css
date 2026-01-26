@@ -8,37 +8,24 @@ body {
   overflow-x: hidden;
 }
 
-/* --- 核心 Mask 样式 --- */
+/* --- Mask Layer (应用在黑夜层) --- */
 .mask-layer {
-  /* 1. 引用 mask.svg */
   -webkit-mask-image: url('/mask.svg');
   mask-image: url('/mask.svg');
-  
-  /* 2. 居中 */
   -webkit-mask-position: center;
   mask-position: center;
-  
-  /* 3. 不重复 */
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  
-  /* 4. 初始 Size (虽然 GSAP 会覆盖，但 CSS 写上以防闪烁) */
-  /* 按照您的要求：初始 300% */
-  -webkit-mask-size: 300% 300%;
-  mask-size: 300% 300%;
 }
 
-/* --- Hotspots 动效 --- */
+/* 动效与亮度保持 */
 .pulse-hotspots {
   animation: pulse 2s infinite ease-in-out;
 }
-
 @keyframes pulse {
   0%, 100% { opacity: 0.8; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.02); }
 }
-
-/* 加亮 SVG (防止黑色不可见) */
 .grid-svg, .hotspots-svg {
   filter: brightness(150%) drop-shadow(0 0 5px rgba(235, 252, 114, 0.3));
 }

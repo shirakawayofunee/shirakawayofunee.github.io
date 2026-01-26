@@ -1,0 +1,37 @@
+图层堆叠（Z轴由下到上）：
+Layer 1 (Z=0): hero-day.png（白天）。常驻。
+Layer 2 (Z=10): hero-night.png（黑夜）。被 mask.svg 裁剪。
+只有 Mask 有颜色的区域，才会显示这张黑夜图。
+Layer 3 (Z=20): grid.svg & hotspots.svg。不被裁剪。
+悬浮在最上层。
+动画剧本（Scroll 进度）：
+入场前：Layer 2 (黑夜) 透明度为 0。
+入场 (Day -> Night)：
+Layer 2 (黑夜) 透明度 0 
+→
+→
+ 1。
+此时 Mask Size 为 300%（巨大），所以黑夜图基本覆盖全屏。
+聚焦 (Night Focus)：
+Layer 2 的 Mask Size 从 300% 
+→
+→
+ 90%。
+视觉效果：黑夜可视区域收缩到屏幕中间，边缘漏出（#13140e）（或纯黑色）。
+Layer 3 (Grid) 透明度 0 
+→
+→
+ 1。
+退场 (Night -> Day)：
+Layer 2 的 Mask Size 从 90% 
+→
+→
+ 300%（原路返回）。
+Layer 3 (Grid) 透明度 1 
+→
+→
+ 0。
+Layer 2 (黑夜) 透明度 1 
+→
+→
+ 0。
