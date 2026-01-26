@@ -46,5 +46,5 @@ body {
   /* 使用 background-repeat 让图片自动平铺，解决断层问题 */
   background-repeat: repeat; 
   /* 0.4s 是下落速度，越小越快 */
-  animation: rainfall 0.4s linear infinite;
+  animation: rainfall 1.4s linear infinite;
 }

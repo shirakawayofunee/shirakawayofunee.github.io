@@ -188,7 +188,7 @@ export default function Home() {
                  src="/rain.png" 
                  alt="Rain" 
                  // 关键修正：去掉 mix-blend-screen，提高不透明度到 0.9 方便观察
-                 className="w-full h-full object-cover opacity-70" 
+                 className="w-full h-full object-cover opacity-60" 
                />
             </div>
           </div>
