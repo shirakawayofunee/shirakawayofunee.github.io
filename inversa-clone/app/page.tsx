@@ -162,29 +162,33 @@ export default function Home() {
 
           {/* === LAYER 2 (Z=10): 黑夜 + Mask === */}
           {/* 核心修改：添加 mask-image 引用 svg */}
-          <div 
+{/* === LAYER 2 (Z=10): 黑夜 + Mask === */}
+<div 
             ref={nightMaskLayerRef} 
             className="mask-layer absolute inset-0 w-full h-full pointer-events-none"
             style={{
-              // 关键：引用 mask.svg
               maskImage: 'url("/mask.svg")',
               WebkitMaskImage: 'url("/mask.svg")',
-              // 设置 Mask 居中不重复
               maskPosition: 'center',
               WebkitMaskPosition: 'center',
               maskRepeat: 'no-repeat',
               WebkitMaskRepeat: 'no-repeat',
-              // maskSize 由 GSAP 控制
             }}
           >
+            {/* 1. 黑夜底图 (添加 absolute 确保重叠) */}
+            <img 
+              src="/hero-night.png" 
+              alt="Night" 
+              className="absolute inset-0 w-full h-full object-cover z-0" 
+            />
             
-            {/* 黑夜图本身是铺满这个 div 的，显示范围由父级的 mask 决定 */}
-            <img src="/hero-night.png" alt="Night" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 w-full h-full z-10 border-4 border-red-500">
+            {/* 2. Rain 图层 */}
+            <div className="absolute inset-0 w-full h-full z-10">
                <img 
                  src="/rain.png" 
                  alt="Rain" 
-                 className="w-full h-full object-cover opacity-100" 
+                 // 关键修正：去掉 mix-blend-screen，提高不透明度到 0.9 方便观察
+                 className="w-full h-full object-cover opacity-70" 
                />
             </div>
           </div>

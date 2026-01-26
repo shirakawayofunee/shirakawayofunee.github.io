@@ -29,3 +29,22 @@ body {
 .grid-svg, .hotspots-svg {
   filter: brightness(150%) drop-shadow(0 0 5px rgba(235, 252, 114, 0.3));
 }
+
+/* 雨水下落动画 */
+@keyframes rainfall {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    /* 这里的 800px 决定了雨落下的循环距离，
+       数值越大显得雨下得越快 */
+    background-position: 0 800px;
+  }
+}
+
+.animate-rain {
+  /* 使用 background-repeat 让图片自动平铺，解决断层问题 */
+  background-repeat: repeat; 
+  /* 0.4s 是下落速度，越小越快 */
+  animation: rainfall 0.4s linear infinite;
+}
