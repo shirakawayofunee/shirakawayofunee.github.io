@@ -1,3 +1,4 @@
+const BASE_PATH = "/inversa-clone"; 
 "use client";
 
 import { useRef } from "react";
