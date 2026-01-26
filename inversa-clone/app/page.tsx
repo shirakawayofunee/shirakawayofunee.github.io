@@ -177,8 +177,16 @@ export default function Home() {
               // maskSize 由 GSAP 控制
             }}
           >
+            
             {/* 黑夜图本身是铺满这个 div 的，显示范围由父级的 mask 决定 */}
             <img src="/hero-night.png" alt="Night" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 w-full h-full z-10 border-4 border-red-500">
+               <img 
+                 src="/rain.png" 
+                 alt="Rain" 
+                 className="w-full h-full object-cover opacity-100" 
+               />
+            </div>
           </div>
 
           {/* === LAYER 3 (Z=20): Grid & Hotspots (不被裁剪) === */}
