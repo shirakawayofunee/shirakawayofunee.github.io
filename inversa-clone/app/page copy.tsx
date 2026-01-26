@@ -1,3 +1,11 @@
+/*
+ * @Author: DCBZ
+ * @Date: 2026-01-26 16:06:47
+ * @LastEditors: your name
+ * @LastEditTime: 2026-01-26 16:15:41
+ * @Description: 
+ * @FilePath: \inversa-clone\app\page copy.tsx
+ */
 "use client";
 
 import { useRef } from "react";
@@ -146,90 +154,89 @@ export default function Home() {
     tl.to({}, { duration: 2 });
 
   }, { scope: container });
-return (
-  <ReactLenis root>
-    {/* 这里的 h-[450vh] 决定了动画的总滚动长度 */}
-    <div ref={container} className="home-hero relative h-[450vh] bg-[#13140e]">
-      <div ref={wrapperRef} className="sticky-wrapper sticky top-0 h-screen w-full overflow-hidden flex justify-center items-center">
-        
-        {/* === LAYER 1 (Z=0): 白天 (常驻) === */}
-        <div ref={dayLayerRef} className="absolute inset-0 w-full h-full">
-           {/* 【修改 1】白天图路径 */}
-           <img src={`${BASE_PATH}/hero-day.png`} alt="Day" className="w-full h-full object-cover" />
-        </div>
 
-        {/* === 夹层 (Z=5): 纯色背景 #13140e === */}
-        <div ref={darkBgLayerRef} className="absolute inset-0 w-full h-full bg-[#13140e] pointer-events-none"></div>
-
-        {/* === LAYER 2 (Z=10): 黑夜 + Mask === */}
-        <div 
-          ref={nightMaskLayerRef} 
-          className="mask-layer absolute inset-0 w-full h-full pointer-events-none"
-          style={{
-            // 【修改 2】Mask 路径 (注意这里用了反引号 ` 和 ${BASE_PATH})
-            maskImage: `url("${BASE_PATH}/mask.svg")`,
-            WebkitMaskImage: `url("${BASE_PATH}/mask.svg")`,
-            maskPosition: 'center',
-            WebkitMaskPosition: 'center',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
-        >
-          {/* 1. 黑夜底图 (添加 absolute 确保重叠) */}
-          {/* 【修改 3】黑夜图路径 */}
-          <img 
-            src={`${BASE_PATH}/hero-night.png`} 
-            alt="Night" 
-            className="absolute inset-0 w-full h-full object-cover z-0" 
-          />
+  return (
+    <ReactLenis root>
+      {/* 这里的 h-[450vh] 决定了动画的总滚动长度 */}
+      <div ref={container} className="home-hero relative h-[450vh] bg-[#13140e]">
+        <div ref={wrapperRef} className="sticky-wrapper sticky top-0 h-screen w-full overflow-hidden flex justify-center items-center">
           
-          {/* 2. Rain 图层 */}
-          <div className="absolute inset-0 w-full h-full z-10">
-             {/* 【修改 4】Rain 图路径 */}
-             {/* 如果你之后想换回“动画版”，记得这里也要加 BASE_PATH */}
-             <img 
-               src={`${BASE_PATH}/rain.png`} 
-               alt="Rain" 
-               className="w-full h-full object-cover opacity-60" 
-             />
+          {/* === LAYER 1 (Z=0): 白天 (常驻) === */}
+          <div ref={dayLayerRef} className="absolute inset-0 w-full h-full">
+             <img src="/hero-day.png" alt="Day" className="w-full h-full object-cover" />
           </div>
-        </div>
 
-        {/* === LAYER 3 (Z=20): Grid & Hotspots (不被裁剪) === */}
-        <div ref={techLayerRef} className="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
-           <div ref={gridRef} className="relative w-full h-full flex items-center justify-center">
-              {/* 【修改 5】Grid 路径 */}
-              <img 
-                src={`${BASE_PATH}/grid.svg`} 
-                className="absolute w-[68%] h-auto object-contain" 
-                alt="Grid" 
-              />
-              {/* 【修改 6】Hotspots 路径 */}
-              <img 
-                src={`${BASE_PATH}/hotspots.svg`} 
-                className="absolute w-[60%] h-auto object-contain pulse-hotspots" 
-                alt="Hotspots" 
-              />
-           </div>
-        </div>
+          {/* === 夹层 (Z=5): 纯色背景 #13140e === */}
+          {/* 当 Mask 缩小时，用于遮挡白天图，显示边缘深色 */}
+          <div ref={darkBgLayerRef} className="absolute inset-0 w-full h-full bg-[#13140e] pointer-events-none"></div>
 
-        {/* === UI 文字层 (Z=40) === */}
-        <div className="slides-container absolute inset-0 z-40 pointer-events-none w-full h-full px-12">
-           <div ref={text1Ref} className="absolute top-1/2 right-20 -translate-y-1/2 text-right max-w-lg">
-              <h3 className="text-[#ebfc72] text-xl tracking-widest mb-4">THE PROBLEM</h3>
-              <p className="text-[#f4f3e8] text-2xl font-light">Daytime view logic...</p>
-           </div>
-           <div ref={text2Ref} className="absolute top-1/2 left-20 -translate-y-1/2 text-left max-w-lg">
-              <h3 className="text-[#ebfc72] text-xl tracking-widest mb-4">ANALYSIS</h3>
-              <p className="text-[#f4f3e8] text-2xl font-light">Focusing on the ecosystem data...</p>
-           </div>
-           <div ref={text3Ref} className="absolute top-1/2 right-20 -translate-y-1/2 text-right max-w-lg">
-              <h3 className="text-[#ebfc72] text-xl tracking-widest mb-4">RESTORED</h3>
-              <p className="text-[#f4f3e8] text-2xl font-light">Back to the thriving day...</p>
-           </div>
-        </div>
+          {/* === LAYER 2 (Z=10): 黑夜 + Mask === */}
+          {/* 核心修改：添加 mask-image 引用 svg */}
+{/* === LAYER 2 (Z=10): 黑夜 + Mask === */}
+<div 
+            ref={nightMaskLayerRef} 
+            className="mask-layer absolute inset-0 w-full h-full pointer-events-none"
+            style={{
+              maskImage: 'url("/mask.svg")',
+              WebkitMaskImage: 'url("/mask.svg")',
+              maskPosition: 'center',
+              WebkitMaskPosition: 'center',
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+            }}
+          >
+            {/* 1. 黑夜底图 (添加 absolute 确保重叠) */}
+            <img 
+              src="/hero-night.png" 
+              alt="Night" 
+              className="absolute inset-0 w-full h-full object-cover z-0" 
+            />
+            
+            {/* 2. Rain 图层 */}
+            <div className="absolute inset-0 w-full h-full z-10">
+               <img 
+                 src="/rain.png" 
+                 alt="Rain" 
+                 // 关键修正：去掉 mix-blend-screen，提高不透明度到 0.9 方便观察
+                 className="w-full h-full object-cover opacity-60" 
+               />
+            </div>
+          </div>
 
+          {/* === LAYER 3 (Z=20): Grid & Hotspots (不被裁剪) === */}
+          <div ref={techLayerRef} className="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
+             <div ref={gridRef} className="relative w-full h-full flex items-center justify-center">
+                <img 
+                  src="/grid.svg" 
+                  className="absolute w-[68%] h-auto object-contain" 
+                  alt="Grid" 
+                />
+                <img 
+                  src="/hotspots.svg" 
+                  className="absolute w-[60%] h-auto object-contain pulse-hotspots" 
+                  alt="Hotspots" 
+                />
+             </div>
+          </div>
+
+          {/* === UI 文字层 (Z=40) === */}
+          <div className="slides-container absolute inset-0 z-40 pointer-events-none w-full h-full px-12">
+             <div ref={text1Ref} className="absolute top-1/2 right-20 -translate-y-1/2 text-right max-w-lg">
+                <h3 className="text-[#ebfc72] text-xl tracking-widest mb-4">THE PROBLEM</h3>
+                <p className="text-[#f4f3e8] text-2xl font-light">Daytime view logic...</p>
+             </div>
+             <div ref={text2Ref} className="absolute top-1/2 left-20 -translate-y-1/2 text-left max-w-lg">
+                <h3 className="text-[#ebfc72] text-xl tracking-widest mb-4">ANALYSIS</h3>
+                <p className="text-[#f4f3e8] text-2xl font-light">Focusing on the ecosystem data...</p>
+             </div>
+             <div ref={text3Ref} className="absolute top-1/2 right-20 -translate-y-1/2 text-right max-w-lg">
+                <h3 className="text-[#ebfc72] text-xl tracking-widest mb-4">RESTORED</h3>
+                <p className="text-[#f4f3e8] text-2xl font-light">Back to the thriving day...</p>
+             </div>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </ReactLenis>
-);
+    </ReactLenis>
+  );
+}
