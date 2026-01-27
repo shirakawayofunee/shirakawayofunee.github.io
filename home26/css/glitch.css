@@ -1,3 +1,42 @@
+
+/* === 页面切换遮罩层 === */
+.page-transition-curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* 这里的颜色要和你的背景色一致，比如你的 var(--bg-page) */
+    z-index: 99999; /* 保证盖住所有东西 */
+    pointer-events: none; /* 遮罩显示时禁止点击 */
+    opacity: 1; /* 默认是黑的，挡住白屏 */
+    transition: opacity 0.6s ease-in-out; /* 动画时间 */
+}
+
+/* 页面加载完成，遮罩消失 */
+.page-loaded .page-transition-curtain {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 页面准备离开，遮罩出现 */
+.page-exiting .page-transition-curtain {
+    opacity: 1;
+    pointer-events: auto; /* 此时禁止用户乱点 */
+}
+
+/* (可选) 在遮罩中间加个 Loading 动图 */
+.page-transition-curtain::after {
+    content: "LOADING..."; /* 或者放一个 loading gif 的 background-image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: monospace;
+    letter-spacing: 5px;
+    font-size: 14px;
+}
 /*! tailwindcss v4.1.17 | MIT License | https://tailwindcss.com */
 @layer properties {
     @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) {
