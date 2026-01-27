@@ -18,7 +18,11 @@ export default {
       {
         term: `GARDEN`,
         desc: `工事中`
-      }
+      },
+      {
+        term: `9th、銀蜘蛛`,
+        desc: `スパイ組織、上庭直属の組織であり、非常に独立した権限を与えられている。規模はさほど大きくないが、FACと同レベルの機関であり、市議会も彼らの意向を無視できない。`
+      },
     ],
     characters: [
       {
@@ -41,34 +45,34 @@ export default {
     },
     {
       type: `narration`,
-      text: `基地には陽光が差し込まず、レオポルドは門柱に寄りかかり、静かに目を伏せて何かを考えていた。しばらくして、彼女は目を開け、大げさに伸びをした。`
+      text: `基地には陽光が差し込まず、「師匠」は門柱に寄りかかり、静かに目を伏せて何かを考えていた。しばらくして、彼女は目を開け、大げさに伸びをした。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `うわーっ、この仕事、めっちゃ疲れた！寝すぎて腰も背中も痛いよ……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `「カーネーション」～、お風呂入りたい！今回はバラで、紅茶もバラ、お菓子も――`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `あ、忘れてた。彼女、まだ目覚めてないんだっけ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `まあいいや、堇でもいいよ。気分、ちょっとマシになった？よかったら、ついでにマッサージしてよ。`
     },
     {
@@ -80,20 +84,20 @@ export default {
     },
     {
       type: `narration`,
-      text: `温かい温泉水が四角い浴槽に注がれ、鮮やかな赤いバラの花びらが浮かぶ。レオポルドは浸かり、堇のサービスに満足そうに身を委ねた。`
+      text: `温かい温泉水が四角い浴槽に注がれ、鮮やかな赤いバラの花びらが浮かぶ。「師匠」は浸かり、堇のサービスに満足そうに身を委ねた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `ん……だいぶ楽になった……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `「カーネーション」はどう？`
     },
     {
@@ -101,7 +105,7 @@ export default {
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `まだ眠っていますが、体内に汚染はもう発生していません。あなたが能力で彼女の体からあの汚物を引き離してくれたおかげです。`
+      text: `まだ眠っていますが、体内に汚染はもう発生していません。師匠が能力で彼女の体からあの汚物を引き離してくれたおかげです。`
     },
     {
       type: `dialogue`,
@@ -114,15 +118,15 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `よかった。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
-      text: `「Garden」の手引きにまた一条追加だ。雇い主の変な力に頼ってバカみたいに動くんじゃなくて、自分を信じるか、さもなきゃ業師に頼りに戻ってこい。`
+      name: `「師匠」`,
+      text: `「Garden」の手引きにまた一条追加だ。雇い主の変な力に頼ってバカみたいに動くんじゃなくて、自分を信じるか、さもなきゃ師匠に頼りに戻ってこい。`
     },
     {
       type: `dialogue`,
@@ -136,13 +140,13 @@ export default {
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `蓟は――`
+      text: `アザミは――`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `自業自得だよ。`
     },
     {
@@ -153,53 +157,53 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `私の禁令を何度も破って、勝手に動いて、あんなバレバレの罠にまで引っかかる。もし私が事前に備えてなかったら、今回の件で何でもかんでも喋られてたよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `もう誰も助けには行かない。勝手に苦しめばいい。`
     },
     {
       type: `narration`,
-      text: `また長い沈黙が続き、結局、レオポルドが渋々口を開いた。`
+      text: `また長い沈黙が続き、結局、「師匠」が渋々口を開いた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `まあ……今、彼女は第九機関の心理専門家のところにいるよ。逆暗示のトラップを仕掛けておいたから、あいつら、まだ数日は右往左往するさ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
-      text: `今、第九機関に閉じ込められてるぶん、外で暴れ回るよりは安全だ。あの銀蜘蛛の頭目、執行人のやり方をいつも見下してるから、彼女をHUSHには渡さないよ。`
+      name: `「師匠」`,
+      text: `今、第九機関に閉じ込められてるぶん、外で暴れ回るよりは安全だ。あの銀蜘蛛、執行人のやり方をいつも見下してるから、彼女をHUSHには渡さないよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `その後、たぶんお前の管理庁に送られるんじゃない？彼女にはちょうどいい。大仇は報いたんだし、自分が何をしたいか考えるまで、静かにしてればいい。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `別にそんな嫌ってるわけじゃないよ。新人は無知でルールを破るけど、少なくとも一点、彼女は君たちよりマシだ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `何をしても自分のためだけ。他人のために犠牲になったり、他人のためにどうこうなんて考えない。絶対に損しないって点で、彼女は私に一番似てる。君たちよりよっぽど楽だよ。`
     },
     {
@@ -218,17 +222,17 @@ export default {
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `業師、こんな派手に動いたこと、初めてです。注目を集めすぎて、大丈夫ですか？`
+      text: `師匠、こんな派手に動いたこと、初めてです。注目を集めすぎて、大丈夫ですか？`
     },
     {
       type: `narration`,
-      text: `レオポルドは笑った。こんな質問、堇にしかできない。普段は柔弱そうなのに、肝心な時はズバッと来る。彼女は顔を上げ、堇の顎を軽くつついた。`
+      text: `「師匠」は笑った。こんな質問、堇にしかできない。普段は柔弱そうなのに、肝心な時はズバッと来る。彼女は顔を上げ、堇の顎を軽くつついた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `私に巻き込まれるのが怖いなら、隠れてなよ。どうせ君たちに出番なんかないんだから。`
     },
     {
@@ -236,7 +240,7 @@ export default {
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `いいえ、「Garden」に入った日から、私は自分の運命を受け入れました。あなたは最強です。誰もあなたを倒せるとは思いません。`
+      text: `いいえ、「Garden」に入った日から、私は自分の運命を受け入れました。師匠は最強です。誰も師匠を倒せるとは思いません。`
     },
     {
       type: `dialogue`,
@@ -249,14 +253,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `深い意図なんてないよ。この前は春で、眠くて動きたくなかっただけ。夏が来たから、花を咲かせる時期になった。それで動いただけ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `HUSHの連中、ずっとウザくまとわりついてきて、私の庭をハエが這うなんて我慢できない。それだけ。`
     },
     {
@@ -267,14 +271,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `で、なんでそんなこと聞くの？普段、こんなこと興味ないよね。ずっと「Garden」を抜けたがってたのに、初めて自分から戻ってきた。私のところに来る奴の目的は一つしかない――`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `お前の復讐、どうなった？あの優しくて自分を犠牲にした局長のためだろ？私が手伝ってやろうか？`
     },
     {
@@ -285,7 +289,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `私のところに戻ってきたのはそのためだろ？あいつに手を出した奴を許すわけない。西区で誰を殺した？錆火、執行委員会……他には？涅槃の幹部たち、チャンスはあった？`
     },
     {
@@ -293,27 +297,27 @@ export default {
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `ありました。最近のあなたの活躍のおかげで、注目がそっちに集まって、私は近づく機会を得ました。あなたの行動を邪魔しないよう、慎重にやりました。「Garden」の仕業だとバレません。`
+      text: `ありました。最近の師匠の活躍のおかげで、注目がそっちに集まって、私は近づく機会を得ました。師匠の行動を邪魔しないよう、慎重にやりました。「Garden」の仕業だとバレません。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `へっ、よくやった。外に一切情報が出てない。さすが私の最高の弟子だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `で、気が済んだ？スッキリした？あんなに仇を討って、そろそろ笑顔になってもいいんじゃない？笑ってみてよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `君の笑顔、久しぶりに見てないからさ。渋い顔されると、私の気分も下がるんだよね。`
     },
     {
@@ -339,55 +343,55 @@ export default {
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `あなたは快意恩仇こそが解放だと言いました。でも、この憎しみには終わりがない。私の恨みはぼやけ、疲れ果て、私は……解放されない。`
+      text: `師匠は快意恩仇こそが解放だと言いました。でも、この憎しみには終わりがない。私の恨みはぼやけ、疲れ果て、私は……解放されない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `あなたもずっと果てしない憎しみと戦ってきました。どうやって向き合ってるんですか？心が麻痺しないように、どうやって自分を守ってるんですか？`
+      text: `師匠もずっと果てしない憎しみと戦ってきました。どうやって向き合ってるんですか？心が麻痺しないように、どうやって自分を守ってるんですか？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `それとも、これが心を差し出す代償ですか？彼を失ったから、私はもう代わりを見つけられない。`
+      text: `それとも、これが心を差し出す代償ですか？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `だからあなたは、私たちに自分だけを愛しろと言うんですか？`
+      text: `だから師匠は、私たちに自分だけを愛しろと言うんですか？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `私はどこへ進めばいいのか……あなたの導きが必要です。`
+      text: `私はどこへ進めばいいのか……師匠の導きが必要です。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `……それ、復讐じゃない。ただ苦しみに押されてるだけだ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `冷静に、理知的に、勇敢に……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `仇が見つからないなら、ちょっと置いとけ。数日後、奴が首持って現れるかもしれないよ。`
     },
     {
@@ -401,14 +405,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `もしそのバカがまだ生きてるなら、見つけて、奪い返せ。好きになるのは悪くない。心を差し出したんじゃなくて、相手の心を騙して、しっかり縛りつければいいだろ？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `機会があれば、そのバカが今どうしてるか、探してみたいね。まあ……`
     },
     {
@@ -419,70 +423,70 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `よく聞け。これが最後の教えだ。二度と言わない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `君たちは私が選んだ花だ。私のいいところを少しくらい持ってるから、私の庭に入れた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `美しい花ほどハエを引き寄せる。それは君たちもわかってる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `花は確かに脆い。美しければ、軽く揉めば砕け、折れば曲がる。君たちもそう。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `私に拾われた時、みんなくそくらえな状態だった。でも大丈夫、見た目が弱いだけで、君たちは思ってるよりずっと強い。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `砕かれても、来年また咲く。焼かれても、新芽が出る。運命は君を折れるけど、決して壊せない――根を自分で握り続けてる限り。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `流されるな、運命に押されるな、外のものに引っ張られるな。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `譲歩しても理解は得られない。苦しみの元は「従わない」ことじゃなく、「独立していない」ことだ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `主権がなく、主権を守る力もない。それがハエに花を踏みつける隙を与えた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `君たちの人生は君たちのもの。私以外の誰の言葉も聞くな。`
     },
     {
@@ -498,42 +502,42 @@ export default {
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `わかりました。でも、業師、なんで「最後の」なんですか？`
+      text: `わかりました。でも、師匠、なんで「最後の」なんですか？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `この2か月、あなたは一人で戦い続けて、みんな心配してます。`
+      text: `この2か月、師匠は一人で戦い続けて、みんな心配してます。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `何か予定があるんですか？教えてください。あなたの身体――`
+      text: `何か予定があるんですか？教えてください。師匠の身体――`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `うーん、ダメダメ、なんか体がキツい。みんなくそくらえ、全員呼んで、マッサージしてよ。ついでに祝おう、誕生日を前祝いだ！`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `今日も美しく、気分も最高、明日も私の思い通りになるように！`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
-      text: `どうやったら業師を喜ばせられるか、考えて。今日の任務は、今日を私の最高の日にすること！`
+      name: `「師匠」`,
+      text: `どうやったら師匠を喜ばせられるか、考えて。今日の任務は、今日を私の最高の日にすること！`
     },
     {
       type: `narration`,
@@ -541,7 +545,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `その夜、レオポルドは手書きの指令を一束残し、刺客たち全員に禁閉を命じ、「Garden」を去った。`
+      text: `その夜、「師匠」は手書きの指令を一束残し、刺客たち全員に禁閉を命じ、「Garden」を去った。`
     },
     {
       type: `narration`,
@@ -649,7 +653,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `おや、シーゲルじゃない？数日ぶりなのに、なんでこんなボロボロなの。死なないでよ、私の「Garden」、お前の小細工で隠れてるんだから。`
     },
     {
@@ -670,12 +674,12 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `そ？なら、ほんと・ご・め・ん。`
     },
     {
       type: `narration`,
-      text: `レオポルドは近づき、シーゲルの傷口に手を突っ込んだ。`
+      text: `「師匠」は近づき、シーゲルの傷口に手を突っ込んだ。`
     },
     {
       type: `dialogue`,
@@ -688,21 +692,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `セヴェロを騙したのはお前だろ……彼女に死にに行く情報と、あの気色悪いルーンを渡した。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `自分の福音地の仲間より私に助けを求めに来るなんて、捨てられたんだね。最後のご利用、ありがと……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `これから、私の「Garden」は福音地と一切関係ないよ。`
     },
     {
@@ -735,17 +739,17 @@ export default {
     },
     {
       type: `narration`,
-      text: `言葉を終える前に、レオポルドが手を振ると、シーゲルの体内から巨大な漆黒の、まるで生きているように蠢く異形の花が引き抜かれた。シーゲルが完全に人形を失い、黒衣の上にその花が咲くだけになった。`
+      text: `言葉を終える前に、「師匠」が手を振ると、シーゲルの体内から巨大な漆黒の、まるで生きているように蠢く異形の花が引き抜かれた。シーゲルが完全に人形を失い、黒衣の上にその花が咲くだけになった。`
     },
     {
       type: `narration`,
-      text: `レオポルドはシーゲルの溶けゆく姿を見、彼女が咲かせた悍ましい異形のものを見つめた。もっと早くこうすべきだった。`
+      text: `「師匠」はシーゲルの溶けゆく姿を見、彼女が咲かせた悍ましい異形のものを見つめた。もっと早くこうすべきだった。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `レオポルド`,
+      name: `「師匠」`,
       text: `だって、私がその気だったから。`
     },
     {
