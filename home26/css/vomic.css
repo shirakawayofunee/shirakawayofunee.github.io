@@ -94,7 +94,7 @@ body {
 /* === 漫画容器 === */
 #comic-container {
     margin-left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width) - 25%);
+    width: calc(100% - var(--sidebar-width) - 15%);
     padding-bottom: 20vh; /* 底部留白 */
 }
 

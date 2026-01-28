@@ -134,35 +134,51 @@ function startApp(currentEpId) {
         });
 
         // B. 左侧进度条：垂直跟随 (保持不变，这个效果很好)
-        const sidebarHeight = window.innerHeight - 200; 
+        const sidebarLimit = window.innerHeight - 250; 
+        
         gsap.to("#progress-track", {
-            y: sidebarHeight, 
+            y: sidebarLimit, 
             ease: "none",
-            scrollTrigger: { trigger: "body", start: "top top", end: "bottom bottom", scrub: 0 }
+            scrollTrigger: { 
+                trigger: "body", 
+                start: "top top", 
+                end: "bottom bottom", 
+                scrub: 0 
+            }
         });
 
-        // C. 【修正2】右侧目录：错落式上升 (One by one)
-        // 这里的逻辑是：
-        // 1. 目标不再是 ul，而是 ul 里的每一个 .toc-item
-        // 2. 它们都要向上移动 (比如移动 50vh)
-        // 3. 使用 stagger 让它们“排队”移动
         const tocItems = document.querySelectorAll('.toc-item');
         
         if (tocItems.length > 0) {
-            // 先把它们稍微往下放一点，方便升起来
-            gsap.set(tocItems, { y: 100, opacity: 0.5 }); 
-
-            gsap.to(tocItems, {
-                y: -window.innerHeight * 0.5, // 最终都升到上方去
-                opacity: 1, // 升起来的过程中变清晰（可选）
-                ease: "none", // 线性匀速，完全跟随滚动条
-                stagger: 0.2, // 【关键】：每个元素之间相隔 0.2 的滚动进度触发
+            // 创建一个时间轴，绑定整个页面的滚动
+            const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: "body",
                     start: "top top",
                     end: "bottom bottom",
-                    scrub: 0.5 // 稍微有点延迟，更有飘逸感
+                    scrub: 1 // 增加一点阻尼感，让动画更平滑
                 }
+            });
+
+            // 遍历每个标题，把它们“按顺序”加到时间轴里
+            tocItems.forEach((item, index) => {
+                // 计算每个标题最终应该停在哪
+                // 第1个停在 top: 20px
+                // 第2个停在 top: 50px (20 + 30)
+                // ...
+                const finalTop = 20 + (index * 35); // 35是行高间距
+
+                // 添加动画到时间轴
+                // 这里的逻辑是：必须等前一个动画做完了(或者做了一半)，下一个才开始
+                tl.to(item, {
+                    top: finalTop, // 升到指定位置
+                    ease: "power1.inOut", // 缓动
+                    duration: 1 // 在时间轴里占 1份 时间
+                }); 
+                
+                // 注意：因为是 Timeline，默认就是串行的（一个接一个）
+                // 所以 Item 2 会在 Item 1 结束后才开始动
+                // 随着你在页面上滚动，这个时间轴会被 scrub 驱动播放
             });
         }
     }
