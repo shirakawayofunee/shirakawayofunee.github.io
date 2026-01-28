@@ -38,12 +38,30 @@ const COMIC_DATA = [
     },
     {
         id: "section_4",
-        images: ["https://placehold.co/600x400/000/FFF?text=To+Be+Continued"],
+        images: [
+        "./vomic/0722/401.webp", 
+        ],
         audioPlaylist: [
-            "./vomic/0722/401.webp", 
+
+        ],
+        autoDuration: 5000
+    },
+    {
+        id: "section_demo_2",
+        layout: "layout-stagger-2", 
+        images: [
             "./vomic/0722/402.webp", 
             "./vomic/0722/403.webp", 
-            "./vomic/0722/404.webp", 
+    ], 
+        audioPlaylist: ["..."], autoDuration: 0
+    },
+    {
+        id: "section_4",
+        images: [
+        "./vomic/0722/404.webp", 
+        ],
+        audioPlaylist: [
+
         ],
         autoDuration: 5000
     },
