@@ -1,0 +1,67 @@
+<!--
+ * @Author: DCBZ
+ * @Date: 2026-01-28 16:32:03
+ * @LastEditors: your name
+ * @LastEditTime: 2026-01-28 16:34:14
+ * @Description: 
+ * @FilePath: \shirakawayofunee.github.io\home26\vomic.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Comic Demo</title>
+    <link rel="stylesheet" href="css/vomic.css">
+    
+    <!-- 引入外部库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+</head>
+<body>
+
+    <!-- Loading / 封面页 -->
+    <div id="cover-screen">
+        <div class="cover-content">
+            <h1>THE COMIC</h1>
+            <p>戴上耳机体验最佳</p>
+            <button id="start-btn" class="play-triangle"></button>
+            <div class="loading-text">点击开始阅读</div>
+        </div>
+    </div>
+
+    <!-- 左侧固定栏 (PC) / 底部栏 (Mobile) -->
+    <aside id="sidebar">
+        <div class="progress-display">
+            <span id="current-page">01</span>
+            <span class="divider">/</span>
+            <span id="total-page">--</span>
+        </div>
+
+        <div class="controls">
+            <!-- 模式切换/暂停按钮 -->
+            <div class="control-item" id="play-toggle">
+                <span class="icon" id="play-icon">⏸</span>
+                <span class="label" id="play-label">AUTO</span>
+            </div>
+            
+            <!-- BGM 开关 -->
+            <div class="control-item" id="bgm-toggle">
+                <span class="icon">♫</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 漫画内容容器 -->
+    <main id="comic-container">
+        <!-- JS 会在这里动态生成内容 -->
+    </main>
+
+    <!-- 配置文件 -->
+    <script src="js/vomicdata.js"></script>
+    <!-- 核心逻辑 -->
+    <script src="js/vomic.js"></script>
+</body>
+</html>
