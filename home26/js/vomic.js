@@ -146,43 +146,51 @@ function startApp(currentEpId) {
                 scrub: 0 
             }
         });
-
         const tocItems = document.querySelectorAll('.toc-item');
         
         if (tocItems.length > 0) {
-            // 创建一个时间轴，绑定整个页面的滚动
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: "body",
                     start: "top top",
                     end: "bottom bottom",
-                    scrub: 1 // 增加一点阻尼感，让动画更平滑
+                    scrub: 1 // 阻尼感
                 }
             });
 
-            // 遍历每个标题，把它们“按顺序”加到时间轴里
             tocItems.forEach((item, index) => {
-                // 计算每个标题最终应该停在哪
-                // 第1个停在 top: 20px
-                // 第2个停在 top: 50px (20 + 30)
-                // ...
-                const finalTop = 20 + (index * 35); // 35是行高间距
-
-                // 添加动画到时间轴
-                // 这里的逻辑是：必须等前一个动画做完了(或者做了一半)，下一个才开始
-                tl.to(item, {
-                    top: finalTop, // 升到指定位置
-                    ease: "power1.inOut", // 缓动
-                    duration: 1 // 在时间轴里占 1份 时间
-                }); 
+                // === 坐标计算 ===
                 
-                // 注意：因为是 Timeline，默认就是串行的（一个接一个）
-                // 所以 Item 2 会在 Item 1 结束后才开始动
-                // 随着你在页面上滚动，这个时间轴会被 scrub 驱动播放
+                // 1. 终点 (右上角)：
+                // 第1个在 top: 20px
+                // 第2个在 top: 55px ...
+                const endTop = 20 + (index * 35); 
+
+                // 2. 起点 (右下角)：
+                // 我们希望它们一开始都在屏幕下方，但要在视野内
+                // 比如从屏幕底部往上数：
+                // 第1个在 bottom: 200px (或者 top: windowHeight - 200)
+                // 第2个在 bottom: 165px ... 这样它们在下方也是整齐排列的
+                // 这里的 150 是给底部 controls 留出的安全距离
+                const startTop = window.innerHeight - 150 - ((tocItems.length - 1 - index) * 35);
+
+                // 立即设置初始位置 (GSAP set)
+                gsap.set(item, { top: startTop });
+
+                // === 动画逻辑 ===
+                // fromTo: 从下方位置 -> 移动到上方位置
+                // 放入 timeline 意味着它们是串行的 (Item 1 到了，Item 2 才动)
+                tl.fromTo(item, 
+                    { top: startTop }, 
+                    {
+                        top: endTop,
+                        ease: "power1.inOut",
+                        duration: 1 // 这里的 duration 决定了它在整个滚动条里占的比例
+                    }
+                );
             });
         }
     }
-
     // === 核心逻辑函数 ===
     function onSectionEnter(index) {
         if (State.currentIndex === index && State.isPlayingAudio) return;
