@@ -2,30 +2,30 @@
  * @Author: DCBZ
  * @Date: 2026-01-28 16:34:34
  * @LastEditors: your name
- * @LastEditTime: 2026-01-28 16:40:43
+ * @LastEditTime: 2026-01-28 18:19:01
  * @Description: 
  * @FilePath: \shirakawayofunee.github.io\home26\js\vomicdata.js
  */
 // 一个短促的“哔”声，用于模拟加载后的音频
-const MOCK_AUDIO = "data:audio/mp3;base64,SUQzBAAAAAAAI1RTSVMAAAAPAAADTGF2ZjU4LjI5LjEwMAAAAAAAAAAAAAAA//OEAAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAAEAAABIADAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw//OEAAABAAAAAgAAAASIAAAAAAA=";
+const MOCK_AUDIO = "./wav/CN/0722rain.m4a";
 
 const COMIC_DATA = [
     {
         id: "section_1",
-        // 多图 + 多音频
         images: [
-            "img/section_1/1.png", 
-            ""
+            "./vomic/0722/101.png", 
+            "./vomic/0722/102.png", 
+            "./vomic/0722/103.png", 
         ],
-        // 音频播放列表：按顺序播放
-        audioPlaylist: [MOCK_AUDIO, MOCK_AUDIO], 
-        autoDuration: 0 // 有音频，此项忽略
+        audioPlaylist: ["./wav/CN/0722/101.wav"], 
+        autoDuration: 0
     },
     {
         id: "section_2",
         // 只有图，没有声音（留白）
         images: [
-            "https://placehold.co/800x300/666/FFF?text=Silence+Scene"
+            "./vomic/0722/201.png", 
+            "./vomic/0722/202.png", 
         ],
         audioPlaylist: [], 
         autoDuration: 3000 // 毫秒：无音频时，在此停留3秒
