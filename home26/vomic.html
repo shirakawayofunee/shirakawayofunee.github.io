@@ -34,10 +34,12 @@
 
     <!-- 左侧固定栏 (PC) / 底部栏 (Mobile) -->
     <aside id="sidebar">
-        <div class="progress-display">
-            <span id="current-page">01</span>
-            <span class="divider">/</span>
-            <span id="total-page">--</span>
+        <div id="progress-track">
+            <div class="progress-display">
+                <span id="current-page">01</span>
+                <span class="divider">/</span>
+                <span id="total-page">--</span>
+            </div>
         </div>
 
         <div class="controls">
@@ -54,10 +56,17 @@
         </div>
     </aside>
 
+
     <!-- 漫画内容容器 -->
     <main id="comic-container">
         <!-- JS 会在这里动态生成内容 -->
     </main>
+
+    <aside id="toc-sidebar">
+        <ul id="chapter-list">
+            <!-- JS 会自动生成 li -->
+        </ul>
+    </aside>
 
     <!-- 配置文件 -->
     <script src="js/vomicdata.js"></script>
