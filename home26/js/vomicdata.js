@@ -102,9 +102,7 @@ const COMIC_DATA = [
     {
         id: "section_7",
         images: [
-            "./vomic/0722/101.webp", 
-            "./vomic/0722/102.webp", 
-            "./vomic/0722/103.webp", 
+            "./vomic/0722/701.webp", 
         ],
         audioPlaylist: ["./wav/CN/0722/101.wav"], 
         autoDuration: 0
@@ -112,7 +110,7 @@ const COMIC_DATA = [
     {
         id: "section_8",
         images: [
-            "./vomic/0722/801.webp", 
+            "./vomic/0722/801.jpg", 
             "https://placehold.co/600x400/000/FFF?text=To+Be+Continued"],
         audioPlaylist: [],
         autoDuration: 5000

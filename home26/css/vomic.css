@@ -81,13 +81,13 @@ body {
 }
 
 .comic-section {
-    min-height: 100vh; /* 每一组至少占满一屏 */
-    padding: 100px 50px;
+    min-height: auto;
+    padding: 10px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-
+    margin-bottom: 40px; 
 }
 
 .comic-img {
@@ -172,35 +172,124 @@ body {
     }
 }
 
+/* === 修正版：紧凑型双格错落 (总宽度 = 单图宽度) === */
 
-/* === 专门用于 2 格分镜的错落排版 === */
 .comic-section.layout-stagger-2 {
-    flex-direction: row-reverse; /* 依然是从右向左 */
+    /* 1. 排列逻辑：依然是日漫向 (右->左) */
+    flex-direction: row-reverse;
     align-items: flex-start;
-    justify-content: center;
-    gap: 30px; /* 只有两张图，间距可以稍微大一点 */
+    
+    /* 2. 宽度控制 (核心修改) */
+    width: 100%;
+    /* 这里必须和你单张大图(401)的 max-width 保持一致 */
+    /* 之前代码里 .comic-img 设的是 800px，这里也设 800px */
+    max-width: 800px; 
+    
+    /* 3. 居中 */
+    margin-left: auto; 
+    margin-right: auto;
+    
+    /* 4. 间距 */
+    gap: 10px; /* 间距小一点，让两张图看起来更像一个整体 */
     flex-wrap: nowrap;
 }
 
-/* 这里的图片我们要大一点 */
+/* === 图片样式 === */
 .comic-section.layout-stagger-2 .comic-img {
-    width: 45%; /* <--- 改大宽度，两张图占 90% */
-    max-width: 500px;
-    box-shadow: 10px 10px 30px rgba(0,0,0,0.2); 
+    /* 
+       数学计算：
+       总宽 100%
+       减去 gap (10px)
+       除以 2 
+       这样两张图加起来刚好填满 800px
+    */
+    width: calc(50% - 5px); 
+    
+    /* 取消之前的 max-width: 300px 限制，让它自动填充 */
+    max-width: none; 
+    
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.2); 
 }
 
-/* 阶梯落差：只需要定义第2张图 */
-/* 第1张图（最右）依然默认在顶端 */
+/* === 阶梯落差 (右高左低) === */
+
+/* 第1张图 (最右)：保持顶端 */
+
+/* 第2张图 (最左)：往下掉 */
 .comic-section.layout-stagger-2 .comic-img:nth-child(2) {
-    margin-top: 100px; /* <--- 因为图大了，落差大一点更好看 */
+    margin-top: 80px; /* 稍微掉下来一点即可，不用太大，保持整体感 */
 }
 
-/* 移动端适配 */
+
+/* === 移动端适配 === */
 @media (max-width: 768px) {
     .comic-section.layout-stagger-2 {
         flex-direction: column;
+        max-width: 100%; /* 手机上占满屏幕 */
     }
     .comic-section.layout-stagger-2 .comic-img {
+        width: 100%;
+        margin-top: 20px !important;
+    }
+}
+
+
+/* === 修正版：3格错落 (总宽度 = 单图宽度) === */
+.comic-section.layout-stagger-row {
+    /* 1. 排列方向：从右向左 */
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    
+    /* 2. 宽度限制 (关键) */
+    width: 100%;
+    /* 这里的数值必须和你的单张大图、2格排版保持完全一致 */
+    max-width: 800px; 
+    
+    /* 3. 居中 */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* 4. 间距 */
+    gap: 10px; /* 缝隙保持一致 */
+    flex-wrap: nowrap;
+}
+
+.comic-section.layout-stagger-row .comic-img {
+    /* 
+       数学计算：
+       总宽 100%
+       减去 2个缝隙 (2 * 10px = 20px)
+       除以 3张图
+    */
+    width: calc((100% - 20px) / 3);
+    
+    /* 移除旧的宽度限制，让它自动填满 */
+    max-width: none; 
+    
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.2); 
+}
+
+/* === 落差保持不变 === */
+
+/* 第1张 (最右)：顶端 */
+
+/* 第2张 (中间)：掉一点 */
+.comic-section.layout-stagger-row .comic-img:nth-child(2) {
+    margin-top: 80px; 
+}
+
+/* 第3张 (最左)：掉更多 */
+.comic-section.layout-stagger-row .comic-img:nth-child(3) {
+    margin-top: 160px; 
+}
+
+/* === 移动端适配 === */
+@media (max-width: 768px) {
+    .comic-section.layout-stagger-row {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .comic-section.layout-stagger-row .comic-img {
         width: 100%;
         margin-top: 20px !important;
     }
