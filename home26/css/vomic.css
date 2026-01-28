@@ -73,6 +73,9 @@ body {
     position: absolute;
     bottom: 40px;
     left: 40px;
+    z-index: 101; /* 保证在文字上面 */
+    padding-top: 20px;
+    background: linear-gradient(to bottom, transparent, var(--bg-color) 20%); /* 渐变遮罩优化视觉 */
 }
 .controls .control-item {
     margin-top: 20px;
@@ -91,7 +94,7 @@ body {
 /* === 漫画容器 === */
 #comic-container {
     margin-left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width));
+    width: calc(100% - var(--sidebar-width) - 25%);
     padding-bottom: 20vh; /* 底部留白 */
 }
 
@@ -131,6 +134,7 @@ body {
     
     #comic-container {
         margin-left: 0;
+        padding-right: 0;
         width: 100%;
     }
     .comic-section { padding: 40px 15px; }
@@ -314,13 +318,12 @@ body {
     position: fixed;
     top: 0; 
     right: 40px; /* 距离右边 */
+    width: 300px;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* 垂直居中，或者 flex-end */
     z-index: 90;
-    pointer-events: none; /* 防止遮挡鼠标滚轮 */
-    mix-blend-mode: difference; /* 可选：让文字在黑白背景上都能看清 */
+    pointer-events: none;
+    mix-blend-mode: difference;
+    display: block; 
 }
 
 #chapter-list {
@@ -332,16 +335,24 @@ body {
 }
 
 .toc-item {
+    position: absolute; /* <--- 关键修改 */
+    right: 0;
+    top: 110vh; /* 初始位置：屏幕下方外面，等待 JS 拉上来 */
+    
+    width: 100%;
+    text-align: right;
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 14px;
     font-weight: 300;
-    color: #999; /* 默认灰色 */
-    margin-bottom: 20px;
-    transition: color 0.3s, font-size 0.3s;
-    opacity: 0.5;
+    color: #999;
     text-transform: uppercase;
     letter-spacing: 1px;
-    position: relative; 
+    transition: color 0.3s, font-size 0.3s;
+    
+    /* 防止换行太丑 */
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* 激活状态：变大、变黑 */
