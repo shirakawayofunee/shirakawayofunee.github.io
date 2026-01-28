@@ -337,8 +337,6 @@ body {
 .toc-item {
     position: absolute; /* <--- 关键修改 */
     right: 0;
-    top: 110vh; /* 初始位置：屏幕下方外面，等待 JS 拉上来 */
-    
     width: 100%;
     text-align: right;
     font-family: 'Helvetica Neue', sans-serif;
@@ -348,8 +346,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s, font-size 0.3s;
-    
-    /* 防止换行太丑 */
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
