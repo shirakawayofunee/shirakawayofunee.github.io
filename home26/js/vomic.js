@@ -19,12 +19,9 @@
         return;
     }
 
-    // 动态加载对应的数据文件
     const script = document.createElement('script');
     script.src = targetEp.dataFile;
     script.onload = () => {
-        // 数据加载完毕，启动主逻辑
-        // 此时 window.CURRENT_EP_DATA 已经有值了
         startApp(targetEp.id);
     };
     script.onerror = () => {
@@ -33,15 +30,14 @@
     document.body.appendChild(script);
 })();
 
-// script.js 的下半部分
+
 
 function startApp(currentEpId) {
-    // 读取数据
+
     const DATA = window.CURRENT_EP_DATA;
     const COMIC_DATA = DATA.pages;
     const BGM_CONFIG = DATA.bgm;
 
-    // === 状态管理 ===
     const State = {
         isStarted: false,
         mode: 'AUTO',
@@ -70,7 +66,6 @@ function startApp(currentEpId) {
 
     // === 1. 初始化 DOM ===
     function initDOM() {
-        // 【修正1】左侧显示的是：本话的分镜总数
         elTotalPage.innerText = String(COMIC_DATA.length).padStart(2, '0');
         elCurrentPage.innerText = "01";
         
@@ -92,7 +87,6 @@ function startApp(currentEpId) {
         });
 
         // 渲染右侧目录 (EPISODE_LIST)
-        // 先清空，防止重复
         tocList.innerHTML = '';
         EPISODE_LIST.forEach((ep) => {
             const li = document.createElement('li');
@@ -116,7 +110,7 @@ function startApp(currentEpId) {
     function initAnimations() {
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
         
-        // A. 漫画内容浮现 (保持不变)
+        // A. 漫画内容
         const sections = document.querySelectorAll('.comic-section');
         sections.forEach((sec, index) => {
             const images = sec.querySelectorAll('.comic-img');
@@ -133,7 +127,7 @@ function startApp(currentEpId) {
             );
         });
 
-        // B. 左侧进度条：垂直跟随 (保持不变，这个效果很好)
+        // B. 左侧进度条
         const sidebarLimit = window.innerHeight - 250; 
         
         gsap.to("#progress-track", {
@@ -172,7 +166,7 @@ function startApp(currentEpId) {
                 // 第1个在 bottom: 200px (或者 top: windowHeight - 200)
                 // 第2个在 bottom: 165px ... 这样它们在下方也是整齐排列的
                 // 这里的 150 是给底部 controls 留出的安全距离
-                const startTop = window.innerHeight - 150 - ((tocItems.length - 1 - index) * 35);
+                const startTop = window.innerHeight - 50 - ((tocItems.length - 1 - index) * 35);
 
                 // 立即设置初始位置 (GSAP set)
                 gsap.set(item, { top: startTop });
