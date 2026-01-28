@@ -1,5 +1,6 @@
 :root {
     --bg-color: #f4f4f4;
+/*     --bg-color: #000; */
     --text-color: #1a1a1a;
     --sidebar-width: 200px;
 }
@@ -76,7 +77,7 @@ body {
 #comic-container {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
-    padding-bottom: 50vh; /* 底部留白 */
+    padding-bottom: 20vh; /* 底部留白 */
 }
 
 .comic-section {
@@ -86,8 +87,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    opacity: 0; /* 默认隐藏，由GSAP显现 */
-    transform: translateY(50px);
+
 }
 
 .comic-img {
@@ -124,4 +124,50 @@ body {
 /* 状态样式 */
 .manual-mode-indicator {
     border-bottom: 2px solid red;
+}
+
+
+/* === 新增：错落排版模式 (PC端) === */
+
+/* 1. 容器设为横向排列 */
+.comic-section.layout-stagger-row {
+    flex-direction: row-reverse; /* 横向排列 */
+    align-items: flex-start; /* 顶部对齐，方便我们用 margin 挤下去 */
+    justify-content: center;
+    gap: 20px; /* 图片之间的空隙 */
+    flex-wrap: nowrap; /* 不换行 */
+}
+
+/* 2. 图片基础样式调整 */
+.comic-section.layout-stagger-row .comic-img {
+    /* 假设三张图并排，宽度要变小，不然放不下 */
+    width: 30%; 
+    max-width: 300px;
+    /* 加上阴影，增加你想要的“层次感” */
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.2); 
+}
+
+/* 3. 制造阶梯落差 (关键点) */
+
+/* 第2张图往下掉一点 */
+.comic-section.layout-stagger-row .comic-img:nth-child(2) {
+    margin-top: 160px; 
+}
+
+/* 第3张图往下掉更多 */
+.comic-section.layout-stagger-row .comic-img:nth-child(3) {
+    margin-top: 240px; 
+}
+
+/* === 移动端适配 (手机竖着看) === */
+@media (max-width: 768px) {
+    /* 手机屏幕太窄，强制变回竖排，或者接受横排但图片很小 */
+    .comic-section.layout-stagger-row {
+        flex-direction: column; /* 变回竖排 */
+        align-items: center;
+    }
+    .comic-section.layout-stagger-row .comic-img {
+        width: 100%; /* 恢复大图 */
+        margin-top: 20px !important; /* 重置落差 */
+    }
 }
