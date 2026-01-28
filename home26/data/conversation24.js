@@ -240,14 +240,14 @@ export default {
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `いいえ、「Garden」に入った日から、私は自分の運命を受け入れました。師匠は最強です。誰も師匠を倒せるとは思いません。`
+      text: `いいえ、「Garden」に入った日から、私は自分の運命を受け入れました。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `ただ、福音地と上庭の争い、いつも嫌悪してたじゃないですか。それなのに、こんな見つかりにくい場所を選んで、今回わざわざ参戦したのは、何か深い意図があるんですか？`
+      text: `師匠は最強です。誰も師匠を倒せるとは思いません。ただ、福音地と上庭の争い、いつも嫌悪してたじゃないですか。それなのに、こんな見つかりにくい場所を選んで、今回わざわざ参戦したのは、何か深い意図があるんですか？`
     },
     {
       type: `dialogue`,
@@ -272,7 +272,14 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `で、なんでそんなこと聞くの？普段、こんなこと興味ないよね。ずっと「Garden」を抜けたがってたのに、初めて自分から戻ってきた。私のところに来る奴の目的は一つしかない――`
+      text: `で、なんでそんなこと聞くの？普段、こんなこと興味ないよね。ずっと組織を抜けたがってたのに、初めて自分から戻ってきた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
+      name: `「師匠」`,
+      text: `私のところに来る奴の目的は一つしかない――`
     },
     {
       type: `dialogue`,
