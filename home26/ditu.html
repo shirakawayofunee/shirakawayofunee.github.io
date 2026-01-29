@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inversa Clone - Vanilla JS Migration</title>
+
+  <!-- 1. 引入 Tailwind CSS (用于复用原有的类名) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. 引入自定义样式 -->
+  <style>
+    body {
+      background: #13140e;
+      color: #f4f3e8;
+      margin: 0;
+      padding: 0;
+      /* 防止浏览器默认滚动行为干扰 Lenis */
+      overflow-x: hidden;
+    }
+
+    /* --- Mask Layer 配置 --- */
+    .mask-layer {
+      /* 初始 Mask 设置，会被 GSAP 覆盖，但保留此处作为 fallback */
+      mask-position: center;
+      -webkit-mask-position: center;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      /* Mask Image 的路径会在 JS 中动态设置，或者你可以在这里写死 */
+    }
+
+    /* --- 动效: 呼吸灯 --- */
+    .pulse-hotspots {
+      animation: pulse 2s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+
+    /* --- 动效: 亮度增强 --- */
+    .grid-svg, .hotspots-svg {
+      filter: brightness(150%) drop-shadow(0 0 5px rgba(235, 252, 114, 0.3));
+    }
+
+    /* --- 动效: 雨水 --- */
+    /* 为了最佳效果，建议 Rain 层使用 background-image 方式，或者保持 img 方式 */
+    .rain-overlay {
+      pointer-events: none;
+      opacity: 0.6;
+      mix-blend-mode: screen; /* 可选：让雨水融合得更自然 */
+    }
+    
+    /* 简单的 CSS 平铺动画不可用于 img 标签的 src 滚动，
+       除非把图片做成 div 的背景。
+       这里为了忠实还原你的 JSX 结构，保持 img 标签，
+       主要依靠 GSAP 处理大结构的滚动。
+    */
+    
+    /* Lenis 推荐的 CSS 设置 */
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+    配置区：
+    h-[450vh] 对应原代码中的滚动高度
+  -->
+  <div id="container" class="home-hero relative h-[450vh] bg-[#13140e]">
+    
+    <!-- Sticky Wrapper -->
+    <div id="wrapper" class="sticky-wrapper sticky top-0 h-screen w-full overflow-hidden flex justify-center items-center">
+      
+      <!-- === LAYER 1 (Z=0): 白天 (常驻) === -->
+      <div id="day-layer" class="absolute inset-0 w-full h-full z-0">
+        <img id="img-day" src="" alt="Day" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- === 夹层 (Z=5): 纯色背景 === -->
+      <div id="dark-bg-layer" class="absolute inset-0 w-full h-full bg-[#13140e] pointer-events-none z-[5] opacity-0"></div>
+
+      <!-- === LAYER 2 (Z=10): 黑夜 + Mask === -->
+      <!-- 注意：这里 mask-image 的路径在 JS 中动态赋值 -->
+      <div id="night-mask-layer" class="mask-layer absolute inset-0 w-full h-full pointer-events-none z-10 opacity-0">
+        <!-- 1. 黑夜底图 -->
+        <img id="img-night" src="" alt="Night" class="absolute inset-0 w-full h-full object-cover z-0" />
+        
+        <!-- 2. Rain 图层 -->
+        <div class="absolute inset-0 w-full h-full z-10">
+           <img id="img-rain" src="" alt="Rain" class="rain-overlay w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <!-- === LAYER 3 (Z=20): Grid & Hotspots === -->
+      <div id="tech-layer" class="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center z-20">
+         <div id="grid-container" class="relative w-full h-full flex items-center justify-center opacity-0">
+            <img id="img-grid" src="" class="absolute w-[68%] h-auto object-contain grid-svg" alt="Grid" />
+            <img id="img-hotspots" src="" class="absolute w-[60%] h-auto object-contain pulse-hotspots hotspots-svg" alt="Hotspots" />
+         </div>
+      </div>
+
+      <!-- === UI 文字层 (Z=40) === -->
+      <div class="slides-container absolute inset-0 z-40 pointer-events-none w-full h-full px-12">
+         
+         <!-- Text 1 -->
+         <div id="text-1" class="absolute top-1/2 right-20 -translate-y-1/2 text-right max-w-lg">
+            <h3 class="text-[#ebfc72] text-xl tracking-widest mb-4">THE PROBLEM</h3>
+            <p class="text-[#f4f3e8] text-2xl font-light">Daytime view logic...</p>
+         </div>
+
+         <!-- Text 2 -->
+         <div id="text-2" class="absolute top-1/2 left-20 -translate-y-1/2 text-left max-w-lg opacity-0 translate-y-[50px]">
+            <h3 class="text-[#ebfc72] text-xl tracking-widest mb-4">ANALYSIS</h3>
+            <p class="text-[#f4f3e8] text-2xl font-light">Focusing on the ecosystem data...</p>
+         </div>
+
+         <!-- Text 3 -->
+         <div id="text-3" class="absolute top-1/2 right-20 -translate-y-1/2 text-right max-w-lg opacity-0 translate-y-[50px]">
+            <h3 class="text-[#ebfc72] text-xl tracking-widest mb-4">RESTORED</h3>
+            <p class="text-[#f4f3e8] text-2xl font-light">Back to the thriving day...</p>
+         </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. 引入 JS 库 -->
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- GSAP ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis (Smooth Scroll) -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- 4. 业务逻辑脚本 -->
+  <script>
+    // ================= 配置路径 =================
+    const BASE_PATH = "svg"; 
+
+    // 初始化图片路径 (模拟 React 模板字符串)
+    // 如果你在本地测试，请确保这些图片存在，或者修改为网络图片 URL
+    document.getElementById('img-day').src = `${BASE_PATH}/hero-day.png`;
+    document.getElementById('img-night').src = `${BASE_PATH}/hero-night.png`;
+    document.getElementById('img-rain').src = `${BASE_PATH}/rain.png`;
+    document.getElementById('img-grid').src = `${BASE_PATH}/grid.svg`;
+    document.getElementById('img-hotspots').src = `${BASE_PATH}/hotspots.svg`;
+
+    // 设置 Mask 的路径
+    const nightMaskLayer = document.getElementById('night-mask-layer');
+    const maskUrl = `url("${BASE_PATH}/mask.svg")`;
+    nightMaskLayer.style.maskImage = maskUrl;
+    nightMaskLayer.style.webkitMaskImage = maskUrl;
+
+
+    // ================= 初始化 Lenis 平滑滚动 =================
+    const lenis = new Lenis();
+
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
+
+    // ================= GSAP 动画逻辑 =================
+    document.addEventListener("DOMContentLoaded", (event) => {
+      
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 获取 DOM 元素
+      const container = document.getElementById('container');
+      const wrapper = document.getElementById('wrapper');
+      
+      const dayLayer = document.getElementById('day-layer');
+      const darkBgLayer = document.getElementById('dark-bg-layer');
+      const techLayer = document.getElementById('tech-layer');
+      const gridContainer = document.getElementById('grid-container');
+      
+      const text1 = document.getElementById('text-1');
+      const text2 = document.getElementById('text-2');
+      const text3 = document.getElementById('text-3');
+
+      // 创建 Timeline
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.5, // 稍微柔和一点的滚动跟随
+          pin: wrapper,
+          // markers: true, // 调试时可以打开
+        }
+      });
+
+      // ==========================================
+      // 1. 初始状态设置 (Set Initial States)
+      // ==========================================
+      
+      // 注意：部分初始状态已写在 HTML class 中 (如 opacity-0)，
+      // 但为了确保逻辑一致性，这里再次强制设定。
+
+      // Layer 1: 白天
+      tl.set(dayLayer, { zIndex: 0, autoAlpha: 1 });
+
+      // 夹层: 深色背景
+      tl.set(darkBgLayer, { zIndex: 5, autoAlpha: 0 });
+
+      // Layer 2: 黑夜 Mask
+      tl.set(nightMaskLayer, { 
+        zIndex: 10,
+        autoAlpha: 0, 
+        webkitMaskSize: "300% 300%",
+        maskSize: "300% 300%"
+      });
+
+      // Layer 3: Tech Grid
+      tl.set(techLayer, { zIndex: 20 });
+      tl.set(gridContainer, { autoAlpha: 0 });
+
+      // 文字状态
+      tl.set(text1, { autoAlpha: 1, y: 0 });
+      tl.set([text2, text3], { autoAlpha: 0, y: 50 });
+
+
+      // ==========================================
+      // 2. 动画剧本
+      // ==========================================
+
+      // --- Phase 0: 准备 ---
+      // 文字1 离场
+      tl.to(text1, { y: -50, autoAlpha: 0, duration: 2 });
+
+
+      // --- Phase 1: 入场 (Day -> Night) ---
+      // 逻辑：Layer 2 (黑夜) 透明度 0 -> 1。
+      // 同时让夹层背景也变黑。
+      tl.to([darkBgLayer, nightMaskLayer], {
+        autoAlpha: 1,
+        duration: 4,
+        ease: "power1.inOut"
+      });
+
+
+      // --- Phase 2: 聚焦 (Night Focus) ---
+      // 1. Mask 收缩
+      tl.to(nightMaskLayer, {
+        webkitMaskSize: "90% 90%",
+        maskSize: "90% 90%",
+        duration: 6,
+        ease: "power2.inOut"
+      });
+
+      // 2. Grid 显现 (与 Mask 收缩同时)
+      tl.to(gridContainer, {
+        autoAlpha: 1,
+        duration: 6,
+        ease: "power2.inOut"
+      }, "<"); 
+
+      // (文字2 进场)
+      tl.to(text2, { y: 0, autoAlpha: 1, duration: 2 }, "-=4");
+
+      
+      // --- Phase 3: 停留 (Hold) ---
+      tl.to({}, { duration: 4 }); 
+
+
+      // --- Phase 4: 退场 (Night -> Day) ---
+      
+      // (文字2 离场)
+      tl.to(text2, { y: -50, autoAlpha: 0, duration: 2 });
+
+      // 1. Mask 放大原路返回
+      tl.to(nightMaskLayer, {
+        webkitMaskSize: "300% 300%",
+        maskSize: "300% 300%",
+        duration: 5,
+        ease: "power2.inOut"
+      });
+
+      // 2. Grid 消失
+      tl.to(gridContainer, {
+        autoAlpha: 0,
+        duration: 4
+      }, "<");
+
+      // 3. 黑夜 & 夹层背景 消失
+      tl.to([darkBgLayer, nightMaskLayer], {
+        autoAlpha: 0,
+        duration: 4,
+        ease: "power1.inOut"
+      });
+
+      // (文字3 进场)
+      tl.to(text3, { y: 0, autoAlpha: 1, duration: 2 }, "-=2");
+
+      // 结尾缓冲
+      tl.to({}, { duration: 2 });
+
+    });
+  </script>
+</body>
+</html>
