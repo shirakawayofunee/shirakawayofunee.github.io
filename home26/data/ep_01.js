@@ -80,7 +80,7 @@ pages: [
         
         // 声音依然按顺序播
         audioPlaylist: ["./wav/CN/0722/501.wav"], 
-        autoDuration: 0
+        autoDuration: 20000
     },
     {
         id: "section_5",
@@ -88,7 +88,7 @@ pages: [
             "./vomic/0722/504.webp", 
             "./vomic/0722/505.webp", 
         ],
-        audioPlaylist: ["./wav/CN/0722/501.wav"], 
+        audioPlaylist: ["./wav/CN/0722/504.wav"], 
         autoDuration: 0
     },
     {

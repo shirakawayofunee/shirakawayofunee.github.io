@@ -2,6 +2,11 @@
 
 // === 0. 启动程序：解析 URL 并加载数据 ===
 (function bootstrap() {
+        // 【新增】强制每次刷新都回到顶部
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual'; // 禁用浏览器的“记住滚动位置”
+        }
+        window.scrollTo(0, 0); // 物理回顶
     // 获取 URL 参数 ?ep=xx
     const urlParams = new URLSearchParams(window.location.search);
     let epId = urlParams.get('ep');
