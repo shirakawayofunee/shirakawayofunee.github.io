@@ -229,6 +229,7 @@
         }
 
         .roll-link-card {
+            min-width: 0; 
             display: block;
             text-decoration: none;
             transition: opacity 0.3s, transform 0.3s;
@@ -312,6 +313,13 @@
             border: 1px solid var(--border-dark); */
 /*             border-radius: 2px; */
         }
+
+        .film-strip-container img {
+    width: 100%;       /* 强制图片宽度跟随父容器 */
+    height: auto;      /* 高度自动 */
+    display: block;    /* 去除图片底部默认间隙 */
+    object-fit: cover; /* 保持图片比例填充 */
+}
 
         .film-frame {
             flex: 1;
