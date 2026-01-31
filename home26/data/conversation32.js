@@ -51,21 +51,21 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `L`,
       text: `……いつも私のことわかってるふりしてたでしょう？今さらそんなこと言うの…。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `L`,
       text: `地上の人間はみんな自分思いで、己の縄張りを守るのに必死で、せいぜい周りの数人をかばうくらい…。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `L`,
       text: `私だってそんなちっぽけな人間だよ。君の壮大な宿願にふさわしくないさ。`
@@ -92,7 +92,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
       text: `103年…79期…第五陵園だろ…`
@@ -122,14 +122,14 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/cry.png`,
       name: `業師`,
       text: `…そうか…見つけたのか…`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/cry.png`,
       name: `業師`,
       text: `何泣いてんだ…そんな必死になって…ほんとバカだな…`

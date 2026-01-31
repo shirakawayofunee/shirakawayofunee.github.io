@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `flowers-406「後日談·2」`,
     bgm: `mp3/bg/终末路.mp3`,
-    summary: `珍しく暇だった週末の午後、局長は図書室に行って本を借りることにした。`
+    summary: `工事中。`
   },
   infoPanel: {
     glossary: [
@@ -37,7 +37,7 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `珍しく暇だった週末の午後、あなたは図書室に行って本を借りることにした。そこには同じく本を借りに来たガロファノがいた。`
+      text: `。`
     },
   ]  
 };

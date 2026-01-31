@@ -99,7 +99,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `第一章「Flowers」終了、つづく。`
+      text: `第一章「繁花」終了、To be continued。`
     }
   ]
 };

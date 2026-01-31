@@ -37,7 +37,7 @@ export default {
   script: [
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `へ、ふふ……なるほど、そっか……`
@@ -48,7 +48,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `お前ら、敵の刀を奪って、使いこなせず、捨てるのも惜しい。決戦が来たら、敵の謎の仕掛けに裏切られるのが怖い。グズグズして結局折って溶かして、適当に道具として捨てた？`
@@ -62,7 +62,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `もっともらしく語るけど、結局は臆病者じゃん！臆病なだけじゃなく、偽善的で、傲慢で、狂妄で、残酷。自分を何だと思ってる！？`
@@ -83,7 +83,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `私はあいつらと違う！でも、お前ら両方とも狗が狗を噛むようなもんだ！悪を倒したからって、ヒーローぶるな！`
@@ -97,7 +97,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `一緒に地獄に落ちろ！なんで他人を巻き込むんだ！！`
@@ -136,7 +136,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `……へ、なんだ、今さら上庭を裏切るって？`
@@ -157,7 +157,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `また道具かよ。今度は彼で何を企んでる？`
@@ -201,14 +201,14 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `ふふふ……休息したら、考えるよ。でも、復讐に誰かの力なんかいらない。私のやり方でいい。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `ただ、あの心泥棒がどんな奴か見てみたいだけ。私の「Garden」の小バカをあんな泣き顔にさせたんだから。`
@@ -223,14 +223,14 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `はは……あの金髪の小娘が私を罵った時の気持ち、ようやくわかったよ……`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `レオポルド`,
       text: `悪は悪だ。どんな立場や理由があっても帳消しになんかならない。自分勝手に私たちの手についた罪を軽く済ませるなんて、お前も私も罪人でしかない。`
@@ -244,7 +244,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `今日はこの人、明日はわが身ではないか。全部お前が決めるもの？はは……お前、何様！？`
@@ -266,28 +266,28 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `……そこまで生きられないよ。お前の命なんかいらないし、そんな先まで待ってこの憤りを晴らす気もない。お前の上に誰がいるか、後で誰が来るか知らないけど――お前が私の「Garden」に手を出した奴だ。それでいい。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `人生は短い。上庭の正しさや、福音地の宿願に比べたらちっぽけだ。いつでもお前らに犠牲にされるなら、ちょっと頑固で、大逆不道でも……いいよね？`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `もう軽い羽根みたいなもんだ。好き勝手やってもいいよね？`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `お前もこの場所も、上庭には大事だろ……`
@@ -298,7 +298,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `この亀裂がお前が触れないものなら……`
@@ -317,21 +317,21 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `私のこと、よく知ってるつもりだろ？なら、わかるはずだ。お前の言うことなんか聞かない。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `お前らの言う「正しさ」なんざ、一番我慢できない。狭間のちっぽけな殺し屋だ。私の獲物、狩る奴、助けを求める奴、みんなくそくらえだ。曲がった道を歩き尽くした私は、お前の「正道」には戻らない。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `正解なんて……私の「Garden」を壊したのがお前の間違いだ！これから何するかはお前と関係ない。今、償え！`
@@ -365,28 +365,28 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `なんて痛快……私、戻ってきた。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `誰も私を操れない。人生はこれだけだ。愛も憎しみも私の思うまま。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `誰かのために犠牲にならず、誰かに仕えず、復讐も楽しみも、毎分毎秒、私を痛快にさせる。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `咲くのは自分のため、生きるのも自分のため、死ぬのも自分のため。一番愛すべきは自分だけ。運命は自分の手で握る！これが「Garden」だ！何度も言っただろ！`
@@ -397,7 +397,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `……君たちも自分のために生きるべきだった……バカな奴ら……`
@@ -452,7 +452,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `……くそくらえ。`

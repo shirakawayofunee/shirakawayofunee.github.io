@@ -87,7 +87,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `へえ、そう？`
@@ -102,7 +102,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `レオポルド`,
       text: `これが私の「罰」なら、大したことないね。`
@@ -113,7 +113,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `上庭の技術、たいしたもんだ。ここじゃお前を殺せない？ここは何の意識空間？`
@@ -142,7 +142,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `ふーん……じゃあ、あの亀裂の向こうは内海の中心？`
@@ -171,7 +171,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `お前も能力者なのに、なんで何の反応もないの？`
@@ -192,7 +192,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `……それが福音地を震え上がらせた「技術」か。気持ち悪いね。そりゃ、お前、心のない人形みたいだ。`
@@ -221,7 +221,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `レオポルド`,
       text: `助ける？あんなことをしておいて、まだ綺麗事を述べるつもり?今更破れた仮面を繕って被り直して、私を馬鹿にでもしているの!?`
@@ -278,7 +278,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `……で、次は？`
@@ -292,7 +292,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `いいこと言うね。まるで全部計算済みみたいに。`
@@ -306,7 +306,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `その前に、上庭のために働けって？`
@@ -378,7 +378,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `堇が気にしてる奴か……でも、お前が殺したんじゃないの？彼もお前と福音地が噛み合った犠牲者だろ？`
@@ -392,7 +392,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `なら、なんで探す？皆殺しにして、失敗を取り戻す気？それとも状況が手に負えなくなって、犬として連れ戻したい？`
@@ -410,7 +410,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `頭おかしいんじゃない？`
@@ -486,7 +486,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `……お前か、急に来て、うざいな。`
@@ -507,7 +507,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `ちっ、あの女はお前に従うけど、私は――`

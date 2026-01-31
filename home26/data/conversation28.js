@@ -91,42 +91,42 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `私がどんな反応すると思った？泣き崩れる？取り乱す？ふふ、ありえないわ。こんなこと、彼女たちの自業自得よ。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `何度も、何度も言ったよね。実力がないなら、でかい仕事を受けるな。自分を守るだけでいい、私を呼ぶなって。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `……そう言ったのに、馬鹿なことするんだから、どうしようもない。「Garden」の花たちは、生も死も覚悟すべきだった。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `ただ、上庭の小娘、お前、今年何歳だ？25？26？上庭の罐から這い出て何年になる？`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `あの紙切れを残したのは……私を怒らせたかったのか？`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `私を舐めてるのか？`
@@ -141,7 +141,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `その程度で小賢しい真似をするつもり!?`
@@ -152,7 +152,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `私さ、何度も奪われたよ。この世界、卑劣な奴が多すぎるから。`
@@ -171,28 +171,28 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `初めて、誰かが私の猫を蹴った。年上の死に損ないだった。そいつを押さえつけて、めっちゃ殴った。手にも顔にも消えない傷を残した。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `2回目、誰かが私の家族を奪った。一人でそいつの大邸宅に乗り込んで、偉そうに立ちはだかる奴らを全部片付けた。最後にその大人は私の前に跪いて、泣きながら悔い改めた。声が枯れるまで。そいつを終わらせた。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `3回目、誰かが友達の目を奪った。そいつを真っ暗な地下室に閉じ込めた。たった2ヶ月で、自分で終わらせた。へ……一生続く前に。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `4回目、5回目、6回目……お前が何回目かなんて、もう覚えてない。`
@@ -207,42 +207,42 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `復讐を頼む人たちはめっちゃ苦しんでる。一度だけ、一度だけ倒されただけで。痛みが鮮明で、抗えず、もう立ち直れないって思う。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `ふん、違うよ……何度か経験すればわかる。どんなものでも倒せる。決意して、どんな代償でも払えば。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `目には目を、歯には歯を。代償をわからせてやる。そうすれば、誰もが学ぶ――レオポルドのものは絶対に触るな。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `私のもの、奪われたものは必ず取り戻す。廃墟になっても私の手に戻す。その後……`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `人は強い。廃墟の上でも育つ。折られた場所に新芽が生え、焼かれた場所に新枝が伸びる。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `私を冒涜した奴らはみんなくそくらえ。そしていつも、私は生まれ変わる。こうやって――`
@@ -265,7 +265,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `人の人生を簡単に弄べると思ってる？私を簡単に潰せると？`
@@ -313,14 +313,14 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `これでも殺せないんでしょう、上庭の化け物め。なら咲くといいわ……傲慢で非人道的な悪魔がどのような花を咲かせるのか、お前の命がどれだけ醜いのかを見せてもらうわ。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `これで私にピッタリの復讐劇を用意できる。思う存分、この怒りを晴らせる！`
@@ -376,7 +376,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `レオポルド`,
       text: `お前が咲かせたのは花じゃない――`
