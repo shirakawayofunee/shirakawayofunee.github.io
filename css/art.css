@@ -416,6 +416,13 @@ body {
     left: 0;
     overflow: hidden;
     display: none;
+    user-select: none;
+    /* 兼容 Chrome, Safari, Opera */
+    -webkit-user-select: none;
+    /* 兼容 Firefox */
+    -moz-user-select: none;
+    /* 兼容 IE 10+ */
+    -ms-user-select: none;
 }
 
 .papermaskDetailTop-zoom {
@@ -424,6 +431,13 @@ body {
     object-fit: contain;
     transition: transform 0.2s ease-out;
     cursor: grab;
+    user-select: none;
+    /* 兼容 Chrome, Safari, Opera */
+    -webkit-user-select: none;
+    /* 兼容 Firefox */
+    -moz-user-select: none;
+    /* 兼容 IE 10+ */
+    -ms-user-select: none;
 }
 
 .papermaskDetailBottom {
@@ -439,6 +453,13 @@ body {
     border-radius: 25px;
     background: var(--bg-detail-bar);
     border: 1px solid #333;
+    user-select: none;
+    /* 兼容 Chrome, Safari, Opera */
+    -webkit-user-select: none;
+    /* 兼容 Firefox */
+    -moz-user-select: none;
+    /* 兼容 IE 10+ */
+    -ms-user-select: none;
 }
 
 .papermaskDetailBottom img {
@@ -447,6 +468,13 @@ body {
     cursor: pointer;
     filter: invert(1);
     transition: transform 0.2s;
+    user-select: none;
+    /* 兼容 Chrome, Safari, Opera */
+    -webkit-user-select: none;
+    /* 兼容 Firefox */
+    -moz-user-select: none;
+    /* 兼容 IE 10+ */
+    -ms-user-select: none;
 }
 
 .papermaskDetailBottom img:hover {
@@ -459,6 +487,13 @@ body {
     right: 3vw;
     cursor: pointer;
     z-index: 2001;
+    user-select: none;
+    /* 兼容 Chrome, Safari, Opera */
+    -webkit-user-select: none;
+    /* 兼容 Firefox */
+    -moz-user-select: none;
+    /* 兼容 IE 10+ */
+    -ms-user-select: none;
 }
 
 .papermaskDetailClose img {
