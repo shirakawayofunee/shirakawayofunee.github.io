@@ -274,14 +274,6 @@ body {
     filter: grayscale(0%);
 }
 
-.cursor-pointer-icon {
-    width: 20px;
-    height: 20px;
-    /* --- 重要修改：添加 ../ --- */
-    background: url('../img/icon/pointer.png') no-repeat center/contain;
-    opacity: 0.5;
-}
-
 /* =========================================
    4. 二级菜单 (Tabs)
    ========================================= */
