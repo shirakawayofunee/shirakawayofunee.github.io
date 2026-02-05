@@ -63,6 +63,11 @@
         <div class="header-summary-box">
             <p class="chapter-summary" id="header-summary">WAITING FOR INPUT...</p>
         </div>
+        <!-- 新增：自动播放开关 (放在沉浸按钮左边) -->
+    <div class="auto-play-switch" id="auto-play-btn" onclick="VoiceManager.toggleAuto()">
+        <span>AUTO</span>
+        <div class="switch-icon"><div class="switch-circle"></div></div>
+    </div>
 
         <!-- 沉浸模式开关 (保留) -->
         <button class="immersive-btn" onclick="enableImmersiveMode()" title="Immersive Mode">

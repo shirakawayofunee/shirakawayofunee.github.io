@@ -279,7 +279,6 @@ let currentChapterIndex = -1;
 let currentCategory = "all";
 let isMusicPlaying = false;
 const bgmPlayer = document.getElementById("bgm-player");
-bgmPlayer.volume = 0.5;
 
 document.addEventListener("DOMContentLoaded", () => {
   initTabs(); // 初始化分类标签
@@ -477,62 +476,28 @@ function updateHeaderFromJSON(chapterId, data) {
 }
 
 // --- 5. 渲染正文 ---
-// --- 5. 渲染正文 (修改版) ---
-// --- 5. 渲染正文 (修正版) ---
 function renderScript(script) {
   const container = document.getElementById("script-content");
   container.innerHTML = "";
 
-  // 重置语音管理器状态
-  VoiceManager.reset(script);
+  script.forEach((line) => {
+    const div = document.createElement("div");
 
-  script.forEach((line, index) => {
-      const div = document.createElement("div");
-      div.id = `msg-row-${index}`; // 用于自动滚动定位
-
-      // 1. 处理语音按钮
-      let voiceBtnHtml = '';
-      if (line.voice) {
-          // 【重要修复】处理文件名中的特殊字符 #
-          // 将路径中的 # 替换为 %23，这样浏览器才能正确加载
-          const safeVoicePath = line.voice.replace(/#/g, '%23');
-
-          // 按钮 HTML：放在文字后面，作为一个内联元素
-          voiceBtnHtml = `
-              <button id="voice-btn-${index}" class="voice-btn" 
-                  onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safeVoicePath}')"
-                  title="Play Voice">
-                  ▶
-              </button>
-          `;
-      }
-
-      // 2. 根据类型渲染
-      if (line.type === "narration") {
-          div.className = "message-row";
-          // 旁白没有按钮
-          div.innerHTML = `<div class="narration">${line.text}</div>`;
-      
-      } else if (line.type === "image") {
-          div.className = "message-row";
-          div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
-      
-      } else if (line.type === "dialogue") {
-          // 区分左右
-          const pos = line.position === "right" ? "pos-right" : "pos-left";
-          div.className = `message-row ${pos}`;
-
-          // 修正结构：
-          // 1. 移除 class="char-name" 的渲染
-          // 2. 将 voiceBtnHtml 放入 message-bubble 内部，紧跟 text
-          div.innerHTML = `
-              <img src="${line.avatar}" class="avatar">
-              <div class="message-bubble">
-                  ${line.text}${voiceBtnHtml}
-              </div>
-          `;
-      }
-      container.appendChild(div);
+    if (line.type === "narration") {
+      div.className = "message-row";
+      div.innerHTML = `<div class="narration">${line.text}</div>`;
+    } else if (line.type === "image") {
+      div.className = "message-row";
+      div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
+    } else if (line.type === "dialogue") {
+      const pos = line.position === "right" ? "pos-right" : "pos-left";
+      div.className = `message-row ${pos}`;
+      div.innerHTML = `
+                <img src="${line.avatar}" class="avatar">
+                <div class="message-bubble">${line.text}</div>
+            `;
+    }
+    container.appendChild(div);
   });
 }
 
