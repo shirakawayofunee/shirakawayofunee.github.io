@@ -333,12 +333,14 @@ span {
     background-color: rgba(37, 34, 37, 0.95);
     color: #c9c7ca;
     border: 1px solid #666;
-    padding: 15px 20px;
+    padding: 10px 15px;
     max-width: 80%;
     position: relative;
     line-height: 1.6; 
     font-size: 1rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    word-wrap: break-word;
+    white-space: pre-wrap; /* 你的剧本可能包含换行符 */
 }
 .message-bubble span { color: var(--highlight-red); font-weight: bold; }
 
@@ -924,11 +926,11 @@ span {
 }
 
 .auto-play-switch:hover {
-    color: #e23b78;
+    color: #D40F30;
 }
 
 .auto-play-switch.active {
-    color: #e23b78;
+    color: #D40F30;
     font-weight: bold;
     text-shadow: 0 0 5px rgba(226, 59, 120, 0.3);
 }
@@ -944,7 +946,7 @@ span {
 }
 
 .auto-play-switch.active .switch-icon {
-    background: #e23b78;
+    background: #D40F30;
 }
 
 .switch-circle {
@@ -967,33 +969,35 @@ span {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    width: 20px; 
+    height: 20px;
     background: transparent;
     border: 1px solid #ccc;
     border-radius: 50%;
     color: #555;
-    font-size: 12px;
+    font-size: 8px;
 
     cursor: pointer;
     transition: all 0.2s;
     flex-shrink: 0; /* 防止被挤压 */
-    margin-left: 8px;           /* 距离左边文字的间距 */
+    margin-left: 5px;    /* 离文字近一点 */
+    margin-bottom: 2px;  /* 微调垂直位置，让它在视觉上和文字中心对齐 */
     vertical-align: middle;     /* 垂直居中对齐文字 */
     padding: 0;
+    flex-shrink: 0;
 }
 
 .voice-btn:hover {
-    border-color: #e23b78;
-    color: #e23b78;
+    border-color: #D40F30;
+    color: #D40F30;
     background: rgba(226, 59, 120, 0.1);
 }
 
 /* 3. 正在播放时的动画效果 (波纹) */
 .voice-btn.playing {
-    border-color: #e23b78;
+    border-color: #D40F30;
     color: #fff;
-    background: #e23b78;
+    background: #D40F30;
     animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
 
