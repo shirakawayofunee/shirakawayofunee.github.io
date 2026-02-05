@@ -53,7 +53,7 @@ export default {
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
       text: `うわーっ、この仕事、めっちゃ疲れた！寝すぎて腰も背中も痛いよ……`,
-      voice: `wav/CN/conversation20/vo_event_11026_12.wav`
+      voice: `wav/CN/conversation24/vo_event_11031_49.wav`
     },
     {
       type: `dialogue`,
@@ -61,7 +61,7 @@ export default {
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
       text: `「カーネーション」～、お風呂入りたい！今回はバラで、紅茶もバラ、お菓子も――`,
-      voice: `wav/CN/conversation20/vo_event_11026_12.wav`
+      voice: `wav/CN/conversation24/vo_event_11031_27.wav`
     },
     {
       type: `dialogue`,
@@ -69,7 +69,7 @@ export default {
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
       text: `あ、忘れてた。彼女、まだ目覚めてないんだっけ。`,
-      voice: `wav/CN/conversation20/vo_event_11026_12.wav`
+      voice: `wav/CN/conversation24/vo_event_11031_28.wav`
     },
     {
       type: `dialogue`,
@@ -77,14 +77,15 @@ export default {
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
       text: `まあいいや、堇でもいいよ。気分、ちょっとマシになった？よかったら、ついでにマッサージしてよ。`,
-      voice: `wav/CN/conversation20/vo_event_11026_12.wav`
+      voice: `wav/CN/conversation24/vo_event_11031_43.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `かしこまりました。`
+      text: `かしこまりました。`,
+      voice: `wav/CN/conversation24/vo_event_11031_11.wav`
     },
     {
       type: `narration`,
@@ -95,14 +96,16 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `ん……だいぶ楽になった……`
+      text: `ん……だいぶ楽になった……`,
+      voice: `wav/CN/conversation24/vo_event_11031_74.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `「カーネーション」はどう？`
+      text: `「カーネーション」はどう？`,
+      voice: `wav/CN/conversation24/vo_event_11031_39.wav`
     },
     {
       type: `dialogue`,
@@ -116,21 +119,24 @@ export default {
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `新人たちが彼女の世話をしています。きっともうすぐ目覚めるでしょう。`
+      text: `新人たちが彼女の世話をしています。きっともうすぐ目覚めるでしょう。`,
+      voice: `wav/CN/conversation24/vo_event_11031_2.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `よかった。`
+      text: `よかった。`,
+      voice: `wav/CN/conversation24/vo_event_11031_40.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `「Garden」の手引きにまた一条追加だ。雇い主の変な力に頼ってバカみたいに動くんじゃなくて、自分を信じるか、さもなきゃ師匠に頼りに戻ってこい。`
+      text: `「Garden」の手引きにまた一条追加だ。雇い主の変な力に頼ってバカみたいに動くんじゃなくて、自分を信じるか、さもなきゃ師匠に頼りに戻ってこい。`,
+      voice: `wav/CN/conversation24/vo_event_11031_9.wav`
     },
     {
       type: `dialogue`,
@@ -144,14 +150,16 @@ export default {
       position: `left`,
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `アザミは――`
+      text: `アザミは――`,
+      voice: `wav/CN/conversation24/vo_event_11031_54.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `自業自得だよ。`
+      text: `自業自得だよ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_.wav`
     },
     {
       type: `narration`,
@@ -162,14 +170,16 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `私の禁令を何度も破って、勝手に動いて、あんなバレバレの罠にまで引っかかる。もし私が事前に備えてなかったら、今回の件で何でもかんでも喋られてたよ。`
+      text: `私の禁令を何度も破って、勝手に動いて、あんなバレバレの罠にまで引っかかる。もし私が事前に備えてなかったら、今回の件で何でもかんでも喋られてたよ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_68.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `もう誰も助けには行かない。勝手に苦しめばいい。`
+      text: `もう誰も助けには行かない。勝手に苦しめばいい。`,
+      voice: `wav/CN/conversation24/vo_event_11031_82.wav`
     },
     {
       type: `narration`,
@@ -180,35 +190,40 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `まあ……今、彼女は第九機関の心理専門家のところにいるよ。逆暗示のトラップを仕掛けておいたから、あいつら、まだ数日は右往左往するさ。`
+      text: `まあ……今、彼女は9thの心理専門家のところにいるよ。逆暗示のトラップを仕掛けておいたから、あいつら、まだ数日は右往左往するさ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_18.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `今、第九機関に閉じ込められてるぶん、外で暴れ回るよりは安全だ。あの銀蜘蛛、執行人のやり方をいつも見下してるから、彼女をHUSHには渡さないよ。`
+      text: `今、9thに閉じ込められてるぶん、外で暴れ回るよりは安全だ。あの銀蜘蛛、執行人のやり方をいつも見下してるから、彼女をHUSHには渡さないよ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_59.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `その後、たぶんお前の管理庁に送られるんじゃない？彼女にはちょうどいい。大仇は報いたんだし、自分が何をしたいか考えるまで、静かにしてればいい。`
+      text: `その後、たぶんお前の管理庁に送られるんじゃない？彼女にはちょうどいい。大仇は報いたんだし、自分が何をしたいか考えるまで、静かにしてればいい。`,
+      voice: `wav/CN/conversation24/vo_event_11031_47.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `別にそんな嫌ってるわけじゃないよ。新人は無知でルールを破るけど、少なくとも一点、彼女は君たちよりマシだ。`
+      text: `別にそんな嫌ってるわけじゃないよ。新人は無知でルールを破るけど、少なくとも一点、彼女は君たちよりマシだ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_32.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `何をしても自分のためだけ。他人のために犠牲になったり、他人のためにどうこうなんて考えない。絶対に損しないって点で、彼女は私に一番似てる。君たちよりよっぽど楽だよ。`
+      text: `何をしても自分のためだけ。他人のために犠牲になったり、他人のためにどうこうなんて考えない。絶対に損しないって点で、彼女は私に一番似てる。君たちよりよっぽど楽だよ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_69.wav`
     },
     {
       type: `dialogue`,
@@ -237,7 +252,8 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `私に巻き込まれるのが怖いなら、隠れてなよ。どうせ君たちに出番なんかないんだから。`
+      text: `私に巻き込まれるのが怖いなら、隠れてなよ。どうせ君たちに出番なんかないんだから。`,
+      voice: `wav/CN/conversation24/vo_event_11031_53.wav`
     },
     {
       type: `dialogue`,
@@ -258,14 +274,16 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `深い意図なんてないよ。この前は春で、眠くて動きたくなかっただけ。夏が来たから、花を咲かせる時期になった。それで動いただけ。`
+      text: `深い意図なんてないよ。この前は春で、眠くて動きたくなかっただけ。夏が来たから、花を咲かせる時期になった。それで動いただけ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_48.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `HUSHの連中、ずっとウザくまとわりついてきて、私の庭をハエが這うなんて我慢できない。それだけ。`
+      text: `HUSHの連中、ずっとウザくまとわりついてきて、私の庭をハエが這うなんて我慢できない。それだけ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_14.wav`
     },
     {
       type: `narration`,
@@ -276,21 +294,24 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `で、なんでそんなこと聞くの？普段、こんなこと興味ないよね。ずっと組織を抜けたがってたのに、初めて自分から戻ってきた。`
+      text: `で、なんでそんなこと聞くの？普段、こんなこと興味ないよね。ずっと組織を抜けたがってたのに、初めて自分から戻ってきた。`,
+      voice: `wav/CN/conversation24/vo_event_11031_45.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `私のところに来る奴の目的は一つしかない――`
+      text: `私のところに来る奴の目的は一つしかない――`,
+      voice: `wav/CN/conversation24/vo_event_11031_45.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `お前の復讐、どうなった？あの優しくて自分を犠牲にした局長のためだろ？私が手伝ってやろうか？`
+      text: `君の復讐、どうなった？あの優しくて自分を犠牲にした局長のためだろ？私が手伝ってやろうか？`,
+      voice: `wav/CN/conversation24/vo_event_11031_15.wav`
     },
     {
       type: `narration`,
@@ -301,7 +322,16 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `私のところに戻ってきたのはそのためだろ？あいつに手を出した奴を許すわけない。西区で誰を殺した？錆火、執行委員会……他には？涅槃の幹部たち、チャンスはあった？`
+      text: `私のところに戻ってきたのはそのためだろ？あいつに手を出した奴を許すわけない。`,
+      voice: `wav/CN/conversation24/vo_event_11031_55.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
+      name: `「師匠」`,
+      text: `西区で誰を殺した？錆火、執行委員会……他には？涅槃の幹部たち、チャンスはあった？`,
+      voice: `wav/CN/conversation24/vo_event_11031_1.wav`
     },
     {
       type: `dialogue`,
@@ -315,21 +345,24 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `へっ、よくやった。外に一切情報が出てない。さすが私の最高の弟子だ。`
+      text: `へっ、よくやった。外に一切情報が出てない。さすが私の最高の弟子だ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_8.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `で、気が済んだ？スッキリした？あんなに仇を討って、そろそろ笑顔になってもいいんじゃない？笑ってみてよ。`
+      text: `で、気が済んだ？スッキリした？あんなに仇を討って、そろそろ笑顔になってもいいんじゃない？笑ってみてよ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_51.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `君の笑顔、久しぶりに見てないからさ。渋い顔されると、私の気分も下がるんだよね。`
+      text: `君の笑顔、久しぶりに見てないからさ。渋い顔されると、私の気分も下がるんだよね。`,
+      voice: `wav/CN/conversation24/vo_event_11031_44.wav`
     },
     {
       type: `dialogue`,
@@ -389,7 +422,8 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `……それ、復讐じゃない。ただ苦しみに押されてるだけだ。`
+      text: `……それ、復讐じゃない。ただ苦しみに押されてるだけだ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_60.wav`
     },
     {
       type: `dialogue`,
@@ -403,7 +437,8 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `仇が見つからないなら、ちょっと置いとけ。数日後、奴が首持って現れるかもしれないよ。`
+      text: `仇が見つからないなら、ちょっと置いとけ。数日後、奴が首持って現れるかもしれないよ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_4.wav`
     },
     {
       type: `dialogue`,
@@ -417,14 +452,16 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `もしそのバカがまだ生きてるなら、見つけて、奪い返せ。好きになるのは悪くない。心を差し出したんじゃなくて、相手の心を騙して、しっかり縛りつければいいだろ？`
+      text: `もしそのバカがまだ生きてるなら、見つけて、奪い返せ。好きになるのは悪くない。心を差し出したんじゃなくて、相手の心を騙して、しっかり縛りつければいいだろ？`,
+      voice: `wav/CN/conversation24/vo_event_11031_5.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `機会があれば、そのバカが今どうしてるか、探してみたいね。まあ……`
+      text: `機会があれば、そのバカが今どうしてるか、探してみたいね。まあ……`,
+      voice: `wav/CN/conversation24/vo_event_11031_36.wav`
     },
     {
       type: `narration`,
@@ -435,14 +472,16 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `よく聞け。これが最後の教えだ。二度と言わない。`
+      text: `よく聞け。これが最後の教えだ。二度と言わない。`,
+      voice: `wav/CN/conversation24/vo_event_11031_13.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `君たちは私が選んだ花だ。私のいいところを少しくらい持ってるから、私の庭に入れた。`
+      text: `君たちは私が選んだ花だ。私のいいところを少しくらい持ってるから、私の庭に入れた。`,
+      voice: `wav/CN/conversation24/vo_event_11031_75.wav`
     },
     {
       type: `dialogue`,
@@ -456,7 +495,8 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `花は確かに脆い。美しければ、軽く揉めば砕け、折れば曲がる。君たちもそう。`
+      text: `花は確かに脆い。美しければ、軽く揉めば砕け、折れば曲がる。君たちもそう。`,
+      voice: `wav/CN/conversation24/vo_event_11031_46.wav`
     },
     {
       type: `dialogue`,
@@ -470,14 +510,16 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `砕かれても、来年また咲く。焼かれても、新芽が出る。運命は君を折れるけど、決して壊せない――根を自分で握り続けてる限り。`
+      text: `砕かれても、来年また咲く。焼かれても、新芽が出る。運命は君を折れるけど、決して壊せない――根を自分で握り続けてる限り。`,
+      voice: `wav/CN/conversation24/vo_event_11031_71.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `流されるな、運命に押されるな、外のものに引っ張られるな。`
+      text: `流されるな、運命に押されるな、外のものに引っ張られるな。`,
+      voice: `wav/CN/conversation24/vo_event_11031_56.wav`
     },
     {
       type: `dialogue`,
@@ -498,7 +540,8 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `君たちの人生は君たちのもの。私以外の誰の言葉も聞くな。`
+      text: `君たちの人生は君たちのもの。私以外の誰の言葉も聞くな。`,
+      voice: `wav/CN/conversation24/vo_event_11031_61.wav`
     },
     {
       type: `narration`,
@@ -534,21 +577,24 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `うーん、ダメダメ、なんか体がキツい。みんなくそくらえ、全員呼んで、マッサージしてよ。ついでに祝おう、誕生日を前祝いだ！`
+      text: `うーん、ダメダメ、なんか体がキツい。みんなくそくらえ、全員呼んで、マッサージしてよ。ついでに祝おう、誕生日を前祝いだ！`,
+      voice: `wav/CN/conversation24/vo_event_11031_33.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `今日も美しく、気分も最高、明日も私の思い通りになるように！`
+      text: `今日も美しく、気分も最高、明日も私の思い通りになるように！`,
+      voice: `wav/CN/conversation24/vo_event_11031_26.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `どうやったら師匠を喜ばせられるか、考えて。今日の任務は、今日を私の最高の日にすること！`
+      text: `どうやったら師匠を喜ばせられるか、考えて。今日の任務は、今日を私の最高の日にすること！`,
+      voice: `wav/CN/conversation24/vo_event_11031_19.wav`
     },
     {
       type: `narration`,
