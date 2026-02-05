@@ -391,3 +391,22 @@ body {
     #toc-sidebar { display: none; }
     #progress-track { position: static; } /* 手机上不动 */
 }
+
+/* 3. 新增：SVG 图标样式 */
+.play-icon {
+    width: 8px;   /* 图标实际大小 */
+    height: 8px;
+    fill: #aaa;   /* 默认灰色 */
+    transition: fill 0.2s;
+    
+    /* 视觉修正：三角形视觉重心往往偏左，稍微往右移 1px 看起来才居中 */
+    margin-left: 1px; 
+}
+
+.voice-btn:hover .play-icon {
+    fill: #e23b78;
+}
+
+.voice-btn.playing .play-icon {
+    fill: #fff;
+}
