@@ -52,28 +52,32 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `うわーっ、この仕事、めっちゃ疲れた！寝すぎて腰も背中も痛いよ……`
+      text: `うわーっ、この仕事、めっちゃ疲れた！寝すぎて腰も背中も痛いよ……`,
+      voice: `wav/CN/conversation20/vo_event_11026_12.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `「カーネーション」～、お風呂入りたい！今回はバラで、紅茶もバラ、お菓子も――`
+      text: `「カーネーション」～、お風呂入りたい！今回はバラで、紅茶もバラ、お菓子も――`,
+      voice: `wav/CN/conversation20/vo_event_11026_12.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `あ、忘れてた。彼女、まだ目覚めてないんだっけ。`
+      text: `あ、忘れてた。彼女、まだ目覚めてないんだっけ。`,
+      voice: `wav/CN/conversation20/vo_event_11026_12.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `まあいいや、堇でもいいよ。気分、ちょっとマシになった？よかったら、ついでにマッサージしてよ。`
+      text: `まあいいや、堇でもいいよ。気分、ちょっとマシになった？よかったら、ついでにマッサージしてよ。`,
+      voice: `wav/CN/conversation20/vo_event_11026_12.wav`
     },
     {
       type: `dialogue`,

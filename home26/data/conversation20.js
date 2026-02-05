@@ -71,35 +71,40 @@ export default {
       position: `left`,
       avatar: `img/dh/x2.png`,
       name: `シャーローム`,
-      text: `犯人が臨時指揮部を襲撃し、輸送車で総司令を拉致して逃走した。車両番号DS-3864H。車は錆びた川を通過し、今、新都市方面に向かっている。`
+      text: `犯人が臨時指揮部を襲撃し、輸送車で総司令を拉致して逃走した。車両番号DS-3864H。車は錆びた川を通過し、今、新都市方面に向かっている。`,
+      voice: `wav/CN/conversation20/vo_event_11026_16.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x2.png`,
       name: `シャーローム`,
-      text: `生命体徴監視によると、司令はまだ生きている。敵がこんな正確な情報を得られたのは、福音地がFAC内部にすでに浸透している証拠だ。`
+      text: `生命体徴監視によると、司令はまだ生きている。敵がこんな正確な情報を得られたのは、福音地がFAC内部にすでに浸透している証拠だ。`,
+      voice: `wav/CN/conversation20/vo_event_11026_12.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `今回の救援任務は<span>上庭HUSH部隊</span>が引き受ける。作戦時間、2時間13分。予定の会議開始時間より前に司令官を奪還し、パニックになるのを避ける。`
+      text: `今回の救援任務は<span>上庭HUSH部隊</span>が引き受ける。作戦時間、2時間13分。予定の会議開始時間より前に司令官を奪還し、パニックになるのを避ける。`,
+      voice: `wav/CN/conversation20/vo_event_11026_13.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `FAC本隊は動かず、一切の情報を漏らすな。司令が予定通り到着すると伝えろ。この間、異常行動、恐怖を煽る行為、司令の行方を追う者はすべて福音地のスパイの可能性がある。第九機関が厳密に追跡する。`
+      text: `FAC本隊は動かず、一切の情報を漏らすな。司令が予定通り到着すると伝えろ。この間、異常行動、恐怖を煽る行為、司令の行方を追う者はすべて福音地のスパイの可能性がある。9thが厳密に追跡する。`,
+      voice: `wav/CN/conversation20/vo_event_11026_7.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `福音地が前哨戦の招待状を送ってきた。これは我々のチャンスでもある。西区作戦は必ず許可される。大戦が来る前に内通者とスパイを排除したまえ。`
+      text: `福音地が前哨戦の招待状を送ってきた。これは我々のチャンスでもある。西区作戦は必ず許可される。大戦が来る前に内通者とスパイを排除したまえ。`,
+      voice: `wav/CN/conversation20/vo_event_11026_11.wav`
     },
     {
       type: `narration`,
@@ -189,7 +194,8 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「業師」`,
-      text: `こんにちは、探偵ちゃん。`
+      text: `こんにちは、探偵ちゃん。`,
+      voice: `wav/CN/conversation20/vo_event_11026_6.wav`
     }
   ]
 };
