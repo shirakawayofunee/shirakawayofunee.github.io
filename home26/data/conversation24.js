@@ -159,7 +159,7 @@ export default {
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
       text: `自業自得だよ。`,
-      voice: `wav/CN/conversation24/vo_event_11031_.wav`
+      voice: `wav/CN/conversation24/vo_event_11031_72.wav`
     },
     {
       type: `narration`,
@@ -480,7 +480,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `君たちは私が選んだ花だ。私のいいところを少しくらい持ってるから、私の庭に入れた。`,
+      text: `君たちは私が選んだ花だ。私のいいところを少しくらい持ってるから、私の庭に入れた。美しい花ほどハエを引き寄せる。それは君たちもわかってる。`,
       voice: `wav/CN/conversation24/vo_event_11031_75.wav`
     },
     {
@@ -488,14 +488,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `美しい花ほどハエを引き寄せる。それは君たちもわかってる。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `「師匠」`,
-      text: `花は確かに脆い。美しければ、軽く揉めば砕け、折れば曲がる。君たちもそう。`,
+      text: `花は確かに脆い。美しければ、軽く揉めば砕け、折れば曲がる。`,
       voice: `wav/CN/conversation24/vo_event_11031_46.wav`
     },
     {
@@ -503,7 +496,8 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
-      text: `私に拾われた時、みんなくそくらえな状態だった。でも大丈夫、見た目が弱いだけで、君たちは思ってるよりずっと強い。`
+      text: `君たちもそう。私に拾われた時、みんなくそくらえな状態だった。でも大丈夫、見た目が弱いだけで、君たちは思ってるよりずっと強い。`,
+      voice: `wav/CN/conversation24/vo_event_11031_16.wav`
     },
     {
       type: `dialogue`,
