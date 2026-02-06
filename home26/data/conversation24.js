@@ -705,7 +705,16 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `「師匠」`,
-      text: `おや、シーゲルじゃない？数日ぶりなのに、なんでこんなボロボロなの。死なないでよ、私の「Garden」、お前の小細工で隠れてるんだから。`
+      text: `おや、シーゲルじゃない？数日ぶりなのに、なんでこんなボロボロなの。`,
+      voice: `wav/CN/conversation24/vo_event_11032_7.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold2.png`,
+      name: `「師匠」`,
+      text: `死なないでよ、私の「Garden」、お前の小細工で隠れてるんだから。`,
+      voice: `wav/CN/conversation24/vo_event_11032_22.wav`
     },
     {
       type: `dialogue`,
@@ -726,7 +735,8 @@ export default {
       position: `left`,
       avatar: `img/dh/smile0.png`,
       name: `「師匠」`,
-      text: `そ？なら、ほんと・ご・め・ん。`
+      text: `そ？なら、ほんと・ご・め・ん。`,
+      voice: `wav/CN/conversation24/vo_event_11032_13.wav`
     },
     {
       type: `narration`,
@@ -737,35 +747,40 @@ export default {
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `ぐっ――！！`
+      text: `ぐっ――！！`,
+      voice: `wav/CN/conversation24/vo_event_11032_28.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「師匠」`,
-      text: `セヴェロを騙したのはお前だろ……彼女に死にに行く情報と、あの気色悪いルーンを渡した。`
+      text: `セヴェロを騙したのはお前だろ……彼女に死にに行く情報と、あの気色悪いルーンを渡した。`,
+      voice: `wav/CN/conversation24/vo_event_11032_11.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「師匠」`,
-      text: `自分の福音地の仲間より私に助けを求めに来るなんて、捨てられたんだね。最後のご利用、ありがと……`
+      text: `自分の福音地の仲間より私に助けを求めに来るなんて、捨てられたんだね。最後のご利用、ありがと……`,
+      voice: `wav/CN/conversation24/vo_event_11032_24.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「師匠」`,
-      text: `これから、私の「Garden」は福音地と一切関係ないよ。`
+      text: `これから、私の「Garden」は福音地と一切関係ないよ。`,
+      voice: `wav/CN/conversation24/vo_event_11032_25.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `咳……へっ、へへ……ふふふ……お前の実力なら、福音地に従わなくても、どうにもできないさ……`
+      text: `へっ、へへ……ふふふ……お前の実力なら、福音地に従わなくても、どうにもできないさ……`,
+      voice: `wav/CN/conversation24/vo_event_11032_12.wav`
     },
     {
       type: `dialogue`,
@@ -786,7 +801,8 @@ export default {
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `うあああ――！！`
+      text: `うあああ――！！`,
+      voice: `wav/CN/conversation24/vo_event_11032_26.wav`
     },
     {
       type: `narration`,
@@ -801,11 +817,13 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「師匠」`,
-      text: `だって、私がその気だったから。`
+      text: `だって、私がその気だったから。`,
+      voice: `wav/CN/conversation24/vo_event_11032_21.wav`
     },
     {
       type: `narration`,
-      text: `次は……`
+      text: `次は……`,
+      voice: `wav/CN/conversation24/vo_event_11032_20.wav`
     },
     {
       type: `narration`,
@@ -816,7 +834,8 @@ export default {
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `蠢く花の泥`,
-      text: `……大丈夫、行って……お前が助けてくれる……`
+      text: `……大丈夫、行って……お前が助けてくれる……`,
+      voice: `wav/CN/conversation24/vo_event_11032_8.wav`
     }
   ]
 };
