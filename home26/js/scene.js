@@ -279,7 +279,7 @@ let currentChapterIndex = -1;
 let currentCategory = "all";
 let isMusicPlaying = false;
 const bgmPlayer = document.getElementById("bgm-player");
-bgmPlayer.volume = 0.5;
+bgmPlayer.volume = 0.4;
 
 document.addEventListener("DOMContentLoaded", () => {
   initTabs(); // 初始化分类标签
@@ -476,9 +476,6 @@ function updateHeaderFromJSON(chapterId, data) {
   }
 }
 
-// --- 5. 渲染正文 ---
-// --- 5. 渲染正文 (修改版) ---
-// --- 5. 渲染正文 (修正版) ---
 // --- 5. 渲染正文 (最终修正版) ---
 function renderScript(script) {
   const container = document.getElementById("script-content");
