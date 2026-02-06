@@ -477,8 +477,6 @@ function updateHeaderFromJSON(chapterId, data) {
 }
 
 // --- 5. 渲染正文 (最终修正版) ---
-// --- 5. 渲染正文 (支持多语音版) ---
-// --- 5. 渲染正文 (最终精简版) ---
 function renderScript(script) {
   const container = document.getElementById("script-content");
   container.innerHTML = "";
@@ -489,26 +487,12 @@ function renderScript(script) {
       const div = document.createElement("div");
       div.id = `msg-row-${index}`;
 
-      // 1. 生成语音按钮 HTML
+      // 1. 处理语音按钮 (改为 SVG 图标以保证完美居中)
       let voiceBtnHtml = '';
-
       if (line.voice) {
-          // === 情况 A: 多国语音 (数组) ===
-          if (Array.isArray(line.voice)) {
-              // 使用 span 包裹，并加 nowrap 防止按钮之间换行
-              voiceBtnHtml += '<span class="voice-group">'; 
-              line.voice.forEach((v, subIndex) => {
-                  const safePath = v.path.replace(/#/g, '%23');
-                  // 生成单字按钮 (注意：这里去掉了所有换行符)
-                  voiceBtnHtml += `<button id="voice-btn-${index}-${subIndex}" class="voice-tag" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', ${subIndex})" title="Play ${v.label}">${v.label}</button>`;
-              });
-              voiceBtnHtml += '</span>';
-          } 
-          // === 情况 B: 单一语音 (字符串) ===
-          else {
-              const safePath = line.voice.replace(/#/g, '%23');
-              voiceBtnHtml = `<button id="voice-btn-${index}-0" class="voice-btn" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', 0)" title="Play Voice"><svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z"></path></svg></button>`;
-          }
+          const safeVoicePath = line.voice.replace(/#/g, '%23');
+          // 注意：这里换成了 SVG，并去掉了 button 标签内的换行
+          voiceBtnHtml = `<button id="voice-btn-${index}" class="voice-btn" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safeVoicePath}')" title="Play Voice"><svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z"></path></svg></button>`;
       }
 
       // 2. 渲染内容
@@ -523,7 +507,9 @@ function renderScript(script) {
       } else if (line.type === "dialogue") {
           const pos = line.position === "right" ? "pos-right" : "pos-left";
           div.className = `message-row ${pos}`;
-          // 确保 voiceBtnHtml 紧贴 text，不要有任何空格
+
+          // 【关键修改】：message-bubble 内部的内容紧贴标签，不要换行！
+          // 这样能消除上下多余的空白
           div.innerHTML = `
               <img src="${line.avatar}" class="avatar">
               <div class="message-bubble">${line.text}${voiceBtnHtml}</div>
@@ -810,86 +796,101 @@ const VoiceManager = {
 
   // 核心流转逻辑：播放指定索引的行
   playSequence(index) {
-    if (!this.isAutoMode) return;
-    if (index >= this.scriptData.length) {
-        this.finishAuto();
-        return;
-    }
+      if (!this.isAutoMode) return; // 双重检查
+      if (index >= this.scriptData.length) {
+          this.finishAuto(); // 结束
+          return;
+      }
 
-    this.currentIndex = index;
-    const line = this.scriptData[index];
-    const rowEl = document.getElementById(`msg-row-${index}`);
-    if (rowEl) rowEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      this.currentIndex = index;
+      const line = this.scriptData[index];
+      const rowId = `msg-row-${index}`;
+      const rowEl = document.getElementById(rowId);
 
-    // 判断是否有语音
-    if (line.voice) {
-        // 如果是数组，默认取第一个(下标0)；如果是字符串，直接用
-        let src = '';
-        if (Array.isArray(line.voice)) {
-            src = line.voice[0].path;
-        } else {
-            src = line.voice;
-        }
-        // 自动播放永远激活第0个按钮
-        this.playAudio(src, index, 0); 
-    } else {
-        // 无语音，等待1秒
-        this.timer = setTimeout(() => {
-            if (this.isAutoMode) this.playNext();
-        }, 1000);
-    }
-},
+      // 1. 滚动到视野中心
+      if (rowEl) {
+          rowEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      // 2. 判断是否有语音
+      if (line.voice) {
+          // >>> 有语音：播放音频
+          this.playAudio(line.voice, index);
+      } else {
+          // >>> 无语音 (旁白/无声)：等待1秒后下一句
+          // 可以在这里根据字数动态计算时间：Math.max(1000, line.text.length * 100)
+          const waitTime = 1000; 
+          this.timer = setTimeout(() => {
+              if (this.isAutoMode) this.playNext();
+          }, waitTime);
+      }
+  },
 
   // 播放下一句
   playNext() {
       this.playSequence(this.currentIndex + 1);
   },
 
-  playAudio(src, index, subIndex = 0) {
-    // 停止之前的动画 (不管是哪一行，哪个子按钮)
-    document.querySelectorAll('.voice-btn, .voice-tag').forEach(b => b.classList.remove('playing'));
+  // 播放音频的具体实现 (兼容手动和自动)
+  playAudio(src, index) {
+      // 如果点的不是当前行，先停止上一句的动画
+      if (this.currentIndex !== index) {
+          this.setButtonState(this.currentIndex, false);
+      }
+      
+      this.currentIndex = index;
+      this.audio.src = src;
+      
+      // 视觉：开启按钮动画
+      this.setButtonState(index, true);
 
-    this.currentIndex = index;
-    // 处理 # 号
-    this.audio.src = src.replace(/#/g, '%23'); 
-    
-    // 激活当前按钮动画
-    this.setButtonState(index, subIndex, true);
+      // 播放
+      const playPromise = this.audio.play();
+      if (playPromise !== undefined) {
+          playPromise.catch(error => {
+              console.log("播放被阻止或出错:", error);
+              this.setButtonState(index, false);
+              // 如果自动模式下出错，稍后跳过
+              if (this.isAutoMode) {
+                  this.timer = setTimeout(() => this.playNext(), 1000);
+              }
+          });
+      }
+  },
 
-    const playPromise = this.audio.play();
-    if (playPromise !== undefined) {
-        playPromise.catch(err => {
-            console.log("Play error:", err);
-            this.setButtonState(index, subIndex, false);
-            if (this.isAutoMode) this.timer = setTimeout(() => this.playNext(), 1000);
-        });
-    }
-},
+  // 手动点击播放按钮
+  playManual(index, src) {
+      // 如果点击正在播放的，则暂停/停止
+      if (this.currentIndex === index && !this.audio.paused && !this.audio.ended) {
+          this.stop();
+          return; 
+      }
 
-// 手动点击 (增加 subIndex)
-playManual(index, src, subIndex) {
-    // 如果点击的是正在播放的，则停止
-    // 这里简化判断，只要点就播放
-    this.isAutoMode = false; 
-    this.updateAutoSwitchUI();
-    clearTimeout(this.timer);
-    this.playAudio(src, index, subIndex);
-},
-
-
+      // 手动播放时，如果当前是自动模式，通常建议暂时关闭自动模式，或者保持自动模式？
+      // 既然用户手动介入了，最稳妥的是：保持自动模式逻辑，把这当做一次“插队”，
+      // 但为了避免混乱，建议手动点击不影响自动模式开关，只重置当前流转。
+      // 这里简化处理：手动点击就是单纯听这一句。
+      this.isAutoMode = false; 
+      this.updateAutoSwitchUI();
+      clearTimeout(this.timer);
+      
+      this.playAudio(src, index);
+  },
 
   // 设置按钮动画状态
-  setButtonState(index, subIndex, isPlaying) {
-    // 拼装 ID：voice-btn-行号-子下标
-    const btnId = `voice-btn-${index}-${subIndex}`;
-    const btn = document.getElementById(btnId);
-    
-    if (btn && isPlaying) {
-        btn.classList.add('playing');
-    } else if (btn) {
-        btn.classList.remove('playing');
-    }
-},
+  setButtonState(index, isPlaying) {
+      const btn = document.getElementById(`voice-btn-${index}`);
+      if (!btn) return;
+      
+      // 重置所有按钮状态 (防止多个按钮同时转)
+      document.querySelectorAll('.voice-btn').forEach(b => b.classList.remove('playing'));
+
+      if (isPlaying) {
+          btn.classList.add('playing');
+      } else {
+          btn.classList.remove('playing');
+      }
+  },
 
   // 停止一切 (离开页面或重置时)
   stop() {

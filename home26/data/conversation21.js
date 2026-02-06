@@ -574,7 +574,10 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
       text: `じゃあね、正義の使者。`,
-      voice: `wav/CN/conversation21/vo_event_11027_47.wav`
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_25.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_47.wav' },
+      ]
     },
     {
       type: `narration`,

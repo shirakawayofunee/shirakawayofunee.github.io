@@ -1034,3 +1034,64 @@ span {
 
 /* 让按钮在左侧对话中位于头像和气泡之间，或者最左侧 */
 /* 这里假设按钮插在 message-bubble 之前 */
+
+
+/* ==================== 多语言语音标签 ==================== */
+/* ==================== 多语言语音按钮 (修正版) ==================== */
+
+/* 1. 按钮组容器：强制不换行，确保几个按钮连在一起 */
+.voice-group {
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 4px; /* 整体离文字的距离 */
+}
+
+/* 2. 多语言按钮样式 (回归小方块/圆圈风格) */
+.voice-tag {
+    /* 布局与尺寸 */
+    display: inline-flex;       /* 关键：Flex布局实现绝对居中 */
+    align-items: center;
+    justify-content: center;
+    
+    width: 18px;                /* 固定宽度，与播放按钮一致 */
+    height: 18px;               /* 固定高度 */
+    
+    padding: 0;                 /* 关键：清除 padding 导致的偏移 */
+    margin: 0 2px;              /* 按钮之间的微小间距 */
+    
+    /* 边框与背景 */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #777;
+    border-radius: 50%;         /* 圆形。如果想要正方形，改成 2px */
+    
+    /* 字体设置 */
+    color: #aaa;
+    font-size: 10px;            /* 字体大小 */
+    font-family: "Microsoft YaHei", sans-serif; /* 确保中文字体渲染正常 */
+    line-height: 1;             /* 关键：防止行高导致垂直偏移 */
+    
+    /* 对齐与交互 */
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+/* 修正第一个按钮的左边距 (因为 .voice-group 已经有 margin-left 了) */
+.voice-group .voice-tag:first-child {
+    margin-left: 0;
+}
+
+.voice-tag:hover {
+    border-color: #D40F30;
+    color: #D40F30;
+    background: rgba(226, 59, 120, 0.1);
+}
+
+/* 播放中状态 */
+.voice-tag.playing {
+    border-color: #D40F30;
+    background: #D40F30;
+    color: #fff;
+    animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}

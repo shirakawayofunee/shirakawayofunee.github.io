@@ -195,7 +195,11 @@ export default {
       avatar: `img/dh/leopold.png`,
       name: `「業師」`,
       text: `こんにちは、探偵ちゃん。`,
-      voice: `wav/CN/conversation20/vo_event_11026_6.wav`
+      voice: `wav/CN/conversation20/vo_event_11026_6.wav`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation20/vo_event_11026#9.wav' },
+        { label: '中', path: 'wav/CN/conversation20/vo_event_11026_6.wav' },
+      ]
     }
   ]
 };
