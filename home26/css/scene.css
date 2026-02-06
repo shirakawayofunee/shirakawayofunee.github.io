@@ -77,7 +77,7 @@ span {
     height: 100%;
     overflow: hidden;
     background-color: var(--panel-bg);
-    border-right: var(--border-line);
+/*     border-right: var(--border-line); */
     padding: 0;
 }
 
@@ -182,7 +182,6 @@ span {
     font-size: 0.8rem;
     padding: 10px 12px;
     cursor: pointer;
-/*     border-right: 1px solid #999; */
     flex-grow: 1;
     text-align: center;
     transition: all 0.2s;
@@ -753,16 +752,30 @@ span {
 .script-header-layer {
     flex-shrink: 0;
     height: 13%; /* 修改点：从 20% 改为 13% */
-    min-height: 90px; /* 修改点：减小最小高度，防止太占地 */
+    min-height: 60px; /* 修改点：减小最小高度，防止太占地 */
     background: var(--panel-bg); 
-    border-bottom: 2px solid #000; /* 如果想让分割线更明显，这里可以改成 #333 或 #fff */
     padding: 10px 40px; /* 修改点：减小内边距 */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     z-index: 10;
     position: relative;
+
+    display: flex;              /* 开启 Flexbox */
+    align-items: center;        /* 关键：垂直居中对齐 */
+    justify-content: space-between; /* 关键：左右撑开 */
+
+}
+
+.header-summary-box {
+    flex: 1;            /* 自动填满左右按钮中间的空间 */
+    text-align: center; /* 文字居中 */
+    
+    /* 防止文字过长把左右按钮挤出去 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 20px;    /* 防止文字紧贴左右按钮 */
 }
 
 /* 概要样式 */
@@ -916,13 +929,14 @@ span {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-right: 15px; /* 放在关闭按钮左侧 */
+
     cursor: pointer;
     font-family: "Consolas", sans-serif;
     font-size: 14px;
     color: #555;
     transition: color 0.3s;
     user-select: none;
+    flex-shrink: 0; 
 }
 
 .auto-play-switch:hover {

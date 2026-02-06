@@ -295,7 +295,8 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「業師」`,
-      text: `……ふん、君たちごときで。`
+      text: `……ふん、君たちごときで。`,
+      voice: `wav/CN/conversation21/vo_event_11027_29.wav`
     },
     {
       type: `narration`,
@@ -342,7 +343,8 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `ハハハハハ！いいね、じゃあ君の正義をしっかり見せてよ。`
+      text: `ハハハハハ！いいね、じゃあ君の正義をしっかり見せてよ。`,
+      voice: `wav/CN/conversation21/展示正义.wav`
     },
     {
       type: `narration`,
@@ -357,7 +359,8 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `その正義がどれだけ笑えるか、見せてよ。`
+      text: `その正義がどれだけ笑えるか、見せてよ。`,
+      voice: `wav/CN/conversation21/vo_event_11027_34.wav`
     },
     {
       type: `narration`,

@@ -450,7 +450,7 @@ async function loadChapter(chapterId) {
     
   } catch (err) {
     console.error(err);
-    scriptDiv.innerHTML = `<div class="narration" style="color:#e23b78">无法打开卷宗: ${chapterId}</div>`;
+    scriptDiv.innerHTML = `<div class="narration" style="color:#D40F30">无法打开卷宗: ${chapterId}</div>`;
   }
 }
 
@@ -713,7 +713,7 @@ function initTypewriter() {
   // 第一步：打主标题 (稍慢，庄重一点)
   setTimeout(() => {
       // 使用红色光标打主标题
-      typeString(titleEl, titleText, [320, 80], "#e23b78", () => {
+      typeString(titleEl, titleText, [320, 80], "#D40F30", () => {
           
           // 第二步：主标题打完后，打副标题 (稍快，像机器指令)
           // 使用灰色光标
