@@ -821,7 +821,10 @@ export default {
       voice: `wav/CN/conversation24/vo_event_11032_21.wav`
     },
     {
-      type: `narration`,
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `「師匠」`,
       text: `次は……`,
       voice: `wav/CN/conversation24/vo_event_11032_20.wav`
     },

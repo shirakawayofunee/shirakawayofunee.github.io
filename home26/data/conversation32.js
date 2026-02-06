@@ -95,7 +95,8 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `103年…79期…第五陵園だろ…`
+      text: `103年…79期…第五陵園だろ…`,
+      voice: `wav/CN/conversation32/vo_event_11043_103.wav`
     },
     {
       type: `narration`,
@@ -118,25 +119,28 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle.jpg`,
       name: `ジギタリス`,
-      text: `そんなことしなくていい！彼女たちの居場所、わかってる。私が探しに行く、私が行く！`
+      text: `そんなことしなくていい！彼女たちの居場所、わかってる。私が探しに行く、私が行く！`,
+      voice: `wav/CN/conversation32/vo_event_11043_99.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/cry.png`,
       name: `業師`,
-      text: `…そうか…見つけたのか…`
+      text: `…そうか…見つけたのか…`,
+      voice: `wav/CN/conversation32/vo_event_11043_110.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/cry.png`,
       name: `業師`,
-      text: `何泣いてんだ…そんな必死になって…ほんとバカだな…`
+      text: `何泣いてんだ…そんな必死になって…ほんとバカだな…`,
+      voice: `wav/CN/conversation32/vo_event_11043_69.wav`
     },
     {
       type: `narration`,
-      text: `另一边。`
+      text: `もう一方。`
     },
     {
       type: `narration`,
@@ -144,7 +148,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `edge-07：黒石英の最終監視記録によると、敵の狂厄級能力者が現場のHUSH部隊を殲滅、黒石英がXを破壊する前にXを破壊し、肉体を破壊しつつ精神空間に強行侵入。`
+      text: `edge-07：黒石英の最終監視記録によると、敵のS級能力者が現場のHUSH部隊を殲滅、黒石英がXを破壊する前にXを破壊し、肉体を破壊しつつ精神空間に強行侵入。`
     },
     {
       type: `narration`,
@@ -156,7 +160,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `edge-02：…<br>edge-02：「Garden」の業師は知ってる。強い、だがそれほど強くはないはずだ。<br>edge-02：X自身が裂け目に触れるのは不可能。理論上、狂厄級能力者でもXを封鎖するルールを破壊したり、観測庭の裂け目を引き裂くことはできない、ただし…<br>edge-02：その業師が何かの刺激を受け、<span>狂厄爆発</span>状態に突入した場合だ。`
+      text: `edge-02：…<br>edge-02：「Garden」の業師は知ってる。強い、だがそれほど強くはないはずだ。<br>edge-02：X自身が裂け目に触れるのは不可能。理論上、S級能力者でもXを封鎖するルールを破壊したり、観測庭の裂け目を引き裂くことはできない、ただし…<br>edge-02：その業師が何かの刺激を受け、<span>狂厄爆発</span>状態に突入した場合だ。`
     },
     {
       type: `narration`,
@@ -223,28 +227,32 @@ export default {
       position: `left`,
       avatar: `img/dh/x5.png`,
       name: `シャーローム`,
-      text: `私は花が好きだ。`
+      text: `私は花が好きだ。`,
+      voice: `wav/CN/conversation32/vo_event_11043_105.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x5.png`,
       name: `シャーローム`,
-      text: `泥に屈せず、隙間に囚われず、陽に向かって這う。一生に一度の盛大な開花のために。`
+      text: `泥に屈せず、隙間に囚われず、陽に向かって這う。一生に一度の盛大な開花のために。`,
+      voice: `wav/CN/conversation32/vo_event_11043_60.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x5.png`,
       name: `シャーローム`,
-      text: `その努力が無駄とわかっていても逆流し、散る運命でも死に向かって生きる姿が好きだ。`
+      text: `その努力が無駄とわかっていても逆流し、散る運命でも死に向かって生きる姿が好きだ。`,
+      voice: `wav/CN/conversation32/vo_event_11043_135.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x5.png`,
       name: `シャーローム`,
-      text: `たとえ人に折られても、自由に…`
+      text: `たとえ人に折られても、自由に……`,
+      voice: `wav/CN/conversation32/vo_event_11043_58.wav`
     },
 /*     {
       type: `narration`,
