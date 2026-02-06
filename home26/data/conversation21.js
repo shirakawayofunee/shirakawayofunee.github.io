@@ -443,7 +443,8 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `この！携帯を返して！彼女たちに、爆弾はもう解除したって、問題ないって伝える！車を止めるだけでいい、最悪、燃料が尽きるまで走らせてやる！`
+      text: `この！携帯を返して！彼女たちに、爆弾はもう解除したって、問題ないって伝える！車を止めるだけでいい、最悪、燃料が尽きるまで走らせてやる！`,
+      voice: `wav/JP/conversation21/vo_event_11027_8.wav`,
     },
     {
       type: `dialogue`,
@@ -451,7 +452,10 @@ export default {
       avatar: `img/dh/leopold3.png`,
       name: `「業師」`,
       text: `言ったよ。`,
-      voice: `wav/CN/conversation21/vo_event_11027_50.wav`
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11026_22.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_50.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -489,7 +493,10 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
       text: `それとも……`,
-      voice: `wav/CN/conversation21/vo_event_11027_13.wav`
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11026_19.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_13.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -512,7 +519,8 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `……シャーローム……姉さん？`
+      text: `……シャーローム……姉さん？`,
+      voice: `wav/JP/conversation21/vo_event_11027_15.wav`,
     },
     {
       type: `narration`,
@@ -530,7 +538,8 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `それを使わないで……やめて……`
+      text: `それを使わないで……やめて……`,
+      voice: `wav/JP/conversation21/vo_event_11027_11.wav`,
     },
     {
       type: `narration`,
