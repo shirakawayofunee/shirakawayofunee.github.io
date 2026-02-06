@@ -78,14 +78,16 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `私をどうしようがいいから、総司令を解放して！`
+      text: `私をどうしようがいいから、総司令を解放して！`,
+      voice: `wav/JP/conversation21/vo_event_11027_48.wav`
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `今回の西区作戦はめっちゃ大事だよ。BR-002を封鎖できれば、西区は救われる。たくさんの無垢な人が城邦に見捨てられずに済む！今はあんたが気まぐれ起こす時じゃない！`
+      text: `今回の西区作戦はめっちゃ大事だよ。BR-002を封鎖できれば、西区は救われる。たくさんの無垢な人が城邦に見捨てられずに済む！今はあんたが気まぐれ起こす時じゃない！`,
+      voice: `wav/JP/conversation21/vo_event_11027_44.wav`
     },
     {
       type: `dialogue`,
@@ -113,7 +115,10 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
       text: `おっと、必要なくなった。彼女から君にかけてきたよ。`,
-      voice: `wav/CN/conversation21/vo_event_11027_17.wav`
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_57.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_17.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -128,7 +133,10 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
       text: `しっ、大人が話してるんだから、子供は口出ししない。君、ミュートにしたよ。`,
-      voice: `wav/CN/conversation21/vo_event_11027_46.wav`
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_46.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_26.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -169,7 +177,10 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
       text: `ふーん、変ね。私が彼女を拉致してから何時間も経ってるのに、なんで今さら電話してきたの？`,
-      voice: `wav/CN/conversation21/vo_event_11027_35.wav`
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_53.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_35.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -181,7 +192,10 @@ export default {
       avatar: `img/dh/leopold2.png`,
       name: `「業師」`,
       text: `自分の部下を利用して私の位置を特定するつもり? ひどいわね、彼女の心が傷つくじゃない。`,
-      voice: `wav/CN/conversation21/vo_event_11027_53.wav`
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -308,7 +322,10 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
       text: `ほら、小娘、しょげないで。見ず知らずの人間に眼中に入れられてないだけだろ。`,
-      voice: `wav/CN/conversation21/vo_event_11027_40.wav`
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_40.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_31.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -325,7 +342,10 @@ export default {
       avatar: `img/dh/smile0.png`,
       name: `「業師」`,
       text: `遊び方は教えてやった。君の探偵ゲーム、まだ終わってないよ。続ける？`,
-      voice: `wav/CN/conversation21/vo_event_11027_39.wav`
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_59.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_39.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -336,7 +356,8 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `私が勝つ。絶対にあんたの思い通りにはさせない。`
+      text: `私が勝つ。絶対にあんたの思い通りにはさせない。`,
+      voice: `wav/JP/conversation21/vo_event_11027_56.wav`
     },
     {
       type: `dialogue`,
@@ -371,7 +392,8 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `解けた！`
+      text: `解けた！`,
+      voice: `wav/JP/conversation21/vo_event_11027_42.wav`
     },
     {
       type: `narration`,
@@ -410,7 +432,10 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
       text: `お、ほんと？よくやったね。褒めてほしい？`,
-      voice: `wav/CN/conversation21/vo_event_11027_58.wav`
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_46.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_58.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -453,7 +478,7 @@ export default {
       name: `「業師」`,
       text: `言ったよ。`,
       voice: [
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11026_22.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_22.wav' },
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_50.wav' },
       ]
     },
@@ -462,7 +487,8 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `え？`
+      text: `え？`,
+      voice: `wav/JP/conversation21/vo_event_11027_43.wav`
     },
     {
       type: `dialogue`,
@@ -478,7 +504,10 @@ export default {
       avatar: `img/dh/smile0.png`,
       name: `「業師」`,
       text: `まだ返信がない。見なかったのかな？それとも信じなかった？`,
-      voice: `wav/CN/conversation21/vo_event_11027_57.wav`
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_57.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_40.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -494,8 +523,8 @@ export default {
       name: `「業師」`,
       text: `それとも……`,
       voice: [
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11026_19.wav' },
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_13.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_19.wav' },
       ]
     },
     {
@@ -508,7 +537,10 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
       text: `ほら、あれ、君の正義の光じゃない？`,
-      voice: `wav/CN/conversation21/vo_event_11027_27.wav`
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_27.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_52.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -538,7 +570,7 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `それを使わないで……やめて……`,
+      text: `それを使わないで……お願い……`,
       voice: `wav/JP/conversation21/vo_event_11027_11.wav`,
     },
     {
