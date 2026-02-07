@@ -254,24 +254,17 @@
 
                 <!-- Text 1 -->
                 <div id="text-1" class="absolute top-[80%] right-20 -translate-y-1/2 text-right max-w-lg">
-                    <h3 class="text-[#ebfc72] text-xl tracking-widest mb-4">THE PROBLEM</h3>
-                    <p class="text-[#f4f3e8] text-2xl font-light">Daytime view logic...</p>
+                    <h3 class="text-[#ebfc72] text-xl tracking-widest mb-4">「穏やかな朝」</h3>
+                    <p class="text-[#f4f3e8] text-2xl font-light">N.F.113/7/22/07:18</p>
                 </div>
 
                 <!-- Text 2 -->
                 <div id="text-2"
                     class="absolute top-[70%] left-20 -translate-y-1/2 text-left max-w-lg opacity-0 translate-y-[50px]">
-                    <h3 class="text-[#ebfc72] text-xl tracking-widest mb-4">N.F.113/7/22/23:14</h3>
+                    <h3 class="text-[#ebfc72] text-xl tracking-widest mb-4">「探求の終点」</h3>
                     <p class="text-[#f4f3e8] text-2xl font-light">雨粒が音を立てる中で、Sは昔の光景を思い出した。</p>
+                    <p class="text-[#f4f3e8] text-2xl font-light">N.F.113/7/22/23:14</p>
                 </div>
-
-                <!-- Text 3 -->
-                <div id="text-3"
-                    class="absolute top-[70%] right-20 -translate-y-1/2 text-right max-w-lg opacity-0 translate-y-[50px]">
-                    <h3 class="text-[#ebfc72] text-xl tracking-widest mb-4">RESTORED</h3>
-                    <p class="text-[#f4f3e8] text-2xl font-light">エリカ山荘の嵐は去ったが、遠くの黒雲はまだどんよりとした山のようで、天と地では何かが蠢いている。</p>
-                </div>
-
             </div>
 
         </div>
@@ -513,16 +506,6 @@
             autoAlpha: 0,
             duration: 4
           }, "<");
-      
-          // 4. 黑夜层 & 深色背景 淡出 (回到白天)
-          tl.to([darkBgLayer, nightMaskLayer], {
-            autoAlpha: 0,
-            duration: 4,
-            ease: "power1.inOut"
-          });
-      
-          // 5. 文字3 (结果) 进场
-          tl.to(text3, { y: 0, autoAlpha: 1, duration: 2 }, "-=2");
       
           // 结尾缓冲
           tl.to({}, { duration: 2 });

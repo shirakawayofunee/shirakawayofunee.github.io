@@ -1,264 +1,114 @@
-:root {
-  --primary-color: #e23b78;
-  --secondary-color: #6aadff;
-  --tertiary-color: #7981b4;
-  --base-font-size: 13px;
-  --small-font-size: 12px;
-}
-.map {
-  position: relative;
-  overflow: hidden;
-  background: url("../kv/d.jpg") no-repeat fixed center / 100% auto;
-  color: var(--primary-color);
-  font-size: var(--base-font-size);
+/* 全局基础设置 */
+/* 允许地图页内部滚动，高度设为100vh */
+#slide7 {
+  overflow-y: auto !important; 
+  height: 100vh;
+  -webkit-overflow-scrolling: touch;
 }
 
+/* 修正 Sticky 样式上下文 */
+#slide7 .home-hero {
+  overflow: visible; 
+}
+
+body {
+  background: #13140e;
+  color: #f4f3e8;
+  margin: 0;
+  padding: 0;
+  /* 防止浏览器默认滚动行为干扰 Lenis */
+  overflow-x: hidden;
+  font-family: 'JetBrains Mono', 'Noto Sans JP', sans-serif;
+}
+
+/* --- Mask Layer 配置 --- */
+.mask-layer {
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  /* Mask Image 路径在 JS 中动态设置 */
+}
+
+/* --- 动效: 呼吸灯 --- */
+.pulse-hotspots {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+/* --- 动效: 亮度增强 --- */
+.grid-svg, .hotspots-svg {
+  filter: brightness(150%) drop-shadow(0 0 5px rgba(235, 252, 114, 0.3));
+}
+
+/* --- 动效: 雨水 --- */
+.rain-overlay {
+  pointer-events: none;
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+/* --- Lenis 滚动库推荐设置 --- */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* --- GPS / Tech UI 动效 --- */
+@keyframes ping-slow {
+  0% { transform: scale(0.5); opacity: 0.8; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* 小光点 (巡逻点) 基础样式 */
+.patrol-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ebfc72;
+  box-shadow: 0 0 4px rgba(235, 252, 114, 0.6);
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+/* 红色小光点 (敌人/威胁) */
+.patrol-dot.enemy {
+  background-color: #ff4d4d;
+  box-shadow: 0 0 4px rgba(255, 77, 77, 0.6);
+}
+
+/* --- 常驻地标文字样式 --- */
 .map-marker {
   position: absolute;
-  z-index: 2;
-  min-height: 15px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #ffffff;
+  /* 强阴影保证可见性 */
+  text-shadow: 0 0 2px #000, 0 0 4px #000, 0 0 8px rgba(0,0,0,0.8);
+  cursor: pointer;
+  z-index: 30;
+  white-space: nowrap; 
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s;
 }
-  
-  .map-bg{
-    position: absolute;
-    width: 100%;
-    
-    top:0;
-    left:0;
-    z-index: 1;
-  }
-  .map-1{
-    position: absolute;
-    z-index: 2;
-    top:10%;
-    left: 7%;
-    height: 80%;
-  }
-  .map-G {
-    top: 26.5%;
-    right: 26.5%;
-  }
-  
-  .map-X {
-    bottom: 50%;
-    left: 52%;
-  }
-  
-  .map-C {
-    bottom: 42%;
-    right: 15%;
-    color: var(--secondary-color);
-    font-size: var(--small-font-size);
-  }
-  
-  .map-S {
-    top: 51%;
-    left: 31%;
-  }
-  
-  .map-Y {
-    top: 17%;
-    left: 26%;
-    color: var(--tertiary-color);
-    font-size: var(--small-font-size);
-  }
-  
-  .map-B {
-    bottom: 22%;
-    right: 23%;
-    color: var(--tertiary-color);
-    font-size: var(--small-font-size);
-  }
-  .map-title{
-    height: 60px;
-    width: auto;
-    display: flex;
-    position: absolute;
-    z-index: 2;
-    top: 22%;
-    left: 31%;
-/*     max-width: 30px; */
-  }
 
-  .map-4{
-    position: absolute;
-    right: 6%;
-    bottom: 3rem;
-    height: 7rem;
-    width: 33.375rem;
-    z-index: 2;
-    display: flex;
-    max-width: 534px;
-  }
-  .map-4 a{
-    cursor: none;
-    width: 100%;
-  }
-  
-  .map-4>div:nth-child(1){
-    width: 12.5rem;
-    height: 100%;
-  }
-  .map-4>div:nth-child(2){
-    width: 9rem;
-    height: 100%;
-    justify-content: center;
-  }
-  .map-4>div:nth-child(3){
-    width: 8rem;
-    height: 100%;
-  }
-  .map-4>div:nth-child(4){
-    width: 10.875rem;
-    height: 100%;
-  }
-  .map-4 img{
-    width: 7.25rem;
-  }
+.map-marker:hover {
+  color: #ebfc72;
+  transform: translate(-50%, -50%) scale(1.1);
+}
 
-  .map-br-002 {
-    top: 56%;
-    left: 15%;
-  }
-  
-  .map-br-002 .map-event-bg {
-    height: 32vh;
-    width: 25vw;
-    background: url('../img/map/002.png') no-repeat center/contain;
-  }
-  
-  .map-br-004 {
-    top: 66%;
-    left: 42%;
-    opacity: 0.8;
-  }
-  
-  .map-br-004 .map-event-bg {
-    height: 27vh;
-    width: 21vw;
-    background: url('../img/map/004.png') no-repeat center/contain;
-  }
-  
-  .map-br-006 {
-    top: 8%;
-    right: 33%;
-    opacity: 0.8;
-  }
-  
-  .map-br-006 .map-event-bg {
-    height: 28vh;
-    width: 24vw;
-    background: url('../img/map/006.png') no-repeat center/contain;
-  }
-
-  .map-4-1>img{
-    width: 95%;
-  }
-  .map-4-2{
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-  
-  }
-  .map-4-2-con{
-    /* height: 3.5rem; */
-    /* background: darkblue; */
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: center;
-  }
-  .map-4-2 img{
-    width: 100%;
-    transition: all 0.3s;
-  }
-  .map-4-2-con img:hover{
-    filter: brightness(70%);
-  }
-  
-  .map-4-3{
-    position: relative;
-  }
-  .map-4-3:hover .map-4-3-icon{
-    transform: translateX(10px);
-  }
-  .map-4-3-bg{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 1;
-  }
-  .map-4-3-p{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 2;
-  }
-  .map-4-3>img{
-    width: 100%;
-  }
-  .map-4-3>img:hover{
-    filter: brightness(70%);
-  }
-  .map-4-3-p>img{
-    transition: all 0.5s;
-  }
-  .map-4-3-p>img:hover{
-    transform: scale(1.1);
-  }
-  .map-4-3-icon{
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    z-index: 3;
-    transition: all 0.3s;
-  }
-  .map-zhe{
-    position: absolute;
-    width: 100%;
-    height: 18rem;
-    bottom: 0;
-    z-index: 1;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,.7));
-  }
-  .map-4-mumu{
-    height:5.9375rem;
-    display: flex;
-    align-items: center;
-    /* margin: 0 1rem; */
-  }
-  .map-4-mumu img{
-       height: 100%;
-       max-height: 130px;
-       object-fit: contain;
-       margin: 0 auto;
-       display: block;
-  }
-  .map-yuyue{
-    position: absolute;
-    right: 8%;
-    bottom: 0;
-    height: 12rem;
-    width: 26rem;
-    z-index: 2;
-    display: flex;
-    /* background: forestgreen; */
-    padding-bottom: 2rem;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .map-yuyue-img{
-    width: 18.5rem;
-    height: 4.25rem;
-  }
-  .map-yuyue-play{
-    width: 6.25rem;
-    height: 6.25rem;
-  }
+/* 地标位置微调 */
+.map-G { top: 30%; left: 75%; }
+.map-X { top: 50%; left: 54%; }
+.map-C { top: 55%; left: 84%; }
+.map-S { top: 53%; left: 37%; }
+.map-Y { top: 20%; left: 25%; }

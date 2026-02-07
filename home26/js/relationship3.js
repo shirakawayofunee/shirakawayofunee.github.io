@@ -84,12 +84,17 @@ document.addEventListener('DOMContentLoaded', () => {
  *  关系数值配置 (在这里修改数值即可，范围 0-100)
  * ============================================================ */
 const dataSet1 = [
-  { label: "愛情", left: 99, right: 30 },
-  { label: "理性", left: 40, right: 80 },
   { label: "親情", left: 100, right: 80 },
+  { label: "慈愛", left: 20, right: 90 },
+  { label: "敬愛", left: 60, right: 0 },
+  { label: "母性愛", left: 70, right: 80 },
+  { label: "性愛", left: 75, right: 0 },
+  { label: "家族愛", left: 100, right: 90 },
+  { label: "偏愛", left: 100, right: 90 },
+  { label: "理性", left: 40, right: 80 },
   { label: "友情", left: 60, right: 70 },
   { label: "信頼度", left: 97, right: 65 },
-  { label: "忠誠度", left: 100, right: 0}, /* 这里的 isDark: true 会让条变成黑色(如果CSS支持) */
+  { label: "忠誠度", left: 100, right: 0},
   { label: "依存度", left: 90, right: 25 },
   { label: "保護欲", left: 100, right: 100 },
   { label: "征服欲", left: 25, right: 10 },
@@ -99,7 +104,6 @@ const dataSet1 = [
   { label: "娯楽性", left: 15, right: 30 },
   { label: "献身", left: 99, right: 85 },
   { label: "欲求", left: 60, right: 20 },
-  { label: "偏愛", left: 100, right: 90 },
   { label: "支配", left: 10, right: 40 },
   { label: "服従", left: 95, right: 1 },
   { label: "崇拝", left: 80, right: 0 },
@@ -107,13 +111,6 @@ const dataSet1 = [
   { label: "歓楽", left: 100, right: 60 },
   { label: "苦痛", left: 15, right: 0 },
   { label: "情欲", left: 80, right: 20 },
-  { label: "敵意", left: 0, right: 0 },
-  { label: "悪意", left: 0, right: 0 },
-  { label: "慈愛", left: 20, right: 90 },
-  { label: "敬愛", left: 60, right: 0 },
-  { label: "母性愛", left: 70, right: 80 },
-  { label: "性愛", left: 75, right: 0 },
-  { label: "家族愛", left: 100, right: 90 },
 ];
 
 
