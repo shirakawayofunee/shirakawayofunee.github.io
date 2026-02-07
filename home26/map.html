@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/transition.css" />
     <!-- 2. 引入自定义样式 -->
     <style>
         body {
@@ -24,6 +25,19 @@
             overflow-x: hidden;
             font-family: 'JetBrains Mono', 'Noto Sans JP', sans-serif;
         }
+        .head {
+        position: fixed !important; /* 强制固定在顶部 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999; /* 确保层级最高 */
+        background: transparent; /* 确保背景透明 */
+    }
+
+    .div-head-text, .div-head-text-en {
+        font-family: "Noto Sans JP", sans-serif; /* 或者你主站用的字体 */
+        font-size: 0.9rem;
+    }
 
         /* --- Mask Layer 配置 --- */
         .mask-layer {
@@ -158,7 +172,101 @@
 </head>
 
 <body>
-
+    <div class="head pc" data-mouse="small">
+        <div class="h-con-left">
+          <h1 data-mouse="mid">
+            <a href="index.html" style="cursor: none;" data-mouse="mid">
+              <!-- 如果有 logo 可以放这里 -->
+            </a>
+          </h1>
+        </div>
+        <div class="h-con-right pc" data-mouse="mid">
+          <div class="h-con-right-l" data-mouse="mid">
+            
+            <!-- 1. 回首页 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='index.html'" id="banner0" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">第一章ホーム</div>
+              <div class="div-head-text-en" data-mouse="mid">HOME</div>
+            </div>
+      
+            <!-- 2. 登场人物 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='index.html'" id="banner1" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">登場人物</div>
+              <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
+            </div>
+      
+            <!-- 3. 关系图 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='index.html'" id="banner2" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">相関図</div>
+              <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
+            </div>
+      
+            <!-- 4. 关系工事中 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='index.html'" id="banner3" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">関係性工事中</div>
+              <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
+            </div>
+      
+            <!-- 5. 组织 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='index.html'" id="banner4" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">主な組織</div>
+              <div class="div-head-text-en" data-mouse="mid">FACTIONS</div>
+            </div>
+      
+            <!-- 6. 第一章 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='index.html'" id="banner5" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">第一章</div>
+              <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
+            </div>
+      
+            <!-- ★★★ 7. 序章地图 (当前页) ★★★ -->
+            <!-- 注意：这里加了 active 类名，并且去掉了跳转 -->
+            <div class="div-center div-centerpc" id="banner6" data-mouse="mid">
+              <div class="div-head-text div-head-text-active" data-mouse="mid" style="color:#e23b78;">序章マップ</div>
+              <div class="div-head-text-en div-head-text-en-active" data-mouse="mid" style="color:#e23b78;">MAP</div>
+            </div>
+      
+            <!-- 8. 情报 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='index.html'" id="banner7" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">情報</div>
+              <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
+            </div>
+      
+            <!-- 9. 物语 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='vomic.html'" id="banner8" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">物語</div>
+              <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
+            </div>
+      
+            <!-- 10. 命运织机 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='scene260108.html'" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">運命の織機</div>
+              <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
+            </div>
+      
+            <!-- 11. 画廊 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='../SL26.html'" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">ギャラリー</div>
+              <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
+            </div>
+      
+            <!-- 12. 年表 -->
+            <div class="div-center div-centerpc" onclick="window.location.href='timeline.html'" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">世界観/年表</div>
+              <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
+            </div>
+          </div>
+      
+          <!-- 右侧音乐图标 (可选保留，如果不想要音乐可以删掉) -->
+          <div class="h-con-right-r">
+            <div class="h-con-right-r-con">
+              <!-- 这里如果你想让音乐继续播放，可能需要iframe方案，否则切页面音乐会断 -->
+              <!-- 简单起见，这里仅保留图标占位 -->
+               <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- 
     配置区：
     h-[450vh] 对应原代码中的滚动高度
