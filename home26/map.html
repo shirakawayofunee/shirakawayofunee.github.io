@@ -17,7 +17,6 @@
     <!-- 2. 引入自定义样式 -->
     <style>
         body {
-            background: #13140e;
             color: #f4f3e8;
             margin: 0;
             padding: 0;
@@ -33,6 +32,8 @@
         z-index: 9999; /* 确保层级最高 */
         background: transparent; /* 确保背景透明 */
     }
+
+    .h-con-right{margin-left: 5%;}
 
     .div-head-text, .div-head-text-en {
         font-family: "Noto Sans JP", sans-serif; /* 或者你主站用的字体 */
@@ -173,19 +174,12 @@
 
 <body>
     <div class="head pc" data-mouse="small">
-        <div class="h-con-left">
-          <h1 data-mouse="mid">
-            <a href="index.html" style="cursor: none;" data-mouse="mid">
-              <!-- 如果有 logo 可以放这里 -->
-            </a>
-          </h1>
-        </div>
         <div class="h-con-right pc" data-mouse="mid">
           <div class="h-con-right-l" data-mouse="mid">
             
             <!-- 1. 回首页 -->
-            <div class="div-center div-centerpc" onclick="window.location.href='index.html'" id="banner0" data-mouse="mid">
-              <div class="div-head-text" data-mouse="mid">第一章ホーム</div>
+            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html'" id="banner0" data-mouse="mid">
+              <div class="div-head-text" data-mouse="mid">ホーム</div>
               <div class="div-head-text-en" data-mouse="mid">HOME</div>
             </div>
       
