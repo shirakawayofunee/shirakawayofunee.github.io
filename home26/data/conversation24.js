@@ -748,7 +748,6 @@ export default {
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
       text: `ぐっ――！！`,
-      voice: `wav/CN/conversation24/vo_event_11032_28.wav`
     },
     {
       type: `dialogue`,
@@ -780,7 +779,7 @@ export default {
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
       text: `へっ、へへ……ふふふ……お前の実力なら、福音地に従わなくても、どうにもできないさ……`,
-      voice: `wav/CN/conversation24/vo_event_11032_12.wav`
+      voice: `wav/JP/conversation24/vo_event_11032#7.wav`
     },
     {
       type: `dialogue`,
@@ -802,7 +801,6 @@ export default {
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
       text: `うあああ――！！`,
-      voice: `wav/CN/conversation24/vo_event_11032_26.wav`
     },
     {
       type: `narration`,
@@ -811,6 +809,14 @@ export default {
     {
       type: `narration`,
       text: `「師匠」はシーゲルの溶けゆく姿を見、彼女が咲かせた悍ましい異形のものを見つめた。もっと早くこうすべきだった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf2.png`,
+      name: `蠢く花の泥`,
+      text: `……大丈夫、行って……お前が助けてくれる……`,
+      voice: `wav/JP/conversation24/vo_event_11032#20.wav`
     },
     {
       type: `dialogue`,
@@ -832,13 +838,6 @@ export default {
       type: `narration`,
       text: `彼女は女が懐に隠していた情報を見た。そしてもう一方……もっと厄介な相手がいる。`
     },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/armaf2.png`,
-      name: `蠢く花の泥`,
-      text: `……大丈夫、行って……お前が助けてくれる……`,
-      voice: `wav/CN/conversation24/vo_event_11032_8.wav`
-    }
+
   ]
 };
