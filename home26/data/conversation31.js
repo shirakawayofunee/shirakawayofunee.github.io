@@ -227,7 +227,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `——もちろん戻したい。`
+      text: `（心の声）——もちろん戻したい。`
     },
     {
       type: `narration`,
