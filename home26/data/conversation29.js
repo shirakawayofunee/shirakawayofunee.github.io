@@ -494,14 +494,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/higer.jpg`,
+      avatar: `img/dh/armaf.png`,
       name: `ヒゲル`,
       text: `緊急任務……「Garden」、我々の敵を排除しろ……`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/higer.jpg`,
+      avatar: `img/dh/armaf.png`,
       name: `ヒゲル`,
       text: `誰でもいい、みんなくそくらえ、まとめてやれ。このリストの奴ら、探して全員殺せ。`
     },
@@ -515,7 +515,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/higer.jpg`,
+      avatar: `img/dh/armaf.png`,
       name: `ヒゲル`,
       text: `殺せ！無謀な愚か者ども！あそこに手を出した！あいつらごときに！□□が壊され、□□□が奪われ、□□□を傷つけた！殺せ、全員殺せ！！`
     },
