@@ -88,7 +88,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `へえ、そう？`
     },
@@ -279,7 +279,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `……で、次は？`
     },
@@ -293,7 +293,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `いいこと言うね。まるで全部計算済みみたいに。`
     },
@@ -307,7 +307,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `その前に、上庭のために働けって？`
     },
@@ -379,7 +379,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `堇が気にしてる奴か……でも、お前が殺したんじゃないの？彼もお前と福音地が噛み合った犠牲者だろ？`
     },
@@ -393,7 +393,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `なら、なんで探す？皆殺しにして、失敗を取り戻す気？それとも状況が手に負えなくなって、犬として連れ戻したい？`
     },
@@ -411,7 +411,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `頭おかしいんじゃない？`
     },
@@ -469,8 +469,11 @@ export default {
       text: `あの時のこと、覚えてるよね。`
     },
     {
-      type: `narration`,
-      text: `レオポルド……`
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `レオポルド`,
+      text: `……`
     },
     {
       type: `narration`,
@@ -482,12 +485,12 @@ export default {
     },
     {
       type: `narration`,
-      text: `N.F.103年「Garden」庭院`
+      text: `（回想）N.F.103年「Garden」庭院`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `……お前か、急に来て、うざいな。`
     },
@@ -508,7 +511,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
+      avatar: `img/dh/impatient.png`,
       name: `レオポルド`,
       text: `ちっ、あの女はお前に従うけど、私は――`
     },
