@@ -406,11 +406,16 @@ export default {
     },
     {
       type: `narration`,
+      text: `（……）`
+    },
+    {
+      type: `narration`,
       text: `探偵の意識が戻ってきた。周囲はわからず、鮮紅と氷青の花棘が自分の体を貫いているのが見えた。あの二人が絡み合った時に爆発した汚染だ。<br>遠くで激しい戦闘音が聞こえた。`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/HUSH.jpg`,
       name: `HUSH作戦部隊`,
       text: `Xに異常発生、早期損耗、緊急で除去プログラム起動。全員除去。全員除去。`
     },
@@ -419,7 +424,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `クリスティーナ、場所はどこだ。教えてくれ。彼女たちはどこだ。<br>お前は死んだんじゃないだろうな。うっ——。`
+      text: `クリスティーナ、場所はどこだ。教えてくれ。彼女たちはどこだ。`
     },
     {
       type: `narration`,
@@ -428,14 +433,16 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/black_quartz.jpg`,
       name: `黒石英`,
       text: `観測庭に異常、指令更新、Xを緊急回収、生命保存。中心部の汚染が深刻すぎる。HUSH、集結して別の狂厄級能力者を排除せよ。<br>Xを回収、ここで派生した汚染物を排除、異常を報告せよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/black_quartz.jpg`,
       name: `黒石英`,
-      text: `もう一人の能力者……MBCCに移管。<br>今回の事故はコストをかけすぎた。損切りだ。我々の力は温存し、福音地に対応する。今、行動せよ。`
+      text: `もう一人の能力者……MBCCに移管。今回の事故はコストをかけすぎた。損切りだ。我々の力は温存し、福音地に対応する。今、行動せよ。`
     },
     {
       type: `narration`,
