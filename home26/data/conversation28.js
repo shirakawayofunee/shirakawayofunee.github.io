@@ -94,14 +94,14 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `私がどんな反応すると思った？泣き崩れる？取り乱す？ふふ、ありえないわ。こんなこと、彼女たちの自業自得よ。`
+      text: `どんな反応を期待してた？泣き喚く？絶望する？ハッ、まさか。あの子らの自業自得だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `何度も、何度も言ったよね。実力がないなら、でかい仕事を受けるな。自分を守るだけでいい、私を呼ぶなって。`
+      text: `何度も、何度も言ったはずだ。実力もないのに大口を叩くなと。自分の身だけ守っていればいい。私に構うなと。`
     },
     {
       type: `dialogue`,
@@ -115,21 +115,21 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `ただ、上庭の小娘、君、今年何歳だ？25？26？上庭の罐から這い出て何年になる？`
+      text: `ただ、上庭の小娘、君、今年何歳だ？25？26？上庭の培養槽から這い出して何年になる？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `あの紙切れを残したのは……私を怒らせたかったのか？`
+      text: `あの書き置き……私を怒らせるつもりか？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `私を舐めてるのか？`
+      text: `私を侮っているのか？`
     },
     {
       type: `narration`,
@@ -210,42 +210,42 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `復讐を頼む人たちはめっちゃ苦しんでる。一度だけ、一度だけ倒されただけで。痛みが鮮明で、抗えず、もう立ち直れないって思う。`
+      text: `復讐を願う連中は皆、絶望を知った顔をする。一度負けただけで、二度と立ち直れないと思い込む。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `ふん、違うよ……何度か経験すればわかる。どんなものでも倒せる。決意して、どんな代償でも払えば。`
+      text: `ハッ、違うな……何度か経験すればわかる。殺せないものなどない。代償を惜しまなければ、必ず潰せる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `目には目を、歯には歯を。代償をわからせてやる。そうすれば、誰もが学ぶ――業師のものは絶対に触るな。`
+      text: `目には目を、歯には歯を。代償をわからせてやる。誰であろうと、『業師』の所有物には指一本触れさせない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `私のもの、奪われたものは必ず取り戻す。廃墟になっても私の手に戻す。その後……`
+      text: `奪われたものは取り返す。例え廃墟になろうとも、私の手に戻す。その後……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `人は強い。廃墟の上でも育つ。折られた場所に新芽が生え、焼かれた場所に新枝が伸びる。`
+      text: `人は強くなる。廃墟の上でも花は咲く。折られた場所から新芽が吹き、焼かれた場所から枝が伸びる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `私を冒涜した奴らはみんなくそくらえ。そしていつも、私は生まれ変わる。こうやって――`
+      text: `私を冒涜した者は皆、同じ末路を辿る。そうして私は、何度でも新生する。こうやって――`
     },
     {
       type: `narration`,
@@ -268,7 +268,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `人の人生を簡単に弄べると思ってる？私を簡単に潰せると？`
+      text: `人の人生を簡単に弄べると思ってる？私を容易く踏み潰せると？`
     },
     {
       type: `narration`,
@@ -323,7 +323,7 @@ export default {
       position: `left`,
       avatar: `img/dh/L_401.png`,
       name: `業師`,
-      text: `これでも殺せないんでしょう、上庭の化け物め。なら咲くといいわ……傲慢で非人道的な悪魔がどのような花を咲かせるのか、君の命がどれだけ醜いのかを見せてもらうわ。`
+      text: `君も簡単には死なんのだろう、上庭の化け物。なら咲いてみせろ……傲慢で非人道的な悪魔がどのような花を咲かせるのか、君の命がどれだけ醜いのかを見せてもらうわ。`
     },
     {
       type: `dialogue`,
