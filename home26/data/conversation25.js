@@ -133,7 +133,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `おっと、大作戦は無事に終わった？`
     },
     {
@@ -155,14 +155,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `ふん、礼はいらないよ。感謝すべきことは山ほどあるけどね。私が優しく教えてあげなかったら、FACの総司令も、あのちっちゃい指揮官たちも、戦場に立つ命なんてなかったんだから。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `今回のなんちゃら西区防衛作戦、最大の勲章は私にくれるべきでしょ？`
     },
     {
@@ -188,7 +188,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `シャーロームはレオポルドを見て、穏やかな笑みを浮かべた。`
+      text: `シャーロームは業師を見て、穏やかな笑みを浮かべた。`
     },
     {
       type: `dialogue`,
@@ -199,20 +199,20 @@ export default {
     },
     {
       type: `narration`,
-      text: `レオポルドは驚いたように見せかけた。`
+      text: `業師は驚いたように見せかけた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `マジ？いいの？私を許して、受け入れてくれるの？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `うーん、やっぱ無理、演技しきれねえ。`
     },
     {
@@ -244,28 +244,28 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `ふふ……憎しみの連鎖、因果応報、いつ終わるかって？今を大切にしろ、だろ？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `私は殺し屋組織の頭だよ。仇を求めてくる奴も、復讐を頼む奴も数え切れない。お前が私に道徳を語る？私が正直で善良だからって、邪魔しないって？お前が遠慮するのは、私が来る奴を殺すからだろ。理解なんて強者の特権だ。私が無視できないほど強くなる前、誰も私の声に耳を貸さなかった。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `この世界は、私が大人しく慎重に生きても優しくなんてしてくれない。自由に生きるには力が必要だ。そして――血には血で償うしかない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `そのくらい、今教える必要ある？`
     },
     {
@@ -277,7 +277,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `シャーロームは両者の激戦中に舞い落ちるレオポルドが作り出した結晶の花びらを受け止め、それを軽く揉みながら、どこか愛でるように眺めた。`
+      text: `シャーロームは両者の激戦中に舞い落ちる業師が作り出した結晶の花びらを受け止め、それを軽く揉みながら、どこか愛でるように眺めた。`
     },
     {
       type: `dialogue`,
@@ -309,7 +309,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `シャーロームはレオポルドを見、若すぎる顔と白すぎる肌を見た――虞美人の時間は遠い昔に止まったようだった。`
+      text: `シャーロームは業師を見、若すぎる顔と白すぎる肌を見た――虞美人の時間は遠い昔に止まったようだった。`
     },
     {
       type: `narration`,
@@ -328,13 +328,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `レオポルドは上庭の執行人を睨み、長い間、新たな花剣を抜き、冗談の余地を完全に消した。`
+      text: `業師は上庭の執行人を睨み、長い間、新たな花剣を抜き、冗談の余地を完全に消した。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `……私の死を呪ってる？礼儀知らずな奴。`
     },
     {
@@ -362,7 +362,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `好きに推測しろよ。当たってもお前にはどうしようもない。福音地の秘術、解けないだろ？でなきゃ、何年も探して、福音地の入口すら見つけられない廃物だろ。`
     },
     {
@@ -383,7 +383,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `気持ち悪いな。私は自分のためだけだ。「Garden」を引き受けたのだって、彼女たちがいい世話してくれるから、私が楽しくなるからだ。`
     },
     {
@@ -395,7 +395,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `その言葉にレオポルドは鳥肌が立った。その瞬間、彼女が無数の敗者から引き抜いた結晶の武器が、青い光に撃ち砕かれた。`
+      text: `その言葉に業師は鳥肌が立った。その瞬間、彼女が無数の敗者から引き抜いた結晶の武器が、青い光に撃ち砕かれた。`
     },
     {
       type: `narration`,
@@ -403,7 +403,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `レオポルドは覚えている。その攻撃は狂厄に極めて強い破壊力を持つ。誘拐事件では、突然降り注いだ光の雨が福音地の狂厄爆弾を一車分丸ごと破壊した。能力者にとって、これは上庭の人造死神だ。`
+      text: `業師は覚えている。その攻撃は狂厄に極めて強い破壊力を持つ。誘拐事件では、突然降り注いだ光の雨が福音地の狂厄爆弾を一車分丸ごと破壊した。能力者にとって、これは上庭の人造死神だ。`
     },
     {
       type: `dialogue`,
@@ -428,11 +428,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `シャーロームは死神を越え、レオポルドを見た。その女は黒石英を前に微動だにせず、新たな花剣を抜いていた。この道のりで相当な力を「準備」したのだろう。`
+      text: `シャーロームは死神を越え、業師を見た。その女は黒石英を前に微動だにせず、新たな花剣を抜いていた。この道のりで相当な力を「準備」したのだろう。`
     },
     {
       type: `narration`,
-      text: `君たちは彼女を過小評価してる……彼女はただ心に迷いがあり、死を避ける方法を無意識に探してるだけ……別の場所で死にたいと願ってる。でも、それは無理だよ、レオポルド……全力を出さなきゃ、君の花は咲く前に揉み潰される。`
+      text: `君たちは彼女を過小評価してる……彼女はただ心に迷いがあり、死を避ける方法を無意識に探してるだけ……別の場所で死にたいと願ってる。でも、それは無理だよ、業師……全力を出さなきゃ、君の花は咲く前に揉み潰される。`
     },
     {
       type: `narration`,
@@ -459,20 +459,21 @@ export default {
       name: `シャーローム`,
       text: `私が君の情報を少し漏らしただけで、馬鹿な子が我先にと追いかけてきたよ……`
     },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
-      text: `……それは？`
-    },
+
     {
       type: `narration`,
       text: `シャーロームは懐から青い水晶の花を数輪取り出した。三色堇、カーネーション、秋桜、百合……`
     },
     {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
+      name: `業師`,
+      text: `……それは？`
+    },
+    {
       type: `narration`,
-      text: `それを見た瞬間、レオポルドの瞳が急に縮んだ。その反応を、シャーロームは微笑みながらすべて見届けた。`
+      text: `それを見た瞬間、業師の瞳が急に縮んだ。その反応を、シャーロームは微笑みながらすべて見届けた。`
     },
     {
       type: `dialogue`,
@@ -493,7 +494,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `さあ、「Garden」の主はどうする？どこまでできる？`
+      text: `（心の声）<br>さあ、「Garden」の主はどうする？どこまでできる？`
     }
   ]
 };

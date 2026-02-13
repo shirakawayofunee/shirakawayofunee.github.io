@@ -233,14 +233,14 @@ const chapterList = [
     category: "flower",
     title: "405「後日談1」",
     subtitle: "Flora",
-    dateLabel: "N.F.113/8/26",
+    dateLabel: "N.F.113.8.26",
   },
   {
     id: "conversation33",
     category: "flower",
     title: "406「後日談2」",
     subtitle: "Flora",
-    dateLabel: "N.F.113/9/",
+    dateLabel: "N.F.113.9",
   },
   {
     id: "conversation34",
@@ -499,7 +499,6 @@ function renderScript(script) {
               voiceBtnHtml += '<span class="voice-group">'; 
               line.voice.forEach((v, subIndex) => {
                   const safePath = v.path.replace(/#/g, '%23');
-                  // 生成单字按钮 (注意：这里去掉了所有换行符)
                   voiceBtnHtml += `<button id="voice-btn-${index}-${subIndex}" class="voice-tag" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', ${subIndex})" title="Play ${v.label}">${v.label}</button>`;
               });
               voiceBtnHtml += '</span>';
