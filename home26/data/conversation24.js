@@ -50,6 +50,13 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/wuyan.png`,
+      name: `「師匠」`,
+      text: `……`,
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
       text: `うわーっ、この仕事、めっちゃ疲れた！寝すぎて腰も背中も痛いよ……`,
