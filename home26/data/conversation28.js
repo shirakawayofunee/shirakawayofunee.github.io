@@ -82,10 +82,7 @@ export default {
     {
       type: `narration`,
       text: `執行人は答えず、血に塗れた業師を見、彼女の真っ赤な瞳を見つめた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `dialogue`,
@@ -95,7 +92,6 @@ export default {
       text: `落ち着いているみたいだな。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_32.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
       ]
     },
     {
@@ -167,18 +163,12 @@ export default {
     {
       type: `narration`,
       text: `4、5人のHUSH精鋭が危険を察知し、執行人の前に飛び出した。だが、赤い光が閃き、串刺しのように一瞬で貫かれた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `narration`,
       text: `業師はすべての障害を砕き、執行人に向かって突進した。瞳は血のように赤く燃えていた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `dialogue`,
@@ -194,10 +184,7 @@ export default {
     {
       type: `narration`,
       text: `業師の足元には残骸が積み重なり、道すがら血が広がっていた。彼女の手の花剣は砕け、脇に投げ捨て、頭を下げて笑いながら呟いた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `dialogue`,
@@ -214,10 +201,7 @@ export default {
       type: `narration`,
       text: `最後の2人のHUSH精鋭が、彼女の空っぽの手を見て、攻撃の隙を狙った。`,
     },
-    {
-      type: `narration`,
-      text: `だが、触れる前に貫かれ、砕け、倒れた。`,
-    },
+
     {
       type: `dialogue`,
       position: `left`,
@@ -230,11 +214,12 @@ export default {
     },
     {
       type: `narration`,
+      text: `だが、触れる前に貫かれ、砕け、倒れた。`,
+    },
+    {
+      type: `narration`,
       text: `業師はそれらを踏みつけ、執行人に向かって一歩ずつ進んだ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `dialogue`,
@@ -283,18 +268,12 @@ export default {
     {
       type: `narration`,
       text: `彼女が手を上げると、足元の敗者たちが痙攣し、体内から赤い花芽が引き出され、瞬時に剣に凝縮した。業師はそれを振り上げた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `narration`,
       text: `密集した青い光と結晶の花刺が同時にぶつかり合い、粉々に砕けた。彼女は舞い散る結晶の破片を抜け、進む足を何も止められなかった。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `dialogue`,
@@ -365,34 +344,22 @@ export default {
     {
       type: `narration`,
       text: `彼女は剣を振り、黒石英のレーザーとぶつかった。青い光が彼女の狂厄の長剣を浄化し、赤い結晶が地面に落ち、千万の塵に砕けた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `narration`,
       text: `業師は惜しまず、左胸を押さえ、引いた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `narration`,
       text: `一瞬、鮮紅の力が胸から噴き出し、競うように外へ咲き、手元に集まった。狂厄級能力者が命で凝縮した鮮紅の長剣を、業師は振り、青い光束を断ち切った。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `narration`,
       text: `黒石英がより鋭い警告を発し、信号が上庭に直結した。次の瞬間、青い光の雨が天井を突き破り、業師に襲いかかった。彼女は剣を宙に舞わせ、花傘を開くように光雨を防ぎ、姿を消した。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `dialogue`,
@@ -408,10 +375,7 @@ export default {
     {
       type: `narration`,
       text: `彼女は執行人の前に瞬時に現れ、剣先が地面に血紅の痕を刻んだ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `dialogue`,
@@ -421,7 +385,6 @@ export default {
       text: `滅相もない、業師。君の時は私より遥かに長い。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_15.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
       ]
     },
     {
@@ -432,7 +395,6 @@ export default {
       text: `運命（さだめ）が何か、君の方がよくわかっているはずだ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_9.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
       ]
     },
     {
@@ -441,42 +403,27 @@ export default {
       avatar: `img/dh/black_quartz.jpg`,
       name: `黒石英`,
       text: `緊急破壊――`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `narration`,
       text: `黒石英は判断を下した。敵対能力者を止められず、即座に執行人に照準を合わせた。だが、遅かった。赤い光が黒石英を瞬時に砕き、執行人の胸を直線的に貫き、深く突き刺し――`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `narration`,
       text: `<img src="img/cg/hua_401_1.png">`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `narration`,
       text: `業師は後ろに引き、執行人の胸から花を引き抜いた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `narration`,
       text: `花が執行人の胸から咲き乱れ、わずかな血色が急速に消えた。魂と命が狂厄となり、激昂する業師に引き抜かれ、業師の手で燃えた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `dialogue`,
@@ -503,10 +450,7 @@ export default {
     {
       type: `narration`,
       text: `執行人は何もせず、空中で灰と化した黒石英を、胸から溢れる結晶の花を、上庭の封鎖がすべて破壊されるのを見ていた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `image`,
@@ -541,7 +485,6 @@ export default {
       text: `ここまで辿り着けるのは君だけだ。本当に<span>見事</span>だ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_34.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
       ]
     },
     {
@@ -552,32 +495,20 @@ export default {
       text: `君がこれほどまでに強く反骨精神を持っていてくれてありがとう……やっぱり君が勝った。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_22.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
       ]
     },
     {
       type: `narration`,
       text: `<img src="img/cg/hua_401_2.png">`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
     },
     {
       type: `narration`,
       text: `破壊が極まり、執行人の目に冷たい三角形の記号が閃いた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
+
     },
     {
       type: `narration`,
       text: `引き抜かれた花には異様な恐怖の気配が染み、背後に何か巨大なものが凝縮し、未曾有の怪物が現れた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
-        { label: '日', path: 'wav/JP/conversation28/vo_event_11041_7.wav' },
-      ]
     },
     {
       type: `narration`,

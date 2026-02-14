@@ -855,6 +855,41 @@ const VoiceManager = {
     // 激活当前按钮动画
     this.setButtonState(index, subIndex, true);
 
+    // === Google Tag Manager 埋点开始 (新增代码) ===
+    // ============================================================
+
+    try {
+      // 1. 提取文件名 (例如: vo_event_11041_34.wav)
+      const fileName = src.split('/').pop();
+
+      // 2. 获取当前章节标题 (利用全局变量 chapterList 和 currentChapterIndex)
+      // 这样你在后台不仅知道点了哪个语音，还知道是在哪一章点的
+      let currentChapTitle = "Unknown";
+      if (typeof chapterList !== 'undefined' && typeof currentChapterIndex !== 'undefined') {
+           if (chapterList[currentChapterIndex]) {
+               currentChapTitle = chapterList[currentChapterIndex].title;
+           }
+      }
+
+      // 3. 推送数据
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+          'event': 'voice_play',              // GTM 触发器名称
+          'voice_filename': fileName,         // 语音文件名 (核心数据)
+          'voice_path': src,                  // 完整路径
+          'chapter_title': currentChapTitle,  // 章节标题
+          'play_mode': this.isAutoMode ? 'auto' : 'manual' // 区分是自动播放还是用户手点的
+      });
+      
+      // 方便调试：在控制台打印一下
+      // console.log("GTM Pushed:", fileName, currentChapTitle, this.isAutoMode ? 'auto' : 'manual');
+
+  } catch (err) {
+      console.error("GTM Tracking Error:", err);
+  }
+  // ============================================================
+  // === 埋点结束 ===
+
     const playPromise = this.audio.play();
     if (playPromise !== undefined) {
         playPromise.catch(err => {
