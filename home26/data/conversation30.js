@@ -44,7 +44,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は、上庭の執行人の手を振り払った。`
+      text: `彼女は、上庭のシャーロームの手を振り払った。`
     },
     {
       type: `dialogue`,
@@ -57,7 +57,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `そう。彼はあまりにも多くの力を得て、自身の根源に近づいた。上庭は怖がって、最も厳しいルールで彼が黒環を吞噬するのを止めた。一度、二度……そして三度目で、彼は確実に死ぬ。`
     },
     {
@@ -71,14 +71,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `ええ、それが上庭です。必死に真相と正解を求めながら、リスクと未知を恐れ、災厄の再来に怯えている。あらゆる保険としてのルールを定め、全てを防ごうとするあまり、自分自身も含めた全員を袋小路へと追いやっている。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `福音地がどのようなものかについては、私よりも君の方が詳しいでしょう？`
     },
     {
@@ -92,7 +92,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `そうね。一方は『狂厄』を食い止めるために全てを犠牲にし、もう一方は『狂厄』を得るために全てを犠牲にする。災厄が目覚める前に、人類は自ら堕落し狂い、互いに噛みつき合って全てを焼き尽くすのです。`
     },
     {
@@ -106,39 +106,39 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `ええ、その時はいずれ訪れます。ですがその前に――`
     },
     {
       type: `narration`,
-      text: `執行人は再び業師の手首を掴んだ。今度は、業師ですら振りほどくことができない。顔を上げると、あの女の顔がすぐ目の前にあった。`
+      text: `シャーロームは再び業師の手首を掴んだ。今度は、業師ですら振りほどくことができない。顔を上げると、あの女の顔がすぐ目の前にあった。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `君は、別の可能性を見たくはないですか？ この愚かな流れを拒絶したくはないのですか？ 私の言う通りにして、彼を探しに行くのです。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `私は彼を縛るルールを壊し、すべての監視から逃がし、私の手さえ届かない場所へと送りました。ですが、これだけでは足りない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `私が届かない場所に行って。君に行ってほしいのです。君はこの狭間における最強の存在であり、長きにわたり両側の世界を渡り歩いてきた唯一の者。君になら、彼をどちらの勢力にも渡さず守り抜くことができる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `たった一人を守るだけなら、君には造作もないことでしょう。`
     },
     {
@@ -152,14 +152,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
-      text: `何言ってるの？私は任期中、常に最も効率的な執行人でした。あらゆるニーズを実現してきた私が、裏切ったなどと誰に言わせるものですか。`
+      name: `シャーローム`,
+      text: `何言ってるの？私は任期中、常に最も効率的なシャーロームでした。あらゆるニーズを実現してきた私が、裏切ったなどと誰に言わせるものですか。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `ただ……この僵化した盤面で、怪物の縄を少し緩めてやっただけに過ぎません。`
     },
     {
@@ -173,21 +173,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `計算などしませんよ。彼を自由にするのです、コクリコ。上庭だろうと福音地だろうと、あるいは運命に対してだろうと、復讐したいならこれが好機です。彼に派手に暴れさせればいい。きっと胸がすくでしょう。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `依頼の報酬として、私の力を借りて生き延び、新たな生を探すもよし。私を殺して泥のように踏みつけ、さらなる高みへ剣を振るうもよし。好きに試すといい。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `私の後に、君に機会を与える者は二度と現れません。`
     },
     {
@@ -226,11 +226,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師は再び執行人の手を振り払い、二歩下がって完全に距離を取った。`
+      text: `業師は再びシャーロームの手を振り払い、二歩下がって完全に距離を取った。`
     },
     {
       type: `narration`,
-      text: `彼女は執行人を見て、ある可笑しなことを思い出した。`
+      text: `彼女はシャーロームを見て、ある可笑しなことを思い出した。`
     },
     {
       type: `dialogue`,
@@ -250,7 +250,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `その通り。コスト削減は私の個人的な趣味に過ぎず、ニーズの実現こそが絶対目的。『必要な犠牲』は常套手段です。それが彼らの意志。<span>私</span>を通してそれを見極めれば、僥倖など期待しなくなるでしょう。`
     },
     {
@@ -268,7 +268,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x6.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `――使用期限内に、こっそり壊れた道具だけ。`
     },
     {
@@ -360,13 +360,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `執行人は止めなかった。崩壊する裂け目から蠢く光の触手が伸び、狂乱の光を投げかける。シャーロームの顔に映る蝋人形のような微笑みには、どこか不気味な亀裂が走り、まるで悲願が達成されたかのようだった。`
+      text: `シャーロームは止めなかった。崩壊する裂け目から蠢く光の触手が伸び、狂乱の光を投げかける。シャーロームの顔に映る蝋人形のような微笑みには、どこか不気味な亀裂が走り、まるで悲願が達成されたかのようだった。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `それでいい……今回もまた、私は代償を惜しまない。`
     },
     {
@@ -430,7 +430,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `執行人は亀裂の前に立ち、光の触手の間で、すべてが業師に集まり、命と力を与え、名状しがたい感情を伝えた。初めて、彼女はその人形から感情を感じた。`
+      text: `シャーロームは亀裂の前に立ち、光の触手の間で、すべてが業師に集まり、命と力を与え、名状しがたい感情を伝えた。初めて、彼女はその人形から感情を感じた。`
     },
     {
       type: `narration`,
@@ -438,34 +438,34 @@ export default {
     },
     {
       type: `narration`,
-      text: `力の起動条件は全て満たされた。執行人は静かに呟いた。`
+      text: `力の起動条件は全て満たされた。シャーロームは静かに呟いた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x6.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `君が受け入れないのはわかってた。君たちの感情はあまりにも熱烈で、裸のまま輝いてる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x6.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `君の命が尽きてなかったら、もっと穏やかな方案を選びたかった。でも、その時間はもうない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x7.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `だから、思う存分抗って……私は全部理解している、全部受け入れるつもりだ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x7.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `私が触れた花は枯れる運命でも、君を生かさなきゃいけない。`
     },
     {
@@ -509,7 +509,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/xzj.png`,
-      name: `執行人`,
+      name: `シャーローム`,
       text: `？！`
     },
 
