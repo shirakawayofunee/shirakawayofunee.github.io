@@ -1100,8 +1100,7 @@ export default {
       name: `シャーローム`,
       text: `何言ってるの？私は任期中、常に最も効率的な執行人でした。あらゆるニーズを実現してきた私が、裏切ったなどと誰に言わせるものですか。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation29/vo_event_11042_53.wav' },
-        { label: '日', path: 'wav/JP/conversation29/vo_event_11042_7.wav' },
+        { label: '中', path: 'wav/CN/conversation29/vo_event_11042_34.wav' },
       ]
     },
     {
@@ -1112,7 +1111,6 @@ export default {
       text: `ただ……この僵化した盤面で、怪物の縄を少し緩めてやっただけに過ぎません。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation29/vo_event_11042_53.wav' },
-        { label: '日', path: 'wav/JP/conversation29/vo_event_11042_7.wav' },
       ]
     },
     {
