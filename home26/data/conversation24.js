@@ -608,15 +608,15 @@ export default {
     },
     {
       type: `narration`,
-      text: `N.F.113年8月19日午前2:23<br>錆びた川、内海放射区付近`
+      text: `N.F.113年8月19日14:23<br>錆の川、内海近接汚染区域`
     },
     {
       type: `narration`,
-      text: `錆びた川の境界、黒ずくめの女が素早く歩き、時折空間の一端で消え、次の瞬間、別の場所に現れた。`
+      text: `錆の川の境界。全身黒ずくめの女が疾走していた。時折空間の一端から消失し、瞬時に別の場所へと現れる。`
     },
     {
       type: `narration`,
-      text: `ようやく安心できる場所を見つけた。`
+      text: `彼女はようやく、一息つける場所を見つけた。`
     },
     {
       type: `dialogue`,
@@ -630,90 +630,90 @@ export default {
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `上庭のHUSH部隊……西区から新都市まで、ずっと邪魔してくる。まるで私たちを見透かしてるみたい……指揮してるのはあの能力者、シャーローム……`
+      text: `HUSHめ……西区からニューシティまで、ずっと妨害してきやがった。まるでこちらの動きが見えているかのように……指揮しているのはあの能力者、シャーロームか……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `やっかいなことになった……`
+      text: `厄介なことになった……`
     },
     {
       type: `narration`,
-      text: `シーゲルは裂け目に静かに寄りかかり、ひどい傷を負っていた。もう逃げる力は残っていなかった。`
+      text: `黒衣の女は裂け目の中で静かに寄りかかった。傷は深く、これ以上逃げ続ける力は残っていない。`
     },
     {
       type: `narration`,
-      text: `誰も助けに来ない。それが彼らの構造だ。地上で動く幹部は互いに独立し、生死は自己責任。`
+      text: `支援は来ない。それが彼らの構造だ。地上で活動する幹事は互いに独立しており、生死は自己責任。`
     },
     {
       type: `narration`,
-      text: `それが上庭に対抗する唯一の方法だ。`
+      text: `それこそが、彼らが上庭に対抗できる唯一の手段だった。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `私たちが外から少しずつ力を掘り起こしてる間に、上庭はすでに狂厄の深部に入る方法を見つけてる……集団観測、最低でも第8層……`
+      text: `我々が外側から慎重に少しずつ力を掘り起こしている間に、上庭は狂厄の深層へ侵入する方法を見つけていたのか……群集観測、少なくとも深度8……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `いや……そんな深い力を使えるはずがない。さもないと、すべて終わってた。私たちが勝てるわけない……`
+      text: `いや……奴らもまだそこまで深い力を行使できてはいないはずだ。そうでなければとっくに終わっている。我々に勝ち目などない……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `今は観測と連絡だけ……狂厄の世界で集団意志の変動を観測したから、3月にあんな正確な誘導ができた……10年前の内海横断行動も、上庭の直接指揮があった……`
+      text: `今のところ奴らは観察し、連絡を取っているに過ぎない……狂厄の世界で群集意志の波動を観測できたからこそ、3月にあれほど正確な誘導ができたのだ……10年前の内海横断作戦でも、上庭の直接指揮があった……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `でも、観測だって長くは続けられない……どんな方法でも、観測者は必ず侵蝕される。つまり……上庭には予備の観測者がいる……彼らの技術、こんなレベルまで来てるの？`
+      text: `だが観測といえど、そう長くは続けられないはずだ……いかなる方法であれ、観測者は必ず腐蝕される。つまり……上庭には代わりの観測者がいるということか……奴らの技術はそこまで到達しているのか……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `もしすべてがあの執行人の観測後の計算なら、もし彼女が本当に何らかの方法で狂厄の深層領域に潜入してるなら……彼女が見るもの、彼女がすることは、福音地には想像もつかない。`
+      text: `もし全てがあの執行人の観測に基づいた計算だとしたら、もし彼女が何らかの方法で深層狂厄領域に潜入しているとしたら……彼女が何を見て、何をしでかすか、福音地（我々）の想像も及ばない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `上庭はどんな技術でこんな怪物を手なずけてる？その技術は□□□に効くのか？`
+      text: `上庭はまたどんな技術を使って、あんな怪物を手元に繋ぎ止めているんだ？ その技術は□□□にも有効なのか？`
     },
     {
       type: `narration`,
-      text: `そう考えると、シーゲルはゾッとした。恐怖と憎悪が同時に溢れた。`
+      text: `そこまで考え、黒衣の女は身震いした。恐怖と憎悪が同時に溢れ出す。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `どんなことがあっても……阻止しないと、抹殺しないと……執行人……さもないと、BR-002が……`
+      text: `いずれにせよ……阻止しなければ。抹殺しなければならない……執行人Xを……さもなくば、BR-002は……`
     },
     {
       type: `narration`,
-      text: `彼女が苦しみながら考えていると、暗闇から聞き慣れた声が響いた。`
+      text: `彼女が苦悩していると、暗闇の中から聞き覚えのある声が響いた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `「師匠」`,
-      text: `おや、シーゲルじゃない？数日ぶりなのに、なんでこんなボロボロなの。`,
+      text: `<span></span>シーゲルじゃない。数日見ないうちにずいぶん落ちぶれたわね。`,
       voice: `wav/CN/conversation24/vo_event_11032_7.wav`
     },
     {
@@ -721,7 +721,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `「師匠」`,
-      text: `死なないでよ、私の「Garden」、お前の小細工で隠れてるんだから。`,
+      text: `死ぬんじゃないわよ、私の『ガーデン』はまだその小細工に隠蔽を頼ってるんだから。`,
       voice: `wav/CN/conversation24/vo_event_11032_22.wav`
     },
     {
@@ -729,40 +729,40 @@ export default {
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `へっ……それは私の力じゃない。地下の力だよ。もうお前に専属だ。私、報酬を前払いしたのに、見たところ……お前、依頼を果たしてないね。`
+      text: `ククッ……あれは私の力ではない、地下の力だ。そしてそれは、既に君のものだ。君の要求に応じて報酬を前払いしてやったというのに、どうやら……君は依頼を果たさなかったようだな。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `むしろ……私たち全員を暴露させた。`
+      text: `それどころか……我々全員を危険に晒した。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
       name: `「師匠」`,
-      text: `そ？なら、ほんと・ご・め・ん。`,
+      text: `そ？なら、悪・か・っ・た・わ・ね`,
       voice: `wav/CN/conversation24/vo_event_11032_13.wav`
     },
     {
       type: `narration`,
-      text: `「師匠」は近づき、シーゲルの傷口に手を突っ込んだ。`
+      text: `「師匠」は歩み寄り、シーゲルに近づくと、片手をその傷口に突き刺した。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `ぐっ――！！`,
+      text: `がはっ――！！`,
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「師匠」`,
-      text: `セヴェロを騙したのはお前だろ……彼女に死にに行く情報と、あの気色悪いルーンを渡した。`,
+      text: `ガロファノを唆したのは君ね……死にに行くような情報を流し、あんな気味の悪いルーン文字まで持たせて。`,
       voice: `wav/CN/conversation24/vo_event_11032_11.wav`
     },
     {
@@ -770,7 +770,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「師匠」`,
-      text: `自分の福音地の仲間より私に助けを求めに来るなんて、捨てられたんだね。最後のご利用、ありがと……`,
+      text: `福音地の仲間じゃなく、私に助けを求めに来たってことは、見捨てられたってことでしょう。最後のご贔屓にしてあげるわ……`,
       voice: `wav/CN/conversation24/vo_event_11032_24.wav`
     },
     {
@@ -778,7 +778,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「師匠」`,
-      text: `これから、私の「Garden」は福音地と一切関係ないよ。`,
+      text: `今後、私の『ガーデン』は、君たち福音地とは一切無関係よ。`,
       voice: `wav/CN/conversation24/vo_event_11032_25.wav`
     },
     {
@@ -786,7 +786,7 @@ export default {
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `へっ、へへ……ふふふ……お前の実力なら、福音地に従わなくても、どうにもできないさ……`,
+      text: `カハッ……ふふ……ふふふふ……君の腕なら、福音地に従わずとも、奴らは君に手出しできまい……`,
       voice: `wav/JP/conversation24/vo_event_11032#7.wav`
     },
     {
@@ -794,36 +794,33 @@ export default {
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `いいよ……私の使命はもう果たした……`
+      text: `構わんさ……私の使命は終わった……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `シーゲル`,
-      text: `お前がなぜこうしてるか、わかってるよ……この力と何を交換したか、裏切った理由、全部知ってる……`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/armaf2.png`,
-      name: `シーゲル`,
-      text: `うあああ――！！`,
+      text: `君がなぜこんなことをするのか、私には分かるぞ……この力のために、君が何を差し出したのかもな。君が裏切った理由、全て知っているぞ……`
     },
     {
       type: `narration`,
-      text: `言葉を終える前に、「師匠」が手を振ると、シーゲルの体内から巨大な漆黒の、まるで生きているように蠢く異形の花が引き抜かれた。シーゲルが完全に人形を失い、黒衣の上にその花が咲くだけになった。`
+      text: `彼女が言い終わるのを待たず、業師は腕を振るい、彼女の体内から巨大な漆黒の、まるで生き物のように蠢く異形の花を引きずり出した。シーゲルが完全に人の形を失い、黒衣の上に咲くその花だけが残るまで。`
     },
     {
       type: `narration`,
-      text: `「師匠」はシーゲルの溶けゆく姿を見、彼女が咲かせた悍ましい異形のものを見つめた。もっと早くこうすべきだった。`
+      text: `業師はシーゲルの崩れゆく形体を見つめ、彼女が咲かせた獰猛で恐ろしい異形の物を見つめる。`
+    },
+    {
+      type: `narration`,
+      text: `もっと早くこうすべきだったのだ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf2.png`,
       name: `蠢く花の泥`,
-      text: `……大丈夫、行って……お前が助けてくれる……`,
+      text: `……いいわ、行きなさい……そして私の力に……`,
       voice: `wav/JP/conversation24/vo_event_11032#20.wav`
     },
     {
@@ -831,7 +828,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「師匠」`,
-      text: `だって、私がその気だったから。`,
+      text: `当然よ。私がそうしたいからそうしたの。`,
       voice: `wav/CN/conversation24/vo_event_11032_21.wav`
     },
     {
@@ -839,12 +836,12 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「師匠」`,
-      text: `次は……`,
+      text: `さて、次は……`,
       voice: `wav/CN/conversation24/vo_event_11032_20.wav`
     },
     {
       type: `narration`,
-      text: `彼女は女が懐に隠していた情報を見た。そしてもう一方……もっと厄介な相手がいる。`
+      text: `彼女はシーゲルが懐に隠し持っていた情報に目をやる。まだ片付いていない……もっと厄介な奴がもう一人残っている。`
     },
 
   ]
