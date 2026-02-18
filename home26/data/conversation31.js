@@ -631,10 +631,9 @@ export default {
       position: `left`,
       avatar: `img/dh/x8.png`,
       name: `シャーローム`,
-      text: `彼女たちも良い花でした。このまま折られてしまうよりは、私の手元に置いて、予備にするのも悪くない――`,
+      text: `彼女たちも良い花だ。このまま折られてしまうよりは、私の手元に置いて、予備にするのも悪くない――`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11043_33.wav' },
       ]
     },
     {
@@ -653,10 +652,9 @@ export default {
       position: `left`,
       avatar: `img/dh/x8.png`,
       name: `シャーローム`,
-      text: `冗談だ。もちろん、やはり君が一番です。`,
+      text: `冗談、勿論君が一番だよ。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11043_33.wav' },
       ]
     },
     {
