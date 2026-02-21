@@ -631,7 +631,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x8.png`,
       name: `シャーローム`,
-      text: `彼女たちも良い花だ。このまま折られてしまうよりは、私の手元に置いて、予備にするのも悪くない――`,
+      text: `彼女たちも良い花だ。このまま折られてしまうよりは、私の手元に置いて、予備にするのもよい――`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11043_33.wav' },
       ]
@@ -652,7 +652,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x8.png`,
       name: `シャーローム`,
-      text: `冗談、勿論君が一番だよ。`,
+      text: `――冗談、君がいいんだ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11043_33.wav' },
       ]
