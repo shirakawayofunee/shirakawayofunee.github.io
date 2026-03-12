@@ -321,7 +321,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `ほら、小娘、しょげないで。見ず知らずの人間に眼中に入れられてないだけだろ。`,
+      text: `ほら、ガキ、しょげるのはやめろ。軽くあしらわれたくらい、どうということもない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_40.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_31.wav' },
