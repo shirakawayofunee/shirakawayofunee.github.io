@@ -62,7 +62,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `ほら、ドアを叩くのやめなよ。これはFACの超装甲車だよ、いつもぶっ壊してる金庫じゃないんだから。`,
+      text: `ほら、ドアを叩くのやめな。これはFACの超装甲車だ、いつもぶっ壊してる金庫じゃないんだから。`,
       voice: `wav/CN/conversation21/vo_event_11027_30.wav`
     },
     {
@@ -70,7 +70,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `まあ、ムキにならないでよ。君たちだって汚い手で私の人を縛ったじゃない？`,
+      text: `まあ、ムキにならないで。君たちだって汚い手で私の人を縛ったじゃない？`,
       voice: `wav/CN/conversation21/vo_event_11027_55.wav`
     },
     {
@@ -86,7 +86,7 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `今回の西区作戦はめっちゃ大事だよ。BR-002を封鎖できれば、西区は救われる。たくさんの無垢な人が城邦に見捨てられずに済む！今はあんたが気まぐれ起こす時じゃない！`,
+      text: `今回の西区作戦はめっちゃ大事だ。BR-002を封鎖できれば、西区は救われる。たくさんの無垢な人が城邦に見捨てられずに済む！今はあんたが気まぐれ起こす時じゃない！`,
       voice: `wav/JP/conversation21/vo_event_11027_44.wav`
     },
     {
@@ -94,7 +94,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `ふん、知ってるよ。私がそんなの気にしないってこと、君もわかってるでしょ。`,
+      text: `ふん、知ってる。私がそんなの気にしないってこと、君もわかってるでしょ。`,
       voice: `wav/CN/conversation21/vo_event_11027_32.wav`
     },
     {
@@ -102,7 +102,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `連絡先を教えてよ。君の大好きな執行人お姉さんに電話かけたいな。`,
+      text: `連絡先を教えて。君の大好きな執行人お姉さんに電話かけたいな。`,
       voice: `wav/CN/conversation21/vo_event_11027_18.wav`
     },
     {
@@ -114,7 +114,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `おっと、必要なくなった。彼女から君にかけてきたよ。`,
+      text: `おっと、必要なくなった。彼女から君にかけてきた。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_57.wav' },
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_17.wav' },
@@ -132,7 +132,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `しっ、大人が話してるんだから、子供は口出ししない。君、ミュートにしたよ。`,
+      text: `しっ、大人が話してるんだから、子供は口出ししない。君、ミュートにした。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_46.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_26.wav' },
@@ -210,7 +210,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `今ならまだ交渉する余地があるよ、「業師」。`,
+      text: `今ならまだ交渉する余地がある、「業師」。`,
       voice: `wav/CN/conversation21/vo_event_11027_45.wav`
     },
     {
@@ -218,7 +218,7 @@ export default {
       position: `left`,
       avatar: `img/dh/smile0.png`,
       name: `「業師」`,
-      text: `ふっ、君のHUSH部隊なら、6月から私の邪魔をしていたじゃない。そんなつれないことを言わないでよ。`,
+      text: `ふっ、君のHUSH部隊なら、6月から私の邪魔をしていたじゃない。そんなつれないことを言わないで。`,
       voice: `wav/CN/conversation21/vo_event_11027_8.wav`
     },
     {
@@ -242,7 +242,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「業師」`,
-      text: `運転してるのは福音地の傀儡造物。狙撃しても無駄よ。この道中で何かあって車が減速したら、爆弾は即爆発する。その時、半径1キロのM値は2000超えるよ。`,
+      text: `運転してるのは福音地の傀儡造物。狙撃しても無駄。この道中で何かあって車が減速したら、爆弾は即爆発する。その時、半径1キロのM値は2000超える。`,
       voice: `wav/CN/conversation21/vo_event_11027_51.wav`
     },
     {
@@ -250,7 +250,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「業師」`,
-      text: `爆弾を解除する唯一の方法は、起動装置を直接外すこと。それは老いぼれの体についてる。老いぼれは君の小犬のそばにいるよ。`,
+      text: `爆弾を解除する唯一の方法は、起動装置を直接外すこと。それは老いぼれの体についてる。老いぼれは君の小犬のそばにいる。`,
       voice: `wav/CN/conversation21/vo_event_11027_1.wav`
     },
     {
@@ -281,7 +281,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「業師」`,
-      text: `これは君の自業自得よ。`,
+      text: `これは君の自業自得。`,
       voice: `wav/CN/conversation21/vo_event_11027_14.wav`
     },
     {
@@ -332,7 +332,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `君のシャーロームお姉さんがHUSH部隊をよこしたけど、君を助けに来たんじゃないよ。当然、彼らじゃ私を止められない。`,
+      text: `君のシャーロームお姉さんがHUSH部隊をよこしたけど、君を助けに来たんじゃない。当然、彼らじゃ私を止められない。`,
       voice: `wav/CN/conversation21/vo_event_11027_26.wav`
     },
     
@@ -341,7 +341,7 @@ export default {
       position: `left`,
       avatar: `img/dh/smile0.png`,
       name: `「業師」`,
-      text: `遊び方は教えてやった。君の探偵ゲーム、まだ終わってないよ。続ける？`,
+      text: `遊び方は教えてやった。君の探偵ゲーム、まだ終わってない。続ける？`,
       voice: [
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_59.wav' },
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_39.wav' },
@@ -364,7 +364,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `ハハハハハ！いいね、じゃあ君の正義をしっかり見せてよ。`,
+      text: `ハハハハハ！いいね、じゃあ君の正義をしっかり見せて。`,
       voice: `wav/CN/conversation21/展示正义.wav`
     },
     {
@@ -380,7 +380,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `その正義がどれだけ笑えるか、見せてよ。`,
+      text: `その正義がどれだけ笑えるか、見せて。`,
       voice: `wav/CN/conversation21/vo_event_11027_34.wav`
     },
     {
@@ -416,7 +416,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `11時56分，もうすぐだよ。`,
+      text: `11時56分、もうすぐだ。`,
       voice: `wav/CN/conversation21/vo_event_11027_52.wav`
     },
     {
@@ -442,7 +442,7 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `ふざけないで！あんなの簡単な仕掛けだよ、私みたいな素人でも簡単に解けた。あんた、そもそもそれで殺す気なんてなかったでしょ！総司令を殺すのが目的じゃないなら、最後の標的は誰？なんでこんなことしてるの？`
+      text: `ふざけないで！あんなの簡単な仕掛けだ、私みたいな素人でも簡単に解けた。あんた、そもそもそれで殺す気なんてなかったでしょ！総司令を殺すのが目的じゃないなら、最後の標的は誰？なんでこんなことしてるの？`
     },
     {
       type: `dialogue`,
@@ -460,7 +460,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `HUSHはもうこの車への強攻を諦めたよ。私には手も足も出ないみたいね。代わりに最後通牒を残してきた。1分後、危険区域に入る前に、車ごと定点爆破するって。`,
+      text: `HUSHはもうこの車への強攻を諦めた。私には手も足も出ないみたいね。代わりに最後通牒を残してきた。1分後、危険区域に入る前に、車ごと定点爆破するって。`,
       voice: `wav/CN/conversation21/vo_event_11027_21.wav`
     },
     {
@@ -495,7 +495,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `君が仕掛けを解く5分前に、君ならできるってわかってた。執行人にメッセージ送ったよ。`,
+      text: `君が仕掛けを解く5分前に、君ならできるってわかってた。執行人にメッセージ送った。`,
       voice: `wav/CN/conversation21/vo_event_11027_10.wav`
     },
     {
@@ -563,7 +563,7 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `やったよ……私は彼女を止めた、信じて……お願い……`
+      text: `やった……私は彼女を止めた、信じて……お願い……`
     },
     {
       type: `dialogue`,
@@ -582,7 +582,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「業師」`,
-      text: `ついでに言うと、老いぼれはそう簡単には死なないよ。でなきゃ、福音地の連中が私にこんな仕事を頼むわけない。`,
+      text: `ついでに言うと、老いぼれはそう簡単には死なない。でなきゃ、福音地の連中が私にこんな仕事を頼むわけない。`,
       voice: `wav/CN/conversation21/vo_event_11027_7.wav`
     },
     {
