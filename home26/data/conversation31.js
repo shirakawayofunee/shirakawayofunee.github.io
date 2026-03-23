@@ -1,9 +1,8 @@
 export default {
   meta: {
-    title: `flowers-404「静かな反逆」`,
-    bgm: `mp3/bg/conversation28.mp3`,
-    summary: `無数の光が触手へと凝縮し、無数の感情が怒りの波として集まった。
-    それらは隙間の向こうから、現実と狂厄を隔てるギャップを引き裂き、怒涛のように押し寄せる。`
+    title: `flowers-405「後日談·1」`,
+    bgm: `mp3/bg/conversation32.mp3`,
+    summary: ``
   },
   infoPanel: {
     glossary: [
@@ -31,1099 +30,245 @@ export default {
         name: `工事中`,
         avatar: `img/dh/`,
         note: `工事中`
-      },
-      {
-        name: `Chris（探偵）`,
-        avatar: `img/dh/pc208.png`,
-        note: `真相と正義を追いかける警察学校の1年生、ただいま絶賛指名手配されています。<br>
-        二人のお姉さんに挟まれて過ごした、人生で一番忘れられない夏だった。<br>
-        ちなみに彼女、かなり心に刺さったみたいで、師匠の「自分のために咲き、自分のために生き、そして自分のために死ぬのよ。誰よりも先に、自分自身を愛する。自分の運命は自分の手にある！」という言葉を自分の推理メモ帳にしっかり書き写してました。`
       }
     ],
-    synopsis: ``
+    synopsis: `工事中`
   },
   script: [
     {
       type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `やめろ、業師！これは戦いじゃない、あなたが飲み込まれかけてるの！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      position: `left`,
+      avatar: `img/dh/muyangren.png`,
+      name: `セリン`,
+      text: `また会えて本当に嬉しいよ。君に出会った時もこうやって連れて帰ったんだよね。また一緒に来てくれる？`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `君、まだ生きていたのか。邪魔をしに来たのか。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `ここは現実じゃない。現実の彼女が咲かせた花はもう空間全体を埋め尽くしてる。ついさっき、突然あなたへの反撃が始まったの。ここに入って、やっと分かった。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `あなたは操られてる！ その白い光はもうあなたに絡みついてる。彼女を攻撃すればするほど、光はあなたを飲み込んでいく。洗脳されるわ、早くやめて！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `……つまり、人を食らう花の中に命知らずにも飛び込んで、ここまで追いかけてきたのは、私を助けるためだって？ アハハハハハ――！！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `業師は嫌悪を剥き出しにし、冷ややかに笑った。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `誰を騙すつもり。君は、あの女を助けに来たんでしょう。あの女が、自らの手で君を爆殺したというのに！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `洗脳されてるのは君の方！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `容赦ない言葉が、震える少女探偵の心を鋭く抉る。彼女は必死に足を踏ん張り、揺らぎながらも、暴走する狂厄の中で歯を食いしばって耐えていた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `恐ろしい。かつて直面したどんな恐怖をも超えている。全身の力を振り絞って、この自分の限界を超えた戦場に留まっていた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `違う……わ、私は自分のために……自分の……`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `振り返って彼女を見る勇気もないくせに！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      avatar: `img/dh/muyangren.png`,
+      name: `セリン`,
+      text: `君の裏切りに気を悪くした人たちのほとんどはもう犠牲になって、今ならもう一度チャンスをあげられるよ。`
     },
 
     {
-      type: `narration`,
-      text: `目の前の金髪の馬鹿は、とっくに満身創痍で、心も粉々に砕けている。なぜだろう、数十年の記憶が雪崩のように押し寄せてくる。彼女を見ていると、『Garden』に初めて足を踏み入れた壊れた人間たちを、そして何より、かつての自分を見ているようだ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/zxx.png`,
+      name: `L`,
+      text: `地上の人間はみんな自分思いで、己の縄張りを守るのに必死で、せいぜい周りの数人をかばうくらい…。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
+      avatar: `img/dh/zxx.png`,
+      name: `L`,
+      text: `私だってそんなちっぽけな人間だ。君の壮大な宿願にふさわしくないさ。`
+    },
+    {
+      type: `narration`,
+      text: `……`
+    },
+    {
+      type: `narration`,
+      text: `藍雨が降り注ぎ、陵園は静寂に包まれる。レオポルドは死に物狂いで記憶の中の方向へ進む。`
+    },
+    {
+      type: `narration`,
+      text: `体は少し回復した。操られていた後遺症か、シャーロームの言葉が頭の中でかすかに響く。`
+    },
+    {
+      type: `narration`,
+      text: `うざい奴、最後まで何か仕掛けてきやがって…レオポルドは首を振って、雑音を頭から振り払う。`
+    },
+    {
+      type: `narration`,
+      text: `もっと大事なこと、レオポルドが本当に気にかけることがまだある。レオポルドは記憶の中のぼやけた場所へ必死に進む。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/zxx.png`,
       name: `業師`,
-      text: `（心の声）
-      この娘は拷問されても一滴の涙も流さなかった。今は何をしている。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      text: `103年…79期…第五陵園だろ…`,
+      voice: `wav/CN/conversation32/vo_event_11043_103.wav`
+    },
+    {
+      type: `narration`,
+      text: `レオポルドはよろめきながら中に入り、英雄碑の方向へ、探偵が伝えた名前を探し、約束の証拠を見つけようとする。`
+    },
+    {
+      type: `narration`,
+      text: `だが、探す必要はなかった。`
+    },
+    {
+      type: `narration`,
+      text: `人影が飛び込んできて、レオポルドを強く抱きしめ、声を上げて泣く。`
+    },
+    {
+      type: `narration`,
+      text: `証拠の地図や情報シートが地面に散らばる。そこにはXにマーキングされた「Garden」のメンバーが受けた可能性のある、上庭が認めた「任務」が記されている。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
+      avatar: `img/dh/thistle.jpg`,
+      name: `ジギタリス`,
+      text: `そんなことしなくていい！彼女たちの居場所、わかってる。私が探しに行く、私が行く！`,
+      voice: `wav/CN/conversation32/vo_event_11043_99.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/cry.png`,
       name: `業師`,
-      text: `（心の声）
-      泣きっ面を見せれば優しくしてもらえるとでも？尻尾を振って慈悲を乞えば逃げられるとでも？自分が無力だから、他人の優しさを盲信し！そして無惨に踏みにじられるの！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `業師は頭痛を覚え、脳裏に奇妙な光景が走る。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `ふ、復讐に目を曇らせないで！彼女は……そういうあなたが好きなんだ。……復讐に執着する人間を、彼女は煽ろうとしているんだ！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `あなたが失ったものが、かけがえのないものだったってことは知ってる。あなたには全員に償わせる力があるし、正義なんて信じてないことも、復讐だけがあなたを癒せるってことも知ってる。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `でも、だからってこれが当然だなんて思わない！ あなたは最初から奪われるべきじゃなかった、こんな目に遭う理屈なんてどこにもない！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `探偵は歯を食いしばり、涙をこらえて業師を見上げた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `『Garden』は生きてる。救えるのはあなただけ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      text: `…そうか…見つけたのか…`,
+      voice: `wav/CN/conversation32/vo_event_11043_110.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
+      avatar: `img/dh/cry.png`,
       name: `業師`,
-      text: `？！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `あの現場には矛盾が多すぎた。でもあなたは苦しすぎて、真実が見えなくなってた。私がそれを持ってきたわ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      text: `何泣いてんだ…そんな必死になって…ほんとバカだな…`,
+      voice: `wav/CN/conversation32/vo_event_11043_69.wav`
     },
     {
       type: `narration`,
-      text: `探偵は意を決してポケットに手を伸ばし、アザミの通話録音が入ったスマホを取り出そうとした。残念ながら、スマホが彼女と共にこの精神空間へ至ることはなかった。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      text: `もう一方。`
     },
     {
       type: `narration`,
-      text: `探偵は平静を装って手を引っ込め、服で拭う。業師の視線が自分に集中している、それが探偵に自信を与えた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `証拠はアザミが持ってる。現場の凝固血を集めて、闇医者に検証してもらったの。そこには大量の人工血漿が混ざってた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `私の推測は正しかった。HUSHは現場を偽装し、あなたに『Garden』は全滅したと思わせた。執行人は常に効率と節約を求める。あんなに手の込んだ回りくどいことをするのは、二つの目的のため以外にあり得ない。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `<span>『Garden』を生かすこと、そしてあなたを発狂させること。</span>`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      text: `edge-07：HUSHシステムが汚染された。ルールは崩壊し、大量の狂厄が第二観測庭に浸透している。現在は進入も修復も不可能。緊急封鎖するしかない。我々はBR-002フィールドの観測を失った。`
     },
     {
       type: `narration`,
-      text: `業師はその思考を追おうとしたが、白い光の触手が依然として彼女を取り囲み、誤った情報を注ぎ込み、探偵の言葉を信じるなと警告してくる。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      text: `edge-07：黒石英の最後の監視記録によると、敵の狂厄級能力者が現場のHUSH部隊を殲滅。黒石英がXを処分する前にそれを破壊し、同時にXの肉体をも損壊させ、彼女の精神空間へ強行侵入した。`
+    },
+    {
+      type: `narration`,
+      text: `edge-07：使用期間の終了まであと1ヶ月。Xは安全に回収され、処分されるはずだった。スペアの準備も整っていた。彼女は最も完璧な執行人となるはずだったにもかかわらず、土壇場で敵に破壊され、観測庭全体までも巻き込んだ。`
+    },
+    {
+      type: `narration`,
+      text: `edge-04：福音地の仕業だ。7月にHUSHシステムの存在を知った彼らは、それがどれほど重要であるかを理解し、我々の観測を破壊すべく直ちに刺客を送り込んだ。Xを襲撃したのは悪名高い「Garden」の業師。黒石英を撃破し、Xを破壊して観測庭に侵入できるのは彼女しかいない。`
+    },
+    {
+      type: `narration`,
+      text: `edge-02：「Garden」の<span>業師</span>は知ってる。彼女は強力だ。だが、これほどの力はあり得ない。
+      edge-02：X本人が裂け目に触れる可能性は皆無だ。理論上、狂厄級能力者であってもXを封鎖するルールは破壊できない。観測庭の裂け目を切り裂くことなど尚更だ。ただし……
+      edge-02：その業師が何らかの<span>刺激</span>を受け、<span>狂厄爆発</span>状態に陥った場合を除いて。`
+    },
+    {
+      type: `narration`,
+      text: `edge-02：…
+      edge-02：Xの運用開始以降の全データ、各黒石英の全記録、そして彼女が観測プロセスで同期した全データを抽出。完全な検証を実行する。`
+    },
+    {
+      type: `narration`,
+      text: `edge-03：検証完了。
+      edge-03：9年間、Xの全任務におけるパフォーマンスは良好。偏差値はすべて安全範囲内に収まり、危機対応も正確。各プランの最適化は、その後の検証においても合理的かつ完全で説明可能なものだった。すべての感性的行動の背後には理性的要求が合致しており、自己覚醒の兆候は皆無。使用期間中、黒石英のレベル5以上の警戒を引き起こした記録はない。`
+    },
+    {
+      type: `narration`,
+      text: `edge-03：彼女は信頼に値する。むしろ彼女の喪失は大きな損失だ。これは福音地の利益に合致する。彼らが一矢報いた。`
+    },
+    {
+      type: `narration`,
+      text: `edge-03：だが、説明が困難な不合理な点が一つだけ存在する。
+      edge-03：Xは過去二回、同一の低級能力者に対してマーキング能力を使用したが、最後まで対象を同化しなかった。
+      edge-03：マーキング対象は、能力、経歴、潜在能力、服従性のいずれにおいても、Xがそこまでする価値を持たない。理性の観点から合理化することは不可能だ。`
+    },
+    {
+      type: `narration`,
+      text: `edge-07：我々が開発したマーキング能力が逆に執行人を汚染し、彼女に余計な感性の裂け目を生じさせたとでも言うつもりか。`
+    },
+    {
+      type: `narration`,
+      text: `edge-03：可能性は低いが排除できない。「マーキング」技術は所詮、福音地の枷を模倣したもので、後天的にXに強制植入した狂厄化物だ。強制的な狂厄共鳴が執行人に逆影響を与える可能性は否定できない。
+      edge-03：これが確証されるまで、マーキングシステムの運用の一時停止を推奨する。`
+    },
+    {
+      type: `narration`,
+      text: `edge-07：もし彼女が本当に裏切ったなら、故意にマーキングシステムに罪をなすりつけた可能性もある！認めるわけにはいかない。`
+    },
+    {
+      type: `narration`,
+      text: `edge-02：過度な疑念はそれ自体が感性の罠だ。理性は事実のみを注視する。侵入される前まで、Xのすべての行動結果は要求を満たしており、余剰なリスクは露呈していない。動機という感性的な概念に至っては……`
+    },
+    {
+      type: `narration`,
+      text: `edge-02：Xが能力者の「マーキング」によって裂け目を生じさせたのか。あるいは意図的に撹乱し「マーキング」技術の研究を阻止しようとしたのか。さらにはHUSHシステムの引き継ぎを密かに妨害しようと企てていたのか。それらは些事だ。これほど多くのシステムが彼女の身で不具合を起こした以上、我々はリスクの欠陥を特定し、将来的なフェイルセーフを追加するための希少なサンプルを手に入れたことになる。`
+    },
+    {
+      type: `narration`,
+      text: `edge-02：現在の彼女は、HUSHシステムを最適化するための絶好の研究対象だ。`
+    },
+    {
+      type: `narration`,
+      text: `edge-02：スペアを凍結。第二観測庭の再建が完了するまでXを<span>封印</span>し、その後、引き継ぎと廃棄を遂行する。これに多くの時間は要しない。`
+    },
+    {
+      type: `narration`,
+      text: `edge-02：HUSHシステムとマーキング技術の双方にリスクが存在する。Xの逸脱の真の要因が明確になるまで、両者の使用は慎重に行う。
+      edge-02：待機期間中は、内部スパイの特定を最優先事項とする。HUSHの情報が福音地に漏洩したことこそが、最も重大なインシデントだ。`
+    },
+    {
+      type: `narration`,
+      text: `edge-02：次に、第二黒環は必ず狂厄爆発を迎える。防衛網では阻止できず、福音地も必ず行動を起こす。BR-002の現状において、争奪戦の鍵を握るのはSHP-13だ。`
+    },
+    {
+      type: `narration`,
+      text: `edge-02：Xの直近半年間の全観測データを抽出。我々が先回りしてSHP-13を発見するには、それで十分だ。Xは確かにそのための作業を多数こなした。必要十分である。
+      edge-02：上庭はすでに一つの「優秀な道具」を失った。ならば、彼女が最後に残した価値を極限まで搾り取る。
+      edge-02：HUSH-Xチャンネルを閉鎖。それが再起動される、その日まで。`
+    },
+    {
+      type: `narration`,
+      text: `眠る女は修復槽に置かれ、青い培養液に浸される。栄養液が彼女の体の亀裂をゆっくり修復し、この危険な意識を永久に封鎖する。`
+    },
+    {
+      type: `narration`,
+      text: `HUSH-Xは水底に沈み、闇に没する。彼女が決して口にしなかった本当の自分自身のように。`
+    },
+    {
+      type: `narration`,
+      text: `（以下、シャーロームの独白）`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `……もし生きてるなら、あの上庭の女がなぜ早く言わない？それで私を騙して働かせた方が簡単だろう。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      avatar: `img/dh/x5.png`,
+      name: `シャーローム`,
+      text: `私は花が好きだ。`,
+      voice: `wav/CN/conversation32/vo_event_11043_105.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `彼女に目を塞がれた君ごときが、死体を見ただけで腰を抜かす役立たずが、あんな場所で何を調べられたって言うの？`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `探偵は何かを言いかけたが、言葉が喉でつかえた。痛みが走る、妹の言葉が脳裏をよぎる。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `（探偵の回想）ミリア「真実に向き合うのは、そんなに難しいこと？探偵！」`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `（心の声）
-      難しいよ……ミリア……すごく難しい……でも……向き合わなきゃ。正義は真実からしか生まれないから。たとえ真実が、痛みを伴うとしても。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `……私は以前`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `探偵は言葉を詰まらせた。背後から突き刺さる視線を感じ取っていた。沈黙の中、彼女はその笑顔を――かつて自分が一番好きだったあの笑顔を、脳裏に描くことすらできた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `彼女は歯を食いしばり、一語一語、全力を振り絞って言うべきことを口にした。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `104年、私は涅槃集団を襲撃し、ありったけの憎悪を込めて現場にいた執行人のShalomを攻撃した。あの時、私は重傷を負っていた。彼女を殺そうとして、そして……私は変えられた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `ずっと、ずっと、彼女が私を救済してくれたのだと思い込んでいた。けれど……けれど、違った。今のあなたの姿を見て、より確信した。真実はそうではない。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `執行人は特定の条件下で能力者を制御し、完全に自分の手駒にできる。それは殺すよりも節約できて効率的で、安定したやり方。それこそが、私の知るShalomが取る手段。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `これが『Garden』破壊の真意。彼女はあなたの復讐の怒りを煽り、そして今のように、能力を使ってあなたを完全に支配しようとしてる。他の人たちの生死なんて……彼女にとっては『節約』できるし、自分の手駒にさえできる、そうでしょ？`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `『Garden』の行方について、いくつか手がかりがあるの。安全な場所に行ったら教える。条件は、あなたが目を覚ますこと。真実を見極めること。真実は――`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `探偵は口ごもり、何度か言葉に詰まった後、涙が先に溢れ出した。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `一番好きだった人、一番信じてたものが消えて……私だって辛いの！ でも、立ち止まってるわけにはいかないじゃない！ あなたと違って、復讐なんかじゃ私は治らない！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `笑えばいいわ。私は永遠に正義を信じたい。何が起きても、世界が壊れてて当然だなんて思いたくないし、人が奪われるのが当たり前だなんて認めない。悪人が悪さをすることに慣れたくなんてない！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `あなたの言葉で一つだけ認めるわ。私は自分の足で立ち上がるべきだってこと。私を救えるのは私だけ……私は正義が存在することを証明しに行く。そしてそれを、必要としている人に届ける。そうやってしか、私の心は癒えないから。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `彼女は顔を上げた。涙はまだ浮かんでいるが、その瞳にもはや迷いはなかった。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `真実を見つけたから、持ってきた。私には正義を執行する力がない、だからあなたが行って。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `運命に弄ばれるな、自分の手で掴めって言ったのはあなたじゃない！ 他人を信じない、御託も聞かないなら、自分の心くらい見たらどうなの。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `あの子たちに戻ってきてほしくないの？`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      avatar: `img/dh/x5.png`,
+      name: `シャーローム`,
+      text: `泥に屈せず、隙間に囚われず、陽に向かって這う。一生に一度の盛大な開花のために。`,
+      voice: `wav/CN/conversation32/vo_event_11043_60.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `私は……`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      avatar: `img/dh/x5.png`,
+      name: `シャーローム`,
+      text: `その努力が無駄とわかっていても逆流し、散る運命でも死に向かって生きる姿が好きだ。`,
+      voice: `wav/CN/conversation32/vo_event_11043_135.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `（心の声）当然、戻ってきてほしい`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      avatar: `img/dh/x5.png`,
+      name: `シャーローム`,
+      text: `たとえ人に折られても、自由に……`,
+      voice: `wav/CN/conversation32/vo_event_11043_58.wav`
     },
-    {
+/*     {
       type: `narration`,
-      text: `それを認めた瞬間、強烈な渇望が抑えきれなくなり、心の中の憤りや不満をすべて突き破った。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `敵なんてどうでもいい、復讐なんてどうでもいい、薄汚い害虫どもなんて知るか。業師はただ今すぐ自分の『Garden』に帰りたかった。自分の花たちが生き生きと咲く姿を見たい、抱きしめたい。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `その瞬間、彼女に絡みついていた光の触手が弾き飛ばされた。体に注ぎ込まれていた生命力も無念も、すべてが唐突に遮断される。業師は完全に自我を取り戻した。意識は急速に鮮明になり、体の萎縮感も消え失せた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `ここまで来てようやく、出口がそう遠くないことに気づく。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `彼女はShalomを見た。最初から最後まで、この女は一言も発さず、否定も肯定もしなかった。いつの間にか、彼女の無力な体は青い光の棘に貫かれ、身動き一つできなくなっていた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/xzhenxin.png`,
-      name: `Shalom`,
-      text: ``,
-    },
-    {
-      type: `narration`,
-      text: `だが苦痛の表情はなく、ただ探偵を見つめ、何かを思案しているようだった。やがて業師の視線に気づくと、ふわりと微笑んだ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `……これ、一体どういうつもり？ 私をおちょくってるの？ こんな風に煽って何の意味があるわけ？`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `Shalom`,
-      text: `私の能力は扱いが面倒でしてね。入念に準備をしないと、君のような強者と正面から向き合うのは危険ですから。手加減ができなくて、ごめんなさい。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `Shalom`,
-      text: `彼女たちも良い花だ。このまま折られてしまうよりは、私の手元に置いて、予備にするのもよい――`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11043_33.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `あの子たちは、君が品定めしていいモノじゃない。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `Shalom`,
-      text: `――冗談、君がいいんだ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11043_33.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `何、まだ私を支配するつもり？今度はどんな手を使うの？`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `Shalom`,
-      text: `もう結構です。やるべきことは全てやりました。これ以上君たちを虐げる必要はありません。君はこの<span>ルール</span>を破壊し、私の<span>感情</span>を振り払い、自由になったのですから。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `向こう側の空間が恐怖に震えるように振動し、Shalomは青い光の棘が凝縮していくのを見つめる。時間は少ないが、十分だ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `Shalom`,
-      text: `次は、逃げろ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `彼女が静かにそう告げた直後、業師が自ら引き裂いた裂け目から凄まじい悲鳴が轟いた。獰猛な巨大な爪が亀裂を打ち砕き、巨大な使い魔が咆哮しながら裂け目から押し出されてきた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `巨大な青い光の棘がその全身を貫き、三角の光紋が焼き付けられ、白煙を上げている。それは実体ではなく、濃密な感情の化身だった。嵐のように、怒号と悲鳴を上げ、無数の棘に心臓を貫かれ喉を締め上げられながらも、死に物狂いで全てを引き裂こうと足掻いていた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `探偵は突然爆発した狂厄の衝撃に、吐き気を催すほどだった。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `？！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `そいつが咆えるたびに、業師の体内で激しい震動が起きた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `恐怖ではない。体内の全ての狂厄が点火され、そいつと共に叫び、抗い、束縛する全てを打ち砕こうとする衝動が抑えきれないのだ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `これはコイツに「制御」されているのか？ それとも、自分の魂の一部がコイツと<span>「共鳴」</span>しているのか？ 一体化しているのか？`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x6.png`,
-      name: `Shalom`,
-      text: `（業師の回想）
-      上庭は私の感情を切り離し、裂け目の向こう側へと送りました。そうすることで、純粋理性となった私は前線に安定して留まることができ、感性の方は狂厄の深淵へと潜り、世界と人の心の変化を観測しているのです。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `なるほど……これが、上庭に追放された君の感情……これが君の本心か。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },    
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `君は全ての狂厄を操れるわけじゃない。君は『これ』を通して人の心の一面を、君と同じ感情を持つ者だけを支配できる……それが君の本当の能力。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `私を煽るために、上庭の命令さえ利用して、あんなことを……`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `さらに続けようとしたが、Shalomが微笑んで手を上げ、人差し指を唇に当てたのが見えた。`,
-    },
-    {
-      type: `narration`,
-      text: `しーっ——彼女は声を出さずに業師に告げる。`,
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `Shalom`,
-      text: `憎しみではない、君と私が生まれ持つ力……口に出すと、効かなくなる。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `Shalom`,
-      text: `君の命は一部しか修復されていません。大事に使ってくださいね、業師。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `業師は全てを悟った。彼女はShalomを見、そして彼女の背後にいる――幾重にも枷を嵌められた「怪物」を見て、初めて緩んだ笑みを浮かべた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `それにしても、酷い鳴き声ね。心は痛まないの？`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `Shalom`,
-      text: `いいえ。分離技術は完璧ですから、とっくの昔に何も感じなくなっています。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `彼女は崩壊する空間を見上げた。虚空で凝縮された無数の青い光の棘が天から降り注ぎ、巨獣の体を、そしてShalomの体をも貫く。彼女はそれを日常茶飯事のように、気にも留めない。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `Shalom`,
-      text: `今の私にはここまでしかできません。外に出たら、忘れないでください。あの件は私にとって重要です。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `ハッ……どうだか。君の真心なんて知ったことじゃないわ。お陰様で私のほうも手一杯なの。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `依頼は受けないわ。勝手に頑張りなさい、<span>Shalom</span>。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `業師の答えに応じたのは巨獣の咆哮だった。鋭い爪が虚無の中の全ての枷を引き裂き、自らを貫く無数の青い光へと立ち向かい、長きにわたり自分を閉じ込めてきた牢獄を破壊する。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `Shalomは壮大な殿堂が崩れ去るのを、向こう側の狂厄が雪崩れ込んでくるのを、神聖なルールがついに腐敗するのを見ていた。これこそが彼女の力。禁錮されず、歪曲されず、剥奪されない本心。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `……`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `業師は目を閉じた。これは自分が気にかけることではない、行くべきだ。彼女は狂厄に飲み込まれそうな探偵を引っ張り寄せ、自らの体内から新たな花の剣を引き抜いた。その剣には煌びやかな結晶の花が咲き乱れていた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `行くわよ、小僧。外まで連れてってあげる。出たらすぐに案内しなさい。騙したら世界中を君と一緒に葬る。言ったことは必ずやるわよ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `光の棘が絶え間なく降り注ぎ、恐怖に駆られた処刑人のように必死で暴徒を阻止しようとする。巨獣は地面に縫い付けられ身動きが取れないが、それでも耳をつんざくような咆哮を上げ、体内から光の触手を爆発させて空間全体を打ち砕くように狂い舞う。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `意識が白く染まる瞬間、空間内に巨大な三角が凝縮され、そこから青い光の棘が豪雨のように降り注ぎ、咆える巨獣と沈黙する執行人を完全に飲み込んだ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `（……）`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `探偵の意識が断片的に戻ってきた。周囲の状況は判別できないが、鮮紅と氷青の花が自分の体を貫いているのが見えた。あれは二人がもつれ合った際、現実空間で爆発した汚染だ。乱入した彼女もまた、その余波を受けていた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `よく見えない彼方から、激しい戦闘音が聞こえてくる。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/black_quartz.jpg`,
-      name: `黒石英`,
-      text: `観測庭に異常、指令更新、Xを緊急回収、生命保存。中心部の汚染が深刻すぎる。HUSH、集結して別の狂厄級能力者を排除せよ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/black_quartz.jpg`,
-      name: `黒石英`,
-      text: `Xを回収し、ここで派生した全ての汚染物を消去。異常を報告せよ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `クリスティーナ、場所はどこ？！ 言いなさい！ あの子たちはどこ？！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `再び激しい銃火音が響くが、鳴り響いた瞬間に重い金属の衝突音にかき消された。数名のHUSHがどこかへ弾き飛ばされたような苦悶の声。探偵は聞き覚えのある声を聞いた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/black_quartz.jpg`,
-      name: `黒石英`,
-      text: `もう一人の能力者は……MBCCへ移送。今回の事故はコストをかけすぎた。損切りだ。我々の力は温存し、福音地に対応する。今、行動せよ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `足音が近づいてきた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `まだやらなければならないことがある。探偵は大声で叫んだ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `業師、約束は守ったわ！ 全部ちゃんと聞いたでしょ、忘れないで！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `私の父はマーシャル・コリンズ、FAC-G42小隊教官、103年夜の蝕月作戦で戦死した……FAC二級英雄勲章受章者よ！ 私は毎年お墓参りに行ってる。永遠に彼を誇りに思う。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
-      text: `ちゃんと生きて、あの子たちを助けて！ 見つからなかったら私のところに来て！ 少なくとも私は絶対諦めないから、聞いてる？！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `？！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `どきなさい！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `業師は理解した。花の剣を猛然と振るい、目の前のHUSH精鋭部隊を撃退すると、振り返ることなく殺戮の道を切り開いていった。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `narration`,
-      text: `この道は復讐のためではない。『Garden』の業師を止められる者は、もはや誰もいない。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-]
+      text: `第一章「Flowers」終了、つづく。`
+    } */
+  ]
 };

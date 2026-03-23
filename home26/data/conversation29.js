@@ -38,66 +38,35 @@ export default {
     {
       type: `narration`,
       text: `N.F.113年8月26日<br>第二観測庭<br>意識空間`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `<img src="img/cg/hua_402.png">`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
       text: `ぼんやりと目を開け、意識が再び戻った時、業師は奇妙な空間に立っていた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `そこは壮大な三角形の殿堂で、高さは百メートル近くに及ぶ。彼女は細かく見定めようとしたが、じっと見つめるほどに、その頂点は高く、遠くに感じられた。諦めた。彼女はここで妙に冷静になり、これが人類の理解を超えるものだとはっきりわかった。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `背後は靄に覆われ、目の前には光の筋が現れ、魂の深部に触れるようだった。何かが彼女を待っている。業師は前に進んだ。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `徐々に、長い廊下は狭くなり、ドームは高くそびえ、両側の傾いた壁は次第に開き、細長い垂直の障壁に変わった。まるで「戻れ、戻れ」と警告しているかのようだった。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `それでも業師は進み続けた。やがて狭い通路を抜け、果てしない、死のように静かな空間にたどり着いた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `中央にShalomが立っていた。彼女の背後には、垂直の亀裂が静かに浮かび、見えない頂点へと続く。暗闇の中で唯一の光だった。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -107,16 +76,11 @@ export default {
       text: `ようこそ、業師。見事に侵入したね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
       type: `narration`,
       text: `業師は剣を抜こうと手を挙げたが、即座に青い光の刺が彼女の腕を貫き、力が発動する前に消滅した。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -126,7 +90,6 @@ export default {
       text: `力を動かすのはやめた方がいいよ。悪い考えがあるなら、口で言うだけでいい。行動に移すのはダメ。ここでは、狂厄も反逆も絶対に「許されない」存在だから。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -693,7 +656,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
+      avatar: `img/dh/leopold.png`,
       name: `業師`,
       text: `君、頭イカれてるんじゃない？`,
       voice: [
@@ -886,26 +849,15 @@ export default {
     {
       type: `narration`,
       text: `気取った福音地の女が、あれほど気色ばんで取り乱したのを見たのは、それが唯一だった。その後の二年間、狂犬のような福音地からの暗殺依頼が『Garden』の門を叩き続けた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `――そして、涙も枯れ果て傷だらけになった多くの罪なき人々が、行き場を失い『Garden』の扉を叩いた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `それは隠秘で凄惨な戦争だった。両勢力が敵を殲滅しようとし、その残酷な結末を、戦争の外にいる者たちが背負わされたのだ。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
+      bgm: `mp3/bg/【繁花】Moonlight Act Ⅱ Wheel of Destiny.mp3`,
     },
     {
       type: `narration`,
@@ -921,6 +873,7 @@ export default {
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
+      
     },
     {
       type: `narration`,
@@ -1447,6 +1400,7 @@ export default {
     {
       type: `narration`,
       text: `広大な庭園が激しく揺れ、虚空から機械のような悲鳴と怒号が響く。そして不吉に広がり続ける裂け目の中から、無数の光の触手がゆっくりと探るように伸びてきた。`,
+      bgm: `mp3/bg/conversation30.mp3`,
     },
     {
       type: `narration`,

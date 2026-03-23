@@ -1,8 +1,8 @@
 export default {
   meta: {
-    title: `flowers-405「後日談·1」`,
-    bgm: `mp3/bg/conversation32.mp3`,
-    summary: ``
+    title: `flowers-406「後日談·2」`,
+    bgm: `mp3/bg/终末路.mp3`,
+    summary: `無数の「英雄」の名を冠した人々に囲まれながら、少女は夜明けの最初の光を迎えた。`
   },
   infoPanel: {
     glossary: [
@@ -36,239 +36,70 @@ export default {
   },
   script: [
     {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/muyangren.png`,
-      name: `セリン`,
-      text: `また会えて本当に嬉しいよ。君に出会った時もこうやって連れて帰ったんだよね。また一緒に来てくれる？`
+      type: `narration`,
+      text: `暁前のFAC記念園。ドイル探長に長編の感謝状を送り終えた後、探偵は予想外の人物と出会った。`
     },
     {
       type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/muyangren.png`,
-      name: `セリン`,
-      text: `君の裏切りに気を悪くした人たちのほとんどはもう犠牲になって、今ならもう一度チャンスをあげられるよ。`
-    },
-
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/zxx.png`,
-      name: `L`,
-      text: `地上の人間はみんな自分思いで、己の縄張りを守るのに必死で、せいぜい周りの数人をかばうくらい…。`
+      position: `right`,
+      name: `ドイル`,
+      text: `よくも俺に会いに来たもんだな！レオポルドはどこだ？彼女こそ俺に感謝しに来るべきじゃないのか？`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/zxx.png`,
-      name: `L`,
-      text: `私だってそんなちっぽけな人間だ。君の壮大な宿願にふさわしくないさ。`
-    },
-    {
-      type: `narration`,
-      text: `……`
-    },
-    {
-      type: `narration`,
-      text: `藍雨が降り注ぎ、陵園は静寂に包まれる。レオポルドは死に物狂いで記憶の中の方向へ進む。`
-    },
-    {
-      type: `narration`,
-      text: `体は少し回復した。操られていた後遺症か、シャーロームの言葉が頭の中でかすかに響く。`
-    },
-    {
-      type: `narration`,
-      text: `うざい奴、最後まで何か仕掛けてきやがって…レオポルドは首を振って、雑音を頭から振り払う。`
-    },
-    {
-      type: `narration`,
-      text: `もっと大事なこと、レオポルドが本当に気にかけることがまだある。レオポルドは記憶の中のぼやけた場所へ必死に進む。`
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `……相変わらず図々しいね、君って。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/zxx.png`,
-      name: `業師`,
-      text: `103年…79期…第五陵園だろ…`,
-      voice: `wav/CN/conversation32/vo_event_11043_103.wav`
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `師匠は忙しいから、代わりに私が伝言を預かってきたよ。『正式採用された？ちゃんとやれてる？事件解決率はどれくらい？何人犯人捕まえた？まだ先輩の足引っ張ってる？』ってね。`
     },
     {
-      type: `narration`,
-      text: `レオポルドはよろめきながら中に入り、英雄碑の方向へ、探偵が伝えた名前を探し、約束の証拠を見つけようとする。`
+      type: `dialogue`,
+      position: `right`,
+      name: `ドイル`,
+      text: `ゴホッゴホッ！やめろよ、ボロクソ言わないでくれ……今日は休日だ、今日は……事件解決しないぞ！`
     },
     {
-      type: `narration`,
-      text: `だが、探す必要はなかった。`
-    },
-    {
-      type: `narration`,
-      text: `人影が飛び込んできて、レオポルドを強く抱きしめ、声を上げて泣く。`
-    },
-    {
-      type: `narration`,
-      text: `証拠の地図や情報シートが地面に散らばる。そこにはXにマーキングされた「Garden」のメンバーが受けた可能性のある、上庭が認めた「任務」が記されている。`
+      type: `dialogue`,
+      position: `right`,
+      name: `ドイル`,
+      text: `妹が学校に復帰するんだ。休学が長すぎたから、戻ったらイジメられるんじゃないかって心配でさ。送っていかなきゃ。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/thistle.jpg`,
-      name: `ジギタリス`,
-      text: `そんなことしなくていい！彼女たちの居場所、わかってる。私が探しに行く、私が行く！`,
-      voice: `wav/CN/conversation32/vo_event_11043_99.wav`
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `へえ——。後で私、師匠と一緒に<span>西区</span>に行くよ。『Garden』の仲間たちはみんなそっちに流れちゃったみたいだから。もう君には私たちを捕まえることも見つけることもできないよ。去る前に一言、言っとこうと思って。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/cry.png`,
-      name: `業師`,
-      text: `…そうか…見つけたのか…`,
-      voice: `wav/CN/conversation32/vo_event_11043_110.wav`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/cry.png`,
-      name: `業師`,
-      text: `何泣いてんだ…そんな必死になって…ほんとバカだな…`,
-      voice: `wav/CN/conversation32/vo_event_11043_69.wav`
+      avatar: `img/dh/thistle3.jpg`,
+      name: `蓟`,
+      text: `私の復讐は終わった。もう殺し屋である必要はない。これからは大好きな『Garden』に残って、ずっと守るよ。`
     },
     {
       type: `narration`,
-      text: `もう一方。`
+      text: `彼女は花のような輝く笑顔を見せ、身を翻して最後の夜の闇に消えた。`
     },
     {
       type: `narration`,
-      text: `edge-07：HUSHシステムが汚染された。ルールは崩壊し、大量の狂厄が第二観測庭に浸透している。現在は進入も修復も不可能。緊急封鎖するしかない。我々はBR-002フィールドの観測を失った。`
+      text: `探偵は静かな陵園に一人残された。雨はもうすぐ止みそうだった。`
     },
     {
       type: `narration`,
-      text: `edge-07：黒石英の最後の監視記録によると、敵の狂厄級能力者が現場のHUSH部隊を殲滅。黒石英がXを処分する前にそれを破壊し、同時にXの肉体をも損壊させ、彼女の精神空間へ強行侵入した。`
+      text: `無数の「英雄」の名を冠した人々に囲まれながら、少女は夜明けの最初の光を迎えた。`
     },
     {
       type: `narration`,
-      text: `edge-07：使用期間の終了まであと1ヶ月。Xは安全に回収され、処分されるはずだった。スペアの準備も整っていた。彼女は最も完璧な執行人となるはずだったにもかかわらず、土壇場で敵に破壊され、観測庭全体までも巻き込んだ。`
-    },
-    {
-      type: `narration`,
-      text: `edge-04：福音地の仕業だ。7月にHUSHシステムの存在を知った彼らは、それがどれほど重要であるかを理解し、我々の観測を破壊すべく直ちに刺客を送り込んだ。Xを襲撃したのは悪名高い「Garden」の業師。黒石英を撃破し、Xを破壊して観測庭に侵入できるのは彼女しかいない。`
-    },
-    {
-      type: `narration`,
-      text: `edge-02：「Garden」の<span>業師</span>は知ってる。彼女は強力だ。だが、これほどの力はあり得ない。
-      edge-02：X本人が裂け目に触れる可能性は皆無だ。理論上、狂厄級能力者であってもXを封鎖するルールは破壊できない。観測庭の裂け目を切り裂くことなど尚更だ。ただし……
-      edge-02：その業師が何らかの<span>刺激</span>を受け、<span>狂厄爆発</span>状態に陥った場合を除いて。`
-    },
-    {
-      type: `narration`,
-      text: `edge-02：…
-      edge-02：Xの運用開始以降の全データ、各黒石英の全記録、そして彼女が観測プロセスで同期した全データを抽出。完全な検証を実行する。`
-    },
-    {
-      type: `narration`,
-      text: `edge-03：検証完了。
-      edge-03：9年間、Xの全任務におけるパフォーマンスは良好。偏差値はすべて安全範囲内に収まり、危機対応も正確。各プランの最適化は、その後の検証においても合理的かつ完全で説明可能なものだった。すべての感性的行動の背後には理性的要求が合致しており、自己覚醒の兆候は皆無。使用期間中、黒石英のレベル5以上の警戒を引き起こした記録はない。`
-    },
-    {
-      type: `narration`,
-      text: `edge-03：彼女は信頼に値する。むしろ彼女の喪失は大きな損失だ。これは福音地の利益に合致する。彼らが一矢報いた。`
-    },
-    {
-      type: `narration`,
-      text: `edge-03：だが、説明が困難な不合理な点が一つだけ存在する。
-      edge-03：Xは過去二回、同一の低級能力者に対してマーキング能力を使用したが、最後まで対象を同化しなかった。
-      edge-03：マーキング対象は、能力、経歴、潜在能力、服従性のいずれにおいても、Xがそこまでする価値を持たない。理性の観点から合理化することは不可能だ。`
-    },
-    {
-      type: `narration`,
-      text: `edge-07：我々が開発したマーキング能力が逆に執行人を汚染し、彼女に余計な感性の裂け目を生じさせたとでも言うつもりか。`
-    },
-    {
-      type: `narration`,
-      text: `edge-03：可能性は低いが排除できない。「マーキング」技術は所詮、福音地の枷を模倣したもので、後天的にXに強制植入した狂厄化物だ。強制的な狂厄共鳴が執行人に逆影響を与える可能性は否定できない。
-      edge-03：これが確証されるまで、マーキングシステムの運用の一時停止を推奨する。`
-    },
-    {
-      type: `narration`,
-      text: `edge-07：もし彼女が本当に裏切ったなら、故意にマーキングシステムに罪をなすりつけた可能性もある！認めるわけにはいかない。`
-    },
-    {
-      type: `narration`,
-      text: `edge-02：過度な疑念はそれ自体が感性の罠だ。理性は事実のみを注視する。侵入される前まで、Xのすべての行動結果は要求を満たしており、余剰なリスクは露呈していない。動機という感性的な概念に至っては……`
-    },
-    {
-      type: `narration`,
-      text: `edge-02：Xが能力者の「マーキング」によって裂け目を生じさせたのか。あるいは意図的に撹乱し「マーキング」技術の研究を阻止しようとしたのか。さらにはHUSHシステムの引き継ぎを密かに妨害しようと企てていたのか。それらは些事だ。これほど多くのシステムが彼女の身で不具合を起こした以上、我々はリスクの欠陥を特定し、将来的なフェイルセーフを追加するための希少なサンプルを手に入れたことになる。`
-    },
-    {
-      type: `narration`,
-      text: `edge-02：現在の彼女は、HUSHシステムを最適化するための絶好の研究対象だ。`
-    },
-    {
-      type: `narration`,
-      text: `edge-02：スペアを凍結。第二観測庭の再建が完了するまでXを<span>封印</span>し、その後、引き継ぎと廃棄を遂行する。これに多くの時間は要しない。`
-    },
-    {
-      type: `narration`,
-      text: `edge-02：HUSHシステムとマーキング技術の双方にリスクが存在する。Xの逸脱の真の要因が明確になるまで、両者の使用は慎重に行う。
-      edge-02：待機期間中は、内部スパイの特定を最優先事項とする。HUSHの情報が福音地に漏洩したことこそが、最も重大なインシデントだ。`
-    },
-    {
-      type: `narration`,
-      text: `edge-02：次に、第二黒環は必ず狂厄爆発を迎える。防衛網では阻止できず、福音地も必ず行動を起こす。BR-002の現状において、争奪戦の鍵を握るのはSHP-13だ。`
-    },
-    {
-      type: `narration`,
-      text: `edge-02：Xの直近半年間の全観測データを抽出。我々が先回りしてSHP-13を発見するには、それで十分だ。Xは確かにそのための作業を多数こなした。必要十分である。
-      edge-02：上庭はすでに一つの「優秀な道具」を失った。ならば、彼女が最後に残した価値を極限まで搾り取る。
-      edge-02：HUSH-Xチャンネルを閉鎖。それが再起動される、その日まで。`
-    },
-    {
-      type: `narration`,
-      text: `眠る女は修復槽に置かれ、青い培養液に浸される。栄養液が彼女の体の亀裂をゆっくり修復し、この危険な意識を永久に封鎖する。`
-    },
-    {
-      type: `narration`,
-      text: `HUSH-Xは水底に沈み、闇に没する。彼女が決して口にしなかった本当の自分自身のように。`
-    },
-    {
-      type: `narration`,
-      text: `（以下、シャーロームの独白）`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x5.png`,
-      name: `シャーローム`,
-      text: `私は花が好きだ。`,
-      voice: `wav/CN/conversation32/vo_event_11043_105.wav`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x5.png`,
-      name: `シャーローム`,
-      text: `泥に屈せず、隙間に囚われず、陽に向かって這う。一生に一度の盛大な開花のために。`,
-      voice: `wav/CN/conversation32/vo_event_11043_60.wav`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x5.png`,
-      name: `シャーローム`,
-      text: `その努力が無駄とわかっていても逆流し、散る運命でも死に向かって生きる姿が好きだ。`,
-      voice: `wav/CN/conversation32/vo_event_11043_135.wav`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x5.png`,
-      name: `シャーローム`,
-      text: `たとえ人に折られても、自由に……`,
-      voice: `wav/CN/conversation32/vo_event_11043_58.wav`
-    },
-/*     {
-      type: `narration`,
-      text: `第一章「Flowers」終了、つづく。`
-    } */
+      text: `第一章「繁花」終了、To be continued。`
+    }
   ]
 };

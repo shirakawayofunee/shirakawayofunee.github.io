@@ -217,28 +217,21 @@ const chapterList = [
   {
     id: "conversation30",
     category: "flower",
-    title: "403「満開」",
+    title: "403「静黙の反逆」",
     subtitle: "Flora",
     dateLabel: "N.F.113/8/26",
   },
   {
     id: "conversation31",
     category: "flower",
-    title: "404「静黙の反逆」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/8/26",
-  },
-  {
-    id: "conversation32",
-    category: "flower",
-    title: "405「エピローグ」",
+    title: "404「エピローグ」",
     subtitle: "Flora",
     dateLabel: "N.F.113.8.26",
   },
   {
     id: "conversation33",
     category: "flower",
-    title: "406「後日談」",
+    title: "405「後日談」",
     subtitle: "Flora",
     dateLabel: "N.F.113.9",
   },
@@ -278,6 +271,8 @@ const chapterList = [
 let currentChapterIndex = -1;
 let currentCategory = "all";
 let isMusicPlaying = false;
+let bgmObserver = null;       // 新增：BGM 滚动观察器
+let lastTriggeredBgm = "";    // 新增：记录当前正在触发的 BGM 路径
 const bgmPlayer = document.getElementById("bgm-player");
 bgmPlayer.volume = 0.4;
 
@@ -414,22 +409,19 @@ async function loadChapter(chapterId) {
     const module = await import(`../data/${chapterId}.js`);
     const data = module.default;
 
-    // 设置 BGM
-    if (data.meta && data.meta.bgm) {
-      playBgm(data.meta.bgm, true); 
-    }
-    
-    // 渲染正文
-    renderScript(data.script);
-    
-    // ============================================
-    // 修改点：只传 infoPanel，让它去读 synopsis
-    // ============================================
-    renderInfo(data.infoPanel); 
+    // 获取该章节默认 BGM
+    const defaultBgm = (data.meta && data.meta.bgm) ? data.meta.bgm : "";
+    lastTriggeredBgm = defaultBgm; // 初始化触发器记录
 
-    // ============================================
-    // 确保 Header 独立读取 meta.summary
-    // ============================================
+    // 设置默认 BGM 并尝试播放
+    if (defaultBgm) {
+      playBgm(defaultBgm, true); 
+    }
+
+    // 渲染正文
+    renderScript(data.script, defaultBgm);
+
+    renderInfo(data.infoPanel); 
     updateHeaderFromJSON(chapterId, data);
 
     // 滚回顶部
@@ -446,6 +438,10 @@ async function loadChapter(chapterId) {
       'chapter_title': currentChapInfo ? currentChapInfo.title : 'Unknown', // 例如: 001「招かれざる客」
       'chapter_category': currentChapInfo ? currentChapInfo.category : 'Unknown' // 例如: bluerain
     });
+
+    setTimeout(() => {
+      initBgmObserver();
+  }, 100);
     // ============================================
     
   } catch (err) {
@@ -477,17 +473,29 @@ function updateHeaderFromJSON(chapterId, data) {
 }
 
 // --- 5. 渲染正文 (最终修正版) ---
-// --- 5. 渲染正文 (支持多语音版) ---
-// --- 5. 渲染正文 (最终精简版) ---
-function renderScript(script) {
+// --- 5. 渲染正文 (支持多首 BGM 继承切换) ---
+function renderScript(script, defaultBgm = "") {
   const container = document.getElementById("script-content");
   container.innerHTML = "";
 
   VoiceManager.reset(script);
 
+  // 👇 新增：记录当前遍历到哪一首 BGM 了，初始值为本章默认 BGM
+  let currentLineBgm = defaultBgm;
+
   script.forEach((line, index) => {
       const div = document.createElement("div");
       div.id = `msg-row-${index}`;
+
+      // 👇 新增：BGM 继承逻辑
+      // 如果剧本当前行配置了新的 bgm，就更新 currentLineBgm
+      if (line.bgm) {
+          currentLineBgm = line.bgm;
+      }
+      // 给每一个生成的 div 都绑定 data-bgm 属性
+      if (currentLineBgm) {
+          div.setAttribute("data-bgm", currentLineBgm);
+      }
 
       // 1. 生成语音按钮 HTML
       let voiceBtnHtml = '';
@@ -522,7 +530,6 @@ function renderScript(script) {
       } else if (line.type === "dialogue") {
           const pos = line.position === "right" ? "pos-right" : "pos-left";
           div.className = `message-row ${pos}`;
-          // 确保 voiceBtnHtml 紧贴 text，不要有任何空格
           div.innerHTML = `
               <img src="${line.avatar}" class="avatar">
               <div class="message-bubble">${line.text}${voiceBtnHtml}</div>
@@ -632,6 +639,49 @@ function playBgm(src, forcePlay = false) {
   }
 }
 
+// --- 新增：BGM 滚动观察器 ---
+function initBgmObserver() {
+  // 1. 如果之前有旧的观察器，先断开，防止切章时重复叠加
+  if (bgmObserver) {
+      bgmObserver.disconnect();
+  }
+
+  // 2. 创建新的观察器
+  bgmObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              const newBgm = entry.target.getAttribute('data-bgm');
+              
+              // 3. 只有当读取到了BGM路径，且与当前触发的不同，才执行切换
+              if (newBgm && newBgm !== lastTriggeredBgm) {
+                  console.log(`[剧情点触发] 切换BGM: ${newBgm}`);
+                  lastTriggeredBgm = newBgm;
+                  
+                  // 调用现有的 playBgm 函数。
+                  // 传入 false 是因为：如果用户此前手动暂停了音乐 (isMusicPlaying = false)，
+                  // 那么滑动到这里时只静默切歌，不强行播放，尊重用户的暂停操作。
+                  // 如果用户处于播放状态，它就会自动切歌并播放。
+                  playBgm(newBgm, false); 
+              }
+          }
+      });
+  }, {
+      // rootMargin 决定触发区域：
+      // "-40% 0px -40% 0px" 表示屏幕上方40%和下方40%都被忽略，
+      // 只有当文字滑动进入屏幕正中央的 20% 狭长区域时，才会触发切歌。
+      // 这是最符合视觉小说阅读节奏的设置。
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0
+  });
+
+  // 4. 将所有带有 data-bgm 的消息行加入监听
+  const rows = document.querySelectorAll('#script-content .message-row');
+  rows.forEach(row => {
+      if (row.hasAttribute('data-bgm')) {
+          bgmObserver.observe(row);
+      }
+  });
+}
 // 切换播放/暂停状态 (绑定到图片点击事件)
 function toggleMusic(action) {
   if (action === 'play') {
