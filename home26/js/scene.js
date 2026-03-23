@@ -231,14 +231,14 @@ const chapterList = [
   {
     id: "conversation32",
     category: "flower",
-    title: "405「後日談1」",
+    title: "405「エピローグ」",
     subtitle: "Flora",
     dateLabel: "N.F.113.8.26",
   },
   {
     id: "conversation33",
     category: "flower",
-    title: "406「後日談2」",
+    title: "406「後日談」",
     subtitle: "Flora",
     dateLabel: "N.F.113.9",
   },

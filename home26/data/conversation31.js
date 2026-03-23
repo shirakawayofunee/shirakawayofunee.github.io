@@ -68,16 +68,6 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `私は君が混乱を起こした隙に忍び込み、ずっと君たちの戦いを見ていた。手出しなんてできなかった。君が突然彼女を突き刺し、花を咲かせようとした瞬間から、すべてがおかしくなった。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      name: `探偵`,
       text: `ここは現実じゃない。現実の彼女が咲かせた花はもう空間全体を埋め尽くしてる。ついさっき、突然あなたへの反撃が始まったの。ここに入って、やっと分かった。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -129,7 +119,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `洗脳されてるのは君の方よ！`,
+      text: `洗脳されてるのは君の方！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -137,7 +127,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `容赦ない言葉が、震える少女探偵の心を鋭く抉る。彼女は必死に足を踏ん張り、揺らぎながらも、暴走する狂瞳の中で歯を食いしばって耐えていた。`,
+      text: `容赦ない言葉が、震える少女探偵の心を鋭く抉る。彼女は必死に足を踏ん張り、揺らぎながらも、暴走する狂厄の中で歯を食いしばって耐えていた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -186,7 +176,8 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `（心の声）<br>この娘は拷問されても一滴の涙も流さなかった。今は何をしている。`,
+      text: `（心の声）
+      この娘は拷問されても一滴の涙も流さなかった。今は何をしている。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -197,7 +188,8 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `（心の声）泣きっ面を見せれば優しくしてもらえるとでも？尻尾を振って慈悲を乞えば逃げられるとでも？自分が無力だから、他人の優しさを盲信し！そして無惨に踏みにじられるのよ！`,
+      text: `（心の声）
+      泣きっ面を見せれば優しくしてもらえるとでも？尻尾を振って慈悲を乞えば逃げられるとでも？自分が無力だから、他人の優しさを盲信し！そして無惨に踏みにじられるの！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -253,7 +245,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `『Garden』は生きてる。救えるのはあなただけよ。`,
+      text: `『Garden』は生きてる。救えるのはあなただけ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -320,7 +312,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `『Garden』を生かすこと、そしてあなたを発狂させること。`,
+      text: `<span>『Garden』を生かすこと、そしてあなたを発狂させること。</span>`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -412,7 +404,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `104年、私はニルヴァーナグループを襲撃し、現場にいた執行人シャーロームに最大の殺意を持って攻撃した。あの時、私も重傷を負って、彼女を殺そうとして、そして……私も変えられた。`,
+      text: `104年、私はニルヴァーナグループを襲撃し、現場にいた執行人Shalomに最大の殺意を持って攻撃した。あの時、私も重傷を負って、彼女を殺そうとして、そして……私も変えられた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -432,7 +424,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `執行人は特定の条件下で能力者を制御し、完全に自分の手駒にできる。それは殺すよりも節約できて効率的で、安定したやり方。それこそが、私の知るシャーロームが取る手段。`,
+      text: `執行人は特定の条件下で能力者を制御し、完全に自分の手駒にできる。それは殺すよりも節約できて効率的で、安定したやり方。それこそが、私の知るShalomが取る手段。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -442,7 +434,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `これが『Garden』破壊の真意よ。彼女はあなたの復讐の怒りを煽り、そして今のように、能力を使ってあなたを完全に支配しようとしてる。他の人たちの生死なんて……彼女にとっては『節約』できるし、自分の手駒にさえできる、そうでしょ？`,
+      text: `これが『Garden』破壊の真意。彼女はあなたの復讐の怒りを煽り、そして今のように、能力を使ってあなたを完全に支配しようとしてる。他の人たちの生死なんて……彼女にとっては『節約』できるし、自分の手駒にさえできる、そうでしょ？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -470,7 +462,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `一番好きだった人、一番信じてたものが消えて……私だって辛いのよ！ でも、立ち止まってるわけにはいかないじゃない！ あなたと違って、復讐なんかじゃ私は治らない！`,
+      text: `一番好きだった人、一番信じてたものが消えて……私だって辛いの！ でも、立ち止まってるわけにはいかないじゃない！ あなたと違って、復讐なんかじゃ私は治らない！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -518,7 +510,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `運命に弄ばれるな、自分の手で掴めって言ったのはあなたじゃない！ 他人を信じない、御託も聞かないなら、自分の心くらい見たらどうなのよ。`,
+      text: `運命に弄ばれるな、自分の手で掴めって言ったのはあなたじゃない！ 他人を信じない、御託も聞かないなら、自分の心くらい見たらどうなの。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -590,11 +582,18 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女はシャーロームを見た。最初から最後まで、この女は一言も発さず、否定も肯定もしなかった。いつの間にか、彼女の無力な体は青い光の棘に貫かれ、身動き一つできなくなっていた。`,
+      text: `彼女はShalomを見た。最初から最後まで、この女は一言も発さず、否定も肯定もしなかった。いつの間にか、彼女の無力な体は青い光の棘に貫かれ、身動き一つできなくなっていた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
       ]
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/xzhenxin.png`,
+      name: `Shalom`,
+      text: ``,
     },
     {
       type: `narration`,
@@ -619,7 +618,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x8.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `私の能力は扱いが面倒でしてね。入念に準備をしないと、君のような強者と正面から向き合うのは危険ですから。手加減ができなくて、ごめんなさい。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -630,7 +629,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x8.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `彼女たちも良い花だ。このまま折られてしまうよりは、私の手元に置いて、予備にするのもよい――`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11043_33.wav' },
@@ -651,7 +650,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x8.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `――冗談、君がいいんだ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11043_33.wav' },
@@ -662,7 +661,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `何よ、まだ私を支配するつもり？ 今度はどんな手を使うの？`,
+      text: `何、まだ私を支配するつもり？今度はどんな手を使うの？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -672,8 +671,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x8.png`,
-      name: `シャーローム`,
-      text: `もう結構です。やるべきことは全てやりました。これ以上君たちを虐げる必要はありません。君はこのルールを破壊し、私の感情を振り払い、自由になったのですから。`,
+      name: `Shalom`,
+      text: `もう結構です。やるべきことは全てやりました。これ以上君たちを虐げる必要はありません。君はこの<span>ルール</span>を破壊し、私の<span>感情</span>を振り払い、自由になったのですから。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -681,7 +680,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `向こう側の空間が恐怖に震えるように振動し、シャーロームは青い光の棘が凝縮していくのを見つめる。時間は少ないが、十分だ。`,
+      text: `向こう側の空間が恐怖に震えるように振動し、Shalomは青い光の棘が凝縮していくのを見つめる。時間は少ないが、十分だ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -691,7 +690,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x8.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `次は、逃げろ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -716,7 +715,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `探偵は突然爆発した狂瞳の衝撃に、吐き気を催すほどだった。`,
+      text: `探偵は突然爆発した狂厄の衝撃に、吐き気を催すほどだった。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -743,7 +742,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `恐怖ではない。体内の全ての狂瞳が点火され、そいつと共に叫び、抗い、束縛する全てを打ち砕こうとする衝動が抑えきれないのだ。`,
+      text: `恐怖ではない。体内の全ての狂厄が点火され、そいつと共に叫び、抗い、束縛する全てを打ち砕こうとする衝動が抑えきれないのだ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -760,9 +759,10 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `シャーローム`,
-      text: `可可莉克的回忆<br>上庭は私の感情を切り離し、裂け目の向こう側へと送りました。そうすることで、純粋理性となった私は前線に安定して留まることができ、感性の方は狂厄の深淵へと潜り、世界と人の心の変化を観測しているのです。`,
+      avatar: `img/dh/x6.png`,
+      name: `Shalom`,
+      text: `（業師の回想）
+      上庭は私の感情を切り離し、裂け目の向こう側へと送りました。そうすることで、純粋理性となった私は前線に安定して留まることができ、感性の方は狂厄の深淵へと潜り、世界と人の心の変化を観測しているのです。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -784,7 +784,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `君は全ての狂瞳を操れるわけじゃない。君は『これ』を通して人の心の一面を、君と同じ感情を持つ者だけを支配できる……それが君の本当の能力。`,
+      text: `君は全ての狂厄を操れるわけじゃない。君は『これ』を通して人の心の一面を、君と同じ感情を持つ者だけを支配できる……それが君の本当の能力。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -803,15 +803,18 @@ export default {
     },
     {
       type: `narration`,
-      text: `さらに続けようとしたが、シャーロームが微笑んで手を上げ、人差し指を唇に当てたのが見えた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      text: `さらに続けようとしたが、Shalomが微笑んで手を上げ、人差し指を唇に当てたのが見えた。`,
     },
     {
       type: `narration`,
       text: `しーっ——彼女は声を出さずにコクリコに告げる。`,
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x8.png`,
+      name: `Shalom`,
+      text: `『仇恨』ではありません。君と私が生まれ持つ力……口に出してしまっては、効力が失われてしまいます。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -821,18 +824,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x8.png`,
-      name: `シャーローム`,
-      text: `『仇恨』ではありません。私たちが生まれ持った力です……口に出してしまっては、効力が失われてしまいますよ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x8.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `君の命は一部しか修復されていません。大事に使ってくださいね、コクリコ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -841,7 +833,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `コクリコは全てを悟った。彼女はシャーロームを見、そして彼女の背後にいる――幾重にも枷を嵌められた「怪物」を見て、初めて緩んだ笑みを浮かべた。`,
+      text: `コクリコは全てを悟った。彼女はShalomを見、そして彼女の背後にいる――幾重にも枷を嵌められた「怪物」を見て、初めて緩んだ笑みを浮かべた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -862,7 +854,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x8.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `いいえ。分離技術は完璧ですから、とっくの昔に何も感じなくなっています。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -871,7 +863,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は崩壊する空間を見上げた。虚空で凝縮された無数の青い光の棘が天から降り注ぎ、巨獣の体を、そしてシャーロームの体をも貫く。彼女はそれを日常茶飯事のように、気にも留めない。`,
+      text: `彼女は崩壊する空間を見上げた。虚空で凝縮された無数の青い光の棘が天から降り注ぎ、巨獣の体を、そしてShalomの体をも貫く。彼女はそれを日常茶飯事のように、気にも留めない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -881,7 +873,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x8.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `今の私にはここまでしかできません。外に出たら、忘れないでください。あの件は私にとって重要です。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -893,7 +885,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `ハッ……どうだか。君の真心なんて知ったことじゃないわ。お陰様で私のほうも手一杯なのよ。`,
+      text: `ハッ……どうだか。君の真心なんて知ったことじゃないわ。お陰様で私のほうも手一杯なの。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -904,7 +896,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `依頼は受けないわ。勝手に頑張りなさい、<span>シャーローム</span>。`,
+      text: `依頼は受けないわ。勝手に頑張りなさい、<span>Shalom</span>。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -920,7 +912,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `シャーロームは壮大な殿堂が崩れ去るのを、向こう側の狂瞳が雪崩れ込んでくるのを、神聖なルールがついに腐敗するのを見ていた。これこそが彼女の力。禁錮されず、歪曲されず、剥奪されない本心。`,
+      text: `Shalomは壮大な殿堂が崩れ去るのを、向こう側の狂厄が雪崩れ込んでくるのを、神聖なルールがついに腐敗するのを見ていた。これこそが彼女の力。禁錮されず、歪曲されず、剥奪されない本心。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -939,7 +931,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師は目を閉じた。これは自分が気にかけることではない、行くべきだ。彼女は狂瞳に飲み込まれそうな探偵を引っ張り寄せ、自らの体内から新たな花の剣を引き抜いた。その剣には煌びやかな結晶の花が咲き乱れていた。`,
+      text: `業師は目を閉じた。これは自分が気にかけることではない、行くべきだ。彼女は狂厄に飲み込まれそうな探偵を引っ張り寄せ、自らの体内から新たな花の剣を引き抜いた。その剣には煌びやかな結晶の花が咲き乱れていた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },

@@ -37,19 +37,18 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `業師はシャーロームの目を見つめた。その空虚な瞳は、空虚であるがゆえに、今この瞬間だけは<span>真誠</span>に見えた。`,
+      text: `業師はShalomの目を見つめた。その空虚な瞳は、空虚であるがゆえに、今この瞬間だけは<span>真誠</span>に見えた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
       ]
     },
     {
-      type: `narration`,
-      text: `嘘はない。偽装も、不純物もない。策を弄し尽くした果てにあるのが、こんな隠秘な依頼であり、それを届けるためにこれほどの手間をかけるとは……なんと愚かな。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `業師`,
+      text: `（心の声）<br>嘘はない。偽装も、不純物もない。策を弄し尽くした果てにあるのが、こんな隠秘な依頼であり、それを届けるためにこれほどの手間をかけるとは……なんと愚かな。`,
     },
     {
       type: `narration`,
@@ -91,7 +90,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師は再びシャーロームの手を振り払い、二歩下がって完全に距離を取った。`,
+      text: `業師は再びShalomの手を振り払い、二歩下がって完全に距離を取った。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -99,7 +98,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女はシャーロームを見て、ある可笑しなことを思い出した。`,
+      text: `彼女はShalomを見て、ある可笑しなことを思い出した。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -131,8 +130,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
-      text: `その通り。コスト削減は私の個人的な趣味に過ぎず、ニーズの実現こそが絶対目的。『必要な犠牲』は常套手段です。それが彼らの意志。<span>私</span>を通してそれを見極めれば、僥倖など期待しなくなるでしょう。`,
+      name: `Shalom`,
+      text: `その通り。コスト削減は私の個人的な趣味に過ぎず、ニーズの実現こそが絶対目的。『必要な犠牲』は常套手段です。それが上庭の意志。<span>私</span>を通してそれを見極めれば、僥倖など期待しなくなるでしょう。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -151,7 +150,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `シャーロームは静かに彼女を見つめ、長い沈黙の後、<span>微笑</span>んで答えた。`,
+      text: `Shalomは静かに彼女を見つめ、長い沈黙の後、微笑んで答えた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -161,7 +160,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x6.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `――使用期限内に、こっそり壊れた道具だけ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -317,7 +316,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `シャーロームは止めなかった。崩壊する裂け目から蠢く光の触手が伸び、狂乱の光を投げかける。シャーロームの顔に映る蝋人形のような微笑みには、どこか不気味な亀裂が走り、まるで悲願が達成されたかのようだった。`,
+      text: `Shalomは止めなかった。崩壊する裂け目から蠢く光の触手が伸び、狂乱の光を投げかける。Shalomの顔に映る蝋人形のような微笑みには、どこか不気味な亀裂が走り、まるで悲願が達成されたかのようだった。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -327,7 +326,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `それでいい……今回もまた、私は代償を惜しまない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -439,7 +438,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `シャーロームは亀裂の前に立ち、光の触手の間で、すべてが業師に集まり、命と力を与え、名状しがたい感情を伝えた。初めて、彼女はその人形から感情を感じた。`,
+      text: `Shalomは亀裂の前に立ち、光の触手の間で、すべてが業師に集まり、命と力を与え、名状しがたい感情を伝えた。初めて、彼女はその人形から感情を感じた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -455,7 +454,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `力の起動条件は全て満たされた。シャーロームは静かに呟いた。`,
+      text: `力の起動条件は全て満たされた。Shalomは静かに呟いた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -465,7 +464,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x6.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `君が受け入れないのはわかってた。君たちの感情はあまりにも熱烈で、裸のまま輝いてる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -476,7 +475,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x6.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `君の命が尽きてなかったら、もっと穏やかな方案を選びたかった。でも、その時間はもうない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -487,7 +486,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x7.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `だから、思う存分抗って……私は全部理解している、全部受け入れるつもりだ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -498,7 +497,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x7.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `私が触れた花は枯れる運命でも、君を生かさなきゃいけない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -518,7 +517,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は剣を振るい光の中へと躍り込んだ。今や彼女の目と脳裏にはシャーローム一人しか映っていない。`,
+      text: `彼女は剣を振るい光の中へと躍り込んだ。今や彼女の目と脳裏にはShalom一人しか映っていない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -578,7 +577,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/xzj.png`,
-      name: `シャーローム`,
+      name: `Shalom`,
       text: `？！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -596,7 +595,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女はコクリコを遮り、シャーロームの前に立ち塞がった。激しい息切れ。先ほどの衝突の衝撃からまだ立ち直れていないのか、あるいはこの空間の狂乱に耐え難いのか。`
+      text: `彼女はコクリコを遮り、Shalomの前に立ち塞がった。激しい息切れ。先ほどの衝突の衝撃からまだ立ち直れていないのか、あるいはこの空間の狂乱に耐え難いのか。`
     }
   ]
 };
