@@ -207,7 +207,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `ふ、復讐に目を曇らせないで！ 彼女はあなたがそうなるのを望んでる……復讐に執着する人間を、彼女は煽ろうとしてるの！`,
+      text: `ふ、復讐に目を曇らせないで！彼女は……そういうあなたが好きなんだ。……復讐に執着する人間を、彼女は煽ろうとしているんだ！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -274,7 +274,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `探偵は意を決してポケットに手を伸ばし、アザミの通話録音が入ったスマホを取り出そうとした。残念ながら、この精神空間は彼女のスマホまで転送することを忘れていたらしい。`,
+      text: `探偵は意を決してポケットに手を伸ばし、アザミの通話録音が入ったスマホを取り出そうとした。残念ながら、スマホが彼女と共にこの精神空間へ至ることはなかった。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -282,7 +282,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `探偵は平静を装って手を引っ込め、服で拭う。コクリコの視線が自分に集中している、それが探偵に自信を与えた。`,
+      text: `探偵は平静を装って手を引っ込め、服で拭う。業師の視線が自分に集中している、それが探偵に自信を与えた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -320,7 +320,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `コクリコはその思考を追おうとしたが、白い光の触手が依然として彼女を取り囲み、誤った情報を注ぎ込み、探偵の言葉を信じるなと警告してくる。`,
+      text: `業師はその思考を追おうとしたが、白い光の触手が依然として彼女を取り囲み、誤った情報を注ぎ込み、探偵の言葉を信じるなと警告してくる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -368,7 +368,8 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `（心の声）<br>難しいよ……ミリア……すごく難しい……でも……向き合わなきゃ。正義は真実からしか生まれないから。たとえ真実が、痛みを伴うとしても。`,
+      text: `（心の声）
+      難しいよ……ミリア……すごく難しい……でも……向き合わなきゃ。正義は真実からしか生まれないから。たとえ真実が、痛みを伴うとしても。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -378,7 +379,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `……この状況、見たことがあるから。`,
+      text: `……私は以前`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -386,7 +387,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `探偵は言葉を切り、背後の視線を感じ取った。沈黙の中で、彼女はその笑顔さえ想像できた。かつて彼女が大好きだった、あの笑顔を。`,
+      text: `探偵は言葉を詰まらせた。背後から突き刺さる視線を感じ取っていた。沈黙の中、彼女はその笑顔を――かつて自分が一番好きだったあの笑顔を、脳裏に描くことすらできた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -404,7 +405,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `104年、私はニルヴァーナグループを襲撃し、現場にいた執行人Shalomに最大の殺意を持って攻撃した。あの時、私も重傷を負って、彼女を殺そうとして、そして……私も変えられた。`,
+      text: `104年、私は涅槃集団を襲撃し、ありったけの憎悪を込めて現場にいた執行人のShalomを攻撃した。あの時、私は重傷を負っていた。彼女を殺そうとして、そして……私は変えられた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -414,7 +415,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `ずっと思ってた、あれは彼女が私を救済してくれたんだって。でも、でも、違った。今のあなたの姿を見て確信した、真実はそうじゃない。`,
+      text: `ずっと、ずっと、彼女が私を救済してくれたのだと思い込んでいた。けれど……けれど、違った。今のあなたの姿を見て、より確信した。真実はそうではない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -558,7 +559,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `敵なんてどうでもいい、復讐なんてどうでもいい、薄汚い害虫どもなんて知るか。コクリコはただ今すぐ自分の『Garden』に帰りたかった。自分の花たちが生き生きと咲く姿を見たい、抱きしめたい。`,
+      text: `敵なんてどうでもいい、復讐なんてどうでもいい、薄汚い害虫どもなんて知るか。業師はただ今すぐ自分の『Garden』に帰りたかった。自分の花たちが生き生きと咲く姿を見たい、抱きしめたい。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -566,7 +567,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `その瞬間、彼女に絡みついていた光の触手が弾き飛ばされた。体に注ぎ込まれていた生命力も無念も、すべてが唐突に遮断される。コクリコは完全に自我を取り戻した。意識は急速に鮮明になり、体の萎縮感も消え失せた。`,
+      text: `その瞬間、彼女に絡みついていた光の触手が弾き飛ばされた。体に注ぎ込まれていた生命力も無念も、すべてが唐突に遮断される。業師は完全に自我を取り戻した。意識は急速に鮮明になり、体の萎縮感も消え失せた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -597,7 +598,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `だが苦痛の表情はなく、ただ探偵を見つめ、何かを思案しているようだった。やがてコクリコの視線に気づくと、ふわりと微笑んだ。`,
+      text: `だが苦痛の表情はなく、ただ探偵を見つめ、何かを思案しているようだった。やがて業師の視線に気づくと、ふわりと微笑んだ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -699,7 +700,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女が静かにそう告げた直後、コクリコが自ら引き裂いた裂け目から凄まじい悲鳴が轟いた。獰猛な巨大な爪が亀裂を打ち砕き、巨大な使い魔が咆哮しながら裂け目から押し出されてきた。`,
+      text: `彼女が静かにそう告げた直後、業師が自ら引き裂いた裂け目から凄まじい悲鳴が轟いた。獰猛な巨大な爪が亀裂を打ち砕き、巨大な使い魔が咆哮しながら裂け目から押し出されてきた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -734,7 +735,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `そいつが咆えるたびに、コクリコの体内で激しい震動が起きた。`,
+      text: `そいつが咆えるたびに、業師の体内で激しい震動が起きた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -807,14 +808,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `しーっ——彼女は声を出さずにコクリコに告げる。`,
+      text: `しーっ——彼女は声を出さずに業師に告げる。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x8.png`,
       name: `Shalom`,
-      text: `『仇恨』ではありません。君と私が生まれ持つ力……口に出してしまっては、効力が失われてしまいます。`,
+      text: `憎しみではない、君と私が生まれ持つ力……口に出すと、効かなくなる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -825,7 +826,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x8.png`,
       name: `Shalom`,
-      text: `君の命は一部しか修復されていません。大事に使ってくださいね、コクリコ。`,
+      text: `君の命は一部しか修復されていません。大事に使ってくださいね、業師。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -833,7 +834,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `コクリコは全てを悟った。彼女はShalomを見、そして彼女の背後にいる――幾重にも枷を嵌められた「怪物」を見て、初めて緩んだ笑みを浮かべた。`,
+      text: `業師は全てを悟った。彼女はShalomを見、そして彼女の背後にいる――幾重にも枷を嵌められた「怪物」を見て、初めて緩んだ笑みを浮かべた。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -904,7 +905,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `コクリコの答えに応じたのは巨獣の咆哮だった。鋭い爪が虚無の中の全ての枷を引き裂き、自らを貫く無数の青い光へと立ち向かい、長きにわたり自分を閉じ込めてきた牢獄を破壊する。`,
+      text: `業師の答えに応じたのは巨獣の咆哮だった。鋭い爪が虚無の中の全ての枷を引き裂き、自らを貫く無数の青い光へと立ち向かい、長きにわたり自分を閉じ込めてきた牢獄を破壊する。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
@@ -1110,7 +1111,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `コクリコは理解した。花の剣を猛然と振るい、目の前のHUSH精鋭部隊を撃退すると、振り返ることなく殺戮の道を切り開いていった。`,
+      text: `業師は理解した。花の剣を猛然と振るい、目の前のHUSH精鋭部隊を撃退すると、振り返ることなく殺戮の道を切り開いていった。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
