@@ -99,7 +99,7 @@ export default {
       name: `業師`,
       text: `へえ、そう？`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_13.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
@@ -301,8 +301,7 @@ export default {
       name: `Shalom`,
       text: `残酷な時代です。人々は常に複雑で解のない難局に直面します。彼らには、情勢を観察し、変化を分析し、解決策を提示し、実行する存在が必要です。私はそれが得意なのです。私の仕事は、ニーズを受け入れ、詰みの中から正解を見つけ出すこと。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_5.wav" },
       ],
     },
     {
@@ -364,8 +363,7 @@ export default {
       name: `Shalom`,
       text: `『Garden』の結末はとっくに決まっていました。追い詰められ、福音地に捕らえられた時点で、両勢力の戦火に引き裂かれることは確定していたのです。それが、狭間に生きる者の宿命。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_11.wav" },
       ],
     },
     {
@@ -390,8 +388,7 @@ export default {
       name: `Shalom`,
       text: `けれど、君が命を削って築いた隠れ家は、君の命が尽きると同時に崩壊する。今回は、復讐すら君の救いにはならない。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_4.wav" },
       ],
     },
     {
@@ -401,8 +398,7 @@ export default {
       name: `Shalom`,
       text: `もう時間は残されていない。たとえ私を殺し、上庭と福音地を血祭りにあげ、世界を転覆させたとしても……君にはもう、新しい花を探す時間などないのです。君の廃墟は、二度と再生しない。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_21.wav" },
       ],
     },
     {
@@ -450,8 +446,7 @@ export default {
       name: `Shalom`,
       text: `私が君に命を与えましょう。新たな『Garden』を見つけるための時間を。そして、君たちを全ての騒乱から完全に遠ざけてみせます。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_18.wav" },
       ],
     },
     {
@@ -461,7 +456,7 @@ export default {
       name: `業師`,
       text: `いいこと言うね。まるで全部計算済みみたいに。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_22.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
@@ -509,21 +504,10 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `Shalom`,
-      text: `ここだけが、彼らの手の及ばない場所。だからこそ、自らの代わりにリスクを制御する数多くのルールが定められたのです。私だけが認可を受け、ここへの侵入権を得ました。`,
+      text: `ここだけが、彼らの手の及ばない場所。だからこそ、自らの代わりにリスクを制御する数多くのルールが定められたのです。私だけが認可を受け、ここへの侵入権を得ました。
+      そして君は、私を倒すことで無理やり押し入ってきた。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/x4.png`,
-      name: `Shalom`,
-      text: `そして君は、私を倒すことで無理やり押し入ってきた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_15.wav" },
       ],
     },
     {
@@ -533,8 +517,7 @@ export default {
       name: `Shalom`,
       text: `よかった。これから起こることは、二人だけの話にする。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_16.wav" },
       ],
     },
     {
@@ -679,8 +662,7 @@ export default {
       name: `Shalom`,
       text: `そうでしょうか？ 私は一歩ずつ心血を注いでここまで辿り着き、ようやく解法を見つけました。少し自慢したいくらいなのですよ。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_17.wav" },
       ],
     },
     {
@@ -723,8 +705,7 @@ export default {
       name: `Shalom`,
       text: `――なぜなら、あれは元々、福音地が生み出した最も狂気じみた創造物だからです。内海の孤島で生まれ、黒環を餌とし、根源へと通じるもの。あれは狂人たちが狂厄を盗み出すために造った究極の器であり、狂厄の蘇生こそが上庭の最大の恐怖なのです。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_2.wav" },
       ],
     },
     {
@@ -901,7 +882,7 @@ export default {
       name: `Shalom`,
       text: `そう。彼はあまりにも多くの力を得て、自身の根源に近づいた。上庭は怖がって、最も厳しいルールで彼が黒環を吞噬するのを止めた。一度、二度……そして三度目で、彼は確実に死ぬ。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_23.wav" },
       ],
     },
     {
@@ -1014,10 +995,10 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `Shalom`,
-      text: `私の踏み込めない場所へ、向かってくれ。君はこの狭間における最強の存在であり、長きにわたり両側の世界を渡り歩いてきた唯一の者。君になら、彼をどちらの勢力にも渡さず守り抜くことができる。`,
+      text: `私の踏み込めない場所へ、向かってくれ。
+      君はこの狭間における最強の存在であり、長きにわたり両側の世界を渡り歩いてきた唯一の者。君になら、彼をどちらの勢力にも渡さず守り抜くことができる。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_25.wav" },
       ],
     },
     {
@@ -1059,7 +1040,7 @@ export default {
       name: `Shalom`,
       text: `ただ……この僵化した盤面で、怪物の縄を少し緩めてやっただけに過ぎません。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_27.wav" },
       ],
     },
     {
@@ -1091,8 +1072,7 @@ export default {
       name: `Shalom`,
       text: `依頼の報酬として、私の力を借りて生き延び、新たな生を探すもよし。私を殺して泥のように踏みつけ、さらなる高みへ剣を振るうもよし。好きに試すといい。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_20.wav" },
       ],
     },
     {
@@ -1130,6 +1110,21 @@ export default {
       text: `（心の声）<br>嘘はない。偽装も、不純物もない。策を弄し尽くした果てにあるのが、こんな隠秘な依頼であり、それを届けるためにこれほどの手間をかけるとは……なんと愚かな。`,
     },
     {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `業師`,
+      text: `（心の声）<br>嘘はない。偽装も、不純物もない。策を弄し尽くした果てにあるのが、こんな隠秘な依頼であり、それを届けるためにこれほどの手間をかけるとは……なんと愚かな。`,
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `業師`,
+      text: `（心の声）
+      残念だ。「もしも」など存在しない。`,
+    },
+    {
       type: `narration`,
       text: `もっと早く、大人しく頭を下げて頼めば、業師も考えなくはなかったかもしれない。余計なことをせず、この女を利用することもできたかもしれない。もし、他に選択肢があるのだと知っていたなら――`,
       voice: [
@@ -1139,7 +1134,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `残念だ。そんなものはありはしない。彼女はとっくに「もしも」なんて考えない。`,
+      text: `彼女はとっくに「もしも」なんて考えない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation21/vo_event_11027_53.wav" },
         { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
@@ -1473,7 +1468,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
+      avatar: `img/dh/leopold.png`,
       name: `業師`,
       text: `……君たちも、自分のためだけに生きればよかったのに……馬鹿な子たち……`,
       voice: [

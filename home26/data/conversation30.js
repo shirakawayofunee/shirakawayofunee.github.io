@@ -1,7 +1,7 @@
 export default {
   meta: {
     title: `flowers-404「静かな反逆」`,
-    bgm: `mp3/bg/conversation28.mp3`,
+    bgm: `mp3/bg/conversation2.mp3`,
     summary: `無数の光が触手へと凝縮し、無数の感情が怒りの波として集まった。
     それらは隙間の向こうから、現実と狂厄を隔てるギャップを引き裂き、怒涛のように押し寄せる。`
   },
@@ -236,20 +236,14 @@ export default {
     {
       type: `narration`,
       text: `探偵は歯を食いしばり、涙をこらえて業師を見上げた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      bgm: `mp3/bg/conversation28.mp3`,
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
       text: `『Garden』は生きてる。救えるのはあなただけ。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      
     },
     {
       type: `dialogue`,
@@ -594,7 +588,7 @@ export default {
       position: `left`,
       avatar: `img/dh/xzhenxin.png`,
       name: `Shalom`,
-      text: ``,
+      text: `……`,
     },
     {
       type: `narration`,
@@ -696,7 +690,8 @@ export default {
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
+      ],
+      bgm: `mp3/bg/开往春天-1.1x.m4a`,
     },
     {
       type: `narration`,

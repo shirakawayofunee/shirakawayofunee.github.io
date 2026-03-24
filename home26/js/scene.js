@@ -224,7 +224,7 @@ const chapterList = [
   {
     id: "conversation31",
     category: "flower",
-    title: "404「エピローグ」",
+    title: "404「終わりに」",
     subtitle: "Flora",
     dateLabel: "N.F.113.8.26",
   },
