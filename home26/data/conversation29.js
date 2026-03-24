@@ -106,18 +106,10 @@ export default {
     {
       type: `narration`,
       text: `そう言うと、彼女は素手で執行人の胸を突き刺した。血が滲んだが、相手は痛みの表情を一切見せなかった。逆に、虚空から鋭い青い光の刺が業師の手の甲を貫いた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `それは執行人の力ではなく、この場を超える、もっと高次のルールだった。だが、業師は動じなかった。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -133,10 +125,6 @@ export default {
     {
       type: `narration`,
       text: `そう言って手を引き抜き、Shalomの首を掴んで力強く地面に叩きつけた。背中に数本の光の刺が突き刺さった。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -152,10 +140,6 @@ export default {
     {
       type: `narration`,
       text: `Shalomは微笑んだ。口を開かず、笑い声が直接業師の脳内に響き、気持ち悪さに鳥肌が立った。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -215,26 +199,15 @@ export default {
     {
       type: `narration`,
       text: `その通りだった。業師は自分の手を見た。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `何もしていなくとも、針のような青い光が皮膚に細かく浮かび上がり、痺れるような痛みが走る。それはまるで蓝雨を浴びて力を抑圧されているようでもあり、何かを警戒し防いでいるようでもあった。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `業師は再びShalomに視線を戻す。この執行人の体には何の痕跡もなく、平然としている。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
+
     },
     {
       type: `dialogue`,
@@ -281,10 +254,6 @@ export default {
     {
       type: `narration`,
       text: `Shalomは人形のような微笑みを浮かべる。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -309,10 +278,6 @@ export default {
     {
       type: `narration`,
       text: `業師は声を上げて笑った。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -404,18 +369,10 @@ export default {
     {
       type: `narration`,
       text: `業師はShalomを睨みつけたが、長い沈黙の後、その瞳には疲労の色が滲んだ。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
       text: `疲れたのかもしれない。先ほどの戦いはあまりに痛快で、彼女は惜しみなく命を使いすぎた。業師は休息を欲していた。彼女は視線を逸らし、気怠げに問いかけた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -483,10 +440,6 @@ export default {
     {
       type: `narration`,
       text: `Shalomは業師へと歩み寄る。その表情はより一層曖昧さを増し、真意を読み取ることはできなかった。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -512,10 +465,6 @@ export default {
     {
       type: `narration`,
       text: `彼女は業師の半歩手前で立ち止まる。業師が嫌悪感を露わに彼女を刺し貫くその前に、Shalomは両手を上げて業師の頬を包み込み、自らの目を直視させた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -560,10 +509,6 @@ export default {
     {
       type: `narration`,
       text: `Shalomの顔は蝋人形のように冷淡なままだったが、手に込められた力は徐々に強まり、そこには拒絶を許さない意志が宿っていた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `narration`,
@@ -615,10 +560,6 @@ export default {
     {
       type: `narration`,
       text: `業師は言葉を失った。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -634,10 +575,6 @@ export default {
     {
       type: `narration`,
       text: `Shalomは小首をかしげ、あろうことか笑みを浮かべた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -655,10 +592,10 @@ export default {
       avatar: `img/dh/x4.png`,
       name: `Shalom`,
       text: `君と同じく、彼もまた、両陣営にとって真に痛手となる、得難い厄介者ですから。`,
-      voice: [
+/*       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
-      ],
+      ], */
     },
     {
       type: `dialogue`,
