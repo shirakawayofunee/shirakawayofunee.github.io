@@ -620,7 +620,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold2.png`,
+      avatar: `img/dh/leopold.png`,
       name: `業師`,
       text: `……`,
       voice: [
@@ -655,7 +655,7 @@ export default {
       position: `left`,
       avatar: `img/dh/armaf.png`,
       name: `ヒゲル`,
-      text: `緊急任務……「Garden」、我々の敵を排除しろ……`,
+      text: `緊急任務……我々の敵を排除しろ……`,
       voice: [
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_21.wav" },
       ],
@@ -665,7 +665,7 @@ export default {
       position: `left`,
       avatar: `img/dh/armaf.png`,
       name: `ヒゲル`,
-      text: `誰でもいい、いっそ全員で行け。このリストにある者を、探し出して全員殺せ。`,
+      text: `誰でもいい、いっそ全員で行け。このリストにある者を、全員殺せ。`,
       voice: [
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_15.wav" },
       ],

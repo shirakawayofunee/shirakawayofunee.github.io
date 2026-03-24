@@ -53,10 +53,6 @@ export default {
     {
       type: `narration`,
       text: `もっと早く、大人しく頭を下げて頼めば、業師も考えなくはなかったかもしれない。余計なことをせず、この女を利用することもできたかもしれない。もし、他に選択肢があるのだと知っていたなら――`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
-        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
-      ]
     },
     {
       type: `narration`,
