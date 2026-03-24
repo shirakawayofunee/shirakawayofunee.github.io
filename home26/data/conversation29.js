@@ -657,7 +657,7 @@ export default {
       name: `ヒゲル`,
       text: `緊急任務……「Garden」、我々の敵を排除しろ……`,
       voice: [
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_21.wav" },
       ],
     },
     {
@@ -667,7 +667,7 @@ export default {
       name: `ヒゲル`,
       text: `誰でもいい、いっそ全員で行け。このリストにある者を、探し出して全員殺せ。`,
       voice: [
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_15.wav" },
       ],
     },
     {
@@ -686,9 +686,19 @@ export default {
       position: `left`,
       avatar: `img/dh/armaf.png`,
       name: `ヒゲル`,
-      text: `殺せ！無謀な愚か者どもめ！あそこに手を出すなど！たかが彼如きが！□□が破壊され、□□□が奪われた……それなのに奴らは、□□□を傷つけるだと！！殺せ、奴らを全員殺せ！！`,
+      text: `殺せ！無謀な愚か者どもめ！あそこに手を出すなど！たかが彼如きが！`,
       voice: [
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_59.wav" },
+      ],
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `ヒゲル`,
+      text: `□□が破壊され、□□□が奪われた……それなのに奴らは、□□□を傷つけるだと！！殺せ、奴らを全員殺せ！！`,
+      voice: [
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_14.wav" },
       ],
     },
     {
@@ -985,7 +995,7 @@ export default {
       text: `……休息が済んだら、考えてあげなくもないわ。でも復讐に彼を使う必要はない。私は私のやり方でやる。他人の力なんて借りないわ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_52.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -996,16 +1006,13 @@ export default {
       text: `ただ、あの泥棒猫がどんな手を使って、私の可愛い子ちゃんをあんな無様な泣きっ面にさせたのか、見てやるだけよ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_32.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
       type: `narration`,
       text: `業師は再びShalomの手を振り払い、二歩下がって完全に距離を取った。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
@@ -1019,7 +1026,7 @@ export default {
       text: `……あの金髪の小娘が私を罵った時、どんな気持ちだったか今なら分かる気がするわ……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_19.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_87.wav" },
       ],
     },
     {
@@ -1030,7 +1037,7 @@ export default {
       text: `悪は悪だ。どんな立場や理由があろうと帳消しにはできない。勝手な理屈で手についた血の借金を軽くなかったことにする……その点においては、君も私も罪人ね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_65.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1051,7 +1058,7 @@ export default {
       text: `今日はこっちを犠牲に、明日はあっちを犠牲に、その量も誰にするかも全部君が決めるってわけ？ハハッ……君、何様！？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_62.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1077,10 +1084,12 @@ export default {
       position: `left`,
       avatar: `img/dh/wuyan.png`,
       name: `業師`,
-      text: `……そこまでは生きられないわね。君のくれた命もいらないし、鬱憤を晴らすのにそんなに長くは待てない。君の上に誰がいようと、前後にどれだけの人間がいようと関係ない`,
+      text: `……そこまでは生きられないわね。君のくれた命もいらないし、鬱憤を晴らすのにそんなに長くは待てない。君の上に誰がいようと、前後にどれだけの人間がいようと関係ない
+      君は私の『Garden』に手を出した。それだけで十分よ。人生は短い。
+      `,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_89.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1088,21 +1097,10 @@ export default {
       position: `left`,
       avatar: `img/dh/wuyan.png`,
       name: `業師`,
-      text: `君は私の『Garden』に手を出した。それだけで十分よ。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/wuyan.png`,
-      name: `業師`,
-      text: `人生は短い。上庭の<span>正しさ</span>や福音地の<span>宿願</span>に比べれば、私たちはちっぽけな存在らしいわね。どうせいつでも切り捨てられる命なら、少しくらい分からず屋で、大逆無道でも……構わないでしょう？`,
+      text: `上庭の<span>正しさ</span>や福音地の<span>宿願</span>に比べれば、私たちはちっぽけな存在らしいわね。どうせいつでも切り捨てられる命なら、少しくらい分からず屋で、大逆無道でも……構わないでしょう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_117.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_2.wav" },
       ],
     },
     {
@@ -1113,7 +1111,7 @@ export default {
       text: `鴻毛より軽い命なんだもの、好き勝手やったっていいじゃない？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_37.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1124,16 +1122,12 @@ export default {
       text: `君もこの場所も、上庭には大事だろ……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_71.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
       type: `narration`,
       text: `彼女はゆっくりと裂け目の前へと歩み寄る。その背後から、異様な音が聞こえてくる。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
     },
     {
       type: `dialogue`,
@@ -1143,7 +1137,7 @@ export default {
       text: `この裂け目が、君にとって触れてはならないものだと言うなら……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_6.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1167,7 +1161,7 @@ export default {
       text: `私のことを理解しているフリをしてたんでしょう？なら分かるはずよ。私が君の言うことなんて聞くわけがないって。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_79.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1178,7 +1172,7 @@ export default {
       text: `君たちの言う『正しさ』ってやつが、一番虫酸が走るの。私の獲物も、私を殺そうとする奴も、私に助けを求める奴も、どいつもこいつもロクな人間じゃない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_91.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1189,16 +1183,13 @@ export default {
       text: `正解……私の『Garden』を壊した、それこそが君の間違いよ！ 今後私が何をしようと君には関係ない。さあ、今すぐ償いなさい！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_87.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
       type: `narration`,
       text: `狂気的な力が雪崩れ込む。コクリコは久しく感じなかった生命の充実に震え、裂け目の中から妖しく輝く長剣を引き抜いた。耳をつんざくような轟音と共に、向こう側の狂厄が噴き出す。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
@@ -1212,7 +1203,7 @@ export default {
       text: `それでいい…今回もまた、私は代償を惜しまない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_56.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1223,18 +1214,12 @@ export default {
     {
       type: `narration`,
       text: `光の触手は生き物のように蠢き、すべてを照らし、業師に触れた。彼女はすべてが戻ってきたと感じた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
       text: `光の触手に囲まれ、空間全体が強烈な感情で満たされていく。反逆の力が身体に入り込み、全ての活力が手の中に戻ってくる。それは、再び自分の命を掌握する快感だった。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `dialogue`,
@@ -1244,7 +1229,7 @@ export default {
       text: `なんて痛快……戻ってきた。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_84.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1255,7 +1240,7 @@ export default {
       text: `誰にも指図はさせない。人生はこれっぽっちしかないの、私が自分で使い果たす。愛するも憎むも、私の心のままに。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_43.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1266,7 +1251,7 @@ export default {
       text: `誰のためにも犠牲にならず、誰にも仕えず、復讐も享楽も、一分一秒に至るまで私が好きに生きる。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_14.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -1277,16 +1262,13 @@ export default {
       text: `咲くのも自分、生きるのも自分、死ぬのも自分のため！最愛の人は自分自身でなければならない。自分の運命は、必ず自分の手で握る！それこそが<span>Garden</span>！何度言わせれば気が済むの！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_10.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
       type: `narration`,
       text: `彼女は両手を広げて光を仰ぎ、笑いながら、ついには涙をこぼした。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `dialogue`,
@@ -1296,48 +1278,33 @@ export default {
       text: `……君たちも、自分のためだけに生きればよかったのに……馬鹿な子たち……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_60.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
       type: `narration`,
       text: `その光の中に、見慣れた笑顔がいくつも浮かんだ。彼女の花たちだ。抱きしめたい、守りたいと思った。本当なら、自分の『Garden』で安らかに眠りたかった。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
       text: `――だが、最期まで彼女に寄り添ったのは、あの蝋人形のような女だけだった。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
       text: `Shalomは亀裂の前に立ち、光の触手の間で、すべてが業師に集まり、命と力を与え、名状しがたい感情を伝えた。初めて、彼女はその人形から感情を感じた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
       text: `彼女はコクリコを見ていた。希薄な憐れみと悲哀、そしてそれ以上の、ある種の冷徹な期待を込めて。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
       text: `力の起動条件は全て満たされた。Shalomは静かに呟いた。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `dialogue`,
@@ -1387,24 +1354,18 @@ export default {
       text: `……くたばれ`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_49.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
       type: `narration`,
       text: `彼女は剣を振るい光の中へと躍り込んだ。今や彼女の目と脳裏にはShalom一人しか映っていない。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
       text: `――どうしても許せず、どうしても屈したくなかったあの女が、いつの間にかコクリコの全意識を占領していた。彼女は仇敵に向けて剣を突き立てるが、相手は両手を広げ、まるで彼女の全てを抱擁するかのように待ち受けている。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
@@ -1416,8 +1377,7 @@ export default {
       name: `？？？`,
       text: `やめて――ッ！！`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_108.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_20.wav" },
       ],
     },
     {
@@ -1434,19 +1394,13 @@ export default {
       avatar: `img/dh/xzj.png`,
       name: `Shalom`,
       text: `？！`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
 
     {
       type: `narration`,
       text: `金髪の少女が頭上の虚空から突然亀裂を打ち、砕いて転がり落ち、たちまちこの空間の狂厄に侵された。`,
-      voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_53.wav" },
-        { label: "日", path: "wav/JP/conversation21/vo_event_11027_7.wav" },
-      ],
+
     },
     {
       type: `narration`,
