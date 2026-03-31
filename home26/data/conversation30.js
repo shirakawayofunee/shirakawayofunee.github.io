@@ -89,7 +89,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `……つまり、人を食らう花の中に命知らずにも飛び込んで、ここまで追いかけてきたのは、私を助けるためだって？ アハハハハハ――！！`,
+      text: `……つまり、人を食らう花の中に命知らずにも飛び込んで、ここまで追いかけてきたのは、私を助けるためだって？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
@@ -250,7 +250,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `？！`,
+      text: `…………証拠？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
@@ -296,7 +296,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
-      text: `私の推測は正しかった。HUSHは現場を偽装し、あなたに『Garden』は全滅したと思わせた。執行人は常に効率と節約を求める。あんなに手の込んだ回りくどいことをするのは、二つの目的のため以外にあり得ない。`,
+      text: `HUSHは現場を偽装し、あなたに『Garden』は全滅したと思わせた。執行人は常に効率と節約を求める。あんなに手の込んだ回りくどいことをするのは、二つの目的のため以外にあり得ない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
@@ -720,7 +720,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
+      avatar: `img/dh/L5.png`,
       name: `業師`,
       text: `？！`,
       voice: [
@@ -745,8 +745,12 @@ export default {
       ]
     },
     {
-      type: `narration`,
-      text: `これはコイツに「制御」されているのか？ それとも、自分の魂の一部がコイツと<span>「共鳴」</span>しているのか？ 一体化しているのか？`,
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `業師`,
+      text: `（心の声）
+      これはコイツに「制御」されているのか？ それとも、自分の魂の一部がコイツと<span>「共鳴」</span>しているのか？ 一体化しているのか？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
@@ -838,7 +842,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
+      avatar: `img/dh/l4.png`,
       name: `業師`,
       text: `それにしても、酷い鳴き声ね。心は痛まないの？`,
       voice: [
@@ -879,7 +883,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
+      avatar: `img/dh/l4.png`,
       name: `業師`,
       text: `ハッ……どうだか。君の真心なんて知ったことじゃないわ。お陰様で私のほうも手一杯なの。`,
       voice: [
@@ -890,7 +894,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/impatient.png`,
+      avatar: `img/dh/leopold2.png`,
       name: `業師`,
       text: `依頼は受けないわ。勝手に頑張りなさい、<span>Shalom</span>。`,
       voice: [
@@ -1011,7 +1015,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `クリスティーナ、場所はどこ？！ 言いなさい！ あの子たちはどこ？！`,
+      text: `クリスティーナ、場所はどこ！言いなさい！あの子たちはどこ！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
@@ -1083,15 +1087,8 @@ export default {
       ]
     },
     {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `？！`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
-        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
-      ]
+      type: `narration`,
+      text: `業師は理解した。花の剣を猛然と振るい、目の前のHUSH精鋭部隊を撃退すると、振り返ることなく殺戮の道を切り開いていった。`,
     },
     {
       type: `dialogue`,
@@ -1104,21 +1101,10 @@ export default {
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
       ]
     },
-    {
-      type: `narration`,
-      text: `業師は理解した。花の剣を猛然と振るい、目の前のHUSH精鋭部隊を撃退すると、振り返ることなく殺戮の道を切り開いていった。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
-        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
-      ]
-    },
+
     {
       type: `narration`,
       text: `この道は復讐のためではない。『Garden』の業師を止められる者は、もはや誰もいない。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
-        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
-      ]
     },
 ]
 };
