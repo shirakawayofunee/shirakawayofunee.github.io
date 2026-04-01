@@ -33,7 +33,7 @@
   min-height: 100vh;
   display: flex;
   box-sizing: border-box;
-/*   background: url("../kv/main_bg.jpg") no-repeat fixed center / 100% auto; */
+  background: url("../kv/main_bg.jpg") no-repeat fixed center / 100% auto;
 }
 
 #board {
@@ -45,22 +45,11 @@
   
 }
 
-#lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 3;
-}
-
 .node, .large-node, .small-node {
   position: absolute;
   pointer-events: auto;
-/*   transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); */
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
-  z-index: 2;
+  z-index: 10 !important;;
   touch-action: none;
 }
 
@@ -82,12 +71,15 @@
   display: inline-block;
   z-index: 7;
   background: rgba(60, 65, 85, 0.45); /* 低透明度的深色背景，适配深色底图 */
-
+  backdrop-filter: blur(12px) saturate(180%); /* 强模糊 + 饱和度提升，典型的 iOS 效果 */
+  -webkit-backdrop-filter: blur(12px) saturate(180%); /* 兼容 Safari */
+  
+  border-radius: 12px; /* 更圆润的圆角 */
   border: 1px solid rgba(255, 255, 255, 0.15); /* 极细的半透明白色边框，营造玻璃边缘感 */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25); /* 柔和的弥散阴影，增加层次感 */
   font-weight: 500;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  margin: 0;
+  margin: 0 auto 0;
 }
 
 .one {
@@ -138,10 +130,9 @@
   stroke-dasharray: 5;
 }
 
-#lines text {
-/*   fill: #ecf0f1; */
+/* #lines text {
   fill: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 使用系统字体，更像 iOS */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
   text-shadow: 0 1px 2px rgba(0,0,0,0.5);
   pointer-events: none;
@@ -153,36 +144,24 @@
 }
 
 #lines rect {
-  fill: rgba(40, 45, 70, 0.6); /* 半透明填充 */
-  /* SVG 元素在某些浏览器不支持 backdrop-filter，所以这里主要靠透明度和描边 */
+  fill: rgba(40, 45, 70, 0.6);
   stroke: rgba(255, 255, 255, 0.15);
   stroke-width: 1px;
-  rx: 8px; /* 圆角增加 */
+  rx: 8px;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
   z-index: 2;
-}
-
-/* .cyfhboard:not(.loaded) .node, .cyfhboard:not(.loaded) .large-node {
-  transform: translate(-50%, -50%) scale(0.8);
 } */
 
-.cyfhboard.loaded .node, .cyfhboard.loaded .large-node {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
 @media (min-width: 992px) {
-  .small-node { width: 102px; }
-  .small-node .avatar { width: 102px; height: 151px; }
-  .small-node .label { max-width: 102px; font-size: 12px; }
+  .small-node { width: 122px; }
+  .small-node .avatar { width: 122px; height: 151px; }
+  .small-node .label { max-width: 122px; font-size: 12px; }
   .node { width: 200px; }
   .node .avatar { height: 170px; }
   .node .label { max-width: 160px; font-size: 13px; }
   .large-node { width: 270px; }
   .large-node .avatar { height: 270px; }
   .large-node .label { max-width: 183px; font-size: 14px; }
-  #lines text { font-size: 12px; }
-  #lines rect { rx: 5; }
 }
 
 @media (max-width: 991px) and (min-width: 577px) {
@@ -192,8 +171,6 @@
   .large-node { width: 120px; }
   .large-node .avatar { width: 120px; height: 156px; }
   .large-node .label { max-width: 120px; font-size: 11px; }
-  #lines text { font-size: 12px; }
-  #lines rect { rx: 4; }
 }
 
 @media (max-width: 576px) {
@@ -212,8 +189,6 @@
   .large-node { width: 90px; }
   .large-node .avatar { width: 90px; height: 117px; }
   .large-node .label { max-width: 90px; font-size: 9px; padding: 4px; }
-  #lines text { font-size: 10px; }
-  #lines rect { rx: 3; }
 }
 
 .node, .large-node {

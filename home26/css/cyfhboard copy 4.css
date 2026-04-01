@@ -33,7 +33,7 @@
   min-height: 100vh;
   display: flex;
   box-sizing: border-box;
-/*   background: url("../kv/main_bg.jpg") no-repeat fixed center / 100% auto; */
+  background: url("../kv/main_bg.jpg") no-repeat fixed center / 100% auto;
 }
 
 #board {
@@ -82,12 +82,15 @@
   display: inline-block;
   z-index: 7;
   background: rgba(60, 65, 85, 0.45); /* 低透明度的深色背景，适配深色底图 */
-
+  backdrop-filter: blur(12px) saturate(180%); /* 强模糊 + 饱和度提升，典型的 iOS 效果 */
+  -webkit-backdrop-filter: blur(12px) saturate(180%); /* 兼容 Safari */
+  
+  border-radius: 12px; /* 更圆润的圆角 */
   border: 1px solid rgba(255, 255, 255, 0.15); /* 极细的半透明白色边框，营造玻璃边缘感 */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25); /* 柔和的弥散阴影，增加层次感 */
   font-weight: 500;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  margin: 0;
+  margin: 0 auto 0;
 }
 
 .one {
@@ -172,9 +175,9 @@
 }
 
 @media (min-width: 992px) {
-  .small-node { width: 102px; }
-  .small-node .avatar { width: 102px; height: 151px; }
-  .small-node .label { max-width: 102px; font-size: 12px; }
+  .small-node { width: 122px; }
+  .small-node .avatar { width: 122px; height: 151px; }
+  .small-node .label { max-width: 122px; font-size: 12px; }
   .node { width: 200px; }
   .node .avatar { height: 170px; }
   .node .label { max-width: 160px; font-size: 13px; }
