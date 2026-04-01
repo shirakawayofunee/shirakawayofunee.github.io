@@ -62,6 +62,9 @@
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
   z-index: 2;
   touch-action: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .node .avatar, .large-node .avatar, .small-node .avatar {
@@ -71,6 +74,7 @@
   background-size: contain;
   background-position: top;
   background-repeat: no-repeat;
+  width: 100%;
 }
 
 .node .label, .large-node .label, .small-node .label {
@@ -81,13 +85,17 @@
   text-align: center;
   display: inline-block;
   z-index: 7;
-  background: rgba(60, 65, 85, 0.45); /* 低透明度的深色背景，适配深色底图 */
+  background: rgba(46, 43, 44, 0.45); /* 低透明度的深色背景，适配深色底图 */
 
   border: 1px solid rgba(255, 255, 255, 0.15); /* 极细的半透明白色边框，营造玻璃边缘感 */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25); /* 柔和的弥散阴影，增加层次感 */
-  font-weight: 500;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  font-weight: 500;/* 
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3); */
   margin: 0;
+  display: block;      /* 改为块级元素，使其占据整行 */
+  width: 100%;        /* 宽度与头像对齐 */
+  box-sizing: border-box; /* 防止 padding 撑破宽度 */
+  margin-top: -50px;    /* 负边距让标签与头像轻微重叠，消除视觉缝隙 */
 }
 
 .one {
