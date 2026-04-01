@@ -10,12 +10,13 @@ const connections = [
     { from: 0, to: 4, label: "宿命のライバル / 好敵手 / 腐れ縁、複雑な協力关系", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 60, isObjective: true },
     { from: 4, to: 0, label: "探す→理解し 憐れみ やがて愛に", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -3, toSlot: -3, bendOffset: 60 },
 
-    { from: 7, to: 0, label: "元同僚 / 今は顧客", color: "#b2160b",  side: "left", sideIn: "top", fromSlot: 0, toSlot: 0, bendOffset: 70, isObjective: false },
+    { from: 7, to: 0, label: "元同僚 / 今は顧客", color: "#b2160b",  side: "left", sideIn: "top", fromSlot: 2, toSlot: 0, bendOffset: 70, isObjective: false },
     { from: 4, to: 5, label: "反逆", color: "#b2160b",  side: "top", sideIn: "left", fromSlot: 0, toSlot: -1, bendOffset: 80 },
-    { from: 5, to: 7, label: "宿敵", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -2, toSlot: -2, bendOffset: 20, isObjective: true },
+    { from: 0, to: 7, label: "反逆", color: "#b2160b",  side: "right", sideIn: "bottom", fromSlot: -4, toSlot: 0, bendOffset: 80 },
+    { from: 5, to: 7, label: "宿敵", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 20, isObjective: true },
     { from: 6, to: 7, label: "幹部", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 40, isObjective: false },
-    { from: 8, to: 0, label: "救いたい", color: "#b2160b",  side: "right", sideIn: "bottom", fromSlot: -2, toSlot: -3, bendOffset: 20, isObjective: false },
-    { from: 0, to: 8, label: "疑う", color: "#b2160b",  side: "bottom", sideIn: "right", fromSlot: -1, toSlot: 2.4, bendOffset: 20, isObjective: false },
+    { from: 8, to: 0, label: "救いたい", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -2, toSlot: 5, bendOffset: 20, isObjective: false },
+    { from: 0, to: 8, label: "疑う", color: "#b2160b",  side: "bottom", sideIn: "right", fromSlot: -2, toSlot: 2, bendOffset: 10, isObjective: false },
   ];
 
   // 其他特定逻辑连线
@@ -59,9 +60,9 @@ function initLayout() {
     [2, 1], // Jin (2)
     [2.7, 1], // Ji (3)
     [-2.7, 0], // X (4)
-    [-1.5, -1.2], // ST (5)
+    [-1, -1.2], // ST (5)
     [3.1, -1], // LY (6)
-    [1.5, -1.2], // DD (7)
+    [1, -1.2], // DD (7)
     [-1.6, 1.2], // Player (8)
   ];
 
@@ -228,31 +229,58 @@ let pathD, lx, ly;
 const isStartVert = (side === "top" || side === "bottom");
 const isEndVert = (sideIn === "top" || sideIn === "bottom");
 
-if (isStartVert !== isEndVert) {
-  // 情况 A: 正交连接（一纵一横），使用 L 型折线确保方向正确
-  if (isStartVert) {
-    // 纵向出发 -> 水平进入 (例如 top -> left)
-    pathD = `M ${sX} ${sY} L ${sX} ${eY} L ${eX} ${eY}`;
-    lx = sX; ly = eY; 
-  } else {
-    // 水平出发 -> 纵向进入 (例如 right -> top)
-    pathD = `M ${sX} ${sY} L ${eX} ${sY} L ${eX} ${eY}`;
-    lx = eX; ly = sY;
-  }
-} else {
-  // 情况 B: 平行连接（同为纵或同为横），使用你原有的三段式 Z 型折线
-  if (!isStartVert) { 
-    // 全水平方向
-    const cornerX = side === "left" ? sX - bendOffset : sX + bendOffset;
-    pathD = `M ${sX} ${sY} L ${cornerX} ${sY} L ${cornerX} ${eY} L ${eX} ${eY}`;
-    lx = cornerX; ly = (sY + eY) / 2;
-  } else {
-    // 全垂直方向
-    const cornerY = side === "top" ? sY - bendOffset : sY + bendOffset;
-    pathD = `M ${sX} ${sY} L ${sX} ${cornerY} L ${eX} ${cornerY} L ${eX} ${eY}`;
-    lx = (sX + eX) / 2; ly = cornerY;
-  }
-}
+const diffX = Math.abs(sX - eX);
+    const diffY = Math.abs(sY - eY);
+    const STRAIGHT_THRESHOLD = 25; // 坐标差小于25px视为“近似直线”
+
+    if (isStartVert !== isEndVert) {
+      // --- 情况 A: 正交连接（一纵一横，L型） ---
+      if (isStartVert) {
+        // 纵向出发 -> 水平进入 
+        pathD = `M ${sX} ${sY} L ${sX} ${eY} L ${eX} ${eY}`;
+        lx = sX; ly = eY; // 默认充当转接头放在转角
+      } else {
+        // 水平出发 -> 纵向进入 
+        pathD = `M ${sX} ${sY} L ${eX} ${sY} L ${eX} ${eY}`;
+        lx = eX; ly = sY; // 默认充当转接头放在转角
+      }
+
+      // 【修改点 2】如果是几乎直线的短L型（横向或纵向距离很小），则将标签居中在整体线段中间
+      if (diffX < STRAIGHT_THRESHOLD || diffY < STRAIGHT_THRESHOLD) {
+        lx = (sX + eX) / 2;
+        ly = (sY + eY) / 2;
+      }
+
+    } else {
+      // --- 情况 B: 平行连接（同为纵或同为横，Z型） ---
+      if (!isStartVert) { 
+        // 全水平方向 (左出右进, 等等)
+        const cornerX = side === "left" ? sX - bendOffset : sX + bendOffset;
+        pathD = `M ${sX} ${sY} L ${cornerX} ${sY} L ${cornerX} ${eY} L ${eX} ${eY}`;
+        
+        // 【修改点 3】Z型逻辑：如果是明显的Z字，标签放在中间垂直线段的中心；如果是近乎直线的直连，直接居中
+        if (diffY < STRAIGHT_THRESHOLD) {
+          lx = (sX + eX) / 2;
+          ly = (sY + eY) / 2;
+        } else {
+          lx = cornerX; 
+          ly = (sY + eY) / 2;
+        }
+      } else {
+        // 全垂直方向 (上出下进, 等等)
+        const cornerY = side === "top" ? sY - bendOffset : sY + bendOffset;
+        pathD = `M ${sX} ${sY} L ${sX} ${cornerY} L ${eX} ${cornerY} L ${eX} ${eY}`;
+        
+        // 同理
+        if (diffX < STRAIGHT_THRESHOLD) {
+          lx = (sX + eX) / 2;
+          ly = (sY + eY) / 2;
+        } else {
+          lx = (sX + eX) / 2; 
+          ly = cornerY;
+        }
+      }
+    }
 
     // --- 5. 渲染 ---
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");

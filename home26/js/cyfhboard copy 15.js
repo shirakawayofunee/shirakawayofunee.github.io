@@ -1,19 +1,21 @@
 const connections = [
-    { from: 0, to: 1, label: "栽培、我が子のように大切にする、最も愛する部下", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 60 },
-    { from: 1, to: 0, label: "劣情、湿度高めの激重愛、求不得苦", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 1, toSlot: 1, bendOffset: 60 },
-    { from: 0, to: 2, label: "栽培、野放し", color: "#b2160b", side: "bottom", sideIn: "top", fromSlot: 1, toSlot: 0, bendOffset: 40 },
-    { from: 2, to: 0, label: "尊敬", color: "#b2160b", side: "top", sideIn: "bottom", fromSlot: 1, toSlot: 2, bendOffset: 60 },
-    { from: 0, to: 3, label: "栽培、教導", color: "#b2160b", side: "bottom", sideIn: "top", fromSlot: 2, toSlot: 0, bendOffset: 80 },
-    { from: 3, to: 0, label: "敬愛", color: "#b2160b", side: "top", sideIn: "bottom", fromSlot: 0, toSlot: 3, bendOffset: 100 },
-    // L 与 X 的复杂关系
-    { from: 0, to: 4, label: "やり返す", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 1, toSlot: 1, bendOffset: 60 },
-    { from: 0, to: 4, label: "宿命のライバル/好敵手、複雑な協力关系", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: -2, toSlot: -2, bendOffset: 60, isObjective: true },
-    { from: 4, to: 0, label: "敬慕の愛、利用/理解→怜れみ、やがて愛", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -5, toSlot: -5, bendOffset: 60 },
-    // 其他
-    { from: 0, to: 6, label: "元同僚、今は顧客", color: "#b2160b",  side: "top", sideIn: "left", fromSlot: 1, toSlot: 0, bendOffset: 50 },
-    { from: 6, to: 0, label: "利用", color: "#b2160b",  side: "bottom", sideIn: "top", fromSlot: 0, toSlot: 2, bendOffset: 40 },
-    { from: 0, to: 7, label: "元の組織、反逆", color: "#b2160b",  side: "top", sideIn: "bottom", fromSlot: -1, toSlot: 0, bendOffset: 70, isObjective: false },
-    { from: 4, to: 5, label: "反逆", color: "#b2160b",  side: "top", sideIn: "left", fromSlot: 0, toSlot: -1, bendOffset: 140 }
+    { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資、我が子のように大切にする、最も愛する部下", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 60 },
+    { from: 1, to: 0, label: "劣情 / 湿度高めの激重愛 / 求不得苦", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 3, toSlot:3, bendOffset: 60 },/* 
+    { from: 0, to: 2, label: "(恩師)栽培、野放し", color: "#b2160b", side: "bottom", sideIn: "top", fromSlot: 1, toSlot: 0, bendOffset: 40 }, *//* 
+    { from: 2, to: 0, label: "尊敬", color: "#b2160b", side: "top", sideIn: "bottom", fromSlot: 1, toSlot: 2, bendOffset: 60 }, */
+    { from: 0, to: 2, label: "(恩師)守護 / 栽培 / 出資", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: 1, bendOffset: 50 },/* 
+    { from: 3, to: 0, label: "敬愛", color: "#b2160b", side: "top", sideIn: "bottom", fromSlot: 0, toSlot: 3, bendOffset: 100 }, */
+
+    { from: 0, to: 4, label: "嫌い→不倶戴天 / やり返す→理解", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 3, toSlot: 3, bendOffset: 60 },
+    { from: 0, to: 4, label: "宿命のライバル / 好敵手 / 腐れ縁、複雑な協力关系", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 60, isObjective: true },
+    { from: 4, to: 0, label: "探す→理解し 憐れみ やがて愛に", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -3, toSlot: -3, bendOffset: 60 },
+
+    { from: 7, to: 0, label: "元同僚 / 今は顧客", color: "#b2160b",  side: "left", sideIn: "top", fromSlot: 0, toSlot: 0, bendOffset: 70, isObjective: false },
+    { from: 4, to: 5, label: "反逆", color: "#b2160b",  side: "top", sideIn: "left", fromSlot: 0, toSlot: -1, bendOffset: 80 },
+    { from: 5, to: 7, label: "宿敵", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -2, toSlot: -2, bendOffset: 20, isObjective: true },
+    { from: 6, to: 7, label: "幹部", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 40, isObjective: false },
+    { from: 8, to: 0, label: "救いたい", color: "#b2160b",  side: "right", sideIn: "bottom", fromSlot: -2, toSlot: -3, bendOffset: 20, isObjective: false },
+    { from: 0, to: 8, label: "疑う", color: "#b2160b",  side: "bottom", sideIn: "right", fromSlot: -1, toSlot: 2.4, bendOffset: 20, isObjective: false },
   ];
 
   // 其他特定逻辑连线
@@ -53,9 +55,9 @@ function initLayout() {
 
   const positions = [
     [0, 0], // Leopold (0)
-    [2.7, 0], // Severo (1)  —— 与 L 同一水平线
-    [1, 1.2], // Jin (2)
-    [2, 1.2], // Ji (3)
+    [2.3, 0], // Severo (1)  —— 与 L 同一水平线
+    [2, 1], // Jin (2)
+    [2.7, 1], // Ji (3)
     [-2.7, 0], // X (4)
     [-1.5, -1.2], // ST (5)
     [3.1, -1], // LY (6)
@@ -100,7 +102,7 @@ function ensureMarker(defs, color) {
     marker.setAttribute("refY", "5");
     marker.setAttribute("markerWidth", "6");
     marker.setAttribute("markerHeight", "6");
-    marker.setAttribute("orient", "auto-start-reverse");
+    marker.setAttribute("orient", "auto");
 
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", "M 0 0 L 10 5 L 0 10 z");
@@ -221,37 +223,36 @@ function drawLines() {
       eX += tSlot * slotStep;
     }
 
-    // --- 4. 路由逻辑 ---
-    let pathD, lx, ly;
-    const threshold = 5;
+// --- 4. 路由逻辑（智能正交版） ---
+let pathD, lx, ly;
+const isStartVert = (side === "top" || side === "bottom");
+const isEndVert = (sideIn === "top" || sideIn === "bottom");
 
-    if (
-      Math.abs(sX - eX) < threshold &&
-      (side === "top" || side === "bottom")
-    ) {
-      pathD = `M ${sX} ${sY} L ${eX} ${eY}`;
-      lx = sX;
-      ly = (sY + eY) / 2;
-    } else if (
-      Math.abs(sY - eY) < threshold &&
-      (side === "left" || side === "right")
-    ) {
-      pathD = `M ${sX} ${sY} L ${eX} ${eY}`;
-      lx = (sX + eX) / 2;
-      ly = sY;
-    } else {
-      if (side === "left" || side === "right") {
-        const cornerX = side === "left" ? sX - bendOffset : sX + bendOffset;
-        pathD = `M ${sX} ${sY} L ${cornerX} ${sY} L ${cornerX} ${eY} L ${eX} ${eY}`;
-        lx = cornerX;
-        ly = sY;
-      } else {
-        const cornerY = side === "top" ? sY - bendOffset : sY + bendOffset;
-        pathD = `M ${sX} ${sY} L ${sX} ${cornerY} L ${eX} ${cornerY} L ${eX} ${eY}`;
-        lx = sX;
-        ly = cornerY;
-      }
-    }
+if (isStartVert !== isEndVert) {
+  // 情况 A: 正交连接（一纵一横），使用 L 型折线确保方向正确
+  if (isStartVert) {
+    // 纵向出发 -> 水平进入 (例如 top -> left)
+    pathD = `M ${sX} ${sY} L ${sX} ${eY} L ${eX} ${eY}`;
+    lx = sX; ly = eY; 
+  } else {
+    // 水平出发 -> 纵向进入 (例如 right -> top)
+    pathD = `M ${sX} ${sY} L ${eX} ${sY} L ${eX} ${eY}`;
+    lx = eX; ly = sY;
+  }
+} else {
+  // 情况 B: 平行连接（同为纵或同为横），使用你原有的三段式 Z 型折线
+  if (!isStartVert) { 
+    // 全水平方向
+    const cornerX = side === "left" ? sX - bendOffset : sX + bendOffset;
+    pathD = `M ${sX} ${sY} L ${cornerX} ${sY} L ${cornerX} ${eY} L ${eX} ${eY}`;
+    lx = cornerX; ly = (sY + eY) / 2;
+  } else {
+    // 全垂直方向
+    const cornerY = side === "top" ? sY - bendOffset : sY + bendOffset;
+    pathD = `M ${sX} ${sY} L ${sX} ${cornerY} L ${eX} ${cornerY} L ${eX} ${eY}`;
+    lx = (sX + eX) / 2; ly = cornerY;
+  }
+}
 
     // --- 5. 渲染 ---
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
