@@ -180,13 +180,13 @@
 }
 
 @media (min-width: 992px) {
-  .small-node { width: 102px; }
-  .small-node .avatar { width: 102px; height: 151px; }
-  .small-node .label { max-width: 102px; font-size: 12px; }
-  .node { width: 200px; }
+  .small-node { width: 122px; height: 151px;}
+  .small-node .avatar { width: 122px; height: 151px; }
+  .small-node .label { max-width: 122px; font-size: 10px; }
+  .node { width: 140px; height: 170px;}
   .node .avatar { height: 170px; }
   .node .label { max-width: 160px; font-size: 13px; }
-  .large-node { width: 270px; }
+  .large-node { width: 218px; height: 270px;}
   .large-node .avatar { height: 270px; }
   .large-node .label { max-width: 183px; font-size: 14px; }
   #lines text { font-size: 12px; }

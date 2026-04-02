@@ -1,14 +1,14 @@
 const connections = [
     { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資、我が子のように大切にする、最も愛する部下", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 60 },
-    { from: 1, to: 0, label: "劣情 / 湿度高めの激重愛 / 求不得苦", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 3, toSlot:3, bendOffset: 60 },/* 
+    { from: 1, to: 0, label: "劣情、湿度高めの激重愛、求不得苦", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 3, toSlot:3, bendOffset: 60 },/* 
     { from: 0, to: 2, label: "(恩師)栽培、野放し", color: "#b2160b", side: "bottom", sideIn: "top", fromSlot: 1, toSlot: 0, bendOffset: 40 }, *//* 
     { from: 2, to: 0, label: "尊敬", color: "#b2160b", side: "top", sideIn: "bottom", fromSlot: 1, toSlot: 2, bendOffset: 60 }, */
-    { from: 0, to: 2, label: "(恩師)守護 / 栽培 / 出資", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: 1, bendOffset: 50 },/* 
+    { from: 0, to: 2, label: "(恩師)守護 / 栽培 / 出資", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: -1, bendOffset: 50 },/* 
     { from: 3, to: 0, label: "敬愛", color: "#b2160b", side: "top", sideIn: "bottom", fromSlot: 0, toSlot: 3, bendOffset: 100 }, */
 
     { from: 0, to: 4, label: "嫌い→不倶戴天 / やり返す→理解", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 3, toSlot: 3, bendOffset: 60 },
     { from: 0, to: 4, label: "宿命のライバル / 好敵手 / 腐れ縁、複雑な協力关系", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 60, isObjective: true },
-    { from: 4, to: 0, label: "探す→理解し 憐れみ やがて愛に", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -3, toSlot: -3, bendOffset: 60 },
+    { from: 4, to: 0, label: "賞賛→理解し 憐れみ やがて愛に", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -3, toSlot: -3, bendOffset: 60 },
 
     { from: 7, to: 0, label: "元同僚 / 今は顧客", color: "#b2160b",  side: "left", sideIn: "top", fromSlot: 2, toSlot: 0, bendOffset: 70, isObjective: false },
     { from: 4, to: 5, label: "反逆", color: "#b2160b",  side: "top", sideIn: "left", fromSlot: 0, toSlot: -1, bendOffset: 80 },
@@ -57,8 +57,8 @@ function initLayout() {
   const positions = [
     [0, 0], // Leopold (0)
     [2.3, 0], // Severo (1)  —— 与 L 同一水平线
-    [2, 1], // Jin (2)
-    [2.7, 1], // Ji (3)
+    [1.9, 1.3], // Jin (2)
+    [2.6, 1.3], // Ji (3)
     [-2.7, 0], // X (4)
     [-1, -1.2], // ST (5)
     [3.1, -1], // LY (6)
@@ -188,7 +188,7 @@ function drawLines() {
 
     const bendOffset = conn.bendOffset || 45;
     const slotStep = 20;
-    const margin = 12;
+    const margin = 20;
 
     // --- 2. 计算起点 (sX, sY) ---
     let sX = p1.x,
