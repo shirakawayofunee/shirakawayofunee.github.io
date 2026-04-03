@@ -1,31 +1,37 @@
+/**
+ * 角色关系图谱核心逻辑
+ * 功能：动态布局、正交折线路由、响应式缩放
+ */
+
 // ==================== 1. 配置数据 ====================
 
 // 节点位置配置 (虚拟坐标系)
+// [0, 0] 是中心点，数值代表相对基础半径的偏移
 const nodeConfig = [
-  { id: 0, pos: [0, 0] },         // 中心主角 L
-  { id: 1, pos: [2.3, 0] },       // Severo
-  { id: 2, pos: [1.9, 1.3] },     // 堇
-  { id: 3, pos: [2.6, 1.3] },     // 蓟
-  { id: 4, pos: [-2.7, 0] },      // X
-  { id: 5, pos: [-1, -1.1] },     // 上庭
-  { id: 6, pos: [2.5, -1.1] },      // 牧者
-  { id: 7, pos: [1, -1.1] },      // 福音地
-  { id: 8, pos: [-1.6, 1.2] }     // Shp-13
+  { id: 0, name: "Leopold", pos: [0, 0] },         // 中心主角
+  { id: 1, name: "Severo", pos: [2.3, 0] },       // 右侧
+  { id: 2, name: "Jin", pos: [1.9, 1.3] },        // 右下
+  { id: 3, name: "Ji", pos: [2.6, 1.3] },         // 右下远端
+  { id: 4, name: "X", pos: [-2.7, 0] },           // 左侧
+  { id: 5, name: "ST", pos: [-1, -1.2] },         // 左上
+  { id: 6, name: "LY", pos: [3.1, -1] },          // 右上远端
+  { id: 7, name: "DD", pos: [1, -1.2] },          // 右上
+  { id: 8, name: "Player", pos: [-1.6, 1.2] }     // 左下
 ];
 
 // 连线关系配置
 const connections = [
-  { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資\n我が子のように大切にする、最も愛する部下", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 60 },
-  { from: 1, to: 0, label: "劣情、湿度高めの激重愛、求不得苦", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 3, toSlot: 3, bendOffset: 60 },
-  { from: 0, to: 2, label: "(恩師)守護 / 栽培 / 出資", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: -1, bendOffset: 50 },
-  { from: 0, to: 4, label: "嫌い→不倶戴天、やり返す→理解", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 3, toSlot: 3, bendOffset: 60 },
-  { from: 0, to: 4, label: "宿命のライバル / 好敵手 / 腐れ縁\n複雑な協力关系", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 60, isObjective: true },
-  { from: 4, to: 0, label: "賞賛→理解し、憐れみ、やがて愛に", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -3, toSlot: -3, bendOffset: 60 },
+  { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資\n最も愛する部下", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 60 },
+  { from: 1, to: 0, label: "劣情、湿度高めの激重愛", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 3, toSlot: 3, bendOffset: 60 },
+  { from: 0, to: 2, label: "(恩師)守護 / 栽培", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: -1, bendOffset: 50 },
+  { from: 0, to: 4, label: "嫌い→不倶戴天 / やり返す", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 3, toSlot: 3, bendOffset: 60 },
+  { from: 0, to: 4, label: "宿命のライバル / 好敵手", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 60, isObjective: true },
+  { from: 4, to: 0, label: "賞賛→理解し 憐れみ やがて愛に", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -3, toSlot: -3, bendOffset: 60 },
   { from: 7, to: 0, label: "元同僚 / 今は顧客", color: "#b2160b", side: "left", sideIn: "top", fromSlot: 2, toSlot: 0, bendOffset: 70 },
   { from: 4, to: 5, label: "反逆", color: "#b2160b", side: "top", sideIn: "left", fromSlot: 0, toSlot: -1, bendOffset: 80 },
   { from: 0, to: 7, label: "反逆", color: "#b2160b", side: "right", sideIn: "bottom", fromSlot: -4, toSlot: 0, bendOffset: 80 },
-  { from: 5, to: 7, label: "宿敵", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 80, isObjective: true },
-  { from: 6, to: 7, label: "幹部", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 70 },
+  { from: 5, to: 7, label: "宿敵", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 20, isObjective: true },
+  { from: 6, to: 7, label: "幹部", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 40 },
   { from: 8, to: 0, label: "救いたい", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -2, toSlot: 5, bendOffset: 20 },
   { from: 0, to: 8, label: "疑う", color: "#b2160b", side: "bottom", sideIn: "right", fromSlot: -2, toSlot: 2, bendOffset: 10 }
 ];
@@ -106,36 +112,17 @@ function ensureMarker(defs, color) {
   return id;
 }
 
-// 专门用于测量文字尺寸的离屏临时 SVG 元素
-let tempSvgForMeasure = null;
-
-function getTempSvg() {
-  if (!tempSvgForMeasure) {
-      tempSvgForMeasure = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      tempSvgForMeasure.style.position = "absolute";
-      tempSvgForMeasure.style.visibility = "hidden";
-      tempSvgForMeasure.style.pointerEvents = "none";
-      // 确保足够大以便测量，且不受Swiper容器影响
-      tempSvgForMeasure.setAttribute("width", "500");
-      tempSvgForMeasure.setAttribute("height", "200");
-      document.body.appendChild(tempSvgForMeasure);
-  }
-  // 确保测量前清空
-  tempSvgForMeasure.innerHTML = "";
-  return tempSvgForMeasure;
-}
-
 /**
 * 创建连线上的文字标签（SVG 组）
-* 改进：使用独立的离屏 SVG 进行文字测量
 */
 function createLineLabel(text, x, y, color) {
   const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
   const isMobile = window.innerWidth <= 768;
   const padding = isMobile ? 4 : 6;
 
-  // 创建 text 元素
   const textEl = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  textEl.setAttribute("x", x);
+  textEl.setAttribute("y", y);
   textEl.setAttribute("text-anchor", "middle");
   textEl.setAttribute("dominant-baseline", "middle");
   textEl.style.fontSize = isMobile ? "10px" : "12px";
@@ -145,40 +132,20 @@ function createLineLabel(text, x, y, color) {
   const lines = text.split('\n');
   lines.forEach((line, i) => {
       const tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
-      // tspan 初始时不设置 x，dy 偏移
+      tspan.setAttribute("x", x);
       tspan.setAttribute("dy", i === 0 ? "0" : "1.2em");
       tspan.textContent = line;
       textEl.appendChild(tspan);
   });
 
-  // 1. 将 text 临时添加到离屏 SVG 测量尺寸
-  const measureSvg = getTempSvg();
-  measureSvg.appendChild(textEl);
-  
-  // 测量
+  // 绘制背景框（先加入 DOM 测量尺寸）
+  const tempSvg = document.getElementById("lines");
+  tempSvg.appendChild(textEl);
   const bbox = textEl.getBBox();
   
-  // 2. 测量完立即移除 text 防止DOM残留
-  measureSvg.removeChild(textEl);
-
-  // 3. 计算实际放置位置
-  // textEl.getBBox() 返回基于 textEl 放置时的位置和大小
-  // 我们需要将文字放在 (x, y)，这意味着 textEl 的 x 应该设为 x。
-  // bbox 是相对于这个 textEl 初始 (0,0) 的边界框。
-  textEl.setAttribute("x", x);
-  textEl.setAttribute("y", y);
-  // 还需要设置 tspans 的 x，因为它们通常相对于父 text 居中。
-  // 如果 text 设置了 x，tspan 通常需要显式设置相同的 x 以使其对齐（在 svg 中）。
-  Array.from(textEl.querySelectorAll('tspan')).forEach(tspan => {
-      tspan.setAttribute("x", x);
-  });
-
-  // 创建背景矩形
   const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-  // bbox.width 和 bbox.height 是准确的文字物理大小
-  // rect 放置需要根据目标 (x, y) 结合 bbox 大小居中放置
-  rect.setAttribute("x", (x - bbox.width/2 - padding));
-  rect.setAttribute("y", (y - bbox.height/2 - padding));
+  rect.setAttribute("x", bbox.x - padding);
+  rect.setAttribute("y", bbox.y - padding);
   rect.setAttribute("width", bbox.width + padding * 2);
   rect.setAttribute("height", bbox.height + padding * 2);
   rect.setAttribute("rx", "4");
@@ -186,7 +153,6 @@ function createLineLabel(text, x, y, color) {
   rect.setAttribute("stroke", color);
   rect.setAttribute("stroke-width", "1");
 
-  // 组合
   group.appendChild(rect);
   group.appendChild(textEl);
   return group;
@@ -228,7 +194,7 @@ function drawLines() {
 
       // 2. 计算终点
       let eX = p2.x, eY = p2.y;
-      const margin = 10; // 离目标的间隙Margin
+      const margin = 10; // 离目标的间隙
       if (sideIn === "left") { eX -= p2.radius + margin; eY += tSlot * slotStep; }
       else if (sideIn === "right") { eX += p2.radius + margin; eY += tSlot * slotStep; }
       else if (sideIn === "top") { eY -= p2.radius + margin; eX += tSlot * slotStep; }
@@ -236,7 +202,7 @@ function drawLines() {
 
       // 3. 正交路由算法
       let pathD = `M ${sX} ${sY}`;
-      let lx, ly; // 标签坐标lx, ly
+      let lx, ly; // 标签坐标
 
       const isStartVert = (side === "top" || side === "bottom");
       const isEndVert = (sideIn === "top" || sideIn === "bottom");

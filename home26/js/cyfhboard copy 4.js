@@ -1,0 +1,329 @@
+// ==================== 配置与状态 ====================
+const nodeConfig = [
+  { id: 0, pos: [0, 0] },       // 主角 L
+  { id: 1, pos: [2.3, 0] },     // Severo
+  { id: 2, pos: [1.9, 1.3] },   // 堇
+  { id: 3, pos: [2.6, 1.3] },   // 蓟
+  { id: 4, pos: [-2.7, 0] },    // X
+  { id: 5, pos: [-1, -1.2] },   // 上庭
+  { id: 6, pos: [3.1, -1] },    // 牧者
+  { id: 7, pos: [1, -1.2] },    // 福音地
+  { id: 8, pos: [-1.6, 1.2] }   // Shp-13
+];
+
+const connections = [
+  { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資、我が子のように大切にする、最も愛する部下", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 60 },
+  { from: 1, to: 0, label: "劣情、湿度高めの激重愛、求不得苦", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 3, toSlot:3, bendOffset: 60 },/* 
+  { from: 0, to: 2, label: "(恩師)栽培、野放し", color: "#b2160b", side: "bottom", sideIn: "top", fromSlot: 1, toSlot: 0, bendOffset: 40 }, *//* 
+  { from: 2, to: 0, label: "尊敬", color: "#b2160b", side: "top", sideIn: "bottom", fromSlot: 1, toSlot: 2, bendOffset: 60 }, */
+  { from: 0, to: 2, label: "(恩師)守護 / 栽培 / 出資", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: -1, bendOffset: 50 },/* 
+  { from: 3, to: 0, label: "敬愛", color: "#b2160b", side: "top", sideIn: "bottom", fromSlot: 0, toSlot: 3, bendOffset: 100 }, */
+
+  { from: 0, to: 4, label: "嫌い→不倶戴天 / やり返す→理解", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 3, toSlot: 3, bendOffset: 60 },
+  { from: 0, to: 4, label: "宿命のライバル / 好敵手 / 腐れ縁、複雑な協力关系", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 60, isObjective: true },
+  { from: 4, to: 0, label: "賞賛→理解し 憐れみ やがて愛に", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -3, toSlot: -3, bendOffset: 60 },
+
+  { from: 7, to: 0, label: "元同僚 / 今は顧客", color: "#b2160b",  side: "left", sideIn: "top", fromSlot: 2, toSlot: 0, bendOffset: 70, isObjective: false },
+  { from: 4, to: 5, label: "反逆", color: "#b2160b",  side: "top", sideIn: "left", fromSlot: 0, toSlot: -1, bendOffset: 80 },
+  { from: 0, to: 7, label: "反逆", color: "#b2160b",  side: "right", sideIn: "bottom", fromSlot: -4, toSlot: 0, bendOffset: 80 },
+  { from: 5, to: 7, label: "宿敵", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 20, isObjective: true },
+  { from: 6, to: 7, label: "幹部", color: "#b2160b",  side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 40, isObjective: false },
+  { from: 8, to: 0, label: "救いたい", color: "#b2160b",  side: "right", sideIn: "left", fromSlot: -2, toSlot: 5, bendOffset: 20, isObjective: false },
+  { from: 0, to: 8, label: "疑う", color: "#b2160b",  side: "bottom", sideIn: "right", fromSlot: -2, toSlot: 2, bendOffset: 10, isObjective: false },
+];
+
+const state = {
+  nodes: [],
+  nodePositions: [],
+};
+
+// ==================== 初始化布局 ====================
+function initLayout() {
+  const board = document.getElementById("board");
+  if (!board) return;
+
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const isMobile = vw <= 768;
+  const baseRadius = isMobile ? Math.min(vw, vh) * 0.38 : Math.min(vw, vh) * 0.25;
+
+  state.nodes = Array.from(document.querySelectorAll('.node'));
+  state.nodePositions = [];
+
+  state.nodes.forEach((node, index) => {
+    const config = nodeConfig[index];
+    if (!config) return;
+
+    const [dx, dy] = config.pos;
+    // 计算中心对齐坐标
+    const x = vw / 2 + dx * baseRadius;
+    const y = vh / 2 + dy * baseRadius;
+
+    // 应用位置
+    node.style.left = `${x}px`;
+    node.style.top = `${y}px`;
+    node.style.transform = "translate(-50%, -50%)";
+
+    // 存入状态供连线使用（取实际渲染的半径）
+    state.nodePositions[index] = {
+      x: x,
+      y: y,
+      radius: node.offsetWidth / 2
+    };
+  });
+}
+
+// ==================== 动态创建箭头 ====================
+function ensureMarker(defs, color) {
+  const id = `arrow-${color.replace("#", "")}`;
+  if (!document.getElementById(id)) {
+    const marker = document.createElementNS("http://www.w3.org/2000/svg", "marker");
+    marker.setAttribute("id", id);
+    marker.setAttribute("viewBox", "0 0 10 10");
+    marker.setAttribute("refX", "9");
+    marker.setAttribute("refY", "5");
+    marker.setAttribute("markerWidth", "6");
+    marker.setAttribute("markerHeight", "6");
+    marker.setAttribute("orient", "auto");
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M 0 0 L 10 5 L 0 10 z");
+    path.setAttribute("fill", color);
+    marker.appendChild(path);
+    defs.appendChild(marker);
+  }
+  return id;
+}
+
+// ==================== 创建标签 ====================
+function createLabel(text, x, y, strokeColor) {
+  const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  const isMobile = window.innerWidth <= 576;
+  const padding = isMobile ? 5 : 8;
+
+  const lines = text.split(/[、\n]/);
+
+  const textEl = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  textEl.setAttribute("x", x);
+  textEl.setAttribute("y", y);
+  textEl.setAttribute("text-anchor", "middle");
+  textEl.setAttribute("dominant-baseline", "middle");
+  textEl.setAttribute("font-size", isMobile ? "9.5px" : "12.5px");
+  textEl.setAttribute("fill", "#ffffff");
+
+  lines.forEach((line, i) => {
+    if (!line.trim()) return;
+    const tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+    tspan.setAttribute("x", x);
+    tspan.setAttribute("dy", i === 0 ? "0" : "1.35em");
+    tspan.textContent = line.trim();
+    textEl.appendChild(tspan);
+  });
+
+  // 使用隐藏SVG计算真实尺寸（避免因未渲染导致测量失效）
+  const tempSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  tempSvg.style.position = "absolute";
+  tempSvg.style.visibility = "hidden";
+  document.body.appendChild(tempSvg);
+  tempSvg.appendChild(textEl.cloneNode(true));
+  const bbox = tempSvg.querySelector("text").getBBox();
+  document.body.removeChild(tempSvg);
+
+  const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+  rect.setAttribute("x", bbox.x - padding);
+  rect.setAttribute("y", bbox.y - padding);
+  rect.setAttribute("width", bbox.width + padding * 2);
+  rect.setAttribute("height", bbox.height + padding * 2);
+  rect.setAttribute("rx", isMobile ? "4" : "6");
+  rect.setAttribute("fill", "rgba(30, 35, 55, 0.85)");
+  rect.setAttribute("stroke", strokeColor || "rgba(255,255,255,0.2)");
+  rect.setAttribute("stroke-width", "1");
+
+  group.appendChild(rect);
+  group.appendChild(textEl);
+  return group;
+}
+
+// ==================== 核心画线函数（电路板式精密版） ====================
+function drawLines() {
+  const svg = document.getElementById("lines");
+  if (!svg) return;
+
+  const defs =
+    svg.querySelector("defs") ||
+    document.createElementNS("http://www.w3.org/2000/svg", "defs");
+  svg.innerHTML = "";
+  svg.appendChild(defs);
+
+  connections.forEach((conn) => {
+    const p1 = state.nodePositions[conn.from];
+    const p2 = state.nodePositions[conn.to];
+    if (!p1 || !p2) return;
+
+    // --- 1. 参数初始化 (处理旧版 slot 兼容性) ---
+    const side = conn.side || (p2.x > p1.x ? "right" : "left");
+    const sideIn = conn.sideIn || (p2.x > p1.x ? "left" : "right");
+
+    const fSlot = conn.fromSlot !== undefined ? conn.fromSlot : conn.slot || 0;
+    const tSlot = conn.toSlot !== undefined ? conn.toSlot : conn.slot || 0;
+
+    const bendOffset = conn.bendOffset || 45;
+    const slotStep = 20;
+    const margin = 20;
+
+    // --- 2. 计算起点 (sX, sY) ---
+    let sX = p1.x,
+      sY = p1.y;
+    if (side === "left") {
+      sX -= p1.radius;
+      sY += fSlot * slotStep;
+    } else if (side === "right") {
+      sX += p1.radius;
+      sY += fSlot * slotStep;
+    } else if (side === "top") {
+      sY -= p1.radius;
+      sX += fSlot * slotStep;
+    } else if (side === "bottom") {
+      sY += p1.radius;
+      sX += fSlot * slotStep;
+    }
+
+    // --- 3. 计算终点 (eX, eY) ---
+    let eX = p2.x,
+      eY = p2.y;
+    if (sideIn === "left") {
+      eX -= p2.radius + margin;
+      eY += tSlot * slotStep;
+    } else if (sideIn === "right") {
+      eX += p2.radius + margin;
+      eY += tSlot * slotStep;
+    } else if (sideIn === "top") {
+      eY -= p2.radius + margin;
+      eX += tSlot * slotStep;
+    } else if (sideIn === "bottom") {
+      eY += p2.radius + margin;
+      eX += tSlot * slotStep;
+    }
+
+// --- 4. 路由逻辑（智能正交版） ---
+let pathD, lx, ly;
+const isStartVert = (side === "top" || side === "bottom");
+const isEndVert = (sideIn === "top" || sideIn === "bottom");
+
+const diffX = Math.abs(sX - eX);
+    const diffY = Math.abs(sY - eY);
+    const STRAIGHT_THRESHOLD = 25; // 坐标差小于25px视为“近似直线”
+
+    if (isStartVert !== isEndVert) {
+      // --- 情况 A: 正交连接（一纵一横，L型） ---
+      if (isStartVert) {
+        // 纵向出发 -> 水平进入 
+        pathD = `M ${sX} ${sY} L ${sX} ${eY} L ${eX} ${eY}`;
+        lx = sX; ly = eY; // 默认充当转接头放在转角
+      } else {
+        // 水平出发 -> 纵向进入 
+        pathD = `M ${sX} ${sY} L ${eX} ${sY} L ${eX} ${eY}`;
+        lx = eX; ly = sY; // 默认充当转接头放在转角
+      }
+
+      // 【修改点 2】如果是几乎直线的短L型（横向或纵向距离很小），则将标签居中在整体线段中间
+      if (diffX < STRAIGHT_THRESHOLD || diffY < STRAIGHT_THRESHOLD) {
+        lx = (sX + eX) / 2;
+        ly = (sY + eY) / 2;
+      }
+
+    } else {
+      // --- 情况 B: 平行连接（同为纵或同为横，Z型） ---
+      if (!isStartVert) { 
+        // 全水平方向 (左出右进, 等等)
+        const cornerX = side === "left" ? sX - bendOffset : sX + bendOffset;
+        pathD = `M ${sX} ${sY} L ${cornerX} ${sY} L ${cornerX} ${eY} L ${eX} ${eY}`;
+        
+        // 【修改点 3】Z型逻辑：如果是明显的Z字，标签放在中间垂直线段的中心；如果是近乎直线的直连，直接居中
+        if (diffY < STRAIGHT_THRESHOLD) {
+          lx = (sX + eX) / 2;
+          ly = (sY + eY) / 2;
+        } else {
+          lx = cornerX; 
+          ly = (sY + eY) / 2;
+        }
+      } else {
+        // 全垂直方向 (上出下进, 等等)
+        const cornerY = side === "top" ? sY - bendOffset : sY + bendOffset;
+        pathD = `M ${sX} ${sY} L ${sX} ${cornerY} L ${eX} ${cornerY} L ${eX} ${eY}`;
+        
+        // 同理
+        if (diffX < STRAIGHT_THRESHOLD) {
+          lx = (sX + eX) / 2;
+          ly = (sY + eY) / 2;
+        } else {
+          lx = (sX + eX) / 2; 
+          ly = cornerY;
+        }
+      }
+    }
+
+    // --- 5. 渲染 ---
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", pathD);
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", conn.color);
+    path.setAttribute("stroke-width", "2.8");
+    if (conn.dashed) {
+      path.setAttribute("stroke-dasharray", "5,5");
+    }
+    path.style.strokeLinejoin = "round";
+
+    if (!conn.isObjective) {
+      const markerId = ensureMarker(defs, conn.color);
+      path.setAttribute("marker-end", `url(#${markerId})`);
+    }
+    svg.appendChild(path);
+
+    if (conn.label) {
+      // 传入颜色供 createLabel 边框使用
+      svg.appendChild(createLabel(conn.label, lx, ly, conn.color));
+    }
+  });
+}
+
+// ==================== 初始化函数 ====================
+function initialize() {
+  const slideContainer = document.getElementById("slide3");
+  if (!slideContainer) return;
+
+  state.nodes = Array.from(
+    slideContainer.querySelectorAll(".node, .large-node, .small-node")
+  );
+  if (state.nodes.length === 0) return;
+
+  initLayout();
+  drawLines();
+
+  // 响应式
+  window.addEventListener("resize", () => {
+    clearTimeout(state.resizeTimer);
+    state.resizeTimer = setTimeout(() => {
+      initLayout();
+      drawLines();
+    }, 200);
+  });
+}
+
+// ==================== 启动 ====================
+window.addEventListener("load", initialize);
+// 启动入口
+function start() {
+  initLayout();
+  // 延迟一丢丢确保 DOM 尺寸就绪再画线
+  setTimeout(drawLines, 50);
+}
+
+window.addEventListener("load", start);
+window.addEventListener("resize", () => {
+  clearTimeout(window.rtimer);
+  window.rtimer = setTimeout(() => {
+    initLayout();
+    drawLines();
+  }, 150);
+});
