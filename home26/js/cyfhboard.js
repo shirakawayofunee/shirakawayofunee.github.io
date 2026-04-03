@@ -21,10 +21,10 @@ const connections = [
   { from: 0, to: 4, label: "宿命のライバル / 好敵手 / 腐れ縁\n複雑な協力关系", color: "#b2160b", isObjective: true, side: "left", sideIn: "right", fromSlot: 0, toSlot: 0 },
   
   // 直连带箭头：X -> L (赏赞)，标签靠右侧目标端
-  { from: 4, to: 0, label: "賞賛→理解し 憐れみ やがて愛に", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -3, toSlot: -3 },
+  { from: 4, to: 0, label: "賞賛→理解し、憐れみ、やがて愛に", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -3, toSlot: -3 },
 
   // 直连带箭头：L -> X (厌恶)，标签靠左侧目标端
-  { from: 0, to: 4, label: "嫌い→不倶戴天 / やり返す→理解", color: "#b2160b", isStraight: true, side: "left", sideIn: "right", fromSlot: 3, toSlot: 3 },
+  { from: 0, to: 4, label: "嫌い→不倶戴天、やり返す→理解", color: "#b2160b", isStraight: true, side: "left", sideIn: "right", fromSlot: 3, toSlot: 3 },
   
   // 弯折线：常规逻辑
   { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資\n我が子のように大切にする\n最も愛する部下", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -1, toSlot: -1,},
