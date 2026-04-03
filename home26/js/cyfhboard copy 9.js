@@ -22,38 +22,30 @@ const connections = [
   
   // 直连带箭头：X -> L (赏赞)，标签靠右侧目标端
   { from: 4, to: 0, label: "賞賛→理解し 憐れみ やがて愛に", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -3, toSlot: -3 },
-
+  
   // 直连带箭头：L -> X (厌恶)，标签靠左侧目标端
   { from: 0, to: 4, label: "嫌い→不倶戴天 / やり返す→理解", color: "#b2160b", isStraight: true, side: "left", sideIn: "right", fromSlot: 3, toSlot: 3 },
   
   // 弯折线：常规逻辑
-  { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資\n我が子のように大切にする\n最も愛する部下", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -1, toSlot: -1,},
-  { from: 1, to: 0, label: "劣情\n湿度高めの激重愛\n求不得苦", color: "#b2160b", side: "left", sideIn: "right", isStraight: true, fromSlot: 3, toSlot: 3,},
+  { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資\n我が子のように大切にする\n最も愛する部下", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 60 },
+  { from: 1, to: 0, label: "劣情\n湿度高めの激重愛\n求不得苦", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 3, toSlot: 3, bendOffset: 60 },
   { from: 0, to: 2, label: "(恩師)守護 / 栽培 / 出資", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: -1, bendOffset: 50 },
   { from: 7, to: 0, label: "元同僚 / 今は顧客", color: "#b2160b", side: "left", sideIn: "top", fromSlot: 2, toSlot: 0, bendOffset: 70 },
   { from: 4, to: 5, label: "反逆", color: "#b2160b", side: "top", sideIn: "left", fromSlot: 0, toSlot: -1, bendOffset: 80 },
-  { from: 0, to: 7, label: "反逆", color: "#b2160b", side: "right", sideIn: "bottom", fromSlot: -5, toSlot: 0, bendOffset: 80 },
+  { from: 0, to: 7, label: "反逆", color: "#b2160b", side: "right", sideIn: "bottom", fromSlot: -4, toSlot: 0, bendOffset: 80 },
   { from: 5, to: 7, label: "宿敵", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 20, isObjective: true },
-  { from: 6, to: 7, label: "幹部", color: "#b2160b", side: "left", sideIn: "right",isStraight: true,  fromSlot: 0, toSlot: 0,},
+  { from: 6, to: 7, label: "幹部", color: "#b2160b", side: "left", sideIn: "right", fromSlot: 0, toSlot: 0, bendOffset: 40 },
   { from: 8, to: 0, label: "救いたい", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -2, toSlot: 5, bendOffset: 20 },
   { from: 0, to: 8, label: "疑う", color: "#b2160b", side: "bottom", sideIn: "right", fromSlot: -2, toSlot: 2, bendOffset: 10 }
 ];
 
-/**
- * 角色关系图谱核心逻辑 - 最终修复汇总版
- * 1. 修复了 SVG 内部 ID 引用导致箭头消失的问题
- * 2. 增加了 nodeMargin 确保连线不紧贴头像
- * 3. 优化了三类连线逻辑（宿命线、直连箭头线、弯折线）
- * 4. 完美支持多行标签垂直/水平居中
- */
-
- const state = {
+const state = {
   nodes: [],
-  nodePositions: [], // 存储计算后的像素坐标和半径
+  nodePositions: [],
   resizeTimer: null
 };
 
-// ==================== 1. 布局初始化 ====================
+// ==================== 2. 核心布局函数 ====================
 
 function initLayout() {
   const board = document.getElementById("board");
@@ -62,15 +54,13 @@ function initLayout() {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
   const isMobile = vw <= 768;
-  
-  // 基础分布半径
   const baseRadius = isMobile ? Math.min(vw, vh) * 0.38 : Math.min(vw, vh) * 0.26;
 
   state.nodes = Array.from(document.querySelectorAll('.node'));
   state.nodePositions = [];
 
   state.nodes.forEach((node, index) => {
-      const config = nodeConfig[index]; // 假设 nodeConfig 在外部定义
+      const config = nodeConfig[index]; // 引用外部 nodeConfig
       if (!config) return;
 
       const [dx, dy] = config.pos;
@@ -90,11 +80,10 @@ function initLayout() {
   });
 }
 
-// ==================== 2. 标签与 Marker 渲染 ====================
+// ==================== 3. 标签与箭头渲染 ====================
 
 /**
-* 创建多行文字标签
-* 逻辑：手动计算总高度并偏移，确保整体垂直居中
+* 改进版：多行文字垂直居中且背景框精准跟随
 */
 function createLineLabel(text, x, y, color) {
   const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -114,7 +103,7 @@ function createLineLabel(text, x, y, color) {
   const lines = text.split('\n');
   const totalHeight = lines.length * lineHeight;
   
-  // 垂直居中核心计算
+  // 手动计算 y 偏移实现垂直居中：startY = 目标Y - (总高度/2) + 第一行基准修正
   const startY = y - (totalHeight / 2) + (lineHeight / 1.5);
 
   lines.forEach((line, i) => {
@@ -125,7 +114,6 @@ function createLineLabel(text, x, y, color) {
       textEl.appendChild(tspan);
   });
 
-  // 必须先临时加入 DOM 才能测量 BBox
   const svg = document.getElementById("lines");
   svg.appendChild(textEl);
   const bbox = textEl.getBBox();
@@ -146,14 +134,11 @@ function createLineLabel(text, x, y, color) {
 }
 
 /**
-* 唯一箭头定义生成
-* 修复：解决 ID 引用在某些环境下失效的问题
+* 唯一 Marker 生成：支持 className 注入
 */
 function ensureUniqueMarker(defs, color, className) {
   const cleanColor = color.replace("#", "");
-  const safeClassName = className ? className.replace(/[^a-zA-Z0-9]/g, '-') : 'default';
-  const id = `arrow-${cleanColor}-${safeClassName}`;
-
+  const id = `arrow-${cleanColor}-${className || 'default'}`;
   if (!document.getElementById(id)) {
       const marker = document.createElementNS("http://www.w3.org/2000/svg", "marker");
       marker.setAttribute("id", id);
@@ -175,7 +160,7 @@ function ensureUniqueMarker(defs, color, className) {
   return id;
 }
 
-// ==================== 3. 绘线核心逻辑 ====================
+// ==================== 4. 绘线核心逻辑 ====================
 
 function drawLines() {
   const svg = document.getElementById("lines");
@@ -185,7 +170,7 @@ function drawLines() {
   svg.innerHTML = "";
   svg.appendChild(defs);
 
-  connections.forEach((conn) => { // 假设 connections 在外部定义
+  connections.forEach((conn) => {
       const p1 = state.nodePositions[conn.from];
       const p2 = state.nodePositions[conn.to];
       if (!p1 || !p2) return;
@@ -195,18 +180,15 @@ function drawLines() {
       const fSlot = conn.fromSlot || 0;
       const tSlot = conn.toSlot || 0;
       const slotStep = 15;
-      
-      // 连线间距：防止线条紧贴头像图片
-      const nodeMargin = 15; 
 
-      // 计算起点 (sX, sY)
+      // 计算起点
       let sX = p1.x, sY = p1.y;
-      if (side === "left") { sX -= p1.radius + nodeMargin; sY += fSlot * slotStep; }
-      else if (side === "right") { sX += p1.radius + nodeMargin; sY += fSlot * slotStep; }
-      else if (side === "top") { sY -= p1.radius + nodeMargin; sX += fSlot * slotStep; }
-      else if (side === "bottom") { sY += p1.radius + nodeMargin; sX += fSlot * slotStep; }
+      if (side === "left") { sX -= p1.radius; sY += fSlot * slotStep; }
+      else if (side === "right") { sX += p1.radius; sY += fSlot * slotStep; }
+      else if (side === "top") { sY -= p1.radius; sX += fSlot * slotStep; }
+      else if (side === "bottom") { sY += p1.radius; sX += fSlot * slotStep; }
 
-      // 计算终点 (eX, eY)
+      // 计算终点
       let eX = p2.x, eY = p2.y;
       const headMargin = conn.isObjective ? 0 : 10;
       if (sideIn === "left") { eX -= p2.radius + headMargin; eY += tSlot * slotStep; }
@@ -218,18 +200,18 @@ function drawLines() {
       let lx, ly;
 
       if (conn.isObjective) {
-          // 类型1：无头直线（如宿命线），绝对居中
+          // 类型1：宿命直线 (无箭头，居中)
           pathD = `M ${sX} ${sY} L ${eX} ${eY}`;
           lx = (sX + eX) / 2;
           ly = (sY + eY) / 2;
       } else if (conn.isStraight) {
-          // 类型2：直连带箭头（如 X/L 并排线），标签靠目标端 (72%)
+          // 类型2：直连箭头线 (不弯折，标签自动靠末端)
           pathD = `M ${sX} ${sY} L ${eX} ${eY}`;
-          const ratio = 0.28; 
+          const ratio = 0.72; // 靠近目标端的比例
           lx = sX + (eX - sX) * ratio;
           ly = sY + (eY - sY) * ratio;
       } else {
-          // 类型3：常规正交弯折线
+          // 类型3：正交弯折线
           const isStartVert = (side === "top" || side === "bottom");
           const isEndVert = (sideIn === "top" || sideIn === "bottom");
           const bendOffset = conn.bendOffset || 40;
@@ -262,13 +244,10 @@ function drawLines() {
       path.setAttribute("stroke-width", "2");
       if (conn.className) path.classList.add(conn.className);
 
-      // 核心修复：带上 location.href 以确保 Marker 引用在任何时候都生效
       if (!conn.isObjective) {
           const mId = ensureUniqueMarker(defs, conn.color, conn.className);
-          const markerUrl = `url(${window.location.href.split('#')[0]}#${mId})`;
-          path.setAttribute("marker-end", markerUrl);
+          path.setAttribute("marker-end", `url(#${mId})`);
       }
-      
       svg.appendChild(path);
 
       if (conn.label) {
@@ -277,17 +256,15 @@ function drawLines() {
   });
 }
 
-// ==================== 4. 生命周期管理 ====================
+// ==================== 5. 生命周期 ====================
 
-function renderAll() {
+function start() {
   initLayout();
-  // 使用 requestAnimationFrame 确保在下次重绘前更新，避免布局抖动
   requestAnimationFrame(drawLines);
 }
 
-window.addEventListener("load", renderAll);
-
+window.addEventListener("load", start);
 window.addEventListener("resize", () => {
   clearTimeout(state.resizeTimer);
-  state.resizeTimer = setTimeout(renderAll, 150);
+  state.resizeTimer = setTimeout(start, 150);
 });
