@@ -43,9 +43,10 @@
   top: 70%; /* 理想的 90% 位置 */
   left: 55%;
   transform: translateX(-50%); /* 水平居中 */
-  width: auto;
+  width: max-content;
   min-width: 100px;
-  max-width: 180px; /* 防止文字过长 */
+  max-width: 240px; /* 防止文字过长 */
+  white-space: normal;
   padding: 6px 10px;
   
   background: rgba(46, 43, 44, 0.75); /* 稍微加深一点透明度增加辨识度 */
@@ -57,7 +58,6 @@
   
   z-index: 15; /* 永远在头像上方 */
   pointer-events: none; /* 防止标签挡住点击头像的事件 */
-  white-space: nowrap; /* 强制不换行，除非你想让它根据 max-width 换行 */
 }
 
 /* 三种尺寸定义 - PC端基准 */

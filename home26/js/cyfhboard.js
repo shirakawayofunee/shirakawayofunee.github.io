@@ -26,7 +26,7 @@ const connections = [
   
   // 折线：常规逻辑
   { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資\n我が子同然に慈しむ\n最も愛する部下", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -1, toSlot: -1,},
-  { from: 1, to: 0, label: "劣情、湿度高めの激重愛\n求不得苦", color: "#b2160b", side: "left", sideIn: "right", isStraight: true, fromSlot: 3, toSlot: 3,},
+  { from: 1, to: 0, label: "(弟子)劣情\n湿度高めの激重愛\n求不得苦", color: "#b2160b", side: "left", sideIn: "right", isStraight: true, fromSlot: 3, toSlot: 3,},
   { from: 0, to: 2, label: "(恩師)守護 / 栽培 / 出資\n我が子同然に慈しむ", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: -1, bendOffset: 50 },
   { from: 7, to: 0, label: "元同僚 / 今は顧客", color: "#b2160b", side: "left", sideIn: "top", fromSlot: 2, toSlot: 0, bendOffset: 70 },
   { from: 4, to: 5, label: "反逆", color: "#b2160b", side: "top", sideIn: "left", fromSlot: 0, toSlot: -1, bendOffset: 80 },

@@ -1375,7 +1375,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `？？？`,
-      text: `やめて――ッ！！`,
+      text: `<span class="big-text no-red">やめて――ッ！！</span>`,
       voice: [
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_20.wav" },
       ],
