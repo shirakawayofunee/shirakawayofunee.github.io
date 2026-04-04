@@ -1169,3 +1169,133 @@ span {
     border-bottom: 3px solid var(--highlight-red);
     border-right: 3px solid var(--highlight-red);
 }
+
+/* ========================================================
+   旁白(Narration) 高科技/系统通话特效样式
+======================================================== */
+
+/* --- 方案 A：System Log (系统操作日志风) --- */
+/* 特点：左对齐，粗野黑底红边框，带有 > SYSTEM_MSG 的前缀，机器感极强 */
+.narration.sys-log {
+    font-family: 'JetBrains Mono', 'Courier New', monospace; /* 强制等宽字体 */
+    text-align: left;
+    background-color: #050505;
+    border-left: 4px solid var(--highlight-red);
+    padding: 12px 20px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.8); /* 搭配你的硬阴影风格 */
+    margin: 15px auto;
+    width: 90%;
+}
+.narration.sys-log::before {
+    content: "> SYSTEM_LOG: ";
+    color: var(--highlight-red);
+    font-weight: 900;
+}
+
+/* --- 方案 B：HUD Alert (全息HUD通知框) --- */
+/* 特点：居中，幽灵蓝扫描线背景，带有赛博括号 [ ]，适合表现主控室大屏幕广播 */
+.narration.hud-alert {
+    font-family: 'myFont', sans-serif;
+    text-align: center;
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 212, 255, 0.1) 50%, transparent 100%);
+    border-top: 1px solid rgba(0, 212, 255, 0.4);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.4);
+    padding: 15px 20px;
+    color: #00d4ff;
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.8); /* 发光文字 */
+    letter-spacing: 3px;
+    margin: 20px auto;
+    width: 100%;
+}
+.narration.hud-alert::before {
+    content: '[ ';
+    font-weight: bold;
+    color: #fff;
+    text-shadow: none;
+}
+.narration.hud-alert::after {
+    content: ' ]';
+    font-weight: bold;
+    color: #fff;
+    text-shadow: none;
+}
+
+/* --- 方案 C：Secure Channel (内部加密通话/无线电) --- */
+/* 特点：斑马线底纹，绿色终端字体，带有抬头标识，适合表示耳机里的暗线指令 */
+.narration.radio-comm {
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    /* 黑灰斜线交替的工程警告底纹 */
+    background: repeating-linear-gradient(
+        -45deg,
+        #111,
+        #111 8px,
+        #1a1a1a 8px,
+        #1a1a1a 16px
+    );
+    border: 1px solid #333;
+    padding: 12px 20px;
+    color: #a3e635; /* 雷达荧光绿 */
+    font-style: italic;
+    margin: 15px auto;
+    width: 85%;
+}
+.narration.radio-comm::before {
+    /* 使用 \A 实现换行 */
+    content: "--- ENCRYPTED_CHANNEL --- \A"; 
+    white-space: pre-wrap;
+    display: block;
+    color: #666;
+    font-size: 0.8em;
+    margin-bottom: 8px;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+/* ========================================================
+   旁白 第四方案：秘密脑机通讯频道 (secret-comm)
+======================================================== */
+.narration.secret-comm {
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    border-top: 1px solid #555;     /* 喜欢的上边缘线 */
+    border-bottom: 1px solid #555;  /* 喜欢的下边缘线 */
+    background: transparent;        /* 纯净背景，不要蓝光 */
+    position: relative;
+}
+
+/* 顶部的通讯标识 */
+.narration.secret-comm .comm-header {
+    font-family: 'Courier New', monospace;
+    color: #666;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+/* 文本主体排版 (保留了 B 方案舒适的行高和字间距) */
+.narration.secret-comm .comm-body {
+    font-family: 'myFont', sans-serif;
+    color: #d4d4d4;              /* 正常灰白色文本，不刺眼 */
+    line-height: 1.8;
+    letter-spacing: 1.5px;
+    text-align: left;            /* 聊天记录适合左对齐 */
+}
+
+/* 白色大括号 [ ] */
+.narration.secret-comm .comm-bracket {
+    color: #fff;
+    font-weight: 900;
+    margin: 0 4px;
+}
+
+/* 自动标红的人名 (冒号前的部分) */
+.narration.secret-comm .comm-speaker {
+    color: var(--highlight-red); /* 提取你全局的标志性红色 */
+    font-family: 'Courier New', monospace; /* 名字用代码字体，更像代号 */
+    font-weight: 900;
+    margin-right: 5px;
+}

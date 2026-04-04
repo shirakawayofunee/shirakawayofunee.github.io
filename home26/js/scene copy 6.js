@@ -520,36 +520,19 @@ function renderScript(script, defaultBgm = "") {
 
       // 2. 渲染内容
       if (line.type === "narration") {
-        div.className = "message-row";
-        let customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
-        let displayText = line.text;
-
-        // 👇 新增逻辑：专门针对“秘密频道 (secret-comm)”的文本处理
-// 👇 新增逻辑：专门针对“秘密频道 (secret-comm)”的文本处理
-if (customBubbleClass === "secret-comm") {
-  // 1. 修复多行标红：使用正则匹配“行首”或“换行符/br标签后”的名字，加上全局标志 g
-  let regex = /(^|<br>|\n)\s*([^:：<]+[:：])/g;
-  displayText = displayText.replace(regex, '$1<span class="comm-speaker">$2</span>');
-
-  // 2. 修复大括号换行：取消代码里的物理回车，全部挤在同一行里，避免触发 pre-line 的换行机制
-  displayText = `<div class="comm-header">--- ENCRYPTED_CHANNEL ---</div><div class="comm-body"><span class="comm-bracket">[</span> ${displayText} <span class="comm-bracket">]</span></div>`;
-}
-
-        div.innerHTML = `<div class="narration ${customBubbleClass}">${displayText}</div>`;
-    
-    } else if (line.type === "image") {
+          div.className = "message-row";
+          div.innerHTML = `<div class="narration">${line.text}</div>`;
+      
+      } else if (line.type === "image") {
           div.className = "message-row";
           div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
       
-        } else if (line.type === "dialogue") {
+      } else if (line.type === "dialogue") {
           const pos = line.position === "right" ? "pos-right" : "pos-left";
           div.className = `message-row ${pos}`;
-          
-          const customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
-          
           div.innerHTML = `
               <img src="${line.avatar}" class="avatar">
-              <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
+              <div class="message-bubble">${line.text}${voiceBtnHtml}</div>
           `;
       }
       container.appendChild(div);

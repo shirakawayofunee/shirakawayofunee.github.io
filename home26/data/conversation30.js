@@ -48,6 +48,7 @@ export default {
       position: `right`,
       name: `探偵`,
       text: `やめろ、業師！これは戦いじゃない、あなたが飲み込まれかけてるの！`,
+      bubbleStyle: "inner-voice-c",
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
@@ -178,6 +179,7 @@ export default {
       name: `業師`,
       text: `（心の声）
       この娘は拷問されても一滴の涙も流さなかった。今は何をしている。`,
+      bubbleStyle: "inner-voice-a",
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
@@ -190,6 +192,7 @@ export default {
       name: `業師`,
       text: `（心の声）
       泣きっ面を見せれば優しくしてもらえるとでも？尻尾を振って慈悲を乞えば逃げられるとでも？自分が無力だから、他人の優しさを盲信し！そして無惨に踏みにじられるの！`,
+      bubbleStyle: "inner-voice-b",
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
@@ -825,7 +828,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x8.png`,
       name: `Shalom`,
-      text: `君の命は一部しか修復されていません。大事に使ってくださいね、業師。`,
+      text: `君の命は一部しか修復されていません。大事に使ってくださいね、Coquelicot。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
