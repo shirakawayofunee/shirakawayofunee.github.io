@@ -1,12 +1,10 @@
-// ==================== 1. 配置数据 ====================
-
 // 节点位置配置 (虚拟坐标系)
 const nodeConfig = [
   { id: 0, pos: [0, 0] },         // 中心主角 L
-  { id: 1, pos: [2.3, 0] },       // Severo
+  { id: 1, pos: [2.5, 0] },       // Severo
   { id: 2, pos: [1.7, 1.2] },     // 堇
   { id: 3, pos: [2.5, 1.2] },     // 蓟
-  { id: 4, pos: [-2.7, 0] },      // X
+  { id: 4, pos: [-3, 0] },      // X
   { id: 5, pos: [-1, -1.1] },     // 上庭
   { id: 6, pos: [2.5, -1.1] },      // 牧者
   { id: 7, pos: [1, -1.1] },      // 福音地
@@ -17,18 +15,18 @@ const nodeConfig = [
 
 // 连线关系配置
 const connections = [
-  // 宿命线：无箭头，直线，绝对居中
+  // 客观描述线：无箭头，直线，绝对居中
   { from: 0, to: 4, label: "宿命のライバル / 好敵手 / 腐れ縁\n複雑な協力关系", color: "#b2160b", isObjective: true, side: "left", sideIn: "right", fromSlot: 0, toSlot: 0 },
   
-  // 直连带箭头：X -> L (赏赞)，标签靠右侧目标端
+  // 直连带箭头：X -> L (赏赞)，标签靠左侧
   { from: 4, to: 0, label: "賞賛→理解し、憐れみ、やがて愛に", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -3, toSlot: -3 },
 
-  // 直连带箭头：L -> X (厌恶)，标签靠左侧目标端
+  // 直连带箭头：L -> X (厌恶)，标签靠右侧
   { from: 0, to: 4, label: "嫌い→不倶戴天、やり返す→理解", color: "#b2160b", isStraight: true, side: "left", sideIn: "right", fromSlot: 3, toSlot: 3 },
   
   // 弯折线：常规逻辑
-  { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資\n我が子のように大切にする\n最も愛する部下", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -1, toSlot: -1,},
-  { from: 1, to: 0, label: "劣情\n湿度高めの激重愛\n求不得苦", color: "#b2160b", side: "left", sideIn: "right", isStraight: true, fromSlot: 3, toSlot: 3,},
+  { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資\n我が子同然に慈しむ\n最も愛する部下", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -1, toSlot: -1,},
+  { from: 1, to: 0, label: "劣情、湿度高めの激重愛\n求不得苦", color: "#b2160b", side: "left", sideIn: "right", isStraight: true, fromSlot: 3, toSlot: 3,},
   { from: 0, to: 2, label: "(恩師)守護 / 栽培 / 出資", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: -1, bendOffset: 50 },
   { from: 7, to: 0, label: "元同僚 / 今は顧客", color: "#b2160b", side: "left", sideIn: "top", fromSlot: 2, toSlot: 0, bendOffset: 70 },
   { from: 4, to: 5, label: "反逆", color: "#b2160b", side: "top", sideIn: "left", fromSlot: 0, toSlot: -1, bendOffset: 80 },

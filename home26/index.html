@@ -293,410 +293,386 @@
           </div>
         </div>
       </div>
-      <!-- PC关系板 -->
-      <div class="swiper-slide pc cyfhboard" data-mouse="small" id="slide3">
-        <div id="board" class="container-fluid">
-          <svg id="lines">
-            <defs>
-              <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
-              </marker>
-            </defs>
-          </svg>
-          <div class="row justify-content-center g-2">
-            <div class="row justify-content-center g-2">
-              <div class="col-lg-8 col-md-10 col-sm-12">
-                <div class="node large-node col-lg-2 col-md-3 col-sm-4 col-6">
-                  <div class="avatar one"></div>
-                  <div class="label">L<br>余命三ヶ月</div>
-                </div>
-                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-                  <div class="avatar two"></div>
-                  <div class="label">Severo、36歳<br /></div>
-                </div>
-                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-                  <div class="avatar three"></div>
-                  <div class="label">堇、23歳<br /></div>
-                </div>
-                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-                  <div class="avatar four"></div>
-                  <div class="label">
-                    蓟、19歳<br />
-                  </div>
-                </div>
-                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-                  <div class="avatar five"></div>
-                  <div class="label">X<br>Lの命を延ばせる</div>
-                </div>
-                <div class="node small-node col-lg-2 col-md-3 col-sm-4 col-6">
-                  <div class="avatar six"></div>
-                  <div class="label">上庭</div>
-                </div>
-                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-                  <div class="avatar seven"></div>
-                  <div class="label">
-                    「牧者」<br>
-                    Lの命を延ばせる<br>
-                    自分を深淵に突き落としたこの人、長い年月にわたり自分を絡めとったこの者。
-                  </div>
-                </div>
-                <div class="node small-node col-lg-2 col-md-3 col-sm-4 col-6">
-                  <div class="avatar eight"></div>
-                  <div class="label">福音地</div>
-                </div>
-                <div class="node col-lg-2 col-md-3 col-sm-4 col-6">
-                  <div class="avatar nine"></div>
-                  <div class="label">Shp-13<br>Lの命を延ばせる</div>
-                </div>
-              </div>
-            </div>
+<!-- PC关系板 -->
+<div class="swiper-slide pc cyfhboard" data-mouse="small" id="slide3">
+  <div id="board">
+    <svg id="lines">
+      <defs>
+        </defs>
+    </svg>
+    <div class="node size-large" data-id="0"><div class="avatar one"></div><div class="label">L<br>余命三ヶ月</div></div>
+    <div class="node size-medium" data-id="1"><div class="avatar two"></div><div class="label">Severo(36歳)</div></div>
+    <div class="node size-small" data-id="2"><div class="avatar three"></div><div class="label">堇(20歳)</div></div>
+    <div class="node size-small" data-id="3"><div class="avatar four"></div><div class="label">蓟、Lの最後の弟子(19歳)</div></div>
+    <div class="node size-medium" data-id="4"><div class="avatar five"></div><div class="label">X(25歳)</div></div>
+    <div class="node size-small" data-id="5"><div class="avatar six"></div><div class="label">上庭(悪役)</div></div>
+    <div class="node size-small" data-id="6"><div class="avatar seven"></div><div class="label">「牧者」(???)<br>Lの命を延ばせる。自分を深淵に突き落としたこの人、長い年月にわたり自分を絡めとったこの者。</div></div>
+    <div class="node size-small" data-id="7"><div class="avatar eight"></div><div class="label">福音地(悪役)</div></div>
+    <div class="node size-medium" data-id="8"><div class="avatar nine"></div><div class="label">Shp-13<br>Lの命を延ばせる</div></div>
+  </div>
+</div>
+<!-- PC关系补足 -->
+<div class="swiper-slide pc sl-part partwan" data-mouse="small" id="slide4">
+<div class="part-content">
+<!-- 左侧：垂直排列的小图按钮（想加第4个直接复制一行 li 即可） -->
+<div class="partwan-left">
+<ul class="wan-tabs">
+  <li class="wan-tab active" data-index="0">
+    <img src="img/wan/1c.png"  class="img-bright" alt="">  <!-- 高亮图 -->
+    <img src="img/wan/1n.png"  class="img-gray"   alt="">  <!-- 置灰图 -->
+  </li>
+  <li class="wan-tab" data-index="1">
+    <img src="img/wan/2c.png"  class="img-bright" alt="">
+    <img src="img/wan/2n.png"  class="img-gray"   alt="">
+  </li>
+  <li class="wan-tab" data-index="2">
+    <img src="img/wan/3c.png" class="img-bright" alt="">
+    <img src="img/wan/3n.png" class="img-gray"   alt="">
+  </li>
+  <!-- 以后加第4个、第5个直接复制上面这整个 <li>...</li> 即可 -->
+</ul>
+</div>
+<!-- 右侧：所有内容区块（默认显示第一个） -->
+<div class="partwan-right">
+
+<!-- ==================== 第 1 个区块：关系数值分析 (包含新移植的图表) ==================== -->
+<div class="wan-content relationship active" id="content-0">
+  <div class="add_browser_window">
+    <!-- 窗口头部 -->
+    <div class="add_window_header">
+      <div class="add_traffic_lights">
+        <div class="add_dot add_bg_red"></div>
+        <div class="add_dot add_bg_yellow"></div>
+        <div class="add_dot add_bg_green"></div>
+      </div>
+      <div class="add_address_bar">
+        localhost/relationship_metrics
+      </div>
+      <div class="add_window_actions"><span>+</span></div>
+    </div>
+
+    <!-- 滚动内容区 -->
+    <!-- 滚动内容区 -->
+    <div class="add_content_scroll_area">
+
+      <!-- 这是一个 Flex 容器，横向排列 5 个列 -->
+      <div class="add_waterfall_container manual-layout">
+
+        <!-- ==================== 第 1 列 ==================== -->
+        <div class="add_column">
+          <!-- 卡片 1.1: 介绍 -->
+          <div class="add_card">
+            <h2>工事中</h2>
+            <p>工事中</p>
+
+          </div>
+          <hr class="add_divider">
+          <!-- 卡片 1.2: 那个超长的双向数值条 (Metrics) -->
+          <!-- [Card] 关系数值分析 (由 JS 自动生成) -->
+          <div class="add_card metric-card">
+            <!-- 这里可以写你的标题，如果不需要可以删掉 -->
+            <!-- <h3>Relationship Metrics</h3> -->
+
+            <!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
+            <div id="metrics-container-1" class="metric-wrapper"></div>
+
+            <span class="add_date">S (Left) vs L (Right)</span>
           </div>
         </div>
-      </div>
 
-      <!-- PC关系补足 -->
-      <div class="swiper-slide pc sl-part partwan" data-mouse="small" id="slide4">
-        <div class="part-content">
-          <!-- 左侧：垂直排列的小图按钮（想加第4个直接复制一行 li 即可） -->
-          <div class="partwan-left">
-            <ul class="wan-tabs">
-              <li class="wan-tab active" data-index="0">
-                <img src="img/wan/1c.png" class="img-bright" alt=""> <!-- 高亮图 -->
-                <img src="img/wan/1n.png" class="img-gray" alt=""> <!-- 置灰图 -->
-              </li>
-              <li class="wan-tab" data-index="1">
-                <img src="img/wan/2c.png" class="img-bright" alt="">
-                <img src="img/wan/2n.png" class="img-gray" alt="">
-              </li>
-              <li class="wan-tab" data-index="2">
-                <img src="img/wan/3c.png" class="img-bright" alt="">
-                <img src="img/wan/3n.png" class="img-gray" alt="">
-              </li>
-              <!-- 以后加第4个、第5个直接复制上面这整个 <li>...</li> 即可 -->
-            </ul>
-          </div>
-          <!-- 右侧：所有内容区块（默认显示第一个） -->
-          <div class="partwan-right">
-
-            <!-- ==================== 第 1 个区块：关系数值分析 (包含新移植的图表) ==================== -->
-            <div class="wan-content relationship active" id="content-0">
-              <div class="add_browser_window">
-                <!-- 窗口头部 -->
-                <div class="add_window_header">
-                  <div class="add_traffic_lights">
-                    <div class="add_dot add_bg_red"></div>
-                    <div class="add_dot add_bg_yellow"></div>
-                    <div class="add_dot add_bg_green"></div>
-                  </div>
-                  <div class="add_address_bar">
-                    localhost/relationship_metrics
-                  </div>
-                  <div class="add_window_actions"><span>+</span></div>
-                </div>
-
-                <!-- 滚动内容区 -->
-                <!-- 滚动内容区 -->
-                <div class="add_content_scroll_area">
-
-                  <!-- 这是一个 Flex 容器，横向排列 5 个列 -->
-                  <div class="add_waterfall_container manual-layout">
-
-                    <!-- ==================== 第 1 列 ==================== -->
-                    <div class="add_column">
-                      <!-- 卡片 1.1: 介绍 -->
-                      <div class="add_card">
-                        <h2>工事中</h2>
-                        <p>工事中</p>
-
-                      </div>
-                      <hr class="add_divider">
-                      <!-- 卡片 1.2: 那个超长的双向数值条 (Metrics) -->
-                      <!-- [Card] 关系数值分析 (由 JS 自动生成) -->
-                      <div class="add_card metric-card">
-                        <!-- 这里可以写你的标题，如果不需要可以删掉 -->
-                        <!-- <h3>Relationship Metrics</h3> -->
-
-                        <!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
-                        <div id="metrics-container-1" class="metric-wrapper"></div>
-
-                        <span class="add_date">S (Left) vs L (Right)</span>
-                      </div>
-                    </div>
-
-                    <!-- ==================== 第 2 列 ==================== -->
-                    <div class="add_column">
-                      <!-- 卡片 2.1: S口调 -->
-                      <div class="add_card">
-                        <h3>Sセリフ例</h3>
-                        <p>一人称：私 / 二人称：あなた<br>
-                          相手の呼び名：<span>師匠</span>（普段は絶対口に出さないけど、心の中で思っている呼び名：ママ）</p>
-                        <hr class="add_divider">
-                        <h3>師匠は私の母親だった、これからは妻になる。（？）</h3>
-                        <p>「師匠――彼女は本当に<span>傑出</span>した人だ。力も知略も胆識も責任感も、
-                          私から見ればまるで<span>高天の孤月</span>のように……遠く及ばず、氷のよう
-                          に冷たく霜のように儚いのに、ひとりで果てしない寒夜を照らし続
-                          けている。彼女は頼れる道標だ。そんな人が本当に存在するなんて。
-                          あなたを<span>守</span>り、大切にし、本来<span>背負</span>うはずのない痛みを代わりに受
-                          け止め、その傷を<span>癒</span>し、そして本当に進むべき道を示してくれる。」</p>
-                          <hr class="add_divider">
-                    <h3>師匠はただ死んだだけ、愛さなくなったわけじゃない。</h3>
-                    <p>精神安定の前提は<span>「幸せで満ち足りた家庭」</span>である。<br>
-                      Sは誰よりもよくわかっている——この家を本当の意味で支えているのはLだということ。Lが死ねば、この家はもう存在しなくなる。<br><br>
-                      ある後輩の鋭い一言「ただの孤児同士が寄り添って温め合ってるだけなのに、彼女は私たちを本物の家族だと思って、こんなところまでやってくれた。」</p>
-                      </div>
-                    </div>
-
-                    <!-- ==================== 第 3 列 ==================== -->
-
-                    <div class="add_column">
-                      <!-- 卡片 4.1: 技术文章填充 -->
-                      <div class="add_card">
-                        <h3>Lセリフ例</h3>
-                        <p>一人称：私 / 二人称：君<br>
-                          相手の呼び名：Severo(フルネーム)</p>
-                        <hr class="add_divider">
-                        <p>工事中</p>
-                      </div>
-                    </div>
-                    <!-- ==================== 第 4 列 ==================== -->
-                    <div class="add_column">
-                      <!-- 卡片 3.1: 时间线1 -->
-                      <div class="add_card">
-                        <h3>最初の十年</h3>
-                        <p>二人は揃って人生のどん底を味わい、同じ組織に身を寄せた。SはLを師と仰ぎ、互いに力を蓄え、時を待った。</p>
-                        <span class="add_date">N.F.84-N.F.93</span>
-                        <hr class="add_divider">
-                        <!-- 卡片 3.2: 时间线2 -->
-                        <h3>次の十年</h3>
-                        <p>ようやく十分な力を得た二人は、Lが組織の本質を見抜き、皆を率いて新しい未来を約束する中で、一緒にその場を離れた。
-                          心の底からLを最も大切な存在と認めていたSは、迷うことなくLに従い、共にそのじゃきょう組織を叛離することを選んだ。</p>
-                        <span class="add_date">N.F.93-N.F.103</span>
-
-                        <hr class="add_divider">
-                        <!-- 卡片 3.3: 时间线3 -->
-                        <h3>三番目の十年</h3>
-                        <p>Sはついに一人前として立派に成長を遂げ、二人は肩を並べて歩むようになった。</p>
-                        <span class="add_date">N.F.103-N.F.113</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- ==================== 第 2 个区块 (保持不变) ==================== -->
-            <div class="wan-content relationship" id="content-1">
-              <div class="add_browser_window">
-                <!-- 窗口头部 -->
-                <div class="add_window_header">
-                  <div class="add_traffic_lights">
-                    <div class="add_dot add_bg_red"></div>
-                    <div class="add_dot add_bg_yellow"></div>
-                    <div class="add_dot add_bg_green"></div>
-                  </div>
-                  <div class="add_address_bar">
-                    localhost/relationship_metrics
-                  </div>
-                  <div class="add_window_actions"><span>+</span></div>
-                </div>
-
-                <!-- 滚动内容区 -->
-                <!-- 滚动内容区 -->
-                <div class="add_content_scroll_area">
-
-                  <!-- 这是一个 Flex 容器，横向排列 5 个列 -->
-                  <div class="add_waterfall_container manual-layout">
-
-                    <!-- ==================== 第 1 列 ==================== -->
-                    <div class="add_column">
-                      <!-- 卡片 1.1: 介绍 -->
-                      <div class="add_card">
-                        <h2>激しく燃え上がる運命のロマンス関係</h2>
-                        <p>正邪曖昧なキャラ×2　黒幕×2　アンチヒーロー×2  </p>
-
-                      </div>
-                      <hr class="add_divider">
-                      <!-- 卡片 1.2: 那个超长的双向数值条 (Metrics) -->
-                      <!-- [Card] 关系数值分析 (由 JS 自动生成) -->
-                      <div class="add_card metric-card">
-                        <!-- 这里可以写你的标题，如果不需要可以删掉 -->
-                        <!-- <h3>Relationship Metrics</h3> -->
-
-                        <!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
-                        <div id="metrics-container-2" class="metric-wrapper"></div>
-
-                        <span class="add_date">X (Left) vs L (Right)</span>
-                      </div>
-                    </div>
-
-                    <!-- ==================== 第 2 列 ==================== -->
-                    <div class="add_column">
-                      <!-- 卡片 2.1: S口调 -->
-                      <div class="add_card">
-                        <h3>Sセリフ例</h3>
-                        <p>一人称：私 / 二人称：君<br>
-                          相手の呼び名：<span>師匠</span>（「GARDEN」のメンバー共通の尊称）→Leo</p>
-                        <hr class="add_divider">
-                        <p>「これが君が命と引き換えに得た力なんだ。流れるすべての未来を犠牲にして、
-                          絶対的な強さと自由を手に入れたんだ。ここまで辿り着けるのは君だけだ。
-                          本当に<span>見事</span>だ……君なら勝てると分かっていたよ。」</p>
-                        <hr class="add_divider">
-                        <p>「別の可能性を見たくない？このバカげた流れを拒絶したくない？」</p>
-                        <hr class="add_divider">
-                        <p>「君が受け入れないのはわかってた。君たちの感情はあまりにも熱烈で、裸のまま輝いてる。
-                          君の命が尽きてなかったら、もっと穏やかな方案を選びたかった。でも、その時間はもうない。
-                          だから、思う存分抗って……私は全部理解している、全部受け入れるつもりだ。
-                          私が触れた花は枯れる運命でも、<span>君を生かさなきゃいけない。</span>」</p>
-                        <hr class="add_divider">
-
-                      </div>
-                    </div>
-
-                    <!-- ==================== 第 3 列 ==================== -->
-
-                    <div class="add_column">
-                      <!-- 卡片 4.1: 技术文章填充 -->
-                      <div class="add_card">
-                        <h3>Lセリフ例</h3>
-                        <p>一人称：私 / 二人称：君<br>
-                          相手の呼び名：</p>
-                        <hr class="add_divider">
-                        <p>工事中</p>
-                      </div>
-                    </div>
-                    <!-- ==================== 第 4 列 ==================== -->
-                    <div class="add_column">
-                      <!-- 卡片 3.1: 时间线1 -->
-                      <div class="add_card">
-                        <h3>本編開始2年前</h3>
-                        <p></p>
-                        <span class="add_date">N.F.?-N.F.113</span>
-                        <hr class="add_divider">
-                        <!-- 卡片 3.2: 时间线2 -->
-                        <h3>幕開け</h3>
-                        <p>お互いに探り合う知恵比べの中で、Xはずっと曖昧な態度を崩さず、Lの心を煽り立てようとしてくる。<br>
-                          一方Lは昔から、こういう自分のことよくわかってる風の偽善的な奴が大嫌いだ。<br>
-
-                          二人はただ自分の計画を押し進みたいだけ。LにとってXは過去最大級に凶悪で厄介な対戦相手で、XにとってLは計画を委ねる理想の器。</p>
-                        <span class="add_date">N.F.113/07</span>
-
-                        <hr class="add_divider">
-                        <!-- 卡片 3.3: 时间线3 -->
-                        <h3>全生還後</h3>
-                        <p>LはXの陰謀を粉砕した。その過程で、二人は互いに本気の力を出し切り、XはLに対して本心をさらけ出した。欣赏も、利用も、傷つけも、愛も、すべてが真実だった。<br>
-
-                          LとXは似たような出発点と境遇を持ち、同じ問題に直面しながらも正反対の答えを選んだ存在。互いにとって、人生で最も欠かせない一片のピースだ。<br>
-
-                          Xは心からLの人柄を認め、Lと弟子たちの「絆」を理解した。だからこそ弟子たちに手加減した。
-                          その僅かな優しさが、LにXの努力を認めさせた瞬間だった。それ以来、LはXを初めて本当の同格の相手として見据えるようになった。<br>
-
-                          そしてLはXのために、ある封印を破壊し、Xが最も大切にしていたものを取り戻させた。<br>
-
-                          二人は複雑な協力関係に変わり、共に結末を塗り替える。</p>
-                        <span class="add_date">N.F.113</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- ==================== 第 3 个区块 (保持不变) ==================== -->
-            <div class="wan-content relationship" id="content-2">
-              <div class="add_browser_window">
-                <!-- 窗口头部 -->
-                <div class="add_window_header">
-                  <div class="add_traffic_lights">
-                    <div class="add_dot add_bg_red"></div>
-                    <div class="add_dot add_bg_yellow"></div>
-                    <div class="add_dot add_bg_green"></div>
-                  </div>
-                  <div class="add_address_bar">
-                    localhost/relationship_metrics
-                  </div>
-                  <div class="add_window_actions"><span>+</span></div>
-                </div>
-
-                <!-- 滚动内容区 -->
-                <!-- 滚动内容区 -->
-                <div class="add_content_scroll_area">
-
-                  <!-- 这是一个 Flex 容器，横向排列 5 个列 -->
-                  <div class="add_waterfall_container manual-layout">
-
-                    <!-- ==================== 第 1 列 ==================== -->
-                    <div class="add_column">
-                      <!-- 卡片 1.1: 介绍 -->
-                      <div class="add_card">
-                        <h2>縁の下の力持ち（L）と、表舞台で輝く英雄。</h2>
-                        <p>工事中</p>
-
-                      </div>
-                      <hr class="add_divider">
-                      <!-- 卡片 1.2: 那个超长的双向数值条 (Metrics) -->
-                      <!-- [Card] 关系数值分析 (由 JS 自动生成) -->
-                      <div class="add_card metric-card">
-                        <!-- 这里可以写你的标题，如果不需要可以删掉 -->
-                        <!-- <h3>Relationship Metrics</h3> -->
-
-                        <!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
-                        <div id="metrics-container-3" class="metric-wrapper"></div>
-
-                        <span class="add_date">L (Left) vs N (Right)</span>
-                      </div>
-                    </div>
-
-                    <!-- ==================== 第 2 列 ==================== -->
-                    <div class="add_column">
-                      <!-- 卡片 2.1: S口调 -->
-                      <div class="add_card">
-                        <h3>セリフ例</h3>
-                        <p>一人称： / 二人称：<br>
-                          相手の呼び名：<span>師匠</span></p>
-                        <hr class="add_divider">
-                        <p>工事中</p>
-                      </div>
-                    </div>
-
-                    <!-- ==================== 第 3 列 ==================== -->
-
-                    <div class="add_column">
-                      <!-- 卡片 4.1: 技术文章填充 -->
-                      <div class="add_card">
-                        <h3>Lセリフ例</h3>
-                        <p>一人称：私 / 二人称：君<br>
-                          相手の呼び名：</p>
-                        <hr class="add_divider">
-                        <p>工事中</p>
-                      </div>
-                    </div>
-                    <!-- ==================== 第 4 列 ==================== -->
-                    <div class="add_column">
-                      <!-- 卡片 3.1: 时间线1 -->
-                      <div class="add_card">
-                        <h3></h3>
-                        <p>お互い正式に会う前から、様々なルートで相手の噂を聞きまくっている。
-                          殺し屋であるLなのに、大局を考え、目が覚めるまで濒死の淵にいる④が利用されないよう守り続けていた。
-                          二人とも立派な善人のはずなのに、なぜかお互いに『信頼を渡す』ことが怖がっている。だからそれぞれ自分流のやり方で、相手が『信頼に足る人か』を測っているんだ。</p>
-                        <span class="add_date">N.F.113</span>
-                        <hr class="add_divider">
-                        <!-- 卡片 3.2: 时间线2 -->
-                        <h3>次の</h3>
-                        <p></p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <!-- ==================== 第 2 列 ==================== -->
+        <div class="add_column">
+          <!-- 卡片 2.1: S口调 -->
+          <div class="add_card">
+            <h3>S台詞例</h3>
+            <p>一人称：私 / 二人称：あなた<br>
+              相手の呼び名：<span>師匠</span>（普段は絶対口に出さないけど、心の中で思っている呼び名：ママ）</p>
+            <hr class="add_divider">
+            <h3>師匠は私の母親だった、これからは妻になる。（？）</h3>
+            <p>「師匠――彼女は本当に<span>傑出</span>した人だ。力も知略も胆識も責任感も、
+              私から見ればまるで<span>高天の孤月</span>のように……遠く及ばず、氷のよう
+              に冷たく霜のように儚いのに、ひとりで果てしない寒夜を照らし続
+              けている。彼女は頼れる道標だ。そんな人が本当に存在するなんて。
+              あなたを<span>守</span>り、大切にし、本来<span>背負</span>うはずのない痛みを代わりに受
+              け止め、その傷を<span>癒</span>し、そして本当に進むべき道を示してくれる。」</p>
+              <hr class="add_divider">
+              <h3>師匠はただ死んだだけ、愛さなくなったわけじゃない。</h3>
+              <p>精神安定の前提は<span>「幸せで満ち足りた家庭」</span>である。<br>
+                Sは誰よりもよくわかっている——この家を本当の意味で支えているのはLだということ。Lが死ねば、この家はもう存在しなくなる。<br><br>
+                ある後輩の鋭い一言「ただの孤児同士が寄り添って温め合ってるだけなのに、彼女は私たちを本物の家族だと思って、こんなところまでやってくれた。」</p>
           </div>
         </div>
+
+        <!-- ==================== 第 3 列 ==================== -->
+
+        <div class="add_column">
+          <!-- 卡片 4.1: 技术文章填充 -->
+          <div class="add_card">
+            <h3>L台詞例</h3>
+            <p>一人称：私 / 二人称：君<br>
+              相手の呼び名：Carnation（コードネーム） / Severo(フルネーム)</p>
+            <hr class="add_divider">
+            <h3>見解</h3>
+            <p>「彼らの振る舞いを畜生にも劣る外道と糾弾しながら、自らも同じ行いに手を染め畜生に堕ちるわけにはいかない。
+              <span>人間</span>ならば、正邪を弁えることだ。」
+              
+          <br>（「工事中」なのは、Lがどうでもいいからじゃないんです。
+              むしろLがあまりにも大事すぎるから。
+              彼女にふさわしい、100点満点の台詞を書きたくて、ずっと手が止まってるんです。）</p>
+          </div>
+        </div>
+        <!-- ==================== 第 4 列 ==================== -->
+        <div class="add_column">
+          <!-- 卡片 3.1: 时间线1 -->
+          <div class="add_card">
+            <h3>最初の十年</h3>
+            <p>二人は揃って人生のどん底を味わい、同じ組織に身を寄せた。SはLを師と仰ぎ、互いに力を蓄え、時を待った。</p>
+            <span class="add_date">N.F.84-N.F.93</span>
+            <hr class="add_divider">
+            <!-- 卡片 3.2: 时间线2 -->
+            <h3>次の十年</h3>
+            <p>ようやく十分な力を得た二人は、Lが組織の本質を見抜き、皆を率いて新しい未来を約束する中で、一緒にその場を離れた。
+              心の底からLを最も大切な存在と認めていたSは、迷うことなくLに従い、共にそのじゃきょう組織を叛離することを選んだ。</p>
+            <span class="add_date">N.F.93-N.F.103</span>
+
+            <hr class="add_divider">
+            <!-- 卡片 3.3: 时间线3 -->
+            <h3>三番目の十年</h3>
+            <p>Sはついに一人前として立派に成長を遂げ、二人は肩を並べて歩むようになった。</p>
+            <span class="add_date">N.F.103-N.F.113</span>
+          </div>
+        </div>
+
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 第 2 个区块 (保持不变) ==================== -->
+<div class="wan-content relationship" id="content-1">
+  <div class="add_browser_window">
+    <!-- 窗口头部 -->
+    <div class="add_window_header">
+      <div class="add_traffic_lights">
+        <div class="add_dot add_bg_red"></div>
+        <div class="add_dot add_bg_yellow"></div>
+        <div class="add_dot add_bg_green"></div>
+      </div>
+      <div class="add_address_bar">
+        localhost/relationship_metrics
+      </div>
+      <div class="add_window_actions"><span>+</span></div>
+    </div>
+
+    <!-- 滚动内容区 -->
+    <!-- 滚动内容区 -->
+    <div class="add_content_scroll_area">
+      <h2>理解し、憐れみ、やがて愛に至る。</h2>
+      <!-- 这是一个 Flex 容器，横向排列 5 个列 -->
+      <div class="add_waterfall_container manual-layout">
+
+        <!-- ==================== 第 1 列 ==================== -->
+        <div class="add_column">
+          <!-- 卡片 1.1: 介绍 -->
+          <div class="add_card">
+            <h2>理解し、憐れみ、やがて愛に。</h2>
+            <p>手を結べば、拳はほどける。<br>
+              真摯に向き合う心に、自由は宿る。<br>
+              頭上の嵐はそうして散り去り、<br>
+              積もり重なった沈黙を、一息に飲み干す一杯の酒に変える。</p>
+              <br><br><br><br>
+              <h3>激しく燃え上がる運命のロマンス関係</h3>
+            <p>正邪曖昧なキャラ×2　黒幕×2　アンチヒーロー×2  </p>
+
+          </div>
+          <hr class="add_divider">
+          <!-- 卡片 1.2: 那个超长的双向数值条 (Metrics) -->
+<!-- [Card] 关系数值分析 (由 JS 自动生成) -->
+<div class="add_card metric-card">
+<!-- 这里可以写你的标题，如果不需要可以删掉 -->
+<!-- <h3>Relationship Metrics</h3> -->
+
+<!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
+<div id="metrics-container-2" class="metric-wrapper"></div>
+
+<span class="add_date">X (Left) vs L (Right)</span>
+</div>
+        </div>
+
+        <!-- ==================== 第 2 列 ==================== -->
+        <div class="add_column">
+          <!-- 卡片 2.1: S口调 -->
+          <div class="add_card">
+            <h3>X台詞例</h3>
+            <p>一人称：私 / 二人称：君<br>
+              相手の呼び名：<span>師匠</span>（「GARDEN」のメンバー共通の尊称）→Coquelicot（Lが自ら選んだコードネームと自称を、Xは敬意を込めてそのまま使っている。）</p>
+            <hr class="add_divider">
+            <p>「これが君が命と引き換えに得た力なんだ。流れるすべての未来を犠牲にして、
+              絶対的な強さと自由を手に入れたんだ。ここまで辿り着けるのは君だけだ。
+本当に<span>見事</span>だ……君なら勝てると分かっていたよ。」</p>
+<hr class="add_divider">
+            <p>「別の可能性を見たくない？このバカげた流れを拒絶したくない？」</p>
+            <hr class="add_divider">
+            <p>「君が受け入れないのはわかってた。君たちの感情はあまりにも熱烈で、裸のまま輝いてる。
+              君の命が尽きてなかったら、もっと穏やかな方案を選びたかった。でも、その時間はもうない。<br>
+              だから、思う存分抗って……私は全部理解している、全部受け入れるつもりだ。
+              私が触れた花は枯れる運命でも、<span>君を生かさなきゃいけない。</span>」</p>
+              <hr class="add_divider">
+              理解し、憐れみ、やがて愛に至る。
+            
+          </div>
+        </div>
+
+        <!-- ==================== 第 3 列 ==================== -->
+
+        <div class="add_column">
+          <!-- 卡片 4.1: 技术文章填充 -->
+          <div class="add_card">
+            <h3>L台詞例</h3>
+            <p>一人称：私 / 二人称：君<br>
+              相手の呼び名：</p>
+            <hr class="add_divider">
+            
+
+            <p>工事中<br>「工事中」なのは、Lがどうでもいいからじゃないんです。
+              むしろLがあまりにも大事すぎるから。
+              彼女にふさわしい、100点満点の台詞を書きたくて、ずっと手が止まってるんです。</p>
+          </div>
+        </div>
+        <!-- ==================== 第 4 列 ==================== -->
+        <div class="add_column">
+          <!-- 卡片 3.1: 时间线1 -->
+          <div class="add_card">
+            <h3>本編開始2年前</h3>
+            <p></p>
+            <span class="add_date">N.F.?-N.F.113</span>
+            <hr class="add_divider">
+            <!-- 卡片 3.2: 时间线2 -->
+            <h3>幕開け</h3>
+            <p>お互いに探り合う知恵比べの中で、Xはずっと曖昧な態度を崩さず、Lの心を煽り立てようとしてくる。<br>
+              一方Lは昔から、こういう自分のことよくわかってる風の偽善的な奴が大嫌いだ。<br>
+              
+              二人はただ自分の計画を押し進みたいだけ。LにとってXは過去最大級に凶悪で厄介な対戦相手で、XにとってLは計画を委ねる理想の器。</p>
+            <span class="add_date">N.F.113/07</span>
+
+            <hr class="add_divider">
+            <!-- 卡片 3.3: 时间线3 -->
+            <h3>全生還後</h3>
+            <p>LはXの陰謀を粉砕した。その過程で、二人は互いに本気の力を出し切り、XはLに対して本心をさらけ出した。欣赏も、利用も、傷つけも、愛も、すべてが真実だった。<br>
+
+              LとXは似たような出発点と境遇を持ち、同じ問題に直面しながらも正反対の答えを選んだ存在。互いにとって、人生で最も欠かせない一片のピースだ。<br>
+              
+              Xは心からLの人柄を認め、Lと弟子たちの「絆」を理解した。だからこそ弟子たちに手加減した。
+              その僅かな優しさが、LにXの努力を認めさせた瞬間だった。それ以来、LはXを初めて本当の同格の相手として見据えるようになった。<br>
+              
+              そしてLはXのために、ある封印を破壊し、Xが最も大切にしていたものを取り戻させた。<br>
+              
+              二人は複雑な協力関係に変わり、共に結末を塗り替える。</p>
+            <span class="add_date">N.F.113</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== 第 3 个区块 (保持不变) ==================== -->
+<div class="wan-content relationship" id="content-2">
+  <div class="add_browser_window">
+    <!-- 窗口头部 -->
+    <div class="add_window_header">
+      <div class="add_traffic_lights">
+        <div class="add_dot add_bg_red"></div>
+        <div class="add_dot add_bg_yellow"></div>
+        <div class="add_dot add_bg_green"></div>
+      </div>
+      <div class="add_address_bar">
+        localhost/relationship_metrics
+      </div>
+      <div class="add_window_actions"><span>+</span></div>
+    </div>
+
+    <!-- 滚动内容区 -->
+    <!-- 滚动内容区 -->
+    <div class="add_content_scroll_area">
+
+      <!-- 这是一个 Flex 容器，横向排列 5 个列 -->
+      <div class="add_waterfall_container manual-layout">
+
+        <!-- ==================== 第 1 列 ==================== -->
+        <div class="add_column">
+          <!-- 卡片 1.1: 介绍 -->
+          <div class="add_card">
+            <h2>縁の下の力持ち（L）と、表舞台で輝く英雄。</h2>
+            <p>工事中</p>
+
+          </div>
+          <hr class="add_divider">
+          <!-- 卡片 1.2: 那个超长的双向数值条 (Metrics) -->
+<!-- [Card] 关系数值分析 (由 JS 自动生成) -->
+<div class="add_card metric-card">
+<!-- 这里可以写你的标题，如果不需要可以删掉 -->
+<!-- <h3>Relationship Metrics</h3> -->
+
+<!-- 核心容器：JS 会把几十个条形图自动塞进这里 -->
+<div id="metrics-container-3" class="metric-wrapper"></div>
+
+<span class="add_date">L (Left) vs N (Right)</span>
+</div>
+        </div>
+
+        <!-- ==================== 第 2 列 ==================== -->
+        <div class="add_column">
+          <!-- 卡片 2.1: S口调 -->
+          <div class="add_card">
+            <h3>台詞例</h3>
+            <p>一人称： / 二人称：<br>
+              相手の呼び名：<span>師匠</span></p>
+            <hr class="add_divider">
+            <p>工事中</p>
+          </div>
+        </div>
+
+        <!-- ==================== 第 3 列 ==================== -->
+
+        <div class="add_column">
+          <!-- 卡片 4.1: 技术文章填充 -->
+          <div class="add_card">
+            <h3>L台詞例</h3>
+            <p>一人称：私 / 二人称：君<br>
+              相手の呼び名：</p>
+            <hr class="add_divider">
+            <p>工事中<br>「工事中」なのは、Lがどうでもいいからじゃないんです。
+              むしろLがあまりにも大事すぎるから。
+              彼女にふさわしい、100点満点の台詞を書きたくて、ずっと手が止まってるんです。</p>
+          </div>
+        </div>
+        <!-- ==================== 第 4 列 ==================== -->
+        <div class="add_column">
+          <!-- 卡片 3.1: 时间线1 -->
+          <div class="add_card">
+            <h3></h3>
+            <p>お互い正式に会う前から、様々なルートで相手の噂を聞きまくっている。
+              殺し屋であるLなのに、大局を考え、目が覚めるまで濒死の淵にいる④が利用されないよう守り続けていた。
+              二人とも立派な善人のはずなのに、なぜかお互いに『信頼を渡す』ことが怖がっている。だからそれぞれ自分流のやり方で、相手が『信頼に足る人か』を測っているんだ。</p>
+            <span class="add_date">N.F.113</span>
+            <hr class="add_divider">
+            <!-- 卡片 3.2: 时间线2 -->
+            <h3>次の</h3>
+            <p></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
 
       <!-- pc世界观 -->
       <div class="swiper-slide pc backstory" data-mouse="small" id="slide4">
