@@ -40,7 +40,7 @@
 /* 核心：标签悬浮逻辑 */
 .label {
   position: absolute;
-  top: 60%; /* 理想的 90% 位置 */
+  top: 70%; /* 理想的 90% 位置 */
   left: 55%;
   transform: translateX(-50%); /* 水平居中 */
   width: auto;

@@ -6,44 +6,38 @@ const nodeConfig = [
   { id: 3, pos: [2.5, 1.2] },     // 蓟
   { id: 4, pos: [-3, 0] },      // X
   { id: 5, pos: [-1, -1.1] },     // 上庭
-  { id: 6, pos: [2.5, -1.1] },      // 牧者
+  { id: 6, pos: [3.2, -1.1] },      // 牧者
   { id: 7, pos: [1, -1.1] },      // 福音地
-  { id: 8, pos: [-1.6, 1.2] }     // Shp-13
+  { id: 8, pos: [-2, 1.2] }     // Shp-13
 ];
 
 // ==================== 1. 配置数据 ====================
 
 // 连线关系配置
 const connections = [
-  // 客观描述线：无箭头，直线，绝对居中
+  // 客观描述线：无箭头，直线
   { from: 0, to: 4, label: "宿命のライバル / 好敵手 / 腐れ縁\n複雑な協力关系", color: "#b2160b", isObjective: true, side: "left", sideIn: "right", fromSlot: 0, toSlot: 0 },
-  
-  // 直连带箭头：X -> L (赏赞)，标签靠左侧
+
+  // 直连带箭头：X -> L标签靠左侧
   { from: 4, to: 0, label: "賞賛→理解し、憐れみ、やがて愛に", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -3, toSlot: -3 },
 
-  // 直连带箭头：L -> X (厌恶)，标签靠右侧
+  // 直连带箭头：L -> X标签靠右侧
   { from: 0, to: 4, label: "嫌い→不倶戴天、やり返す→理解", color: "#b2160b", isStraight: true, side: "left", sideIn: "right", fromSlot: 3, toSlot: 3 },
   
-  // 弯折线：常规逻辑
+  // 折线：常规逻辑
   { from: 0, to: 1, label: "(恩師)守護 / 栽培 / 出資\n我が子同然に慈しむ\n最も愛する部下", color: "#b2160b", isStraight: true, side: "right", sideIn: "left", fromSlot: -1, toSlot: -1,},
   { from: 1, to: 0, label: "劣情、湿度高めの激重愛\n求不得苦", color: "#b2160b", side: "left", sideIn: "right", isStraight: true, fromSlot: 3, toSlot: 3,},
-  { from: 0, to: 2, label: "(恩師)守護 / 栽培 / 出資", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: -1, bendOffset: 50 },
+  { from: 0, to: 2, label: "(恩師)守護 / 栽培 / 出資\n我が子同然に慈しむ", color: "#b2160b", side: "bottom", sideIn: "left", fromSlot: 3, toSlot: -1, bendOffset: 50 },
   { from: 7, to: 0, label: "元同僚 / 今は顧客", color: "#b2160b", side: "left", sideIn: "top", fromSlot: 2, toSlot: 0, bendOffset: 70 },
   { from: 4, to: 5, label: "反逆", color: "#b2160b", side: "top", sideIn: "left", fromSlot: 0, toSlot: -1, bendOffset: 80 },
   { from: 0, to: 7, label: "反逆", color: "#b2160b", side: "right", sideIn: "bottom", fromSlot: -5, toSlot: 0, bendOffset: 80 },
   { from: 5, to: 7, label: "宿敵", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 20, isObjective: true },
   { from: 6, to: 7, label: "幹部", color: "#b2160b", side: "left", sideIn: "right",isStraight: true,  fromSlot: 0, toSlot: 0,},
-  { from: 8, to: 0, label: "救いたい", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -2, toSlot: 5, bendOffset: 20 },
-  { from: 0, to: 8, label: "疑う", color: "#b2160b", side: "bottom", sideIn: "right", fromSlot: -2, toSlot: 2, bendOffset: 10 }
+  { from: 8, to: 0, label: "救いたい\n一切の不純物を含まない人類愛", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -4, toSlot: 5, bendOffset: 50 },
+  { from: 0, to: 8, label: "疑う→認める", color: "#b2160b", side: "bottom", sideIn: "right", fromSlot: -2, toSlot: 2, bendOffset: 10 },
+  /* { from: 6, to: 8, label: "姉弟", color: "#b2160b", side: "bottom", sideIn: "bottom", fromSlot: -1, toSlot: -1, bendOffset: 20, isObjective: true }, */
+{ from: 0, to: 8, label: "友達", color: "#b2160b", side: "bottom", sideIn: "right", fromSlot: -4, toSlot: -1, bendOffset: 20, isObjective: true },
 ];
-
-/**
- * 角色关系图谱核心逻辑 - 最终修复汇总版
- * 1. 修复了 SVG 内部 ID 引用导致箭头消失的问题
- * 2. 增加了 nodeMargin 确保连线不紧贴头像
- * 3. 优化了三类连线逻辑（宿命线、直连箭头线、弯折线）
- * 4. 完美支持多行标签垂直/水平居中
- */
 
  const state = {
   nodes: [],
