@@ -230,7 +230,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      name: `？？？`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
       text: `……`
     },
     {
@@ -243,25 +244,29 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      name: `？？？`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
       text: `スキャン完了。上庭も君の方案を全体評価した。君の措置は奇妙だが、合理的で、任務要求に合致している。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      name: `？？？`,
-      text: `Leopoldが君の罠に踏み込もうと、彼女の命はもう尽きている。`
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
+      text: `『業師』が君の罠に踏み込もうと、彼女の命はもう尽きている。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      name: `？？？`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
       text: `「Garden」はもはや脅威ではなく、君は福音地の目を避け、SHP-13を取り戻す最善の方法を見つけた。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      name: `？？？`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
       text: `君の方案は信頼できる。`
     },
     {
@@ -274,31 +279,36 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      name: `？？？`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
       text: `……当初、君のリスク評価は非常に高かった。すぐに警報を鳴らし、即刻破壊されると考えていた。だが、君はそうならなかった。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      name: `？？？`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
       text: `我々は君のそばにいて、はっきりわかっている。君の限られた行動時間の中で、常に信頼できる方案を出してきた。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      name: `？？？`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
       text: `上庭は君を信じ、福音地は君を警戒し、反逆者は君に制御される。君は最も完璧な執行人、この位置に最適だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      name: `？？？`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
       text: `9年はあまりにも短い。君を撤去し破壊するのは惜しい。君の後、もっと適任な者を見つけるのは難しいだろう。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      name: `？？？`,
+      avatar: `img/dh/black_quartz.jpg`,
+      name: `黒石英`,
       text: `クローン技術が失われていなければ。上庭は無数の君を複製し、HUSHを常に効率的に運用できたのに。`
     },
     {

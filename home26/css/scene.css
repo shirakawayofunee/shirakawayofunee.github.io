@@ -1264,6 +1264,13 @@ span {
     border-bottom: 1px solid #555;  /* 喜欢的下边缘线 */
     background: transparent;        /* 纯净背景，不要蓝光 */
     position: relative;
+color: #fff;
+border: 1px solid #dcfa25;
+background-color:#080808; /* 稍微偏蓝灰的背景 */
+box-shadow: inset 0 0 15px rgba(0, 212, 255, 0.15); /* 内部幽幽的蓝光 */
+/* 添加扫描线背景 */
+background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 212, 255, 0.05) 50%);
+background-size: 100% 4px;
 }
 
 /* 顶部的通讯标识 */
@@ -1294,8 +1301,70 @@ span {
 
 /* 自动标红的人名 (冒号前的部分) */
 .narration.secret-comm .comm-speaker {
-    color: var(--highlight-red); /* 提取你全局的标志性红色 */
+/*     color: var(--highlight-red); */
+/*     color: #a3e635; */
+    color: #a8d604;
+    
     font-family: 'Courier New', monospace; /* 名字用代码字体，更像代号 */
     font-weight: 900;
     margin-right: 5px;
+}
+
+/* ========================================================
+   特殊对话气泡样式 (回想 / 不稳定 / 受控)
+======================================================== */
+
+/* --- 1. 回想台词 (bubble-recall) --- */
+.message-bubble.bubble-recall {
+    background-color: rgba(20, 20, 20, 0.4); /* 背景变得更透明、更暗 */
+    border: 2px dashed #666;                 /* 褪色的虚线边框 */
+    color: #999;                             /* 文字颜色变暗 */
+    font-style: italic;                      /* 斜体表现虚幻感 */
+    box-shadow: none;                        /* 移除物理阴影，表现它不在现实空间 */
+    backdrop-filter: blur(2px);              /* 可选：给背景一点点模糊感 */
+}
+
+/* --- 2. 心态不平稳/崩溃 (bubble-unstable) --- */
+.message-bubble.bubble-unstable {
+    background-color: #000;
+    border: 2px solid var(--highlight-red);
+    color: #fff;
+    /* 赛博精神病特有的红蓝视觉错位阴影 */
+    text-shadow: 1.5px 0 0 rgba(212, 15, 48, 0.8), -1.5px 0 0 rgba(0, 212, 255, 0.8);
+    /* 让整个气泡稍微倾斜一点点，打破方正感 */
+    transform: skewX(-3deg);
+    /* 添加神经质的微弱抖动动画 */
+    animation: mind-jitter 0.15s infinite alternate;
+}
+/* 微抖动关键帧 */
+@keyframes mind-jitter {
+    0% { transform: skewX(-3deg) translate(0.5px, 0.5px); }
+    100% { transform: skewX(-3deg) translate(-0.5px, -0.5px); }
+}
+/* 放大不平稳气泡里的红字效果，让它更刺眼 */
+.message-bubble.bubble-unstable span {
+    color: #ff003c;
+    font-weight: 900;
+    font-size: 1.1em;
+}
+
+/* --- 3. 受控制/系统劫持 (bubble-controlled) --- */
+.message-bubble.bubble-controlled {
+    font-family: 'Courier New', monospace; /* 强制系统等宽字体 */
+    background-color: #1a0515;             /* 幽暗的紫黑色背景 */
+    border: 1px solid #ff00ff;             /* 刺眼的霓虹品红，暗示被异物入侵 */
+    box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.2); /* 内部幽幽紫光 */
+    color: #e0b0ff;                        /* 偏紫的死板文字 */
+    letter-spacing: 1px;
+}
+/* 在气泡开头自动加上一个“注入”警告 */
+.message-bubble.bubble-controlled::before {
+    content: ">> OVERRIDE_INJECT: \A";     /* \A 实现换行 */
+    white-space: pre-wrap;
+    display: block;
+    color: #ff00ff;
+    font-weight: 900;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    animation: blink 1s step-end infinite; /* 闪烁效果（借用你原有的 blink 动画） */
 }
