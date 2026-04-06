@@ -34,7 +34,7 @@ const connections = [
   { from: 5, to: 7, label: "宿敵", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -1, toSlot: -1, bendOffset: 20, isObjective: true },
   { from: 6, to: 7, label: "幹部", color: "#b2160b", side: "left", sideIn: "right",isStraight: true,  fromSlot: 0, toSlot: 0,},
   { from: 8, to: 0, label: "救いたい\n一切の不純物を含まない人類愛", color: "#b2160b", side: "right", sideIn: "left", fromSlot: -4, toSlot: 5, bendOffset: 50 },
-  { from: 0, to: 8, label: "疑う→認める", color: "#b2160b", side: "bottom", sideIn: "right", fromSlot: -2, toSlot: 2, bendOffset: 10 },
+  { from: 0, to: 8, label: "半信半疑→認める", color: "#b2160b", side: "bottom", sideIn: "right", fromSlot: -2, toSlot: 2, bendOffset: 10 },
   /* { from: 6, to: 8, label: "姉弟", color: "#b2160b", side: "bottom", sideIn: "bottom", fromSlot: -1, toSlot: -1, bendOffset: 20, isObjective: true }, */
 { from: 0, to: 8, label: "友達", color: "#b2160b", side: "bottom", sideIn: "right", fromSlot: -4, toSlot: -1, bendOffset: 20, isObjective: true },
 ];
