@@ -987,9 +987,8 @@ span {
     background: transparent;
     border: 1px solid #ccc;
     border-radius: 50%;
-    color: #555;
+    color: #fff;
     font-size: 8px;
-
     cursor: pointer;
     transition: all 0.2s;
     flex-shrink: 0; /* 防止被挤压 */
@@ -998,6 +997,8 @@ span {
     vertical-align: middle;     /* 垂直居中对齐文字 */
     padding: 0;
     flex-shrink: 0;
+    background: #D40F30;
+    border-color: #D40F30;
 }
 
 .voice-btn:hover {

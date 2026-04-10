@@ -670,7 +670,7 @@ export default {
       name: `業師`,
       text: `……`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_54.wav" },
+        { label: "▶", path: "wav/CN/conversation29/vo_event_11042_54.wav" },
       ],
     },
     {

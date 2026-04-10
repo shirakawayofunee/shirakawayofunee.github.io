@@ -210,7 +210,7 @@ const chapterList = [
   {
     id: "conversation29",
     category: "flower",
-    title: "402「依頼」",
+    title: "402「依頼·満開」",
     subtitle: "Flora",
     dateLabel: "N.F.113/8/26",
   },
