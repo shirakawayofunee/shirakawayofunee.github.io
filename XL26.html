@@ -373,7 +373,7 @@
             { src: "img/XL/zhuxian3.jpg", alt: "メインストーリー", description: "【メインストーリー/本編】（猫猫バージョン）" },
             { src: "img/XL/zhuxian4.webp", alt: "メインストーリー", description: "【メインストーリー/本編】FIN" },
             { src: "img/XL/zhuxian5.jpg", alt: "メインストーリー", description: "【メインストーリー/本編】「後日談」" },
-            
+            { src: "img/L/イベントED_ 繁花.mkv", alt: "Gallery Image 1", description: "繁花ED" },
             { src: "img/XL/X_gift1.webp", alt: "メインストーリー", description: "【BAD END-IF】Xからのご挨拶――Lの中で一番重い存在、その死骸" },
             { src: "img/XL/Xliwu2.webp", alt: "メインストーリー", description: "" },
             
@@ -382,6 +382,7 @@
 
         const galleryImages = [
             { src: "img/XL/00.jpg", alt: "Gallery Image 5", description: "波を起こす者と海面下の者" },
+            { src: "img/XL/XL_0.mp4", alt: "Gallery Image 5", description: "波を起こす者と海面下の者" },
             { src: "img/XL/XL0.jpg", alt: "Gallery Image 1", description: "「N.F.113年8月26日」  401「残花の復仇」" },
             { src: "img/XL/XL1.jpg", alt: "Gallery Image 1", description: "「IF」IFだけど、未来で正史になる可能性もある（？）" },
             { src: "img/XL/XL2.jpg", alt: "Gallery Image 2", description: "死の舞踏" },
@@ -631,47 +632,72 @@ const tab1Images = [
         }
 
         // 瀑布流生成逻辑
-        function arrangeWaterfall(containerId, imageArray) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            container.innerHTML = "";
+// 瀑布流生成逻辑
+function arrangeWaterfall(containerId, imageArray) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    container.innerHTML = "";
+    
+    const width = window.innerWidth;
+    const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+    
+    const columns = Array(columnCount).fill().map(() => {
+        const col = document.createElement("div");
+        col.className = "gallery-column";
+        container.appendChild(col);
+        return col;
+    });
 
-            const width = window.innerWidth;
-            const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+    if (!imageArray) return;
 
-            const columns = Array(columnCount).fill().map(() => {
-                const col = document.createElement("div");
-                col.className = "gallery-column";
-                container.appendChild(col);
-                return col;
-            });
+    imageArray.forEach((image, index) => {
+        const item = document.createElement("div");
+        item.className = "gallery-item";
 
-            if (!imageArray) return;
-
-            imageArray.forEach((image, index) => {
-                const item = document.createElement("div");
-                item.className = "gallery-item";
-
-                const img = document.createElement("img");
-                img.src = image.src;
-                img.alt = image.alt;
-                img.className = "holder-img";
-
-                // [核心修改] 点击时，传递整个数组和当前索引
-                img.onclick = function () {
-                    openDetailModal(imageArray, index);
-                };
-
-                const caption = document.createElement("div");
-                caption.className = "caption";
-                caption.textContent = image.description || "";
-
-                item.appendChild(img);
-                item.appendChild(caption);
-                columns[index % columnCount].appendChild(item);
-            });
+        // [核心修改] 判断是否是视频文件（根据 src 后缀）
+        const isVideo = image.src.toLowerCase().endsWith('.mp4') || image.src.toLowerCase().endsWith('.mkv');
+        
+        let mediaEl;
+        
+        if (isVideo) {
+            // 如果是视频，创建 video 标签
+            mediaEl = document.createElement("video");
+            mediaEl.src = image.src;
+            mediaEl.className = "holder-img"; // 保持和之前一样的 class 以应用同样的 CSS
+            // 模拟 GIF 的效果：自动播放、循环、静音、行内播放(兼容移动端)
+            mediaEl.autoplay = true;
+            mediaEl.loop = true;
+            mediaEl.muted = true;
+            mediaEl.playsInline = true;
+            mediaEl.preload = "metadata"; // 优化加载
+            
+            // 鼠标悬停时播放，移开时暂停 (可选优化：避免同时播放太多视频卡顿)
+            // 如果你希望它像GIF一样一直动，可以注释掉下面这两行
+            // mediaEl.onmouseover = () => mediaEl.play();
+            // mediaEl.onmouseout = () => mediaEl.pause();
+        } else {
+            // 如果是普通的图片，保持原来的 img 标签
+            mediaEl = document.createElement("img");
+            mediaEl.src = image.src;
+            mediaEl.alt = image.alt || "";
+            mediaEl.className = "holder-img";
         }
 
+        // [核心修改] 点击时，传递整个数组和当前索引
+        mediaEl.onclick = function () {
+            openDetailModal(imageArray, index);
+        };
+
+        const caption = document.createElement("div");
+        caption.className = "caption";
+        caption.textContent = image.description || "";
+
+        item.appendChild(mediaEl);
+        item.appendChild(caption);
+        columns[index % columnCount].appendChild(item);
+    });
+}
         // 键盘支持 (可选：按左右键切换，ESC关闭)
         document.addEventListener('keydown', function (e) {
             if ($(".papermaskDetail").is(":visible")) {
@@ -842,6 +868,5 @@ const tab1Images = [
             }, { once: true });
         }
     });
-
     </script>
 </html>
