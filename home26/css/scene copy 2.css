@@ -1,5 +1,3 @@
-@import "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=block";
-
 /* --- 全局字体与基础设置 --- */
 @font-face {
     font-family: "myFont";
@@ -15,6 +13,7 @@
     --text-main: #000000;
     --text-sub: #666666;
     --highlight-bg: #e0e0e0;
+    
     --highlight-red: #D40F30;
 }
 
@@ -78,6 +77,7 @@ span {
     height: 100%;
     overflow: hidden;
     background-color: var(--panel-bg);
+/*     border-right: var(--border-line); */
     padding: 0;
 }
 
@@ -98,7 +98,8 @@ span {
 .header-box {
     width: 100%;
     border: none; 
-    padding: 5% 0 0 0;
+    padding: 0;
+    padding-top: 5%;
     text-align: center;
     position: relative;
     display: flex;
@@ -106,6 +107,7 @@ span {
     justify-content: center;
     align-items: center;
 }
+
 
 .main-title {
     font-family: 'myFont', "Arial Black", sans-serif;
@@ -297,9 +299,13 @@ span {
 
 /* --- 中间：剧本正文 (Script) --- */
 .script-panel {
+/*     background-color: #1e1e1e;  */
     color: #d4d4d4;
     border: none;
     background-color: var(--dark-panel-bg);
+/*     background-image: url("../img/dh/bg_full.png");
+    background-size: cover;
+    background-attachment: local; */
 }
 
 .script-content {
@@ -314,7 +320,6 @@ span {
     margin-bottom: 30px;
     align-items: flex-start;
 }
-
 .avatar {
     width: 120px;
     height: 120px;
@@ -334,7 +339,7 @@ span {
     font-size: 1rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     word-wrap: break-word;
-    white-space: pre-line;
+    white-space: pre-wrap; /* 你的剧本可能包含换行符 */
 }
 .message-bubble span { color: var(--highlight-red); font-weight: bold; }
 
@@ -345,13 +350,13 @@ span {
 
 .narration {
     text-align: center;
+    /* color: #c9c7ca; */
     color: #d8d8d8;
+    /* color: #eceadd; */
     margin: 10px auto;
     width: 100%;
     line-height: 1.5;
     font-size: 0.95rem;
-    white-space: pre-line;
-    word-wrap: break-word;
 }
 .cg-image {
     max-width: 100%;
@@ -447,13 +452,15 @@ span {
     top: 10px;
     right: 1.7%;
     z-index: 100;
+    /* 移除之前的背景和边框设置，只保留定位 */
 }
 
 .music-icon {
-    width: 25px; 
+    width: 25px;  /* 根据您的图片实际大小调整，建议 30-50px */
     height: 25px; 
     object-fit: contain;
     cursor: pointer;
+    /* 给个轻微的点击反馈 */
     transition: transform 0.1s;
 }
 
@@ -461,26 +468,100 @@ span {
     transform: scale(0.9);
 }
 
-/* --- 赛博动画与特效 --- */
+/* --- 移动端适配 --- */
+@media (max-width: 926px) {
+    body { overflow: auto; height: auto; }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 0;
+    }
+    
+    .directory-panel {
+        height: auto;
+        max-height: 50vh;
+        border-bottom: var(--border-line);
+    }
+    
+    .script-panel { min-height: 100vh; overflow: visible; }
+    .script-content { padding: 20px 15px; }
+    .message-bubble { max-width: 85%; font-size: 0.95rem; }
+    .avatar { width: 60px; height: 60px; }
+    
+    .info-panel { background: #f0f0f0; padding-bottom: 50px; }
+}
+
+@import"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=block";
+
 @keyframes glitch-anim-1 {
-    0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px) }
-    20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px) }
-    40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px) }
-    60% { clip-path: inset(80% 0 5% 0); transform: translate(1px, -2px) }
-    80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px) }
-    to { clip-path: inset(30% 0 50% 0); transform: translate(2px, -1px) }
+    0% {
+        clip-path: inset(20% 0 80% 0);
+        transform: translate(-2px, 1px)
+    }
+
+    20% {
+        clip-path: inset(60% 0 10% 0);
+        transform: translate(2px, -1px)
+    }
+
+    40% {
+        clip-path: inset(40% 0 50% 0);
+        transform: translate(-2px, 2px)
+    }
+
+    60% {
+        clip-path: inset(80% 0 5% 0);
+        transform: translate(1px, -2px)
+    }
+
+    80% {
+        clip-path: inset(10% 0 70% 0);
+        transform: translate(-1px, 1px)
+    }
+
+    to {
+        clip-path: inset(30% 0 50% 0);
+        transform: translate(2px, -1px)
+    }
 }
 
 @keyframes glitch-anim-2 {
-    0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px) }
-    20% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 2px) }
-    40% { clip-path: inset(30% 0 20% 0); transform: translate(1px, -2px) }
-    60% { clip-path: inset(10% 0 80% 0); transform: translate(-1px, 1px) }
-    80% { clip-path: inset(50% 0 30% 0); transform: translate(2px, -1px) }
-    to { clip-path: inset(20% 0 70% 0); transform: translate(-2px, 1px) }
+    0% {
+        clip-path: inset(10% 0 60% 0);
+        transform: translate(2px, -1px)
+    }
+
+    20% {
+        clip-path: inset(80% 0 5% 0);
+        transform: translate(-2px, 2px)
+    }
+
+    40% {
+        clip-path: inset(30% 0 20% 0);
+        transform: translate(1px, -2px)
+    }
+
+    60% {
+        clip-path: inset(10% 0 80% 0);
+        transform: translate(-1px, 1px)
+    }
+
+    80% {
+        clip-path: inset(50% 0 30% 0);
+        transform: translate(2px, -1px)
+    }
+
+    to {
+        clip-path: inset(20% 0 70% 0);
+        transform: translate(-2px, 1px)
+    }
 }
 
-.cyber-glitch { position: relative; }
+.cyber-glitch {
+    position: relative
+}
+
 .cyber-glitch:before,
 .cyber-glitch:after {
     content: attr(data-text);
@@ -489,19 +570,21 @@ span {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--background);
+    background: var(--background)
 }
+
 .cyber-glitch:before {
     left: 2px;
     text-shadow: -1px 0 #ff00ff;
     clip-path: inset(0 0 0 0);
-    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+    animation: glitch-anim-1 2s infinite linear alternate-reverse
 }
+
 .cyber-glitch:after {
     left: -2px;
     text-shadow: -1px 0 #00d4ff;
     clip-path: inset(0 0 0 0);
-    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+    animation: glitch-anim-2 3s infinite linear alternate-reverse
 }
 
 .cyber-scanlines {
@@ -514,136 +597,187 @@ span {
     width: 100%;
     height: 100%;
     z-index: 9999;
-    opacity: .15;
+    opacity: .15
 }
 
 .cyber-chamfer {
-    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)
 }
+
 .cyber-chamfer-sm {
-    clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+    clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px)
 }
 
 @keyframes blink {
-    0%, to { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    to {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 0
+    }
 }
 
 .cyber-cursor:after {
     content: "_";
     animation: blink 1s step-end infinite;
     color: var(--accent);
-    margin-left: 2px;
+    margin-left: 2px
 }
 
 
 /* 复刻版：新粗野主义按钮 */
 .neo-btn {
+    /* --- 布局与基础样式 --- */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap; 
+    white-space: nowrap; /* 防止文字换行 */
     width: 100%;
-    height: 3.5rem; 
-    padding: 0 2rem; 
-    font-size: 1.125rem; 
-    font-weight: 700;    
-    text-transform: uppercase; 
-    letter-spacing: 0.025em;   
+    height: 3.5rem; /* 对应 h-14 */
+    padding: 0 2rem; /* 对应 px-8 */
+    
+    /* --- 字体样式 --- */
+    font-size: 1.125rem; /* 对应 text-lg */
+    font-weight: 700;    /* 对应 font-bold */
+    text-transform: uppercase; /* 大写 */
+    letter-spacing: 0.025em;   /* 宽字间距 */
     color: #000;
+    
+    /* --- 核心视觉样式 (边框与背景) --- */
     background-color: #fff;
-    border: 4px solid #000; 
+    border: 4px solid #000; /* 厚边框 */
     cursor: pointer;
+    
+    /* --- 关键：硬阴影 (Shadow) --- */
+    /* x偏移6px, y偏移6px, 模糊0px, 扩展0px, 黑色 */
     box-shadow: 6px 6px 0px 0px #000; 
+    
+    /* --- 动画设置 --- */
+    /* 0.1秒线性过渡，这就产生了那种“干脆利落”的机械感 */
     transition: all 0.1s linear; 
 }
 
+/* 桌面端适配 (大屏幕时稍微变大一点) */
 @media (min-width: 640px) {
     .neo-btn {
-        height: 4rem; 
-        width: auto;  
-        padding: 0 3rem; 
-        font-size: 1.25rem; 
+        height: 4rem; /* sm:h-16 */
+        width: auto;  /* sm:w-auto */
+        padding: 0 3rem; /* sm:px-12 */
+        font-size: 1.25rem; /* sm:text-xl */
     }
 }
 
+/* --- 核心交互：悬停效果 (Hover) --- */
 .neo-btn:hover {
+    /* 1. 位移：向右下角移动 6px，正好填满阴影的位置 */
     transform: translate(6px, 6px); 
+    
+    /* 2. 阴影消失：配合位移，造成“按下去”的错觉 */
     box-shadow: none; 
+    
+    /* 3. 反色效果：黑底白字 */
     background-color: #000;
     color: #fff;
 }
 
+/* 按钮里的图标样式 */
 .neo-btn svg {
     margin-right: 0.5rem;
-    stroke-width: 3px; 
+    stroke-width: 3px; /* 加粗图标线条 */
 }
 
+
+
 .synopsis-text button, 
-.synopsis-text a.btn { 
+.synopsis-text a.btn { /* 如果是 a 标签做的按钮也加上 */
+    
+    /* --- 1. 基础结构 --- */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none; 
-    font-family: 'JetBrains Mono', monospace; 
+    text-decoration: none; /* 去掉下划线 */
+    font-family: 'JetBrains Mono', monospace; /* 保持字体一致 */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    
+    /* 尺寸 */
     height: 3rem;
     padding: 0 2rem;
-    margin: 2.5fr; 
-    background-color: #fff; 
-    color: #000000;            
-    border: 2px solid #000; 
+    margin: 2.5fr; /* 防止按钮贴在一起 */
+    
+    /* --- 2. 颜色适配 (黑底专用) --- */
+    background-color: #fff; /* 按钮本体：白色 */
+    color: #000000;            /* 文字：黑色 */
+    border: 2px solid #000; /* 边框：白色 (防止在黑底上看不清边缘) */
     box-shadow: 6px 6px 0px 0px #000; 
+    /* --- 4. 动画 --- */
     transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
-    position: relative; 
+    position: relative; /* 确保 z-index 正常 */
 }
 
+/* --- Hover 状态 --- */
 .synopsis-text button:hover,
 .synopsis-text a.btn:hover {
+    /* 位移：填补阴影位置 */
     transform: translate(6px, 6px);
+    
+    /* 阴影消失 */
     box-shadow: none;
-    background-color: #000; 
-    border-color: #000;     
-    color: #fff;            
+    
+    /* 颜色变化：变成绿色背景，或者保持白色 */
+    background-color: #000; /* 变绿 */
+    border-color: #000;     /* 边框也变绿 */
+    color: #fff;            /* 文字保持黑色 */
 }
 
 
-/* ==================== 新增 UI 样式 ==================== */
+
+/* ==================== 新增 UI 样式 (修正版) ==================== */
 
 /* 1. 外层容器：Flex 垂直布局 */
 .script-wrapper {
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden; 
+    overflow: hidden; /* 禁止外层滚动 */
     background-color: var(--dark-panel-bg);
+/*     background-image: url("../img/dh/bg_full.png");
+    background-size: cover; */
 }
 
-/* 2. 顶部固定 Div */
+/* 2. 顶部固定 Div (约20%高度) */
 .script-header-layer {
     flex-shrink: 0;
-    height: 13%; 
-    min-height: 60px; 
+    height: 13%; /* 修改点：从 20% 改为 13% */
+    min-height: 60px; /* 修改点：减小最小高度，防止太占地 */
     background: var(--panel-bg); 
-    padding: 10px 40px; 
+    padding: 10px 40px; /* 修改点：减小内边距 */
     display: flex;
     flex-direction: column;
-    align-items: center;        
-    justify-content: space-between; 
+    justify-content: center;
     z-index: 10;
     position: relative;
+
+    display: flex;              /* 开启 Flexbox */
+    align-items: center;        /* 关键：垂直居中对齐 */
+    justify-content: space-between; /* 关键：左右撑开 */
+
 }
 
 .header-summary-box {
-    flex: 1;            
-    text-align: center; 
+    flex: 1;            /* 自动填满左右按钮中间的空间 */
+    text-align: center; /* 文字居中 */
+    
+    /* 防止文字过长把左右按钮挤出去 */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 0 20px;    
+    padding: 0 20px;    /* 防止文字紧贴左右按钮 */
 }
 
 /* 概要样式 */
@@ -655,11 +789,11 @@ span {
     padding-left: 12px;
     line-height: 1.2;
     font-weight: 700;
+    /* 限制显示两行，超出省略 */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    white-space: pre-line;
 }
 
 /* 3. 滚动区域 */
@@ -669,19 +803,22 @@ span {
     padding: 0;
     scroll-behavior: smooth;
 }
-
 .script-scroll-area .script-content {
-    padding: 40px 40px 120px 40px; 
+    padding: 40px 40px 100px 40px; 
 }
 
 .script-scroll-area::-webkit-scrollbar { 
     width: 6px; 
 }
 .script-scroll-area::-webkit-scrollbar-thumb { 
-    background: #555; 
+    background: #555; /* 灰色滑块 */
 }
 .script-scroll-area::-webkit-scrollbar-track { 
-    background: #000; 
+    background: #000; /* 黑色轨道 */
+}
+
+.script-scroll-area .script-content {
+    padding: 40px 40px 120px 40px; 
 }
 
 /* 4. 悬浮按钮 (Neo-Brutalism) */
@@ -708,13 +845,13 @@ span {
     background-color: #fff; 
     color: #000;            
     border: 2px solid #000; 
-    box-shadow: 6px 6px 0px 0px #000; 
+    box-shadow: 6px 6px 0px 0px #000; /* 硬阴影 */
     cursor: pointer;
     transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .neo-float-btn:hover:not(:disabled) {
-    transform: translate(6px, 6px); 
+    transform: translate(6px, 6px); /* 填补阴影位置 */
     box-shadow: none;
     background-color: #000;
     color: #fff;
@@ -734,7 +871,7 @@ span {
     top: 0;
     right: 0;
     width: 40px;
-    height: 100%; 
+    height: 100%; /* 占满 Header 高度，方便点击，或者设为 auto */
     background: #000;
     color: #fff;
     border: none;
@@ -752,19 +889,49 @@ span {
     background: var(--highlight-red);
 }
 
+/* 小图标样式 */
 .immersive-icon {
-    transform: rotate(45deg); 
+    transform: rotate(45deg); /* 让加号变成X，或者直接用X字符 */
     font-weight: bold;
 }
+
+/* 移动端适配 */
+@media (max-width: 926px) {
+    .script-header-layer { padding: 15px 20px; height: auto; min-height: 120px; }
+    .chapter-big-title { font-size: 1.2rem; }
+    .floating-nav-layer { 
+        bottom: 20px; 
+        right: 50%; 
+        transform: translateX(50%);
+        width: 90%; 
+        justify-content: space-between;
+    }
+    .neo-float-btn { flex: 1; padding: 0; font-size: 0.9rem; }
+}
+
+/* 让正文和气泡支持读取文本中的换行符 */
+.message-bubble, 
+.narration {
+    white-space: pre-line; /* 关键：识别换行符，但合并多余空格 */
+    word-wrap: break-word; /* 防止太长不换行 */
+}
+
+/* 概要部分也支持换行 */
+.chapter-summary {
+    white-space: pre-line;
+}
+
+
 
 
 /* ==================== 语音播放相关样式 ==================== */
 
-/* 1. 顶部自动播放开关 */
+/* 1. 顶部自动播放开关 (添加到 script-header-layer) */
 .auto-play-switch {
     display: flex;
     align-items: center;
     gap: 8px;
+
     cursor: pointer;
     font-family: "Consolas", sans-serif;
     font-size: 14px;
@@ -820,18 +987,21 @@ span {
     justify-content: center;
     width: 20px; 
     height: 20px;
-    background: #D40F30;
-    border: 1px solid #D40F30;
+    background: transparent;
+    border: 1px solid #ccc;
     border-radius: 50%;
     color: #fff;
     font-size: 8px;
     cursor: pointer;
     transition: all 0.2s;
-    flex-shrink: 0; 
-    margin-left: 5px;    
-    margin-bottom: 2px;  
-    vertical-align: middle;     
+    flex-shrink: 0; /* 防止被挤压 */
+    margin-left: 5px;    /* 离文字近一点 */
+    margin-bottom: 2px;  /* 微调垂直位置，让它在视觉上和文字中心对齐 */
+    vertical-align: middle;     /* 垂直居中对齐文字 */
     padding: 0;
+    flex-shrink: 0;
+    background: #D40F30;
+    border-color: #D40F30;
 }
 
 .voice-btn:hover {
@@ -849,43 +1019,68 @@ span {
 }
 
 @keyframes pulse-ring {
-    0% { box-shadow: 0 0 0 0 rgba(226, 59, 120, 0.7); }
-    70% { box-shadow: 0 0 0 6px rgba(226, 59, 120, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(226, 59, 120, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(226, 59, 120, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(226, 59, 120, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(226, 59, 120, 0);
+    }
 }
+
+/* 调整布局：确保按钮在气泡左侧正确对齐 */
+.message-row {
+    align-items: flex-start; /* 顶部对齐 */
+}
+
+/* 让按钮在左侧对话中位于头像和气泡之间，或者最左侧 */
+/* 这里假设按钮插在 message-bubble 之前 */
 
 
 /* ==================== 多语言语音标签 ==================== */
+/* ==================== 多语言语音按钮 (修正版) ==================== */
 
-/* 1. 按钮组容器 */
+/* 1. 按钮组容器：强制不换行，确保几个按钮连在一起 */
 .voice-group {
     display: inline-block;
     white-space: nowrap;
-    margin-left: 4px; 
+    margin-left: 4px; /* 整体离文字的距离 */
 }
 
-/* 2. 多语言按钮样式 */
+/* 2. 多语言按钮样式 (回归小方块/圆圈风格) */
 .voice-tag {
-    display: inline-flex;       
+    /* 布局与尺寸 */
+    display: inline-flex;       /* 关键：Flex布局实现绝对居中 */
     align-items: center;
     justify-content: center;
-    width: 18px;                
-    height: 18px;               
-    padding: 0;                 
-    margin: 0 2px;              
+    
+    width: 18px;                /* 固定宽度，与播放按钮一致 */
+    height: 18px;               /* 固定高度 */
+    
+    padding: 0;                 /* 关键：清除 padding 导致的偏移 */
+    margin: 0 2px;              /* 按钮之间的微小间距 */
+    
+    /* 边框与背景 */
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #777;
-    border-radius: 50%;         
+    border-radius: 50%;         /* 圆形。如果想要正方形，改成 2px */
+    
+    /* 字体设置 */
     color: #aaa;
-    font-size: 10px;            
-    font-family: "Microsoft YaHei", sans-serif; 
-    line-height: 1;             
+    font-size: 10px;            /* 字体大小 */
+    font-family: "Microsoft YaHei", sans-serif; /* 确保中文字体渲染正常 */
+    line-height: 1;             /* 关键：防止行高导致垂直偏移 */
+    
+    /* 对齐与交互 */
     vertical-align: middle;
     cursor: pointer;
     transition: all 0.2s;
     flex-shrink: 0;
 }
 
+/* 修正第一个按钮的左边距 (因为 .voice-group 已经有 margin-left 了) */
 .voice-group .voice-tag:first-child {
     margin-left: 0;
 }
@@ -896,6 +1091,7 @@ span {
     background: rgba(226, 59, 120, 0.1);
 }
 
+/* 播放中状态 */
 .voice-tag.playing {
     border-color: #D40F30;
     background: #D40F30;
@@ -908,57 +1104,58 @@ span {
    新增样式：放大字体 (基于 span 的专属 Class)
 ======================================================== */
 
-/* 1. 放大且保持红色 */
+/* 1. 放大且保持红色 (继承了你全局的 span 红色) */
 .message-bubble span.big-text {
-    font-size: 1.6em;         
-    font-weight: 900;         
-    line-height: 1;           
-    vertical-align: bottom;   
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8); 
-    display: inline-block;    
+    font-size: 1.6em;         /* 字体放大 1.6倍，你可以自己改数字 */
+    font-weight: 900;         /* 极粗体 */
+    line-height: 1;           /* 防止行高撑破气泡 */
+    vertical-align: bottom;   /* 让底部对齐看起来更舒服 */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8); /* 增加一点粗野硬阴影增强冲击力 */
+    display: inline-block;    /* 防止 transform 动画失效 */
 }
 
-/* 2. 可选：只变大不要变红 */
+/* 2. 可选：如果你希望有的字【只变大，不要变红】，加上 no-red 这个类 */
 .message-bubble span.big-text.no-red {
-    color: #c9c7ca;           
+    color: #c9c7ca;           /* 强制覆盖，恢复成常规文字颜色 */
 }
 
 
 /* ========================================================
-   新增样式：心声/内心独白 气泡特效
+   新增样式：心声/内心独白 气泡特效 (3种方案测试)
 ======================================================== */
 
-/* --- 方案 A：经典虚线版 --- */
+/* --- 方案 A：经典虚线版 (类似漫画内心独白) --- */
 .message-bubble.inner-voice-a {
-    background-color: rgba(37, 34, 37, 0.3); 
-    border: 2px dashed #888;                 
-    font-style: italic;                      
-    color: #a0a0a0;                          
-    box-shadow: none;                        
+    background-color: rgba(37, 34, 37, 0.3); /* 背景变透明很多 */
+    border: 2px dashed #888;                 /* 灰色虚线边框 */
+    font-style: italic;                      /* 文字稍微倾斜 */
+    color: #a0a0a0;                          /* 文字颜色稍微暗一点以区分正常说话 */
+    box-shadow: none;                        /* 去掉硬阴影，显得更轻盈 */
 }
 
-/* --- 方案 B：赛博扫描线版 --- */
+/* --- 方案 B：赛博扫描线版 (科技/脑电波感) --- */
 .message-bubble.inner-voice-b {
-    background-color: rgba(10, 15, 20, 0.85); 
-    border: 1px solid #00d4ff;                
-    box-shadow: inset 0 0 15px rgba(0, 212, 255, 0.15); 
-    color: #e0f7fa;                           
+    background-color: rgba(10, 15, 20, 0.85); /* 稍微偏蓝灰的背景 */
+    border: 1px solid #00d4ff;                /* 赛博蓝色细边框 */
+    box-shadow: inset 0 0 15px rgba(0, 212, 255, 0.15); /* 内部幽幽的蓝光 */
+    color: #e0f7fa;                           /* 偏白蓝色的文字 */
+    /* 添加扫描线背景 */
     background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 212, 255, 0.05) 50%);
     background-size: 100% 4px;
 }
-
+/* 给方案 B 的红色 span 也做个适配，防止蓝色背景下红色太刺眼 */
 .message-bubble.inner-voice-b span { 
-    color: #ff00ff; 
+    color: #ff00ff; /* 在赛博模式下把高亮字变成品红色 (Neon Pink) */ 
 }
 
-/* --- 方案 C：新粗野主义机械折角版 --- */
+/* --- 方案 C：新粗野主义机械折角版 (利用伪元素做四角定位) --- */
 .message-bubble.inner-voice-c {
-    background-color: transparent;            
-    border: 1px dotted #555;                  
+    background-color: transparent;            /* 完全没有背景色 */
+    border: 1px dotted #555;                  /* 只有淡淡的点线框 */
     box-shadow: none;
-    position: relative;                       
+    position: relative;                       /* 给伪元素定位用 */
 }
-
+/* 左上角机械红框 */
 .message-bubble.inner-voice-c::before {
     content: '';
     position: absolute;
@@ -967,7 +1164,7 @@ span {
     border-top: 3px solid var(--highlight-red);
     border-left: 3px solid var(--highlight-red);
 }
-
+/* 右下角机械红框 */
 .message-bubble.inner-voice-c::after {
     content: '';
     position: absolute;
@@ -977,21 +1174,21 @@ span {
     border-right: 3px solid var(--highlight-red);
 }
 
-
 /* ========================================================
    旁白(Narration) 高科技/系统通话特效样式
 ======================================================== */
 
 /* --- 方案 A：System Log (系统操作日志风) --- */
+/* 特点：左对齐，粗野黑底红边框，带有 > SYSTEM_MSG 的前缀，机器感极强 */
 .narration.sys-log {
-    font-family: 'JetBrains Mono', 'Courier New', monospace; 
+    font-family: 'JetBrains Mono', 'Courier New', monospace; /* 强制等宽字体 */
     text-align: left;
     background-color: #050505;
     border-left: 4px solid var(--highlight-red);
     padding: 12px 20px;
     color: #e0e0e0;
     font-size: 0.95rem;
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.8); 
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.8); /* 搭配你的硬阴影风格 */
     margin: 15px auto;
     width: 90%;
 }
@@ -1002,6 +1199,7 @@ span {
 }
 
 /* --- 方案 B：HUD Alert (全息HUD通知框) --- */
+/* 特点：居中，幽灵蓝扫描线背景，带有赛博括号 [ ]，适合表现主控室大屏幕广播 */
 .narration.hud-alert {
     font-family: 'myFont', sans-serif;
     text-align: center;
@@ -1010,7 +1208,7 @@ span {
     border-bottom: 1px solid rgba(0, 212, 255, 0.4);
     padding: 15px 20px;
     color: #00d4ff;
-    text-shadow: 0 0 5px rgba(0, 212, 255, 0.8); 
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.8); /* 发光文字 */
     letter-spacing: 3px;
     margin: 20px auto;
     width: 100%;
@@ -1029,9 +1227,11 @@ span {
 }
 
 /* --- 方案 C：Secure Channel (内部加密通话/无线电) --- */
+/* 特点：斑马线底纹，绿色终端字体，带有抬头标识，适合表示耳机里的暗线指令 */
 .narration.radio-comm {
     font-family: 'Courier New', monospace;
     text-align: center;
+    /* 黑灰斜线交替的工程警告底纹 */
     background: repeating-linear-gradient(
         -45deg,
         #111,
@@ -1041,12 +1241,13 @@ span {
     );
     border: 1px solid #333;
     padding: 12px 20px;
-    color: #a3e635; 
+    color: #a3e635; /* 雷达荧光绿 */
     font-style: italic;
     margin: 15px auto;
     width: 85%;
 }
 .narration.radio-comm::before {
+    /* 使用 \A 实现换行 */
     content: "--- ENCRYPTED_CHANNEL --- \A"; 
     white-space: pre-wrap;
     display: block;
@@ -1056,21 +1257,27 @@ span {
     font-style: normal;
     letter-spacing: 1px;
 }
-
-/* --- 方案 D：秘密脑机通讯频道 (secret-comm) --- */
+/* ========================================================
+   旁白 第四方案：秘密脑机通讯频道 (secret-comm)
+======================================================== */
 .narration.secret-comm {
     width: 90%;
     margin: 30px auto;
     padding: 20px;
+    border-top: 1px solid #555;     /* 喜欢的上边缘线 */
+    border-bottom: 1px solid #555;  /* 喜欢的下边缘线 */
+    background: transparent;        /* 纯净背景，不要蓝光 */
     position: relative;
-    color: #fff;
-    border: 1px solid #dcfa25;
-    background-color: #080808; 
-    box-shadow: inset 0 0 15px rgba(0, 212, 255, 0.15); 
-    background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 212, 255, 0.05) 50%);
-    background-size: 100% 4px;
+color: #fff;
+border: 1px solid #dcfa25;
+background-color:#080808; /* 稍微偏蓝灰的背景 */
+box-shadow: inset 0 0 15px rgba(0, 212, 255, 0.15); /* 内部幽幽的蓝光 */
+/* 添加扫描线背景 */
+background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 212, 255, 0.05) 50%);
+background-size: 100% 4px;
 }
 
+/* 顶部的通讯标识 */
 .narration.secret-comm .comm-header {
     font-family: 'Courier New', monospace;
     color: #666;
@@ -1080,27 +1287,32 @@ span {
     letter-spacing: 2px;
 }
 
+/* 文本主体排版 (保留了 B 方案舒适的行高和字间距) */
 .narration.secret-comm .comm-body {
     font-family: 'myFont', sans-serif;
-    color: #d4d4d4;              
+    color: #d4d4d4;              /* 正常灰白色文本，不刺眼 */
     line-height: 1.8;
     letter-spacing: 1.5px;
-    text-align: left;            
+    text-align: left;            /* 聊天记录适合左对齐 */
 }
 
+/* 白色大括号 [ ] */
 .narration.secret-comm .comm-bracket {
     color: #fff;
     font-weight: 900;
     margin: 0 4px;
 }
 
+/* 自动标红的人名 (冒号前的部分) */
 .narration.secret-comm .comm-speaker {
+/*     color: var(--highlight-red); */
+/*     color: #a3e635; */
     color: #a8d604;
-    font-family: 'Courier New', monospace; 
+    
+    font-family: 'Courier New', monospace; /* 名字用代码字体，更像代号 */
     font-weight: 900;
     margin-right: 5px;
 }
-
 
 /* ========================================================
    特殊对话气泡样式 (回想 / 不稳定 / 受控)
@@ -1108,12 +1320,12 @@ span {
 
 /* --- 1. 回想台词 (bubble-recall) --- */
 .message-bubble.bubble-recall {
-    background-color: rgba(20, 20, 20, 0.4); 
-    border: 2px dashed #666;                 
-    color: #999;                             
-    font-style: italic;                      
-    box-shadow: none;                        
-    backdrop-filter: blur(2px);              
+    background-color: rgba(20, 20, 20, 0.4); /* 背景变得更透明、更暗 */
+    border: 2px dashed #666;                 /* 褪色的虚线边框 */
+    color: #999;                             /* 文字颜色变暗 */
+    font-style: italic;                      /* 斜体表现虚幻感 */
+    box-shadow: none;                        /* 移除物理阴影，表现它不在现实空间 */
+    backdrop-filter: blur(2px);              /* 可选：给背景一点点模糊感 */
 }
 
 /* --- 2. 心态不平稳/崩溃 (bubble-unstable) --- */
@@ -1121,16 +1333,19 @@ span {
     background-color: #000;
     border: 2px solid var(--highlight-red);
     color: #fff;
+    /* 赛博精神病特有的红蓝视觉错位阴影 */
     text-shadow: 1.5px 0 0 rgba(212, 15, 48, 0.8), -1.5px 0 0 rgba(0, 212, 255, 0.8);
+    /* 让整个气泡稍微倾斜一点点，打破方正感 */
     transform: skewX(-3deg);
+    /* 添加神经质的微弱抖动动画 */
     animation: mind-jitter 0.15s infinite alternate;
 }
-
+/* 微抖动关键帧 */
 @keyframes mind-jitter {
     0% { transform: skewX(-3deg) translate(0.5px, 0.5px); }
     100% { transform: skewX(-3deg) translate(-0.5px, -0.5px); }
 }
-
+/* 放大不平稳气泡里的红字效果，让它更刺眼 */
 .message-bubble.bubble-unstable span {
     color: #ff003c;
     font-weight: 900;
@@ -1139,60 +1354,21 @@ span {
 
 /* --- 3. 受控制/系统劫持 (bubble-controlled) --- */
 .message-bubble.bubble-controlled {
-    font-family: 'Courier New', monospace; 
-    background-color: #1a0515;             
-    border: 1px solid #ff00ff;             
-    box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.2); 
-    color: #e0b0ff;                        
+    font-family: 'Courier New', monospace; /* 强制系统等宽字体 */
+    background-color: #1a0515;             /* 幽暗的紫黑色背景 */
+    border: 1px solid #ff00ff;             /* 刺眼的霓虹品红，暗示被异物入侵 */
+    box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.2); /* 内部幽幽紫光 */
+    color: #e0b0ff;                        /* 偏紫的死板文字 */
     letter-spacing: 1px;
 }
-
+/* 在气泡开头自动加上一个“注入”警告 */
 .message-bubble.bubble-controlled::before {
-    content: ">> OVERRIDE_INJECT: \A";     
+    content: ">> OVERRIDE_INJECT: \A";     /* \A 实现换行 */
     white-space: pre-wrap;
     display: block;
     color: #ff00ff;
     font-weight: 900;
     font-size: 0.8em;
     margin-bottom: 5px;
-    animation: blink 1s step-end infinite; 
-}
-
-
-/* ==================== 移动端统一适配 ==================== */
-@media (max-width: 926px) {
-    body { overflow: auto; height: auto; }
-    
-    .main-container {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        gap: 0;
-    }
-    
-    .directory-panel {
-        height: auto;
-        max-height: 50vh;
-        border-bottom: var(--border-line);
-    }
-    
-    .script-panel { min-height: 100vh; overflow: visible; }
-    .script-content { padding: 20px 15px; }
-    .message-bubble { max-width: 85%; font-size: 0.95rem; }
-    .avatar { width: 60px; height: 60px; }
-    
-    .info-panel { background: #f0f0f0; padding-bottom: 50px; }
-
-    .script-header-layer { padding: 15px 20px; height: auto; min-height: 120px; }
-    .chapter-big-title { font-size: 1.2rem; }
-    
-    .floating-nav-layer { 
-        bottom: 20px; 
-        right: 50%; 
-        transform: translateX(50%);
-        width: 90%; 
-        justify-content: space-between;
-    }
-    
-    .neo-float-btn { flex: 1; padding: 0; font-size: 0.9rem; }
+    animation: blink 1s step-end infinite; /* 闪烁效果（借用你原有的 blink 动画） */
 }
