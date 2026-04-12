@@ -38,11 +38,12 @@ export default {
     {
       type: `narration`,
       text: `N.F.113年8月26日<br>第二観測庭<br>意識空間`,
+      bubbleStyle: "center",
     },
     {
       type: `narration`,
       text: `<img src="img/cg/hua_402.png">`,
-
+      bubbleStyle: "center",
     },
     {
       type: `narration`,
@@ -137,7 +138,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `上庭の技術、たいしたもんだ。ここじゃお前を殺せない？ここは何の意識空間？`,
+      text: `上庭の技術、たいしたもんだ。ここじゃ君を殺せない？ここは何の意識空間？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_109.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
@@ -345,6 +346,7 @@ export default {
     {
       type: `image`,
       src: `img/cg/flowers_2.jpg`,
+      bubbleStyle: "center",
     },
     {
       type: `dialogue`,
@@ -615,7 +617,6 @@ export default {
       text: `それは狂厄の根源から来る力。上庭によって慎重に研究され、利用されてきました。最初は能力者の抑制、次に狂厄への対抗、そして黒環の鎮圧……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_73.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {
@@ -689,6 +690,7 @@ export default {
     {
       type: `narration`,
       text: `（回想）N.F.103年「Garden」庭院`,
+      "bubbleStyle": "end-void" 
     },
     {
       type: `dialogue`,
@@ -790,7 +792,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は、上庭のShalomの手を振り払った。`,
+      text: `彼女は、上庭の執行人の手を振り払った。`,
     },
     {
       type: `dialogue`,
@@ -932,7 +934,7 @@ export default {
       name: `Shalom`,
       text: `私の踏み込めない場所へ、向かってくれ。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_？.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_51_0001.wav" },
       ],
     },
     {
@@ -1024,7 +1026,7 @@ export default {
       name: `Shalom`,
       text: `私の後に、君に機会を与える者は二度と現れません。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_？.wav" },
+        { label: "中", path: "wav/CN/conversation29/vo_event_11042_33.wav" },
       ],
     },
     {
@@ -1033,23 +1035,8 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師はShalomの目を見つめた。その空虚な瞳は、空虚であるがゆえに、今この瞬間だけは<span>真誠</span>に見えた。`,
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      bubbleStyle: "inner-voice-c",
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `（心の声）<br>嘘はない。偽装も、不純物もない。策を弄し尽くした果てにあるのが、こんな隠秘な依頼であり、それを届けるためにこれほどの手間をかけるとは……なんと愚かな。`,
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      bubbleStyle: "inner-voice-c",
-      avatar: `img/dh/impatient.png`,
-      name: `業師`,
-      text: `（心の声）<br>嘘はない。偽装も、不純物もない。策を弄し尽くした果てにあるのが、こんな隠秘な依頼であり、それを届けるためにこれほどの手間をかけるとは……なんと愚かな。`,
+      text: `業師はShalomの目を見つめた。その空虚な瞳は、空虚であるがゆえに、今はどこまでも<span>真摯</span>に映った。
+      `,
     },
     {
       type: `dialogue`,
@@ -1058,15 +1045,23 @@ export default {
       avatar: `img/dh/impatient.png`,
       name: `業師`,
       text: `（心の声）
-      残念だ。「もしも」など存在しない。`,
+      嘘も、偽りも、一切の不純物もない
+      
+      あらゆる策を巡らせた果てに、これほど密やかな依頼を、ここまで手間をかけて私の手元に届けるとは……実に愚か
+      
+      もっと早く、おとなしく私に助けを求めていれば、考慮したかもしれないものを
+      
+      余計な真似さえしなければ、この女を利用して何かできたかもしれないものを
+
+      もし、他に選択肢があると早く知っていれば――
+
+      残念。「もしも」などは存在しなかった。
+      `,
+      bubbleStyle: "inner-voice-a",
     },
     {
       type: `narration`,
-      text: `もっと早く、大人しく頭を下げて頼めば、業師も考えなくはなかったかもしれない。余計なことをせず、この女を利用することもできたかもしれない。もし、他に選択肢があるのだと知っていたなら――`,
-    },
-    {
-      type: `narration`,
-      text: `彼女はとっくに「もしも」なんて考えない。`,
+      text: `彼女はとうの昔に、「もしも」など考えなくなっていた。`,
     },
     {
       type: `dialogue`,
@@ -1129,7 +1124,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
-      avatar: `img/dh/x4.png`,
+      avatar: `img/dh/x6.png`,
       name: `Shalom`,
       text: `その通り。コスト削減は私の個人的な趣味に過ぎず、ニーズの実現こそが絶対目的。『必要な犠牲』は常套手段です。それが上庭の意志。<span>私</span>を通してそれを見極めれば、僥倖など期待しなくなるでしょう。`,
       voice: [
@@ -1245,7 +1240,7 @@ export default {
     {
       type: `narration`,
       text: `<img src="img/cg/hua_402_3.png">`,
-
+      bubbleStyle: "center",
     },
     {
       type: `dialogue`,
@@ -1301,7 +1296,6 @@ export default {
       text: `それでいい…今回もまた、私は代償を惜しまない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_56.wav" },
-        { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
     },
     {

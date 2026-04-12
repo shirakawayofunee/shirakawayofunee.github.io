@@ -192,7 +192,7 @@ export default {
       name: `業師`,
       text: `（心の声）
       泣きっ面を見せれば優しくしてもらえるとでも？尻尾を振って慈悲を乞えば逃げられるとでも？自分が無力だから、他人の優しさを盲信し！そして無惨に踏みにじられるの！`,
-      bubbleStyle: "inner-voice-b",
+      bubbleStyle: "inner-voice-a",
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
@@ -1005,7 +1005,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/black_quartz.jpg`,
+      avatar: `img/dh/black_quartz.png`,
       name: `黒石英`,
       text: `Xを回収し、ここで派生した全ての汚染物を消去。異常を報告せよ。`,
       voice: [

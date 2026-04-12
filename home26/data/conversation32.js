@@ -98,8 +98,19 @@ export default {
       text: `無数の「英雄」の名を冠した人々に囲まれながら、少女は夜明けの最初の光を迎えた。`
     },
     {
-      type: `narration`,
-      text: `第一章「繁花」終了、To be continued。`
-    }
+      "type": "narration",
+      "text": "第一章「繁花」終了。\nTo be continued",
+      "bubbleStyle": "end-cinematic" 
+    },
+    {
+      "type": "narration",
+      "text": "第一章「繁花」終了。\nTo be continued",
+      "bubbleStyle": "end-archive" 
+    },
+    {
+      "type": "narration",
+      "text": "第一章「繁花」終了。\nTo be continued",
+      "bubbleStyle": "end-void" 
+    },
   ]
 };

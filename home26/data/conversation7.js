@@ -87,8 +87,14 @@ export default {
       text: `<span>シャーローム</span>`
     },
     {
-      type: `narration`,
-      text: `序章「Blue rain」終了、つづく。`
-    }
+      "type": "narration",
+      "text": "序章「Blue rain」終了。\nTo be continued",
+      "bubbleStyle": "end-cinematic" 
+    },
+    {
+      "type": "narration",
+      "text": "序章「Blue rain」終了。\nTo be continued",
+      "bubbleStyle": "end-rain-wash" 
+    },
   ]
 };
