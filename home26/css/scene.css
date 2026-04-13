@@ -3,7 +3,7 @@
 /* --- 全局字体与基础设置 --- */
 @font-face {
     font-family: "myFont";
-    src: url("../font/DreamHanSansJP-W10.ttf") format("truetype");
+    src: url("../font/DreamHanSansJP-W12.ttf") format("truetype");
     font-display: swap;
 }
 
@@ -1600,7 +1600,7 @@ span {
 /* 1. 整体容器背景与默认文字变白 */
 .script-wrapper.light-mode {
     background-color: #f8f9fa !important; /* 柔和的护眼白 */
-    color: #111 !important;
+    color: #0b0b0b !important;
 }
 
 /* 2. 旁白文字变黑 */
