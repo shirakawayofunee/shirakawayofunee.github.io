@@ -43,11 +43,13 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年8月8日 16:00<br>新城中央公園 落花庭園<br>「沈水の花」事件現場`
+      text: `N.F.113年8月8日 16:00<br>新城中央公園 落花庭園<br>「沈水の花」事件現場`,
+      bubbleStyle: "center",
     },
     {
-      type: `image`,
-      src: `img/cg/hua_01.png`
+      type: `narration`,
+      text: `<img src="img/cg/hua_01.png">`,
+      bubbleStyle: "center",
     },
     {
       type: `narration`,

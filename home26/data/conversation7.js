@@ -37,15 +37,18 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年7月23日00:41<br>「GARDEN」アジト`
+      text: `N.F.113年7月23日00:41<br>「GARDEN」アジト`,
+      bubbleStyle: "center",
     },
     {
       type: `narration`,
-      text: `概要：レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。`
+      text: `概要：レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。`,
+      bubbleStyle: "center",
     },
     {
       type: `image`,
-      src: `img/cg/br_05.png`
+      src: `img/cg/br_05.png`,
+      bubbleStyle: "center",
     },
     {
       type: `dialogue`,
