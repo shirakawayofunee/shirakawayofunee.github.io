@@ -901,3 +901,24 @@ const VoiceManager = {
 };
 
 VoiceManager.init();
+
+
+
+// --- 新增：正文背景主题切换 (白天 / 黑夜) ---
+function setTheme(mode) {
+  const wrapper = document.querySelector('.script-wrapper');
+  const btnNight = document.getElementById('btn-night');
+  const btnDay = document.getElementById('btn-day');
+
+  if (mode === 'light') {
+      // 开启白天模式
+      wrapper.classList.add('light-mode');
+      btnDay.classList.add('active');
+      btnNight.classList.remove('active');
+  } else {
+      // 恢复黑夜模式 (默认)
+      wrapper.classList.remove('light-mode');
+      btnNight.classList.add('active');
+      btnDay.classList.remove('active');
+  }
+}

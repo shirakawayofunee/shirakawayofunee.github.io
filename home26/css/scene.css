@@ -76,8 +76,8 @@ span {
 
 /* 滚动条样式 */
 .panel::-webkit-scrollbar { width: 6px; }
-.panel::-webkit-scrollbar-thumb { background: #555; }
-.panel::-webkit-scrollbar-track { background: #000; }
+.panel::-webkit-scrollbar-thumb { background: #000; }
+.panel::-webkit-scrollbar-track { background: #fff; }
 
 /* --- 左侧：目录栏 (Directory) --- */
 .directory-panel {
@@ -653,18 +653,21 @@ span {
     flex: 1; 
     overflow-y: auto; 
     padding: 0;
+/*     padding: 5% 5% 5% 5%; */
     scroll-behavior: smooth;
 }
 
 .script-scroll-area .script-content {
-    padding: 40px 40px 120px 40px; 
+/*     padding: 40px 40px 120px 40px;  */
+    padding: 5% 6.5% 0% 6.5%;
 }
 
 .script-scroll-area::-webkit-scrollbar { 
     width: 6px; 
+    padding: 0;
 }
 .script-scroll-area::-webkit-scrollbar-thumb { 
-    background: #555; 
+    background: #fff; 
 }
 .script-scroll-area::-webkit-scrollbar-track { 
     background: #000; 
@@ -1557,4 +1560,125 @@ span {
     color: #00d4ff;
     text-shadow: 0 0 8px rgba(0, 212, 255, 0.8);
     font-weight: 300;
+}
+
+
+/* ==================== DAY / NIGHT 主题切换按钮组 ==================== */
+.theme-switch-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.theme-btn {
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.theme-btn:hover {
+    color: #aaa;
+}
+
+/* 选中状态的按钮：高亮并带有下划线指示 */
+.theme-btn.active {
+    color: #D40F30;
+    border-bottom: 2px solid #D40F30;
+}
+
+/* ==================== 剧本正文：白天模式 (.light-mode) 覆盖 ==================== */
+
+/* 给背景和文字加个平滑过渡，切主题时不会太刺眼 */
+.script-wrapper, .script-panel, .message-bubble, .narration {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* 1. 整体容器背景与默认文字变白 */
+.script-wrapper.light-mode {
+    background-color: #f8f9fa !important; /* 柔和的护眼白 */
+    color: #111 !important;
+}
+
+/* 2. 旁白文字变黑 */
+.script-wrapper.light-mode .narration {
+    color: #222;
+}
+
+/* 3. 对话气泡变白、文字变黑、边框变浅 */
+.script-wrapper.light-mode .message-bubble {
+    background-color: #ffffff;
+    color: #111;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05); /* 阴影变淡 */
+}
+
+/* 4. 头像边框变浅 */
+.script-wrapper.light-mode .avatar {
+    border-color: #ccc;
+}
+
+/* 5. 前言 / 概要部分颜色适配 */
+.script-wrapper.light-mode .preface-box.style-a .chapter-summary,
+.script-wrapper.light-mode .preface-box.style-b .chapter-summary,
+.script-wrapper.light-mode .preface-box.style-c .chapter-summary {
+    color: #333;
+    text-shadow: none; /* 去除黑底常用的发光阴影 */
+}
+
+/* 针对 B 风格前言，将原本暗色的背景框调成浅灰色 */
+.script-wrapper.light-mode .preface-box.style-b .chapter-summary {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+
+.script-wrapper.light-mode .preface-box.style-c .chapter-summary {
+
+    font-size: 1.06rem;
+    line-height: 2.2;            /* 宽松的行高 */
+    letter-spacing: 2px;         /* 增加字间距，提升高级感 */
+    font-weight: normal;         /* 摒弃粗体，追求纤细感 */
+    padding: 30px 2%;           /* 左右留白 */
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* 针对 C 风格前言的巨大引号，颜色加深一点点让它在白底可见 */
+.script-wrapper.light-mode .preface-box.style-c::before {
+    color: rgba(0, 0, 0, 0.05);
+}
+
+/* ==================== 可选：针对白天模式的特殊气泡适配 ==================== */
+/* 比如之前的系统日志（sys-log）在白底上可以反转颜色 */
+.script-scroll-area.light-mode .narration.sys-log {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+    border-left: 4px solid var(--highlight-red);
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+}
+
+
+/* 6. 白天模式下的滚动条颜色适配 (针对 Webkit 浏览器: Chrome/Edge/Safari) */
+.script-scroll-area.light-mode .script-scroll-area::-webkit-scrollbar-track {
+    background: #f8f9fa; /* 轨道颜色与白底融为一体 */
+}
+
+.script-scroll-area.light-mode .script-scroll-area::-webkit-scrollbar-thumb {
+    background: #cccccc; /* 滑块改为较浅的灰色 */
+    border-radius: 3px;  /* 可选：给滑块加点圆角看起来更精致 */
+}
+
+.script-scroll-area.light-mode .script-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: #aaaaaa; /* 鼠标悬停时稍微加深 */
+}
+
+/* 针对 Firefox 浏览器的标准滚动条属性适配 */
+.script-scroll-area.light-mode .script-scroll-area {
+    scrollbar-color: #cccccc #f8f9fa; /* 滑块颜色 轨道颜色 */
 }
