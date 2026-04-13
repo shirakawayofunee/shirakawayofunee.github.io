@@ -44,36 +44,9 @@ export default {
       text: `もちろん、遅れてやってきた新都市の治安官やFACの隊員たちも現場を封鎖しようとしていた。`
     },
     {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/reporter_a.jpg`,
-      name: `記者A`,
-      text: `FACの撫恤金事件とこの事件の関係は？能力者が関与してるんですか？`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/reporter_b.jpg`,
-      name: `記者B`,
-      text: `こんな治安事件にFACが絡むのはなぜですか？彼らの管轄なんですか？FACが私腹を肥やしたから凶手の報復を招いたんじゃないですか？！`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/bystander.jpg`,
-      name: `路人`,
-      text: `俺をインタビューしろ！絶対最近の行動議程と関係あるよ！昔のことを暴く気だな！！`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/reporter_c.jpg`,
-      name: `記者C`,
-      text: `「FACは城邦を守る盾なんかじゃなく、城邦の安全を裏で壊す危険な組織だ」と主張する声があります。どうお答えになりますか？`
-    },
-    {
-      type: `narration`,
-      text: `騒がしい質問の声とパシャパシャ光るフラッシュが、現場をますます混乱させた。`
+      "type": "narration",
+      "text": "<span class='rep-tag'>[ REPORTER 1 ]</span>FACの撫恤金事件とこの事件の関係は？能力者が関与してるんですか？\n<span class='rep-tag'>[ REPORTER 2 ]</span>こんな治安事件にFACが絡むのはなぜですか？彼らの管轄なんですか？FACが私腹を肥やしたから凶手の報復を招いたんじゃないですか？！\n<span class='rep-tag'>[ REPORTER 3 ]</span>『FACは城邦を守る盾なんかじゃなく、城邦の安全を裏で壊す危険な組織だ』と主張する声があります。どうお答えになりますか？\n\n騒がしい質問の声とパシャパシャ光るフラッシュが、現場をますます混乱させた。",
+      "bubbleStyle": "npc-press-box"
     },
     {
       type: `narration`,
@@ -93,7 +66,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `使い物にならないって、どういうこと……`
     },
@@ -171,21 +144,21 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `基金会の13人の元老、なんで一人だけが別の現場に移されたんだ？`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `なんでわざわざ二つの対称的な場面を用意したんだ？`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `基金会被報復の理由はもう明確だ。でも、同態復仇だとしても、これはおかしい。目の前のこの「豪華」な現場だけで十分なのに、なぜ……`
     },
@@ -196,7 +169,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `ちょっと考えがあるんだ。一旦、第三の現場に戻ってみたい。その前に、第四の現場で一つ調べてほしいことがある。`
     },

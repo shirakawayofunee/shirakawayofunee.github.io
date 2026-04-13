@@ -77,7 +77,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `ここは……どこ？`
     },
@@ -99,7 +99,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `……覚えてるよ、殺人犯。`
     },
@@ -117,21 +117,21 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `君の事件……全部10年前の復讐だ。同様の復讐……でも、それは君の本当の狙いじゃない……`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `……君はこの事件で、あたしに何かを調べさせたいんだ。10年前の何かを暴きたいんだよね……`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `なら、素直にあたしに調べさせてよ! どうしてこんな酷いことをするの! 俳句はあと二つ、 それは二人分の命。
       ここまでにしようよ。君の欲しい物を調べに行ってあげるから、これ以上は―――`
@@ -150,7 +150,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `じゃあ、なんで私をここに連れてきた？殺す気？それとも拷問？`
     },
@@ -164,7 +164,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `は？`
     },
@@ -178,7 +178,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `「も」？`
     },
@@ -196,7 +196,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `違う……どんな不当な扱いを受けたって、私は他人を傷つけない。正義を信じてる……`
     },
@@ -210,7 +210,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `！`
     },
@@ -250,7 +250,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `……そんなんじゃない。君には関係ない。話すつもりもない。`
     },
@@ -296,21 +296,21 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc208.png`,
       name: `探偵`,
       text: `……そういうこと言うの、君で何人目だ。「世の中が暗いから、正義なんて存在しない。だからちょっとルールを破ってもいいよね」って。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc208.png`,
       name: `探偵`,
       text: `世界がひどいから、君の悪は許されるって？ふざけるな！自分がやった悪を軽々しく流すなよ。君だってあいつらと同類、汚い仲間だ！君も悪の一部だ！`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/pc208.png`,
       name: `探偵`,
       text: `この城邦で、どれだけの市民が君たちを恐れてるか、どれだけの極悪人が君たちを真似して無垢な人を傷つけてるか、自分でわかってないの？`
     },
@@ -332,7 +332,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `これは……？`
     },
@@ -393,7 +393,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `待って――`
     },
@@ -434,21 +434,21 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `そして……君は彼女を利用した。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `最初は福音地、次は君……復讐を口実に、傷ついた人たちを騙して利用してる。一無所有の彼女たちを、傷つける刃に変えたんだ。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `彼女の人生が壊れたとしても、人は強い。少しずつ立ち直って、自分を取り戻せたはずだ。可是、君が彼女を闇に引きずり込んだ。今じゃもう戻れない！`
     },
@@ -498,7 +498,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `じゃあ……今やってることは何？この一連の事件、誰に復讐してるの？`
     },
@@ -523,7 +523,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `うっ――！`
     },

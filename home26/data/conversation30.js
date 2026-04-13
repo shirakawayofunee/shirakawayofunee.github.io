@@ -908,18 +908,12 @@ export default {
     {
       type: `narration`,
       text: `業師の答えに応じたのは巨獣の咆哮だった。鋭い爪が虚無の中の全ての枷を引き裂き、自らを貫く無数の青い光へと立ち向かい、長きにわたり自分を閉じ込めてきた牢獄を破壊する。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
-        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
-      ]
+      "bubbleStyle": "npc-crowd-noise"
     },
     {
       type: `narration`,
       text: `Shalomは壮大な殿堂が崩れ去るのを、向こう側の狂厄が雪崩れ込んでくるのを、神聖なルールがついに腐敗するのを見ていた。これこそが彼女の力。禁錮されず、歪曲されず、剥奪されない本心。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
-        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
-      ]
+
     },
     {
       type: `dialogue`,

@@ -1311,6 +1311,7 @@ export default {
       type: `narration`,
       text: `広大な庭園が激しく揺れ、虚空から機械のような悲鳴と怒号が響く。そして不吉に広がり続ける裂け目の中から、無数の光の触手がゆっくりと探るように伸びてきた。`,
       bgm: `mp3/bg/conversation30.mp3`,
+      "bubbleStyle": "npc-crowd-noise"
     },
     {
       type: `narration`,

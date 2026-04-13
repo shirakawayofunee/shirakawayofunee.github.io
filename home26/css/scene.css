@@ -370,7 +370,7 @@ span {
 
 /* --- 右侧：信息栏 (Info) --- */
 .info-panel {
-    border-left: var(--border-line);
+/*     border-left: var(--border-line); */
     padding: 20px;
     padding-top: 10px;
     font-size: 0.95rem;
@@ -1681,4 +1681,149 @@ span {
 /* 针对 Firefox 浏览器的标准滚动条属性适配 */
 .script-scroll-area.light-mode .script-scroll-area {
     scrollbar-color: #cccccc #f8f9fa; /* 滑块颜色 轨道颜色 */
+}
+
+
+
+@keyframes rec-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* 白天模式适配 */
+.script-wrapper.light-mode .narration.npc-live-report {
+    color: #111;
+    background: linear-gradient(90deg, rgba(212, 15, 48, 0.08) 0%, transparent 100%);
+}
+
+
+/* 方案 3：采访速记 (Transcript Log) */
+.narration.npc-transcript {
+    text-align: left;
+    margin: 30px auto;
+    padding: 15px 0;
+    border-top: 1px dotted #888;
+    border-bottom: 1px dotted #888;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* 速记标签头 */
+.narration.npc-transcript::before {
+    content: "[ REPORTER ] ";
+    background-color: #333;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* 模拟打字光标 */
+.narration.npc-transcript::after {
+    content: " _";
+    font-weight: 900;
+    animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 白天模式适配 */
+.script-wrapper.light-mode .narration.npc-transcript {
+    color: #444;
+    border-color: #ccc;
+}
+.script-wrapper.light-mode .narration.npc-transcript::before {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+/* 方案 4：人声鼎沸 (Crowd Noise) */
+.narration.npc-crowd-noise {
+    text-align: center;
+    margin: 40px auto;
+    font-size: 1.1rem;
+    font-weight: 900;
+    font-style: italic;
+    color: #e0e0e0;
+    
+    /* 核心：红蓝错位的重影叠加，模拟声音的噪点 */
+    text-shadow: 
+        2px 0px 0px rgba(212, 15, 48, 0.7),   /* 红色重影 */
+        -2px 0px 0px rgba(0, 212, 255, 0.7);  /* 蓝色重影 */
+        
+    /* 微弱震动动画，模拟声波或耳鸣 */
+    animation: noise-shake 0.15s infinite alternate;
+}
+
+@keyframes noise-shake {
+    0% { transform: translateX(0.5px) rotate(0.2deg); }
+    100% { transform: translateX(-0.5px) rotate(-0.2deg); }
+}
+
+/* 白天模式适配 */
+.script-wrapper.light-mode .narration.npc-crowd-noise {
+    color: #222;
+    text-shadow: 
+        2px 0px 0px rgba(212, 15, 48, 0.5),   
+        -2px 0px 0px rgba(0, 212, 255, 0.5); 
+}
+
+
+/* ========================================================
+   记者群访框：一个大框内容纳多名记者的提问
+======================================================== */
+
+/* 1. 外层大框：白底黑框 + 硬阴影 */
+.narration.npc-press-box {
+    /* background-color: #fff; */
+    background: linear-gradient(90deg, rgba(212, 15, 48, 0.15) 0%, transparent 100%);
+    color: #bdbdbd !important;
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0px 0px #000;
+    position: relative;
+    margin: 30px auto;
+    
+    /* 顶部留出 35px 空间，不要让文字和 REC 撞在一起 */
+    padding: 35px 20px 20px 20px; 
+    
+    text-align: left;
+    font-weight: 900;
+    font-size: 1.05rem;
+    line-height: 1.8; /* 行高拉大，防止三段话挤在一起 */
+}
+
+/* 2. 右上角：跳动的红色 ● REC 指示器 */
+.narration.npc-press-box::before {
+    content: "● REC";
+    position: absolute;
+    top: 8px;
+    left: 22px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--highlight-red);
+    letter-spacing: 2px;
+    animation: rec-blink 1s step-end infinite;
+}
+
+/* 3. 局部的记者名字标签 (红色中括号) */
+.narration.npc-press-box .rep-tag {
+    font-family: 'Courier New', 'Arial Black', monospace;
+    color: var(--highlight-red);
+    font-size: 1.1rem;
+    margin-right: 8px;
+    letter-spacing: 1px;
+}
+
+/* 白天模式适配 */
+.script-wrapper.light-mode .narration.npc-press-box {
+    box-shadow: 6px 6px 0px 0px var(--highlight-red);
+    border-color: #000;
+    color: #111;
+    background: linear-gradient(90deg, rgba(212, 15, 48, 0.08) 0%, transparent 100%);
 }

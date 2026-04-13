@@ -71,7 +71,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `そっか……じゃあ、邪魔しないよ……`
     },
@@ -89,7 +89,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `うん！`
     },
@@ -100,21 +100,21 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `「Garden」は復讐の依頼を引き受けてるけど、なぜこの数人を選んだのか、最終的に見せつけた組み合わせには何か意図があるはず。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `こんな堂々と手がかりをくれるんだから、私に何かを調べさせたいんだ。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `最初の二つの事件は、103年のFACの敗戦に関係してる。間違いなく、それだよ。`
     },
@@ -125,7 +125,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `「Garden」は当時のことが不公平だと感じて、こうした事件で注目を集め、真相を暴いて何かを訴えたいのかな？`
     },
@@ -197,7 +197,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `！もしかして、また波乱を起こして、FACの後方を乱し、この作戦を妨害しようとしてる？`
     },
@@ -211,21 +211,21 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `彼女の犯行手段は突飛だけど、実際に会ってみると、完全な狂人って感じじゃないんだ。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `彼女たちは……もうこの世界を諦めた人たちだ。正義なんて信じず、負けを認めることもしない。すべてを自分の手でつかもうとする。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `昔の私と、すごく似てる……`
     },
@@ -250,7 +250,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `そんなこと絶対にさせない！`
     },
@@ -264,7 +264,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `私、私……真相を突き止めて、犯人を捕まえる。そして二度と誰も傷つけさせない。誰も私と同じ目に……`
     },
@@ -275,7 +275,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `……そんなの嫌だ。シャーローム姉さんは私の最重要の人。選ぶなら、姉さんが死ぬくらいなら私が死んだ方がいい。`
     },
@@ -293,7 +293,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `そんなわけない！シャーローム姉さんがそんなことするはずない！`
     },
@@ -311,7 +311,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `私……わかってる……でも、姉さんはそんなことしないよ。こんな冗談、ひどいよ……`
     },
@@ -348,14 +348,14 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `うん、わかった！私も今すぐ出発する！戦局に関係するなら、急がないと。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `三、四句目の詩にはきっと手がかりがある。103年のFAC関連事件と合わせて、少なくとも事前に警告を出せるし、もっと情報集められるよ。`
     },
@@ -373,7 +373,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `え？`
     },
@@ -384,7 +384,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `ミリア？あ、そうだ、姉さん、ミリアは私の妹！めっちゃ頭のいい子なんだ！`
     },
@@ -400,7 +400,7 @@ export default {
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
-      text: `ちっ。`
+      text: `ちっ`
     },
     {
       type: `dialogue`,
@@ -430,7 +430,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `……そんなこと言わないで。この事件を解決したら、ちゃんと話そうよ、ね？`
     },
@@ -448,14 +448,14 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `うん！ほんとにめっちゃいい人で、優しくて正義感があって、強くて賢い！姉さんの答えはいつも正しいんだ！`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/detective.png`,
+      avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `おかげで、私、またやる気出てきたよ。`
     },

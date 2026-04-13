@@ -42,14 +42,14 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/pc1.png`,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `あの業師、めっちゃ頭使って、自分の原則まで破って、3番目の現場の後にわざわざ4番目を作り上げた。全部その事実を隠すためだよ。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/pc1.png`,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `犯人が隠したいものがあるなら、私たちがそれを暴かなきゃ！`
     },
@@ -112,28 +112,28 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/pc1.png`,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `ユウツは別の殺し屋に殺された……業師があんなに手を尽くしたのは、全部を隠すためだ。あの人物も「Garden」の能力者で、しかも、かなり弱い。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/pc1.png`,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `これはチャンスだよ。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/pc1.png`,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `業師の意志に逆らって犯行に及び、現場にこんなに破綻を残して、自意識過剰な業師に完璧な計画を捨てさせてまで現場を隠させた……ユウツを襲った犯人は、想像以上に簡単に倒せるはず。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/pc1.png`,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `彼女が突破口になる。でも……どうすればいい？`
     },
