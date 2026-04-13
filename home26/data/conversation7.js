@@ -87,6 +87,22 @@ export default {
       text: `<span>シャーローム</span>`
     },
     {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold1.png`,
+      name: `レオポルド`,
+      text: `<span>シャーローム</span>`,
+      "bubbleStyle": "bubble-recall-drip" 
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold1.png`,
+      name: `レオポルド`,
+      text: `<span>シャーローム</span>`,
+      "bubbleStyle": "bubble-recall-ghost" 
+    },
+    {
       "type": "narration",
       "text": "序章「Blue rain」終了。\nTo be continued",
       "bubbleStyle": "end-cinematic" 
@@ -95,6 +111,11 @@ export default {
       "type": "narration",
       "text": "序章「Blue rain」終了。\nTo be continued",
       "bubbleStyle": "end-rain-wash" 
+    },
+    {
+      "type": "narration",
+      "text": "序章「Blue rain」終了。\nTo be continued",
+      "bubbleStyle": "recall-drip" 
     },
   ]
 };

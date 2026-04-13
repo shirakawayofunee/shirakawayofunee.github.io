@@ -1223,30 +1223,12 @@ span {
 }
 
 .preface-box .chapter-summary {
-    font-family: "ming", serif; /* 强制使用本地设定的字体 */
+    font-family: "ming", serif;
     margin: 0;
     white-space: pre-line;      /* 支持换行 */
     word-wrap: break-word;
-    /* 覆盖掉你之前的 -webkit-line-clamp (不限制行数，全文展示) */
     display: block;             
     overflow: visible;
-}
-
-
-/* ==================== 风格选项 A：古典单行线 (优雅、文学感) ==================== */
-/* 视觉效果：文字居中，上下带有细线，字间距大，像实体书的卷首语 */
-.preface-box.style-a {
-    text-align: center;
-}
-.preface-box.style-a .chapter-summary {
-    color: #a0a0a0;              /* 柔和的银灰色 */
-    font-size: 1.05rem;
-    line-height: 2.2;            /* 宽松的行高 */
-    letter-spacing: 2px;         /* 增加字间距，提升高级感 */
-    font-weight: normal;         /* 摒弃粗体，追求纤细感 */
-    padding: 30px 10%;           /* 左右留白 */
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* ==================== 风格选项 C：巨型引号留白 (极简、意识流、戏剧感) ==================== */
@@ -1254,7 +1236,6 @@ span {
 .preface-box.style-c {
     position: relative;
     text-align: left;
-    padding: 40px 10% 20px 15%;
 }
 /* 巨大的引号装饰 */
 .preface-box.style-c::before {
@@ -1265,12 +1246,13 @@ span {
     font-family: "ming", serif;
     font-size: 6rem;
     color: rgba(255, 255, 255, 0.15); /* 极度微弱的透明白 */
+
     line-height: 1;
 }
 
 .preface-box.style-c .chapter-summary {
-    color: #a0a0a0;              /* 柔和的银灰色 */
-    font-size: 1.05rem;
+    color: #b7b7b7;
+    font-size: 1.06rem;
     line-height: 2.2;            /* 宽松的行高 */
     letter-spacing: 2px;         /* 增加字间距，提升高级感 */
     font-weight: normal;         /* 摒弃粗体，追求纤细感 */
@@ -1278,9 +1260,6 @@ span {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
-
-
-
 
 /* 方案 1：电影谢幕感 */
 .narration.end-cinematic {
@@ -1418,4 +1397,164 @@ span {
 
 .narration.center{
     text-align: center;
+}
+
+
+/* 方案 1：泪痕割裂 (用于气泡或旁白) */
+.bubble-recall-drip, 
+.narration.recall-drip {
+    background-color: #000; /* 纯黑底色 */
+    color: #fff; /* 极白的锐利文字 */
+    border: none;
+    box-shadow: none;
+    padding: 20px 30px;
+    position: relative;
+    font-weight: 300;
+    letter-spacing: 2px;
+    overflow: hidden;
+}
+
+/* 左侧深灰色的静态刻痕 */
+.bubble-recall-drip::before,
+.narration.recall-drip::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #333;
+}
+
+/* 核心 Blue Rain：顺着刻痕垂直滑落的蓝色水滴/泪痕 */
+.bubble-recall-drip::after,
+.narration.recall-drip::after {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: -50px;
+    width: 3px;
+    height: 40px;
+    /* 蓝色雨滴的渐变：顶部透明，中间亮蓝，底部纯白高光 */
+    background: linear-gradient(to bottom, transparent, #00d4ff, #ffffff);
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: blue-drip 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes blue-drip {
+    0% { transform: translateY(-20px) scaleY(1); opacity: 0; }
+    20% { opacity: 1; }
+    80% { transform: translateY(150px) scaleY(3); opacity: 0; }
+    100% { transform: translateY(150px); opacity: 0; }
+}
+
+/* 方案 2：沉语重影 (用于气泡) */
+.message-bubble.bubble-recall-ghost {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    letter-spacing: 4px;
+    line-height: 2;
+    
+    /* 核心 1：利用多重阴影制造失焦和重影 (模仿多语言杂乱感) */
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 1),
+        -15px -10px 8px rgba(255, 255, 255, 0.1), /* 白色幽灵重影 */
+        10px 15px 10px rgba(0, 212, 255, 0.2);    /* 蓝色幽灵重影 */
+        
+    /* 核心 2：Blue Rain 斜向极细雨丝背景 */
+    background-image: repeating-linear-gradient(
+        15deg,
+        transparent,
+        transparent 15px,
+        rgba(0, 212, 255, 0.03) 15px,
+        rgba(0, 212, 255, 0.03) 16px
+    );
+    background-size: 200% 200%;
+    animation: rain-slant 4s linear infinite;
+}
+
+/* 呼吸闪烁感，模拟记忆的不稳定 */
+.message-bubble.bubble-recall-ghost:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+    transition: all 0.5s ease;
+}
+
+@keyframes rain-slant {
+    0% { background-position: 0% 0%; }
+    100% { background-position: -50% 50%; }
+}
+
+/* 方案 3：溯流竖排 (推荐用于旁白 Narration) */
+.narration.recall-vertical {
+    /* 核心 1：竖向排版 (从右向左) */
+    font-family: "ming";
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    
+    /* 布局约束 */
+    height: 700px; /* 固定一个高度让雨丝有空间上升 */
+
+    padding: 18% 25% 0 0;
+    
+    /* 字体设计 */
+    font-size: 1.15rem;
+    letter-spacing: 6px;
+    line-height: 3;
+    color: #000;
+    /* 核心 2：Blue Rain 时光倒流 (向上的蓝色渐变线) */
+    background: url('/home26/img/cg/bg_flower23_room_tips.png') no-repeat center; 
+}
+
+/* 方案 4：雨夜车窗 (用于气泡) */
+.message-bubble.bubble-recall-glass {
+    /* 核心 1：深蓝色调与毛玻璃模糊 */
+    background-color: rgba(5, 12, 20, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    
+    /* 边框模拟被水洗过的反光 */
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    
+    color: #e0e6ed;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    border-radius: 4px !important; /* 给车窗一点点圆角 */
+    
+    position: relative;
+    overflow: hidden;
+}
+
+/* 核心 2：Blue Rain 动态水滴模糊遮罩 */
+.message-bubble.bubble-recall-glass::before {
+    content: '';
+    position: absolute;
+    top: -100%; left: -100%; width: 300%; height: 300%;
+    
+    /* 用径向渐变画出几个模糊的水滴散布在背景上 */
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0,212,255,0.1) 0%, transparent 5%),
+        radial-gradient(circle at 70% 60%, rgba(0,212,255,0.1) 0%, transparent 8%),
+        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.05) 0%, transparent 4%);
+    
+    /* 缓慢的玻璃水波游动 */
+    animation: glass-water 10s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes glass-water {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(5%, 10%); }
+}
+
+/* 气泡内的强调字 (原本是红色)，在这里强制转为冰蓝色，符合冷雨基调 */
+.message-bubble.bubble-recall-glass span {
+    color: #00d4ff;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.8);
+    font-weight: 300;
 }
