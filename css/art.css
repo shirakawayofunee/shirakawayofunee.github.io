@@ -73,7 +73,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--term-blue);
+    background: var(--accent-main);
 }
 
 /* =========================================
@@ -314,7 +314,7 @@ body {
 .gallery-header .nav-link.active {
     color: var(--text-lvl-1) !important;
     font-weight: bold;
-    border-bottom: 2px solid var(--accent-main);
+/*     border-bottom: 2px solid var(--accent-main); */
 }
 
 .peer-links-grid {
@@ -372,9 +372,7 @@ body {
     cursor: pointer;
 }
 
-.holder-img:hover {
-    border: 1px solid var(--accent-hover);
-}
+
 
 .gallery-container {
     display: flex;

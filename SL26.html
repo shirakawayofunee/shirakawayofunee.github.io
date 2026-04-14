@@ -271,10 +271,25 @@
 </div>
     <!-- BGM 音频组件 -->
     <audio id="bgm" src="bgm/SL.m4a" loop preload="auto"></audio>
-    <script src="js/transition.js"></script>
 </body>
+
     <!-- 脚本部分 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/magnetic-pointer.js"></script>
+
+<script>
+    // 初始化指针效果！
+    const myPointer = new MagneticPointer({
+        // 把你希望有吸附效果的元素 class 都写在这里，用逗号隔开
+        selector: '.nav-item, .my-button, .div-center, .roll-link-card, .gallery-item, img.holder-img, .div-center' , 
+
+        // 以下参数都可以选填，如果你不喜欢默认样式可以自己改
+        color: '#FF3D00',       // 颜色：荧光绿
+        baseSize: 40,           // 平常鼠标状态下的正方形大小
+        padding: 10,            // 吸附时，框比你的元素大多少像素
+        magneticForce: 0.15     // 磁吸感强度 (0代表完全定死在中心，1代表无吸附感，推荐0.1~0.2)
+    });
+</script>
     
     <!-- 嵌入你的 papermaskDetail.js 逻辑 -->
     <script>

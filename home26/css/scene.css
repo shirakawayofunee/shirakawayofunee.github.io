@@ -1266,19 +1266,15 @@ span {
 
 /* 方案 1：电影谢幕感 */
 .narration.end-cinematic {
-    /* 间距改动：上下巨大的留白，使其脱离普通正文 */
-    margin: 80px auto 40px auto; 
+    margin: 0 0 50px 0; 
     
     /* 字体改动：变小，但拉开极其夸张的字间距 */
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     letter-spacing: 8px;
     font-weight: 300; /* 偏细的字重 */
     text-transform: uppercase; /* 强制英文大写 */
-    
-    /* 颜色改动：暗灰/银色，不刺眼 */
     color: #888;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.1); /* 极其微弱的发光 */
-    
     /* 动画改动：缓慢的淡入效果，配合一点点向上浮动 */
     opacity: 0;
     animation: cinematic-fade 3s ease forwards;

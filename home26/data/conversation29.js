@@ -46,7 +46,7 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年8月26日<br>第二観測庭<br>意識空間`,
+      text: `N.F.113年8月26日<br>第二観測庭(意識空間)`,
       bubbleStyle: "center",
     },
     {
