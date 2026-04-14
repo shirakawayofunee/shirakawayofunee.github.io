@@ -1574,24 +1574,6 @@ span {
     user-select: none;
 }
 
-.theme-btn {
-    color: #666;
-    width: 78px;
-    cursor: pointer;
-    transition: color 0.3s;
-    background: url('/home26/img/dh/sprite_horror_boss_bar_2.png') no-repeat center; 
-}
-
-/* .theme-btn:hover {
-    color: #aaa;
-} */
-
-/* 选中状态的按钮：高亮并带有下划线指示 */
-.theme-btn.active {
-    color: #D40F30;
-    border-bottom: 2px solid #D40F30;
-}
-
 /* ==================== 剧本正文：白天模式 (.light-mode) 覆盖 ==================== */
 
 /* 给背景和文字加个平滑过渡，切主题时不会太刺眼 */
