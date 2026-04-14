@@ -1576,13 +1576,15 @@ span {
 
 .theme-btn {
     color: #666;
+    width: 78px;
     cursor: pointer;
     transition: color 0.3s;
+    background: url('/home26/img/dh/sprite_horror_boss_bar_2.png') no-repeat center; 
 }
 
-.theme-btn:hover {
+/* .theme-btn:hover {
     color: #aaa;
-}
+} */
 
 /* 选中状态的按钮：高亮并带有下划线指示 */
 .theme-btn.active {

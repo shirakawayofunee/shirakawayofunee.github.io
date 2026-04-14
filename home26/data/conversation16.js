@@ -213,21 +213,21 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `動機はほぼ確実だと思う。基金会は10年前の戦役とやっぱり関係してる。それに、前の二人の被害者とも意外な繋がりがあった。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `基金会が撫恤金で不正を働いたせいで、多くの家庭が正義を求めた。彼らはアナタニアの報告に誤誘導されたか、ネイサンの脅迫を受けたことがある。そして、基金会はFACの抑圧にも一役買ってる。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `ただ、現場にはまだわからない疑問がいくつかある。`
     },
@@ -241,28 +241,28 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `現場には被害者が一人だけなのに、12種類の異なる狂厄の花が残されてる。現場の被害者とは一致しない。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `一人につき一種類の花しか咲かないはずだから、被害者は少なくとも12人いる。それに、被害者の体は「業師」の能力で固化してるはずなのに、現場には彼の花がない。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `つまり、少なくとも一人の「花」と、12人の「開花された人」がこの現場から消えた。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `あの女、めっちゃパフォーマンス好きだよね。消えたものはめっちゃ儀式的に配置されてる。まるで私に「解け」って誘ってるみたいだし、「探せ」って言ってるみたい。もっと大事なのは……`
     },
@@ -273,21 +273,21 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `ここには「歡宴」なんてない……ただ一人の被害者が「独行」してるだけ……`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `前の二句は事件の場所、時間、被害者と対応してる。でも三句目の詩は、被害者は合ってるけど、場所が微妙にズレてる。むしろ四句目の方に近い……`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `探長、四番目の事件現場はもう出てると思う。ただ、私たちがまだ見つけてないだけ。ここで消えたものは、四番目の現場で全部見つかるかもしれない。`
     },
@@ -302,14 +302,14 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `ドイルさん、未来基金会の他の要人の行方を早く調べられる？資金の流れとか……うーん、彼らがよく使う消費場所とか。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `今回の被害者の身分が特殊すぎる。私たち、先手を打たないと――`
     },
@@ -362,14 +362,14 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `他の12人の被害者、一つの花束……`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: ``,
+      avatar: `img/dh/zhentan6.png`,
       name: `探偵`,
       text: `これが……「秋膏盛、酒肉錯金銀、歡宴起」だ。`
     }
