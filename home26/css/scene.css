@@ -40,6 +40,10 @@ span {
     color: #fc0214;
 }
 
+rt{
+    font-size: 0.6rem
+}
+
 /* 背景装饰层 (暂时隐藏，因为新风格不需要) */
 .bg-layer {
     position: fixed;
@@ -185,7 +189,7 @@ span {
     background: transparent;
     color: var(--text-sub);
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     padding: 10px 12px;
     cursor: pointer;
     flex-grow: 1;
@@ -234,7 +238,7 @@ span {
 .chap-title {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 800;
     color: var(--text-main);
     white-space: nowrap;
@@ -339,7 +343,7 @@ span {
     max-width: 80%;
     position: relative;
     line-height: 1.6; 
-    font-size: 1rem;
+    font-size: 0.9rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     word-wrap: break-word;
     white-space: pre-line;
@@ -352,13 +356,12 @@ span {
 .pos-right .avatar { margin-left: 20px; }
 
 .narration {
-    text-align: center;
     text-align: left;
     color: #bdbdbd;
-    margin: 10px auto;
+    margin: 0;
     width: 100%;
-    line-height: 1.6;
-    font-size: 0.95rem;
+    line-height: 1.8;
+    font-size: 0.9rem;
     white-space: pre-line;
     word-wrap: break-word;
 }
@@ -370,10 +373,9 @@ span {
 
 /* --- 右侧：信息栏 (Info) --- */
 .info-panel {
-/*     border-left: var(--border-line); */
     padding: 20px;
     padding-top: 10px;
-    font-size: 0.95rem;
+    font-size: 0.855rem;
 }
 .info-section {
     margin-bottom: 30px;
@@ -384,7 +386,7 @@ span {
     padding-bottom: 8px;
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 0.95rem;
+    font-size: 0.855rem;
     font-weight: 800;
     letter-spacing: 1px;
 }

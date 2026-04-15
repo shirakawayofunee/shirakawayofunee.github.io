@@ -690,7 +690,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
       name: `「師匠」`,
-      text: `業師（私）を喜ばせる方法をよく考えなさい。今日の任務は、今日という日を私にとって最高に楽しい一日にすることよ！`,
+      text: `<ruby>業師<rt>私</rt></ruby>を喜ばせる方法をよく考えなさい。今日の任務は、今日という日を私にとって最高に楽しい一日にすることよ！`,
       voice: `wav/CN/conversation24/vo_event_11031_19.wav`
     },
     {
