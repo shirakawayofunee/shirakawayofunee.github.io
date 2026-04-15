@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>侧边栏卡片方案对比</title>
+<style>
+  /* ====== 基础模拟环境 ====== */
+  body {
+    background-color: #f0f0f0;
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+  }
+  /* 模拟你的侧边栏宽度 (约占屏幕40%，这里固定350px方便对比) */
+  .sidebar-simulator {
+    width: 350px; 
+    background: #fff;
+    border: 1px dashed #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  h3 { text-align: center; color: #555; font-size: 16px; margin-top: 0; }
+
+  /* ====== 通用窗口 UI ====== */
+  .mac-window {
+    border: 2px solid #333;
+    background-color: #fff;
+    margin-bottom: 20px;
+  }
+  .mac-header {
+    border-bottom: 2px solid #333;
+    background-color: #a8a8a8;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  .mac-dots { display: flex; gap: 4px; }
+  .mac-dots span { width: 10px; height: 10px; border-radius: 50%; border: 1px solid #fff; background-color: #ddd; }
+  .mac-close { font-size: 18px; font-weight: bold; width: 22px; height: 22px; border: 2px solid #333; background: #fff; display: flex; justify-content: center; align-items: center; line-height: 1; }
+
+  /* =========================================
+     方案 1：上下分层式 (Profile Card)
+     特点：绝对稳定，上图右文，下方大框放详情
+  ========================================= */
+  .v1-body {
+    padding: 15px;
+    background-color: #fcfcfc;
+  }
+  .v1-top-section {
+    display: flex;
+    gap: 15px; /* 头像和右侧文字的间距 */
+    margin-bottom: 25px;
+  }
+  .v1-avatar {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border: 2px solid #333;
+    object-fit: cover;
+    background: #fff;
+  }
+  .v1-info {
+    flex-grow: 1;
+    min-width: 0; /* 防挤压 */
+  }
+  .v1-name {
+    font-size: 22px;
+    font-weight: 900;
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+  .v1-stats {
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+    word-break: break-word;
+  }
+  
+  /* 底部独立文本框 */
+  .v1-bottom-section {
+    position: relative;
+    border: 2px solid #333;
+    padding: 15px 12px;
+    background: #fff;
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: bold;
+    color: #333;
+  }
+  .v1-label {
+    position: absolute;
+    top: -24px;
+    left: -2px; /* 标签贴左侧 */
+    background: #e0e0e0;
+    border: 2px solid #333;
+    border-bottom: none;
+    padding: 2px 12px;
+    font-size: 11px;
+    font-weight: 900;
+  }
+
+  /* =========================================
+     方案 3：图文环绕式 (Float Wrap)
+     特点：利用率极高，文字自然包裹图片
+  ========================================= */
+  .v3-body {
+    padding: 15px;
+    background-color: #fcfcfc;
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: bold;
+    color: #333;
+    overflow: hidden; /* 清除浮动，防止图片撑破底部 */
+  }
+  .v3-avatar {
+    float: left; /* 关键：左浮动 */
+    width: 120px; /* 头像稍大一点 */
+    height: 120px;
+    margin: 0 15px 5px 0; /* 右边和下边留出间距排斥文字 */
+    border: 2px solid #333;
+    object-fit: cover;
+    background: #fff;
+  }
+  .v3-name {
+    font-size: 22px;
+    font-weight: 900;
+    margin: -4px 0 5px 0; /* 微调顶部对齐 */
+    line-height: 1.2;
+  }
+  .v3-stats {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .v3-text span.highlight {
+    color: #d32f2f; /* 红色高亮 */
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- 左侧：方案一展示区 -->
+  <div class="sidebar-simulator">
+    <h3>方案一：上下分层式</h3>
+    <div id="container-v1"></div>
+  </div>
+
+  <!-- 右侧：方案三展示区 -->
+  <div class="sidebar-simulator">
+    <h3>方案三：图文环绕式</h3>
+    <div id="container-v3"></div>
+  </div>
+
+<script>
+  // 模拟从你的 JS 读取的数据 (包含高亮 HTML 标签)
+  const mockData = {
+    characters: [
+      {
+        avatar: "https://via.placeholder.com/150/ffffff/555555?text=Img", // 这里放你的图片链接
+        name: "Chris (探偵)",
+        basicStats: "나이 | 성별 | 키 | 몸무게 | 체형",
+        note: "探偵服を着て、大きい斧を武器にする少女、犬系（<span style='color:red'>別に本物の犬ではない</span>）。\n\n내용을 적습니다. 내용을 적습니다. 내용을 적습니다."
+      }
+    ]
+  };
+
+  // 渲染方案一
+  const containerV1 = document.getElementById("container-v1");
+  mockData.characters.forEach(c => {
+    containerV1.innerHTML += `
+      <div class="mac-window">
+        <div class="mac-header">
+          <div class="mac-dots"><span></span><span></span><span></span></div>
+          <div class="mac-close">&times;</div>
+        </div>
+        <div class="v1-body">
+          <div class="v1-top-section">
+            <img src="${c.avatar}" class="v1-avatar">
+            <div class="v1-info">
+              <h4 class="v1-name">${c.name}</h4>
+              <div class="v1-stats">${c.basicStats}</div>
+            </div>
+          </div>
+          <div class="v1-bottom-section">
+            <div class="v1-label">캐릭터 서사 요약</div>
+            ${c.note.replace(/\n/g, '<br>')}
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  // 渲染方案三
+  const containerV3 = document.getElementById("container-v3");
+  mockData.characters.forEach(c => {
+    containerV3.innerHTML += `
+      <div class="mac-window">
+        <div class="mac-header">
+          <div class="mac-dots"><span></span><span></span><span></span></div>
+          <div class="mac-close">&times;</div>
+        </div>
+        <div class="v3-body">
+          <img src="${c.avatar}" class="v3-avatar">
+          <h4 class="v3-name">${c.name}</h4>
+          <div class="v3-stats">${c.basicStats}</div>
+          <div class="v3-text">
+            ${c.note.replace(/\n/g, '<br>')}
+          </div>
+        </div>
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>

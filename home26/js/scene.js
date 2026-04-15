@@ -549,20 +549,57 @@ function renderInfo(info) {
 
   const charDiv = document.getElementById("characters-container");
   charDiv.innerHTML = "";
-  if (info.characters) {
+  
+  if (info && info.characters) {
     info.characters.forEach((c) => {
       const card = document.createElement("div");
-      card.className = "char-card";
+      card.className = "oc-window-card";
+      
       card.innerHTML = `
-                <img src="${c.avatar}">
-                <div class="char-info">
-                    <strong>${c.name}</strong>
-                    <p>${c.note}</p>
-                </div>
-            `;
+        <!-- 主体内容 -->
+        <div class="oc-window-body">
+          
+          <!-- 上半区：贴边头像 + 名字 -->
+          <div class="oc-top-section">
+            <div class="oc-avatar-box">
+               ${c.avatar ? `<img src="${c.avatar}" alt="${c.name}">` : ''}
+            </div>
+            <div class="oc-info-box">
+              <h4 class="oc-name">${c.name || ''}</h4>
+              <div class="oc-stats">${c.note || ''}</div>
+            </div>
+          </div>
+  
+          <!-- 下半区：纯文本描述 -->
+          <div class="oc-bottom-section">
+            <div class="oc-summary-text">${c.basicStats || ''}</div>
+          </div>
+  
+        </div>
+      `;
+      
       charDiv.appendChild(card);
     });
   }
+  
+  // 假设这是从你的 info 对象中读取的真实数据结构
+  // 如果你的字段名不同，请修改下方模板字符串 ${c.xxx} 里的变量名
+  /* 
+    模拟数据格式参考：
+    info.characters = [
+      {
+        avatar: "image1.jpg",
+        name: "이름", (名字)
+        basicStats: "나이 | 성별 | 키 | 몸무게 | 체형", (基本信息栏)
+        job: "무직", (职业)
+        birthday: "10월 21일", (生日)
+        like: "닭강정, 초콜릿", (喜欢)
+        hate: "브로콜리, 운동", (讨厌)
+        summary: "내용을 적습니다. 내용을 적습니다..." (详情描述)
+      }, ...
+    ]
+  */
+
 
   const synDiv = document.getElementById("synopsis-container");
   synDiv.innerHTML = info.synopsis || "暂无记录";

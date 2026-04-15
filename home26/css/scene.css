@@ -308,19 +308,6 @@ rt{
 }
 
 /* --- 中间：剧本正文 (Script) --- */
-.script-panel {
-    color: #d4d4d4;
-    border: none;
-    background-color: var(--dark-panel-bg);
-}
-
-.script-content {
-    padding: 40px;
-    flex: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .message-row {
     display: flex;
     margin-bottom: 30px;
@@ -340,7 +327,7 @@ rt{
     color: #c9c7ca;
     border: 1px solid #666;
     padding: 15px 15px;
-    max-width: 80%;
+    max-width: 75%;
     position: relative;
     line-height: 1.6; 
     font-size: 0.9rem;
@@ -378,7 +365,7 @@ rt{
     font-size: 0.855rem;
 }
 .info-section {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .info-title {
     color: #000;
@@ -421,12 +408,12 @@ rt{
     margin-bottom: 15px;
     background: #f0f0f0;
     color: #000;
-    padding: 10px;
+/*     padding: 10px; */
     border: 1px solid #ccc;
 }
 .char-card img {
     width: 80px;
-    height: 80px;
+    height: 120px;
     object-fit: cover;
     margin-right: 10px;
     border: 1px solid #999;
@@ -661,7 +648,7 @@ rt{
 
 .script-scroll-area .script-content {
 /*     padding: 40px 40px 120px 40px;  */
-    padding: 5% 6.5% 0% 6.5%;
+    padding: 5% 30px 0% 40px;
 }
 
 .script-scroll-area::-webkit-scrollbar { 
@@ -902,7 +889,7 @@ rt{
 /* 1. 放大且保持红色 */
 .message-bubble span.big-text {
     font-size: 1.6em;         
-    font-weight: 900;         
+    font-weight: 900;
     line-height: 1;           
     vertical-align: bottom;   
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8); 
@@ -1809,3 +1796,115 @@ rt{
     color: #111;
     background: linear-gradient(90deg, rgba(212, 15, 48, 0.08) 0%, transparent 100%);
 }
+
+
+
+/* --- 角色卡片窗口样式 (方案一贴边进化版) --- */
+.oc-window-wrapper {
+    font-family: 'myFont', "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .oc-window-card {
+    border: 2px solid #333;
+    background-color: #fff;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 顶部标题栏 */
+  .oc-window-header {
+    border-bottom: 2px solid #333;
+    background-color: #a8a8a8;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  /* Mac 风格的三个点 */
+  .oc-window-dots { display: flex; gap: 4px; }
+  .oc-window-dots span {
+    display: block; width: 10px; height: 10px;
+    border-radius: 50% !important; border: 1px solid #fff; background-color: #ddd;
+  }
+  .oc-window-close {
+    width: 24px; height: 24px; background-color: #fff;
+    border: 2px solid #333; display: flex; justify-content: center; align-items: center;
+    font-size: 18px; font-weight: bold; line-height: 1;
+  }
+  
+  /* =======================================
+     主体容器：取消全局内边距，允许子元素贴边
+     ======================================= */
+  .oc-window-body {
+    display: flex;
+    flex-direction: column;
+    background-color: #fcfcfc;
+  }
+  
+  /* --- 上半部分：头像 + 基础信息 --- */
+  .oc-top-section {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #333; /* 底部分隔线 */
+  }
+  
+  /* 头像区域：完全贴紧左侧和顶部，右侧有边框分割 */
+  .oc-avatar-box {
+    width: 100px; /* 固定头像宽度，可根据需要调整 */
+    flex-shrink: 0;
+    border-right: 1px solid #333; /* 右侧分隔线 */
+    background-color: #e5e5e5;
+    display: flex;
+  }
+  .oc-avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* 消除 img 底部的幽灵空白 */
+  }
+  
+  /* 基础信息区域：占据剩余宽度，自带内边距 */
+  .oc-info-box {
+    flex-grow: 1;
+    min-width: 0; 
+    padding: 12px; /* 从 15px 缩小到 12px，扩大横向空间防止误断行 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .oc-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    overflow-wrap: break-word; 
+  word-break: normal; 
+  }
+  .oc-stats {
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 700;
+    overflow-wrap: break-word; 
+  word-break: normal; 
+  }
+  
+  /* --- 下半部分：详细描述区域 --- */
+  .oc-bottom-section {
+    padding: 10px 5px 10px 12px; /* 直接简单的留白 */
+    background-color: #fff; /* 保持描述区域是干净的白色 */
+  }
+  
+  .oc-summary-text {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #333;
+    white-space: pre-wrap; /* 保留手打的回车和空格 */
+    overflow-wrap: break-word;
+  }

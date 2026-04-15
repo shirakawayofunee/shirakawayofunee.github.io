@@ -98,7 +98,7 @@ const chapterList = [
   {
     id: "conversation13",
     category: "flower",
-    title: "106「业师」",
+    title: "106「業師」",
     subtitle: "Flora",
     dateLabel: "N.F.113/8/9/18:30",
   },
@@ -168,7 +168,7 @@ const chapterList = [
   {
     id: "conversation23",
     category: "flower",
-    title: "301「西区作战」",
+    title: "301「西区作戦」",
     subtitle: "Flora Part.Ⅲ",
     dateLabel: "N.F.113/8/17/14:23",
   },
@@ -210,40 +210,33 @@ const chapterList = [
   {
     id: "conversation29",
     category: "flower",
-    title: "402「依頼」",
+    title: "402「依頼·満開」",
     subtitle: "Flora",
     dateLabel: "N.F.113/8/26",
   },
   {
     id: "conversation30",
     category: "flower",
-    title: "403「満開」",
+    title: "403「静黙の反逆」",
     subtitle: "Flora",
     dateLabel: "N.F.113/8/26",
   },
   {
     id: "conversation31",
     category: "flower",
-    title: "404「静黙の反逆」",
+    title: "404「終わりに」",
     subtitle: "Flora",
-    dateLabel: "N.F.113/8/26",
+    dateLabel: "N.F.113.8.26",
   },
   {
     id: "conversation32",
     category: "flower",
-    title: "405「後日談1」",
+    title: "405「後日談」",
     subtitle: "Flora",
-    dateLabel: "N.F.113/8/26",
+    dateLabel: "N.F.113.9",
   },
   {
     id: "conversation33",
-    category: "flower",
-    title: "406「後日談2」",
-    subtitle: "Flora",
-    dateLabel: "N.F.113/9/",
-  },
-  {
-    id: "conversation34",
     category: "weak",
     title: "501「」",
     subtitle: "The Weak",
@@ -274,30 +267,29 @@ const chapterList = [
 ];
 
 // ==================== 核心逻辑 ====================
-
 let currentChapterIndex = -1;
 let currentCategory = "all";
 let isMusicPlaying = false;
+let bgmObserver = null;       
+let lastTriggeredBgm = "";    
 const bgmPlayer = document.getElementById("bgm-player");
+bgmPlayer.volume = 0.4;
 
 document.addEventListener("DOMContentLoaded", () => {
-  initTabs(); // 初始化分类标签
-  renderList(); // 初始化列表
-  handleHashChange(); // 检查URL
+  initTabs(); 
+  renderList(); 
+  handleHashChange(); 
 
-  // 事件监听
   window.addEventListener("hashchange", handleHashChange);
 
-  // 搜索监听
   document.getElementById("chapter-search").addEventListener("input", (e) => {
     renderList(e.target.value);
   });
 
-  // 按钮监听
   document.getElementById('btn-play').addEventListener('click', () => toggleMusic('play'));
-    
-  // 点击动图(v2) -> 触发暂停
   document.getElementById('btn-pause').addEventListener('click', () => toggleMusic('pause'));
+
+  setupAudioUnlock();
 });
 
 // --- 1. 初始化分类标签 ---
@@ -311,22 +303,18 @@ function initTabs() {
     if (cat.id === "all") btn.classList.add("active");
 
     btn.onclick = () => {
-      // 切换 Tab 样式
-      document
-        .querySelectorAll(".tab-btn")
-        .forEach((b) => b.classList.remove("active"));
+      document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      // 切换数据
       currentCategory = cat.id;
-      // 清空搜索框并重绘列表
       document.getElementById("chapter-search").value = "";
       renderList();
     };
     container.appendChild(btn);
   });
 }
-// --- 2. 渲染章节列表 (关键：扁平化结构以适配 CSS Grid) ---
+
+// --- 2. 渲染章节列表 ---
 function renderList(searchText = "") {
     const listContainer = document.getElementById('chapter-list');
     listContainer.innerHTML = '';
@@ -347,22 +335,15 @@ function renderList(searchText = "") {
             el.classList.add('active');
         }
 
-        // 修改点：必须使用这种“扁平”结构，不能有额外的 div 包裹
-        // 这样 CSS 里的 grid-column: 1/2 才能生效
         el.innerHTML = `
             <span class="chap-title">${item.title}</span>
-            
             <div class="chap-arrow-box">
                 <svg class="custom-arrow" viewBox="0 0 12 12">
-                    <!-- 身体：从 0.5 到 10，长箭头 -->
                     <line x1="0.5" y1="6" x2="10" y2="6" stroke-linecap="round"></line>
-                    <!-- 头部 -->
                     <polyline points="7 3 10 6 7 9" stroke-linecap="round" stroke-linejoin="round"></polyline>
                 </svg>
             </div>
-            
             <span class="chap-subtitle">${item.subtitle}</span>
-            
             <span class="chap-date">${item.dateLabel}</span>
         `;
 
@@ -377,12 +358,10 @@ function renderList(searchText = "") {
 // --- 3. 路由处理 ---
 function handleHashChange() {
   const hash = window.location.hash.substring(1);
-  if (!hash) return; // 无hash不操作
+  if (!hash) return; 
 
-  // 加载章节内容
   loadChapter(hash);
 
-  // 更新列表高亮
   document.querySelectorAll(".chapter-item").forEach((item) => {
     if (item.dataset.id === hash) {
       item.classList.add("active");
@@ -392,7 +371,6 @@ function handleHashChange() {
     }
   });
 
-  // 更新当前索引 (用于上一章/下一章)
   currentChapterIndex = chapterList.findIndex((c) => c.id === hash);
   updateNavButtons();
 }
@@ -401,49 +379,64 @@ function handleHashChange() {
 async function loadChapter(chapterId) {
   const scriptDiv = document.getElementById("script-content");
   
-  // Header 状态重置
+  // 【修改点】：保护前言节点 (script-header)
+  // 因为现在 script-header 嵌在 script-content 内部，不能直接被 innerHTML 抹掉
+  const headerBox = document.getElementById("script-header");
   const summaryEl = document.getElementById("header-summary");
+  
   if (summaryEl) {
       summaryEl.textContent = "ACCESSING ARCHIVES...";
   }
   
-  scriptDiv.innerHTML = '<div class="narration">運命を読み取り中……</div>';
+  // 【修改点】：清空容器，放回前言节点，再插入读取中的文字
+  scriptDiv.innerHTML = '';
+  if (headerBox) {
+      scriptDiv.appendChild(headerBox); 
+  }
+  scriptDiv.insertAdjacentHTML('beforeend', '<div class="narration">運命を読み取り中……</div>');
 
   try {
     const module = await import(`../data/${chapterId}.js`);
     const data = module.default;
 
-    // 设置 BGM
-    if (data.meta && data.meta.bgm) {
-      playBgm(data.meta.bgm, true); 
-    }
-    
-    // 渲染正文
-    renderScript(data.script);
-    
-    // ============================================
-    // 修改点：只传 infoPanel，让它去读 synopsis
-    // ============================================
-    renderInfo(data.infoPanel); 
+    const defaultBgm = (data.meta && data.meta.bgm) ? data.meta.bgm : "";
+    lastTriggeredBgm = defaultBgm; 
 
-    // ============================================
-    // 确保 Header 独立读取 meta.summary
-    // ============================================
+    if (defaultBgm) {
+      playBgm(defaultBgm, true); 
+    }
+
+    renderScript(data.script, defaultBgm);
+    renderInfo(data.infoPanel); 
     updateHeaderFromJSON(chapterId, data);
 
-    // 滚回顶部
     const scrollPanel = document.getElementById("script-panel");
     if (scrollPanel) scrollPanel.scrollTop = 0;
+
+    const currentChapInfo = chapterList.find(item => item.id === chapterId);
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'chapter_read',          
+      'chapter_id': chapterId,          
+      'chapter_title': currentChapInfo ? currentChapInfo.title : 'Unknown', 
+      'chapter_category': currentChapInfo ? currentChapInfo.category : 'Unknown' 
+    });
+
+    setTimeout(() => {
+      initBgmObserver();
+    }, 100);
     
   } catch (err) {
     console.error(err);
-    scriptDiv.innerHTML = `<div class="narration" style="color:#e23b78">无法打开卷宗: ${chapterId}</div>`;
+    scriptDiv.innerHTML = '';
+    if (headerBox) scriptDiv.appendChild(headerBox);
+    scriptDiv.insertAdjacentHTML('beforeend', `<div class="narration" style="color:#D40F30">无法打开卷宗: ${chapterId}</div>`);
   }
 }
 
-// --- 新增：更新顶部 UI 的函数 ---
+// --- 新增：更新顶部开场白的函数 ---
 function updateHeaderFromJSON(chapterId, data) {
-  // 修改点：只读取 meta.summary，如果没有则显示默认占位符，不再去读 synopsis
   const jsonSummary = (data.meta && data.meta.summary) 
                       ? data.meta.summary 
                       : "NO SUMMARY DATA"; 
@@ -451,47 +444,93 @@ function updateHeaderFromJSON(chapterId, data) {
   const elSummary = document.getElementById("header-summary");
   
   if (elSummary) {
-      // 简单的淡入效果
       elSummary.style.opacity = 0;
       elSummary.textContent = jsonSummary;
       
-      // 50ms 后显示
+      // 【修改点】：延长淡入时间，并改为更平滑的 ease，增加前言的文学感
       setTimeout(() => {
-          elSummary.style.transition = "opacity 0.3s";
+          elSummary.style.transition = "opacity 0.8s ease";
           elSummary.style.opacity = 1;
       }, 50);
   }
 }
 
 // --- 5. 渲染正文 ---
-function renderScript(script) {
+function renderScript(script, defaultBgm = "") {
   const container = document.getElementById("script-content");
+  
+  // 【修改点】：同样保护前言节点，避免被抹除
+  const headerBox = document.getElementById("script-header");
   container.innerHTML = "";
+  if (headerBox) {
+      container.appendChild(headerBox);
+  }
 
-  script.forEach((line) => {
-    const div = document.createElement("div");
+  VoiceManager.reset(script);
 
-    if (line.type === "narration") {
-      div.className = "message-row";
-      div.innerHTML = `<div class="narration">${line.text}</div>`;
-    } else if (line.type === "image") {
-      div.className = "message-row";
-      div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
-    } else if (line.type === "dialogue") {
-      const pos = line.position === "right" ? "pos-right" : "pos-left";
-      div.className = `message-row ${pos}`;
-      div.innerHTML = `
-                <img src="${line.avatar}" class="avatar">
-                <div class="message-bubble">${line.text}</div>
-            `;
-    }
-    container.appendChild(div);
+  let currentLineBgm = defaultBgm;
+
+  script.forEach((line, index) => {
+      const div = document.createElement("div");
+      div.id = `msg-row-${index}`;
+
+      if (line.bgm) {
+          currentLineBgm = line.bgm;
+      }
+      if (currentLineBgm) {
+          div.setAttribute("data-bgm", currentLineBgm);
+      }
+
+      let voiceBtnHtml = '';
+
+      if (line.voice) {
+          if (Array.isArray(line.voice)) {
+              voiceBtnHtml += '<span class="voice-group">'; 
+              line.voice.forEach((v, subIndex) => {
+                  const safePath = v.path.replace(/#/g, '%23');
+                  voiceBtnHtml += `<button id="voice-btn-${index}-${subIndex}" class="voice-tag" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', ${subIndex})" title="Play ${v.label}">${v.label}</button>`;
+              });
+              voiceBtnHtml += '</span>';
+          } else {
+              const safePath = line.voice.replace(/#/g, '%23');
+              voiceBtnHtml = `<button id="voice-btn-${index}-0" class="voice-btn" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', 0)" title="Play Voice"><svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z"></path></svg></button>`;
+          }
+      }
+
+      if (line.type === "narration") {
+        div.className = "message-row";
+        let customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
+        let displayText = line.text;
+
+        if (customBubbleClass === "secret-comm") {
+            let regex = /(^|<br>|\n)\s*([^:：<]+[:：])/g;
+            displayText = displayText.replace(regex, '$1<span class="comm-speaker">$2</span>');
+            displayText = `<div class="comm-header">--- ENCRYPTED_CHANNEL ---</div><div class="comm-body"><span class="comm-bracket">[</span> ${displayText} <span class="comm-bracket">]</span></div>`;
+        }
+
+        div.innerHTML = `<div class="narration ${customBubbleClass}">${displayText}</div>`;
+    
+      } else if (line.type === "image") {
+          div.className = "message-row";
+          div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
+      
+      } else if (line.type === "dialogue") {
+          const pos = line.position === "right" ? "pos-right" : "pos-left";
+          div.className = `message-row ${pos}`;
+          
+          const customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
+          
+          div.innerHTML = `
+              <img src="${line.avatar}" class="avatar">
+              <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
+          `;
+      }
+      container.appendChild(div);
   });
 }
 
 // --- 6. 渲染右侧信息 ---
 function renderInfo(info) {
-  // 名词解释
   const glossaryDiv = document.getElementById("glossary-container");
   glossaryDiv.innerHTML = "";
   if (info.glossary) {
@@ -508,7 +547,6 @@ function renderInfo(info) {
     });
   }
 
-  // 角色
   const charDiv = document.getElementById("characters-container");
   charDiv.innerHTML = "";
   if (info.characters) {
@@ -526,9 +564,7 @@ function renderInfo(info) {
     });
   }
 
-  // 前情提要
   const synDiv = document.getElementById("synopsis-container");
-  // 只渲染文本内容，删除了之前在这里追加 <button> 的代码
   synDiv.innerHTML = info.synopsis || "暂无记录";
 }
 
@@ -539,49 +575,30 @@ function navigate(dir) {
     window.location.hash = chapterList[newIdx].id;
   }
 }
-// --- 修改后的按钮状态更新函数 ---
+
 function updateNavButtons() {
-  // 1. 获取新版 HTML 中的悬浮按钮 ID
   const btnPrev = document.getElementById("float-btn-prev");
   const btnNext = document.getElementById("float-btn-next");
 
-  // 2. 加上安全检查，防止找不到元素报错
   if (btnPrev && btnNext) {
-      // 3. 根据当前章节索引判断是否禁用
-      // 如果是第一章 (index <= 0)，禁用“前”
       btnPrev.disabled = currentChapterIndex <= 0;
-      
-      // 如果是最后一章 (index >= 总数-1)，禁用“次”
       btnNext.disabled = currentChapterIndex >= chapterList.length - 1;
   }
 }
-function playBgm(src) {
-  if (!bgmPlayer.src.includes(src)) {
-    bgmPlayer.src = src;
-    if (isMusicPlaying) bgmPlayer.play().catch(() => {});
-  }
-}
-// --- 音乐控制 (新版：图片切换 + 自动播放) ---
 
-// 播放音乐的核心函数
-// src: 音乐路径
-// forcePlay: 是否强制尝试播放 (用于切章节时自动播放)
+// --- 音乐控制 ---
 function playBgm(src, forcePlay = false) {
-  // 如果切歌了，或者不仅没切歌但强制要求播放
   if (!bgmPlayer.src.includes(src)) {
       bgmPlayer.src = src;
   }
 
   if (forcePlay || isMusicPlaying) {
-      // 尝试播放
       const playPromise = bgmPlayer.play();
 
       if (playPromise !== undefined) {
           playPromise.then(() => {
-              // 播放成功：更新状态为播放中
               updateMusicUI(true);
           }).catch(error => {
-              // 自动播放被浏览器拦截：更新状态为暂停
               console.log("Auto-play blocked by browser. User interaction needed.");
               updateMusicUI(false);
           });
@@ -589,7 +606,37 @@ function playBgm(src, forcePlay = false) {
   }
 }
 
-// 切换播放/暂停状态 (绑定到图片点击事件)
+// --- BGM 滚动观察器 ---
+function initBgmObserver() {
+  if (bgmObserver) {
+      bgmObserver.disconnect();
+  }
+
+  bgmObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              const newBgm = entry.target.getAttribute('data-bgm');
+              
+              if (newBgm && newBgm !== lastTriggeredBgm) {
+                  console.log(`[剧情点触发] 切换BGM: ${newBgm}`);
+                  lastTriggeredBgm = newBgm;
+                  playBgm(newBgm, false); 
+              }
+          }
+      });
+  }, {
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0
+  });
+
+  const rows = document.querySelectorAll('#script-content .message-row');
+  rows.forEach(row => {
+      if (row.hasAttribute('data-bgm')) {
+          bgmObserver.observe(row);
+      }
+  });
+}
+
 function toggleMusic(action) {
   if (action === 'play') {
       bgmPlayer.play();
@@ -600,103 +647,278 @@ function toggleMusic(action) {
   }
 }
 
-// 更新 UI 图片显示
 function updateMusicUI(playing) {
   isMusicPlaying = playing;
-  const btnPlay = document.getElementById('btn-play'); // v2c.png
-  const btnPause = document.getElementById('btn-pause'); // v2.gif
+  const btnPlay = document.getElementById('btn-play'); 
+  const btnPause = document.getElementById('btn-pause'); 
 
   if (playing) {
-      // 正在播放：隐藏静止图，显示动图
       btnPlay.style.display = 'none';
       btnPause.style.display = 'block';
   } else {
-      // 停止/暂停：显示静止图，隐藏动图
       btnPlay.style.display = 'block';
       btnPause.style.display = 'none';
   }
 }
 
-
-// --- 沉浸模式：移除 Header ---
-function enableImmersiveMode() {
-  const header = document.getElementById("script-header");
-  if (header) {
-      header.style.display = 'none';
+// --- 新增：全局解除浏览器音频限制 ---
+function setupAudioUnlock() {
+  const unlockHandler = () => {
+      // 如果当前有音乐路径，且处于被拦截的暂停状态，且我们的 UI 认为它没在播放
+      if (bgmPlayer.src && bgmPlayer.paused && !isMusicPlaying) {
+          const playPromise = bgmPlayer.play();
+          if (playPromise !== undefined) {
+              playPromise.then(() => {
+                  // 解锁成功：同步更新动图和状态
+                  updateMusicUI(true);
+              }).catch(e => {
+                  console.log("Global unlock failed or empty src:", e);
+              });
+          }
+      }
       
-      // 由于使用了 Flex 布局，Header 移除后，
-      // .script-scroll-area (flex: 1) 会自动向上延伸填满空间。
+      // 【关键】：无论成功与否，只要用户交互过一次，浏览器的“手势锁”就解除了。
+      // 立即移除监听器，避免每次点击都重复执行。
+      document.body.removeEventListener('click', unlockHandler, true);
+      document.body.removeEventListener('touchstart', unlockHandler, true);
+  };
+
+  // 使用捕获阶段 (true)，确保在其他按钮事件触发前，先解除音频锁定
+  document.body.addEventListener('click', unlockHandler, true);
+  document.body.addEventListener('touchstart', unlockHandler, { passive: true, capture: true });
+}
+// --- 沉浸模式：隐藏顶部悬浮工具栏 ---
+function enableImmersiveMode() {
+  // 【修改点】：目标从 script-header 改为了新的绝对定位容器 script-tools-layer
+  const toolsLayer = document.querySelector(".script-tools-layer");
+  if (toolsLayer) {
+      toolsLayer.style.display = 'none';
   }
 }
 
-
-
 // ==================== 视觉特效 ====================
 
-// --- 打字机效果 (用于左侧 Header) ---
 document.addEventListener("DOMContentLoaded", () => {
   initTypewriter();
 });
 
-// --- 序列化打字机效果 ---
 function initTypewriter() {
   const titleEl = document.querySelector('.main-title');
   const subEl = document.querySelector('.sub-title');
   
   if (!titleEl || !subEl) return;
 
-  // 1. 定义内容
   const titleText = "運命の織機";
   const subText = ">./USER_LOGS.EXE";
 
-  // 2. 清空内容
   titleEl.textContent = "";
   subEl.textContent = "";
 
-  // 3. 通用打字函数 (带光标)
-  // element: 目标元素
-  // text: 文本
-  // speed: 打字速度 [基准, 随机波动]
-  // cursorColor: 光标颜色
-  // callback: 打完后的回调
   function typeString(element, text, speed, cursorColor, callback) {
       let i = 0;
-      // 添加光标
       element.style.borderRight = `3px solid ${cursorColor}`;
       
       function step() {
           if (i < text.length) {
               element.textContent += text.charAt(i);
               i++;
-              // 随机延迟
               setTimeout(step, Math.random() * speed[1] + speed[0]);
           } else {
-              // 打完了
-              element.style.borderRight = "none"; // 移除光标
+              element.style.borderRight = "none"; 
               if (callback) callback();
           }
       }
       step();
   }
 
-  // 4. 执行序列
-  // 第一步：打主标题 (稍慢，庄重一点)
   setTimeout(() => {
-      // 使用红色光标打主标题
-      typeString(titleEl, titleText, [320, 80], "#e23b78", () => {
-          
-          // 第二步：主标题打完后，打副标题 (稍快，像机器指令)
-          // 使用灰色光标
+      typeString(titleEl, titleText, [320, 80], "#D40F30", () => {
           typeString(subEl, subText, [120, 30], "#555", () => {
-              
-              // 全部结束，给副标题留一个闪烁光标作为待机状态
               subEl.style.borderRight = "2px solid #555";
               setInterval(() => {
                    const currentColor = subEl.style.borderRightColor;
                    subEl.style.borderRightColor = (currentColor === 'transparent') ? '#555' : 'transparent';
               }, 500);
           });
-          
       });
-  }, 200); // 页面加载后延迟 0.5秒开始
+  }, 200); 
+}
+
+// ==================== 语音与自动播放管理器 ====================
+
+const VoiceManager = {
+  audio: new Audio(),       
+  isAutoMode: false,        
+  currentIndex: 0,          
+  scriptData: [],           
+  timer: null,              
+
+  init() {
+      this.audio.preload = 'auto';
+      
+      this.audio.onended = () => {
+          this.setButtonState(this.currentIndex, false); 
+          if (this.isAutoMode) {
+              this.playNext(); 
+          }
+      };
+
+      this.audio.onerror = () => {
+          console.warn("语音文件加载失败，1秒后跳过");
+          this.setButtonState(this.currentIndex, false);
+          if (this.isAutoMode) {
+              this.timer = setTimeout(() => this.playNext(), 1000);
+          }
+      };
+  },
+
+  reset(newScriptData) {
+      this.stop(); 
+      this.isAutoMode = false;
+      this.updateAutoSwitchUI();
+      this.currentIndex = 0;
+      this.scriptData = newScriptData || [];
+  },
+
+  toggleAuto() {
+      this.isAutoMode = !this.isAutoMode;
+      this.updateAutoSwitchUI();
+
+      if (this.isAutoMode) {
+          this.playSequence(this.currentIndex);
+      } else {
+          clearTimeout(this.timer);
+      }
+  },
+
+  updateAutoSwitchUI() {
+      const btn = document.getElementById('auto-play-btn');
+      if (!btn) return;
+      if (this.isAutoMode) btn.classList.add('active');
+      else btn.classList.remove('active');
+  },
+
+  playSequence(index) {
+    if (!this.isAutoMode) return;
+    if (index >= this.scriptData.length) {
+        this.finishAuto();
+        return;
+    }
+
+    this.currentIndex = index;
+    const line = this.scriptData[index];
+    const rowEl = document.getElementById(`msg-row-${index}`);
+    if (rowEl) rowEl.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    if (line.voice) {
+        let src = '';
+        if (Array.isArray(line.voice)) {
+            src = line.voice[0].path;
+        } else {
+            src = line.voice;
+        }
+        this.playAudio(src, index, 0); 
+    } else {
+        this.timer = setTimeout(() => {
+            if (this.isAutoMode) this.playNext();
+        }, 1000);
+    }
+  },
+
+  playNext() {
+      this.playSequence(this.currentIndex + 1);
+  },
+
+  playAudio(src, index, subIndex = 0) {
+    document.querySelectorAll('.voice-btn, .voice-tag').forEach(b => b.classList.remove('playing'));
+
+    this.currentIndex = index;
+    this.audio.src = src.replace(/#/g, '%23'); 
+    
+    this.setButtonState(index, subIndex, true);
+
+    try {
+      const fileName = src.split('/').pop();
+      let currentChapTitle = "Unknown";
+      if (typeof chapterList !== 'undefined' && typeof currentChapterIndex !== 'undefined') {
+           if (chapterList[currentChapterIndex]) {
+               currentChapTitle = chapterList[currentChapterIndex].title;
+           }
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+          'event': 'voice_play',              
+          'voice_filename': fileName,         
+          'voice_path': src,                  
+          'chapter_title': currentChapTitle,  
+          'play_mode': this.isAutoMode ? 'auto' : 'manual' 
+      });
+  } catch (err) {
+      console.error("GTM Tracking Error:", err);
+  }
+
+    const playPromise = this.audio.play();
+    if (playPromise !== undefined) {
+        playPromise.catch(err => {
+            console.log("Play error:", err);
+            this.setButtonState(index, subIndex, false);
+            if (this.isAutoMode) this.timer = setTimeout(() => this.playNext(), 1000);
+        });
+    }
+  },
+
+  playManual(index, src, subIndex) {
+      this.isAutoMode = false; 
+      this.updateAutoSwitchUI();
+      clearTimeout(this.timer);
+      this.playAudio(src, index, subIndex);
+  },
+
+  setButtonState(index, subIndex, isPlaying) {
+    const btnId = `voice-btn-${index}-${subIndex}`;
+    const btn = document.getElementById(btnId);
+    
+    if (btn && isPlaying) {
+        btn.classList.add('playing');
+    } else if (btn) {
+        btn.classList.remove('playing');
+    }
+  },
+
+  stop() {
+      this.audio.pause();
+      this.audio.currentTime = 0;
+      clearTimeout(this.timer);
+      this.setButtonState(this.currentIndex, false);
+  },
+  
+  finishAuto() {
+      this.isAutoMode = false;
+      this.updateAutoSwitchUI();
+      console.log("End of Auto Play");
+  }
+};
+
+VoiceManager.init();
+
+
+
+// --- 新增：正文背景主题切换 (白天 / 黑夜) ---
+function setTheme(mode) {
+  const wrapper = document.querySelector('.script-wrapper');
+  const btnNight = document.getElementById('btn-night');
+  const btnDay = document.getElementById('btn-day');
+
+  if (mode === 'light') {
+      // 开启白天模式
+      wrapper.classList.add('light-mode');
+      btnDay.classList.add('active');
+      btnNight.classList.remove('active');
+  } else {
+      // 恢复黑夜模式 (默认)
+      wrapper.classList.remove('light-mode');
+      btnNight.classList.add('active');
+      btnDay.classList.remove('active');
+  }
 }
