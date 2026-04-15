@@ -556,12 +556,23 @@ function renderInfo(info) {
       // 1. 判断该角色是否需要交替排版（需在你的数据中设置 isReverse: true）
       const reverseClass = c.isReverse ? 'style-reverse' : '';
   
-      // 2. 只有当 note 字段有实质内容时，才渲染底部描述区域
+    // 2. 【核心修复】：清洗文本里的“代码缩进空格”
+    let cleanNote = "";
+    if (c.note) {
+      // 按换行符把文字切成一行行 -> 洗掉每一行前后的多余空格 -> 再拼回去
+      cleanNote = String(c.note)
+        .split('\n')
+        .map(line => line.trim()) 
+        .join('\n')
+        .trim(); // 最后再把首尾可能因为纯回车产生的空行洗掉
+    }
+
+    // 3.  只有当 note 字段有实质内容时，才渲染底部描述区域
       // .trim() 是为了防止你不小心敲了几个纯空格导致空块出现
-      const hasNote = c.note && c.note.trim() !== ''; 
+      const hasNote = c.basicStats && c.basicStats.trim() !== ''; 
       const bottomSectionHTML = hasNote ? `
           <div class="oc-bottom-section">
-            <div class="oc-summary-text">${c.note}</div>
+            <div class="oc-summary-text">${c.basicStats}</div>
           </div>
       ` : '';
   
@@ -579,7 +590,7 @@ function renderInfo(info) {
             </div>
             <div class="oc-info-box">
               <h4 class="oc-name">${c.name || ''}</h4>
-              <div class="oc-stats">${c.basicStats || ''}</div>
+              <div class="oc-stats">${c.note || ''}</div>
             </div>
           </div>
   

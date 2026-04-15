@@ -22,9 +22,9 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `<ruby>執行人X<rt>Shalom</rt></ruby>`,
+        avatar: `img/dh/x4.png`,
+        note: `廃棄期限まであと一ヶ月しかない道具。他人の苦しみと命を代償に、自分のかすかな希望を買う?`
       },
       {
         name: `工事中`,
@@ -45,7 +45,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `San値変動、安全。感情変動、安全。各種生理指標、安定。思考活性度、高水準を維持。執行人状態、安定。`
+      text: `M値変動、安全。感情変動、安全。各種生理指標、安定。思考活性度、高水準を維持。執行人状態、安定。`
     },
     {
       type: `narration`,

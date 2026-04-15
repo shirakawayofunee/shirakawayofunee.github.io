@@ -360,12 +360,13 @@ rt{
 
 /* --- 右侧：信息栏 (Info) --- */
 .info-panel {
-    padding: 20px;
-    padding-top: 10px;
+    padding: 12px;
+/*     padding-top: 10px;
+    padding-bottom: 10px; */
     font-size: 0.855rem;
 }
 .info-section {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 .info-title {
     color: #000;
@@ -1018,7 +1019,7 @@ rt{
 }
 .narration.radio-comm::before {
     content: "--- ENCRYPTED_CHANNEL --- \A"; 
-    white-space: pre-wrap;
+    white-space: pre-line;
     display: block;
     color: #666;
     font-size: 0.8em;
@@ -1119,7 +1120,7 @@ rt{
 
 .message-bubble.bubble-controlled::before {
     content: ">> OVERRIDE_INJECT: \A";     
-    white-space: pre-wrap;
+    white-space: pre-line;
     display: block;
     color: #ff00ff;
     font-weight: 900;
@@ -1714,7 +1715,7 @@ rt{
 
 /* 方案 4：人声鼎沸 (Crowd Noise) */
 .narration.npc-crowd-noise {
-    text-align: center;
+    text-align: left;
     margin: 40px auto;
     font-size: 1.1rem;
     font-weight: 900;
@@ -1810,7 +1811,7 @@ rt{
   .oc-window-card {
     border: 2px solid #333;
     background-color: #fff;
-    margin-bottom: 25px;
+    margin-bottom: 14px;
     display: flex;
     flex-direction: column;
   }
@@ -1872,7 +1873,8 @@ rt{
   
   /* --- 下半部分：详细描述区域 --- */
   .oc-bottom-section {
-    padding: 10px 5px 10px 12px; /* 直接简单的留白 */
+    border-top: 1px solid #333; 
+    padding: 7px 5px 10px 12px; /* 直接简单的留白 */
     background-color: #fff; /* 保持描述区域是干净的白色 */
   }
   
@@ -1881,7 +1883,7 @@ rt{
     line-height: 1.6;
     font-weight: 300;
     color: #333;
-    white-space: pre-wrap; /* 保留手打的回车和空格 */
+    white-space: pre-line; /* 保留手打的回车和空格 */
     overflow-wrap: break-word;
   }
 
