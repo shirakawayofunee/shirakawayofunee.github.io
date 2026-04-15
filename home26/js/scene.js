@@ -552,8 +552,21 @@ function renderInfo(info) {
   
   if (info && info.characters) {
     info.characters.forEach((c) => {
+      
+      // 1. 判断该角色是否需要交替排版（需在你的数据中设置 isReverse: true）
+      const reverseClass = c.isReverse ? 'style-reverse' : '';
+  
+      // 2. 只有当 note 字段有实质内容时，才渲染底部描述区域
+      // .trim() 是为了防止你不小心敲了几个纯空格导致空块出现
+      const hasNote = c.note && c.note.trim() !== ''; 
+      const bottomSectionHTML = hasNote ? `
+          <div class="oc-bottom-section">
+            <div class="oc-summary-text">${c.note}</div>
+          </div>
+      ` : '';
+  
       const card = document.createElement("div");
-      card.className = "oc-window-card";
+      card.className = `oc-window-card ${reverseClass}`; // 注入交替类名
       
       card.innerHTML = `
         <!-- 主体内容 -->
@@ -566,14 +579,12 @@ function renderInfo(info) {
             </div>
             <div class="oc-info-box">
               <h4 class="oc-name">${c.name || ''}</h4>
-              <div class="oc-stats">${c.note || ''}</div>
+              <div class="oc-stats">${c.basicStats || ''}</div>
             </div>
           </div>
   
-          <!-- 下半区：纯文本描述 -->
-          <div class="oc-bottom-section">
-            <div class="oc-summary-text">${c.basicStats || ''}</div>
-          </div>
+          <!-- 下半区：动态渲染（若无内容则为完全不生成该 div，不会留有空隙） -->
+          ${bottomSectionHTML}
   
         </div>
       `;

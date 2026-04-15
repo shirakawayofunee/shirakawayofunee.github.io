@@ -1815,29 +1815,6 @@ rt{
     flex-direction: column;
   }
   
-  /* 顶部标题栏 */
-  .oc-window-header {
-    border-bottom: 2px solid #333;
-    background-color: #a8a8a8;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-  }
-  
-  /* Mac 风格的三个点 */
-  .oc-window-dots { display: flex; gap: 4px; }
-  .oc-window-dots span {
-    display: block; width: 10px; height: 10px;
-    border-radius: 50% !important; border: 1px solid #fff; background-color: #ddd;
-  }
-  .oc-window-close {
-    width: 24px; height: 24px; background-color: #fff;
-    border: 2px solid #333; display: flex; justify-content: center; align-items: center;
-    font-size: 18px; font-weight: bold; line-height: 1;
-  }
-  
   /* =======================================
      主体容器：取消全局内边距，允许子元素贴边
      ======================================= */
@@ -1851,7 +1828,6 @@ rt{
   .oc-top-section {
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid #333; /* 底部分隔线 */
   }
   
   /* 头像区域：完全贴紧左侧和顶部，右侧有边框分割 */
@@ -1907,4 +1883,17 @@ rt{
     color: #333;
     white-space: pre-wrap; /* 保留手打的回车和空格 */
     overflow-wrap: break-word;
+  }
+
+  .oc-window-card.style-reverse .oc-window-header {
+    flex-direction: row-reverse;
+  }
+  /* 2. 让主体内容左右互换 */
+  .oc-window-card.style-reverse .oc-top-section {
+    flex-direction: row-reverse;
+  }
+  /* 3. 头像边框方向对调（原先在右侧，现在要在左侧才能隔开文字） */
+  .oc-window-card.style-reverse .oc-avatar-box {
+    border-right: none;
+    border-left: 2px solid #333;
   }
