@@ -2,9 +2,9 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2025-08-22 03:09:44
+ * @LastEditTime: 2026-04-17 02:29:21
  * @Description: Enhanced music control with auto-play on Swiper slide change and correct button display
- * @FilePath: \shirakawayofunee.github.io\home\js\musicControls.js
+ * @FilePath: \shirakawayofunee.github.io\home26\js\musicControls.js
  */
 var musicTimer;
 
@@ -127,13 +127,13 @@ function changeMusicProgress() {
     if (timeEndMobile) timeEndMobile.textContent = allData;
 }
 
-function showPlayPrompt() {
+/* function showPlayPrompt() {
     const prompt = document.createElement('div');
     prompt.innerText = '请点击播放背景音乐';
     prompt.style.cssText = 'position: fixed; bottom: 20px; right: 20px; padding: 10px; background: #333; color: #fff; z-index: 1000;';
     document.body.appendChild(prompt);
     setTimeout(() => prompt.remove(), 5000);
-}
+} */
 
 function enableAutoPlayOnSlideChange(swiperInstance) {
     if (!swiperInstance) {

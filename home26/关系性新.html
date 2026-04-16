@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jujutsu Kaisen Fanbook Layout Replica</title>
+<style>
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #111111;
+        --q-underline: 2px solid #111;
+        --font-main: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+        --font-serif: "Noto Serif JP", "Mincho", serif;
+    }
+    @font-face {
+  font-family: "title";
+  src: url("../font/DreamHanSerifJP-W27.ttf") format("truetype");
+  font-display: swap;
+}
+
+    body {
+        margin: 0;
+        padding: 20px;
+        background-color: #e0e0e0; /* 外围背景色，方便看清页面边界 */
+        display: flex;
+        justify-content: center;
+        font-family: var(--font-main);
+        color: var(--text-color);
+        line-height: 1.5;
+    }
+
+    /* 双页整体容器 */
+    .spread-container {
+        display: flex;
+        width: 1600px; /* 固定宽度以保证排版不乱 */
+        height: 1130px;
+        background-color: var(--bg-color);
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    /* 单页样式 */
+    .page {
+        width: 50%;
+        height: 100%;
+        position: relative;
+        box-sizing: border-box;
+        padding: 40px;
+        overflow: hidden;
+    }
+
+    .page-left { border-right: 1px solid #ccc; }
+
+    /* --- 通用组件样式 --- */
+    
+    /* 注音样式调整 */
+    ruby { ruby-align: center; }
+    rt { font-size: 0.5em; color: #444; transform: translateY(-1px); }
+
+    /* Q&A 样式 */
+    .qa-block { margin-bottom: 25px; }
+    
+    .q-text {
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 8px;
+        text-decoration: underline;
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 4px;
+        display: inline;
+    }
+    .q-marker {
+        font-family: var(--font-serif);
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 2px;
+    }
+
+    .a-block {
+        display: flex;
+        align-items: flex-start;
+    }
+    .a-marker {
+        font-family: var(--font-serif);
+        font-size: 42px;
+        line-height: 0.8;
+        color: #555;
+        margin-right: 8px;
+        margin-top: 2px;
+    }
+    .a-text {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.6;
+    }
+
+    /* 漫画占位框 */
+    .manga-panel {
+        border: 2px solid #111;
+        background-color: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+        font-weight: bold;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    /* 黑底白字引用框 */
+    .black-box-quote {
+        background-color: #111;
+        color: #fff;
+        padding: 6px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.4;
+        display: inline-block;
+    }
+
+    /* --- 左页 (P31 三轮霞) 专属定位 --- */
+    
+    .header-tag {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        background: #111;
+        color: #fff;
+        padding: 4px 15px;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 16px;
+    }
+
+    .l-panel-1 { position: absolute; top: 80px; left: 30px; width: 140px; height: 180px; }
+    
+    .l-qa-1 { position: absolute; top: 60px; left: 190px; width: 280px; }
+    .l-qa-1 .a-text { font-size: 22px; font-weight: bold; margin-top: 10px; line-height: 1.4; }
+
+    .l-panel-2 { position: absolute; top: 220px; left: 190px; width: 250px; height: 210px; background: #000; color: #fff; } /* 简易领域那张图通常是黑底 */
+
+    .l-qa-2 { position: absolute; top: 280px; left: 30px; width: 150px; }
+    .l-qa-3 { position: absolute; top: 430px; left: 30px; width: 150px; }
+    .l-qa-3 .a-text { font-size: 32px; font-weight: 900; letter-spacing: 2px; line-height: 1; margin-top: 5px; }
+
+    .l-quote-1 { position: absolute; top: 440px; left: 190px; width: 260px; }
+
+    .l-qa-4 { position: absolute; top: 540px; left: 240px; width: 180px; }
+
+    .l-panel-3 { position: absolute; top: 540px; left: 30px; width: 190px; height: 140px; }
+    .l-quote-2 { position: absolute; top: 690px; left: 30px; width: 230px; }
+
+    .l-qa-5 { position: absolute; top: 670px; left: 270px; width: 200px; }
+
+    .l-panel-4 { position: absolute; top: 800px; left: 180px; width: 200px; height: 140px; }
+    .l-qa-6 { position: absolute; top: 830px; left: 30px; width: 140px; }
+    .l-qa-6 .a-text { font-size: 28px; font-weight: bold; margin-top: 5px; }
+
+    .page-num-l { position: absolute; bottom: 20px; left: 20px; font-weight: bold; font-size: 18px; }
+
+    /* --- 右页 (P18 乙骨忧太) 专属定位 --- */
+
+    .r-title-box {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        background: #111;
+        color: #fff;
+        padding: 5px 15px;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+
+    .r-panel-1 { position: absolute; top: 100px; left: 40px; width: 180px; height: 200px; }
+
+    .r-qa-1 { position: absolute; top: 100px; left: 240px; width: 250px; }
+
+    .r-vertical-text {
+        position: absolute;
+        top: 340px;
+        right: 40px;
+        writing-mode: vertical-rl;
+        background: #111;
+        color: #fff;
+        padding: 15px 5px;
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        box-shadow: -4px 4px 0px #000;
+    }
+
+    .r-panel-2 { position: absolute; top: 380px; left: 260px; width: 220px; height: 220px; border-radius: 5px; } /* 五条悟气泡框附近 */
+
+    .r-qa-2 { position: absolute; top: 350px; left: 40px; width: 200px; }
+    .r-qa-3 { position: absolute; top: 480px; left: 40px; width: 200px; }
+
+    .r-panel-3 { position: absolute; top: 660px; left: 40px; width: 240px; height: 160px; }
+
+    .r-qa-4 { position: absolute; top: 830px; left: 40px; width: 350px; }
+
+    .page-num-r { position: absolute; bottom: 20px; right: 20px; font-weight: bold; font-size: 18px; }
+
+</style>
+</head>
+<body>
+
+<div class="spread-container">
+    <!-- ============== 左页 (Page 31) ============== -->
+    <div class="page page-left">
+        <div class="header-tag">第1章 キャラクター</div>
+
+        <!-- 面部特写 -->
+        <div class="manga-panel l-panel-1">漫画コマ<br>(三輪顔アップ)</div>
+
+        <!-- Q1 -->
+        <div class="qa-block l-qa-1">
+            <div class="q-text">
+                <span class="q-marker">Q</span>
+                <ruby>三輪<rt>みわ</rt></ruby><ruby>霞<rt>かすみ</rt></ruby>というキャラが<br>誕生した経緯を教えて下さい。
+            </div>
+            <div class="a-block" style="margin-top: 15px;">
+                <span class="a-marker" style="font-size: 50px;">A</span>
+                <span class="a-text">普通でミーハーな<br>奴が欲しかったので。</span>
+            </div>
+        </div>
+
+        <!-- 全身图 -->
+        <div class="manga-panel l-panel-2">漫画コマ<br>(シン・陰流 簡易領域)</div>
+
+        <!-- Q2 -->
+        <div class="qa-block l-qa-2">
+            <div class="q-text">
+                <span class="q-marker">Q</span>
+                ミーハーだから“<ruby>三輪<rt>みわ</rt></ruby>”、では“<ruby>霞<rt>かすみ</rt></ruby>”はどこから？
+            </div>
+            <div class="a-block">
+                <span class="a-marker">A</span>
+                <span class="a-text">昔「良い字面だなー」って思ってた同級生の名前から。</span>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qa-block l-qa-3">
+            <div class="q-text">
+                <span class="q-marker">Q</span>
+                中学生でバイトをできたのは、どうしてですか？
+            </div>
+            <div class="a-block">
+                <span class="a-marker">A</span>
+                <span class="a-text">無許可</span>
+            </div>
+        </div>
+
+        <!-- 黑框引用 1 -->
+        <div class="black-box-quote l-quote-1">
+            中1の時バイト中シン・陰流最高師範に<br>
+            「君、呪術師やんない？」とスカウトされて<br>
+            流されるままここまで生きてしまった。<br>
+            <span style="font-size: 11px; float: right; font-weight: normal; margin-top: 2px;">(5巻P88引用)</span>
+        </div>
+
+        <!-- Q4 -->
+        <div class="qa-block l-qa-4">
+            <div class="q-text">
+                <span class="q-marker">Q</span>
+                なぜ呪術師にスカウトされたのでしょうか？
+            </div>
+            <div class="a-block">
+                <span class="a-marker">A</span>
+                <span class="a-text">髪の毛。呪いが見えてる事。</span>
+            </div>
+        </div>
+
+        <!-- 拔刀图 -->
+        <div class="manga-panel l-panel-3">漫画コマ<br>(三輪 抜刀)</div>
+
+        <!-- 黑框引用 2 -->
+        <div class="black-box-quote l-quote-2">
+            自分の事を「まとも・普通・一般的」と<br>
+            思っていて実際そうなんだけど普通の<br>
+            まま呪術師やってる事は少し異常。<br>
+            <span style="font-size: 11px; float: right; font-weight: normal; margin-top: 2px;">(5巻P88引用)</span>
+        </div>
+
+        <!-- Q5 -->
+        <div class="qa-block l-qa-5">
+            <div class="q-text">
+                <span class="q-marker">Q</span>
+                呪術師でありながらピュアでいられる事が異常、という彼女が自分を保てている理由は？
+            </div>
+            <div class="a-block">
+                <span class="a-marker">A</span>
+                <span class="a-text">価値観が地に足ついてるからじゃないですかね。</span>
+            </div>
+        </div>
+
+        <!-- 机械丸图 -->
+        <div class="manga-panel l-panel-4">漫画コマ<br>(三輪＆メカ丸)</div>
+
+        <!-- Q6 -->
+        <div class="qa-block l-qa-6">
+            <div class="q-text">
+                <span class="q-marker">Q</span>
+                <ruby>メカ丸<rt>めかまる</rt></ruby>の感情を少しでも読み取れていましたか？
+            </div>
+            <div class="a-block">
+                <span class="a-marker">A</span>
+                <span class="a-text">微妙〜</span>
+            </div>
+        </div>
+
+        <div class="page-num-l">31</div>
+    </div>
+
+    <!-- ============== 右页 (Page 18) ============== -->
+    <div class="page">
+        
+        <!-- 顶部大标题 -->
+        <div class="r-title-box">担当した術師が数名返り討ち</div>
+
+        <!-- 惊恐图 -->
+        <div class="manga-panel r-panel-1">漫画コマ<br>(憂太 驚き)</div>
+
+        <!-- 右 Q1 -->
+        <div class="qa-block r-qa-1">
+            <div class="q-text">
+                <span class="q-marker">Q</span>
+                6年もの間、<ruby>里香<rt>りか</rt></ruby>が起こしてきた「事件」に呪術関係者が目を付けなかった理由はあるのでしょうか？
+            </div>
+            <div class="a-block" style="margin-top:10px;">
+                <span class="a-marker">A</span>
+                <span class="a-text">初めはそこまで規模の大きいトラブルは起こしておらず（身内関係が多かった）、0巻冒頭のロッカー詰めの前に決め手となる大きな事件があり、後追いで調査、記録。担当した術師が数名返り討ち。五条へお鉢が回るといった流れ。</span>
+            </div>
+        </div>
+
+        <!-- 竖排大字 -->
+        <div class="r-vertical-text">
+            <ruby>憂太<rt>ゆうた</rt></ruby>は<ruby>隔世<rt>かくせい</rt></ruby>遺伝的なあれ
+        </div>
+
+        <!-- 右 Q2 -->
+        <div class="qa-block r-qa-2">
+            <div class="q-text">
+                <span class="q-marker">Q</span>
+                現在、家族との関係はどのようになっているのでしょうか？
+            </div>
+            <div class="a-block">
+                <span class="a-marker">A</span>
+                <span class="a-text">妹とは既に普通に連絡とってます。両親は難しそう。</span>
+            </div>
+        </div>
+
+        <!-- 右 Q3 -->
+        <div class="qa-block r-qa-3">
+            <div class="q-text">
+                <span class="q-marker">Q</span>
+                <ruby>菅原道真<rt>すがわらのみちざね</rt></ruby>の子孫という事は、<ruby>乙骨<rt>おっこつ</rt></ruby>も乙骨家族も呪術師の家系なのでしょうか？
+            </div>
+            <div class="a-block">
+                <span class="a-marker">A</span>
+                <span class="a-text"><ruby>乙骨<rt>おっこつ</rt></ruby>の家族は非術師です。<ruby>憂太<rt>ゆうた</rt></ruby>は隔世遺伝的なあれです。</span>
+            </div>
+        </div>
+
+        <!-- 五条悟图 -->
+        <div class="manga-panel r-panel-2" style="border:none; background:transparent;">
+             <div class="manga-panel" style="width: 100%; height: 100%; border-radius: 50%;">漫画コマ<br>(五条 ピース)</div>
+        </div>
+
+        <!-- 侧脸图 -->
+        <div class="manga-panel r-panel-3">漫画コマ<br>(憂太 横顔)</div>
+
+        <!-- 右 Q4 -->
+        <div class="qa-block r-qa-4">
+            <div class="q-text">
+                <span class="q-marker">Q</span>
+                京都校との交流会で圧勝したのは「<ruby>里香<rt>りか</rt></ruby>」を出したからですか？<ruby>憂太<rt>ゆうた</rt></ruby>の実力ですか？
+            </div>
+            <div class="a-block" style="margin-top:10px;">
+                <span class="a-marker" style="font-size: 50px;">A</span>
+                <span class="a-text" style="font-size: 18px; font-weight: bold;">「出した」というより「出ちゃった」<br>です。後始末が大変でした。</span>
+            </div>
+        </div>
+
+        <div class="page-num-r">18</div>
+    </div>
+</div>
+
+</body>
+</html>

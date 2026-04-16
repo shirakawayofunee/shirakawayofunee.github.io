@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "title";
+  src: url("../font/DreamHanSerifJP-W27.ttf") format("truetype");
+  font-display: swap;
+}
 /* ====================== partwan 专属完整样式（直接替换你原来的 partwan 所有样式）====================== */
 
 .metric-label-group span{
@@ -244,7 +249,7 @@ color:#fff;
 .add_browser_window {
     background-color: #151516; /* 窗口背景深色 */
     width: 100%;
-    height: auto;            /* 高度自动，不再强制 100% */
+    height: 70%;            /* 高度自动，不再强制 100% */
     aspect-ratio: 16 / 9;    /* 强制锁定宽高比为 14:9 */
     max-height: 100vh;        /* 防止在小屏幕上高度溢出屏幕 */
 /*     border-radius: 12px; */
@@ -319,6 +324,15 @@ color:#fff;
     min-height: 0;    
     scrollbar-width: thin;
     scrollbar-color: #444 transparent;
+}
+
+.text-huge {
+  color: #fff;
+  font-family: "title";
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -1px;
 }
 
 /* --- 瀑布流布局核心 --- */

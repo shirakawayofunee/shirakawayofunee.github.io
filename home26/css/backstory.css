@@ -1,8 +1,42 @@
+
+
+#slide5 .pc, 
+.backstory-mask {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.backstory-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000; /* 纯黑底色 */
+  opacity: 0;       /* 初始完全透明 */
+  z-index: 100;
+  pointer-events: none;
+  will-change: opacity; /* 优化性能，减少闪烁 */
+}
+
+/* 新增：外层包裹器的基础样式 */
+.gsap-section {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 你的原有代码不需要动，只需确保外层高度也是铺满的即可 */
 .backstory {
+  width: 100%;
+  height: 100%;
   display: flex;
   box-sizing: border-box;
   padding-top: 10vh;
 }
+
 .backstory-left {
   box-sizing: border-box;
   width: 57%;

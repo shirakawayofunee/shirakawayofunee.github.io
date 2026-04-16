@@ -10,40 +10,107 @@
   font-family: "cn";
   src: url(../font/Sans.ttf);
 }
-/* @font-face {
-  font-family: "myFont";
-  src: url(../font/myFont.html);
-} */
+
 @font-face {
   font-family: "myFont";
   src: url("../font/DreamHanSansJP-W10.ttf") format("truetype");
   font-display: swap;
 }
 
-html,
-body {
+/* 1. 解封浏览器的原生滚动！极其重要！ */
+html, body {
+  margin: 0;
+  padding: 0;
+  /* 重点：一定要干掉 overflow: hidden ! 强制开启垂直滚动 */
+  overflow-y: auto !important; 
+  overflow-x: hidden;
+  height: auto !important; /* 让高度由内部内容自动撑开，不要写死 100% */
+  scroll-behavior: auto; /* 平滑滚动我们交给 GSAP，这里用原生的 */
+  color: #000;
   position: relative;
-  height: 100%;
   font-family: 'myFont';
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* 重点：不要写 height: 100%，要让内容撑开高度 */
+  height: auto !important; 
+  min-height: 100vh;
+  
+  /* 之前的背景是黑色的，确保这里是透明的，否则会挡住底层的 .slide-bg */
+  background-color: transparent !important; 
+  
+  font-family: 'myFont';
+  color: #fff; /* 建议设为白色，因为背景通常是深色的 */
   scrollbar-color: transparent transparent;
   scrollbar-track-color: transparent;
   -ms-scrollbar-track-color: transparent;
-  /* font-family: "myFont"; */
-  color: #000;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  /* cursor: none; */
-  background: #000;
+}
+
+/* 2. 新的主包裹层，不需要任何特殊定位，就是一个普通的容器 */
+.gsap-main-container {
+  width: 100%;
+  position: relative;
+  z-index: 999; /* 确保在背景层之上 */
+  display: block; /* 确保不是隐藏状态 */
+}
+
+/* 3. 让每一个模块刚好铺满一整个屏幕 */
+.gsap-slide {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  /* 这里写 overflow: hidden 是为了防止每一屏里面的元素飞出当前屏，而不是锁死整个页面 */
+  overflow: hidden; 
+}
+
+/* 建议新建一个容器，或者修改你的 .slide-bg */
+.slide-bg {
+  position: fixed;    /* 关键：固定在视口，不随页面滚动 */
+  top: 0;
+  left: 0;
+  width: 100vw;       /* 使用视口单位确保填满 */
+  height: 100vh;
+  z-index: -1;        /* 放在最底层，别挡住内容 */
+  
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  
+  /* 解决“放大/缩放”的关键 */
+  background-size: cover; 
+  /* 如果你绝对不能忍受任何像素被裁剪，用 100% 100%，
+     但如果屏幕比例不是 16:9，图片会变形（拉伸）。
+     'cover' 是目前主流的做法，它会等比例缩放直到填满。 */
+}
+
+
+/* 让 slide5 处于底层 */
+#slide5 {
+  position: relative;
+  overflow: hidden; /* 必须，防止推上去的内容溢出 */
+  z-index: 5 !important; 
+}
+
+/* 让 slide6 处于顶层，这样它才能“盖过” slide5 的幕布 */
+#slide6 {
+  position: relative;
+  z-index: 10 !important; 
+  background-color: #fff; /* 确保 slide6 有背景色，否则会透过去看到 slide5 */
+}
+
+/* 确保遮罩只在 slide5 内部起作用 */
+#slide5 .backstory-mask {
+  z-index: 100; /* 这个 100 只是相对于 slide5 内部 */
+  pointer-events: none;
 }
 
 .swiperBG {
   width: 100%;
   height: 100%;
-  background: url("../img/bg.jpg") no-repeat bottom;
+  background: url("../img/bg.jpg") no-repeat;
   background-size: cover;
   position: absolute;
   z-index: 10;
@@ -82,11 +149,15 @@ body {
   width: 0;
 }
 .head {
-  position: absolute;
+  position: fixed; /* 核心：固定在屏幕可视区域，不随页面滚动而滚走 */
+  top: 0;
+  left: 0;
+  /* width: 100vw; */
+  z-index: 999999 !important;
+/*   position: absolute; */
   /* background: yellowgreen; */
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
   /* background: url("../img/first/top.png") no-repeat center; */
-
   background-size: 100% 100%;
   width: 100%;
   height: 6.25rem;
@@ -530,3 +601,5 @@ h1 {
       display: none;
   }
 }
+
+
