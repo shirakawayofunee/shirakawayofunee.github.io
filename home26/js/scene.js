@@ -542,7 +542,7 @@ function renderInfo(info) {
       item.innerHTML = `
         <div class="glossary-term">
             <div class="term-text">${g.term}</div>
-            <div class="term-icon" style="display:inline-block; font-weight:400;" font-size:59px;>+</div>
+            <div class="term-icon" style="display:inline-block; font-weight:600;" font-size:59px;>+</div>
         </div>
         <div class="glossary-desc">
             <div class="desc-inner">${g.desc}</div>

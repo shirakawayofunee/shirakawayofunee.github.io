@@ -393,7 +393,7 @@ rt{
 
  .glossary-term {
     /* 移除了背景色和边框，只保留底部细线显得更干净 */
-    padding: 12px 6px;
+    padding: 9px 6px;
     cursor: pointer;
     color: rgba(1, 1, 1, 1);
     display: flex;
@@ -404,9 +404,14 @@ rt{
 }
 
 .glossary-term:hover { 
-    background: #555; 
-    color: var(--panel-bg);
+    background: #cfcfcf; 
 }
+
+.term-text{
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
 
 .glossary-desc {
     background: transparent; /* 背景透明，避免色块堆积感 */
@@ -416,7 +421,7 @@ rt{
 }
 
 .desc-inner {
-    padding: 0 6px 16px 6px; /* 用内层容器来撑开上下边距，不要写在外层容器上 */
+    padding: 0 6px 9px 6px; /* 用内层容器来撑开上下边距，不要写在外层容器上 */
 }
 
 

@@ -23,12 +23,12 @@ export default {
     characters: [
       {
         name: `工事中`,
-        avatar: `img/dh/`,
+        avatar: `img/dh/leopold402.png`,
         note: `工事中`,
       },
       {
         name: `工事中`,
-        avatar: `img/dh/`,
+        avatar: `img/dh/x402.png`,
         note: `上庭の七代目執行人、高き壁に閉じ込められ感情を奪われた囚人。`,
       },
       {
@@ -47,7 +47,7 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年8月26日<br>第二観測庭(意識空間)`,
+      text: `N.F.113年8月26日<br>理性の殿堂·第二観測庭(意識空間)`,
       bubbleStyle: "center",
     },
     {
@@ -229,7 +229,6 @@ export default {
     {
       type: `narration`,
       text: `業師は再びShalomに視線を戻す。この執行人の体には何の痕跡もなく、平然としている。`,
-
     },
     {
       type: `dialogue`,
@@ -700,7 +699,7 @@ export default {
     {
       type: `narration`,
       text: `（回想）N.F.103年「Garden」庭院`,
-      "bubbleStyle": "end-void" 
+      bubbleStyle: "end-void",
     },
     {
       type: `dialogue`,
@@ -798,7 +797,6 @@ export default {
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_95.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" },
       ],
-      
     },
     {
       type: `narration`,
@@ -912,7 +910,6 @@ export default {
     {
       type: `narration`,
       text: `Shalomは再び業師の手首を掴んだ。今度は、業師ですら振りほどくことができない。顔を上げると、あの女の顔がすぐ目の前にあった。`,
-
     },
     {
       type: `dialogue`,
@@ -944,7 +941,10 @@ export default {
       name: `Shalom`,
       text: `私の踏み込めない場所へ、向かってくれ。`,
       voice: [
-        { label: "中", path: "wav/CN/conversation29/vo_event_11042_51_0001.wav" },
+        {
+          label: "中",
+          path: "wav/CN/conversation29/vo_event_11042_51_0001.wav",
+        },
       ],
     },
     {
@@ -1100,7 +1100,6 @@ export default {
     {
       type: `narration`,
       text: `業師は再びShalomの手を振り払い、二歩下がって完全に距離を取った。`,
-
     },
     {
       type: `narration`,
@@ -1230,7 +1229,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
-      
+
       avatar: `img/dh/impatient.png`,
       name: `業師`,
       text: `この裂け目が、君にとって触れてはならないものだと言うなら……`,
@@ -1291,7 +1290,6 @@ export default {
     {
       type: `narration`,
       text: `狂気的な力が雪崩れ込む。Coquelicotは久しく感じなかった生命の充実に震え、裂け目の中から妖しく輝く長剣を引き抜いた。耳をつんざくような轟音と共に、向こう側の狂厄が噴き出す。`,
-
     },
     {
       type: `narration`,
@@ -1312,17 +1310,15 @@ export default {
       type: `narration`,
       text: `広大な庭園が激しく揺れ、虚空から機械のような悲鳴と怒号が響く。そして不吉に広がり続ける裂け目の中から、無数の光の触手がゆっくりと探るように伸びてきた。`,
       bgm: `mp3/bg/conversation30.mp3`,
-      "bubbleStyle": "npc-crowd-noise"
+      bubbleStyle: "npc-crowd-noise",
     },
     {
       type: `narration`,
       text: `光の触手は生き物のように蠢き、すべてを照らし、業師に触れた。彼女はすべてが戻ってきたと感じた。`,
-
     },
     {
       type: `narration`,
       text: `光の触手に囲まれ、空間全体が強烈な感情で満たされていく。反逆の力が身体に入り込み、全ての活力が手の中に戻ってくる。それは、再び自分の命を掌握する快感だった。`,
-
     },
     {
       type: `dialogue`,
@@ -1375,7 +1371,6 @@ export default {
     {
       type: `narration`,
       text: `彼女は両手を広げて光を仰ぎ、笑いながら、ついには涙をこぼした。`,
-
     },
     {
       type: `dialogue`,
@@ -1392,27 +1387,22 @@ export default {
     {
       type: `narration`,
       text: `その光の中に、見慣れた笑顔がいくつも浮かんだ。彼女の花たちだ。抱きしめたい、守りたいと思った。本当なら、自分の『Garden』で安らかに眠りたかった。`,
-
     },
     {
       type: `narration`,
       text: `――だが、最期まで彼女に寄り添ったのは、あの蝋人形のような女だけだった。`,
-
     },
     {
       type: `narration`,
       text: `Shalomは亀裂の前に立ち、光の触手の間で、すべてが業師に集まり、命と力を与え、名状しがたい感情を伝えた。初めて、彼女はその人形から感情を感じた。`,
-
     },
     {
       type: `narration`,
       text: `彼女はCoquelicotを見ていた。希薄な憐れみと悲哀、そしてそれ以上の、ある種の冷徹な期待を込めて。`,
-
     },
     {
       type: `narration`,
       text: `力の起動条件は全て満たされた。Shalomは静かに呟いた。`,
-
     },
     {
       type: `dialogue`,
@@ -1473,12 +1463,10 @@ export default {
     {
       type: `narration`,
       text: `彼女は剣を振るい光の中へと躍り込んだ。今や彼女の目と脳裏にはShalom一人しか映っていない。`,
-
     },
     {
       type: `narration`,
       text: `――どうしても許せず、どうしても屈したくなかったあの女が、いつの間にかCoquelicotの全意識を占領していた。彼女は仇敵に向けて剣を突き立てるが、相手は両手を広げ、まるで彼女の全てを抱擁するかのように待ち受けている。`,
-
     },
     {
       type: `narration`,
@@ -1507,13 +1495,11 @@ export default {
       avatar: `img/dh/xzj.png`,
       name: `Shalom`,
       text: `？！`,
-
     },
 
     {
       type: `narration`,
       text: `金髪の少女が頭上の虚空から突然亀裂を打ち、砕いて転がり落ち、たちまちこの空間の狂厄に侵された。`,
-
     },
     {
       type: `narration`,
