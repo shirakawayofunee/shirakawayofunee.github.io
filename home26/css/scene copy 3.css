@@ -15,10 +15,10 @@
 
 :root {
     /* 左侧面板：黑白工业风 */
-    --panel-bg: rgba(253, 253, 253, 1);
+    --panel-bg: #f2f2f2;
     --list-bg: #ffffff;
-    --border-line: 2px solid rgba(1, 1, 1, 1);
-    --text-main: rgba(1, 1, 1, 1);
+    --border-line: 2px solid #000000;
+    --text-main: #000000;
     --text-sub: #666666;
     --highlight-bg: #e0e0e0;
     --highlight-red: #D40F30;
@@ -50,13 +50,9 @@ rt{
 }
 
 /* 针对 Chrome, Safari, Edge (webkit) */
-.info-panel::-webkit-scrollbar {
+::-webkit-scrollbar {
     display: none;
-}
-
-.chapter-list::-webkit-scrollbar {
-    display: none;
-}
+  }
   
   /* 针对 Firefox 和 IE/Edge */
   html {
@@ -83,12 +79,11 @@ rt{
 
 /* 滚动条样式 */
 .panel::-webkit-scrollbar { width: 6px; }
-.panel::-webkit-scrollbar-thumb { background: rgba(1, 1, 1, 1); }
+.panel::-webkit-scrollbar-thumb { background: #000; }
 .panel::-webkit-scrollbar-track { background: #fff; }
 
 /* --- 左侧：目录栏 (Directory) --- */
 .directory-panel {
-
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -205,7 +200,7 @@ rt{
 .tab-btn:last-child { border-right: none; }
 
 .tab-btn:hover, .tab-btn.active {
-    background-color: rgba(1, 1, 1, 1);
+    background-color: #000;
     color: #fff;
 }
 
@@ -219,7 +214,7 @@ rt{
 }
 
 .chapter-list::-webkit-scrollbar { width: 6px; background: var(--list-bg); }
-.chapter-list::-webkit-scrollbar-thumb { background: rgba(1, 1, 1, 1); }
+.chapter-list::-webkit-scrollbar-thumb { background: #000; }
 
 .chapter-item {
     padding: 15px 10px 15px 12px;
@@ -237,7 +232,7 @@ rt{
 }
 
 .chapter-item:hover { background-color: var(--highlight-bg); }
-.chapter-item.active { background-color: rgba(1, 1, 1, 1); border-bottom-style: solid; }
+.chapter-item.active { background-color: #000; border-bottom-style: solid; }
 
 .chap-title {
     grid-column: 1 / 2;
@@ -364,17 +359,17 @@ rt{
 
 /* --- 右侧：信息栏 (Info) --- */
 .info-panel {
-    background:#f1f1f1;
-    color: rgba(1, 1, 1, 1);
     padding: 12px;
+/*     padding-top: 10px;
+    padding-bottom: 10px; */
     font-size: 0.855rem;
 }
 .info-section {
     margin-bottom: 8px;
 }
 .info-title {
-    color: rgba(1, 1, 1, 1);
-    border-bottom: 2px solid rgba(1, 1, 1, 1);
+    color: #000;
+    border-bottom: 2px solid #000;
     padding-bottom: 8px;
     margin-top: 0;
     margin-bottom: 15px;
@@ -385,47 +380,36 @@ rt{
 
 .glossary-item { 
 /*     height: 35px; */
-/*     margin-bottom: 5px; */
-    border-bottom: 1px solid #ccc;
- }
-
- .glossary-term {
-    /* 移除了背景色和边框，只保留底部细线显得更干净 */
-    padding: 12px 6px;
+    margin-bottom: 5px; }
+.glossary-term {
+    background: #e0e0e0;
+    padding: 3px 6px;
     cursor: pointer;
-    color: rgba(1, 1, 1, 1);
+    color: #000;
+    border: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     font-weight: bold;
-    transition: color 0.3s ease; /* 只保留文字颜色的简单过渡 */
 }
-
-.glossary-term:hover { 
-    background: #555; 
-    color: var(--panel-bg);
-}
-
+.glossary-term:hover { background: #d0d0d0; }
 .glossary-desc {
-    background: transparent; /* 背景透明，避免色块堆积感 */
+    display: none;
+    padding: 10px;
+    background: #f0f0f0;
     color: #555;
-    font-size: 0.8rem;
-    line-height: 1.6; /* 加大行高，提升阅读体验 */
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
-
-.desc-inner {
-    padding: 0 6px 16px 6px; /* 用内层容器来撑开上下边距，不要写在外层容器上 */
-}
-
-
-
-
+.glossary-item.active .glossary-desc { display: block; }
+.glossary-item.active .gloss-term span { transform: rotate(180deg); }
 
 .char-card {
     display: flex;
     margin-bottom: 15px;
     background: #f0f0f0;
-    color: rgba(1, 1, 1, 1);
+    color: #000;
 /*     padding: 10px; */
     border: 1px solid #ccc;
 }
@@ -448,14 +432,14 @@ rt{
     width: 100%;
     margin-top: 10px;
     background: transparent;
-    border: 2px solid rgba(1, 1, 1, 1);
-    color: rgba(1, 1, 1, 1);
+    border: 2px solid #000;
+    color: #000;
     padding: 8px;
     cursor: pointer;
     text-align: center;
     font-weight: bold;
 }
-.link-btn:hover { background: rgba(1, 1, 1, 1); color: #fff; }
+.link-btn:hover { background: #000; color: #fff; }
 
 /* --- 音乐开关 (图片版) --- */
 .music-controls {
@@ -521,7 +505,7 @@ rt{
 }
 
 .cyber-scanlines {
-    background: linear-gradient(to bottom, #fff0, #fff0 50%, rgba(1, 1, 1, 1)3 50%, rgba(1, 1, 1, 1)3);
+    background: linear-gradient(to bottom, #fff0, #fff0 50%, #0003 50%, #0003);
     background-size: 100% 4px;
     pointer-events: none;
     position: fixed;
@@ -566,11 +550,11 @@ rt{
     font-weight: 700;    
     text-transform: uppercase; 
     letter-spacing: 0.025em;   
-    color: rgba(1, 1, 1, 1);
+    color: #000;
     background-color: #fff;
-    border: 4px solid rgba(1, 1, 1, 1); 
+    border: 4px solid #000; 
     cursor: pointer;
-    box-shadow: 6px 6px 0px 0px rgba(1, 1, 1, 1); 
+    box-shadow: 6px 6px 0px 0px #000; 
     transition: all 0.1s linear; 
 }
 
@@ -586,7 +570,7 @@ rt{
 .neo-btn:hover {
     transform: translate(6px, 6px); 
     box-shadow: none; 
-    background-color: rgba(1, 1, 1, 1);
+    background-color: #000;
     color: #fff;
 }
 
@@ -609,9 +593,9 @@ rt{
     padding: 0 2rem;
     margin: 2.5fr; 
     background-color: #fff; 
-    color: rgba(1, 1, 1, 1);            
-    border: 2px solid rgba(1, 1, 1, 1); 
-    box-shadow: 6px 6px 0px 0px rgba(1, 1, 1, 1); 
+    color: #000000;            
+    border: 2px solid #000; 
+    box-shadow: 6px 6px 0px 0px #000; 
     transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     position: relative; 
@@ -621,8 +605,8 @@ rt{
 .synopsis-text a.btn:hover {
     transform: translate(6px, 6px);
     box-shadow: none;
-    background-color: rgba(1, 1, 1, 1); 
-    border-color: rgba(1, 1, 1, 1);     
+    background-color: #000; 
+    border-color: #000;     
     color: #fff;            
 }
 
@@ -677,7 +661,7 @@ rt{
     background: #fff; 
 }
 .script-scroll-area::-webkit-scrollbar-track { 
-    background: rgba(1, 1, 1, 1); 
+    background: #000; 
 }
 
 /* 4. 悬浮按钮 (Neo-Brutalism) */
@@ -702,9 +686,9 @@ rt{
     font-weight: 700;
     font-size: 0.8rem;
     background-color: #fff; 
-    color: rgba(1, 1, 1, 1);            
-    border: 2px solid rgba(1, 1, 1, 1); 
-    box-shadow: 6px 6px 0px 0px rgba(1, 1, 1, 1); 
+    color: #000;            
+    border: 2px solid #000; 
+    box-shadow: 6px 6px 0px 0px #000; 
     cursor: pointer;
     transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -712,9 +696,9 @@ rt{
 .neo-float-btn:hover:not(:disabled) {
     transform: translate(6px, 6px); 
     box-shadow: none;
-    background-color: rgba(1, 1, 1, 1);
+    background-color: #000;
     color: #fff;
-    border-color: rgba(1, 1, 1, 1);
+    border-color: #000;
 }
 .neo-float-btn:disabled {
     opacity: 0.5;
@@ -731,7 +715,7 @@ rt{
     right: 0;
     width: 40px;
     height: 100%; 
-    background: rgba(1, 1, 1, 1);
+    background: #000;
     color: #fff;
     border: none;
     border-left: 2px solid #333;
@@ -1106,7 +1090,7 @@ rt{
 
 /* --- 2. 心态不平稳/崩溃 (bubble-unstable) --- */
 .message-bubble.bubble-unstable {
-    background-color: rgba(1, 1, 1, 1);
+    background-color: #000;
     border: 2px solid var(--highlight-red);
     color: #fff;
     text-shadow: 1.5px 0 0 rgba(212, 15, 48, 0.8), -1.5px 0 0 rgba(0, 212, 255, 0.8);
@@ -1409,7 +1393,7 @@ rt{
 /* 方案 1：泪痕割裂 (用于气泡或旁白) */
 .bubble-recall-drip, 
 .narration.recall-drip {
-    background-color: rgba(1, 1, 1, 1); /* 纯黑底色 */
+    background-color: #000; /* 纯黑底色 */
     color: #fff; /* 极白的锐利文字 */
     border: none;
     box-shadow: none;
@@ -1511,7 +1495,7 @@ rt{
     font-size: 1.15rem;
     letter-spacing: 6px;
     line-height: 3;
-    color: rgba(1, 1, 1, 1);
+    color: #000;
     /* 核心 2：Blue Rain 时光倒流 (向上的蓝色渐变线) */
     background: url('/home26/img/cg/bg_flower23_room_tips.png') no-repeat center; 
 }
@@ -1644,7 +1628,7 @@ rt{
 /* 比如之前的系统日志（sys-log）在白底上可以反转颜色 */
 .script-scroll-area.light-mode .narration.sys-log {
     background-color: #fff;
-    color: rgba(1, 1, 1, 1);
+    color: #000;
     border: 1px solid #ddd;
     border-left: 4px solid var(--highlight-red);
     box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
@@ -1771,8 +1755,8 @@ rt{
     /* background-color: #fff; */
     background: linear-gradient(90deg, rgba(212, 15, 48, 0.15) 0%, transparent 100%);
     color: #bdbdbd !important;
-    border: 3px solid rgba(1, 1, 1, 1);
-    box-shadow: 6px 6px 0px 0px rgba(1, 1, 1, 1);
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0px 0px #000;
     position: relative;
     margin: 30px auto;
     
@@ -1810,7 +1794,7 @@ rt{
 /* 白天模式适配 */
 .script-wrapper.light-mode .narration.npc-press-box {
     box-shadow: 6px 6px 0px 0px var(--highlight-red);
-    border-color: rgba(1, 1, 1, 1);
+    border-color: #000;
     color: #111;
     background: linear-gradient(90deg, rgba(212, 15, 48, 0.08) 0%, transparent 100%);
 }

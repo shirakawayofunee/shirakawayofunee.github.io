@@ -533,26 +533,18 @@ function renderScript(script, defaultBgm = "") {
 function renderInfo(info) {
   const glossaryDiv = document.getElementById("glossary-container");
   glossaryDiv.innerHTML = "";
-  
   if (info.glossary) {
     info.glossary.forEach((g) => {
       const item = document.createElement("div");
       item.className = "glossary-item";
-      // 移除 inline onclick，将 ▼ 替换为 + （符合你截图中的风格）
       item.innerHTML = `
-        <div class="glossary-term">
-            <div class="term-text">${g.term}</div>
-            <div class="term-icon" style="display:inline-block; font-weight:400;" font-size:59px;>+</div>
-        </div>
-        <div class="glossary-desc">
-            <div class="desc-inner">${g.desc}</div>
-        </div>
-      `;
+                <div class="glossary-term" onclick="this.parentElement.classList.toggle('active')">
+                    ${g.term} <span>▼</span>
+                </div>
+                <div class="glossary-desc">${g.desc}</div>
+            `;
       glossaryDiv.appendChild(item);
     });
-
-    // 数据渲染完成后，初始化 GSAP 动画手风琴效果
-    initAccordion(glossaryDiv);
   }
 
   const charDiv = document.getElementById("characters-container");
@@ -988,52 +980,4 @@ function setTheme(mode) {
       btnNight.classList.add('active');
       btnDay.classList.remove('active');
   }
-}
-
-function initAccordion(container) {
-  const items = container.querySelectorAll('.glossary-item');
-  let activeItem = null; // 用于记录当前打开的项
-
-  items.forEach(item => {
-    const term = item.querySelector('.glossary-term');
-    const desc = item.querySelector('.glossary-desc');
-    const icon = item.querySelector('.term-icon');
-
-    // 1. 初始化状态：高度为0，完全透明，隐藏溢出
-    gsap.set(desc, { height: 0, opacity: 0, overflow: "hidden" });
-    gsap.set(icon, { rotation: 0 });
-
-    // 2. 绑定点击事件
-    term.addEventListener('click', () => {
-      const isOpen = item.classList.contains('active');
-
-      // 【核心逻辑】：如果点击了新项，且当前有打开的项，先关掉旧的
-      if (!isOpen && activeItem) {
-        const activeDesc = activeItem.querySelector('.glossary-desc');
-        const activeIcon = activeItem.querySelector('.term-icon');
-        activeItem.classList.remove('active');
-        
-        // 旧项收起动画
-        gsap.to(activeDesc, { height: 0, opacity: 0, duration: 0.4, ease: "power3.inOut" });
-        gsap.to(activeIcon, { rotation: 0, duration: 0.4, ease: "power3.inOut" });
-      }
-
-      // 切换当前点击项的状态
-      if (isOpen) {
-        // 如果点的是自己，且本来是开着的 -> 收起
-        item.classList.remove('active');
-        activeItem = null;
-        gsap.to(desc, { height: 0, opacity: 0, duration: 0.4, ease: "power3.inOut" });
-        gsap.to(icon, { rotation: 0, duration: 0.4, ease: "power3.inOut" });
-      } else {
-        // 如果是关闭状态 -> 展开
-        item.classList.add('active');
-        activeItem = item;
-        // 展开动画：高度设为 "auto"，GSAP 会自动计算真实内容的高度
-        gsap.to(desc, { height: "auto", opacity: 1, duration: 0.4, ease: "power3.inOut" });
-        // 图标旋转 45 度，把 + 变成 ×
-        gsap.to(icon, { rotation: 45, duration: 0.4, ease: "power3.inOut" }); 
-      }
-    });
-  });
 }
