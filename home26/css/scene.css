@@ -364,22 +364,24 @@ rt{
 
 /* --- 右侧：信息栏 (Info) --- */
 .info-panel {
-    background:#f1f1f1;
+    background:#fffffffa;
     color: rgba(1, 1, 1, 1);
     padding: 12px;
     font-size: 0.855rem;
+    margin: 0;
+/*     padding: 0; */
 }
-.info-section {
+/* .info-section {
     margin-bottom: 8px;
-}
+} */
 .info-title {
     color: rgba(1, 1, 1, 1);
+    border-top: 2px solid rgba(1, 1, 1, 1);
     border-bottom: 2px solid rgba(1, 1, 1, 1);
     padding-bottom: 8px;
-    margin-top: 0;
-    margin-bottom: 15px;
+
     font-size: 0.855rem;
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: 1px;
 }
 
