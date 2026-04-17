@@ -49,6 +49,17 @@ body {
   -ms-scrollbar-track-color: transparent;
 }
 
+/* 针对 Chrome, Safari, Edge (webkit) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 针对 Firefox 和 IE/Edge */
+html {
+  ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
 /* 2. 新的主包裹层，不需要任何特殊定位，就是一个普通的容器 */
 .gsap-main-container {
   width: 100%;

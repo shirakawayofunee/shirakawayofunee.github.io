@@ -202,7 +202,7 @@ changeBanner(0);
 // 1. 入场平移 (Slide5 露头 10% 开始，到全屏结束)
 // ======================================================
 gsap.fromTo([".backstory-left", ".backstory-right"],
-    { x: "-30vw" }, 
+    { x: "50vw" }, 
     { 
         x: "0", 
         ease: "none", 
@@ -245,7 +245,7 @@ const exitTl = gsap.timeline({
 });
 
 exitTl
-    // A. 遮罩动画：明确从 0 变到 0.5 (不使用 1 避免变死黑)
+    // A. 遮罩动画
     .fromTo(".backstory-mask", 
         { opacity: 0 }, 
         { opacity: 0.8, ease: "none" }, 
