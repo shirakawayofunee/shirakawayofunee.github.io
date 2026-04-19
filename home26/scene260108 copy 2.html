@@ -55,98 +55,92 @@
 
         <!-- 中间：剧本主容器 (Wrapper) -->
         <main class="panel script-wrapper">
+
+            
+
             <!-- 【修改】悬浮功能栏 -->
-            <div class="script-tools-layer">
-                <div class="auto-play-switch" id="auto-play-btn" onclick="VoiceManager.toggleAuto()">
-                    <span>AUTO</span>
-                    <div class="switch-icon">
-                        <div class="switch-circle"></div>
-                    </div>
+<div class="script-tools-layer">
+    <div class="auto-play-switch" id="auto-play-btn" onclick="VoiceManager.toggleAuto()">
+        <span>AUTO</span>
+        <div class="switch-icon">
+            <div class="switch-circle"></div>
+        </div>
+    </div>
+    <div class="theme-switch-group">
+        <img src="img/dh/sprite_horror_boss_bar_2.png" id="btn-night" onclick="setTheme('dark')">
+        <img src="img/dh/sprite_horror_boss_bar_3.png" id="btn-day" onclick="setTheme('light')">
+    </div>
+
+    <!-- ========== 【新增】阅读设置 Wrapper ========== -->
+    <div class="reading-settings-wrapper">
+        <!-- Aa 按钮 -->
+        <div class="btn-reading-settings" id="btn-reading-settings">Aa</div>
+        
+        <!-- 下拉面板 -->
+        <div id="reading-settings-panel" class="reading-panel hidden">
+            <!-- 字号 -->
+            <div class="rs-row">
+                <span class="rs-label">字号</span>
+                <div class="rs-control">
+                    <input type="range" id="rs-fontsize" min="0.5" max="2.0" step="0.05">
+                    <span id="rs-val-fontsize" class="rs-val">0.85rem</span>
                 </div>
-                <div class="theme-switch-group">
-                    <img src="img/dh/sprite_horror_boss_bar_2.png" id="btn-night" onclick="setTheme('dark')">
-                    <img src="img/dh/sprite_horror_boss_bar_3.png" id="btn-day" onclick="setTheme('light')">
-                </div>
-        
-                <!-- ========== 阅读设置 Wrapper ========== -->
-                <div class="reading-settings-wrapper">
-                    <!-- Aa 按钮 -->
-                    <div class="btn-reading-settings" id="btn-reading-settings">Aa</div>
-        
-                    <!-- 下拉面板 -->
-                    <div id="reading-settings-panel" class="reading-panel" style="display: none;">
-        
-                        <!-- 字号 -->
-                        <div class="rs-item">
-                            <div class="rs-label">フォントサイズ</div>
-                            <div class="rs-control-group">
-                                <input type="range" id="rs-fontsize" min="0.5" max="2.0" step="0.05">
-                                <span id="rs-val-fontsize" class="rs-val">0.9rem</span>
-                            </div>
-                        </div>
-        
-                        <div class="rs-item">
-                            <div class="rs-label">文字の太さ</div>
-                            <div class="rs-control-group">
-                                <input type="range" id="rs-fontweight" min="300" max="700" step="100">
-                                <span id="rs-val-fontweight" class="rs-val">400</span>
-                            </div>
-                        </div>
-        
-                        <div class="rs-item">
-                            <div class="rs-label">行間</div>
-                            <div class="rs-control-group">
-                                <input type="range" id="rs-lineheight" min="1.0" max="3.0" step="0.1">
-                                <span id="rs-val-lineheight" class="rs-val">1.8</span>
-                            </div>
-                        </div>
-        
-                        <div class="rs-item">
-                            <div class="rs-label">文字間隔</div>
-                            <div class="rs-control-group">
-                                <input type="range" id="rs-letterspacing" min="-5" max="20" step="1">
-                                <span id="rs-val-letterspacing" class="rs-val">0%</span>
-                            </div>
-                        </div>
-        
-                        <hr class="rs-divider">
-        
-                        <!-- 使用明体 -->
-                        <div class="rs-item rs-item-toggle">
-                            <div class="rs-label">明朝体</div>
-                            <label class="rs-switch">
-                                <input type="checkbox" id="rs-fontfamily">
-                                <span class="rs-slider round"></span>
-                            </label>
-                        </div>
-        
-                        <hr class="rs-divider">
-        
-                        <!-- 恢复默认 -->
-                        <button id="rs-reset-btn" class="rs-btn-reset">デフォルトに戻す</button>
-        
-                    </div>
-                </div>
-        
-        
             </div>
-        
+            <!-- 字宽 (Font Weight) -->
+            <div class="rs-row">
+                <span class="rs-label">字宽</span>
+                <div class="rs-control">
+                    <input type="range" id="rs-fontweight" min="300" max="700" step="100">
+                    <span id="rs-val-fontweight" class="rs-val">400</span>
+                </div>
+            </div>
+            <!-- 使用明体 -->
+            <div class="rs-row">
+                <span class="rs-label">使用明体</span>
+                <div class="rs-control">
+                    <label class="rs-switch">
+                        <input type="checkbox" id="rs-fontfamily">
+                        <span class="rs-slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <!-- 行高 -->
+            <div class="rs-row">
+                <span class="rs-label">行高</span>
+                <div class="rs-control">
+                    <input type="range" id="rs-lineheight" min="1.0" max="3.0" step="0.1">
+                    <span id="rs-val-lineheight" class="rs-val">1.6</span>
+                </div>
+            </div>
+            <!-- 字符间距 -->
+            <div class="rs-row">
+                <span class="rs-label">字符间距</span>
+                <div class="rs-control">
+                    <input type="range" id="rs-letterspacing" min="-5" max="20" step="1">
+                    <span id="rs-val-letterspacing" class="rs-val">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
             <!-- 剧本正文滚动区 -->
             <div class="script-scroll-area" id="script-panel">
                 <div class="script-content" id="script-content">
-        
+                    
                     <div class="preface-box style-c" id="script-header">
                         <p class="chapter-summary" id="header-summary">WAITING FOR INPUT...</p>
                     </div>
-        
+
                     <!-- 原本的正文部分 -->
                     <div class="loading-text">運命を読み取り中……</div>
                 </div>
-        
+                
                 <!-- 底部占位 -->
                 <div style="height: 60px;"></div>
             </div>
-        
+
         </main>
 
         <!-- 3. 永久悬浮导航按钮层 -->

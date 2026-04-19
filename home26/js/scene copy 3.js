@@ -1038,14 +1038,14 @@ function initAccordion(container) {
   });
 }
 
+
 // ==================== 阅读设置管理器 ====================
 const ReadingSettingsManager = {
-  // 默认设置常量
   defaultSettings: {
-      fontSize: 0.9,
+      fontSize: 0.85,
       fontWeight: 400,
       isMing: false,
-      lineHeight: 1.8,
+      lineHeight: 1.6,
       letterSpacing: 0
   },
   currentSettings: {},
@@ -1060,11 +1060,13 @@ const ReadingSettingsManager = {
       }
       
       this.cacheDOM();
-      if(!this.panel) return;
+      if(!this.panel) return; // 如果找不到面板节点，停止执行防止报错
 
       this.bindEvents();
       this.applyToCSS();
       this.updateUI();
+      
+      console.log("[阅读设置] 模块初始化完成");
   },
 
   cacheDOM() {
@@ -1081,12 +1083,10 @@ const ReadingSettingsManager = {
       this.valWeight = document.getElementById('rs-val-fontweight');
       this.valLineHeight = document.getElementById('rs-val-lineheight');
       this.valLetterSpacing = document.getElementById('rs-val-letterspacing');
-      
-      this.btnReset = document.getElementById('rs-reset-btn');
   },
 
   bindEvents() {
-      // Toggle 面板显隐
+      // Toggle 面板显隐控制 【修复点：直接操作 display 属性】
       this.btnAa.addEventListener('click', (e) => {
           e.stopPropagation();
           if (this.panel.style.display === 'none' || this.panel.style.display === '') {
@@ -1098,7 +1098,7 @@ const ReadingSettingsManager = {
           }
       });
 
-      // 点击外部关闭面板
+      // 点击外部区域关闭面板
       document.addEventListener('click', (e) => {
           if (this.panel && this.panel.style.display === 'flex') {
               if (!this.panel.contains(e.target) && e.target !== this.btnAa) {
@@ -1108,15 +1108,12 @@ const ReadingSettingsManager = {
           }
       });
 
-      // 绑定输入事件
+      // 绑定滑块
       this.inputSize.addEventListener('input', (e) => this.handleInput('fontSize', e.target.value));
       this.inputWeight.addEventListener('input', (e) => this.handleInput('fontWeight', e.target.value));
       this.inputLineHeight.addEventListener('input', (e) => this.handleInput('lineHeight', e.target.value));
       this.inputLetterSpacing.addEventListener('input', (e) => this.handleInput('letterSpacing', e.target.value));
       this.inputFamily.addEventListener('change', (e) => this.handleInput('isMing', e.target.checked));
-      
-      // 绑定恢复默认按钮
-      this.btnReset.addEventListener('click', () => this.resetToDefault());
   },
 
   handleInput(key, value) {
@@ -1134,45 +1131,22 @@ const ReadingSettingsManager = {
       root.style.setProperty('--rs-font-family', this.currentSettings.isMing ? '"ming", serif' : '"myFont", sans-serif');
       root.style.setProperty('--rs-line-height', this.currentSettings.lineHeight);
       
+      // 【修复点】：将百分比 (例如 10%) 换算为 CSS 支持的 em 单位 (0.1em)
       const spacingEm = this.currentSettings.letterSpacing / 100;
       root.style.setProperty('--rs-letter-spacing', `${spacingEm}em`);
   },
 
   updateUI() {
-      // 更新表单控件的值
       this.inputSize.value = this.currentSettings.fontSize;
       this.inputWeight.value = this.currentSettings.fontWeight;
       this.inputLineHeight.value = this.currentSettings.lineHeight;
       this.inputLetterSpacing.value = this.currentSettings.letterSpacing;
       this.inputFamily.checked = this.currentSettings.isMing;
 
-      // 更新文本显示
       this.valSize.textContent = `${this.currentSettings.fontSize.toFixed(2)}rem`;
       this.valWeight.textContent = this.currentSettings.fontWeight;
       this.valLineHeight.textContent = this.currentSettings.lineHeight.toFixed(1);
       this.valLetterSpacing.textContent = `${this.currentSettings.letterSpacing}%`;
-      
-      // 更新滑块颜色填充百分比
-      [this.inputSize, this.inputWeight, this.inputLineHeight, this.inputLetterSpacing].forEach(input => {
-          this.updateSliderFill(input);
-      });
-  },
-
-  // 计算滑块比例，用于 CSS linear-gradient 动态上色
-  updateSliderFill(inputEl) {
-      const min = parseFloat(inputEl.min) || 0;
-      const max = parseFloat(inputEl.max) || 100;
-      const val = parseFloat(inputEl.value);
-      const percent = ((val - min) / (max - min)) * 100;
-      inputEl.style.setProperty('--slider-fill', `${percent}%`);
-  },
-  
-  // 恢复默认设置
-  resetToDefault() {
-      this.currentSettings = { ...this.defaultSettings };
-      this.applyToCSS();
-      this.updateUI();
-      this.saveSettings();
   },
 
   saveSettings() {
@@ -1182,7 +1156,7 @@ const ReadingSettingsManager = {
   }
 };
 
-// 确保 DOM 挂载后执行
+// 【修复点】确保挂载
 document.addEventListener("DOMContentLoaded", () => {
   ReadingSettingsManager.init();
 });

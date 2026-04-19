@@ -23,11 +23,11 @@
     --highlight-bg: #e0e0e0;
     --highlight-red: #D40F30;
     --highlight-red: #fc0214;
-    --rs-font-size: 0.9rem;
+    --rs-font-size: 0.85rem;
     --rs-font-weight: 400;
     --rs-font-family: "myFont", sans-serif;
-    --rs-line-height: 1.8;
-    --rs-letter-spacing: 0em; /* 【修复点】CSS原生不支持百分比，这里换成默认的 0em */
+    --rs-line-height: 1.6;
+    --rs-letter-spacing: 0%;
 }
 
 body {
@@ -54,6 +54,171 @@ rt{
     box-sizing: border-box;
 }
 
+/* 将变量应用到你的剧本正文内容上 */
+/* 请确保选择器能精确覆盖到你原本的正文文本（通常是 .message-bubble 和 .narration） */
+#script-content .message-bubble,
+#script-content .narration {
+    font-size: var(--rs-font-size) !important;
+    font-weight: var(--rs-font-weight) !important;
+    font-family: var(--rs-font-family) !important;
+    line-height: var(--rs-line-height) !important;
+    letter-spacing: var(--rs-letter-spacing) !important;
+    transition: all 0.2s ease; /* 调整时增加平滑过渡 */
+}
+
+/* ==================== 面板 UI 样式 ==================== */
+.reading-settings-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.btn-reading-settings {
+    cursor: pointer;
+    font-family: serif; /* 让 Aa 看起来更符合文本设置图标的语义 */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ccc;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    user-select: none;
+}
+.btn-reading-settings:hover,
+.btn-reading-settings.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.reading-panel {
+    position: absolute;
+    top: 120%; /* 在 Aa 按钮下方弹出 */
+    right: 0;  /* 整体右对齐，如果你希望它居中可以改 right: 50%; transform: translateX(50%); */
+    width: 25vw;
+    min-width: 260px;
+    background: #1e1e1e; /* 暗色主题背景 */
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 9999;
+    
+    /* 动画与隐藏状态 */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+}
+
+.reading-panel.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+/* 白天模式面板颜色覆盖 (配合你的 .light-mode) */
+.light-mode .btn-reading-settings { color: #333; }
+.light-mode .btn-reading-settings:hover,
+.light-mode .btn-reading-settings.active { background: rgba(0,0,0,0.05); }
+.light-mode .reading-panel {
+    background: #fdfdfd;
+    border-color: #ddd;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.light-mode .rs-label { color: #333; }
+.light-mode .rs-val { color: #666; }
+
+/* 内部行布局 */
+.rs-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rs-label {
+    font-size: 0.85rem;
+    color: #ddd;
+    white-space: nowrap;
+}
+
+.rs-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.rs-val {
+    font-size: 0.8rem;
+    color: #aaa;
+    width: 48px; /* 固定宽度防止数字跳动 */
+    text-align: right;
+    font-family: monospace;
+}
+
+/* 原生滑块样式美化 */
+.rs-control input[type=range] {
+    -webkit-appearance: none;
+    width: 120px;
+    height: 4px;
+    background: #555;
+    border-radius: 2px;
+    outline: none;
+}
+.rs-control input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #D40F30; /* 呼应你原本的主题红 */
+    cursor: pointer;
+}
+
+/* Toggle Switch 样式 (iOS风格) */
+.rs-switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+.rs-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.rs-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #555;
+    transition: .4s;
+    border-radius: 20px;
+}
+.rs-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+.rs-switch input:checked + .rs-slider {
+    background-color: #D40F30;
+}
+.rs-switch input:checked + .rs-slider:before {
+    transform: translateX(16px);
+}
+
 /* 针对 Chrome, Safari, Edge (webkit) */
 .info-panel::-webkit-scrollbar {
     display: none;
@@ -68,100 +233,6 @@ rt{
     ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;    /* Firefox */
   }
-
-
-/* 【修复点】：增加层级权重，并确保只覆盖正文区域，加上 !important 强制生效 */
-.script-content .message-bubble,
-.script-content .narration {
-    font-size: var(--rs-font-size) !important;
-    font-weight: var(--rs-font-weight) !important;
-    font-family: var(--rs-font-family) !important;
-    line-height: var(--rs-line-height) !important;
-    letter-spacing: var(--rs-letter-spacing) !important;
-    transition: font-size 0.2s, color 0.2s; 
-}
-
-/* ==================== 面板基础样式 ==================== */
-.reading-settings-wrapper { position: relative; display: flex; align-items: center;}
-.btn-reading-settings { cursor: pointer; font-family: serif; font-size: 1.1rem; font-weight: bold; color: #ccc; padding: 4px 10px; border-radius: 4px; transition: all 0.2s; user-select: none; }
-.btn-reading-settings:hover, .btn-reading-settings.active { color: #6d6d6d; background: #dedede; }
-
-.reading-panel { 
-    position: absolute; top: 120%; right: 0; 
-    width: 20vw; min-width: 280px; 
-    background: #1e1e1e; border: 1px solid #444; border-radius: 8px; 
-    padding: 16px 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); 
-    display: flex; flex-direction: column; z-index: 9999; 
-}
-
-/* 白天模式覆盖 */
-.light-mode .btn-reading-settings { color: #333; }
-.light-mode .btn-reading-settings:hover, .light-mode .btn-reading-settings.active { background: rgba(0,0,0,0.05); }
-.light-mode .reading-panel { background: #fdfdfd; border-color: #ddd; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-
-/* ==================== 内部排版：上下结构 ==================== */
-.rs-item { display: flex; flex-direction: column; margin-bottom: 16px; gap: 8px; }
-.rs-item-toggle { flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 4px; gap: 0;}
-
-.rs-label { font-size: 0.85rem; color: #ddd; font-weight: 500; }
-.light-mode .rs-label { color: #333; }
-
-.rs-control-group { display: flex; align-items: center; gap: 16px; width: 100%; }
-
-.rs-val { font-size: 0.85rem; color: #aaa; width: 45px; text-align: right; font-family: sans-serif; }
-.light-mode .rs-val { color: #666; }
-
-/* 分割线 */
-.rs-divider { border: none; border-top: 1px solid #333; margin: 4px 0 16px 0; width: 100%; }
-.light-mode .rs-divider { border-top: 1px solid #eee; }
-
-/* ==================== 滑块深度美化 (仿 Mac 样式) ==================== */
-.rs-control-group input[type=range] {
-    -webkit-appearance: none; flex: 1; height: 4px; border-radius: 2px; outline: none;
-    /* 动态填充颜色：左侧主题红/蓝，右侧底色 */
-    background: linear-gradient(to right, #D40F30 var(--slider-fill, 50%), #444 var(--slider-fill, 50%));
-}
-.light-mode .rs-control-group input[type=range] {
-    background: linear-gradient(to right, #4A90E2 var(--slider-fill, 50%), #e0e0e0 var(--slider-fill, 50%));
-}
-
-/* 圆形白色带阴影的滑块头 */
-.rs-control-group input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none; appearance: none;
-    width: 16px; height: 16px; border-radius: 50%;
-    background: #ffffff;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
-    border: 1px solid #ddd;
-    cursor: pointer;
-    margin-top: -1px; /* 微调垂直居中 */
-}
-
-/* ==================== 开关 Toggle ==================== */
-.rs-switch { position: relative; display: inline-block; width: 40px; height: 22px; }
-.rs-switch input { opacity: 0; width: 0; height: 0; }
-.rs-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .3s; border-radius: 22px; }
-.rs-slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 2px; bottom: 2px; background-color: white; transition: .3s; border-radius: 50%; box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
-.light-mode .rs-slider { background-color: #ddd; }
-.rs-switch input:checked + .rs-slider { background-color: #D40F30; }
-.light-mode .rs-switch input:checked + .rs-slider { background-color: #34C759; /* iOS绿 */ }
-.rs-switch input:checked + .rs-slider:before { transform: translateX(18px); }
-
-/* ==================== 恢复默认按钮 ==================== */
-.rs-btn-reset {
-    width: 100%; padding: 8px 0; background: transparent; 
-    border: 1px solid #444; border-radius: 6px; 
-    color: #aaa; cursor: pointer; transition: 0.2s; font-size: 0.85rem;
-}
-.rs-btn-reset:hover { background: #333; color: #fff; }
-.light-mode .rs-btn-reset { border-color: #ccc; color: #666; }
-.light-mode .rs-btn-reset:hover { background: #f5f5f5; color: #333; }
-
-
-
-
-
-
-
 
 /* --- 布局 (Grid) --- */
 .main-container {
@@ -1301,13 +1372,10 @@ rt{
     height: 40px; /* 轻量级的高度 */
     padding: 0 15px;
     display: flex;
+    justify-content: space-between; /* 左右分列 */
+    align-items: center;
     z-index: 50;
     pointer-events: none; /* 让空白区域穿透点击 */
-    display: flex;
-    flex-direction: row;     /* 确保横向排列 */
-    align-items: center;     /* 垂直方向居中对齐 */
-    justify-content: flex-end; /* 推荐：整体靠右对齐（大多数悬浮工具栏的做法） */
-    gap: 10px; /* 【核心属性】这三个元素之间的距离，绝对等距！嫌大嫌小直接改这个数值 */
 }
 
 .script-tools-layer > * {
