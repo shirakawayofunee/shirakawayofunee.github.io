@@ -8,8 +8,20 @@
 }
 
 @font-face {
+    font-family: "zhengwen";
+    src: url("../font/DreamHanSansJP-W16.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
     font-family: "ming";
     src: url("../font/LXGWNeoZhiSongPlus.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/PretendardJP-Medium.otf") format("truetype");
     font-display: swap;
 }
 
@@ -223,7 +235,7 @@ rt{
 }
 
 .main-title {
-    font-family: 'myFont', "Arial Black", sans-serif;
+    font-family: 'Pretendard', "Arial Black", sans-serif;
     font-weight: 900;
     font-size: 3rem;
     line-height: 1.1;
@@ -741,6 +753,8 @@ rt{
 
 /* 1. 外层容器：Flex 垂直布局 */
 .script-wrapper {
+    font-family: "zhengwen";
+    font-weight: 600;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -749,21 +763,6 @@ rt{
 }
 
 
-/* 概要样式 */
-.chapter-summary {
-    font-family: 'myFont', "Arial Black", sans-serif;
-    font-size: 0.95rem;
-    color: #555;
-    margin: 0;
-    padding-left: 12px;
-    line-height: 1.2;
-    font-weight: 700;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    white-space: pre-line;
-}
 
 /* 3. 滚动区域 */
 .script-scroll-area {
@@ -833,36 +832,6 @@ rt{
     box-shadow: none;
     transform: translate(3px, 3px);
 }
-
-/* --- 沉浸模式按钮 --- */
-.immersive-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px;
-    height: 100%; 
-    background: rgba(1, 1, 1, 1);
-    color: #fff;
-    border: none;
-    border-left: 2px solid #333;
-    cursor: pointer;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-}
-
-.immersive-btn:hover {
-    background: var(--highlight-red);
-}
-
-.immersive-icon {
-    transform: rotate(45deg); 
-    font-weight: bold;
-}
-
 
 /* ==================== 语音播放相关样式 ==================== */
 
@@ -984,7 +953,7 @@ rt{
     border-radius: 50%;         
     color: #aaa;
     font-size: 10px;            
-    font-family: "Microsoft YaHei", sans-serif; 
+    font-family: "myFont", sans-serif; 
     line-height: 1;             
     vertical-align: middle;
     cursor: pointer;
@@ -1352,6 +1321,14 @@ rt{
     word-wrap: break-word;
     display: block;             
     overflow: visible;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.2;
+    font-weight: 700;/* 
+    display: -webkit-box; */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* ==================== 风格选项 C：巨型引号留白 (极简、意识流、戏剧感) ==================== */
