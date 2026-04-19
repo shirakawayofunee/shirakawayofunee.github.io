@@ -477,11 +477,15 @@ rt{
     color: rgba(1, 1, 1, 1);
     border-top: 2px solid rgba(1, 1, 1, 1);
     border-bottom: 2px solid rgba(1, 1, 1, 1);
-    padding-bottom: 8px;
-
+    padding: 5px 0;
+    align-items: center;
     font-size: 0.855rem;
     font-weight: 400;
     letter-spacing: 1px;
+}
+
+.bottom2{
+    border-bottom: 0px solid rgba(1, 1, 1, 1);
 }
 
 .glossary-item { 

@@ -64,8 +64,8 @@
                     </div>
                 </div>
                 <div class="theme-switch-group">
-                    <img src="img/dh/sprite_horror_boss_bar_2.png" id="btn-night" onclick="setTheme('dark')">
-                    <img src="img/dh/sprite_horror_boss_bar_3.png" id="btn-day" onclick="setTheme('light')">
+                    <img src="img/dh/bar_1.png" id="btn-night" onclick="setTheme('dark')">
+                    <img src="img/dh/bar_2.png" id="btn-day" onclick="setTheme('light')">
                 </div>
         
                 <!-- ========== 阅读设置 Wrapper ========== -->
@@ -127,6 +127,13 @@
         
                     </div>
                 </div>
+                <button id="float-btn-prev" class="btn-reading-settings" onclick="navigate(-1)">
+                    <
+                </button>
+    
+                <button id="float-btn-next" class="btn-reading-settings" onclick="navigate(1)">
+                    >
+                </button>
         
         
             </div>
@@ -150,7 +157,7 @@
         </main>
 
         <!-- 3. 永久悬浮导航按钮层 -->
-        <div class="floating-nav-layer">
+<!--         <div class="floating-nav-layer">
             <button id="float-btn-prev" class="neo-float-btn prev-btn" onclick="navigate(-1)">
                 前章
             </button>
@@ -158,12 +165,12 @@
             <button id="float-btn-next" class="neo-float-btn next-btn" onclick="navigate(1)">
                 次章
             </button>
-        </div>
+        </div> -->
         <!-- 右侧：信息栏 (Info) -->
         <aside class="panel info-panel">
             <!-- 1. 出场角色 -->
             <div class="info-section">
-                <div class="info-title">登場人物</div>
+                <!-- <div class="info-title bottom2" >登場人物</div> -->
                 <div id="characters-container" class="oc-window-wrapper"></div>
             </div>
             <!-- 2. 用語解説 -->
