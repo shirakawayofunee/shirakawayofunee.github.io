@@ -1,8 +1,10 @@
 export default {
   meta: {
-    title: `flowers-405「後日談·1」`,
+    title: `flowers-404「終わりに」`,
     bgm: `mp3/bg/conversation32.mp3`,
-    summary: ``
+    summary: `人の世の「貪・瞋・痴」、愛憎と果てなき欲は、物語の終焉と共に消滅するものではない。
+    人間の業――愛と憎悪、貪欲と愚かさ、渦巻く欲望。それらは物語が幕を下ろしたとて、決して消えはしない。
+    `
   },
   infoPanel: {
     glossary: [

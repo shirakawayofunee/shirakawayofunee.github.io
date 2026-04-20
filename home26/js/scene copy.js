@@ -379,24 +379,20 @@ function handleHashChange() {
 async function loadChapter(chapterId) {
   const scriptDiv = document.getElementById("script-content");
   
-  const titleBox = document.getElementById("chapter-title-box"); 
+  // 【修改点】：保护前言节点 (script-header)
+  // 因为现在 script-header 嵌在 script-content 内部，不能直接被 innerHTML 抹掉
   const headerBox = document.getElementById("script-header");
   const summaryEl = document.getElementById("header-summary");
   
   if (summaryEl) {
       summaryEl.textContent = "ACCESSING ARCHIVES...";
   }
-
-    // 【新增】：加载新章节前，旧标题平滑淡出
-    if (titleBox) {
-      titleBox.style.transition = "opacity 0.3s ease";
-      titleBox.style.opacity = 0;
-  }
   
   // 【修改点】：清空容器，放回前言节点，再插入读取中的文字
   scriptDiv.innerHTML = '';
-  if (titleBox) scriptDiv.appendChild(titleBox); 
-  if (headerBox) scriptDiv.appendChild(headerBox); 
+  if (headerBox) {
+      scriptDiv.appendChild(headerBox); 
+  }
   scriptDiv.insertAdjacentHTML('beforeend', '<div class="narration">運命を読み取り中……</div>');
 
   try {
@@ -441,29 +437,6 @@ async function loadChapter(chapterId) {
 
 // --- 新增：更新顶部开场白的函数 ---
 function updateHeaderFromJSON(chapterId, data) {
-  const jsonTitle = (data.meta && data.meta.title) ? data.meta.title : "UNKNOWN RECORD";
-  const titleBox = document.getElementById("chapter-title-box");
-  const titleEl = document.getElementById("chapter-title");
-
-  if (titleBox && titleEl) {
-      titleEl.innerHTML = jsonTitle;
-      
-      // 动画初始状态 (具体 translateY 根据下方风格微调)
-      titleBox.style.transition = "none";
-      titleBox.style.opacity = 0;
-      titleBox.style.transform = "translateY(15px)"; 
-      
-      // 触发重绘以应用 transition
-      void titleBox.offsetWidth; 
-      
-      // 延时执行淡入动画 (平滑淡入)
-      setTimeout(() => {
-          titleBox.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-          titleBox.style.opacity = 1;
-          titleBox.style.transform = "translateY(0)";
-      }, 100); // 略微延迟，让其与Summary有个先后层次感
-  }
-
   const jsonSummary = (data.meta && data.meta.summary) 
                       ? data.meta.summary 
                       : "NO SUMMARY DATA"; 
@@ -473,6 +446,8 @@ function updateHeaderFromJSON(chapterId, data) {
   if (elSummary) {
       elSummary.style.opacity = 0;
       elSummary.textContent = jsonSummary;
+      
+      // 【修改点】：延长淡入时间，并改为更平滑的 ease，增加前言的文学感
       setTimeout(() => {
           elSummary.style.transition = "opacity 0.8s ease";
           elSummary.style.opacity = 1;
@@ -483,11 +458,13 @@ function updateHeaderFromJSON(chapterId, data) {
 // --- 5. 渲染正文 ---
 function renderScript(script, defaultBgm = "") {
   const container = document.getElementById("script-content");
-  const titleBox = document.getElementById("chapter-title-box"); 
+  
+  // 【修改点】：同样保护前言节点，避免被抹除
   const headerBox = document.getElementById("script-header");
   container.innerHTML = "";
-  if (titleBox) container.appendChild(titleBox);
-  if (headerBox) container.appendChild(headerBox);
+  if (headerBox) {
+      container.appendChild(headerBox);
+  }
 
   VoiceManager.reset(script);
 

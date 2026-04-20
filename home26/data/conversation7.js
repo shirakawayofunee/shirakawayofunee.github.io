@@ -2,7 +2,10 @@ export default {
   meta: {
     title: `Blue Rain-007「登場」`,
     bgm: `mp3/bg/conversation7.mp3`,
-    summary: ``
+    summary: `汝の行く先へ我も行き、汝の留まる地に我も留まる。
+    汝の国は我が国、汝の神は我が神。
+    汝の死ぬ地で私も死に、そこに葬られる。
+    死を除いては、決して離れはしない。——《聖書·ルツ記》`
   },
   infoPanel: {
     glossary: [

@@ -1,6 +1,14 @@
+/*
+ * @Author: DCBZ
+ * @Date: 2026-01-03 18:43:50
+ * @LastEditors: your name
+ * @LastEditTime: 2026-04-21 01:24:44
+ * @Description: 
+ * @FilePath: \shirakawayofunee.github.io\home26\data\conversation33.js
+ */
 export default {
   meta: {
-    title: `flowers-406「後日談·2」`,
+    title: `flowers-405「後日談」`,
     bgm: `mp3/bg/终末路.mp3`,
     summary: `工事中。`
   },
