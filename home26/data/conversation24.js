@@ -2,7 +2,8 @@ export default {
   meta: {
     title: `Flowers-302「露の世は露の世ながらさりながら」`,
     bgm: `mp3/bg/conversation24.mp3`,
-    summary: `Xの作戦に気付き、Lも物陰に隠れて反撃を開始した。`
+    summary: `「世があなたがたを憎むより先に、まず私を憎む。」――《ヨハネによる福音書 15:18-27》
+    「これこそ私の骨の骨、私の肉の肉。」――《創世記 2:23》`
   },
   infoPanel: {
     glossary: [

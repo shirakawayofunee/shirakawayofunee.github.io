@@ -27,7 +27,7 @@ export default {
         note: `工事中`,
       },
       {
-        name: `工事中`,
+        name: `高き壁に閉じ込められた囚人`,
         avatar: `img/dh/x402.png`,
         note: `上庭の七代目執行人、高き壁に閉じ込められ感情を奪われた囚人。`,
       },
