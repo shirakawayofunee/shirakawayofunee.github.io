@@ -2035,8 +2035,8 @@ rt{
     text-align: center;
     margin: 25px auto 35px auto;
     padding: 15px 0;
-    width: 85%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 700px;
     position: relative;
 }
 /* 上下优雅的渐变细线 */
