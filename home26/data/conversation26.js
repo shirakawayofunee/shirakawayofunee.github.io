@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-304「失った正義」`,
+    title: `「失った[正]義」`,
     bgm: `mp3/bg/conversation8.mp3`,
     summary: `混乱に陥ったクリスティナは、つまずきながら、正義を追求し始めた……`
   },

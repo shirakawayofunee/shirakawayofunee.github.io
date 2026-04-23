@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `Blue Rain-002「穏やかな朝」`,
+    title: `「穏やかな[朝]」`,
     bgm: `mp3/bg/Gymnopedie.mp3`,
     summary: `雨粒が音を立てる中、Sも敵も制限を受けてしまう`
   },

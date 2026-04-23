@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `Blue Rain-001「招かれざる客」`,
+    title: `「招かれざる[客]」`,
     bgm: `mp3/bg/conversation2.mp3`,
     summary: `工事中`
   },

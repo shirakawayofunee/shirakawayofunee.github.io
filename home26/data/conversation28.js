@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-401「残花の復仇」`,
+    title: `「[残]花の復讐」`,
     bgm: `mp3/bg/conversation28.mp3`,
     summary: `犠牲になった子供たちのために、踏みにじられた花々のために、Lは自らの手でXへ復讐すると決意した。`
   },

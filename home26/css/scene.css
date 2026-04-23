@@ -19,6 +19,12 @@
     font-display: swap;
 }
 
+/* @font-face {
+    font-family: "ming";
+    src: url("../font/FOT-TsukuMinPro-L.otf") format("truetype");
+    font-display: swap;
+} */
+
 @font-face {
     font-family: "Pretendard";
     src: url("../font/PretendardJP-Medium.otf") format("truetype");
@@ -109,7 +115,7 @@ rt{
 /* 白天模式覆盖 */
 .light-mode .btn-reading-settings { color: #333; }
 .light-mode .btn-reading-settings:hover, .light-mode .btn-reading-settings.active { background: rgba(0,0,0,0.05); }
-.light-mode .reading-panel { background: #fdfdfd; border-color: #ddd; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+.light-mode .reading-panel { background: #e1e0e3; border-color: #ddd; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
 
 /* ==================== 内部排版：上下结构 ==================== */
 .rs-item { display: flex; flex-direction: column; margin-bottom: 16px; gap: 8px; }
@@ -438,8 +444,9 @@ rt{
 }
 
 .message-bubble {
-    background-color: rgba(37, 34, 37, 0.95);
+    background-color: #212121;
     color: #c9c7ca;
+    color: rgb(229, 229, 229);
     border: 1px solid #666;
     padding: 15px 15px;
     max-width: 75%;
@@ -475,7 +482,7 @@ rt{
 
 /* --- 右侧：信息栏 (Info) --- */
 .info-panel {
-    background:#fffffffa;
+    background:#fff;
     color: rgba(1, 1, 1, 1);
     padding: 12px;
     font-size: 0.855rem;
@@ -1309,7 +1316,7 @@ rt{
 /* ==================== 前言 / 引言 通用基础设置 ==================== */
 .preface-box {
     width: 100%;
-    margin-bottom: 50px; /* 和下方正文拉开距离 */
+    margin-bottom: 40px; /* 和下方正文拉开距离 */
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -1321,7 +1328,7 @@ rt{
     word-wrap: break-word;
     display: block;             
     overflow: visible;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #555;
     line-height: 1.2;
     font-weight: 700;/* 
@@ -1351,15 +1358,34 @@ rt{
 }
 
 .preface-box.style-c .chapter-summary {
+    color: #eaeaea;
     color: #b7b7b7;
-    font-size: 1.06rem;
+    color: #ececec;
+    
+    font-size: 1.1rem;
     line-height: 2.2;            /* 宽松的行高 */
     letter-spacing: 2px;         /* 增加字间距，提升高级感 */
-    font-weight: normal;         /* 摒弃粗体，追求纤细感 */
+    font-weight: 300;
     padding: 30px 2%;           /* 左右留白 */
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.15); */
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+
 }
+
+
+/* 上下优雅的渐变细线 */
+.preface-box.style-c .chapter-summary::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: radial-gradient(circle, rgba(180,180,180,0.8) 0%, rgba(180,180,180,0) 90%);
+}
+.preface-box.style-c .chapter-summary::after { bottom: 0; }
+
+
 
 /* 方案 1：电影谢幕感 */
 .narration.end-cinematic {
@@ -1676,8 +1702,8 @@ rt{
 
 /* 1. 整体容器背景与默认文字变白 */
 .script-wrapper.light-mode {
-    background-color: #f8f9fa !important; /* 柔和的护眼白 */
-    color: #0b0b0b !important;
+    background: rgb(255, 255, 255,0.99) !important; /* 柔和的护眼白 */
+    color: #000 !important;
 }
 
 /* 2. 旁白文字变黑 */
@@ -2008,39 +2034,16 @@ rt{
   }
 
 
-
-
-  .style1-title-box {
-    text-align: center;
-    margin: 20px auto 30px auto;
-    padding: 0 15px;
-    width: 100%;
-}
-.style1-title {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #D40F30;
-    margin: 0;
-    line-height: 1.4;
-    letter-spacing: 1px;
-    text-shadow: 0px 2px 10px rgba(212, 15, 48, 0.3); /* 轻微发光 */
-}
-/* 移动端适配 */
-@media (max-width: 600px) {
-    .style1-title { font-size: 1.4rem; }
-    .style1-title-box { margin: 15px auto 20px auto; }
-}
-
 .style2-title-box {
     text-align: center;
-    margin: 25px auto 35px auto;
-    padding: 15px 0;
+    margin: 0 0 0 3%;
+    padding: 0 0 15px 0;
     width: 100%;
     max-width: 700px;
     position: relative;
 }
 /* 上下优雅的渐变细线 */
-.style2-title-box::before,
+/* .style2-title-box::before,
 .style2-title-box::after {
     content: "";
     position: absolute;
@@ -2050,13 +2053,14 @@ rt{
     background: radial-gradient(circle, rgba(180,180,180,0.8) 0%, rgba(180,180,180,0) 90%);
 }
 .style2-title-box::before { top: 0; }
-.style2-title-box::after { bottom: 0; }
+.style2-title-box::after { bottom: 0; } */
 
 .style2-title {
     font-family: "ming", "Songti SC", serif; /* 强调文学感衬线体 */
-    font-size: 1.6rem;
-    font-weight: normal;
-    color: #eaeaea; /* 假设为暗色背景，如果亮色背景请改为 #333 */
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: left;
+    color: #f8fbfb; /* 假设为暗色背景，如果亮色背景请改为 #333 */
     margin: 0;
     letter-spacing: 3px;
     line-height: 1.5;
@@ -2083,41 +2087,25 @@ rt{
     .style3-title { font-size: 1.2rem; letter-spacing: 3px; }
 }
 
-.style4-title-box {
-    text-align: center;
-    margin: 10px auto 15px auto;
+/* 全局强调语法样式 */
+.em {
+    font-size: 1.25em;     /* 放大1.25倍 */
+    /* font-weight: 600; */
+    color: #D40F30;        /* 使用项目主色调凸显，如果是黑白风可改成纯白/纯黑 */
+    margin: 0 1px;         /* 左右稍微空出一点距离，防止大字和周围文字挤在一起 */
+    display: inline-block; /* 配合 transform 如果你想做动画可以用 */
+    vertical-align: baseline; /* 保持基线对齐 */
 }
-.style4-title {
-    font-family: inherit; /* 与现有文本保持一致 */
-    font-size: 1.1rem;
-    font-weight: normal;
-    color: #999; /* 柔和的灰色/次要颜色 */
-    font-style: italic;
-    letter-spacing: 1.5px;
-    margin: 0;
-    opacity: 0.8;
+
+/* 针对标题和Summary中如果有不同的大小需求，可以单独微调 */
+#chapter-title .em {
+    font-size: 1.5em; 
+}
+#header-summary .em {
+    font-size: 1.15em;
 }
 
 
-.style5-title-box {
-    text-align: center;
-    margin: 25px auto 30px auto;
-}
-.style5-title {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #FFF;
-    margin: 0 0 8px 0;
-    letter-spacing: 1px;
-}
-.style5-deco {
-    font-size: 0.65rem;
-    color: #D40F30; /* 点缀色 */
-    letter-spacing: 4px;
-    font-family: monospace;
-    opacity: 0.7;
-}
-@media (max-width: 600px) {
-    .style5-title { font-size: 1.3rem; }
-    .style5-deco { font-size: 0.55rem; letter-spacing: 2px; }
+.light-mode .style2-title{
+color: #000;
 }

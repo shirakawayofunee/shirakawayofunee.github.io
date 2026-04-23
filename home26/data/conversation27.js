@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-305「第五現場」`,
+    title: `「第[五]現場」`,
     bgm: `mp3/bg/conversation2.mp3`,
     summary: `混乱に陥ったクリスティナは、つまずきながら、正義を追求し始めた……`
   },

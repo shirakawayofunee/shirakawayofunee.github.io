@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-303「交鋒」`,
+    title: `「[交]鋒」`,
     bgm: `mp3/bg/conversation13.mp3`,
     summary: `上庭協同作戦所の特別観察庁で、宿命のライバル同士の対決が始まった？`
   },

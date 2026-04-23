@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `Blue Rain-005「何のために戦うか」`,
+    title: `「何のために[戦]うか」`,
     bgm: `mp3/bg/conversation5.mp3`,
     summary: `雨粒が音を立てる中で、Sは昔の光景を思い出した。`
   },

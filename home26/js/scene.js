@@ -210,7 +210,7 @@ const chapterList = [
   {
     id: "conversation29",
     category: "flower",
-    title: "402「依頼·満開」",
+    title: "402「満開」",
     subtitle: "Flora",
     dateLabel: "N.F.113/8/26",
   },
@@ -439,6 +439,12 @@ async function loadChapter(chapterId) {
   }
 }
 
+
+function parseEmphasis(text) {
+  if (!text) return "";
+  // 正则解释：匹配 [ 然后捕获中间的任何非 ] 字符，最后匹配 ]
+  return text.replace(/\[([^\]]+)\]/g, '<span class="em">$1</span>');
+}
 // --- 新增：更新顶部开场白的函数 ---
 function updateHeaderFromJSON(chapterId, data) {
   const jsonTitle = (data.meta && data.meta.title) ? data.meta.title : "UNKNOWN RECORD";
@@ -446,7 +452,12 @@ function updateHeaderFromJSON(chapterId, data) {
   const titleEl = document.getElementById("chapter-title");
 
   if (titleBox && titleEl) {
-      titleEl.innerHTML = jsonTitle;
+/*       titleEl.innerHTML = jsonTitle; */
+
+      const jsonTitle = (data.meta && data.meta.title) ? data.meta.title : "UNKNOWN RECORD";
+        
+      // 【修改点】：调用正则替换，并赋值给 innerHTML
+      titleEl.innerHTML = parseEmphasis(jsonTitle);
       
       // 动画初始状态 (具体 translateY 根据下方风格微调)
       titleBox.style.transition = "none";
@@ -472,7 +483,8 @@ function updateHeaderFromJSON(chapterId, data) {
   
   if (elSummary) {
       elSummary.style.opacity = 0;
-      elSummary.textContent = jsonSummary;
+      elSummary.innerHTML = parseEmphasis(jsonSummary);
+      /* elSummary.textContent = jsonSummary; */
       setTimeout(() => {
           elSummary.style.transition = "opacity 0.8s ease";
           elSummary.style.opacity = 1;

@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-403「静かな反逆」`,
+    title: `「静かな反逆」`,
     bgm: `mp3/bg/conversation2.mp3`,
     summary: `無数の光が触手へと凝縮し、無数の感情が怒りの波として集まった。
     それらは隙間の向こうから、現実と狂厄を隔てるギャップを引き裂き、怒涛のように押し寄せる。`

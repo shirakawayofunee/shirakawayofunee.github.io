@@ -1,0 +1,49 @@
+// --- 辅助函数：将 [文本] 替换为带有 .em 类的 span ---
+function parseEmphasis(text) {
+    if (!text) return "";
+    // 正则解释：匹配 [ 然后捕获中间的任何非 ] 字符，最后匹配 ]
+    return text.replace(/\[([^\]]+)\]/g, '<span class="em">$1</span>');
+}
+
+// --- 更新顶部开场白的函数 ---
+function updateHeaderFromJSON(chapterId, data) {
+    const titleBox = document.getElementById("chapter-title-box");
+    const titleEl = document.getElementById("chapter-title");
+
+    // 1. 处理并渲染标题
+    if (titleBox && titleEl) {
+        const jsonTitle = (data.meta && data.meta.title) ? data.meta.title : "UNKNOWN RECORD";
+        
+        // 【修改点】：调用正则替换，并赋值给 innerHTML
+        titleEl.innerHTML = parseEmphasis(jsonTitle);
+        
+        titleBox.style.transition = "none";
+        titleBox.style.opacity = 0;
+        titleBox.style.transform = "translateY(15px)"; 
+        
+        void titleBox.offsetWidth; // 触发重绘
+        
+        setTimeout(() => {
+            titleBox.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+            titleBox.style.opacity = 1;
+            titleBox.style.transform = "translateY(0)";
+        }, 100); 
+    }
+
+    // 2. 处理并渲染前言 Summary
+    const elSummary = document.getElementById("header-summary");
+    if (elSummary) {
+        const jsonSummary = (data.meta && data.meta.summary) ? data.meta.summary : "NO SUMMARY DATA"; 
+        
+        elSummary.style.opacity = 0;
+        
+        // 【核心修改点】：之前用的是 textContent（会把标签当成普通文字输出）
+        // 现在必须改成 innerHTML，这样 <span> 标签才能生效
+        elSummary.innerHTML = parseEmphasis(jsonSummary);
+        
+        setTimeout(() => {
+            elSummary.style.transition = "opacity 0.8s ease";
+            elSummary.style.opacity = 1;
+        }, 50);
+    }
+}

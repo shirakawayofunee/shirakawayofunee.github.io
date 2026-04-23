@@ -1,13 +1,13 @@
 export default {
   meta: {
-    title: `Blue Rain-004「大切なこと」`,
+    title: `「[大]切なこと」`,
     bgm: `mp3/bg/conversation2.mp3`,
     summary: `暴走した能力者たちが束縛を解き、危機が迫る。`
   },
   infoPanel: {
     glossary: [
       {
-        term: `上庭 (Paradeisos)`,
+        term: `上庭`,
         desc: `人类文明的最高统治机构，位于天空之上。`
       },
       {

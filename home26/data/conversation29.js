@@ -1,8 +1,9 @@
 export default {
   meta: {
-    title: `flowers-402「依頼」`,
+    title: `「[満]開」`,
     bgm: `mp3/bg/conversation7.mp3`,
-    summary: `嘘も偽装も雑味もない。すべてを計算し尽くした末に、費やした苦心と労力が、ただの「依頼」に過ぎなかったとは……`,
+    summary: `無数の光が触手へと凝縮し、無数の感情が怒りの波として集まった。
+それらは隙間の向こうから、現実と狂厄を隔てるギャップを引き裂き、怒涛のように押し寄せる。`,
   },
   infoPanel: {
     glossary: [
