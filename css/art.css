@@ -294,16 +294,16 @@ body {
     border-bottom: none;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 12px;
 }
 
 .gallery-header .nav-link {
     border: none;
     color: var(--text-lvl-3);
     font-family: 'myFont', sans-serif;
-    font-size: 0.83rem;
+    font-size: 0.8rem;
     background: transparent !important;
-    padding: 5px 15px;
+    padding: 5px 3px;
     transition: all 0.3s;
 }
 
