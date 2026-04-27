@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>360° 灵动眼睛双风格比稿</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            font-family: sans-serif;
+            overflow: hidden;
+            background: #222;
+        }
+        /* 左侧：极简风格背景 */
+        .panel-left {
+            flex: 1;
+            background-color: #0f1012; /* 类似你原图的深色背景 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #333;
+        }
+        /* 右侧：写实风格背景 */
+        .panel-right {
+            flex: 1;
+            background-color: #e0e5ec;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .title {
+            color: #888;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+        .panel-left .title { color: #555; }
+        
+        svg {
+            /* 禁用鼠标事件，防止鼠标悬停在眼睛上时抖动 */
+            pointer-events: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 风格 1：极简线框风 (还原你的参考图) -->
+    <div class="panel-left">
+        <div class="title">STYLE 1 : 极简线框风</div>
+        <svg id="svg-min" viewBox="0 0 200 100" width="350" height="175">
+            <!-- 外层眼眶 -->
+            <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50" fill="none" stroke="#e0e0e0" stroke-width="4" stroke-linejoin="round"/>
+            <!-- 内层眼眶 -->
+            <path d="M 30 50 Q 100 10 170 50 Q 100 90 30 50" fill="none" stroke="#e0e0e0" stroke-width="2" stroke-linejoin="round"/>
+            
+            <!-- 瞳孔组 -->
+            <!-- transform 会由 JS 动态注入 -->
+            <g id="pupil-min">
+                <!-- vector-effect="non-scaling-stroke" 是为了保证透视变扁时，线条粗细保持不变 -->
+                <circle cx="0" cy="0" r="18" fill="none" stroke="#e0e0e0" stroke-width="3" vector-effect="non-scaling-stroke"/>
+                <circle cx="0" cy="0" r="7" fill="#e0e0e0" vector-effect="non-scaling-stroke"/>
+            </g>
+        </svg>
+    </div>
+
+    <!-- 风格 2：拟物写实风 -->
+    <div class="panel-right">
+        <div class="title">STYLE 2 : 拟物写实风</div>
+        <svg id="svg-real" viewBox="0 0 200 100" width="350" height="175">
+            <defs>
+                <!-- 眼白球体渐变 -->
+                <radialGradient id="sclera-grad" cx="50%" cy="50%" r="50%">
+                    <stop offset="60%" stop-color="#ffffff"/>
+                    <stop offset="100%" stop-color="#b0b5be"/>
+                </radialGradient>
+                <!-- 虹膜渐变 -->
+                <radialGradient id="iris-grad" cx="50%" cy="50%" r="50%">
+                    <stop offset="30%" stop-color="#3a7bd5"/>
+                    <stop offset="90%" stop-color="#113a6b"/>
+                    <stop offset="100%" stop-color="#0a1a3a"/>
+                </radialGradient>
+            </defs>
+
+            <!-- 眼白 (底) -->
+            <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50" fill="url(#sclera-grad)"/>
+            
+            <!-- 瞳孔组 -->
+            <g id="pupil-real">
+                <!-- 虹膜 -->
+                <circle cx="0" cy="0" r="22" fill="url(#iris-grad)"/>
+                <!-- 深邃的内核 -->
+                <circle cx="0" cy="0" r="10" fill="#050a12"/>
+            </g>
+            
+            <!-- 眼眶内阴影盖在最上层，增加立体感 -->
+            <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50" fill="none" stroke="#6b7585" stroke-width="3" opacity="0.4"/>
+        </svg>
+    </div>
+
+    <script>
+        // 1. 监听全局鼠标位置
+        const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        // 核心计算与渲染函数
+        function updateEye(pupilId, svgId, config) {
+            const pupil = document.getElementById(pupilId);
+            const svg = document.getElementById(svgId);
+            
+            // 获取 SVG 在屏幕上的实际中心点坐标
+            const rect = svg.getBoundingClientRect();
+            const eyeCenterX = rect.left + rect.width / 2;
+            const eyeCenterY = rect.top + rect.height / 2;
+
+            // 计算鼠标相对眼睛中心的偏移量
+            let dx = mouse.x - eyeCenterX;
+            let dy = mouse.y - eyeCenterY;
+
+            // 计算真实的鼠标距离和角度
+            let dist = Math.hypot(dx, dy);
+            let angle = Math.atan2(dy, dx);
+
+            // 【关键1：距离压缩】将无限的屏幕距离映射到一个平滑的 0~1 范围内
+            // 600 是一个控制灵敏度的阈值，越大眼睛越不容易看满边界
+            let intensity = Math.min(dist / 600, 1); 
+            // 用 sin 曲线缓出，让靠近边缘时移动得越来越慢
+            let easeIntensity = Math.sin(intensity * Math.PI / 2); 
+
+            // 计算椭圆眼眶在这个角度下的最大允许位移半径
+            // 公式： R = (Rx * Ry) / sqrt((Ry*cosθ)² + (Rx*sinθ)²)
+            let maxR = (config.Rx * config.Ry) / Math.sqrt(
+                Math.pow(config.Ry * Math.cos(angle), 2) + Math.pow(config.Rx * Math.sin(angle), 2)
+            );
+
+            // 目标位移
+            let targetR = maxR * easeIntensity;
+            let targetTx = targetR * Math.cos(angle);
+            let targetTy = targetR * Math.sin(angle);
+
+            // 初始化当前位置记录（用于平滑过渡）
+            if (pupil.currentTx === undefined) pupil.currentTx = 0;
+            if (pupil.currentTy === undefined) pupil.currentTy = 0;
+
+            // 【关键2：Lerp 平滑延迟】
+            // 0.15 是跟随速度，数值越小越肉、惯性越大；数值越大越生硬
+            pupil.currentTx += (targetTx - pupil.currentTx) * 0.15;
+            pupil.currentTy += (targetTy - pupil.currentTy) * 0.15;
+
+            // 根据当前实际位置计算透视形变
+            let currentR = Math.hypot(pupil.currentTx, pupil.currentTy);
+            let currentAngle = Math.atan2(pupil.currentTy, pupil.currentTx);
+            let deg = currentAngle * 180 / Math.PI;
+
+            // 【关键3：透视压扁 (Squish)】
+            // 距离中心越远，X轴方向压得越扁。config.squish 控制最大压扁程度
+            let ratio = maxR > 0 ? Math.min(currentR / maxR, 1) : 0;
+            let scaleX = 1 - (ratio * config.squish);
+
+            // 组合变形并应用：
+            // 1. translate(100,50) 将坐标系原点移到眼眶中心
+            // 2. translate(tx, ty) 移动瞳孔
+            // 3. rotate(deg) 将坐标系 X 轴指向运动方向
+            // 4. scale(scaleX, 1) 在运动方向上压扁，产生 3D 透视错觉
+            pupil.setAttribute('transform', 
+                `translate(100, 50) 
+                 translate(${pupil.currentTx}, ${pupil.currentTy}) 
+                 rotate(${deg}) 
+                 scale(${scaleX}, 1)`
+            );
+        }
+
+        // 动画循环
+        function animate() {
+            // 参数释义：pupilId, svgId, { Rx: 水平最大位移, Ry: 垂直最大位移, squish: 边缘最大压扁系数 }
+            // 注意：Rx 和 Ry 是在 ViewBox (200x100) 比例下的数值
+            
+            updateEye('pupil-min', 'svg-min', { Rx: 42, Ry: 14, squish: 0.45 });
+            updateEye('pupil-real', 'svg-real', { Rx: 40, Ry: 12, squish: 0.35 });
+            
+            requestAnimationFrame(animate);
+        }
+
+        // 启动！
+        animate();
+    </script>
+</body>
+</html>

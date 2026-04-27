@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>360° 灵动眼睛 - 球体裁切版</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            font-family: sans-serif;
+            overflow: hidden;
+            background: #222;
+        }
+        .panel-left {
+            flex: 1;
+            background-color: #0f1012;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #333;
+        }
+        .panel-right {
+            flex: 1;
+            background-color: #d8dee9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .title {
+            color: #888;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+        .panel-left .title { color: #555; }
+        svg { pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <!-- 风格 1：极简线框风 (新增边界裁切) -->
+    <div class="panel-left">
+        <div class="title">STYLE 1 : 极简线框风 (带裁切)</div>
+        <svg id="svg-min" viewBox="0 0 200 100" width="350" height="175">
+            <defs>
+                <!-- 定义一个和眼眶完全一致的裁切遮罩 -->
+                <clipPath id="clip-min">
+                    <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50"/>
+                </clipPath>
+            </defs>
+
+            <!-- 整个瞳孔组被 clip-path 包裹，超出眼眶的部分会被直接隐藏 -->
+            <g clip-path="url(#clip-min)">
+                <g id="pupil-min">
+                    <circle cx="0" cy="0" r="18" fill="none" stroke="#e0e0e0" stroke-width="3" vector-effect="non-scaling-stroke"/>
+                    <circle cx="0" cy="0" r="7" fill="#e0e0e0" vector-effect="non-scaling-stroke"/>
+                </g>
+            </g>
+            
+            <!-- 眼眶线最后画，盖在最上面，确保边缘干净 -->
+            <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50" fill="none" stroke="#e0e0e0" stroke-width="4" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <!-- 风格 2：拟物写实风 (新增 3D 球体光影 + 边界裁切) -->
+    <div class="panel-right">
+        <div class="title">STYLE 2 : 拟物写实风 (3D 球体质感)</div>
+        <svg id="svg-real" viewBox="0 0 200 100" width="350" height="175">
+            <defs>
+                <clipPath id="clip-real">
+                    <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50"/>
+                </clipPath>
+                
+                <!-- 【关键：球体渐变】 fx和fy让高光偏移到左上角，产生圆润的球体感 -->
+                <radialGradient id="sclera-grad" cx="50%" cy="50%" r="50%" fx="35%" fy="35%">
+                    <stop offset="0%" stop-color="#ffffff"/>
+                    <stop offset="70%" stop-color="#dce1e8"/>
+                    <stop offset="100%" stop-color="#9ca5b5"/>
+                </radialGradient>
+                
+                <radialGradient id="iris-grad" cx="50%" cy="50%" r="50%" fx="35%" fy="35%">
+                    <stop offset="0%" stop-color="#4a8ef0"/>
+                    <stop offset="60%" stop-color="#14437a"/>
+                    <stop offset="100%" stop-color="#051224"/>
+                </radialGradient>
+
+                <!-- 【关键：固定内阴影】 模拟眼眶盖在眼球上产生的立体阴影 -->
+                <radialGradient id="inner-shadow" cx="50%" cy="50%" r="50%">
+                    <stop offset="60%" stop-color="rgba(0,0,0,0)"/>
+                    <stop offset="100%" stop-color="rgba(0,0,0,0.5)"/>
+                </radialGradient>
+            </defs>
+
+            <!-- 眼白 (底) -->
+            <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50" fill="url(#sclera-grad)"/>
+            
+            <!-- 裁切区域 -->
+            <g clip-path="url(#clip-real)">
+                <!-- 移动的瞳孔 -->
+                <g id="pupil-real">
+                    <circle cx="0" cy="0" r="24" fill="url(#iris-grad)"/>
+                    <circle cx="0" cy="0" r="10" fill="#040914"/>
+                </g>
+                
+                <!-- 盖在瞳孔之上的固定内阴影 (不随瞳孔移动，制造深邃的球体感) -->
+                <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50" fill="url(#inner-shadow)" pointer-events="none"/>
+            </g>
+            
+            <!-- 眼眶盖板 -->
+            <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50" fill="none" stroke="#6f7a8a" stroke-width="3" opacity="0.6"/>
+        </svg>
+    </div>
+
+    <script>
+        const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        function updateEye(pupilId, svgId, config) {
+            const pupil = document.getElementById(pupilId);
+            const svg = document.getElementById(svgId);
+            const rect = svg.getBoundingClientRect();
+            const eyeCenterX = rect.left + rect.width / 2;
+            const eyeCenterY = rect.top + rect.height / 2;
+
+            let dx = mouse.x - eyeCenterX;
+            let dy = mouse.y - eyeCenterY;
+
+            let dist = Math.hypot(dx, dy);
+            let angle = Math.atan2(dy, dx);
+
+            // 距离压缩，模拟球面限制
+            let intensity = Math.min(dist / 500, 1); 
+            let easeIntensity = Math.sin(intensity * Math.PI / 2); 
+
+            // 限制允许移动的最大半径
+            let maxR = (config.Rx * config.Ry) / Math.sqrt(
+                Math.pow(config.Ry * Math.cos(angle), 2) + Math.pow(config.Rx * Math.sin(angle), 2)
+            );
+
+            let targetTx = (maxR * easeIntensity) * Math.cos(angle);
+            let targetTy = (maxR * easeIntensity) * Math.sin(angle);
+
+            if (pupil.currentTx === undefined) pupil.currentTx = 0;
+            if (pupil.currentTy === undefined) pupil.currentTy = 0;
+
+            // 平滑延迟
+            pupil.currentTx += (targetTx - pupil.currentTx) * 0.15;
+            pupil.currentTy += (targetTy - pupil.currentTy) * 0.15;
+
+            // 计算透视压扁
+            let currentR = Math.hypot(pupil.currentTx, pupil.currentTy);
+            let currentAngle = Math.atan2(pupil.currentTy, pupil.currentTx);
+            let deg = currentAngle * 180 / Math.PI;
+
+            // ratio 控制了变形的时机，越靠近边缘变形越严重
+            let ratio = maxR > 0 ? Math.min(currentR / maxR, 1) : 0;
+            let scaleX = 1 - (ratio * config.squish);
+
+            // 渲染形变
+            pupil.setAttribute('transform', 
+                `translate(100, 50) 
+                 translate(${pupil.currentTx}, ${pupil.currentTy}) 
+                 rotate(${deg}) 
+                 scale(${scaleX}, 1)`
+            );
+        }
+
+        function animate() {
+            // 由于加入了裁切遮罩，我稍微放大了瞳孔可以移动的范围（Rx和Ry），
+            // 这样能让你清楚看到瞳孔被眼角“吃掉”的遮挡效果。
+            updateEye('pupil-min', 'svg-min', { Rx: 55, Ry: 20, squish: 0.5 });
+            updateEye('pupil-real', 'svg-real', { Rx: 50, Ry: 18, squish: 0.4 });
+            
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

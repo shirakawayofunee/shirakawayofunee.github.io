@@ -294,7 +294,7 @@ body {
     border-bottom: none;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 20px;
 }
 
 .gallery-header .nav-link {
@@ -308,11 +308,11 @@ body {
 }
 
 .gallery-header .nav-link:hover {
-    color: var(--text-lvl-1);
+    color: var(--accent-hover);
 }
 
 .gallery-header .nav-link.active {
-    color: var(--text-lvl-1) !important;
+    color: var(--accent-hover) !important;
     font-weight: bold;
 /*     border-bottom: 2px solid var(--accent-main); */
 }
