@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-405「後日談」`,
+    title: `「[後]日談」`,
     bgm: `mp3/bg/终末路.mp3`,
     summary: `無数の「英雄」の名を冠した人々に囲まれながら、少女は夜明けの最初の光を迎えた。`
   },

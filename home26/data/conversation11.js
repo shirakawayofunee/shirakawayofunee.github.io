@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-104「廃墟」`,
+    title: `「[廃]墟」`,
     bgm: `mp3/bg/conversation12.mp3`,
     summary: `ニューシティ治安支局では、治安官と刑事が集まり、次の対策について話し合っている……`
   },

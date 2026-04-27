@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-202「εἰρήνη」`,
+    title: `「εἰρήνη」`,
     bgm: `mp3/bg/conversation14.mp3`,
     summary: `彼女が唯一安心したのは、Shalomが再び傍にいてくれたことだった。`
   },

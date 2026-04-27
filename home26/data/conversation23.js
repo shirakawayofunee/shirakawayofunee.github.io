@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-301「西区作战」`,
+    title: `「[西]区作戦」`,
     bgm: `mp3/bg/conversation12.mp3`,
     summary: `上庭の指示を受け、Xは手持ちの資源を総動員し、作戦計画を開始した。`
   },

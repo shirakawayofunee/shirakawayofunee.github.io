@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `「終わりに」`,
+    title: `「[終]わりに」`,
     bgm: `mp3/bg/conversation32.mp3`,
     summary: `人の世の「貪・瞋・痴」、愛憎と果てなき欲は、物語の終焉と共に消滅するものではない。`
   },

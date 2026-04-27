@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-209「執行人」`,
+    title: `「執行[人]」`,
     bgm: `mp3/bg/conversation20.mp3`,
     summary: `Xは彼女なりのやり方で事態を収拾した。しかし、得るものがあれば代償もある。`
   },

@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `Blue Rain-007「登場」`,
+    title: `「[登]場」`,
     bgm: `mp3/bg/conversation7.mp3`,
     summary: `汝の行く先へ我も行き、汝の留まる地に我も留まる。
     汝の国は我が国、汝の神は我が神。
@@ -91,22 +91,6 @@ export default {
       avatar: `img/dh/leopold1.png`,
       name: `レオポルド`,
       text: `<span>シャーローム</span>`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/leopold1.png`,
-      name: `レオポルド`,
-      text: `<span>シャーローム</span>`,
-      "bubbleStyle": "bubble-recall-drip" 
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/leopold1.png`,
-      name: `レオポルド`,
-      text: `<span>シャーローム</span>`,
-      "bubbleStyle": "bubble-recall-ghost" 
     },
     {
       "type": "narration",

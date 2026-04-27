@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-204「第四現場」`,
+    title: `「第[四]現場」`,
     bgm: `mp3/bg/conversation12.mp3`,
     summary: `第四現場、サンセットクラブ。宴に参加した人間たちは逆に花の養分になった。`
   },

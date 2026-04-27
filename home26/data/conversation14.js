@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-201「創傷」`,
+    title: `「創傷」`,
     bgm: `mp3/bg/conversation14.mp3`,
     summary: `花庭園から逃げ出した探偵は、病院で夢から覚めた。`
   },

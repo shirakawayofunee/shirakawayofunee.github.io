@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-105「第二現場」`,
+    title: `「第[二]現場」`,
     bgm: `mp3/bg/conversation12.mp3`,
     summary: `花が咲いたレンガの壁の下には、どんな秘密が隠されているのだろうか？`
   },

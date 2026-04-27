@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-101「追悼式」`,
+    title: `「追悼[式]」`,
     bgm: `mp3/bg/conversation8.mp3`,
     summary: `FAC記念墓地では、空が静かに泣いているかのように、青い雨が降ってきた。`
   },

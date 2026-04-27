@@ -275,10 +275,13 @@ let lastTriggeredBgm = "";
 const bgmPlayer = document.getElementById("bgm-player");
 bgmPlayer.volume = 0.4;
 
+
 document.addEventListener("DOMContentLoaded", () => {
   initTabs(); 
   renderList(); 
   handleHashChange(); 
+
+  setTheme('light');
 
   window.addEventListener("hashchange", handleHashChange);
 
@@ -292,6 +295,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupAudioUnlock();
 });
 
+function toggleSidebar() {
+  const container = document.querySelector('.main-container');
+  container.classList.toggle('sidebar-collapsed');
+}
 // --- 1. 初始化分类标签 ---
 function initTabs() {
   const container = document.getElementById("category-tabs");

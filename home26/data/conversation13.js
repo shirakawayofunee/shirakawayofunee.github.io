@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-106「业师」`,
+    title: `「业师」`,
     bgm: `mp3/bg/conversation13.mp3`,
     summary: `探偵が目を覚ましたのは、優雅な庭園だった。
     そこは伝説の暗殺組織 「Garden」の拠点だ。`

@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-208「最後通牒」`,
+    title: `「最[後]通牒」`,
     bgm: `mp3/bg/conversation20.mp3`,
     summary: `Xは彼女なりのやり方で事態を収拾した。しかし、得るものがあれば代償もある。`
   },

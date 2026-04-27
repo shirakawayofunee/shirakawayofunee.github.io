@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-102「探偵ゲーム」`,
+    title: `「[探]偵ゲーム」`,
     bgm: `mp3/bg/conversation9.mp3`,
     summary: `犯行現場では女性が水に浮かんでおり、真っ赤な死装束のように、身体の上に花が咲き乱れていた。`
   },

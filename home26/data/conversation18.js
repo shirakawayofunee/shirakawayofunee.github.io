@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-205「二人目」`,
+    title: `「もう一[人]」`,
     bgm: `mp3/bg/conversation12.mp3`,
     summary: `第四現場で見つかったわずかな綻びが、探偵に第三現場の再調査を決意させる。`
   },

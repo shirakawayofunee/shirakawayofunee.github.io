@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `flowers-103「暗殺予告」`,
+    title: `「暗[殺]予告」`,
     bgm: `mp3/bg/conversation10.mp3`,
     summary: `……103年に何があった？`
   },
