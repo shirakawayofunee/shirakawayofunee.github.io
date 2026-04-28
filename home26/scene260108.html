@@ -29,13 +29,12 @@
 
         <!-- 左侧：c (Directory) -->
         <aside class="panel directory-panel">
-                    <!-- 【任务1新增】：左侧侧边栏缩进按钮 -->
-        <div class="sidebar-toggle-btn" onclick="toggleSidebar()">
-            <!-- SVG 折线箭头 -->
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-        </div>
+            <div class="sidebar-toggle-btn" onclick="toggleSidebar()">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </div>
             <div class="dir-header">
                 <div class="header-box">
                     <div class="main-title">運命の織機</div>
@@ -65,7 +64,7 @@
                     </div>
                 </div>
                 <div class="theme-switch-group">
-                    
+
                     <img src="img/dh/bar_2.png" id="btn-day" class="active" onclick="setTheme('light')">
                     <img src="img/dh/bar_1.png" id="btn-night" onclick="setTheme('dark')">
                 </div>
@@ -129,34 +128,36 @@
 
                     </div>
                 </div>
-                <div id="float-btn-prev" class="btn-reading-settings" onclick="navigate(-1)"><</div>
-                <div id="float-btn-next" class="btn-reading-settings" onclick="navigate(1)">></div>
-                
-                
-                <!-- BGM 控制 -->
-                <div class="music-controls">
-                    <img src="img/v2c.png" id="btn-play" class="music-icon" alt="Play" style="display: block;">
-                    <img src="img/v2.gif" id="btn-pause" class="music-icon" alt="Pause" style="display: none;">
-                </div>
-            </div>
+                <div id="float-btn-prev" class="btn-reading-settings" onclick="navigate(-1)">
+                    <
+                        </div>
+                        <div id="float-btn-next" class="btn-reading-settings" onclick="navigate(1)">></div>
 
-            <!-- 剧本正文滚动区 -->
-            <div class="script-scroll-area" id="script-panel">
-                <div class="script-content" id="script-content">
-                    <div id="chapter-title-box" class="style2-title-box">
-                        <div id="chapter-title" class="style2-title"></div>
-                    </div>
-                    <div class="preface-box style-c" id="script-header">
-                        <p class="chapter-summary" id="header-summary">WAITING FOR INPUT...</p>
-                    </div>
 
-                    <!-- 原本的正文部分 -->
-                    <div class="loading-text">運命を読み取り中……</div>
+                        <!-- BGM 控制 -->
+                        <div class="music-controls">
+                            <img src="img/v2c.png" id="btn-play" class="music-icon" alt="Play" style="display: block;">
+                            <img src="img/v2.gif" id="btn-pause" class="music-icon" alt="Pause" style="display: none;">
+                        </div>
                 </div>
 
-                <!-- 底部占位 -->
-                <div style="height: 60px;"></div>
-            </div>
+                <!-- 剧本正文滚动区 -->
+                <div class="script-scroll-area" id="script-panel">
+                    <div class="script-content" id="script-content">
+                        <div id="chapter-title-box" class="style2-title-box">
+                            <div id="chapter-title" class="style2-title"></div>
+                        </div>
+                        <div class="preface-box style-c" id="script-header">
+                            <p class="chapter-summary" id="header-summary">WAITING FOR INPUT...</p>
+                        </div>
+
+                        <!-- 原本的正文部分 -->
+                        <div class="loading-text">運命を読み取り中……</div>
+                    </div>
+
+                    <!-- 底部占位 -->
+                    <div style="height: 60px;"></div>
+                </div>
 
         </main>
 

@@ -340,9 +340,6 @@ html {
 
 /* 1. 整体容器背景与默认文字变白 */
 .script-wrapper.light-mode {
-    /*     background: rgb(254, 254, 254,1) !important;
-
-    background:#e3e2de; */
     background: #FFF;
     color: #000 !important;
 }
@@ -427,22 +424,18 @@ html {
     background: linear-gradient(90deg, rgba(212, 15, 48, 0.08) 0%, transparent 100%);
 }
 
-
-
-
-
 /* --- 布局 (Grid) --- */
 .main-container {
     display: grid;
     grid-template-columns: 21fr 58fr 21fr;
     height: 100vh;
-    gap: 2px;
-    background-color: rgb(1, 1, 1, 1);
+    /* gap: 2px;
+    background-color: rgb(1, 1, 1, 1); */
     transition: grid-template-columns 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .main-container.sidebar-collapsed {
-    grid-template-columns: 3fr 75fr 22fr;
+    grid-template-columns: 3fr 76fr 21fr;
 }
 
 /* 通用面板 */
@@ -452,11 +445,11 @@ html {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    border-right: 1.5px solid rgba(128, 128, 128, 0.15);
 }
 
 /* --- 左侧：目录栏 (Directory) --- */
 .directory-panel {
-
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -783,24 +776,24 @@ html {
 .info-panel {
     background: rgba(253, 253, 253, 1);
     color: rgba(1, 1, 1, 1);
-    padding: 12px;
     font-size: 0.855rem;
     margin: 0;
-    /*     padding: 0; */
 }
 
-/* .info-section {
-    margin-bottom: 8px;
-} */
+.info-section{
+    margin-bottom: 4%;
+}
+
 .info-title {
     color: rgba(1, 1, 1, 1);
-    border-top: 2px solid rgba(1, 1, 1, 1);
-    border-bottom: 2px solid rgba(1, 1, 1, 1);
-    padding: 5px 0;
+    border-top: 1px solid rgba(128, 128, 128, 0.15);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    padding: 2% 5%;
     align-items: center;
     font-size: 0.855rem;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-weight: 800;
+    letter-spacing: 6px;
+
 }
 
 .bottom2 {
@@ -815,8 +808,6 @@ html {
 }
 
 .glossary-term {
-    /* 移除了背景色和边框，只保留底部细线显得更干净 */
-    padding: 9px 6px;
     cursor: pointer;
     color: rgba(1, 1, 1, 1);
     display: flex;
@@ -824,6 +815,7 @@ html {
     align-items: center;
     font-weight: bold;
     transition: color 0.3s ease;
+    padding: 3% 8%;
     /* 只保留文字颜色的简单过渡 */
     /* border-bottom: 1px dashed #aaa; */
 }
@@ -835,6 +827,7 @@ html {
 .term-text {
     font-size: 0.8rem;
     font-weight: 600;
+    
 }
 
 
@@ -910,13 +903,6 @@ html {
 }
 
 /* --- 音乐开关 (图片版) --- */
-.music-controls {
-    position: fixed;
-    top: 10px;
-    right: 1.7%;
-    z-index: 100;
-}
-
 .music-icon {
     width: 25px;
     height: 25px;
@@ -925,103 +911,12 @@ html {
     transition: transform 0.1s;
 }
 
-.music-icon:active {
+/* .music-icon:active {
     transform: scale(0.9);
-}
+} */
 
 /* --- 赛博动画与特效 --- */
-@keyframes glitch-anim-1 {
-    0% {
-        clip-path: inset(20% 0 80% 0);
-        transform: translate(-2px, 1px)
-    }
 
-    20% {
-        clip-path: inset(60% 0 10% 0);
-        transform: translate(2px, -1px)
-    }
-
-    40% {
-        clip-path: inset(40% 0 50% 0);
-        transform: translate(-2px, 2px)
-    }
-
-    60% {
-        clip-path: inset(80% 0 5% 0);
-        transform: translate(1px, -2px)
-    }
-
-    80% {
-        clip-path: inset(10% 0 70% 0);
-        transform: translate(-1px, 1px)
-    }
-
-    to {
-        clip-path: inset(30% 0 50% 0);
-        transform: translate(2px, -1px)
-    }
-}
-
-@keyframes glitch-anim-2 {
-    0% {
-        clip-path: inset(10% 0 60% 0);
-        transform: translate(2px, -1px)
-    }
-
-    20% {
-        clip-path: inset(80% 0 5% 0);
-        transform: translate(-2px, 2px)
-    }
-
-    40% {
-        clip-path: inset(30% 0 20% 0);
-        transform: translate(1px, -2px)
-    }
-
-    60% {
-        clip-path: inset(10% 0 80% 0);
-        transform: translate(-1px, 1px)
-    }
-
-    80% {
-        clip-path: inset(50% 0 30% 0);
-        transform: translate(2px, -1px)
-    }
-
-    to {
-        clip-path: inset(20% 0 70% 0);
-        transform: translate(-2px, 1px)
-    }
-}
-
-.cyber-glitch {
-    position: relative;
-}
-
-.cyber-glitch:before,
-.cyber-glitch:after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--background);
-}
-
-.cyber-glitch:before {
-    left: 2px;
-    text-shadow: -1px 0 #ff00ff;
-    clip-path: inset(0 0 0 0);
-    animation: glitch-anim-1 2s infinite linear alternate-reverse;
-}
-
-.cyber-glitch:after {
-    left: -2px;
-    text-shadow: -1px 0 #00d4ff;
-    clip-path: inset(0 0 0 0);
-    animation: glitch-anim-2 3s infinite linear alternate-reverse;
-}
 
 .cyber-scanlines {
     background: linear-gradient(to bottom, rgba(253, 253, 253, 1)0, rgba(253, 253, 253, 1)0 50%, rgba(1, 1, 1, 1)3 50%, rgba(1, 1, 1, 1)3);
@@ -1681,10 +1576,6 @@ html {
     background-color: inherit;
     /* 融于正文背景 */
     border-bottom: 1px solid rgba(128, 128, 128, 0.15);
-    /* 加一条浅色底部分界线 */
-    border-right: 0;
-
-    /* pointer-events: none; 彻底移除此属性，由于不再遮挡正文，不需要穿透点击了 */
 }
 
 /* 调整沉浸模式按钮样式以适应悬浮状态 */
@@ -2230,6 +2121,7 @@ html {
     color: #333;
     width: 100%;
     box-sizing: border-box;
+    padding: 5% 5% 0 5%;
 }
 
 .oc-window-card {
@@ -2279,7 +2171,6 @@ html {
     flex-grow: 1;
     min-width: 0;
     padding: 12px;
-    /* 从 15px 缩小到 12px，扩大横向空间防止误断行 */
     display: flex;
     flex-direction: column;
     justify-content: center;
