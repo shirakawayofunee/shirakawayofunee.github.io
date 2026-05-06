@@ -47,7 +47,7 @@ body {
     font-family: 'myFont', "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e0e0e0;
+    background-color: rgba(4, 4, 4, 0.95);
     /* 背景改为浅灰色，与左侧面板协调 */
     color: #333;
     /* 默认文字颜色 */
@@ -150,9 +150,14 @@ html {
 }
 
 .light-mode .reading-panel {
-    background: #e1e0e3;
+    background: #ddd;
     border-color: #ddd;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .voice-btn {
+    background: rgba(253, 253, 253, 1);
+    border: 1px solid #000;
 }
 
 /* ==================== 内部排版：上下结构 ==================== */
@@ -757,7 +762,7 @@ html {
 .narration {
     font-family: "GenJyuu";
     text-align: left;
-    color: #bdbdbd;
+    color: rgb(254, 254, 254);
     margin: 0;
     width: 100%;
     line-height: 1.8;
