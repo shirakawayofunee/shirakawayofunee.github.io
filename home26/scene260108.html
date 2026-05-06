@@ -53,9 +53,9 @@
             </div>
         </aside>
 
-        <!-- 中间：剧本主容器 (Wrapper) -->
+        <!-- 中间：剧本主容器-->
         <main class="panel script-wrapper light-mode">
-            <!-- 【修改】悬浮功能栏 -->
+            <!-- 功能栏 -->
             <div class="script-tools-layer">
                 <div class="auto-play-switch" id="auto-play-btn" onclick="VoiceManager.toggleAuto()">
                     <span>AUTO</span>
@@ -64,19 +64,18 @@
                     </div>
                 </div>
                 <div class="theme-switch-group">
-
                     <img src="img/dh/bar_2.png" id="btn-day" class="active" onclick="setTheme('light')">
                     <img src="img/dh/bar_1.png" id="btn-night" onclick="setTheme('dark')">
                 </div>
-
+        
                 <!-- ========== 阅读设置 Wrapper ========== -->
                 <div class="reading-settings-wrapper">
                     <!-- Aa 按钮 -->
                     <div class="btn-reading-settings" id="btn-reading-settings">Aa</div>
-
+        
                     <!-- 下拉面板 -->
                     <div id="reading-settings-panel" class="reading-panel" style="display: none;">
-
+        
                         <!-- 字号 -->
                         <div class="rs-item">
                             <div class="rs-label">フォントサイズ</div>
@@ -85,7 +84,7 @@
                                 <span id="rs-val-fontsize" class="rs-val">0.9rem</span>
                             </div>
                         </div>
-
+        
                         <div class="rs-item">
                             <div class="rs-label">文字の太さ</div>
                             <div class="rs-control-group">
@@ -93,7 +92,7 @@
                                 <span id="rs-val-fontweight" class="rs-val">400</span>
                             </div>
                         </div>
-
+        
                         <div class="rs-item">
                             <div class="rs-label">行間</div>
                             <div class="rs-control-group">
@@ -101,7 +100,7 @@
                                 <span id="rs-val-lineheight" class="rs-val">1.8</span>
                             </div>
                         </div>
-
+        
                         <div class="rs-item">
                             <div class="rs-label">文字間隔</div>
                             <div class="rs-control-group">
@@ -109,9 +108,9 @@
                                 <span id="rs-val-letterspacing" class="rs-val">0%</span>
                             </div>
                         </div>
-
+        
                         <hr class="rs-divider">
-
+        
                         <!-- 使用明体 -->
                         <div class="rs-item rs-item-toggle">
                             <div class="rs-label">明朝体</div>
@@ -120,45 +119,47 @@
                                 <span class="rs-slider round"></span>
                             </label>
                         </div>
-
+        
                         <hr class="rs-divider">
-
+        
                         <!-- 恢复默认 -->
                         <button id="rs-reset-btn" class="rs-btn-reset">デフォルトに戻す</button>
-
+        
                     </div>
                 </div>
                 <div id="float-btn-prev" class="btn-reading-settings" onclick="navigate(-1)">
                     <
-                        </div>
-                        <div id="float-btn-next" class="btn-reading-settings" onclick="navigate(1)">></div>
-
-
-                        <!-- BGM 控制 -->
-                        <div class="music-controls">
-                            <img src="img/v2c.png" id="btn-play" class="music-icon" alt="Play" style="display: block;">
-                            <img src="img/v2.gif" id="btn-pause" class="music-icon" alt="Pause" style="display: none;">
-                        </div>
                 </div>
-
-                <!-- 剧本正文滚动区 -->
-                <div class="script-scroll-area" id="script-panel">
-                    <div class="script-content" id="script-content">
-                        <div id="chapter-title-box" class="style2-title-box">
-                            <div id="chapter-title" class="style2-title"></div>
-                        </div>
-                        <div class="preface-box style-c" id="script-header">
-                            <p class="chapter-summary" id="header-summary">WAITING FOR INPUT...</p>
-                        </div>
-
-                        <!-- 原本的正文部分 -->
-                        <div class="loading-text">運命を読み取り中……</div>
+                <div id="float-btn-next" class="btn-reading-settings" onclick="navigate(1)">
+                    >
+                </div>
+        
+        
+                <!-- BGM 控制 -->
+                <div class="music-controls">
+                    <img src="img/v2c.png" id="btn-play" class="music-icon" alt="Play" style="display: block;" onclick="toggleMusic('play')">
+                    <img src="img/v2.gif" id="btn-pause" class="music-icon" alt="Pause" style="display: none;" onclick="toggleMusic('pause')">
+                </div>
+            </div>
+        
+            <!-- 剧本正文滚动区 -->
+            <div class="script-scroll-area" id="script-panel">
+                <div class="script-content" id="script-content">
+                    <div id="chapter-title-box" class="style2-title-box">
+                        <div id="chapter-title" class="style2-title"></div>
                     </div>
-
-                    <!-- 底部占位 -->
-                    <div style="height: 60px;"></div>
+                    <div class="preface-box style-c" id="script-header">
+                        <p class="chapter-summary" id="header-summary">WAITING FOR INPUT……</p>
+                    </div>
+        
+                    <!-- 原本的正文部分 -->
+                    <div class="loading-text">WAITING FOR INPUT……</div>
                 </div>
-
+        
+                <!-- 底部占位 -->
+                <div style="height: 60px;"></div>
+            </div>
+        
         </main>
 
         <!-- 右侧：信息栏 (Info) -->

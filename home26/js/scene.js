@@ -288,10 +288,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("chapter-search").addEventListener("input", (e) => {
     renderList(e.target.value);
   });
-
-  document.getElementById('btn-play').addEventListener('click', () => toggleMusic('play'));
-  document.getElementById('btn-pause').addEventListener('click', () => toggleMusic('pause'));
-
   setupAudioUnlock();
 });
 
