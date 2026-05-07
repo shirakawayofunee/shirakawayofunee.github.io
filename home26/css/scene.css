@@ -440,7 +440,7 @@ html {
 }
 
 .main-container.sidebar-collapsed {
-    grid-template-columns: 3fr 76fr 21fr;
+    grid-template-columns: 3fr 66fr 31fr;
 }
 
 /* 通用面板 */

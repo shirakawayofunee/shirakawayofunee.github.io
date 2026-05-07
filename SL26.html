@@ -293,146 +293,160 @@
     
     <!-- 嵌入你的 papermaskDetail.js 逻辑 -->
     <script>
-    var papermaskZoom = 1;
-    var currentImgList = []; // 当前查看的图片数组
-    var currentImgIndex = 0; // 当前查看的图片索引
-    var isAnimating = false; // 防止快速点击导致动画冲突
+var papermaskZoom = 1;
+        var currentImgList = []; // 当前查看的图片/视频数组
+        var currentImgIndex = 0; // 当前查看的索引
+        var isAnimating = false; // 防止快速点击导致动画冲突
 
-    // 1. 打开 Modal (入口函数)
-    // 注意：需要修改 arrangeWaterfall 里的调用方式，见下方说明
-    function openDetailModal(imgList, index) {
-        currentImgList = imgList;
-        currentImgIndex = index;
-        papermaskZoom = 1;
-
-        const container = document.getElementById("imageContainer");
-        container.innerHTML = ""; 
-        
-        const img = document.createElement("img");
-        img.src = currentImgList[currentImgIndex].src;
-        img.className = "detail-img"; // 默认在中间
-        img.id = "activeDetailImg";
-        
-        container.appendChild(img);
-
-        $(".papermaskDetail").fadeIn(200);
-        $(".papermaskDetail").css("display", "flex");
-    }
-
-    // 2. 切换图片 (核心重写：双图同步位移)
-    function navigateImage(direction) {
-        if (isAnimating) return;
-        if (!currentImgList || currentImgList.length === 0) return;
-
-        // 计算新索引
-        let newIndex = currentImgIndex + direction;
-        if (newIndex >= currentImgList.length) newIndex = 0;
-        if (newIndex < 0) newIndex = currentImgList.length - 1;
-
-        const container = document.getElementById("imageContainer");
-        const currentImg = container.querySelector("img"); // 屏幕上当前的图
-        
-        // 创建下一张图
-        const nextImg = document.createElement("img");
-        nextImg.src = currentImgList[newIndex].src;
-        nextImg.className = "detail-img";
-        // 新图不继承 active ID，动画结束后再给，防止缩放冲突
-        
-        // --- 第一步：把新图放在屏幕外面 (准备区) ---
-        if (direction === 1) {
-            // 下一张：新图在右边 (100%)
-            nextImg.classList.add("img-pos-right");
-        } else {
-            // 上一张：新图在左边 (-100%)
-            nextImg.classList.add("img-pos-left");
-        }
-        
-        container.appendChild(nextImg);
-
-        // --- 第二步：强制浏览器重绘 (Force Reflow) ---
-        // 这一行非常关键！没有它，浏览器会合并样式修改，导致新图直接闪现，没有滑入动画
-        nextImg.offsetWidth; 
-
-        // --- 第三步：开始推拉 ---
-        isAnimating = true;
-
-        // 给两张图都加上动画过渡属性
-        if(currentImg) currentImg.classList.add("img-animating");
-        nextImg.classList.add("img-animating");
-
-        // 设定最终位置（利用 requestAnimationFrame 确保下一帧执行）
-        requestAnimationFrame(() => {
-            // 1. 新图归位 (回到中间 0)
-            nextImg.classList.remove("img-pos-right", "img-pos-left");
-            
-            // 2. 旧图移走
-            if (currentImg) {
-                // 重置旧图的缩放，防止缩放状态下位移看起来很怪
-                currentImg.style.transform = ""; 
-                
-                if (direction === 1) {
-                    // 往左推走 (-100%)
-                    currentImg.classList.add("img-pos-left");
-                } else {
-                    // 往右推走 (100%)
-                    currentImg.classList.add("img-pos-right");
-                }
+        // [新增辅助函数]：根据后缀自动生成 img 或 video 标签
+        function createMediaElement(src) {
+            const isVideo = src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm');
+            let el;
+            if (isVideo) {
+                el = document.createElement("video");
+                el.src = src;
+                // 让弹窗里的视频表现得像 GIF 一样
+                el.autoplay = true;
+                el.loop = true;
+                el.muted = true; // 必须静音才能自动播放
+                el.playsInline = true;
+            } else {
+                el = document.createElement("img");
+                el.src = src;
             }
-        });
-
-        // --- 第四步：动画结束清理 ---
-        setTimeout(() => {
-            if(currentImg) currentImg.remove();
-            
-            // 清理新图的动画类，使其变回普通状态
-            nextImg.classList.remove("img-animating");
-            nextImg.id = "activeDetailImg"; // 赋予ID以供缩放
-            
-            // 重置缩放倍率变量
-            papermaskZoom = 1;
-            
-            isAnimating = false;
-        }, 1600); // 时间需与 CSS transition 0.5s 保持一致
-
-        currentImgIndex = newIndex;
-    }
-
-    // 3. 缩放功能 (修改为操作 id="activeDetailImg")
-    function handleZoomChange(num) {
-        if (num == 1) papermaskZoom += 0.2; // 放大稍微快一点
-        if (num == -1) papermaskZoom -= 0.2;
-        if (num == 0) papermaskZoom = 1;
-        
-        if (papermaskZoom > 4) papermaskZoom = 4;
-        if (papermaskZoom < 0.5) papermaskZoom = 0.5;
-        
-        // 只缩放当前激活的图片
-        const activeImg = document.getElementById("activeDetailImg");
-        if(activeImg) {
-            activeImg.style.transform = `scale(${papermaskZoom})`;
+            return el;
         }
-    }
 
-    // 4. 下载功能
-    function handleDownload() {
-        if (!currentImgList[currentImgIndex]) return;
-        var imgSrc = currentImgList[currentImgIndex].src;
-        var a = document.createElement("a");
-        a.href = imgSrc;
-        a.download = imgSrc.split('/').pop() || 'image.jpg';
-        a.style.display = "none";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    }
+        // 1. 打开 Modal (入口函数)
+        function openDetailModal(imgList, index) {
+            currentImgList = imgList;
+            currentImgIndex = index;
+            papermaskZoom = 1;
 
-    // 5. 关闭 Modal
-    function paperShowHide() {
-        $(".papermaskDetail").fadeOut(200);
-        setTimeout(() => {
-             document.getElementById("imageContainer").innerHTML = ""; // 清理内存
-        }, 200);
-    }
+            const container = document.getElementById("imageContainer");
+            container.innerHTML = "";
+
+            // [修改] 调用辅助函数生成媒体标签
+            const mediaEl = createMediaElement(currentImgList[currentImgIndex].src);
+            mediaEl.className = "detail-img"; // 默认在中间
+            mediaEl.id = "activeDetailImg";
+
+            container.appendChild(mediaEl);
+
+            $(".papermaskDetail").fadeIn(200);
+            $(".papermaskDetail").css("display", "flex");
+        }
+
+        // 2. 切换图片 (核心重写：双图同步位移)
+        function navigateImage(direction) {
+            if (isAnimating) return;
+            if (!currentImgList || currentImgList.length === 0) return;
+
+            // 计算新索引
+            let newIndex = currentImgIndex + direction;
+            if (newIndex >= currentImgList.length) newIndex = 0;
+            if (newIndex < 0) newIndex = currentImgList.length - 1;
+
+            const container = document.getElementById("imageContainer");
+            
+            // [核心修改] 以前是 querySelector("img")，如果是视频就会报错找不到
+            // 现在改为按 class 查找，这样无论图片还是视频都能正确获取
+            const currentMedia = container.querySelector(".detail-img"); 
+
+            // [修改] 创建下一个媒体元素 (图片或视频)
+            const nextMedia = createMediaElement(currentImgList[newIndex].src);
+            nextMedia.className = "detail-img";
+
+            // --- 第一步：把新图放在屏幕外面 (准备区) ---
+            if (direction === 1) {
+                nextMedia.classList.add("img-pos-right");
+            } else {
+                nextMedia.classList.add("img-pos-left");
+            }
+
+            container.appendChild(nextMedia);
+
+            // --- 第二步：强制浏览器重绘 (Force Reflow) ---
+            nextMedia.offsetWidth;
+
+            // --- 第三步：开始推拉 ---
+            isAnimating = true;
+
+            // 给两张图都加上动画过渡属性
+            if (currentMedia) currentMedia.classList.add("img-animating");
+            nextMedia.classList.add("img-animating");
+
+            // 设定最终位置（利用 requestAnimationFrame 确保下一帧执行）
+            requestAnimationFrame(() => {
+                // 1. 新图归位 (回到中间 0)
+                nextMedia.classList.remove("img-pos-right", "img-pos-left");
+
+                // 2. 旧图移走
+                if (currentMedia) {
+                    currentMedia.style.transform = "";
+
+                    if (direction === 1) {
+                        currentMedia.classList.add("img-pos-left");
+                    } else {
+                        currentMedia.classList.add("img-pos-right");
+                    }
+                }
+            });
+
+            // --- 第四步：动画结束清理 ---
+            setTimeout(() => {
+                if (currentMedia) currentMedia.remove();
+
+                // 清理新图的动画类
+                nextMedia.classList.remove("img-animating");
+                nextMedia.id = "activeDetailImg"; // 赋予ID以供缩放
+
+                // 重置缩放倍率变量
+                papermaskZoom = 1;
+
+                isAnimating = false;
+            }, 1600); // 时间需与 CSS transition 保持一致
+
+            currentImgIndex = newIndex;
+        }
+
+        // 3. 缩放功能
+        function handleZoomChange(num) {
+            if (num == 1) papermaskZoom += 0.2; 
+            if (num == -1) papermaskZoom -= 0.2;
+            if (num == 0) papermaskZoom = 1;
+
+            if (papermaskZoom > 4) papermaskZoom = 4;
+            if (papermaskZoom < 0.5) papermaskZoom = 0.5;
+
+            // [无需修改] transform: scale 同样适用于 <video> 标签！
+            const activeImg = document.getElementById("activeDetailImg");
+            if (activeImg) {
+                activeImg.style.transform = `scale(${papermaskZoom})`;
+            }
+        }
+
+        // 4. 下载功能
+        function handleDownload() {
+            if (!currentImgList[currentImgIndex]) return;
+            var imgSrc = currentImgList[currentImgIndex].src;
+            var a = document.createElement("a");
+            a.href = imgSrc;
+            // [微调] 默认文件名从 image.jpg 改成更加通用的 file
+            a.download = imgSrc.split('/').pop() || 'file'; 
+            a.style.display = "none";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // 5. 关闭 Modal
+        function paperShowHide() {
+            $(".papermaskDetail").fadeOut(200);
+            setTimeout(() => {
+                document.getElementById("imageContainer").innerHTML = ""; // 清理内存 (视频也会随之被销毁，停止播放)
+            }, 200);
+        }
 
         // ================= 数据定义 (请务必保留完整数据) =================
         const r18gImages = [
@@ -451,10 +465,10 @@
       const galleryImages = [
           { src: "img/SL/SL1【本編】「中秋の名月」.webp", alt: "Gallery Image 1", description: "【本編】「中秋の名月」  犯罪組織の主宰者と部下の殺し屋" },
           { src: "img/L/L0.webp", alt: "Gallery Image 1", description: "【本編】嵐を呼ぶ" },
-          { src: "img/XL/XL_0.mp4", alt: "Gallery Image 1", description: "【本編】嵐を呼ぶ" },
+          { src: "img/XL/XL_0.mp4", alt: "Gallery Image 1", description: "【本編】嵐を呼ぶ(Live2D)" },
           { src: "img/S/S0.jpg", alt: "Gallery Image 1", description: "表面上は穏やかな物腰なのに、洗練された腹黒い大人の36歳女性。" },
           { src: "img/SL/SL2「Fall」.webp", alt: "Gallery Image 3", description: "" },
-          { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "【本編】鮮烈な人" },
+          { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "【本編】茨に抱かれた虞美人" },
           { src: "img/SL/SL3.webp", alt: "Gallery Image 6", description: "吸血鬼貴族とその専属の仕立て屋（WIP）" },
           
           /* { src: "img/SL/SL3「赤い糸」.webp", alt: "Gallery Image 3", description: "" }, */
@@ -799,12 +813,12 @@
             { src: "img/S/S0.jpg", alt: "Gallery Image 1", description: "表面上は穏やかな物腰なのに、洗練された腹黒い大人の36歳女性。" },
             /* { src: "img/S/S00.jpg", alt: "Gallery Image 1", description: "" }, */
             { src: "img/S/S1.jpg", alt: "Gallery Image 1", description: "(「何のために戦うか」引用)" },
-            { src: "img/S/S2.jpg", alt: "Gallery Image 2", description: "" },
+            { src: "img/S/S2.jpg", alt: "Gallery Image 2", description: "wip" },
             { src: "img/S/S3.jpg", alt: "Gallery Image 3", description: "" },
             { src: "img/S/S4.jpg", alt: "Gallery Image 4", description: "" },
             { src: "img/S/S5.jpg", alt: "Gallery Image 5", description: "" },
             { src: "img/S/S6.jpg", alt: "Gallery Image 6", description: "" },
-            { src: "img/S/S7.jpg", alt: "Gallery Image 7", description: "" },
+            /* { src: "img/S/S7.jpg", alt: "Gallery Image 7", description: "" }, */
             { src: "img/S/S8.jpg", alt: "Gallery Image 8", description: "落書き" },
             { src: "img/S/S9.jpg", alt: "Gallery Image 9", description: "落書き" },
             { src: "img/S/S10.jpg", alt: "Gallery Image 10", description: "落書き" },

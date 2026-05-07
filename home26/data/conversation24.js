@@ -44,8 +44,8 @@ export default {
         note: `完全没体验过战争的Z时代，L在她这个年纪的时候，烦恼的是怎么把自己的肠子塞回去，L衷心地为孩子们体会不到“战争是属于全人类的伤口。”这件事而高兴。`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
+        name: `Shalom`,
+        avatar: `img/dh/X24.png`,
         note: `她知道地底想看到她和鱼死网破，但她决定顺水推舟，布下更深层的局。`
       },
       {
@@ -54,13 +54,15 @@ export default {
         note: `工事中`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `Siegel`,
+        avatar: `img/dh/Siegel.png`,
+        note: `「福音地」の司祭であり、「GARDEN」との橋渡しを担う者。`,
+        basicStats: `7月用情报诱骗L的下属送死（加洛法诺）。その死が示すのは、「福音地」による「GARDEN」支配の完全なる終焉。
+        `,
       },
       {
         name: `局長（名前だけ登場）`,
-        avatar: `img/dh/PC02.jpg`,
+        avatar: `img/dh/PC24.png`,
         note: `『弱者』の主人公。今回は名前のみ登場。いずれ顔を見せるための予告となります。`,
         basicStats: `Lが義人や賢者なら、局長は■■です。
         「CP要素」についてですが、ご安心ください。義母攻め×娘婿受けという猟奇的な関係性ではありません。
@@ -979,17 +981,15 @@ export default {
       type: `narration`,
 	bubbleStyle: "secret-comm",
       text: `Hush-X：ご安心ください。いつものように、きみたちの望みに全て応えましょう。
-
 edge-02：ええ、頼んだわ。
-      edge-02：最も効率的で頼りがいのある執行人として、君が我々の信頼を裏切ったことは一度もないものね。
-      Hush-X：はい、既に実行しています。すぐに……`
+      edge-02：最も効率的で頼りがいのある執行人として、君が我々の信頼を裏切ったことは一度もないものね。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
-      text: `はい、既に実行しています。すぐに……`
+      text: `すぐに……`
     },
     {
       type: `narration`,
@@ -1002,6 +1002,14 @@ edge-02：ええ、頼んだわ。
     {
       type: `narration`,
       text: `この半月、彼女を襲った傀儡たちはみな似たようなものを持っていた。シャーロームは暗号をまとめ、まだ完全ではないが、発信者の意図は十分に読み取れた。彼女は小さく微笑んだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `シャーローム`,
+      text: `（心の声）
+      探しに来て、師匠。きみなら、きっと私の期待を裏切らない……`
     }
 
   ]
