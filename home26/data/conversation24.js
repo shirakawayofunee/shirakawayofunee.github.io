@@ -1,7 +1,7 @@
 export default {
   meta: {
     title: `「露の世は露の[世]ながらさりながら」`,
-    bgm: `mp3/bg/花间.m4a`,
+    bgm: `mp3/bg/千秋.mp3`,
     summary: `「世が汝らを憎むより先に、必ずや我を憎む。」——《ヨハネによる福音書 15:18-27》
     「これぞ我が骨の骨、我が肉の肉。」——《創世記 2:23》`
   },
@@ -377,7 +377,7 @@ export default {
       name: `「師匠」`,
       text: `そして、『ガーデン』で私を訪ねてくる人間の目的は一つだけ――`,
       voice: `wav/CN/conversation24/vo_event_11031_45.wav`,
-      bgm: `mp3/bg/-.mp3`,
+      /* bgm: `mp3/bg/-.mp3`, */
     },
     {
       type: `dialogue`,
@@ -571,7 +571,6 @@ export default {
       name: `「師匠」`,
       text: `よくお聞き。教えるのはこれが最後よ。二度は言わないわ。`,
       voice: `wav/CN/conversation24/vo_event_11031_13.wav`,
-      bgm: `mp3/bg/-.mp3`,
     },
     {
       type: `dialogue`,
@@ -692,7 +691,7 @@ export default {
       name: `「師匠」`,
       text: `今日も変わらず美しく、気分上々。明日も私の思い通りになるように。`,
       voice: `wav/CN/conversation24/vo_event_11031_26.wav`,
-      bgm: `mp3/bg/330933570.mp3`,
+      /* bgm: `mp3/bg/330933570.mp3`, */
     },
     {
       type: `dialogue`,
@@ -710,7 +709,7 @@ export default {
     {
       type: `narration`,
       text: `その夜が明けると、「業師」は手書きの指令書の束を残し、全ての暗殺者に指定時刻まで外出を禁じると、彼女の『ガーデン』を去った。`,
-      bgm: `mp3/bg/conversation2.mp3`,
+      bgm: `mp3/bg/花间.m4a`,
     },
     {
       type: `narration`,
