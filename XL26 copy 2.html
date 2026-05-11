@@ -44,28 +44,34 @@
                 <!-- 1. ホーム -> /home26/flowers.html -->
                 <div class="div-center" onclick="window.location.href='/home26/flowers.html'">
                     <div class="div-head-text">ホーム</div>
+                    <div class="div-head-text-en">HOME</div>
                 </div>
 
                 <!-- 2. 登場人物 -> #2 -->
                 <div class="div-center" onclick="window.location.href='/home26/flowers.html#1'">
                     <div class="div-head-text">登場人物</div>
+                    <div class="div-head-text-en">CHARACTER</div>
                 </div>
 
                 <!-- 3. 相関図 -> #3 -->
                 <div class="div-center" onclick="window.location.href='/home26/flowers.html#2'">
                     <div class="div-head-text">相関図</div>
+                    <div class="div-head-text-en">RELATIONSHIP</div>
                 </div>
 
                 <!-- 4. 関係性補足 -> #4 -->
                 <div class="div-center" onclick="window.location.href='/home26/flowers.html#3'">
                     <div class="div-head-text">関係性補足</div>
+                    <div class="div-head-text-en">RELATIONSHIP</div>
                 </div>
 
                 <div class="div-center div-centerpc" onclick="window.location.href='/home26/scene260108.html'" data-mouse="mid">
                     <div class="div-head-text" data-mouse="mid">運命の織機</div> <!-- 日文标题 -->
+                    <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>   <!-- 英文标题 -->
                   </div>
                   <div class="div-center div-centerpc" onclick="window.location.href='/home26/timeline.html'" data-mouse="mid">
                     <div class="div-head-text" data-mouse="mid">世界観/年表</div>
+                    <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
                   </div>
 
             </div>
@@ -130,48 +136,43 @@
     </div>
 
     <!-- 3. 二级菜单 (Tabs) -->
-    <div class="page-layout d-flex  align-items-start">
-        <div class="secondary-menu-container">
-            <div class="gallery-header">
-                <ul class="nav flex-column" id="galleryTabs" role="tablist">
-                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#gallery">二人</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#L">L</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#X">X</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dc">メインストーリー/本編</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mansion">世界観/背景</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doodle">落書き</a></li> -->
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">『○○しないと出られない部屋』</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">擬獣化/平和な日常</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#theme">テーマ</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#r18g">他作品の〇〇ってキャラのイメージ</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab1">序章『何のために戦うか』</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab2">『最後通牒』</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="gallery-section  flex-grow-1 w-100">
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="gallery"><div class="gallery-container" id="galleryContainer"></div></div>
-                <div class="tab-pane fade" id="L"><div class="gallery-container" id="LContainer"></div></div>
-                <div class="tab-pane fade" id="X"><div class="gallery-container" id="XContainer"></div></div>
-                <div class="tab-pane fade" id="dc"><div class="gallery-container" id="dcContainer"></div></div>
-                <div class="tab-pane fade" id="manga"><div class="gallery-container" id="mangaContainer"></div></div>
-                <div class="tab-pane fade" id="catdw"><div class="gallery-container" id="catdwContainer"></div></div>
-                <div class="tab-pane fade" id="theme"><div class="gallery-container" id="themeContainer"></div></div>
-                <div class="tab-pane fade" id="r18g"><div class="gallery-container" id="r18gContainer"></div></div>
-                <div class="tab-pane fade" id="mansion"><div class="gallery-container" id="mansionContainer"></div></div>
-                <div class="tab-pane fade" id="tab1"><div class="gallery-container" id="tab1Container"></div></div>
-                <div class="tab-pane fade" id="tab2"><div class="gallery-container" id="tab2Container"></div></div>
-                <div class="tab-pane fade" id="doodle"><div class="gallery-container" id="doodleContainer"></div></div>
-            </div>
+    <div class="secondary-menu-container">
+        <div class="gallery-header">
+            <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#gallery">二人</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#L">L</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#X">X</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dc">メインストーリー/本編</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mansion">世界観/背景</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doodle">落書き</a></li> -->
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">『○○しないと出られない部屋』(37p)</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">擬獣化/平和な日常</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#theme">テーマ</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#r18g">他作品の〇〇ってキャラのイメージ</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab1">序章『何のために戦うか』(8p)</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab2">『最後通牒』(10p)</a></li>
+            </ul>
         </div>
     </div>
 
-    
-
 
     <!-- 4. 正文内容区 (Gallery Section) -->
-
+    <div class="gallery-section">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="gallery"><div class="gallery-container" id="galleryContainer"></div></div>
+            <div class="tab-pane fade" id="L"><div class="gallery-container" id="LContainer"></div></div>
+            <div class="tab-pane fade" id="X"><div class="gallery-container" id="XContainer"></div></div>
+            <div class="tab-pane fade" id="dc"><div class="gallery-container" id="dcContainer"></div></div>
+            <div class="tab-pane fade" id="manga"><div class="gallery-container" id="mangaContainer"></div></div>
+            <div class="tab-pane fade" id="catdw"><div class="gallery-container" id="catdwContainer"></div></div>
+            <div class="tab-pane fade" id="theme"><div class="gallery-container" id="themeContainer"></div></div>
+            <div class="tab-pane fade" id="r18g"><div class="gallery-container" id="r18gContainer"></div></div>
+            <div class="tab-pane fade" id="mansion"><div class="gallery-container" id="mansionContainer"></div></div>
+            <div class="tab-pane fade" id="tab1"><div class="gallery-container" id="tab1Container"></div></div>
+            <div class="tab-pane fade" id="tab2"><div class="gallery-container" id="tab2Container"></div></div>
+            <div class="tab-pane fade" id="doodle"><div class="gallery-container" id="doodleContainer"></div></div>
+        </div>
+    </div>
 
     <!-- 5. 自定义图片详情 Modal -->
     <div class="papermaskDetail" id="customDetailModal">
@@ -689,7 +690,7 @@ function arrangeWaterfall(containerId, imageArray) {
     container.innerHTML = "";
     
     const width = window.innerWidth;
-    const columnCount = width > 576 ? 2 : 1;
+    const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
     
     const columns = Array(columnCount).fill().map(() => {
         const col = document.createElement("div");
