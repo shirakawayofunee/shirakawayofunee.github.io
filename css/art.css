@@ -278,7 +278,7 @@ body {
    4. 二级菜单 (Tabs)
    ========================================= */
    .page-layout {
-    gap: 30px; /* 菜单和右侧图片区的间距 */
+/*     gap: 30px; */
     padding: 0;
     box-sizing: border-box;
 }
@@ -286,7 +286,7 @@ body {
 .secondary-menu-container {
     position: sticky;
     top: 2.5rem; /* 距离顶部留出呼吸空间 */
-    width: 250px; /* 左侧菜单固定宽度 */
+    width: 15%; /* 左侧菜单固定宽度 */
     flex-shrink: 0;
     background-color: transparent;
     /* 渐变方向改为从左至右 */
@@ -310,7 +310,7 @@ body {
     border-radius: 4px;
 }
 .gallery-header .nav {
-    gap: 8px; /* 菜单项上下的间距 */
+    gap: 6px; /* 菜单项上下的间距 */
 }
 
 .gallery-header .nav-tabs {
@@ -387,7 +387,7 @@ body {
 }
 
 .gallery-section {
-    padding: 20px 1vw;
+    padding: 2%;
     min-height: 120vh;
     min-width: 0; /* 防止子元素撑破 Flex 布局 */
 }
