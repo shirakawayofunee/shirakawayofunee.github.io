@@ -47,14 +47,14 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle3.jpg`,
       name: `蓟`,
       text: `……相変わらず図々しいね、君って。`
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle3.jpg`,
       name: `蓟`,
       text: `師匠は忙しいから、代わりに私が伝言を預かってきたよ。『正式採用された？ちゃんとやれてる？事件解決率はどれくらい？何人犯人捕まえた？まだ先輩の足引っ張ってる？』ってね。`
@@ -73,14 +73,14 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle3.jpg`,
       name: `蓟`,
       text: `へえ——。後で私、師匠と一緒に<span>西区</span>に行くよ。『Garden』の仲間たちはみんなそっちに流れちゃったみたいだから。もう君には私たちを捕まえることも見つけることもできないよ。去る前に一言、言っとこうと思って。`
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle3.jpg`,
       name: `蓟`,
       text: `私の復讐は終わった。もう殺し屋である必要はない。これからは大好きな『Garden』に残って、ずっと守るよ。`
@@ -97,7 +97,7 @@ export default {
       type: `narration`,
       text: `無数の「英雄」の名を冠した人々に囲まれながら、少女は夜明けの最初の光を迎えた。`
     },
-    {
+/*     {
       "type": "narration",
       "text": "第一章「繁花」終了。\nTo be continued",
       "bubbleStyle": "end-cinematic" 
@@ -106,7 +106,7 @@ export default {
       "type": "narration",
       "text": "第一章「繁花」終了。\nTo be continued",
       "bubbleStyle": "end-archive" 
-    },
+    }, */
     {
       "type": "narration",
       "text": "第一章「繁花」終了。\nTo be continued",

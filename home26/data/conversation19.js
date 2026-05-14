@@ -95,21 +95,21 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle2.jpg`,
       name: `隠れた人影`,
       text: `……私のミスだ。自分でこの始末をつけないと。追い出されてもいい、もう業師に迷惑かけられない……`
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle2.jpg`,
       name: `隠れた人影`,
       text: `クソくらえ……クソくらえ！確かに刺した、能力も発動した、確認したんだ！`
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle2.jpg`,
       name: `隠れた人影`,
       text: `あのゴミが生きてるのに、アイツに殺された人たちがなんで生きられない！`
@@ -120,7 +120,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle2.jpg`,
       name: `蓟`,
       text: `殺してやる、何度でも殺してやる！自分の手で殺してやる！`
@@ -149,7 +149,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle2.jpg`,
       name: `蓟`,
       text: `あの時、お前を殺すべきだった！`

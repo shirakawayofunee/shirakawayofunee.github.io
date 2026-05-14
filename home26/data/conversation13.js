@@ -361,7 +361,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle.jpg`,
       name: `蓟`,
       text: `ごめんなさい……業師……許してください……`
@@ -416,7 +416,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle2.jpg`,
       name: `蓟`,
       text: `……死ねばよかったのに、飼い慣らされたクズ！`

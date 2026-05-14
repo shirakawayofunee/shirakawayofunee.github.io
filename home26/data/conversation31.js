@@ -110,7 +110,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/thistle.jpg`,
       name: `ジギタリス`,
       text: `そんなことしなくていい！彼女たちの居場所、わかってる。私が探しに行く、私が行く！`,
