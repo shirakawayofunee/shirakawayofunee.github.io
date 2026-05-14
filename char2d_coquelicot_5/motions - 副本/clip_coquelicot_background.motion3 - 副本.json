@@ -1,0 +1,39 @@
+{
+  "Version": 3,
+  "Meta": {
+    "Duration": 11.467,
+    "Fps": 30.0,
+    "Loop": true,
+    "AreBeziersRestricted": true,
+    "CurveCount": 2,
+    "TotalSegmentCount": 3,
+    "TotalPointCount": 3,
+    "UserDataCount": 0,
+    "TotalUserDataSize": 0
+  },
+  "Curves": [
+    {
+      "Target": "Model",
+      "Id": "Opacity",
+      "Segments": [
+        0,
+        1,
+        0,
+        11.467,
+        1
+      ]
+    },
+    {
+      "Target": "Model",
+      "Id": "LipSync",
+      "Segments": [
+        0,
+        0,
+        0,
+        11.467,
+        0
+      ]
+    }
+  ],
+  "UserData": []
+}

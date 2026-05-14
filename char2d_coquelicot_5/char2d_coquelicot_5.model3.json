@@ -1,0 +1,92 @@
+{
+  "Version": 3,
+  "Name": "char2d_coquelicot_5",
+  "FileReferences": {
+    "Moc": "char2d_coquelicot_5.moc3",
+    "Textures": [
+      "textures/texture_00.png",
+      "textures/texture_01.png"
+    ],
+    "Physics": null,
+    "Motions": {
+      "clip_coquelicot_background": [
+        {
+          "File": "motions/clip_coquelicot_background.motion3.json"
+        }
+      ],
+      "clip_coquelicot_boring": [
+        {
+          "File": "motions/clip_coquelicot_boring.motion3.json"
+        }
+      ],
+      "clip_coquelicot_click_body": [
+        {
+          "File": "motions/clip_coquelicot_click_body.motion3.json"
+        }
+      ],
+      "clip_coquelicot_click_handleft": [
+        {
+          "File": "motions/clip_coquelicot_click_handleft.motion3.json"
+        }
+      ],
+      "clip_coquelicot_click_handright": [
+        {
+          "File": "motions/clip_coquelicot_click_handright.motion3.json"
+        }
+      ],
+      "clip_coquelicot_click_head": [
+        {
+          "File": "motions/clip_coquelicot_click_head.motion3.json"
+        }
+      ],
+      "clip_coquelicot_click_leg": [
+        {
+          "File": "motions/clip_coquelicot_click_leg.motion3.json"
+        }
+      ],
+      "clip_coquelicot_exit": [
+        {
+          "File": "motions/clip_coquelicot_exit.motion3.json"
+        }
+      ],
+      "clip_coquelicot_greet": [
+        {
+          "File": "motions/clip_coquelicot_greet.motion3.json"
+        }
+      ],
+      "clip_coquelicot_idle": [
+        {
+          "File": "motions/clip_coquelicot_idle.motion3.json"
+        }
+      ],
+      "clip_coquelicot_level": [
+        {
+          "File": "motions/clip_coquelicot_level.motion3.json"
+        }
+      ],
+      "clip_coquelicot_prepare": [
+        {
+          "File": "motions/clip_coquelicot_prepare.motion3.json"
+        }
+      ]
+    },
+    "Expressions": []
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": [
+        "ParamEyeROpen",
+        "ParamEyeLOpen"
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": [
+        "ParamMouthOpen"
+      ]
+    }
+  ]
+}
