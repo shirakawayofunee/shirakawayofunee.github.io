@@ -232,11 +232,11 @@
     <!-- 脚本部分 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-                // ================= 数据定义 (请务必保留完整数据) =================
+        // ================= 数据定义 (请务必保留完整数据) =================
 
-                const dcImages = [
-        { src: "img/XL/后日谈.mp4", alt: "メインストーリー", description: "【猫バージョン】「終わりに」" },
-        { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【猫猫バージョン】Lの過去 P1-P6" },
+        const dcImages = [
+            { src: "img/XL/后日谈.mp4", alt: "メインストーリー", description: "【猫バージョン】「終わりに」" },
+            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【猫猫バージョン】Lの過去 P1-P6" },
             { src: "img/XL/zhuxian2.webp", alt: "メインストーリー", description: "【メインストーリー/本編】「瞳に映るキミ」" },
             { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【メインストーリー/本編】Lの過去 P1-P7" },
             { src: "img/XL/zhuxian3.jpg", alt: "メインストーリー", description: "【メインストーリー/本編】（猫猫バージョン）" },
@@ -245,13 +245,15 @@
             { src: "img/L/イベントED_ 繁花.mkv", alt: "Gallery Image 1", description: "繁花ED" },
             { src: "img/XL/X_gift1.webp", alt: "メインストーリー", description: "【BAD END-IF】Xからのご挨拶――Lの中で一番重い存在、その死骸" },
             { src: "img/XL/Xliwu2.webp", alt: "メインストーリー", description: "" },
-            
+
             { src: "img/XL/工事中.jpg", alt: "工事中", description: "" }
         ];
 
         const galleryImages = [
             { src: "img/XL/XL_0.mp4", alt: "Gallery Image 5", description: "波を起こす者と海面下の者(隠し要素:水面下に潜み、虎視眈々と好機を待つ「X」)" },
             { src: "img/XL/XL2.jpg", alt: "Gallery Image 2", description: "死の舞踏" },
+            
+            { src: "img/L/就这样饶有趣味地看着你.mp4", alt: "メインストーリー", description: "ただこうして、興味深げに君を見つめている（相方視点）" },
             { src: "img/XL/永夜の「魔女」と吸血鬼の「真祖」.png", alt: "Gallery Image 2", description: "永夜の「魔女」と吸血鬼の「真祖」" },
             { src: "img/XL/「永夜の魔女」と「吸血鬼の真祖」.webp", alt: "Gallery Image 2", description: "「永夜の魔女」×「吸血鬼の真祖」" },
             { src: "img/XL/XL1.jpg", alt: "Gallery Image 1", description: "「IF」IFだけど、未来で正史になる可能性もある（？）" },
@@ -259,17 +261,17 @@
             { src: "img/XL/XL3.webp", alt: "Gallery Image 3", description: "手を結べば、拳はほどける。(1/2)" },
             { src: "img/XL/XL4.webp", alt: "Gallery Image 3", description: "真摯に向き合う心に、自由は宿る。(2/2)" },
             { src: "img/XL/30.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」(P30引用)" },
-    { src: "img/XL/31.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」(P31引用)" },
-    { src: "img/XL/0201/32.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」(P32引用)" },
+            { src: "img/XL/31.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」(P31引用)" },
+            { src: "img/XL/0201/32.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」(P32引用)" },
             { src: "img/XL/XL5.jpg", alt: "Gallery Image 4", description: "首を絞める" },
-            
+
             { src: "img/XL/XL6.jpg", alt: "Gallery Image 6", description: "頭上の嵐はそうして散り去り、積もり重なった沈黙を、一息に飲み干す一杯の酒に変える。" },
             { src: "img/XL/XL7.jpg", alt: "Gallery Image 5", description: "" },
-           
+
             { src: "img/XL/XL8.jpg", alt: "Gallery Image 7", description: "共同の出発点（反逆）" },
 
-            
-    { src: "img/XL/29.webp", alt: "Manga Image 4", description: "" },
+
+            { src: "img/XL/29.webp", alt: "Manga Image 4", description: "" },
 
 
 
@@ -284,19 +286,20 @@
             { src: "img/XL/IF4.jpg", alt: "DC Image 4", description: "（笑）" },
             { src: "img/XL/掐脖子2.jpg", alt: "Gallery Image 8", description: "首を絞める" },
             { src: "img/XL/謎時空.jpg", alt: "Gallery Image 8", description: "謎時空IF" },
-            
+
         ];
-        
-        const LImages = [        
-        { src: "img/L/L_生い立ち.mp4", alt: "メインストーリー/本編", description: "【本編/猫バージョン】Lの生い立ち" },
-        { src: "img/L/L0.webp", alt: "Gallery Image 1", description: "【本編/メインストーリー】嵐を呼ぶ" },
-        { src: "img/L/后日谈.mp4", alt: "メインストーリー", description: "【本編/猫バージョン】「後日談」" },
-        
-        { src: "img/L/L1.jpg", alt: "Gallery Image 1", description: "" },
-        { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "" },
-        { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【メインストーリー/本編】Lの過去 P1-P7" },
-        
-        
+
+        const LImages = [
+            
+            { src: "img/L/L0.webp", alt: "Gallery Image 1", description: "【本編/メインストーリー】嵐を呼ぶ" },
+            { src: "img/L/后日谈.mp4", alt: "メインストーリー", description: "【本編/猫バージョン】「後日談」" },
+            { src: "img/L/就这样饶有趣味地看着你.mp4", alt: "メインストーリー", description: "ただこうして、興味深げに君を見つめている（相方視点）" },
+            { src: "img/L/L_生い立ち.mp4", alt: "メインストーリー/本編", description: "【本編/猫バージョン】Lの生い立ち" },
+            { src: "img/L/L1.jpg", alt: "Gallery Image 1", description: "" },
+            { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "" },
+            { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【メインストーリー/本編】Lの過去 P1-P7" },
+
+
             { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "簡単に希望と平和をもたらす救世主なんて存在しない。いるのは、ただひたすら先を歩く先駆者たちだけだ。" },
             { src: "img/L/L2.webp", alt: "Gallery Image 2", description: "試験" },
             { src: "img/L/L3.webp", alt: "Gallery Image 3", description: "" },
@@ -317,84 +320,84 @@
             { src: "img/L/L15.webp", alt: "Gallery Image 15", description: "疲れた表情…すき❤" },
             { src: "img/L/L16.jpg", alt: "Gallery Image 15", description: "" },
             { src: "img/L/zangli.webp", alt: "Gallery Image 14", description: "N.F.76年" },
-        ]; 
+        ];
         const XImages = [
-        { src: "img/X/X_backstory.webp", alt: "Gallery Image 1", description: "Xの生い立ち" },
-        { src: "img/X/X0.jpg", alt: "Gallery Image 1", description: "" },
-        { src: "img/X/X1.jpg", alt: "Gallery Image 1", description: "" },
-        { src: "img/XL/X表情.jpg", alt: "X表情", description: "X表情" },
-        { src: "img/X/X_01.mp4", alt: "Gallery Image 1", description: "Live2D" },
-        { src: "img/X/X_02.mp4", alt: "Gallery Image 1", description: "Live2D" },
+            { src: "img/X/X_backstory.webp", alt: "Gallery Image 1", description: "Xの生い立ち" },
+            { src: "img/X/X0.jpg", alt: "Gallery Image 1", description: "" },
+            { src: "img/X/X1.jpg", alt: "Gallery Image 1", description: "" },
+            { src: "img/XL/X表情.jpg", alt: "X表情", description: "X表情" },
+            { src: "img/X/X_01.mp4", alt: "Gallery Image 1", description: "Live2D" },
+            { src: "img/X/X_02.mp4", alt: "Gallery Image 1", description: "Live2D" },
             { src: "img/X/X1.webp", alt: "Gallery Image 1", description: "" },
             { src: "img/X/X2.webp", alt: "Gallery Image 2", description: "" },
             { src: "img/X/X3.webp", alt: "Gallery Image 3", description: "" },
             { src: "img/X/X4.webp", alt: "Gallery Image 4", description: "" },
             { src: "img/X/X5.webp", alt: "Gallery Image 5", description: "" },
-/*             { src: "img/X/X6.webp", alt: "Gallery Image 6", description: "" },
-            { src: "img/X/X7.webp", alt: "Gallery Image 7", description: "" },
-            { src: "img/X/X8.webp", alt: "Gallery Image 8", description: "" },
-            { src: "img/X/X9.webp", alt: "Gallery Image 9", description: "" },
-            { src: "img/X/X10.webp", alt: "Gallery Image 10", description: "" },
-*/
+            /*             { src: "img/X/X6.webp", alt: "Gallery Image 6", description: "" },
+                        { src: "img/X/X7.webp", alt: "Gallery Image 7", description: "" },
+                        { src: "img/X/X8.webp", alt: "Gallery Image 8", description: "" },
+                        { src: "img/X/X9.webp", alt: "Gallery Image 9", description: "" },
+                        { src: "img/X/X10.webp", alt: "Gallery Image 10", description: "" },
+            */
 
         ];
 
 
         const mangaImages = [
-/*         { src: "img/XL/MH/1.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p1" },
-        { src: "img/XL/MH/2.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p2" },
-        { src: "img/XL/MH/3.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p3" },
-            { src: "img/XL/MH/4.png", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p4" },
-            { src: "img/XL/MH/5.png", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p5 Fin." }, */
+            /*         { src: "img/XL/MH/1.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p1" },
+                    { src: "img/XL/MH/2.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p2" },
+                    { src: "img/XL/MH/3.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p3" },
+                        { src: "img/XL/MH/4.png", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p4" },
+                        { src: "img/XL/MH/5.png", alt: "Manga Image 4", description: "「○○しないと出られない部屋」p5 Fin." }, */
 
 
-    { src: "img/XL/0201/01.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」01/37" },
-    { src: "img/XL/0201/02.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」02/37" },
-    { src: "img/XL/0201/03.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」03/37" },
-    { src: "img/XL/0201/04.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」04/37" },
-    { src: "img/XL/0201/05.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」05/37" },
-    { src: "img/XL/0201/06.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」06/37" },
-    { src: "img/XL/0201/07.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」07/37" },
-    { src: "img/XL/0201/08.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」08/37" },
-    { src: "img/XL/0201/09.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」09/37" },
-    { src: "img/XL/0201/10.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」10/37" },
-    { src: "img/XL/0201/11.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」11/37" },
-    { src: "img/XL/0201/12.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」12/37" },
-    { src: "img/XL/0201/13.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」13/37" },
-    { src: "img/XL/0201/14.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」14/37" },
-    { src: "img/XL/0201/15.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」15/37" },
-    { src: "img/XL/0201/16.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」16/37" },
-    { src: "img/XL/0201/17.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」17/37" },
-    { src: "img/XL/0201/18.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」18/37" },
-    { src: "img/XL/0201/19.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」19/37" },
-    { src: "img/XL/0201/20.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」20/37" },
-    { src: "img/XL/0201/21.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」21/37" },
-    { src: "img/XL/0201/22.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」22/37" },
-    { src: "img/XL/0201/23.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」23/37" },
-    { src: "img/XL/0201/24.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」24/37" },
-    { src: "img/XL/0201/25.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」25/37" },
-    { src: "img/XL/0201/26.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」26/37" },
-    { src: "img/XL/0201/27.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」27/37" },
-    { src: "img/XL/0201/28.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」28/37" },
-    { src: "img/XL/0201/29.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」29/37" },
-    { src: "img/XL/0201/30.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」30/37" },
-    { src: "img/XL/0201/31.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」31/37" },
-    { src: "img/XL/0201/32.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」32/37" },
-    { src: "img/XL/0201/33.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」33/37" },
-    { src: "img/XL/0201/34.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」34/37" },
-    { src: "img/XL/0201/35.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」35/37" },
-    { src: "img/XL/0201/36.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」36/37" },
-    { src: "img/XL/0201/37.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」37/37" },
-/*     { src: "img/XL/0201/38.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」38/37" },
-    { src: "img/XL/0201/39.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」39/37" },
-    { src: "img/XL/0201/40.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」40/37" } */
+            { src: "img/XL/0201/01.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」01/37" },
+            { src: "img/XL/0201/02.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」02/37" },
+            { src: "img/XL/0201/03.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」03/37" },
+            { src: "img/XL/0201/04.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」04/37" },
+            { src: "img/XL/0201/05.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」05/37" },
+            { src: "img/XL/0201/06.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」06/37" },
+            { src: "img/XL/0201/07.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」07/37" },
+            { src: "img/XL/0201/08.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」08/37" },
+            { src: "img/XL/0201/09.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」09/37" },
+            { src: "img/XL/0201/10.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」10/37" },
+            { src: "img/XL/0201/11.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」11/37" },
+            { src: "img/XL/0201/12.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」12/37" },
+            { src: "img/XL/0201/13.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」13/37" },
+            { src: "img/XL/0201/14.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」14/37" },
+            { src: "img/XL/0201/15.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」15/37" },
+            { src: "img/XL/0201/16.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」16/37" },
+            { src: "img/XL/0201/17.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」17/37" },
+            { src: "img/XL/0201/18.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」18/37" },
+            { src: "img/XL/0201/19.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」19/37" },
+            { src: "img/XL/0201/20.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」20/37" },
+            { src: "img/XL/0201/21.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」21/37" },
+            { src: "img/XL/0201/22.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」22/37" },
+            { src: "img/XL/0201/23.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」23/37" },
+            { src: "img/XL/0201/24.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」24/37" },
+            { src: "img/XL/0201/25.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」25/37" },
+            { src: "img/XL/0201/26.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」26/37" },
+            { src: "img/XL/0201/27.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」27/37" },
+            { src: "img/XL/0201/28.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」28/37" },
+            { src: "img/XL/0201/29.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」29/37" },
+            { src: "img/XL/0201/30.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」30/37" },
+            { src: "img/XL/0201/31.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」31/37" },
+            { src: "img/XL/0201/32.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」32/37" },
+            { src: "img/XL/0201/33.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」33/37" },
+            { src: "img/XL/0201/34.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」34/37" },
+            { src: "img/XL/0201/35.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」35/37" },
+            { src: "img/XL/0201/36.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」36/37" },
+            { src: "img/XL/0201/37.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」37/37" },
+            /*     { src: "img/XL/0201/38.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」38/37" },
+                { src: "img/XL/0201/39.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」39/37" },
+                { src: "img/XL/0201/40.webp", alt: "Manga Image 4", description: "「○○しないと出られない部屋」40/37" } */
         ];
         const catdwImages = [
-        { src: "img/XL/cat/dw2.jpg", alt: "Catdw Image 2", description: "猫の群れでは、地位の高い猫が低い猫の毛づくろぎますが、ウサギの群れでは、毛づくろいされることがより高い地位を象徴している。なので、二人とも自分が上だと思っているのです！" },
-           
+            { src: "img/XL/cat/dw2.jpg", alt: "Catdw Image 2", description: "猫の群れでは、地位の高い猫が低い猫の毛づくろぎますが、ウサギの群れでは、毛づくろいされることがより高い地位を象徴している。なので、二人とも自分が上だと思っているのです！" },
+
             { src: "img/XL/可爱.jpg", alt: "Halloween", description: "【SD】DEATH NOTE（？" },
             { src: "img/XL/サボテン.jpg", alt: "Halloween", description: "サボテン1" },
-            
+
             { src: "img/XL/Halloween.jpg", alt: "Halloween", description: "【SD】Halloween！" },
             { src: "img/XL/cat/dw1.jpg", alt: "Catdw Image 1", description: "気持ち悪がる猫とあざとウサギ" },
             { src: "img/XL/浇水.jpg", alt: "Catdw Image 3", description: "サボテン2" },
@@ -407,26 +410,26 @@
 
         ];
         const r18gImages = [
-        { src: "img/sutong/XL/01.jpg", alt: "Gallery Image 1", description: "" },
-          { src: "img/sutong/XL/02.jpg", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/XL/03.jpg", alt: "Gallery Image 3", description: "" },
-          { src: "img/sutong/XL/04.jpg", alt: "Gallery Image 4", description: "" },
-          { src: "img/sutong/XL/05.jpg", alt: "Gallery Image 5", description: "" },
-          { src: "img/sutong/XL/06.jpg", alt: "Gallery Image 6", description: "" },
-          { src: "img/sutong/XL/07.jpg", alt: "Gallery Image 7", description: "" },
-          { src: "img/sutong/XL/08.jpg", alt: "Gallery Image 8", description: "" },
-          { src: "img/sutong/XL/09.jpg", alt: "Gallery Image 9", description: "" },
-          { src: "img/sutong/XL/10.jpg", alt: "Gallery Image 10", description: "" },
-          { src: "img/sutong/XL/11.jpg", alt: "Gallery Image 11", description: "" },
-          { src: "img/sutong/XL/12.jpg", alt: "Gallery Image 12", description: "" },
-          { src: "img/sutong/XL/13.jpg", alt: "Gallery Image 13", description: "" },
-          { src: "img/sutong/XL/14.jpg", alt: "Gallery Image 14", description: "" },
-          { src: "img/sutong/XL/15.jpg", alt: "Gallery Image 15", description: "" },
-          { src: "img/sutong/XL/16.jpg", alt: "Gallery Image 16", description: "" },
-          { src: "img/sutong/XL/17.jpg", alt: "Gallery Image 17", description: "" },
-          { src: "img/sutong/XL/18.jpg", alt: "Gallery Image 18", description: "" },
-          { src: "img/sutong/XL/19.jpg", alt: "Gallery Image 19", description: "" },
-          { src: "img/sutong/XL/20.jpg", alt: "Gallery Image 20", description: "" }
+            { src: "img/sutong/XL/01.jpg", alt: "Gallery Image 1", description: "" },
+            { src: "img/sutong/XL/02.jpg", alt: "Gallery Image 2", description: "" },
+            { src: "img/sutong/XL/03.jpg", alt: "Gallery Image 3", description: "" },
+            { src: "img/sutong/XL/04.jpg", alt: "Gallery Image 4", description: "" },
+            { src: "img/sutong/XL/05.jpg", alt: "Gallery Image 5", description: "" },
+            { src: "img/sutong/XL/06.jpg", alt: "Gallery Image 6", description: "" },
+            { src: "img/sutong/XL/07.jpg", alt: "Gallery Image 7", description: "" },
+            { src: "img/sutong/XL/08.jpg", alt: "Gallery Image 8", description: "" },
+            { src: "img/sutong/XL/09.jpg", alt: "Gallery Image 9", description: "" },
+            { src: "img/sutong/XL/10.jpg", alt: "Gallery Image 10", description: "" },
+            { src: "img/sutong/XL/11.jpg", alt: "Gallery Image 11", description: "" },
+            { src: "img/sutong/XL/12.jpg", alt: "Gallery Image 12", description: "" },
+            { src: "img/sutong/XL/13.jpg", alt: "Gallery Image 13", description: "" },
+            { src: "img/sutong/XL/14.jpg", alt: "Gallery Image 14", description: "" },
+            { src: "img/sutong/XL/15.jpg", alt: "Gallery Image 15", description: "" },
+            { src: "img/sutong/XL/16.jpg", alt: "Gallery Image 16", description: "" },
+            { src: "img/sutong/XL/17.jpg", alt: "Gallery Image 17", description: "" },
+            { src: "img/sutong/XL/18.jpg", alt: "Gallery Image 18", description: "" },
+            { src: "img/sutong/XL/19.jpg", alt: "Gallery Image 19", description: "" },
+            { src: "img/sutong/XL/20.jpg", alt: "Gallery Image 20", description: "" }
 
 
         ];
@@ -440,79 +443,79 @@
 
         const mansionImages = [
 
-        { src: "img/FZ/001.webp", alt: "Mansion Image 01", description: "Lの秘密アジトの一つ" },
-{ src: "img/FZ/002.webp", alt: "Mansion Image 02", description: "Lの秘密アジトの一つ/神秘的な術式" },
-{ src: "img/FZ/003.webp", alt: "Mansion Image 03", description: "アジト内/仕事用/スパイ映画風" },
-{ src: "img/FZ/X01.webp", alt: "Mansion Image 04", description: "序章/Xの邸宅/夜" },
-/* { src: "img/FZ/X02.webp", alt: "Mansion Image 04", description: "序章/Xの邸宅/日" }, */
-{ src: "img/FZ/X03.webp", alt: "Mansion Image 04", description: "序章/Xの邸宅/屋内" },
-{ src: "img/FZ/004.webp", alt: "Mansion Image 06", description: "アジト内/仕事用/書斎/スパイ映画風" },
-{ src: "img/FZ/005.webp", alt: "Mansion Image 04", description: "XL初対面の場所/序章/エノリカ山荘の公園" },
-{ src: "img/FZ/L01.webp", alt: "Mansion Image 19", description: "「GARDEN」秘密アジトの一つ" },
-{ src: "img/FZ/L02.webp", alt: "Mansion Image 20", description: "「GARDEN」秘密アジトの一つ" },
-{ src: "img/FZ/map.webp", alt: "Mansion Image 04", description: "序章地図/エノリカ山荘" },
-{ src: "img/FZ/S_tailorshop.webp", alt: "Mansion Image 05", description: "Sの仕立て屋" },
+            { src: "img/FZ/001.webp", alt: "Mansion Image 01", description: "Lの秘密アジトの一つ" },
+            { src: "img/FZ/002.webp", alt: "Mansion Image 02", description: "Lの秘密アジトの一つ/神秘的な術式" },
+            { src: "img/FZ/003.webp", alt: "Mansion Image 03", description: "アジト内/仕事用/スパイ映画風" },
+            { src: "img/FZ/X01.webp", alt: "Mansion Image 04", description: "序章/Xの邸宅/夜" },
+            /* { src: "img/FZ/X02.webp", alt: "Mansion Image 04", description: "序章/Xの邸宅/日" }, */
+            { src: "img/FZ/X03.webp", alt: "Mansion Image 04", description: "序章/Xの邸宅/屋内" },
+            { src: "img/FZ/004.webp", alt: "Mansion Image 06", description: "アジト内/仕事用/書斎/スパイ映画風" },
+            { src: "img/FZ/005.webp", alt: "Mansion Image 04", description: "XL初対面の場所/序章/エノリカ山荘の公園" },
+            { src: "img/FZ/L01.webp", alt: "Mansion Image 19", description: "「GARDEN」秘密アジトの一つ" },
+            { src: "img/FZ/L02.webp", alt: "Mansion Image 20", description: "「GARDEN」秘密アジトの一つ" },
+            { src: "img/FZ/map.webp", alt: "Mansion Image 04", description: "序章地図/エノリカ山荘" },
+            { src: "img/FZ/S_tailorshop.webp", alt: "Mansion Image 05", description: "Sの仕立て屋" },
 
-{ src: "img/FZ/バー.webp", alt: "Mansion Image 07", description: "バー" },
-{ src: "img/FZ/008.webp", alt: "Mansion Image 08", description: "" },
-
-
-/* { src: "img/FZ/009.webp", alt: "Mansion Image 09", description: "" },
-{ src: "img/FZ/010.webp", alt: "Mansion Image 10", description: "" },
-{ src: "img/FZ/011.webp", alt: "Mansion Image 11", description: "" },
-{ src: "img/FZ/012.webp", alt: "Mansion Image 12", description: "" },
-{ src: "img/FZ/013.webp", alt: "Mansion Image 13", description: "" },
-{ src: "img/FZ/014.webp", alt: "Mansion Image 14", description: "" },
-{ src: "img/FZ/015.webp", alt: "Mansion Image 15", description: "" },
-{ src: "img/FZ/016.webp", alt: "Mansion Image 16", description: "" },
-{ src: "img/FZ/017.webp", alt: "Mansion Image 17", description: "" },
-{ src: "img/FZ/018.webp", alt: "Mansion Image 18", description: "" },
-{ src: "img/FZ/019.webp", alt: "Mansion Image 19", description: "" },
-{ src: "img/FZ/020.webp", alt: "Mansion Image 20", description: "" }, */
-];
+            { src: "img/FZ/バー.webp", alt: "Mansion Image 07", description: "バー" },
+            { src: "img/FZ/008.webp", alt: "Mansion Image 08", description: "" },
 
 
-const tab1Images = [
-{ src: "img/SL/001.jpg", alt: "Gallery Image 1", description: "Blue Rain-005「何のために戦うか」P1" },
-          { src: "img/SL/002.jpg", alt: "Gallery Image 2", description: "画面にはXが出てきていないのですが、この日はかなり大きな出来事がありました（？）しかもXL初対面です" },
-          { src: "img/SL/003.jpg", alt: "Gallery Image 3", description: "P3" },
-          { src: "img/SL/004.jpg", alt: "Gallery Image 4", description: "P4" },
-          { src: "img/SL/005.jpg", alt: "Gallery Image 5", description: "P5" },
-          { src: "img/SL/006.jpg", alt: "Gallery Image 6", description: "P6" },
-          { src: "img/SL/007.jpg", alt: "Gallery Image 7", description: "P7 wip" },
-          { src: "img/SL/008.jpg", alt: "Gallery Image 7", description: "P8 wip" },
+            /* { src: "img/FZ/009.webp", alt: "Mansion Image 09", description: "" },
+            { src: "img/FZ/010.webp", alt: "Mansion Image 10", description: "" },
+            { src: "img/FZ/011.webp", alt: "Mansion Image 11", description: "" },
+            { src: "img/FZ/012.webp", alt: "Mansion Image 12", description: "" },
+            { src: "img/FZ/013.webp", alt: "Mansion Image 13", description: "" },
+            { src: "img/FZ/014.webp", alt: "Mansion Image 14", description: "" },
+            { src: "img/FZ/015.webp", alt: "Mansion Image 15", description: "" },
+            { src: "img/FZ/016.webp", alt: "Mansion Image 16", description: "" },
+            { src: "img/FZ/017.webp", alt: "Mansion Image 17", description: "" },
+            { src: "img/FZ/018.webp", alt: "Mansion Image 18", description: "" },
+            { src: "img/FZ/019.webp", alt: "Mansion Image 19", description: "" },
+            { src: "img/FZ/020.webp", alt: "Mansion Image 20", description: "" }, */
+        ];
+
+
+        const tab1Images = [
+            { src: "img/SL/001.jpg", alt: "Gallery Image 1", description: "Blue Rain-005「何のために戦うか」P1" },
+            { src: "img/SL/002.jpg", alt: "Gallery Image 2", description: "画面にはXが出てきていないのですが、この日はかなり大きな出来事がありました（？）しかもXL初対面です" },
+            { src: "img/SL/003.jpg", alt: "Gallery Image 3", description: "P3" },
+            { src: "img/SL/004.jpg", alt: "Gallery Image 4", description: "P4" },
+            { src: "img/SL/005.jpg", alt: "Gallery Image 5", description: "P5" },
+            { src: "img/SL/006.jpg", alt: "Gallery Image 6", description: "P6" },
+            { src: "img/SL/007.jpg", alt: "Gallery Image 7", description: "P7 wip" },
+            { src: "img/SL/008.jpg", alt: "Gallery Image 7", description: "P8 wip" },
         ];
 
         const tab2Images = [
-        { src: "img/XL/0228/001.webp", alt: "Catdw Image 1", description: "「最後通牒」01/10" },
-  { src: "img/XL/0228/002.webp", alt: "Catdw Image 2", description: "「最後通牒」02/10 N.F.113/8/15" },
-  { src: "img/XL/0228/003.webp", alt: "Catdw Image 3", description: "「最後通牒」03/10" },
-  { src: "img/XL/0228/004.webp", alt: "Catdw Image 4", description: "「最後通牒」04/10" },
-  { src: "img/XL/0228/005.webp", alt: "Catdw Image 5", description: "「最後通牒」05/10" },
-  { src: "img/XL/0228/006.webp", alt: "Catdw Image 6", description: "「最後通牒」06/10" },
-  { src: "img/XL/0228/007.webp", alt: "Catdw Image 7", description: "「最後通牒」07/10" },
-  { src: "img/XL/0228/008.webp", alt: "Catdw Image 8", description: "「最後通牒」08/10" },
-  { src: "img/XL/0228/009.webp", alt: "Catdw Image 9", description: "「最後通牒」09/10" },
-  { src: "img/XL/0228/010.webp", alt: "Catdw Image 10", description: "「最後通牒」10/10" }
+            { src: "img/XL/0228/001.webp", alt: "Catdw Image 1", description: "「最後通牒」01/10" },
+            { src: "img/XL/0228/002.webp", alt: "Catdw Image 2", description: "「最後通牒」02/10 N.F.113/8/15" },
+            { src: "img/XL/0228/003.webp", alt: "Catdw Image 3", description: "「最後通牒」03/10" },
+            { src: "img/XL/0228/004.webp", alt: "Catdw Image 4", description: "「最後通牒」04/10" },
+            { src: "img/XL/0228/005.webp", alt: "Catdw Image 5", description: "「最後通牒」05/10" },
+            { src: "img/XL/0228/006.webp", alt: "Catdw Image 6", description: "「最後通牒」06/10" },
+            { src: "img/XL/0228/007.webp", alt: "Catdw Image 7", description: "「最後通牒」07/10" },
+            { src: "img/XL/0228/008.webp", alt: "Catdw Image 8", description: "「最後通牒」08/10" },
+            { src: "img/XL/0228/009.webp", alt: "Catdw Image 9", description: "「最後通牒」09/10" },
+            { src: "img/XL/0228/010.webp", alt: "Catdw Image 10", description: "「最後通牒」10/10" }
 
         ];
 
         const doodleImages = [
 
-      ];
+        ];
 
 
 
         function getArrayByName(name) {
-            const map = { 
-                "gallery": galleryImages, 
+            const map = {
+                "gallery": galleryImages,
                 "L": LImages,     // 新增映射
                 "X": XImages,     // 新增映射
-                "dc": dcImages, 
-                "manga": mangaImages, 
-                "catdw": catdwImages, 
-                "theme": themeImages, 
-                "r18g": r18gImages, 
+                "dc": dcImages,
+                "manga": mangaImages,
+                "catdw": catdwImages,
+                "theme": themeImages,
+                "r18g": r18gImages,
                 "mansion": mansionImages,
                 "tab1": tab1Images,
                 "tab2": tab2Images,
