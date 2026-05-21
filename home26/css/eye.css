@@ -85,10 +85,10 @@
 
   /* 让大眼球变成黑色 */
 .large-eye {
-    --eye-color: #333333; 
+    --eye-color: #060606; 
   }
   
   /* 让小眼球变成蓝色，甚至可以加点其他的样式 */
   .small-eye {
-    --eye-color: #4a8ef0;
+    --eye-color: #060606;
   }

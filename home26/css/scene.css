@@ -1966,10 +1966,8 @@ html {
     display: flex;
     gap: 15px;
     align-items: center;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-size: 14px;
-    font-weight: bold;
     user-select: none;
+    font-size: 14px;
 }
 
 
