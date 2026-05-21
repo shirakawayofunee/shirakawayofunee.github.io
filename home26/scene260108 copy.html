@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的页面 - 集成灵动眼睛</title>
+    <!-- 引入眼球组件的 CSS 文件 -->
+    <link rel="stylesheet" href="css/eye.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 90%;
+            max-width: 1200px;
+            gap: 30px; /* 增加列之间的间距 */
+        }
+
+        .section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            flex: 1; /* 让两列等宽 */
+        }
+
+        .eye-display-area {
+            /* 这是眼球组件的父容器，它决定了眼球的实际显示尺寸 */
+            width: 100%; /* 例如，让眼球容器占据其父列的100%宽度 */
+            height: 100px; /* 例如，固定高度，或者使用 padding-bottom hack 维持宽高比 */
+            max-width: 250px; /* 限制最大宽度 */
+            margin: 20px auto;
+            border: 1px dashed #a0a0a0;
+            background-color: #0f1012; /* 与原“极简线框风”的背景色匹配 */
+            display: flex; /* 使用 flexbox 帮助眼球 SVG 在容器内居中 */
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* 确保眼球不会溢出边框 */
+        }
+        
+        .smaller-eye-area {
+            width: 80px;  /* 更小的尺寸 */
+            height: 40px;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            background-color: #d8dee9; /* 与原“拟物写实风”的背景色匹配 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        h2 {
+            color: #4a5568;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #777;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>欢迎来到我的定制页面！</h1>
+        <p>这里有我的各种精彩内容，以及一个有趣的鼠标跟随眼球。</p>
+    </header>
+
+    <div class="main-content">
+        <div class="section">
+            <h2>左侧内容区</h2>
+            <p>
+                这是你的主要内容区域，可以在这里放置文字、图片、表格等任何信息。
+                这个眼球组件可以很方便地嵌入到页面的任何一个父级 <code>div</code> 中，
+                并且它的尺寸会自适应父容器。
+            </p>
+            <h3>我的跟随眼睛 (极简风格)</h3>
+            <!-- 这个 div 将作为眼球组件的父容器 -->
+            <div id="my-first-eye" class="eye-display-area">
+                <!-- 眼球组件会通过 JavaScript 插入到这里 -->
+            </div>
+            <p>
+                你可以通过调整上面 <code>#my-first-eye</code> 这个 <code>div</code> 的 
+                <code>width</code> 和 <code>height</code> 属性来控制眼睛的大小。
+                组件内部的 SVG 会自动填充这个容器。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>右侧功能区</h2>
+            <p>
+                这里可以放置一些辅助功能或者侧边栏内容。
+                为了展示灵活性，我们也可以在这里添加一个不同风格或尺寸的眼睛。
+            </p>
+            <h3>我的另一个眼睛 (拟物风格，小尺寸)</h3>
+            <div id="my-second-eye" class="smaller-eye-area">
+                <!-- 另一个眼球组件会插入到这里 -->
+            </div>
+            <p>
+                注意，无论父容器如何定义大小，眼睛的内部坐标系始终是 <code>viewBox="0 0 200 100"</code>，
+                这意味着它的宽高比是 2:1。如果你想避免眼睛变形，请尽量让父容器也保持 2:1 的宽高比。
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 我的个人页面. All rights reserved.</p>
+    </footer>
+
+    <!-- 引入眼球组件的 JavaScript 文件 -->
+    <script src="js/eye.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 获取你想要插入眼球组件的父容器
+            const eyeContainer1 = document.getElementById('my-first-eye');
+            if (eyeContainer1) {
+                // 实例化第一个眼球组件 (使用默认的 'minimal' 极简风格)
+                // 确保 parentElement 存在
+                new MagneticEye(eyeContainer1, { 
+                    style: 'minimal' // 明确指定为极简线框风（对应你原页面左侧的）
+                });
+            }
+
+            // 你可以根据需要创建多个眼睛实例
+            const eyeContainer2 = document.getElementById('my-second-eye');
+            if (eyeContainer2) {
+                // 实例化第二个眼球组件 (使用 'realistic' 拟物风格)
+                new MagneticEye(eyeContainer2, { 
+                    style: 'realistic' // 拟物写实风
+                });
+            }
+
+            // 如果你想动态调整大小，可以直接修改父容器的 CSS 属性
+            // 例如：
+            // setTimeout(() => {
+            //     if (eyeContainer1) {
+            //         eyeContainer1.style.width = '300px';
+            //         eyeContainer1.style.height = '150px';
+            //     }
+            // }, 5000);
+        });
+    </script>
+</body>
+</html>

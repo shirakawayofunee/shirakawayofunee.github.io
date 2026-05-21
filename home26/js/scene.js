@@ -387,7 +387,7 @@ async function loadChapter(chapterId) {
   const summaryEl = document.getElementById("header-summary");
   
   if (summaryEl) {
-      summaryEl.textContent = "ACCESSING ARCHIVES...";
+      summaryEl.textContent = "God's great power is in the gentle breeze, not in the storm.";
   }
 
     // 【新增】：加载新章节前，旧标题平滑淡出

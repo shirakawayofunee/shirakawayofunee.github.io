@@ -1,0 +1,47 @@
+/* eye-component.css */
+
+/* 外层容器，用于控制眼睛组件的尺寸和布局 */
+.magnetic-eye-component {
+    display: block; /* 确保它作为一个块级元素 */
+    width: 100%;    /* 默认填充父容器的宽度 */
+    height: 100%;   /* 默认填充父容器的高度 */
+    box-sizing: border-box; /* 边框和内边距包含在宽度和高度内 */
+    /* 可以根据需要在这里添加边框、背景等样式 */
+}
+
+/* SVG 元素本身的样式 */
+.magnetic-eye-component svg {
+    display: block;         /* 移除 SVG 下方可能存在的额外间隙 */
+    width: 100%;            /* 确保 SVG 填充其父容器的宽度 */
+    height: 100%;           /* 确保 SVG 填充其父容器的高度 */
+    pointer-events: none;   /* **关键**：让鼠标事件穿透 SVG，以便 window 上的 mousemove 能捕获到 */
+    overflow: visible;      /* 允许 SVG 内部元素绘制到 viewBox 外部（如果裁切需要） */
+}
+
+.eye-display-area {
+    /* 这是眼球组件的父容器，它决定了眼球的实际显示尺寸 */
+    width: 100%; /* 例如，让眼球容器占据其父列的100%宽度 */
+    height: 100px; /* 例如，固定高度，或者使用 padding-bottom hack 维持宽高比 */
+    max-width: 250px; /* 限制最大宽度 */
+    margin: 20px auto;
+    border: 1px dashed #a0a0a0;
+    background-color: #0f1012; /* 与原“极简线框风”的背景色匹配 */
+    display: flex; /* 使用 flexbox 帮助眼球 SVG 在容器内居中 */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 确保眼球不会溢出边框 */
+}
+
+.smaller-eye-area {
+    width: 80px;  /* 更小的尺寸 */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: blue;
+}
+
+/* 如果有需要，可以在这里添加更具体的 SVG 内部元素样式，
+   但原代码中的颜色、描边等大多是通过 SVG 属性直接定义的，
+   所以这里的 CSS 保持简洁。 */
