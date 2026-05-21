@@ -400,7 +400,7 @@ async function loadChapter(chapterId) {
   scriptDiv.innerHTML = '';
   if (titleBox) scriptDiv.appendChild(titleBox); 
   if (headerBox) scriptDiv.appendChild(headerBox); 
-  scriptDiv.insertAdjacentHTML('beforeend', '<div class="narration">運命を読み取り中……</div>');
+  scriptDiv.insertAdjacentHTML('beforeend', '<div class="narration">運命の果てと果てで、同じような痛みを私たちは抱いているのか</div>');
 
   try {
     const module = await import(`../data/${chapterId}.js`);
