@@ -1,7 +1,7 @@
 class MagneticPointer {
     constructor(options = {}) {
         // --- 配置参数 ---
-        this.selector = options.selector || '.magnetic-target'; 
+        this.selector = options.selector || '.magnetic-target'; // 你要吸附的元素类名
         this.color = options.color || '#17f700';
         this.baseSize = options.baseSize || 40;
         this.padding = options.padding || 20;
@@ -12,23 +12,13 @@ class MagneticPointer {
         this.pointer = null;
         this.currentTarget = null;
         
-        // --- 新增：记录坐标状态 ---
-        this.mouseX = -100;
-        this.mouseY = -100;
-        
         this.init();
     }
 
     init() {
-        // 【关键修复 1】检测是否为触屏设备（如手机/平板），如果是，则直接不启动鼠标特效
-        if (window.matchMedia("(pointer: coarse)").matches) {
-            return;
-        }
-
         this.injectStyles();
         this.createDOM();
         this.bindEvents();
-        this.render(); // 启动高性能渲染循环
     }
 
     injectStyles() {
@@ -49,14 +39,10 @@ class MagneticPointer {
                 left: 0;
                 width: var(--width);
                 height: var(--height);
-                /* 【关键修复 2】加上 !important，防止被 GitHub 页面上的其他主题 CSS 覆盖 */
-                pointer-events: none !important; 
-                z-index: 999999;
+                pointer-events: none; /* 穿透鼠标事件，非常关键 */
+                z-index: 99999;
                 transition: width 0.2s ease-out, height 0.2s ease-out;
                 will-change: transform, width, height;
-                
-                /* 【关键修复 3】初始隐藏，等鼠标真正移动了再显示，避免它一直傻傻停在左上角 */
-                opacity: 0; 
             }
             .magnetic-pointer div {
                 position: absolute;
@@ -83,18 +69,32 @@ class MagneticPointer {
     }
 
     bindEvents() {
-        // 【关键修复 4】增加 { capture: true } 开启事件捕获，强行拦截被其他插件截断的鼠标事件
+        // 1. 处理鼠标移动时的跟随与磁吸坐标计算
         window.addEventListener("mousemove", (e) => {
-            this.mouseX = e.clientX;
-            this.mouseY = e.clientY;
+            let x = e.clientX;
+            let y = e.clientY;
 
-            // 第一次移动鼠标时，解除透明状态
-            if (this.pointer.style.opacity === '0' || this.pointer.style.opacity === '') {
-                this.pointer.style.opacity = '1';
+            // 如果当前有选中的目标，计算磁吸
+            if (this.currentTarget) {
+                const rect = this.currentTarget.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                x = centerX + (x - centerX) * this.magneticForce;
+                y = centerY + (y - centerY) * this.magneticForce;
             }
-        }, { capture: true, passive: true });
 
+            this.pointer.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+        });
+
+        // ==========================================
+        // 2. 核心修改：使用事件委托处理动态元素悬停
+        // ==========================================
+        
+        // 监听全局鼠标进入元素
         document.addEventListener('mouseover', (e) => {
+            // e.target.closest 会向上查找最近的符合条件的元素
+            // 这样即使你鼠标放到目标内部的子元素上（比如按钮里的文字），也能正确识别
             const target = e.target.closest(this.selector);
             
             if (target) {
@@ -103,42 +103,22 @@ class MagneticPointer {
                 this.pointer.style.setProperty("--width", `${rect.width + this.padding}px`);
                 this.pointer.style.setProperty("--height", `${rect.height + this.padding}px`);
             }
-        }, { capture: true });
+        });
 
+        // 监听全局鼠标离开元素
         document.addEventListener('mouseout', (e) => {
             const target = e.target.closest(this.selector);
             
             if (target) {
+                // 如果鼠标只是在目标元素内部的子元素之间移动，不触发离开动画
                 if (e.relatedTarget && target.contains(e.relatedTarget)) {
                     return;
                 }
+
                 this.currentTarget = null;
                 this.pointer.style.setProperty("--width", `${this.baseSize}px`);
                 this.pointer.style.setProperty("--height", `${this.baseSize}px`);
             }
-        }, { capture: true });
-    }
-
-    // 【关键修复 5】使用 requestAnimationFrame 分离“数据计算”和“页面渲染”
-    render() {
-        let x = this.mouseX;
-        let y = this.mouseY;
-
-        if (this.currentTarget) {
-            const rect = this.currentTarget.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            
-            x = centerX + (x - centerX) * this.magneticForce;
-            y = centerY + (y - centerY) * this.magneticForce;
-        }
-
-        // 使用 translate3d 开启 GPU 硬件加速，防止在 Github 环境下与其他复杂 CSS 产生性能冲突
-        if (this.pointer) {
-            this.pointer.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-        }
-
-        // 保持循环渲染
-        requestAnimationFrame(() => this.render());
+        });
     }
 }
