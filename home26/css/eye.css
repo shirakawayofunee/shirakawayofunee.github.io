@@ -45,3 +45,50 @@
 /* 如果有需要，可以在这里添加更具体的 SVG 内部元素样式，
    但原代码中的颜色、描边等大多是通过 SVG 属性直接定义的，
    所以这里的 CSS 保持简洁。 */
+
+   /* 基础眼球容器样式（按需设定宽高） */
+.eye-wrapper {
+    margin: 0 auto;
+    /* 确保宽高比接近 2:1 不会变形 */
+  }
+  
+  /* 默认状态下的大眼球：显示并设定大尺寸 */
+  .large-eye {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: 100px; 
+  }
+  
+  /* 默认状态下的小眼球：隐藏 */
+  .small-eye {
+    display: none;
+    width: 60px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ========================================= */
+  /* 当触发 sidebar-collapsed 时，发生状态反转 */
+  /* ========================================= */
+  
+  /* 侧边栏收缩时：隐藏大眼球 */
+  .main-container.sidebar-collapsed .large-eye {
+    display: none;
+  }
+  
+  /* 侧边栏收缩时：显示小眼球 */
+  .main-container.sidebar-collapsed .small-eye {
+    display: block;
+  }
+
+  /* 让大眼球变成黑色 */
+.large-eye {
+    --eye-color: #333333; 
+  }
+  
+  /* 让小眼球变成蓝色，甚至可以加点其他的样式 */
+  .small-eye {
+    --eye-color: #4a8ef0;
+  }

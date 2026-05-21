@@ -82,12 +82,12 @@ class MagneticEye {
                 <!-- 整个瞳孔组被 clip-path 包裹，超出眼眶的部分会被直接隐藏 -->
                 <g clip-path="url(#clip-minimal-${instanceId})">
                     <g class="pupil-group">
-                        <circle cx="0" cy="0" r="18" fill="none" stroke="#e0e0e0" stroke-width="3" vector-effect="non-scaling-stroke"/>
-                        <circle cx="0" cy="0" r="7" fill="#e0e0e0" vector-effect="non-scaling-stroke"/>
+                        <circle cx="0" cy="0" r="18" fill="none" stroke="var(--eye-color, #e0e0e0)" stroke-width="3" vector-effect="non-scaling-stroke"/>
+                        <circle cx="0" cy="0" r="7" fill="var(--eye-color, #e0e0e0)" vector-effect="non-scaling-stroke"/>
                     </g>
                 </g>
                 <!-- 眼眶线最后画，盖在最上面，确保边缘干净 -->
-                <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50" fill="none" stroke="#e0e0e0" stroke-width="4" stroke-linejoin="round"/>
+                <path d="M 10 50 Q 100 -10 190 50 Q 100 110 10 50" fill="none" stroke="var(--eye-color, #e0e0e0)" stroke-width="4" stroke-linejoin="round"/>
             `;
             // 极简风格的默认瞳孔配置
             this.pupilConfig = { Rx: 55, Ry: 20, squish: 0.5, ...this.options.pupilConfig };
@@ -158,6 +158,7 @@ class MagneticEye {
 
         // 获取 SVG 在页面中的实际位置和尺寸
         const rect = this.svg.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) return; 
         const eyeCenterX = rect.left + rect.width / 2;
         const eyeCenterY = rect.top + rect.height / 2;
 

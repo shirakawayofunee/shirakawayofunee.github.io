@@ -479,6 +479,10 @@ html {
     justify-content: center;
     transition: all 0.2s ease;
     box-shadow: 2px 2px 0px #111;
+    position: absolute;
+  
+  /* 如果你想让它在最左侧（例如距离左边 10px） */
+  left: 20px;
     /* 粗野主义阴影风格 */
 }
 

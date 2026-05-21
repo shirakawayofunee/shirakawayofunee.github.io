@@ -295,6 +295,21 @@ function toggleSidebar() {
   const container = document.querySelector('.main-container');
   container.classList.toggle('sidebar-collapsed');
 }
+
+// 初始化两个眼球
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. 初始化侧边栏的大眼球
+  const largeEyeDiv = document.getElementById('large-eye-container');
+  if (largeEyeDiv) {
+      new MagneticEye(largeEyeDiv, { style: 'minimal' });
+  }
+
+  // 2. 初始化收缩后才显示的小眼球
+  const smallEyeDiv = document.getElementById('small-eye-container');
+  if (smallEyeDiv) {
+      new MagneticEye(smallEyeDiv, { style: 'minimal' }); // 或者改成 'realistic'
+  }
+});
 // --- 1. 初始化分类标签 ---
 function initTabs() {
   const container = document.getElementById("category-tabs");
