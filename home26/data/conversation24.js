@@ -46,13 +46,14 @@ export default {
       },
       {
         name: `『Pansy』`,
-        avatar: `img/dh/`,
-        note: `完全没体验过战争的Z时代，L在她这个年纪的时候，烦恼的是怎么把自己的肠子塞回去，L衷心地为孩子们体会不到“战争是属于全人类的伤口。”这件事而高兴。
-        <br>生い立ち：（工事中）
-        `
+        avatar: `img/dh/P24.png`,
+        note: `敬语系角色
+        `,
+        basicStats: `完全没体验过战争的Z时代，L在她这个年纪的时候，烦恼的是怎么把自己的肠子塞回去，L衷心地为孩子们体会不到“战争是属于全人类的伤口。”这件事而高兴。
+        <br>生い立ち：（工事中）`
       },
       {
-        name: `『Garofano』`,
+        name: `『Garofano』（名前だけ登場）`,
         avatar: `img/dh/S24.png`,
         note: `工事中`
       },
