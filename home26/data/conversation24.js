@@ -50,7 +50,8 @@ export default {
         note: `敬语系角色
         `,
         basicStats: `完全没体验过战争的Z时代，L在她这个年纪的时候，烦恼的是怎么把自己的肠子塞回去，L衷心地为孩子们体会不到“战争是属于全人类的伤口。”这件事而高兴。
-        <br>生い立ち：（工事中）`
+        <br>生い立ち：（工事中）
+Lの目には、まるで家出していた子が何か目的を抱えて帰ってきたように映っている。`
       },
       {
         name: `『Garofano』（名前だけ登場）`,
@@ -511,6 +512,15 @@ export default {
       name: `堇`,
       text: `だから師匠は、私たちに自分だけを愛せと教えるのですか？
       どこへ進めばいいのか分かりません。私に……導きをください。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      bubbleStyle: "inner-voice-c",
+      avatar: `img/dh/wuyan.png`,
+      name: `「師匠」`,
+      text: `彼らの振る舞いを畜生にも劣る外道と糾弾しながら、自らも同じ行いに手を染め畜生に堕ちるわけにはいかない。人間ならば、正邪を弁えることだ。`,
+      voice: `wav/CN/conversation24/vo_event_11031_60.wav`
     },
     {
       type: `dialogue`,
