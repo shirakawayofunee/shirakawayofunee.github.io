@@ -432,7 +432,7 @@ html {
 /* --- 布局 (Grid) --- */
 .main-container {
     display: grid;
-    grid-template-columns: 21fr 58fr 21fr;
+    grid-template-columns: 19fr 58fr 23fr;
     height: 100vh;
     /* gap: 2px;
     background-color: rgb(1, 1, 1, 1); */
@@ -534,7 +534,8 @@ html {
 .header-box {
     width: 100%;
     border: none;
-    padding: 5% 0 0 0;
+    /* padding: 5% 0 0 0; */
+    padding: 0;
     text-align: center;
     position: relative;
     display: flex;
@@ -575,7 +576,8 @@ html {
     border-bottom: var(--border-line);
     background-color: var(--panel-bg);
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    /* flex-wrap: wrap; */
 }
 
 .tab-btn {
@@ -584,9 +586,11 @@ html {
     color: var(--text-sub);
     font-weight: bold;
     font-size: 0.72rem;
-    padding: 10px 12px;
+    padding: 10px 5px;
     cursor: pointer;
     flex-grow: 1;
+    flex-shrink: 1; 
+    min-width: 0;
     text-align: center;
     transition: all 0.2s;
     height: 36px;
@@ -618,11 +622,11 @@ html {
     cursor: pointer;
     transition: background 0.2s;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    /* grid-template-columns: minmax(0, 1fr) auto; */
+    grid-template-columns: 1fr 30px;
     grid-template-rows: auto auto;
     gap: 4px 8px;
     align-items: center;
-    /* 确保盒子不超出父容器 */
     width: 100%;
     box-sizing: border-box;
 }
@@ -642,10 +646,11 @@ html {
     font-size: 0.85rem;
     font-weight: 800;
     color: var(--text-main);
-    white-space: nowrap;
-    overflow: visible;
+    white-space: normal; 
+    word-break: break-all;
+    line-break: loose;
+    overflow-wrap: anywhere; 
     justify-self: start;
-    text-overflow: clip;
     min-width: 0;
     width: 100%;
 }
@@ -2127,7 +2132,7 @@ html {
     color: #333;
     width: 100%;
     box-sizing: border-box;
-    padding: 5% 5% 0 5%;
+    padding: 4% 4% 0 4%;
 }
 
 .oc-window-card {

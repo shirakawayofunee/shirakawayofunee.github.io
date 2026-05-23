@@ -35,7 +35,7 @@ export default {
         note: `工事中`
       },
       {
-        name: `X`,
+        name: `Shalom｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
         avatar: `img/dh/x402.png`,
         note: `廃棄期限まであと一ヶ月しかない道具`
       }

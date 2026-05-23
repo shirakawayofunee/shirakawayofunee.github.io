@@ -313,75 +313,64 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- 1. 初始化分类标签 ---
 function initTabs() {
   const container = document.getElementById("category-tabs");
-  if (!container) return;
-  
-  container.innerHTML = ''; // 规避重复渲染
-
   categories.forEach((cat) => {
     const btn = document.createElement("button");
     btn.className = "tab-btn";
     btn.textContent = cat.name;
     btn.dataset.id = cat.id;
-    
-    // 初始化高亮状态
-    if (cat.id === currentCategory) btn.classList.add("active");
+    if (cat.id === "all") btn.classList.add("active");
 
     btn.onclick = () => {
-      // 切换按钮高亮样式
       document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      // 更新全局当前的分类 ID
       currentCategory = cat.id;
-      
-      // 没有任何多余负担，直接纯净重新渲染
-      renderList(); 
+      document.getElementById("chapter-search").value = "";
+      renderList();
     };
-    
     container.appendChild(btn);
   });
 }
 
 // --- 2. 渲染章节列表 ---
-function renderList() {
-  const listContainer = document.getElementById('chapter-list');
-  if (!listContainer) return;
-  listContainer.innerHTML = '';
+function renderList(searchText = "") {
+    const listContainer = document.getElementById('chapter-list');
+    listContainer.innerHTML = '';
 
-  // 此时过滤只看分类，再也没有搜索框的干扰了
-  const filtered = chapterList.filter(item => {
-      return currentCategory === 'all' || 
-             (item.category && item.category.toLowerCase() === currentCategory.toLowerCase());
-  });
+    const filtered = chapterList.filter(item => {
+        const matchCategory = currentCategory === 'all' || item.category === currentCategory;
+        const matchText = item.title.toLowerCase().includes(searchText.toLowerCase()) ||
+                          item.subtitle.toLowerCase().includes(searchText.toLowerCase());
+        return matchCategory && matchText;
+    });
 
-  // 生成 DOM
-  filtered.forEach(item => {
-      const el = document.createElement('div');
-      el.className = 'chapter-item';
-      el.dataset.id = item.id;
-      
-      if (window.location.hash.substring(1) === item.id) {
-          el.classList.add('active');
-      }
+    filtered.forEach(item => {
+        const el = document.createElement('div');
+        el.className = 'chapter-item';
+        el.dataset.id = item.id;
+        
+        if (window.location.hash.substring(1) === item.id) {
+            el.classList.add('active');
+        }
 
-      el.innerHTML = `
-          <span class="chap-title">${item.title}</span>
-          <div class="chap-arrow-box">
-              <svg class="custom-arrow" viewBox="0 0 12 12">
-                  <line x1="0.5" y1="6" x2="10" y2="6" stroke-linecap="round"></line>
-                  <polyline points="7 3 10 6 7 9" stroke-linecap="round" stroke-linejoin="round"></polyline>
-              </svg>
-          </div>
-          <span class="chap-subtitle">${item.subtitle}</span>
-          <span class="chap-date">${item.dateLabel}</span>
-      `;
+        el.innerHTML = `
+            <span class="chap-title">${item.title}</span>
+            <div class="chap-arrow-box">
+                <svg class="custom-arrow" viewBox="0 0 12 12">
+                    <line x1="0.5" y1="6" x2="10" y2="6" stroke-linecap="round"></line>
+                    <polyline points="7 3 10 6 7 9" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                </svg>
+            </div>
+            <span class="chap-subtitle">${item.subtitle}</span>
+            <span class="chap-date">${item.dateLabel}</span>
+        `;
 
-      el.onclick = () => {
-          window.location.hash = item.id;
-      };
+        el.onclick = () => {
+            window.location.hash = item.id;
+        };
 
-      listContainer.appendChild(el);
-  });
+        listContainer.appendChild(el);
+    });
 }
 
 // --- 3. 路由处理 ---
