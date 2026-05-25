@@ -432,7 +432,7 @@ html {
 /* --- 布局 (Grid) --- */
 .main-container {
     display: grid;
-    grid-template-columns: 19fr 58fr 23fr;
+    grid-template-columns: 18fr 58fr 24fr;
     height: 100vh;
     /* gap: 2px;
     background-color: rgb(1, 1, 1, 1); */
