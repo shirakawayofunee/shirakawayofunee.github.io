@@ -90,7 +90,7 @@ export default {
       position: `left`,
       avatar: `img/dh/black_quartz.jpg`,
       name: `黒石英`,
-      text: `対象（業師）の状態変化を確認。X、下がれ。SHP-13の回収が最優先だ、今の段階で破損することは許されない。`,
+      text: `<ruby>対象<rt>能力者</rt></ruby>の状態変化を確認。X、下がれ。SHP-13の回収が最優先だ、今の段階で破損することは許されない。`,
     },
     {
       type: `narration`,

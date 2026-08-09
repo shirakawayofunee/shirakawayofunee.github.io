@@ -90,7 +90,10 @@ export default {
       avatar: `img/dh/zxx.png`,
       name: `業師`,
       text: `103年…79期…第五陵園だろ…`,
-      voice: `wav/CN/conversation32/vo_event_11043_103.wav`
+      voice: [
+        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_103.wav' },
+        { label: '日', path: 'wav/JP/conversation30/voevent11043_5.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -114,7 +117,10 @@ export default {
       avatar: `img/dh/thistle.jpg`,
       name: `ジギタリス`,
       text: `そんなことしなくていい！彼女たちの居場所、わかってる。私が探しに行く、私が行く！`,
-      voice: `wav/CN/conversation32/vo_event_11043_99.wav`
+      voice: [
+        { label: '中', path: 'wav/CN/conversation32/vo_event_11043_99.wav' },
+        { label: '日', path: 'wav/JP/conversation30/voevent11043_8.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -122,7 +128,10 @@ export default {
       avatar: `img/dh/cry.png`,
       name: `業師`,
       text: `…そうか…見つけたのか…`,
-      voice: `wav/CN/conversation32/vo_event_11043_110.wav`
+      voice: [
+        { label: '中', path: 'wav/CN/conversation32/vo_event_11043_110.wav' },
+        { label: '日', path: 'wav/JP/conversation30/voevent11043_28.wav' },
+      ]
     },
     {
       type: `dialogue`,
