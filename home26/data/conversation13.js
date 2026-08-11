@@ -118,6 +118,13 @@ export default {
       text: `ぷっ。ベビーフェイスなのに、もっと可愛い言葉を話しなさいよ。`
     },
     {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopoldmy.jpg`,
+      name: `業師`,
+      text: `さあ、私の名前を呼んで。<span>『Coquelicot』</span>`
+    },
+    {
       type: `narration`,
       text: `探偵にそんな気分はなかった。意識は体と同じく重く、ただ一番大事なものをつかみたかった。`
     },
@@ -370,7 +377,7 @@ export default {
       position: `right`,
       avatar: `img/dh/thistle.jpg`,
       name: `蓟`,
-      text: `ごめんなさい……業師……許してください……`
+      text: `ごめんなさい……師匠……許してください……`
     },
     {
       type: `narration`,
