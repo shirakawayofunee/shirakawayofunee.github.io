@@ -43,7 +43,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `ドイル`,
-      text: `よくも俺に会いに来たもんだな！レオポルドはどこだ？彼女こそ俺に感謝しに来るべきじゃないのか？`
+      text: `よくも俺に会いに来たもんだな！『Coquelicot』はどこだ？彼女こそ俺に感謝しに来るべきじゃないのか？`
     },
     {
       type: `dialogue`,

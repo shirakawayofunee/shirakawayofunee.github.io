@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
+        name: `Chris｜未来の<ruby>名探偵<rt>自称</rt></ruby>`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
@@ -55,7 +55,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `新都市第三大道<br>未来慈善基金会园区 事件現場`
+      text: `<新都市第三大道><br><未来慈善基金会园区 事件現場>`
+    },
+    {
+      type: `image`,
+      src: `img/cg/fl_203.png`,
     },
     {
       type: `narration`,

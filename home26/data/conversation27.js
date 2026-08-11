@@ -40,6 +40,11 @@ export default {
       text: `N.F.113年8月24日 4:35<br>「Garden」事件現場`
     },
     {
+      type: `image`,
+      src: `img/cg/flowers_2.jpg`,
+      bubbleStyle: "center",
+    },
+    {
       type: `narration`,
       text: `典雅な屏風は銃弾でズタズタに引き裂かれ、精緻な絹の表面には、身体を貫いた弾丸が飛び散らせた血痕が付着していた。少し離れた紗幕や壁には、黒ずんだ弾痕と乾いた血の汚れが残っている。`
     },
@@ -346,7 +351,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `狭間に生きる者は安息を求めるのが難しい。Leopold……君が頑張ったのは知ってる。`
+      text: `狭間に生きる者は安息を求めるのが難しい。『Coquelicot』……君が頑張ったのは知ってる。`
     },
     {
       type: `narration`,

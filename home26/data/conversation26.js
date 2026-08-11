@@ -34,7 +34,14 @@ export default {
         name: `工事中`,
         avatar: `img/dh/`,
         note: `工事中`
-      }
+      },
+      {
+        name: `Mireya｜探偵の妹`,
+        avatar: `img/dh/Mireya.png`,
+        note: `探偵の養父母の実の娘。人を見る目がある人`,
+        basicStats: `両脚に障害があるが、それゆえに自立心が強く、賢く、気丈である。
+姉妹の間ではよく口げんかをするが、実は探偵のことを深く心配している。`,
+      },
     ],
     synopsis: `工事中`
   },
@@ -187,13 +194,15 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `見ても無駄よ。私とあいつは血縁じゃないし、仲も悪い。あいつはここに逃げてこない。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `ほら、これ。あいつが「助けた」バカな連中のうち、似たようなバカが何人かいる。誰かがかくまうなら、絶対この中にいるよ。`
     },
@@ -229,13 +238,14 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `ここで何バカやってんの！？`
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       name: `クリス`,
       text: `……ミリア？どうして……`
     },
@@ -245,25 +255,27 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `あの連中、うちまで来た。名簿で少しは引きつけられるけど、すぐバレる。追跡されてるか、来るかもわかんない。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `これからどうする？どこに逃げる？`
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       name: `クリス`,
       text: `……逃げる……いや……裏に何かある。調べなきゃ……真相を……見つけなきゃ……`
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       name: `クリス`,
       text: `……何が起きたの？`
     },
@@ -273,25 +285,29 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `またあの女のせい？あいつに問題があるって言ったのに、お前だけが自分を騙してた。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `あいつとずっと走り回って、とうに見抜けたはずだろ。真相に直面するのがそんなに難しいか、探偵！？ちっ、もういい。今の状態でも、お前には何か考えがあるんだろ。どうせ止められない。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `これ、持ってけ。お前、治安警学校も受かったし、事件も解決した。それ、全部あいつの手引きじゃない。いなくたって、お前は探長だ。廃物みたいになるな。`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
+      avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `うちに来た時のゾッとする姿を思い出せ。あんなとこから這い出せたんだ、今、しっかりしろ！`
     },
@@ -301,7 +317,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       name: `クリス`,
       text: `……行くよ……来てくれて、ありがとう。`
     },
@@ -376,7 +392,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリス`,
-      text: `この5日、レオポルドが死ぬって噂が飛び交ってる。驚くなよ、八割がたお前らを騙す罠だ。同じ手にかかったろ？`
+      text: `この5日、『Coquelicot』が死ぬって噂が飛び交ってる。驚くなよ、八割がたお前らを騙す罠だ。同じ手にかかったろ？`
     },
     {
       type: `dialogue`,
