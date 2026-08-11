@@ -2,15 +2,15 @@
  * @Author: DCBZ
  * @Date: 2026-01-03 18:16:00
  * @LastEditors: your name
- * @LastEditTime: 2026-01-03 18:58:24
+ * @LastEditTime: 2026-08-11 16:30:27
  * @Description: 
- * @FilePath: \shirakawayofunee.github.io\home\data\side02.js
+ * @FilePath: \shirakawayofunee.github.io\home26\data\side02.js
  */
 export default {
   meta: {
-    title: `flowers-406「後日談·2」`,
+    title: `「腹黑」`,
     bgm: `mp3/bg/终末路.mp3`,
-    summary: `珍しく暇だった週末の午後、局長は図書室に行って本を借りることにした。`
+    summary: `午後の時間、あなたは食堂でガロファノに会った。`
   },
   infoPanel: {
     glossary: [

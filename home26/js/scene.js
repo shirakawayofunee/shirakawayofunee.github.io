@@ -238,7 +238,7 @@ const chapterList = [
   {
     id: "conversation33",
     category: "weak",
-    title: "501「」",
+    title: "501「Citadel」",
     subtitle: "The Weak",
     dateLabel: "N.F.113/11/",
   },
