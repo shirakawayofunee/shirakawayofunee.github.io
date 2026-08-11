@@ -2,13 +2,13 @@
  * @Author: DCBZ
  * @Date: 2026-01-03 18:43:50
  * @LastEditors: your name
- * @LastEditTime: 2026-04-21 01:24:44
+ * @LastEditTime: 2026-08-11 16:17:31
  * @Description: 
  * @FilePath: \shirakawayofunee.github.io\home26\data\conversation33.js
  */
 export default {
   meta: {
-    title: `flowers-405「後日談」`,
+    title: `「[C]itadel」`,
     bgm: `mp3/bg/终末路.mp3`,
     summary: `工事中。`
   },
