@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `Chris｜未来の名探偵（自称）`,
+        name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`

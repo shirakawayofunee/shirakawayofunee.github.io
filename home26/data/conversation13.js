@@ -23,12 +23,18 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
+        name: `「Coquelicot」｜業師（L）`,
         avatar: `img/dh/leopoldmy.jpg`,
-        note: `工事中`
+        note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
+        basicStats: `生の流儀：人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
+        コードネーム由来：
+        「Coquelicot」、フランス語の「虞美人」
+        人前では（工事中）
+内面では子どもへの深い慈愛と責任感を胸に、いかなる逆境にあっても活路を切り開き、決して重圧をかけず、心配させまいと気丈に振る舞う師匠
+生い立ち：（工事中）`
       },
       {
-        name: `Chris｜未来の名探偵（自称）`,
+        name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
@@ -87,7 +93,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
-      text: `私の「Garden」。敵の牙城よ、刑事ちゃん。`
+      text: `私の「Garden」。敵の牙城よ、探偵ちゃん。`
     },
 
     {

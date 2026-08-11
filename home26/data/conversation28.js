@@ -30,12 +30,19 @@ export default {
     ],
     characters: [
       {
-        name: `L`,
+        name: `「Coquelicot」｜業師（L）`,
         avatar: `img/dh/leopold402.png`,
-        note: `工事中`
+        note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
+        basicStats: `生の流儀：人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
+        コードネーム由来：
+        「Coquelicot」、フランス語の「虞美人」
+        人前では（工事中）
+内面では子どもへの深い慈愛と責任感を胸に、いかなる逆境にあっても活路を切り開き、決して重圧をかけず、心配させまいと気丈に振る舞う師匠
+生い立ち：（工事中）`
       },
+      
       {
-        name: `Shalom｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
+        name: `Shalom｜上庭の<ruby>執行人<rt>Hush-X</rt></ruby>`,
         avatar: `img/dh/x402.png`,
         note: `廃棄期限まであと一ヶ月しかない道具`
       }
@@ -394,7 +401,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x6.png`,
       name: `執行人`,
-      text: `運命（さだめ）が何か、君の方がよくわかっているはずだ。`,
+      text: `<ruby>運命<rt>さだめ</rt></ruby>が何か、君の方がよくわかっているはずだ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_9.wav' },
       ]
