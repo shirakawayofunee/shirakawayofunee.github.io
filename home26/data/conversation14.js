@@ -111,7 +111,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `（探偵の回想）<br>「Garden」は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`
+      text: `（探偵の回想）<br>「Garden」は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_44.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,

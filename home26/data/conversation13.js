@@ -42,6 +42,7 @@ export default {
     ],
     synopsis: `工事中`
   },
+  
   script: [
     {
       type: `dialogue`,
@@ -49,6 +50,11 @@ export default {
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
       text: `さっきの叫び声、めっちゃ悲惨だったね。悪夢でも見た？安心して、君の体にあった汚染は、慈悲深い私が全部抜いてあげたから。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_33.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -65,6 +71,7 @@ export default {
     {
       type: `narration`,
       text: `暗闇から聞こえるのは、聞き慣れた声。誰かが彼女をじっと見つめている。`
+    ,
     },
     {
       type: `dialogue`,
@@ -72,6 +79,11 @@ export default {
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
       text: `床、硬いよね。ごめんね、怪我人に膝枕でも貸してあげたいところだけど、君、傷だらけでさ。寄りかかったら私の服が汚れちゃうから。ちょっと我慢してね。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_63.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -80,6 +92,7 @@ export default {
     {
       type: `image`,
       src: `img/cg/hua_05.png`
+    ,
     },
     {
       type: `dialogue`,
@@ -87,6 +100,10 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `ここは……どこ？`
+    ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -94,6 +111,11 @@ export default {
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
       text: `私の「Garden」。敵の牙城よ、探偵ちゃん。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_86.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
 
     {
@@ -102,6 +124,11 @@ export default {
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
       text: `私のこと、覚えてる？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_23.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -109,6 +136,10 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `……覚えてるよ、殺人犯。`
+    ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -116,6 +147,11 @@ export default {
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
       text: `ぷっ。ベビーフェイスなのに、もっと可愛い言葉を話しなさいよ。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_92.wav' },
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_2.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -123,6 +159,11 @@ export default {
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
       text: `さあ、私の名前を呼んで。<span>『Coquelicot』</span>`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_92.wav' },
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_2.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -134,6 +175,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `君の事件……全部10年前の復讐だ。同様の復讐……でも、それは君の本当の狙いじゃない……`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -141,6 +187,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `……君はこの事件で、あたしに何かを調べさせたいんだ。10年前の何かを暴きたいんだよね……`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -149,6 +200,11 @@ export default {
       name: `探偵`,
       text: `なら、素直にあたしに調べさせてよ! どうしてこんな酷いことをするの! 俳句はあと二つ、 それは二人分の命。
       ここまでにしようよ。君の欲しい物を調べに行ってあげるから、これ以上は―――`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_1.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -160,6 +216,11 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `業師`,
       text: `「Garden」は人生を楽しむ場所なんだから、仕事のつまんない話はなしにしてよ。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_88.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -167,6 +228,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `じゃあ、なんで私をここに連れてきた？殺す気？それとも拷問？`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -174,6 +240,11 @@ export default {
       avatar: `img/dh/leopold3.png`,
       name: `業師`,
       text: `そうね……ああ、そう言えばあなたを「Garden」に推薦した人がいるわね。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_21.wav' },
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_12.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -181,13 +252,35 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `は？`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
-      text: `ふふ、可愛い反応。君もFACの可哀想な子なんだから、ここの仲間と挨拶でもしたら？`
+      text: `ふふ、可愛い反応。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_65.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopoldmy.jpg`,
+      name: `業師`,
+      text: `君もFACの可哀想な子なんだから、ここの仲間と挨拶でもしたら？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_89.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -195,6 +288,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `「も」？`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -202,6 +300,11 @@ export default {
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
       text: `何年も経って、FACで死んだ人なんて山ほどいる。君と同じ境遇の子供が「Garden」に加わるなんて、普通でしょ？彼女たち、君のこと結構気に入ってるよ。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_15.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -213,6 +316,10 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `違う……どんな不当な扱いを受けたって、私は他人を傷つけない。正義を信じてる……`
+    ,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_4.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -220,6 +327,11 @@ export default {
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
       text: `何が違うのさ。8年前、君だって一人で涅槃グループに乗り込んで、上庭の代表を刺したじゃない？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_59.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -237,7 +349,22 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の「Garden」に連れてこられても驚きも騒ぎもしない……やっぱり、慣れてるんだね。君の心はずっと真っ暗なところに閉じ込められてる。`
+      text: `だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の「Garden」に連れてこられても驚きも騒ぎもしない……`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_17.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold.png`,
+      name: `業師`,
+      text: `やっぱり、慣れてるんだね。君の心はずっと真っ暗なところに閉じ込められてる。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_6.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -249,6 +376,11 @@ export default {
       avatar: `img/dh/smile0.png`,
       name: `業師`,
       text: `あの時、何があったの？小さい子がそんな大それたことやっちゃうなんて、どれだけ怒ってたの？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_82.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -256,6 +388,11 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `業師`,
       text: `刺殺、成功した？憎しみをぶつけた相手、仕留めた？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_94.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -267,6 +404,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `……そんなんじゃない。君には関係ない。話すつもりもない。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -274,6 +416,11 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `業師`,
       text: `じゃあ、刺殺失敗したんだ。残念だね、君、めっちゃ才能あるのに。能力者として覚醒までしてる。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_38.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -281,6 +428,11 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `業師`,
       text: `暗殺者として、復讐者として、怒りに燃えてすべてを焼き尽くす者として。君には暴力と破壊の才能がある。ここにいる子たちと同じだ。だからあの女が君をそばに置いてるのよ。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_50.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -288,6 +440,11 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `業師`,
       text: `正義なんてやめなよ。それは君のシャーローム姉さんがでっち上げた嘘、君を縛る鎖にすぎない。君が扱ってる事件がその証拠でしょ？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_96.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -295,6 +452,11 @@ export default {
       avatar: `img/dh/regret.png`,
       name: `業師`,
       text: `アナタニアって女、浅はかで虚栄心の塊。道徳の高いところに立って他人を口汚く罵り、人を傷つけたらビビって魂が抜けたみたいになって、数日後にはまた自己弁護して高みに戻る。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_41.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -302,6 +464,11 @@ export default {
       avatar: `img/dh/smile0.png`,
       name: `業師`,
       text: `ネイサンだって、汚い手口のシンジケートの野犬。頭の腐った議員に取り入って、どれだけの人命を背負ってるんだ。10年経っても、私が裁かなかったら、誰が裁くの？君の正義はどこにあるの？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_39.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -313,6 +480,11 @@ export default {
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
       text: `……そういうこと言うの、君で何人目だ。「世の中が暗いから、正義なんて存在しない。だからちょっとルールを破ってもいいよね」って。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -320,6 +492,11 @@ export default {
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
       text: `世界がひどいから、君の悪は許されるって？ふざけるな！自分がやった悪を軽々しく流すなよ。君だってあいつらと同類、汚い仲間だ！君も悪の一部だ！`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -327,6 +504,11 @@ export default {
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
       text: `この城邦で、どれだけの市民が君たちを恐れてるか、どれだけの極悪人が君たちを真似して無垢な人を傷つけてるか、自分でわかってないの？`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -338,6 +520,11 @@ export default {
       avatar: `img/dh/leopold3.png`,
       name: `業師`,
       text: `はぁ……聞いた、蓟？これが君が必死で助けた「同類」だよ。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_80.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -349,6 +536,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `これは……？`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -360,6 +552,11 @@ export default {
       avatar: `img/dh/smile0.png`,
       name: `業師`,
       text: `化け物の山からこいつをせっかく引っ張り出したのに、同じ境遇なら分かり合えると思ったんだろ？でも、相手には君がただのクズに見える。せっかくの好意が無駄だったね。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_51.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -367,10 +564,20 @@ export default {
       avatar: `img/dh/smile0.png`,
       name: `業師`,
       text: `もしこいつが君の情にほだされて、涙を流して優しい言葉をかけてきたら、君、泣きながら「Garden」の全部を差し出しちゃうつもり？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_72.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
       text: `蓟は業師を見られず、ただ探偵を恨めしそうに睨み、怒りと羞恥、後悔が目に溢れていた。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -378,6 +585,11 @@ export default {
       avatar: `img/dh/thistle.jpg`,
       name: `蓟`,
       text: `ごめんなさい……師匠……許してください……`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -389,6 +601,11 @@ export default {
       avatar: `img/dh/impatient.png`,
       name: `業師`,
       text: `情けない！何度も言ったよね、他人をそんな大事にしないって。今さら泣きわめいて何？「あ、大丈夫、許すよ」って私が言えば、気が楽になる？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_19.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -396,6 +613,11 @@ export default {
       avatar: `img/dh/impatient.png`,
       name: `業師`,
       text: `勝手な行動で私のルールを破り、敵を本拠地に連れ込み、君の気持ちまで私がケアしろって？私が君のママなの？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_56.wav' },
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_6.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -403,6 +625,11 @@ export default {
       avatar: `img/dh/impatient.png`,
       name: `業師`,
       text: `ムカつく！せっかくの休息時間、君とその汚い拾い物に台無しにされた。禁閉行き！私が機嫌直すまで出てくんな。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_64.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -410,6 +637,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `待って――`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -429,10 +661,15 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/thistle2.jpg`,
       name: `蓟`,
       text: `……死ねばよかったのに、飼い慣らされたクズ！`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_2.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -444,6 +681,11 @@ export default {
       avatar: `img/dh/smile0.png`,
       name: `業師`,
       text: `ほら、彼女もFACの遺族だよ。103年で全てを失った。でも、君みたいな後ろ盾はなかった。正義にすがっても、返ってきたのはビンタの嵐だけ。だから私のところに来た。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_73.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -451,6 +693,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `そして……君は彼女を利用した。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -458,6 +705,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `最初は福音地、次は君……復讐を口実に、傷ついた人たちを騙して利用してる。一無所有の彼女たちを、傷つける刃に変えたんだ。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -465,6 +717,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `彼女の人生が壊れたとしても、人は強い。少しずつ立ち直って、自分を取り戻せたはずだ。可是、君が彼女を闇に引きずり込んだ。今じゃもう戻れない！`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -480,6 +737,11 @@ export default {
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
       text: `吠えるな。執行人がくれるのは立派な正義で、私が与えるのは憎しみの洗脳だと？誰を見下してるの？`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_74.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -487,6 +749,11 @@ export default {
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
       text: `君がどんな奴か、私にはお見通しだ。この世界に復讐する力がないから、一番空っぽなものを救命胴衣みたいにしがみついてるだけ。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_30.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -494,6 +761,11 @@ export default {
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
       text: `君みたいなのが一番騙されやすい、一番間抜けで弱いんだ。蓟の馬鹿を目覚めさせるためじゃなきゃ、君のことなんか見向きもしないよ。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_75.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -501,6 +773,11 @@ export default {
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
       text: `「Garden」は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_46.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -508,6 +785,11 @@ export default {
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
       text: `私たちを傷つけた奴は、当然私が自分で裁く。そうやって奪われたものを自分の手で取り返すの。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_81.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -515,13 +797,35 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `じゃあ……今やってることは何？この一連の事件、誰に復讐してるの？`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
-      text: `私の深い恨みはもう自分で片付けた。私は自由だ。今やってることは、全部私が楽しみたいから。で、私が何をしたいかって？君の主人に伝えなよ。彼女に私と遊んでもらおうじゃない。これもきっと、彼女が君を送り込んだ目的でしょ。`
+      text: `私の深い恨みはもう自分で片付けた。私は自由だ。今やってることは、全部私が楽しみたいから。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_1.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold2.png`,
+      name: `業師`,
+      text: `で、私が何をしたいかって？君の主人に伝えなよ。彼女に私と遊んでもらおうじゃない。これもきっと、彼女が君を送り込んだ目的でしょ。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_87.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -529,6 +833,11 @@ export default {
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
       text: `だって……まさか本当に君に事件を解決できるなんて思ってる人、いるわけないよね。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_71.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -540,6 +849,11 @@ export default {
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
       text: `うっ――！`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -547,6 +861,11 @@ export default {
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
       text: `リラックスして。これはただの回復剤に、ほんのちょっと精神薬を混ぜただけ。ここから逃げるのに役立つよ。道さえ覚えなきゃ、君の命は取らない。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_47.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -554,6 +873,11 @@ export default {
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
       text: `逃げなさい、道端で死なないでね。芝居はまだ終わっていないの。私、君が幕を開けてくれるの、待ってるから。`
+      ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_66.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     }
   ]
 };
