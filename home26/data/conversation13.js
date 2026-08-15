@@ -39,6 +39,14 @@ export default {
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
       },
+      {
+        name: `『<ruby>薊<rt>アザミ</rt></ruby>』`,
+        avatar: `img/dh/thistle3.jpg`,
+        note: `19歳、能力者、「GARDEN」の殺し屋`,
+        basicStats: `103年、身为FAC的双亲死于，走投无路的薊加入花园
+        103年、
+        作为殺し屋最想复仇的对象是连军人家属的抚恤金都要贪污的基金会。`
+      },
     ],
     synopsis: `工事中`
   },
@@ -519,7 +527,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold3.png`,
       name: `業師`,
-      text: `はぁ……聞いた、蓟？これが君が必死で助けた「同類」だよ。`
+      text: `はぁ……聞いた、薊？これが君が必死で助けた「同類」だよ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_80.wav' },
@@ -544,7 +552,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師はもう探偵の質問には答えず、蓟の方を向き、嘲るような顔をした。`
+      text: `業師はもう探偵の質問には答えず、薊の方を向き、嘲るような顔をした。`
     },
     {
       type: `dialogue`,
@@ -572,7 +580,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `蓟は業師を見られず、ただ探偵を恨めしそうに睨み、怒りと羞恥、後悔が目に溢れていた。`
+      text: `薊は業師を見られず、ただ探偵を恨めしそうに睨み、怒りと羞恥、後悔が目に溢れていた。`
     ,
       voice: [
         /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
@@ -583,7 +591,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/thistle.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `ごめんなさい……師匠……許してください……`
     ,
       voice: [
@@ -663,7 +671,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `……死ねばよかったのに、飼い慣らされたクズ！`
     ,
       voice: [
@@ -673,7 +681,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `蓟は去った。探偵は地面に倒れ、業師は横で面白そうに見つめていた。`
+      text: `薊は去った。探偵は地面に倒れ、業師は横で面白そうに見つめていた。`
     },
     {
       type: `dialogue`,
@@ -760,7 +768,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
-      text: `君みたいなのが一番騙されやすい、一番間抜けで弱いんだ。蓟の馬鹿を目覚めさせるためじゃなきゃ、君のことなんか見向きもしないよ。`
+      text: `君みたいなのが一番騙されやすい、一番間抜けで弱いんだ。薊の馬鹿を目覚めさせるためじゃなきゃ、君のことなんか見向きもしないよ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_75.wav' },

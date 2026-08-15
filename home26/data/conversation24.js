@@ -75,9 +75,9 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
         `,
       },
       {
-        name: `『Garofano』（名前だけ登場）`,
-        avatar: `img/dh/S24.png`,
-        note: `Lに長年仕えていた組織の古参幹部。`,
+        name: `『薊』（名前だけ登場）`,
+        avatar: `img/dh/thistle3.jpg`,
+        note: ``,
         basicStats: ``
       },
       {

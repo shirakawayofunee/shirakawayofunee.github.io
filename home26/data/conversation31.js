@@ -91,7 +91,7 @@ export default {
       name: `業師`,
       text: `103年…79期…第五陵園だろ…`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_103.wav' },
+        { label: '中', path: 'wav/CN/conversation32/vo_event_11043_103.wav' },
         { label: '日', path: 'wav/JP/conversation30/voevent11043_5.wav' },
       ]
     },

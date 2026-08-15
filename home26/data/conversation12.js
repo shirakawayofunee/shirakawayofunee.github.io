@@ -275,7 +275,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `人は花を咲かせる……肉体も魂も養分となり、花を育て、開花させる。`
+      text: `（探偵の回想）<br>人は花を咲かせる……肉体も魂も養分となり、花を育て、開花させる。`
     },
     {
       type: `narration`,

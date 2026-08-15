@@ -191,7 +191,7 @@ export default {
       position: `left`,
       avatar: `img/dh/pc0.png`,
       name: `Unknown`,
-      text: `俺だ。`
+      text: `私だ。`
     },
     {
       type: `dialogue`,

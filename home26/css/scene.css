@@ -1899,11 +1899,11 @@ html {
     padding: 18% 25% 0 0;
 
     /* 字体设计 */
-    font-size: 1.15rem;
-    letter-spacing: 6px;
-    line-height: 3;
-    font-family: "ming";
-    color: rgba(1, 1, 1, 1);
+    font-size: 1.15rem !important;
+    letter-spacing: 6px !important;
+    line-height: 3 !important;
+    font-family: "ming" !important;
+    color: rgba(1, 1, 1, 1) !important;
     /* 核心 2：Blue Rain 时光倒流 (向上的蓝色渐变线) */
     background: url('/home26/img/cg/bg_flower23_room_tips.png') no-repeat center;
 }

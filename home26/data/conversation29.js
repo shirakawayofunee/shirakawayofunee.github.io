@@ -44,7 +44,12 @@ export default {
         name: `『Coquelicot』｜業師`,
         avatar: `img/dh/leopold402.png`,
         note: `工事中`,
-        basicStats: `
+        basicStats: `生の流儀：人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
+        コードネーム由来：
+        「Coquelicot」、フランス語の「虞美人」
+        人前では（工事中）
+        内面では子どもへの深い慈愛と責任感を胸に、いかなる逆境にあっても活路を切り開き、決して重圧をかけず、心配させまいと気丈に振る舞う師匠
+        生い立ち：（工事中）
         `,
       },
       {
@@ -569,7 +574,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
-      text: `スミレが気にかけていたあの人のことね……でも、君が殺したんじゃなかったかしら？ あの人も、君たちと福音地が殺し合うための生贄でしょう？`,
+      text: `<ruby>菫<rt>スミレ</rt></ruby>が気にかけていたあの人のことね……でも、君が殺したんじゃなかったかしら？ あの人も、君たちと福音地が殺し合うための生贄でしょう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_12.wav" },
         /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */

@@ -43,6 +43,14 @@ export default {
         二人のお姉さんに挟まれて過ごした、人生で一番忘れられない夏だった。
         ちなみに彼女、かなり心に刺さったみたいで、師匠の「自分のために咲き、自分のために生き、そして自分のために死ぬのよ。誰よりも先に、自分自身を愛する。自分の運命は自分の手にある！」という言葉を自分の推理メモ帳にしっかり書き写してました。`
       },
+      {
+        name: `『<ruby>薊<rt>アザミ</rt></ruby>』`,
+        avatar: `img/dh/thistle3.jpg`,
+        note: `19歳、能力者、「GARDEN」の殺し屋`,
+        basicStats: `103年、身为FAC的双亲死于，走投无路的薊加入花园
+        103年、
+        作为殺し屋最想复仇的对象是连军人家属的抚恤金都要贪污的基金会。`
+      },
     ],
     synopsis: ``
   },
@@ -74,7 +82,7 @@ export default {
       name: `探偵`,
       text: `ここは現実じゃない。現実の彼女が咲かせた花はもう空間全体を埋め尽くしてる。ついさっき、突然きみへの反撃が始まったの。ここに入って、やっと分かった。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -84,7 +92,7 @@ export default {
       name: `探偵`,
       text: `きみは操られてる！その白い光はもうきみに絡みついてる。彼女を攻撃すればするほど、光はきみを飲み込んでいく。洗脳されるわ、早くやめて！`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -188,7 +196,7 @@ export default {
       name: `探偵`,
       text: `ふ、復讐に目を曇らせないで！彼女は……そういうきみが好きなんだ。……復讐に執着する人間を、彼女は煽ろうとしているんだ！`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -198,7 +206,7 @@ export default {
       name: `探偵`,
       text: `きみが失ったものが、かけがえのないものだったってことは知ってる。きみには全員に償わせる力があるし、正義なんて信じてないことも、復讐だけがきみを癒せるってことも知ってる。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -208,7 +216,7 @@ export default {
       name: `探偵`,
       text: `でも、だからってこれが当然だなんて思わない！きみは最初から奪われるべきじゃなかった、こんな目に遭う理屈なんてどこにもない！`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -231,7 +239,7 @@ export default {
       name: `業師`,
       text: `…………証拠？`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -241,55 +249,35 @@ export default {
       name: `探偵`,
       text: `あの現場には矛盾が多すぎた。でもきみは苦しすぎて、真実が見えなくなってた。私がそれを持ってきたわ。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
     {
       type: `narration`,
       text: `探偵は意を決してポケットに手を伸ばし、アザミの通話録音が入ったスマホを取り出そうとした。残念ながら、スマホが彼女と共にこの精神空間へ至ることはなかった。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `narration`,
       text: `探偵は平静を装って手を引っ込め、服で拭う。業師の視線が自分に集中している、それが探偵に自信を与えた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
       text: `証拠はアザミが持ってる。現場の凝固血を集めて、闇医者に検証してもらったの。そこには大量の人工血漿が混ざってた。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
       text: `HUSHは現場を偽装し、きみに『Garden』は全滅したと思わせた。執行人は常に効率と節約を求める。あんなに手の込んだ回りくどいことをするのは、二つの目的のため以外にあり得ない。`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `探偵`,
       text: `<span>『Garden』を生かすこと、そしてきみを発狂させること。</span>`,
-      voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `narration`,
@@ -337,7 +325,7 @@ export default {
       text: `（心の声）
       難しいよ……ミリア……すごく難しい……でも……向き合わなきゃ。正義は真実からしか生まれないから。たとえ真実が、痛みを伴うとしても。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -347,7 +335,7 @@ export default {
       name: `探偵`,
       text: `……私は以前`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -355,7 +343,7 @@ export default {
       type: `narration`,
       text: `探偵は言葉を詰まらせた。背後から突き刺さる視線を感じ取っていた。沈黙の中、彼女はその笑顔を――かつて自分が一番好きだったあの笑顔を、脳裏に描くことすらできた。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -363,7 +351,7 @@ export default {
       type: `narration`,
       text: `彼女は歯を食いしばり、一語一語、全力を振り絞って言うべきことを口にした。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -373,7 +361,7 @@ export default {
       name: `探偵`,
       text: `104年、私は涅槃集団を襲撃し、ありったけの憎悪を込めて現場にいた執行人のShalomを攻撃した。あの時、私は重傷を負っていた。彼女を殺そうとして、そして……私は変えられた。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -383,7 +371,7 @@ export default {
       name: `探偵`,
       text: `ずっと、ずっと、彼女が私を救済してくれたのだと思い込んでいた。けれど……けれど、違った。今のきみの姿を見て、より確信した。真実はそうではない。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -393,7 +381,7 @@ export default {
       name: `探偵`,
       text: `執行人は特定の条件下で能力者を制御し、完全に自分の手駒にできる。それは殺すよりも節約できて効率的で、安定したやり方。それこそが、私の知るShalomが取る手段。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -403,7 +391,7 @@ export default {
       name: `探偵`,
       text: `これが『Garden』破壊の真意。彼女はきみの復讐の怒りを煽り、そして今のように、能力を使ってきみを完全に支配しようとしてる。他の人たちの生死なんて……彼女にとっては『節約』できるし、自分の手駒にさえできる、そうでしょ？`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -413,7 +401,7 @@ export default {
       name: `探偵`,
       text: `『Garden』の行方について、いくつか手がかりがあるの。安全な場所に行ったら教える。条件は、きみが目を覚ますこと。真実を見極めること。真実は――`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -421,7 +409,7 @@ export default {
       type: `narration`,
       text: `探偵は口ごもり、何度か言葉に詰まった後、涙が先に溢れ出した。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -431,7 +419,7 @@ export default {
       name: `探偵`,
       text: `一番好きだった人、一番信じてたものが消えて……私だって辛いの！でも、立ち止まってるわけにはいかないじゃない！きみと違って、復讐なんかじゃ私は治らない！`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -441,7 +429,7 @@ export default {
       name: `探偵`,
       text: `笑えばいいわ。私は永遠に正義を信じたい。何が起きても、世界が壊れてて当然だなんて思いたくないし、人が奪われるのが当たり前だなんて認めない。悪人が悪さをすることに慣れたくなんてない！`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -451,7 +439,7 @@ export default {
       name: `探偵`,
       text: `きみの言葉で一つだけ認めるわ。私は自分の足で立ち上がるべきだってこと。私を救えるのは私だけ……私は正義が存在することを証明しに行く。そしてそれを、必要としている人に届ける。そうやってしか、私の心は癒えないから。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -459,7 +447,7 @@ export default {
       type: `narration`,
       text: `彼女は顔を上げた。涙はまだ浮かんでいるが、その瞳にもはや迷いはなかった。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -479,7 +467,7 @@ export default {
       name: `探偵`,
       text: `運命に弄ばれるな、自分の手で掴めって言ったのはきみじゃない！他人を信じない、御託も聞かないなら、自分の心くらい見たらどうなの。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -489,7 +477,7 @@ export default {
       name: `探偵`,
       text: `あの子たちに戻ってきてほしくないの？`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -511,7 +499,7 @@ export default {
       name: `業師`,
       text: `（心の声）当然、戻ってきてほしい`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -519,7 +507,7 @@ export default {
       type: `narration`,
       text: `それを認めた瞬間、強烈な渇望が抑えきれなくなり、心の中の憤りや不満をすべて突き破った。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -527,7 +515,7 @@ export default {
       type: `narration`,
       text: `敵なんてどうでもいい、復讐なんてどうでもいい、薄汚い害虫どもなんて知るか。業師はただ今すぐ自分の『Garden』に帰りたかった。自分の花たちが生き生きと咲く姿を見たい、抱きしめたい。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -535,7 +523,7 @@ export default {
       type: `narration`,
       text: `その瞬間、彼女に絡みついていた光の触手が弾き飛ばされた。体に注ぎ込まれていた生命力も無念も、すべてが唐突に遮断される。業師は完全に自我を取り戻した。意識は急速に鮮明になり、体の萎縮感も消え失せた。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -543,7 +531,7 @@ export default {
       type: `narration`,
       text: `ここまで来てようやく、出口がそう遠くないことに気づく。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -551,7 +539,7 @@ export default {
       type: `narration`,
       text: `彼女はShalomを見た。最初から最後まで、この女は一言も発さず、否定も肯定もしなかった。いつの間にか、彼女の無力な体は青い光の棘に貫かれ、身動き一つできなくなっていた。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -566,7 +554,7 @@ export default {
       type: `narration`,
       text: `だが苦痛の表情はなく、ただ探偵を見つめ、何かを思案しているようだった。やがて業師の視線に気づくと、ふわりと微笑んだ。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -609,7 +597,7 @@ export default {
       name: `業師`,
       text: `あの子たちは、君が品定めしていいモノじゃない。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -649,7 +637,7 @@ export default {
       type: `narration`,
       text: `向こう側の空間が恐怖に震えるように振動し、Shalomは青い光の棘が凝縮していくのを見つめる。時間は少ないが、十分だ。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -669,7 +657,7 @@ export default {
       type: `narration`,
       text: `彼女が静かにそう告げた直後、業師が自ら引き裂いた裂け目から凄まじい悲鳴が轟いた。獰猛な巨大な爪が亀裂を打ち砕き、巨大な使い魔が咆哮しながら裂け目から押し出されてきた。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -677,7 +665,7 @@ export default {
       type: `narration`,
       text: `巨大な青い光の棘がその全身を貫き、三角の光紋が焼き付けられ、白煙を上げている。それは実体ではなく、濃密な感情の化身だった。嵐のように、怒号と悲鳴を上げ、無数の棘に心臓を貫かれ喉を締め上げられながらも、死に物狂いで全てを引き裂こうと足掻いていた。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -685,7 +673,7 @@ export default {
       type: `narration`,
       text: `探偵は突然爆発した狂厄の衝撃に、吐き気を催すほどだった。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -696,7 +684,7 @@ export default {
       name: `業師`,
       text: `？！`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -704,7 +692,7 @@ export default {
       type: `narration`,
       text: `そいつが咆えるたびに、業師の体内で激しい震動が起きた。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -712,7 +700,7 @@ export default {
       type: `narration`,
       text: `恐怖ではない。体内の全ての狂厄が点火され、そいつと共に叫び、抗い、束縛する全てを打ち砕こうとする衝動が抑えきれないのだ。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -802,7 +790,7 @@ export default {
       type: `narration`,
       text: `業師は全てを悟った。彼女はShalomを見、そして彼女の背後にいる――幾重にも枷を嵌められた「怪物」を見て、初めて緩んだ笑みを浮かべた。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -832,7 +820,7 @@ export default {
       type: `narration`,
       text: `彼女は崩壊する空間を見上げた。虚空で凝縮された無数の青い光の棘が天から降り注ぎ、巨獣の体を、そしてShalomの体をも貫く。彼女はそれを日常茶飯事のように、気にも留めない。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -971,7 +959,7 @@ export default {
       name: `探偵`,
       text: `業師、約束は守ったわ！全部ちゃんと聞いたでしょ、忘れないで！`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
@@ -981,7 +969,7 @@ export default {
       name: `探偵`,
       text: `私の父はマーシャル・コリンズ、FAC-G42小隊教官、103年夜の蝕月作戦で戦死した……FAC二級英雄勲章受章者よ！私は毎年お墓参りに行ってる。永遠に彼を誇りに思う。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
