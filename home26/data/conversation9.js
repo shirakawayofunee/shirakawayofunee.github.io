@@ -38,6 +38,12 @@ export default {
         note: `支局の刑事で、「GARDEN」による一連の暗殺事件を担当してるよ。`,
         basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`
       },
+      {
+        name: `Nathan?`,
+        avatar: `img/dh/.jpg`,
+        note: ``,
+        basicStats: ``
+      },
 
     ],
     synopsis: `工事中`
@@ -225,7 +231,7 @@ export default {
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `ふん、電話番号をそのまま残すなんて、なんて傲慢な奴だ。命を踏みにじって、得意げに俺たちに挑戦してくる。見てろよ、すぐにお前の正体を暴いてやる！`
+      text: `ふん、電話番号をそのまま残すなんて、なんて傲慢な奴だ。命を踏みにじって、得意げに私たちに挑戦してくる。見てろよ、すぐにお前の正体を暴いてやる！`
     },
     {
       type: `narration`,
@@ -348,7 +354,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `Unknown`,
-      text: `やあ、新米探偵さん。探偵ゲーム、楽しんでる？`
+      text: `やあ、新米刑事さん。探偵ゲーム、楽しんでる？`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_53.wav' },
+        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -381,14 +391,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `どうして俺が花を踏もうとしたって知ってるんだ？`
+      text: `どうして私が花を踏もうとしたって知ってるんだ？`
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `俺のことが見えてる！犯人は近くにいる！俺が見える場所で、電話してるやつ——`
+      text: `私のことが見えてる！犯人は近くにいる！私が見える場所で、電話してるやつ——`
     },
     {
       type: `dialogue`,

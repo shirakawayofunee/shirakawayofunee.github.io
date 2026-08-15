@@ -7,13 +7,17 @@ export default {
   infoPanel: {
     glossary: [
       {
-        term: `工事中`,
+        term: `FAC`,
         desc: `工事中`
       },
       {
-        term: `工事中`,
+        term: `BR-002`,
         desc: `工事中`
-      }
+      },
+      {
+        term: `藍雨`,
+        desc: `工事中`
+      },
     ],
     characters: [
       {
@@ -110,14 +114,14 @@ export default {
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
-      text: `追悼？ふん、君が行けばいいじゃない。君だって「娘」なんでしょ？養子でも、彼らは君を可愛がってた。`
+      text: `（探偵の回想）<br>追悼？ふん、君が行けばいいじゃない。君だって「娘」なんでしょ？養子でも、彼らは君を可愛がってた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
-      text: `私は行かないよ。`
+      text: `（探偵の回想）<br>私は行かないよ。`
     },
     {
       type: `dialogue`,
@@ -138,14 +142,14 @@ export default {
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
-      text: `…なに？慰めに来たの？それとも、私に慰めてほしいの？`
+      text: `（探偵の回想）<br>…なに？慰めに来たの？それとも、私に慰めてほしいの？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
-      text: `私の両親が死んだから、ようやく私と同じになった、共感できるって思ったわけ？`
+      text: `（探偵の回想）<br>私の両親が死んだから、ようやく私と同じになった、共感できるって思ったわけ？`
     },
     {
       type: `dialogue`,
@@ -166,21 +170,21 @@ export default {
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `悲痛な少女`,
-      text: `出てけ！私は君と違う！FACのその綺麗事、受け入れない！こんな英雄、認めない！`
+      text: `（探偵の回想）<br>出てけ！私は君と違う！FACのその綺麗事、受け入れない！こんな英雄、認めない！`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `悲痛な少女`,
-      text: `死んだらそれで終わりだよ！彼らは私を置いていった、私を孤児にした！そんな奴らが何の英雄だ！`
+      text: `（探偵の回想）<br>死んだらそれで終わりだよ！彼らは私を置いていった、私を孤児にした！そんな奴らが何の英雄だ！`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `悲痛な少女`,
-      text: `うっ…くそくらえの光明と正義…こんなもののために死にに行くなんて…バカすぎる、みんなくそくらえだ…`
+      text: `（探偵の回想）<br>うっ…くそくらえの光明と正義…こんなもののために死にに行くなんて…バカすぎる、みんなくそくらえだ…`
     },
     {
       type: `dialogue`,
@@ -210,8 +214,10 @@ export default {
     },
     {
       type: `narration`,
-      text: `突然、電話の着信音が鳴る。彼女はぼんやりと携帯を取り出し、聞き慣れたメロディを認識すると、灰色の瞳が一瞬で輝きを放ち、探偵は飛び上がった。`
+      text: `突然、電話の着信音が鳴る。彼女はぼんやりと携帯を取り出し、聞き慣れたメロディを認識すると、灰色の瞳が一瞬で輝きを放ち、探偵は飛び上がった。`,
+      bgm: `mp3/bg/conversation9.mp3`,
     },
+    
     {
       type: `dialogue`,
       position: `right`,

@@ -1790,7 +1790,7 @@ html {
 
 /* 交互动画：当读者鼠标滑过时，记忆才会短暂变清晰 */
 .narration.end-void:hover {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.6);
     filter: blur(0px);
     letter-spacing: 6px;
     /* 字间距轻微拉长，像是一声长叹 */
@@ -1888,7 +1888,7 @@ html {
 /* 方案 3：溯流竖排 (推荐用于旁白 Narration) */
 .narration.recall-vertical {
     /* 核心 1：竖向排版 (从右向左) */
-    font-family: "ming";
+    
     writing-mode: vertical-rl;
     text-orientation: upright;
 
@@ -1902,6 +1902,7 @@ html {
     font-size: 1.15rem;
     letter-spacing: 6px;
     line-height: 3;
+    font-family: "ming";
     color: rgba(1, 1, 1, 1);
     /* 核心 2：Blue Rain 时光倒流 (向上的蓝色渐变线) */
     background: url('/home26/img/cg/bg_flower23_room_tips.png') no-repeat center;

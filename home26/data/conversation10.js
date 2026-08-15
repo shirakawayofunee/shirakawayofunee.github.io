@@ -56,14 +56,22 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `警探チームに特別採用された能力者って、お前か……足の速さと持久力は悪くない。ただ、動きがちょっと鈍いね。`
+      text: `警探チームに特別採用された能力者って、お前か……足の速さと持久力は悪くない。ただ、動きがちょっと鈍いね。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_58.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `ねえ、登ってこれる？ベビー・刑・事・ちゃん〜？`
+      text: `ねえ、登ってこれる？ベビー・刑・事・ちゃん〜？`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_4.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -93,7 +101,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `特別派遣の能力者探偵って、どれほどのものかと思ったけど、ガッカリだよ、小娘。`
+      text: `特別派遣の能力者探偵って、どれほどのものかと思ったけど、ガッカリだよ、小娘。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_37.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -122,14 +134,14 @@ export default {
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `現場を派手に飾り立てて、狂厄の能力をこれ見よがしに披露するのは、俺たちに挑戦状を叩きつけるつもりか？それとも観客に褒められたいだけか？`
+      text: `現場を派手に飾り立てて、狂厄の能力をこれ見よがしに披露するのは、私たちに挑戦状を叩きつけるつもりか？それとも観客に褒められたいだけか？`
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `派手好きで自己陶酔のやつ、天下の誰もがお前の操り人形になると思ってるんだろ。電話で俺たちを馬鹿にしながら、近くで自分の「芸術」を鑑賞して……残念だったな、俺に当たっちまった！`
+      text: `派手好きで自己陶酔のやつ、天下の誰もがお前の操り人形になると思ってるんだろ。電話で私たちを馬鹿にしながら、近くで自分の「芸術」を鑑賞して……残念だったな、私に当たっちまった！`
     },
     {
       type: `dialogue`,
@@ -143,28 +155,40 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `へえ、警学校の1年目で心理プロファイリングを教わった？その答え、まあまあだね。`
+      text: `へえ、警学校の1年目で心理プロファイリングを教わった？その答え、まあまあだね。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_1.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `でもね、おバカさん。解答速度が遅すぎるよ。最初の連絡からヒントはたっぷり与えてたのに。`
+      text: `でもね、おバカさん。解答速度が遅すぎるよ。最初の連絡からヒントはたっぷり与えてたのに。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_22.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `あの先輩刑事は一耳で現場が監視されてるって気づいて、視線を抑えつつ慎重に不審者を探して、蛇を驚かせなかった。なのに、お前は47秒も遅れて、そこで大声で喚いてるだけ。`
+      text: `あの先輩刑事は一耳で現場が監視されてるって気づいて、視線を抑えつつ慎重に不審者を探して、蛇を驚かせなかった。なのに、お前は47秒も遅れて、そこで大声で喚いてるだけ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_51.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `うっ……お前に説教される筋合いはない！俺と一緒に戻れ、事件を全部白状しろ。なんでこんなことした？どうやってやった？仲間はいるのか？`
+      text: `うっ……お前に説教される筋合いはない！私と一緒に戻れ、事件を全部白状しろ。なんでこんなことした？どうやってやった？仲間はいるのか？`
     },
     {
       type: `dialogue`,
@@ -185,7 +209,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `ハハハハ！`
+      text: `ハハハハ！`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_7.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -199,7 +227,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `いや……なんでもない、面白いことを思いついただけ。こんな風なやつ、久しぶりに見たよ……`
+      text: `いや……なんでもない、面白いことを思いついただけ。こんな風なやつ、久しぶりに見たよ……`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_57.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -210,7 +242,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `……正義感が爆発してるバカ。`
+      text: `……正義感が爆発してるバカ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_46.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -221,14 +257,22 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `私に大口叩くなんて、さすがに私とお前が同じド素人だと思ってるわけじゃないよね。`
+      text: `私に大口叩くなんて、さすがに私とお前が同じド素人だと思ってるわけじゃないよね。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_45.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `……「殺人犯」なんて言葉じゃ私を定義できないよ。私たちの見る「命」も「正義」も違うんだ。`
+      text: `……「殺人犯」なんて言葉じゃ私を定義できないよ。私たちの見る「命」も「正義」も違うんだ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_30.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -239,14 +283,22 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `ほら、人は花を咲かせる。これはお前の花だ。大事に守れよ。傷つければ、それはお前の命を傷つけることになる。`
+      text: `ほら、人は花を咲かせる。これはお前の花だ。大事に守れよ。傷つければ、それはお前の命を傷つけることになる。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_16.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `命を大切に思うことには賛成よ。どんな醜く卑劣な人間でも、美しい花を咲かせられる。肉体も魂も養分となって、花を育て、開花するまで。それこそが本当の純粋な命だ。`
+      text: `命を大切に思うことには賛成よ。どんな醜く卑劣な人間でも、美しい花を咲かせられる。肉体も魂も養分となって、花を育て、開花するまで。それこそが本当の純粋な命だ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_26.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -264,14 +316,22 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `続けるよ。もっともっとたくさんの花を咲かせる。まるで水の中のあの女のようになるまで、彼女が耐えうる全ての花を開かせる。`
+      text: `続けるよ。もっともっとたくさんの花を咲かせる。まるで水の中のあの女のようになるまで、彼女が耐えうる全ての花を開かせる。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_52.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `命って偉大だよね。強い人ほどそう。私は誰かがまるごと庭園を咲かせたのを見たことがあるよ。`
+      text: `命って偉大だよね。強い人ほどそう。私は誰かがまるごと庭園を咲かせたのを見たことがあるよ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_29.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -285,7 +345,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `ああ、それね。`
+      text: `ああ、それね。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_49.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -296,7 +360,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `花を愛でるとき、足元の花泥を気にする？`
+      text: `花を愛でるとき、足元の花泥を気にする？`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_24.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -333,7 +401,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `怒った？ハハハ、ちょっと面白いね。これ、キミが喚くつまんない「正義」よりずっとキレイじゃない？`
+      text: `怒った？ハハハ、ちょっと面白いね。これ、キミが喚くつまんない「正義」よりずっとキレイじゃない？`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_17.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -369,7 +441,22 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `シャーロームか……姉さんって呼ぶんだ、キミ、彼女のこと大好きだろ？ふふ……なら、ちょうどいい。この姉さんとも遊んでよ。`
+      text: `シャーロームか……姉さんって呼ぶんだ、キミ、彼女のこと大好きだろ？`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_15.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold.jpg`,
+      name: `業師`,
+      text: `ふふ……なら、ちょうどいい。この姉さんとも遊んでよ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_11.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -387,13 +474,9 @@ export default {
       text: `抜いてみると、その白刃はただの便箋だった。広げると、中には数行の文字。`
     },
     {
-      "type": "narration",
-      "text": "庭院深く、春花は碧水に沈み、声は寄せる。\n梅雨の夜、流蛍は断壁に舞い、残垣の影。\n秋の膏盛ん、酒肉は金銀に誤り、欢宴始まる。\n歳暮至り、茫茫と枯井を覆い、独り行く。",
-      "bubbleStyle": "recall-vertical" 
-    },
-    {
       type: `narration`,
-      text: ``
+    text: `庭院深く、春花は碧水に沈み、声は寄せる。\n梅雨の夜、流蛍は断壁に舞い、残垣の影。\n秋の膏盛ん、酒肉は金銀に誤り、欢宴始まる。\n歳暮至り、茫茫と枯井を覆い、独り行く。`,
+      bubbleStyle: `recall-vertical`
     },
     {
       type: `dialogue`,
@@ -407,28 +490,44 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `ふふ、これが始まりだよ。盛大な花の開花を約束したんだから、ちゃんと守るよ。`
+      text: `ふふ、これが始まりだよ。盛大な花の開花を約束したんだから、ちゃんと守るよ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_13.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `次の花は、いつ、どこで、なぜ咲くのか……推理してみなよ？未来の名探偵さん、キミの大好きな推理ゲームだと思ってさ。`
+      text: `次の花は、いつ、どこで、なぜ咲くのか……推理してみなよ？未来の名探偵さん、キミの大好きな推理ゲームだと思ってさ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_21.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `私の謎を解けたら、依頼を一つ聞いてあげる。誰を殺すか、誰を救うか、誰を許すか……でも、もし解けなかったら……`
+      text: `私の謎を解けたら、依頼を一つ聞いてあげる。誰を殺すか、誰を救うか、誰を許すか……でも、もし解けなかったら……`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_47.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `キミも、シャーロームも、キミの愛する人たち、たくさんの人が私の「Garden」を飾る花になる。`
+      text: `キミも、シャーロームも、キミの愛する人たち、たくさんの人が私の「Garden」を飾る花になる。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_60.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -442,7 +541,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `さあ…、早く動きなよ。こんなとこで私と意地張ってる暇があったら、2番目の花はもう咲いてるかもしれないよ。`
+      text: `さあ…、早く動きなよ。こんなとこで私と意地張ってる暇があったら、2番目の花はもう咲いてるかもしれないよ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_14.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -460,7 +563,22 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `自分で推理しなよ。できれば大勢連れてきな。口だけの正義じゃ私を止められないよ。ついでに、返してあげる、探偵ちゃん。これはキミの花。`
+      text: `自分で推理しなよ。できれば大勢連れてきな。口だけの正義じゃ私を止められないよ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_28.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold.jpg`,
+      name: `業師`,
+      text: `ついでに、返してあげる、探偵ちゃん。これはキミの花。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_36.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `narration`,
@@ -471,14 +589,22 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `キンセンカは陽気な命じゃないから、キミも無理に正義の使者なんて演じなくていいよ。<span>ありのままの自分</span>で私に挑みな。それなら、ちょっと期待できるかな。`
+      text: `キンセンカは陽気な命じゃないから、キミも無理に正義の使者なんて演じなくていいよ。<span>ありのままの自分</span>で私に挑みな。それなら、ちょっと期待できるかな。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_27.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `これは<span>10年</span>かけて醸成された花期だよ。難易度下げてあげたんだから、勝ちなよ。`
+      text: `これは<span>10年</span>かけて醸成された花期だよ。難易度下げてあげたんだから、勝ちなよ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation10/vo_event_11012_10.wav' },
+        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
