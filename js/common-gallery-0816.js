@@ -215,6 +215,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 $(document).ready(function () {
+    // 尝试加载默认tab的内容。如果有 galleryImages 就加载它，否则加载个空的
     const initialArray = (typeof galleryImages !== 'undefined') ? galleryImages :[];
     arrangeWaterfall("galleryContainer", initialArray);
 
@@ -328,9 +329,6 @@ function muteMusic(num) {
 document.addEventListener('DOMContentLoaded', function () {
     var bgmPlayer = document.getElementById('bgm');
     if(bgmPlayer) {
-        // 在这里将音量初始化为 70%
-        bgmPlayer.volume = 0.6; 
-
         document.addEventListener('click', function tryAutoPlay() {
             if (bgmPlayer.paused) {
                 muteMusic(2);
