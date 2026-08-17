@@ -22,9 +22,9 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
+        name: `？`,
         avatar: `img/dh/leopold.png`,
-        note: `工事中`
+        note: `誰がどう見てもわかる状態で、ネタバレを防ぐ意味はあるのだろうか`
       },
       {
         name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
@@ -465,7 +465,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `？？`,
-      text: `やっと目が覚めたね。`
+      text: `やっと目が覚めたね。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation12/vo_event_11015_3.wav' },
+        { label: '中', path: 'wav/CN/conversation12/vo_event_11015_5.wav' },
+      ]
     },
     {
       type: `dialogue`,

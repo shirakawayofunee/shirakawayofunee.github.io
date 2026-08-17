@@ -70,7 +70,7 @@ export default {
       text: `ねえ、登ってこれる？ベビー・刑・事・ちゃん〜？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_4.wav' },
-        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_43.wav' },
+        { label: '日', path: 'wav/JP/conversation10/刑・事・ちゃん.wav' },
       ]
     },
     {
