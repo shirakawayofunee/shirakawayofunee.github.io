@@ -260,7 +260,7 @@ export default {
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `あなたがこの事件の責任者、ドイル警部ですよね！私は未来の名探偵、特別に——`
+      text: `君がこの事件の責任者、ドイル警部ですよね！私は未来の名探偵、特別に——`
     },
     {
       type: `dialogue`,

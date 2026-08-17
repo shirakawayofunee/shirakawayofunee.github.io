@@ -449,7 +449,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x.png`,
       name: `X`,
-      text: `ご安心ください。いつものように、あなたたちの望みに全て応えましょう。`
+      text: `ご安心ください。いつものように、君たちの望みに全て応えましょう。`
     },
     {
       type: `dialogue`,

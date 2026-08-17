@@ -247,7 +247,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold3.png`,
       name: `業師`,
-      text: `そうね……ああ、そう言えばあなたを「Garden」に推薦した人がいるわね。`
+      text: `そうね……ああ、そう言えば君を「Garden」に推薦した人がいるわね。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_21.wav' },

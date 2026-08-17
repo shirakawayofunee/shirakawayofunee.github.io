@@ -101,7 +101,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `ご安心を。あの力をあなたに使うには上からの許可が必要ですが、絶対に認められません。`
+      text: `ご安心を。あの力を君に使うには上からの許可が必要ですが、絶対に認められません。`
     },
     {
       type: `dialogue`,
@@ -123,7 +123,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `車内には大量の5級狂厄汚染物がありました。あなたは衝撃には耐えられても、汚染には絶対に耐えられません。上庭が直接浄化するのが最も確実な方法で、代償も最小です。`
+      text: `車内には大量の5級狂厄汚染物がありました。君は衝撃には耐えられても、汚染には絶対に耐えられません。上庭が直接浄化するのが最も確実な方法で、代償も最小です。`
     },
     {
       type: `dialogue`,
@@ -204,7 +204,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `もちろんです。第九機関とHUSHはすでに動いています。あなたを殺せなかった以上、敵の計画は完全に露呈します。`
+      text: `もちろんです。第九機関とHUSHはすでに動いています。君を殺せなかった以上、敵の計画は完全に露呈します。`
     },
     {
       type: `narration`,
@@ -316,7 +316,7 @@ export default {
       position: `right`,
       avatar: ``,
       name: `探偵`,
-      text: `司令がさっき言ってた、BR-002、3月の西区の暴動……あなた、関わったの？`
+      text: `司令がさっき言ってた、BR-002、3月の西区の暴動……君、関わったの？`
     },
     {
       type: `dialogue`,
@@ -330,7 +330,7 @@ export default {
       position: `right`,
       avatar: ``,
       name: `探偵`,
-      text: `シャーローム姉さん……あなたは何をしたの？それって本当に……正義なの？`
+      text: `シャーローム姉さん……君は何をしたの？それって本当に……正義なの？`
     },
     {
       type: `narration`,

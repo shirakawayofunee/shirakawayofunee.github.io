@@ -58,28 +58,40 @@ export default {
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
       name: `FAC総司令`,
-      text: `今日、私たちはここに集まり、1423人の戦士、友人、そして同胞を迎えます。`
+      text: `今日、私たちはここに集まり、1423人の戦士、友人、そして同胞を迎えます。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_28.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
       name: `FAC総司令`,
-      text: `3月の災変で、彼らはためらうことなく西区へ向かい、突発的な狂厄危機に対抗し、命を捧げました。`
+      text: `3月の災変で、彼らはためらうことなく西区へ向かい、突発的な狂厄危機に対抗し、命を捧げました。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_18.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
       name: `FAC総司令`,
-      text: `今、災害の影響は抑えられ、反撃の号角がまもなく鳴り響こうとしています。FACはようやく彼らを愛する人々の元へ送り返すことができます。`
+      text: `今、災害の影響は抑えられ、反撃の号角がまもなく鳴り響こうとしています。FACはようやく彼らを愛する人々の元へ送り返すことができます。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_16.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
       name: `FAC総司令`,
-      text: `ここに来て、英雄たちを最後の旅路に見送ってくれて、再び感謝を申し上げます。`
+      text: `ここに来て、英雄たちを最後の旅路に見送ってくれて、再び感謝を申し上げます。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_30.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -100,105 +112,158 @@ export default {
       position: `right`,
       avatar: `img/dh/pc1.png`,
       name: `探偵`,
-      text: `ありがとう…他の人の代わりに来ただけだから、大丈夫だよ。`
+      text: `ありがとう…他の人の代わりに来ただけだから、大丈夫だよ。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_18.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/pc1.png`,
       name: `探偵`,
-      text: `あたしは強いからね。`
+      text: `あたしは強いからね。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_16.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
-      text: `（探偵の回想）<br>追悼？ふん、君が行けばいいじゃない。君だって「娘」なんでしょ？養子でも、彼らは君を可愛がってた。`
+      text: `（探偵記憶の中の声）<br>追悼？ふん、君が行けばいいじゃない。君だって「娘」なんでしょ？養子でも、彼らは君を可愛がってた。`,
+      voice: [
+        
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_24.wav' },
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_3.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
-      text: `（探偵の回想）<br>私は行かないよ。`
+      text: `（探偵記憶の中の声）<br>私は行かないよ。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_2.wav' },
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_14.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
       name: `FAC総司令`,
-      text: `この時代は傷だらけで、長い夜はまだ明けない。でも、信じる者がいて、立ち上がる者がいる。愛する城邦のために戦い、信じた未来のために犠牲になった。`
+      text: `この時代は傷だらけで、長い夜はまだ明けない。でも、信じる者がいて、立ち上がる者がいる。愛する城邦のために戦い、信じた未来のために犠牲になった。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_19.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
       name: `FAC総司令`,
-      text: `彼らは闇の中で光を守る英雄、絶望の中で生を取り戻した戦士だ。私たちは決して忘れない。`
+      text: `彼らは闇の中で光を守る英雄、絶望の中で生を取り戻した戦士だ。私たちは決して忘れない。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_10.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
-      text: `（探偵の回想）<br>…なに？慰めに来たの？それとも、私に慰めてほしいの？`
+      text: `（探偵記憶の中の声）<br>…なに？慰めに来たの？それとも、私に慰めてほしいの？`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_13.wav' },
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_21.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `記憶の中の声`,
-      text: `（探偵の回想）<br>私の両親が死んだから、ようやく私と同じになった、共感できるって思ったわけ？`
+      text: `（探偵記憶の中の声）<br>私の両親が死んだから、ようやく私と同じになった、共感できるって思ったわけ？`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_12.wav' },
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_24.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
       name: `FAC総司令`,
-      text: `この陵園は君たちのため、そして彼らのために建てられた。彼らは君たちが来ることを望んでいる。愛する人たちが無事でいるのを見たいからだ。`
+      text: `この陵園は君たちのため、そして彼らのために建てられた。彼らは君たちが来ることを望んでいる。愛する人たちが無事でいるのを見たいからだ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_13.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
       name: `FAC総司令`,
-      text: `どうか、たびたび彼らに会いに来てくれ。君たちが無事でいること、それがFACの戦いの最大の意味だ。`
+      text: `どうか、たびたび彼らに会いに来てくれ。君たちが無事でいること、それがFACの戦いの最大の意味だ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_8.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `悲痛な少女`,
-      text: `（探偵の回想）<br>出てけ！私は君と違う！FACのその綺麗事、受け入れない！こんな英雄、認めない！`
+      text: `（探偵記憶の中の声）<br>出てけ！私は君と違う！FACのその綺麗事、受け入れない！こんな英雄、認めない！`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_11.wav' },
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_5.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `悲痛な少女`,
-      text: `（探偵の回想）<br>死んだらそれで終わりだよ！彼らは私を置いていった、私を孤児にした！そんな奴らが何の英雄だ！`
+      text: `（探偵記憶の中の声）<br>死んだらそれで終わりだよ！彼らは私を置いていった、私を孤児にした！そんな奴らが何の英雄だ！`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_21.wav' },
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_9.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `悲痛な少女`,
-      text: `（探偵の回想）<br>うっ…くそくらえの光明と正義…こんなもののために死にに行くなんて…バカすぎる、みんなくそくらえだ…`
+      text: `（探偵記憶の中の声）<br>うっ…くそくらえの光明と正義…こんなもののために死にに行くなんて…バカすぎる、みんなくそくらえだ…`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_4.wav' },
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_22.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
       name: `FAC総司令`,
-      text: `…来てくれてありがとう。`
+      text: `…来てくれてありがとう。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_20.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
       name: `FAC総司令`,
-      text: `我々の城邦が苦難から遠ざかり、同胞が永遠に平安でありますように。`
+      text: `我々の城邦が苦難から遠ざかり、同胞が永遠に平安でありますように。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation8/vo_event_11000_26.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -223,21 +288,37 @@ export default {
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `シャーローム姉さん！帰ってきたの？うわ…そんな大変だったんだ…もう…え？！地下の連中がまた何か企んでる？殺し屋が連続襲撃？なんて卑劣な奴ら、正面で勝てないからって裏で汚い手を使うなんて！`
+      text: `シャーローム姉さん！帰ってきたの？`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_1.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `…え？私が特派調査員？！本当にいいの？！`
+      text: `うわ…そんな大変だったんだ…もう…え？！地下の連中がまた何か企んでる？殺し屋が連続襲撃？なんて卑劣な奴ら、正面で勝てないからって裏で汚い手を使うなんて！`
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `うんうんうん、もちろんだよ！シャーローム姉さんの依頼なら絶対頑張ってやるよ！名探偵の未来をかけて、今すぐ出発する！`
+      text: `…え？私が特派調査員？！本当にいいの？！`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_8.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc2.png`,
+      name: `探偵`,
+      text: `うんうんうん、もちろんだよ！シャーローム姉さんの依頼なら絶対頑張ってやるよ！名探偵の未来をかけて、今すぐ出発する！`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_31.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -248,7 +329,10 @@ export default {
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `お姉様の信頼と!光と正義のために!`
+      text: `お姉様の信頼と!光と正義のために!`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation8/vo_event_11000_22.wav' },
+      ]
     },
     {
       type: `narration`,
