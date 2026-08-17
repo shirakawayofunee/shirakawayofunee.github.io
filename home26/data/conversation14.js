@@ -22,9 +22,9 @@ export default {
     ],
     characters: [
       {
-        name: `Shalom（X）`,
+        name: `Shalom｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
         avatar: `img/dh/x201.png`,
-        note: `「上庭」の七代目執行人、`
+        note: `「上庭」の七代目執行人`
       },
       {
         name: `工事中`,

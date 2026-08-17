@@ -27,6 +27,11 @@ export default {
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
       },
+      {
+        name: `Shalom｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
+        avatar: `img/dh/x201.png`,
+        note: `「上庭」の七代目執行人`
+      },
     ],
     synopsis: `工事中`
   },

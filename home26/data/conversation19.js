@@ -68,18 +68,9 @@ export default {
       text: `N.F.113年8月14日 21:25<br>新都市第三大道 - 未来基金療養院`
     },
     {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/reporter_a.jpg`,
-      name: `記者`,
-      text: `探長！説明してください！ユウツが生きてるって本当ですか？なんで情報を隠してるんですか？もしかして殺し屋なんかいなくて、全部ユウツの自作自演じゃないですか！当時のスキャンダル清算の話を聞いて、金蝉脱殻を企んだんじゃないですか！`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/reporter_b.jpg`,
-      name: `記者`,
-      text: `みんなに説明してください！注目度がどんどん高まってます、隠しきれませんよ！療養院で本人を見ました！`
+      "type": "narration",
+      "text": "<span class='rep-tag'>[ REPORTER 1 ]</span>探長！説明してください！ユウツが生きてるって本当ですか？なんで情報を隠してるんですか？もしかして殺し屋なんかいなくて、全部ユウツの自作自演じゃないですか！当時のスキャンダル清算の話を聞いて、金蝉脱殻を企んだんじゃないですか！\n<span class='rep-tag'>[ REPORTER 2 ]</span>みんなに説明してください！注目度がどんどん高まってます、隠しきれませんよ！療養院で本人を見ました！\n",
+      "bubbleStyle": "npc-press-box"
     },
     {
       type: `narration`,
@@ -95,21 +86,21 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/thistle2.jpg`,
       name: `隠れた人影`,
-      text: `……私のミスだ。自分でこの始末をつけないと。追い出されてもいい、もう業師に迷惑かけられない……`
+      text: `……私のミスだ。自分でこの始末をつけないと。追い出されてもいい、もう師匠に迷惑かけられない……`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/thistle2.jpg`,
       name: `隠れた人影`,
       text: `クソくらえ……クソくらえ！確かに刺した、能力も発動した、確認したんだ！`
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/thistle2.jpg`,
       name: `隠れた人影`,
       text: `あのゴミが生きてるのに、アイツに殺された人たちがなんで生きられない！`
@@ -120,9 +111,9 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `殺してやる、何度でも殺してやる！自分の手で殺してやる！`
     },
     {
@@ -149,9 +140,9 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `あの時、お前を殺すべきだった！`
     },
     {
@@ -228,25 +219,9 @@ export default {
       text: `画面には、無数のカメラとマイクに囲まれた冷徹で毅然とした老人が映っていた。探偵は彼を認識した。蝕月行動後に就任した現FAC総司令官だ。`
     },
     {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/reporter_a.jpg`,
-      name: `記者`,
-      text: `FACの撫恤金事件とこの事件の関係は？能力者が関与してるんですか？総司令の帰還と関係ありますか？`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/reporter_b.jpg`,
-      name: `記者`,
-      text: `こんな治安事件にFACが絡むのはなぜですか？管轄内ですか？今回の作戦計画に何か裏があるんですか？`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/reporter_c.jpg`,
-      name: `記者`,
-      text: `説明してください！`
+      "type": "narration",
+      "text": "<span class='rep-tag'>[ REPORTER 1 ]</span>FACの撫恤金事件とこの事件の関係は？能力者が関与してるんですか？総司令の帰還と関係ありますか？\n<span class='rep-tag'>[ REPORTER 2 ]</span>こんな治安事件にFACが絡むのはなぜですか？管轄内ですか？今回の作戦計画に何か裏があるんですか？\n<span class='rep-tag'>[ REPORTER 3 ]</span>説明してください！",
+      "bubbleStyle": "npc-press-box"
     },
     {
       type: `dialogue`,
@@ -279,7 +254,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `蓟がこっそり「Garden」を抜け出せたなら、業師は今、基地にいない可能性が高い。じゃあ、どこにいる？`
+      text: `薊がこっそり「Garden」を抜け出せたなら、業師は今、基地にいない可能性が高い。じゃあ、どこにいる？`
     },
     {
       type: `narration`,
