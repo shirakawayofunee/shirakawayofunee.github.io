@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
+        name: `？`,
         avatar: `img/dh/leopold.jpg`,
         note: `事件現場で治安官に偽装した容疑者`
       },

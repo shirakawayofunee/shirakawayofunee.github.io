@@ -22,9 +22,9 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
+        name: `「業師」`,
         avatar: `img/dh/leopold.jpg`,
-        note: `工事中`
+        note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`
       },
       {
         name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
@@ -59,7 +59,7 @@ export default {
       text: `警探チームに特別採用された能力者って、お前か……足の速さと持久力は悪くない。ただ、動きがちょっと鈍いね。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_58.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_26.wav' },
       ]
     },
     {
@@ -70,7 +70,7 @@ export default {
       text: `ねえ、登ってこれる？ベビー・刑・事・ちゃん〜？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_4.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_43.wav' },
       ]
     },
     {
@@ -104,7 +104,7 @@ export default {
       text: `特別派遣の能力者探偵って、どれほどのものかと思ったけど、ガッカリだよ、小娘。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_37.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_34.wav' },
       ]
     },
     {
@@ -158,7 +158,7 @@ export default {
       text: `へえ、警学校の1年目で心理プロファイリングを教わった？その答え、まあまあだね。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_1.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_1.wav' },
       ]
     },
     {
@@ -169,7 +169,7 @@ export default {
       text: `でもね、おバカさん。解答速度が遅すぎるよ。最初の連絡からヒントはたっぷり与えてたのに。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_22.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_30.wav' },
       ]
     },
     {
@@ -180,7 +180,7 @@ export default {
       text: `あの先輩刑事は一耳で現場が監視されてるって気づいて、視線を抑えつつ慎重に不審者を探して、蛇を驚かせなかった。なのに、お前は47秒も遅れて、そこで大声で喚いてるだけ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_51.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_37.wav' },
       ]
     },
     {
@@ -212,7 +212,7 @@ export default {
       text: `ハハハハ！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_7.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_22.wav' },
       ]
     },
     {
@@ -230,7 +230,7 @@ export default {
       text: `いや……なんでもない、面白いことを思いついただけ。こんな風なやつ、久しぶりに見たよ……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_57.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_38.wav' },
       ]
     },
     {
@@ -245,7 +245,7 @@ export default {
       text: `……正義感が爆発してるバカ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_46.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_53.wav' },
       ]
     },
     {
@@ -257,10 +257,10 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `私に大口叩くなんて、さすがに私とお前が同じド素人だと思ってるわけじゃないよね。`,
+      text: `私に大口叩くなんて、さすがに私とお前が同じド新人だと思ってるわけじゃないよね。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_45.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_39.wav' },
       ]
     },
     {
@@ -271,7 +271,7 @@ export default {
       text: `……「殺人犯」なんて言葉じゃ私を定義できないよ。私たちの見る「命」も「正義」も違うんだ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_30.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_23.wav' },
       ]
     },
     {
@@ -286,7 +286,7 @@ export default {
       text: `ほら、人は花を咲かせる。これはお前の花だ。大事に守れよ。傷つければ、それはお前の命を傷つけることになる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_16.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_4.wav' },
       ]
     },
     {
@@ -297,7 +297,7 @@ export default {
       text: `命を大切に思うことには賛成よ。どんな醜く卑劣な人間でも、美しい花を咲かせられる。肉体も魂も養分となって、花を育て、開花するまで。それこそが本当の純粋な命だ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_26.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_28.wav' },
       ]
     },
     {
@@ -319,7 +319,7 @@ export default {
       text: `続けるよ。もっともっとたくさんの花を咲かせる。まるで水の中のあの女のようになるまで、彼女が耐えうる全ての花を開かせる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_52.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_25.wav' },
       ]
     },
     {
@@ -330,7 +330,7 @@ export default {
       text: `命って偉大だよね。強い人ほどそう。私は誰かがまるごと庭園を咲かせたのを見たことがあるよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_29.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_10.wav' },
       ]
     },
     {
@@ -348,7 +348,7 @@ export default {
       text: `ああ、それね。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_49.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_42.wav' },
       ]
     },
     {
@@ -363,7 +363,7 @@ export default {
       text: `花を愛でるとき、足元の花泥を気にする？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_24.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_29.wav' },
       ]
     },
     {
@@ -371,7 +371,10 @@ export default {
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `き、貴様!!`
+      text: `き、貴様!!`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_41.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -404,7 +407,7 @@ export default {
       text: `怒った？ハハハ、ちょっと面白いね。これ、キミが喚くつまんない「正義」よりずっとキレイじゃない？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_17.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_33.wav' },
       ]
     },
     {
@@ -444,7 +447,7 @@ export default {
       text: `シャーロームか……姉さんって呼ぶんだ、キミ、彼女のこと大好きだろ？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_15.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_17.wav' },
       ]
     },
     {
@@ -455,7 +458,7 @@ export default {
       text: `ふふ……なら、ちょうどいい。この姉さんとも遊んでよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_11.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_20.wav' },
       ]
     },
     {
@@ -493,7 +496,7 @@ export default {
       text: `ふふ、これが始まりだよ。盛大な花の開花を約束したんだから、ちゃんと守るよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_13.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_24.wav' },
       ]
     },
     {
@@ -504,7 +507,7 @@ export default {
       text: `次の花は、いつ、どこで、なぜ咲くのか……推理してみなよ？未来の名探偵さん、キミの大好きな推理ゲームだと思ってさ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_21.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_2.wav' },
       ]
     },
     {
@@ -515,7 +518,7 @@ export default {
       text: `私の謎を解けたら、依頼を一つ聞いてあげる。誰を殺すか、誰を救うか、誰を許すか……でも、もし解けなかったら……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_47.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' },
       ]
     },
     {
@@ -526,7 +529,7 @@ export default {
       text: `キミも、シャーロームも、キミの愛する人たち、たくさんの人が私の「Garden」を飾る花になる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_60.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_11.wav' },
       ]
     },
     {
@@ -541,10 +544,10 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `業師`,
-      text: `さあ…、早く動きなよ。こんなとこで私と意地張ってる暇があったら、2番目の花はもう咲いてるかもしれないよ。`,
+      text: `さあ、早く動きなよ。こんなとこで私と意地張ってる暇があったら、2番目の花はもう咲いてるかもしれないよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_14.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_40.wav' },
       ]
     },
     {
@@ -566,7 +569,7 @@ export default {
       text: `自分で推理しなよ。できれば大勢連れてきな。口だけの正義じゃ私を止められないよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_28.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_32.wav' },
       ]
     },
     {
@@ -577,7 +580,7 @@ export default {
       text: `ついでに、返してあげる、探偵ちゃん。これはキミの花。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_36.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_8.wav' },
       ]
     },
     {
@@ -592,7 +595,7 @@ export default {
       text: `キンセンカは陽気な命じゃないから、キミも無理に正義の使者なんて演じなくていいよ。<span>ありのままの自分</span>で私に挑みな。それなら、ちょっと期待できるかな。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_27.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_21.wav' },
       ]
     },
     {
@@ -603,7 +606,7 @@ export default {
       text: `これは<span>10年</span>かけて醸成された花期だよ。難易度下げてあげたんだから、勝ちなよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_10.wav' },
-        /* { label: '日', path: 'wav/JP/conversation10/vo_event_11012_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation10/vo_event_11012_19.wav' },
       ]
     },
     {
