@@ -24,7 +24,7 @@ export default {
       {
         name: `？`,
         avatar: `img/dh/leopold.png`,
-        note: `誰がどう見てもわかる状態で、ネタバレを防ぐ意味はあるのだろうか`
+        note: `誰のことか丸わかりなのに、ネタバレ防止にする必要ある？`
       },
       {
         name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
