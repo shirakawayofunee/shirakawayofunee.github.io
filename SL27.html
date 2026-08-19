@@ -145,24 +145,108 @@
         <div class="secondary-menu-container">
             <div class="gallery-header">
                 <ul class="nav flex-column" id="galleryTabs" role="tablist">
-                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#gallery">イラスト</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#r18g">序章『何のために戦うか』</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#pose">『最後通牒』</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#lonly">L</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#sonly">S</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mansion">世界観</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doodle">平和な日常/落書き</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dc">テーマ</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#otherChar">他作品の〇〇ってキャラのイメージ</a>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#gallery" data-subtitle="ILLUSTRATION">
+                            <span class="nav-title">イラスト</span>
+                            <span class="nav-arrow"></span>
+                        </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">漫画</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#costume">衣装</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">ふわふわ/擬獣化とSD</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#nsfw">NSFW</a></li> -->
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#travel">両生還後の旅行</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#death">死後</a></li>
-                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#food">食べ物</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#female">女性審美補足</a></li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#r18g" data-subtitle="PROLOGUE">
+                            <span class="nav-title">序章『何のために戦うか』</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#pose" data-subtitle="EPISODE 1">
+                            <span class="nav-title">『最後通牒』</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#lonly" data-subtitle="CHARACTER L">
+                            <span class="nav-title">L</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#sonly" data-subtitle="CHARACTER S">
+                            <span class="nav-title">S</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#mansion" data-subtitle="WORLD">
+                            <span class="nav-title">世界観</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#doodle" data-subtitle="DAILY LIFE & DOODLE">
+                            <span class="nav-title">平和な日常/落書き</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#dc" data-subtitle="THEME">
+                            <span class="nav-title">テーマ</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#otherChar" data-subtitle="CHARACTER IMAGE">
+                            <span class="nav-title">他作品の〇〇ってキャラのイメージ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#manga" data-subtitle="MANGA">
+                            <span class="nav-title">漫画</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#costume" data-subtitle="COSTUME">
+                            <span class="nav-title">衣装</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#catdw" data-subtitle="BEAST & SD">
+                            <span class="nav-title">ふわふわ/擬獣化とSD</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <!-- 被注释保留的项，若启用将保持相同视觉设计 -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#nsfw" data-subtitle="NSFW">
+                            <span class="nav-title">NSFW</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#travel" data-subtitle="TRAVEL">
+                            <span class="nav-title">両生還後の旅行</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#death" data-subtitle="AFTER DEATH">
+                            <span class="nav-title">死後</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#food" data-subtitle="FOOD">
+                            <span class="nav-title">食べ物</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#female" data-subtitle="FEMALE">
+                            <span class="nav-title">女性審美補足</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li> -->
                 </ul>
             </div>
         </div>

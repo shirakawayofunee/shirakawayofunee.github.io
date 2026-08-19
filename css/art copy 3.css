@@ -786,7 +786,6 @@ body {
     }
 }
 
-
 /* 1. 初始化容器与计数器 */
 #galleryTabs.nav {
     flex-direction: column;
@@ -809,7 +808,7 @@ body {
     text-align: left;
     outline: none;
     
-    /* 核心布局 */
+    /* 核心布局 (接近页面 B 的 .chapter-item) */
     padding: 15px 10px 15px 12px;
     border-bottom: 1px dashed #aaa !important; /* 保留虚线底边 */
     cursor: pointer;
@@ -823,65 +822,32 @@ body {
     width: 100%;
     box-sizing: border-box;
 
+    /* 默认颜色配置 (可结合你页面现有的变量，这里提供基础回退色) */
+    color: var(--text-main, #333); 
     counter-increment: gallery-counter; /* 计数器递增 */
 }
 
-/* 3. Hover 状态（仅改变背景色，不改变文字颜色） */
+/* 3. Hover 状态 */
 #galleryTabs .nav-link:hover {
-    background-color: var(--highlight-bg, rgba(0, 0, 0, 0.05)) !important;
+    background-color: var(--highlight-bg, rgba(0, 0, 0, 0.05));
+    color: var(--text-main, #333); /* 保持主要文字颜色 */
 }
 
-/* 4. Active 激活状态（Bootstrap 自动添加，整行变黑白） */
+/* 4. Active 状态 (Bootstrap 自动添加) */
 #galleryTabs .nav-link.active {
     background-color: rgba(1, 1, 1, 1) !important; /* 纯黑背景 */
     border-bottom: 1px solid rgba(1, 1, 1, 1) !important; /* 实线底边 */
+    color: rgba(253, 253, 253, 1) !important; /* 文字变白 */
 }
 
-
-/* ==========================================================
-   5. 状态颜色精准锁定（彻底解决 :link / :visited 颜色不一致问题）
-   ========================================================== */
-
-/* --- 5.1 未激活状态 (强制锁定颜色，防止浏览器及 Bootstrap 干扰) --- */
-
-/* 标题默认色 */
-#galleryTabs .nav-link:not(.active) .nav-title {
-    color: var(--text-main, #666) !important;
-}
-
-/* 箭头默认色 (利用 currentColor 传递) */
-#galleryTabs .nav-link:not(.active) .nav-arrow {
-    color: var(--text-main, #666) !important; 
-}
-
-/* 副标题 (::before) 与 自动序号 (::after) 默认色 */
-#galleryTabs .nav-link:not(.active)::before,
-#galleryTabs .nav-link:not(.active)::after {
-    color: var(--text-sub, #666) !important;
-}
-
-
-/* --- 5.2 激活状态 (文字、箭头、副标题、序号全部强制变白) --- */
-
-#galleryTabs .nav-link.active .nav-title,
-#galleryTabs .nav-link.active .nav-arrow,
-#galleryTabs .nav-link.active::before,
-#galleryTabs .nav-link.active::after {
-    color: rgba(253, 253, 253, 1) !important;
-}
-
-
-/* ==========================================================
-   6. 结构与动画样式
-   ========================================================== */
-
-/* 标题文本排版 */
+/* 5. 标题样式 */
 #galleryTabs .nav-link .nav-title {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 
     font-size: 0.85rem;
     font-weight: 800;
+    color: #6c6c6c; 
 
     white-space: normal;
     word-break: break-all;
@@ -893,9 +859,9 @@ body {
     width: 100%;
 }
 
-/* 副标题提取 */
+/* 6. 副标题 (通过 ::before 自动提取 data-subtitle) */
 #galleryTabs .nav-link::before {
-    content: attr(data-subtitle);
+    content: attr(data-subtitle); /* 自动读取属性 */
     grid-column: 1 / 2;
     grid-row: 2 / 3;
 
@@ -905,12 +871,18 @@ body {
     text-transform: uppercase;
     white-space: nowrap;
     justify-self: start;
+
+    /* 默认副标题颜色，Active 时变为白色 */
+    color: var(--text-sub, #666);
     transition: color 0.2s;
 }
+#galleryTabs .nav-link.active::before {
+    color: rgba(253, 253, 253, 1) !important;
+}
 
-/* 自动序号生成 */
+/* 7. 自动序号 (通过 ::after 和 Counter 生成) */
 #galleryTabs .nav-link::after {
-    content: counter(gallery-counter, decimal-leading-zero);
+    content: counter(gallery-counter, decimal-leading-zero); /* 自动生成如 01, 02 */
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     justify-self: end;
@@ -919,10 +891,16 @@ body {
     font-family: 'Courier New', monospace;
     font-weight: bold;
     white-space: nowrap;
+
+    /* 默认序号颜色，Active 时变为白色 */
+    color: var(--text-sub, #666);
     transition: color 0.2s;
 }
+#galleryTabs .nav-link.active::after {
+    color: rgba(253, 253, 253, 1) !important;
+}
 
-/* 纯 CSS 箭头折角 */
+/* 8. 纯 CSS 箭头样式 */
 #galleryTabs .nav-link .nav-arrow {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
@@ -931,16 +909,18 @@ body {
 
     width: 7px;
     height: 7px;
+    /* 使用 currentColor 可以让边框颜色自动跟随文字（Hover/Active 变色时无需单独写边框色） */
     border-top: 2px solid currentColor;
     border-right: 2px solid currentColor;
 
-    transform: rotate(0deg); /* 0度时：折角朝向右上 (对应 Page B 初始状态) */
+    /* 0度时：折角朝向右上角 (类似原设计未 hover 时的角度) */
+    transform: rotate(0deg); 
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     box-sizing: border-box;
     display: block;
 }
 
-/* 悬停/激活时箭头旋转至正右方 (45度) */
+/* Hover/Active 状态下，箭头旋转到 45度 指向正右方 */
 #galleryTabs .nav-link:hover .nav-arrow,
 #galleryTabs .nav-link.active .nav-arrow {
     transform: rotate(45deg); 
