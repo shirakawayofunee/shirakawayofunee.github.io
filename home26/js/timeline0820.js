@@ -72,20 +72,20 @@ window.timelineMsg = [
   {
     date: "N.F.25～60",
     title: "涅槃集団設立",
-    text: "（4年に一度開催）",
+    text: "5つの宗主市が出資し、共同で内海周辺にディスを立ち上げた。移民を主な人口とするこのまちは、鉱業を礎にした。しかし、YFJの管理支配は全く宗主市の元に把握され、科学者たちはチラン博士の率いて<span>上庭</span>を秘かに成立。<br>各国はＥ.Ｄ.Ｇ.Ｅ.協定に調印し、ディスとYFJ貿易を行う。",
     isMajor: true, // 【样式A】开关
     customRow: 2,
   },
   {
     date: "N.F.33",
-    text: "チラン逝去、チラン広場完成",
+    text: "チラン逝去。その功績を記念し、名を冠した『チラン広場』が建設される。",
     span: 3,
     customRow: 6,
   },
   {
     date: "N.F.34年", // 大标题背景字
     title: "第1回ディス万国博覧会", // 样式A需要标题
-    text: "5つの宗主市が出資し、共同で内海周辺にディスを立ち上げた。移民を主な人口とするこのまちは、鉱業を礎にした。しかし、YFJの管理支配は全く宗主市の元に把握され、科学者たちはチラン博士の率いて<span>上庭</span>を秘かに成立。<br>各国はＥ.Ｄ.Ｇ.Ｅ.協定に調印し、ディスとYFJ貿易を行う。",
+    text: "（4年に一度開催）",
     isMajor: true, // 【样式A】开关
     customRow: 2.5,
   },
@@ -135,6 +135,15 @@ window.timelineMsg = [
     customRow: 6,
   },
   {
+    type: "image",
+    src: "./img/timeline/福音地.jpg",
+    span: 6,
+    customRow: 3,
+    customWidth: 700,
+    caption: "福音地"
+  },
+
+  {
     date: "N.F.72.12.26",
     title: "ディス独立",
     text: "ディス独立戦争が勝利を収めた。独立軍の統率者デレヴァンの宣言のもと、ディスは正式に独立を果たしました。彼自身も新ディスの初代議長の職務を引き受けました。",
@@ -145,7 +154,7 @@ window.timelineMsg = [
     date: "N.F.72年～84年",
     text: "デレヴァンは城邦議長の職を長く務め続け、権力の譲渡を拒否し、選挙を操作して強引に再選を重ねました。これにより、彼はディス史上最も長期間統治した独裁者となりました。彼の統治下では、対外的には狂気的な拡張と略奪を繰り返し。国内では異分子を高圧的に弾圧し、至るところで腐敗がはびこりました。城邦は次第に腐敗の一途をたどりました。",
     customRow: 7,
-    span: 4,
+    span: 5,
   },
   {
     date: "N.F.81年",
@@ -181,6 +190,7 @@ window.timelineMsg = [
     span: 6,
     customRow: 3,
     customWidth: 700,
+    caption: "BR-000"
   },
   {
     date: "N.F.84.06.15",
@@ -260,10 +270,18 @@ window.timelineMsg = [
   {
     date: "N.F.106",
     title: "BR-003爆発",
-    text: "ナビゲーター天文台事変。",
+    text: "天文台で第12回ディス万国博覧会が開催、ナビゲーター天文台事変。機密文書。",
     isMajor: true,
-    customRow: 1.5,
+    customRow: 6.5,
   },
+/*   {
+    type: "image",
+    src: "./img/timeline/br003.jpg",
+    span: 6,
+    customRow: 3,
+    customWidth: 700,
+    caption: "BR-003"
+  }, */
   {
     date: "N.F.112", // 大标题背景字
     title: "BR-004爆発", // 样式A需要标题
