@@ -53,10 +53,10 @@ export default {
         `,
       },
       {
-        name: `Shalom｜高き壁に閉じ込められた囚人`,
+        name: `Shalom<br>高き壁に閉じ込められた囚人`,
         avatar: `img/dh/x402.png`,
         note: `上庭の七代目執行人、高き壁に閉じ込められ感情を奪われた囚人。`,
-        basicStats: `
+        basicStats: `人間の感情を摘出する手術。そんなことが本当に可能なのか
         `,
       },
       {
@@ -142,7 +142,7 @@ export default {
       text: `へえ、そう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_13.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_6.wav" },
       ],
     },
     {
@@ -163,7 +163,7 @@ export default {
       text: `これが私の「罰」なら、大したことないね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_123.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_120.wav" },
       ],
     },
     {
@@ -179,7 +179,7 @@ export default {
       text: `上庭の技術、たいしたもんだ。ここじゃ君を殺せない？ここは何の意識空間？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_109.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_33.wav" },
       ],
     },
     {
@@ -221,7 +221,7 @@ export default {
       text: `へえ……ということは、その裂け目の向こうが内海の中枢ってわけ？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_45.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_5.wav" },
       ],
     },
     {
@@ -301,7 +301,7 @@ export default {
       text: `それが、福音地を驚かせた『技術』ってわけね。反吐が出るわ。どうりで心のない人形のように見えるはず。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_68.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_86.wav" }, 
       ],
     },
     {
@@ -328,6 +328,7 @@ export default {
       text: `ですから今、私は君を助けることもできます。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_111.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_41.wav" },
       ],
     },
     {
@@ -343,7 +344,7 @@ export default {
       text: `助ける？あんなことをしておいて、剥がれた仮面を縫い合わせてもう一度御託を並べようっての？私を馬鹿だと思ってる!?`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_100.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_56.wav" },
       ],
     },
     {
@@ -425,7 +426,7 @@ export default {
       text: `……それで？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_93.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_115.wav" },
       ],
     },
     {
@@ -448,7 +449,7 @@ export default {
       text: `いいこと言うね。まるで全部計算済みみたいに。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_22.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_62.wav" },
       ],
     },
     {
@@ -471,7 +472,7 @@ export default {
       text: `その前に、上庭のために働けって？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_85.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_103.wav" },
       ],
     },
     {
@@ -510,6 +511,7 @@ export default {
       text: `よかった。これから起こることは、二人だけの話にする。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_16.wav" },
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_32.wav" },
       ],
     },
     {
@@ -577,7 +579,7 @@ export default {
       text: `<ruby>菫<rt>スミレ</rt></ruby>が気にかけていたあの人のことね……でも、君が殺したんじゃなかったかしら？ あの人も、君たちと福音地が殺し合うための生贄でしょう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_12.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_45.wav" },
       ],
     },
     {
@@ -600,7 +602,7 @@ export default {
       text: `なら、今さら何のために探すの？根絶やしにして、当時の失敗を埋め合わせるため？それとも局面が制御できなくなって、また連れ戻して犬として飼うつもり？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_47.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_25.wav" },
       ],
     },
     {
@@ -627,7 +629,7 @@ export default {
       text: `君、頭イカれてるんじゃない？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_42.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_70.wav" },
       ],
     },
     {
@@ -738,7 +740,7 @@ export default {
       text: `……君か。急に来て、鬱陶しいわね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_77.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_90.wav" },
       ],
     },
     {
@@ -772,7 +774,7 @@ export default {
       text: `チッ、あの女は君の言いなりかもしれないけど、私は御免だよ——`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_59.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_66.wav" },
       ],
     },
     {
@@ -823,7 +825,7 @@ export default {
       text: `ハッ、ふふ……なるほど、そっか……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_95.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_99.wav" },
       ],
     },
     {
@@ -839,7 +841,7 @@ export default {
       text: `君ら、敵の刀を奪って、使いこなせず、捨てるのも惜しい。いざ決戦となれば、背後から刺されるのが怖くなって、煮え切らない態度のままへし折って溶かし、適当な道具として使い潰す……そういうこと？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_121.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_114.wav" },
       ],
     },
     {
@@ -862,7 +864,7 @@ export default {
       text: `もっともらしく語るけど、結局は臆病者じゃん！臆病なだけじゃなく、偽善的で、傲慢で、狂妄で、残酷。自分を何だと思ってる！？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_28.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_34.wav" },
       ],
     },
     {
@@ -897,7 +899,7 @@ export default {
       text: `私はあいつらとは違う!でも、君ら両方とも狗が狗を噛むようなもんだ！悪党を叩いたからって、自分が英雄になったつもりでいないで！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_44.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_17.wav" },
       ],
     },
     {
@@ -909,7 +911,6 @@ export default {
       text: `そうね。一方は『狂厄』を食い止めるために全てを犠牲にし、もう一方は『狂厄』を得るために全てを犠牲にする。災厄が目覚める前に、人類は自ら堕落し狂い、互いに噛みつき合って全てを焼き尽くすのです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_105.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
       ],
     },
     {
@@ -921,7 +922,7 @@ export default {
       text: `だったら君らだけで抱き合って地獄へ落ちなさい！他人を巻き込むんじゃないわよ！！！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_120.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_94.wav" },
       ],
     },
     {
@@ -996,7 +997,7 @@ export default {
       text: `ハッ、なんだ、今さら上庭への裏切り？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_94.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_64.wav" },
       ],
     },
     {
@@ -1030,7 +1031,7 @@ export default {
       text: `また君の道具？今度は彼に何をさせるつもり？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_78.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_65.wav" },
       ],
     },
     {
@@ -1110,7 +1111,8 @@ export default {
       text: `……休息が済んだら、考えてあげなくもないわ。でも復讐に彼を使う必要はない。私は私のやり方でやる。他人の力なんて借りないわ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_52.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_38.wav" },
+        { label: "日2", path: "wav/JP/conversation29/vo_event_11042_108.wav" },
       ],
     },
     {
@@ -1122,7 +1124,7 @@ export default {
       text: `ただ、あの泥棒猫がどんな手を使って、私の可愛い子ちゃんをあんな無様な泣きっ面にさせたのか、見てやるだけよ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_32.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_107.wav" },
       ],
     },
     {
@@ -1154,7 +1156,7 @@ export default {
       text: `悪は悪だ。どんな立場や理由があろうと帳消しにはできない。勝手な理屈で手についた血の借金を軽くなかったことにする……その点においては、君も私も罪人ね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_65.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_11.wav" },
       ],
     },
     {
@@ -1177,7 +1179,7 @@ export default {
       text: `今日はこっちを犠牲に、明日はあっちを犠牲に、その量も誰にするかも全部君が決めるってわけ？ハハッ……君、何様！？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_62.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_37.wav" },
       ],
     },
     {
@@ -1210,7 +1212,7 @@ export default {
       `,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_89.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_68.wav" },
       ],
     },
     {
@@ -1234,7 +1236,7 @@ export default {
       text: `鴻毛より軽い命なんだもの、好き勝手やったっていいじゃない？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_37.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_48.wav" },
       ],
     },
     {
@@ -1246,7 +1248,7 @@ export default {
       text: `君もこの場所も、上庭には大事だろ……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_71.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_22.wav" },
       ],
     },
     {
@@ -1263,7 +1265,7 @@ export default {
       text: `この裂け目が、君にとって触れてはならないものだと言うなら……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_6.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_35.wav" },
       ],
     },
     {
@@ -1288,7 +1290,7 @@ export default {
       text: `私のことを理解しているフリをしてたんでしょう？なら分かるはずよ。私が君の言うことなんて聞くわけがないって。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_79.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_43.wav" },
       ],
     },
     {
@@ -1300,7 +1302,7 @@ export default {
       text: `君たちの言う『正しさ』ってやつが、一番虫酸が走るの。私の獲物も、私を殺そうとする奴も、私に助けを求める奴も、どいつもこいつもロクな人間じゃない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_91.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_18.wav" },
       ],
     },
     {
@@ -1312,7 +1314,7 @@ export default {
       text: `正解……私の『Garden』を壊した、それこそが君の間違いよ！ 今後私が何をしようと君には関係ない。さあ、今すぐ償いなさい！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_87.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_98.wav" },
       ],
     },
     {
@@ -1357,7 +1359,7 @@ export default {
       text: `なんて痛快……戻ってきた。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_84.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_63.wav" },
       ],
     },
     {
@@ -1369,7 +1371,7 @@ export default {
       text: `誰にも指図はさせない。人生はこれっぽっちしかないの、私が自分で使い果たす。愛するも憎むも、私の心のままに。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_43.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_78.wav" },
       ],
     },
     {
@@ -1381,7 +1383,7 @@ export default {
       text: `誰のためにも犠牲にならず、誰にも仕えず、復讐も享楽も、一分一秒に至るまで私が好きに生きる。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_14.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_73.wav" },
       ],
     },
     {
@@ -1393,7 +1395,7 @@ export default {
       text: `咲くのも自分、生きるのも自分、死ぬのも自分のため！最愛の人は自分自身でなければならない。自分の運命は、必ず自分の手で握る！それこそが<span>Garden</span>！何度言わせれば気が済むの！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_10.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_4.wav" },
       ],
     },
     {
@@ -1409,7 +1411,7 @@ export default {
       text: `……君たちも、自分のためだけに生きればよかったのに……馬鹿な子たち……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_60.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_110.wav" },
       ],
     },
     {
@@ -1485,7 +1487,7 @@ export default {
       text: `……くたばれ`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_49.wav" },
-        /* { label: "日", path: "wav/JP/conversation29/vo_event_11042_7.wav" }, */
+        { label: "日", path: "wav/JP/conversation29/vo_event_11042_60.wav" },
       ],
     },
     {
