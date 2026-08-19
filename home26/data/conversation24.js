@@ -282,7 +282,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/regret.png`,
       name: `「師匠」`,
       text: `その後は十中八九、君のあの管理局行きになるわね。あの子にはお似合いよ。大願成就したんだもの、自分が何をしたいのか分かるまで、そこで頭を冷やせばいい。`,
-      voice: `wav/CN/conversation24/vo_event_11031_47.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_47.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_11.wav" },
+      ],
     },
     {
       type: `dialogue`,
@@ -430,7 +433,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/leopold2.png`,
       name: `「師匠」`,
       text: `西区に行って誰を殺したの？錆火、執行委員会……他には誰？涅槃の重役たちに手を下す機会はあった？`,
-      voice: `wav/CN/conversation24/vo_event_11031_1.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_1.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_15.wav" },
+      ],
     },
     {
       type: `dialogue`,
@@ -465,7 +471,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/regret.png`,
       name: `「師匠」`,
       text: `君が笑うところ、ずいぶん見てないわ。仏頂面をされてると私の気分まで滅入るの。`,
-      voice: `wav/CN/conversation24/vo_event_11031_44.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_44.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_13.wav" },
+      ],
     },
     {
       type: `dialogue`,
@@ -487,7 +496,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
-      avatar: `img/dh/jin1.png`,
+      avatar: `img/dh/jin2.png`,
       name: `堇`,
       text: `彼らは自分たちが何をしたのかさえ知らない！`
     },
@@ -509,7 +518,8 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
       name: `堇`,
-      text: `師匠もずっと、終わりのない憎しみと対峙してきました。どうやって向き合っているのですか？どうやって心を麻痺させずにいられるのですか？`
+      text: `師匠もずっと、終わりのない憎しみと対峙してきました。どうやって向き合っているのですか？どうやって心を麻痺させずにいられるのですか？`,
+      voice: `wav/JP/conversation24/vo_event_11031_9.wav`
     },
     {
       type: `dialogue`,
@@ -588,7 +598,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/regret.png`,
       name: `「師匠」`,
       text: `機会があれば、私も探しに行ってみたかったわね。あの朴念仁が最近どうしてるか。でも……`,
-      voice: `wav/CN/conversation24/vo_event_11031_36.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_36.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_14.wav" },
+      ],
     },
     {
       type: `narration`,
