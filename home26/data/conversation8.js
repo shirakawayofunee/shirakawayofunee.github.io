@@ -24,7 +24,11 @@ export default {
         name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
         avatar: `img/dh/zhentan1.png`,
         note: `19歳、能力者、警察学校の一年生。`,
-        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`,
+        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。
+        ▍背景
+      父は103年の「月蝕作戦」でFACとして殉職し、母も数年後に悲しみで亡くなった。
+      105年に一人で上庭代表を暗殺した後、HUSH-Xに拾われたんだ。
+      両親の戦友に育てられたけど、養父母も113年3月のBR-002二次勃発でFACとして命を落とした。`,
       },
       {
         name: `Mireya｜探偵の妹`,
