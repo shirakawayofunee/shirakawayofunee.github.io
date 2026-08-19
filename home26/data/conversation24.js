@@ -119,7 +119,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
       text: `<span>Garofano</span>～お風呂入りたい！今回はバラで、紅茶もバラ、お菓子も――`,
-      voice: `wav/CN/conversation24/vo_event_11031_27.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_27.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_28.wav" },
+      ],
     },
     {
       type: `dialogue`,
@@ -136,7 +139,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/猫1.png`,
       name: `「師匠」`,
-      text: `まあいいや、堇でもいいよ。気分、ちょっとマシになった？よかったら、ついでにマッサージしてよ。`,
+      text: `まあいいや、菫でもいいよ。気分、ちょっとマシになった？よかったら、ついでにマッサージしてよ。`,
       voice: `wav/CN/conversation24/vo_event_11031_43.wav`
     },
     {
@@ -144,7 +147,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `仰せのままに。`,
       voice: `wav/CN/conversation24/vo_event_11031_11.wav`
     },
@@ -168,14 +171,17 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/regret.png`,
       name: `「師匠」`,
       text: `<span>Garofano</span>はどう？`,
-      voice: `wav/CN/conversation24/vo_event_11031_39.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_39.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_22.wav" },
+      ],
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `まだ眠っていますが、体内での汚染生成は止まりました。師匠が能力を使って、彼女の体内から穢れを取り除いてくださったおかげです。`
     },
     {
@@ -183,7 +189,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `何人かの新人が看病していますので、すぐに目覚めるでしょう。`,
       voice: `wav/CN/conversation24/vo_event_11031_2.wav`
     },
@@ -210,7 +216,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `はい。第73条として記録しておきます。`
     },
     {
@@ -218,7 +224,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `アザミは――`,
       voice: `wav/CN/conversation24/vo_event_11031_54.wav`
     },
@@ -251,7 +257,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/impatient.png`,
       name: `「師匠」`,
       text: `助けに行くつもりはないわ。自分の蒔いた種は自分で刈らせなさい。`,
-      voice: `wav/CN/conversation24/vo_event_11031_82.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_82.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_16.wav" },
+      ],
     },
     {
       type: `narration`,
@@ -264,7 +273,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/regret.png`,
       name: `「師匠」`,
       text: `……まあ、あの子は今頃、<span>9th</span>の心理専門家のお手元でしょうね。私から逆暗示の罠を仕掛けておいたから、連中もしばらくは振り回されるはずよ。`,
-      voice: `wav/CN/conversation24/vo_event_11031_18.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_18.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_32.wav" },
+      ],
     },
     {
       type: `dialogue`,
@@ -310,7 +322,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `彼女が無事なら、それで十分です。`
     },
     {
@@ -322,7 +334,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `師匠、これほど派手に行動されるのは初めてではありませんか？今回はあまりに注目を集めすぎています。大丈夫なのですか？`
     },
     {
@@ -351,7 +363,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `いいえ。『ガーデン』に入ったあの日から、自分の運命に対する覚悟はできています。それに、師匠が最強です。師匠を打ち破れる者がいるとは到底思えません。`
     },
     {
@@ -359,7 +371,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `ただ、福音地と上庭の争いをあれほど嫌悪し、わざわざ見つかりにくいこの場所を選んだ師匠が、今回その渦中に飛び込んだ。何か深い意味があるのですか？`
     },
     {
@@ -369,7 +381,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/smile0.png`,
       name: `「師匠」`,
       text: `深い意味なんてないわよ。この前までは春の眠気で動きたくなかっただけ。今は夏が来て、花が咲く時期だから手を出したの。`,
-      voice: `wav/CN/conversation24/vo_event_11031_48.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_48.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_17.wav" },
+      ],
     },
     {
       type: `dialogue`,
@@ -391,7 +406,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/regret.png`,
       name: `「師匠」`,
       text: `そういう君こそ、なぜそんなことを聞くの？普段はそんなことに関心もないし、ずっと組織を出たがっていたくせに。君が自分から私を訪ねてきたのはこれが初めてよ。`,
-      voice: `wav/CN/conversation24/vo_event_11031_45.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_45.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_23.wav" },
+      ],
     },
     {
       type: `dialogue`,
@@ -443,7 +461,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `……はい。最近の師匠のご活躍のおかげで注意が逸れ、彼らに近づく好機を得ました。師匠の行動の妨げにならぬよう、隠密に処理しました。『ガーデン』の手によるものだとは誰にも気づかれません。`
     },
     {
@@ -462,7 +480,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/smile0.png`,
       name: `「師匠」`,
       text: `で、気が済んだ？スカッとした？あれだけ復讐したんだから、少しは嬉しくなったでしょう。笑ってみせなさいよ。`,
-      voice: `wav/CN/conversation24/vo_event_11031_51.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_51.wav" },
+        { label: "日", path: "wav/JP/conversation24/给我笑一个.wav" },
+      ],
     },
     {
       type: `dialogue`,
@@ -481,15 +502,16 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
-      text: `……数多くのギャング、執行官、そして涅槃の偽善者どもを始末しました。仇敵をこの手で葬ったはずなのに……復讐の実感が何一つ湧かないのです。`
+      name: `菫`,
+      text: `……数多くのギャング、執行官、そして涅槃の偽善者どもを始末しました。仇敵をこの手で葬ったはずなのに……復讐の実感が何一つ湧かないのです。`,
+      voice: `wav/JP/conversation24/vo_event_11031_35.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `……キリがありません。私の敵、彼の苦しみに責任があるクズどもは、殺しても殺しても湧いてくる。`
     },
     {
@@ -497,7 +519,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin2.png`,
-      name: `堇`,
+      name: `菫`,
       text: `彼らは自分たちが何をしたのかさえ知らない！`
     },
     {
@@ -509,15 +531,16 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin2.png`,
-      name: `堇`,
-      text: `師匠は、快意恩仇こそが解脱だと言いました。ですが、この憎しみに終わりはありません。私の恨みは次第にぼやけ、疲弊し、私は……救われない。`
+      name: `菫`,
+      text: `師匠は、快意恩仇こそが解脱だと言いました。ですが、この憎しみに終わりはありません。私の恨みは次第にぼやけ、疲弊し、私は……救われない。`,
+      voice: `wav/JP/conversation24/西秀2.wav`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `師匠もずっと、終わりのない憎しみと対峙してきました。どうやって向き合っているのですか？どうやって心を麻痺させずにいられるのですか？`,
       voice: `wav/JP/conversation24/vo_event_11031_9.wav`
     },
@@ -526,7 +549,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `それとも、これが心を他人に預けた代償なのでしょうか？`
     },
     {
@@ -534,7 +557,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin3.png`,
-      name: `堇`,
+      name: `菫`,
       text: `だから師匠は、私たちに自分だけを愛せと教えるのですか？
       どこへ進めばいいのか分かりません。私に……導きをください。`
     },
@@ -579,7 +602,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `堇`,
+      name: `菫`,
       text: `別の道、ですか……？`
     },
     {
@@ -650,7 +673,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/regret.png`,
       name: `「師匠」`,
       text: `揉みくちゃにされても、来年にはまた咲く。焼かれても、また新しい芽が出る。運命は君を折ることはできても、君を破壊することは永遠にできない――君がその根を、自分の手で握りしめている限りはね。`,
-      voice: `wav/CN/conversation24/vo_event_11031_71.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_71.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_20.wav" },
+      ],
     },
     {
       type: `dialogue`,
@@ -699,7 +725,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin4.png`,
-      name: `堇`,
+      name: `菫`,
       text: `肝に銘じます。ですが、師匠、なぜ『最後』なのですか？`
     },
     {
@@ -707,7 +733,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin4.png`,
-      name: `堇`,
+      name: `菫`,
       text: `ここ二ヶ月、師匠はずっと一人で戦い続けておられます。みんな心配しているのです。`
     },
     {
@@ -715,7 +741,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin4.png`,
-      name: `堇`,
+      name: `菫`,
       text: `何か計画があるのですか？教えてください。お体だって――`
     },
     {
@@ -725,7 +751,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/leopold.png`,
       name: `「師匠」`,
       text: `あーもうダメダメ、体中が痛いのよ。全員呼んできなさい、みんなでマッサージよ。お祝いしましょ、私の誕生日の前祝い。`,
-      voice: `wav/CN/conversation24/vo_event_11031_33.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_33.wav" },
+        { label: "日", path: "wav/JP/conversation24/vo_event_11031_27.wav" },
+      ],
     },
     {
       type: `dialogue`,
@@ -744,7 +773,10 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       avatar: `img/dh/leopold2.png`,
       name: `「師匠」`,
       text: `<ruby>業師<rt>私</rt></ruby>を喜ばせる方法をよく考えなさい。今日の任務は、今日という日を私にとって最高に楽しい一日にすることよ！`,
-      voice: `wav/CN/conversation24/vo_event_11031_19.wav`
+      voice: [
+        { label: "中", path: "wav/CN/conversation24/vo_event_11031_19.wav" },
+        { label: "日", path: "wav/JP/conversation24/好好想想怎么让业师开心.wav" },
+      ],
     },
     {
       type: `narration`,
