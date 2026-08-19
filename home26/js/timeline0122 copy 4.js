@@ -23,13 +23,11 @@ window.timelineMsg = [
     forceCompact: true,
   },
   {
-    type: "image",
-    src: "./img/timeline/YFJ.png",
-    customRow: 2,
-    span: 2,
-    customWidth: 200,
-    forceCompact: true,
-    caption: "YFJ" 
+    date: "N.F.14年", // 大标题背景字
+    title: "ナイトフォール宣言", // 样式A需要标题
+    text: "国際連合が解散し、人類の文明は暗黒期に入る。",
+    isMajor: true, 
+    customRow: 1.5,
   },
   {
     date: "N.F.21年",
@@ -44,13 +42,22 @@ window.timelineMsg = [
     isMajor: true, 
     customRow: 3.5,
   },
+  {
+    type: "image",
+    src: "./img/timeline/YFJ.png",
+    customRow: 2,
+    span: 2,
+    customWidth: 200,
+    forceCompact: true,
+    caption: "YFJ" 
+  },
 
   {
     date: "N.F.24年", // 大标题背景字
     title: "都市「ディス」の建設", // 样式A需要标题
     text: "5つの宗主市が出資し、共同で内海周辺にディスを立ち上げた。移民を主な人口とするこのまちは、鉱業を礎にした。しかし、YFJの管理支配は全く宗主市の元に把握され、科学者たちはチラン博士の率いて<span>上庭</span>を秘かに成立。<br>各国はＥ.Ｄ.Ｇ.Ｅ.協定に調印し、ディスとYFJ貿易を行う。",
     isMajor: true, // 【样式A】开关
-    customRow: 2,
+    customRow: 5,
   },
   {
     type: "image",
@@ -397,23 +404,43 @@ function generateLayout(data) {
     if (row < 1) row = 1;
     if (row + span > 9) row = 9 - span;
 
-    const rowDiff = Math.abs(row - lastRow);
-    let gap = 50;
+    // --- 3. 精准垂直重叠检测 ---
+    // 通过判断当前元素范围 [row, row + span] 与上一个元素范围 [lastRow, lastRow + lastSpan] 是否存在交集
+    let isVerticalOverlap = false;
+    if (index > 0) {
+      const prevStart = lastRow;
+      const prevEnd = lastRow + lastSpan;
+      const currentStart = row;
+      const currentEnd = row + span;
+      // 区间交集判断公式
+      isVerticalOverlap = Math.max(prevStart, currentStart) < Math.min(prevEnd, currentEnd);
+    }
 
-    if (item.forceCompact) {
-        gap = (rowDiff > 2) ? -200 : -20;
-    } 
-    else if (data[index - 1] && data[index - 1].isMajor) {
-      gap = 120; // 避让大事件
-    } 
-    else if (item.isMajor) {
-      gap = 150; // 大事件自身边距
-    } 
-    else if (item.type === "image" && lastType === "image" && rowDiff > 2) {
-      gap = -lastWidth + 50; // 图片重叠
-    } 
-    else if (item.type !== "image" && lastType !== "image" && rowDiff > 2) {
-      gap = -80; // 普通文字紧凑
+    // --- 4. 间距(Gap)计算逻辑 ---
+    let gap = 50; // 默认间距
+
+    if (isVerticalOverlap) {
+      // 情况 A：垂直方向上有重合。水平方向上必须使用【正间距】避让，绝对不能重叠
+      if (data[index - 1] && data[index - 1].isMajor) {
+        gap = 120; // 避让大事件，给予较宽的呼吸空间
+      } else if (item.isMajor) {
+        gap = 150; // 大事件自身的前置安全边距
+      } else if (item.forceCompact) {
+        gap = 50;  // 即使设置了紧凑，因为垂直重合，也需要保留至少 50px 的正向安全间距
+      } else {
+        gap = 80;  // 普通重合元素之间的水平安全间距
+      }
+    } else {
+      // 情况 B：垂直方向上完全错开。此时水平方向可以安全地“重叠”（使用负间距实现紧凑排版）
+      if (item.forceCompact) {
+        gap = -200; // 强力拉回，使其在不同行紧凑并排
+      } else if (item.type === "image" && lastType === "image") {
+        gap = -lastWidth + 60; // 图片横向交错重叠
+      } else if (item.type !== "image" && lastType !== "image") {
+        gap = -80; // 普通文字块横向交错
+      } else {
+        gap = -30; // 默认错开时的微调负间距
+      }
     }
 
     let myX = currentX + gap;
