@@ -76,6 +76,10 @@ body {
     background: var(--accent-main);
 }
 
+.secondary-menu-container::-webkit-scrollbar {
+    display: none;
+}
+
 /* =========================================
    2. 顶部主导航栏
    ========================================= */
@@ -780,4 +784,144 @@ body {
     .cmd-body {
         font-size: 0.9rem;
     }
+}
+
+/* 1. 初始化容器与计数器 */
+#galleryTabs.nav {
+    flex-direction: column;
+    counter-reset: gallery-counter; /* 初始化计数器 */
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+#galleryTabs .nav-item {
+    width: 100%;
+}
+
+/* 2. 重置并重建 .nav-link 为 2x2 Grid 布局 */
+#galleryTabs .nav-link {
+    /* 重置 Bootstrap 默认样式 */
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    text-align: left;
+    outline: none;
+    
+    /* 核心布局 (接近页面 B 的 .chapter-item) */
+    padding: 15px 10px 15px 12px;
+    border-bottom: 1px dashed #aaa !important; /* 保留虚线底边 */
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    grid-template-rows: auto auto;
+    gap: 4px 8px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+
+    /* 默认颜色配置 (可结合你页面现有的变量，这里提供基础回退色) */
+    color: var(--text-main, #333); 
+    counter-increment: gallery-counter; /* 计数器递增 */
+}
+
+/* 3. Hover 状态 */
+#galleryTabs .nav-link:hover {
+    background-color: var(--highlight-bg, rgba(0, 0, 0, 0.05));
+    color: var(--text-main, #333); /* 保持主要文字颜色 */
+}
+
+/* 4. Active 状态 (Bootstrap 自动添加) */
+#galleryTabs .nav-link.active {
+    background-color: rgba(1, 1, 1, 1) !important; /* 纯黑背景 */
+    border-bottom: 1px solid rgba(1, 1, 1, 1) !important; /* 实线底边 */
+    color: rgba(253, 253, 253, 1) !important; /* 文字变白 */
+}
+
+/* 5. 标题样式 */
+#galleryTabs .nav-link .nav-title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: inherit; /* 自动继承 a 标签颜色 */
+
+    white-space: normal;
+    word-break: break-all;
+    line-break: loose;
+    overflow-wrap: anywhere;
+
+    justify-self: start;
+    min-width: 0;
+    width: 100%;
+}
+
+/* 6. 副标题 (通过 ::before 自动提取 data-subtitle) */
+#galleryTabs .nav-link::before {
+    content: attr(data-subtitle); /* 自动读取属性 */
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+    justify-self: start;
+
+    /* 默认副标题颜色，Active 时变为白色 */
+    color: var(--text-sub, #666);
+    transition: color 0.2s;
+}
+#galleryTabs .nav-link.active::before {
+    color: rgba(253, 253, 253, 1) !important;
+}
+
+/* 7. 自动序号 (通过 ::after 和 Counter 生成) */
+#galleryTabs .nav-link::after {
+    content: counter(gallery-counter, decimal-leading-zero); /* 自动生成如 01, 02 */
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: end;
+
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    white-space: nowrap;
+
+    /* 默认序号颜色，Active 时变为白色 */
+    color: var(--text-sub, #666);
+    transition: color 0.2s;
+}
+#galleryTabs .nav-link.active::after {
+    color: rgba(253, 253, 253, 1) !important;
+}
+
+/* 8. 纯 CSS 箭头样式 */
+#galleryTabs .nav-link .nav-arrow {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    align-self: center;
+
+    width: 7px;
+    height: 7px;
+    /* 使用 currentColor 可以让边框颜色自动跟随文字（Hover/Active 变色时无需单独写边框色） */
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+
+    /* 0度时：折角朝向右上角 (类似原设计未 hover 时的角度) */
+    transform: rotate(0deg); 
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    box-sizing: border-box;
+    display: block;
+}
+
+/* Hover/Active 状态下，箭头旋转到 45度 指向正右方 */
+#galleryTabs .nav-link:hover .nav-arrow,
+#galleryTabs .nav-link.active .nav-arrow {
+    transform: rotate(45deg); 
 }

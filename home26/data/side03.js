@@ -30,9 +30,14 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `『Garofano』`,
+        avatar: `img/dh/severo5.png`,
+        note: `36歳、能力者、「GARDEN」幹部`,
+        basicStats: `▍コードネーム由来：
+        「Garofano」 イタリア語の「Carnation」
+        外を渡り歩く時は、コードネームで通している。
+        本編では少し取り乱した分、番外編で大人の余裕を見せつける。
+        `
       },
       {
         name: `工事中`,

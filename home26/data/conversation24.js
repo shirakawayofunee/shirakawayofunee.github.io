@@ -60,7 +60,7 @@ export default {
 Lの目には、まるで家出していた子が何か目的を抱えて帰ってきたように映っている。`
       },
       {
-        name: `Garofano（名前だけ登場）`,
+        name: `『Garofano』（名前だけ登場）`,
         avatar: `img/dh/S24.png`,
         note: `Lに長年仕えていた組織の古参幹部。`,
         basicStats: `
