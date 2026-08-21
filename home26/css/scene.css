@@ -2360,3 +2360,9 @@ html {
 }
 .panel-left .title { color: #555; }
 svg { pointer-events: none; }
+
+.narration video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

@@ -222,6 +222,15 @@ edge-02：HUSHシステムとマーキング技術の双方にリスクが存在
       text: `たとえ人に折られても、自由に……`,
       voice: `wav/CN/conversation32/vo_event_11043_58.wav`
     },
+    {
+      type: `narration`,
+      text: `
+        <video controls>
+          <source src="./img/L/イベントED_ 繁花.mkv" type="video/mkv">
+        </video>
+      `,
+      bubbleStyle: "center",
+    },
 /*     {
       type: `narration`,
       text: `第一章「Flowers」終了、つづく。`

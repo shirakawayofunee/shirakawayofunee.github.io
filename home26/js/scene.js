@@ -464,7 +464,7 @@ async function loadChapter(chapterId) {
     console.error(err);
     scriptDiv.innerHTML = '';
     if (headerBox) scriptDiv.appendChild(headerBox);
-    scriptDiv.insertAdjacentHTML('beforeend', `<div class="narration" style="color:#D40F30">无法打开卷宗: ${chapterId}</div>`);
+    scriptDiv.insertAdjacentHTML('beforeend', `<div class="narration" style="color:#D40F30">: ${chapterId}</div>`);
   }
 }
 
