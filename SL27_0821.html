@@ -18,13 +18,15 @@
     <meta name="theme-color" content="#0A0A0A000" />
     <title>心が通じ合い、死生を共にし、決して裏切らない。</title>
     <link rel="stylesheet" href="css/transition.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Share+Tech+Mono&display=swap"
         rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/glitch.css"> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/glitch.css">
     <link rel="stylesheet" href="css/art.css">
 </head>
 
@@ -36,7 +38,7 @@
     <!-- 1. 顶部主导航栏 (Head PC) -->
     <div class="head pc">
         <div class="h-con-left">
-            <!--             <h1 class="cyber-glitch" data-text="GALLERY">GALLERY
+<!--             <h1 class="cyber-glitch" data-text="GALLERY">GALLERY
             </h1> -->
         </div>
         <div class="h-con-right">
@@ -139,108 +141,108 @@
     </div>
 
     <!-- 3. 二级菜单 (Tabs) -->
-    <div class="page-layout">
+    <div class="page-layout d-flex  align-items-start">
         <div class="secondary-menu-container">
             <div class="gallery-header">
-                <ul id="galleryTabs" role="tablist">
+                <ul class="nav flex-column" id="galleryTabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#gallery" data-tab="gallery" data-subtitle="ILLUSTRATION">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#gallery" data-subtitle="ILLUSTRATION">
                             <span class="nav-title">イラスト</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#r18g" data-tab="r18g" data-subtitle="PROLOGUE">
+                        <a class="nav-link" data-bs-toggle="tab" href="#r18g" data-subtitle="PROLOGUE">
                             <span class="nav-title">序章『何のために戦うか』</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#pose" data-tab="pose" data-subtitle="EPISODE 1">
+                        <a class="nav-link" data-bs-toggle="tab" href="#pose" data-subtitle="EPISODE 1">
                             <span class="nav-title">『最後通牒』</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#lonly" data-tab="lonly" data-subtitle="CHARACTER L">
+                        <a class="nav-link" data-bs-toggle="tab" href="#lonly" data-subtitle="CHARACTER L">
                             <span class="nav-title">L</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#sonly" data-tab="sonly" data-subtitle="CHARACTER S">
+                        <a class="nav-link" data-bs-toggle="tab" href="#sonly" data-subtitle="CHARACTER S">
                             <span class="nav-title">S</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#mansion" data-tab="mansion" data-subtitle="WORLD">
+                        <a class="nav-link" data-bs-toggle="tab" href="#mansion" data-subtitle="WORLD">
                             <span class="nav-title">世界観</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#doodle" data-tab="doodle" data-subtitle="DAILY LIFE & DOODLE">
+                        <a class="nav-link" data-bs-toggle="tab" href="#doodle" data-subtitle="DAILY LIFE & DOODLE">
                             <span class="nav-title">平和な日常/落書き</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#dc" data-tab="dc" data-subtitle="THEME">
+                        <a class="nav-link" data-bs-toggle="tab" href="#dc" data-subtitle="THEME">
                             <span class="nav-title">テーマ</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#otherChar" data-tab="otherChar" data-subtitle="CHARACTER IMAGE">
+                        <a class="nav-link" data-bs-toggle="tab" href="#otherChar" data-subtitle="CHARACTER IMAGE">
                             <span class="nav-title">他作品の〇〇ってキャラのイメージ</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#manga" data-tab="manga" data-subtitle="MANGA">
+                        <a class="nav-link" data-bs-toggle="tab" href="#manga" data-subtitle="MANGA">
                             <span class="nav-title">漫画</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#costume" data-tab="costume" data-subtitle="COSTUME">
+                        <a class="nav-link" data-bs-toggle="tab" href="#costume" data-subtitle="COSTUME">
                             <span class="nav-title">衣装</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#catdw" data-tab="catdw" data-subtitle="BEAST & SD">
+                        <a class="nav-link" data-bs-toggle="tab" href="#catdw" data-subtitle="BEAST & SD">
                             <span class="nav-title">ふわふわ/擬獣化とSD</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <!-- 被注释保留的项，若启用将保持相同视觉设计 -->
                     <!-- <li class="nav-item">
-                        <a class="nav-link" href="#nsfw" data-tab="nsfw" data-subtitle="NSFW">
+                        <a class="nav-link" data-bs-toggle="tab" href="#nsfw" data-subtitle="NSFW">
                             <span class="nav-title">NSFW</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#travel" data-tab="travel" data-subtitle="TRAVEL">
+                        <a class="nav-link" data-bs-toggle="tab" href="#travel" data-subtitle="TRAVEL">
                             <span class="nav-title">両生還後の旅行</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#death" data-tab="death" data-subtitle="AFTER DEATH">
+                        <a class="nav-link" data-bs-toggle="tab" href="#death" data-subtitle="AFTER DEATH">
                             <span class="nav-title">死後</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#food" data-tab="food" data-subtitle="FOOD">
+                        <a class="nav-link" data-bs-toggle="tab" href="#food" data-subtitle="FOOD">
                             <span class="nav-title">食べ物</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
                     <!-- <li class="nav-item">
-                        <a class="nav-link" href="#female" data-tab="female" data-subtitle="FEMALE">
+                        <a class="nav-link" data-bs-toggle="tab" href="#female" data-subtitle="FEMALE">
                             <span class="nav-title">女性審美補足</span>
                             <span class="nav-arrow"></span>
                         </a>
@@ -307,7 +309,7 @@
     </div>
 
 
-
+    
 
     <!-- 给最外层加了 id="terminal-wrapper" 方便关闭 -->
     <div id="terminal-wrapper" class="cmd-wrapper">
@@ -345,7 +347,7 @@
     <!-- 4. 正文内容区 (Gallery Section) -->
 
 
-
+    
 
     <!-- 5. 自定义图片详情 Modal -->
     <div class="papermaskDetail" id="customDetailModal">
@@ -859,14 +861,18 @@
                   { src: "img/sutong/20.webp", alt: "Gallery Image 20", description: "" } */
     ];
 
-    // 统一注册：Tab ID -> 图片数组。新增分类时只需在这里增加一项。
-    window.galleryRegistry = {
-        gallery: galleryImages, r18g: r18gImages, lonly: lonlyImages,
-        sonly: sonlyImages, dc: dcImages, doodle: doodleImages,
-        manga: mangaImages, costume: costumeImages, death: deathImages,
-        catdw: catdwImages, mansion: mansionImages, travel: travelImages,
-        food: foodImages, nsfw: nsfwImages, pose: poseImages,
-        female: femaleImages, otherChar: otherCharImages
-    };
+    // 辅助函数：根据名称获取数组
+    function getArrayByName(name) {
+        const map = {
+            "gallery": galleryImages, "r18g": r18gImages, "lonly": lonlyImages,
+            "sonly": sonlyImages, "dc": dcImages, "doodle": doodleImages,
+            "manga": mangaImages, "costume": costumeImages, "death": deathImages,
+            "catdw": catdwImages, "mansion": mansionImages, "travel": travelImages,
+            "food": foodImages, "nsfw": nsfwImages, "pose": poseImages,
+            "female": femaleImages, "otherChar": otherCharImages
+        };
+        return map[name] || [];
+    }
 </script>
-<script src="js/common-gallery.js"></script>
+
+</html>

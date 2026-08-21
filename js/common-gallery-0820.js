@@ -2,12 +2,7 @@
 // 全局通用变量
 // ==========================================
 var papermaskZoom = 1;
-var translateX = 0;
-var translateY = 0;
-var isDragging = false;
-var startX = 0, startY = 0;
-
-var currentImgList = []; 
+var currentImgList =[]; 
 var currentImgIndex = 0; 
 var isAnimating = false; 
 var hoverTimeout;
@@ -16,9 +11,7 @@ var hoverTimeout;
 // 辅助与核心功能函数
 // ==========================================
 function createMediaElement(src) {
-    const isVideo = src.toLowerCase().endsWith('.mp4') || 
-                    src.toLowerCase().endsWith('.webm') || 
-                    src.toLowerCase().endsWith('.mkv');
+    const isVideo = src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm');
     let el;
     if (isVideo) {
         el = document.createElement("video");
@@ -27,7 +20,6 @@ function createMediaElement(src) {
         el.loop = true;
         el.muted = true; 
         el.playsInline = true;
-        el.preload = "metadata";
     } else {
         el = document.createElement("img");
         el.src = src;
@@ -39,8 +31,6 @@ function openDetailModal(imgList, index) {
     currentImgList = imgList;
     currentImgIndex = index;
     papermaskZoom = 1;
-    translateX = 0;
-    translateY = 0;
 
     const container = document.getElementById("imageContainer");
     container.innerHTML = "";
@@ -48,19 +38,11 @@ function openDetailModal(imgList, index) {
     const mediaEl = createMediaElement(currentImgList[currentImgIndex].src);
     mediaEl.className = "detail-img"; 
     mediaEl.id = "activeDetailImg";
-    mediaEl.style.cursor = "grab";
 
     container.appendChild(mediaEl);
 
-    const modal = document.getElementById("customDetailModal");
-    if (modal) {
-        modal.style.opacity = "0";
-        modal.style.display = "flex";
-        // 强制回流以触发 CSS Transition 渐变
-        modal.offsetHeight; 
-        modal.style.transition = "opacity 0.2s ease";
-        modal.style.opacity = "1";
-    }
+    $(".papermaskDetail").fadeIn(200);
+    $(".papermaskDetail").css("display", "flex");
 }
 
 function navigateImage(direction) {
@@ -75,7 +57,6 @@ function navigateImage(direction) {
     const currentMedia = container.querySelector(".detail-img"); 
     const nextMedia = createMediaElement(currentImgList[newIndex].src);
     nextMedia.className = "detail-img";
-    nextMedia.style.cursor = "grab";
 
     if (direction === 1) {
         nextMedia.classList.add("img-pos-right");
@@ -84,24 +65,16 @@ function navigateImage(direction) {
     }
 
     container.appendChild(nextMedia);
-    nextMedia.offsetWidth; // 触发回流
+    nextMedia.offsetWidth; // Force Reflow
     isAnimating = true;
 
-    // 导航时重置缩放和位移
-    papermaskZoom = 1;
-    translateX = 0;
-    translateY = 0;
-
-    if (currentMedia) {
-        currentMedia.classList.add("img-animating");
-        // 清除缩放变换以保证平移动画正常
-        currentMedia.style.transform = ""; 
-    }
+    if (currentMedia) currentMedia.classList.add("img-animating");
     nextMedia.classList.add("img-animating");
 
     requestAnimationFrame(() => {
         nextMedia.classList.remove("img-pos-right", "img-pos-left");
         if (currentMedia) {
+            currentMedia.style.transform = "";
             if (direction === 1) {
                 currentMedia.classList.add("img-pos-left");
             } else {
@@ -114,31 +87,24 @@ function navigateImage(direction) {
         if (currentMedia) currentMedia.remove();
         nextMedia.classList.remove("img-animating");
         nextMedia.id = "activeDetailImg"; 
+        papermaskZoom = 1;
         isAnimating = false;
     }, 1600); 
 
     currentImgIndex = newIndex;
 }
 
-function updateImageTransform() {
-    const activeImg = document.getElementById("activeDetailImg");
-    if (activeImg) {
-        activeImg.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) scale(${papermaskZoom})`;
-    }
-}
-
 function handleZoomChange(num) {
     if (num == 1) papermaskZoom += 0.2; 
     if (num == -1) papermaskZoom -= 0.2;
-    if (num == 0) {
-        papermaskZoom = 1;
-        translateX = 0;
-        translateY = 0;
-    }
+    if (num == 0) papermaskZoom = 1;
     if (papermaskZoom > 4) papermaskZoom = 4;
     if (papermaskZoom < 0.5) papermaskZoom = 0.5;
 
-    updateImageTransform();
+    const activeImg = document.getElementById("activeDetailImg");
+    if (activeImg) {
+        activeImg.style.transform = `scale(${papermaskZoom})`;
+    }
 }
 
 function handleDownload() {
@@ -154,74 +120,36 @@ function handleDownload() {
 }
 
 function paperShowHide() {
-    const modal = document.getElementById("customDetailModal");
-    if (modal) {
-        modal.style.opacity = "0";
-        setTimeout(() => {
-            modal.style.display = "none";
-            const container = document.getElementById("imageContainer");
-            if (container) container.innerHTML = ""; 
-        }, 200);
+    $(".papermaskDetail").fadeOut(200);
+    setTimeout(() => {
+        document.getElementById("imageContainer").innerHTML = ""; 
+    }, 200);
+}
+
+// ==========================================
+// 数据映射逻辑 (安全重写版)
+// ==========================================
+function getArrayByName(name) {
+    // 采用 typeof 安全检查，避免某网页没有定义特定数组时报错白屏
+    switch(name) {
+        case "gallery": return (typeof galleryImages !== 'undefined') ? galleryImages :[];
+        case "L":       return (typeof LImages !== 'undefined') ? LImages :[];
+        case "X":       return (typeof XImages !== 'undefined') ? XImages :[];
+        case "dc":      return (typeof dcImages !== 'undefined') ? dcImages :[];
+        case "manga":   return (typeof mangaImages !== 'undefined') ? mangaImages :[];
+        case "catdw":   return (typeof catdwImages !== 'undefined') ? catdwImages :[];
+        case "theme":   return (typeof themeImages !== 'undefined') ? themeImages :[];
+        case "r18g":    return (typeof r18gImages !== 'undefined') ? r18gImages :[];
+        case "mansion": return (typeof mansionImages !== 'undefined') ? mansionImages :[];
+        case "tab1":    return (typeof tab1Images !== 'undefined') ? tab1Images :[];
+        case "tab2":    return (typeof tab2Images !== 'undefined') ? tab2Images :[];
+        case "doodle":  return (typeof doodleImages !== 'undefined') ? doodleImages : [];
+        default:        return[];
     }
 }
 
 // ==========================================
-// 拖拽与缩放平移交互逻辑
-// ==========================================
-function initDragAndPan() {
-    const container = document.getElementById("imageContainer");
-    if (!container) return;
-
-    function startDrag(e) {
-        if (papermaskZoom <= 1) return; // 仅在放大状态下允许平移
-        const activeImg = document.getElementById("activeDetailImg");
-        if (!activeImg) return;
-
-        e.preventDefault();
-        isDragging = true;
-        
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-        
-        startX = clientX - translateX;
-        startY = clientY - translateY;
-        
-        activeImg.style.cursor = 'grabbing';
-    }
-
-    function drag(e) {
-        if (!isDragging) return;
-        e.preventDefault();
-        
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-        
-        translateX = clientX - startX;
-        translateY = clientY - startY;
-        
-        updateImageTransform();
-    }
-
-    function endDrag() {
-        if (!isDragging) return;
-        isDragging = false;
-        const activeImg = document.getElementById("activeDetailImg");
-        if (activeImg) {
-            activeImg.style.cursor = 'grab';
-        }
-    }
-
-    container.addEventListener('mousedown', startDrag);
-    container.addEventListener('mousemove', drag);
-    window.addEventListener('mouseup', endDrag);
-
-    container.addEventListener('touchstart', startDrag, { passive: false });
-    container.addEventListener('touchmove', drag, { passive: false });
-    window.addEventListener('touchend', endDrag);
-}
-
-// ==========================================
-// 瀑布流布局逻辑
+// 瀑布流与初始化逻辑
 // ==========================================
 function arrangeWaterfall(containerId, imageArray) {
     const container = document.getElementById(containerId);
@@ -245,9 +173,7 @@ function arrangeWaterfall(containerId, imageArray) {
         const item = document.createElement("div");
         item.className = "gallery-item";
 
-        const isVideo = image.src.toLowerCase().endsWith('.mp4') || 
-                        image.src.toLowerCase().endsWith('.webm') || 
-                        image.src.toLowerCase().endsWith('.mkv');
+        const isVideo = image.src.toLowerCase().endsWith('.mp4') || image.src.toLowerCase().endsWith('.mkv');
         let mediaEl;
         
         if (isVideo) {
@@ -280,128 +206,38 @@ function arrangeWaterfall(containerId, imageArray) {
     });
 }
 
-// ==========================================
-// 选项卡切换控制
-// ==========================================
-function switchTab(tabId) {
-    const navLinks = document.querySelectorAll('#galleryTabs .nav-link');
-    const tabPanes = document.querySelectorAll('.tab-content .tab-pane');
-    
-    let activePane = null;
-
-    navLinks.forEach(link => {
-        const linkTab = link.getAttribute('href').substring(1);
-        if (linkTab === tabId) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
-
-    tabPanes.forEach(pane => {
-        if (pane.id === tabId) {
-            pane.classList.add('active');
-            pane.offsetHeight; // 强制重绘
-            pane.classList.add('show');
-            activePane = pane;
-        } else {
-            pane.classList.remove('show', 'active');
-        }
-    });
-
-    if (activePane) {
-        const containerId = tabId + "Container";
-        // 从全局统一数据注册表中获取图片数据
-        const array = (window.galleryRegistry && window.galleryRegistry[tabId]) ? window.galleryRegistry[tabId] : [];
-        arrangeWaterfall(containerId, array);
-    }
-}
-
-// 检测 URL Hash 自动定位 Tab
-function handleHashChange() {
-    const hash = window.location.hash.substring(1);
-    if (hash && window.galleryRegistry && window.galleryRegistry[hash]) {
-        switchTab(hash);
-    } else {
-        // 默认载入第一个 Tab
-        switchTab('gallery');
-    }
-}
-
-// ==========================================
-// 初始化与事件监听
-// ==========================================
-document.addEventListener('DOMContentLoaded', function () {
-    // 1. 初始化选项卡切换和瀑布流
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-
-    // 2. 绑定 Tab 点击和 hover 自动切换逻辑
-    const navLinks = document.querySelectorAll('#galleryTabs .nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const tabId = this.getAttribute('href').substring(1);
-            history.pushState(null, null, '#' + tabId);
-            switchTab(tabId);
-        });
-
-        link.addEventListener('mouseenter', function () {
-            const tabId = this.getAttribute('href').substring(1);
-            hoverTimeout = setTimeout(function () {
-                history.pushState(null, null, '#' + tabId);
-                switchTab(tabId);
-            }, 250);
-        });
-
-        link.addEventListener('mouseleave', function () {
-            clearTimeout(hoverTimeout);
-        });
-    });
-
-    // 3. 窗口尺寸调整重新计算瀑布流 (防抖处理)
-    let resizeTimeout;
-    window.addEventListener('resize', function () {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function () {
-            const activeLink = document.querySelector('#galleryTabs .nav-link.active');
-            if (activeLink) {
-                const tabId = activeLink.getAttribute('href').substring(1);
-                const containerId = tabId + "Container";
-                const array = (window.galleryRegistry && window.galleryRegistry[tabId]) ? window.galleryRegistry[tabId] : [];
-                arrangeWaterfall(containerId, array);
-            }
-        }, 150);
-    });
-
-    // 4. 键盘导航支持
-    document.addEventListener('keydown', function (e) {
-        const modal = document.getElementById("customDetailModal");
-        if (modal && modal.style.display === "flex") {
-            if (e.key === "ArrowLeft") navigateImage(-1);
-            if (e.key === "ArrowRight") navigateImage(1);
-            if (e.key === "Escape") paperShowHide();
-        }
-    });
-
-    // 5. 初始化图片缩放后的拖拽/手势交互
-    initDragAndPan();
-
-    // 6. BGM 自动播放激活逻辑
-    var bgmPlayer = document.getElementById('bgm');
-    if (bgmPlayer) {
-        bgmPlayer.volume = 0.6; 
-        document.addEventListener('click', function tryAutoPlay() {
-            if (bgmPlayer.paused) {
-                muteMusic(2);
-            }
-            document.removeEventListener('click', tryAutoPlay);
-        }, { once: true });
+document.addEventListener('keydown', function (e) {
+    if ($(".papermaskDetail").is(":visible")) {
+        if (e.key === "ArrowLeft") navigateImage(-1);
+        if (e.key === "ArrowRight") navigateImage(1);
+        if (e.key === "Escape") paperShowHide();
     }
 });
 
+$(document).ready(function () {
+    const initialArray = (typeof galleryImages !== 'undefined') ? galleryImages :[];
+    arrangeWaterfall("galleryContainer", initialArray);
+
+    $('.nav-link').on('mouseenter', function () {
+        var _this = this; 
+        hoverTimeout = setTimeout(function () {
+            var tabTrigger = new bootstrap.Tab(_this);
+            tabTrigger.show();
+        }, 250);
+    }).on('mouseleave', function () {
+        clearTimeout(hoverTimeout);
+    });
+
+    $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+        const targetId = $(e.target).attr("href").substring(1);
+        const containerId = targetId + "Container";
+        const array = getArrayByName(targetId);
+        arrangeWaterfall(containerId, array);
+    });
+});
+
 // ==========================================
-// 打字机效果 (使用原生 IntersectionObserver 激活)
+// 打字机效果
 // ==========================================
 (function () {
     const textContent = `二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
@@ -410,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
 それに、Lという人は<span class="text-blue">自由</span>すぎてカッコよすぎる。誰とでも一期一会でパッと火花散らせるけど、誰のそばにも長くは留まらない。<span class="text-blue">愛だってLを縛れない。</span>`;
 
     const typewriterEl = document.getElementById('cmd-typewriter');
-    if (!typewriterEl) return;
+    if (!typewriterEl) return; // 安全检查，如果没有这个元素就不执行
 
     let charIndex = 0;
     let isTyping = false;
@@ -488,3 +324,18 @@ function muteMusic(num) {
         }
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    var bgmPlayer = document.getElementById('bgm');
+    if(bgmPlayer) {
+        // 在这里将音量初始化为 70%
+        bgmPlayer.volume = 0.6; 
+
+        document.addEventListener('click', function tryAutoPlay() {
+            if (bgmPlayer.paused) {
+                muteMusic(2);
+            }
+            document.removeEventListener('click', tryAutoPlay);
+        }, { once: true });
+    }
+});
