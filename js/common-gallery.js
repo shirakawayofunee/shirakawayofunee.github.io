@@ -346,7 +346,7 @@ function handleHashChange() {
         switchTab(hash);
     } else {
         // 默认载入第一个 Tab
-        switchTab('gallery');
+        switchTab('interpretation90');
     }
 }
 
