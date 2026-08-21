@@ -315,6 +315,28 @@ function switchTab(tabId) {
         const array = (window.galleryRegistry && window.galleryRegistry[tabId]) ? window.galleryRegistry[tabId] : [];
         arrangeWaterfall(containerId, array);
     }
+
+    // ==========================================================
+    // 【新增】切换选项卡时重置滚动条位置，防止用户直接看到底部
+    // ==========================================================
+    const pageLayout = document.querySelector('.page-layout');
+    if (pageLayout) {
+        // 计算顶部导航栏高度 (2.5rem)
+        const navbarHeight = parseFloat(getComputedStyle(document.documentElement).fontSize) * 2.5 || 40;
+        // 计算 page-layout 距离文档顶部的绝对距离
+        const targetPosition = pageLayout.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+        
+        // 只有当观众已经向下滚动，且滚动位置超过了画廊顶部时，才将其拉回画廊顶部
+        if (window.pageYOffset > targetPosition) {
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'auto' // 使用 'auto' 瞬间重置。比 'smooth' 更加干净利落，避免换页时画面闪烁
+            });
+        }
+    } else {
+        // 兜底降级方案：直接回到网页最顶部
+        window.scrollTo({ top: 0, behavior: 'auto' });
+    }
 }
 
 // 检测 URL Hash 自动定位 Tab
