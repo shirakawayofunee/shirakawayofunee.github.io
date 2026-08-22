@@ -2366,3 +2366,13 @@ svg { pointer-events: none; }
     height: auto;
     display: block;
 }
+
+.cg-video {
+    max-width: 100%;      /* 宽度不超过父容器 */
+    height: auto;         /* 高度自适应 */
+    border-radius: 8px;   /* 可选：添加圆角，使视觉更柔和 */
+    display: block;
+    margin: 10px auto;    /* 居中并保持间距 */
+    background-color: #000; /* 加载时显示黑色背景，防止闪白 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 可选：增加阴影提升质感 */
+}

@@ -223,14 +223,14 @@ edge-02：HUSHシステムとマーキング技術の双方にリスクが存在
       voice: `wav/CN/conversation32/vo_event_11043_58.wav`
     },
     {
-      type: `narration`,
-      text: `
-        <video controls>
-          <source src="./img/L/イベントED_ 繁花.mkv" type="video/mkv">
-        </video>
-      `,
-      bubbleStyle: "center",
-    },
+      type: `video`,
+      src: `img/cg/イベントED_繁花.mkv`,       // 视频路径
+      poster: `img/cg/イベントED_繁花.jpg`,   // 视频封面（可选，加载前显示的图片）
+      autoplay: false,               // 是否自动播放（默认不自动播放）
+      controls: true,                // 是否显示播放控件
+      loop: false,                   // 是否循环播放
+      muted: false                   // 是否静音
+    }
 /*     {
       type: `narration`,
       text: `第一章「Flowers」終了、つづく。`

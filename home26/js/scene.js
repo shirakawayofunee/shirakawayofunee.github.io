@@ -527,6 +527,10 @@ function renderScript(script, defaultBgm = "") {
   const titleBox = document.getElementById("chapter-title-box"); 
   const headerBox = document.getElementById("script-header");
   container.innerHTML = "";
+  if (wasBgmPlayingBeforeVideo) {
+    toggleMusic('play');
+    wasBgmPlayingBeforeVideo = false;
+}
   if (titleBox) container.appendChild(titleBox);
   if (headerBox) container.appendChild(headerBox);
 
@@ -577,6 +581,39 @@ function renderScript(script, defaultBgm = "") {
       } else if (line.type === "image") {
           div.className = "message-row";
           div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
+
+        } else if (line.type === "video") {
+            div.className = "message-row";
+            
+            // 解析配置参数，如果没有传则给默认值
+            const showControls = line.controls !== false ? "controls" : "";
+          const isAutoplay = line.autoplay ? "autoplay" : "";
+          const isLoop = line.loop ? "loop" : "";
+          const isMuted = line.muted ? "muted" : "";
+          const posterAttr = line.poster ? `poster="${line.poster}"` : "";
+            
+            // playsinline 可以防止 iOS 端视频在播放时自动跳出全屏
+            div.innerHTML = `
+              <div class="narration">
+                  <video 
+                      src="${line.src}" 
+                      class="cg-video" 
+                      ${showControls} 
+                      ${isAutoplay} 
+                      ${isLoop} 
+                      ${isMuted} 
+                      ${posterAttr} 
+                      playsinline
+                      onplay="handleVideoPlay(this)"
+                      onpause="handleVideoPause(this)"
+                      onended="handleVideoPause(this)">
+                  </video>
+              </div>
+          `;
+        
+        // ==========================================
+        // 视频处理结束
+        // ==========================================
       
       } else if (line.type === "dialogue") {
           const pos = line.position === "right" ? "pos-right" : "pos-left";
@@ -817,6 +854,41 @@ function setupAudioUnlock() {
   // 使用捕获阶段 (true)，确保在其他按钮事件触发前，先解除音频锁定
   document.body.addEventListener('click', unlockHandler, true);
   document.body.addEventListener('touchstart', unlockHandler, { passive: true, capture: true });
+}
+
+// 新增：用来记录视频播放前，BGM 是否处于播放状态的全局变量
+let wasBgmPlayingBeforeVideo = false;
+
+// 新增：视频播放时的逻辑
+function handleVideoPlay(videoElement) {
+    console.log("[视频事件] 开始播放");
+    
+    // 如果当前 BGM 正在播放，我们需要暂停它并记录状态
+    if (isMusicPlaying) {
+        wasBgmPlayingBeforeVideo = true;
+        toggleMusic('pause'); // 调用您原有的函数，暂停 BGM 并更新 UI
+        console.log("[联动] 已自动暂停 BGM 并记录了播放状态");
+    }
+}
+
+// 新增：视频暂停或结束时的逻辑
+function handleVideoPause(videoElement) {
+    console.log("[视频事件] 暂停或结束");
+    
+    // 检查页面上是否还有其他正在播放的视频（防止多视频并存时互相干扰）
+    const allVideos = document.querySelectorAll('.cg-video');
+    const isAnyVideoPlaying = Array.from(allVideos).some(video => {
+        return !video.paused && !video.ended && video !== videoElement;
+    });
+
+    // 如果没有任何视频在播放了，且进入视频前 BGM 是开启的，则恢复 BGM
+    if (!isAnyVideoPlaying) {
+        if (wasBgmPlayingBeforeVideo) {
+            toggleMusic('play'); // 调用您原有的函数，恢复播放并更新 UI
+            wasBgmPlayingBeforeVideo = false; // 重置记录状态
+            console.log("[联动] 无其他视频播放，已恢复 BGM");
+        }
+    }
 }
 // --- 沉浸模式：隐藏顶部悬浮工具栏 ---
 function enableImmersiveMode() {
