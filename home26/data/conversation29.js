@@ -1275,6 +1275,7 @@ export default {
     {
       type: `narration`,
       text: `空間が激しく振動し、裂けた隙間のように眩い白光がこちらの静寂を引き裂いた。裂け目の底から氷のような青い結晶の花が蔓延し、それに伴って狂厄の脈動する気配が流れ込んでくる。`,
+      bgm: `mp3/bg/conversation30.mp3`,
     },
     {
       type: `narration`,
@@ -1317,6 +1318,7 @@ export default {
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_98.wav" },
       ],
     },
+
     {
       type: `narration`,
       text: `狂気的な力が雪崩れ込む。Coquelicotは久しく感じなかった生命の充実に震え、裂け目の中から妖しく輝く長剣を引き抜いた。耳をつんざくような轟音と共に、向こう側の狂厄が噴き出す。`,
@@ -1329,7 +1331,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
-      avatar: `img/dh/x7.png`,
+      avatar: `img/dh/x3.png`,
       name: `Shalom`,
       text: `それでいい…今回もまた、私は代償を惜しまない。`,
       voice: [
@@ -1339,7 +1341,6 @@ export default {
     {
       type: `narration`,
       text: `広大な庭園が激しく揺れ、虚空から機械のような悲鳴と怒号が響く。そして不吉に広がり続ける裂け目の中から、無数の光の触手がゆっくりと探るように伸びてきた。`,
-      bgm: `mp3/bg/conversation30.mp3`,
       bubbleStyle: "npc-crowd-noise",
     },
     {
@@ -1438,7 +1439,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
-      avatar: `img/dh/x6.png`,
+      avatar: `img/dh/x3.png`,
       name: `Shalom`,
       text: `君が受け入れないのはわかってた。君たちの感情はあまりにも熱烈で、裸のまま輝いてる。`,
       voice: [
@@ -1449,7 +1450,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
-      avatar: `img/dh/x6.png`,
+      avatar: `img/dh/x10.png`,
       name: `Shalom`,
       text: `君の命が尽きてなかったら、もっと穏やかな方案を選びたかった。でも、その時間はもうない。`,
       voice: [
@@ -1526,7 +1527,6 @@ export default {
       name: `Shalom`,
       text: `？！`,
     },
-
     {
       type: `narration`,
       text: `金髪の少女が頭上の虚空から突然亀裂を打ち、砕いて転がり落ち、たちまちこの空間の狂厄に侵された。`,
