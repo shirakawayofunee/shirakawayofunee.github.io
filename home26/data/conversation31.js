@@ -224,8 +224,8 @@ edge-02：HUSHシステムとマーキング技術の双方にリスクが存在
     },
     {
       type: `video`,
-      src: `img/cg/イベントED_繁花.mkv`,       // 视频路径
-      poster: `img/cg/イベントED_繁花.jpg`,   // 视频封面（可选，加载前显示的图片）
+      src: `img/cg/イベントED_繁花.mp4`,       // 视频路径
+      poster: `img/cg/イベントED_繁花.png`,   // 视频封面（可选，加载前显示的图片）
       autoplay: false,               // 是否自动播放（默认不自动播放）
       controls: true,                // 是否显示播放控件
       loop: false,                   // 是否循环播放
