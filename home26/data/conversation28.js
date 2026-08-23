@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「残花の[復]讐」`,
     bgm: `mp3/bg/conversation28.mp3`,
-    summary: `犠牲になった子供たちのために、踏みにじられた花々のために、Lは自らの手でXへ復讐すると決意した。`
+    summary: `犠牲になった子供たちのために、踏みにじられた花々のために、業師は自らの手でXへ復讐すると決意した。`
   },
   infoPanel: {
     glossary: [
