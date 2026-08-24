@@ -72,7 +72,8 @@ export default {
     },
     {
       type: `image`,
-      src: `img/cg/fl_205.png`,
+      src: `img/cg/fl_205_1.jpg`,
+      bubbleStyle: "center",
     },
     {
       type: `narration`,
@@ -81,6 +82,11 @@ export default {
     {
       type: `narration`,
       text: `この秘密を隠すため、業師はさまざまな謎を巧妙に仕掛けただけでなく、予告状のルールまで破った……`
+    },
+    {
+      type: `image`,
+      src: `img/cg/fl_205_2.jpg`,
+      bubbleStyle: "center",
     },
     {
       type: `narration`,

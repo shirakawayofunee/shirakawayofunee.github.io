@@ -59,7 +59,8 @@ export default {
     },
     {
       type: `image`,
-      src: `img/cg/fl_203.png`,
+      src: `img/cg/fl_203.jpg`,
+      bubbleStyle: "center",
     },
     {
       type: `narration`,

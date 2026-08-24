@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2025-02-25 08:45:50
  * @LastEditors: your name
- * @LastEditTime: 2026-01-22 07:40:35
+ * @LastEditTime: 2026-08-24 21:56:52
  * @Description: 
  * @FilePath: \shirakawayofunee.github.io\home26\js\gallery.js
  */
@@ -15,7 +15,7 @@ function openMusicmask(){
     window.open('scene260108.html','_blank')   
 }
 function openPapermask(){ 
-    window.open('../SL26.html','_blank')
+    window.open('../SL27.html','_blank')
 }
 
 function openflowersmask(){ 

@@ -70,7 +70,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `藍雨が降り注ぎ、陵園は静寂に包まれる。Coquelicotは死に物狂いで記憶の中の方向へ進む。`
+      text: `藍雨が降り注ぎ、陵園は静寂に包まれる。『Coquelicot』は死に物狂いで記憶の中の方向へ進む。`
     },
     {
       type: `narration`,
@@ -78,11 +78,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `うざい奴、最後まで何か仕掛けてきやがって…Coquelicotは首を振って、雑音を頭から振り払う。`
+      text: `うざい奴、最後まで何か仕掛けてきやがって…『Coquelicot』は首を振って、雑音を頭から振り払う。`
     },
     {
       type: `narration`,
-      text: `もっと大事なこと、Coquelicotが本当に気にかけることがまだある。Coquelicotは記憶の中のぼやけた場所へ必死に進む。`
+      text: `もっと大事なこと、『Coquelicot』が本当に気にかけることがまだある。『Coquelicot』は記憶の中のぼやけた場所へ必死に進む。`
     },
     {
       type: `dialogue`,
@@ -97,7 +97,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `Coquelicotはよろめきながら中に入り、英雄碑の方向へ、探偵が伝えた名前を探し、約束の証拠を見つけようとする。`
+      text: `『Coquelicot』はよろめきながら中に入り、英雄碑の方向へ、探偵が伝えた名前を探し、約束の証拠を見つけようとする。`
     },
     {
       type: `narration`,
@@ -105,7 +105,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `人影が飛び込んできて、Coquelicotを強く抱きしめ、声を上げて泣く。`
+      text: `人影が飛び込んできて、『Coquelicot』を強く抱きしめ、声を上げて泣く。`
     },
     {
       type: `narration`,

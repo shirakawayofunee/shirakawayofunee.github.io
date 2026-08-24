@@ -60,7 +60,7 @@ export default {
       position: `left`,
       avatar: `img/dh/doyle.jpg`,
       name: `ドイル`,
-      text: `お前のことなんて大した問題じゃない。俺が証明してやる。`
+      text: `君のことなんて大した問題じゃない。俺が証明してやる。`
     },
     {
       type: `narration`,
@@ -75,14 +75,14 @@ export default {
       position: `left`,
       avatar: `img/dh/doyle.jpg`,
       name: `ドイル`,
-      text: `特別管理局が認めた。どんなことがあっても、傷が癒えるまで逮捕しないって。この間、重案組がお前の安定性を証明する資料を用意する。FACのあの親父もあちこち手を回してる。`
+      text: `特別管理局が認めた。どんなことがあっても、傷が癒えるまで逮捕しないって。この間、重案組が君の安定性を証明する資料を用意する。FACのあの親父もあちこち手を回してる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/doyle.jpg`,
       name: `ドイル`,
-      text: `誰がこんな命令出したのか知らんが、俺たちはお前がいい奴だって知ってる……`
+      text: `誰がこんな命令出したのか知らんが、俺たちは君がいい奴だって知ってる……`
     },
     {
       type: `narration`,
@@ -123,7 +123,7 @@ export default {
       position: `left`,
       avatar: `img/dh/doyle.jpg`,
       name: `ドイル`,
-      text: `諦めるな、クリス。お前はいつも他人のために正義を叫んできた。今、お前が正義を必要としてる時、俺たちがお前に公正を返す。`
+      text: `諦めるな、クリス。君はいつも他人のために正義を叫んできた。今、君が正義を必要としてる時、俺たちが君に公正を返す。`
     },
     {
       type: `narration`,
@@ -174,20 +174,23 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/npc.png`,
       name: `治安官`,
-      text: `お前がクリスの妹、ミリアか？`
+      text: `（治安官）<br>お前がクリスの妹、ミリアか？`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/npc.png`,
       name: `治安官`,
-      text: `お前の姉さんは能力者として、安全性と服従度が閾値を下回り、高危険級と評価された。即刻逮捕だ。`
+      text: `（治安官）<br>お前の姉さんは能力者として、安全性と服従度が閾値を下回り、高危険級と評価された。即刻逮捕だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/npc.png`,
       name: `治安官`,
-      text: `どけ！徹底的に捜索する！`
+      text: `（治安官）<br>どけ！徹底的に捜索する！`
     },
     {
       type: `narration`,
@@ -214,8 +217,9 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/npc.png`,
       name: `治安官`,
-      text: `危険な能力者を告発するなんて、立派な正義市民だな。`
+      text: `（治安官）<br>危険な能力者を告発するなんて、立派な正義市民だな。`
     },
     {
       type: `narration`,
@@ -328,7 +332,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `W区の隠された牢房で、昏迷中の「Garden」の殺し屋・蓟が警報で目を覚ました。`
+      text: `W区の隠された牢房で、昏迷中の「Garden」の殺し屋・薊が警報で目を覚ました。`
     },
     {
       type: `narration`,
@@ -338,19 +342,19 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `……E-2……私のとこじゃない……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `だろ……あいつがまだ……`
     },
     {
       type: `narration`,
-      text: `考えていると、壁が轟音とともに破られた。蓟は目を瞠った。「Garden」の仲間でこんな無粋な真似をする奴はいない。`
+      text: `考えていると、壁が轟音とともに破られた。薊は目を瞠った。「Garden」の仲間でこんな無粋な真似をする奴はいない。`
     },
     {
       type: `dialogue`,
@@ -361,19 +365,19 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      avatar: `img/dh/thistle2.jpg`,
+      name: `薊`,
       text: `！？お前――`
     },
     {
       type: `narration`,
-      text: `探偵は一言も発せず、杖で蓟の四肢の拘束具を叩き壊した。高精度の暗号錠も、探偵の暴力の前では一秒で解かれた。探偵は蓟を掴んで外へ突進した。`
+      text: `探偵は一言も発せず、杖で薊の四肢の拘束具を叩き壊した。高精度の暗号錠も、探偵の暴力の前では一秒で解かれた。探偵は薊を掴んで外へ突進した。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      avatar: `img/dh/thistle2.jpg`,
+      name: `薊`,
       text: `放せ！何する気だ！？`
     },
     {
@@ -385,8 +389,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      avatar: `img/dh/thistle2.jpg`,
+      name: `薊`,
       text: `ふざけんな、もう二度と――`
     },
     {
@@ -409,13 +413,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `その言葉に蓟は焦り、探偵の手首を掴み、前を塞ぐ治安官を避け、廊下の奥へ突進した。`
+      text: `その言葉に薊は焦り、探偵の手首を掴み、前を塞ぐ治安官を避け、廊下の奥へ突進した。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `壁を壊せ！`
     },
     {
@@ -442,15 +446,15 @@ export default {
     },
     {
       type: `narration`,
-      text: `蓟は答えず、探偵を引き離し、警戒しながら二人がいた黒い円を凝視した。手には炎のような刃が凝縮していた。`
+      text: `薊は答えず、探偵を引き離し、警戒しながら二人がいた黒い円を凝視した。手には炎のような刃が凝縮していた。`
     },
     {
       type: `narration`,
-      text: `まず、弾丸が下から垂直に撃ち上がり、しばらくして、頭のようなものが黒い穴から半分覗いた。蓟は怒号を上げ、炎の刃を突き刺し、侵入者が姿を現す前に押し戻した。`
+      text: `まず、弾丸が下から垂直に撃ち上がり、しばらくして、頭のようなものが黒い穴から半分覗いた。薊は怒号を上げ、炎の刃を突き刺し、侵入者が姿を現す前に押し戻した。`
     },
     {
       type: `narration`,
-      text: `黒い円は急速に閉じ、消えた。まるで地面に存在しなかったかのように。蓟は後ろに倒れ、大きく息をついた。すべてが終わったようだった。`
+      text: `黒い円は急速に閉じ、消えた。まるで地面に存在しなかったかのように。薊は後ろに倒れ、大きく息をついた。すべてが終わったようだった。`
     },
     {
       type: `narration`,
@@ -460,7 +464,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `……早く……「Garden」に……`
     },
     {
@@ -471,19 +475,19 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `これが……最後の基地。「登録」した「Garden」のメンバーが入口を開けるけど、開けた後、閉じるまで時間がかかる。さっきみたいに。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `バカな連中で助かった……もし追跡装置を投げ込まれたら、また……`
     },
     {
       type: `narration`,
-      text: `探偵は黙って蓟を支え、二人でやっと一人の能力者として、遠くの建物に向かった。`
+      text: `探偵は黙って薊を支え、二人でやっと一人の能力者として、遠くの建物に向かった。`
     },
     {
       type: `dialogue`,
@@ -495,21 +499,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `違う。業師は言った。これは報酬……最後の依頼の報酬だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `彼女はついに、誰も邪魔しない「Garden」を手に入れる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `蓟`,
+      name: `薊`,
       text: `つまり、福音地が与えた避難所。さっきのは空間技術？`
     },
     {
@@ -522,7 +526,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `探偵は瞬時に反応し、蓟に麻酔を打ち、崩れるのを止めた。これは病院でこっそり手に入れたもの。蓟の看守を処理した後、まだ残っていた。`
+      text: `探偵は瞬時に反応し、薊に麻酔を打ち、崩れるのを止めた。これは病院でこっそり手に入れたもの。薊の看守を処理した後、まだ残っていた。`
     },
     {
       type: `narration`,

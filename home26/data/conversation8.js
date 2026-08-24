@@ -58,6 +58,11 @@ export default {
       bubbleStyle: "end-cinematic",
     },
     {
+      type: `image`,
+      src: `img/cg/fl_08.jpg`,
+      bubbleStyle: "center",
+    },
+    {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/fac_commander.png`,
