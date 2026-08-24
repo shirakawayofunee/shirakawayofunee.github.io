@@ -45,7 +45,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `概要：レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、セヴェロは「GARDEN」に戻り体を休養する。`,
+      text: `概要：レオポルドは福音地からFAC総司令の暗殺依頼を引き受け、『Garofano』は「GARDEN」に戻り体を休養する。`,
       bubbleStyle: "center",
     },
     {
