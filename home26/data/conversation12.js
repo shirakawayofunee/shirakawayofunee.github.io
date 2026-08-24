@@ -48,7 +48,8 @@ export default {
     },
     {
       type: `image`,
-      src: `img/cg/hua_02.png`
+      src: `img/cg/fl_105_1.jpg`,
+      bubbleStyle: "center",
     },
     {
       type: `dialogue`,
@@ -95,6 +96,11 @@ export default {
     {
       type: `narration`,
       text: `前の被害者は生とも死ともつかぬ状態だったが、この被害者の肉体は完全に消滅している。これは犯人の意図的な要求なのか、それともその能力に関係するのか？`
+    },
+    {
+      type: `image`,
+      src: `img/cg/fl_105_2.jpg`,
+      bubbleStyle: "center",
     },
     {
       type: `narration`,
@@ -269,6 +275,11 @@ export default {
     {
       type: `narration`,
       text: `炎が徐々に消え、濡れた壁にはまだらに赤い蛍光が残る。散らばりながらも、いくつかの目立つ光斑が集まり、コンクリートに埋められた「何か」の位置を示していた。`
+    },
+    {
+      type: `image`,
+      src: `img/cg/fl_105.jpg`,
+      bubbleStyle: "center",
     },
     {
       type: `dialogue`,

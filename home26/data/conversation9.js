@@ -55,8 +55,8 @@ export default {
       bubbleStyle: "center",
     },
     {
-      type: `narration`,
-      text: `<img src="img/cg/hua_01.png">`,
+      type: `image`,
+      src: `img/cg/fl_102.jpg`,
       bubbleStyle: "center",
     },
     {
