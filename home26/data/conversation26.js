@@ -31,16 +31,17 @@ export default {
         note: `工事中`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
-      },
-      {
         name: `Mireya｜探偵の妹`,
         avatar: `img/dh/Mireya.png`,
         note: `探偵の養父母の実の娘。人を見る目がある人`,
         basicStats: `両脚に障害があるが、それゆえに自立心が強く、賢く、気丈である。
 姉妹の間ではよく口げんかをするが、実は探偵のことを深く心配している。`,
+      },
+      {
+        name: `Doyle｜刑事`,
+        avatar: `img/dh/doyle.jpg`,
+        note: `支局の刑事で、「GARDEN」による一連の暗殺事件を担当してるよ。`,
+        basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`
       },
     ],
     synopsis: `工事中`
