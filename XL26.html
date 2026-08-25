@@ -130,8 +130,20 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#mansion" data-tab="mansion" data-subtitle="WORLD & SETTING">
-                            <span class="nav-title">世界観/背景</span>
+                        <a class="nav-link" href="#tab1" data-tab="tab1" data-subtitle="EPISODE 0">
+                            <span class="nav-title">序章<br>『何のために戦うか』</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tab2" data-tab="tab2" data-subtitle="EPISODE 1">
+                            <span class="nav-title">『最後通牒』</span>
+                            <span class="nav-arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#catdw" data-tab="catdw" data-subtitle="DAILY LIFE">
+                            <span class="nav-title">擬獣化/平和な日常</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
@@ -142,8 +154,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#catdw" data-tab="catdw" data-subtitle="DAILY LIFE">
-                            <span class="nav-title">擬獣化/平和な日常</span>
+                        <a class="nav-link" href="#mansion" data-tab="mansion" data-subtitle="WORLD & SETTING">
+                            <span class="nav-title">世界観/背景</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
@@ -156,18 +168,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#r18g" data-tab="r18g" data-subtitle="CHARACTER IMAGE">
                             <span class="nav-title">他作品の〇〇ってキャラのイメージ</span>
-                            <span class="nav-arrow"></span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tab1" data-tab="tab1" data-subtitle="EPISODE 0">
-                            <span class="nav-title">序章<br>『何のために戦うか』</span>
-                            <span class="nav-arrow"></span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tab2" data-tab="tab2" data-subtitle="EPISODE 1">
-                            <span class="nav-title">『最後通牒』</span>
                             <span class="nav-arrow"></span>
                         </a>
                     </li>
@@ -228,7 +228,7 @@
     </div>
 
     <!-- BGM 音频组件 -->
-    <audio id="bgm" src="bgm/XL.m4a" loop preload="auto"></audio>
+    <audio id="bgm" src="bgm/Loving La Vie En Rose.flac" loop preload="auto"></audio>
 </body>
 
 <script src="js/magnetic-pointer.js"></script>
@@ -252,7 +252,7 @@
     { src: "img/XL/X早見表_0822.jpg", alt: "Gallery Image 1", description: "早見表_X" },
     { src: "img/L/L早見表_动物.png", alt: "Gallery Image 1", description: "早見表_L_動物" },
         { src: "img/XL/XL_0.mp4", alt: "Gallery Image 5", description: "波を起こす者と海面下の者(隠し要素:水面下に潜み、虎視眈々と好機を待つ「X」)" },
-        { src: "img/XL/zhuxian2.webp", alt: "メインストーリー", description: "【メインストーリー/本編】「瞳に映る君」" },
+        { src: "img/XL/zhuxian00.webp", alt: "メインストーリー", description: "【メインストーリー/本編】「瞳に映る君」" },
         { src: "img/L/就这样饶有趣味地看着你.mp4", alt: "メインストーリー", description: "ただこうして、興味深げに君を見つめている（相方視点）" },
         { src: "img/L/「緋夜覚醒」.mp4", alt: "メインストーリー", description: "吸血鬼の「真祖」_Live2D" },
         { src: "img/XL/XL0.jpg", alt: "Gallery Image 1", description: "「N.F.113年8月26日」  401「残花の復仇」" },
@@ -271,12 +271,14 @@
         { src: "img/XL/謎時空.jpg", alt: "Gallery Image 8", description: "謎時空幼少期IF" }];
 
     const dcImages = [
+    { src: "img/XL/イベントPV_繁花_1.mp4", alt: "メインストーリー", description: "N.F.113.8.8～N.F.113.8.15「Lが仕組んだ連続殺人事件」" },
+    { src: "img/XL/イベントPV_繁花_2.mp4", alt: "メインストーリー", description: "N.F.113.8.26" },
+    { src: "img/XL/zhuxian2.webp", alt: "メインストーリー", description: "「瞳に映る君」" },
+    { src: "img/XL/zhuxian4.webp", alt: "メインストーリー", description: "【メインストーリー/本編】FIN" },
         { src: "img/XL/后日谈.mp4", alt: "メインストーリー", description: "【猫バージョン】「終わりに」" },
-        { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【猫猫バージョン】Lの過去 P1-P6" },
-        { src: "img/XL/zhuxian2.webp", alt: "メインストーリー", description: "【メインストーリー/本編】「瞳に映る君」" },
-        { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【メインストーリー/本編】Lの生い立ち P1-P7" },
+        
         { src: "img/XL/zhuxian3.jpg", alt: "メインストーリー", description: "【メインストーリー/本編】（猫猫バージョン）" },
-        { src: "img/XL/zhuxian4.webp", alt: "メインストーリー", description: "【メインストーリー/本編】FIN" },
+        
         { src: "img/XL/zhuxian5.jpg", alt: "メインストーリー", description: "【メインストーリー/本編】「後日談」" },
 
         { src: "img/L/イベントED_ 繁花.mkv", alt: "Gallery Image 1", description: "繁花ED_" },
@@ -328,7 +330,6 @@
         { src: "img/L/L_生い立ち.mp4", alt: "メインストーリー/本編", description: "【本編/猫バージョン】Lの生い立ち" },
         { src: "img/L/L1.jpg", alt: "Gallery Image 1", description: "「多くの人のために流される、契約の血」" },
         { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "" },
-        { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【メインストーリー/本編】Lの生い立ち P1-P7" },
         { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "簡単に希望と平和をもたらす救世主なんて存在しない。いるのは、ただひたすら先を歩く先駆者たちだけだ。" },
         { src: "img/L/L2.webp", alt: "Gallery Image 2", description: "試験" },
         { src: "img/L/L3.webp", alt: "Gallery Image 3", description: "" },
