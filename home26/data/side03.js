@@ -1,15 +1,7 @@
-/*
- * @Author: DCBZ
- * @Date: 2026-01-03 18:16:00
- * @LastEditors: your name
- * @LastEditTime: 2026-04-28 04:15:26
- * @Description: 
- * @FilePath: \shirakawayofunee.github.io\home26\data\side03.js
- */
 export default {
   meta: {
     title: `「母熊と図書室」`,
-    bgm: `mp3/bg/终末路.mp3`,
+    bgm: `mp3/bg/N9-1预兆.mp3`,
     summary: `珍しく暇だった週末の午後、局長は図書室に行って本を借りることにした。`
   },
   infoPanel: {

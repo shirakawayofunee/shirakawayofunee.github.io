@@ -1,7 +1,7 @@
 export default {
   meta: {
     title: `予期せぬ救世主`,
-    bgm: `mp3/bg/终末路.mp3`,
+    bgm: `mp3/bg/N9-1预兆.mp3`,
     summary: `植物の正常な成長を邪魔しちゃうんじゃないかと心配して、いつも植物から距離を取っていた曜が、最近は温室に長居するようになった……？`
   },
   infoPanel: {

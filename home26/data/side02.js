@@ -2,14 +2,14 @@
  * @Author: DCBZ
  * @Date: 2026-01-03 18:16:00
  * @LastEditors: your name
- * @LastEditTime: 2026-08-19 18:52:46
+ * @LastEditTime: 2026-08-27 18:14:08
  * @Description: 
  * @FilePath: \shirakawayofunee.github.io\home26\data\side02.js
  */
 export default {
   meta: {
     title: `「腹黑」`,
-    bgm: `mp3/bg/终末路.mp3`,
+    bgm: `mp3/bg/N9-1预兆.mp3`,
     summary: `午後の時間、あなたは食堂でガロファノに会った。`
   },
   infoPanel: {
