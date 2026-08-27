@@ -336,7 +336,7 @@ html {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     font-size: 0.75rem;
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New',monospace;
     color: var(--text-sub);
     font-weight: bold;
     text-transform: uppercase;

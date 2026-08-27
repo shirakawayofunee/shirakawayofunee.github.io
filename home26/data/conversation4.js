@@ -17,7 +17,7 @@ export default {
     ],
     characters: [
       {
-        name: `S`,
+        name: `『Garofano』`,
         avatar: `img/dh/severo10.png`,
         note: `Garden的`
       },
@@ -83,7 +83,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/agent.png`,
-      name: `Agent`,
+      name: `代理人`,
       text: `準備ができたら出発だ。車は外に用意してある。ここからの仕事は私が引き継ぐ。`
     },
     {
@@ -108,7 +108,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/agent.png`,
-      name: `Agent`,
+      name: `代理人`,
       text: `別の情報源があるなら、この殺し屋にはなおさら生きる価値がない。ここで処分しよう。`
     },
     {
@@ -136,7 +136,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/agent.png`,
-      name: `Agent`,
+      name: `代理人`,
       text: `…一理あるな。後で——!!`
     },
     {
@@ -179,7 +179,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/agent.png`,
-      name: `Agent`,
+      name: `代理人`,
       text: `これは福音地の術式か？！下がれ！`
     },
     {
@@ -194,14 +194,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/agent.png`,
-      name: `Agent`,
+      name: `代理人`,
       text: `A級警告、福音地の術式が確認された。ここにいるすべての作戦要員は命令を受け。<br>この能力者を包囲しろ、殺さず生け捕りにしろ！`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/agent.png`,
-      name: `Agent`,
+      name: `代理人`,
       text: `目標能力者は山荘の北東方向へ移動中、そこに彼女の仲間がいる。山荘内の全治安官、全力で彼女を阻止しろ。`
     },
     {
@@ -215,7 +215,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/agent.png`,
-      name: `Agent`,
+      name: `代理人`,
       text: `彼らには別の任務がある。お前たちの仕事はこの山荘内にいる弱った能力者を捕まえることだ。逃がすな、死なせるな。`
     },
     {

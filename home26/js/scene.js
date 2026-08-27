@@ -12,6 +12,13 @@ const categories = [
 // 2. 章节数据库 (请在这里录入所有章节信息)
 const chapterList = [
   {
+    id: "conversation0",
+    category: "bluerain",
+    title: "000「雨夜」",
+    subtitle: "Blue Rain",
+    dateLabel: "N.F.113/7/19",
+  },
+  {
     id: "conversation1",
     category: "bluerain",
     title: "001「招かれざる客」",
@@ -64,7 +71,7 @@ const chapterList = [
     id: "conversation8",
     category: "flower",
     title: "101「追悼式」",
-    subtitle: "Flora Part.Ⅰ",
+    subtitle: "Part.Ⅰ 究明",
     dateLabel: "N.F.113/8/8/09:00",
   },
   {
@@ -106,7 +113,7 @@ const chapterList = [
     id: "conversation14",
     category: "flower",
     title: "201「創傷」",
-    subtitle: "Flora Part.Ⅱ",
+    subtitle: "Part.Ⅱ 疾走",
     dateLabel: "N.F.113/8/10/15:20",
   },
   {
@@ -169,7 +176,7 @@ const chapterList = [
     id: "conversation23",
     category: "flower",
     title: "301「西区作戦」",
-    subtitle: "Flora Part.Ⅲ",
+    subtitle: "Part.Ⅲ 遷延",
     dateLabel: "N.F.113/8/17/14:23",
   },
   {
@@ -204,7 +211,7 @@ const chapterList = [
     id: "conversation28",
     category: "flower",
     title: "401「残花の復讐」",
-    subtitle: "Flora Part.Ⅳ",
+    subtitle: "Part.Ⅳ 終局",
     dateLabel: "N.F.113/8/26/02:13",
   },
   {
