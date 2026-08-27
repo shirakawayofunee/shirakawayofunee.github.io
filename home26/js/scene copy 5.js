@@ -530,7 +530,7 @@ function renderScript(script, defaultBgm = "") {
   if (wasBgmPlayingBeforeVideo) {
     toggleMusic('play');
     wasBgmPlayingBeforeVideo = false;
-  }
+}
   if (titleBox) container.appendChild(titleBox);
   if (headerBox) container.appendChild(headerBox);
 
@@ -582,32 +582,38 @@ function renderScript(script, defaultBgm = "") {
           div.className = "message-row";
           div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
 
-      } else if (line.type === "video") {
-          div.className = "message-row";
-          
-          const showControls = line.controls !== false ? "controls" : "";
+        } else if (line.type === "video") {
+            div.className = "message-row";
+            
+            // 解析配置参数，如果没有传则给默认值
+            const showControls = line.controls !== false ? "controls" : "";
           const isAutoplay = line.autoplay ? "autoplay" : "";
           const isLoop = line.loop ? "loop" : "";
           const isMuted = line.muted ? "muted" : "";
           const posterAttr = line.poster ? `poster="${line.poster}"` : "";
             
-          div.innerHTML = `
-            <div class="narration">
-                <video 
-                    src="${line.src}" 
-                    class="cg-video" 
-                    ${showControls} 
-                    ${isAutoplay} 
-                    ${isLoop} 
-                    ${isMuted} 
-                    ${posterAttr} 
-                    playsinline
-                    onplay="handleVideoPlay(this)"
-                    onpause="handleVideoPause(this)"
-                    onended="handleVideoPause(this)">
-                </video>
-            </div>
+            // playsinline 可以防止 iOS 端视频在播放时自动跳出全屏
+            div.innerHTML = `
+              <div class="narration">
+                  <video 
+                      src="${line.src}" 
+                      class="cg-video" 
+                      ${showControls} 
+                      ${isAutoplay} 
+                      ${isLoop} 
+                      ${isMuted} 
+                      ${posterAttr} 
+                      playsinline
+                      onplay="handleVideoPlay(this)"
+                      onpause="handleVideoPause(this)"
+                      onended="handleVideoPause(this)">
+                  </video>
+              </div>
           `;
+        
+        // ==========================================
+        // 视频处理结束
+        // ==========================================
       
       } else if (line.type === "dialogue") {
           const pos = line.position === "right" ? "pos-right" : "pos-left";
@@ -615,23 +621,9 @@ function renderScript(script, defaultBgm = "") {
           
           const customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
           
-          // 1. 【新增逻辑】：如果没有头像 (avatar)，则生成一个透明占位符以确保对话气泡对齐
-          const avatarHTML = line.avatar 
-              ? `<img src="${line.avatar}" class="avatar">` 
-              : `<div class="avatar-placeholder"></div>`;
-          
-          // 2. 【新增逻辑】：如果数据配置了名字，则渲染名字，否则为空
-          const nameHTML = line.name 
-              ? `<div class="message-name">${line.name}</div>` 
-              : ``;
-
-          // 3. 【修改布局】：将名字与气泡用 message-content 容器包裹，实现垂直方向的对齐
           div.innerHTML = `
-              ${avatarHTML}
-              <div class="message-content">
-                  ${nameHTML}
-                  <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
-              </div>
+              <img src="${line.avatar}" class="avatar">
+              <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
           `;
       }
       container.appendChild(div);

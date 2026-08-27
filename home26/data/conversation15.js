@@ -24,12 +24,13 @@ export default {
       {
         name: `Shalom｜X`,
         avatar: `img/dh/x201.png`,
-        note: `「上庭」の七代目執行人、`
+        note: `「上庭」の七代目執行人`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/pc201.png`,
-        note: `Xに頼まれて、最近の一連の暗殺事件の特別調査員を務めさせてもらうことになった。`
+        name: `Christina`,
+        avatar: `img/dh/zhentan5.png`,
+        note: `Xに頼まれて、最近の一連の暗殺事件の特別調査員を務めさせてもらうことになった。`,
+        basicStats: `N.F.104年、単独で涅槃集団を襲撃。現場に居合わせた上庭の代行者・シャロームを刺傷した。`,
       },
       {
         name: `Mireya｜探偵の妹`,
@@ -39,7 +40,7 @@ export default {
 姉妹の間ではよく口げんかをするが、実は探偵のことを深く心配している。`,
       },
     ],
-    synopsis: `工事中`
+    /* synopsis: `工事中` */
   },
   script: [
     {

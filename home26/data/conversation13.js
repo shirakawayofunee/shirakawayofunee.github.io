@@ -3,13 +3,13 @@ export default {
     title: `「业师」`,
     bgm: `mp3/bg/conversation13.mp3`,
     summary: `探偵が目を覚ましたのは、優雅な庭園だった。
-    そこは伝説の暗殺組織 「Garden」の拠点だ。`
+    そこは伝説の暗殺組織 『Garden』の拠点だ。`
   },
   infoPanel: {
     glossary: [
       {
         term: `上庭`,
-        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
+        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織『<span>Edge</span>』であり、
     現在は再編を経て7人のメンバーによって構成されている。`
       },
       {
@@ -23,29 +23,42 @@ export default {
     ],
     characters: [
       {
-        name: `「Coquelicot」｜業師（L）`,
+        name: `『Coquelicot』｜業師（L）`,
         avatar: `img/dh/leopoldmy.jpg`,
-        note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
-        basicStats: `生の流儀：人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
-        ▌コードネーム由来：
-        「Coquelicot」、フランス語の「虞美人」
-        人前では（工事中）
-        ▌内面では子どもへの深い慈愛と責任感を胸に、いかなる逆境にあっても活路を切り開き、決して重圧をかけず、心配させまいと気丈に振る舞う師匠
-生い立ち：（工事中）`
+        note: `『GARDEN』の主、裏社会を陰で牛耳る実力者。`,
+        basicStats: `▌生の流儀
+        人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
+        ▌コードネーム由来
+        フランス語の『虞美人』
+        ▌内面では子どもへの深い慈愛と責任感を胸に、いかなる逆境にあっても活路を切り開き、決して重圧をかけず、心配させまいと気丈に振る舞う師匠`,
+        profile: `危険度：	S級
+        能力：	緋花剣落
+        出身：	NEW CITY
+        誕生日：	9月23日
+        身長：	178cm
+        コードネーム：Coquelicot
+`, 
+
       },
       {
         name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、能力者、警察学校の一年生。`,
-        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
+        basicStats: `憧れの『<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん』に頼まれて、『GARDEN』が引き起こした連続殺人事件を調査中。`
       },
       {
         name: `『<ruby>薊<rt>アザミ</rt></ruby>』`,
         avatar: `img/dh/thistle3.jpg`,
-        note: `19歳、能力者、「GARDEN」の殺し屋`,
-        basicStats: `103年、身为FAC的双亲死于，走投无路的薊加入花园
-        103年、
-        作为殺し屋最想复仇的对象是连军人家属的抚恤金都要贪污的基金会。`
+        note: `19歳、『GARDEN』の殺し屋`,
+        basicStats: `復讐のために『花庭園』へ加入したFACの遺児。
+        直情径行で衝動的な面があるものの、決して根は悪くない。誰よりも師匠を慕っており、そして心配もしている。`,
+        profile: `危険度：A級
+        能力：	燃命火刃
+        出身：	NEW CITY
+        誕生日：	10月21日
+        身長：	170cm
+        コードネーム：Thistle
+`, 
       },
     ],
     synopsis: `工事中`
@@ -118,7 +131,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
-      text: `私の「Garden」。敵の牙城よ、探偵ちゃん。`
+      text: `私の『Garden』。敵の牙城よ、探偵ちゃん。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_86.wav' },
@@ -170,7 +183,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_92.wav' },
-        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_2.wav' },
+        { label: '日', path: 'wav/JP/conversation13/叫我的名字.wav' },
       ]
     },
     {
@@ -223,7 +236,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `業師`,
-      text: `「Garden」は人生を楽しむ場所なんだから、仕事のつまんない話はなしにしてよ。`
+      text: `『Garden』は人生を楽しむ場所なんだから、仕事のつまんない話はなしにしてよ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_88.wav' },
@@ -247,7 +260,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold3.png`,
       name: `業師`,
-      text: `そうね……ああ、そう言えば君を「Garden」に推薦した人がいるわね。`
+      text: `そうね……ああ、そう言えば君を『Garden』に推薦した人がいるわね。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_21.wav' },
@@ -295,7 +308,7 @@ export default {
       position: `right`,
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
-      text: `「も」？`
+      text: `『も』？`
     ,
       voice: [
         /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
@@ -307,7 +320,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
       name: `業師`,
-      text: `何年も経って、FACで死んだ人なんて山ほどいる。君と同じ境遇の子供が「Garden」に加わるなんて、普通でしょ？彼女たち、君のこと結構気に入ってるよ。`
+      text: `何年も経って、FACで死んだ人なんて山ほどいる。君と同じ境遇の子供が『Garden』に加わるなんて、普通でしょ？彼女たち、君のこと結構気に入ってるよ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_15.wav' },
@@ -316,7 +329,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `……復讐のために「Garden」に加わる。探偵はその気持ちをすぐに理解した。彼女は拳をぎゅっと握った。`
+      text: `……復讐のために『Garden』に加わる。探偵はその気持ちをすぐに理解した。彼女は拳をぎゅっと握った。`
     },
     {
       type: `dialogue`,
@@ -357,7 +370,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `業師`,
-      text: `だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の「Garden」に連れてこられても驚きも騒ぎもしない……`,
+      text: `だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の『Garden』に連れてこられても驚きも騒ぎもしない……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_17.wav' },
         /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
@@ -487,7 +500,7 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `……そういうこと言うの、君で何人目だ。「世の中が暗いから、正義なんて存在しない。だからちょっとルールを破ってもいいよね」って。`
+      text: `……そういうこと言うの、君で何人目だ。『世の中が暗いから、正義なんて存在しない。だからちょっとルールを破ってもいいよね』って。`
     ,
       voice: [
         /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
@@ -527,7 +540,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold3.png`,
       name: `業師`,
-      text: `はぁ……聞いた、薊？これが君が必死で助けた「同類」だよ。`
+      text: `はぁ……聞いた、薊？これが君が必死で助けた『同類』だよ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_80.wav' },
@@ -571,7 +584,7 @@ export default {
       position: `left`,
       avatar: `img/dh/smile0.png`,
       name: `業師`,
-      text: `もしこいつが君の情にほだされて、涙を流して優しい言葉をかけてきたら、君、泣きながら「Garden」の全部を差し出しちゃうつもり？`
+      text: `もしこいつが君の情にほだされて、涙を流して優しい言葉をかけてきたら、君、泣きながら『Garden』の全部を差し出しちゃうつもり？`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_72.wav' },
@@ -589,7 +602,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/thistle.jpg`,
       name: `薊`,
       text: `ごめんなさい……師匠……許してください……`
@@ -608,7 +621,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `業師`,
-      text: `情けない！何度も言ったよね、他人をそんな大事にしないって。今さら泣きわめいて何？「あ、大丈夫、許すよ」って私が言えば、気が楽になる？`
+      text: `情けない！何度も言ったよね、他人をそんな大事にしないって。今さら泣きわめいて何？『あ、大丈夫、許すよ』って私が言えば、気が楽になる？`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_19.wav' },
@@ -653,7 +666,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `探偵は叫んだが、それは業師に向けたものではなく、泣き出しそうな「Garden」の暗殺者に向けたものだった。`
+      text: `探偵は叫んだが、それは業師に向けたものではなく、泣き出しそうな『Garden』の暗殺者に向けたものだった。`
     },
     {
       type: `narration`,
@@ -780,7 +793,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `業師`,
-      text: `「Garden」は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`
+      text: `『Garden』は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_46.wav' },
