@@ -2376,3 +2376,32 @@ svg { pointer-events: none; }
     background-color: #000; /* 加载时显示黑色背景，防止闪白 */
     box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 可选：增加阴影提升质感 */
 }
+
+
+/* 两端对齐属性列表的容器 */
+.oc-profile-section {
+    margin: 0;
+    padding: 0 5%;
+  }
+  
+  /* 单个属性行：采用 flex 两端对齐加下划线 */
+  .oc-profile-section .profile-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px solid #eaeaea; /* 与截图一致的浅灰色细下划线 */
+    font-size: 0.75rem;
+  }
+  
+  .oc-profile-section .profile-label {
+    color: #696969; /* 左边标签颜色 */
+    /* padding-left: 5%; */
+  }
+  
+  .oc-profile-section .profile-value {
+    color: #333333; /* 右边具体值颜色 */
+    text-align: right;
+    /* padding-right: 5%; */
+  }
+  

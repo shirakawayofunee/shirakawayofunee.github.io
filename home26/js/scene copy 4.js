@@ -631,55 +631,7 @@ function renderScript(script, defaultBgm = "") {
 }
 
 // --- 6. 渲染右侧信息 ---
-// =========================================================================
-// 新增辅助函数：专门用来将 profile 里的多行“键：值”转换为两端对齐、带下划线的 HTML
-// =========================================================================
-function parseProfile(text) {
-  if (!text) return "";
-  
-  // 1. 按换行切分，洗掉多余空格，并过滤空行
-  const lines = String(text)
-    .split('\n')
-    .map(line => line.trim())
-    .filter(line => line.length > 0);
-
-  let html = '<div class="oc-profile-section">';
-  
-  lines.forEach(line => {
-    // 2. 寻找中英文冒号，分离键与值
-    const colonIndex = line.indexOf('：') !== -1 ? line.indexOf('：') : line.indexOf(':');
-    if (colonIndex !== -1) {
-      const key = line.substring(0, colonIndex).trim();
-      const value = line.substring(colonIndex + 1).trim();
-      html += `
-        <div class="profile-row">
-          <span class="profile-label">${key}</span>
-          <span class="profile-value">${value}</span>
-        </div>
-      `;
-    } else {
-      // 备用：如不含冒号则整行展示
-      html += `
-        <div class="profile-row">
-          <span class="profile-label">${line}</span>
-          <span class="profile-value"></span>
-        </div>
-      `;
-    }
-  });
-  
-  html += '</div>';
-  return html;
-}
-
-// =========================================================================
-// 主渲染函数：已整合您原本的所有逻辑（词汇表、角色卡、简介渲染）
-// =========================================================================
 function renderInfo(info) {
-  
-  // ----------------------------------------------------
-  // 1. 【完全保留】您原先的 glossary 词汇表渲染与 GSAP 初始化
-  // ----------------------------------------------------
   const glossaryDiv = document.getElementById("glossary-container");
   glossaryDiv.innerHTML = "";
   
@@ -687,7 +639,7 @@ function renderInfo(info) {
     info.glossary.forEach((g) => {
       const item = document.createElement("div");
       item.className = "glossary-item";
-      // 移除 inline onclick，将 ▼ 替换为 +
+      // 移除 inline onclick，将 ▼ 替换为 + （符合你截图中的风格）
       item.innerHTML = `
         <div class="glossary-term">
             <div class="term-text">${g.term}</div>
@@ -704,46 +656,32 @@ function renderInfo(info) {
     initAccordion(glossaryDiv);
   }
 
-  // ----------------------------------------------------
-  // 2. 【核心更新】角色卡片渲染
-  // ----------------------------------------------------
   const charDiv = document.getElementById("characters-container");
   charDiv.innerHTML = "";
   
   if (info && info.characters) {
     info.characters.forEach((c) => {
       
-      // A. 判断该角色是否需要交替排版
+      // 1. 判断该角色是否需要交替排版（需在你的数据中设置 isReverse: true）
       const reverseClass = c.isReverse ? 'style-reverse' : '';
   
-      // B. 修复您原先代码中的一个细节：原先定义了 cleanNote 却在渲染时错用了 c.note
-      // 这里清洗了 note 里的冗余代码缩进空格
-      let cleanNote = "";
-      if (c.note) {
-        cleanNote = String(c.note)
-          .split('\n')
-          .map(line => line.trim()) 
-          .join('\n')
-          .trim();
-      }
+    // 2. 【核心修复】：清洗文本里的“代码缩进空格”
+    let cleanNote = "";
+    if (c.note) {
+      // 按换行符把文字切成一行行 -> 洗掉每一行前后的多余空格 -> 再拼回去
+      cleanNote = String(c.note)
+        .split('\n')
+        .map(line => line.trim()) 
+        .join('\n')
+        .trim(); // 最后再把首尾可能因为纯回车产生的空行洗掉
+    }
 
-      // C. 【新增核心】：如果数据有 c.profile（两端对齐的数据），就调用辅助函数渲染
-      // 如果数据里没有配置 profile 字段，则输出空字符串，不占用卡片上的任何空间
-      const profileHTML = c.profile ? parseProfile(c.profile) : '';
-
-      // D. 清理并准备渲染 bottomSection (basicStats 区域)
-      let cleanBasicStats = "";
-      if (c.basicStats) {
-        cleanBasicStats = String(c.basicStats)
-          .split('\n')
-          .map(line => line.trim()) 
-          .join('\n')
-          .trim();
-      }
-      const hasNote = cleanBasicStats !== ''; 
+    // 3.  只有当 note 字段有实质内容时，才渲染底部描述区域
+      // .trim() 是为了防止你不小心敲了几个纯空格导致空块出现
+      const hasNote = c.basicStats && c.basicStats.trim() !== ''; 
       const bottomSectionHTML = hasNote ? `
           <div class="oc-bottom-section">
-            <div class="oc-summary-text">${cleanBasicStats}</div>
+            <div class="oc-summary-text">${c.basicStats}</div>
           </div>
       ` : '';
   
@@ -761,14 +699,12 @@ function renderInfo(info) {
             </div>
             <div class="oc-info-box">
               <h4 class="oc-name">${c.name || ''}</h4>
-              <!-- 此处已替换为已洗掉缩进空格的 cleanNote -->
-              <div class="oc-stats">${cleanNote || ''}</div>
+              <div class="oc-stats">${c.note || ''}</div>
             </div>
           </div>
+  
           <!-- 下半区：动态渲染（若无内容则为完全不生成该 div，不会留有空隙） -->
           ${bottomSectionHTML}
-          <!-- 【新增区】：动态生成两端对齐带下划线的属性（若没有该字段则不产生多余空隙） -->
-          ${profileHTML}
   
         </div>
       `;
@@ -776,12 +712,28 @@ function renderInfo(info) {
       charDiv.appendChild(card);
     });
   }
+  
+  // 假设这是从你的 info 对象中读取的真实数据结构
+  // 如果你的字段名不同，请修改下方模板字符串 ${c.xxx} 里的变量名
+  /* 
+    模拟数据格式参考：
+    info.characters = [
+      {
+        avatar: "image1.jpg",
+        name: "이름", (名字)
+        basicStats: "나이 | 성별 | 키 | 몸무게 | 체형", (基本信息栏)
+        job: "무직", (职业)
+        birthday: "10월 21일", (生日)
+        like: "닭강정, 초콜릿", (喜欢)
+        hate: "브로콜리, 운동", (讨厌)
+        summary: "내용을 적습니다. 내용을 적습니다..." (详情描述)
+      }, ...
+    ]
+  */
 
-  // ----------------------------------------------------
-  // 3. 【完全保留】您原先的 synopsis 简介渲染
-  // ----------------------------------------------------
+
   const synDiv = document.getElementById("synopsis-container");
-  synDiv.innerHTML = info.synopsis || "工事中";
+  synDiv.innerHTML = info.synopsis || "暂无记录";
 }
 
 // --- 辅助功能 ---

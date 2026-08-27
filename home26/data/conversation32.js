@@ -22,15 +22,35 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `Chris｜探偵`,
+        avatar: `img/dh/.png`,
+        note: `19歳、能力者、警察学校の一年生。`,
+        basicStats: `真相と正義を追いかける警察学校の1年生、ただいま絶賛指名手配されています。<br>
+        二人のお姉さんに挟まれて過ごした、人生で一番忘れられない夏だった。
+      `,
+      profile: `危険度：A級
+        出身：	NEW CITY
+        誕生日：	9月15日
+        身長：	172cm
+        能力：	正義専心
+`, 
+
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
-      }
+        name: `『<ruby>薊<rt>アザミ</rt></ruby>』`,
+        avatar: `img/dh/thistle3.jpg`,
+        note: `19歳、能力者、「GARDEN」の殺し屋`,
+        basicStats: `103年、身为FAC的双亲死于，走投无路的薊加入花园
+        103年、
+        作为殺し屋最想复仇的对象是连军人家属的抚恤金都要贪污的基金会。`,
+        profile: `危険度：A級
+        出身：	NEW CITY
+        誕生日：	10月21日
+        身長：	188cm
+        能力：	燃命火刃
+`, 
+      },
+
     ],
     synopsis: `工事中`
   },
