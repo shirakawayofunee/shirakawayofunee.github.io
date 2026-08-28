@@ -44,14 +44,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/info_dept.jpg`,
+
       name: `情報課`,
       text: `現場にあった「そこにあるはずのない花」数輪について、その理由がわかりました。デイジー、春に咲く花ですが、セントラルパークにはそんな花はありません。情報課は新都市全体を調べ尽くし、興味深いものを発見しました。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/info_dept.jpg`,
+
       name: `情報課`,
       text: `104年の春、ここで一人の女性が溺死しました。調査の結果、他殺は除外されましたが、当時の現場写真が非常に興味深いものでした。`
     },
@@ -65,49 +65,49 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/info_dept.jpg`,
+
       name: `情報課`,
       text: `まだ確実な証拠はありませんが、彼女たちが一つの出来事に関係していることは確かです。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/info_dept.jpg`,
+
       name: `情報課`,
       text: `103年のFACのあの有名な大敗です。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/info_dept.jpg`,
+
       name: `情報課`,
       text: `亡魂の名はオフィーリア。元FAC通信部門所属で、103年のある重大な作戦の支援に参加していました。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/info_dept.jpg`,
+
       name: `情報課`,
       text: `現在、詳細を調べるための十分な権限は得ていませんが、その作戦は大失敗に終わり、死傷者が多数出ました。当時、これが連鎖反応を引き起こし、FACの当時の総帥を含む数人の責任者が引責辞任し、元総帥も間もなく病死しました。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/info_dept.jpg`,
+
       name: `情報課`,
       text: `オフィーリアは地位は高くありませんでしたが、104年初頭に心身の不調を理由にFACを退職しました。そして3ヶ月後、池で溺死しているのが発見されました。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/info_dept.jpg`,
+
       name: `情報課`,
       text: `アナタニアについてですが、彼女はFACのメンバーではありませんでした。しかし、103年のFACの内部世論危機を処理する役割を担い、103年の敗戦の責任は内部の情報や通信担当者にあるとする記事をいくつか発表しました。その中にはオフィーリアも含まれていました。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/info_dept.jpg`,
+
       name: `情報課`,
       text: `これが当時、大きな波紋を呼びました……`
     },
@@ -189,8 +189,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/pc0.png`,
-      name: `Unknown`,
+      name: `調査員`,
       text: `私だ。`
     },
     {
@@ -210,36 +209,33 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/pc0.png`,
-      name: `Unknown`,
+      name: `調査員`,
       text: `そんな話は自分で彼女に言えよ。シャーロームが君に連絡しろって言ったのは、情報を提供するためだ。私は「Garden」の数人の暗殺者とやり合ったことがあるが、彼女たちは殺人を楽しむような狂人じゃない。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/pc0.png`,
-      name: `Unknown`,
+      name: `調査員`,
       text: `雇われた依頼以外で、「Garden」の自主的な行動には強い目的があり、感情に突き動かされていることが多い。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/pc0.png`,
-      name: `Unknown`,
+      
+      name: `調査員`,
       text: `君が担当している一連の事件から見ると、「Garden」は元々無関係だったいくつかの事件を結びつけて、儀式的な意味を持たせようとしている。その儀式自体に目的がある。シャーロームは君にその目的を突き止めてほしいと言ってる。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/pc0.png`,
-      name: `Unknown`,
+      name: `調査員`,
       text: `彼女たちがこんな派手な行動に出るのは珍しい。これはチャンスだ。「Garden」の拠点を追跡するために、すでに人を送り込んでいる。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/pc0.png`,
-      name: `Unknown`,
+      
+      name: `調査員`,
       text: `シャーロームは、必要ならいつでも君のそばに来ると言ってる。でも、彼女は君ならできると信じてる。`
     },
     {

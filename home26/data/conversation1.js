@@ -59,7 +59,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf.png`,
-      name: `Unknown`,
+      name: `シーゲル`,
       text: `聞いたよ、君たちの基地が最近襲われたって。上庭が手を出したんだろ？`
     },
     {
@@ -80,28 +80,28 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf.png`,
-      name: `Unknown`,
+      name: `シーゲル`,
       text: `へっ、足を洗ったってわけ？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf.png`,
-      name: `Unknown`,
+      name: `シーゲル`,
       text: `上庭はそんなの知ったこっちゃないよ。一度福音地に染まったら、一生溝のネズミとして扱われるのさ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf.png`,
-      name: `Unknown`,
+      name: `シーゲル`,
       text: `彼らはとっくに君たちをマークしてる…`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf.png`,
-      name: `Unknown`,
+      name: `シーゲル`,
       text: `この組織を作ったのは私たち、君を救って、君の復讐を果たさせた…君の新生は、私たちの贈り物だよ…`
     },
     {
@@ -115,21 +115,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf.png`,
-      name: `Unknown`,
+      name: `シーゲル`,
       text: `もうすぐ全部上庭に排除されるよ、そんもの。君の首領も、家族も、抵抗なんてできないさ…その日はもうすぐ来る、君もわかってるだろ…`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf.png`,
-      name: `Unknown`,
+      name: `シーゲル`,
       text: `だが…取引しないか？今の上庭の執行者、君たちを追い詰めてるリーダーが、尻尾を出したんだ…`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/armaf.png`,
-      name: `Unknown`,
+      name: `シーゲル`,
       text: `そいつを見つけ出せ…一緒にやらないか…十分な力を与えるよ。君の「新生」を守るんのさ。`
     },
     {

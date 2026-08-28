@@ -147,7 +147,6 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/rahu.png`,
       name: `？？`,
       text: `……識別番号05257885……`
     },
@@ -160,7 +159,6 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/rahu.png`,
       name: `？？`,
       text: `……FAC反狂厄作戦部隊・特別ユニット。通信接続を要請する。`
     },
@@ -179,14 +177,12 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/rahu.png`,
       name: `？？`,
       text: `すでに現場へ到着。支援人員は……`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/rahu.png`,
       name: `？？`,
       text: `一名。`
     },
@@ -203,13 +199,6 @@ export default {
     {
       type: `narration`,
       text: `女は片手で巨大な盾を持ち上げ、力任せに地面へ叩きつけた。その轟音に、通信の向こうで取り乱していた男が息を呑む。\n\n彼女は盾を支えに、ゆっくりと立ち上がった。`
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/rahu.png`,
-      name: `？？`,
-      text: `部下に伝えろ。巻き込まれたくなければ、退避しろ。`
     },
     {
       type: `narration`,

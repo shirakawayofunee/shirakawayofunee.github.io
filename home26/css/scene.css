@@ -626,22 +626,6 @@ html {
     text-align: right;
 }
 
-/* 空白头像精确占位符（防止无头像NPC排版错位） */
-.avatar-placeholder {
-    width: 120px;
-    height: 120px;
-    flex-shrink: 0;
-    border: 1px solid transparent; 
-}
-
-.pos-left .avatar-placeholder {
-    margin-right: 20px;
-}
-
-.pos-right .avatar-placeholder {
-    margin-left: 20px;
-}
-
 /* =========================================================================
    5. 特殊气泡与旁白样式 (回想、崩溃、系统日志、加密无线电等)
    ========================================================================= */

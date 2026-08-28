@@ -622,17 +622,17 @@ function renderScript(script, defaultBgm = "") {
           
           const customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
           
-          // 1. 【更新核心逻辑】：判断是否有头像，如果有才渲染，没有头像则保持为空（不再生成占位符）
+          // 1. 【新增逻辑】：如果没有头像 (avatar)，则生成一个透明占位符以确保对话气泡对齐
           const avatarHTML = line.avatar 
               ? `<img src="${line.avatar}" class="avatar">` 
-              : ``;
+              : `<div class="avatar-placeholder"></div>`;
           
-          // 2. 判断是否有名字
+          // 2. 【新增逻辑】：如果数据配置了名字，则渲染名字，否则为空
           const nameHTML = line.name 
               ? `<div class="message-name">${line.name}</div>` 
               : ``;
 
-          // 3. 渲染页面（无头像时，由于 avatarHTML 为空，整体会自动靠边贴紧）
+          // 3. 【修改布局】：将名字与气泡用 message-content 容器包裹，实现垂直方向的对齐
           div.innerHTML = `
               ${avatarHTML}
               <div class="message-content">

@@ -39,14 +39,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/muyangren.png`,
-      name: `セリン`,
+      name: `■■■`,
       text: `また会えて本当に嬉しいよ。君に出会った時もこうやって連れて帰ったんだよね。また一緒に来てくれる？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/muyangren.png`,
-      name: `セリン`,
+      name: `■■■`,
       text: `君の裏切りに気を悪くした人たちのほとんどはもう犠牲になって、今ならもう一度チャンスをあげられるよ。`
     },
 
@@ -54,14 +54,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/zxx.png`,
-      name: `L`,
+      name: `『業師』`,
       text: `地上の人間はみんな自分思いで、己の縄張りを守るのに必死で、せいぜい周りの数人をかばうくらい…。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/zxx.png`,
-      name: `L`,
+      name: `『業師』`,
       text: `私だってそんなちっぽけな人間だ。君の壮大な宿願にふさわしくないさ。`
     },
     {
@@ -70,7 +70,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `藍雨が降り注ぎ、陵園は静寂に包まれる。『Coquelicot』は死に物狂いで記憶の中の方向へ進む。`
+      text: `藍雨が降り注ぎ、陵園は静寂に包まれる。業師は死に物狂いで記憶の中の方向へ進む。`
     },
     {
       type: `narration`,
@@ -78,17 +78,17 @@ export default {
     },
     {
       type: `narration`,
-      text: `うざい奴、最後まで何か仕掛けてきやがって…『Coquelicot』は首を振って、雑音を頭から振り払う。`
+      text: `うざい奴、最後まで何か仕掛けてきやがって…業師は首を振って、雑音を頭から振り払う。`
     },
     {
       type: `narration`,
-      text: `もっと大事なこと、『Coquelicot』が本当に気にかけることがまだある。『Coquelicot』は記憶の中のぼやけた場所へ必死に進む。`
+      text: `もっと大事なこと、業師が本当に気にかけることがまだある。業師は記憶の中のぼやけた場所へ必死に進む。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/zxx.png`,
-      name: `業師`,
+      name: `『業師』`,
       text: `103年…79期…第五陵園だろ…`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_103.wav' },
@@ -97,7 +97,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `『Coquelicot』はよろめきながら中に入り、英雄碑の方向へ、探偵が伝えた名前を探し、約束の証拠を見つけようとする。`
+      text: `業師はよろめきながら中に入り、英雄碑の方向へ、探偵が伝えた名前を探し、約束の証拠を見つけようとする。`
     },
     {
       type: `narration`,
@@ -105,7 +105,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `人影が飛び込んできて、『Coquelicot』を強く抱きしめ、声を上げて泣く。`
+      text: `人影が飛び込んできて、業師を強く抱きしめ、声を上げて泣く。`
     },
     {
       type: `narration`,
@@ -115,7 +115,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/thistle.jpg`,
-      name: `ジギタリス`,
+      name: `『薊』`,
       text: `そんなことしなくていい！彼女たちの居場所、わかってる。私が探しに行く、私が行く！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_99.wav' },
@@ -126,7 +126,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/cry.png`,
-      name: `業師`,
+      name: `『業師』`,
       text: `…そうか…見つけたのか…`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_110.wav' },
@@ -137,7 +137,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/cry.png`,
-      name: `業師`,
+      name: `『業師』`,
       text: `何泣いてんだ…そんな必死になって…ほんとバカだな…`,
       voice: `wav/CN/conversation32/vo_event_11043_69.wav`
     },

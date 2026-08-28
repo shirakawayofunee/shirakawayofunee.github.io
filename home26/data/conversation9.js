@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `？`,
+        name: `不気味な男の声`,
         avatar: `img/dh/leopold.jpg`,
         note: `事件現場で治安官に偽装した容疑者`
       },
@@ -245,7 +245,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/doyle.jpg`,
-      name: `ドイル`,
+      name: `陰気な男`,
       text: `……どこから来た小娘だ？何者だ？なんで現場に勝手に入ってる？`
     },
     {
@@ -353,7 +353,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `Unknown`,
+      name: `不気味な男の声`,
       text: `やあ、新米刑事さん。探偵ゲーム、楽しんでる？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_53.wav' },
@@ -371,14 +371,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `Unknown`,
+      name: `不気味な男の声`,
       text: `そう言うなよ。アナタニアはまだ生きてる。花が彼女の命で、燦然と咲いてるんだ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `Unknown`,
+      name: `不気味な男の声`,
       text: `動くなよ、もしその花をうっかり踏み潰したら、殺人犯はお前になっちまうぜ。`
     },
     {

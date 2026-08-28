@@ -164,14 +164,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `もちろん、FAC側の作戦手配はすでに同期済み。HUSH-Xは準備完了、1分後に観測に入り、BR-002の状態を確認する。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `要求はすべて実現する、いつものように。`
     },
     {
@@ -357,7 +357,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `申し訳ありません、子猫が一匹潜り込んだので、今追い出したところです。すぐに履歴を確認します。`
     },
     {
@@ -371,14 +371,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `ええ、計画が順調に進んでいることを嬉しく思っています。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `次は、FACの正面支援に加えて、私の本当の仕事はSHP-13の奪還ですね。`
     },
     {
@@ -392,7 +392,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `いいでしょう。この可能性は予想済みで、方案もすでにあります。ちょうど今私が扱っていることと少し関連が……`
     },
     {
@@ -406,14 +406,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `ええ、連中に狙われているのです。逃げられない以上、利用するまでです。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `でなければ、福音地が暗殺者どもにSHP-13の捕獲命令を出し、我々が出遅れる可能性もありますから。`
     },
     {
@@ -427,28 +427,28 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `結構です。最も重要なのはリスク管理ですから。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `私は長く観測してきて、侵蝕されるリスクが限界に達しています。期限になれば交代すべきでしょう。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `戦争が始まろうとする今、より安定した候補者にHUSHシステムに引き継ぎ、戦略的一貫性を維持した方がいいと思います。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `X`,
+      name: `HUSH-X`,
       text: `ご安心ください。いつものように、君たちの望みに全て応えましょう。`
     },
     {

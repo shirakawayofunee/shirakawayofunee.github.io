@@ -69,7 +69,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `業師`,
+      name: ` 『業師』`,
       text: `さっきの叫び声、めっちゃ悲惨だったね。悪夢でも見た？安心して、君の体にあった汚染は、慈悲深い私が全部抜いてあげたから。`
     ,
       voice: [
@@ -98,7 +98,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `業師`,
+      name: ` 『業師』`,
       text: `床、硬いよね。ごめんね、怪我人に膝枕でも貸してあげたいところだけど、君、傷だらけでさ。寄りかかったら私の服が汚れちゃうから。ちょっと我慢してね。`
     ,
       voice: [
@@ -130,7 +130,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `業師`,
+      name: ` 『業師』`,
       text: `私の『Garden』。敵の牙城よ、探偵ちゃん。`
     ,
       voice: [
@@ -143,7 +143,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `業師`,
+      name: ` 『業師』`,
       text: `私のこと、覚えてる？`
     ,
       voice: [
@@ -166,7 +166,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `業師`,
+      name: ` 『業師』`,
       text: `ぷっ。ベビーフェイスなのに、もっと可愛い言葉を話しなさいよ。`
     ,
       voice: [
@@ -178,7 +178,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `業師`,
+      name: ` 『業師』`,
       text: `さあ、私の名前を呼んで。<span>『Coquelicot』</span>`
     ,
       voice: [
@@ -235,7 +235,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `『Garden』は人生を楽しむ場所なんだから、仕事のつまんない話はなしにしてよ。`
     ,
       voice: [
@@ -259,7 +259,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold3.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `そうね……ああ、そう言えば君を『Garden』に推薦した人がいるわね。`
     ,
       voice: [
@@ -283,7 +283,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `ふふ、可愛い反応。`
     ,
       voice: [
@@ -295,7 +295,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `君もFACの可哀想な子なんだから、ここの仲間と挨拶でもしたら？`
     ,
       voice: [
@@ -319,7 +319,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `何年も経って、FACで死んだ人なんて山ほどいる。君と同じ境遇の子供が『Garden』に加わるなんて、普通でしょ？彼女たち、君のこと結構気に入ってるよ。`
     ,
       voice: [
@@ -346,7 +346,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `何が違うのさ。8年前、君だって一人で涅槃グループに乗り込んで、上庭の代表を刺したじゃない？`
     ,
       voice: [
@@ -369,7 +369,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の『Garden』に連れてこられても驚きも騒ぎもしない……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_17.wav' },
@@ -380,7 +380,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `やっぱり、慣れてるんだね。君の心はずっと真っ暗なところに閉じ込められてる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_6.wav' },
@@ -395,7 +395,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `あの時、何があったの？小さい子がそんな大それたことやっちゃうなんて、どれだけ怒ってたの？`
     ,
       voice: [
@@ -407,7 +407,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `刺殺、成功した？憎しみをぶつけた相手、仕留めた？`
     ,
       voice: [
@@ -435,7 +435,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `じゃあ、刺殺失敗したんだ。残念だね、君、めっちゃ才能あるのに。能力者として覚醒までしてる。`
     ,
       voice: [
@@ -447,7 +447,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `暗殺者として、復讐者として、怒りに燃えてすべてを焼き尽くす者として。君には暴力と破壊の才能がある。ここにいる子たちと同じだ。だからあの女が君をそばに置いてるのよ。`
     ,
       voice: [
@@ -459,7 +459,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `正義なんてやめなよ。それは君のシャーローム姉さんがでっち上げた嘘、君を縛る鎖にすぎない。君が扱ってる事件がその証拠でしょ？`
     ,
       voice: [
@@ -471,7 +471,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `アナタニアって女、浅はかで虚栄心の塊。道徳の高いところに立って他人を口汚く罵り、人を傷つけたらビビって魂が抜けたみたいになって、数日後にはまた自己弁護して高みに戻る。`
     ,
       voice: [
@@ -483,7 +483,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `ネイサンだって、汚い手口のシンジケートの野犬。頭の腐った議員に取り入って、どれだけの人命を背負ってるんだ。10年経っても、私が裁かなかったら、誰が裁くの？君の正義はどこにあるの？`
     ,
       voice: [
@@ -539,7 +539,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold3.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `はぁ……聞いた、薊？これが君が必死で助けた『同類』だよ。`
     ,
       voice: [
@@ -571,7 +571,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `化け物の山からこいつをせっかく引っ張り出したのに、同じ境遇なら分かり合えると思ったんだろ？でも、相手には君がただのクズに見える。せっかくの好意が無駄だったね。`
     ,
       voice: [
@@ -583,7 +583,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `もしこいつが君の情にほだされて、涙を流して優しい言葉をかけてきたら、君、泣きながら『Garden』の全部を差し出しちゃうつもり？`
     ,
       voice: [
@@ -604,7 +604,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `ごめんなさい……師匠……許してください……`
     ,
       voice: [
@@ -620,7 +620,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `情けない！何度も言ったよね、他人をそんな大事にしないって。今さら泣きわめいて何？『あ、大丈夫、許すよ』って私が言えば、気が楽になる？`
     ,
       voice: [
@@ -632,7 +632,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `勝手な行動で私のルールを破り、敵を本拠地に連れ込み、君の気持ちまで私がケアしろって？私が君のママなの？`
     ,
       voice: [
@@ -644,7 +644,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `ムカつく！せっかくの休息時間、君とその汚い拾い物に台無しにされた。禁閉行き！私が機嫌直すまで出てくんな。`
     ,
       voice: [
@@ -684,7 +684,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `……死ねばよかったのに、飼い慣らされたクズ！`
     ,
       voice: [
@@ -700,7 +700,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `ほら、彼女もFACの遺族だよ。103年で全てを失った。でも、君みたいな後ろ盾はなかった。正義にすがっても、返ってきたのはビンタの嵐だけ。だから私のところに来た。`
     ,
       voice: [
@@ -756,7 +756,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `吠えるな。執行人がくれるのは立派な正義で、私が与えるのは憎しみの洗脳だと？誰を見下してるの？`
     ,
       voice: [
@@ -768,7 +768,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `君がどんな奴か、私にはお見通しだ。この世界に復讐する力がないから、一番空っぽなものを救命胴衣みたいにしがみついてるだけ。`
     ,
       voice: [
@@ -780,7 +780,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `君みたいなのが一番騙されやすい、一番間抜けで弱いんだ。薊の馬鹿を目覚めさせるためじゃなきゃ、君のことなんか見向きもしないよ。`
     ,
       voice: [
@@ -792,7 +792,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `『Garden』は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`
     ,
       voice: [
@@ -804,7 +804,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `私たちを傷つけた奴は、当然私が自分で裁く。そうやって奪われたものを自分の手で取り返すの。`
     ,
       voice: [
@@ -828,7 +828,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `私の深い恨みはもう自分で片付けた。私は自由だ。今やってることは、全部私が楽しみたいから。`
     ,
       voice: [
@@ -840,7 +840,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `で、私が何をしたいかって？君の主人に伝えなよ。彼女に私と遊んでもらおうじゃない。これもきっと、彼女が君を送り込んだ目的でしょ。`
     ,
       voice: [
@@ -852,7 +852,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `だって……まさか本当に君に事件を解決できるなんて思ってる人、いるわけないよね。`
     ,
       voice: [
@@ -880,7 +880,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `リラックスして。これはただの回復剤に、ほんのちょっと精神薬を混ぜただけ。ここから逃げるのに役立つよ。道さえ覚えなきゃ、君の命は取らない。`
     ,
       voice: [
@@ -892,7 +892,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `逃げなさい、道端で死なないでね。芝居はまだ終わっていないの。私、君が幕を開けてくれるの、待ってるから。`
       ,
       voice: [

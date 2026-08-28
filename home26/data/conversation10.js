@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `「業師」`,
+        name: `『業師』`,
         avatar: `img/dh/leopold.jpg`,
         note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`
       },
@@ -443,7 +443,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `シャーロームか……姉さんって呼ぶんだ、キミ、彼女のこと大好きだろ？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_15.wav' },
@@ -454,7 +454,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `ふふ……なら、ちょうどいい。この姉さんとも遊んでよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_11.wav' },
@@ -492,7 +492,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `ふふ、これが始まりだよ。盛大な花の開花を約束したんだから、ちゃんと守るよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_13.wav' },
@@ -503,7 +503,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `次の花は、いつ、どこで、なぜ咲くのか……推理してみなよ？未来の名探偵さん、キミの大好きな推理ゲームだと思ってさ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_21.wav' },
@@ -514,7 +514,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `私の謎を解けたら、依頼を一つ聞いてあげる。誰を殺すか、誰を救うか、誰を許すか……でも、もし解けなかったら……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_47.wav' },
@@ -525,7 +525,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `キミも、シャーロームも、キミの愛する人たち、たくさんの人が私の「Garden」を飾る花になる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_60.wav' },
@@ -543,7 +543,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `さあ、早く動きなよ。こんなとこで私と意地張ってる暇があったら、2番目の花はもう咲いてるかもしれないよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_14.wav' },
@@ -565,7 +565,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `自分で推理しなよ。できれば大勢連れてきな。口だけの正義じゃ私を止められないよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_28.wav' },
@@ -576,7 +576,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `ついでに、返してあげる、探偵ちゃん。これはキミの花。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_36.wav' },
@@ -591,7 +591,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `キンセンカは陽気な命じゃないから、キミも無理に正義の使者なんて演じなくていいよ。<span>ありのままの自分</span>で私に挑みな。それなら、ちょっと期待できるかな。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_27.wav' },
@@ -602,7 +602,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
-      name: `業師`,
+      name: `『業師』`,
       text: `これは<span>10年</span>かけて醸成された花期だよ。難易度下げてあげたんだから、勝ちなよ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_10.wav' },

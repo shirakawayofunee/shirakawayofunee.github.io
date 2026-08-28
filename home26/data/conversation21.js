@@ -60,7 +60,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `ほら、ドアを叩くのやめな。これはFACの超装甲車だ、いつもぶっ壊してる金庫じゃないんだから。`,
       voice: `wav/CN/conversation21/vo_event_11027_30.wav`
     },
@@ -68,7 +68,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `まあ、ムキにならないで。君たちだって汚い手で私の人を縛ったじゃない？`,
       voice: `wav/CN/conversation21/vo_event_11027_55.wav`
     },
@@ -92,7 +92,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `ふん、知ってる。私がそんなの気にしないってこと、君もわかってるでしょ。`,
       voice: `wav/CN/conversation21/vo_event_11027_32.wav`
     },
@@ -100,7 +100,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `連絡先を教えて。君の大好きな執行人お姉さんに電話かけたいな。`,
       voice: `wav/CN/conversation21/vo_event_11027_18.wav`
     },
@@ -112,7 +112,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `おっと、必要なくなった。彼女から君にかけてきた。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_57.wav' },
@@ -130,7 +130,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `しっ、大人が話してるんだから、子供は口出ししない。君、ミュートにした。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_46.wav' },
@@ -149,7 +149,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `こんにちは、「業師」。`,
       voice: `wav/CN/conversation21/vo_event_11027_48.wav`
     },
@@ -157,7 +157,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `どうも、執行人さん。君の大事な子が私の手にいるけど、まるで驚いてないみたいね。`,
       voice: `wav/CN/conversation21/vo_event_11027_11.wav`
     },
@@ -165,7 +165,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `キミがあの子を初めて誘拐した時に、GPSを仕込んでおいたから、位置は特定できる。<br>クリスティナが錆の川の近くにいるのは知っている。
       きっとまたキミに拉致されたんだろつ。`,
       voice: `wav/CN/conversation21/vo_event_11027_2.wav`
@@ -174,7 +174,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `ふーん、変ね。私が彼女を拉致してから何時間も経ってるのに、なんで今さら電話してきたの？`,
       voice: [
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_53.wav' },
@@ -189,7 +189,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `自分の部下を利用して私の位置を特定するつもり? ひどいわね、彼女の心が傷つくじゃない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
@@ -200,7 +200,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `総司令もそこにいるね。車の位置はすでに特定済み。今回は君を追うのは治安官でもFACでもなく、上庭専属のHUSH部隊だ。`,
       voice: `wav/CN/conversation21/vo_event_11027_42.wav`
     },
@@ -208,15 +208,15 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
-      text: `今ならまだ交渉する余地がある、「業師」。`,
+      name: `執行人`,
+      text: `今ならまだ交渉する余地がある、『業師』`,
       voice: `wav/CN/conversation21/vo_event_11027_45.wav`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `ふっ、君のHUSH部隊なら、6月から私の邪魔をしていたじゃない。そんなつれないことを言わないで。`,
       voice: `wav/CN/conversation21/vo_event_11027_8.wav`
     },
@@ -224,7 +224,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `君の指揮に従うために電話に出たわけじゃないわ。`,
       voice: `wav/CN/conversation21/vo_event_11027_37.wav`
     },
@@ -232,7 +232,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `聞きなさい、上庭の執行人。この車には君たちの総司令、交渉の重要人物十数人、そして君たちが大嫌いな福音地の狂厄爆弾がある。新都市に向かってる。`,
       voice: `wav/CN/conversation21/vo_event_11027_25.wav`
     },
@@ -240,7 +240,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `運転してるのは福音地の傀儡造物。狙撃しても無駄。この道中で何かあって車が減速したら、爆弾は即爆発する。その時、半径1キロのM値は2000超える。`,
       voice: `wav/CN/conversation21/vo_event_11027_51.wav`
     },
@@ -248,7 +248,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `爆弾を解除する唯一の方法は、起動装置を直接外すこと。それは老いぼれの体についてる。老いぼれは君の小犬のそばにいる。`,
       voice: `wav/CN/conversation21/vo_event_11027_1.wav`
     },
@@ -256,7 +256,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `彼女にその能力があるかどうか……ふ、君も私もわかってるよね。`,
       voice: `wav/CN/conversation21/vo_event_11027_23.wav`
     },
@@ -264,14 +264,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `今は昼の11時32分。あと30分もしないうちに、この車は新都市の最初の人口密集地に着く。私は君と違って、条件は話さない。`,
       voice: `wav/CN/conversation21/vo_event_11027_4.wav`
     },
@@ -279,7 +279,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `これは君の自業自得。`,
       voice: `wav/CN/conversation21/vo_event_11027_14.wav`
     },
@@ -287,7 +287,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `わかった。これは確かに君らしい選択だ。`,
       voice: `wav/CN/conversation21/vo_event_11027_38.wav`
     },
@@ -295,7 +295,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `西区作戦は必要だし、総司令も必要だ。上庭の要求は明確で、私は最小の代償で脅威を解除する。`,
       voice: `wav/CN/conversation21/vo_event_11027_12.wav`
     },
@@ -307,7 +307,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `……ふん、君たちごときで。`,
       voice: `wav/CN/conversation21/vo_event_11027_29.wav`
     },
@@ -319,7 +319,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `ほら、ガキ、しょげるのはやめろ。軽くあしらわれたくらい、どうということもない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_40.wav' },
@@ -330,7 +330,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `君のシャーロームお姉さんがHUSH部隊をよこしたけど、君を助けに来たんじゃない。当然、彼らじゃ私を止められない。`,
       voice: `wav/CN/conversation21/vo_event_11027_26.wav`
     },
@@ -339,7 +339,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `遊び方は教えてやった。君の探偵ゲーム、まだ終わってない。続ける？`,
       voice: [
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_59.wav' },
@@ -362,7 +362,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `ハハハハハ！いいね、じゃあ君の正義をしっかり見せて。`,
       voice: `wav/CN/conversation21/展示正义.wav`
     },
@@ -378,7 +378,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `その正義がどれだけ笑えるか、見せて。`,
       voice: `wav/CN/conversation21/vo_event_11027_34.wav`
     },
@@ -414,7 +414,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `11時56分、もうすぐだ。`,
       voice: `wav/CN/conversation21/vo_event_11027_52.wav`
     },
@@ -429,7 +429,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `お、ほんと？よくやったね。褒めてほしい？`,
       voice: [
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_46.wav' },
@@ -458,7 +458,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `HUSHはもうこの車への強攻を諦めた。私には手も足も出ないみたいね。代わりに最後通牒を残してきた。1分後、危険区域に入る前に、車ごと定点爆破するって。`,
       voice: `wav/CN/conversation21/vo_event_11027_21.wav`
     },
@@ -474,7 +474,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold3.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `言ったよ。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_22.wav' },
@@ -493,7 +493,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `君が仕掛けを解く5分前に、君ならできるってわかってた。執行人にメッセージ送った。`,
       voice: `wav/CN/conversation21/vo_event_11027_10.wav`
     },
@@ -501,7 +501,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `まだ返信がない。見なかったのかな？それとも信じなかった？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_57.wav' },
@@ -519,7 +519,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `それとも……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_13.wav' },
@@ -534,7 +534,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `ほら、あれ、君の正義の光じゃない？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation21/vo_event_11027_27.wav' },
@@ -580,7 +580,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `ついでに言うと、老いぼれはそう簡単には死なない。でなきゃ、福音地の連中が私にこんな仕事を頼むわけない。`,
       voice: `wav/CN/conversation21/vo_event_11027_7.wav`
     },
@@ -588,7 +588,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `でも、この車にいる他の人はそうじゃない。`,
       voice: `wav/CN/conversation21/vo_event_11027_31.wav`
     },
@@ -596,7 +596,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `君も含めてね。`,
       voice: `wav/CN/conversation21/vo_event_11027_3.wav`
     },
@@ -612,7 +612,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `「業師」`,
+      name: `『業師』`,
       text: `じゃあね、正義の使者。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation21/vo_event_11027_25.wav' },
@@ -631,7 +631,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x3.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `位置、力、タイミング……`,
       voice: `wav/CN/conversation21/vo_event_11027_36.wav`
     },
@@ -639,7 +639,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x3.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `行け。`,
       voice: `wav/CN/conversation21/vo_event_11027_20.wav`
     },

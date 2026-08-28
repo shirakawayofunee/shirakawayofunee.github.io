@@ -133,7 +133,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『業師』`,
       text: `おっと、大作戦は無事に終わった？`
     },
     {
@@ -154,15 +154,15 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      avatar: `img/dh/l4.png`,
+      name: `『業師』`,
       text: `ふん、礼はいらないよ。感謝すべきことは山ほどあるけどね。私が優しく教えてあげなかったら、FACの総司令も、あのちっちゃい指揮官たちも、戦場に立つ命なんてなかったんだから。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      avatar: `img/dh/l4.png`,
+      name: `『業師』`,
       text: `今回のなんちゃら西区防衛作戦、最大の勲章は私にくれるべきでしょ？`
     },
     {
@@ -205,14 +205,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『業師』`,
       text: `マジ？いいの？私を許して、受け入れてくれるの？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『業師』`,
       text: `うーん、やっぱ無理、演技しきれねえ。`
     },
     {
@@ -243,29 +243,29 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      avatar: `img/dh/leopold2.png`,
+      name: `『業師』`,
       text: `ふふ……憎しみの連鎖、因果応報、いつ終わるかって？今を大切にしろ、だろ？`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      avatar: `img/dh/regret.png`,
+      name: `『業師』`,
       text: `私は殺し屋組織の頭だよ。仇を求めてくる奴も、復讐を頼む奴も数え切れない。お前が私に道徳を語る？私が正直で善良だからって、邪魔しないって？お前が遠慮するのは、私が来る奴を殺すからだろ。理解なんて強者の特権だ。私が無視できないほど強くなる前、誰も私の声に耳を貸さなかった。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      avatar: `img/dh/regret.png`,
+      name: `『業師』`,
       text: `この世界は、私が大人しく慎重に生きても優しくなんてしてくれない。自由に生きるには力が必要だ。そして――血には血で償うしかない。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      avatar: `img/dh/leopold2.png`,
+      name: `『業師』`,
       text: `そのくらい、今教える必要ある？`
     },
     {
@@ -334,7 +334,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『業師』`,
       text: `……私の死を呪ってる？礼儀知らずな奴。`
     },
     {
@@ -361,8 +361,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      avatar: `img/dh/impatient.png`,
+      name: `『業師』`,
       text: `好きに推測しろよ。当たってもお前にはどうしようもない。福音地の秘術、解けないだろ？でなきゃ、何年も探して、福音地の入口すら見つけられない廃物だろ。`
     },
     {
@@ -382,8 +382,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      avatar: `img/dh/impatient.png`,
+      name: `『業師』`,
       text: `気持ち悪いな。私は自分のためだけだ。「Garden」を引き受けたのだって、彼女たちがいい世話してくれるから、私が楽しくなるからだ。`
     },
     {
@@ -470,8 +470,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      avatar: `img/dh/L5.png`,
+      name: `『業師』`,
       text: `……それは？`
     },
     {

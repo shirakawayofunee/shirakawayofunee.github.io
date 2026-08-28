@@ -75,7 +75,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x3.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `ご無事で何より、司令。`
     },
     {
@@ -100,7 +100,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `ご安心を。あの力を君に使うには上からの許可が必要ですが、絶対に認められません。`
     },
     {
@@ -122,7 +122,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `車内には大量の5級狂厄汚染物がありました。君は衝撃には耐えられても、汚染には絶対に耐えられません。上庭が直接浄化するのが最も確実な方法で、代償も最小です。`
     },
     {
@@ -136,7 +136,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `はい。福音地が動き出しています。時間は限られ、私の任務は明確です。どんな代償を払っても。`
     },
     {
@@ -203,7 +203,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `もちろんです。第九機関とHUSHはすでに動いています。君を殺せなかった以上、敵の計画は完全に露呈します。`
     },
     {
@@ -228,7 +228,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `私の部下です。`
     },
     {
@@ -254,7 +254,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `私がやる。`
     },
     {
@@ -279,7 +279,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `誰もが君のようには純粋じゃない。あの女はもっと残酷な罠を仕掛けたことがある。このリスクは無視できない。`
     },
     {
@@ -293,7 +293,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `その必要はない。`
     },
     {
@@ -340,7 +340,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `もういい。`
     },
     {
@@ -362,7 +362,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `普通の救急で十分だ。連れていけ。もう必要ない。`
     },
     {
@@ -394,7 +394,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x4.png`,
-      name: `シャーローム`,
+      name: `執行人`,
       text: `要求は受け取った。すべて実現する、いつものように。`
     },
     {
@@ -405,14 +405,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『業師』`,
       text: `あらら、依頼失敗しちゃって、しかもバレちゃった～次はどうしようかな～`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『業師』`,
       text: `面倒がやってくるよ。親愛なる依頼人さんたち、どうするつもり～？`
     }
   ]

@@ -174,23 +174,23 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/npc.png`,
+      
       name: `治安官`,
-      text: `（治安官）<br>お前がクリスの妹、ミリアか？`
+      text: `お前がクリスの妹、ミリアか？`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/npc.png`,
+      
       name: `治安官`,
-      text: `（治安官）<br>お前の姉さんは能力者として、安全性と服従度が閾値を下回り、高危険級と評価された。即刻逮捕だ。`
+      text: `お前の姉さんは能力者として、安全性と服従度が閾値を下回り、高危険級と評価された。即刻逮捕だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/npc.png`,
+      
       name: `治安官`,
-      text: `（治安官）<br>どけ！徹底的に捜索する！`
+      text: `どけ！徹底的に捜索する！`
     },
     {
       type: `narration`,
@@ -217,9 +217,9 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/npc.png`,
+      
       name: `治安官`,
-      text: `（治安官）<br>危険な能力者を告発するなんて、立派な正義市民だな。`
+      text: `危険な能力者を告発するなんて、立派な正義市民だな。`
     },
     {
       type: `narration`,
@@ -342,14 +342,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `……E-2……私のとこじゃない……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `だろ……あいつがまだ……`
     },
     {
@@ -366,7 +366,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `！？お前――`
     },
     {
@@ -377,7 +377,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `放せ！何する気だ！？`
     },
     {
@@ -390,7 +390,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `ふざけんな、もう二度と――`
     },
     {
@@ -419,7 +419,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `壁を壊せ！`
     },
     {
@@ -464,7 +464,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `……早く……「Garden」に……`
     },
     {
@@ -475,14 +475,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `これが……最後の基地。「登録」した「Garden」のメンバーが入口を開けるけど、開けた後、閉じるまで時間がかかる。さっきみたいに。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `バカな連中で助かった……もし追跡装置を投げ込まれたら、また……`
     },
     {
@@ -499,21 +499,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `薊`,
-      text: `違う。業師は言った。これは報酬……最後の依頼の報酬だ。`
+      name: `『薊』`,
+      text: `違う。師匠は言った。これは報酬……最後の依頼の報酬だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `彼女はついに、誰も邪魔しない「Garden」を手に入れる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `薊`,
+      name: `『薊』`,
       text: `つまり、福音地が与えた避難所。さっきのは空間技術？`
     },
     {

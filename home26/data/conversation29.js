@@ -53,7 +53,6 @@ export default {
         `,
         profile: `危険度：	S級
         能力：	緋花剣落
-        出身：	NEW CITY
         誕生日：	9月23日
         身長：	178cm
 `, 
@@ -132,14 +131,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `中央にShalomが立っていた。彼女の背後には、垂直の亀裂が静かに浮かび、見えない頂点へと続く。暗闇の中で唯一の光だった。`,
+      text: `中央にシャーロームが立っていた。彼女の背後には、垂直の亀裂が静かに浮かび、見えない頂点へと続く。暗闇の中で唯一の光だった。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `ようこそ、業師。見事に侵入したね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_122.wav" },
@@ -154,7 +153,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `力を動かすのはやめた方がいいよ。悪い考えがあるなら、口で言うだけでいい。行動に移すのはダメ。ここでは、狂厄も反逆も絶対に「許されない」存在だから。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_115.wav" },
@@ -165,7 +164,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `へえ、そう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_13.wav" },
@@ -186,7 +185,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `これが私の「罰」なら、大したことないね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_123.wav" },
@@ -195,14 +194,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `そう言って手を引き抜き、Shalomの首を掴んで力強く地面に叩きつけた。背中に数本の光の刺が突き刺さった。`,
+      text: `そう言って手を引き抜き、シャーロームの首を掴んで力強く地面に叩きつけた。背中に数本の光の刺が突き刺さった。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `上庭の技術、たいしたもんだ。ここじゃ君を殺せない？ここは何の意識空間？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_109.wav" },
@@ -211,14 +210,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `Shalomは微笑んだ。口を開かず、笑い声が直接業師の脳内に響き、気持ち悪さに鳥肌が立った。`,
+      text: `シャーロームは微笑んだ。口を開かず、笑い声が直接業師の脳内に響き、気持ち悪さに鳥肌が立った。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `びっくりした？さっき喉を締められて声が出せなかったから、意識で直接話しただけ。慣れないよね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_8.wav" },
@@ -233,7 +232,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `この意識空間は上庭が構築した理性の境界。重層的な防護の下、狂厄を深く観測する最前線だ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_119.wav" },
@@ -244,7 +243,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `へえ……ということは、その裂け目の向こうが内海の中枢ってわけ？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_45.wav" },
@@ -256,7 +255,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `まだそこまで深くはありませんが、確かに通常の黒環よりは源泉に近い場所です。それゆえ、この空間にはより厳密な防御ルールが敷かれています。私や君の衝動を制限しているのも、全ては向こう側の『狂厄』の浸透を防ぐため。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_35.wav" },
@@ -267,7 +266,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `君は能力者であり、彼らにとって想定外の来訪者でもあります。ここでは、さぞ居心地が悪いことでしょう。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_99.wav" },
@@ -283,14 +282,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師は再びShalomに視線を戻す。この執行人の体には何の痕跡もなく、平然としている。`,
+      text: `業師は再びシャーロームに視線を戻す。この執行人の体には何の痕跡もなく、平然としている。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `君も能力者でしょう。少しも反応が出ないなんてこと、ある？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_70.wav" },
@@ -302,7 +301,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x6.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `私はずっとここに留まり、全てのルールを熟知し、使いこなしているからです。ゆえに、どんなに複雑なルールも私の自由を縛ることはできません。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_30.wav" },
@@ -313,7 +312,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x6.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `私は七代目執行人。上庭は私の感情を切り離し、裂け目の向こう側へと送りました。そうすることで、純粋理性となった私は前線に安定して留まることができ、感性の方は狂厄の深淵へと潜り、世界と人の心の変化を観測しているのです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_46.wav" },
@@ -324,7 +323,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `それが、福音地を驚かせた『技術』ってわけね。反吐が出るわ。どうりで心のない人形のように見えるはず。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_68.wav" },
@@ -333,14 +332,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `Shalomは人形のような微笑みを浮かべる。`,
+      text: `シャーロームは人形のような微笑みを浮かべる。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `残酷な時代です。人々は常に複雑で解のない難局に直面します。彼らには、情勢を観察し、変化を分析し、解決策を提示し、実行する存在が必要です。私はそれが得意なのです。私の仕事は、ニーズを受け入れ、詰みの中から正解を見つけ出すこと。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_5.wav" },
@@ -351,7 +350,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x6.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `ですから今、私は君を助けることもできます。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_111.wav" },
@@ -367,7 +366,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `助ける？あんなことをしておいて、剥がれた仮面を縫い合わせてもう一度御託を並べようっての？私を馬鹿だと思ってる!?`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_100.wav" },
@@ -379,7 +378,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `もちろん、君は愚かではありません。だからこそ聞いてください。
       私がいなくとも、何百何千という追手が君たちを始末しに来ることは分かっているはずです。私だけが、君と対話できる唯一の存在なのです。`,
       voice: [
@@ -391,7 +390,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `『Garden』の結末はとっくに決まっていました。追い詰められ、福音地に捕らえられた時点で、両勢力の戦火に引き裂かれることは確定していたのです。それが、狭間に生きる者の宿命。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_11.wav" },
@@ -402,7 +401,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `新たな戦争が間もなく始まります。私がいてもいなくても、君たちは逃れられない。だからこそ君は死に物狂いで足掻いている。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_112.wav" },
@@ -418,7 +417,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `けれど、君が命を削って築いた隠れ家は、君の命が尽きると同時に崩壊する。今回は、復讐すら君の救いにはならない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_4.wav" },
@@ -429,7 +428,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `もう時間は残されていない。たとえ私を殺し、上庭と福音地を血祭りにあげ、世界を転覆させたとしても……君にはもう、新しい花を探す時間などないのです。君の廃墟は、二度と再生しない。
       君自身が、一番よく分かっているはずです。`,
       voice: [
@@ -438,7 +437,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師はShalomを睨みつけたが、長い沈黙の後、その瞳には疲労の色が滲んだ。`,
+      text: `業師はシャーロームを睨みつけたが、長い沈黙の後、その瞳には疲労の色が滲んだ。`,
     },
     {
       type: `narration`,
@@ -449,7 +448,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `……それで？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_93.wav" },
@@ -461,7 +460,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `私が君に命を与えましょう。新たな『Garden』を見つけるための時間を。そして、君たちを全ての騒乱から完全に遠ざけてみせます。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_18.wav" },
@@ -472,7 +471,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `いいこと言うね。まるで全部計算済みみたいに。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_22.wav" },
@@ -484,7 +483,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `君をここまで導く計算ができたのですから、君たちを救う計算も当然できています。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_107.wav" },
@@ -495,7 +494,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `その前に、上庭のために働けって？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_85.wav" },
@@ -507,7 +506,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `いいえ。君は私の言うことだけを聞けばいい。たった一度だけでいいのです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_61.wav" },
@@ -515,14 +514,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `Shalomは業師へと歩み寄る。その表情はより一層曖昧さを増し、真意を読み取ることはできなかった。`,
+      text: `シャーロームは業師へと歩み寄る。その表情はより一層曖昧さを増し、真意を読み取ることはできなかった。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `ここだけが、彼らの手の及ばない場所。だからこそ、自らの代わりにリスクを制御する数多くのルールが定められたのです。私だけが認可を受け、ここへの侵入権を得ました。
       そして君は、私を倒すことで無理やり押し入ってきた。`,
       voice: [
@@ -534,7 +533,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `よかった。これから起こることは、二人だけの話にする。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_16.wav" },
@@ -543,14 +542,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は業師の半歩手前で立ち止まる。業師が嫌悪感を露わに彼女を刺し貫くその前に、Shalomは両手を上げて業師の頬を包み込み、自らの目を直視させた。`,
+      text: `彼女は業師の半歩手前で立ち止まる。業師が嫌悪感を露わに彼女を刺し貫くその前に、シャーロームは両手を上げて業師の頬を包み込み、自らの目を直視させた。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `私には、君を生かす力がある、『Garden』を守る力も。ただ一つ、私の手伝いをしてほしいのです。ある人物を探してほしい。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_97.wav" },
@@ -561,7 +560,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `ミノスの局長、『枷』の持ち主、SHP-13。彼は西区の暴動で行方不明となり、枷は『骸者』に汚染され拡散しました。黒環の干渉により、上庭も感応を辿って彼を見つけ出すことは不可能です。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_40.wav" },
@@ -572,7 +571,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x10.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `今、彼を匿っている者はそれなりの手腕を持っていますが、間もなく嗅ぎつけてくる追手は増える一方でしょう。誰にも隠し通せなくなる。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_57.wav" },
@@ -583,7 +582,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `君に頼みたいのは、その『Garden』の主としての手腕。そして、表と裏の社会を自在に渡り歩く、君のその実力で、誰よりも早く彼を見つけ出すことです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_75.wav" },
@@ -591,7 +590,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `Shalomの顔は蝋人形のように冷淡なままだったが、手に込められた力は徐々に強まり、そこには拒絶を許さない意志が宿っていた。`,
+      text: `シャーロームの顔は蝋人形のように冷淡なままだったが、手に込められた力は徐々に強まり、そこには拒絶を許さない意志が宿っていた。`,
     },
     {
       type: `narration`,
@@ -602,7 +601,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `<ruby>菫<rt>スミレ</rt></ruby>が気にかけていたあの人のことね……でも、君が殺したんじゃなかったかしら？ あの人も、君たちと福音地が殺し合うための生贄でしょう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_12.wav" },
@@ -614,7 +613,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x6.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `ええ。私が綿密に計画しました。任務を受け、思考を巡らせ、動乱の情勢の中で細心の注意を払い、彼を袋小路へと送り込みました。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_66.wav" },
@@ -625,7 +624,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `なら、今さら何のために探すの？根絶やしにして、当時の失敗を埋め合わせるため？それとも局面が制御できなくなって、また連れ戻して犬として飼うつもり？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_47.wav" },
@@ -637,7 +636,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `いいえ。君には彼を見つけ出し——そして、<span>彼を探しに来る者を全員殺してほしいのです</span>。彼が目覚めるまで、闇の中で守り抜いてください。それ以外は、何もしなくていい。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_50.wav" },
@@ -652,7 +651,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `君、頭イカれてるんじゃない？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_42.wav" },
@@ -661,14 +660,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `Shalomは小首をかしげ、あろうことか笑みを浮かべた。`,
+      text: `シャーロームは小首をかしげ、あろうことか笑みを浮かべた。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `そうでしょうか？ 私は一歩ずつ心血を注いでここまで辿り着き、ようやく解法を見つけました。少し自慢したいくらいなのですよ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_17.wav" },
@@ -679,7 +678,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `それは狂厄の根源から来る力。上庭によって慎重に研究され、利用されてきました。最初は能力者の抑制、次に狂厄への対抗、そして黒環の鎮圧……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_73.wav" },
@@ -690,7 +689,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `十年です。上庭はその力を必要とし、背後にある真実を追い求めながらも、完全に理解することはできず、警戒を解くこともできなかった。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_29.wav" },
@@ -701,7 +700,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `――なぜなら、あれは元々、福音地が生み出した最も狂気じみた創造物だからです。内海の孤島で生まれ、黒環を餌とし、根源へと通じるもの。あれは狂人たちが狂厄を盗み出すために造った究極の器であり、狂厄の蘇生こそが上庭の最大の恐怖なのです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_2.wav" },
@@ -712,7 +711,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `この情報を得た上庭は、あらゆる代償を惜しまず行動を起こし、内海へ侵攻しました。甚大な犠牲を払って孤島を破壊し、福音地に大打撃を与えた。
       それは隠蔽されるべき偉大な勝利であり、彼らが持ち帰ったのは、それほどまでに恐ろしい存在だったのです。`,
       voice: [
@@ -724,7 +723,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `当時、君は『福音地』と密接な関係にあった。覚えているはずです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_110.wav" },
@@ -735,7 +734,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `……`,
       voice: [
         { label: "▶", path: "wav/CN/conversation29/vo_event_11042_54.wav" },
@@ -763,7 +762,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `……君か。急に来て、鬱陶しいわね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_77.wav" },
@@ -775,7 +774,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/armaf.png`,
-      name: `ヒゲル`,
+      name: `シーゲル`,
       text: `緊急任務……我々の敵を排除しろ……`,
       voice: [
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_21.wav" },
@@ -786,7 +785,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/armaf.png`,
-      name: `ヒゲル`,
+      name: `シーゲル`,
       text: `誰でもいい、いっそ全員で行け。このリストにある者を、全員殺せ。`,
       voice: [
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_15.wav" },
@@ -797,7 +796,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `チッ、あの女は君の言いなりかもしれないけど、私は御免だよ——`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_59.wav" },
@@ -809,7 +808,7 @@ export default {
       position: `left`,
       bubbleStyle: "bubble-unstable",
       avatar: `img/dh/armaf.png`,
-      name: `ヒゲル`,
+      name: `シーゲル`,
       text: `殺せ！無謀な愚か者どもめ！あそこに手を出すなど！たかが彼如きが！`,
       voice: [
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_59.wav" },
@@ -820,7 +819,7 @@ export default {
       position: `left`,
       bubbleStyle: "bubble-unstable",
       avatar: `img/dh/armaf.png`,
-      name: `ヒゲル`,
+      name: `シーゲル`,
       text: `□□が破壊され、□□□が奪われた……それなのに奴らは、□□□を傷つけるだと！！殺せ、奴らを全員殺せ！！`,
       voice: [
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_14.wav" },
@@ -848,7 +847,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `ハッ、ふふ……なるほど、そっか……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_95.wav" },
@@ -864,7 +863,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `君ら、敵の刀を奪って、使いこなせず、捨てるのも惜しい。いざ決戦となれば、背後から刺されるのが怖くなって、煮え切らない態度のままへし折って溶かし、適当な道具として使い潰す……そういうこと？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_121.wav" },
@@ -876,7 +875,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x10.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `そう。彼はあまりにも多くの力を得て、自身の根源に近づいた。上庭は怖がって、最も厳しいルールで彼が黒環を吞噬するのを止めた。一度、二度……そして三度目で、彼は確実に死ぬ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_23.wav" },
@@ -887,7 +886,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `もっともらしく語るけど、結局は臆病者じゃん！臆病なだけじゃなく、偽善的で、傲慢で、狂妄で、残酷。自分を何だと思ってる！？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_28.wav" },
@@ -899,7 +898,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `ええ、それが<span>上庭</span>です。必死に真相と正解を求めながら、リスクと未知を恐れ、災厄の再来に怯えている。
       あらゆる保険としてのルールを定め、全てを防ごうとするあまり、自分自身も含めた全員を袋小路へと追いやっている。`,
       voice: [
@@ -911,7 +910,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `<span>福音地</span>がどのようなものかについては、私よりも君の方が詳しいでしょう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_1.wav" },
@@ -922,7 +921,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `私はあいつらとは違う!でも、君ら両方とも狗が狗を噛むようなもんだ！悪党を叩いたからって、自分が英雄になったつもりでいないで！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_44.wav" },
@@ -934,7 +933,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x6.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `そうね。一方は『狂厄』を食い止めるために全てを犠牲にし、もう一方は『狂厄』を得るために全てを犠牲にする。災厄が目覚める前に、人類は自ら堕落し狂い、互いに噛みつき合って全てを焼き尽くすのです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_105.wav" },
@@ -945,7 +944,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `だったら君らだけで抱き合って地獄へ落ちなさい！他人を巻き込むんじゃないわよ！！！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_120.wav" },
@@ -957,7 +956,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `ええ、その時はいずれ訪れます。ですがその前に――`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_86.wav" },
@@ -965,14 +964,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `Shalomは再び業師の手首を掴んだ。今度は、業師ですら振りほどくことができない。顔を上げると、あの女の顔がすぐ目の前にあった。`,
+      text: `シャーロームは再び業師の手首を掴んだ。今度は、業師ですら振りほどくことができない。顔を上げると、あの女の顔がすぐ目の前にあった。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `君は、別の可能性を見たくはないですか？ この愚かな流れを拒絶したくはないのですか？ 私の言う通りにして、彼を探しに行くのです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_58.wav" },
@@ -983,7 +982,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `私は彼を縛るルールを壊し、すべての監視から逃がし、私の手さえ届かない場所へと送りました。ですが、これだけでは足りない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_67.wav" },
@@ -994,7 +993,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `私の踏み込めない場所へ、向かってくれ。`,
       voice: [
         {
@@ -1008,7 +1007,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `君はこの狭間における最強の存在であり、長きにわたり両側の世界を渡り歩いてきた唯一の者。君になら、彼をどちらの勢力にも渡さず守り抜くことができる。
       たった一人を守るだけなら、君には造作もないことでしょう。`,
       voice: [
@@ -1020,7 +1019,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `ハッ、なんだ、今さら上庭への裏切り？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_94.wav" },
@@ -1032,7 +1031,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `何言ってるの？私は任期中、常に最も効率的な執行人でした。あらゆるニーズを実現してきた私が、裏切ったなどと誰に言わせるものですか。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_34.wav" },
@@ -1043,7 +1042,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `ただ……この僵化した盤面で、怪物の縄を少し緩めてやっただけに過ぎません。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_27.wav" },
@@ -1054,7 +1053,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `また君の道具？今度は彼に何をさせるつもり？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_78.wav" },
@@ -1066,7 +1065,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `彼を自由にするのです、Coquelicot。君と同じく、彼もまた、両陣営にとって真に痛手となる、得難い厄介者ですから。
       上庭だろうと福音地だろうと、あるいは運命に対してだろうと、復讐したいならこれが好機です。彼に派手に暴れさせればいい。きっと胸がすくでしょう。`,
       voice: [
@@ -1078,7 +1077,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `依頼の報酬として、私の力を借りて生き延び、新たな生を探すもよし。私を殺して泥のように踏みつけ、さらなる高みへ剣を振るうもよし。好きに試すといい。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_20.wav" },
@@ -1089,7 +1088,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `私の後に、君に機会を与える者は二度と現れません。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_33.wav" },
@@ -1101,7 +1100,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師はShalomの目を見つめた。その空虚な瞳は、空虚であるがゆえに、今はどこまでも<span>真摯</span>に映った。
+      text: `業師はシャーロームの目を見つめた。その空虚な瞳は、空虚であるがゆえに、今はどこまでも<span>真摯</span>に映った。
       `,
     },
     {
@@ -1109,7 +1108,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `（心の声）
       嘘も、偽りも、一切の不純物もない
       
@@ -1134,7 +1133,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `……休息が済んだら、考えてあげなくもないわ。でも復讐に彼を使う必要はない。私は私のやり方でやる。他人の力なんて借りないわ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_52.wav" },
@@ -1147,7 +1146,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `ただ、あの泥棒猫がどんな手を使って、私の可愛い子ちゃんをあんな無様な泣きっ面にさせたのか、見てやるだけよ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_32.wav" },
@@ -1156,18 +1155,18 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師は再びShalomの手を振り払い、二歩下がって完全に距離を取った。`,
+      text: `業師は再びシャーロームの手を振り払い、二歩下がって完全に距離を取った。`,
     },
     {
       type: `narration`,
-      text: `彼女はShalomを見て、ある可笑しなことを思い出した。`,
+      text: `彼女はシャーロームを見て、ある可笑しなことを思い出した。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `……あの金髪の小娘が私を罵った時、どんな気持ちだったか今なら分かる気がするわ……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_19.wav" },
@@ -1179,7 +1178,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `悪は悪だ。どんな立場や理由があろうと帳消しにはできない。勝手な理屈で手についた血の借金を軽くなかったことにする……その点においては、君も私も罪人ね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_65.wav" },
@@ -1191,7 +1190,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x6.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `その通り。コスト削減は私の個人的な趣味に過ぎず、ニーズの実現こそが絶対目的。『必要な犠牲』は常套手段です。それが上庭の意志。<span>私</span>を通してそれを見極めれば、僥倖など期待しなくなるでしょう。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_90.wav" },
@@ -1202,7 +1201,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `今日はこっちを犠牲に、明日はあっちを犠牲に、その量も誰にするかも全部君が決めるってわけ？ハハッ……君、何様！？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_62.wav" },
@@ -1211,14 +1210,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `Shalomは静かに彼女を見つめ、長い沈黙の後、微笑んで答えた。`,
+      text: `シャーロームは静かに彼女を見つめ、長い沈黙の後、微笑んで答えた。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x6.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `――使用期限内に、こっそり壊れた道具だけ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_81.wav" },
@@ -1233,7 +1232,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `……そこまでは生きられないわね。君のくれた命もいらないし、鬱憤を晴らすのにそんなに長くは待てない。君の上に誰がいようと、前後にどれだけの人間がいようと関係ない
       君は私の『Garden』に手を出した。それだけで十分よ。人生は短い。
       `,
@@ -1247,7 +1246,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `上庭の<span>正しさ</span>や福音地の<span>宿願</span>に比べれば、私たちはちっぽけな存在らしいわね。どうせいつでも切り捨てられる命なら、少しくらい分からず屋で、大逆無道でも……構わないでしょう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_117.wav" },
@@ -1259,7 +1258,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `鴻毛より軽い命なんだもの、好き勝手やったっていいじゃない？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_37.wav" },
@@ -1271,7 +1270,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `君もこの場所も、上庭には大事だろ……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_71.wav" },
@@ -1288,7 +1287,7 @@ export default {
       bubbleStyle: "inner-voice-c",
 
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `この裂け目が、君にとって触れてはならないものだと言うなら……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_6.wav" },
@@ -1314,7 +1313,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `私のことを理解しているフリをしてたんでしょう？なら分かるはずよ。私が君の言うことなんて聞くわけがないって。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_79.wav" },
@@ -1326,7 +1325,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `君たちの言う『正しさ』ってやつが、一番虫酸が走るの。私の獲物も、私を殺そうとする奴も、私に助けを求める奴も、どいつもこいつもロクな人間じゃない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_91.wav" },
@@ -1338,7 +1337,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `正解……私の『Garden』を壊した、それこそが君の間違いよ！ 今後私が何をしようと君には関係ない。さあ、今すぐ償いなさい！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_87.wav" },
@@ -1352,14 +1351,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `Shalomは止めなかった。崩壊する裂け目から蠢く光の触手が伸び、狂乱の光を投げかける。Shalomの顔に映る蝋人形のような微笑みには、どこか不気味な亀裂が走り、まるで悲願が達成されたかのようだった。`,
+      text: `シャーロームは止めなかった。崩壊する裂け目から蠢く光の触手が伸び、狂乱の光を投げかける。シャーロームの顔に映る蝋人形のような微笑みには、どこか不気味な亀裂が走り、まるで悲願が達成されたかのようだった。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `それでいい…今回もまた、私は代償を惜しまない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_56.wav" },
@@ -1383,7 +1382,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold208.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `なんて痛快……戻ってきた。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_84.wav" },
@@ -1395,7 +1394,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold208.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `誰にも指図はさせない。人生はこれっぽっちしかないの、私が自分で使い果たす。愛するも憎むも、私の心のままに。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_43.wav" },
@@ -1407,7 +1406,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold208.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `誰のためにも犠牲にならず、誰にも仕えず、復讐も享楽も、一分一秒に至るまで私が好きに生きる。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_14.wav" },
@@ -1419,7 +1418,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold208.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `咲くのも自分、生きるのも自分、死ぬのも自分のため！最愛の人は自分自身でなければならない。自分の運命は、必ず自分の手で握る！それこそが<span>Garden</span>！何度言わせれば気が済むの！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_10.wav" },
@@ -1435,7 +1434,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `……君たちも、自分のためだけに生きればよかったのに……馬鹿な子たち……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_60.wav" },
@@ -1452,7 +1451,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `Shalomは亀裂の前に立ち、光の触手の間で、すべてが業師に集まり、命と力を与え、名状しがたい感情を伝えた。初めて、彼女はその人形から感情を感じた。`,
+      text: `シャーロームは亀裂の前に立ち、光の触手の間で、すべてが業師に集まり、命と力を与え、名状しがたい感情を伝えた。初めて、彼女はその人形から感情を感じた。`,
     },
     {
       type: `narration`,
@@ -1460,14 +1459,14 @@ export default {
     },
     {
       type: `narration`,
-      text: `力の起動条件は全て満たされた。Shalomは静かに呟いた。`,
+      text: `力の起動条件は全て満たされた。シャーロームは静かに呟いた。`,
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `君が受け入れないのはわかってた。君たちの感情はあまりにも熱烈で、裸のまま輝いてる。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_113.wav" },
@@ -1478,7 +1477,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x10.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `君の命が尽きてなかったら、もっと穏やかな方案を選びたかった。でも、その時間はもうない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_64.wav" },
@@ -1489,7 +1488,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x7.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `だから、思う存分抗って……私は全部理解している、全部受け入れるつもりだ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_9.wav" },
@@ -1500,7 +1499,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x7.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `私が触れた花は枯れる運命でも、君を生かさなきゃいけない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_3.wav" },
@@ -1511,7 +1510,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `業師`,
+      name: `『コクリコ』`,
       text: `……くたばれ`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_49.wav" },
@@ -1520,7 +1519,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は剣を振るい光の中へと躍り込んだ。今や彼女の目と脳裏にはShalom一人しか映っていない。`,
+      text: `彼女は剣を振るい光の中へと躍り込んだ。今や彼女の目と脳裏にはシャーローム一人しか映っていない。`,
     },
     {
       type: `narration`,
@@ -1551,7 +1550,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/xzj.png`,
-      name: `Shalom`,
+      name: `シャーローム`,
       text: `？！`,
     },
     {
@@ -1560,7 +1559,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女はCoquelicotを遮り、Shalomの前に立ち塞がった。激しい息切れ。先ほどの衝突の衝撃からまだ立ち直れていないのか、あるいはこの空間の狂乱に耐え難いのか。`,
+      text: `彼女はCoquelicotを遮り、シャーロームの前に立ち塞がった。激しい息切れ。先ほどの衝突の衝撃からまだ立ち直れていないのか、あるいはこの空間の狂乱に耐え難いのか。`,
     },
   ],
 };

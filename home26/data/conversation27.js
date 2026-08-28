@@ -243,7 +243,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `シャーローム`,
+      name: `『執行人』`,
       text: `少し困惑してるみたい。審査を始める？`
     },
     {
@@ -278,7 +278,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `シャーローム`,
+      name: `『執行人』`,
       text: `そう？いつもとちょっと違う感じね。私、何か間違えたかと思って、チェックされるんじゃないかと。`
     },
     {
@@ -324,21 +324,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `シャーローム`,
+      name: `『執行人』`,
       text: `肉体は複製できても、精神や経験は無理。君も感性の罠に落ちたね。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `シャーローム`,
+      name: `『執行人』`,
       text: `それに、仕事はまだ終わってない。別れを急がないで。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `シャーローム`,
+      name: `『執行人』`,
       text: `最後のステップが残ってる……`
     },
     {
@@ -351,7 +351,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `狭間に生きる者は安息を求めるのが難しい。『Coquelicot』……君が頑張ったのは知ってる。`
+      text: `狭間に生きる者は安息を求めるのが難しい。コクリコ……君が頑張ったのは知ってる。`
     },
     {
       type: `narration`,
@@ -365,7 +365,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `シャーローム`,
+      name: `『執行人』`,
       text: `私を捕まえに来なよ、業師。君なら絶対に裏切らない……`
     }
   ]
