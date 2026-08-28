@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0A0A0A000" />
-    <title>心が通じ合い、死生を共にし、決して裏切らない。</title>
+    <meta name="theme-color" content="#000000" />
+    <title>ふわふわ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,7 +76,7 @@
         }
 
         /* 滚动条 */
-        ::-webkit-scrollbar { width: 8px; height: 8px; border-radius: 0 !important;}
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-page); }
         ::-webkit-scrollbar-thumb { border-radius: 4px; background: #333; }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent-main); }
@@ -397,7 +397,17 @@
             overflow: hidden;
             display: none;
         }
-
+        .papermaskDetailTop {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .papermaskDetailTop-zoom {
             max-height: 90vh;
             max-width: 90vw;
@@ -453,8 +463,8 @@
         
         #terminal-wrapper {
             position: fixed;            /* 悬浮在屏幕上 */
-            bottom: 20px;             /* 距底 */
-            right:20px;               /* 距右 */
+            bottom: 30px;               /* 距底 */
+            right: 30px;                /* 距右 */
             z-index: 9999;              /* 最顶层 */
             width: 100%;
             max-width: 580px;
@@ -537,99 +547,6 @@
             letter-spacing: 0.05em;
             text-shadow: 0 1px 2px rgba(0,0,0,0.6);
         }
-
-        /* =========================================
-   [新增] 图片切换按钮与动画样式
-   ========================================= */
-
-/* 1. 左右切换按钮 */
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(30, 30, 30, 0.6); /* 半透明黑底 */
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 2002; /* 必须高于图片 */
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
-}
-
-.nav-btn:hover {
-    background: rgba(255, 61, 0, 0.8); /* 悬停变为主题色 */
-    color: #fff;
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 61, 0, 0.4);
-}
-
-.nav-btn.prev { left: 20px; }
-.nav-btn.next { right: 20px; }
-
-.nav-btn svg {
-    width: 30px;
-    height: 30px;
-}
-
-/* 2. 图片容器与定位 */
-.papermaskDetailTop {
-    position: relative; /* 关键：作为绝对定位图片的父容器 */
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    perspective: 1000px;
-}
-
-/* 图片通用样式 */
-.detail-img {
-    position: absolute; /* 绝对定位，实现双图重叠动画 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-        /* 关键：默认位于中心 */
-        transform: translate3d(0, 0, 0) scale(1);
-    
-    /* 只有在需要动画时才开启 transition，JS中控制 */
-    transition: transform 0s; 
-    
-    /* 硬件加速 */
-    will-change: transform;
-    backface-visibility: hidden;
-}
-
-/* 状态类：位于右侧（等待从右滑入） */
-.img-pos-right {
-    transform: translate3d(100%, 0, 0) scale(1);
-}
-
-/* 状态类：位于左侧（等待从左滑入） */
-.img-pos-left {
-    transform: translate3d(-100%, 0, 0) scale(1);
-}
-
-/* 动画过程类：加上这个类名后，位置改变会有丝滑过渡 */
-.img-animating {
-    /* 
-       贝塞尔曲线：cubic-bezier(0.25, 1, 0.5, 1) 
-       这是一种类似 iOS 的物理缓动，启动快，结束时有阻尼感，非常高级 
-    */
-    transition: transform 1.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* 移动端适配：调整按钮大小 */
-@media (max-width: 768px) {
-    .nav-btn { width: 40px; height: 40px; }
-    .nav-btn.prev { left: 10px; }
-    .nav-btn.next { right: 10px; }
-}
 
         @media (min-width: 768px) {
             .cmd-body { font-size: 0.9rem; }
@@ -720,333 +637,151 @@
             <img src="/home/img/v2c.png" alt="Music">
         </div>
       </div>
-    </div>
-
-    <!-- 2. 同级页面跳转指引 (Peer Nav) -->
-    <div class="peer-nav-section">
-        <div class="peer-links-grid">
-            
-            <!-- 链接 1: Summer in Kyoto -->
-            <a href="XL.html" class="roll-link-card">
-                <div class="roll-header">
-                    <!-- 上半部分：元数据/标签 -->
-                    <div class="roll-meta">
-                        <span class="roll-badge">GALLERY #XL</span>
-                        <span class="roll-info">2人雰囲気 - XL</span>
-                        <span class="roll-count">🥀🪡</span>
-                    </div>
-                    <!-- 下半部分：大标题 -->
-                    <div class="roll-title">
-                        賢者の心を知るのは賢者のみ
-                    </div>
+      </div>
+  
+      <!-- Peer Nav (链接到 SL 和 L) -->
+      <div class="peer-nav-section">
+          <div class="peer-links-grid">
+          
+              <a href="SL.html" class="roll-link-card">
+                  <div class="roll-header">
+                      <!-- 上半部分：元数据/标签 -->
+                      <div class="roll-meta">
+                          <span class="roll-badge">GALLERY #SL</span>
+                          <span class="roll-info">2人雰囲気 - SL</span>
+                          <span class="roll-count">🥀🪡</span>
+                      </div>
+                      <!-- 下半部分：大标题 -->
+                      <div class="roll-title">
+                          心が通じ合い、死生を共にし、決して裏切らない。
+                      </div>
+                  </div>
+  
+                  <div class="film-strip-container">
+                    <div class="film-frame"><img src="img/SL/SL1【本編】「中秋の名月」.webp" alt=""></div>
+                    <div class="film-frame"><img src="img/SL/SL2「Fall」.webp" alt=""></div>
+                    <div class="film-frame"><img src="img/SL/SL3.webp" alt=""></div>
+                    <div class="film-frame"><img src="img/SL/SL6.webp" alt=""></div>
                 </div>
-                
-                <div class="film-strip-container">
-                    <div class="film-frame"><img src="img/XL/00.jpg" alt=""></div>
-                    <div class="film-frame"><img src="img/XL/zhuxian2.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/XL/XL5.jpg" alt=""></div>
-                </div>
-            </a>
-        
-            <!-- 链接 2: Solo Exhibition -->
-            <a href="L.html" class="roll-link-card">
-                <div class="roll-header">
-                    <!-- 上半部分：元数据/标签 -->
-                    <div class="roll-meta">
-                        <span class="roll-badge">GALLERY #L</span>
-                        <span class="roll-info"></span>
-                        <span class="roll-count">ART</span>
-                    </div>
-                    <!-- 下半部分：大标题 -->
-                    <div class="roll-title">
-                        罪人たちの救世主
-                    </div>
-                </div>
-        
-                <div class="film-strip-container">
-                    <div class="film-frame"><img src="img/L/L-1.jpg" alt=""></div>
-                    <div class="film-frame"><img src="img/L/L2.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/L/L3.webp" alt=""></div>
-                    <div class="film-frame"><img src="img/L/L4.webp" alt=""></div>
-                </div>
-            </a>
-        
-        </div>
-
-    </div>
+              </a>
+          
+              <!-- 链接 2: Solo Exhibition -->
+              <a href="L.html" class="roll-link-card">
+                  <div class="roll-header">
+                      <!-- 上半部分：元数据/标签 -->
+                      <div class="roll-meta">
+                          <span class="roll-badge">GALLERY #L</span>
+                          <span class="roll-info"></span>
+                          <span class="roll-count">ART</span>
+                      </div>
+                      <!-- 下半部分：大标题 -->
+                      <div class="roll-title">
+                          罪人たちの救世主
+                      </div>
+                  </div>
+          
+                  <div class="film-strip-container">
+                      <div class="film-frame"><img src="img/L/L-1.jpg" alt=""></div>
+                      <div class="film-frame"><img src="img/L/L2.webp" alt=""></div>
+                      <div class="film-frame"><img src="img/L/L3.webp" alt=""></div>
+                      <div class="film-frame"><img src="img/L/L4.webp" alt=""></div>
+                  </div>
+              </a>
+          
+          </div>
+  
+      </div>
 
     <!-- 3. 二级菜单 (Tabs) -->
     <div class="secondary-menu-container">
         <div class="gallery-header">
             <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
-                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#gallery">イラスト</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#r18g">メインストーリー</a></li>
+                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#gallery">ふわふわ</a></li>
+<!--                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#r18g">メインストーリー/本編</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#lonly">L</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#sonly">S</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doodle">平和な日常/落書き</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dc">テーマ</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#otherChar">他作品の〇〇ってキャラのイメージ</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#manga">漫画</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#costume">衣装</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#catdw">ふわふわ/擬獣化とSD</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#nsfw">NSFW</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mansion">邸宅</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#travel">両生還後の旅行</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#death">死後</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#food">食べ物</a></li>
-                
-                <!-- <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#pose">ポーズ</a></li> -->
-<!-- <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#female">女性審美補足</a></li> -->
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#sonly">S</a></li> -->
             </ul>
         </div>
     </div>
-
-        <!-- 给最外层加了 id="terminal-wrapper" 方便关闭 -->
-<div id="terminal-wrapper" class="cmd-wrapper">
-    <div class="cmd-window">
-        <!-- Header -->
-        <div class="cmd-header">
-            <div class="cmd-buttons">
-                <!-- 装饰性按钮 -->
-                <div class="cmd-btn red"></div>
-                <div class="cmd-btn yellow"></div>
-                <div class="cmd-btn green"></div>
-            </div>
-            
-            <!-- 关闭按钮 -->
-            <div class="cmd-close-action" onclick="document.getElementById('terminal-wrapper').style.opacity='0'; setTimeout(()=>{document.getElementById('terminal-wrapper').style.display='none'}, 300);" title="Close">
-                &times;
-            </div>
-        </div>
-        
-        <!-- Body -->
-        <div class="cmd-body">
-            <div class="prompt-line">
-                <span class="text-green">➜</span> 
-                <span class="text-blue">~</span> 
-                <span class="text-gray">SLの関係についての私の考え：</span>
-            </div>
-            
-            <div id="cmd-typewriter"></div>
-            <span class="cmd-cursor"></span>
-        </div>
-    </div>
-</div>
-    <!-- 4. 正文内容区 (Gallery Section) -->
-
+<ul>
 
     <div class="gallery-section">
         <div class="tab-content">
-            <!-- 容器 id 对应上面的 href -->
             <div class="tab-pane fade show active" id="gallery"><div class="gallery-container" id="galleryContainer"></div></div>
-            <div class="tab-pane fade" id="r18g"><div class="gallery-container" id="r18gContainer"></div></div>
-            <div class="tab-pane fade" id="lonly"><div class="gallery-container" id="lonlyContainer"></div></div>
-            <div class="tab-pane fade" id="sonly"><div class="gallery-container" id="sonlyContainer"></div></div>
-            <div class="tab-pane fade" id="dc"><div class="gallery-container" id="dcContainer"></div></div>
-            <div class="tab-pane fade" id="doodle"><div class="gallery-container" id="doodleContainer"></div></div>
-            <div class="tab-pane fade" id="manga"><div class="gallery-container" id="mangaContainer"></div></div>
-            <div class="tab-pane fade" id="costume"><div class="gallery-container" id="costumeContainer"></div></div>
-            <div class="tab-pane fade" id="death"><div class="gallery-container" id="deathContainer"></div></div>
-            <div class="tab-pane fade" id="catdw"><div class="gallery-container" id="catdwContainer"></div></div>
-            <div class="tab-pane fade" id="mansion"><div class="gallery-container" id="mansionContainer"></div></div>
-            <div class="tab-pane fade" id="travel"><div class="gallery-container" id="travelContainer"></div></div>
-            <div class="tab-pane fade" id="food"><div class="gallery-container" id="foodContainer"></div></div>
-            <div class="tab-pane fade" id="nsfw">
-                <div class="gallery-container" id="nsfwContainer"></div>
-            </div>
-            <div class="tab-pane fade" id="pose">
-                <div class="gallery-container" id="poseContainer"></div>
-            </div>
-            <div class="tab-pane fade" id="female">
-                <div class="gallery-container" id="femaleContainer"></div>
-            </div>
-            <div class="tab-pane fade" id="otherChar">
-                <div class="gallery-container" id="otherCharContainer"></div>
-            </div>
         </div>
     </div>
 
-<!-- 5. 自定义图片详情 Modal -->
-<div class="papermaskDetail" id="customDetailModal">
+   <!--  5. 自定义图片详情 Modal (恢复 papermaskDetail 结构) -->
+    <div class="papermaskDetail" id="customDetailModal">
+        <!-- 顶部图片区域 -->
+        <div class="papermaskDetailTop">
+            <img src="#" alt="" class="papermaskDetailTop-zoom" id="papermaskDetailTop-zoom">
+        </div>
+        
+        <!-- 底部控制栏 -->
+        <div class="papermaskDetailBottom">
+            <!-- 按钮图片路径注意检查，如果图标是黑色的，CSS里的 filter: invert(1) 会把它们变白 -->
+            <img src="img/paperDetail/b.png" alt="放大" onclick="handleZoomChange(1)" title="Zoom In">
+            <img src="img/paperDetail/s.png" alt="缩小" onclick="handleZoomChange(-1)" title="Zoom Out">
+            <img src="img/paperDetail/a.png" alt="重置" onclick="handleZoomChange(0)" title="Reset">
+            <img src="img/paperDetail/d.png" alt="下载" onclick="handleDownload()" title="Download">
+        </div>
 
-    <!-- [新增] 左切换按钮 -->
-    <div class="nav-btn prev" onclick="navigateImage(-1)">
-        <svg viewBox="0 0 24 24">
-            <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-        </svg>
+        <!-- 关闭按钮 -->
+        <div class="papermaskDetailClose">
+            <img src="img/paperDetail/c.png" alt="关闭" onclick="paperShowHide()">
+        </div>
     </div>
-
-    <!-- 顶部图片区域 (容器) -->
-    <div class="papermaskDetailTop" id="imageContainer">
-        <!-- 图片将通过 JS 动态插入在这里，不再写死 img 标签 -->
-    </div>
-
-    <!-- [新增] 右切换按钮 -->
-    <div class="nav-btn next" onclick="navigateImage(1)">
-        <svg viewBox="0 0 24 24">
-            <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-        </svg>
-    </div>
-
-    <!-- 底部控制栏 (保持不变) -->
-    <div class="papermaskDetailBottom">
-        <img src="img/paperDetail/b.png" alt="放大" onclick="handleZoomChange(1)" title="Zoom In">
-        <img src="img/paperDetail/s.png" alt="缩小" onclick="handleZoomChange(-1)" title="Zoom Out">
-        <img src="img/paperDetail/a.png" alt="重置" onclick="handleZoomChange(0)" title="Reset">
-        <img src="img/paperDetail/d.png" alt="下载" onclick="handleDownload()" title="Download">
-    </div>
-
-    <!-- 关闭按钮 (保持不变) -->
-    <div class="papermaskDetailClose">
-        <img src="img/paperDetail/c.png" alt="关闭" onclick="paperShowHide()">
-    </div>
-</div>
 
     <!-- 脚本部分 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- 嵌入你的 papermaskDetail.js 逻辑 -->
     <script>
-    var papermaskZoom = 1;
-    var currentImgList = []; // 当前查看的图片数组
-    var currentImgIndex = 0; // 当前查看的图片索引
-    var isAnimating = false; // 防止快速点击导致动画冲突
+        var papermaskZoom = 1;
 
-    // 1. 打开 Modal (入口函数)
-    // 注意：需要修改 arrangeWaterfall 里的调用方式，见下方说明
-    function openDetailModal(imgList, index) {
-        currentImgList = imgList;
-        currentImgIndex = index;
-        papermaskZoom = 1;
-
-        const container = document.getElementById("imageContainer");
-        container.innerHTML = ""; 
-        
-        const img = document.createElement("img");
-        img.src = currentImgList[currentImgIndex].src;
-        img.className = "detail-img"; // 默认在中间
-        img.id = "activeDetailImg";
-        
-        container.appendChild(img);
-
-        $(".papermaskDetail").fadeIn(200);
-        $(".papermaskDetail").css("display", "flex");
-    }
-
-    // 2. 切换图片 (核心重写：双图同步位移)
-    function navigateImage(direction) {
-        if (isAnimating) return;
-        if (!currentImgList || currentImgList.length === 0) return;
-
-        // 计算新索引
-        let newIndex = currentImgIndex + direction;
-        if (newIndex >= currentImgList.length) newIndex = 0;
-        if (newIndex < 0) newIndex = currentImgList.length - 1;
-
-        const container = document.getElementById("imageContainer");
-        const currentImg = container.querySelector("img"); // 屏幕上当前的图
-        
-        // 创建下一张图
-        const nextImg = document.createElement("img");
-        nextImg.src = currentImgList[newIndex].src;
-        nextImg.className = "detail-img";
-        // 新图不继承 active ID，动画结束后再给，防止缩放冲突
-        
-        // --- 第一步：把新图放在屏幕外面 (准备区) ---
-        if (direction === 1) {
-            // 下一张：新图在右边 (100%)
-            nextImg.classList.add("img-pos-right");
-        } else {
-            // 上一张：新图在左边 (-100%)
-            nextImg.classList.add("img-pos-left");
-        }
-        
-        container.appendChild(nextImg);
-
-        // --- 第二步：强制浏览器重绘 (Force Reflow) ---
-        // 这一行非常关键！没有它，浏览器会合并样式修改，导致新图直接闪现，没有滑入动画
-        nextImg.offsetWidth; 
-
-        // --- 第三步：开始推拉 ---
-        isAnimating = true;
-
-        // 给两张图都加上动画过渡属性
-        if(currentImg) currentImg.classList.add("img-animating");
-        nextImg.classList.add("img-animating");
-
-        // 设定最终位置（利用 requestAnimationFrame 确保下一帧执行）
-        requestAnimationFrame(() => {
-            // 1. 新图归位 (回到中间 0)
-            nextImg.classList.remove("img-pos-right", "img-pos-left");
+        // 缩放功能
+        function handleZoomChange(num) {
+            if (num == 1) papermaskZoom += 0.1;
+            if (num == -1) papermaskZoom -= 0.1;
+            if (num == 0) papermaskZoom = 1;
             
-            // 2. 旧图移走
-            if (currentImg) {
-                // 重置旧图的缩放，防止缩放状态下位移看起来很怪
-                currentImg.style.transform = ""; 
-                
-                if (direction === 1) {
-                    // 往左推走 (-100%)
-                    currentImg.classList.add("img-pos-left");
-                } else {
-                    // 往右推走 (100%)
-                    currentImg.classList.add("img-pos-right");
-                }
+            // 限制缩放范围
+            if (papermaskZoom > 4) papermaskZoom = 4;
+            if (papermaskZoom < 0.1) papermaskZoom = 0.1;
+            
+            $(".papermaskDetailTop-zoom").css("transform", `scale(${papermaskZoom})`);
+        }
+
+        // 下载功能
+        function handleDownload() {
+            var imgSrc = $(".papermaskDetailTop-zoom")[0].src;
+            if (imgSrc) {
+                var a = document.createElement("a");
+                a.href = imgSrc;
+                a.download = imgSrc.split('/').pop() || 'image.jpg';
+                a.style.display = "none";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
             }
-        });
-
-        // --- 第四步：动画结束清理 ---
-        setTimeout(() => {
-            if(currentImg) currentImg.remove();
-            
-            // 清理新图的动画类，使其变回普通状态
-            nextImg.classList.remove("img-animating");
-            nextImg.id = "activeDetailImg"; // 赋予ID以供缩放
-            
-            // 重置缩放倍率变量
-            papermaskZoom = 1;
-            
-            isAnimating = false;
-        }, 1600); // 时间需与 CSS transition 0.5s 保持一致
-
-        currentImgIndex = newIndex;
-    }
-
-    // 3. 缩放功能 (修改为操作 id="activeDetailImg")
-    function handleZoomChange(num) {
-        if (num == 1) papermaskZoom += 0.2; // 放大稍微快一点
-        if (num == -1) papermaskZoom -= 0.2;
-        if (num == 0) papermaskZoom = 1;
-        
-        if (papermaskZoom > 4) papermaskZoom = 4;
-        if (papermaskZoom < 0.5) papermaskZoom = 0.5;
-        
-        // 只缩放当前激活的图片
-        const activeImg = document.getElementById("activeDetailImg");
-        if(activeImg) {
-            activeImg.style.transform = `scale(${papermaskZoom})`;
         }
-    }
 
-    // 4. 下载功能
-    function handleDownload() {
-        if (!currentImgList[currentImgIndex]) return;
-        var imgSrc = currentImgList[currentImgIndex].src;
-        var a = document.createElement("a");
-        a.href = imgSrc;
-        a.download = imgSrc.split('/').pop() || 'image.jpg';
-        a.style.display = "none";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    }
+        // 关闭 Modal
+        function paperShowHide() {
+            papermaskZoom = 1;
+            $(".papermaskDetailTop-zoom").css("transform", `scale(1)`);
+            $(".papermaskDetail").fadeOut(200); // 使用淡出效果
+        }
 
-    // 5. 关闭 Modal
-    function paperShowHide() {
-        $(".papermaskDetail").fadeOut(200);
-        setTimeout(() => {
-             document.getElementById("imageContainer").innerHTML = ""; // 清理内存
-        }, 200);
-    }
+        // 打开 Modal (自定义函数)
+        function openDetailModal(src) {
+            $("#papermaskDetailTop-zoom").attr("src", src);
+            papermaskZoom = 1;
+            $(".papermaskDetailTop-zoom").css("transform", `scale(1)`);
+            $(".papermaskDetail").fadeIn(200);
+            $(".papermaskDetail").css("display", "flex"); // 确保 flex 布局以居中
+        }
 
         // ================= 数据定义 (请务必保留完整数据) =================
         const r18gImages = [
@@ -1061,52 +796,51 @@
           { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【メインストーリー/本編】Lの過去 P1-P7" },
           { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【猫猫バージョン】Lの過去 P1-P6" },
           { src: "img/SL/g2.webp", alt: "R18-G Image 2", description: "【BAD END-IF】Xからのご挨拶――Lの中で一番重い存在、その死骸" },
-          { src: "img/SL/g1.webp", alt: "R18-G Image 1", description: "【BAD END-IF】遺体修復" },
+          { src: "img/SL/g1.webp", alt: "R18-G Image 1", description: "【BAD END-IF】" },
           { src: "img/SL/zhuxian3.webp", alt: "Gallery Image 8", description: "Blue Rain-007「登場」" },
       ];
       const galleryImages = [
-          { src: "img/SL/SL1【本編】「中秋の名月」.webp", alt: "Gallery Image 1", description: "【本編】「中秋の名月」  犯罪組織の主宰者と部下の殺し屋" },
-          { src: "img/L/L0.jpg", alt: "Gallery Image 1", description: "【本編】嵐を呼ぶ" },
-          { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "【本編】鮮烈な人" },
-          { src: "img/S/S0.jpg", alt: "Gallery Image 1", description: "表面上は穏やかな物腰なのに、腹黒い大人の36歳女性。優雅、洗練。" },
-          { src: "img/SL/SL2「Fall」.webp", alt: "Gallery Image 3", description: "" },
-          
-          { src: "img/SL/SL3.webp", alt: "Gallery Image 2", description: "「運命の舞台」  死神と信者" },
-          /* { src: "img/SL/SL3「赤い糸」.webp", alt: "Gallery Image 3", description: "" }, */
-          { src: "img/SL/SL4.webp", alt: "Gallery Image 4", description: "【本編】余裕しゃくしゃく" },
-          { src: "img/SL/SL5「運輸」.webp", alt: "Gallery Image 5", description: "05「運輸」" },
-          { src: "img/SL/SL6.webp", alt: "Gallery Image 6", description: "吸血鬼貴族とその専属の仕立て屋（WIP）" },
-          { src: "img/SL/SL7.webp", alt: "Gallery Image 7", description: "" },
-          { src: "img/SL/SL8.webp", alt: "Gallery Image 7", description: "" },
-          { src: "img/L/L7.webp", alt: "Gallery Image 7", description: "「供養」" },
-          { src: "img/SL/SL9.webp", alt: "Gallery Image 9", description: "" },
-          { src: "img/SL/SL10.webp", alt: "Gallery Image 10", description: "" },
-          { src: "img/SL/SL11.webp", alt: "Gallery Image 11", description: "" },
-          { src: "img/SL/SL12.webp", alt: "Gallery Image 12", description: "" },
-          { src: "img/SL/SL13.webp", alt: "Gallery Image 13", description: "【本編】" },
-          { src: "img/SL/SL14.webp", alt: "Gallery Image 14", description: "" },
-          { src: "img/SL/SL15.webp", alt: "Gallery Image 15", description: "" },
-          { src: "img/SL/SL16.webp", alt: "Gallery Image 16", description: "【本編】" },
-          { src: "img/SL/SL17.webp", alt: "Gallery Image 17", description: "" },
-          { src: "img/SL/SL18.webp", alt: "Gallery Image 18", description: "" },
-          { src: "img/SL/SL19.webp", alt: "Gallery Image 19", description: "" },
-          { src: "img/SL/SL20.webp", alt: "Gallery Image 20", description: "同人誌表紙风" },
-          { src: "img/SL/SL21.webp", alt: "Gallery Image 21", description: "" },
-          { src: "img/SL/SL22.webp", alt: "Gallery Image 22", description: "【本編】" },
-          { src: "img/SL/SL23.webp", alt: "Gallery Image 23", description: "" },
-          { src: "img/SL/SL24.webp", alt: "Gallery Image 24", description: "" },
-      ];
+  { src: "img/DW/DW1.webp", alt: "Gallery Image 1", description: "" },
+  { src: "img/DW/DW2.webp", alt: "Gallery Image 2", description: "" },
+  { src: "img/DW/DW3.webp", alt: "Gallery Image 3", description: "" },
+  { src: "img/DW/DW4.webp", alt: "Gallery Image 4", description: "" },
+  { src: "img/DW/DW5.webp", alt: "Gallery Image 5", description: "" },
+  { src: "img/DW/DW6.webp", alt: "Gallery Image 6", description: "" },
+  { src: "img/DW/DW7.webp", alt: "Gallery Image 7", description: "" },
+  { src: "img/DW/DW8.webp", alt: "Gallery Image 8", description: "" },
+  { src: "img/DW/DW9.webp", alt: "Gallery Image 9", description: "" },
+  { src: "img/DW/DW10.webp", alt: "Gallery Image 10", description: "" },
+  { src: "img/DW/DW11.webp", alt: "Gallery Image 11", description: "" },
+  { src: "img/DW/DW12.webp", alt: "Gallery Image 12", description: "" },
+  { src: "img/DW/DW13.webp", alt: "Gallery Image 13", description: "" },
+  { src: "img/DW/DW14.webp", alt: "Gallery Image 14", description: "" },
+/*   { src: "img/DW/DW15.webp", alt: "Gallery Image 15", description: "" },
+  { src: "img/DW/DW16.webp", alt: "Gallery Image 16", description: "" },
+  { src: "img/DW/DW17.webp", alt: "Gallery Image 17", description: "" },
+  { src: "img/DW/DW18.webp", alt: "Gallery Image 18", description: "" },
+  { src: "img/DW/DW19.webp", alt: "Gallery Image 19", description: "" },
+  { src: "img/DW/DW20.webp", alt: "Gallery Image 20", description: "" },
+  { src: "img/DW/DW21.webp", alt: "Gallery Image 21", description: "" },
+  { src: "img/DW/DW22.webp", alt: "Gallery Image 22", description: "" },
+  { src: "img/DW/DW23.webp", alt: "Gallery Image 23", description: "" },
+  { src: "img/DW/DW24.webp", alt: "Gallery Image 24", description: "" },
+  { src: "img/DW/DW25.webp", alt: "Gallery Image 25", description: "" },
+  { src: "img/DW/DW26.webp", alt: "Gallery Image 26", description: "" },
+  { src: "img/DW/DW27.webp", alt: "Gallery Image 27", description: "" },
+  { src: "img/DW/DW28.webp", alt: "Gallery Image 28", description: "" },
+  { src: "img/DW/DW29.webp", alt: "Gallery Image 29", description: "" },
+  { src: "img/DW/DW30.webp", alt: "Gallery Image 30", description: "" }, */
+    ];
 
       const dcImages = [
           { src: "img/DC/DC1.webp", alt: "DC Image 1", description: "主従" },
           { src: "img/DC/DC2.webp", alt: "DC Image 2", description: "" },
-          { src: "img/DC/风声.jpg", alt: "DC Image 3", description: "戦友——映画『风声』（2009）" },
-          { src: "img/DC/DC3.webp", alt: "DC Image 3", description: "师弟——映画『Memoirs of a Geisha』（2005）" },
+          { src: "img/DC/风声.jpg", alt: "DC Image 3", description: "戦友——映画『风声』" },
+          { src: "img/DC/DC3.webp", alt: "DC Image 3", description: "" },
           { src: "img/DC/DC4.jpg", alt: "DC Image 4", description: "聖母憐子像" },
           { src: "img/DC/DC4-2.jpg", alt: "DC Image 5", description: "" },
           { src: "img/DC/chadui2.jpg", alt: "DC Image 5", description: "" },
           { src: "img/DC/DecisiontoLeave1.jpg", alt: "DC Image 5", description: "共犯——映画『Decision to Leave』(2022)" },
-          { src: "img/DC/末路狂花1.jpg", alt: "DC Image 5", description: "映画『Thelma & Louise』（1991）" },
           { src: "img/DC/Dolores.Claiborne1.jpg", alt: "DC Image 5", description: "映画『Dolores Claiborne』(1995)" },
           { src: "img/DC/Dolores.Claiborne2.jpg", alt: "DC Image 5", description: "映画『Dolores Claiborne』(1995)" },
           { src: "img/DC/DC5.webp", alt: "DC Image 5", description: "母女————映画『Pearl』(2022)" },
@@ -1172,7 +906,9 @@
       ];
 
       const mansionImages = [
-
+          { src: "img/FZ/DD1.jpg", alt: "Mansion Image 1", description: "" },
+          { src: "img/FZ/DD2.jpg", alt: "Mansion Image 2", description: "" },
+          { src: "img/FZ/DD3.jpg", alt: "Mansion Image 3", description: "" },
           { src: "img/FZ/livingroom1.webp", alt: "Mansion Image 4", description: "living room1" },
           { src: "img/FZ/livingroom2.webp", alt: "Mansion Image 5", description: "living room2" },
           { src: "img/FZ/4.webp", alt: "Mansion Image 6", description: "living room3" },
@@ -1195,40 +931,28 @@
   { src: "img/FZ/closet7.webp", alt: "Mansion Image 7", description: "closet" },
   { src: "img/FZ/closet8.webp", alt: "Mansion Image 8", description: "closet" },
   { src: "img/FZ/closet9.webp", alt: "Mansion Image 9", description: "closet" },
-  { src: "img/FZ/closet10.webp", alt: "Mansion Image 10", description: "closet" },
-  { src: "img/FZ/DD1.jpg", alt: "Mansion Image 1", description: "" },
-          { src: "img/FZ/DD2.jpg", alt: "Mansion Image 2", description: "" },
-          { src: "img/FZ/DD3.jpg", alt: "Mansion Image 3", description: "" },
+  { src: "img/FZ/closet10.webp", alt: "Mansion Image 10", description: "closet" }
       ];
 
       const doodleImages = [
-      { src: "img/SL/ty/01.webp", alt: "Image 1", description: "01「小さくなった!」" },
-{ src: "img/SL/ty/02「お姫様抱っこ」.webp", alt: "Image 2", description: "02「お姫様抱っこ」" },
-{ src: "img/SL/ty/03「眠？イチャイチャ」.webp", alt: "Image 7", description: "03「眠？イチャイチャ」" },
-{ src: "img/SL/ty/04.jpg", alt: "Image 4", description: "04 「最近冷えるので 暖かく してください」" },
-{ src: "img/SL/ty/05.jpg", alt: "Image 5", description: "05 " },
-{ src: "img/SL/ty/05.webp", alt: "Image 5", description: "05 " },
-{ src: "img/SL/ty/06.jpg", alt: "Image 6", description: "06 舞" },
-{ src: "img/SL/ty/07.webp", alt: "Image 3", description: "07 " },
-{ src: "img/SL/ty/08.jpg", alt: "Image 8", description: "08 「Kissing Hands」" },
-{ src: "img/SL/ty/09.webp", alt: "Image 9", description: "09「束の間の平和」" },
-{ src: "img/SL/ty/10.jpg", alt: "Image 10", description: "10「お姫様抱っこ」" },
-{ src: "img/SL/ty/11.webp", alt: "Image 11", description: "11「お風呂？」" },
-{ src: "img/SL/ty/12.webp", alt: "Image 12", description: "12「お世話」" },
-{ src: "img/SL/ty/13.webp", alt: "Image 13", description: "13「日常」" },
-{ src: "img/SL/ty/14.webp", alt: "Image 14", description: "14「" },
-{ src: "img/SL/ty/15.jpg", alt: "Image 15", description: "15「Lが出張する時、Lのベッドで寝ることがある（Lにバレたことがあって、その後Sは同型のマットレスをワンセットもらった）」" },
-{ src: "img/SL/ty/16.webp", alt: "Image 16", description: "16「」" },
-{ src: "img/SL/ty/15.webp", alt: "Halloween", description: "「サボテン」（Lと友達）" },
-{ src: "img/SL/ty/17.webp", alt: "Image 17", description: "17「甘噛み」" },
-{ src: "img/SL/ty/18.webp", alt: "Image 18", description: "18「眠る」" },
-{ src: "img/SL/ty/19.jpg", alt: "Image 19", description: "19「幼少期」" },
-{ src: "img/SL/ty/20.webp", alt: "Image 20", description: "20「" },
-{ src: "img/SL/ty/21.webp", alt: "Image 21", description: "21「" },
-{ src: "img/SL/ty/22.webp", alt: "Image 22", description: "22「二人の子供時代を埋め合わせるため、LはSを遊園地に連れて行く。」" },
-{ src: "img/SL/ty/23.webp", alt: "Image 22", description: "23" },
-{ src: "img/SL/ty/24.webp", alt: "Image 24", description: "24" },
-{ src: "img/SL/ty/25.webp", alt: "Image 25", description: "25" },
+          { src: "img/SL/ty/ty1.webp", alt: "Doodle Image 1", description: "お姫様抱っこ" },
+          { src: "img/SL/ty/chadui1.jpg", alt: "Doodle Image 1", description: "舞" },
+          { src: "img/SL/ty/ty3.webp", alt: "Doodle Image 3", description: "小さくなった！？" },
+          { src: "img/SL/ty/ty4.webp", alt: "Doodle Image 4", description: "眠？イチャイチャ" },
+          { src: "img/SL/ty/ty6.jpg", alt: "Doodle Image 8", description: "「最近冷えるので 暖かく してください」" },
+          { src: "img/SL/ty/ty5.webp", alt: "Doodle Image 5", description: "" },
+          { src: "img/SL/ty/chadui2.jpg", alt: "Doodle Image 1", description: "Kissing Hands" },
+          { src: "img/SL/ty/ty6.webp", alt: "Doodle Image 6", description: "" },
+          { src: "img/SL/ty/ty7.webp", alt: "Doodle Image 7", description: "Kiss" },
+          { src: "img/SL/ty/chadui4.jpg", alt: "Doodle Image 8", description: "Lが出張する時、Lのベッドで寝ることがある（Lにバレたことがあって、その後Sは同型のマットレスをワンセットもらった）" },
+          { src: "img/SL/ty/ty2.webp", alt: "Doodle Image 2", description: "日常" },
+          { src: "img/SL/ty/ty8.webp", alt: "Doodle Image 8", description: "甘噛み" },
+          { src: "img/SL/ty/ty9.webp", alt: "Doodle Image 9", description: "眠る" },
+          { src: "img/SL/ty/chadui3.jpg", alt: "Doodle Image 1", description: "舞" },
+          { src: "img/SL/ty/ty10.webp", alt: "Doodle Image 10", description: "二人の子供時代を埋め合わせるため、LはSを遊園地に連れて行く。" },
+          { src: "img/SL/ty/ty11.webp", alt: "Doodle Image 11", description: "" },
+          { src: "img/SL/ty/ty12.webp", alt: "Doodle Image 12", description: "いらないわ～" },
+          { src: "img/SL/ty/ty13.webp", alt: "Doodle Image 13", description: "学パロ" }
       ];
 
       const catdwImages = [
@@ -1249,17 +973,12 @@
           { src: "img/SL/cat/DC6.webp", alt: "Catdw Image 9", description: "" },
           { src: "img/SL/cat/shiyuanshou.gif", alt: "Catdw Image 9", description: "噬元獣（フラーケン） キャプテン・マーベル(映画)" },
           { src: "img/SL/cat/cat2.jpg", alt: "L Image 8", description: "" },
-          { src: "img/SL/cat/娃娃1.jpg", alt: "SD Image 1", description: "" },
-          { src: "img/SL/cat/娃娃2.jpg", alt: "SD Image 1", description: "" },
-          { src: "img/SL/cat/娃娃3.jpg", alt: "SD Image 1", description: "" },
-          { src: "img/SL/cat/3033847.png", alt: "SD Image 1", description: "" },
           { src: "img/L/sd/sd1.webp", alt: "SD Image 1", description: "" },
             { src: "img/L/sd/sd2.webp", alt: "SD Image 2", description: "" },
             { src: "img/L/sd/sd3.webp", alt: "SD Image 3", description: "" },
             { src: "img/L/sd/sd4.webp", alt: "SD Image 4", description: "" },
             { src: "img/L/sd/sd5.jpg", alt: "SD Image 5", description: "" },
             { src: "img/L/sd/sd5.webp", alt: "SD Image 5", description: "" },
-            { src: "img/L/sd/06.jpg", alt: "SD Image 5", description: "花妖にくっつかれ" },
             { src: "img/L/sd/sd6.png", alt: "SD Image 7", description: "" },
             { src: "img/L/sd/sd6.webp", alt: "SD Image 6", description: "" },
             { src: "img/L/sd/sd7.webp", alt: "SD Image 7", description: "" },
@@ -1270,19 +989,12 @@
 
       const nsfwImages = [
           { src: "img/SL/nsfw1.webp", alt: "NSFW Image 1", description: "" },
-          { src: "img/SL/nsfw2.webp", alt: "NSFW Image 2", description: "「Sの要望１」体型の設定に誤りがありますので、参考にしないでください。" },
-          { src: "img/SL/nsfw2.webp", alt: "NSFW Image 2", description: "「Sの要望１」体型の設定に誤りがありますので、参考にしないでください。" },
-          { src: "img/SL/nsfw3.webp", alt: "NSFW Image 3", description: "「Sの要望２」体型の設定に誤りがありますので、参考にしないでください。" },
-          { src: "img/SL/nsfw4.webp", alt: "NSFW Image 4", description: "L体型華奢" },
+          { src: "img/SL/nsfw2.webp", alt: "NSFW Image 2", description: "体型の設定に誤りがありますので、参考にしないでください。" },
+          { src: "img/SL/nsfw3.webp", alt: "NSFW Image 3", description: "体型の設定に誤りがありますので、参考にしないでください。" },
+          { src: "img/SL/nsfw4.webp", alt: "NSFW Image 4", description: "体型華奢" },
           { src: "img/SL/nsfw5.webp", alt: "NSFW Image 4", description: "S体型参考" },
-          { src: "img/SL/nsfw6.jpg", alt: "NSFW Image 4", description: "S体型参考" },
-          { src: "img/SL/nsfw7.webp", alt: "NSFW Image 4", description: "S体型参考" },
       ];
         const travelImages = [
-        { src: "img/SL/travel/001.webp", alt: "Travel Image 1", description: "" },
-        { src: "img/SL/travel/002.jpg", alt: "Travel Image 1", description: "" },
-        { src: "img/SL/travel/003.webp", alt: "Travel Image 1", description: "" },
-
   { src: "img/SL/travel/travel1.webp", alt: "Travel Image 1", description: "イタリア BGM：Mystery of Love" },
   { src: "img/SL/travel/travel1-2.webp", alt: "Travel Image 1", description: "" },
   { src: "img/SL/travel/travel1-3.webp", alt: "Travel Image 1", description: "" },
@@ -1372,13 +1084,11 @@
         ];
 
         const lonlyImages = [
+        { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【公式】メインストーリー/本編" },
         { src: "img/L/L0.jpg", alt: "Gallery Image 1", description: "嵐を呼ぶ" },
-        { src: "img/L/muyu.webp", alt: "Gallery Image 1", description: "師匠の入浴奉仕は組織内部でトップ1の人気イベント" },
-        { src: "img/L/L-1.jpg", alt: "メインストーリー/本編", description: "【本編】メインストーリー" },
-        { src: "img/L/L1.jpg", alt: "Gallery Image 1", description: "" },
-            
-            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "簡単に希望と平和をもたらす救世主なんて存在しない。いるのは、ただひたすら先を歩く先駆者たちだけだ。" },
+            { src: "img/XL/zhuxian1.jpg", alt: "メインストーリー", description: "【公式】メインストーリー/本編（猫猫バージョン）" },
             { src: "img/L/L1.webp", alt: "Gallery Image 1", description: "" },
+            
             { src: "img/L/L2.webp", alt: "Gallery Image 2", description: "危険な関系〜" },
             { src: "img/L/L3.webp", alt: "Gallery Image 3", description: "" },
             { src: "img/L/L4.webp", alt: "Gallery Image 4", description: "死と新生" },
@@ -1386,20 +1096,16 @@
             { src: "img/L/L6.webp", alt: "Gallery Image 6", description: "" },
             { src: "img/L/L7.webp", alt: "Gallery Image 7", description: "「供養」" },
             { src: "img/L/L8.webp", alt: "Gallery Image 8", description: "「孤独」" },
-            { src: "img/L/L8.jpg", alt: "Gallery Image 8", description: "落書き" },
             { src: "img/L/L9.webp", alt: "Gallery Image 9", description: "「憤怒」" },
             { src: "img/L/L10.webp", alt: "Gallery Image 10", description: "" },
             { src: "img/L/L11.webp", alt: "Gallery Image 11", description: "" },
             { src: "img/L/L12.webp", alt: "Gallery Image 12", description: "" },
             { src: "img/L/L13.webp", alt: "Gallery Image 13", description: "" },
-            { src: "img/L/L14.webp", alt: "Gallery Image 14", description: "" },
-            /* { src: "img/L/L15.webp", alt: "Gallery Image 15", description: "" }, */
-            { src: "img/L/L16.jpg", alt: "Gallery Image 15", description: "" },
-            { src: "img/L/zangli.webp", alt: "Gallery Image 14", description: "N.F.76年" },
+            { src: "img/L/L16.jpg", alt: "Gallery Image 14", description: "" },
+            { src: "img/L/L15.webp", alt: "Gallery Image 15", description: "" }
         ];
         const sonlyImages = [
-            { src: "img/S/S0.jpg", alt: "Gallery Image 1", description: "優雅、洗練" },
-            { src: "img/S/S00.jpg", alt: "Gallery Image 1", description: "「何のために戦うか」" },
+            { src: "img/S/S0.jpg", alt: "Gallery Image 1", description: "洗練" },
             { src: "img/S/S1.jpg", alt: "Gallery Image 1", description: "" },
             { src: "img/S/S2.jpg", alt: "Gallery Image 2", description: "" },
             { src: "img/S/S3.jpg", alt: "Gallery Image 3", description: "" },
@@ -1407,19 +1113,19 @@
             { src: "img/S/S5.jpg", alt: "Gallery Image 5", description: "" },
             { src: "img/S/S6.jpg", alt: "Gallery Image 6", description: "" },
             { src: "img/S/S7.jpg", alt: "Gallery Image 7", description: "" },
-            { src: "img/S/S8.webp", alt: "Gallery Image 8", description: "落書き" },
+            { src: "img/S/S8.jpg", alt: "Gallery Image 8", description: "落書き" },
             { src: "img/S/S9.jpg", alt: "Gallery Image 9", description: "" },
             { src: "img/S/S10.jpg", alt: "Gallery Image 10", description: "" },
             { src: "img/S/S11.jpg", alt: "Gallery Image 11", description: "落書き" },
             { src: "img/S/S12.jpg", alt: "Gallery Image 12", description: "落書き" },
-            { src: "img/S/S13.webp", alt: "Gallery Image 13", description: "落書き" },
+            { src: "img/S/S13.jpg", alt: "Gallery Image 13", description: "落書き" },
             { src: "img/S/S14.jpg", alt: "Gallery Image 14", description: "ペルセポネー" },
             { src: "img/S/S15.jpg", alt: "Gallery Image 15", description: "" },
             { src: "img/S/S16.jpg", alt: "Gallery Image 11", description: "" },
-            { src: "img/S/S17.png", alt: "Gallery Image 12", description: "" },
+            { src: "img/S/S17.jpg", alt: "Gallery Image 12", description: "" },
             { src: "img/S/S18.jpg", alt: "Gallery Image 13", description: "" },
-            /* { src: "img/S/S19.jpg", alt: "Gallery Image 14", description: "" },
-            { src: "img/S/S20.jpg", alt: "Gallery Image 15", description: "" }, */
+            { src: "img/S/S19.jpg", alt: "Gallery Image 14", description: "" },
+            { src: "img/S/S20.jpg", alt: "Gallery Image 15", description: "" },
         ];
         const costumeImages = [
         { src: "img/cloakroom/L01 - 「礼服」（傘のデザイン、すごく好き）.jpg", alt: "Gallery Image 1", description: "L01 - 「礼服」（傘のデザイン、すごく好き）" },
@@ -1438,49 +1144,6 @@
         { src: "img/cloakroom/S06 - 「和服」.jpg", alt: "Gallery Image 1", description: "S06 - 「和服」" },
         { src: "img/cloakroom/S06 - 「和服」（additional）.png", alt: "Gallery Image 1", description: "S06 - 「和服」（additional）" },
         ];
-
-        const poseImages = [
-    // 在这里填入图片数据，例如：
-    // { src: "img/pose/1.jpg", alt: "Pose 1", description: "说明文字" },
-];
-
-const femaleImages = [
-    // { src: "img/female/1.jpg", alt: "Female 1", description: "说明文字" },
-];
-
-const otherCharImages = [
-{ src: "img/sutong/01.webp", alt: "Gallery Image 1", description: "" },
-          { src: "img/sutong/02.webp", alt: "Gallery Image 2", description: "正しい方向に最短で辿り着く外道の手法" },
-          { src: "img/sutong/L/忍冬.png", alt: "Gallery Image 2", description: "Vulpisfoglia" },
-        { src: "img/sutong/L/忍冬表情差分.webp", alt: "Gallery Image 2", description: "忍冬表情差分" },
-          { src: "img/sutong/se.jpg", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/se2.jpg", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/se3.jpg", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/e-teru01.jpg", alt: "Gallery Image 2", description: "蓬莱山輝夜八意永琳　えーてる「東方永夜抄」" },
-          
-          { src: "img/sutong/fovopobo00.webp", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/fovopobo01.jpg", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/fovopobo02.webp", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/fovopobo03.webp", alt: "Gallery Image 2", description: "" },
-          { src: "img/sutong/03.webp", alt: "Gallery Image 3", description: "" },
-          { src: "img/sutong/04.webp", alt: "Gallery Image 4", description: "" },
-          { src: "img/sutong/05.webp", alt: "Gallery Image 5", description: "" },
-          { src: "img/sutong/06.webp", alt: "Gallery Image 6", description: "" },
-          { src: "img/sutong/07.webp", alt: "Gallery Image 7", description: "" },
-          { src: "img/sutong/08.webp", alt: "Gallery Image 8", description: "" },
-          { src: "img/sutong/09.webp", alt: "Gallery Image 9", description: "" },
-          { src: "img/sutong/10.webp", alt: "Gallery Image 10", description: "" },
-          { src: "img/sutong/11.webp", alt: "Gallery Image 11", description: "" },
-/*           { src: "img/sutong/12.webp", alt: "Gallery Image 12", description: "" },
-          { src: "img/sutong/13.webp", alt: "Gallery Image 13", description: "" },
-          { src: "img/sutong/14.webp", alt: "Gallery Image 14", description: "" },
-          { src: "img/sutong/15.webp", alt: "Gallery Image 15", description: "" },
-          { src: "img/sutong/16.webp", alt: "Gallery Image 16", description: "" },
-          { src: "img/sutong/17.webp", alt: "Gallery Image 17", description: "" },
-          { src: "img/sutong/18.webp", alt: "Gallery Image 18", description: "" },
-          { src: "img/sutong/19.webp", alt: "Gallery Image 19", description: "" },
-          { src: "img/sutong/20.webp", alt: "Gallery Image 20", description: "" } */
-];
         
         // 辅助函数：根据名称获取数组
         function getArrayByName(name) {
@@ -1489,84 +1152,67 @@ const otherCharImages = [
                  "sonly": sonlyImages, "dc": dcImages, "doodle": doodleImages,
                  "manga": mangaImages, "costume": costumeImages, "death": deathImages,
                  "catdw": catdwImages, "mansion": mansionImages, "travel": travelImages,
-                 "food": foodImages, "nsfw": nsfwImages,"pose": poseImages,
-         "female": femaleImages,"otherChar": otherCharImages
+                 "food": foodImages, "nsfw": nsfwImages
              };
              return map[name] || [];
         }
 
         // 瀑布流生成逻辑
         function arrangeWaterfall(containerId, imageArray) {
-        const container = document.getElementById(containerId);
-        if(!container) return;
-        container.innerHTML = "";
+            const container = document.getElementById(containerId);
+            if(!container) return;
+            container.innerHTML = "";
 
-        const width = window.innerWidth;
-        const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
+            const width = window.innerWidth;
+            const columnCount = width > 992 ? 3 : width > 576 ? 2 : 1;
 
-        const columns = Array(columnCount).fill().map(() => {
-            const col = document.createElement("div");
-            col.className = "gallery-column";
-            container.appendChild(col);
-            return col;
-        });
+            // 创建列
+            const columns = Array(columnCount).fill().map(() => {
+                const col = document.createElement("div");
+                col.className = "gallery-column";
+                container.appendChild(col);
+                return col;
+            });
 
-        if(!imageArray) return;
+            if(!imageArray) return;
 
-        imageArray.forEach((image, index) => {
-            const item = document.createElement("div");
-            item.className = "gallery-item";
+            imageArray.forEach((image, index) => {
+                const item = document.createElement("div");
+                item.className = "gallery-item";
 
-            const img = document.createElement("img");
-            img.src = image.src; 
-            img.alt = image.alt;
-            img.className = "holder-img"; 
-            
-            // [核心修改] 点击时，传递整个数组和当前索引
-            img.onclick = function() {
-                openDetailModal(imageArray, index);
-            };
+                const img = document.createElement("img");
+                img.src = image.src; // 简化处理，直接加载，如果需要懒加载可加 lazy 逻辑
+                img.alt = image.alt;
+                
+                // === 关键：应用 papermask.css 的类名 .holder-img ===
+                img.className = "holder-img"; 
+                
+                // 绑定点击事件，打开自定义 Modal
+                img.onclick = function() {
+                    openDetailModal(image.src);
+                };
 
-            const caption = document.createElement("div");
-            caption.className = "caption";
-            caption.textContent = image.description || "";
+                const caption = document.createElement("div");
+                caption.className = "caption";
+                caption.textContent = image.description || "";
 
-            item.appendChild(img);
-            item.appendChild(caption);
-            columns[index % columnCount].appendChild(item);
-        });
-    }
-
-    // 键盘支持 (可选：按左右键切换，ESC关闭)
-    document.addEventListener('keydown', function(e) {
-        if ($(".papermaskDetail").is(":visible")) {
-            if (e.key === "ArrowLeft") navigateImage(-1);
-            if (e.key === "ArrowRight") navigateImage(1);
-            if (e.key === "Escape") paperShowHide();
+                item.appendChild(img);
+                item.appendChild(caption);
+                columns[index % columnCount].appendChild(item);
+            });
         }
-    });
+
         // 初始化
         $(document).ready(function() {
             // 默认加载第一个 tab
             arrangeWaterfall("galleryContainer", galleryImages);
           
-    // [修改] 定义一个变量来存储定时器 ID
-    var hoverTimeout;
-
-    // [修改] 鼠标悬停(Hover)切换 Tab 功能 - 加入延迟防抖
-    $('.nav-link').on('mouseenter', function() {
-        var _this = this; // 保存当前的 tab 元素上下文
-        
-        // 设定 500 毫秒 (0.5秒) 后执行切换
-        hoverTimeout = setTimeout(function() {
-            var tabTrigger = new bootstrap.Tab(_this);
-            tabTrigger.show();
-        }, 250); 
-
-    }).on('mouseleave', function() {
-        // 如果在 0.5 秒内鼠标移出了，就取消这个定时器，不进行切换
-        clearTimeout(hoverTimeout);
-    });
+            // [新增] 鼠标悬停(Hover)切换 Tab 功能
+            // 这里使用了 Bootstrap 的 Tab 实例方法来实现更丝滑的切换
+            $('.nav-link').on('mouseenter', function() {
+                var tabTrigger = new bootstrap.Tab(this);
+                tabTrigger.show();
+            });
 
             // Tab 切换监听
             $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -1576,49 +1222,6 @@ const otherCharImages = [
                 arrangeWaterfall(containerId, array);
             });
         });
-
-        (function() {
-    const textContent = `二次創作における恋愛的な解釈については、私もすんなり受け入れます。純粋で美しい愛情を描くのも、不健全で歪んだ、さらには暗く湿った感情を表現するのも、どちらもすごく楽しんで鑑賞しています。
-ただ、本家の設定においては、SLは単純な恋愛関係ではないが確かにそこに愛があることは間違いないです。
-それに、Lって人はほんと自由すぎてカッコよすぎる。誰とでも一期一会でパッと火花散らせるけど、誰のそばにも長くは留まらない。愛だってLを縛れない。
-二人は師弟、主従、母娘、神と信徒、革命の戦友であり……こうした様々な立場が重なり合って、彼女たちの間に深いかつ複雑な絆を築き上げています。
-この絆の核心は、単一のラベルを超えた、もっと深い愛にあるのです。`;
-
-    const typewriterEl = document.getElementById('cmd-typewriter');
-    let charIndex = 0;
-    let isTyping = false;
-
-    function type() {
-        if (charIndex < textContent.length) {
-            typewriterEl.textContent += textContent.charAt(charIndex);
-            charIndex++;
-            
-            // [调整] 速度优化：原本是 30~80ms，现在改为 10~50ms，整体快了约 1.5 倍
-            // 遇到逗号或句号时，稍微停顿一下，模拟人类思考
-            let delay = Math.random() * 40 + 10;
-            const char = textContent.charAt(charIndex - 1);
-            if (char === '。' || char === '、') {
-                delay += 100; // 标点符号处额外停顿
-            }
-            
-            setTimeout(type, delay);
-        }
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !isTyping) {
-                isTyping = true;
-                type();
-            }
-        });
-    }, { threshold: 0.1 });
-
-    const wrapper = document.getElementById('terminal-wrapper');
-    if (wrapper) {
-        observer.observe(wrapper);
-    }
-})();
     </script>
 </body>
 </html>
