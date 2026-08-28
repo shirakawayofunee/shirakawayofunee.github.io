@@ -36,7 +36,8 @@ export default {
         name: `Doyle｜刑事`,
         avatar: `img/dh/doyle.jpg`,
         note: `支局の刑事で、「GARDEN」による一連の暗殺事件を担当してるよ。`,
-        basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`
+        basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
+        profile: `所属：ニューシティ治安局`
       },
     ],
     synopsis: `工事中`

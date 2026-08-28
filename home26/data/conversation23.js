@@ -27,7 +27,7 @@ export default {
         note: `廃棄期限まであと一ヶ月しかない道具。他人の苦しみと命を代償に、自分のかすかな希望を買う?`
       },
       {
-        name: `工事中`,
+        name: `EDGE`,
         avatar: `img/dh/`,
         note: `工事中`
       }
