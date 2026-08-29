@@ -12,6 +12,13 @@ const categories = [
 // 2. 章节数据库 (请在这里录入所有章节信息)
 const chapterList = [
   {
+    id: "conversation0",
+    category: "bluerain",
+    title: "000「雨夜」",
+    subtitle: "Blue Rain",
+    dateLabel: "N.F.113/7/19",
+  },
+  {
     id: "conversation1",
     category: "bluerain",
     title: "001「招かれざる客」",
@@ -64,7 +71,7 @@ const chapterList = [
     id: "conversation8",
     category: "flower",
     title: "101「追悼式」",
-    subtitle: "Flora Part.Ⅰ",
+    subtitle: "Part.Ⅰ 究明",
     dateLabel: "N.F.113/8/8/09:00",
   },
   {
@@ -106,7 +113,7 @@ const chapterList = [
     id: "conversation14",
     category: "flower",
     title: "201「創傷」",
-    subtitle: "Flora Part.Ⅱ",
+    subtitle: "Part.Ⅱ 疾走",
     dateLabel: "N.F.113/8/10/15:20",
   },
   {
@@ -169,7 +176,7 @@ const chapterList = [
     id: "conversation23",
     category: "flower",
     title: "301「西区作戦」",
-    subtitle: "Flora Part.Ⅲ",
+    subtitle: "Part.Ⅲ 遷延",
     dateLabel: "N.F.113/8/17/14:23",
   },
   {
@@ -204,7 +211,7 @@ const chapterList = [
     id: "conversation28",
     category: "flower",
     title: "401「残花の復讐」",
-    subtitle: "Flora Part.Ⅳ",
+    subtitle: "Part.Ⅳ 終局",
     dateLabel: "N.F.113/8/26/02:13",
   },
   {
@@ -238,7 +245,14 @@ const chapterList = [
   {
     id: "conversation33",
     category: "weak",
-    title: "501「」",
+    title: "501「Citadel」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.113/11/",
+  },
+  {
+    id: "conversation34",
+    category: "weak",
+    title: "502「襲撃」",
     subtitle: "The Weak",
     dateLabel: "N.F.113/11/",
   },
@@ -313,64 +327,75 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- 1. 初始化分类标签 ---
 function initTabs() {
   const container = document.getElementById("category-tabs");
+  if (!container) return;
+  
+  container.innerHTML = ''; // 规避重复渲染
+
   categories.forEach((cat) => {
     const btn = document.createElement("button");
     btn.className = "tab-btn";
     btn.textContent = cat.name;
     btn.dataset.id = cat.id;
-    if (cat.id === "all") btn.classList.add("active");
+    
+    // 初始化高亮状态
+    if (cat.id === currentCategory) btn.classList.add("active");
 
     btn.onclick = () => {
+      // 切换按钮高亮样式
       document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
+      // 更新全局当前的分类 ID
       currentCategory = cat.id;
-      document.getElementById("chapter-search").value = "";
-      renderList();
+      
+      // 没有任何多余负担，直接纯净重新渲染
+      renderList(); 
     };
+    
     container.appendChild(btn);
   });
 }
 
 // --- 2. 渲染章节列表 ---
-function renderList(searchText = "") {
-    const listContainer = document.getElementById('chapter-list');
-    listContainer.innerHTML = '';
+function renderList() {
+  const listContainer = document.getElementById('chapter-list');
+  if (!listContainer) return;
+  listContainer.innerHTML = '';
 
-    const filtered = chapterList.filter(item => {
-        const matchCategory = currentCategory === 'all' || item.category === currentCategory;
-        const matchText = item.title.toLowerCase().includes(searchText.toLowerCase()) ||
-                          item.subtitle.toLowerCase().includes(searchText.toLowerCase());
-        return matchCategory && matchText;
-    });
+  // 此时过滤只看分类，再也没有搜索框的干扰了
+  const filtered = chapterList.filter(item => {
+      return currentCategory === 'all' || 
+             (item.category && item.category.toLowerCase() === currentCategory.toLowerCase());
+  });
 
-    filtered.forEach(item => {
-        const el = document.createElement('div');
-        el.className = 'chapter-item';
-        el.dataset.id = item.id;
-        
-        if (window.location.hash.substring(1) === item.id) {
-            el.classList.add('active');
-        }
+  // 生成 DOM
+  filtered.forEach(item => {
+      const el = document.createElement('div');
+      el.className = 'chapter-item';
+      el.dataset.id = item.id;
+      
+      if (window.location.hash.substring(1) === item.id) {
+          el.classList.add('active');
+      }
 
-        el.innerHTML = `
-            <span class="chap-title">${item.title}</span>
-            <div class="chap-arrow-box">
-                <svg class="custom-arrow" viewBox="0 0 12 12">
-                    <line x1="0.5" y1="6" x2="10" y2="6" stroke-linecap="round"></line>
-                    <polyline points="7 3 10 6 7 9" stroke-linecap="round" stroke-linejoin="round"></polyline>
-                </svg>
-            </div>
-            <span class="chap-subtitle">${item.subtitle}</span>
-            <span class="chap-date">${item.dateLabel}</span>
-        `;
+      el.innerHTML = `
+          <span class="chap-title">${item.title}</span>
+          <div class="chap-arrow-box">
+              <svg class="custom-arrow" viewBox="0 0 12 12">
+                  <line x1="0.5" y1="6" x2="10" y2="6" stroke-linecap="round"></line>
+                  <polyline points="7 3 10 6 7 9" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg>
+          </div>
+          <span class="chap-subtitle">${item.subtitle}</span>
+          <span class="chap-date">${item.dateLabel}</span>
+      `;
 
-        el.onclick = () => {
-            window.location.hash = item.id;
-        };
+      el.onclick = () => {
+          window.location.hash = item.id;
+      };
 
-        listContainer.appendChild(el);
-    });
+      listContainer.appendChild(el);
+  });
 }
 
 // --- 3. 路由处理 ---
@@ -453,7 +478,7 @@ async function loadChapter(chapterId) {
     console.error(err);
     scriptDiv.innerHTML = '';
     if (headerBox) scriptDiv.appendChild(headerBox);
-    scriptDiv.insertAdjacentHTML('beforeend', `<div class="narration" style="color:#D40F30">无法打开卷宗: ${chapterId}</div>`);
+    scriptDiv.insertAdjacentHTML('beforeend', `<div class="narration" style="color:#D40F30">: ${chapterId}</div>`);
   }
 }
 
@@ -516,6 +541,10 @@ function renderScript(script, defaultBgm = "") {
   const titleBox = document.getElementById("chapter-title-box"); 
   const headerBox = document.getElementById("script-header");
   container.innerHTML = "";
+  if (wasBgmPlayingBeforeVideo) {
+    toggleMusic('play');
+    wasBgmPlayingBeforeVideo = false;
+  }
   if (titleBox) container.appendChild(titleBox);
   if (headerBox) container.appendChild(headerBox);
 
@@ -566,6 +595,33 @@ function renderScript(script, defaultBgm = "") {
       } else if (line.type === "image") {
           div.className = "message-row";
           div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
+
+      } else if (line.type === "video") {
+          div.className = "message-row";
+          
+          const showControls = line.controls !== false ? "controls" : "";
+          const isAutoplay = line.autoplay ? "autoplay" : "";
+          const isLoop = line.loop ? "loop" : "";
+          const isMuted = line.muted ? "muted" : "";
+          const posterAttr = line.poster ? `poster="${line.poster}"` : "";
+            
+          div.innerHTML = `
+            <div class="narration">
+                <video 
+                    src="${line.src}" 
+                    class="cg-video" 
+                    ${showControls} 
+                    ${isAutoplay} 
+                    ${isLoop} 
+                    ${isMuted} 
+                    ${posterAttr} 
+                    playsinline
+                    onplay="handleVideoPlay(this)"
+                    onpause="handleVideoPause(this)"
+                    onended="handleVideoPause(this)">
+                </video>
+            </div>
+          `;
       
       } else if (line.type === "dialogue") {
           const pos = line.position === "right" ? "pos-right" : "pos-left";
@@ -573,9 +629,23 @@ function renderScript(script, defaultBgm = "") {
           
           const customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
           
+          // 1. 【更新核心逻辑】：判断是否有头像，如果有才渲染，没有头像则保持为空（不再生成占位符）
+          const avatarHTML = line.avatar 
+              ? `<img src="${line.avatar}" class="avatar">` 
+              : ``;
+          
+          // 2. 判断是否有名字
+          const nameHTML = line.name 
+              ? `<div class="message-name">${line.name}</div>` 
+              : ``;
+
+          // 3. 渲染页面（无头像时，由于 avatarHTML 为空，整体会自动靠边贴紧）
           div.innerHTML = `
-              <img src="${line.avatar}" class="avatar">
-              <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
+              ${avatarHTML}
+              <div class="message-content">
+                  ${nameHTML}
+                  <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
+              </div>
           `;
       }
       container.appendChild(div);
@@ -583,7 +653,55 @@ function renderScript(script, defaultBgm = "") {
 }
 
 // --- 6. 渲染右侧信息 ---
+// =========================================================================
+// 新增辅助函数：专门用来将 profile 里的多行“键：值”转换为两端对齐、带下划线的 HTML
+// =========================================================================
+function parseProfile(text) {
+  if (!text) return "";
+  
+  // 1. 按换行切分，洗掉多余空格，并过滤空行
+  const lines = String(text)
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0);
+
+  let html = '<div class="oc-profile-section">';
+  
+  lines.forEach(line => {
+    // 2. 寻找中英文冒号，分离键与值
+    const colonIndex = line.indexOf('：') !== -1 ? line.indexOf('：') : line.indexOf(':');
+    if (colonIndex !== -1) {
+      const key = line.substring(0, colonIndex).trim();
+      const value = line.substring(colonIndex + 1).trim();
+      html += `
+        <div class="profile-row">
+          <span class="profile-label">${key}</span>
+          <span class="profile-value">${value}</span>
+        </div>
+      `;
+    } else {
+      // 备用：如不含冒号则整行展示
+      html += `
+        <div class="profile-row">
+          <span class="profile-label">${line}</span>
+          <span class="profile-value"></span>
+        </div>
+      `;
+    }
+  });
+  
+  html += '</div>';
+  return html;
+}
+
+// =========================================================================
+// 主渲染函数：已整合您原本的所有逻辑（词汇表、角色卡、简介渲染）
+// =========================================================================
 function renderInfo(info) {
+  
+  // ----------------------------------------------------
+  // 1. 【完全保留】您原先的 glossary 词汇表渲染与 GSAP 初始化
+  // ----------------------------------------------------
   const glossaryDiv = document.getElementById("glossary-container");
   glossaryDiv.innerHTML = "";
   
@@ -591,7 +709,7 @@ function renderInfo(info) {
     info.glossary.forEach((g) => {
       const item = document.createElement("div");
       item.className = "glossary-item";
-      // 移除 inline onclick，将 ▼ 替换为 + （符合你截图中的风格）
+      // 移除 inline onclick，将 ▼ 替换为 +
       item.innerHTML = `
         <div class="glossary-term">
             <div class="term-text">${g.term}</div>
@@ -608,32 +726,46 @@ function renderInfo(info) {
     initAccordion(glossaryDiv);
   }
 
+  // ----------------------------------------------------
+  // 2. 【核心更新】角色卡片渲染
+  // ----------------------------------------------------
   const charDiv = document.getElementById("characters-container");
   charDiv.innerHTML = "";
   
   if (info && info.characters) {
     info.characters.forEach((c) => {
       
-      // 1. 判断该角色是否需要交替排版（需在你的数据中设置 isReverse: true）
+      // A. 判断该角色是否需要交替排版
       const reverseClass = c.isReverse ? 'style-reverse' : '';
   
-    // 2. 【核心修复】：清洗文本里的“代码缩进空格”
-    let cleanNote = "";
-    if (c.note) {
-      // 按换行符把文字切成一行行 -> 洗掉每一行前后的多余空格 -> 再拼回去
-      cleanNote = String(c.note)
-        .split('\n')
-        .map(line => line.trim()) 
-        .join('\n')
-        .trim(); // 最后再把首尾可能因为纯回车产生的空行洗掉
-    }
+      // B. 修复您原先代码中的一个细节：原先定义了 cleanNote 却在渲染时错用了 c.note
+      // 这里清洗了 note 里的冗余代码缩进空格
+      let cleanNote = "";
+      if (c.note) {
+        cleanNote = String(c.note)
+          .split('\n')
+          .map(line => line.trim()) 
+          .join('\n')
+          .trim();
+      }
 
-    // 3.  只有当 note 字段有实质内容时，才渲染底部描述区域
-      // .trim() 是为了防止你不小心敲了几个纯空格导致空块出现
-      const hasNote = c.basicStats && c.basicStats.trim() !== ''; 
+      // C. 【新增核心】：如果数据有 c.profile（两端对齐的数据），就调用辅助函数渲染
+      // 如果数据里没有配置 profile 字段，则输出空字符串，不占用卡片上的任何空间
+      const profileHTML = c.profile ? parseProfile(c.profile) : '';
+
+      // D. 清理并准备渲染 bottomSection (basicStats 区域)
+      let cleanBasicStats = "";
+      if (c.basicStats) {
+        cleanBasicStats = String(c.basicStats)
+          .split('\n')
+          .map(line => line.trim()) 
+          .join('\n')
+          .trim();
+      }
+      const hasNote = cleanBasicStats !== ''; 
       const bottomSectionHTML = hasNote ? `
           <div class="oc-bottom-section">
-            <div class="oc-summary-text">${c.basicStats}</div>
+            <div class="oc-summary-text">${cleanBasicStats}</div>
           </div>
       ` : '';
   
@@ -651,12 +783,14 @@ function renderInfo(info) {
             </div>
             <div class="oc-info-box">
               <h4 class="oc-name">${c.name || ''}</h4>
-              <div class="oc-stats">${c.note || ''}</div>
+              <!-- 此处已替换为已洗掉缩进空格的 cleanNote -->
+              <div class="oc-stats">${cleanNote || ''}</div>
             </div>
           </div>
-  
           <!-- 下半区：动态渲染（若无内容则为完全不生成该 div，不会留有空隙） -->
           ${bottomSectionHTML}
+          <!-- 【新增区】：动态生成两端对齐带下划线的属性（若没有该字段则不产生多余空隙） -->
+          ${profileHTML}
   
         </div>
       `;
@@ -664,28 +798,12 @@ function renderInfo(info) {
       charDiv.appendChild(card);
     });
   }
-  
-  // 假设这是从你的 info 对象中读取的真实数据结构
-  // 如果你的字段名不同，请修改下方模板字符串 ${c.xxx} 里的变量名
-  /* 
-    模拟数据格式参考：
-    info.characters = [
-      {
-        avatar: "image1.jpg",
-        name: "이름", (名字)
-        basicStats: "나이 | 성별 | 키 | 몸무게 | 체형", (基本信息栏)
-        job: "무직", (职业)
-        birthday: "10월 21일", (生日)
-        like: "닭강정, 초콜릿", (喜欢)
-        hate: "브로콜리, 운동", (讨厌)
-        summary: "내용을 적습니다. 내용을 적습니다..." (详情描述)
-      }, ...
-    ]
-  */
 
-
+  // ----------------------------------------------------
+  // 3. 【完全保留】您原先的 synopsis 简介渲染
+  // ----------------------------------------------------
   const synDiv = document.getElementById("synopsis-container");
-  synDiv.innerHTML = info.synopsis || "暂无记录";
+  synDiv.innerHTML = info.synopsis || "工事中";
 }
 
 // --- 辅助功能 ---
@@ -806,6 +924,41 @@ function setupAudioUnlock() {
   // 使用捕获阶段 (true)，确保在其他按钮事件触发前，先解除音频锁定
   document.body.addEventListener('click', unlockHandler, true);
   document.body.addEventListener('touchstart', unlockHandler, { passive: true, capture: true });
+}
+
+// 新增：用来记录视频播放前，BGM 是否处于播放状态的全局变量
+let wasBgmPlayingBeforeVideo = false;
+
+// 新增：视频播放时的逻辑
+function handleVideoPlay(videoElement) {
+    console.log("[视频事件] 开始播放");
+    
+    // 如果当前 BGM 正在播放，我们需要暂停它并记录状态
+    if (isMusicPlaying) {
+        wasBgmPlayingBeforeVideo = true;
+        toggleMusic('pause'); // 调用您原有的函数，暂停 BGM 并更新 UI
+        console.log("[联动] 已自动暂停 BGM 并记录了播放状态");
+    }
+}
+
+// 新增：视频暂停或结束时的逻辑
+function handleVideoPause(videoElement) {
+    console.log("[视频事件] 暂停或结束");
+    
+    // 检查页面上是否还有其他正在播放的视频（防止多视频并存时互相干扰）
+    const allVideos = document.querySelectorAll('.cg-video');
+    const isAnyVideoPlaying = Array.from(allVideos).some(video => {
+        return !video.paused && !video.ended && video !== videoElement;
+    });
+
+    // 如果没有任何视频在播放了，且进入视频前 BGM 是开启的，则恢复 BGM
+    if (!isAnyVideoPlaying) {
+        if (wasBgmPlayingBeforeVideo) {
+            toggleMusic('play'); // 调用您原有的函数，恢复播放并更新 UI
+            wasBgmPlayingBeforeVideo = false; // 重置记录状态
+            console.log("[联动] 无其他视频播放，已恢复 BGM");
+        }
+    }
 }
 // --- 沉浸模式：隐藏顶部悬浮工具栏 ---
 function enableImmersiveMode() {

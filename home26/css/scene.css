@@ -626,6 +626,73 @@ html {
     text-align: right;
 }
 
+/* 選択肢行のレイアウト調整 */
+.choice-row {
+    justify-content: center !important;
+    width: 100%;
+}
+
+.choice-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 16px 0;
+}
+
+/* 画像のデザインを再現したボタンのスタイル */
+.choice-btn-custom {
+    display: block;
+    width: 100%;
+    max-width: 500px; /* 必要に応じてサイズをご調整ください */
+    min-height: 44px;
+    padding: 10px 24px;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    color: #f1f1f1;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline: none;
+    
+    /* 右側のみ赤いボーダーと角丸を適用 */
+    border: 1px solid #a31c1c; 
+    border-left: none; 
+    border-radius: 0 6px 6px 0;
+
+    /* 
+      1. 斜線パターンのレイヤー (微細な縞模様)
+      2. 左から右にかけてフェードインする暗赤色のグラデーション
+    */
+    background-image: 
+        repeating-linear-gradient(
+            -45deg, 
+            rgba(255, 255, 255, 0.03) 0px, 
+            rgba(255, 255, 255, 0.03) 1px, 
+            transparent 1px, 
+            transparent 6px
+        ),
+        linear-gradient(
+            to right, 
+            rgba(0, 0, 0, 0) 0%, 
+            rgba(65, 8, 8, 0.5) 15%, 
+            rgba(105, 14, 14, 0.8) 50%, 
+            rgba(115, 14, 14, 0.95) 100%
+        );
+
+    transition: filter 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+/* ホバー・クリック時の演出 */
+.choice-btn-custom:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 10px rgba(163, 28, 28, 0.4);
+    color: #ffffff;
+}
+
+.choice-btn-custom:active {
+    transform: scale(0.99);
+}
+
 /* =========================================================================
    5. 特殊气泡与旁白样式 (回想、崩溃、系统日志、加密无线电等)
    ========================================================================= */

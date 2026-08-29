@@ -536,120 +536,134 @@ function updateHeaderFromJSON(chapterId, data) {
 }
 
 // --- 5. 渲染正文 ---
+// 選択肢クリック時のプレースホルダー関数（すでに定義済みの場合は不要です）
+window.handleChoiceClick = window.handleChoiceClick || function(index, text) {
+  console.log(`Choice clicked: Index ${index}, Text: "${text}"`);
+};
+
 function renderScript(script, defaultBgm = "") {
-  const container = document.getElementById("script-content");
-  const titleBox = document.getElementById("chapter-title-box"); 
-  const headerBox = document.getElementById("script-header");
-  container.innerHTML = "";
-  if (wasBgmPlayingBeforeVideo) {
-    toggleMusic('play');
-    wasBgmPlayingBeforeVideo = false;
-  }
-  if (titleBox) container.appendChild(titleBox);
-  if (headerBox) container.appendChild(headerBox);
+const container = document.getElementById("script-content");
+const titleBox = document.getElementById("chapter-title-box"); 
+const headerBox = document.getElementById("script-header");
+container.innerHTML = "";
+if (wasBgmPlayingBeforeVideo) {
+  toggleMusic('play');
+  wasBgmPlayingBeforeVideo = false;
+}
+if (titleBox) container.appendChild(titleBox);
+if (headerBox) container.appendChild(headerBox);
 
-  VoiceManager.reset(script);
+VoiceManager.reset(script);
 
-  let currentLineBgm = defaultBgm;
+let currentLineBgm = defaultBgm;
 
-  script.forEach((line, index) => {
-      const div = document.createElement("div");
-      div.id = `msg-row-${index}`;
+script.forEach((line, index) => {
+    const div = document.createElement("div");
+    div.id = `msg-row-${index}`;
 
-      if (line.bgm) {
-          currentLineBgm = line.bgm;
-      }
-      if (currentLineBgm) {
-          div.setAttribute("data-bgm", currentLineBgm);
-      }
+    if (line.bgm) {
+        currentLineBgm = line.bgm;
+    }
+    if (currentLineBgm) {
+        div.setAttribute("data-bgm", currentLineBgm);
+    }
 
-      let voiceBtnHtml = '';
+    let voiceBtnHtml = '';
 
-      if (line.voice) {
-          if (Array.isArray(line.voice)) {
-              voiceBtnHtml += '<span class="voice-group">'; 
-              line.voice.forEach((v, subIndex) => {
-                  const safePath = v.path.replace(/#/g, '%23');
-                  voiceBtnHtml += `<button id="voice-btn-${index}-${subIndex}" class="voice-tag" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', ${subIndex})" title="Play ${v.label}">${v.label}</button>`;
-              });
-              voiceBtnHtml += '</span>';
-          } else {
-              const safePath = line.voice.replace(/#/g, '%23');
-              voiceBtnHtml = `<button id="voice-btn-${index}-0" class="voice-btn" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', 0)" title="Play Voice"><svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z"></path></svg></button>`;
-          }
-      }
-
-      if (line.type === "narration") {
-        div.className = "message-row";
-        let customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
-        let displayText = line.text;
-
-        if (customBubbleClass === "secret-comm") {
-            let regex = /(^|<br>|\n)\s*([^:：<]+[:：])/g;
-            displayText = displayText.replace(regex, '$1<span class="comm-speaker">$2</span>');
-            displayText = `<div class="comm-header">--- ENCRYPTED_CHANNEL ---</div><div class="comm-body"><span class="comm-bracket">[</span> ${displayText} <span class="comm-bracket">]</span></div>`;
+    if (line.voice) {
+        if (Array.isArray(line.voice)) {
+            voiceBtnHtml += '<span class="voice-group">'; 
+            line.voice.forEach((v, subIndex) => {
+                const safePath = v.path.replace(/#/g, '%23');
+                voiceBtnHtml += `<button id="voice-btn-${index}-${subIndex}" class="voice-tag" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', ${subIndex})" title="Play ${v.label}">${v.label}</button>`;
+            });
+            voiceBtnHtml += '</span>';
+        } else {
+            const safePath = line.voice.replace(/#/g, '%23');
+            voiceBtnHtml = `<button id="voice-btn-${index}-0" class="voice-btn" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', 0)" title="Play Voice"><svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z"></path></svg></button>`;
         }
+    }
 
-        div.innerHTML = `<div class="narration ${customBubbleClass}">${displayText}</div>`;
-    
-      } else if (line.type === "image") {
-          div.className = "message-row";
-          div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
+    if (line.type === "narration") {
+      div.className = "message-row";
+      let customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
+      let displayText = line.text;
 
-      } else if (line.type === "video") {
-          div.className = "message-row";
-          
-          const showControls = line.controls !== false ? "controls" : "";
-          const isAutoplay = line.autoplay ? "autoplay" : "";
-          const isLoop = line.loop ? "loop" : "";
-          const isMuted = line.muted ? "muted" : "";
-          const posterAttr = line.poster ? `poster="${line.poster}"` : "";
-            
-          div.innerHTML = `
-            <div class="narration">
-                <video 
-                    src="${line.src}" 
-                    class="cg-video" 
-                    ${showControls} 
-                    ${isAutoplay} 
-                    ${isLoop} 
-                    ${isMuted} 
-                    ${posterAttr} 
-                    playsinline
-                    onplay="handleVideoPlay(this)"
-                    onpause="handleVideoPause(this)"
-                    onended="handleVideoPause(this)">
-                </video>
-            </div>
-          `;
-      
-      } else if (line.type === "dialogue") {
-          const pos = line.position === "right" ? "pos-right" : "pos-left";
-          div.className = `message-row ${pos}`;
-          
-          const customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
-          
-          // 1. 【更新核心逻辑】：判断是否有头像，如果有才渲染，没有头像则保持为空（不再生成占位符）
-          const avatarHTML = line.avatar 
-              ? `<img src="${line.avatar}" class="avatar">` 
-              : ``;
-          
-          // 2. 判断是否有名字
-          const nameHTML = line.name 
-              ? `<div class="message-name">${line.name}</div>` 
-              : ``;
-
-          // 3. 渲染页面（无头像时，由于 avatarHTML 为空，整体会自动靠边贴紧）
-          div.innerHTML = `
-              ${avatarHTML}
-              <div class="message-content">
-                  ${nameHTML}
-                  <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
-              </div>
-          `;
+      if (customBubbleClass === "secret-comm") {
+          let regex = /(^|<br>|\n)\s*([^:：<]+[:：])/g;
+          displayText = displayText.replace(regex, '$1<span class="comm-speaker">$2</span>');
+          displayText = `<div class="comm-header">--- ENCRYPTED_CHANNEL ---</div><div class="comm-body"><span class="comm-bracket">[</span> ${displayText} <span class="comm-bracket">]</span></div>`;
       }
-      container.appendChild(div);
-  });
+
+      div.innerHTML = `<div class="narration ${customBubbleClass}">${displayText}</div>`;
+  
+    } else if (line.type === "choice") {
+        // 【追加】選択肢（choice）のレンダリング処理
+        div.className = "message-row choice-row";
+        const safeText = (line.text || "").replace(/'/g, "\\'");
+        div.innerHTML = `
+          <div class="choice-container">
+              <button class="choice-btn-custom" onclick="event.stopPropagation(); handleChoiceClick(${index}, '${safeText}')">
+                  ${line.text || ""}
+              </button>
+          </div>
+        `;
+
+    } else if (line.type === "image") {
+        div.className = "message-row";
+        div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
+
+    } else if (line.type === "video") {
+        div.className = "message-row";
+        
+        const showControls = line.controls !== false ? "controls" : "";
+        const isAutoplay = line.autoplay ? "autoplay" : "";
+        const isLoop = line.loop ? "loop" : "";
+        const isMuted = line.muted ? "muted" : "";
+        const posterAttr = line.poster ? `poster="${line.poster}"` : "";
+          
+        div.innerHTML = `
+          <div class="narration">
+              <video 
+                  src="${line.src}" 
+                  class="cg-video" 
+                  ${showControls} 
+                  ${isAutoplay} 
+                  ${isLoop} 
+                  ${isMuted} 
+                  ${posterAttr} 
+                  playsinline
+                  onplay="handleVideoPlay(this)"
+                  onpause="handleVideoPause(this)"
+                  onended="handleVideoPause(this)">
+              </video>
+          </div>
+        `;
+    
+    } else if (line.type === "dialogue") {
+        const pos = line.position === "right" ? "pos-right" : "pos-left";
+        div.className = `message-row ${pos}`;
+        
+        const customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
+        
+        const avatarHTML = line.avatar 
+            ? `<img src="${line.avatar}" class="avatar">` 
+            : ``;
+        
+        const nameHTML = line.name 
+            ? `<div class="message-name">${line.name}</div>` 
+            : ``;
+
+        div.innerHTML = `
+            ${avatarHTML}
+            <div class="message-content">
+                ${nameHTML}
+                <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
+            </div>
+        `;
+    }
+    container.appendChild(div);
+});
 }
 
 // --- 6. 渲染右侧信息 ---
