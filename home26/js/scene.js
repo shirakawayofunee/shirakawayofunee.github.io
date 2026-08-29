@@ -254,7 +254,14 @@ const chapterList = [
     category: "weak",
     title: "502「襲撃」",
     subtitle: "The Weak",
-    dateLabel: "N.F.113/11/",
+    dateLabel: "N.F.113.11.22",
+  },
+  {
+    id: "conversation35",
+    category: "weak",
+    title: "503「厳冬」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.113.11.23/19:38",
   },
   {
     id: "side01",
