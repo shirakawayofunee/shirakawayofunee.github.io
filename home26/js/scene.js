@@ -275,7 +275,7 @@ const chapterList = [
     category: "weak",
     title: "505「礎石」",
     subtitle: "The Weak",
-    dateLabel: "N.F.104.11.23/19:38",
+    dateLabel: "N.F.104",
   },
   {
     id: "side01",

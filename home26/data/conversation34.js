@@ -94,7 +94,7 @@ edge-03：必ず勝利を掴め。手段は問わない。代償も問わない�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `我々の担当業務です、長官。この件にご関心を持っていただけて、光栄です。ちょうど、この業務と私の上司に関する報告書があります。ぜひ、ご覧ください。`,
     },
@@ -114,21 +114,21 @@ edge-03：必ず勝利を掴め。手段は問わない。代償も問わない�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `襲撃を受けた執行官は、私の直属の上司――ドンです。三週間前、ドン氏は巡回中に行方不明になりました。これが、我々が見つけた最後の手がかりです。疑いようもありません。これは、相手側からの脅迫であり、挑発です。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `過激派による暴力的な襲撃。一般市民による、非暴力的な不服従。これらすべてが、一つの原因を示しています。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `錆火の暴動そのものは鎮圧しました。ですが、民衆の怒りまで解消されたわけではありません。彼らは城邦を信頼していない。そして、西区で起きたすべての不幸を、我々の責任だと考えています。`,
     },
@@ -145,7 +145,7 @@ edge-03：必ず勝利を掴め。手段は問わない。代償も問わない�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `おっしゃるとおりです。`,
     },
@@ -182,7 +182,7 @@ edge-03：必ず勝利を掴め。手段は問わない。代償も問わない�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `了解しました、長官。直ちに準備へ入ります。`,
     },
@@ -229,7 +229,7 @@ edge-03：必ず勝利を掴め。手段は問わない。代償も問わない�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `あれは錆火の能力者。高危険度です。\n\n一人だけなら、この装備でも多少は時間を稼げる。私が足止めします。あなたたちは支援を呼んでください。`,
     },
@@ -246,7 +246,7 @@ edge-03：必ず勝利を掴め。手段は問わない。代償も問わない�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `本部へ通達。マチルダ巡回隊、正体不明の能力者による襲撃を受けた。敵の攻撃性は極めて高い。支援を要請する。支援を要請する。`,
     },
@@ -370,7 +370,7 @@ edge-03：必ず勝利を掴め。手段は問わない。代償も問わない�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `キャヴェンディッシュです。拠点へ戻ったら、訓練なら付き合います。その代わり、仲間を挑発するのはやめてください。任務中に余計な問題を起こすのも。`,
     },
@@ -381,7 +381,7 @@ edge-03：必ず勝利を掴め。手段は問わない。代償も問わない�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `来るべきじゃなかった、ヘカテー。カスロなら、私一人でも対処できます。\n\nでも、あなたと錆火の協力関係をMBCCに知られるわけにはいません。`,
     },
@@ -406,7 +406,7 @@ edge-03：必ず勝利を掴め。手段は問わない。代償も問わない�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `そういう話は、安全な場所でするものです。`,
     },
@@ -417,7 +417,7 @@ edge-03：必ず勝利を掴め。手段は問わない。代償も問わない�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda_wz.png`,
       name: `マチルダ`,
       text: `これで「襲撃現場」は偽装できました。執行委員会も疑わないでしょう。向こうも、ほかにやることが山ほどありますから。\n\n迎えに来てくれてありがとう。さあ、拠点へ戻りましょう。`,
     },

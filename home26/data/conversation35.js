@@ -21,6 +21,13 @@ export default {
     ],
     characters: [
       {
+        name: `ヘカテ`,
+        avatar: `img/dh/hecate.png`,
+        note: `局長を探し求める能力者。`,
+        basicStats: `心を閉ざし、周囲への不信感を露わにしながらヘラの病床に寄り添う。枷の汚染が進み精神が限界に達しつつある。`,
+        profile: `能力：悪夢（ナイトメア）の具現化`,
+      },
+      {
         name: `Matildaマチルダ`,
         avatar: `img/dh/matilda.png`,
         note: `西区復興執行委員会の上等兵`,
@@ -28,6 +35,20 @@ export default {
         profile: `所属：西区復興執行委員会
         危険度：A級
         能力：絶対銃器掌握`,
+      },
+      {
+        name: `ドナルド`,
+        avatar: `img/dh/don1.png`,
+        note: `地下拠点の周辺を窺っていた金髪の執行官。`,
+        basicStats: `ヘカテに対してフルーツキャンディをプレゼントする。マティルダの「天敵」であり旧知の存在。`,
+        profile: `所属：執行官`,
+      },
+      {
+        name: `コヒ`,
+        avatar: `img/dh/kexi.png`,
+        note: `「西区の影の守護神」と称される能力者。`,
+        basicStats: `シンジケートのストリートチルドレン組織のリーダー。無口ながら強大な力を持ち、陰から難民たちの安全を支える。`,
+        profile: `危険度：S級`,
       },
       {
         name: `ロフナ`,
@@ -49,27 +70,6 @@ export default {
         note: `局長直属の禁閉者（能力者）。`,
         basicStats: `暴動の最中に狂厄感染者に襲われ、重傷を負って以来、隔離病室で深い昏睡状態に陥り目覚めていない。`,
         profile: `能力：高速再生`,
-      },
-      {
-        name: `ヘカテ`,
-        avatar: `img/dh/hecate.png`,
-        note: `局長を探し求める能力者。`,
-        basicStats: `心を閉ざし、周囲への不信感を露わにしながらヘラの病床に寄り添う。枷の汚染が進み精神が限界に達しつつある。`,
-        profile: `能力：悪夢（ナイトメア）の具現化`,
-      },
-      {
-        name: `コヒ`,
-        avatar: `img/dh/kexi.png`,
-        note: `「西区の影の守護神」と称される能力者。`,
-        basicStats: `シンジケートのストリートチルドレン組織のリーダー。無口ながら強大な力を持ち、陰から難民たちの安全を支える。`,
-        profile: `危険度：狂厄級`,
-      },
-      {
-        name: `ドナルド`,
-        avatar: `img/dh/don1.png`,
-        note: `地下拠点の周辺を窺っていた金髪の執行官。`,
-        basicStats: `ヘカテに対してフルーツキャンディをプレゼントする。マティルダの「天敵」であり旧知の存在。`,
-        profile: `所属：執行官`,
       },
     ],
     synopsis: `再建執行委員会による締め付けが強まる中、マティルダは責任者ロフナとともに東19地下拠点の移転を進める。重傷のヘラを守るヘカテは孤独に憔悴し、マティルダの説得を受けて難民の同行を決意。危険な汚染区域を抜ける道中、能力者のコヒ、そして謎の金髪執行官ドナルドと遭遇する。`,
@@ -104,15 +104,15 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `覚えている。局長がW-31最深部の半骸を排除し、新たなBR-002の発生も重なった結果、かつての第二黒環は完全に活動を停止した。今では利用可能な小規模異方晶鉱坑になっている。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `ある意味では、錆火がかつて目指していたことも、確かに実現したと言える。`,
     },
     {
@@ -143,8 +143,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `カバンディッシュだ。ええ、気にかけている。だからこそ、今も出口を探している。`,
     },
     {
@@ -168,8 +168,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `検討する。この後、拠点を移転する。経路上で危険に遭遇する可能性があるから、先に偵察してもらえる？`,
     },
     {
@@ -309,8 +309,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `あなたが私に謝る必要はない。`,
     },
     {
@@ -328,8 +328,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `そろそろ出発する。ロフナがあなたたちのことを心配している。`,
     },
     {
@@ -342,8 +342,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `枷を奪い、あなたたちを傷つけた者たちは、もう黒環の一部になった。ここには、あなたの敵はいない。ヘカテ。`,
     },
     {
@@ -356,8 +356,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `今のところ、何も分かっていない。`,
     },
     {
@@ -385,15 +385,15 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `あなたが憎む錆火は、もう全滅した。枷に執着して力を乱用し、狂厄に汚染され、侵食され、堕落した。憎しみに理性を焼き尽くされ、BR-002の一部になった。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `あなたも同じ道を行くつもり？友達をここに置き去りにして、局長の帰りも待たず、自分まで死役になる？`,
     },
     {
@@ -410,36 +410,36 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `ここに残ることを選んだのはあなた自身。他では得られない情報を手に入れるため。自分で私たちの側に立つと決めたなら、必要になるかもしれないものを、何もかも遠ざけないで。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `ロフナが流民寨で狂厄に感染した時、局長が自分から枷を使って汚染を抑えた。だから彼女は生き延び、禁閉者になれた。その時あなたは現場にいた。私よりよく知っているはず。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `彼女はあなたに何かを求めたことなんてない。あなたたちを守ろうとするのは、あの局長に救われたことへの恩返し。暴動の中からあなたたちを連れ戻した人間もいる。今も、あなたの局長を探し続けている人間がいる。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `私を信じなくてもいい。でも、信じられる人を探して。自分を閉じ込めないで。孤立している今のあなたは、精神まで限界に近づいている。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `ヘカテ。まだ前へ進みたいなら。誰かのために戦いたいなら。まず、自分の心を守って。`,
     },
     {
@@ -449,15 +449,15 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `執行委員会がすぐこの一帯を捜索する。難民たちは拠点を移す。一緒に来る？`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `MBCCへ送り届けることもできる。そうすれば、あなたはここから完全に離れられる。難民たちを城邦当局に巻き込ませるわけにはいかないし、あなたも二度と私たちと顔を合わせなくて済む。`,
     },
     {
@@ -470,8 +470,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `分かった。あなたは負傷者区画で患者を守って。枷の汚染が悪化している。今のあなたは戦闘に向いていない。`,
     },
     {
@@ -492,15 +492,15 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `妨害装置と警戒装置はすべて地上へ配置済み。執行委員会に発見されないためにも、慎重に進む。異変があれば、すぐに経路を変更。ただし、地下も安全ではない。向かう先は深度汚染区域。執行委員会の捜索を避けられるのは、あそこだけ。つまり、移動中に死役と遭遇する可能性が高い。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `まだ戦える者は準備して。この道中が無事に終わることはない。`,
     },
     {
@@ -560,15 +560,15 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `コヒ……か？久しぶり。本当に助かった。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `今は情報も簡単には届かない。迎えが来るなんて思ってなかったし、まさか来たのがあなただとは。ありがとう。コヒ。`,
     },
     {
@@ -589,8 +589,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `そう。どこにいるか、教えてくれる？`,
     },
     {
@@ -668,15 +668,15 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `さて、ヘカテ。こちらは執行官から情報を探りに来たスパイ。連れて行って。私が尋問する。`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      avatar: `img/dh/matilda1.png`,
+      name: `マチルダ`,
       text: `彼とは、積もる話がたくさんある。`,
     },
   ],

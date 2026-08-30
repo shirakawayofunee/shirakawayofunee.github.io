@@ -21,18 +21,19 @@ export default {
     ],
     characters: [
       {
-        name: `マチルダ`,
+        name: `Matildaマチルダ`,
         avatar: `img/dh/matilda.png`,
-        note: `西区復興執行委員会の副官であり上等兵。`,
-        basicStats: `ドナルドから知恵と支援を得つつ難民たちの過酷な生存圏を守る。彼の無謀な「綱引き」作戦を深く懸念する。`,
-        profile: `所属：西区復興執行委員会\n能力：長槍戦闘`
+        note: `西区復興執行委員会の上等兵`,
+        basicStats: `キャヴェンディッシュ家の令嬢。堅物で孤立を好むが、秘密裏に錆火を支援している。`,
+        profile: `所属：西区復興執行委員会
+        危険度：A級
+        能力：絶対銃器掌握`,
       },
       {
         name: `ドナルド`,
-        avatar: `img/dh/donald.png`,
+        avatar: `img/dh/don504.png`,
         note: `再建委員会に赴任した型破りな執行官。`,
-        basicStats: `マチルダの恩人であり、裏で流民寨を助け続けてきた謎多き人物。局長の命を救うため、自らの命をかけた大胆な作戦を企てる。`,
-        profile: `所属：再建委員会\n立場：長官`
+        basicStats: `裏で流民寨を助け続けてきた謎多き人物。`,
       },
       {
         name: `ドゥドゥ`,
@@ -86,7 +87,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `ヘカテはとても落ち込んでいます。あの人の消息を、ずっと待ち続けてきたんですから。`
     },
@@ -100,7 +101,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `見つからないよう努力なさってください。`
     },
@@ -134,7 +135,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `ですが、せっかくお越しいただいたのですから、もう少し知恵を貸してください。今の錆火の状況は、非常に扱いが難しい。\n\n各拠点が受け入れる難民は増える一方ですし、密輸で物資を備蓄する方法も、以前ほど頼りになりません。貴重品は言うまでもなく、食料にさえ何度か不足が出ています。\n\n福音地はいまだに狂厄を裏から活性化させています。W-31で採れる異方晶だけでは防護に必要な量を賄えず、分散していた拠点も消費を抑えるため統合せざるを得ません。しかし、基地周辺に集まれば、今度は再建委員会の「巡察」の標的になりやすい。\n\n今や黒環だけが最大の脅威ではありません。福音地と上庭の政策、その両方が西区の生存圏を圧迫しています。`
     },
@@ -148,7 +149,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `そんな桃源郷はありません。世界はすでに、狂厄という災害によって強く結びついています。\n\n新城も衛星城も、異邦でさえ西区の難民を受け入れようとはしません。感染の有無に関係なく、彼らは狂厄を運ぶ存在と見なされ、誰からも拒絶されています。かつての禁閉者と同じように。`
     },
@@ -162,7 +163,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `何もないところから新たな居住地を開拓するには、開拓者自身がもっと強く、前向きでなければなりません。今の西区の人々には、それができません。\n\n錆火の崩壊がもたらした影響はあまりにも大きい。人々は希望を信じることが難しくなり、精神的な支えを失い、士気は下がり続けています。`
     },
@@ -173,7 +174,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `私はただの新城出身者で、執行官です。彼らの苦境や気持ちを、本当の意味で理解することはできません。\n\nですから、ドナルド長官。本当に錆火の幹部たちと話すつもりはないんですか？　彼らはずっと、指導者になれる人を探しています。`
     },
@@ -198,7 +199,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `残念ながら、「catfish effect」は科学的根拠のない俗説です。ですが、お考えは理解しました。\n\nあなたは難民たちの抱える問題を、すでに十分理解している。なら、黙って見過ごすはずがありません。別の計画があるのでしょう。\n\n最近、難民キャンプの周辺に頻繁に姿を現しているのはなぜですか？　その怪我は人間によるものではありません。先ほどまでどこへ行き、何をしていたんです？\n\nあの局長と関係があるんですか？`
     },
@@ -281,7 +282,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `……つまり……黒環の中には狂厄と、それを抑え込む別の力が存在する？枷、でしょうか？`
     },
@@ -295,7 +296,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `……また、お一人で行くんですか？これほど危険な作戦なのに、一人で向かい、誰にも知らせずに？`
     },
@@ -309,7 +310,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `必要であれば、いつでも私に連絡してください。私にも多少の戦闘能力はあります。`
     },
@@ -327,7 +328,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/matilda.png`,
+      avatar: `img/dh/matilda1.png`,
       name: `マチルダ`,
       text: `難民たちのために、これほど多くの助けを必死に集めている人が、単なる狂人だとは思いません。彼らの見えないところで、あなたはきっと、もっと多くの努力を重ねてきた。\n\nそれに……時には、狂気だけが絶望に抗える。すでに多くの人が、あなたのその狂気に引き寄せられてここへ集まっています。庇護を求め、活路を求め、答えを探して。\n\nいずれにせよ、私たち全員の運命は、もう一つに結びついています。`
     },

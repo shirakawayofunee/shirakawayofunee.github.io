@@ -18,32 +18,25 @@ export default {
     characters: [
       {
         name: `局長`,
-        avatar: `img/dh/chief.png`,
+        avatar: `img/dh/PC24.png`,
         note: `精神世界から過去を追体験するMBCC局長。`,
         basicStats: `触れることはできないが、朧げな精神世界をジュリアンと共有し、扉を開けたりピンチを救ったりと彼らの道を切り開く。`,
         profile: `所属：MBCC`
       },
       {
         name: `ジュリアン（青年期）`,
-        avatar: `img/dh/julian_young.png`,
+        avatar: `img/dh/julian_young_1.png`,
         note: `若き天才建築家。`,
         basicStats: `足が不自由ながら、設計図に埋もれ、錆火の仲間たちのために知恵を絞り続ける。ドナルドが設計を信頼する絶対の相棒。`,
         profile: `所属：錆火\n立場：建築家`
       },
       {
         name: `ドナルド（青年期）`,
-        avatar: `img/dh/donald_young.png`,
+        avatar: `img/dh/don501.png`,
         note: `錆火のリーダーであり大英雄。`,
-        basicStats: `当時24〜25歳ほど。放電能力を持ち、ジュリアンの設計図を頼りに単身で汚染されたW-31鉱坑を救い、錆火に希望をもたらした。`,
+        basicStats: `当時24歳。放電能力を持ち、ジュリアンの設計図を頼りに単身で汚染されたW-31鉱坑を救い、錆火に希望をもたらした。`,
         profile: `所属：錆火\n能力：放電・機械制御`
       },
-      {
-        name: `負傷した老人`,
-        avatar: `img/dh/injured_elder.png`,
-        note: `基地を支える老いた労働者。`,
-        basicStats: `涅槃やギャングの脅威に晒されながらも、「お前たちが元気なら全然疲れない」と錆火の未来を優しく見守る。`,
-        profile: `立場：難民・労働者`
-      }
     ],
     synopsis: `高塔ブラックリングに囚われたジュリアンの過去の記憶。そこは、多くの仲間たちに囲まれ、賑やかで温かな希望に満ちていたかつての錆火の基地だった。ドナルドが戻らず涅槃（ニルヴァーナ）の捜索が差し迫る中、ドナルドはW-31鉱坑を再起動させて凱旋し、錆火は辛迪加の希望となる自らの鉱坑を奪い返す。`
   },
@@ -88,7 +81,7 @@ export default {
       position: `left`,
       avatar: `img/dh/julian_young.png`,
       name: `ジュリアン`,
-      text: `また勝手に開いた……。いいことだな。きっと誰かが錆火を助けてくれてるんだ。今日も何事もなく済むといいけど。`
+      text: `また勝手に開いた……いいことだな。きっと誰かが錆火を助けてくれてるんだ。今日も何事もなく済むといいけど。`
     },
     {
       type: `narration`,
@@ -229,7 +222,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald_young.png`,
+      avatar: `img/dh/don_youth.png`,
       name: `ドナルド`,
       text: `……ほら、やったぞ……。機械を再起動して、鉱坑も手に入れた。お前が見てないのが残念なくらいだ。涅槃の連中、顔真っ青にしてたぞ。\n\n交渉も絶対に勝てる。W-31は戻ってくる。俺たちの勝ちだ。`
     },
@@ -243,7 +236,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald_young.png`,
+      avatar: `img/dh/don_youth.png`,
       name: `ドナルド`,
       text: `へへ……英雄か。へへ、なんか照れるな。下じゃ俺もてんてこ舞いだったんだ。\n\nお前がくれた構造図があったからだ。お前が設計した仕掛けやフック、それに俺たちの後ろには、たくさんの仲間がいた……\n\n俺たちはみんな英雄だよ, ジュリアン。錆火の……みんなが英雄なんだ。`
     },
