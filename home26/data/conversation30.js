@@ -47,9 +47,8 @@ export default {
         name: `『<ruby>薊<rt>アザミ</rt></ruby>』`,
         avatar: `img/dh/thistle3.jpg`,
         note: `19歳、能力者、「GARDEN」の殺し屋`,
-        basicStats: `103年、身为FAC的双亲死于，走投无路的薊加入花园
-        103年、
-        作为殺し屋最想复仇的对象是连军人家属的抚恤金都要贪污的基金会。`
+        basicStats: `復讐のために『花庭園』へ加入したFACの遺児。
+        直情径行で衝動的な面があるものの、決して根は悪くない。`
       },
     ],
     synopsis: ``
@@ -529,7 +528,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `ここまで来てようやく、出口がそう遠くないことに気づく。`,
+      text: `この時ようやく、彼女は気づいた。ここを去る出口は、すぐそこにあるのだと。`,
       voice: [
         /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
@@ -646,7 +645,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x8.png`,
       name: `シャーローム`,
-      text: `次は、逃げろ。`,
+      text: `次は、逃げな`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_91.wav' },
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
@@ -780,7 +779,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x8.png`,
       name: `シャーローム`,
-      text: `君の命は一部しか修復されていません。大事に使ってくださいね、Coquelicot。`,
+      text: `君の命は一部しか修復されていません。大事に使ってくださいね、『コクリコ』`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_128.wav' },
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
@@ -799,7 +798,7 @@ export default {
       position: `left`,
       avatar: `img/dh/l4.png`,
       name: `『コクリコ』`,
-      text: `それにしても、酷い鳴き声ね。心は痛まないの？`,
+      text: `それにしても、酷い鳴き声ね。胸は痛まないわけ？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_61.wav' },
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
@@ -840,7 +839,7 @@ export default {
       position: `left`,
       avatar: `img/dh/l4.png`,
       name: `『コクリコ』`,
-      text: `ハッ……どうだか。君の真心なんて知ったことじゃないわ。お陰様で私のほうも手一杯なの。`,
+      text: `フッ……まあいい。君が本心でどう思っていようが、私の知ったことじゃない。お陰様で私のほうも手一杯なの。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_126.wav' },
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
@@ -883,7 +882,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
-      text: `行くわよ、小僧。外まで連れてってあげる。出たらすぐに案内しなさい。騙したら世界中を君と一緒に葬る。言ったことは必ずやるわよ。`,
+      text: `行くわよ、小僧。外まで連れてってあげる。出たらすぐに案内しなさい。もし私を騙そうものなら、世界中を君の道连れにしてやる。私は、言ったことは必ず実行する。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_42.wav' },
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
@@ -928,7 +927,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
-      text: `クリスティーナ、場所はどこ！言いなさい！あの子たちはどこ！`,
+      text: `クリスティーナ、場所はどこ！あの子たちはどこ！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_117.wav' },
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
@@ -936,7 +935,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `再び激しい銃火音が響くが、鳴り響いた瞬間に重い金属の衝突音にかき消された。数名のHUSHがどこかへ弾き飛ばされたような苦悶の声。探偵は聞き覚えのある声を聞いた。`,
+      text: `再び激しい銃火音が響くが、鳴り響いた瞬間に重い金属の衝突音にかき消された。数名のHUSHがどこかへ弾き飛ばされたような苦悶の声。`,
     },
     {
       type: `dialogue`,

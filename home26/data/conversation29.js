@@ -218,7 +218,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `びっくりした？さっき喉を締められて声が出せなかったから、意識で直接話しただけ。慣れないよね。`,
+      text: `びっくりした？さっき喉を圧迫されて声が出せなかったから、直接、君の意識に語りかけるしかなかったんだ。慣れないだろう`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_8.wav" },
       ],
@@ -472,7 +472,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
       name: `『コクリコ』`,
-      text: `いいこと言うね。まるで全部計算済みみたいに。`,
+      text: `いいね。まるで、すべてを計算しているかのような、その言い草。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_22.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_62.wav" },
@@ -484,7 +484,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `君をここまで導く計算ができたのですから、君たちを救う計算も当然できています。`,
+      text: `君をここまで導くことができたのですから、なら、君たちが助かるよう計算することも、当然、できることだよ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_107.wav" },
       ],

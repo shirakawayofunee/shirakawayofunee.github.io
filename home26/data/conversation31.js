@@ -231,9 +231,5 @@ edge-02：HUSHシステムとマーキング技術の双方にリスクが存在
       loop: false,                   // 是否循环播放
       muted: false                   // 是否静音
     }
-/*     {
-      type: `narration`,
-      text: `第一章「Flowers」終了、つづく。`
-    } */
   ]
 };
