@@ -264,6 +264,20 @@ const chapterList = [
     dateLabel: "N.F.113.11.23/19:38",
   },
   {
+    id: "conversation36",
+    category: "weak",
+    title: "504「眠れる希望」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.113.11.23/19:38",
+  },
+  {
+    id: "conversation37",
+    category: "weak",
+    title: "505「礎石」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.104.11.23/19:38",
+  },
+  {
     id: "side01",
     category: "extra",
     title: "「サボテン」",
