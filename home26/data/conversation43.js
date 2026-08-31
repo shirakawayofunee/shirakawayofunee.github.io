@@ -25,8 +25,8 @@ export default {
     ],
     characters: [
       {
-        name: `ヘカテ`,
-        avatar: `img/dh/.png`,
+        avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
         note: `局長を探す少女。`,
         basicStats: `ブラックリングの影響で汚染が上昇し、憎しみの感情が膨れ上がる。死役との共鳴により制御を失いかけている。`,
         profile: `危険度：高（汚染進行中）
@@ -51,15 +51,6 @@ export default {
         出身：不明
         能力：強大な力`
       },
-      {
-        name: `狂化した錆火`,
-        avatar: `img/dh/.png`,
-        note: `死役化した錆火のコンビクト。`,
-        basicStats: `外套・赤い眼・錆火の紋様・黒い棘を持ち、「シンジケートを返せ」と狂乱する。`,
-        profile: `危険度：高
-        出身：錆火
-        能力：死役化・狂厄`
-      }
     ],
     synopsis: `工事中`
   },
@@ -86,7 +77,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `これは福音地の術式。あなたたちは福音地とも繋がっているのか。あの狂厄分子が局長にしたことは――`
     },
     {
@@ -103,7 +95,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `そう……難民キャンプの近くにも同じ術式があった。身を隠すために使っていた……あの人たちも、これでハイラを守っていた。`
     },
     {
@@ -115,7 +108,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `本当にそうなのか。この人を信じていいのか。あの女執行官も、難民キャンプの人たちも……私に信じろと言う。
 でも、錆火も私たちに信じろと言っていた。あの人たちも……局長を裏切ろうとしているんじゃないのか。`
     },
@@ -132,7 +126,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `私が影響を受けている……本当に。今の私の感情も……全部、狂厄のせいなのか。`
     },
     {
@@ -149,7 +144,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `嫌。局長を探す。私は自分を制御できる。まだやれる。`
     },
     {
@@ -170,7 +166,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `錆火……`
     },
     {
@@ -206,7 +203,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `ゴホッ、ゴホゴホッ……!!`
     },
     {
@@ -243,7 +241,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `許せない……局長を傷つけた人……ハイラを傷つけた人……許せない……`
     },
     {
@@ -268,7 +267,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `私……この感情を知っている……`
     },
     {
@@ -280,7 +280,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `憎しみ……怒り……悔しさ……`
     },
     {
@@ -292,7 +293,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `あなたたちも……あの男も、あの怪物も……`
     },
     {
@@ -304,7 +306,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `……私も……`
     },
     {
@@ -323,7 +326,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `私もあなたたちと同じ……
 私も……あなたたちを憎んでいる……`
     },
@@ -358,7 +362,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `……?`
     },
     {
@@ -381,7 +386,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `ゾーヤを連れ去った人……あなたが……私たちが探していた人なのか。
 局長を救えるのか。`
     },

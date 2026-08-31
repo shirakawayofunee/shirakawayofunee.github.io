@@ -254,7 +254,7 @@ const chapterList = [
     category: "weak",
     title: "502「襲撃」",
     subtitle: "The Weak",
-    dateLabel: "N.F.113.11.22",
+    dateLabel: "N.F.113.11.22/20:38",
   },
   {
     id: "conversation35",
@@ -268,7 +268,7 @@ const chapterList = [
     category: "weak",
     title: "504「眠れる希望」",
     subtitle: "The Weak",
-    dateLabel: "N.F.113.11.23/19:38",
+    dateLabel: "N.F.113.11.23/20:13",
   },
   {
     id: "conversation37",
@@ -282,14 +282,14 @@ const chapterList = [
     category: "weak",
     title: "506「逮捕」",
     subtitle: "The Weak",
-    dateLabel: "N.F.113",
+    dateLabel: "N.F.113.11.24",
   },
   {
     id: "conversation39",
     category: "weak",
     title: "507「迷宮」",
     subtitle: "The Weak",
-    dateLabel: "00:00",
+    dateLabel: "N.F.113.11.24",
   },
   {
     id: "conversation40",

@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `「眠れる希望」`,
+    title: `「眠れる[希]望」`,
     bgm: `mp3/bg/sleeping_hope.mp3`,
     summary: `錆火の基地内では、再建委員会に所属する副官とその上官の間で、それぞれの進むべき道について、眠れる希望について、話し合いが行われている。`
   },
@@ -96,7 +96,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `だからって、見つけたって教えるわけにもいかないだろ。あの子の周りにいる連中は善意だけで動いてるわけじゃない。局長に何かあったと知ったら、あの子はますます自分を許せなくなる。`
@@ -110,7 +110,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `近くまで行かなきゃ、枷の問題もちゃんと確認できないだろ。彼女たちの状態は君も知ってるはずだ。\n\nそれより、こういう話をする前にまず縄をほどいてくれないかな、副官のお姉さん。俺は命がけで情報を届けに来たんだぞ。これ幸いと私怨を晴らすのはなしにしようぜ。`
@@ -144,7 +144,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `うーん……なるほど。じゃあ、俺から言えることは一つだけ。\n\nみんなで俺と一緒に逃げることを、強くおすすめする。\n\n世界は広い。黒環にも、上庭にも、福音地にも手の届かない場所まで逃げて、しばらく身を潜めればいい。何より生き残ることが大事だ。`
@@ -158,7 +158,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `じゃあ、新天地を切り開けばいいだろ？\n\n外を飛び回ってる連中から聞いたんだが、世の中は移り変わる。外には避難場所になりそうな土地だって、まだまだあるらしい。\n\n辛迪加は建設者を誇りにしてきたんだろ。だったら外へ出て、もう一度輝かしいものを作ればいい。過去の栄光にしがみついてる必要はない。`
@@ -183,7 +183,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `ごほっ、ごほっ！！　本気で言ってる？`
@@ -194,7 +194,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `……リーダーの末路なら、俺たちも見てきただろ。まったく魅力を感じない。俺が欲しいのは、そういうものじゃない。\n\n俺はその――ナマズになりたい。今みたいに、何をやってもロクに成功しない狂人執行官くらいがちょうどいい。\n\n知らないだろ。俺が出てくるだけで、みんな急に元気になるんだぞ。さっきまでどれだけしょぼくれてた奴でも、俺を見るなり飛び上がって、我先にと殴りかかってくる。みんな見違えるほど元気になるんだ。これだって、そこらのリーダーに負けてないだろ？`
@@ -212,7 +212,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `鋭いねえ。やっぱり君はとんでもない逸材だよ。\n\nそう……さっき、隣 of 流民寨に戻ってきたんだ。一番奥にある記念碑まで行って、昔馴染みに会ってきた。\n\n黒環が引き起こした問題なら、黒環の専門家に聞くのが一番だろ。`
@@ -248,14 +248,14 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `ぶるっ……お前の周りにいる美人って、なんで揃いも揃ってあんなに怖いんだよ。一回会いに来るだけで鬼門くぐりだ。寿命が縮むって。\n\n俺たち、一度しか話したことないだろ？　それなのに、なんで俺はお前のためにこんな有様になってるんだよ。俺、頑張りすぎじゃない？　後で絶対返してもらうからな。`
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `だから、さっさと目を覚ませよ、局長。これ以上寝てるなら、俺も手荒なことをするぞ。`
@@ -266,7 +266,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `BR-002は、あんなものじゃない。12月を過ぎれば、あいつは満9歳になる。一度死んで、また蘇って、姿を隠せるようになって、局長の枷と繋がった後は逆にその枷を侵食し、何百、何千という「錆火の連中」を汚染した……\n\nあれは大爆発以降、最大にして最強の黒環だ。放っておけば西区全体が飲み込まれる。まるで内海が何倍にも広がって、城邦の半分を沈めるようにな。新城も上庭も、もう見て見ぬふりはできない。\n\nだが妙なんだ。BR-002は二次爆発の後、拡大を止めた。汚染が外へ漏れることはあっても、黒環の境界はずっと安定している。外へ逃げ出して人を襲う死役はほとんどいない。それどころか、外にいた怪物まで一匹、また一匹と黒環へ戻り、それ以来二度と出てこない。\n\nFACは必死に警戒してるが、反狂厄隔離壁は所詮、檻を作れるだけだ。檻の中の凶暴な犬を、大人しい猫に変えられるわけじゃない。今の黒環は、9年前と比べるとまるで別人みたいに性格が変わってる。`
@@ -277,7 +277,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `まるで……何かに首を締めつけられて、身動きが取れないみたいに。`
@@ -291,7 +291,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `まあ、上庭の秘密兵器だ。あいつに少しくらい期待したって罰は当たらないだろ。\n\nこの半年あまり、小局長はたぶん、誰にも見えない場所で黒環や、あの怪物と死ぬほどやり合ってる。ヘラとヘカテの状態を見れば、枷だって必死に抵抗してるのが分かる。だから俺も、少しだけ手を貸す方法を考えた。\n\n理屈は複雑すぎるから説明しない。簡単に言えば綱引きだ。こっち側に少し力を足して、あっち側をちょっとくすぐってやる。そうすれば楽に勝てる。どう？　俺の作戦、なかなか発想力があるだろ？`
@@ -305,7 +305,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `ふふん。こんなに格好よくて、イカれてて、最高に燃える作戦だぞ？　誰かに見せ場を奪われてたまるか！\n\n大丈夫大丈夫。もう助手も、仲間も、それから頼れる強い味方も見つけてある。万全だ。\n\nもし本当に何かあっても、偉大なる逃亡計画があるだろ？うんうん、万全。`
@@ -319,7 +319,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `もちろん。俺が君に遠慮したことなんてあったか？こっちの父老たちや、かわいい子たちのことは君に任せた。`
@@ -349,7 +349,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `希望にも賞味期限がある。俺たちに残された時間は、もう多くない。`
@@ -381,21 +381,21 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `頼れる奴にしがみついて、仲間を取り戻して、死なないよう気をつけて、それで時間も急がなきゃならない……\n\nはあ。親愛なる局長さんよ。赤の他人のドナルドが、お前のために命張りに行くぞ。出発前に、少しだけプレッシャーをかけに来た。`
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `帰ってきて、俺に恩を返すでもいい。世界を救うでもいい。ただ、待ってる奴を抱きしめてやるだけでもいい。早く帰ってこい。できれば、今すぐ目を開けろ。`
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `これ以上遅れたら……取り戻せなくなるものが、あるかもしれない。`

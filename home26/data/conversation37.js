@@ -63,7 +63,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/julian_young.png`,
       name: `ジュリアン`,
       text: `今行く！`
@@ -78,7 +78,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/julian_young.png`,
       name: `ジュリアン`,
       text: `また勝手に開いた……いいことだな。きっと誰かが錆火を助けてくれてるんだ。今日も何事もなく済むといいけど。`
@@ -161,7 +161,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/julian_young.png`,
       name: `ジュリアン`,
       text: `見てない。`
@@ -188,7 +188,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/julian_young.png`,
       name: `ジュリアン`,
       text: `まだ戻らないのか……？　まさか、何かあったんじゃ……`
@@ -228,7 +228,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/julian_young.png`,
       name: `ジュリアン`,
       text: `みんなを勝たせたのはあなたです。能力で機械に電気を通して、涅槃の連中の鼻を明かした。見事でしたよ、英雄。`

@@ -22,14 +22,13 @@ export default {
         avatar: `img/dh/hecate.png`,
         note: `局長を追い、ドナルドを密かに尾行するコンビクト。`,
         basicStats: `ドナルドの強さを信じ、その尾行中に彼のあまりに無様な茶番に直面して深く困惑する。自身の能力への依存や過去の無力さに苦悩する。`,
-        profile: `危険度：高危険度\n立場：尾行者`
+        profile: `危険度：高危険度`
       },
       {
         name: `ドナルド`,
         avatar: `img/dh/don_bkp.png`,
         note: `上庭の執行人に直々に選ばれた経歴を持つ執行官。`,
-        basicStats: `「た——す——け——て——く——れ——ぇぇぇぇぇぇぇ！！！！！」<br>普段は狂人の仮面を被り、ギャングの襲撃にすら怯えて見せるが、その実はFACの封鎖基地へ潜入するためにすべてを計算して行動している。`,
-        profile: `所属：再建委員会\n能力：放電・機械制御`
+        basicStats: `裏で流民寨を助け続けてきた謎多き人物。`,
       },
       {
         name: `サンジ`,
@@ -38,20 +37,6 @@ export default {
         basicStats: `ヘカテーの背後に突如姿を現し、彼女をドナルドのもとへ案内する。戦闘能力はなく、その素性は謎に包まれている。`,
         profile: `立場：ドナルドの助手`
       },
-      {
-        name: `FAC隊員`,
-        avatar: `img/dh/fac_soldier.png`,
-        note: `封鎖線の周囲を巡回する隊員。`,
-        basicStats: `ドナルドのしがみつきと泣き喚きに呆れ果てつつも、彼の正体に気づきS1基地へと連行する。`,
-        profile: `所属：FAC`
-      },
-      {
-        name: `FAC責任者`,
-        avatar: `img/dh/fac_leader.png`,
-        note: `S1基地の司令。`,
-        basicStats: `ドナルドを「上庭の執行人が選んだ執行官」と呼び、彼の持つBR-002への知見と能力を借りるために歓迎する。`,
-        profile: `所属：FAC`
-      }
     ],
     synopsis: `ドナルドを尾行するヘカテーは、ギャングに鉄パイプで襲われても無様に命乞いを叫ぶ彼の姿に呆れ果てる。しかし、それらはすべてFAC基地へ「怪我をした執行官」として潜入するためのドナルドの計算だった。ドナルドが基地で本来の執行官の貌を取り戻す中、ヘカテーの前にドナルドの助手サンジが現れ、彼女を導き始める。`
   },
@@ -67,7 +52,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `任務以外のものは、全部どうでもいいのか自分の命だって、どうなっても構わないって？じゃあ、あの子は？\n\nあの局長ってのは、お前にとって大切な人なのか？\n\n俺が連れ戻してやる。`
     },
@@ -157,7 +142,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `た——す——け——て——く——れ——ぇぇぇぇぇぇぇ！！！！！`
     },
@@ -179,7 +164,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `うぅ……`
     },
@@ -190,7 +175,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `うぇぇぇん……怖かったぁ……うぇぇぇぇん……`
     },
@@ -214,6 +199,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/fac.png`,
       name: `FAC隊員`,
       text: `さっきの爆発は何だ？また暴走した能力者でも現れたのか？気をつけろ。今の奴らは全員、黒環と繋がっている。FACの封鎖線から外へ漏れ出る、唯一の移動性汚染源だ。必ず――`
     },
@@ -224,7 +210,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `FACのお兄さーん！！　こっちこっちー！！`
     },
@@ -235,7 +221,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `見てくださいよ、俺、執行官ですよ！　執行官！あのクソギャングどもが、街中で執行官を襲いまくってるんです！助けて！　俺を連れて帰って！！\n\n怪我してるんですよ、治療が必要なんです！執委会まで戻ってる場合じゃないんです、あんたたちの基地に連れてってください！このご恩は一生――`
     },
@@ -248,13 +234,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/fac.png`,
       name: `FAC隊員`,
       text: `もちろんです。しかし今は、能力者の件のほうが優先――`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `あいたたたたた、痛い痛い痛い——！！能力者なんてどうでもいいでしょう！　ここに死にかけがいるんですよ！死ぬぅぅぅぅぅぅぅ！！`
     },
@@ -265,19 +252,21 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/fac.png`,
       name: `FAC隊員`,
       text: `……もしかして、あなたは……。少し前に連れ去られた執行官、ドナルドでは？`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `俺のこと知ってるんですか？`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/fac.png`,
       name: `FAC隊員`,
       text: `その個性は、かなり有名ですから。一度お会いしてみたいと思っていました。`
     },
@@ -288,6 +277,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/fac.png`,
       name: `FAC隊員`,
       text: `執委会へお送りする前に、まずFACまでご同行ください。`
     },
@@ -337,7 +327,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `何が執行人だ。知らない知らない、俺はコネなんか使ってない！でも, いいねぇ〜。俺もあんたたちに会いたくて仕方なかった。`
     },

@@ -43,7 +43,8 @@ export default {
         能力：強大な力`
       },
       {
-        name: `パルマ`,
+        avatar: `img/dh/parma.jpg`,
+      name: `パルマ`,
         avatar: `img/dh/parma.png`,
         note: `福音地の司祭。`,
         basicStats: `死に際に笑い、福音地の先手を宣言する。`,
@@ -276,10 +277,23 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/parma.jpg`,
       name: `パルマ`,
-      text: `ふふ……前はあれだけ人の心を弄んでいたくせに、今回は随分と鈍いじゃないか。
-あの清理人はいなくなったのか？　西区の集団観測も終了したのか？　ふふふ……
-それなら我々が先に行かせてもらおう。`
+      text: `ふふ……前はあれだけ人の心を弄んでいたくせに、今回は随分と鈍いじゃないか。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/parma.jpg`,
+      name: `パルマ`,
+      text: `あの清理人はいなくなったのか？西区の集団観測も終了したのか？ふふふ……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/parma.jpg`,
+      name: `パルマ`,
+      text: `それなら我々が先に行かせてもらおう。`
     },
     {
       type: `narration`,

@@ -33,7 +33,8 @@ export default {
     ],
     characters: [
       {
-        name: `ヘカテ`,
+        avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
         avatar: `img/dh/.png`,
         note: `局長を探しに来た少女。`,
         basicStats: `局長の行方を追ってFAC哨所へ潜入。初めて聞く信頼できる情報に安堵する。`,
@@ -51,7 +52,8 @@ export default {
         能力：不明`
       },
       {
-        name: `ドナルド`,
+        avatar: `img/dh/don3.png`,
+      name: `ドナルド`,
         avatar: `img/dh/don_bkp.png`,
         note: `執行委員会所属。錆火の元関係者。`,
         basicStats: `芝居がかった狂人を装いながら情報を引き出し、迷宮攻略の道案内役を引き受ける。`,
@@ -79,6 +81,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `ふぅ――気持ちいい。さっきは逃げるのに必死で、すっかり我慢してた。`,
       note: `電子音`
@@ -86,6 +89,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `FACの基地の中に入るのは初めてだ。壮観なのは壮観だけど、トイレくらいもう少しどうにかならないのか。執行委員会と比べると、設備がちょっと簡素だな。`,
       note: `電子音`
@@ -100,6 +104,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `いやいや、そんな。こっちこそ勉強させてもらいたくて来たんだ。まずは黒環のデータでも見せてもらおうか。`,
       note: `電子音`
@@ -136,12 +141,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `うんうん。じゃあ、我らが偉大なる上庭はどう通達していたかな――`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `「ユリアンは禁閉者ではない。だが福音地の人間が彼に何をしたのか。その結果、彼は黒環となった。あるいは9年前、錆火の集団意識を繋ぎ止める錨となった」`
     },
@@ -172,6 +179,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `はいはい、そこまでは全部知ってる。妙な黒環ってことだろう。いったい何に制限されていて、そして誰が人類に貴重な時間を稼いでくれているのか。`
     },
@@ -184,7 +192,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `！`
     },
     {
@@ -213,7 +222,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `……そう。局長はまだ戦っている。`
     },
     {
@@ -233,6 +243,7 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `それで、今になって俺を呼んだってことは、状況が変わったのか。`
     },
@@ -266,6 +277,7 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `なるほど。やっぱり宿敵同士の全面対決ってわけか。このシンジケートは本当に戦場として都合がいいな。`
     },
@@ -278,12 +290,14 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `じゃあ、そのまま入ればいいだけだろう。俺を呼んだ意味は何だ。まさか、俺があいつらと斬り合えると思ってるわけじゃないよな。`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `俺、弱いんだよ。特殊能力なんて一つもない。兄貴、俺のこと守ってくれよ。`
     },
@@ -307,6 +321,7 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `これは何だ。黒環の中か。`
     },
@@ -337,12 +352,14 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `……ああ。俺はこの仕掛けを知っている。迷宮も道も、全部あいつの設計で、あいつ自身の個性そのものだ。これまでずっと錆火が生き延びるための砦だった。`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `だから俺を呼んだんだな。
 錆火を知り尽くしていて、そのうえ建築家の迷宮を攻略するための道案内ができる人間が必要だから。`
@@ -396,24 +413,28 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `いやあ、俺は別に何の抵抗もない。実を言えば、俺は錆火の裏切り者なんだ。昔から言うだろう。時勢を見極める者こそ俊傑って。`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `俺が執行委員会に就任してからというもの、流民寨を叩く時はいつも俺が案内役だった。仕掛けだの迷宮だの、そんなものは何の問題もない。喜んでお手伝いさせてもらうよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `ただ、一つだけまだ腑に落ちないことがある。`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `第九機関は福音地を追い、FACは黒環を守り、上庭まで外へ出て枷鎖を探している。
 どう見ても、これは悪の勢力を相手にした総力戦だ。`
@@ -421,6 +442,7 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `なのに、我らが親愛なる執行委員会は何をしている。
 人口統計、管理、再配置……。
@@ -434,6 +456,7 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `俺は上庭の決定を信じている。今回の配置にも、きっと何か深い意味があるんだろう。あなたは何か知っているのか。`
     },
@@ -463,12 +486,14 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `ははははは、何が執行人だ、掃き溜めだ、ABCDEFだ。俺、自分の後ろ盾がそんなに強かったなんて知らなかったよ。上庭のお偉いさんが俺を守ってくれてるのか。そいつは心強い。`
     },
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `じゃあ出発しよう。皆さん、どうか俺のことをしっかり守ってくれよ。`
     },
@@ -480,6 +505,7 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `ふふん。`,
       note: `電子音`
@@ -505,7 +531,8 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `right`,
-      name: `ヘカテ`,
+      avatar: `img/dh/hecate.png`,
+      name: `ヘカテー`,
       text: `私は局長を探しに来た。FACの作戦に参加して、何の役に立つ。局長はどこにいる。`
     },
     {
@@ -558,6 +585,7 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `任せてくれ。皆さんは思う存分突っ込んでくれ。俺は絶対に後ろに隠れて出てこないからな。`
     },
@@ -570,6 +598,7 @@ FACの口から語られた、これが初めて聞く本当に信頼できる�
     {
       type: `dialogue`,
       position: `left`,
+      avatar: `img/dh/don3.png`,
       name: `ドナルド`,
       text: `突撃だ、大将ども。俺が道を教えてやる。突っ込め――！！`
     },
