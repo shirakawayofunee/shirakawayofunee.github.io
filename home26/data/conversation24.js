@@ -1021,8 +1021,8 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
       bubbleStyle: "bubble-unstable",
+      avatar: `img/dh/armaf3.png`,
       name: `蠢く花の泥`,
       text: `……いいわ、行きなさい……そして私の力に……`,
       voice: `wav/JP/conversation24/vo_event_11032#20.wav`

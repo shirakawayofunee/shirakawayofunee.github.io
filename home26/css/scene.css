@@ -641,6 +641,7 @@ html {
 
 /* 画像のデザインを再現したボタンのスタイル */
 .choice-btn-custom {
+    border: 0;
     display: block;
     width: 100%;
     max-width: 500px; /* 必要に応じてサイズをご調整ください */
@@ -648,50 +649,89 @@ html {
     padding: 10px 24px;
     font-size: 15px;
     letter-spacing: 0.05em;
-    color: #f1f1f1;
+    background-color: #232323;
+    color: #ffffff;
     text-align: center;
     cursor: pointer;
     box-sizing: border-box;
     outline: none;
-    
-    /* 右側のみ赤いボーダーと角丸を適用 */
-    border: 1px solid #a31c1c; 
-    border-left: none; 
-    border-radius: 0 6px 6px 0;
-
-    /* 
-      1. 斜線パターンのレイヤー (微細な縞模様)
-      2. 左から右にかけてフェードインする暗赤色のグラデーション
-    */
-    background-image: 
-        repeating-linear-gradient(
-            -45deg, 
-            rgba(255, 255, 255, 0.03) 0px, 
-            rgba(255, 255, 255, 0.03) 1px, 
-            transparent 1px, 
-            transparent 6px
-        ),
-        linear-gradient(
-            to right, 
-            rgba(0, 0, 0, 0) 0%, 
-            rgba(65, 8, 8, 0.5) 15%, 
-            rgba(105, 14, 14, 0.8) 50%, 
-            rgba(115, 14, 14, 0.95) 100%
-        );
-
+ 
     transition: filter 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 
 /* ホバー・クリック時の演出 */
 .choice-btn-custom:hover {
     filter: brightness(1.2);
-    box-shadow: 0 0 10px rgba(163, 28, 28, 0.4);
     color: #ffffff;
+    background-color: #007550;
 }
 
 .choice-btn-custom:active {
     transform: scale(0.99);
 }
+
+   .choice-group-row {
+    display: block !important; /* 親要素のフレックスを強制解除し、縦並びにします */
+    width: 100%;
+    margin: 16px 0;
+    box-sizing: border-box;
+}
+
+.choice-buttons-container {
+    display: flex !important;
+    flex-direction: row !important; /* 2つのボタンを並列にします */
+    justify-content: center;       /* 中央寄せ */
+    gap: 16px;                     /* ボタン同士の横の隙間 */
+    width: 100%;
+    margin-bottom: 24px;           /* 下に続くテキストとの余白を十分に確保 */
+    box-sizing: border-box;
+}
+
+/* 各トグルボタン（横幅の調整） */
+.choice-btn-custom.choice-toggle-btn {
+    display: inline-block;
+    flex: 1;
+    max-width: 240px;  /* 画面が大きくてもボタンが広がりすぎないように制限 */
+    min-width: 130px;  /* スマホ等でボタンが潰れないよう最小幅を確保 */
+    width: auto;       /* デフォルトの 100% を上書き */
+    box-sizing: border-box;
+    opacity: 0.55;
+    filter: brightness(0.85);
+    transition: all 0.25s ease;
+}
+
+/* ホバー時の不透明度リセット */
+.choice-btn-custom.choice-toggle-btn:hover {
+    opacity: 0.85;
+    filter: brightness(1.1);
+}
+
+/* アクティブ（選択中）状態のスタイル */
+.choice-btn-custom.choice-toggle-btn.active {
+    opacity: 1;
+    filter: brightness(1.2);
+    border: 0;
+}
+
+/* ==========================================
+   分岐後のテキスト（旁白/台詞）を描画するコンテナ
+   ========================================== */
+.choice-branches-container {
+    display: block !important; /* 横並びを防ぎ、通常の1行として縦に流します */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.choice-branch-content {
+    display: none !important; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.choice-branch-content.active {
+    display: block !important;
+}
+
 
 /* =========================================================================
    5. 特殊气泡与旁白样式 (回想、崩溃、系统日志、加密无线电等)

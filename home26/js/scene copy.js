@@ -1,0 +1,1722 @@
+// ==================== 配置区域 ====================
+
+// 1. 分类配置 (随时可添加新篇章)
+const categories = [
+  { id: "all", name: "脚本集" },
+  { id: "bluerain", name: "Blue Rain" },
+  { id: "flower", name: "繁花" },
+  { id: "weak", name: "弱者" },
+  { id: "extra", name: "番外編" },
+];
+
+// 2. 章节数据库 (请在这里录入所有章节信息)
+const chapterList = [
+  {
+    id: "conversation0",
+    category: "bluerain",
+    title: "000「雨夜」",
+    subtitle: "Blue Rain",
+    dateLabel: "N.F.113/7/19",
+  },
+  {
+    id: "conversation1",
+    category: "bluerain",
+    title: "001「招かれざる客」",
+    subtitle: "Blue Rain",
+    dateLabel: "N.F.113/7/16",
+  },
+  {
+    id: "conversation2",
+    category: "bluerain",
+    title: "002「穏やかな朝」",
+    subtitle: "Blue Rain",
+    dateLabel: "N.F.113/7/22/07:18",
+  },
+  {
+    id: "conversation3",
+    category: "bluerain",
+    title: "003「家」",
+    subtitle: "Blue Rain",
+    dateLabel: "N.F.113/7/22/07:21",
+  },
+  {
+    id: "conversation4",
+    category: "bluerain",
+    title: "004「大切なこと」",
+    subtitle: "Blue Rain",
+    dateLabel: "N.F.113/7/22/23:04",
+  },
+  {
+    id: "conversation5",
+    category: "bluerain",
+    title: "005「何のために戦うか」",
+    subtitle: "Blue Rain",
+    dateLabel: "N.F.113/7/22/23:14",
+  },
+  {
+    id: "conversation6",
+    category: "bluerain",
+    title: "006「探求の終点」",
+    subtitle: "Blue Rain",
+    dateLabel: "N.F.113/7/22/23:24",
+  },
+  {
+    id: "conversation7",
+    category: "bluerain",
+    title: "007「登場」",
+    subtitle: "Blue Rain",
+    dateLabel: "N.F.113/7/23/00:41",
+  },
+  {
+    id: "conversation8",
+    category: "flower",
+    title: "101「追悼式」",
+    subtitle: "Part.Ⅰ 究明",
+    dateLabel: "N.F.113/8/8/09:00",
+  },
+  {
+    id: "conversation9",
+    category: "flower",
+    title: "102「探偵ゲーム」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/8/16:00",
+  },
+  {
+    id: "conversation10",
+    category: "flower",
+    title: "103「暗殺予告」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/8/16:13",
+  },
+  {
+    id: "conversation11",
+    category: "flower",
+    title: "104「廃墟」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/9/03:20",
+  },
+  {
+    id: "conversation12",
+    category: "flower",
+    title: "105「第二現場」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/9/17:36",
+  },
+  {
+    id: "conversation13",
+    category: "flower",
+    title: "106「業師」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/9/18:30",
+  },
+  {
+    id: "conversation14",
+    category: "flower",
+    title: "201「創傷」",
+    subtitle: "Part.Ⅱ 疾走",
+    dateLabel: "N.F.113/8/10/15:20",
+  },
+  {
+    id: "conversation15",
+    category: "flower",
+    title: "202「εἰρήνη」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/10/15:25",
+  },
+  {
+    id: "conversation16",
+    category: "flower",
+    title: "203「第三現場」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/11/07:45",
+  },
+  {
+    id: "conversation17",
+    category: "flower",
+    title: "204「第四現場」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/11/08:30",
+  },
+  {
+    id: "conversation18",
+    category: "flower",
+    title: "205「もう一人」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/11/09:00",
+  },
+  {
+    id: "conversation19",
+    category: "flower",
+    title: "206「誘餌」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/14/21:25",
+  },
+  {
+    id: "conversation20",
+    category: "flower",
+    title: "207「本当の目標」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/15/05:25",
+  },
+  {
+    id: "conversation21",
+    category: "flower",
+    title: "208「最後通牒」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/15/11:30",
+  },
+  {
+    id: "conversation22",
+    category: "flower",
+    title: "209「執行人」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/15/12:00",
+  },
+  {
+    id: "conversation23",
+    category: "flower",
+    title: "301「西区作戦」",
+    subtitle: "Part.Ⅲ 遷延",
+    dateLabel: "N.F.113/8/17/14:23",
+  },
+  {
+    id: "conversation24",
+    category: "flower",
+    title: "302「露の世は露の世ながらさりながら」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/17/14:23",
+  },
+  {
+    id: "conversation25",
+    category: "flower",
+    title: "303「対決」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/23/07:00",
+  },
+  {
+    id: "conversation26",
+    category: "flower",
+    title: "304「失った正義」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/23/17:20",
+  },
+  {
+    id: "conversation27",
+    category: "flower",
+    title: "305「第五現場」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/24/04:35",
+  },
+  {
+    id: "conversation28",
+    category: "flower",
+    title: "401「残花の復讐」",
+    subtitle: "Part.Ⅳ 終局",
+    dateLabel: "N.F.113/8/26/02:13",
+  },
+  {
+    id: "conversation29",
+    category: "flower",
+    title: "402「満開」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/26",
+  },
+  {
+    id: "conversation30",
+    category: "flower",
+    title: "403「静黙の反逆」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113/8/26",
+  },
+  {
+    id: "conversation31",
+    category: "flower",
+    title: "404「終わりに」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113.8.26",
+  },
+  {
+    id: "conversation32",
+    category: "flower",
+    title: "405「後日談」",
+    subtitle: "Flora",
+    dateLabel: "N.F.113.9",
+  },
+  {
+    id: "conversation33",
+    category: "weak",
+    title: "Mz-501「Citadel」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.10？",
+  },
+  {
+    id: "conversation34",
+    category: "weak",
+    title: "502「襲撃」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.113.11.22",
+  },
+  {
+    id: "conversation35",
+    category: "weak",
+    title: "503「厳冬」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.113.11.23/19:38",
+  },
+  {
+    id: "conversation36",
+    category: "weak",
+    title: "504「眠れる希望」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.113.11.23/19:38",
+  },
+  {
+    id: "conversation37",
+    category: "weak",
+    title: "Mz-505「礎石」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.104",
+  },
+  {
+    id: "conversation38",
+    category: "weak",
+    title: "506「逮捕」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.113",
+  },
+  {
+    id: "conversation39",
+    category: "weak",
+    title: "507「迷宮」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation40",
+    category: "weak",
+    title: "507-02「微光と暗流」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.113.11.25/10:00",
+  },
+  {
+    id: "conversation41",
+    category: "weak",
+    title: "508「盟友」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation42",
+    category: "weak",
+    title: "Mz-509「深坑」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.104.11",
+  },
+  {
+    id: "conversation43",
+    category: "weak",
+    title: "13-6 うねり",
+    subtitle: "The Weak",
+    dateLabel: "16:13",
+  },
+  {
+    id: "conversation44",
+    category: "weak",
+    title: "13-7 羊飼いの行方",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation45",
+    category: "weak",
+    title: "Sd-1302 起爆",
+    subtitle: "The Weak",
+    dateLabel: "10:07",
+  },
+  {
+    id: "conversation46",
+    category: "weak",
+    title: "13-8 弱者と罪人",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation47",
+    category: "weak",
+    title: "13-9 希望",
+    subtitle: "The Weak",
+    dateLabel: "21:13",
+  },
+  {
+    id: "conversation48",
+    category: "weak",
+    title: "終着地 Mz-1304",
+    subtitle: "The Weak",
+    dateLabel: "23:14",
+  },
+  {
+    id: "conversation49",
+    category: "weak",
+    title: "13-10 嵐",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation50",
+    category: "weak",
+    title: "13-11 粛清命令",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation51",
+    category: "weak",
+    title: "13-12 高塔",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation52",
+    category: "weak",
+    title: "13-13 上庭01",
+    subtitle: "The Weak",
+    dateLabel: "09:22",
+  },
+  {
+    id: "conversation53",
+    category: "weak",
+    title: "Re13-13 過去",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation54",
+    category: "weak",
+    title: "13-14 前時代の人間",
+    subtitle: "The Weak",
+    dateLabel: "15:48",
+  },
+  {
+    id: "conversation55",
+    category: "weak",
+    title: "Sd-1303 影",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation56",
+    category: "weak",
+    title: "13-15 堕落",
+    subtitle: "The Weak",
+    dateLabel: "06:54",
+  },
+  {
+    id: "conversation57",
+    category: "weak",
+    title: "13-16 強者",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation58",
+    category: "weak",
+    title: "13-17 弱者の戦い",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation59",
+    category: "weak",
+    title: "13-18 局長・運命",
+    subtitle: "The Weak",
+    dateLabel: "05:54",
+  },
+  {
+    id: "side01",
+    category: "extra",
+    title: "「サボテン」",
+    subtitle: "Side Story",
+    dateLabel: "N.F.114/？/？",
+  },
+
+  {
+    id: "side02",
+    category: "extra",
+    title: "「腹黑」",
+    subtitle: "Side Story",
+    dateLabel: "N.F.114/？/？",
+  },
+  {
+    id: "side03",
+    category: "extra",
+    title: "「母熊と図書室」",
+    subtitle: "Side Story",
+    dateLabel: "N.F.114/？/？",
+  },
+];
+
+// ==================== 核心逻辑 ====================
+let currentChapterIndex = -1;
+let currentCategory = "all";
+let isMusicPlaying = false;
+let bgmObserver = null;
+let lastTriggeredBgm = "";
+const bgmPlayer = document.getElementById("bgm-player");
+bgmPlayer.volume = 0.4;
+
+document.addEventListener("DOMContentLoaded", () => {
+  initTabs();
+  renderList();
+  handleHashChange();
+
+  setTheme("light");
+
+  window.addEventListener("hashchange", handleHashChange);
+
+  document.getElementById("chapter-search").addEventListener("input", (e) => {
+    renderList(e.target.value);
+  });
+  setupAudioUnlock();
+});
+
+function toggleSidebar() {
+  const container = document.querySelector(".main-container");
+  container.classList.toggle("sidebar-collapsed");
+}
+
+// 初始化两个眼球
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. 初始化侧边栏的大眼球
+  const largeEyeDiv = document.getElementById("large-eye-container");
+  if (largeEyeDiv) {
+    new MagneticEye(largeEyeDiv, { style: "minimal" });
+  }
+
+  // 2. 初始化收缩后才显示的小眼球
+  const smallEyeDiv = document.getElementById("small-eye-container");
+  if (smallEyeDiv) {
+    new MagneticEye(smallEyeDiv, { style: "minimal" }); // 或者改成 'realistic'
+  }
+});
+// --- 1. 初始化分类标签 ---
+function initTabs() {
+  const container = document.getElementById("category-tabs");
+  if (!container) return;
+
+  container.innerHTML = ""; // 规避重复渲染
+
+  categories.forEach((cat) => {
+    const btn = document.createElement("button");
+    btn.className = "tab-btn";
+    btn.textContent = cat.name;
+    btn.dataset.id = cat.id;
+
+    // 初始化高亮状态
+    if (cat.id === currentCategory) btn.classList.add("active");
+
+    btn.onclick = () => {
+      // 切换按钮高亮样式
+      document
+        .querySelectorAll(".tab-btn")
+        .forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // 更新全局当前的分类 ID
+      currentCategory = cat.id;
+
+      // 没有任何多余负担，直接纯净重新渲染
+      renderList();
+    };
+
+    container.appendChild(btn);
+  });
+}
+
+// --- 2. 渲染章节列表 ---
+function renderList() {
+  const listContainer = document.getElementById("chapter-list");
+  if (!listContainer) return;
+  listContainer.innerHTML = "";
+
+  // 此时过滤只看分类，再也没有搜索框的干扰了
+  const filtered = chapterList.filter((item) => {
+    return (
+      currentCategory === "all" ||
+      (item.category &&
+        item.category.toLowerCase() === currentCategory.toLowerCase())
+    );
+  });
+
+  // 生成 DOM
+  filtered.forEach((item) => {
+    const el = document.createElement("div");
+    el.className = "chapter-item";
+    el.dataset.id = item.id;
+
+    if (window.location.hash.substring(1) === item.id) {
+      el.classList.add("active");
+    }
+
+    el.innerHTML = `
+          <span class="chap-title">${item.title}</span>
+          <div class="chap-arrow-box">
+              <svg class="custom-arrow" viewBox="0 0 12 12">
+                  <line x1="0.5" y1="6" x2="10" y2="6" stroke-linecap="round"></line>
+                  <polyline points="7 3 10 6 7 9" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg>
+          </div>
+          <span class="chap-subtitle">${item.subtitle}</span>
+          <span class="chap-date">${item.dateLabel}</span>
+      `;
+
+    el.onclick = () => {
+      window.location.hash = item.id;
+    };
+
+    listContainer.appendChild(el);
+  });
+}
+
+// --- 3. 路由处理 ---
+function handleHashChange() {
+  const hash = window.location.hash.substring(1);
+  if (!hash) return;
+
+  loadChapter(hash);
+
+  document.querySelectorAll(".chapter-item").forEach((item) => {
+    if (item.dataset.id === hash) {
+      item.classList.add("active");
+      item.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      item.classList.remove("active");
+    }
+  });
+
+  currentChapterIndex = chapterList.findIndex((c) => c.id === hash);
+  updateNavButtons();
+}
+
+// --- 4. 加载 JSON 数据 ---
+async function loadChapter(chapterId) {
+  const scriptDiv = document.getElementById("script-content");
+
+  const titleBox = document.getElementById("chapter-title-box");
+  const headerBox = document.getElementById("script-header");
+  const summaryEl = document.getElementById("header-summary");
+
+  if (summaryEl) {
+    summaryEl.textContent =
+      "God's great power is in the gentle breeze, not in the storm.";
+  }
+
+  // 【新增】：加载新章节前，旧标题平滑淡出
+  if (titleBox) {
+    titleBox.style.transition = "opacity 0.3s ease";
+    titleBox.style.opacity = 0;
+  }
+
+  // 【修改点】：清空容器，放回前言节点，再插入读取中的文字
+  scriptDiv.innerHTML = "";
+  if (titleBox) scriptDiv.appendChild(titleBox);
+  if (headerBox) scriptDiv.appendChild(headerBox);
+  scriptDiv.insertAdjacentHTML(
+    "beforeend",
+    '<div class="narration">運命の果てと果てで、同じような痛みを私たちは抱いているのか</div>'
+  );
+
+  try {
+    const module = await import(`../data/${chapterId}.js`);
+    const data = module.default;
+
+    const defaultBgm = data.meta && data.meta.bgm ? data.meta.bgm : "";
+    lastTriggeredBgm = defaultBgm;
+
+    if (defaultBgm) {
+      playBgm(defaultBgm, true);
+    }
+
+    renderScript(data.script, defaultBgm);
+    renderInfo(data.infoPanel);
+    updateHeaderFromJSON(chapterId, data);
+
+    const scrollPanel = document.getElementById("script-panel");
+    if (scrollPanel) scrollPanel.scrollTop = 0;
+
+    const currentChapInfo = chapterList.find((item) => item.id === chapterId);
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "chapter_read",
+      chapter_id: chapterId,
+      chapter_title: currentChapInfo ? currentChapInfo.title : "Unknown",
+      chapter_category: currentChapInfo ? currentChapInfo.category : "Unknown",
+    });
+
+    setTimeout(() => {
+      initBgmObserver();
+    }, 100);
+  } catch (err) {
+    console.error(err);
+    scriptDiv.innerHTML = "";
+    if (headerBox) scriptDiv.appendChild(headerBox);
+    scriptDiv.insertAdjacentHTML(
+      "beforeend",
+      `<div class="narration" style="color:#D40F30">: ${chapterId}</div>`
+    );
+  }
+}
+
+function parseEmphasis(text) {
+  if (!text) return "";
+  // 正则解释：匹配 [ 然后捕获中间的任何非 ] 字符，最后匹配 ]
+  return text.replace(/\[([^\]]+)\]/g, '<span class="em">$1</span>');
+}
+// --- 新增：更新顶部开场白的函数 ---
+function updateHeaderFromJSON(chapterId, data) {
+  const jsonTitle =
+    data.meta && data.meta.title ? data.meta.title : "UNKNOWN RECORD";
+  const titleBox = document.getElementById("chapter-title-box");
+  const titleEl = document.getElementById("chapter-title");
+
+  if (titleBox && titleEl) {
+    /*       titleEl.innerHTML = jsonTitle; */
+
+    const jsonTitle =
+      data.meta && data.meta.title ? data.meta.title : "UNKNOWN RECORD";
+
+    // 【修改点】：调用正则替换，并赋值给 innerHTML
+    titleEl.innerHTML = parseEmphasis(jsonTitle);
+
+    // 动画初始状态 (具体 translateY 根据下方风格微调)
+    titleBox.style.transition = "none";
+    titleBox.style.opacity = 0;
+    titleBox.style.transform = "translateY(15px)";
+
+    // 触发重绘以应用 transition
+    void titleBox.offsetWidth;
+
+    // 延时执行淡入动画 (平滑淡入)
+    setTimeout(() => {
+      titleBox.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+      titleBox.style.opacity = 1;
+      titleBox.style.transform = "translateY(0)";
+    }, 100); // 略微延迟，让其与Summary有个先后层次感
+  }
+
+  const jsonSummary =
+    data.meta && data.meta.summary ? data.meta.summary : "NO SUMMARY DATA";
+
+  const elSummary = document.getElementById("header-summary");
+
+  if (elSummary) {
+    elSummary.style.opacity = 0;
+    elSummary.innerHTML = parseEmphasis(jsonSummary);
+    /* elSummary.textContent = jsonSummary; */
+    setTimeout(() => {
+      elSummary.style.transition = "opacity 0.8s ease";
+      elSummary.style.opacity = 1;
+    }, 50);
+  }
+}
+
+// 選択肢グループ用のカウンター
+let choiceGroupCounter = 0;
+
+// 分岐（アクティブ状態）を切り替えるグローバル関数
+window.toggleChoiceBranch = function(button, groupId, targetId) {
+    // 1. 同一グループ内のボタンのアクティブクラスを切り替え
+    const buttons = document.querySelectorAll(`.choice-toggle-btn[data-group="${groupId}"]`);
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    // 2. 同一グループ内のすべての分岐コンテンツを非表示にし、対象のみを表示
+    const branches = document.querySelectorAll(`[id^="${groupId}-branch-"]`);
+    branches.forEach(branch => {
+        branch.style.display = 'none';
+        branch.classList.remove('active');
+    });
+    
+    const targetBranch = document.getElementById(targetId);
+    if (targetBranch) {
+        targetBranch.style.display = '';
+        targetBranch.classList.add('active');
+    }
+};
+
+function renderScript(script, defaultBgm = "", customContainer = null) {
+  // customContainerが指定されていればそれを使用し、なければデフォルトの領域を使用
+  const container = customContainer || document.getElementById("script-content");
+  
+  // ルート（最初の呼び出し）の時のみ、コンテナを初期化してヘッダー等を描画する
+  if (!customContainer) {
+    const titleBox = document.getElementById("chapter-title-box"); 
+    const headerBox = document.getElementById("script-header");
+    container.innerHTML = "";
+    if (wasBgmPlayingBeforeVideo) {
+      toggleMusic('play');
+      wasBgmPlayingBeforeVideo = false;
+    }
+    if (titleBox) container.appendChild(titleBox);
+    if (headerBox) container.appendChild(headerBox);
+    VoiceManager.reset(script);
+  }
+
+  let currentLineBgm = defaultBgm;
+
+  script.forEach((line, index) => {
+      const div = document.createElement("div");
+      div.id = `msg-row-${index}`;
+
+      if (line.bgm) {
+          currentLineBgm = line.bgm;
+      }
+      if (currentLineBgm) {
+          div.setAttribute("data-bgm", currentLineBgm);
+      }
+
+      let voiceBtnHtml = '';
+
+      if (line.voice) {
+          if (Array.isArray(line.voice)) {
+              voiceBtnHtml += '<span class="voice-group">'; 
+              line.voice.forEach((v, subIndex) => {
+                  const safePath = v.path.replace(/#/g, '%23');
+                  voiceBtnHtml += `<button id="voice-btn-${index}-${subIndex}" class="voice-tag" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', ${subIndex})" title="Play ${v.label}">${v.label}</button>`;
+              });
+              voiceBtnHtml += '</span>';
+          } else {
+              const safePath = line.voice.replace(/#/g, '%23');
+              voiceBtnHtml = `<button id="voice-btn-${index}-0" class="voice-btn" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', 0)" title="Play Voice"><svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z"></path></svg></button>`;
+          }
+      }
+
+      if (line.type === "narration") {
+        div.className = "message-row";
+        let customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
+        let displayText = line.text;
+
+        if (customBubbleClass === "secret-comm") {
+            let regex = /(^|<br>|\n)\s*([^:：<]+[:：])/g;
+            displayText = displayText.replace(regex, '$1<span class="comm-speaker">$2</span>');
+            displayText = `<div class="comm-header">--- ENCRYPTED_CHANNEL ---</div><div class="comm-body"><span class="comm-bracket">[</span> ${displayText} <span class="comm-bracket">]</span></div>`;
+        }
+
+        div.innerHTML = `<div class="narration ${customBubbleClass}">${displayText}</div>`;
+    
+      } else if (line.type === "choice_group") {
+          // 【追加】分岐選択肢グループの処理
+          choiceGroupCounter++;
+          const groupId = `choice-group-${choiceGroupCounter}`;
+          div.className = "message-row choice-group-row";
+          
+          let buttonsHtml = `<div class="choice-buttons-container">`;
+          let branchesHtml = `<div class="choice-branches-container">`;
+          
+          line.choices.forEach((choice, choiceIdx) => {
+              const choiceId = `${groupId}-branch-${choiceIdx}`;
+              // 最初の選択肢（インデックス0）をデフォルトでアクティブ（表示）にする
+              const activeClass = choiceIdx === 0 ? "active" : "";
+              const activeStyle = choiceIdx === 0 ? "" : "display: none;";
+              
+              buttonsHtml += `
+                  <button class="choice-btn-custom choice-toggle-btn ${activeClass}" 
+                          data-group="${groupId}" 
+                          onclick="event.stopPropagation(); toggleChoiceBranch(this, '${groupId}', '${choiceId}')">
+                      ${choice.text || ""}
+                  </button>
+              `;
+              
+              branchesHtml += `
+                  <div id="${choiceId}" class="choice-branch-content ${activeClass}" style="${activeStyle}"></div>
+              `;
+          });
+          
+          buttonsHtml += `</div>`;
+          branchesHtml += `</div>`;
+          div.innerHTML = buttonsHtml + branchesHtml;
+          
+          // ドキュメントに追加する前に、各分岐用のコンテナ内にシナリオを再帰レンダリング
+          line.choices.forEach((choice, choiceIdx) => {
+              const choiceId = `${groupId}-branch-${choiceIdx}`;
+              const branchContainer = div.querySelector(`#${choiceId}`);
+              if (branchContainer && choice.script) {
+                  renderScript(choice.script, currentLineBgm, branchContainer);
+              }
+          });
+
+      } else if (line.type === "choice") {
+          // 単体の選択肢（従来通り）
+          div.className = "message-row choice-row";
+          const safeText = (line.text || "").replace(/'/g, "\\'");
+          div.innerHTML = `
+            <div class="choice-container">
+                <button class="choice-btn-custom" onclick="event.stopPropagation(); handleChoiceClick(${index}, '${safeText}')">
+                    ${line.text || ""}
+                </button>
+            </div>
+          `;
+
+      } else if (line.type === "image") {
+          div.className = "message-row";
+          div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
+
+      } else if (line.type === "video") {
+          div.className = "message-row";
+          
+          const showControls = line.controls !== false ? "controls" : "";
+          const isAutoplay = line.autoplay ? "autoplay" : "";
+          const isLoop = line.loop ? "loop" : "";
+          const isMuted = line.muted ? "muted" : "";
+          const posterAttr = line.poster ? `poster="${line.poster}"` : "";
+            
+          div.innerHTML = `
+            <div class="narration">
+                <video 
+                    src="${line.src}" 
+                    class="cg-video" 
+                    ${showControls} 
+                    ${isAutoplay} 
+                    ${isLoop} 
+                    ${isMuted} 
+                    ${posterAttr} 
+                    playsinline
+                    onplay="handleVideoPlay(this)"
+                    onpause="handleVideoPause(this)"
+                    onended="handleVideoPause(this)">
+                </video>
+            </div>
+          `;
+      
+      } else if (line.type === "dialogue") {
+          const pos = line.position === "right" ? "pos-right" : "pos-left";
+          div.className = `message-row ${pos}`;
+          
+          const customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
+          
+          const avatarHTML = line.avatar 
+              ? `<img src="${line.avatar}" class="avatar">` 
+              : ``;
+          
+          const nameHTML = line.name 
+              ? `<div class="message-name">${line.name}</div>` 
+              : ``;
+
+          div.innerHTML = `
+              ${avatarHTML}
+              <div class="message-content">
+                  ${nameHTML}
+                  <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
+              </div>
+          `;
+      }
+      container.appendChild(div);
+  });
+}
+
+// --- 6. 渲染右侧信息 ---
+// =========================================================================
+// 新增辅助函数：专门用来将 profile 里的多行“键：值”转换为两端对齐、带下划线的 HTML
+// =========================================================================
+function parseProfile(text) {
+  if (!text) return "";
+
+  // 1. 按换行切分，洗掉多余空格，并过滤空行
+  const lines = String(text)
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0);
+
+  let html = '<div class="oc-profile-section">';
+
+  lines.forEach((line) => {
+    // 2. 寻找中英文冒号，分离键与值
+    const colonIndex =
+      line.indexOf("：") !== -1 ? line.indexOf("：") : line.indexOf(":");
+    if (colonIndex !== -1) {
+      const key = line.substring(0, colonIndex).trim();
+      const value = line.substring(colonIndex + 1).trim();
+      html += `
+        <div class="profile-row">
+          <span class="profile-label">${key}</span>
+          <span class="profile-value">${value}</span>
+        </div>
+      `;
+    } else {
+      // 备用：如不含冒号则整行展示
+      html += `
+        <div class="profile-row">
+          <span class="profile-label">${line}</span>
+          <span class="profile-value"></span>
+        </div>
+      `;
+    }
+  });
+
+  html += "</div>";
+  return html;
+}
+
+// =========================================================================
+// 主渲染函数：已整合您原本的所有逻辑（词汇表、角色卡、简介渲染）
+// =========================================================================
+function renderInfo(info) {
+  // ----------------------------------------------------
+  // 1. 【完全保留】您原先的 glossary 词汇表渲染与 GSAP 初始化
+  // ----------------------------------------------------
+  const glossaryDiv = document.getElementById("glossary-container");
+  glossaryDiv.innerHTML = "";
+
+  if (info.glossary) {
+    info.glossary.forEach((g) => {
+      const item = document.createElement("div");
+      item.className = "glossary-item";
+      // 移除 inline onclick，将 ▼ 替换为 +
+      item.innerHTML = `
+        <div class="glossary-term">
+            <div class="term-text">${g.term}</div>
+            <div class="term-icon" style="display:inline-block; font-weight:600;" font-size:59px;>+</div>
+        </div>
+        <div class="glossary-desc">
+            <div class="desc-inner">${g.desc}</div>
+        </div>
+      `;
+      glossaryDiv.appendChild(item);
+    });
+
+    // 数据渲染完成后，初始化 GSAP 动画手风琴效果
+    initAccordion(glossaryDiv);
+  }
+
+  // ----------------------------------------------------
+  // 2. 【核心更新】角色卡片渲染
+  // ----------------------------------------------------
+  const charDiv = document.getElementById("characters-container");
+  charDiv.innerHTML = "";
+
+  if (info && info.characters) {
+    info.characters.forEach((c) => {
+      // A. 判断该角色是否需要交替排版
+      const reverseClass = c.isReverse ? "style-reverse" : "";
+
+      // B. 修复您原先代码中的一个细节：原先定义了 cleanNote 却在渲染时错用了 c.note
+      // 这里清洗了 note 里的冗余代码缩进空格
+      let cleanNote = "";
+      if (c.note) {
+        cleanNote = String(c.note)
+          .split("\n")
+          .map((line) => line.trim())
+          .join("\n")
+          .trim();
+      }
+
+      // C. 【新增核心】：如果数据有 c.profile（两端对齐的数据），就调用辅助函数渲染
+      // 如果数据里没有配置 profile 字段，则输出空字符串，不占用卡片上的任何空间
+      const profileHTML = c.profile ? parseProfile(c.profile) : "";
+
+      // D. 清理并准备渲染 bottomSection (basicStats 区域)
+      let cleanBasicStats = "";
+      if (c.basicStats) {
+        cleanBasicStats = String(c.basicStats)
+          .split("\n")
+          .map((line) => line.trim())
+          .join("\n")
+          .trim();
+      }
+      const hasNote = cleanBasicStats !== "";
+      const bottomSectionHTML = hasNote
+        ? `
+          <div class="oc-bottom-section">
+            <div class="oc-summary-text">${cleanBasicStats}</div>
+          </div>
+      `
+        : "";
+
+      const card = document.createElement("div");
+      card.className = `oc-window-card ${reverseClass}`; // 注入交替类名
+
+      card.innerHTML = `
+        <!-- 主体内容 -->
+        <div class="oc-window-body">
+          
+          <!-- 上半区：贴边头像 + 名字 -->
+          <div class="oc-top-section">
+            <div class="oc-avatar-box">
+               ${c.avatar ? `<img src="${c.avatar}" alt="${c.name}">` : ""}
+            </div>
+            <div class="oc-info-box">
+              <h4 class="oc-name">${c.name || ""}</h4>
+              <!-- 此处已替换为已洗掉缩进空格的 cleanNote -->
+              <div class="oc-stats">${cleanNote || ""}</div>
+            </div>
+          </div>
+          <!-- 下半区：动态渲染（若无内容则为完全不生成该 div，不会留有空隙） -->
+          ${bottomSectionHTML}
+          <!-- 【新增区】：动态生成两端对齐带下划线的属性（若没有该字段则不产生多余空隙） -->
+          ${profileHTML}
+  
+        </div>
+      `;
+
+      charDiv.appendChild(card);
+    });
+  }
+
+  // ----------------------------------------------------
+  // 3. 【完全保留】您原先的 synopsis 简介渲染
+  // ----------------------------------------------------
+  const synDiv = document.getElementById("synopsis-container");
+  synDiv.innerHTML = info.synopsis || "工事中";
+}
+
+// --- 辅助功能 ---
+function navigate(dir) {
+  const newIdx = currentChapterIndex + dir;
+  if (newIdx >= 0 && newIdx < chapterList.length) {
+    window.location.hash = chapterList[newIdx].id;
+  }
+}
+
+function updateNavButtons() {
+  const btnPrev = document.getElementById("float-btn-prev");
+  const btnNext = document.getElementById("float-btn-next");
+
+  if (btnPrev && btnNext) {
+    btnPrev.disabled = currentChapterIndex <= 0;
+    btnNext.disabled = currentChapterIndex >= chapterList.length - 1;
+  }
+}
+
+// --- 音乐控制 ---
+function playBgm(src, forcePlay = false) {
+  if (!bgmPlayer.src.includes(src)) {
+    bgmPlayer.src = src;
+  }
+
+  if (forcePlay || isMusicPlaying) {
+    const playPromise = bgmPlayer.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          updateMusicUI(true);
+        })
+        .catch((error) => {
+          console.log("Auto-play blocked by browser. User interaction needed.");
+          updateMusicUI(false);
+        });
+    }
+  }
+}
+
+// --- BGM 滚动观察器 ---
+function initBgmObserver() {
+  if (bgmObserver) {
+    bgmObserver.disconnect();
+  }
+
+  bgmObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const newBgm = entry.target.getAttribute("data-bgm");
+
+          if (newBgm && newBgm !== lastTriggeredBgm) {
+            console.log(`[剧情点触发] 切换BGM: ${newBgm}`);
+            lastTriggeredBgm = newBgm;
+            playBgm(newBgm, false);
+          }
+        }
+      });
+    },
+    {
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0,
+    }
+  );
+
+  const rows = document.querySelectorAll("#script-content .message-row");
+  rows.forEach((row) => {
+    if (row.hasAttribute("data-bgm")) {
+      bgmObserver.observe(row);
+    }
+  });
+}
+
+function toggleMusic(action) {
+  if (action === "play") {
+    bgmPlayer.play();
+    updateMusicUI(true);
+  } else {
+    bgmPlayer.pause();
+    updateMusicUI(false);
+  }
+}
+
+function updateMusicUI(playing) {
+  isMusicPlaying = playing;
+  const btnPlay = document.getElementById("btn-play");
+  const btnPause = document.getElementById("btn-pause");
+
+  if (playing) {
+    btnPlay.style.display = "none";
+    btnPause.style.display = "block";
+  } else {
+    btnPlay.style.display = "block";
+    btnPause.style.display = "none";
+  }
+}
+
+// --- 新增：全局解除浏览器音频限制 ---
+function setupAudioUnlock() {
+  const unlockHandler = () => {
+    // 如果当前有音乐路径，且处于被拦截的暂停状态，且我们的 UI 认为它没在播放
+    if (bgmPlayer.src && bgmPlayer.paused && !isMusicPlaying) {
+      const playPromise = bgmPlayer.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // 解锁成功：同步更新动图和状态
+            updateMusicUI(true);
+          })
+          .catch((e) => {
+            console.log("Global unlock failed or empty src:", e);
+          });
+      }
+    }
+
+    // 【关键】：无论成功与否，只要用户交互过一次，浏览器的“手势锁”就解除了。
+    // 立即移除监听器，避免每次点击都重复执行。
+    document.body.removeEventListener("click", unlockHandler, true);
+    document.body.removeEventListener("touchstart", unlockHandler, true);
+  };
+
+  // 使用捕获阶段 (true)，确保在其他按钮事件触发前，先解除音频锁定
+  document.body.addEventListener("click", unlockHandler, true);
+  document.body.addEventListener("touchstart", unlockHandler, {
+    passive: true,
+    capture: true,
+  });
+}
+
+// 新增：用来记录视频播放前，BGM 是否处于播放状态的全局变量
+let wasBgmPlayingBeforeVideo = false;
+
+// 新增：视频播放时的逻辑
+function handleVideoPlay(videoElement) {
+  console.log("[视频事件] 开始播放");
+
+  // 如果当前 BGM 正在播放，我们需要暂停它并记录状态
+  if (isMusicPlaying) {
+    wasBgmPlayingBeforeVideo = true;
+    toggleMusic("pause"); // 调用您原有的函数，暂停 BGM 并更新 UI
+    console.log("[联动] 已自动暂停 BGM 并记录了播放状态");
+  }
+}
+
+// 新增：视频暂停或结束时的逻辑
+function handleVideoPause(videoElement) {
+  console.log("[视频事件] 暂停或结束");
+
+  // 检查页面上是否还有其他正在播放的视频（防止多视频并存时互相干扰）
+  const allVideos = document.querySelectorAll(".cg-video");
+  const isAnyVideoPlaying = Array.from(allVideos).some((video) => {
+    return !video.paused && !video.ended && video !== videoElement;
+  });
+
+  // 如果没有任何视频在播放了，且进入视频前 BGM 是开启的，则恢复 BGM
+  if (!isAnyVideoPlaying) {
+    if (wasBgmPlayingBeforeVideo) {
+      toggleMusic("play"); // 调用您原有的函数，恢复播放并更新 UI
+      wasBgmPlayingBeforeVideo = false; // 重置记录状态
+      console.log("[联动] 无其他视频播放，已恢复 BGM");
+    }
+  }
+}
+// --- 沉浸模式：隐藏顶部悬浮工具栏 ---
+function enableImmersiveMode() {
+  // 【修改点】：目标从 script-header 改为了新的绝对定位容器 script-tools-layer
+  const toolsLayer = document.querySelector(".script-tools-layer");
+  if (toolsLayer) {
+    toolsLayer.style.display = "none";
+  }
+}
+
+// ==================== 视觉特效 ====================
+
+document.addEventListener("DOMContentLoaded", () => {
+  initTypewriter();
+});
+
+function initTypewriter() {
+  const titleEl = document.querySelector(".main-title");
+  const subEl = document.querySelector(".sub-title");
+
+  if (!titleEl || !subEl) return;
+
+  const titleText = "運命の織機";
+  const subText = ">./USER_LOGS.EXE";
+
+  titleEl.textContent = "";
+  subEl.textContent = "";
+
+  function typeString(element, text, speed, cursorColor, callback) {
+    let i = 0;
+    element.style.borderRight = `3px solid ${cursorColor}`;
+
+    function step() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(step, Math.random() * speed[1] + speed[0]);
+      } else {
+        element.style.borderRight = "none";
+        if (callback) callback();
+      }
+    }
+    step();
+  }
+
+  setTimeout(() => {
+    typeString(titleEl, titleText, [320, 80], "#D40F30", () => {
+      typeString(subEl, subText, [120, 30], "#555", () => {
+        subEl.style.borderRight = "2px solid #555";
+        setInterval(() => {
+          const currentColor = subEl.style.borderRightColor;
+          subEl.style.borderRightColor =
+            currentColor === "transparent" ? "#555" : "transparent";
+        }, 500);
+      });
+    });
+  }, 200);
+}
+
+// ==================== 语音与自动播放管理器 ====================
+
+const VoiceManager = {
+  audio: new Audio(),
+  isAutoMode: false,
+  currentIndex: 0,
+  scriptData: [],
+  timer: null,
+
+  init() {
+    this.audio.preload = "auto";
+
+    this.audio.onended = () => {
+      this.setButtonState(this.currentIndex, false);
+      if (this.isAutoMode) {
+        this.playNext();
+      }
+    };
+
+    this.audio.onerror = () => {
+      console.warn("语音文件加载失败，1秒后跳过");
+      this.setButtonState(this.currentIndex, false);
+      if (this.isAutoMode) {
+        this.timer = setTimeout(() => this.playNext(), 1000);
+      }
+    };
+  },
+
+  reset(newScriptData) {
+    this.stop();
+    this.isAutoMode = false;
+    this.updateAutoSwitchUI();
+    this.currentIndex = 0;
+    this.scriptData = newScriptData || [];
+  },
+
+  toggleAuto() {
+    this.isAutoMode = !this.isAutoMode;
+    this.updateAutoSwitchUI();
+
+    if (this.isAutoMode) {
+      this.playSequence(this.currentIndex);
+    } else {
+      clearTimeout(this.timer);
+    }
+  },
+
+  updateAutoSwitchUI() {
+    const btn = document.getElementById("auto-play-btn");
+    if (!btn) return;
+    if (this.isAutoMode) btn.classList.add("active");
+    else btn.classList.remove("active");
+  },
+
+  playSequence(index) {
+    if (!this.isAutoMode) return;
+    if (index >= this.scriptData.length) {
+      this.finishAuto();
+      return;
+    }
+
+    this.currentIndex = index;
+    const line = this.scriptData[index];
+    const rowEl = document.getElementById(`msg-row-${index}`);
+    if (rowEl) rowEl.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    if (line.voice) {
+      let src = "";
+      if (Array.isArray(line.voice)) {
+        src = line.voice[0].path;
+      } else {
+        src = line.voice;
+      }
+      this.playAudio(src, index, 0);
+    } else {
+      this.timer = setTimeout(() => {
+        if (this.isAutoMode) this.playNext();
+      }, 1000);
+    }
+  },
+
+  playNext() {
+    this.playSequence(this.currentIndex + 1);
+  },
+
+  playAudio(src, index, subIndex = 0) {
+    document
+      .querySelectorAll(".voice-btn, .voice-tag")
+      .forEach((b) => b.classList.remove("playing"));
+
+    this.currentIndex = index;
+    this.audio.src = src.replace(/#/g, "%23");
+
+    this.setButtonState(index, subIndex, true);
+
+    try {
+      const fileName = src.split("/").pop();
+      let currentChapTitle = "Unknown";
+      if (
+        typeof chapterList !== "undefined" &&
+        typeof currentChapterIndex !== "undefined"
+      ) {
+        if (chapterList[currentChapterIndex]) {
+          currentChapTitle = chapterList[currentChapterIndex].title;
+        }
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "voice_play",
+        voice_filename: fileName,
+        voice_path: src,
+        chapter_title: currentChapTitle,
+        play_mode: this.isAutoMode ? "auto" : "manual",
+      });
+    } catch (err) {
+      console.error("GTM Tracking Error:", err);
+    }
+
+    const playPromise = this.audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((err) => {
+        console.log("Play error:", err);
+        this.setButtonState(index, subIndex, false);
+        if (this.isAutoMode)
+          this.timer = setTimeout(() => this.playNext(), 1000);
+      });
+    }
+  },
+
+  playManual(index, src, subIndex) {
+    this.isAutoMode = false;
+    this.updateAutoSwitchUI();
+    clearTimeout(this.timer);
+    this.playAudio(src, index, subIndex);
+  },
+
+  setButtonState(index, subIndex, isPlaying) {
+    const btnId = `voice-btn-${index}-${subIndex}`;
+    const btn = document.getElementById(btnId);
+
+    if (btn && isPlaying) {
+      btn.classList.add("playing");
+    } else if (btn) {
+      btn.classList.remove("playing");
+    }
+  },
+
+  stop() {
+    this.audio.pause();
+    this.audio.currentTime = 0;
+    clearTimeout(this.timer);
+    this.setButtonState(this.currentIndex, false);
+  },
+
+  finishAuto() {
+    this.isAutoMode = false;
+    this.updateAutoSwitchUI();
+    console.log("End of Auto Play");
+  },
+};
+
+VoiceManager.init();
+
+// --- 新增：正文背景主题切换 (白天 / 黑夜) ---
+function setTheme(mode) {
+  const wrapper = document.querySelector(".script-wrapper");
+  const btnNight = document.getElementById("btn-night");
+  const btnDay = document.getElementById("btn-day");
+
+  if (mode === "light") {
+    // 开启白天模式
+    wrapper.classList.add("light-mode");
+    btnDay.classList.add("active");
+    btnNight.classList.remove("active");
+  } else {
+    // 恢复黑夜模式 (默认)
+    wrapper.classList.remove("light-mode");
+    btnNight.classList.add("active");
+    btnDay.classList.remove("active");
+  }
+}
+
+function initAccordion(container) {
+  const items = container.querySelectorAll(".glossary-item");
+  let activeItem = null; // 用于记录当前打开的项
+
+  items.forEach((item) => {
+    const term = item.querySelector(".glossary-term");
+    const desc = item.querySelector(".glossary-desc");
+    const icon = item.querySelector(".term-icon");
+
+    // 1. 初始化状态：高度为0，完全透明，隐藏溢出
+    gsap.set(desc, { height: 0, opacity: 0, overflow: "hidden" });
+    gsap.set(icon, { rotation: 0 });
+
+    // 2. 绑定点击事件
+    term.addEventListener("click", () => {
+      const isOpen = item.classList.contains("active");
+
+      // 【核心逻辑】：如果点击了新项，且当前有打开的项，先关掉旧的
+      if (!isOpen && activeItem) {
+        const activeDesc = activeItem.querySelector(".glossary-desc");
+        const activeIcon = activeItem.querySelector(".term-icon");
+        activeItem.classList.remove("active");
+
+        // 旧项收起动画
+        gsap.to(activeDesc, {
+          height: 0,
+          opacity: 0,
+          duration: 0.4,
+          ease: "power3.inOut",
+        });
+        gsap.to(activeIcon, {
+          rotation: 0,
+          duration: 0.4,
+          ease: "power3.inOut",
+        });
+      }
+
+      // 切换当前点击项的状态
+      if (isOpen) {
+        // 如果点的是自己，且本来是开着的 -> 收起
+        item.classList.remove("active");
+        activeItem = null;
+        gsap.to(desc, {
+          height: 0,
+          opacity: 0,
+          duration: 0.4,
+          ease: "power3.inOut",
+        });
+        gsap.to(icon, { rotation: 0, duration: 0.4, ease: "power3.inOut" });
+      } else {
+        // 如果是关闭状态 -> 展开
+        item.classList.add("active");
+        activeItem = item;
+        // 展开动画：高度设为 "auto"，GSAP 会自动计算真实内容的高度
+        gsap.to(desc, {
+          height: "auto",
+          opacity: 1,
+          duration: 0.4,
+          ease: "power3.inOut",
+        });
+        // 图标旋转 45 度，把 + 变成 ×
+        gsap.to(icon, { rotation: 45, duration: 0.4, ease: "power3.inOut" });
+      }
+    });
+  });
+}
+
+// ==================== 阅读设置管理器 ====================
+const ReadingSettingsManager = {
+  // 默认设置常量
+  defaultSettings: {
+    fontSize: 0.9,
+    fontWeight: 400,
+    isMing: false,
+    lineHeight: 1.8,
+    letterSpacing: 0,
+  },
+  currentSettings: {},
+
+  init() {
+    try {
+      const saved = localStorage.getItem("reading_settings");
+      this.currentSettings = saved
+        ? JSON.parse(saved)
+        : { ...this.defaultSettings };
+    } catch (e) {
+      console.warn("读取本地设置失败", e);
+      this.currentSettings = { ...this.defaultSettings };
+    }
+
+    this.cacheDOM();
+    if (!this.panel) return;
+
+    this.bindEvents();
+    this.applyToCSS();
+    this.updateUI();
+  },
+
+  cacheDOM() {
+    this.btnAa = document.getElementById("btn-reading-settings");
+    this.panel = document.getElementById("reading-settings-panel");
+
+    this.inputSize = document.getElementById("rs-fontsize");
+    this.inputWeight = document.getElementById("rs-fontweight");
+    this.inputFamily = document.getElementById("rs-fontfamily");
+    this.inputLineHeight = document.getElementById("rs-lineheight");
+    this.inputLetterSpacing = document.getElementById("rs-letterspacing");
+
+    this.valSize = document.getElementById("rs-val-fontsize");
+    this.valWeight = document.getElementById("rs-val-fontweight");
+    this.valLineHeight = document.getElementById("rs-val-lineheight");
+    this.valLetterSpacing = document.getElementById("rs-val-letterspacing");
+
+    this.btnReset = document.getElementById("rs-reset-btn");
+  },
+
+  bindEvents() {
+    // Toggle 面板显隐
+    this.btnAa.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (
+        this.panel.style.display === "none" ||
+        this.panel.style.display === ""
+      ) {
+        this.panel.style.display = "flex";
+        this.btnAa.classList.add("active");
+      } else {
+        this.panel.style.display = "none";
+        this.btnAa.classList.remove("active");
+      }
+    });
+
+    // 点击外部关闭面板
+    document.addEventListener("click", (e) => {
+      if (this.panel && this.panel.style.display === "flex") {
+        if (!this.panel.contains(e.target) && e.target !== this.btnAa) {
+          this.panel.style.display = "none";
+          this.btnAa.classList.remove("active");
+        }
+      }
+    });
+
+    // 绑定输入事件
+    this.inputSize.addEventListener("input", (e) =>
+      this.handleInput("fontSize", e.target.value)
+    );
+    this.inputWeight.addEventListener("input", (e) =>
+      this.handleInput("fontWeight", e.target.value)
+    );
+    this.inputLineHeight.addEventListener("input", (e) =>
+      this.handleInput("lineHeight", e.target.value)
+    );
+    this.inputLetterSpacing.addEventListener("input", (e) =>
+      this.handleInput("letterSpacing", e.target.value)
+    );
+    this.inputFamily.addEventListener("change", (e) =>
+      this.handleInput("isMing", e.target.checked)
+    );
+
+    // 绑定恢复默认按钮
+    this.btnReset.addEventListener("click", () => this.resetToDefault());
+  },
+
+  handleInput(key, value) {
+    if (key !== "isMing") value = parseFloat(value);
+    this.currentSettings[key] = value;
+    this.applyToCSS();
+    this.updateUI();
+    this.saveSettings();
+  },
+
+  applyToCSS() {
+    const root = document.documentElement;
+    root.style.setProperty(
+      "--rs-font-size",
+      `${this.currentSettings.fontSize}rem`
+    );
+    root.style.setProperty("--rs-font-weight", this.currentSettings.fontWeight);
+    root.style.setProperty(
+      "--rs-font-family",
+      this.currentSettings.isMing ? '"ming", serif' : '"myFont", sans-serif'
+    );
+    root.style.setProperty("--rs-line-height", this.currentSettings.lineHeight);
+
+    const spacingEm = this.currentSettings.letterSpacing / 100;
+    root.style.setProperty("--rs-letter-spacing", `${spacingEm}em`);
+  },
+
+  updateUI() {
+    // 更新表单控件的值
+    this.inputSize.value = this.currentSettings.fontSize;
+    this.inputWeight.value = this.currentSettings.fontWeight;
+    this.inputLineHeight.value = this.currentSettings.lineHeight;
+    this.inputLetterSpacing.value = this.currentSettings.letterSpacing;
+    this.inputFamily.checked = this.currentSettings.isMing;
+
+    // 更新文本显示
+    this.valSize.textContent = `${this.currentSettings.fontSize.toFixed(2)}rem`;
+    this.valWeight.textContent = this.currentSettings.fontWeight;
+    this.valLineHeight.textContent = this.currentSettings.lineHeight.toFixed(1);
+    this.valLetterSpacing.textContent = `${this.currentSettings.letterSpacing}%`;
+
+    // 更新滑块颜色填充百分比
+    [
+      this.inputSize,
+      this.inputWeight,
+      this.inputLineHeight,
+      this.inputLetterSpacing,
+    ].forEach((input) => {
+      this.updateSliderFill(input);
+    });
+  },
+
+  // 计算滑块比例，用于 CSS linear-gradient 动态上色
+  updateSliderFill(inputEl) {
+    const min = parseFloat(inputEl.min) || 0;
+    const max = parseFloat(inputEl.max) || 100;
+    const val = parseFloat(inputEl.value);
+    const percent = ((val - min) / (max - min)) * 100;
+    inputEl.style.setProperty("--slider-fill", `${percent}%`);
+  },
+
+  // 恢复默认设置
+  resetToDefault() {
+    this.currentSettings = { ...this.defaultSettings };
+    this.applyToCSS();
+    this.updateUI();
+    this.saveSettings();
+  },
+
+  saveSettings() {
+    try {
+      localStorage.setItem(
+        "reading_settings",
+        JSON.stringify(this.currentSettings)
+      );
+    } catch (e) {
+      console.warn("无法保存设置", e);
+    }
+  },
+};
+
+// 确保 DOM 挂载后执行
+document.addEventListener("DOMContentLoaded", () => {
+  ReadingSettingsManager.init();
+});

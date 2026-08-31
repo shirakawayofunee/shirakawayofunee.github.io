@@ -245,9 +245,9 @@ const chapterList = [
   {
     id: "conversation33",
     category: "weak",
-    title: "501「Citadel」",
+    title: "Mz-501「Citadel」",
     subtitle: "The Weak",
-    dateLabel: "N.F.113/11/",
+    dateLabel: "N.F.10？",
   },
   {
     id: "conversation34",
@@ -273,16 +273,72 @@ const chapterList = [
   {
     id: "conversation37",
     category: "weak",
-    title: "505「礎石」",
+    title: "Mz-505「礎石」",
     subtitle: "The Weak",
     dateLabel: "N.F.104",
+  },
+  {
+    id: "conversation38",
+    category: "weak",
+    title: "506「逮捕」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.113",
+  },
+  {
+    id: "conversation39",
+    category: "weak",
+    title: "507「迷宮」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation40",
+    category: "weak",
+    title: "507-02「微光と暗流」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.113.11.25/10:00",
+  },
+  {
+    id: "conversation41",
+    category: "weak",
+    title: "508「盟友」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation42",
+    category: "weak",
+    title: "Mz-509「深坑」",
+    subtitle: "The Weak",
+    dateLabel: "N.F.104.11",
+  },
+  {
+    id: "conversation43",
+    category: "weak",
+    title: "510「うねり」",
+    subtitle: "The Weak",
+    dateLabel: "16:13",
+  },
+  {
+    id: "conversation44",
+    category: "weak",
+    title: "511「羊飼いの行方」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation45",
+    category: "weak",
+    title: "511-02「起爆」",
+    subtitle: "The Weak",
+    dateLabel: "10:07",
   },
   {
     id: "side01",
     category: "extra",
     title: "「サボテン」",
     subtitle: "Side Story",
-     dateLabel: "N.F.114/？/？",
+    dateLabel: "N.F.114/？/？",
   },
 
   {
@@ -290,14 +346,14 @@ const chapterList = [
     category: "extra",
     title: "「腹黑」",
     subtitle: "Side Story",
-     dateLabel: "N.F.114/？/？",
+    dateLabel: "N.F.114/？/？",
   },
   {
     id: "side03",
     category: "extra",
     title: "「母熊と図書室」",
     subtitle: "Side Story",
-     dateLabel: "N.F.114/？/？",
+    dateLabel: "N.F.114/？/？",
   },
 ];
 
@@ -305,18 +361,17 @@ const chapterList = [
 let currentChapterIndex = -1;
 let currentCategory = "all";
 let isMusicPlaying = false;
-let bgmObserver = null;       
-let lastTriggeredBgm = "";    
+let bgmObserver = null;
+let lastTriggeredBgm = "";
 const bgmPlayer = document.getElementById("bgm-player");
 bgmPlayer.volume = 0.4;
 
-
 document.addEventListener("DOMContentLoaded", () => {
-  initTabs(); 
-  renderList(); 
-  handleHashChange(); 
+  initTabs();
+  renderList();
+  handleHashChange();
 
-  setTheme('light');
+  setTheme("light");
 
   window.addEventListener("hashchange", handleHashChange);
 
@@ -327,79 +382,84 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function toggleSidebar() {
-  const container = document.querySelector('.main-container');
-  container.classList.toggle('sidebar-collapsed');
+  const container = document.querySelector(".main-container");
+  container.classList.toggle("sidebar-collapsed");
 }
 
 // 初始化两个眼球
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // 1. 初始化侧边栏的大眼球
-  const largeEyeDiv = document.getElementById('large-eye-container');
+  const largeEyeDiv = document.getElementById("large-eye-container");
   if (largeEyeDiv) {
-      new MagneticEye(largeEyeDiv, { style: 'minimal' });
+    new MagneticEye(largeEyeDiv, { style: "minimal" });
   }
 
   // 2. 初始化收缩后才显示的小眼球
-  const smallEyeDiv = document.getElementById('small-eye-container');
+  const smallEyeDiv = document.getElementById("small-eye-container");
   if (smallEyeDiv) {
-      new MagneticEye(smallEyeDiv, { style: 'minimal' }); // 或者改成 'realistic'
+    new MagneticEye(smallEyeDiv, { style: "minimal" }); // 或者改成 'realistic'
   }
 });
 // --- 1. 初始化分类标签 ---
 function initTabs() {
   const container = document.getElementById("category-tabs");
   if (!container) return;
-  
-  container.innerHTML = ''; // 规避重复渲染
+
+  container.innerHTML = ""; // 规避重复渲染
 
   categories.forEach((cat) => {
     const btn = document.createElement("button");
     btn.className = "tab-btn";
     btn.textContent = cat.name;
     btn.dataset.id = cat.id;
-    
+
     // 初始化高亮状态
     if (cat.id === currentCategory) btn.classList.add("active");
 
     btn.onclick = () => {
       // 切换按钮高亮样式
-      document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+      document
+        .querySelectorAll(".tab-btn")
+        .forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
       // 更新全局当前的分类 ID
       currentCategory = cat.id;
-      
+
       // 没有任何多余负担，直接纯净重新渲染
-      renderList(); 
+      renderList();
     };
-    
+
     container.appendChild(btn);
   });
 }
 
 // --- 2. 渲染章节列表 ---
 function renderList() {
-  const listContainer = document.getElementById('chapter-list');
+  const listContainer = document.getElementById("chapter-list");
   if (!listContainer) return;
-  listContainer.innerHTML = '';
+  listContainer.innerHTML = "";
 
   // 此时过滤只看分类，再也没有搜索框的干扰了
-  const filtered = chapterList.filter(item => {
-      return currentCategory === 'all' || 
-             (item.category && item.category.toLowerCase() === currentCategory.toLowerCase());
+  const filtered = chapterList.filter((item) => {
+    return (
+      currentCategory === "all" ||
+      (item.category &&
+        item.category.toLowerCase() === currentCategory.toLowerCase())
+    );
   });
 
   // 生成 DOM
-  filtered.forEach(item => {
-      const el = document.createElement('div');
-      el.className = 'chapter-item';
-      el.dataset.id = item.id;
-      
-      if (window.location.hash.substring(1) === item.id) {
-          el.classList.add('active');
-      }
+  filtered.forEach((item) => {
+    const el = document.createElement("div");
+    el.className = "chapter-item";
+    el.dataset.id = item.id;
 
-      el.innerHTML = `
+    if (window.location.hash.substring(1) === item.id) {
+      el.classList.add("active");
+    }
+
+    el.innerHTML = `
           <span class="chap-title">${item.title}</span>
           <div class="chap-arrow-box">
               <svg class="custom-arrow" viewBox="0 0 12 12">
@@ -411,18 +471,18 @@ function renderList() {
           <span class="chap-date">${item.dateLabel}</span>
       `;
 
-      el.onclick = () => {
-          window.location.hash = item.id;
-      };
+    el.onclick = () => {
+      window.location.hash = item.id;
+    };
 
-      listContainer.appendChild(el);
+    listContainer.appendChild(el);
   });
 }
 
 // --- 3. 路由处理 ---
 function handleHashChange() {
   const hash = window.location.hash.substring(1);
-  if (!hash) return; 
+  if (!hash) return;
 
   loadChapter(hash);
 
@@ -442,67 +502,72 @@ function handleHashChange() {
 // --- 4. 加载 JSON 数据 ---
 async function loadChapter(chapterId) {
   const scriptDiv = document.getElementById("script-content");
-  
-  const titleBox = document.getElementById("chapter-title-box"); 
+
+  const titleBox = document.getElementById("chapter-title-box");
   const headerBox = document.getElementById("script-header");
   const summaryEl = document.getElementById("header-summary");
-  
+
   if (summaryEl) {
-      summaryEl.textContent = "God's great power is in the gentle breeze, not in the storm.";
+    summaryEl.textContent =
+      "God's great power is in the gentle breeze, not in the storm.";
   }
 
-    // 【新增】：加载新章节前，旧标题平滑淡出
-    if (titleBox) {
-      titleBox.style.transition = "opacity 0.3s ease";
-      titleBox.style.opacity = 0;
+  // 【新增】：加载新章节前，旧标题平滑淡出
+  if (titleBox) {
+    titleBox.style.transition = "opacity 0.3s ease";
+    titleBox.style.opacity = 0;
   }
-  
+
   // 【修改点】：清空容器，放回前言节点，再插入读取中的文字
-  scriptDiv.innerHTML = '';
-  if (titleBox) scriptDiv.appendChild(titleBox); 
-  if (headerBox) scriptDiv.appendChild(headerBox); 
-  scriptDiv.insertAdjacentHTML('beforeend', '<div class="narration">運命の果てと果てで、同じような痛みを私たちは抱いているのか</div>');
+  scriptDiv.innerHTML = "";
+  if (titleBox) scriptDiv.appendChild(titleBox);
+  if (headerBox) scriptDiv.appendChild(headerBox);
+  scriptDiv.insertAdjacentHTML(
+    "beforeend",
+    '<div class="narration">運命の果てと果てで、同じような痛みを私たちは抱いているのか</div>'
+  );
 
   try {
     const module = await import(`../data/${chapterId}.js`);
     const data = module.default;
 
-    const defaultBgm = (data.meta && data.meta.bgm) ? data.meta.bgm : "";
-    lastTriggeredBgm = defaultBgm; 
+    const defaultBgm = data.meta && data.meta.bgm ? data.meta.bgm : "";
+    lastTriggeredBgm = defaultBgm;
 
     if (defaultBgm) {
-      playBgm(defaultBgm, true); 
+      playBgm(defaultBgm, true);
     }
 
     renderScript(data.script, defaultBgm);
-    renderInfo(data.infoPanel); 
+    renderInfo(data.infoPanel);
     updateHeaderFromJSON(chapterId, data);
 
     const scrollPanel = document.getElementById("script-panel");
     if (scrollPanel) scrollPanel.scrollTop = 0;
 
-    const currentChapInfo = chapterList.find(item => item.id === chapterId);
+    const currentChapInfo = chapterList.find((item) => item.id === chapterId);
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      'event': 'chapter_read',          
-      'chapter_id': chapterId,          
-      'chapter_title': currentChapInfo ? currentChapInfo.title : 'Unknown', 
-      'chapter_category': currentChapInfo ? currentChapInfo.category : 'Unknown' 
+      event: "chapter_read",
+      chapter_id: chapterId,
+      chapter_title: currentChapInfo ? currentChapInfo.title : "Unknown",
+      chapter_category: currentChapInfo ? currentChapInfo.category : "Unknown",
     });
 
     setTimeout(() => {
       initBgmObserver();
     }, 100);
-    
   } catch (err) {
     console.error(err);
-    scriptDiv.innerHTML = '';
+    scriptDiv.innerHTML = "";
     if (headerBox) scriptDiv.appendChild(headerBox);
-    scriptDiv.insertAdjacentHTML('beforeend', `<div class="narration" style="color:#D40F30">: ${chapterId}</div>`);
+    scriptDiv.insertAdjacentHTML(
+      "beforeend",
+      `<div class="narration" style="color:#D40F30">: ${chapterId}</div>`
+    );
   }
 }
-
 
 function parseEmphasis(text) {
   if (!text) return "";
@@ -511,180 +576,244 @@ function parseEmphasis(text) {
 }
 // --- 新增：更新顶部开场白的函数 ---
 function updateHeaderFromJSON(chapterId, data) {
-  const jsonTitle = (data.meta && data.meta.title) ? data.meta.title : "UNKNOWN RECORD";
+  const jsonTitle =
+    data.meta && data.meta.title ? data.meta.title : "UNKNOWN RECORD";
   const titleBox = document.getElementById("chapter-title-box");
   const titleEl = document.getElementById("chapter-title");
 
   if (titleBox && titleEl) {
-/*       titleEl.innerHTML = jsonTitle; */
+    /*       titleEl.innerHTML = jsonTitle; */
 
-      const jsonTitle = (data.meta && data.meta.title) ? data.meta.title : "UNKNOWN RECORD";
-        
-      // 【修改点】：调用正则替换，并赋值给 innerHTML
-      titleEl.innerHTML = parseEmphasis(jsonTitle);
-      
-      // 动画初始状态 (具体 translateY 根据下方风格微调)
-      titleBox.style.transition = "none";
-      titleBox.style.opacity = 0;
-      titleBox.style.transform = "translateY(15px)"; 
-      
-      // 触发重绘以应用 transition
-      void titleBox.offsetWidth; 
-      
-      // 延时执行淡入动画 (平滑淡入)
-      setTimeout(() => {
-          titleBox.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-          titleBox.style.opacity = 1;
-          titleBox.style.transform = "translateY(0)";
-      }, 100); // 略微延迟，让其与Summary有个先后层次感
+    const jsonTitle =
+      data.meta && data.meta.title ? data.meta.title : "UNKNOWN RECORD";
+
+    // 【修改点】：调用正则替换，并赋值给 innerHTML
+    titleEl.innerHTML = parseEmphasis(jsonTitle);
+
+    // 动画初始状态 (具体 translateY 根据下方风格微调)
+    titleBox.style.transition = "none";
+    titleBox.style.opacity = 0;
+    titleBox.style.transform = "translateY(15px)";
+
+    // 触发重绘以应用 transition
+    void titleBox.offsetWidth;
+
+    // 延时执行淡入动画 (平滑淡入)
+    setTimeout(() => {
+      titleBox.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+      titleBox.style.opacity = 1;
+      titleBox.style.transform = "translateY(0)";
+    }, 100); // 略微延迟，让其与Summary有个先后层次感
   }
 
-  const jsonSummary = (data.meta && data.meta.summary) 
-                      ? data.meta.summary 
-                      : "NO SUMMARY DATA"; 
+  const jsonSummary =
+    data.meta && data.meta.summary ? data.meta.summary : "NO SUMMARY DATA";
 
   const elSummary = document.getElementById("header-summary");
-  
+
   if (elSummary) {
-      elSummary.style.opacity = 0;
-      elSummary.innerHTML = parseEmphasis(jsonSummary);
-      /* elSummary.textContent = jsonSummary; */
-      setTimeout(() => {
-          elSummary.style.transition = "opacity 0.8s ease";
-          elSummary.style.opacity = 1;
-      }, 50);
+    elSummary.style.opacity = 0;
+    elSummary.innerHTML = parseEmphasis(jsonSummary);
+    /* elSummary.textContent = jsonSummary; */
+    setTimeout(() => {
+      elSummary.style.transition = "opacity 0.8s ease";
+      elSummary.style.opacity = 1;
+    }, 50);
   }
 }
 
-// --- 5. 渲染正文 ---
-// 選択肢クリック時のプレースホルダー関数（すでに定義済みの場合は不要です）
-window.handleChoiceClick = window.handleChoiceClick || function(index, text) {
-  console.log(`Choice clicked: Index ${index}, Text: "${text}"`);
+// 選択肢グループ用のカウンター
+let choiceGroupCounter = 0;
+
+// 分岐（アクティブ状態）を切り替えるグローバル関数
+window.toggleChoiceBranch = function(button, groupId, targetId) {
+    // 1. 同一グループ内のボタンのアクティブクラスを切り替え
+    const buttons = document.querySelectorAll(`.choice-toggle-btn[data-group="${groupId}"]`);
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    // 2. 同一グループ内のすべての分岐コンテンツを非表示にし、対象のみを表示
+    const branches = document.querySelectorAll(`[id^="${groupId}-branch-"]`);
+    branches.forEach(branch => {
+        branch.style.display = 'none';
+        branch.classList.remove('active');
+    });
+    
+    const targetBranch = document.getElementById(targetId);
+    if (targetBranch) {
+        targetBranch.style.display = '';
+        targetBranch.classList.add('active');
+    }
 };
 
-function renderScript(script, defaultBgm = "") {
-const container = document.getElementById("script-content");
-const titleBox = document.getElementById("chapter-title-box"); 
-const headerBox = document.getElementById("script-header");
-container.innerHTML = "";
-if (wasBgmPlayingBeforeVideo) {
-  toggleMusic('play');
-  wasBgmPlayingBeforeVideo = false;
-}
-if (titleBox) container.appendChild(titleBox);
-if (headerBox) container.appendChild(headerBox);
-
-VoiceManager.reset(script);
-
-let currentLineBgm = defaultBgm;
-
-script.forEach((line, index) => {
-    const div = document.createElement("div");
-    div.id = `msg-row-${index}`;
-
-    if (line.bgm) {
-        currentLineBgm = line.bgm;
+function renderScript(script, defaultBgm = "", customContainer = null) {
+  // customContainerが指定されていればそれを使用し、なければデフォルトの領域を使用
+  const container = customContainer || document.getElementById("script-content");
+  
+  // ルート（最初の呼び出し）の時のみ、コンテナを初期化してヘッダー等を描画する
+  if (!customContainer) {
+    const titleBox = document.getElementById("chapter-title-box"); 
+    const headerBox = document.getElementById("script-header");
+    container.innerHTML = "";
+    if (wasBgmPlayingBeforeVideo) {
+      toggleMusic('play');
+      wasBgmPlayingBeforeVideo = false;
     }
-    if (currentLineBgm) {
-        div.setAttribute("data-bgm", currentLineBgm);
-    }
+    if (titleBox) container.appendChild(titleBox);
+    if (headerBox) container.appendChild(headerBox);
+    VoiceManager.reset(script);
+  }
 
-    let voiceBtnHtml = '';
+  let currentLineBgm = defaultBgm;
 
-    if (line.voice) {
-        if (Array.isArray(line.voice)) {
-            voiceBtnHtml += '<span class="voice-group">'; 
-            line.voice.forEach((v, subIndex) => {
-                const safePath = v.path.replace(/#/g, '%23');
-                voiceBtnHtml += `<button id="voice-btn-${index}-${subIndex}" class="voice-tag" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', ${subIndex})" title="Play ${v.label}">${v.label}</button>`;
-            });
-            voiceBtnHtml += '</span>';
-        } else {
-            const safePath = line.voice.replace(/#/g, '%23');
-            voiceBtnHtml = `<button id="voice-btn-${index}-0" class="voice-btn" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', 0)" title="Play Voice"><svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z"></path></svg></button>`;
-        }
-    }
+  script.forEach((line, index) => {
+      const div = document.createElement("div");
+      div.id = `msg-row-${index}`;
 
-    if (line.type === "narration") {
-      div.className = "message-row";
-      let customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
-      let displayText = line.text;
-
-      if (customBubbleClass === "secret-comm") {
-          let regex = /(^|<br>|\n)\s*([^:：<]+[:：])/g;
-          displayText = displayText.replace(regex, '$1<span class="comm-speaker">$2</span>');
-          displayText = `<div class="comm-header">--- ENCRYPTED_CHANNEL ---</div><div class="comm-body"><span class="comm-bracket">[</span> ${displayText} <span class="comm-bracket">]</span></div>`;
+      if (line.bgm) {
+          currentLineBgm = line.bgm;
+      }
+      if (currentLineBgm) {
+          div.setAttribute("data-bgm", currentLineBgm);
       }
 
-      div.innerHTML = `<div class="narration ${customBubbleClass}">${displayText}</div>`;
-  
-    } else if (line.type === "choice") {
-        // 【追加】選択肢（choice）のレンダリング処理
-        div.className = "message-row choice-row";
-        const safeText = (line.text || "").replace(/'/g, "\\'");
-        div.innerHTML = `
-          <div class="choice-container">
-              <button class="choice-btn-custom" onclick="event.stopPropagation(); handleChoiceClick(${index}, '${safeText}')">
-                  ${line.text || ""}
-              </button>
-          </div>
-        `;
+      let voiceBtnHtml = '';
 
-    } else if (line.type === "image") {
-        div.className = "message-row";
-        div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
+      if (line.voice) {
+          if (Array.isArray(line.voice)) {
+              voiceBtnHtml += '<span class="voice-group">'; 
+              line.voice.forEach((v, subIndex) => {
+                  const safePath = v.path.replace(/#/g, '%23');
+                  voiceBtnHtml += `<button id="voice-btn-${index}-${subIndex}" class="voice-tag" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', ${subIndex})" title="Play ${v.label}">${v.label}</button>`;
+              });
+              voiceBtnHtml += '</span>';
+          } else {
+              const safePath = line.voice.replace(/#/g, '%23');
+              voiceBtnHtml = `<button id="voice-btn-${index}-0" class="voice-btn" onclick="event.stopPropagation(); VoiceManager.playManual(${index}, '${safePath}', 0)" title="Play Voice"><svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z"></path></svg></button>`;
+          }
+      }
 
-    } else if (line.type === "video") {
+      if (line.type === "narration") {
         div.className = "message-row";
-        
-        const showControls = line.controls !== false ? "controls" : "";
-        const isAutoplay = line.autoplay ? "autoplay" : "";
-        const isLoop = line.loop ? "loop" : "";
-        const isMuted = line.muted ? "muted" : "";
-        const posterAttr = line.poster ? `poster="${line.poster}"` : "";
-          
-        div.innerHTML = `
-          <div class="narration">
-              <video 
-                  src="${line.src}" 
-                  class="cg-video" 
-                  ${showControls} 
-                  ${isAutoplay} 
-                  ${isLoop} 
-                  ${isMuted} 
-                  ${posterAttr} 
-                  playsinline
-                  onplay="handleVideoPlay(this)"
-                  onpause="handleVideoPause(this)"
-                  onended="handleVideoPause(this)">
-              </video>
-          </div>
-        `;
+        let customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
+        let displayText = line.text;
+
+        if (customBubbleClass === "secret-comm") {
+            let regex = /(^|<br>|\n)\s*([^:：<]+[:：])/g;
+            displayText = displayText.replace(regex, '$1<span class="comm-speaker">$2</span>');
+            displayText = `<div class="comm-header">--- ENCRYPTED_CHANNEL ---</div><div class="comm-body"><span class="comm-bracket">[</span> ${displayText} <span class="comm-bracket">]</span></div>`;
+        }
+
+        div.innerHTML = `<div class="narration ${customBubbleClass}">${displayText}</div>`;
     
-    } else if (line.type === "dialogue") {
-        const pos = line.position === "right" ? "pos-right" : "pos-left";
-        div.className = `message-row ${pos}`;
-        
-        const customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
-        
-        const avatarHTML = line.avatar 
-            ? `<img src="${line.avatar}" class="avatar">` 
-            : ``;
-        
-        const nameHTML = line.name 
-            ? `<div class="message-name">${line.name}</div>` 
-            : ``;
+      } else if (line.type === "choice_group") {
+          // 【追加】分岐選択肢グループの処理
+          choiceGroupCounter++;
+          const groupId = `choice-group-${choiceGroupCounter}`;
+          div.className = "message-row choice-group-row";
+          
+          let buttonsHtml = `<div class="choice-buttons-container">`;
+          let branchesHtml = `<div class="choice-branches-container">`;
+          
+          line.choices.forEach((choice, choiceIdx) => {
+              const choiceId = `${groupId}-branch-${choiceIdx}`;
+              // 最初の選択肢（インデックス0）をデフォルトでアクティブ（表示）にする
+              const activeClass = choiceIdx === 0 ? "active" : "";
+              const activeStyle = choiceIdx === 0 ? "" : "display: none;";
+              
+              buttonsHtml += `
+                  <button class="choice-btn-custom choice-toggle-btn ${activeClass}" 
+                          data-group="${groupId}" 
+                          onclick="event.stopPropagation(); toggleChoiceBranch(this, '${groupId}', '${choiceId}')">
+                      ${choice.text || ""}
+                  </button>
+              `;
+              
+              branchesHtml += `
+                  <div id="${choiceId}" class="choice-branch-content ${activeClass}" style="${activeStyle}"></div>
+              `;
+          });
+          
+          buttonsHtml += `</div>`;
+          branchesHtml += `</div>`;
+          div.innerHTML = buttonsHtml + branchesHtml;
+          
+          // ドキュメントに追加する前に、各分岐用のコンテナ内にシナリオを再帰レンダリング
+          line.choices.forEach((choice, choiceIdx) => {
+              const choiceId = `${groupId}-branch-${choiceIdx}`;
+              const branchContainer = div.querySelector(`#${choiceId}`);
+              if (branchContainer && choice.script) {
+                  renderScript(choice.script, currentLineBgm, branchContainer);
+              }
+          });
 
-        div.innerHTML = `
-            ${avatarHTML}
-            <div class="message-content">
-                ${nameHTML}
-                <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
+      } else if (line.type === "choice") {
+          // 単体の選択肢（従来通り）
+          div.className = "message-row choice-row";
+          const safeText = (line.text || "").replace(/'/g, "\\'");
+          div.innerHTML = `
+            <div class="choice-container">
+                <button class="choice-btn-custom" onclick="event.stopPropagation(); handleChoiceClick(${index}, '${safeText}')">
+                    ${line.text || ""}
+                </button>
             </div>
-        `;
-    }
-    container.appendChild(div);
-});
+          `;
+
+      } else if (line.type === "image") {
+          div.className = "message-row";
+          div.innerHTML = `<div class="narration"><img src="${line.src}" class="cg-image"></div>`;
+
+      } else if (line.type === "video") {
+          div.className = "message-row";
+          
+          const showControls = line.controls !== false ? "controls" : "";
+          const isAutoplay = line.autoplay ? "autoplay" : "";
+          const isLoop = line.loop ? "loop" : "";
+          const isMuted = line.muted ? "muted" : "";
+          const posterAttr = line.poster ? `poster="${line.poster}"` : "";
+            
+          div.innerHTML = `
+            <div class="narration">
+                <video 
+                    src="${line.src}" 
+                    class="cg-video" 
+                    ${showControls} 
+                    ${isAutoplay} 
+                    ${isLoop} 
+                    ${isMuted} 
+                    ${posterAttr} 
+                    playsinline
+                    onplay="handleVideoPlay(this)"
+                    onpause="handleVideoPause(this)"
+                    onended="handleVideoPause(this)">
+                </video>
+            </div>
+          `;
+      
+      } else if (line.type === "dialogue") {
+          const pos = line.position === "right" ? "pos-right" : "pos-left";
+          div.className = `message-row ${pos}`;
+          
+          const customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
+          
+          const avatarHTML = line.avatar 
+              ? `<img src="${line.avatar}" class="avatar">` 
+              : ``;
+          
+          const nameHTML = line.name 
+              ? `<div class="message-name">${line.name}</div>` 
+              : ``;
+
+          div.innerHTML = `
+              ${avatarHTML}
+              <div class="message-content">
+                  ${nameHTML}
+                  <div class="message-bubble ${customBubbleClass}">${line.text}${voiceBtnHtml}</div>
+              </div>
+          `;
+      }
+      container.appendChild(div);
+  });
 }
 
 // --- 6. 渲染右侧信息 ---
@@ -693,18 +822,19 @@ script.forEach((line, index) => {
 // =========================================================================
 function parseProfile(text) {
   if (!text) return "";
-  
+
   // 1. 按换行切分，洗掉多余空格，并过滤空行
   const lines = String(text)
-    .split('\n')
-    .map(line => line.trim())
-    .filter(line => line.length > 0);
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0);
 
   let html = '<div class="oc-profile-section">';
-  
-  lines.forEach(line => {
+
+  lines.forEach((line) => {
     // 2. 寻找中英文冒号，分离键与值
-    const colonIndex = line.indexOf('：') !== -1 ? line.indexOf('：') : line.indexOf(':');
+    const colonIndex =
+      line.indexOf("：") !== -1 ? line.indexOf("：") : line.indexOf(":");
     if (colonIndex !== -1) {
       const key = line.substring(0, colonIndex).trim();
       const value = line.substring(colonIndex + 1).trim();
@@ -724,8 +854,8 @@ function parseProfile(text) {
       `;
     }
   });
-  
-  html += '</div>';
+
+  html += "</div>";
   return html;
 }
 
@@ -733,13 +863,12 @@ function parseProfile(text) {
 // 主渲染函数：已整合您原本的所有逻辑（词汇表、角色卡、简介渲染）
 // =========================================================================
 function renderInfo(info) {
-  
   // ----------------------------------------------------
   // 1. 【完全保留】您原先的 glossary 词汇表渲染与 GSAP 初始化
   // ----------------------------------------------------
   const glossaryDiv = document.getElementById("glossary-container");
   glossaryDiv.innerHTML = "";
-  
+
   if (info.glossary) {
     info.glossary.forEach((g) => {
       const item = document.createElement("div");
@@ -766,47 +895,48 @@ function renderInfo(info) {
   // ----------------------------------------------------
   const charDiv = document.getElementById("characters-container");
   charDiv.innerHTML = "";
-  
+
   if (info && info.characters) {
     info.characters.forEach((c) => {
-      
       // A. 判断该角色是否需要交替排版
-      const reverseClass = c.isReverse ? 'style-reverse' : '';
-  
+      const reverseClass = c.isReverse ? "style-reverse" : "";
+
       // B. 修复您原先代码中的一个细节：原先定义了 cleanNote 却在渲染时错用了 c.note
       // 这里清洗了 note 里的冗余代码缩进空格
       let cleanNote = "";
       if (c.note) {
         cleanNote = String(c.note)
-          .split('\n')
-          .map(line => line.trim()) 
-          .join('\n')
+          .split("\n")
+          .map((line) => line.trim())
+          .join("\n")
           .trim();
       }
 
       // C. 【新增核心】：如果数据有 c.profile（两端对齐的数据），就调用辅助函数渲染
       // 如果数据里没有配置 profile 字段，则输出空字符串，不占用卡片上的任何空间
-      const profileHTML = c.profile ? parseProfile(c.profile) : '';
+      const profileHTML = c.profile ? parseProfile(c.profile) : "";
 
       // D. 清理并准备渲染 bottomSection (basicStats 区域)
       let cleanBasicStats = "";
       if (c.basicStats) {
         cleanBasicStats = String(c.basicStats)
-          .split('\n')
-          .map(line => line.trim()) 
-          .join('\n')
+          .split("\n")
+          .map((line) => line.trim())
+          .join("\n")
           .trim();
       }
-      const hasNote = cleanBasicStats !== ''; 
-      const bottomSectionHTML = hasNote ? `
+      const hasNote = cleanBasicStats !== "";
+      const bottomSectionHTML = hasNote
+        ? `
           <div class="oc-bottom-section">
             <div class="oc-summary-text">${cleanBasicStats}</div>
           </div>
-      ` : '';
-  
+      `
+        : "";
+
       const card = document.createElement("div");
       card.className = `oc-window-card ${reverseClass}`; // 注入交替类名
-      
+
       card.innerHTML = `
         <!-- 主体内容 -->
         <div class="oc-window-body">
@@ -814,12 +944,12 @@ function renderInfo(info) {
           <!-- 上半区：贴边头像 + 名字 -->
           <div class="oc-top-section">
             <div class="oc-avatar-box">
-               ${c.avatar ? `<img src="${c.avatar}" alt="${c.name}">` : ''}
+               ${c.avatar ? `<img src="${c.avatar}" alt="${c.name}">` : ""}
             </div>
             <div class="oc-info-box">
-              <h4 class="oc-name">${c.name || ''}</h4>
+              <h4 class="oc-name">${c.name || ""}</h4>
               <!-- 此处已替换为已洗掉缩进空格的 cleanNote -->
-              <div class="oc-stats">${cleanNote || ''}</div>
+              <div class="oc-stats">${cleanNote || ""}</div>
             </div>
           </div>
           <!-- 下半区：动态渲染（若无内容则为完全不生成该 div，不会留有空隙） -->
@@ -829,7 +959,7 @@ function renderInfo(info) {
   
         </div>
       `;
-      
+
       charDiv.appendChild(card);
     });
   }
@@ -854,111 +984,121 @@ function updateNavButtons() {
   const btnNext = document.getElementById("float-btn-next");
 
   if (btnPrev && btnNext) {
-      btnPrev.disabled = currentChapterIndex <= 0;
-      btnNext.disabled = currentChapterIndex >= chapterList.length - 1;
+    btnPrev.disabled = currentChapterIndex <= 0;
+    btnNext.disabled = currentChapterIndex >= chapterList.length - 1;
   }
 }
 
 // --- 音乐控制 ---
 function playBgm(src, forcePlay = false) {
   if (!bgmPlayer.src.includes(src)) {
-      bgmPlayer.src = src;
+    bgmPlayer.src = src;
   }
 
   if (forcePlay || isMusicPlaying) {
-      const playPromise = bgmPlayer.play();
+    const playPromise = bgmPlayer.play();
 
-      if (playPromise !== undefined) {
-          playPromise.then(() => {
-              updateMusicUI(true);
-          }).catch(error => {
-              console.log("Auto-play blocked by browser. User interaction needed.");
-              updateMusicUI(false);
-          });
-      }
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          updateMusicUI(true);
+        })
+        .catch((error) => {
+          console.log("Auto-play blocked by browser. User interaction needed.");
+          updateMusicUI(false);
+        });
+    }
   }
 }
 
 // --- BGM 滚动观察器 ---
 function initBgmObserver() {
   if (bgmObserver) {
-      bgmObserver.disconnect();
+    bgmObserver.disconnect();
   }
 
-  bgmObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              const newBgm = entry.target.getAttribute('data-bgm');
-              
-              if (newBgm && newBgm !== lastTriggeredBgm) {
-                  console.log(`[剧情点触发] 切换BGM: ${newBgm}`);
-                  lastTriggeredBgm = newBgm;
-                  playBgm(newBgm, false); 
-              }
-          }
-      });
-  }, {
-      rootMargin: "-40% 0px -40% 0px",
-      threshold: 0
-  });
+  bgmObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const newBgm = entry.target.getAttribute("data-bgm");
 
-  const rows = document.querySelectorAll('#script-content .message-row');
-  rows.forEach(row => {
-      if (row.hasAttribute('data-bgm')) {
-          bgmObserver.observe(row);
-      }
+          if (newBgm && newBgm !== lastTriggeredBgm) {
+            console.log(`[剧情点触发] 切换BGM: ${newBgm}`);
+            lastTriggeredBgm = newBgm;
+            playBgm(newBgm, false);
+          }
+        }
+      });
+    },
+    {
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0,
+    }
+  );
+
+  const rows = document.querySelectorAll("#script-content .message-row");
+  rows.forEach((row) => {
+    if (row.hasAttribute("data-bgm")) {
+      bgmObserver.observe(row);
+    }
   });
 }
 
 function toggleMusic(action) {
-  if (action === 'play') {
-      bgmPlayer.play();
-      updateMusicUI(true);
+  if (action === "play") {
+    bgmPlayer.play();
+    updateMusicUI(true);
   } else {
-      bgmPlayer.pause();
-      updateMusicUI(false);
+    bgmPlayer.pause();
+    updateMusicUI(false);
   }
 }
 
 function updateMusicUI(playing) {
   isMusicPlaying = playing;
-  const btnPlay = document.getElementById('btn-play'); 
-  const btnPause = document.getElementById('btn-pause'); 
+  const btnPlay = document.getElementById("btn-play");
+  const btnPause = document.getElementById("btn-pause");
 
   if (playing) {
-      btnPlay.style.display = 'none';
-      btnPause.style.display = 'block';
+    btnPlay.style.display = "none";
+    btnPause.style.display = "block";
   } else {
-      btnPlay.style.display = 'block';
-      btnPause.style.display = 'none';
+    btnPlay.style.display = "block";
+    btnPause.style.display = "none";
   }
 }
 
 // --- 新增：全局解除浏览器音频限制 ---
 function setupAudioUnlock() {
   const unlockHandler = () => {
-      // 如果当前有音乐路径，且处于被拦截的暂停状态，且我们的 UI 认为它没在播放
-      if (bgmPlayer.src && bgmPlayer.paused && !isMusicPlaying) {
-          const playPromise = bgmPlayer.play();
-          if (playPromise !== undefined) {
-              playPromise.then(() => {
-                  // 解锁成功：同步更新动图和状态
-                  updateMusicUI(true);
-              }).catch(e => {
-                  console.log("Global unlock failed or empty src:", e);
-              });
-          }
+    // 如果当前有音乐路径，且处于被拦截的暂停状态，且我们的 UI 认为它没在播放
+    if (bgmPlayer.src && bgmPlayer.paused && !isMusicPlaying) {
+      const playPromise = bgmPlayer.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // 解锁成功：同步更新动图和状态
+            updateMusicUI(true);
+          })
+          .catch((e) => {
+            console.log("Global unlock failed or empty src:", e);
+          });
       }
-      
-      // 【关键】：无论成功与否，只要用户交互过一次，浏览器的“手势锁”就解除了。
-      // 立即移除监听器，避免每次点击都重复执行。
-      document.body.removeEventListener('click', unlockHandler, true);
-      document.body.removeEventListener('touchstart', unlockHandler, true);
+    }
+
+    // 【关键】：无论成功与否，只要用户交互过一次，浏览器的“手势锁”就解除了。
+    // 立即移除监听器，避免每次点击都重复执行。
+    document.body.removeEventListener("click", unlockHandler, true);
+    document.body.removeEventListener("touchstart", unlockHandler, true);
   };
 
   // 使用捕获阶段 (true)，确保在其他按钮事件触发前，先解除音频锁定
-  document.body.addEventListener('click', unlockHandler, true);
-  document.body.addEventListener('touchstart', unlockHandler, { passive: true, capture: true });
+  document.body.addEventListener("click", unlockHandler, true);
+  document.body.addEventListener("touchstart", unlockHandler, {
+    passive: true,
+    capture: true,
+  });
 }
 
 // 新增：用来记录视频播放前，BGM 是否处于播放状态的全局变量
@@ -966,41 +1106,41 @@ let wasBgmPlayingBeforeVideo = false;
 
 // 新增：视频播放时的逻辑
 function handleVideoPlay(videoElement) {
-    console.log("[视频事件] 开始播放");
-    
-    // 如果当前 BGM 正在播放，我们需要暂停它并记录状态
-    if (isMusicPlaying) {
-        wasBgmPlayingBeforeVideo = true;
-        toggleMusic('pause'); // 调用您原有的函数，暂停 BGM 并更新 UI
-        console.log("[联动] 已自动暂停 BGM 并记录了播放状态");
-    }
+  console.log("[视频事件] 开始播放");
+
+  // 如果当前 BGM 正在播放，我们需要暂停它并记录状态
+  if (isMusicPlaying) {
+    wasBgmPlayingBeforeVideo = true;
+    toggleMusic("pause"); // 调用您原有的函数，暂停 BGM 并更新 UI
+    console.log("[联动] 已自动暂停 BGM 并记录了播放状态");
+  }
 }
 
 // 新增：视频暂停或结束时的逻辑
 function handleVideoPause(videoElement) {
-    console.log("[视频事件] 暂停或结束");
-    
-    // 检查页面上是否还有其他正在播放的视频（防止多视频并存时互相干扰）
-    const allVideos = document.querySelectorAll('.cg-video');
-    const isAnyVideoPlaying = Array.from(allVideos).some(video => {
-        return !video.paused && !video.ended && video !== videoElement;
-    });
+  console.log("[视频事件] 暂停或结束");
 
-    // 如果没有任何视频在播放了，且进入视频前 BGM 是开启的，则恢复 BGM
-    if (!isAnyVideoPlaying) {
-        if (wasBgmPlayingBeforeVideo) {
-            toggleMusic('play'); // 调用您原有的函数，恢复播放并更新 UI
-            wasBgmPlayingBeforeVideo = false; // 重置记录状态
-            console.log("[联动] 无其他视频播放，已恢复 BGM");
-        }
+  // 检查页面上是否还有其他正在播放的视频（防止多视频并存时互相干扰）
+  const allVideos = document.querySelectorAll(".cg-video");
+  const isAnyVideoPlaying = Array.from(allVideos).some((video) => {
+    return !video.paused && !video.ended && video !== videoElement;
+  });
+
+  // 如果没有任何视频在播放了，且进入视频前 BGM 是开启的，则恢复 BGM
+  if (!isAnyVideoPlaying) {
+    if (wasBgmPlayingBeforeVideo) {
+      toggleMusic("play"); // 调用您原有的函数，恢复播放并更新 UI
+      wasBgmPlayingBeforeVideo = false; // 重置记录状态
+      console.log("[联动] 无其他视频播放，已恢复 BGM");
     }
+  }
 }
 // --- 沉浸模式：隐藏顶部悬浮工具栏 ---
 function enableImmersiveMode() {
   // 【修改点】：目标从 script-header 改为了新的绝对定位容器 script-tools-layer
   const toolsLayer = document.querySelector(".script-tools-layer");
   if (toolsLayer) {
-      toolsLayer.style.display = 'none';
+    toolsLayer.style.display = "none";
   }
 }
 
@@ -1011,9 +1151,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initTypewriter() {
-  const titleEl = document.querySelector('.main-title');
-  const subEl = document.querySelector('.sub-title');
-  
+  const titleEl = document.querySelector(".main-title");
+  const subEl = document.querySelector(".sub-title");
+
   if (!titleEl || !subEl) return;
 
   const titleText = "運命の織機";
@@ -1023,94 +1163,95 @@ function initTypewriter() {
   subEl.textContent = "";
 
   function typeString(element, text, speed, cursorColor, callback) {
-      let i = 0;
-      element.style.borderRight = `3px solid ${cursorColor}`;
-      
-      function step() {
-          if (i < text.length) {
-              element.textContent += text.charAt(i);
-              i++;
-              setTimeout(step, Math.random() * speed[1] + speed[0]);
-          } else {
-              element.style.borderRight = "none"; 
-              if (callback) callback();
-          }
+    let i = 0;
+    element.style.borderRight = `3px solid ${cursorColor}`;
+
+    function step() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(step, Math.random() * speed[1] + speed[0]);
+      } else {
+        element.style.borderRight = "none";
+        if (callback) callback();
       }
-      step();
+    }
+    step();
   }
 
   setTimeout(() => {
-      typeString(titleEl, titleText, [320, 80], "#D40F30", () => {
-          typeString(subEl, subText, [120, 30], "#555", () => {
-              subEl.style.borderRight = "2px solid #555";
-              setInterval(() => {
-                   const currentColor = subEl.style.borderRightColor;
-                   subEl.style.borderRightColor = (currentColor === 'transparent') ? '#555' : 'transparent';
-              }, 500);
-          });
+    typeString(titleEl, titleText, [320, 80], "#D40F30", () => {
+      typeString(subEl, subText, [120, 30], "#555", () => {
+        subEl.style.borderRight = "2px solid #555";
+        setInterval(() => {
+          const currentColor = subEl.style.borderRightColor;
+          subEl.style.borderRightColor =
+            currentColor === "transparent" ? "#555" : "transparent";
+        }, 500);
       });
-  }, 200); 
+    });
+  }, 200);
 }
 
 // ==================== 语音与自动播放管理器 ====================
 
 const VoiceManager = {
-  audio: new Audio(),       
-  isAutoMode: false,        
-  currentIndex: 0,          
-  scriptData: [],           
-  timer: null,              
+  audio: new Audio(),
+  isAutoMode: false,
+  currentIndex: 0,
+  scriptData: [],
+  timer: null,
 
   init() {
-      this.audio.preload = 'auto';
-      
-      this.audio.onended = () => {
-          this.setButtonState(this.currentIndex, false); 
-          if (this.isAutoMode) {
-              this.playNext(); 
-          }
-      };
+    this.audio.preload = "auto";
 
-      this.audio.onerror = () => {
-          console.warn("语音文件加载失败，1秒后跳过");
-          this.setButtonState(this.currentIndex, false);
-          if (this.isAutoMode) {
-              this.timer = setTimeout(() => this.playNext(), 1000);
-          }
-      };
+    this.audio.onended = () => {
+      this.setButtonState(this.currentIndex, false);
+      if (this.isAutoMode) {
+        this.playNext();
+      }
+    };
+
+    this.audio.onerror = () => {
+      console.warn("语音文件加载失败，1秒后跳过");
+      this.setButtonState(this.currentIndex, false);
+      if (this.isAutoMode) {
+        this.timer = setTimeout(() => this.playNext(), 1000);
+      }
+    };
   },
 
   reset(newScriptData) {
-      this.stop(); 
-      this.isAutoMode = false;
-      this.updateAutoSwitchUI();
-      this.currentIndex = 0;
-      this.scriptData = newScriptData || [];
+    this.stop();
+    this.isAutoMode = false;
+    this.updateAutoSwitchUI();
+    this.currentIndex = 0;
+    this.scriptData = newScriptData || [];
   },
 
   toggleAuto() {
-      this.isAutoMode = !this.isAutoMode;
-      this.updateAutoSwitchUI();
+    this.isAutoMode = !this.isAutoMode;
+    this.updateAutoSwitchUI();
 
-      if (this.isAutoMode) {
-          this.playSequence(this.currentIndex);
-      } else {
-          clearTimeout(this.timer);
-      }
+    if (this.isAutoMode) {
+      this.playSequence(this.currentIndex);
+    } else {
+      clearTimeout(this.timer);
+    }
   },
 
   updateAutoSwitchUI() {
-      const btn = document.getElementById('auto-play-btn');
-      if (!btn) return;
-      if (this.isAutoMode) btn.classList.add('active');
-      else btn.classList.remove('active');
+    const btn = document.getElementById("auto-play-btn");
+    if (!btn) return;
+    if (this.isAutoMode) btn.classList.add("active");
+    else btn.classList.remove("active");
   },
 
   playSequence(index) {
     if (!this.isAutoMode) return;
     if (index >= this.scriptData.length) {
-        this.finishAuto();
-        return;
+      this.finishAuto();
+      return;
     }
 
     this.currentIndex = index;
@@ -1119,161 +1260,184 @@ const VoiceManager = {
     if (rowEl) rowEl.scrollIntoView({ behavior: "smooth", block: "center" });
 
     if (line.voice) {
-        let src = '';
-        if (Array.isArray(line.voice)) {
-            src = line.voice[0].path;
-        } else {
-            src = line.voice;
-        }
-        this.playAudio(src, index, 0); 
+      let src = "";
+      if (Array.isArray(line.voice)) {
+        src = line.voice[0].path;
+      } else {
+        src = line.voice;
+      }
+      this.playAudio(src, index, 0);
     } else {
-        this.timer = setTimeout(() => {
-            if (this.isAutoMode) this.playNext();
-        }, 1000);
+      this.timer = setTimeout(() => {
+        if (this.isAutoMode) this.playNext();
+      }, 1000);
     }
   },
 
   playNext() {
-      this.playSequence(this.currentIndex + 1);
+    this.playSequence(this.currentIndex + 1);
   },
 
   playAudio(src, index, subIndex = 0) {
-    document.querySelectorAll('.voice-btn, .voice-tag').forEach(b => b.classList.remove('playing'));
+    document
+      .querySelectorAll(".voice-btn, .voice-tag")
+      .forEach((b) => b.classList.remove("playing"));
 
     this.currentIndex = index;
-    this.audio.src = src.replace(/#/g, '%23'); 
-    
+    this.audio.src = src.replace(/#/g, "%23");
+
     this.setButtonState(index, subIndex, true);
 
     try {
-      const fileName = src.split('/').pop();
+      const fileName = src.split("/").pop();
       let currentChapTitle = "Unknown";
-      if (typeof chapterList !== 'undefined' && typeof currentChapterIndex !== 'undefined') {
-           if (chapterList[currentChapterIndex]) {
-               currentChapTitle = chapterList[currentChapterIndex].title;
-           }
+      if (
+        typeof chapterList !== "undefined" &&
+        typeof currentChapterIndex !== "undefined"
+      ) {
+        if (chapterList[currentChapterIndex]) {
+          currentChapTitle = chapterList[currentChapterIndex].title;
+        }
       }
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-          'event': 'voice_play',              
-          'voice_filename': fileName,         
-          'voice_path': src,                  
-          'chapter_title': currentChapTitle,  
-          'play_mode': this.isAutoMode ? 'auto' : 'manual' 
+        event: "voice_play",
+        voice_filename: fileName,
+        voice_path: src,
+        chapter_title: currentChapTitle,
+        play_mode: this.isAutoMode ? "auto" : "manual",
       });
-  } catch (err) {
+    } catch (err) {
       console.error("GTM Tracking Error:", err);
-  }
+    }
 
     const playPromise = this.audio.play();
     if (playPromise !== undefined) {
-        playPromise.catch(err => {
-            console.log("Play error:", err);
-            this.setButtonState(index, subIndex, false);
-            if (this.isAutoMode) this.timer = setTimeout(() => this.playNext(), 1000);
-        });
+      playPromise.catch((err) => {
+        console.log("Play error:", err);
+        this.setButtonState(index, subIndex, false);
+        if (this.isAutoMode)
+          this.timer = setTimeout(() => this.playNext(), 1000);
+      });
     }
   },
 
   playManual(index, src, subIndex) {
-      this.isAutoMode = false; 
-      this.updateAutoSwitchUI();
-      clearTimeout(this.timer);
-      this.playAudio(src, index, subIndex);
+    this.isAutoMode = false;
+    this.updateAutoSwitchUI();
+    clearTimeout(this.timer);
+    this.playAudio(src, index, subIndex);
   },
 
   setButtonState(index, subIndex, isPlaying) {
     const btnId = `voice-btn-${index}-${subIndex}`;
     const btn = document.getElementById(btnId);
-    
+
     if (btn && isPlaying) {
-        btn.classList.add('playing');
+      btn.classList.add("playing");
     } else if (btn) {
-        btn.classList.remove('playing');
+      btn.classList.remove("playing");
     }
   },
 
   stop() {
-      this.audio.pause();
-      this.audio.currentTime = 0;
-      clearTimeout(this.timer);
-      this.setButtonState(this.currentIndex, false);
+    this.audio.pause();
+    this.audio.currentTime = 0;
+    clearTimeout(this.timer);
+    this.setButtonState(this.currentIndex, false);
   },
-  
+
   finishAuto() {
-      this.isAutoMode = false;
-      this.updateAutoSwitchUI();
-      console.log("End of Auto Play");
-  }
+    this.isAutoMode = false;
+    this.updateAutoSwitchUI();
+    console.log("End of Auto Play");
+  },
 };
 
 VoiceManager.init();
 
-
-
 // --- 新增：正文背景主题切换 (白天 / 黑夜) ---
 function setTheme(mode) {
-  const wrapper = document.querySelector('.script-wrapper');
-  const btnNight = document.getElementById('btn-night');
-  const btnDay = document.getElementById('btn-day');
+  const wrapper = document.querySelector(".script-wrapper");
+  const btnNight = document.getElementById("btn-night");
+  const btnDay = document.getElementById("btn-day");
 
-  if (mode === 'light') {
-      // 开启白天模式
-      wrapper.classList.add('light-mode');
-      btnDay.classList.add('active');
-      btnNight.classList.remove('active');
+  if (mode === "light") {
+    // 开启白天模式
+    wrapper.classList.add("light-mode");
+    btnDay.classList.add("active");
+    btnNight.classList.remove("active");
   } else {
-      // 恢复黑夜模式 (默认)
-      wrapper.classList.remove('light-mode');
-      btnNight.classList.add('active');
-      btnDay.classList.remove('active');
+    // 恢复黑夜模式 (默认)
+    wrapper.classList.remove("light-mode");
+    btnNight.classList.add("active");
+    btnDay.classList.remove("active");
   }
 }
 
 function initAccordion(container) {
-  const items = container.querySelectorAll('.glossary-item');
+  const items = container.querySelectorAll(".glossary-item");
   let activeItem = null; // 用于记录当前打开的项
 
-  items.forEach(item => {
-    const term = item.querySelector('.glossary-term');
-    const desc = item.querySelector('.glossary-desc');
-    const icon = item.querySelector('.term-icon');
+  items.forEach((item) => {
+    const term = item.querySelector(".glossary-term");
+    const desc = item.querySelector(".glossary-desc");
+    const icon = item.querySelector(".term-icon");
 
     // 1. 初始化状态：高度为0，完全透明，隐藏溢出
     gsap.set(desc, { height: 0, opacity: 0, overflow: "hidden" });
     gsap.set(icon, { rotation: 0 });
 
     // 2. 绑定点击事件
-    term.addEventListener('click', () => {
-      const isOpen = item.classList.contains('active');
+    term.addEventListener("click", () => {
+      const isOpen = item.classList.contains("active");
 
       // 【核心逻辑】：如果点击了新项，且当前有打开的项，先关掉旧的
       if (!isOpen && activeItem) {
-        const activeDesc = activeItem.querySelector('.glossary-desc');
-        const activeIcon = activeItem.querySelector('.term-icon');
-        activeItem.classList.remove('active');
-        
+        const activeDesc = activeItem.querySelector(".glossary-desc");
+        const activeIcon = activeItem.querySelector(".term-icon");
+        activeItem.classList.remove("active");
+
         // 旧项收起动画
-        gsap.to(activeDesc, { height: 0, opacity: 0, duration: 0.4, ease: "power3.inOut" });
-        gsap.to(activeIcon, { rotation: 0, duration: 0.4, ease: "power3.inOut" });
+        gsap.to(activeDesc, {
+          height: 0,
+          opacity: 0,
+          duration: 0.4,
+          ease: "power3.inOut",
+        });
+        gsap.to(activeIcon, {
+          rotation: 0,
+          duration: 0.4,
+          ease: "power3.inOut",
+        });
       }
 
       // 切换当前点击项的状态
       if (isOpen) {
         // 如果点的是自己，且本来是开着的 -> 收起
-        item.classList.remove('active');
+        item.classList.remove("active");
         activeItem = null;
-        gsap.to(desc, { height: 0, opacity: 0, duration: 0.4, ease: "power3.inOut" });
+        gsap.to(desc, {
+          height: 0,
+          opacity: 0,
+          duration: 0.4,
+          ease: "power3.inOut",
+        });
         gsap.to(icon, { rotation: 0, duration: 0.4, ease: "power3.inOut" });
       } else {
         // 如果是关闭状态 -> 展开
-        item.classList.add('active');
+        item.classList.add("active");
         activeItem = item;
         // 展开动画：高度设为 "auto"，GSAP 会自动计算真实内容的高度
-        gsap.to(desc, { height: "auto", opacity: 1, duration: 0.4, ease: "power3.inOut" });
+        gsap.to(desc, {
+          height: "auto",
+          opacity: 1,
+          duration: 0.4,
+          ease: "power3.inOut",
+        });
         // 图标旋转 45 度，把 + 变成 ×
-        gsap.to(icon, { rotation: 45, duration: 0.4, ease: "power3.inOut" }); 
+        gsap.to(icon, { rotation: 45, duration: 0.4, ease: "power3.inOut" });
       }
     });
   });
@@ -1283,144 +1447,175 @@ function initAccordion(container) {
 const ReadingSettingsManager = {
   // 默认设置常量
   defaultSettings: {
-      fontSize: 0.9,
-      fontWeight: 400,
-      isMing: false,
-      lineHeight: 1.8,
-      letterSpacing: 0
+    fontSize: 0.9,
+    fontWeight: 400,
+    isMing: false,
+    lineHeight: 1.8,
+    letterSpacing: 0,
   },
   currentSettings: {},
 
   init() {
-      try {
-          const saved = localStorage.getItem('reading_settings');
-          this.currentSettings = saved ? JSON.parse(saved) : { ...this.defaultSettings };
-      } catch (e) {
-          console.warn("读取本地设置失败", e);
-          this.currentSettings = { ...this.defaultSettings };
-      }
-      
-      this.cacheDOM();
-      if(!this.panel) return;
+    try {
+      const saved = localStorage.getItem("reading_settings");
+      this.currentSettings = saved
+        ? JSON.parse(saved)
+        : { ...this.defaultSettings };
+    } catch (e) {
+      console.warn("读取本地设置失败", e);
+      this.currentSettings = { ...this.defaultSettings };
+    }
 
-      this.bindEvents();
-      this.applyToCSS();
-      this.updateUI();
+    this.cacheDOM();
+    if (!this.panel) return;
+
+    this.bindEvents();
+    this.applyToCSS();
+    this.updateUI();
   },
 
   cacheDOM() {
-      this.btnAa = document.getElementById('btn-reading-settings');
-      this.panel = document.getElementById('reading-settings-panel');
-      
-      this.inputSize = document.getElementById('rs-fontsize');
-      this.inputWeight = document.getElementById('rs-fontweight');
-      this.inputFamily = document.getElementById('rs-fontfamily');
-      this.inputLineHeight = document.getElementById('rs-lineheight');
-      this.inputLetterSpacing = document.getElementById('rs-letterspacing');
+    this.btnAa = document.getElementById("btn-reading-settings");
+    this.panel = document.getElementById("reading-settings-panel");
 
-      this.valSize = document.getElementById('rs-val-fontsize');
-      this.valWeight = document.getElementById('rs-val-fontweight');
-      this.valLineHeight = document.getElementById('rs-val-lineheight');
-      this.valLetterSpacing = document.getElementById('rs-val-letterspacing');
-      
-      this.btnReset = document.getElementById('rs-reset-btn');
+    this.inputSize = document.getElementById("rs-fontsize");
+    this.inputWeight = document.getElementById("rs-fontweight");
+    this.inputFamily = document.getElementById("rs-fontfamily");
+    this.inputLineHeight = document.getElementById("rs-lineheight");
+    this.inputLetterSpacing = document.getElementById("rs-letterspacing");
+
+    this.valSize = document.getElementById("rs-val-fontsize");
+    this.valWeight = document.getElementById("rs-val-fontweight");
+    this.valLineHeight = document.getElementById("rs-val-lineheight");
+    this.valLetterSpacing = document.getElementById("rs-val-letterspacing");
+
+    this.btnReset = document.getElementById("rs-reset-btn");
   },
 
   bindEvents() {
-      // Toggle 面板显隐
-      this.btnAa.addEventListener('click', (e) => {
-          e.stopPropagation();
-          if (this.panel.style.display === 'none' || this.panel.style.display === '') {
-              this.panel.style.display = 'flex';
-              this.btnAa.classList.add('active');
-          } else {
-              this.panel.style.display = 'none';
-              this.btnAa.classList.remove('active');
-          }
-      });
+    // Toggle 面板显隐
+    this.btnAa.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (
+        this.panel.style.display === "none" ||
+        this.panel.style.display === ""
+      ) {
+        this.panel.style.display = "flex";
+        this.btnAa.classList.add("active");
+      } else {
+        this.panel.style.display = "none";
+        this.btnAa.classList.remove("active");
+      }
+    });
 
-      // 点击外部关闭面板
-      document.addEventListener('click', (e) => {
-          if (this.panel && this.panel.style.display === 'flex') {
-              if (!this.panel.contains(e.target) && e.target !== this.btnAa) {
-                  this.panel.style.display = 'none';
-                  this.btnAa.classList.remove('active');
-              }
-          }
-      });
+    // 点击外部关闭面板
+    document.addEventListener("click", (e) => {
+      if (this.panel && this.panel.style.display === "flex") {
+        if (!this.panel.contains(e.target) && e.target !== this.btnAa) {
+          this.panel.style.display = "none";
+          this.btnAa.classList.remove("active");
+        }
+      }
+    });
 
-      // 绑定输入事件
-      this.inputSize.addEventListener('input', (e) => this.handleInput('fontSize', e.target.value));
-      this.inputWeight.addEventListener('input', (e) => this.handleInput('fontWeight', e.target.value));
-      this.inputLineHeight.addEventListener('input', (e) => this.handleInput('lineHeight', e.target.value));
-      this.inputLetterSpacing.addEventListener('input', (e) => this.handleInput('letterSpacing', e.target.value));
-      this.inputFamily.addEventListener('change', (e) => this.handleInput('isMing', e.target.checked));
-      
-      // 绑定恢复默认按钮
-      this.btnReset.addEventListener('click', () => this.resetToDefault());
+    // 绑定输入事件
+    this.inputSize.addEventListener("input", (e) =>
+      this.handleInput("fontSize", e.target.value)
+    );
+    this.inputWeight.addEventListener("input", (e) =>
+      this.handleInput("fontWeight", e.target.value)
+    );
+    this.inputLineHeight.addEventListener("input", (e) =>
+      this.handleInput("lineHeight", e.target.value)
+    );
+    this.inputLetterSpacing.addEventListener("input", (e) =>
+      this.handleInput("letterSpacing", e.target.value)
+    );
+    this.inputFamily.addEventListener("change", (e) =>
+      this.handleInput("isMing", e.target.checked)
+    );
+
+    // 绑定恢复默认按钮
+    this.btnReset.addEventListener("click", () => this.resetToDefault());
   },
 
   handleInput(key, value) {
-      if (key !== 'isMing') value = parseFloat(value);
-      this.currentSettings[key] = value;
-      this.applyToCSS();
-      this.updateUI();
-      this.saveSettings();
+    if (key !== "isMing") value = parseFloat(value);
+    this.currentSettings[key] = value;
+    this.applyToCSS();
+    this.updateUI();
+    this.saveSettings();
   },
 
   applyToCSS() {
-      const root = document.documentElement;
-      root.style.setProperty('--rs-font-size', `${this.currentSettings.fontSize}rem`);
-      root.style.setProperty('--rs-font-weight', this.currentSettings.fontWeight);
-      root.style.setProperty('--rs-font-family', this.currentSettings.isMing ? '"ming", serif' : '"myFont", sans-serif');
-      root.style.setProperty('--rs-line-height', this.currentSettings.lineHeight);
-      
-      const spacingEm = this.currentSettings.letterSpacing / 100;
-      root.style.setProperty('--rs-letter-spacing', `${spacingEm}em`);
+    const root = document.documentElement;
+    root.style.setProperty(
+      "--rs-font-size",
+      `${this.currentSettings.fontSize}rem`
+    );
+    root.style.setProperty("--rs-font-weight", this.currentSettings.fontWeight);
+    root.style.setProperty(
+      "--rs-font-family",
+      this.currentSettings.isMing ? '"ming", serif' : '"myFont", sans-serif'
+    );
+    root.style.setProperty("--rs-line-height", this.currentSettings.lineHeight);
+
+    const spacingEm = this.currentSettings.letterSpacing / 100;
+    root.style.setProperty("--rs-letter-spacing", `${spacingEm}em`);
   },
 
   updateUI() {
-      // 更新表单控件的值
-      this.inputSize.value = this.currentSettings.fontSize;
-      this.inputWeight.value = this.currentSettings.fontWeight;
-      this.inputLineHeight.value = this.currentSettings.lineHeight;
-      this.inputLetterSpacing.value = this.currentSettings.letterSpacing;
-      this.inputFamily.checked = this.currentSettings.isMing;
+    // 更新表单控件的值
+    this.inputSize.value = this.currentSettings.fontSize;
+    this.inputWeight.value = this.currentSettings.fontWeight;
+    this.inputLineHeight.value = this.currentSettings.lineHeight;
+    this.inputLetterSpacing.value = this.currentSettings.letterSpacing;
+    this.inputFamily.checked = this.currentSettings.isMing;
 
-      // 更新文本显示
-      this.valSize.textContent = `${this.currentSettings.fontSize.toFixed(2)}rem`;
-      this.valWeight.textContent = this.currentSettings.fontWeight;
-      this.valLineHeight.textContent = this.currentSettings.lineHeight.toFixed(1);
-      this.valLetterSpacing.textContent = `${this.currentSettings.letterSpacing}%`;
-      
-      // 更新滑块颜色填充百分比
-      [this.inputSize, this.inputWeight, this.inputLineHeight, this.inputLetterSpacing].forEach(input => {
-          this.updateSliderFill(input);
-      });
+    // 更新文本显示
+    this.valSize.textContent = `${this.currentSettings.fontSize.toFixed(2)}rem`;
+    this.valWeight.textContent = this.currentSettings.fontWeight;
+    this.valLineHeight.textContent = this.currentSettings.lineHeight.toFixed(1);
+    this.valLetterSpacing.textContent = `${this.currentSettings.letterSpacing}%`;
+
+    // 更新滑块颜色填充百分比
+    [
+      this.inputSize,
+      this.inputWeight,
+      this.inputLineHeight,
+      this.inputLetterSpacing,
+    ].forEach((input) => {
+      this.updateSliderFill(input);
+    });
   },
 
   // 计算滑块比例，用于 CSS linear-gradient 动态上色
   updateSliderFill(inputEl) {
-      const min = parseFloat(inputEl.min) || 0;
-      const max = parseFloat(inputEl.max) || 100;
-      const val = parseFloat(inputEl.value);
-      const percent = ((val - min) / (max - min)) * 100;
-      inputEl.style.setProperty('--slider-fill', `${percent}%`);
+    const min = parseFloat(inputEl.min) || 0;
+    const max = parseFloat(inputEl.max) || 100;
+    const val = parseFloat(inputEl.value);
+    const percent = ((val - min) / (max - min)) * 100;
+    inputEl.style.setProperty("--slider-fill", `${percent}%`);
   },
-  
+
   // 恢复默认设置
   resetToDefault() {
-      this.currentSettings = { ...this.defaultSettings };
-      this.applyToCSS();
-      this.updateUI();
-      this.saveSettings();
+    this.currentSettings = { ...this.defaultSettings };
+    this.applyToCSS();
+    this.updateUI();
+    this.saveSettings();
   },
 
   saveSettings() {
-      try {
-          localStorage.setItem('reading_settings', JSON.stringify(this.currentSettings));
-      } catch(e) { console.warn("无法保存设置", e); }
-  }
+    try {
+      localStorage.setItem(
+        "reading_settings",
+        JSON.stringify(this.currentSettings)
+      );
+    } catch (e) {
+      console.warn("无法保存设置", e);
+    }
+  },
 };
 
 // 确保 DOM 挂载后执行

@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `「[C]itadel」`,
+    title: `「迷宮·[C]itadel」`,
     bgm: `mp3/bg/终末.mp3`,
     summary: `小さな要塞の中で、少年は不安な明日を待っている。
     運命が彼にどのような脚本を書いたのかは、誰にも分からない。`
@@ -28,22 +28,21 @@ export default {
       {
         name: `局長`,
         avatar: `img/dh/PC24.png`,
-        note: `MBCC（ミノス危機管理局）の局長`,
+        note: `MBCC（ミノス危機管理局）の局長、Shp-13`,
         basicStats: `肉体は長期の昏睡状態にあり、意識はBR-002の精神汚染の深層領域を彷徨う。時空が混濁したこの領域で、あなたの目に映ったのは、見知った顔だった……`,
-        profile: `所属：MBCC`
       },
       {
         name: `夢の中の少年`,
         avatar: `img/dh/julian_child.png`,
         note: `少年時代のJulien`,
-        basicStats: `シンジケートで暮らす足の不自由な天才少年。周囲のギャングからの嫌がらせに晒されながらも、父親のメールと向き合う。`,
+        basicStats: `シンジケートで暮らす足の不自由な天才少年。`,
         profile: `年齢：11歳`
       },
       {
         name: `ドナルド（青年期）`,
         avatar: `img/dh/don501.png`,
         note: `能力者`,
-        basicStats: ``,
+        basicStats: `Julienと友達になりたい`,
         profile: `所属：錆火\n能力：暴風雷霆`
       },
     ],
