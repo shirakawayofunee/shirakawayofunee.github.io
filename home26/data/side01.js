@@ -22,15 +22,27 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `<ruby>曜<rt>ヤオ</rt></ruby>`,
+        avatar: `img/dh/yao.png`,
+        note: `使徒・金烏`,
+        basicStats: `阿煦の意識と融合し、人間性に目覚めたS級灰燼の使徒・金烏
+        曜は、彼女と阿煦が同一人物だとは考えていない（ただし、阿煦の記憶は残っている）`,
+        profile: ``
+      },
+      {
+        name: ``,
+        avatar: `img/dh/director.png`,
+        note: ``,
+        basicStats: ``,
+        profile: ``
       },
       {
         name: `局長`,
-        avatar: `img/dh/`,
-        note: `工事中`
-      }
+        avatar: `img/dh/director.png`,
+        note: ``,
+        basicStats: ``,
+        profile: ``
+      },
     ],
     synopsis: `工事中`
   },

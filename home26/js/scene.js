@@ -294,7 +294,7 @@ const chapterList = [
   {
     id: "conversation40",
     category: "weak",
-    title: "507-02「微光と暗流」",
+    title: "Re-507「微光と暗流」",
     subtitle: "The Weak",
     dateLabel: "N.F.113.11.25/10:00",
   },
@@ -329,9 +329,114 @@ const chapterList = [
   {
     id: "conversation45",
     category: "weak",
-    title: "511-02「起爆」",
+    title: "Re-511「起爆」",
     subtitle: "The Weak",
     dateLabel: "10:07",
+  },
+  {
+    id: "conversation46",
+    category: "weak",
+    title: "512「弱者と罪人」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation47",
+    category: "weak",
+    title: "513「希望」",
+    subtitle: "The Weak",
+    dateLabel: "21:13",
+  },
+  {
+    id: "conversation48",
+    category: "weak",
+    title: "Mz-514「終着地」",
+    subtitle: "The Weak",
+    dateLabel: "23:14",
+  },
+  {
+    id: "conversation49",
+    category: "weak",
+    title: "515「嵐」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation50",
+    category: "weak",
+    title: "601「粛清命令」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation51",
+    category: "weak",
+    title: "602「高塔」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation52",
+    category: "weak",
+    title: "603「上庭01」",
+    subtitle: "The Weak",
+    dateLabel: "09:22",
+  },
+  {
+    id: "conversation53",
+    category: "weak",
+    title: "Re-603「過去」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation54",
+    category: "weak",
+    title: "604「前時代の人間」",
+    subtitle: "The Weak",
+    dateLabel: "15:48",
+  },
+  {
+    id: "conversation55",
+    category: "weak",
+    title: "Re-604「影」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation56",
+    category: "weak",
+    title: "605「堕落」",
+    subtitle: "The Weak",
+    dateLabel: "06:54",
+  },
+  {
+    id: "conversation57",
+    category: "weak",
+    title: "Re-605「黒幕」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation58",
+    category: "weak",
+    title: "606「強者」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation59",
+    category: "weak",
+    title: "607「弱者の戦い」",
+    subtitle: "The Weak",
+    dateLabel: "00:00",
+  },
+  {
+    id: "conversation60",
+    category: "weak",
+    title: "608「局長・運命」",
+    subtitle: "The Weak",
+    dateLabel: "05:54",
   },
   {
     id: "side01",
@@ -694,19 +799,71 @@ function renderScript(script, defaultBgm = "", customContainer = null) {
       }
 
       if (line.type === "narration") {
+
         div.className = "message-row";
-        let customBubbleClass = line.bubbleStyle ? line.bubbleStyle : "";
-        let displayText = line.text;
-
-        if (customBubbleClass === "secret-comm") {
-            let regex = /(^|<br>|\n)\s*([^:：<]+[:：])/g;
-            displayText = displayText.replace(regex, '$1<span class="comm-speaker">$2</span>');
-            displayText = `<div class="comm-header">--- ENCRYPTED_CHANNEL ---</div><div class="comm-body"><span class="comm-bracket">[</span> ${displayText} <span class="comm-bracket">]</span></div>`;
-        }
-
-        div.innerHTML = `<div class="narration ${customBubbleClass}">${displayText}</div>`;
     
-      } else if (line.type === "choice_group") {
+        let customBubbleClass = line.bubbleStyle
+            ? line.bubbleStyle
+            : "";
+    
+    
+        /* =====================================================
+           Email
+           ===================================================== */
+    
+        if (customBubbleClass === "email") {
+    
+            const emailFrom = line.emailFrom || "UNKNOWN";
+            const emailTo = line.emailTo || "UNKNOWN";
+            const emailDate = line.emailDate || "";
+            const emailSubject = line.emailSubject || "MESSAGE";
+            const emailClassification =
+                line.emailClassification || "CONFIDENTIAL";
+    
+    
+            div.innerHTML = `
+                <div class="narration email-reader">
+                    <div class="email-body"></div>
+                </div>
+            `;
+            const emailBody = div.querySelector(".email-body");
+    
+            if (emailBody) {
+                emailBody.textContent = line.text || "";
+            }
+    
+        } else if (customBubbleClass === "secret-comm") {
+    
+            let displayText = line.text;
+    
+            let regex = /(^|<br>|\n)\s*([^:：<]+[:：])/g;
+    
+            displayText = displayText.replace(
+                regex,
+                '$1<span class="comm-speaker">$2</span>'
+            );
+    
+            displayText =
+                `<div class="comm-header">--- ENCRYPTED_CHANNEL ---</div>` +
+                `<div class="comm-body">` +
+                `<span class="comm-bracket">[</span>` +
+                ` ${displayText} ` +
+                `<span class="comm-bracket">]</span>` +
+                `</div>`;
+    
+            div.innerHTML =
+                `<div class="narration ${customBubbleClass}">${displayText}</div>`;
+    
+    
+        /* =====================================================
+           Normal Narration
+           ===================================================== */
+    
+        } else {
+    
+            div.innerHTML =
+                `<div class="narration ${customBubbleClass}">${line.text}</div>`;
+        }} else if (line.type === "choice_group") {
           // 【追加】分岐選択肢グループの処理
           choiceGroupCounter++;
           const groupId = `choice-group-${choiceGroupCounter}`;

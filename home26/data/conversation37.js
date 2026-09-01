@@ -2,7 +2,8 @@ export default {
   meta: {
     title: `「迷宮·礎石」`,
     bgm: `mp3/bg/foundation.mp3`,
-    summary: `過去の基地の中で、少年は新たな一歩を踏み出した。 数え切れないほどの困難に直面し、急成長を遂げている。`
+    summary: `過去の基地の中で、少年は新たな一歩を踏み出した。
+    数え切れないほどの困難に直面し、急成長を遂げている。`
   },
   infoPanel: {
     glossary: [

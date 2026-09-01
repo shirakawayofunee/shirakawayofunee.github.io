@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `「深坑」`,
+    title: `「迷宮·深坑」`,
     bgm: `mp3/bg/deep_pit.mp3`,
     summary: `絶望の深坑の外では、たとえ栄光が失われ、英雄がいなくとも、男が暗闇を突破しようとしていた。`
   },

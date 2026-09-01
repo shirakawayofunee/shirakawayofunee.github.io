@@ -25,15 +25,15 @@ export default {
         avatar: `img/dh/hecate.png`,
         note: `局長を探し求める能力者。`,
         basicStats: `心を閉ざし、周囲への不信感を露わにしながらヘラの病床に寄り添う。枷の汚染が進み精神が限界に達しつつある。`,
-        profile: `能力：悪夢（ナイトメア）の具現化`,
+        profile: `危険度：A級
+        能力：悪夢具現化`,
       },
       {
         name: `Matildaマチルダ`,
         avatar: `img/dh/matilda.png`,
         note: `西区復興執行委員会の上等兵`,
         basicStats: `キャヴェンディッシュ家の令嬢。堅物で孤立を好むが、秘密裏に錆火を支援している。`,
-        profile: `所属：西区復興執行委員会
-        危険度：A級
+        profile: `危険度：A級
         能力：絶対銃器掌握`,
       },
       {
@@ -41,7 +41,6 @@ export default {
         avatar: `img/dh/don1.png`,
         note: `地下拠点の周辺を窺っていた金髪の執行官。`,
         basicStats: `ヘカテに対してフルーツキャンディをプレゼントする。マティルダの「天敵」であり旧知の存在。`,
-        profile: `所属：執行官`,
       },
       {
         name: `コヒ`,
@@ -77,7 +76,7 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `N.F.113年11月23日　18:38\n\n流亡者・東19地下拠点`,
+      text: `N.F.113年11月23日　19:38\n\n流亡者・東19地下拠点`,
     },
     {
       type: `narration`,

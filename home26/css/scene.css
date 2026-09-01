@@ -766,6 +766,346 @@ html {
     color: #c9c7ca;
 }
 
+
+/* =========================================================
+   Narration — Email Reader
+   ========================================================= */
+
+   .narration.email-reader {
+    --email-bg: #fdfdfd;
+    --email-panel: #f5f5f5;
+    --email-border: #111111;
+    --email-border-light: #cfcfcf;
+    --email-text: #111111;
+    --email-sub: #666666;
+    --email-red: #D40F30;
+
+    width: 100%;
+    max-width: 920px;
+    margin: 2.5rem auto;
+    background: var(--email-bg);
+    border: 2px solid var(--email-border);
+    color: var(--email-text);
+    font-family: "Pretendard", sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   邮件窗口顶部
+   --------------------------------------------------------- */
+
+.narration.email-reader .email-window-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 42px;
+    padding: 0 14px;
+    background: #111111;
+    color: #ffffff;
+    font-family: "GenJyuu", sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    box-sizing: border-box;
+}
+
+.narration.email-reader .email-window-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.narration.email-reader .email-window-icon {
+    width: 8px;
+    height: 8px;
+    background: var(--email-red);
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.narration.email-reader .email-window-status {
+    color: #bcbcbc;
+    font-size: 0.7rem;
+}
+
+
+/* ---------------------------------------------------------
+   邮件标题 / 信息
+   --------------------------------------------------------- */
+
+.narration.email-reader .email-header {
+    padding: 24px 28px 20px;
+    border-bottom: 2px solid var(--email-border);
+    box-sizing: border-box;
+}
+
+.narration.email-reader .email-subject {
+    margin: 0 0 20px;
+    font-family: "GenJyuu", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
+.narration.email-reader .email-meta {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    row-gap: 7px;
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.narration.email-reader .email-meta-label {
+    color: var(--email-sub);
+}
+
+.narration.email-reader .email-meta-value {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.narration.email-reader .email-sender {
+    font-family: "GenJyuu", sans-serif;
+}
+
+
+/* ---------------------------------------------------------
+   地址
+   --------------------------------------------------------- */
+
+.narration.email-reader .email-address {
+    color: var(--email-sub);
+}
+
+
+/* ---------------------------------------------------------
+   邮件正文
+   --------------------------------------------------------- */
+
+.narration.email-reader .email-body {
+    padding: 34px 30px 38px;
+    background: var(--email-bg);
+
+    font-family: "ming", serif;
+    font-size: 0.98rem;
+    line-height: 2;
+    letter-spacing: 0.03em;
+
+    /*
+     * 保留 JS 中 text 字符串里的 \n 和 \n\n
+     */
+    white-space: pre-wrap;
+
+    word-break: break-word;
+    overflow-wrap: anywhere;
+
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   邮件正文重点
+   --------------------------------------------------------- */
+
+.narration.email-reader .email-important {
+    color: var(--email-red);
+}
+
+
+/* ---------------------------------------------------------
+   邮件警告框
+   --------------------------------------------------------- */
+
+.narration.email-reader .email-warning {
+    margin: 1.8em 0;
+    padding: 12px 16px;
+
+    border-left: 4px solid var(--email-red);
+    background: #f5f5f5;
+
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.8;
+
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   附件
+   --------------------------------------------------------- */
+
+.narration.email-reader .email-attachments {
+    border-top: 1px solid var(--email-border-light);
+    padding: 18px 28px 22px;
+
+    background: var(--email-panel);
+
+    box-sizing: border-box;
+}
+
+.narration.email-reader .email-attachments-title {
+    margin-bottom: 12px;
+
+    color: var(--email-sub);
+
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.narration.email-reader .email-attachment {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 10px 12px;
+
+    border: 1px solid var(--email-border-light);
+    background: #ffffff;
+
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.82rem;
+
+    box-sizing: border-box;
+}
+
+.narration.email-reader .email-attachment-icon {
+    width: 26px;
+    height: 30px;
+
+    border: 1px solid var(--email-border);
+
+    position: relative;
+    flex-shrink: 0;
+
+    box-sizing: border-box;
+}
+
+.narration.email-reader .email-attachment-icon::after {
+    content: "";
+
+    position: absolute;
+
+    top: 5px;
+    left: 5px;
+
+    width: 14px;
+    height: 1px;
+
+    background: var(--email-border);
+
+    box-shadow:
+        0 5px 0 var(--email-border),
+        0 10px 0 var(--email-border);
+}
+
+.narration.email-reader .email-attachment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.narration.email-reader .email-attachment-name {
+    color: var(--email-text);
+    overflow-wrap: anywhere;
+}
+
+.narration.email-reader .email-attachment-size {
+    color: var(--email-sub);
+    font-size: 0.7rem;
+}
+
+
+/* ---------------------------------------------------------
+   底部信息栏
+   --------------------------------------------------------- */
+
+.narration.email-reader .email-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 44px;
+    padding: 0 14px;
+
+    border-top: 2px solid var(--email-border);
+    background: var(--email-panel);
+
+    box-sizing: border-box;
+}
+
+.narration.email-reader .email-footer-info {
+    color: var(--email-sub);
+
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.7rem;
+}
+
+.narration.email-reader .email-footer-classification {
+    color: var(--email-red);
+
+    font-family: "GenJyuu", sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+}
+
+
+/* ---------------------------------------------------------
+   移动端
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .narration.email-reader {
+        margin: 1.5rem auto;
+        border-width: 1px;
+    }
+
+    .narration.email-reader .email-window-bar {
+        min-height: 38px;
+        padding: 0 10px;
+    }
+
+    .narration.email-reader .email-window-status {
+        display: none;
+    }
+
+    .narration.email-reader .email-header {
+        padding: 20px 18px 18px;
+    }
+
+    .narration.email-reader .email-subject {
+        font-size: 1.15rem;
+        margin-bottom: 16px;
+    }
+
+    .narration.email-reader .email-meta {
+        grid-template-columns: 58px minmax(0, 1fr);
+        font-size: 0.76rem;
+    }
+
+    .narration.email-reader .email-body {
+        padding: 26px 18px 30px;
+        font-size: 0.92rem;
+        line-height: 1.9;
+    }
+
+    .narration.email-reader .email-attachments {
+        padding: 15px 18px 18px;
+    }
+
+    .narration.email-reader .email-footer {
+        padding: 0 10px;
+    }
+}
+
+
 /* --- 方案 A：经典虚线心声气泡 --- */
 .message-bubble.inner-voice-a {
     font-family: "ming";
