@@ -38,20 +38,14 @@ export default {
         basicStats: `自らを導火線にしながらも無傷で攻撃を命中させ、黒環の運命を人々に委ねる。`
       },
       {
-        name: `黒石英`,
-        avatar: `img/dh/blackcrystal.png`,
-        note: `上庭の技術提供者。`,
-        basicStats: `「規則」の精度低下を抗議し、局長に中止を求める。`
-      },
-      {
-        name: `渡鴉`,
+        name: `Raven`,
         avatar: `img/dh/raven.png`,
-        note: `詩と思想で力を取り戻す。`,
-        basicStats: `「心に願いが残っている限り、どうして立ち止まっていられる?」`
+        note: `後世に名を残す<ruby>大詩人<rt>自称</rt></ruby>`,
+        basicStats: `風変わりな性格で、型破りな振る舞いが多く、細かいことにはこだわらない。元記者、現教師（<span>教員免許なし</span>）兼西区史官`
       },
       {
-        name: `科希`,
-        avatar: `img/dh/kohi.png`,
+        name: `コージ`,
+        avatar: `img/dh/crache.png`,
         note: `渡鴉の詩に支えられる少女。`,
         basicStats: `ビラから溢れる墨線が身体を支え上げる。`
       },
@@ -449,52 +443,51 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/refugee.png`,
-      name: `丧气难民`,
-      text: `目を開けろ!!小僧!!
-目を開けろおお、お前の詩が生き返ったぞ!!!`
+      name: `落ち込む難民`,
+      text: `目を開けろ!!ガキ!!お前の詩が生きている!!!`
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/kohi.png`,
-      name: `科希`,
+      position: `left`,
+      avatar: `img/dh/crache.png`,
+      name: `コージ`,
       text: `……これ……は……`
     },
     {
       type: `narration`,
       text: `彼女が握りしめたビラには、渡鴉の大げさな飾り文字も、尊大な賛美歌もなかった。何もない。
-それでも、無数の墨線が空中を舞う紙から溢れ出し、彼女の指の隙間をすり抜け、猛スピードで背後へ飛んでいく。強大な力が突然、落下していた科希の身体を支え上げた。`
+
+それでも、無数の墨線が空中を舞う紙から溢れ出し、彼女の指の隙間をすり抜け、猛スピードで背後へ飛んでいく。強大な力が突然、落下していたコージの身体を支え上げた。`
     },
-    {
+/*     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/ika.png`,
       name: `伊卡`,
       text: `俺も持ってる、見てくれ!渡鴉の動員詩だ。すごくいい。力がある。`
-    },
+    }, */
     {
       type: `narration`,
-      text: `本人の筆跡じゃない。本人もここにはいない。それなのに、なぜこんなにも懐かしいのか。科希の頭は真っ白になり、背後を振り返る――`
+      text: `本人の筆跡じゃない。本人もここにはいない。それなのに、なぜこんなにも懐かしいのか。コージの頭は真っ白になり、背後を振り返る――`
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/kohi.png`,
-      name: `科希`,
+      position: `left`,
+      avatar: `img/dh/crache.png`,
+      name: `コージ`,
       text: `……レイヴン?`
     },
     {
-      type: `narration`,
-      text: `（白闪光）`
+      type: `image`,
+      src: `img/cg/cg13_06.jpg`,
+      bubbleStyle: "center",
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/kohi.png`,
-      name: `科希`,
-      text: `……
-このクソ烏、こんな登場の仕方、あまりにもセンスがない。`
+      position: `left`,
+      avatar: `img/dh/crache.png`,
+      name: `コージ`,
+      text: `クソガラス、なんて品のない登場なの`
     },
     {
       type: `narration`,
