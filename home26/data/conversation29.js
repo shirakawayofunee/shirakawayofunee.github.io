@@ -53,21 +53,17 @@ export default {
         `,
         profile: `危険度：	S級
         能力：	緋花剣落
-        誕生日：	9月23日
-        身長：	178cm
+        嫌い：無意味な犠牲
 `, 
       },
       {
-        name: `Shalom<br>高き壁に閉じ込められた囚人`,
+        name: `Shalom｜高き壁に閉じ込められた囚人`,
         avatar: `img/dh/x402.png`,
-        note: `上庭の七代目執行人、高き壁に閉じ込められ感情を奪われた囚人。`,
-        basicStats: `人間の感情を摘出する手術。そんなことが本当に可能なのか
+        note: `上庭の七代目執行人`,
+        basicStats: `「己の理解者の手で命を落とし、誰かが自分の死を嘆いて声を枯らす……それも悪くない」
         `,
         profile: `危険度：	S級
         能力：	【データ削除】
-        出身：	不明
-        誕生日：	9月19日
-        身長：	188cm
 `, 
       },
       {
@@ -484,7 +480,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `君をここまで導くことができたのですから、なら、君たちが助かるよう計算することも、当然、できることだよ。`,
+      text: `君をここまで導くことができたのですから、もちろん、君たちが助かるよう計算することも、できることだ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_107.wav" },
       ],
@@ -735,7 +731,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
       name: `『コクリコ』`,
-      text: `……`,
+      text: `(息を呑む)`,
       voice: [
         { label: "▶", path: "wav/CN/conversation29/vo_event_11042_54.wav" },
       ],
@@ -1066,7 +1062,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `彼を自由にするのです、Coquelicot。君と同じく、彼もまた、両陣営にとって真に痛手となる、得難い厄介者ですから。
+      text: `彼を自由にするのです、コクリコ。君と同じく、彼もまた、両陣営にとって真に痛手となる、得難い厄介者ですから。
       上庭だろうと福音地だろうと、あるいは運命に対してだろうと、復讐したいならこれが好機です。彼に派手に暴れさせればいい。きっと胸がすくでしょう。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_82.wav" },
@@ -1138,7 +1134,7 @@ export default {
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_52.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_38.wav" },
-        { label: "日2", path: "wav/JP/conversation29/vo_event_11042_108.wav" },
+        /* { label: "日2", path: "wav/JP/conversation29/vo_event_11042_108.wav" }, */
       ],
     },
     {
@@ -1191,7 +1187,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x6.png`,
       name: `シャーローム`,
-      text: `その通り。コスト削減は私の個人的な趣味に過ぎず、ニーズの実現こそが絶対目的。『必要な犠牲』は常套手段です。それが上庭の意志。<span>私</span>を通してそれを見極めれば、僥倖など期待しなくなるでしょう。`,
+      text: `その通り。コスト削減は私の個人的な趣味に過ぎず、ニーズの実現こそが絶対目的。『必要な犠牲』は常套手段です。それが<span>上庭</span>の意志。<span>私</span>を通してそれを見極めれば、僥倖など期待しなくなるでしょう。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_90.wav" },
       ],
@@ -1225,7 +1221,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `業師は高らかに笑った。彼女の背後で淡い青色の裂け目が突如拡大し、そこから溢れ出した奇怪な光が、まるでCoquelicotと引かれ合うかのように迫り、その眩い輝きで彼女を飲み込もうとしていた。`,
+      text: `業師は高らかに笑った。彼女の背後で淡い青色の裂け目が突如拡大し、そこから溢れ出した奇怪な光が、まるで業師と引かれ合うかのように迫り、その眩い輝きで彼女を飲み込もうとしていた。`,
     },
     {
       type: `dialogue`,
@@ -1233,7 +1229,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
       name: `『コクリコ』`,
-      text: `……そこまでは生きられないわね。君のくれた命もいらないし、鬱憤を晴らすのにそんなに長くは待てない。君の上に誰がいようと、前後にどれだけの人間がいようと関係ない
+      text: `……そこまでは生きられないわ。君のくれた命もいらないし、鬱憤を晴らすのにそんなに長くは待てない。君の上に誰がいようと、前後にどれだけの人間がいようと関係ない
       君は私の『Garden』に手を出した。それだけで十分よ。人生は短い。
       `,
       voice: [
@@ -1288,7 +1284,7 @@ export default {
 
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
-      text: `この裂け目が、君にとって触れてはならないものだと言うなら……`,
+      text: `この裂け目が、君にとって触れてはならないものだというのなら……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_6.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_35.wav" },
@@ -1296,7 +1292,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `Coquelicotは片手を裂け目へと突き刺した。青い光の棘が猛烈な勢いで彼女の体内に侵入するが、彼女は意に介さず、さらに奥へと割り入ってゆく。`,
+      text: `『コクリコ』は片手を裂け目へと突き刺した。青い光の棘が猛烈な勢いで彼女の体内に侵入するが、彼女は意に介さず、さらに奥へと割り入ってゆく。`,
     },
     {
       type: `narration`,
@@ -1347,7 +1343,7 @@ export default {
 
     {
       type: `narration`,
-      text: `狂気的な力が雪崩れ込む。Coquelicotは久しく感じなかった生命の充実に震え、裂け目の中から妖しく輝く長剣を引き抜いた。耳をつんざくような轟音と共に、向こう側の狂厄が噴き出す。`,
+      text: `狂気的な力が雪崩れ込む。『コクリコ』は久しく感じなかった生命の充実に震え、裂け目の中から妖しく輝く長剣を引き抜いた。耳をつんざくような轟音と共に、向こう側の狂厄が噴き出す。`,
     },
     {
       type: `narration`,
@@ -1455,7 +1451,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女はCoquelicotを見ていた。希薄な憐れみと悲哀、そしてそれ以上の、ある種の冷徹な期待を込めて。`,
+      text: `彼女は『コクリコ』を見ていた。希薄な憐れみと悲哀、そしてそれ以上の、ある種の冷徹な期待を込めて。`,
     },
     {
       type: `narration`,
@@ -1523,11 +1519,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `――どうしても許せず、どうしても屈したくなかったあの女が、いつの間にかCoquelicotの全意識を占領していた。彼女は仇敵に向けて剣を突き立てるが、相手は両手を広げ、まるで彼女の全てを抱擁するかのように待ち受けている。`,
+      text: `――どうしても許せず、どうしても屈したくなかったあの女が、いつの間にか『コクリコ』の全意識を占領していた。彼女は仇敵に向けて剣を突き立てるが、相手は両手を広げ、まるで彼女の全てを抱擁するかのように待ち受けている。`,
     },
     {
       type: `narration`,
-      text: `Coquelicotの命は回復しつつあったが、意識は徐々に溶解していく――突如として空間が砕け散った。`,
+      text: `『コクリコ』の命は回復しつつあったが、意識は徐々に溶解していく――突如として空間が砕け散った。`,
     },
     {
       type: `dialogue`,
@@ -1544,7 +1540,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `その瞬間、Coquelicotは確かに見た。あの蝋細工のような女の目に、一筋の驚きが走ったのを。`,
+      text: `その瞬間、『コクリコ』は確かに見た。あの蝋細工のような女の目に、一筋の驚きが走ったのを。`,
     },
     {
       type: `dialogue`,
@@ -1559,7 +1555,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女はCoquelicotを遮り、シャーロームの前に立ち塞がった。激しい息切れ。先ほどの衝突の衝撃からまだ立ち直れていないのか、あるいはこの空間の狂乱に耐え難いのか。`,
+      text: `彼女は『コクリコ』を遮り、シャーロームの前に立ち塞がった。激しい息切れ。先ほどの衝突の衝撃からまだ立ち直れていないのか、あるいはこの空間の狂乱に耐え難いのか。`,
     },
   ],
 };
