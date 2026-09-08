@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「招かれざる[客]」`,
     bgm: `mp3/bg/conversation2.mp3`,
-    summary: `工事中`
+    summary: `提案の裏に蠢く危険な秘密を本能で感じ取っていながら、彼女はあえて全てを賭ける覚悟を決めた。`
   },
   infoPanel: {
     glossary: [
