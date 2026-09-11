@@ -41,22 +41,23 @@ export default {
 
       },
       {
-        name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
+        name: `Chris｜未来の<ruby>名探偵<rt>自称</rt></ruby>`,
         avatar: `img/dh/pc2.png`,
-        note: `19歳、能力者、警察学校の一年生。`,
-        basicStats: `憧れの『<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん』に頼まれて、『GARDEN』が引き起こした連続殺人事件を調査中。`
+        note: `19歳、警察学校の一年生。`,
+        basicStats: `憧れの『<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん』に頼まれて、『GARDEN』が引き起こした連続殺人事件を調査中。`,
+        profile: `危険度：B級
+        能力：相信正義
+`, 
       },
       {
         name: `『<ruby>薊<rt>アザミ</rt></ruby>』`,
         avatar: `img/dh/thistle3.jpg`,
-        note: `19歳、『GARDEN』の殺し屋`,
-        basicStats: `復讐のために『花庭園』へ加入したFACの遺児。
-        直情径行で衝動的な面があるものの、決して根は悪くない。誰よりも師匠を慕っており、そして心配もしている。`,
-        profile: `危険度：A級
-        能力：	燃命火刃
-        出身：	NEW CITY
-        誕生日：	10月21日
-        身長：	170cm
+        note: `19歳、FACの遺児。`,
+        basicStats: `復讐のために『GARDEN』へ加入したFACの遺児。
+        直情径行で衝動的な面があるものの、決して根は悪くない。誰よりも師匠を慕っており、そして心配もしている。
+        彼女自身も自分が無知で未熟であることを自覚しており、成し遂げたい思いも持っている。`,
+        profile: `危険度：B級
+        能力：燃命火刃
         コードネーム：Thistle
 `, 
       },

@@ -27,9 +27,16 @@ export default {
         note: `工事中`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `『<ruby>薊<rt>アザミ</rt></ruby>』`,
+        avatar: `img/dh/thistle3.jpg`,
+        note: `19歳、新米殺し屋`,
+        basicStats: `復讐のために『GARDEN』へ加入したFACの遺児。
+        直情径行で衝動的な面があるものの、決して根は悪くない。誰よりも師匠を慕っており、そして心配もしている。
+        彼女自身も自分が無知で未熟であることを自覚しており、成し遂げたい思いも持っている。`,
+        profile: `危険度：B級
+        能力：燃命火刃
+        コードネーム：Thistle
+`, 
       },
       {
         name: `Doyle｜刑事`,
