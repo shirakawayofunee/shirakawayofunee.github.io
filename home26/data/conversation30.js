@@ -23,9 +23,13 @@ export default {
     ],
     characters: [
       {
-        name: `工事中｜業師`,
+        name: `『コクリコ』｜業師`,
         avatar: `img/dh/leopold1.png`,
-        note: `工事中`
+        note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
+        basicStats: `確かに、振り返りに値することは存在する。
+        追憶と欲望――その両方が不快の色を帯びていようとも、彼女の心火は、これまで以上に激しく燃え盛っていた。
+        進み続けよ、先駆者。
+        `
       },
       {
         name: `Shalom｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
@@ -39,9 +43,9 @@ export default {
         name: `Christina｜探偵`,
         avatar: `img/dh/.png`,
         note: `19歳、能力者、警察学校の一年生。`,
-        basicStats: `真相と正義を追いかける警察学校の1年生、ただいま絶賛指名手配されています。<br>
+        basicStats: `<span>真相</span>と<span>正義</span>を追いかける警察学校の1年生、ただいま絶賛指名手配されています。<br>
         二人のお姉さんに挟まれて過ごした、人生で一番忘れられない夏だった。
-        ちなみに彼女、かなり心に刺さったみたいで、師匠の「自分のために咲き、自分のために生き、そして自分のために死ぬのよ。誰よりも先に、自分自身を愛する。自分の運命は自分の手にある！」という言葉を自分の推理メモ帳にしっかり書き写してました。`
+        ちなみに彼女、かなり心に刺さったみたいで、業師の「自分のために咲き、自分のために生き、そして自分のために死ぬのよ。誰よりも先に、自分自身を愛する。自分の運命は自分の手にある！」という言葉を自分の推理メモ帳にしっかり書き写してました。`
       },
       {
         name: `『<ruby>薊<rt>アザミ</rt></ruby>』`,
@@ -485,7 +489,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
-      text: `私は……`,
+      text: `私……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_72.wav' },
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */

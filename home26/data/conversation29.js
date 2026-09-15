@@ -43,7 +43,7 @@ export default {
       {
         name: `『Coquelicot』｜業師`,
         avatar: `img/dh/leopold402.png`,
-        note: `工事中`,
+        note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
         basicStats: `生の流儀：人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
         コードネーム由来：
         「Coquelicot」、フランス語の「虞美人」
