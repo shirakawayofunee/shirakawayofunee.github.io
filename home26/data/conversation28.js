@@ -42,7 +42,7 @@ export default {
       },
       
       {
-        name: `Shalom｜上庭の<ruby>執行人<rt>Hush-X</rt></ruby>`,
+        name: `SHALOM｜上庭の<ruby>執行人<rt>Hush-X</rt></ruby>`,
         avatar: `img/dh/x402.png`,
         note: `廃棄期限まであと一ヶ月しかない道具`,
         basicStats: `非道な振る舞いと、告白にも似た熱烈な囁き。

@@ -23,7 +23,8 @@ export default {
     ],
     characters: [
       {
-        name: `『コクリコ』｜業師`,
+        name: `「COQUELIC」｜業師`,
+        name2: `コクリコ`,
         avatar: `img/dh/leopold1.png`,
         note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
         basicStats: `確かに、振り返りに値することは存在する。
@@ -32,10 +33,12 @@ export default {
         `
       },
       {
-        name: `Shalom｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
+        name: `SHALOM｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
+        name2: `シャーローム`,
         avatar: `img/dh/X30.png`,
-        note: `上庭の七代目執行人、高き壁に閉じ込められ感情を奪われた囚人。`,
-        basicStats: `<span>執行人</span>はこれまで無数の人生を壊してきた。でも今回ばかりは、
+        note: `上庭の七代目執行人`,
+        basicStats: `上庭の七代目執行人、高き壁に閉じ込められ感情を奪われた囚人。
+        <span>執行人</span>はこれまで無数の人生を壊してきた。でも今回ばかりは、
         <span>シャーローム</span>が本心からLと彼女の理想郷が、生き延びられるように、Lを一助けすることを選んだ。
         `
       },

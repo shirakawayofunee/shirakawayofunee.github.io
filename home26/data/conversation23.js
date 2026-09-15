@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `<ruby>執行人X<rt>Shalom</rt></ruby>`,
+        name: `<ruby>執行人X<rt>SHALOM</rt></ruby>`,
         avatar: `img/dh/x4.png`,
         note: `廃棄期限まであと一ヶ月しかない道具。他人の苦しみと命を代償に、自分のかすかな希望を買う?`
       },

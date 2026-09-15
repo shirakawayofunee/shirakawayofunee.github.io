@@ -57,7 +57,7 @@ export default {
 `, 
       },
       {
-        name: `Shalom｜高き壁に閉じ込められた囚人`,
+        name: `SHALOM｜高き壁に閉じ込められた囚人`,
         avatar: `img/dh/x402.png`,
         note: `上庭の七代目執行人`,
         basicStats: `「己の理解者の手で命を落とし、誰かが自分の死を嘆いて声を枯らす……それも悪くない」

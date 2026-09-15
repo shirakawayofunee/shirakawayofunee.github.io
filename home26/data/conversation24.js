@@ -46,7 +46,7 @@ export default {
 `
       },
       {
-        name: `Shalom｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
+        name: `SHALOM｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
         avatar: `img/dh/X24.png`,
         note: `上庭の七代目執行人、人前では`,
         basicStats: `Xは福音地の思惑を完全に見抜いている。

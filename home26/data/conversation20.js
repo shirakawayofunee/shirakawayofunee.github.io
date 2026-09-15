@@ -32,7 +32,7 @@ export default {
       },
       {
         term: `HUSH部隊`,
-        desc: `HUSH-X（Shalom）に支配された改造人部隊は、極めて高い戦闘能力を有している。`
+        desc: `HUSH-X（SHALOM）に支配された改造人部隊は、極めて高い戦闘能力を有している。`
       },
     ],
     characters: [
@@ -48,7 +48,7 @@ export default {
 子供たちのために障害と隐患を排除しておくこと。自分がもういなくなっても、子供たちが安全に歩き続けられるようにする。`,
       },
       {
-        name: `<ruby>執行人X<rt>Shalom</rt></ruby>`,
+        name: `<ruby>執行人X<rt>SHALOM</rt></ruby>`,
         avatar: `img/dh/x4.png`,
         note: `廃棄期限まであと一ヶ月しかない道具。他人の苦しみと命を代償に、自分のかすかな希望を買う?`
       },

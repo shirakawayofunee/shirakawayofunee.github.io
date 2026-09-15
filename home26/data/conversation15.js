@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「εἰρήνη」`,
     bgm: `mp3/bg/conversation14.mp3`,
-    summary: `彼女が唯一安心したのは、Shalomが再び傍にいてくれたことだった。`
+    summary: `彼女が唯一安心したのは、SHALOMが再び傍にいてくれたことだった。`
   },
   infoPanel: {
     glossary: [
@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `Shalom｜X`,
+        name: `SHALOM｜X`,
         avatar: `img/dh/x201.png`,
         note: `「上庭」の七代目執行人`
       },

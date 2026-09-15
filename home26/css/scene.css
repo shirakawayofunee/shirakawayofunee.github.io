@@ -27,6 +27,12 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "name1";
+    src: url("../font/PretendardJP-Black.otf") format("truetype");
+    font-display: swap;
+}
+
 :root {
     /* 左侧面板：黑白工业风 */
     --panel-bg: rgba(253, 253, 253, 1);
@@ -1647,8 +1653,19 @@ html {
 }
 
 .oc-name {
-    font-size: 0.95rem;
+    font-family: "name1";
+    font-size: 1.4rem;
     font-weight: 700;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.oc-name_2 {
+    font-family: "name1";
+    font-size: 0.9rem;
+    font-weight: 500;
     margin: 0 0 8px 0;
     line-height: 1.2;
     overflow-wrap: break-word;

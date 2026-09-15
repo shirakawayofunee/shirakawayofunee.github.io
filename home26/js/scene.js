@@ -1104,8 +1104,8 @@ function renderInfo(info) {
                ${c.avatar ? `<img src="${c.avatar}" alt="${c.name}">` : ""}
             </div>
             <div class="oc-info-box">
-              <h4 class="oc-name">${c.name || ""}</h4>
-              <!-- 此处已替换为已洗掉缩进空格的 cleanNote -->
+              <div class="oc-name">${c.name || ""}</div>
+              <div class="oc-name_2">${c.name2 || ""}</div>
               <div class="oc-stats">${cleanNote || ""}</div>
             </div>
           </div>
