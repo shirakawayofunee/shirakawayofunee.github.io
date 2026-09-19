@@ -1,7 +1,7 @@
 export default {
   meta: {
     title: `「母熊と図書室」`,
-    bgm: `mp3/bg/N9-1预兆.mp3`,
+    bgm: `mp3/bg/water.mp3`,
     summary: `珍しく暇だった週末の午後、局長は図書室に行って本を借りることにした。`
   },
   infoPanel: {

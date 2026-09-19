@@ -9,7 +9,7 @@
 export default {
   meta: {
     title: `「腹黑」`,
-    bgm: `mp3/bg/N9-1预兆.mp3`,
+    bgm: `mp3/bg/water.mp3`,
     summary: `午後の時間、あなたは食堂でガロファノに会った。`
   },
   infoPanel: {
