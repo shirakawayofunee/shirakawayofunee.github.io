@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「失った[正]義」`,
     bgm: `mp3/bg/conversation8.mp3`,
-    summary: `混乱に陥ったクリスティナは、つまずきながら、正義を追求し始めた……`
+    summary: `何かで戸惑い、傷付けられ、助けを求める時は、自分と同じ貧しい人のところへ行きなさい。君を助けてくれるのは彼らのみである。彼らのみなのだ。`
   },
   infoPanel: {
     glossary: [

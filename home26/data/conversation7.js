@@ -30,9 +30,11 @@ export default {
         note: `工事中`
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `「Garofano」`,
+        avatar: `img/dh/severo007.png`,
+        note: `Lと同じ戦線に立つSも、福音地の者たちを決して歓迎しない。`,
+        basicStats: `子供にとって世の終わりのような一大事は、大人にとっては、すべて大事に至らず無事に収められるものだ。`,
+        profile: `所属：GARDEN`
       },
     ],
     synopsis: `業師は福音地からFAC総司令の暗殺依頼を引き受け、『Garofano』は「GARDEN」に戻り体を休養する。`,

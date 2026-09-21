@@ -2,8 +2,7 @@ export default {
   meta: {
     title: `「[雨]夜」`,
     bgm: `mp3/bg/conversation2.mp3`,
-    summary: `黒雲が街を覆い、豪雨が迫る。
-    そして、その幕開けを飾るのは——`
+    summary: `人類は本来、互いに妨げることなく、自由自在に安楽な日々を送るべきものです。`
   },
   infoPanel: {
     glossary: [

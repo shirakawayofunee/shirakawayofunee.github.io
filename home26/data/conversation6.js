@@ -45,13 +45,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `概要：失血多量と狂厄汚染の二重の打撃により、暴走していた『Garofano』がついに倒れた。間一髪のところで、レオポルドが駆けつけ、彼女を救い出す。`
+      text: `概要：失血多量と狂厄汚染の二重の打撃により、暴走していた『Garofano』がついに倒れた。間一髪のところで、業師が駆けつけ、彼女を救い出す。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `レオポルド`,
+      name: `業師`,
       text: `私の花を、誰がお前なんかに踏みつけていいと言った？`
     },
     {
