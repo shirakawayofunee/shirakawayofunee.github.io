@@ -67,7 +67,7 @@ export default {
       name: `クリスティーナ`,
       text: `やめろ、業師！これは戦いじゃない、きみが飲み込まれかけてるの！`,
       bubbleStyle: "inner-voice-c",
-      voice: `wav/JP/conversation30/voevent11043_21.wav`,
+      voice: `wav/JP/conversation30/vo_event_11043_21.wav`,
     },
     {
       type: `dialogue`,
@@ -86,8 +86,7 @@ export default {
       name: `クリスティーナ`,
       text: `ここは現実じゃない。現実の彼女が咲かせた花はもう空間全体を埋め尽くしてる。ついさっき、突然きみへの反撃が始まったの。ここに入って、やっと分かった。`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_66.wav' },
       ]
     },
     {
@@ -96,7 +95,7 @@ export default {
       name: `クリスティーナ`,
       text: `きみは操られてる！その白い光はもうきみに絡みついてる。彼女を攻撃すればするほど、光はきみを飲み込んでいく。洗脳されるわ、早くやめて！`,
       
-      voice: `wav/JP/conversation32/vo_event_11043_44.wav`
+      voice: `wav/JP/conversation30/vo_event_11043_44.wav`
     },
     {
       type: `dialogue`,
@@ -106,7 +105,7 @@ export default {
       text: `……つまり、人を食らう花の中に命知らずにも飛び込んで、ここまで追いかけてきたのは、私を助けるためだって？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_87.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_63.wav' },
       ]
     },
     {
@@ -121,7 +120,7 @@ export default {
       text: `誰を騙すつもり。君は、あの女を助けに来たんでしょう。あの女が、自らの手で君を爆殺したというのに！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_92.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_135.wav' }, */
       ]
     },
     {
@@ -132,7 +131,7 @@ export default {
       text: `洗脳されてるのは君の方！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_89.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_85.wav' },
       ]
     },
     {
@@ -198,8 +197,7 @@ export default {
       name: `クリスティーナ`,
       text: `ふ、復讐に目を曇らせないで！彼女は……そういうきみが好きなんだ。……復讐に執着する人間を、彼女は煽ろうとしているんだ！`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_72.wav' }, */
       ]
     },
     {
@@ -209,7 +207,7 @@ export default {
       text: `きみが失ったものが、かけがえのないものだったってことは知ってる。きみには全員に償わせる力があるし、正義なんて信じてないことも、復讐だけがきみを癒せるってことも知ってる。`,
       voice: [
         /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_57.wav' }, */
       ]
     },
     {
@@ -232,7 +230,8 @@ export default {
       position: `right`,
       name: `クリスティーナ`,
       text: `『Garden』は生きてる。救えるのはきみだけ。`,
-      voice: `wav/JP/conversation32/vo_event_11043_34.wav`,
+      voice: `wav/JP/conversation30/vo_event_11043_34.wav`,
+      voice: `wav/JP/conversation30/vo_event_11043_71.wav`,
     },
     {
       type: `dialogue`,
@@ -251,8 +250,7 @@ export default {
       name: `クリスティーナ`,
       text: `あの現場には矛盾が多すぎた。でもきみは苦しすぎて、真実が見えなくなってた。私がそれを持ってきたわ。`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_59.wav' },
       ]
     },
     {
@@ -268,12 +266,14 @@ export default {
       position: `right`,
       name: `クリスティーナ`,
       text: `証拠はアザミが持ってる。現場の凝固血を集めて、闇医者に検証してもらったの。そこには大量の人工血漿が混ざってた。`,
+      voice: `wav/JP/conversation30/vo_event_11043_62.wav`,
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
       text: `HUSHは現場を偽装し、きみに『Garden』は全滅したと思わせた。執行人は常に効率と節約を求める。あんなに手の込んだ回りくどいことをするのは、二つの目的のため以外にあり得ない。`,
+      voice: `wav/JP/conversation30/vo_event_11043_117.wav`,
     },
     {
       type: `dialogue`,
@@ -293,7 +293,7 @@ export default {
       text: `……もし生きてるなら、あの上庭の女がなぜ早く言わない？それで私を騙して働かせた方が簡単だろう。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_6.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_87.wav' },
       ]
     },
     {
@@ -304,7 +304,7 @@ export default {
       text: `彼女に目を塞がれた君ごときが、死体を見ただけで腰を抜かす役立たずが、あんな場所で何を調べられたって言うの？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_98.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_124.wav' },
       ]
     },
     {
@@ -337,8 +337,7 @@ export default {
       name: `クリスティーナ`,
       text: `……私は以前`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_67.wav' }, */
       ]
     },
     {
@@ -363,8 +362,7 @@ export default {
       name: `クリスティーナ`,
       text: `104年、私は涅槃集団を襲撃し、ありったけの憎悪を込めて現場にいた執行人のシャーロームを攻撃した。あの時、私は重傷を負っていた。彼女を殺そうとして、そして……私は変えられた。`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_112.wav' },
       ]
     },
     {
@@ -373,8 +371,7 @@ export default {
       name: `クリスティーナ`,
       text: `ずっと、ずっと、彼女が私を救済してくれたのだと思い込んでいた。けれど……けれど、違った。今のきみの姿を見て、より確信した。真実はそうではない。`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_78.wav' },
       ]
     },
     {
@@ -383,8 +380,7 @@ export default {
       name: `クリスティーナ`,
       text: `執行人は特定の条件下で能力者を制御し、完全に自分の手駒にできる。それは殺すよりも節約できて効率的で、安定したやり方。それこそが、私の知るシャーロームが取る手段。`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_97.wav' },
       ]
     },
     {
@@ -418,10 +414,18 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `一番好きだった人、一番信じてたものが消えて……私だって辛いの！でも、立ち止まってるわけにはいかないじゃない！きみと違って、復讐なんかじゃ私は治らない！`,
+      text: `一番好きだった人、一番信じてたものが消えて……私だって辛いの！でも、立ち止まってるわけにはいかないじゃない！`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_75.wav' }, */
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリスティーナ`,
+      text: `きみと違って、復讐なんかじゃ私は治らない！`,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_68.wav' }, */
       ]
     },
     {
@@ -429,7 +433,7 @@ export default {
       position: `right`,
       name: `クリスティーナ`,
       text: `笑えばいいわ。私は永遠に正義を信じたい。何が起きても、世界が壊れてて当然だなんて思いたくないし、人が奪われるのが当たり前だなんて認めない。悪人が悪さをすることに慣れたくなんてない！`,
-      voice: `wav/JP/conversation32/vo_event_11043_32.wav`,
+      voice: `wav/JP/conversation30/vo_event_11043_32.wav`,
       voice: [
         /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
@@ -441,17 +445,12 @@ export default {
       name: `クリスティーナ`,
       text: `きみの言葉で一つだけ認めるわ。私は自分の足で立ち上がるべきだってこと。私を救えるのは私だけ……私は正義が存在することを証明しに行く。そしてそれを、必要としている人に届ける。そうやってしか、私の心は癒えないから。`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_113.wav' },
       ]
     },
     {
       type: `narration`,
       text: `彼女は顔を上げた。涙はまだ浮かんでいるが、その瞳にもはや迷いはなかった。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `dialogue`,
@@ -460,14 +459,14 @@ export default {
       text: `真実を見つけたから、持ってきた。私には正義を執行する力がない、だからきみが行って。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_46.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_77.wav' },
       ]
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `運命に弄ばれるな、自分の手で掴めって言ったのはきみじゃない！他人を信じない、御託も聞かないなら、自分の心くらい見たらどうなの。`,
+      text: `運命に弄ばれるな、自分の手で掴めって言ったのはきみじゃない！`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_43.wav' },
       ]
@@ -476,10 +475,18 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
+      text: `他人を信じない、御託も聞かないなら、自分の心くらい見たらどうなの。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_58.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリスティーナ`,
       text: `あの子たちに戻ってきてほしくないの？`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_55.wav' },
       ]
     },
     {
@@ -487,10 +494,10 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
-      text: `私……`,
+      text: `私…`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_72.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_100.wav' },
       ]
     },
     {
@@ -620,7 +627,7 @@ export default {
       text: `何、まだ私を支配するつもり？今度はどんな手を使うの？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_49.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_116.wav' },
       ]
     },
     {
@@ -754,7 +761,7 @@ export default {
       text: `私を煽るために、上庭の命令さえ利用して、あんなことを……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_122.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_92.wav' },
       ]
     },
     {
@@ -803,7 +810,7 @@ export default {
       text: `それにしても、酷い鳴き声ね。胸は痛まないわけ？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_61.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_60.wav' },
       ]
     },
     {
@@ -844,7 +851,7 @@ export default {
       text: `フッ……まあいい。君が本心でどう思っていようが、私の知ったことじゃない。お陰様で私のほうも手一杯なの。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_126.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_82.wav' },
       ]
     },
     {
@@ -887,7 +894,7 @@ export default {
       text: `行くわよ、小僧。外まで連れてってあげる。出たらすぐに案内しなさい。もし私を騙そうものなら、世界中を君の道連れにしてやる。私は、言ったことは必ず実行する。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_42.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_108.wav' },
       ]
     },
     {
@@ -932,7 +939,7 @@ export default {
       text: `クリスティーナ、場所はどこ！あの子たちはどこ！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_117.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_80.wav' },
       ]
     },
     {
@@ -960,8 +967,16 @@ export default {
       name: `クリスティーナ`,
       text: `業師、約束は守ったわ！全部ちゃんと聞いたでしょ、忘れないで！`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_93.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリスティーナ`,
+      text: `業師、約束は守ったわ！全部ちゃんと聞いたでしょ、忘れないで！`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_109.wav' },
       ]
     },
     {
@@ -970,8 +985,7 @@ export default {
       name: `クリスティーナ`,
       text: `私の父はマーシャル・コリンズ、FAC-G42小隊教官、103年夜の蝕月作戦で戦死した……FAC二級英雄勲章受章者！私は毎年お墓参りに行ってる。永遠に彼を誇りに思う。`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_101.wav' },
       ]
     },
     {
@@ -981,7 +995,7 @@ export default {
       text: `ちゃんと生きて、あの子たちを助けて！見つからなかったら私のところに来て！少なくとも私は絶対諦めないから、聞いてる？！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_59.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_103.wav' },
       ]
     },
     {

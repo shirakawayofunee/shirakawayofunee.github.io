@@ -65,7 +65,8 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `よくも私に会いに来たもんだな！『Coquelicot』はどこだ？彼女こそ私に感謝しに来るべきじゃないのか？`
+      text: `よくも私に会いに来たもんだな！『Coquelicot』はどこだ？彼女こそ私に感謝しに来るべきじゃないのか？`,
+      voice: `wav/JP/conversation32/vo_event_11043_114.wav`,
     },
     {
       type: `dialogue`,
@@ -76,7 +77,6 @@ export default {
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_48.wav' },
         { label: '日', path: 'wav/CN/conversation30/vo_event_11043_22.wav' },
-        
       ]
     },
     {
@@ -91,13 +91,15 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `ゴホッゴホッ！やめろよ、ボロクソ言わないでくれ……今日は休日だ、今日は……事件解決しないぞ！`
+      text: `ゴホッゴホッ！やめろよ、ボロクソ言わないでくれ……今日は休日だ、今日は……事件解決しないぞ！`,
+      voice: `wav/JP/conversation32/vo_event_11043_125.wav`,
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `妹が学校に復帰するんだ。休学が長すぎたから、戻ったらイジメられるんじゃないかって心配でさ。送っていかなきゃ。`
+      text: `妹が学校に復帰するんだ。休学が長すぎたから、戻ったらイジメられるんじゃないかって心配でさ。送っていかなきゃ。`,
+      voice: `wav/JP/conversation32/vo_event_11043_94.wav`,
     },
     {
       type: `dialogue`,

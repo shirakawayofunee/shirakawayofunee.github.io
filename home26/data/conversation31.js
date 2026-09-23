@@ -139,7 +139,10 @@ export default {
       avatar: `img/dh/cry.png`,
       name: `『業師』`,
       text: `何泣いてんだ…そんな必死になって…ほんとバカだな…`,
-      voice: `wav/CN/conversation32/vo_event_11043_69.wav`
+      voice: [
+        { label: '中', path: 'wav/CN/conversation32/vo_event_11043_69.wav' },
+        { label: '日', path: 'wav/JP/conversation30/voevent11043_69.wav' },
+      ]
     },
     {
       type: `narration`,
