@@ -1,7 +1,7 @@
 export default {
   meta: {
     title: `「[終]わりに」`,
-    bgm: `mp3/bg/conversation32.mp3`,
+    bgm: `mp3/bg/开往春天-1.1x.m4a`,
     summary: `人の世の「貪・瞋・痴」、愛憎と果てなき欲は、物語の終焉と共に消滅するものではない。`
   },
   infoPanel: {
@@ -55,7 +55,7 @@ export default {
       position: `left`,
       avatar: `img/dh/zxx.png`,
       name: `『業師』`,
-      text: `地上の人間はみんな自分思いで、己の縄張りを守るのに必死で、せいぜい周りの数人をかばうくらい…。`
+      text: `地上の人間はみんな自分思いで、己の縄張りを守るのに必死で、せいぜい周りの数人をかばうくらい…`
     },
     {
       type: `dialogue`,
@@ -113,7 +113,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
+      position: `left`,
       avatar: `img/dh/thistle.jpg`,
       name: `『薊』`,
       text: `そんなことしなくていい！彼女たちの居場所、わかってる。私が探しに行く、私が行く！`,
@@ -143,7 +143,8 @@ export default {
     },
     {
       type: `narration`,
-      text: `もう一方。`
+      text: `もう一方。`,
+    bgm: `mp3/bg/conversation32.mp3`,
     },
     {
       type: `narration`,
@@ -195,8 +196,11 @@ edge-02：HUSHシステムとマーキング技術の双方にリスクが存在
       position: `left`,
       avatar: `img/dh/x5.png`,
       name: `シャーローム`,
-      text: `私は花が好きだ。`,
-      voice: `wav/CN/conversation32/vo_event_11043_105.wav`
+      text: `私は花が好きだ`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation32/vo_event_11043_105.wav' },
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_47.wav' },
+      ]
     },
     {
       type: `dialogue`,

@@ -64,8 +64,8 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      name: `ドイル`,
-      text: `よくも俺に会いに来たもんだな！『Coquelicot』はどこだ？彼女こそ俺に感謝しに来るべきじゃないのか？`
+      name: `クリスティーナ`,
+      text: `よくも私に会いに来たもんだな！『Coquelicot』はどこだ？彼女こそ私に感謝しに来るべきじゃないのか？`
     },
     {
       type: `dialogue`,
@@ -76,6 +76,7 @@ export default {
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_48.wav' },
         { label: '日', path: 'wav/CN/conversation30/vo_event_11043_22.wav' },
+        
       ]
     },
     {
@@ -83,18 +84,19 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
       name: `『薊』`,
-      text: `師匠は忙しいから、代わりに私が伝言を預かってきたよ。『正式採用された？ちゃんとやれてる？事件解決率はどれくらい？何人犯人捕まえた？まだ先輩の足引っ張ってる？』ってね。`
+      text: `師匠は忙しいから、代わりに私が伝言を預かってきたよ。『正式採用された？ちゃんとやれてる？事件解決率はどれくらい？何人犯人捕まえた？まだ先輩の足引っ張ってる？』ってね。`,
+      voice: `wav/JP/conversation32/vo_event_11043_53.wav`,
     },
     {
       type: `dialogue`,
       position: `right`,
-      name: `ドイル`,
+      name: `クリスティーナ`,
       text: `ゴホッゴホッ！やめろよ、ボロクソ言わないでくれ……今日は休日だ、今日は……事件解決しないぞ！`
     },
     {
       type: `dialogue`,
       position: `right`,
-      name: `ドイル`,
+      name: `クリスティーナ`,
       text: `妹が学校に復帰するんだ。休学が長すぎたから、戻ったらイジメられるんじゃないかって心配でさ。送っていかなきゃ。`
     },
     {
@@ -102,14 +104,16 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
       name: `『薊』`,
-      text: `へえ——。後で私、師匠と一緒に<span>西区</span>に行くよ。『Garden』の仲間たちはみんなそっちに流れちゃったみたいだから。もう君には私たちを捕まえることも見つけることもできないよ。去る前に一言、言っとこうと思って。`
+      text: `へえ——。後で私、師匠と一緒に<span>西区</span>に行くよ。『Garden』の仲間たちはみんなそっちに流れちゃったみたいだから。もう君には私たちを捕まえることも見つけることもできないよ。去る前に一言、言っとこうと思って。`,
+      voice: `wav/JP/conversation32/vo_event_11043_46.wav`,
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
       name: `『薊』`,
-      text: `私の復讐は終わった。もう殺し屋である必要はない。これからは大好きな『Garden』に残って、ずっと守るよ。`
+      text: `私の復讐は終わった。もう殺し屋である必要はない。これからは大好きな『Garden』に残って、ずっと守るよ。`,
+      voice: `wav/JP/conversation32/vo_event_11043_41.wav`,
     },
     {
       type: `narration`,
