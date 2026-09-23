@@ -92,7 +92,7 @@ export default {
       text: `103年…79期…第五陵園だろ…`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_103.wav' },
-        { label: '日', path: 'wav/JP/conversation30/voevent11043_5.wav' },
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_5.wav' },
       ]
     },
     {
@@ -119,7 +119,7 @@ export default {
       text: `そんなことしなくていい！彼女たちの居場所、わかってる。私が探しに行く、私が行く！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_99.wav' },
-        { label: '日', path: 'wav/JP/conversation30/voevent11043_8.wav' },
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_8.wav' },
       ]
     },
     {
@@ -130,7 +130,7 @@ export default {
       text: `…そうか…見つけたのか…`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_110.wav' },
-        { label: '日', path: 'wav/JP/conversation30/voevent11043_28.wav' },
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_28.wav' },
       ]
     },
     {
@@ -141,7 +141,7 @@ export default {
       text: `何泣いてんだ…そんな必死になって…ほんとバカだな…`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_69.wav' },
-        { label: '日', path: 'wav/JP/conversation30/voevent11043_69.wav' },
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_69.wav' },
       ]
     },
     {
