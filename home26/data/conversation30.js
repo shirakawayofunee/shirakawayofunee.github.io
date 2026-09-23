@@ -65,7 +65,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `やめろ、業師！これは戦いじゃない、きみが飲み込まれかけてるの！`,
+      text: `やめろ、コクリコ！これは戦いじゃない、きみが飲み込まれかけてるの！`,
       bubbleStyle: "inner-voice-c",
       voice: `wav/JP/conversation30/vo_event_11043_21.wav`,
     },
@@ -120,7 +120,7 @@ export default {
       text: `誰を騙すつもり。君は、あの女を助けに来たんでしょう。あの女が、自らの手で君を爆殺したというのに！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_92.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_135.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_135.wav' },
       ]
     },
     {
@@ -148,7 +148,7 @@ export default {
       name: `クリスティーナ`,
       text: `違う……わ、私は自分のために……自分の……`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_116.wav' },
+        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_116.wav' }, */
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_49.wav' },
       ]
     },
@@ -197,7 +197,7 @@ export default {
       name: `クリスティーナ`,
       text: `ふ、復讐に目を曇らせないで！彼女は……そういうきみが好きなんだ。……復讐に執着する人間を、彼女は煽ろうとしているんだ！`,
       voice: [
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_72.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_72.wav' },
       ]
     },
     {
@@ -206,8 +206,7 @@ export default {
       name: `クリスティーナ`,
       text: `きみが失ったものが、かけがえのないものだったってことは知ってる。きみには全員に償わせる力があるし、正義なんて信じてないことも、復讐だけがきみを癒せるってことも知ってる。`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_57.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_57.wav' },
       ]
     },
     {
@@ -216,7 +215,6 @@ export default {
       name: `クリスティーナ`,
       text: `でも、だからってこれが当然だなんて思わない！きみは最初から奪われるべきじゃなかった、こんな目に遭う理屈なんてどこにもない！`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_17.wav' },
       ]
     },
@@ -229,8 +227,14 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `『Garden』は生きてる。救えるのはきみだけ。`,
+      text: `『Garden』は生きてる。`,
       voice: `wav/JP/conversation30/vo_event_11043_34.wav`,
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      name: `クリスティーナ`,
+      text: `彼女たちを救えるのは君だけなんだよ`,
       voice: `wav/JP/conversation30/vo_event_11043_71.wav`,
     },
     {
@@ -239,10 +243,7 @@ export default {
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
       text: `…………証拠？`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -273,13 +274,14 @@ export default {
       position: `right`,
       name: `クリスティーナ`,
       text: `HUSHは現場を偽装し、きみに『Garden』は全滅したと思わせた。執行人は常に効率と節約を求める。あんなに手の込んだ回りくどいことをするのは、二つの目的のため以外にあり得ない。`,
-      voice: `wav/JP/conversation30/vo_event_11043_117.wav`,
+      voice: `wav/JP/conversation30/vo_event_11043_117_0001.wav`,
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
       text: `<span>『Garden』を生かすこと、そしてきみを発狂させること。</span>`,
+      voice: `wav/JP/conversation30/vo_event_11043_117_0002.wav`,
     },
     {
       type: `narration`,
@@ -326,10 +328,7 @@ export default {
       name: `クリスティーナ`,
       text: `（心の声）
       難しいよ……ミリア……すごく難しい……でも……向き合わなきゃ。正義は真実からしか生まれないから。たとえ真実が、痛みを伴うとしても。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -337,24 +336,16 @@ export default {
       name: `クリスティーナ`,
       text: `……私は以前`,
       voice: [
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_67.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_67.wav' },
       ]
     },
     {
       type: `narration`,
       text: `探偵は言葉を詰まらせた。背後から突き刺さる視線を感じ取っていた。沈黙の中、彼女はその笑顔を――かつて自分が一番好きだったあの笑顔を、脳裏に描くことすらできた。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `narration`,
       text: `彼女は歯を食いしばり、一語一語、全力を振り絞って言うべきことを口にした。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `dialogue`,
@@ -405,10 +396,7 @@ export default {
     {
       type: `narration`,
       text: `探偵は口ごもり、何度か言葉に詰まった後、涙が先に溢れ出した。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -416,7 +404,7 @@ export default {
       name: `クリスティーナ`,
       text: `一番好きだった人、一番信じてたものが消えて……私だって辛いの！でも、立ち止まってるわけにはいかないじゃない！`,
       voice: [
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_75.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_75.wav' },
       ]
     },
     {
@@ -425,7 +413,7 @@ export default {
       name: `クリスティーナ`,
       text: `きみと違って、復讐なんかじゃ私は治らない！`,
       voice: [
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_68.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_68.wav' },
       ]
     },
     {
@@ -435,8 +423,7 @@ export default {
       text: `笑えばいいわ。私は永遠に正義を信じたい。何が起きても、世界が壊れてて当然だなんて思いたくないし、人が奪われるのが当たり前だなんて認めない。悪人が悪さをすることに慣れたくなんてない！`,
       voice: `wav/JP/conversation30/vo_event_11043_32.wav`,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' },
       ]
     },
     {
@@ -506,50 +493,28 @@ export default {
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
       text: `（心の声）当然、戻ってきてほしい`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `narration`,
       text: `それを認めた瞬間、強烈な渇望が抑えきれなくなり、心の中の憤りや不満をすべて突き破った。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `narration`,
       text: `敵なんてどうでもいい、復讐なんてどうでもいい、薄汚い害虫どもなんて知るか。業師はただ今すぐ自分の『Garden』に帰りたかった。自分の花たちが生き生きと咲く姿を見たい、抱きしめたい。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `narration`,
       text: `その瞬間、彼女に絡みついていた光の触手が弾き飛ばされた。体に注ぎ込まれていた生命力も無念も、すべてが唐突に遮断される。業師は完全に自我を取り戻した。意識は急速に鮮明になり、体の萎縮感も消え失せた。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
     },
     {
       type: `narration`,
       text: `この時ようやく、彼女は気づいた。ここを去る出口は、すぐそこにあるのだと。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `narration`,
       text: `彼女はシャーロームを見た。最初から最後まで、この女は一言も発さず、否定も肯定もしなかった。いつの間にか、彼女の無力な体は青い光の棘に貫かれ、身動き一つできなくなっていた。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -561,10 +526,7 @@ export default {
     {
       type: `narration`,
       text: `だが苦痛の表情はなく、ただ探偵を見つめ、何かを思案しているようだった。やがて業師の視線に気づくと、ふわりと微笑んだ。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -585,7 +547,6 @@ export default {
       text: `私の能力は扱いが面倒でしてね。入念に準備をしないと、君のような強者と正面から向き合うのは危険ですから。手加減ができなくて、ごめんなさい。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_45.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
     {
@@ -604,10 +565,7 @@ export default {
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
       text: `あの子たちは、君が品定めしていいモノじゃない。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -638,16 +596,12 @@ export default {
       text: `もう結構です。やるべきことは全てやりました。これ以上君たちを虐げる必要はありません。君はこの<span>ルール</span>を破壊し、私の<span>感情</span>を振り払い、自由になったのですから。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_75.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
     {
       type: `narration`,
       text: `向こう側の空間が恐怖に震えるように振動し、シャーロームは青い光の棘が凝縮していくのを見つめる。時間は少ないが、十分だ。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -657,33 +611,23 @@ export default {
       text: `次は、逃げな`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_91.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ],
       bgm: `mp3/bg/开往春天-1.1x.m4a`,
     },
     {
       type: `narration`,
       text: `彼女が静かにそう告げた直後、業師が自ら引き裂いた裂け目から凄まじい悲鳴が轟いた。獰猛な巨大な爪が亀裂を打ち砕き、巨大な使い魔が咆哮しながら裂け目から押し出されてきた。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `narration`,
       text: `巨大な青い光の棘がその全身を貫き、三角の光紋が焼き付けられ、白煙を上げている。それは実体ではなく、濃密な感情の化身だった。嵐のように、怒号と悲鳴を上げ、無数の棘に心臓を貫かれ喉を締め上げられながらも、死に物狂いで全てを引き裂こうと足掻いていた。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `narration`,
       text: `探偵は突然爆発した狂厄の衝撃に、吐き気を催すほどだった。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -691,26 +635,17 @@ export default {
       avatar: `img/dh/L5.png`,
       name: `『コクリコ』`,
       text: `？！`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `narration`,
       text: `そいつが咆えるたびに、業師の体内で激しい震動が起きた。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `narration`,
       text: `恐怖ではない。体内の全ての狂厄が点火され、そいつと共に叫び、抗い、束縛する全てを打ち砕こうとする衝動が抑えきれないのだ。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -780,7 +715,6 @@ export default {
       text: `憎しみではない、君と私が生まれ持つ力……口に出すと、効かなくなる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_38.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
     {
@@ -791,16 +725,12 @@ export default {
       text: `君の命は一部しか修復されていません。大事に使ってくださいね、『コクリコ』`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_128.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
     {
       type: `narration`,
       text: `業師は全てを悟った。彼女はシャーロームを見、そして彼女の背後にいる――幾重にも枷を嵌められた「怪物」を見て、初めて緩んだ笑みを浮かべた。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -821,16 +751,12 @@ export default {
       text: `いいえ。分離技術は完璧ですから、とっくの昔に何も感じなくなっています。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_131.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
     {
       type: `narration`,
       text: `彼女は崩壊する空間を見上げた。虚空で凝縮された無数の青い光の棘が天から降り注ぎ、巨獣の体を、そしてシャーロームの体をも貫く。彼女はそれを日常茶飯事のように、気にも留めない。`,
-      voice: [
-        /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
-      ]
+
     },
     {
       type: `dialogue`,
@@ -840,7 +766,6 @@ export default {
       text: `今の私にはここまでしかできません。外に出たら、忘れないでください。あの件は私にとって重要です。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_40.wav' },
-        /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
       ]
     },
     {

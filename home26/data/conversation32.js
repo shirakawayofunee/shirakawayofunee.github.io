@@ -75,8 +75,7 @@ export default {
       name: `『薊』`,
       text: `……相変わらず図々しいね、君って。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_48.wav' },
-        { label: '日', path: 'wav/CN/conversation30/vo_event_11043_22.wav' },
+        { label: '日', path: 'wav/JP/conversation32/vo_event_11043_22.wav' },
       ]
     },
     {
