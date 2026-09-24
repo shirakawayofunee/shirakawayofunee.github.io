@@ -22,22 +22,25 @@ export default {
     ],
     characters: [
       {
-        name: `不気味な男の声`,
-        avatar: `img/dh/leopold.jpg`,
+        name: `？`,
+        name2: `不気味な男の声`,
+        avatar: `img/dh/L102.png`,
         note: `事件現場で治安官に偽装した容疑者`
       },
       {
-        name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
+        name: `Chris`,
+        name2: `未<ruby>来の名探<rt>自称</rt></ruby>偵`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
       },
       {
-        name: `Doyle｜刑事`,
+        name: `Doyle`,
+        name2: `ドイル`,
         avatar: `img/dh/doyle.jpg`,
-        note: `支局の刑事で、「GARDEN」による一連の暗殺事件を担当してるよ。`,
-        basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
-        profile: `所属：ニューシティ治安局`
+        note: `支局の刑事`,
+        basicStats: `「GARDEN」による一連の暗殺事件を担当してるよ。生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
+        profile: `所属：新城治安局`
       },
     ],
     synopsis: `工事中`
@@ -52,6 +55,33 @@ export default {
       type: `image`,
       src: `img/cg/fl_102.jpg`,
       bubbleStyle: "center",
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `ニュース`,
+      text: `ここ数日、新城では多くの要人に匿名の脅迫状が届いており、襲撃事件も発生しています。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation9/vo_event_11011_1.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `ニュース`,
+      text: `西区の戦況が収まったこのタイミングでの事件発生に、街では様々な憶測が広がっています。まだ死傷者は出ていませんが、関係筋からの情報によりますと、この一連の事件は3週間前の連続暗殺事件と深く関わっているとのことです。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation9/vo_event_11011_25.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      name: `ニュース`,
+      text: `犯人の逮捕が遅れた場合、事件が更に過激化し、社会に悪影響をもたらす可能性が大きいです。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation9/vo_event_11011_8.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -350,8 +380,8 @@ export default {
       name: `不気味な男の声`,
       text: `やあ、新米刑事さん。探偵ゲーム、楽しんでる？`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_53.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '中', path: 'wav/CN/conversation9/vo_event_11011_53.wav' },
+        { label: '日', path: 'wav/JP/conversation9/vo_event_11011_21.wav' },
       ]
     },
     {
@@ -359,21 +389,33 @@ export default {
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `お前がネイサンか？！出てこい、殺人犯！`
+      text: `お前がネイサンか？！出てこい、殺人犯！`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation9/vo_event_11011_23.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `不気味な男の声`,
-      text: `そう言うなよ。アナタニアはまだ生きてる。花が彼女の命で、燦然と咲いてるんだ。`
+      text: `そう言うなよ。アナタニアはまだ生きてる。花が彼女の命で、燦然と咲いてるんだ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation9/vo_event_11011_53.wav' },
+        { label: '日', path: 'wav/JP/conversation9/vo_event_11011_27.wav' },
+      ]
+
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `不気味な男の声`,
-      text: `動くなよ、もしその花をうっかり踏み潰したら、殺人犯はお前になっちまうぜ。`
+      text: `動くなよ、もしその花をうっかり踏み潰したら、殺人犯はお前になっちまうぜ。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation9/vo_event_11011_53.wav' },
+        { label: '日', path: 'wav/JP/conversation9/vo_event_11011_10.wav' },
+      ]
     },
     {
       type: `narration`,

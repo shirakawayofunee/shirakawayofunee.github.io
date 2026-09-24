@@ -1551,7 +1551,7 @@ export default {
       position: `left`,
       avatar: `img/dh/xzj.png`,
       name: `シャーローム`,
-      text: `？！`,
+      text: `？`,
     },
     {
       type: `narration`,

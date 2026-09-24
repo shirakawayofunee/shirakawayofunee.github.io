@@ -94,7 +94,6 @@ export default {
       position: `right`,
       name: `クリスティーナ`,
       text: `きみは操られてる！その白い光はもうきみに絡みついてる。彼女を攻撃すればするほど、光はきみを飲み込んでいく。洗脳されるわ、早くやめて！`,
-      
       voice: `wav/JP/conversation30/vo_event_11043_44.wav`
     },
     {
@@ -102,7 +101,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
-      text: `……つまり、人を食らう花の中に命知らずにも飛び込んで、ここまで追いかけてきたのは、私を助けるためだって？`,
+      text: `……つまり、捨て身の覚悟で人食い花の中に飛び込んできて、私を救うためだと言うつもりか`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_87.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_63.wav' },
@@ -816,7 +815,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
-      text: `行くわよ、小僧。外まで連れてってあげる。出たらすぐに案内しなさい。もし私を騙そうものなら、世界中を君の道連れにしてやる。私は、言ったことは必ず実行する。`,
+      text: `行くわよ、小僧。外まで連れてってあげる。出たらすぐに案内しなさい。騙したら世界中を君と一緒に葬る。言ったことは必ずやるわ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_42.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_108.wav' },
