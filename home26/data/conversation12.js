@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `「第[二]現場」`,
+    title: `「第二[現]場」`,
     bgm: `mp3/bg/conversation12.mp3`,
     summary: `花が咲いたレンガの壁の下には、どんな秘密が隠されているのだろうか？`
   },
@@ -27,17 +27,19 @@ export default {
         note: `誰のことか丸わかりなのに、ネタバレ防止にする必要ある？`
       },
       {
-        name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
+        name: `Chris`,
+        name2: `未<ruby>来の名探<rt>自称</rt></ruby>偵`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
       },
       {
-        name: `Doyle｜刑事`,
+        name: `Doyle`,
+        name2: `ドイル`,
         avatar: `img/dh/doyle.jpg`,
-        note: `支局の刑事で、「GARDEN」による一連の暗殺事件を担当してるよ。`,
-        basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
-        profile: `所属：ニューシティ治安局`
+        note: `支局の刑事`,
+        basicStats: `「GARDEN」による一連の暗殺事件を担当してるよ。生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
+        profile: `所属：新城治安局`
       },
     ],
     synopsis: `工事中`
@@ -404,35 +406,30 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/fac_officer.jpg`,
       name: `FAC中層`,
       text: `……この任務は上からの推薦だった。こんな大事になるとは誰も思わなかった。どうか彼女を気にかけてやってください。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/fac_officer.jpg`,
       name: `FAC中層`,
       text: `あの子の父親はFACの教官だった。彼女の家族と親しかった戦士、チーム全員が一つの秘密作戦で死にました。そう、103年……`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/fac_officer.jpg`,
       name: `FAC中層`,
       text: `あの数年、FACに関する噂や悪評が多すぎた。巻き込まれた人々は悪い方向に考えがちだった。彼女の母親もその後、過労で病死した。クリスは大きな打撃を受け、いろいろ問題を起こした。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/fac_officer.jpg`,
       name: `FAC中層`,
       text: `いい家に引き取られ、彼女自身も立ち直ろうと努力し、頑張って治安警学校にも合格した。だけど、万が一ってこともある。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/fac_officer.jpg`,
       name: `FAC中層`,
       text: `彼女の養父母もFACの戦闘員だったけど、つい最近、西区の作戦で殉職した。あの子、いつも強がってるけど、どこまで耐えられるか……`
     },
@@ -476,7 +473,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `？？`,
+      name: `？`,
       text: `やっと目が覚めたね。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation12/vo_event_11015_3.wav' },

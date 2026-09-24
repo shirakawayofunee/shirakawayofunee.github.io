@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「εἰρήνη」`,
     bgm: `mp3/bg/conversation14.mp3`,
-    summary: `彼女が唯一安心したのは、SHALOMが再び傍にいてくれたことだった。`
+    summary: `彼女が唯一安心したのは、シャーロームが再び傍にいてくれたことだった。`
   },
   infoPanel: {
     glossary: [
@@ -27,10 +27,15 @@ export default {
         note: `「上庭」の七代目執行人`
       },
       {
-        name: `Christina`,
+        name: `Christina｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
+        name2: `クリス`,
         avatar: `img/dh/zhentan5.png`,
-        note: `Xに頼まれて、最近の一連の暗殺事件の特別調査員を務めさせてもらうことになった。`,
-        basicStats: `N.F.104年、単独で涅槃集団を襲撃。現場に居合わせた上庭の代行者・シャロームを刺傷した。`,
+        note: `19歳、能力者、警察学校の一年生。`,
+        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。
+        ▍背景
+      父は103年の「月蝕作戦」でFACとして殉職し、母も数年後に悲しみで亡くなった。
+      105年に一人で上庭代表を暗殺した後、HUSH-Xに拾われたんだ。
+      両親の戦友に育てられたけど、養父母も113年3月のBR-002二次勃発でFACとして命を落とした。`,
       },
       {
         name: `Mireya｜探偵の妹`,

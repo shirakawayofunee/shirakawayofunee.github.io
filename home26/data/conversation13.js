@@ -75,7 +75,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_33.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_66.wav' },
       ]
     },
     {
@@ -104,7 +104,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_63.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_93.wav' },
       ]
     },
     {
@@ -124,7 +124,7 @@ export default {
       text: `ここは……どこ？`
     ,
       voice: [
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_69.wav' },
       ]
     },
     {
@@ -136,7 +136,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_86.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_47.wav' },
       ]
     },
 
@@ -149,7 +149,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_23.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_94.wav' },
       ]
     },
     {
@@ -160,7 +160,7 @@ export default {
       text: `……覚えてるよ、殺人犯。`
     ,
       voice: [
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_29.wav' },
       ]
     },
     {
@@ -180,7 +180,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
       name: ` 『業師』`,
-      text: `さあ、私の名前を呼んで。<span>『Coquelicot』</span>`
+      text: `さあ、私の名前を呼んで。<span>コクリコ</span>`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_92.wav' },
@@ -211,8 +211,7 @@ export default {
       text: `……君はこの事件で、あたしに何かを調べさせたいんだ。10年前の何かを暴きたいんだよね……`
     ,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_86.wav' },
       ]
     },
     {
@@ -241,7 +240,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_88.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_85.wav' },
       ]
     },
     {
@@ -252,8 +251,7 @@ export default {
       text: `じゃあ、なんで私をここに連れてきた？殺す気？それとも拷問？`
     ,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_28.wav' },
       ]
     },
     {
@@ -289,7 +287,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_65.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_73.wav' },
       ]
     },
     {
@@ -301,7 +299,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_89.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_60.wav' },
       ]
     },
     {
@@ -352,7 +350,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_59.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_23.wav' },
       ]
     },
     {
@@ -385,7 +383,7 @@ export default {
       text: `やっぱり、慣れてるんだね。君の心はずっと真っ暗なところに閉じ込められてる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_6.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_27.wav' },
       ]
     },
     {
@@ -401,7 +399,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_82.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_79.wav' },
       ]
     },
     {
@@ -441,7 +439,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_38.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_59.wav' },
       ]
     },
     {
@@ -449,11 +447,11 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `『コクリコ』`,
-      text: `暗殺者として、復讐者として、怒りに燃えてすべてを焼き尽くす者として。君には暴力と破壊の才能がある。ここにいる子たちと同じだ。だからあの女が君をそばに置いてるのよ。`
+      text: `暗殺者として、復讐者として、怒りに燃えてすべてを焼き尽くす者として。君には暴力と破壊の才能がある。ここにいる子たちと同じだ。だからあの女が君をそばに置いてるのね。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_50.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_72.wav' },
       ]
     },
     {
@@ -465,7 +463,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_96.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_71.wav' },
       ]
     },
     {
@@ -477,7 +475,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_41.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_58.wav' },
       ]
     },
     {
@@ -545,7 +543,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_80.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_88.wav' },
       ]
     },
     {
@@ -589,7 +587,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_72.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_38.wav' },
       ]
     },
     {
@@ -690,7 +688,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_2.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_36.wav' },
       ]
     },
     {
@@ -702,11 +700,11 @@ export default {
       position: `left`,
       avatar: `img/dh/smile0.png`,
       name: `『コクリコ』`,
-      text: `ほら、彼女もFACの遺族だよ。103年で全てを失った。でも、君みたいな後ろ盾はなかった。正義にすがっても、返ってきたのはビンタの嵐だけ。だから私のところに来た。`
+      text: `ほら、彼女もFACの遺族だ。103年で全てを失った。でも、君みたいな後ろ盾はなかった。正義にすがっても、返ってきたのはビンタの嵐だけ。だから私のところに来た。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_73.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_92.wav' },
       ]
     },
     {
@@ -717,8 +715,7 @@ export default {
       text: `そして……君は彼女を利用した。`
     ,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_49.wav' },
       ]
     },
     {
@@ -729,8 +726,7 @@ export default {
       text: `最初は福音地、次は君……復讐を口実に、傷ついた人たちを騙して利用してる。一無所有の彼女たちを、傷つける刃に変えたんだ。`
     ,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_54.wav' },
       ]
     },
     {
@@ -762,7 +758,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_74.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_43.wav' },
       ]
     },
     {
@@ -774,7 +770,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_30.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_87.wav' },
       ]
     },
     {
@@ -798,7 +794,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_46.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_30.wav' },
       ]
     },
     {
@@ -810,7 +806,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_81.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_84.wav' },
       ]
     },
     {
@@ -834,7 +830,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_1.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_63.wav' },
       ]
     },
     {
@@ -858,7 +854,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_71.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_57.wav' },
       ]
     },
     {
@@ -886,7 +882,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_47.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_74.wav' },
       ]
     },
     {
@@ -898,7 +894,7 @@ export default {
       ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_66.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_90.wav' },
       ]
     }
   ]

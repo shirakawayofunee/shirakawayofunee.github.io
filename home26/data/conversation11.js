@@ -22,17 +22,19 @@ export default {
     ],
     characters: [
       {
-        name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
+        name: `Chris`,
+        name2: `未<ruby>来の名探<rt>自称</rt></ruby>偵`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
       },
       {
-        name: `Doyle｜刑事`,
+        name: `Doyle`,
+        name2: `ドイル`,
         avatar: `img/dh/doyle.jpg`,
-        note: `支局の刑事で、「GARDEN」による一連の暗殺事件を担当してるよ。`,
-        basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
-        profile: `所属：ニューシティ治安局`
+        note: `支局の刑事`,
+        basicStats: `「GARDEN」による一連の暗殺事件を担当してるよ。生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
+        profile: `所属：新城治安局`
       },
     ],
     synopsis: `工事中`

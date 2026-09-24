@@ -380,7 +380,7 @@ export default {
       name: `不気味な男の声`,
       text: `やあ、新米刑事さん。探偵ゲーム、楽しんでる？`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation9/vo_event_11011_53.wav' },
+        { label: '中', path: 'wav/CN/conversation9/vo_event_11011_13.wav' },
         { label: '日', path: 'wav/JP/conversation9/vo_event_11011_21.wav' },
       ]
     },
@@ -401,7 +401,7 @@ export default {
       name: `不気味な男の声`,
       text: `そう言うなよ。アナタニアはまだ生きてる。花が彼女の命で、燦然と咲いてるんだ。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation9/vo_event_11011_53.wav' },
+        { label: '中', path: 'wav/CN/conversation9/vo_event_11011_3.wav' },
         { label: '日', path: 'wav/JP/conversation9/vo_event_11011_27.wav' },
       ]
 
@@ -413,7 +413,7 @@ export default {
       name: `不気味な男の声`,
       text: `動くなよ、もしその花をうっかり踏み潰したら、殺人犯はお前になっちまうぜ。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation9/vo_event_11011_53.wav' },
+        { label: '中', path: 'wav/CN/conversation9/vo_event_11011_5.wav' },
         { label: '日', path: 'wav/JP/conversation9/vo_event_11011_10.wav' },
       ]
     },

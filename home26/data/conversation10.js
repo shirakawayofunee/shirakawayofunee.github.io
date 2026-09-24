@@ -22,12 +22,14 @@ export default {
     ],
     characters: [
       {
-        name: `『業師』`,
-        avatar: `img/dh/leopold.jpg`,
-        note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`
+        name: `「業師」`,
+        avatar: `img/dh/L102.png`,
+        note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
+        basicStats: `「命」や「正義」に対して独特な見解を持つの能力者。`
       },
       {
-        name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
+        name: `Chris`,
+        name2: `未<ruby>来の名探<rt>自称</rt></ruby>偵`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
@@ -268,7 +270,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `容疑者`,
-      text: `……「殺人犯」なんて言葉じゃ私を定義できないよ。私たちの見る「命」も「正義」も違うんだ。`,
+      text: `……「殺人犯」なんて言葉じゃ私を定義できない。私たちの見る「命」も「正義」も違うんだ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_30.wav' },
         { label: '日', path: 'wav/JP/conversation10/vo_event_11012_23.wav' },
