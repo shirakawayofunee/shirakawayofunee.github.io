@@ -98,7 +98,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `中には一枚の花笺だけがあった。かつて受け取ったものと全く同じ。`
+      text: `中には一枚の花便箋だけがあった。かつて受け取ったものと全く同じ。`
     },
     {
       type: `narration`,

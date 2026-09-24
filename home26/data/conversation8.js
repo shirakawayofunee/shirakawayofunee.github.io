@@ -33,18 +33,17 @@ export default {
       {
         name: `Mireya`,
         name2: `探偵の妹`,
-        avatar: `img/dh/Mireya.png`,
+        avatar: `img/dh/miria.png`,
         note: `探偵の養父母の実の娘。人を見る目がある人`,
         basicStats: `両脚に障害があるが、それゆえに自立心が強く、賢く、気丈である。
 姉妹の間ではよく口げんかをするが、実は探偵のことを深く心配している。`,
       },
       {
         name: `Adrien`,
+        name2: `アドリアン`,
         avatar: `img/dh/fac_commander.png`,
         note: `FAC総司令官、最前線で四十有余年、奮闘し続けている。`,
       },
-
-
     ],
     synopsis: `工事中`,
     relatedLink: {

@@ -23,14 +23,15 @@ export default {
     characters: [
       {
         name: `SHALOM｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
-        avatar: `img/dh/x201.png`,
+        avatar: `img/dh/X104.png`,
         note: `「上庭」の七代目執行人`
       },
       {
         name: `Christina`,
-        avatar: `img/dh/zhentan5.png`,
-        note: `Xに頼まれて、最近の一連の暗殺事件の特別調査員を務めさせてもらうことになった。`,
-        basicStats: `N.F.104年、単独で涅槃集団を襲撃。現場に居合わせた上庭の代行者・シャロームを刺傷した。`,
+        name2: `クリスティーナ`,
+        avatar: `img/dh/zhentan104.png`,
+        note: `連続殺人事件の特別調査員`,
+        basicStats: `N.F.104年、単独で涅槃集団を襲撃。現場に居合わせた上庭人・シャーロームを刺傷した。`,
       },
     ],
     synopsis: `工事中`
@@ -40,72 +41,108 @@ export default {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `父は英雄だった。彼は正義と光が永遠に存在すると言い、そのために戦った。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `でも、たくさんの英雄たちが、10年前の遠征であまりにも簡単に死にました。何の意味もなく。`
     },
     {
       type: `narration`,
       text: `ニュース<br>103年夜、FACの大規模戦役が完全な失敗に終わり、死者数は非公開、さらなる説明もなし。情報によると、目的地は内海で、生存率はゼロだった。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `FACは世間から激しい非難を浴び、地位は急落。市議会や涅槃グループでさえFACを操るようになった。私の父も笑いものにされた。人々は口では彼を英雄と呼び、心では「バカな奴」と呼んだ。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `私は尋ねた。パパや叔父叔母たちは、正義のために戦い、城邦を守るために死んだ。なぜこんな結果に？みんな、正義なんて要らないの？`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `彼らは黙り、嘲笑し、または嫌悪感を込めて顔を背けた。最後にある人が言った。「あのバカな奴らは最初から最後まで真相が見えなかったからだ。真相は、正義なんて嘘っぱちだ」と。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `この時代、人は簡単に奪われ、悪はなんの罰も受けずに済む。現実は霧と陰謀に満ち、利益や憎しみ、欲望が正義を凌駕する。盲目的にそれを信じるのは愚かで、死にに行くのも自業自得だ。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `私は大声で反論したかったけど、言葉が出なかった。疑い始めると、悪いことが次から次へと起きた。嫌な予感がして、すべてを悪い方向に考えてしまう。もっと怖いのは……その予感が、ほとんどいつも当たってしまうこと。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `もし正義が存在するなら、この瞬間、どこにある？なぜ出てこない？世界が崩れ、こんな大きな黒い穴が腐り落ちているのに、なぜ無視する？なぜ誰もその穴を埋めようとしない？`
     },
     {
       type: `narration`,
       text: `ニュース<br>104年夜、涅槃グループが西区から撤退。W-31鉱山で大爆発が発生し、死者数は1万人以上。グループはこれを事故と主張。上庭特派員の調査により、この説明が受け入れられた……`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `黒い穴はどんどん大きくなり、私はそこから抜け出せない。何かしないと。私の世界がその穴と一緒に崩れるのを、ただ見ているわけにはいかない……何かしないと、私は――`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -115,29 +152,41 @@ export default {
       text: `（探偵の回想）<br>「Garden」は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`    ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_44.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_18.wav' },
       ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `W-31は事故なんかじゃない。作為的なものだ。彼らの資産移動を調べた。全部怪しい点だらけ。直感が教えてくれる。これは悪だ。パパたちが遭遇したものと同じ、彼らはみな悪だ。誰も裁かないなら、私がやる。私が行かなきゃ！`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `上庭の人間が涅槃に行くって聞いて、私は涅槃本部の近くで待ち伏せした。撃たれた。たくさんの人が私を殴り、捕まえ、能力者だと叫んだ。でも構わない、命がけで一人を刺した。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `right`,
       avatar: `img/dh/zhentan5.png`,
-      name: `探偵`,
+      name: `クリスティーナ`,
       text: `――でも、彼女が銃弾の雨から私を守ってくれた。がけで一人を刺した。`
+    ,
+      voice: [
+        /* { label: '中', path: 'wav/JP/conversation13/vo_event_11016_41.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -145,6 +194,10 @@ export default {
       avatar: `img/dh/X14.png`,
       name: `シャーローム`,
       text: `……そうか、君は心の正義を証明するために来たんだね……`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_85.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -152,6 +205,10 @@ export default {
       avatar: `img/dh/X14.png`,
       name: `シャーローム`,
       text: `もう持たないんだろう？だからこんな過激な手段に……`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_84.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -159,6 +216,10 @@ export default {
       avatar: `img/dh/X14.png`,
       name: `シャーローム`,
       text: `そんな必要はないよ……まだその時じゃない。君にはまだ長い時間がある……私の話を聞いて……`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_77.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -166,6 +227,10 @@ export default {
       avatar: `img/dh/X14.png`,
       name: `シャーローム`,
       text: `正義は確かに存在する。私はこの目で見た。`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_9.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -173,6 +238,10 @@ export default {
       avatar: `img/dh/X14.png`,
       name: `シャーローム`,
       text: `もう一つの純粋で本物の世界……人の心のすべてがむき出しになる場所……そこで、私は正義を見た……それは永遠に存在する……`
+    ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_79.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -180,6 +249,10 @@ export default {
       avatar: `img/dh/X14.png`,
       name: `シャーローム`,
       text: `今、誰かが君のために正義を貫いてくれる。君が大きくなったら、今度は君が彼らのために頑張る番だよ……`
+      ,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation13/vo_event_11016_52.wav' },
+      ]
     },
     {
       type: `narration`,
@@ -187,7 +260,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `08/08<br>前線報告：BR-002環の活動は低調で、現時点で爆発的拡大期の兆候は観測されていない。より広範囲かつ高強度の汚染制御作業に適している。<br>重大行動部署：行動代号K1は「封鎖行動」と命名され、総司令が動員部署を主導し、準備小组を設立。<br>封鎖行動の核心目標は、BR-002を中心とした防御網を構築し、2号黒環および周辺被災地域を完全封鎖する。<br>特殊情報警告：上座観察員Xの情報同期によると、福音地勢力がBR-002に潜入し、環核心を奪取しようとしている。黒環防御網の構築を妨害するリスクが存在。`
+      text: `08/08<br>前線報告：BR-002環の活動は低調で、現時点で爆発的拡大期の兆候は観測されていない。より広範囲かつ高強度の汚染制御作業に適している。<br>重大行動部署：行動代号K1は「封鎖行動」と命名され、総司令が動員部署を主導し、準備小組を設立。<br>封鎖行動の核心目標は、BR-002を中心とした防御網を構築し、2号黒環および周辺被災地域を完全封鎖する。<br>特殊情報警告：上座観察員Xの情報同期によると、福音地勢力がBR-002に潜入し、環核心を奪取しようとしている。黒環防御網の構築を妨害するリスクが存在。`
     },
     {
       type: `narration`,

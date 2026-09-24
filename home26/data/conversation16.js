@@ -22,17 +22,19 @@ export default {
     ],
     characters: [
       {
-        name: `Chris｜未来の<ruby>名探偵<rt>自称</rt></ruby>`,
+        name: `Chris`,
+        name2: `未<ruby>来の名探<rt>自称</rt></ruby>偵`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`
       },
       {
-        name: `Doyle｜刑事`,
+        name: `Doyle`,
+        name2: `ドイル`,
         avatar: `img/dh/doyle.jpg`,
-        note: `支局の刑事で、「GARDEN」による一連の暗殺事件を担当してるよ。`,
-        basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
-        profile: `所属：ニューシティ治安局`
+        note: `支局の刑事`,
+        basicStats: `「GARDEN」による一連の暗殺事件を担当してるよ。生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
+        profile: `所属：新城治安局`
       },
     ],
     synopsis: `工事中`
@@ -132,9 +134,20 @@ export default {
       text: `探偵が指を入れてみると、機械が動く音が聞こえた。`
     },
     {
+      type: `image`,
+      src: `img/cg/fl_203_2.jpg`,
+      bubbleStyle: "center",
+    },
+    {
       type: `narration`,
       text: `仕掛けを調整すると、壁画の壁が開き、隠し扉が現れた。中には電子保管庫が並んでいた。`
     },
+    {
+      type: `image`,
+      src: `img/cg/fl_203_3.jpg`,
+      bubbleStyle: "center",
+    },
+
     {
       type: `narration`,
       text: `保管庫には整然と積まれた紙の書類があった。探偵はそれを取り出し、慎重にめくった。`
@@ -149,11 +162,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `リストには、FACと市議会からの拨款が記録されていた。10年前から今日まで、毎年2回、金額はどんどん増えている。`
+      text: `リストには、FACと市議会からの支出金が記録されていた。10年前から今日まで、毎年2回、金額はどんどん増えている。`
     },
     {
       type: `narration`,
-      text: `拨款の名目は撫恤金だが、その行き先は銀行や投資だった。いや、よく見ると、銀行や投資も偽装だ――送金先の口座は実は個人名義だった。`
+      text: `支出金の名目は撫恤金だが、その行き先は銀行や投資だった。いや、よく見ると、銀行や投資も偽装だ――送金先の口座は実は個人名義だった。`
     },
     {
       type: `narration`,
@@ -166,6 +179,11 @@ export default {
     {
       type: `narration`,
       text: `書類をめくり続けると、奇妙なことに、一輪の狂厄の花が紙の間から生え、鮮やかに咲いていた――このページをめくる前、書類は平らだったのに。`
+    },
+    {
+      type: `image`,
+      src: `img/cg/lihui_item_folder.png`,
+      bubbleStyle: "center",
     },
     {
       type: `narration`,
@@ -189,7 +207,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `（以下は証拠品に関する情報：）<br>Ⅰ．資金流动記録：未来慈善基金会の慈善撫恤金の実際の流れを記録したもの。容疑者が作成した複製で、中には一輪の聚合した狂厄の花が残されている。<br>Ⅱ．会議報告：慈善撫恤金の増額に関する会議報告書。起草者のユウツが、撫恤金の各支出と今回の増額要請の理由を詳細に記している。<br>Ⅲ．会議銘牌：名前が記された銘牌。正式な印刷体ではなく手書きで、既知の被害者とは微妙に異なる。<br>Ⅳ．狂厄の花-残：花瓶に挿された狂厄の花。一部花びらに狂厄の花の特性があり、人間のDNAが検出された。<br>Ⅴ．電子密令：高い権限を持つ電子密令。一般の通信端末の解読や、高機密ネットワークへのログイン、複数の機密データベースへの接続が可能。`
+      text: `（以下は証拠品に関する情報：）<br>Ⅰ．資金記録：未来慈善基金会の慈善撫恤金の実際の流れを記録したもの。容疑者が作成した複製で、中には一輪の聚合した狂厄の花が残されている。<br>Ⅱ．会議報告：慈善撫恤金の増額に関する会議報告書。起草者のユウツが、撫恤金の各支出と今回の増額要請の理由を詳細に記している。<br>Ⅲ．会議銘牌：名前が記された銘牌。正式な印刷体ではなく手書きで、既知の被害者とは微妙に異なる。<br>Ⅳ．狂厄の花-残：花瓶に挿された狂厄の花。一部花びらに狂厄の花の特性があり、人間のDNAが検出された。<br>Ⅴ．電子密令：高い権限を持つ電子密令。一般の通信端末の解読や、高機密ネットワークへのログイン、複数の機密データベースへの接続が可能。`
     },
     {
       type: `narration`,
@@ -324,42 +342,36 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/officer.jpg`,
       name: `治安官`,
       text: `探長、テレビ見て！`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/news_reporter.jpg`,
       name: `ニュース`,
       text: `緊急速報、緊急速報！新都市第三大道の落日クラブで最新の事件現場が発見されました。これで最近の連続事件は4件目です！`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/news_reporter.jpg`,
       name: `ニュース`,
       text: `さらに、匿名で送られてきた資料を受け取りました！`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/news_reporter.jpg`,
       name: `ニュース`,
       text: `「数千万の撫恤金がどこに行ったか知りたい？104年に何をしたか聞いてみて？」`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/news_reporter.jpg`,
       name: `ニュース`,
       text: `凶手は何か情報を伝えようとしているようです。消えた撫恤金と宴会での被害者、この二つにはどんな関係が？本局の記者が引き続きお伝えします。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/news_reporter.jpg`,
       name: `ニュース`,
       text: `最新情報追跡中！現場映像が入りました。この宴会は何？！テーブルの花、天に、こんなの悪魔が作り出したものですか？`
     },

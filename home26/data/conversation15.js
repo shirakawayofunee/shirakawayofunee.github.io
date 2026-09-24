@@ -23,23 +23,25 @@ export default {
     characters: [
       {
         name: `SHALOM｜X`,
-        avatar: `img/dh/x201.png`,
+        name2: `シャーローム`,
+        avatar: `img/dh/X104.png`,
         note: `「上庭」の七代目執行人`
       },
       {
-        name: `Christina｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
-        name2: `クリス`,
-        avatar: `img/dh/zhentan5.png`,
+        name: `Christina`,
+        name2: `クリスティーナ`,
+        avatar: `img/dh/zhentan104.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。
         ▍背景
       父は103年の「月蝕作戦」でFACとして殉職し、母も数年後に悲しみで亡くなった。
-      105年に一人で上庭代表を暗殺した後、HUSH-Xに拾われたんだ。
+      104年に一人で上庭代表を暗殺した後、HUSH-Xに拾われたんだ。
       両親の戦友に育てられたけど、養父母も113年3月のBR-002二次勃発でFACとして命を落とした。`,
       },
       {
-        name: `Mireya｜探偵の妹`,
-        avatar: `img/dh/Mireya.png`,
+        name: `Mireya`,
+        name2: `ミリア`,
+        avatar: `img/dh/miria.png`,
         note: `探偵の養父母の実の娘。人を見る目がある人`,
         basicStats: `両脚に障害があるが、それゆえに自立心が強く、賢く、気丈である。
 姉妹の間ではよく口げんかをするが、実は探偵のことを深く心配している。`,
@@ -59,6 +61,10 @@ export default {
     {
       type: `narration`,
       text: `シャーロームは病床のそばに座り、ゆっくりとリンゴを削っていた。ナイフの扱いは慣れていないようで、動きは遅いが正確だった。黒石英のような視線の下、薄い皮が少しずつ長く剥がれ落ち、彼女はようやく口を開いた。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -66,6 +72,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `調査員はすでに現場周辺で「Garden」の拠点を捜索している。君の命がけの脱出が、重要な情報をもたらしてくれた。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -73,6 +83,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `仕事の話だけど……FACはまもなく重大な戦闘を迎える。私の意見が必要なんだ。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -84,6 +98,10 @@ export default {
     {
       type: `narration`,
       text: `シャーロームは微笑み、ひと切れのリンゴを差し出した。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -91,6 +109,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `君のことも大事だよ。進捗を教えて。君が功績を上げたって聞いてるよ。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -102,6 +124,10 @@ export default {
     {
       type: `narration`,
       text: `彼女は調査記録や檔案を呼び出し、自分の推測をすべて報告した。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -109,6 +135,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `「Garden」は復讐の依頼を引き受けてるけど、なぜこの数人を選んだのか、最終的に見せつけた組み合わせには何か意図があるはず。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -116,6 +146,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `こんな堂々と手がかりをくれるんだから、私に何かを調べさせたいんだ。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -127,6 +161,10 @@ export default {
     {
       type: `narration`,
       text: `10年前の話をすると、探偵はまだ少し怯えた様子だった。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -138,6 +176,10 @@ export default {
     {
       type: `narration`,
       text: `シャーロームは二つ目のリンゴを手に取り、相変わらずゆっくりと削り始めた。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -145,6 +187,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `彼女たちは世間の目なんて気にしないよ。復讐を自分たちの手でしっかり握りしめる人たちだから。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -152,6 +198,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `103年のことを今さら持ち出すのは、それが「今」に役立つからだ。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -159,6 +209,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `蝕月行動は高度な機密だった。FACはもっと崇高な目的のために大きな犠牲を払った。でも、その犠牲は誰かに利用され、歪められた。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -166,6 +220,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `情報が漏洩し、世間からのFACへの非難が止まらなくなった。新都市の他の派閥もその隙に圧力をかけてきた。FACはかつての地位を失い、それ以来ずっと縛られてる。人々の城邦への信頼はどん底に落ちた。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -185,6 +243,10 @@ export default {
     {
       type: `narration`,
       text: `その時の被害者が、彼女の目の前にいる。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -192,6 +254,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `FACはまもなく西区で重大な戦闘を行う。非常に重要な黒環制御作戦だ。多くの人材と資金が投入され、権力構造も変わる。今回のFAC総司令の新都市帰還は、この作戦計画の承認を進めるのが最重要任務だ。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -199,6 +265,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `こんな時に過去の事件が再び持ち出されるのは、何のためだと思う？`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -206,6 +276,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `！もしかして、また波乱を起こして、FACの後方を乱し、この作戦を妨害しようとしてる？`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -213,6 +287,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `少なくとも、福音地には絶対に有利だ。「Garden」はもともと福音地勢力が作った暗殺者組織だった。数年前に独立を宣言したとはいえ、エリカ荘園事件を見れば、彼女たちと福音地はまだ繋がってる。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -220,6 +298,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `彼女の犯行手段は突飛だけど、実際に会ってみると、完全な狂人って感じじゃないんだ。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -227,6 +309,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `彼女たちは……もうこの世界を諦めた人たちだ。正義なんて信じず、負けを認めることもしない。すべてを自分の手でつかもうとする。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -234,6 +320,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `昔の私と、すごく似てる……`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -245,6 +335,10 @@ export default {
     {
       type: `narration`,
       text: `彼女は果物を置き、探偵を見つめた。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -252,6 +346,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `もし私が誰かに殺されたら、クリスは私のために人を殺す？`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -259,6 +357,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `そんなこと絶対にさせない！`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -266,6 +368,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `でも、もし起きたら？君はどうする？`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -277,6 +383,10 @@ export default {
     {
       type: `narration`,
       text: `探偵の頭はどんどん下がり、話しながら自分でも納得できなくなった。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -288,6 +398,10 @@ export default {
     {
       type: `narration`,
       text: `シャーロームはうつむく金髪の少女をじっと見て、ゆっくり、はっきりと一語一語を告げた。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -295,6 +409,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `じゃあ、もし私が人を殺して、悪を犯したら？`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -302,6 +420,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `そんなわけない！シャーローム姉さんがそんなことするはずない！`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -313,6 +435,10 @@ export default {
     {
       type: `narration`,
       text: `そう言って、彼女は探偵の頭をくしゃっと撫で、いつもの温かい声に戻った。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -332,6 +458,10 @@ export default {
     {
       type: `narration`,
       text: `クリスが現れた場所の半径10キロを捜索したが、「Garden」の入口は見つからなかった。彼女たちが意図的にクリスを移動させた可能性がある。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -343,6 +473,10 @@ export default {
     {
       type: `narration`,
       text: `電話が切れ、シャーロームのリンゴも削り終わった。明らかに上達していて、素早く一切れを切り、探偵の口元に差し出した。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -350,6 +484,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `じゃあ、私、先に行くね。事件に進展があればいつでも連絡して。今となっては、この事件の性質は完全に変わってる。君にもっと手がかりが必要だ。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -357,6 +495,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `うん、わかった！私も今すぐ出発する！戦局に関係するなら、急がないと。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -368,6 +510,10 @@ export default {
     {
       type: `narration`,
       text: `探偵はベッドから飛び降り、痛みをこらえて歯を食いしばり、さっと服を着替えた。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -375,6 +521,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `そんなに急がなくても。ちょうど、誰か面会に来てくれたよ。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -386,6 +536,10 @@ export default {
     {
       type: `narration`,
       text: `ドアが開き、陰気な車椅子の少女が入口に現れ、警戒心たっぷりに病室の二人を睨んだ。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -393,6 +547,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `ミリア？あ、そうだ、姉さん、ミリアは私の妹！めっちゃ頭のいい子なんだ！`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -400,6 +558,10 @@ export default {
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `知ってるよ。養子縁組の家族の子だよね。よく話してた。仲良いんだろうな。`
+          ,
+      voice: [
+       /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */ 
+      ]
     },
     {
       type: `dialogue`,
@@ -407,6 +569,10 @@ export default {
       avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `ちっ`
+          ,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation15/vo_event_11021_20.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -418,6 +584,10 @@ export default {
     {
       type: `narration`,
       text: `探偵はニコニコしながらシャーロームを見送ったが、ミリアの方を振り返ると、少し気まずそうだった。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
@@ -425,6 +595,10 @@ export default {
       avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `お前が死んだって聞いて、書類にサインしに来た。まだ生きてるじゃん。`
+          ,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation15/vo_event_11021_17.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -432,6 +606,10 @@ export default {
       avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
       text: `正義のために死ぬつもりなら、事前に言っとけよ。面倒かけんな。`
+          ,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation15/vo_event_11021_65.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -443,13 +621,21 @@ export default {
     {
       type: `narration`,
       text: `ミリアは答えず、ただシャーロームが去った背中を見つめた。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/Mireya.png`,
+      avatar: `img/dh/Mireya_danxin.png`,
       name: `ミリア`,
       text: `……あれが、お前が言う「すごい人」？`
+          ,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation15/vo_event_11021_61.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -457,6 +643,10 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `うん！ほんとにめっちゃいい人で、優しくて正義感があって、強くて賢い！姉さんの答えはいつも正しいんだ！`
+          ,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation15/vo_event_11021_54.wav' },
+      ]
     },
     {
       type: `dialogue`,
@@ -464,20 +654,32 @@ export default {
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
       text: `おかげで、私、またやる気出てきたよ。`
+          ,
+      voice: [
+        /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/Mireya.png`,
+      avatar: `img/dh/Mireya_danxin.png`,
       name: `ミリア`,
       text: `……あの女、最初から最後まで私をまともに見てなかった。彼女の目には、私なんか<span>透明</span>なんだ。`
+          ,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation15/vo_event_11021_12.wav' },
+      ]
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
-      text: `気をつけなよ。どうやって死ぬか分からないよ。`
+      text: `気をつけな。どうやって死ぬか分からない。`
+      ,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation15/vo_event_11021_30.wav' },
+      ]
     },
     {
       type: `narration`,

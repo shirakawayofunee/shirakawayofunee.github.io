@@ -23,19 +23,18 @@ export default {
     ],
     characters: [
       {
-        name: `『Coquelicot』｜業師（L）`,
-        avatar: `img/dh/leopoldmy.jpg`,
-        note: `『GARDEN』の主、裏社会を陰で牛耳る実力者。`,
-        basicStats: `▌生の流儀
+        name: `「Coquelicot」（L）`,
+        name2: `コクリコ`,
+        avatar: `img/dh/L106.png`,
+        note: `『GARDEN』の主·業師、裏社会を陰で牛耳る実力者。`,
+        basicStats: `「命」や「正義」に対して独特な見解を持つの能力者。
+        ▌生の流儀
         人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
         ▌コードネーム由来
         フランス語の『虞美人』
         ▌内面では子どもへの深い慈愛と責任感を胸に、いかなる逆境にあっても活路を切り開き、決して重圧をかけず、心配させまいと気丈に振る舞う師匠`,
         profile: `危険度：	S級
         能力：	緋花剣落
-        出身：	NEW CITY
-        誕生日：	9月23日
-        身長：	178cm
         コードネーム：Coquelicot
 `, 
 
@@ -50,7 +49,8 @@ export default {
 `, 
       },
       {
-        name: `『<ruby>薊<rt>アザミ</rt></ruby>』`,
+        name: `「薊」`,
+        name2: `アザミ`,
         avatar: `img/dh/thistle3.jpg`,
         note: `19歳、FACの遺児。`,
         basicStats: `復讐のために『GARDEN』へ加入したFACの遺児。
@@ -323,7 +323,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_15.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_9.wav' },
       ]
     },
     {
@@ -372,7 +372,7 @@ export default {
       text: `だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の『Garden』に連れてこられても驚きも騒ぎもしない……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_17.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_8.wav' },
       ]
     },
     {
@@ -411,7 +411,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_94.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' },
       ]
     },
     {
@@ -487,7 +487,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_39.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_21.wav' },
       ]
     },
     {
@@ -514,8 +514,7 @@ export default {
       text: `世界がひどいから、君の悪は許されるって？ふざけるな！自分がやった悪を軽々しく流すなよ。君だってあいつらと同類、汚い仲間だ！君も悪の一部だ！`
     ,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_20.wav' },
       ]
     },
     {
@@ -575,7 +574,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_51.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_41.wav' },
       ]
     },
     {
@@ -607,8 +606,7 @@ export default {
       text: `ごめんなさい……師匠……許してください……`
     ,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_16.wav' },
       ]
     },
     {
@@ -624,7 +622,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_19.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_14.wav' },
       ]
     },
     {
@@ -648,7 +646,7 @@ export default {
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_64.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_5.wav' },
       ]
     },
     {
@@ -778,11 +776,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `『コクリコ』`,
-      text: `君みたいなのが一番騙されやすい、一番間抜けで弱いんだ。薊の馬鹿を目覚めさせるためじゃなきゃ、君のことなんか見向きもしないよ。`
+      text: `君みたいなのが一番騙されやすい、一番間抜けで弱いんだ。薊の馬鹿を目覚めさせるためじゃなきゃ、君のことなんか見向きもしない。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_75.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_13.wav' },
       ]
     },
     {
@@ -817,8 +815,7 @@ export default {
       text: `じゃあ……今やってることは何？この一連の事件、誰に復讐してるの？`
     ,
       voice: [
-        /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_17.wav' },
       ]
     },
     {
@@ -838,11 +835,11 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `『コクリコ』`,
-      text: `で、私が何をしたいかって？君の主人に伝えなよ。彼女に私と遊んでもらおうじゃない。これもきっと、彼女が君を送り込んだ目的でしょ。`
+      text: `で、私が何をしたいかって？君の主人に伝えな。彼女に私と遊んでもらおうじゃない。これもきっと、彼女が君を送り込んだ目的でしょ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_87.wav' },
-        /* { label: '日', path: 'wav/JP/conversation13/vo_event_11016_7.wav' }, */
+        { label: '日', path: 'wav/JP/conversation13/vo_event_11016_19.wav' },
       ]
     },
     {
