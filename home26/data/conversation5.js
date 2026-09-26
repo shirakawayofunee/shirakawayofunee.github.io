@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「何のために[戦]うか」`,
     bgm: `mp3/bg/conversation5.mp3`,
-    summary: `雨粒が音を立てる中で、「ガロファノ」は昔の光景を思い出した。`
+    summary: `雨粒が音を立てる中で、ガロファノは昔の光景を思い出した。`
   },
   infoPanel: {
     glossary: [
@@ -23,14 +23,16 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `​人は誰しも危険に身を投じることを望み、それと同時に無事に戻ってくることを願っている。`
+        name: `「Garofano」`,
+        name2: `ガロファノ`,
+        avatar: `img/dh/证件照/005.png`,
+        note: ``,
+        basicStats: `​人は誰しも危険に身を投じることを望み、それと同時に無事に戻ってくることを願っている。`,
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `？`,
+        avatar: `img/dh/leopold1.png`,
+        note: `今向かっています`
       }
     ],
     synopsis: `「ガロファノ」が「GARDEN」への忠誠は揺るぎない。数時間にわたる審問は進展せず、代理人は「ガロファノ」の罵倒以外何も得られなかった。<br>そこへXが「生きている「ガロファノ」の方が価値がある」と提案――「ガロファノ」を人質として連れ去れ、レオポルドから福音地の重要情報を引き出すという計画を立てた。代理人はその提案を認める。しかし、「レオポルド」の名を耳にした瞬間、「ガロファノ」は福音地から与えられた単瞳のルーンを起動。<br>ルーンの力が暴走し、彼女は一瞬で制御を失い、監禁を突破して屋敷から逃走し、大混乱を引き起った。`
@@ -56,19 +58,20 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/security.png`,
-      name: `Security`,
+      name: `治安官`,
       text: `殺さず生け捕りにしろって…こんなの、どうできるというんだ！？なんで俺たちがこんな怪物と戦わなきゃいけないんだ！俺たちはただの人間だ、こんなの無理…軍はどこ！？戻ってこいよ、助けてくれよ！助け——`
     },
     {
       type: `narration`,
-      text: `（「ガロファノ」の脳は瀕死の状態に陥り、生前の記憶が走馬灯のように目の前で駆け巡る。）`
+      text: `（ガロファノの脳は瀕死の状態に陥り、生前の記憶が走馬灯のように目の前で駆け巡る。）`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo10.png`,
       name: `「ガロファノ」`,
-      text: `Sの中「私はかつて、何の覚悟も持たないまま、すべてを失った。」`
+      text: `（心の声）
+      私はかつて、何の覚悟も持たないまま、すべてを失った。`
     },
     {
       type: `narration`,
@@ -77,8 +80,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/npc.png`,
-      name: `Gospel NPC`,
+      name: `福音地NPC`,
       text: `可哀そうな子…何もかも失って…私と一緒に来なさい。少なくとも、ここは君の仲間がいる。復讐だってできる。私が教えてあげるわ…`
     },
     {
@@ -86,60 +88,61 @@ export default {
       position: `left`,
       avatar: `img/dh/severo10.png`,
       name: `「ガロファノ」`,
-      text: `Sの中「私は心構えがなく、再びそれらを手に入れた。」`
+      text: `（心の声）
+      私は心構えがなく、再びそれらを手に入れた。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/junior.png`,
-      name: `Junior`,
-      text: `こんな可愛い服、本当に私にくれるの？ありがとう！！Sさん、なんかお母ちゃんみたい！あ、ごめん、姉ちゃんだよ～`
+      name: `かすかな幻影`,
+      text: `こんな可愛い服、本当に私にくれるの？ありがとう！！ガロファノ、なんかお母ちゃんみたい！あ、ごめん、姉ちゃんだよ～`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/j.png`,
-      name: `J`,
+      avatar: `img/dh/jin005.png`,
+      name: `かすかな幻影(菫)`,
       text: `姉ちゃんなんて、ちょっと恥ずかしいなぁ…私よりも先にここに来て、たくさんのものを教えてくれた。私の心の中では、ずっと尊敬すべき先輩だと思っているんです…`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `Leopold`,
-      text: `よし、今日からもう私たちを縛れる者はいない。処分すべき者は皆殺しだ。もう一線を画いて、バイバイできるんだ～。`
+      name: `かすかな幻影(業師)`,
+      text: `よし、今日からもう私たちを縛れる者はいない。処分すべき者は皆殺しだ。もう一線を画いて、バイバイできるんだ～`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `Leopold`,
+      name: `かすかな幻影(業師)`,
       text: `今から、みな、自分の好きな仕事だけを受けて、好きな獲物だけを仕留めて、報酬をもらおう。行きたいところがあれば行け、気が向かなければ離れても構わない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `Leopold`,
+      name: `かすかな幻影(業師)`,
       text: `誰かの指図をもう受けなくていい——私の以外はね。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `Leopold`,
-      text: `恨みは君たちを縛れなくなる、私が自由をやるんだ。自分の命は、好きなように使えばいい——師匠の私が許したんだから。`
+      name: `かすかな幻影(業師)`,
+      text: `恨みは君たちを縛れなくなる、私が自由をやるんだ。自分の命は、好きなように使えばいい——<ruby>業師<rt>私</rt></ruby>が許したんだから。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo10.png`,
       name: `「ガロファノ」`,
-      text: `「ガロファノ」の中「私は自分のために生きている…もう宝物は私の手に入った…彼女たちを傷つけるなんてさせない…誰も私のとこを通させない…」`
+      text: `（心の声）
+      私は自分のために生きている…もう<span>宝物</span>は私の手に入った…彼女たちを傷つけるなんてさせない…誰も私のとこを通させない…`
     },
     {
       type: `narration`,
-      text: `だが、そんな思いももはや意味がない。「狂厄」が彼女の体内で暴走し、「ガロファノ」の意識を徐々に奪っていく。`
+      text: `だが、そんな思いももはや意味がない。「狂厄」が彼女の体内で暴走し、ガロファノの意識を徐々に奪っていく。`
     }
   ]
 };

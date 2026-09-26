@@ -152,7 +152,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `「ガロファノ」の手のひらには単瞳のルーンが握られ、彼女は強大な力を得るが、同時に狂厄に完全に支配される。汚れた棘が彼女の全身から突き出した。`
+      text: `ガロファノの手のひらには単瞳のルーンが握られ、彼女は強大な力を得るが、同時に狂厄に完全に支配される。汚れた棘が彼女の全身から突き出した。`
     },
     {
       type: `dialogue`,
@@ -172,7 +172,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo9.png`,
-      name: `「ガロファノ」`,
+      name: `「ガロファノ？」`,
       text: `彼女たちに…触れるな！！`
     },
     {
@@ -208,7 +208,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/security.png`,
-      name: `Security`,
+      name: `治安官`,
       text: `で、でも…俺たちの仕事は洋館の安全を守ること、彼女を守ることだ。軍はまだいるだろ？遠くに行ってない、すぐそこにいるんだ、なんで彼らを呼ばない！`
     },
     {
@@ -222,7 +222,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/security.png`,
-      name: `Security`,
+      name: `治安官`,
       text: `弱ってる…？これを弱ってるって言うのか？`
     },
     {

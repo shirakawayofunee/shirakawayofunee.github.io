@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2026-08-29 17:09:05
  * @LastEditors: your name
- * @LastEditTime: 2026-09-27 01:44:58
+ * @LastEditTime: 2026-09-27 02:22:43
  * @Description: 
  * @FilePath: \shirakawayofunee.github.io\home26\data\conversation7.js
  */
@@ -34,18 +34,22 @@ export default {
     characters: [
       {
         name: `工事中`,
-        avatar: `img/dh/`,
+        avatar: `img/dh/leopold1.png`,
         note: `謎多きの女。`,
-        basicStats: `謎多きの女。`,
+        basicStats: `謎多きの女。子供にとって世の終わりのような一大事は、大人にとっては、すべて大事に至らず無事に収められるものだ。`,
         profile: `危険度：S級\n能力：不明
         `
       },
       {
         name: `「Garofano」`,
+        name2: `ガロファノ`,
         avatar: `img/dh/severo007.png`,
         note: `Lと同じ戦線に立つSも、福音地の者たちを決して歓迎しない。`,
-        basicStats: `子供にとって世の終わりのような一大事は、大人にとっては、すべて大事に至らず無事に収められるものだ。`,
-        profile: `所属：GARDEN`
+        basicStats: `沉迷于爱之中的人渴望向一个偶像奉献自己，而不管那偶像是否接受。旁人也许以为这种执著十分痛苦，但对她来讲，要是没有这种执著反而更痛苦。
+        `,
+        profile: `所属：GARDEN
+        危険度：A級
+        能力：穿刺蚕食`
       },
     ],
     synopsis: `業師は福音地からFAC総司令の暗殺依頼を引き受け、「ガロファノ」は「GARDEN」に戻り体を休養する。`,
