@@ -25,7 +25,8 @@ export default {
         name: `「Garofano」`,
         name2: `ガロファノ`,
         avatar: `img/dh/证件照/002.png`,
-        note: `仕立て屋`
+        note: `仕立て屋`,
+        basicStats: `仕立屋を経営して生計を立てる若い未亡人`,
       },
       {
         name: `工事中`,

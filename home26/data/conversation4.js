@@ -17,9 +17,15 @@ export default {
     ],
     characters: [
       {
-        name: `「ガロファノ」`,
+        name: `「Garofano」`,
+        name2: `ガロファノ`,
         avatar: `img/dh/severo10.png`,
-        note: `Garden的`
+        note: `仕立て屋に化けた殺し屋`,
+        basicStats: `
+        `,
+        profile: `所属：GARDEN
+        危険度：A級
+        能力：穿刺蚕食`
       },
       {
         name: `X`,
