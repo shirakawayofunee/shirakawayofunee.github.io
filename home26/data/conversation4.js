@@ -17,7 +17,7 @@ export default {
     ],
     characters: [
       {
-        name: `『Garofano』`,
+        name: `「ガロファノ」`,
         avatar: `img/dh/severo10.png`,
         note: `Garden的`
       },
@@ -50,7 +50,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `概要：『Garofano』が「GARDEN」への忠誠は揺るぎない。数時間にわたる審問は進展せず、代理人は『Garofano』の罵倒以外何も得られなかった。<br>そこへXが「生きている『Garofano』の方が価値がある」と提案――『Garofano』を人質として連れ去れ、<br>レオポルドから福音地の重要情報を引き出すという計画を立てた。代理人はその提案を認める。<br>しかし、「レオポルド」の名を耳にした瞬間、『Garofano』は福音地から与えられた単瞳のルーンを起動。<br>ルーンの力が暴走し、彼女は一瞬で制御を失い、監禁を突破して屋敷から逃走し、大混乱を引き起った。`
+      text: `概要：「ガロファノ」が「GARDEN」への忠誠は揺るぎない。数時間にわたる審問は進展せず、代理人は「ガロファノ」の罵倒以外何も得られなかった。<br>そこへXが「生きている「ガロファノ」の方が価値がある」と提案――「ガロファノ」を人質として連れ去れ、<br>レオポルドから福音地の重要情報を引き出すという計画を立てた。代理人はその提案を認める。<br>しかし、「レオポルド」の名を耳にした瞬間、「ガロファノ」は福音地から与えられた単瞳のルーンを起動。<br>ルーンの力が暴走し、彼女は一瞬で制御を失い、監禁を突破して屋敷から逃走し、大混乱を引き起った。`
     },
     {
       type: `narration`,
@@ -64,7 +64,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo1.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `ああ――！！`
     },
     {
@@ -95,7 +95,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は倒れている『Garofano』をちらっと見た。<br>この殺し屋はすでに瀕死で、しかしその目は不屈と執念に満ちている。少し考えた後、Xが口を開く。`
+      text: `彼女は倒れている「ガロファノ」をちらっと見た。<br>この殺し屋はすでに瀕死で、しかしその目は不屈と執念に満ちている。少し考えた後、Xが口を開く。`
     },
     {
       type: `dialogue`,
@@ -130,7 +130,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x.png`,
       name: `X`,
-      text: `『Garofano』を生かしておく理由としてはこれで十分でしょう。`
+      text: `「ガロファノ」を生かしておく理由としてはこれで十分でしょう。`
     },
     {
       type: `dialogue`,
@@ -141,18 +141,18 @@ export default {
     },
     {
       type: `narration`,
-      text: `何かの言葉が彼女を刺激したのか、『Garofano』が目を開けて、苦痛と憎悪に満ちた目で彼女を見下ろす二人を睨みつけた。`
+      text: `何かの言葉が彼女を刺激したのか、「ガロファノ」が目を開けて、苦痛と憎悪に満ちた目で彼女を見下ろす二人を睨みつけた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo9.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `お前なんかに…絶対に…させない…`
     },
     {
       type: `narration`,
-      text: `『Garofano』の手のひらには単瞳のルーンが握られ、彼女は強大な力を得るが、同時に狂厄に完全に支配される。汚れた棘が彼女の全身から突き出した。`
+      text: `「ガロファノ」の手のひらには単瞳のルーンが握られ、彼女は強大な力を得るが、同時に狂厄に完全に支配される。汚れた棘が彼女の全身から突き出した。`
     },
     {
       type: `dialogue`,
@@ -172,7 +172,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo9.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `彼女たちに…触れるな！！`
     },
     {
@@ -228,6 +228,87 @@ export default {
     {
       type: `narration`,
       text: `彼は言葉を失い、花道の向こうから暴走する怪物が自分に向かって突進してくる。咆哮する烈風のような巨大な恐怖が、治安官の理性を一瞬で引き裂いた。`
-    }
+    },
+    {
+      type: `narration`,
+      text: `概要：ヒーゲル（福音地の幹事の一人）が『Garofano』を見つけ、「GARDEN」と「命の延長」を餌に、単瞳のルーンを与え、上庭特使Xの暗殺を頼んだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `聞いたよ、君たちの基地が最近襲われたって。上庭が手を出したんだろ？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/severo3.png`,
+      name: `「ガロファノ」`,
+      text: `…あなたなのね、福音地の卑怯者…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/severo3.png`,
+      name: `「ガロファノ」`,
+      text: `お前たちと上庭の争いに、巻き込む気か。私たちはもうお前たちの道具じゃない。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `へっ、足を洗ったってわけ？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `上庭はそんなの知ったこっちゃないよ。一度福音地に染まったら、一生溝のネズミとして扱われるのさ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `彼らはとっくに君たちをマークしてる…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `この組織を作ったのは私たち、君を救って、君の復讐を果たさせた…君の新生は、私たちの贈り物だよ…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/severo3.png`,
+      name: `「ガロファノ」`,
+      text: `違う！復讐は私を救わなかった。私を救ったのは家族、彼女とみんなだった…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `もうすぐ全部上庭に排除されるよ、そんもの。君の首領も、家族も、抵抗なんてできないさ…その日はもうすぐ来る、君もわかってるだろ…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `だが…取引しないか？今の上庭の執行者、君たちを追い詰めてるリーダーが、尻尾を出したんだ…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `そいつを見つけ出せ…一緒にやらないか…十分な力を与えるよ。君の「新生」を守るんのさ。`
+    },
   ]
 };

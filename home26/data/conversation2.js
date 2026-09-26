@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「穏やかな[朝]」`,
     bgm: `mp3/bg/Gymnopedie.mp3`,
-    summary: `雨粒が音を立てる中、Sも敵も制限を受けてしまう`
+    summary: `​人は誰しも危険に身を投じることを望み、それと同時に無事に戻ってくることを願っている。`
   },
   infoPanel: {
     glossary: [
@@ -22,9 +22,10 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `「Garofano」`,
+        name2: `ガロファノ`,
+        avatar: `img/dh/证件照/002.png`,
+        note: `仕立て屋`
       },
       {
         name: `工事中`,
@@ -32,21 +33,21 @@ export default {
         note: `工事中`
       }
     ],
-    synopsis: `エノリカ山荘にはほとんどの場所に罠が仕掛けられており、いつ襲撃を受けてもおかしくない暗殺の戦場と化している。数日間、『Garofano』はエノリカ山荘の警備員（能力者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、調査員が訪ねてくる。`
+    synopsis: `エノリカ山荘にはほとんどの場所に罠が仕掛けられており、いつ襲撃を受けてもおかしくない暗殺の戦場と化している。数日間、「ガロファノ」はエノリカ山荘の警備員（能力者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、調査員が訪ねてくる。`
   },
   script: [
     {
       type: `narration`,
-      text: `N.F.113年7月22日 7:18<br>ニューシティ・エノリカ山荘周辺 花道商店街 『Garofano』の仕立て屋`
+      text: `N.F.113年7月22日 7:18<br>新都市・エノリカ山荘周辺 花道商店街 「ガロファノ」の仕立て屋`
     },
     {
       type: `image`,
       src: `img/cg/br_01.png`
     },
-    {
+/*     {
       type: `narration`,
-      text: `概要：数日間、『Garofano』はエリカ山荘の警備員（能力者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、調査員が訪ねてくる。  <br>『Garofano』は一瞬の情け深き、自身と「同じ境遇」に見える調査員を引き込もうとし、「上庭に傷つけられた同類」だと説得、<br>「GARDEN」の首領レオポルドが復讐を助けられると伝えた。しかし、その優しさは強く拒絶され、逆に調査員に裏切られた。最終的に『Garofano』は罠に落ち、能力者対策の部隊に制圧され、昏迷状態に陥る。調査員もSan値が限界に達し、一時的に行動不能となる。`
-    },
+      text: `概要：数日間、「ガロファノ」はエリカ山荘の警備員（能力者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、調査員が訪ねてくる。  <br>「ガロファノ」は一瞬の情け深き、自身と「同じ境遇」に見える調査員を引き込もうとし、「上庭に傷つけられた同類」だと説得、<br>「GARDEN」の首領レオポルドが復讐を助けられると伝えた。しかし、その優しさは強く拒絶され、逆に調査員に裏切られた。最終的に「ガロファノ」は罠に落ち、能力者対策の部隊に制圧され、昏迷状態に陥る。調査員もSan値が限界に達し、一時的に行動不能となる。`
+    }, */
     {
       type: `narration`,
       text: `襲撃の後、商業街の朝はひときわ静かだ。警員たちはXの宅邸周辺に集まり、捜査と警戒に追われている。遠くのエリアには、運の悪い数人だけが巡回に派遣されている。`
@@ -62,15 +63,15 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/severo1.png`,
-      name: `Severo`,
+      avatar: `img/dh/severo0.png`,
+      name: `「ガロファノ」`,
       text: `こんな朝早く、誰かと思ったよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/severo1.png`,
-      name: `Severo`,
+      avatar: `img/dh/severo0.png`,
+      name: `「ガロファノ」`,
       text: `こんにちは、お客様。この数日はお店をお休みしてます。礼服のオーダーをご希望なら、数日後にまたお越しください。`
     },
     {
@@ -87,15 +88,15 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/severo1.png`,
-      name: `Severo`,
+      avatar: `img/dh/severo2.png`,
+      name: `「ガロファノ」`,
       text: `ありがとう、思う人がですね…カーネーションが好きです、私に似ているからって。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/severo1.png`,
-      name: `Severo`,
+      avatar: `img/dh/severo2.png`,
+      name: `「ガロファノ」`,
       text: `彼はFACの人間だった。数年前に怪我で退役してたのに、西区で事件が起きて、緊急で呼び戻された。それから…葬式だった。`
     },
     {
@@ -105,8 +106,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/severo1.png`,
-      name: `Severo`,
+      avatar: `img/dh/severo2.png`,
+      name: `「ガロファノ」`,
       text: `ごめん、墓地から戻ったばかりで、気持ちの整理がついてないの。`
     },
     {
@@ -119,15 +120,15 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/severo1.png`,
-      name: `Severo`,
+      avatar: `img/dh/severo4.png`,
+      name: `「ガロファノ」`,
       text: `その制服、FACの部隊のものよね…今はサービスを提供できないけど、ここにある花なら自由に持ってっていいよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/severo1.png`,
-      name: `Severo`,
+      avatar: `img/dh/severo4.png`,
+      name: `「ガロファノ」`,
       text: `もし、お前にも追悼したい人がいるなら…`
     },
     {
@@ -152,7 +153,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo4.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `……私…あっ！`
     },
     {
@@ -167,7 +168,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `ったく、せっかちな人ね。こんな小さな問題、私ならちゃんと説明できたのに。`
     },
     {
@@ -181,14 +182,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `ふふ、冗談まで言える？気分いいね、ボディガードさん。その笑顔、ずっとキープしてなよ。一生ずっと…`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `だって、人生なんて一瞬で終わっちゃうこともあるんだから。`
     },
     {

@@ -12,19 +12,19 @@ const categories = [
 // 2. 章节数据库 (请在这里录入所有章节信息)
 const chapterList = [
   {
-    id: "conversation0",
+    id: "conversation1",
     category: "bluerain",
-    title: "000「雨夜」",
+    title: "001「雨夜」",
     subtitle: "Blue Rain",
     dateLabel: "N.F.113/7/19",
   },
-  {
+/*   {
     id: "conversation1",
     category: "bluerain",
     title: "001「招かれざる客」",
     subtitle: "Blue Rain",
     dateLabel: "N.F.113/7/16",
-  },
+  }, */
   {
     id: "conversation2",
     category: "bluerain",

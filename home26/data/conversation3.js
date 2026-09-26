@@ -32,14 +32,14 @@ export default {
         note: `工事中`
       }
     ],
-    synopsis: `数日間、『Garofano』はエリカ山荘の警備員（能力者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、調査員が訪ねてくる。
-    『Garofano』は一瞬の情け深き、自身と「同じ境遇」に見える調査員を引き込もうとし、「上庭に傷つけられた同類」だと説得、
-    「GARDEN」の首領レオポルドが復讐を助けられると伝えた。しかし、その優しさは強く拒絶され、逆に調査員に裏切られた。最終的に『Garofano』は罠に落ち、能力者対策の部隊に制圧され、昏迷状態に陥る。調査員もSan値が限界に達し、一時的に行動不能となる。`
+    synopsis: `数日間、「ガロファノ」はエリカ山荘の警備員（能力者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、調査員が訪ねてくる。
+    「ガロファノ」は一瞬の情け深き、自身と「同じ境遇」に見える調査員を引き込もうとし、「上庭に傷つけられた同類」だと説得、
+    「GARDEN」の首領レオポルドが復讐を助けられると伝えた。しかし、その優しさは強く拒絶され、逆に調査員に裏切られた。最終的に「ガロファノ」は罠に落ち、能力者対策の部隊に制圧され、昏迷状態に陥る。調査員もSan値が限界に達し、一時的に行動不能となる。`
   },
   script: [
     {
       type: `narration`,
-      text: `N.F.113年7月22日 08:05<br>『Garofano』の仕立て屋`
+      text: `N.F.113年7月22日 08:05<br>「ガロファノ」の仕立て屋`
     },
     {
       type: `image`,
@@ -49,7 +49,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `もう、FACの伝統って優しく礼儀正しいことじゃなかった？なんで私にはそんな乱暴なのさ。戦友の未亡人なんだから、ちょっと手加減してよ、ね？`
     },
     {
@@ -67,14 +67,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `これらはすべて私の人生で実際に経験したことです。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `西区に新しい黒環ができたよね。お前の仲間、どれだけそこで死んだ？知ってるよ、FACの誇らしい伝統――意味のない、わけわかんない「偉大な犠牲」を崇めること。だからさ、むしろ私たち、同病相憐れむべきじゃない？もっと話すべきだよ…っと！`
     },
     {
@@ -96,21 +96,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `正解、さすがだね。お前たちの戦い方、知ってるよ。怪物と正面からぶつかり合うのが好きで、怖がらず避けず、いつも命を惜しまず盾になる。これに対抗するには、この手が一番効くの。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `おっと、動かないで。この毒にはちょっとだけ狂厄の汚染が混ざってる。もし異方晶持ってるなら、静かに浄化を待った方がいい。今はまだお前を傷つけたくないから。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `あなたと話したいんだ。`
     },
     {
@@ -121,28 +121,28 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `この4ヶ月、城邦のすべての黒環が活発化して、FACの全戦力は正面戦場に投入されてる。新城の悪質な事件に対応する余裕なんてないから、ずっと前に第九機関に引き継がれてるよね。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `ボディガード、いや、FAC-G47小隊の能力者、お前がここにいるはずない。上級からの援護命令なんて出てないでしょ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `勝手に新城に戻って、関係ない事件に無理やり介入して、手がかり見つけても報告せず、単独で私みたいな「殺し屋」に会いに来た…お前の能力者の力だって、クリーンじゃないよね？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `身FACとして、服従と忠誠がお前の務めなのに、お前はあまりにも多くの一線を越えた。どれか一つでも、裁判沙汰になるよ。`
     },
     {
@@ -156,14 +156,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `…いや、お前のこと、お前が思う以上に理解してるよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `お前は内海の「蝕月作戦」に参加して、唯一の生き残り。ここに来たのは復讐のためだけだよね。`
     },
     {
@@ -177,63 +177,63 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `103年、FACは緊急命令を受け、28の中隊が秘密裏に内海へ向かい、BR-000に突入。情報も時間も不足の中で、作戦は何の成果も上げず、お前以外全員戦死。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `愚かな作戦だった。可是事後，戦術を立案した指揮官は姿を消し、すべての損失と責任はFACに押し付けられた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `こんなこと知ったら、誰だって納得いかないよ。私たちと同じさ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `私の父はFACの後方支援部で輸送員だった。N.F.83年、基地で、作戦から持ち帰った異物に感染して、死ぬまでそれが何かわからなかった。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `父は狂厄に侵され、混乱の中で検疫も受けず家に帰り、母や妹の前で怪物に変わった…`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `お前と同じ、あの夜、私も惨めな生き残りだった。お前の憎しみ、わかるよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `この何年も、お前はたくさんのものを犠牲にして、能力者になって、ひとりで憎しみを耐え抜いて上庭の犬になった。それでも、黒幕の端っこにも触れられない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `お前が歩いてるこの真っ暗で冷たい道、私も同じように歩いてきた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `私たちの人生は一瞬で崩れ、すべて壊された。正義なんて誰も返してくれない。だから、自分で取り戻すしかない。この世界には、多少なりとも道理があるべきじゃない？`
     },
     {
@@ -244,14 +244,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `お前の敵じゃない、同類だ。お前にはまだたくさんの同類がいるよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `この世には私たちを受け入れてくれる場所がある。理解してくれる人がいる。彼女はお前を導き、過酷な復讐を支えてくれる。お前にその覚悟があれば、私が彼女に会わせてあげる。`
     },
     {
@@ -265,7 +265,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `やっと手に入れた私の新しい家族だよ。`
     },
     {
@@ -294,28 +294,28 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `彼らはみな上庭の人間だ。上庭は決して無垢じゃない、みんなくそくらえの敵だ。一番強く、一番恐ろしい敵。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `お前も彼らを憎んでるよね？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `お前が命がけで能力者になったように、私も彼らに対抗する力が必要だった。手に入れるために戦い、捨てるものもあった。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `復讐はすべてを捧げるもの。お前が一番わかってるよね？今、お前にはそのチャンスがある。私たちが助けてあげるよ。`
     },
     {
@@ -340,18 +340,18 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `…本当に残念だ。本気でお前を家に連れて帰りたかった。`
     },
     {
       type: `narration`,
-      text: `両者の力の差は歴然で、一瞬にして『Garofano』は地面に叩きつけられ、戦闘不能に。続けて大盾が彼女に重くのしかかり、床に押さえつけられて動けなくなる。`
+      text: `両者の力の差は歴然で、一瞬にして「ガロファノ」は地面に叩きつけられ、戦闘不能に。続けて大盾が彼女に重くのしかかり、床に押さえつけられて動けなくなる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `うっ…咳咳、なんて恐ろしい力…こんな力手に入れるために、どんな悪事を働いた？お前の愛するFACは知ってる？`
     },
     {
@@ -365,7 +365,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo3.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `…何をしようって？`
     },
     {
@@ -383,7 +383,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `…なるほど、お前たちが欲しいのは私だけじゃないってわけね…`
     },
     {
@@ -397,7 +397,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `ふふふ…そう見ると、お前には悪鬼の才能があるね…正義にこだわるのやめたら？もうFACには向いてないよ。`
     },
     {
@@ -409,13 +409,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `大盾が再び強く叩きつけられ、骨が折れる音が聞こえたようだ。『Garofano』は痛みにうめきながらも、顔には弱々しくも陶酔した笑みが浮かぶ。今、彼女の目にはもはや優しい誘いはなく、憎悪と殺意だけが宿っている。`
+      text: `大盾が再び強く叩きつけられ、骨が折れる音が聞こえたようだ。「ガロファノ」は痛みにうめきながらも、顔には弱々しくも陶酔した笑みが浮かぶ。今、彼女の目にはもはや優しい誘いはなく、憎悪と殺意だけが宿っている。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `ふふふ、10年も耐えたのに、今さら急いでどうするの？モノはもう渡したよ…あの花箋、見た？読めなかった？`
     },
     {
@@ -433,7 +433,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `簡単だよ。一歩ずつ解いていこう。`
     },
     {
@@ -455,7 +455,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `通信暗号だよ。蝕月作戦期間中、唯一内海の黒環を貫通した情報番号。この番号を通じて、環内のお前たちに命令が下された。発信元は誰も見つけられない上庭だ。`
     },
     {
@@ -470,7 +470,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `気づいた？この通信の向こう側が、お前がディスを10年探しても見つけられなかった仇だよ。`
     },
     {
@@ -523,7 +523,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `そんなに興奮して、誰に叫んでるの？`
     },
     {
@@ -532,13 +532,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `だが、『Garofano』はすでに大盾の圧制から脱し、笑顔のまま、弱々しくも勝利者の傲慢さを漂わせる。彼女はゆっくりと調査員の身体に突き刺した長い針を回し、毒と汚染をさらに深く敵の体内に送り込む。`
+      text: `だが、「ガロファノ」はすでに大盾の圧制から脱し、笑顔のまま、弱々しくも勝利者の傲慢さを漂わせる。彼女はゆっくりと調査員の身体に突き刺した長い針を回し、毒と汚染をさらに深く敵の体内に送り込む。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `反応大きいね。ずっと追い求めてた仇に会えた？`
     },
     {
@@ -556,21 +556,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `焦るなよ、今まさに教えてあげようとしてるじゃない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `私は狂厄を売りさばく奴らと取引して、汚い依頼を受けて、ほんの少しの情報をかき集め、汚れた力を手に入れた。奴らがろくでもないのは知ってる。どうでもいいさ。<br>黒幕に触れられるのは、日の目を見ないクズどもだけだ。奴らなら上庭の偽装を切り裂いて、偉そうな奴らにちょっとした頭痛を与えられる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `お前や私みたいな普通の人間に、そんなことできると思う？`
     },
     {
@@ -581,7 +581,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `私、襲った上庭人の中に無辜な人がいるって知ってるよ。でも、みんなくそくらえで役に立つんだ。`
     },
     {
@@ -592,32 +592,32 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `上庭の連中はいつも行方を隠してる。外の人間は上庭がどこにあるかもわからない。でも最近、何人かの上庭人が新城に降りてきた。お前も私も知ってるよね、彼らは西区のトラブルを解決しに来たんだ。間違いなく重要な連中だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `だからこうやって出会ったんだ。この貴重な突破口を利用して、上庭の情報を探り、上庭に潜り込むために。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `お前は保護任務に無理やり介入して、信頼を得ようとした。よくやってるよ、「正直な」FAC。でも、どんなに頑張っても、あの貴人たちは犬を上庭に連れて帰らない。あの連中の口から情報を引き出すには、こうするしかない――`
     },
     {
       type: `narration`,
-      text: `針の先が少し力を込め、調査員のコートの前を切り裂く。ポケットから花箋が覗く。『Garofano』は手を伸ばし、それを取り上げる。`
+      text: `針の先が少し力を込め、調査員のコートの前を切り裂く。ポケットから花箋が覗く。「ガロファノ」は手を伸ばし、それを取り上げる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `これは予告状、狩りのリストに載ってる上庭人全員にあらかじめ送ってる。賢い上庭人ならわかるよ、これは脅迫状じゃない――大慈悲で与えた一縷の生還のチャンスだ。<br>謎は難しくない。彼らは私が何を求めてるか知ってる。生き延びたければ教えてくれるよ。明朗会計、情報を渡して命を買い取る。話すと思う？`
     },
     {
@@ -631,14 +631,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `そう、一緒に！これこそ必要な犠牲じゃない？彼らは理解してくれるよ。こうやって機会の重さがよりはっきりする。<br>誰かは白状するよ、実際もう白状した奴もいる。これが機会の正しい使い方、本当の復讐だ。私はすべてを捨てて地獄に落ちてもいい。お前はどう？`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `10年だよ。この空気を切り裂く力以外、お前は何を成し遂げた？`
     },
     {
@@ -654,7 +654,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `狂気的な力がくすぶる炎のように燃え上がり、この瞬間、突然爆発する。調査員は咆哮しながら立ち上がり、自身を貫く長い針を帯びたまま、前に突進し、『Garofano』の首を片手で掴むと、力強く壁に叩きつける。`
+      text: `狂気的な力がくすぶる炎のように燃え上がり、この瞬間、突然爆発する。調査員は咆哮しながら立ち上がり、自身を貫く長い針を帯びたまま、前に突進し、「ガロファノ」の首を片手で掴むと、力強く壁に叩きつける。`
     },
     {
       type: `narration`,
@@ -682,35 +682,35 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `ハ…ハハハハ…すごい力だね。もう怪物扱いだよ。この姿で、FACはまだお前を必要としてる？殺されるんじゃない？ハハハ――`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `私の仇はもう報いたよ。誰かが私のために恨みを晴らしてくれて、心の空虚も怒りも癒された。今は新しい家族がいて、新しい人生があって、私は救われたんだ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `本気でお前を家に連れて帰りたかった。でも、何かを失う者が全部家族になれるわけじゃないみたいだ…お前のおかげで、今ある大切な宝物をますます愛おしく感じるよ…`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `もう二度と、誰にも私のものを傷つけさせない。あなたも、あなたが私たちを利用して媚を売ろうとしているあいつも、一人たりとも見逃さない。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `かつての私は復讐のためにすべてを捧げた。今は未来を守るため、その倍の力を尽くす。すべてを失ったお前が、どうやって私に勝てるっていうんだ？家を失った野良犬が、目も見えずに吠える以外に何ができる？`
     },
     {
@@ -719,13 +719,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `『Garofano』はすでに連れ去られ、調査員の耳元にはその女の華奢な声だけがまとわりつく。`
+      text: `「ガロファノ」はすでに連れ去られ、調査員の耳元にはその女の華奢な声だけがまとわりつく。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `Severo`,
+      name: `「ガロファノ」`,
       text: `その執着を抱えたまま、過去に溺れなさい。`
     }
   ]

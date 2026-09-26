@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `本当の[目]標`,
     bgm: `mp3/bg/conversation20.mp3`,
-    summary: `暗殺者が真のターゲットFAC総司令官を誘拐した。人質を移動させる兵員輸送車は錆の川を出発し、高速でニューシティに向かっている。`
+    summary: `暗殺者が真のターゲットFAC総司令官を誘拐した。人質を移動させる兵員輸送車は錆の川を出発し、高速で新都市に向かっている。`
   },
   infoPanel: {
     glossary: [

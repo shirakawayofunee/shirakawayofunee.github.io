@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「第[三]現場」`,
     bgm: `mp3/bg/conversation12.mp3`,
-    summary: `第三現場、ニューシティ未来慈善財団産業パーク。花は再び死を咲かせた。`
+    summary: `第三現場、新都市未来慈善財団産業パーク。花は再び死を咲かせた。`
   },
   infoPanel: {
     glossary: [

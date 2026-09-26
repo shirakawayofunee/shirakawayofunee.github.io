@@ -23,7 +23,7 @@ export default {
     ],
     characters: [
       {
-        name: `「Coquelicot」（L）`,
+        name: `「Coquelicot」`,
         name2: `コクリコ`,
         avatar: `img/dh/L106.png`,
         note: `『GARDEN』の主·業師、裏社会を陰で牛耳る実力者。`,
