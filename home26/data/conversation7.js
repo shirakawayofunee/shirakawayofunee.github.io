@@ -2,7 +2,7 @@
  * @Author: DCBZ
  * @Date: 2026-08-29 17:09:05
  * @LastEditors: your name
- * @LastEditTime: 2026-09-27 02:22:43
+ * @LastEditTime: 2026-09-27 20:47:59
  * @Description: 
  * @FilePath: \shirakawayofunee.github.io\home26\data\conversation7.js
  */
@@ -33,9 +33,9 @@ export default {
     ],
     characters: [
       {
-        name: `工事中`,
+        name: `業師`,
         avatar: `img/dh/leopold1.png`,
-        note: `謎多きの女。`,
+        note: `悪名高い殺し屋`,
         basicStats: `謎多きの女。子供にとって世の終わりのような一大事は、大人にとっては、すべて大事に至らず無事に収められるものだ。`,
         profile: `危険度：S級\n能力：不明
         `
