@@ -25,13 +25,16 @@ export default {
         name: `「Garofano」`,
         name2: `ガロファノ`,
         avatar: `img/dh/证件照/002.png`,
-        note: `仕立て屋`,
-        basicStats: `仕立屋を経営して生計を立てる若い未亡人`,
+        note: `仕立屋の主人`,
+        basicStats: `仕立屋を経営して生計を立てる若い未亡人?`,
       },
       {
-        name: `工事中`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        name: `Rahu`,
+        name2: `调查员`,
+        avatar: `img/dh/证件照/002_2.png`,
+        note: `招かれざる客`,
+        basicStats: `エノリカ山荘の警備を支援する調査員`,
+        profile: `所属：FAC\n能力：不明`
       }
     ],
     synopsis: `エノリカ山荘にはほとんどの場所に罠が仕掛けられており、いつ襲撃を受けてもおかしくない暗殺の戦場と化している。数日間、「ガロファノ」はエノリカ山荘の警備員（能力者を含む）と何度も正面衝突した。「GARDEN」に戻って休息しようとした矢先、調査員が訪ねてくる。`
@@ -51,7 +54,7 @@ export default {
     }, */
     {
       type: `narration`,
-      text: `襲撃の後、商業街の朝はひときわ静かだ。警員たちはXの宅邸周辺に集まり、捜査と警戒に追われている。遠くのエリアには、運の悪い数人だけが巡回に派遣されている。`
+      text: `襲撃の後、商業街の朝はひときわ静かだ。警員たちはその<ruby>上庭人<rt>X</rt></ruby>の宅邸周辺に集まり、捜査と警戒に追われている。遠くのエリアには、運の悪い数人だけが巡回に派遣されている。`
     },
     {
       type: `narration`,
@@ -65,14 +68,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo0.png`,
-      name: `「ガロファノ」`,
+      name: `仕立屋の主人`,
       text: `こんな朝早く、誰かと思ったよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo0.png`,
-      name: `「ガロファノ」`,
+      name: `仕立屋の主人`,
       text: `こんにちは、お客様。この数日はお店をお休みしてます。礼服のオーダーをご希望なら、数日後にまたお越しください。`
     },
     {
@@ -90,14 +93,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo2.png`,
-      name: `「ガロファノ」`,
+      name: `仕立屋の主人`,
       text: `ありがとう、思う人がですね…カーネーションが好きです、私に似ているからって。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo2.png`,
-      name: `「ガロファノ」`,
+      name: `仕立屋の主人`,
       text: `彼はFACの人間だった。数年前に怪我で退役してたのに、西区で事件が起きて、緊急で呼び戻された。それから…葬式だった。`
     },
     {
@@ -108,7 +111,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo2.png`,
-      name: `「ガロファノ」`,
+      name: `仕立屋の主人`,
       text: `ごめん、墓地から戻ったばかりで、気持ちの整理がついてないの。`
     },
     {
@@ -122,14 +125,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo4.png`,
-      name: `「ガロファノ」`,
+      name: `仕立屋の主人`,
       text: `その制服、FACの部隊のものよね…今はサービスを提供できないけど、ここにある花なら自由に持ってっていいよ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo4.png`,
-      name: `「ガロファノ」`,
+      name: `仕立屋の主人`,
       text: `もし、お前にも追悼したい人がいるなら…`
     },
     {
@@ -154,8 +157,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo4.png`,
-      name: `「ガロファノ」`,
-      text: `……私…あっ！`
+      name: `仕立屋の主人`,
+      text: `私…あっ！`
     },
     {
       type: `narration`,
@@ -169,7 +172,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `「ガロファノ」`,
+      name: `仕立屋の主人`,
       text: `ったく、せっかちな人ね。こんな小さな問題、私ならちゃんと説明できたのに。`
     },
     {
@@ -183,14 +186,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `「ガロファノ」`,
+      name: `仕立屋の主人`,
       text: `ふふ、冗談まで言える？気分いいね、ボディガードさん。その笑顔、ずっとキープしてなよ。一生ずっと…`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/severo5.png`,
-      name: `「ガロファノ」`,
+      name: `仕立屋の主人`,
       text: `だって、人生なんて一瞬で終わっちゃうこともあるんだから。`
     },
     {

@@ -30,7 +30,7 @@ export default {
       {
         name: `？`,
         avatar: `img/dh/rahu.png`,
-        note: `FAC反狂厄作戦部隊所属の隊員。`,
+        note: `FAC支援人員`,
         basicStats: `識別番号05257885。片手で巨大な盾を扱い、単独で襲撃現場の制圧に現れる強靭な女性。`,
         profile: `所属：FAC\n能力：不明`
       }
