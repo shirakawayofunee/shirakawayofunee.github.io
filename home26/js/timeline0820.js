@@ -324,6 +324,13 @@ window.timelineMsg = [
     customRow: 2,
   },
   {
+    date: "N.F.113.7.16～7.23",
+    title: "「BLUE RAIN」",
+    text: "ヒーゲル（福音地の幹事の一人）がセヴェロを見つけ、「GARDEN」と「命の延長」を餌に、単瞳のルーンを与え、上庭特使Xの暗殺を頼んだ。",
+    isMajor: true, // 【样式A】开关
+    customRow: 2,
+  },
+  {
     date: "N.F.113.7.16",
     title: "序章始める",
     text: "ヒーゲル（福音地の幹事の一人）がセヴェロを見つけ、「GARDEN」と「命の延長」を餌に、単瞳のルーンを与え、上庭特使Xの暗殺を頼んだ。",

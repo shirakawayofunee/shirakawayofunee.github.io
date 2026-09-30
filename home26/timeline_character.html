@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>双人物对比年表 - 历史时间线</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for Japanese & Chinese aesthetics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans SC', 'Noto Sans JP', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              red: '#e60012',
+              dark: '#111111',
+              gray: '#666666',
+              lightBg: '#f8f9fa',
+              personA: '#1e3a8a', // Indigo / Person A accent
+              personB: '#047857', // Emerald / Person B accent
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Timeline Aesthetics & Fine Lines */
+    body {
+      background-color: #ffffff;
+      color: #333333;
+      overflow-x: hidden;
+      font-feature-settings: "palt";
+    }
+
+    /* Subtle hairline border styling */
+    .hairline-border {
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+
+    /* Central vertical stem */
+    .timeline-stem {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background-color: #d1d5db;
+      transform: translateX(-50%);
+    }
+
+    /* Smooth transitions */
+    .filter-btn {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Image placeholder pattern effect */
+    .placeholder-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+      background-size: 12px 12px;
+    }
+
+    /* Print styles for export */
+    @media print {
+      header, .no-print { display: none !important; }
+      .timeline-stem { background-color: #999 !important; }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased selection:bg-red-500 selection:text-white">
+
+  <!-- 1. Top Header Navigation (TAGUCHI Style Minimal Bar) -->
+  <header class="w-full border-b border-gray-200 bg-white sticky top-0 z-40 backdrop-blur-md bg-white/90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <span class="font-extrabold text-2xl tracking-tighter text-black uppercase font-mono">
+          TAGUCHI<span class="text-brand-red text-xs align-super font-sans">CHRONICLE</span>
+        </span>
+        <span class="hidden sm:inline-block h-4 w-[1px] bg-gray-300"></span>
+        <span class="hidden sm:inline-block text-xs tracking-widest text-gray-500 font-medium">双人物年表对比</span>
+      </div>
+
+      <!-- Navigation Items -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs tracking-widest font-semibold uppercase text-gray-700">
+        <a href="#philosophy" class="hover:text-brand-red transition">Philosophy</a>
+        <a href="#timeline" class="hover:text-brand-red transition">Timeline</a>
+        <a href="#person-a" class="hover:text-brand-red transition flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-blue-700"></span>人物 A
+        </a>
+        <a href="#person-b" class="hover:text-brand-red transition flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-emerald-600"></span>人物 B
+        </a>
+        <button onclick="toggleDataDrawer()" class="hover:text-brand-red transition text-gray-500 flex items-center gap-1">
+          <i class="fa-solid fa-code text-xs"></i> 数据源码
+        </button>
+      </nav>
+
+      <!-- Right Controls / Search & Lang -->
+      <div class="flex items-center space-x-4">
+        <!-- Search Input -->
+        <div class="relative hidden sm:block">
+          <input type="text" id="searchInput" oninput="handleSearch()" placeholder="搜索事件或关键词..." 
+            class="pl-8 pr-3 py-1 text-xs border border-gray-300 rounded-full focus:outline-none focus:border-black transition w-36 focus:w-48">
+          <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2 text-gray-400 text-xs"></i>
+        </div>
+
+        <!-- Language indicator -->
+        <div class="text-xs text-gray-500 tracking-wider font-mono">
+          <span class="text-black font-bold">ZH</span> | <span>JP</span> | <span>EN</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Header Title Banner -->
+  <section class="bg-brand-dark text-white py-6 px-4 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-baseline justify-between gap-2">
+      <div>
+        <h1 class="text-xl sm:text-2xl font-bold tracking-widest font-sans flex items-center gap-3">
+          双人物对比年表 <span class="text-xs bg-gray-800 text-gray-300 font-normal px-2.5 py-0.5 rounded-full border border-gray-700">会社のあゆみ • 经典版式</span>
+        </h1>
+      </div>
+      <p class="text-xs text-gray-400 tracking-wider font-light">
+        并行轨迹 • 时代印记 • 双视角编年史
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. Philosophy & Intro Section -->
+  <section id="philosophy" class="py-14 px-4 bg-white border-b border-gray-100">
+    <div class="max-w-3xl mx-auto text-center space-y-4">
+      <div class="text-xs tracking-widest text-gray-400 uppercase font-semibold font-mono">
+        PHILOSOPHY & HISTORY
+      </div>
+      
+      <!-- Styled Tagline with accented letters matching sample image -->
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-black tracking-tight leading-snug">
+        Two Stories, <span class="text-brand-red">O</span>ne Timeline.
+      </h2>
+      
+      <p class="text-xs sm:text-sm text-gray-500 font-medium tracking-wide">
+        两段人生历程，同一个时代的交相辉映。
+      </p>
+
+      <div class="w-12 h-[2px] bg-brand-red mx-auto my-4"></div>
+
+      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto tracking-normal font-light">
+        本页面完美复刻日系高端企业历史年表版式。通过居中贯穿的年代主轴，将<b>人物 A</b> 与 <b>人物 B</b> 在各个历史节点的重要转折、技术突破与人生事件并列呈现。数据源完全由外部 JS 数组驱动，支持便捷的多行文本录入与动态筛选。
+      </p>
+
+      <!-- Profile Cards Preview Bar -->
+      <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+        <!-- Person A Box -->
+        <div id="person-a" class="p-4 rounded-lg bg-blue-50/50 border border-blue-100 flex items-start space-x-3">
+          <div class="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+            A
+          </div>
+          <div class="text-xs space-y-1">
+            <div class="font-bold text-blue-950 text-sm flex items-center gap-2">
+              人物 A：田口 章男 (Taguchi)
+              <span class="text-[10px] bg-blue-200 text-blue-800 px-1.5 py-0.2 rounded">左侧视角</span>
+            </div>
+            <p class="text-gray-600 leading-normal">重型机械与工程设备开创者，专注于硬件装备革命与国际化扩张。</p>
+          </div>
+        </div>
+
+        <!-- Person B Box -->
+        <div id="person-b" class="p-4 rounded-lg bg-emerald-50/50 border border-emerald-100 flex items-start space-x-3">
+          <div class="w-10 h-10 rounded-full bg-emerald-800 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+            B
+          </div>
+          <div class="text-xs space-y-1">
+            <div class="font-bold text-emerald-950 text-sm flex items-center gap-2">
+              人物 B：佐藤 健二 (Sato)
+              <span class="text-[10px] bg-emerald-200 text-emerald-800 px-1.5 py-0.2 rounded">右侧视角</span>
+            </div>
+            <p class="text-gray-600 leading-normal">精密传感与智能控制专家，深耕底层技术研发与学术研究。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Interactive Sticky Toolbar (Filtering & Controls) -->
+  <section class="sticky top-16 z-30 bg-white/95 backdrop-blur-md border-b border-gray-200 py-3 px-4 no-print shadow-sm">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Filter Tabs -->
+      <div class="flex items-center space-x-1 sm:space-x-2 bg-gray-100 p-1 rounded-lg text-xs font-medium">
+        <button onclick="setFilter('all')" id="btn-filter-all" class="filter-btn px-3 py-1.5 rounded-md bg-white text-black shadow-sm font-semibold">
+          <i class="fa-solid fa-layer-group mr-1 text-gray-500"></i> 全部对比
+        </button>
+        <button onclick="setFilter('left')" id="btn-filter-left" class="filter-btn px-3 py-1.5 rounded-md text-gray-600 hover:text-black">
+          <span class="w-2 h-2 rounded-full inline-block bg-blue-700 mr-1"></span> 仅看人物 A
+        </button>
+        <button onclick="setFilter('right')" id="btn-filter-right" class="filter-btn px-3 py-1.5 rounded-md text-gray-600 hover:text-black">
+          <span class="w-2 h-2 rounded-full inline-block bg-emerald-600 mr-1"></span> 仅看人物 B
+        </button>
+      </div>
+
+      <!-- Quick Stats & Actions -->
+      <div class="flex items-center space-x-3 text-xs text-gray-500">
+        <span id="eventCountBadge" class="font-mono bg-gray-100 px-2 py-1 rounded">共加载 -- 个节点</span>
+        <button onclick="toggleDataDrawer()" class="hover:text-black underline underline-offset-2 flex items-center gap-1">
+          <i class="fa-solid fa-pen-to-square"></i> 编辑数据
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Core Timeline Area (Replicating exact TAGUCHI vertical style) -->
+  <main id="timeline" class="py-16 px-3 sm:px-6 max-w-6xl mx-auto relative min-h-[600px]">
+    
+    <!-- Central Vertical Stem Axis -->
+    <div class="timeline-stem hidden md:block"></div>
+
+    <!-- Dynamic Event Rows Container -->
+    <div id="timelineContainer" class="space-y-12 relative">
+      <!-- Timeline content generated by JavaScript -->
+    </div>
+
+  </main>
+
+  <!-- 6. Code Inspector / Live Data Drawer (Slide-over Modal) -->
+  <div id="dataDrawer" class="fixed inset-0 bg-black/50 z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex justify-end">
+    <div class="w-full max-w-2xl bg-gray-900 text-gray-100 h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between transform translate-x-full transition-transform duration-300" id="drawerContent">
+      <div>
+        <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
+          <div class="flex items-center space-x-2">
+            <i class="fa-solid fa-code text-brand-red text-lg"></i>
+            <h3 class="font-bold text-lg text-white font-mono">JS 数据源配置 (timelineData)</h3>
+          </div>
+          <button onclick="toggleDataDrawer()" class="text-gray-400 hover:text-white p-1">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+
+        <p class="text-xs text-gray-400 mb-3 leading-relaxed">
+          数组字段值统一使用 <b>模板字符串反引号 <code class="text-yellow-400 bg-gray-800 px-1 py-0.5 rounded">` `</code></b>，支持直接换行与多行文本输入，编辑后点击下方“应用修改”即可实时重新渲染时间线。
+        </p>
+
+        <!-- Live Textarea for Editing -->
+        <textarea id="jsonEditor" class="w-full h-96 bg-gray-950 text-green-400 font-mono text-xs p-4 rounded border border-gray-800 focus:outline-none focus:border-brand-red leading-relaxed" spellcheck="false"></textarea>
+      </div>
+
+      <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+        <button onclick="copyDataCode()" class="text-xs bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 rounded transition flex items-center gap-1.5">
+          <i class="fa-regular fa-copy"></i> 复制 JS 源码
+        </button>
+        <div class="flex space-x-2">
+          <button onclick="resetDataToDefault()" class="text-xs bg-gray-800 hover:bg-red-900/50 text-red-300 px-3 py-2 rounded transition">
+            重置默认
+          </button>
+          <button onclick="applyDataFromDrawer()" class="text-xs bg-brand-red hover:bg-red-700 text-white font-bold px-4 py-2 rounded transition">
+            应用修改
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Footer -->
+  <footer class="bg-gray-950 text-gray-500 py-12 px-4 border-t border-gray-900 text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="space-y-1 text-center md:text-left">
+        <div class="text-white font-extrabold tracking-widest uppercase font-mono text-base">
+          TAGUCHI CHRONICLE
+        </div>
+        <p>双人物对比年表网页版式 • 纯色图片占位 & 响应式渲染</p>
+      </div>
+      <div class="text-center md:text-right text-gray-600">
+        <p>© 2026 Comparative Timeline Archive. All Rights Reserved.</p>
+        <p class="mt-0.5">Designed with Taguchi Enterprise Aesthetic</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /**
+     * =========================================================================
+     * JS 驱动数据对象: timelineData
+     * 说明：
+     * 1. decade 类型表示年代分割线 (如 1950s, 1960s)
+     * 2. event 类型表示具体的历史节点
+     * 3. 所有字符串属性值均采用反引号 `` ，方便包含换行符与复杂排版
+     * 4. side: 'left' (人物A), 'right' (人物B)
+     * =========================================================================
+     */
+    const defaultTimelineData = [
+      {
+        type: `decade`,
+        decade: `60s`
+      },
+      {
+        type: `event`,
+        side: `left`,
+        person: `人物 A`,
+        personId: `A`,
+        year: `1957年`,
+        title: `山阳熔接工业所 诞生`,
+        subtitle: `创办首家专业金属焊接工作室`,
+        description: `在战后重建时期创立了小型熔接工厂，
+开启了重型机械零部件加工与改装的先河。
+奠定了日后工业装备制造的基础。`,
+        hasImage: true,
+        imageColor: `#2c3e50`,
+        imageText: `1957年 初期工厂与工友合影`,
+        tags: [`创业`, `重工起步`]
+      },
+
+      {
+        type: `decade`,
+        decade: `88s`
+      },
+      {
+        type: `event`,
+        side: `right`,
+        person: `人物 B`,
+        personId: `B`,
+        year: `N.F.88年`,
+        title: `Shalom 誕生`,
+        subtitle: `技术研究中心建立`,
+        description: `全面转向高精度液压剪切设备的研发，
+并申请了多项关键技术发明专利。`,
+        hasImage: false,
+        tags: [`企业化`, `研发`]
+      },
+
+      {
+        type: `decade`,
+        decade: `1970s`
+      },
+      {
+        type: `event`,
+        side: `left`,
+        person: `人物 A`,
+        personId: `A`,
+        year: `1975年`,
+        title: `建立第一代自动化生产线`,
+        subtitle: `大幅提升工业剪切效率`,
+        description: `引进了当时最先进的数控机床设备，
+完成了从手工焊接向现代化流水线生产的飞跃。`,
+        hasImage: true,
+        imageColor: `#1e3a8a`,
+        imageText: `1975年 生产线全景历史图`,
+        tags: [`技术飞跃`]
+      },
+
+      {
+        type: `decade`,
+        decade: `1980s`
+      },
+      {
+        type: `event`,
+        side: `left`,
+        person: `人物 A`,
+        personId: `A`,
+        year: `1985年`,
+        title: `株式会社田口工业 组织变更`,
+        subtitle: `总部新大楼落成与品牌升级`,
+        description: `完成股份制改造，
+确立了“以品质服务客户”的经营哲学，
+全面进军全国工业装备市场。`,
+        hasImage: true,
+        imageColor: `#111827`,
+        imageText: `1985年 集团大楼落成典礼`,
+        tags: [`上市改组`, `品牌升级`]
+      },
+      {
+        type: `event`,
+        side: `right`,
+        person: `人物 B`,
+        personId: `B`,
+        year: `1985年`,
+        title: `「元祖 强力玻璃剪」诞生`,
+        subtitle: `突破性建筑拆除工具`,
+        description: `成功研制出世界上第一款高刚性建筑拆除剪，
+该产品获得当年日本工业设计大奖。`,
+        hasImage: true,
+        imageColor: `#b91c1c`,
+        imageText: `「元祖 强力玻璃剪」产品海报`,
+        tags: [`明星产品`, `爆款诞生`]
+      },
+
+      {
+        type: `decade`,
+        decade: `1990s`
+      },
+      {
+        type: `event`,
+        side: `right`,
+        person: `人物 B`,
+        personId: `B`,
+        year: `1990年`,
+        title: `株式会社田口 Create 设立`,
+        subtitle: `成立专门的软件控制研发子公司`,
+        description: `布局智能化控制软件，
+将电子传感技术与液压重机相结合。`,
+        hasImage: false,
+        tags: [`智能化`]
+      },
+      {
+        type: `event`,
+        side: `right`,
+        person: `人物 B`,
+        personId: `B`,
+        year: `1993年`,
+        title: `「哥斯拉小剪」诞生`,
+        subtitle: `小型化高输出拆除剪`,
+        description: `专为狭窄城市空间设计的机型，
+开创了城市更新拆除的新纪元。`,
+        hasImage: true,
+        imageColor: `#047857`,
+        imageText: `「哥斯拉小剪」宣传画册`,
+        tags: [`新产品`]
+      },
+      {
+        type: `event`,
+        side: `left`,
+        person: `人物 A`,
+        personId: `A`,
+        year: `1995年`,
+        title: `「橙色斗齿」诞生`,
+        subtitle: `耐磨强化型挖斗部件`,
+        description: `采用全新复合合金材料，
+使用寿命提升超过 300%，被行业广泛采用。`,
+        hasImage: false,
+        tags: [`材料突破`]
+      },
+      {
+        type: `event`,
+        side: `left`,
+        person: `人物 A`,
+        personId: `A`,
+        year: `1997年`,
+        title: `租赁事业部 正式发足`,
+        subtitle: `开启“制造+服务”双轮驱动模式`,
+        description: `推出覆盖全国的设备租赁与全周期维保服务网络，
+降低客户设备采购门槛。`,
+        hasImage: false,
+        tags: [`商业模式`]
+      },
+
+      {
+        type: `decade`,
+        decade: `2000s`
+      },
+      {
+        type: `event`,
+        side: `right`,
+        person: `人物 B`,
+        personId: `B`,
+        year: `2002年`,
+        title: `「草刈粉碎机」与「自动杂志机」诞生`,
+        subtitle: `环保与再生资源处理设备`,
+        description: `响应绿色环保号召，
+研发用于园林绿化粉碎与废纸循环处理的专用附属设备。`,
+        hasImage: true,
+        imageColor: `#312e81`,
+        imageText: `2002年 环保设备展会现场`,
+        tags: [`绿色环保`]
+      },
+      {
+        type: `event`,
+        side: `left`,
+        person: `人物 A`,
+        personId: `A`,
+        year: `2003年`,
+        title: `物流专车事业部 启动`,
+        subtitle: `自建全国物流配送卡车车队`,
+        description: `配备大型重载卡车，
+实现大中型机械设备 24 小时直达施工现场。`,
+        hasImage: true,
+        imageColor: `#4b5563`,
+        imageText: `2003年 自建物流车队排布`,
+        tags: [`物流配套`]
+      },
+      {
+        type: `event`,
+        side: `left`,
+        person: `人物 A`,
+        personId: `A`,
+        year: `2005年`,
+        title: `六机贸易 (上海) 有限公司 设立`,
+        subtitle: `进军中国与亚太市场`,
+        description: `在中国上海设立全资子公司，
+开展高端附件设备的进口与售后技术支持服务。`,
+        hasImage: false,
+        tags: [`全球化`, `中国总部`]
+      },
+
+      {
+        type: `decade`,
+        decade: `2010s`
+      },
+      {
+        type: `event`,
+        side: `right`,
+        person: `人物 B`,
+        personId: `B`,
+        year: `2013年`,
+        title: `PT Guzzilla International (印尼) 设立`,
+        subtitle: `东南亚制造与服务基地`,
+        description: `在印尼雅加达建立生产线，
+进一步扩展东南亚矿业与基础设施市场。`,
+        hasImage: true,
+        imageColor: `#065f46`,
+        imageText: `印尼子公司开业仪式`,
+        tags: [`海外工厂`]
+      },
+      {
+        type: `event`,
+        side: `left`,
+        person: `人物 A`,
+        personId: `A`,
+        year: `2015年`,
+        title: `重机型巨大机器人「SUPER GUZZILLA」诞生`,
+        subtitle: `双臂协同超大型双协同操作机`,
+        description: `在东京国际展示场首次登场，
+集成了全遥控操作、AI 姿态感知与超强剪切力，
+被誉为未来工程机械的终极形态。`,
+        hasImage: true,
+        imageColor: `#374151`,
+        imageText: `「SUPER GUZZILLA」展示占位`,
+        tags: [`黑科技`, `里程碑`]
+      }
+    ];
+
+    // Global working copy of data
+    let currentData = JSON.parse(JSON.stringify(defaultTimelineData));
+    let activeFilter = 'all'; // 'all', 'left', 'right'
+    let searchQuery = '';
+
+    /**
+     * Render the timeline into DOM based on active data and filter
+     */
+    function renderTimeline() {
+      const container = document.getElementById('timelineContainer');
+      container.innerHTML = '';
+
+      let visibleEventsCount = 0;
+
+      currentData.forEach((item, index) => {
+        // Handle Decade Header
+        if (item.type === 'decade') {
+          const decadeElem = document.createElement('div');
+          decadeElem.className = 'relative py-8 flex items-center justify-center z-10 my-4';
+          decadeElem.innerHTML = `
+            <!-- Full Horizontal Hairline -->
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-200"></div>
+            </div>
+            <!-- Decade Label Badge -->
+            <div class="relative bg-white px-6 py-1 border border-gray-300 rounded-full shadow-xs">
+              <span class="text-lg font-bold font-mono text-gray-800 tracking-wider">${escapeHtml(item.decade)}</span>
+            </div>
+          `;
+          container.appendChild(decadeElem);
+          return;
+        }
+
+        // Handle Event Node
+        if (item.type === 'event') {
+          // Check Filter (left vs right vs all)
+          if (activeFilter !== 'all' && item.side !== activeFilter) {
+            return;
+          }
+
+          // Check Search Filter
+          if (searchQuery.trim() !== '') {
+            const query = searchQuery.toLowerCase();
+            const textMatch = (
+              item.year.toLowerCase().includes(query) ||
+              item.title.toLowerCase().includes(query) ||
+              (item.subtitle && item.subtitle.toLowerCase().includes(query)) ||
+              (item.description && item.description.toLowerCase().includes(query)) ||
+              (item.person && item.person.toLowerCase().includes(query))
+            );
+            if (!textMatch) return;
+          }
+
+          visibleEventsCount++;
+
+          const isLeft = item.side === 'left';
+          const nodeRow = document.createElement('div');
+          nodeRow.className = `relative flex flex-col md:flex-row items-center my-6 group`;
+
+          // Prepare Badge Theme
+          const isPersonA = item.side === 'left';
+          const personBadgeClass = isPersonA 
+            ? 'bg-blue-100 text-blue-900 border-blue-200' 
+            : 'bg-emerald-100 text-emerald-900 border-emerald-200';
+          
+          const sideDotClass = isPersonA ? 'border-blue-700' : 'border-emerald-600';
+
+          // Format description multi-line string
+          const formattedDesc = escapeHtml(item.description || '').replace(/\n/g, '<br>');
+
+          // Render Image Placeholder HTML if available
+          let imageBoxHtml = '';
+          if (item.hasImage) {
+            const bgColor = item.imageColor || '#333333';
+            const imgLabel = item.imageText || '历史照片 / 资料占位';
+            imageBoxHtml = `
+              <div class="mt-3 rounded-lg overflow-hidden border border-gray-200 shadow-xs transition hover:shadow-md">
+                <div class="w-full h-36 sm:h-44 flex flex-col items-center justify-center p-4 text-white relative placeholder-pattern" style="background-color: ${bgColor};">
+                  <div class="bg-black/30 backdrop-blur-xs p-2 rounded-full mb-2">
+                    <i class="fa-solid fa-image text-lg opacity-90"></i>
+                  </div>
+                  <span class="text-xs font-medium tracking-wider text-center max-w-xs leading-snug drop-shadow-xs">
+                    ${escapeHtml(imgLabel)}
+                  </span>
+                  <span class="absolute bottom-2 right-2 text-[10px] opacity-60 font-mono">
+                    IMAGE PLACEHOLDER
+                  </span>
+                </div>
+              </div>
+            `;
+          }
+
+          // Render Tag Chips
+          let tagsHtml = '';
+          if (item.tags && Array.isArray(item.tags)) {
+            tagsHtml = `<div class="flex flex-wrap gap-1 mt-2.5">
+              ${item.tags.map(t => `<span class="text-[10px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded border border-gray-200">${escapeHtml(t)}</span>`).join('')}
+            </div>`;
+          }
+
+          // Desktop HTML (Dual Column split by central vertical line)
+          nodeRow.innerHTML = `
+            <!-- Left Side Content (Person A when isLeft, or empty space) -->
+            <div class="w-full md:w-1/2 pr-0 md:pr-10 ${isLeft ? 'text-left md:text-right' : 'hidden md:block'}">
+              ${isLeft ? `
+                <div class="inline-block w-full max-w-md bg-white p-5 rounded-xl border border-gray-200 shadow-xs hover:border-gray-300 transition text-left">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs px-2 py-0.5 rounded-md border font-semibold ${personBadgeClass}">
+                      ${escapeHtml(item.person || '人物 A')}
+                    </span>
+                    <span class="font-mono text-sm font-bold text-gray-900 tracking-wider">${escapeHtml(item.year)}</span>
+                  </div>
+                  <h3 class="text-base font-bold text-gray-900 leading-snug">「${escapeHtml(item.title)}」</h3>
+                  ${item.subtitle ? `<p class="text-xs font-semibold text-gray-500 mt-0.5">${escapeHtml(item.subtitle)}</p>` : ''}
+                  <p class="text-xs text-gray-600 mt-2 leading-relaxed font-normal">${formattedDesc}</p>
+                  ${imageBoxHtml}
+                  ${tagsHtml}
+                </div>
+              ` : ''}
+            </div>
+
+            <!-- Central Node Hollow Circle Dot & Connecting Line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 hidden md:flex items-center justify-center z-20">
+              <!-- Connecting Line extending to left or right -->
+              <div class="w-3 h-3 rounded-full bg-white border-2 ${sideDotClass} shadow-xs transition group-hover:scale-125"></div>
+            </div>
+
+            <!-- Right Side Content (Person B when !isLeft, or empty space) -->
+            <div class="w-full md:w-1/2 pl-0 md:pl-10 ${!isLeft ? 'text-left' : 'hidden md:block'}">
+              ${!isLeft ? `
+                <div class="inline-block w-full max-w-md bg-white p-5 rounded-xl border border-gray-200 shadow-xs hover:border-gray-300 transition">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="font-mono text-sm font-bold text-gray-900 tracking-wider">${escapeHtml(item.year)}</span>
+                    <span class="text-xs px-2 py-0.5 rounded-md border font-semibold ${personBadgeClass}">
+                      ${escapeHtml(item.person || '人物 B')}
+                    </span>
+                  </div>
+                  <h3 class="text-base font-bold text-gray-900 leading-snug">「${escapeHtml(item.title)}」</h3>
+                  ${item.subtitle ? `<p class="text-xs font-semibold text-gray-500 mt-0.5">${escapeHtml(item.subtitle)}</p>` : ''}
+                  <p class="text-xs text-gray-600 mt-2 leading-relaxed font-normal">${formattedDesc}</p>
+                  ${imageBoxHtml}
+                  ${tagsHtml}
+                </div>
+              ` : ''}
+            </div>
+          `;
+
+          container.appendChild(nodeRow);
+        }
+      });
+
+      // Update badge count
+      document.getElementById('eventCountBadge').textContent = `显示 ${visibleEventsCount} 项事件`;
+
+      if (visibleEventsCount === 0) {
+        container.innerHTML += `
+          <div class="text-center py-16 text-gray-400">
+            <i class="fa-solid fa-folder-open text-3xl mb-2"></i>
+            <p class="text-xs">未找到符合条件的事件节点</p>
+          </div>
+        `;
+      }
+    }
+
+    // Helper: Escaping HTML
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    /**
+     * Filter handler
+     */
+    function setFilter(type) {
+      activeFilter = type;
+      
+      // Update UI button styles
+      ['all', 'left', 'right'].forEach(t => {
+        const btn = document.getElementById(`btn-filter-${t}`);
+        if (t === type) {
+          btn.className = 'filter-btn px-3 py-1.5 rounded-md bg-white text-black shadow-sm font-semibold';
+        } else {
+          btn.className = 'filter-btn px-3 py-1.5 rounded-md text-gray-600 hover:text-black';
+        }
+      });
+
+      renderTimeline();
+    }
+
+    /**
+     * Search Handler
+     */
+    function handleSearch() {
+      searchQuery = document.getElementById('searchInput').value;
+      renderTimeline();
+    }
+
+    /**
+     * Drawer Code Toggle
+     */
+    function toggleDataDrawer() {
+      const drawer = document.getElementById('dataDrawer');
+      const drawerContent = document.getElementById('drawerContent');
+      const isHidden = drawer.classList.contains('pointer-events-none');
+
+      if (isHidden) {
+        // Populate editor text with formatted JS representation
+        document.getElementById('jsonEditor').value = formatJSDataString(currentData);
+        drawer.classList.remove('pointer-events-none', 'opacity-0');
+        drawerContent.classList.remove('translate-x-full');
+      } else {
+        drawer.classList.add('opacity-0', 'pointer-events-none');
+        drawerContent.classList.add('translate-x-full');
+      }
+    }
+
+    /**
+     * Format array into clean JS string using backticks
+     */
+    function formatJSDataString(arr) {
+      return `const timelineData = ` + JSON.stringify(arr, null, 2).replace(/"([^"]+)":/g, '$1:')
+        .replace(/"([^"]*)"/g, '`$1`');
+    }
+
+    /**
+     * Apply Code from Drawer Textarea
+     */
+    function applyDataFromDrawer() {
+      const rawText = document.getElementById('jsonEditor').value;
+      try {
+        // Evaluate or parse edited structure
+        let cleaned = rawText.trim();
+        if (cleaned.startsWith('const timelineData =')) {
+          cleaned = cleaned.replace(/^const timelineData =/, '');
+        }
+        // Convert backticks representation into valid JSON string evaluation
+        const parsed = eval(`(${cleaned})`);
+        if (Array.isArray(parsed)) {
+          currentData = parsed;
+          renderTimeline();
+          toggleDataDrawer();
+        } else {
+          alert('请输入有效的数组格式！');
+        }
+      } catch (err) {
+        alert('解析 JS 语法出错：' + err.message);
+      }
+    }
+
+    /**
+     * Reset to default
+     */
+    function resetDataToDefault() {
+      currentData = JSON.parse(JSON.stringify(defaultTimelineData));
+      document.getElementById('jsonEditor').value = formatJSDataString(currentData);
+      renderTimeline();
+    }
+
+    /**
+     * Copy JS source code to clipboard
+     */
+    function copyDataCode() {
+      const textToCopy = document.getElementById('jsonEditor').value;
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = textToCopy;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempTextArea);
+      
+      const copyBtn = event.currentTarget;
+      const originalText = copyBtn.innerHTML;
+      copyBtn.innerHTML = `<i class="fa-solid fa-check text-green-400"></i> 已复制！`;
+      setTimeout(() => {
+        copyBtn.innerHTML = originalText;
+      }, 2000);
+    }
+
+    // Initialize page on load
+    window.onload = function() {
+      renderTimeline();
+    };
+  </script>
+</body>
+</html>
