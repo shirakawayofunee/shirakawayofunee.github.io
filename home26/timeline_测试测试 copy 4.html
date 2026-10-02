@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Timeline Sample</title>
+    <style>
+        :root {
+            --bg: #fbfbfb;
+            --fg: #111111;
+            --line: #dcdcdc;
+            --accent: #0022aa;
+            --muted: #777777;
+            --major: #e6e6e6;
+        }
+
+        body.dark {
+            --bg: #1b1b1b;
+            --fg: #f0f0f0;
+            --line: #383838;
+            --accent: #5d82ff;
+            --muted: #aaaaaa;
+            --major: #2a2a2a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--fg);
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            min-width: 320px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* ==================== 1. 导航栏 (现版本样式) ==================== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: 76px;
+            background: var(--bg);
+            border-bottom: 1px solid var(--fg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav {
+            display: flex;
+            gap: 5px;
+            align-items: stretch;
+            height: 100%;
+        }
+
+        .nav-item {
+            padding: 0 17px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: var(--fg);
+            color: var(--bg);
+        }
+
+        .nav-jp {
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .nav-en {
+            font: 10px "Courier New", monospace;
+            letter-spacing: 1px;
+            color: var(--muted);
+        }
+
+        .nav-item:hover .nav-en,
+        .nav-item.active .nav-en {
+            color: var(--bg);
+        }
+
+        .mode {
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid var(--fg);
+            background: transparent;
+            color: var(--fg);
+            padding: 5px 12px;
+            font: 11px "Courier New", monospace;
+            cursor: pointer;
+        }
+
+        /* ==================== 2. Hero 标语区 ==================== */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 32px 55px;
+            text-align: center;
+        }
+
+        .kicker {
+            font: 11px "Courier New", monospace;
+            letter-spacing: 3px;
+            color: var(--muted);
+        }
+
+        .hero h1 {
+            margin-top: 13px;
+            font-size: clamp(28px, 4vw, 48px);
+            letter-spacing: .08em;
+            font-weight: 900;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            color: var(--muted);
+            font-size: 13px;
+            letter-spacing: .08em;
+        }
+
+        /* ==================== 3. 时间轴主体 (三个版本前样式) ==================== */
+        .timeline {
+            position: relative;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 28px 140px;
+        }
+
+        /* 12px 主干粗竖线 */
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 27px;
+            bottom: 0;
+            left: 50%;
+            width: 12px;
+            transform: translateX(-50%);
+            background: var(--line);
+            border-radius: 6px;
+        }
+
+        /* 年代/纪元分隔标签 */
+        .decade {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 35px 0 28px;
+            height: 54px;
+        }
+
+        .decade:first-child {
+            margin-top: 0;
+        }
+
+        .decade::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .decade span {
+            position: relative;
+            background: var(--bg);
+            padding: 0 20px;
+            font: 700 25px/1 "Courier New", monospace;
+            letter-spacing: 1px;
+            color: #7a7a7a;
+        }
+
+        /* 网格行布局 */
+        .row {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 30px 1fr;
+            align-items: center;
+            min-height: 145px;
+            margin: 8px 0;
+        }
+
+        .side {
+            min-width: 0;
+        }
+
+        .left {
+            padding-right: 15px;
+            text-align: right;
+        }
+
+        .right {
+            padding-left: 15px;
+            text-align: left;
+        }
+
+        .empty {
+            visibility: hidden;
+        }
+
+        .connector {
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            background: var(--fg);
+            z-index: 2;
+        }
+
+        .left+.node+.side.right+.connector {
+            right: 50%;
+            width: 15px;
+        }
+
+        .left.empty+.node+.side.right+.connector {
+            left: 50%;
+            width: 15px;
+        }
+
+        .node {
+            position: relative;
+            z-index: 4;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--fg);
+            border-radius: 50%;
+            background: var(--bg);
+            margin: auto;
+        }
+
+        /* ==================== 4. 小事件 (三个版本前原汁原味设计) ==================== */
+        .event {
+            display: inline-block;
+            max-width: 430px;
+            padding: 9px 0;
+            text-align: inherit;
+        }
+
+        .event-date {
+            font: 700 13px/1.2 "Courier New", monospace;
+            color: var(--accent);
+            margin-bottom: 7px;
+        }
+
+        .event-title {
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            background: var(--fg);
+            color: var(--bg);
+            font-size: 18px;
+            font-weight: 900;
+            line-height: 1.55;
+            padding: 2px 8px;
+        }
+
+        .event-desc {
+            margin-top: 12px;
+            font-size: 12px;
+            line-height: 1.8;
+            color: var(--fg);
+        }
+
+        /* 图片类型 (三个版本前样式) */
+        .event-image {
+            margin-top: 14px;
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        .event-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ==================== 5. 大事件 (现版本卡片设计) ==================== */
+        .event-item.is-major {
+            display: inline-block;
+            max-width: 460px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .major-content-wrap {
+            position: relative;
+            padding: 22px 24px;
+            border: 2px solid var(--fg);
+            background: var(--bg);
+            border-radius: 4px;
+            box-shadow: 5px 5px 0px var(--fg);
+            overflow: hidden;
+        }
+
+        .major-bg-year {
+            position: absolute;
+            right: 10px;
+            bottom: -10px;
+            font: 900 76px/1 Impact, "Arial Black", sans-serif;
+            color: var(--major);
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        .major-title {
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--fg);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            letter-spacing: 0.05em;
+        }
+
+        .major-desc {
+            font-size: 12px;
+            line-height: 1.8;
+            color: var(--fg);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 页脚 */
+        .footer {
+            border-top: 1px solid var(--fg);
+            padding: 35px;
+            text-align: center;
+            font: 10px "Courier New", monospace;
+            color: var(--muted);
+        }
+
+        /* ================== 样式 A：关键节点 (IsMajor) ================== */
+.event-item.is-major {
+    border-left: none; /* 确保没有边框 */
+    background: transparent; /* 去掉背景，让灰色大字透出来 */
+    overflow: visible; /* 允许大字溢出一点 */
+    justify-content: flex-start;
+    padding-top: 4vh;
+}
+
+.major-content-wrap {
+    border-left: 5px solid var(--fg-color); /* 边框移到这里 */
+    padding-left: 15px; /* 文字和线的间距 */
+    display: flex;
+    flex-direction: column;
+    /* 关键：让高度自适应内容，而不是撑满格子 */
+    height: fit-content; 
+}
+
+/* 背景大字年份 */
+.major-bg-year {
+    position: absolute;
+    top: -10%; 
+    left: 0;
+    font-family: var(--font-impact);
+    font-size: 7rem; /* 巨大字体 */
+    color: var(--major-text-bg); 
+    line-height: 1;
+    z-index: -1; /* 在底层 */
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* 黑底白字大标题 */
+.major-title {
+    background: var(--fg-color);
+    color: var(--bg-color); 
+    font-size: 2.2rem;
+    font-weight: 900;
+    padding: 5px 15px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 20px;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+/* 下方描述文字 */
+.major-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+
+    padding: 10px;
+
+    background: var(--major-desc-bg); 
+    /* 如果有边框颜色，建议也改变量，或者去掉边框 */
+    border: 1px solid var(--line-color); 
+    color: var(--fg-color);
+}
+
+.major-desc span {
+    background: var(--fg-color);
+    color: var(--bg-color); 
+    padding: 2px 6px;
+    margin: 0 2px;
+    font-weight: bold;
+    display: inline-block; /* 稍微撑开一点 */
+}
+
+
+/* 图片样式 */
+.event-item.is-image {
+    padding: 0; border: none;
+    background: transparent;    
+    overflow: hidden; 
+}
+.event-item.is-image img {
+    width: 100%; height: 100%; object-fit: cover; 
+    object-position: center center;
+    clip-path: inset(0 100% 0 0);
+}
+
+        /* ==================== 6. 响应式布局 (移动端) ==================== */
+        @media(max-width:700px) {
+            .header {
+                height: 60px;
+                justify-content: flex-start;
+                overflow: auto;
+            }
+
+            .nav {
+                padding-left: 10px;
+            }
+
+            .nav-item {
+                padding: 0 9px;
+            }
+
+            .mode {
+                display: none;
+            }
+
+            .hero {
+                padding: 55px 20px 35px;
+            }
+
+            .timeline {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .timeline::before {
+                left: 24px;
+                transform: none;
+            }
+
+            .row {
+                display: block;
+                min-height: 0;
+                margin: 25px 0 45px;
+                padding-left: 48px;
+            }
+
+            .left,
+            .right {
+                padding: 0;
+                text-align: left;
+            }
+
+            .empty {
+                display: none;
+            }
+
+            .node {
+                position: absolute;
+                left: 15px;
+                top: 10px;
+            }
+
+            .connector {
+                display: none;
+            }
+
+            .event,
+            .event-item.is-major {
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 (现版本) -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-item">
+                <div class="nav-jp">ホーム</div>
+                <div class="nav-en">HOME</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-jp">登場人物</div>
+                <div class="nav-en">CHARACTER</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-jp">相関図</div>
+                <div class="nav-en">RELATIONSHIP</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-jp">世界観</div>
+                <div class="nav-en">BACKSTORY</div>
+            </div>
+            <div class="nav-item active">
+                <div class="nav-jp">時間軸</div>
+                <div class="nav-en">TIMELINE</div>
+            </div>
+        </nav>
+        <button class="mode" id="mode">DARK</button>
+    </header>
+
+    <!-- Hero 视觉区 -->
+    <section class="hero">
+        <div class="kicker">ARCHIVE / CHRONOLOGY</div>
+        <h1>HISTORY TIMELINE</h1>
+        <p>同じ時代を生きた二つの軌跡を、一本の時間軸に記録する。</p>
+    </section>
+
+    <!-- 主时间轴容器 -->
+    <main class="timeline" id="timeline"></main>
+
+    <!-- 页脚 -->
+    <footer class="footer">VERTICAL TIMELINE SAMPLE / 2026</footer>
+
+    <script>
+        // =========================================================
+        // 数据源定义
+        //  - isMajor: true  -> 大事件（现版本卡片样式）
+        //  - isMajor: false/未定义 -> 小事件（三个版本前原汁原味样式）
+        //  - type: "image"  -> 图片（三个版本前样式）
+        //  - type: "decade" -> 年代分隔标题
+        // =========================================================
+        const data = [
+            { type: "decade", text: "1950s" },
+            { 
+                date: "1957年", 
+                title: "山陽熔接工業所 誕生", 
+                text: "創業。最初期の事業基盤がここから始まる。", 
+                side: "left" 
+            },
+            { type: "decade", text: "1960s" },
+            { 
+                date: "1962年", 
+                title: "有限会社タクチ工業に組織変更", 
+                text: "組織変更を行い、次の発展段階へ移行。", 
+                side: "right" 
+            },
+            { type: "decade", text: "113年", color: "#5d82ff" },
+            {
+                date: "N.F.113.3",
+                bgYear: "113", // 用于大事件右下角巨型背景字
+                title: "BR-002再爆発",
+                text: "死者数は約3万人で、このうち一部は黒環の暴発そのものではなく、锈火暴動によって命を落としています。113年8月、FACが封鎖行動を開始する時点で、狂厄汚染の影響下にある人数はすでに17万人近くに達していました。",
+                isMajor: true, // 触发现版本大事件卡片
+                side: "left"
+            },
+            {
+                type: "image",
+                src: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&w=700&q=80",
+                caption: "BR-002再爆発",
+                side: "left"
+            },
+            {
+                date: "N.F.113年6月",
+                text: "BR-002事件後、福音地の勢力は新城から撤退し、東区の混乱事件は減少、西区が主要な戦場となる。FACは黒環防衛陣線の構築を計画する。<br><br>福音地と上庭は互いにスパイを送り込んた。福音地はスパイを通じて上庭の秘密兵器「HUSH」システムの存在を知り、能力者組織「GARDEN」にその破壊を依頼するが、首领レオポルドに拒否される――彼女はより有利な介入のタイミングを待っている。<br><br>一方、HUSH部隊は福音地を掃除任務を受け、まず福音地と曖昧な関係を持つ能力者組織「GARDEN」を標的にした。HUSH部隊はHUSH-X（以下、X）の指揮下で「GARDEN」への破壊を開始。",
+                side: "right"
+            }
+        ];
+
+        // =========================================================
+        // 核心渲染逻辑
+        // =========================================================
+        function render() {
+            const el = document.getElementById('timeline');
+            if (!el) return;
+            el.innerHTML = '';
+            
+            let currentSide = 'left'; 
+
+            data.forEach(item => {
+                // A. 年代分隔线
+                if (item.type === 'decade') {
+                    const d = document.createElement('div');
+                    d.className = 'decade';
+                    const colorStyle = item.color ? ` style="color: ${item.color}"` : '';
+                    d.innerHTML = `<span${colorStyle}>${item.text}</span>`;
+                    el.appendChild(d);
+                    return;
+                }
+
+                // B. 交替计算左右
+                const side = item.side || currentSide;
+                currentSide = side === 'left' ? 'right' : 'left'; 
+
+                const row = document.createElement('div');
+                row.className = 'row';
+
+                let cardContent = '';
+
+                if (item.type === 'image') {
+                    // C1. 【图片】三个版本前样式
+                    cardContent = `
+                        <div class="event-image">
+                            <img src="${item.src}" alt="${item.caption || ''}">
+                        </div>
+                        ${item.caption ? `<div class="event-desc" style="text-align:center; color:var(--muted)">▲ ${item.caption}</div>` : ''}
+                    `;
+                } else if (item.isMajor) {
+                    // C2. 【大事件】现版本卡片样式
+                    const bgYearText = item.bgYear || item.date || '';
+                    cardContent = `
+                        <div class="event-item is-major">
+                            <div class="major-content-wrap">
+                                ${bgYearText ? `<div class="major-bg-year">${bgYearText}</div>` : ''}
+                                ${item.title ? `<div class="major-title">${item.title}</div>` : ''}
+                                ${item.text ? `<div class="major-desc">${item.text}</div>` : ''}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // C3. 【小事件】三个版本前的原汁原味样式（蓝字日期 + 黑底白字标题）
+                    const titleHTML = item.title ? `<div><span class="event-title">${item.title}</span></div>` : '';
+                    const textHTML = item.text ? `<p class="event-desc">${item.text}</p>` : '';
+                    
+                    cardContent = `
+                        <article class="event">
+                            ${item.date ? `<div class="event-date">${item.date}</div>` : ''}
+                            ${titleHTML}
+                            ${textHTML}
+                        </article>
+                    `;
+                }
+
+                // D. 组装网格 HTML
+                if (side === 'left') {
+                    row.innerHTML = `<div class="side left">${cardContent}</div><div class="node"></div><div class="side right empty"></div><div class="connector"></div>`;
+                } else {
+                    row.innerHTML = `<div class="side left empty"></div><div class="node"></div><div class="side right">${cardContent}</div><div class="connector"></div>`;
+                }
+                
+                el.appendChild(row);
+            });
+        }
+
+        // 初始化渲染
+        render();
+
+        // 明暗模式切换绑定
+        const modeBtn = document.getElementById('mode');
+        if (modeBtn) {
+            modeBtn.onclick = () => { 
+                document.body.classList.toggle('dark'); 
+                modeBtn.textContent = document.body.classList.contains('dark') ? 'LIGHT' : 'DARK';
+            };
+        }
+    </script>
+</body>
+
+</html>

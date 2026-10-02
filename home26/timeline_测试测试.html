@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Timeline Sample</title>
+    <style>
+        :root {
+            --bg: #fbfbfb;
+            --fg: #111;
+            --line: #dcdcdc;
+            --accent: #0022aa;
+            --muted: #777;
+            --major: #e6e6e6
+        }
+
+        body.dark {
+            --bg: #1b1b1b;
+            --fg: #f0f0f0;
+            --line: #383838;
+            --accent: #5d82ff;
+            --muted: #aaa;
+            --major: #3a3a3a
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--fg);
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            min-width: 320px
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: 76px;
+            background: var(--bg);
+            border-bottom: 1px solid var(--fg);
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .nav {
+            display: flex;
+            gap: 5px;
+            align-items: stretch;
+            height: 100%
+        }
+
+        .nav-item {
+            padding: 0 17px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: var(--fg);
+            color: var(--bg)
+        }
+
+        .nav-jp {
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap
+        }
+
+        .nav-en {
+            font: 10px "Courier New", monospace;
+            letter-spacing: 1px;
+            color: #777
+        }
+
+        .nav-item:hover .nav-en,
+        .nav-item.active .nav-en {
+            color: var(--bg)
+        }
+
+        .mode {
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid var(--fg);
+            background: transparent;
+            color: var(--fg);
+            padding: 5px 12px;
+            font: 11px "Courier New", monospace;
+            cursor: pointer
+        }
+
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 32px 55px;
+            text-align: center
+        }
+
+        .kicker {
+            font: 11px "Courier New", monospace;
+            letter-spacing: 3px;
+            color: var(--muted)
+        }
+
+        .hero h1 {
+            margin-top: 13px;
+            font-size: clamp(28px, 4vw, 48px);
+            letter-spacing: .08em;
+            font-weight: 900
+        }
+
+        .hero p {
+            margin-top: 15px;
+            color: var(--muted);
+            font-size: 13px;
+            letter-spacing: .08em
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 30px 28px 140px
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 7px;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, transparent 0 20%, var(--line) 20% 80%, transparent 80%)
+        }
+
+        .decade {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 35px 0 28px;
+            height: 54px
+        }
+
+        .decade::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: var(--line)
+        }
+
+        .decade span {
+            position: relative;
+            background: var(--bg);
+            padding: 0 20px;
+            font: 700 25px/1 "Courier New", monospace;
+            letter-spacing: 1px
+        }
+
+        .row {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 70px 1fr;
+            align-items: center;
+            min-height: 145px;
+            margin: 8px 0
+        }
+
+        .side {
+            min-width: 0
+        }
+
+        .left {
+            padding-right: 34px;
+            text-align: right
+        }
+
+        .right {
+            padding-left: 34px;
+            text-align: left
+        }
+
+        .empty {
+            visibility: hidden
+        }
+
+        .connector {
+            position: absolute;
+            top: 50%;
+            height: 1px;
+            background: var(--fg);
+            z-index: 2
+        }
+
+        .left+.node+.side.right+.connector {
+            right: 50%;
+            width: 35px
+        }
+
+        .left.empty+.node+.side.right+.connector {
+            left: 50%;
+            width: 35px
+        }
+
+        .node {
+            position: relative;
+            z-index: 4;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--fg);
+            border-radius: 50%;
+            background: var(--bg);
+            margin: auto
+        }
+
+        .event {
+            display: inline-block;
+            max-width: 430px;
+            padding: 9px 0
+        }
+
+        .event-date {
+            font: 700 13px/1.2 "Courier New", monospace;
+            color: var(--accent);
+            margin-bottom: 7px
+        }
+
+        .event-title {
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            background: var(--fg);
+            color: var(--bg);
+            font-size: 18px;
+            font-weight: 900;
+            line-height: 1.55;
+            padding: 2px 8px
+        }
+
+        .event-desc {
+            margin-top: 12px;
+            font-size: 12px;
+            line-height: 1.8;
+            color: var(--fg)
+        }
+
+        .event-image {
+            margin-top: 14px;
+            width: 100%;
+            height: 120px;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            position: relative;
+            background: #cfcfcf
+        }
+
+        .event-image::before {
+            content: "ARCHIVE / IMAGE";
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            background: var(--fg);
+            color: var(--bg);
+            font: 10px "Courier New", monospace;
+            padding: 5px 8px
+        }
+
+        .event-image .photo {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, .08), rgba(255, 255, 255, .35)), repeating-linear-gradient(90deg, #aaa 0 2px, #d8d8d8 2px 5px);
+            filter: grayscale(1)
+        }
+
+        .major .event::after {
+            content: attr(data-year);
+            position: absolute;
+            z-index: -1;
+            font: 900 92px/1 Impact, "Arial Black", sans-serif;
+            color: var(--major);
+            white-space: nowrap;
+            pointer-events: none
+        }
+
+        .left .event::after {
+            right: 0;
+            top: -5px
+        }
+
+        .right .event::after {
+            left: 0;
+            top: -5px
+        }
+
+        .footer {
+            border-top: 1px solid var(--fg);
+            padding: 35px;
+            text-align: center;
+            font: 10px "Courier New", monospace;
+            color: var(--muted)
+        }
+
+        @media(max-width:700px) {
+            .header {
+                height: 60px;
+                justify-content: flex-start;
+                overflow: auto
+            }
+
+            .nav {
+                padding-left: 10px
+            }
+
+            .nav-item {
+                padding: 0 9px
+            }
+
+            .mode {
+                display: none
+            }
+
+            .hero {
+                padding: 55px 20px 35px
+            }
+
+            .timeline {
+                padding-left: 14px;
+                padding-right: 14px
+            }
+
+            .timeline::before {
+                left: 24px;
+                transform: none
+            }
+
+            .row {
+                display: block;
+                min-height: 0;
+                margin: 25px 0 45px;
+                padding-left: 48px
+            }
+
+            .left,
+            .right {
+                padding: 0;
+                text-align: left
+            }
+
+            .empty {
+                display: none
+            }
+
+            .node {
+                position: absolute;
+                left: 15px;
+                top: 10px
+            }
+
+            .connector {
+                display: none
+            }
+
+            .event {
+                max-width: none
+            }
+
+            .major .event::after {
+                left: 0 !important;
+                right: auto !important;
+                top: -20px !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-item">
+                <div class="nav-jp">ホーム</div>
+                <div class="nav-en">HOME</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-jp">登場人物</div>
+                <div class="nav-en">CHARACTER</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-jp">相関図</div>
+                <div class="nav-en">RELATIONSHIP</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-jp">世界観</div>
+                <div class="nav-en">BACKSTORY</div>
+            </div>
+            <div class="nav-item active">
+                <div class="nav-jp">時間軸</div>
+                <div class="nav-en">TIMELINE</div>
+            </div>
+        </nav><button class="mode" id="mode">DARK</button>
+    </header>
+    <section class="hero">
+        <div class="kicker">ARCHIVE / CHRONOLOGY</div>
+        <h1>HISTORY TIMELINE</h1>
+        <p>同じ時代を生きた二つの軌跡を、一本の時間軸に記録する。</p>
+    </section>
+    <main class="timeline" id="timeline"></main>
+    <footer class="footer">VERTICAL TIMELINE SAMPLE / 2026</footer>
+    <script>
+        const data = [
+            { type: "decade", year: "1950s" }, { side: "left", year: "1957年", title: "山陽熔接工業所 誕生", desc: "創業。最初期の事業基盤がここから始まる。" },
+            { type: "decade", year: "1960s" }, { side: "right", year: "1962年", title: "有限会社タクチ工業に組織変更", desc: "組織変更を行い、次の発展段階へ移行。" },
+            { type: "decade", year: "1970s" }, { side: "left", year: "1974年", title: "事業領域を拡大", desc: "製造体制を整備し、新たな市場への展開を開始。" },
+            { type: "decade", year: "1980s" }, { side: "left", year: "1985年", title: "株式会社タクチ工業に組織変更", desc: "会社組織を改め、事業基盤をさらに強化。", image: true },
+            { side: "right", year: "1987年", title: "新製品開発部門を設置", desc: "技術開発を中心とした新体制を構築。" },
+            { type: "decade", year: "1990s" }, { side: "right", year: "1993年", title: "新たな製品シリーズを発表", desc: "主要製品のラインナップを拡充。", image: true }, { side: "left", year: "1997年", title: "海外市場への進出", desc: "国内で培った技術を海外市場へ展開。" },
+            { type: "decade", year: "2000s" }, { side: "left", year: "2003年", title: "物流・サービス体制を強化", desc: "全国規模のサポートネットワークを整備。", image: true }, { side: "right", year: "2008年", title: "次世代技術の研究を開始", desc: "新しい技術分野への研究開発を本格化。" },
+            { type: "decade", year: "2010s" }, { side: "right", year: "2015年", title: "新世代モデル誕生", desc: "これまでの技術を統合した新しい製品を発表。", image: true }
+        ];
+        function render() { const el = document.getElementById('timeline'); el.innerHTML = ''; data.forEach(item => { if (item.type === 'decade') { const d = document.createElement('div'); d.className = 'decade'; d.innerHTML = '<span>' + item.year + '</span>'; el.appendChild(d); return; } const row = document.createElement('div'); row.className = 'row'; const event = '<article class="event" data-year="' + item.year + '"><div class="event-date">' + item.year + '</div><div><span class="event-title">' + item.title + '</span></div><p class="event-desc">' + item.desc + '</p>' + (item.image ? '<div class="event-image"><div class="photo"></div></div>' : '') + '</article>'; if (item.side === 'left') { row.innerHTML = '<div class="side left">' + event + '</div><div class="node"></div><div class="side right empty"></div><div class="connector"></div>'; } else { row.innerHTML = '<div class="side left empty"></div><div class="node"></div><div class="side right">' + event + '</div><div class="connector"></div>'; } el.appendChild(row); }); } render();
+        document.getElementById('mode').onclick = () => { document.body.classList.toggle('dark'); document.getElementById('mode').textContent = document.body.classList.contains('dark') ? 'LIGHT' : 'DARK' };
+    </script>
+</body>
+
+</html>

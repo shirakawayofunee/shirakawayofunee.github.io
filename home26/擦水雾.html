@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>擦开雾气看照片</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; overflow: hidden; }
+  body {
+    display: flex;
+    background: #0b0e13;
+    color: #cfd8e3;
+    font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #sidebar {
+    flex: 0 0 252px; width: 252px; height: 100%;
+    padding: 22px 18px;
+    display: flex; flex-direction: column; gap: 14px;
+    background: #10151d;
+    border-right: 1px solid rgba(255,255,255,.07);
+    overflow-y: auto;
+  }
+  #sidebar h1 {
+    margin: 0; font-size: 17px; font-weight: 600;
+    letter-spacing: .04em; color: #e8eef6;
+  }
+  #sidebar h1 span {
+    display: block; margin-top: 6px; font-size: 11.5px;
+    font-weight: 400; letter-spacing: .08em;
+    text-transform: uppercase; color: #6d7c8e;
+  }
+
+  /* ★ 常驻提示条 */
+  .hint-inline {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: rgba(59, 130, 246, .10);
+    border: 1px solid rgba(59, 130, 246, .22);
+    font-size: 12px;
+    line-height: 1.7;
+    color: #b8cde4;
+  }
+
+  .group { display: flex; flex-direction: column; gap: 8px; }
+  .label-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 13px; color: #93a2b5;
+  }
+  .label-row b {
+    font-weight: 600; color: #6fb2ff;
+    font-variant-numeric: tabular-nums;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none; appearance: none;
+    width: 100%; height: 4px; border-radius: 4px;
+    background: linear-gradient(90deg, #2f6fd0, #6fb2ff);
+    outline: none; cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #eaf2fb; border: 2px solid #2f6fd0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.55); cursor: pointer;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 15px; height: 15px; border-radius: 50%;
+    background: #eaf2fb; border: 2px solid #2f6fd0; cursor: pointer;
+  }
+  #density { background: linear-gradient(90deg, #2f5f8f, #9cc7f0); }
+  #density::-webkit-slider-thumb { border-color: #4a8fd8; }
+  #density::-moz-range-thumb { border-color: #4a8fd8; }
+  #blurEl { background: linear-gradient(90deg, #3a5f7f, #7fb5e8); }
+  #blurEl::-webkit-slider-thumb { border-color: #5a9fd0; }
+  #blurEl::-moz-range-thumb { border-color: #5a9fd0; }
+  #rainDensity { background: linear-gradient(90deg, #3a4f6f, #8fb0d8); }
+  #rainDensity::-webkit-slider-thumb { border-color: #5a7fa0; }
+  #rainDensity::-moz-range-thumb { border-color: #5a7fa0; }
+
+  .btn {
+    width: 100%; padding: 10px 14px;
+    border-radius: 9px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(255,255,255,.05);
+    color: #d5dfea; font-size: 13.5px; font-family: inherit;
+    cursor: pointer;
+    transition: background .18s, border-color .18s, transform .08s;
+  }
+  .btn:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.28); }
+  .btn:active { transform: scale(.985); }
+  .btn.primary {
+    background: linear-gradient(180deg, #3b82f6, #2563eb);
+    border-color: #4f8ef7; color: #fff; font-weight: 500;
+  }
+  .btn.primary:hover { background: linear-gradient(180deg, #4b8ffa, #2f6ff0); }
+  .btn.download {
+    background: linear-gradient(180deg, #10b981, #059669);
+    border-color: #34d399;
+    color: #fff;
+    font-weight: 500;
+  }
+  .btn.download:hover { background: linear-gradient(180deg, #34d399, #10b981); }
+
+  /* ★ 水痕开关 */
+  .btn.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .btn.toggle .sw {
+    position: relative;
+    flex: 0 0 auto;
+    width: 34px; height: 18px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.2);
+    transition: background .22s, border-color .22s;
+  }
+  .btn.toggle .sw::after {
+    content: '';
+    position: absolute;
+    top: 1px; left: 1px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #b9c8d9;
+    transition: transform .22s, background .22s;
+  }
+  .btn.toggle.on .sw { background: rgba(59,130,246,.55); border-color: #4f8ef7; }
+  .btn.toggle.on .sw::after { transform: translateX(16px); background: #fff; }
+
+  .zoom-row {
+    display: grid; grid-template-columns: 46px 1fr 46px;
+    align-items: center; gap: 8px;
+  }
+  .zoom-row button {
+    padding: 9px 0; border-radius: 9px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(255,255,255,.05);
+    color: #d5dfea; font-size: 16px; line-height: 1;
+    cursor: pointer; font-family: inherit;
+    transition: background .18s, border-color .18s;
+  }
+  .zoom-row button:hover { background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.28); }
+  .zoom-row button:active { transform: scale(.96); }
+  .zoom-row .val {
+    text-align: center; font-size: 13px; color: #6fb2ff;
+    font-variant-numeric: tabular-nums; font-weight: 600;
+  }
+
+  .dpad {
+    display: grid;
+    grid-template-areas: ". up ." "left . right" ". down .";
+    gap: 6px; grid-template-columns: repeat(3, 1fr);
+  }
+  .dpad button {
+    padding: 8px 0; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(255,255,255,.05);
+    color: #b9c8d9; font-size: 13px; line-height: 1;
+    cursor: pointer; font-family: inherit;
+    transition: background .18s, border-color .18s;
+  }
+  .dpad button:hover { background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.28); color: #fff; }
+  .dpad button:active { transform: scale(.95); }
+  .dpad button[data-pan="up"]    { grid-area: up; }
+  .dpad button[data-pan="left"]  { grid-area: left; }
+  .dpad button[data-pan="right"] { grid-area: right; }
+  .dpad button[data-pan="down"]  { grid-area: down; }
+
+  .tip { margin: 0; font-size: 12px; line-height: 1.8; color: #667588; }
+  .tip em { font-style: normal; color: #8fa3ba; }
+
+  #stage {
+    position: relative; flex: 1 1 auto; min-width: 0;
+    height: 100%; background: #000; overflow: hidden;
+  }
+
+  #photo {
+    position: absolute; display: block; visibility: hidden;
+    pointer-events: none; -webkit-user-drag: none; user-select: none;
+    transform-origin: center center; backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  #fog {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    display: block; touch-action: none; cursor: crosshair;
+  }
+
+  #rain {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    display: block; pointer-events: none;
+  }
+
+  #brushIndicator {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+    box-shadow:
+      0 0 0 1.5px rgba(255, 255, 255, .9),
+      0 0 0 3px rgba(0, 0, 0, .55),
+      inset 0 0 0 1px rgba(0, 0, 0, .35);
+    opacity: 0;
+    transition: opacity .3s ease, width .15s ease, height .15s ease;
+  }
+  #brushIndicator.show { opacity: 1; }
+
+  #dropOverlay {
+    position: fixed; inset: 0; z-index: 50;
+    display: none; place-items: center;
+    background: rgba(8, 12, 18, .82);
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  }
+  #dropOverlay.show { display: grid; }
+  #dropOverlay .box {
+    padding: 40px 64px;
+    border: 2px dashed rgba(120, 175, 255, .65);
+    border-radius: 20px; font-size: 17px;
+    color: #bcd6f5; letter-spacing: .06em;
+  }
+
+  @media (max-width: 780px) {
+    body { flex-direction: column; }
+    #sidebar {
+      flex: 0 0 auto; width: 100%; height: auto;
+      flex-direction: row; flex-wrap: wrap; align-items: center;
+      gap: 10px 16px; padding: 12px 14px;
+      border-right: none; border-bottom: 1px solid rgba(255,255,255,.07);
+      overflow: visible;
+    }
+    #sidebar h1 { display: none; }
+    .hint-inline { display: none; }
+    .group { flex: 1 1 140px; gap: 6px; }
+    .zoom-row { grid-template-columns: 40px 1fr 40px; }
+    .dpad { max-width: 150px; }
+    .btn { width: auto; padding: 8px 16px; }
+    .tip { display: none; }
+    #stage { height: auto; flex: 1 1 auto; min-height: 0; }
+  }
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <h1>擦雾见图 <span>Fog Eraser</span></h1>
+
+  <!-- ★ 常驻提示 -->
+  <p class="hint-inline">拖动鼠标擦除雾气，露出清晰照片。玻璃上的水痕不会被擦除。</p>
+
+  <div class="group">
+    <div class="label-row"><span>雾气浓度</span><b id="densityVal">42%</b></div>
+    <input type="range" id="density" min="0" max="100" step="1" value="42">
+  </div>
+
+  <div class="group">
+    <div class="label-row"><span>背景模糊</span><b id="blurVal">14 px</b></div>
+    <input type="range" id="blurEl" min="0" max="40" step="1" value="14">
+  </div>
+
+  <div class="group">
+    <div class="label-row"><span>笔刷粗细</span><b id="brushVal">90 px</b></div>
+    <input type="range" id="brush" min="10" max="300" step="2" value="90">
+  </div>
+
+  <div class="group">
+    <div class="label-row"><span>水痕密度</span><b id="rainDensityVal">45%</b></div>
+    <input type="range" id="rainDensity" min="0" max="100" step="1" value="45">
+  </div>
+
+  <!-- ★ 水痕开关 -->
+  <div class="group">
+    <button class="btn toggle on" id="rainBtn">
+      <span>雨滴水痕</span>
+      <i class="sw"></i>
+    </button>
+    <button class="btn" id="regenRain">重新生成水痕</button>
+  </div>
+
+  <div class="group">
+    <div class="label-row"><span>图片缩放</span></div>
+    <div class="zoom-row">
+      <button id="zoomOut" title="缩小">－</button>
+      <div class="val" id="zoomVal">100%</div>
+      <button id="zoomIn" title="放大">＋</button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label-row"><span>平移视图</span></div>
+    <div class="dpad">
+      <button data-pan="up"    title="上移">▲</button>
+      <button data-pan="left"  title="左移">◀</button>
+      <button data-pan="right" title="右移">▶</button>
+      <button data-pan="down"  title="下移">▼</button>
+    </div>
+  </div>
+
+  <div class="group">
+    <button class="btn primary" id="pickBtn">选择图片</button>
+    <input type="file" id="fileInput" accept="image/*" hidden>
+    <button class="btn" id="resetBtn">重新起雾</button>
+    <button class="btn download" id="downloadBtn">下载当前画面</button>
+  </div>
+
+  <p class="tip">
+    <em>滚轮</em>缩放，方向键平移<br>
+    也可把图片<em>直接拖进窗口</em>
+  </p>
+</aside>
+
+<main id="stage">
+  <img id="photo" alt="被雾气遮住的照片">
+  <canvas id="fog"></canvas>
+  <canvas id="rain"></canvas>
+  <div id="brushIndicator"></div>
+</main>
+
+<div id="dropOverlay"><div class="box">松手放下图片</div></div>
+
+<script>
+(() => {
+  'use strict';
+
+  const stage     = document.getElementById('stage');
+  const img       = document.getElementById('photo');
+  const fogCanvas = document.getElementById('fog');
+  const fctx      = fogCanvas.getContext('2d');
+  const rainCanvas = document.getElementById('rain');
+  const rctx      = rainCanvas.getContext('2d');
+  const overlay   = document.getElementById('dropOverlay');
+  const brushEl   = document.getElementById('brush');
+  const brushVal  = document.getElementById('brushVal');
+  const densityEl = document.getElementById('density');
+  const densityVal = document.getElementById('densityVal');
+  const blurEl    = document.getElementById('blurEl');
+  const blurVal   = document.getElementById('blurVal');
+  const rainDensityEl = document.getElementById('rainDensity');
+  const rainDensityVal = document.getElementById('rainDensityVal');
+  const zoomVal   = document.getElementById('zoomVal');
+  const fileInput = document.getElementById('fileInput');
+  const brushIndicator = document.getElementById('brushIndicator');
+  const rainBtn   = document.getElementById('rainBtn');
+
+  const DPR       = Math.min(window.devicePixelRatio || 1, 2);
+  const SOFT      = 0.55;
+  const MIN_SCALE = 1;
+  const MAX_SCALE = 8;
+
+  let brushSize = parseInt(brushEl.value, 10);
+  let brushR    = brushSize / 2;
+  let density   = parseInt(densityEl.value, 10) / 100;
+  let blurPx    = parseInt(blurEl.value, 10);
+  let rainDensity = parseInt(rainDensityEl.value, 10) / 100;
+  let rainOn = true;
+
+  let stageW = 0, stageH = 0;
+  let baseW = 0, baseH = 0;
+  let scale = 1, tx = 0, ty = 0;
+
+  let drawing = false, prev = null;
+  let currentUrl = '';
+  let lastCanvasPos = null;
+
+  const fogLayer  = document.createElement('canvas'); const flctx = fogLayer.getContext('2d');
+  const maskLayer = document.createElement('canvas'); const mctx  = maskLayer.getContext('2d');
+  const clearCache = document.createElement('canvas'); const ccctx = clearCache.getContext('2d');
+  let clearCacheKey = '';
+
+  const rainClearLayer = document.createElement('canvas'); const rcctx = rainClearLayer.getContext('2d');
+  const rainBlurLayer  = document.createElement('canvas'); const rbctx = rainBlurLayer.getContext('2d');
+  const tempLayer      = document.createElement('canvas'); const tctx  = tempLayer.getContext('2d');
+
+  const sampleCanvas = document.createElement('canvas');
+  const sctx = sampleCanvas.getContext('2d', { willReadFrequently: true });
+  let sampleData = null;
+  let sampleKey = '';
+
+  let dropSeeds = [];
+  let streams = [];
+
+  const DEFAULT_IMG = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000">' +
+      '<defs>' +
+        '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+          '<stop offset="0" stop-color="#22304a"/>' +
+          '<stop offset="0.5" stop-color="#3b4b73"/>' +
+          '<stop offset="1" stop-color="#6b4d7a"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="sun" cx="0.72" cy="0.28" r="0.55">' +
+          '<stop offset="0" stop-color="#ffd9a0" stop-opacity="0.95"/>' +
+          '<stop offset="0.45" stop-color="#ff9f68" stop-opacity="0.35"/>' +
+          '<stop offset="1" stop-color="#ff9f68" stop-opacity="0"/>' +
+        '</radialGradient>' +
+        '<radialGradient id="glow" cx="0.2" cy="0.85" r="0.6">' +
+          '<stop offset="0" stop-color="#7ee8fa" stop-opacity="0.35"/>' +
+          '<stop offset="1" stop-color="#7ee8fa" stop-opacity="0"/>' +
+        '</radialGradient>' +
+      '</defs>' +
+      '<rect width="1600" height="1000" fill="url(#g)"/>' +
+      '<rect width="1600" height="1000" fill="url(#sun)"/>' +
+      '<rect width="1600" height="1000" fill="url(#glow)"/>' +
+      '<circle cx="430" cy="690" r="240" fill="#ffffff" opacity="0.06"/>' +
+      '<circle cx="1220" cy="360" r="150" fill="#ffffff" opacity="0.05"/>' +
+      '<path d="M0 760 Q 300 660 620 740 T 1200 720 T 1600 780 L1600 1000 L0 1000 Z" fill="#0e1522" opacity="0.55"/>' +
+      '<path d="M0 850 Q 400 780 800 850 T 1600 860 L1600 1000 L0 1000 Z" fill="#070b12" opacity="0.7"/>' +
+    '</svg>'
+  );
+
+  const clamp = (v, a, b) => v < a ? a : (v > b ? b : v);
+
+  /* ================================================================
+     尺寸 & 布局
+     ================================================================ */
+  function computeBase() {
+    const sw = stage.clientWidth;
+    const sh = stage.clientHeight;
+    if (sw <= 0 || sh <= 0) return;
+
+    stageW = sw; stageH = sh;
+
+    const iw = img.naturalWidth  || 4;
+    const ih = img.naturalHeight || 3;
+    const ar = iw / ih;
+
+    let w = sw, h = sw / ar;
+    if (h > sh) { h = sh; w = sh * ar; }
+
+    baseW = Math.max(1, Math.floor(w));
+    baseH = Math.max(1, Math.floor(h));
+
+    img.style.width  = baseW + 'px';
+    img.style.height = baseH + 'px';
+    img.style.left   = ((sw - baseW) / 2) + 'px';
+    img.style.top    = ((sh - baseH) / 2) + 'px';
+    img.style.visibility = 'visible';
+
+    const W = Math.round(sw * DPR), H = Math.round(sh * DPR);
+
+    fogCanvas.width  = W; fogCanvas.height = H;
+    fctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    rainCanvas.width  = W; rainCanvas.height = H;
+    rctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    fogLayer.width = W; fogLayer.height = H;
+    flctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    maskLayer.width = W; maskLayer.height = H;
+    mctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    mctx.clearRect(0, 0, sw, sh);
+
+    clearCache.width = W; clearCache.height = H;
+    ccctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    clearCacheKey = '';
+
+    rainClearLayer.width = W; rainClearLayer.height = H;
+    rcctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    rainBlurLayer.width = W; rainBlurLayer.height = H;
+    rbctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    tempLayer.width = W; tempLayer.height = H;
+    tctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    sampleCanvas.width  = Math.max(1, Math.floor(sw));
+    sampleCanvas.height = Math.max(1, Math.floor(sh));
+    sampleData = null;
+    sampleKey = '';
+
+    generateFogLayer();
+    generateSeeds();
+    redrawRain();
+  }
+
+  function getImageRect() {
+    const w = baseW * scale, h = baseH * scale;
+    return { x: stageW / 2 + tx - w / 2, y: stageH / 2 + ty - h / 2, w, h };
+  }
+
+  function applyView() {
+    const w = baseW * scale, h = baseH * scale;
+    const maxTx = w > stageW ? (w - stageW) / 2 : 0;
+    const maxTy = h > stageH ? (h - stageH) / 2 : 0;
+    tx = clamp(tx, -maxTx, maxTx);
+    ty = clamp(ty, -maxTy, maxTy);
+
+    img.style.transform =
+      'translate(' + tx.toFixed(2) + 'px,' + ty.toFixed(2) + 'px) ' +
+      'scale(' + scale.toFixed(4) + ')';
+
+    zoomVal.textContent = Math.round(scale * 100) + '%';
+    redrawFog();
+    redrawRain();
+  }
+
+  /* ================================================================
+     雾气
+     ================================================================ */
+  function generateFogLayer() {
+    if (stageW <= 0) return;
+    const d = clamp(density, 0, 1);
+    const area = stageW * stageH;
+
+    flctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    flctx.globalCompositeOperation = 'source-over';
+    flctx.clearRect(0, 0, stageW, stageH);
+
+    const baseA = 0.05 + d * 0.58;
+    const g1 = flctx.createLinearGradient(0, 0, stageW * 0.75, stageH);
+    g1.addColorStop(0,    'rgba(228,239,250,' + baseA + ')');
+    g1.addColorStop(0.45, 'rgba(213,228,243,' + (baseA * 0.88) + ')');
+    g1.addColorStop(1,    'rgba(232,242,250,' + baseA + ')');
+    flctx.fillStyle = g1;
+    flctx.fillRect(0, 0, stageW, stageH);
+
+    const patches = Math.round(14 + d * 30);
+    for (let i = 0; i < patches; i++) {
+      const x = Math.random() * stageW, y = Math.random() * stageH;
+      const r = (0.10 + Math.random() * 0.26) * Math.max(stageW, stageH);
+      const a = (0.015 + Math.random() * 0.045) * (0.4 + d);
+      const g = flctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, 'rgba(255,255,255,' + a + ')');
+      g.addColorStop(1, 'rgba(255,255,255,0)');
+      flctx.fillStyle = g;
+      flctx.beginPath(); flctx.arc(x, y, r, 0, Math.PI * 2); flctx.fill();
+    }
+
+    const grains = Math.min(9000, Math.round(area / 95 * (0.28 + d * 1.05)));
+    for (let i = 0; i < grains; i++) {
+      const x = Math.random() * stageW, y = Math.random() * stageH;
+      const r = 0.25 + Math.random() * 1.1;
+      const a = (0.05 + Math.random() * 0.22) * (0.35 + d * 0.95);
+      flctx.fillStyle = 'rgba(255,255,255,' + a + ')';
+      flctx.beginPath(); flctx.arc(x, y, r, 0, Math.PI * 2); flctx.fill();
+    }
+
+    const drops = Math.round(area / 2600 * (0.30 + d));
+    for (let i = 0; i < drops; i++) {
+      const x = Math.random() * stageW, y = Math.random() * stageH;
+      const r = 1.3 + Math.random() * 3.0;
+      const k = 0.40 + d * 0.65;
+      const g = flctx.createRadialGradient(x - r * 0.35, y - r * 0.35, 0, x, y, r);
+      g.addColorStop(0,    'rgba(255,255,255,' + (0.62 * k) + ')');
+      g.addColorStop(0.55, 'rgba(222,236,249,' + (0.16 * k) + ')');
+      g.addColorStop(1,    'rgba(196,218,238,0)');
+      flctx.fillStyle = g;
+      flctx.beginPath(); flctx.arc(x, y, r, 0, Math.PI * 2); flctx.fill();
+    }
+
+    if (d > 0.04) {
+      const edge = flctx.createRadialGradient(
+        stageW / 2, stageH / 2, Math.min(stageW, stageH) * 0.38,
+        stageW / 2, stageH / 2, Math.max(stageW, stageH) * 0.76
+      );
+      edge.addColorStop(0, 'rgba(255,255,255,0)');
+      edge.addColorStop(1, 'rgba(238,246,253,' + (0.03 + d * 0.12) + ')');
+      flctx.fillStyle = edge;
+      flctx.fillRect(0, 0, stageW, stageH);
+    }
+  }
+
+  function redrawFog() {
+    if (stageW <= 0) return;
+    fctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    fctx.globalCompositeOperation = 'source-over';
+    fctx.clearRect(0, 0, stageW, stageH);
+
+    const rect = getImageRect();
+    if (img.naturalWidth > 0 && rect.w > 0 && rect.h > 0) {
+      fctx.save();
+      fctx.beginPath(); fctx.rect(0, 0, stageW, stageH); fctx.clip();
+      if (blurPx > 0.5) fctx.filter = 'blur(' + blurPx + 'px)';
+      fctx.drawImage(img, rect.x, rect.y, rect.w, rect.h);
+      fctx.filter = 'none';
+      fctx.restore();
+    }
+
+    fctx.drawImage(fogLayer, 0, 0, stageW, stageH);
+
+    fctx.globalCompositeOperation = 'destination-out';
+    fctx.drawImage(maskLayer, 0, 0, stageW, stageH);
+    fctx.globalCompositeOperation = 'source-over';
+  }
+
+  /* ================================================================
+     擦除
+     ================================================================ */
+  function eraseAt(x, y, r) {
+    fctx.globalCompositeOperation = 'destination-out';
+    const g1 = fctx.createRadialGradient(x, y, 0, x, y, r);
+    g1.addColorStop(0,    'rgba(0,0,0,1)');
+    g1.addColorStop(SOFT, 'rgba(0,0,0,1)');
+    g1.addColorStop(1,    'rgba(0,0,0,0)');
+    fctx.fillStyle = g1;
+    fctx.beginPath(); fctx.arc(x, y, r, 0, Math.PI * 2); fctx.fill();
+    fctx.globalCompositeOperation = 'source-over';
+
+    const g2 = mctx.createRadialGradient(x, y, 0, x, y, r);
+    g2.addColorStop(0,    'rgba(255,255,255,1)');
+    g2.addColorStop(SOFT, 'rgba(255,255,255,1)');
+    g2.addColorStop(1,    'rgba(255,255,255,0)');
+    mctx.fillStyle = g2;
+    mctx.beginPath(); mctx.arc(x, y, r, 0, Math.PI * 2); mctx.fill();
+  }
+
+  function strokeTo(p) {
+    if (!prev) { eraseAt(p.x, p.y, brushR); prev = p; return; }
+    const dx = p.x - prev.x, dy = p.y - prev.y;
+    const dist = Math.hypot(dx, dy);
+    const steps = Math.max(1, Math.ceil(dist / Math.max(2, brushR * 0.3)));
+    for (let i = 1; i <= steps; i++) {
+      eraseAt(prev.x + dx * i / steps, prev.y + dy * i / steps, brushR);
+    }
+    prev = p;
+  }
+
+  /* ================================================================
+     像素采样
+     ================================================================ */
+  function updatePixelCache() {
+    if (stageW <= 0 || !img.naturalWidth) { sampleData = null; return; }
+    if (sampleKey === clearCacheKey && sampleData) return;
+    sampleKey = clearCacheKey;
+
+    sctx.setTransform(1, 0, 0, 1, 0, 0);
+    sctx.clearRect(0, 0, sampleCanvas.width, sampleCanvas.height);
+    sctx.drawImage(clearCache, 0, 0, sampleCanvas.width, sampleCanvas.height);
+
+    try {
+      sampleData = sctx.getImageData(0, 0, sampleCanvas.width, sampleCanvas.height);
+    } catch (e) {
+      sampleData = null;
+    }
+  }
+
+  function sampleColorSmooth(x, y) {
+    if (!sampleData) return null;
+    const W = sampleData.width, H = sampleData.height, d = sampleData.data;
+    const cx = Math.round(x), cy = Math.round(y);
+    let r = 0, g = 0, b = 0, n = 0;
+    for (let dy = -1; dy <= 1; dy++) {
+      for (let dx = -1; dx <= 1; dx++) {
+        const px = cx + dx, py = cy + dy;
+        if (px < 0 || py < 0 || px >= W || py >= H) continue;
+        const idx = (py * W + px) * 4;
+        if (d[idx + 3] < 10) continue;
+        r += d[idx]; g += d[idx + 1]; b += d[idx + 2]; n++;
+      }
+    }
+    if (!n) return null;
+    return [r / n | 0, g / n | 0, b / n | 0];
+  }
+
+  /* ================================================================
+     水痕数据生成
+     ================================================================ */
+  function generateSeeds() {
+    if (stageW <= 0) return;
+    const W = stageW, H = stageH;
+    const d = rainDensity;
+
+    dropSeeds = [];
+    streams = [];
+
+    const smallN = Math.round(70 + d * 240);
+    for (let i = 0; i < smallN; i++) {
+      const x = Math.random() * W;
+      const y = Math.pow(Math.random(), 0.55) * H;
+      const r = 0.5 + Math.random() * Math.random() * 2.0;
+      dropSeeds.push({ x, y, r, stretch: 1 + (Math.random() - 0.5) * 0.3, hlx: -0.35, hly: -0.4 });
+    }
+
+    const medN = Math.round(8 + d * 35);
+    for (let i = 0; i < medN; i++) {
+      const x = Math.random() * W;
+      const y = Math.pow(Math.random(), 0.55) * H;
+      const r = 2.2 + Math.random() * 2.4;
+      dropSeeds.push({ x, y, r, stretch: 1 + (Math.random() - 0.5) * 0.35, hlx: -0.4, hly: -0.42 });
+    }
+
+    const bigN = Math.round(2 + d * 8);
+    for (let i = 0; i < bigN; i++) {
+      const x = Math.random() * W;
+      const y = Math.pow(Math.random(), 0.55) * H;
+      const r = 4.5 + Math.random() * 5;
+      dropSeeds.push({ x, y, r, stretch: 1 + (Math.random() - 0.5) * 0.4, hlx: -0.4, hly: -0.4 });
+    }
+
+    const streamCount = Math.round(2 + d * 7);
+    for (let s = 0; s < streamCount; s++) {
+      streams.push(buildStream(W, H));
+    }
+  }
+
+  function buildStream(W, H) {
+    const startX = Math.random() * W;
+    const startY = Math.random() * H * 0.15;
+    const totalLen = (0.35 + Math.random() * 0.55) * H;
+    const endY = Math.min(H + 20, startY + totalLen);
+
+    const steps = Math.max(30, Math.round((endY - startY) / 2.5));
+    const pts = [];
+    let x = startX;
+    let vx = 0;
+
+    const wA = Math.random() * 10;
+    const wB = Math.random() * 10;
+
+    for (let i = 0; i <= steps; i++) {
+      const t = i / steps;
+      const y = startY + (endY - startY) * t;
+
+      vx += (Math.random() - 0.5) * 0.85;
+      vx *= 0.88;
+      x += vx;
+
+      let r;
+      if (t < 0.12) {
+        r = 0.35 * (t / 0.12);
+      } else if (t < 0.78) {
+        const k = (t - 0.12) / 0.66;
+        const wobble = 0.55 + Math.sin(k * 9 + wA) * 0.18
+                            + Math.sin(k * 22 + wB) * 0.10;
+        r = Math.max(0.28, wobble);
+      } else {
+        const k = (t - 0.78) / 0.22;
+        r = 0.6 + Math.pow(k, 1.4) * 3.6;
+      }
+
+      pts.push({ x, y, r, t });
+    }
+
+    const willBreak = Math.random() < 0.40;
+    const breakAt = willBreak ? (0.30 + Math.random() * 0.45) : 1;
+
+    return { pts, breakAt };
+  }
+
+  /* ================================================================
+     清晰图片缓存
+     ================================================================ */
+  function refreshClearCache() {
+    if (stageW <= 0 || !img.naturalWidth) return;
+    const rect = getImageRect();
+    const key = rect.x.toFixed(1) + ',' + rect.y.toFixed(1) + ',' +
+                rect.w.toFixed(1) + ',' + rect.h.toFixed(1);
+    if (key === clearCacheKey) return;
+    clearCacheKey = key;
+
+    ccctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    ccctx.clearRect(0, 0, stageW, stageH);
+    ccctx.save();
+    ccctx.beginPath();
+    ccctx.rect(0, 0, stageW, stageH);
+    ccctx.clip();
+    ccctx.drawImage(img, rect.x, rect.y, rect.w, rect.h);
+    ccctx.restore();
+  }
+
+  /* ================================================================
+     绘制单颗水珠
+     ================================================================ */
+  function drawDrop(ctx, s, simplified) {
+    const r = s.r;
+    if (r < 0.35) return;
+
+    const stretch = s.stretch || 1;
+    const rx = r;
+    const ry = r * stretch;
+
+    const bg = sampleColorSmooth(s.x, s.y) || [110, 130, 160];
+    const [br, bgr, bb] = bg;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.ellipse(s.x, s.y, rx, ry, 0, 0, Math.PI * 2);
+    ctx.clip();
+
+    const k = 1 + r * 0.018;
+    ctx.translate(s.x, s.y);
+    ctx.scale(k, k);
+    ctx.translate(-s.x, -s.y);
+    ctx.drawImage(clearCache, -r * 0.14 / k, -r * 0.20 / k, stageW, stageH);
+    ctx.restore();
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.ellipse(s.x, s.y, rx, ry, 0, 0, Math.PI * 2);
+    ctx.clip();
+    const inner = ctx.createRadialGradient(s.x, s.y, rx * 0.3, s.x, s.y, rx);
+    inner.addColorStop(0,    'rgba(255, 255, 255, 0.08)');
+    inner.addColorStop(0.55, 'rgba(0, 0, 0, 0)');
+    inner.addColorStop(1,    'rgba(' + (br * 0.28 | 0) + ',' + (bgr * 0.32 | 0) + ',' + (bb * 0.45 | 0) + ', 0.42)');
+    ctx.fillStyle = inner;
+    ctx.fillRect(s.x - rx, s.y - ry, rx * 2, ry * 2);
+    ctx.restore();
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.ellipse(s.x, s.y, rx * 0.90, ry * 0.90, 0, 0, Math.PI * 2);
+    const ringGrad = ctx.createLinearGradient(s.x, s.y - ry, s.x, s.y + ry);
+    ringGrad.addColorStop(0,   'rgba(255, 255, 255, 0.62)');
+    ringGrad.addColorStop(0.5, 'rgba(220, 232, 248, 0.10)');
+    ringGrad.addColorStop(1,   'rgba(' + (br * 0.45 | 0) + ',' + (bgr * 0.5 | 0) + ',' + (bb * 0.6 | 0) + ', 0.32)');
+    ctx.strokeStyle = ringGrad;
+    ctx.lineWidth = Math.max(0.5, r * 0.13);
+    ctx.stroke();
+    ctx.restore();
+
+    if (r > 0.9 && !simplified) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.ellipse(s.x, s.y, rx * 0.90, ry * 0.90, 0, Math.PI * 1.05, Math.PI * 1.85);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.90)';
+      ctx.lineWidth = Math.max(0.6, r * 0.11);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    if (r > 1.3 && !simplified) {
+      const hlx = s.x + rx * (s.hlx || -0.35);
+      const hly = s.y + ry * (s.hly || -0.4);
+      const hlr = Math.max(0.5, r * 0.17);
+      const g = ctx.createRadialGradient(hlx, hly, 0, hlx, hly, hlr);
+      g.addColorStop(0,   'rgba(255, 255, 255, 1)');
+      g.addColorStop(0.5, 'rgba(255, 255, 255, 0.5)');
+      g.addColorStop(1,   'rgba(255, 255, 255, 0)');
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(hlx, hly, hlr, 0, Math.PI * 2); ctx.fill();
+    }
+
+    if (r > 2.2 && !simplified) {
+      const cx2 = s.x + rx * 0.05;
+      const cy2 = s.y + ry * 0.45;
+      const crx = rx * 0.42;
+      const cry = ry * 0.20;
+      const g = ctx.createRadialGradient(cx2, cy2, 0, cx2, cy2, Math.max(crx, cry));
+      g.addColorStop(0, 'rgba(255, 255, 255, 0.35)');
+      g.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.ellipse(cx2, cy2, crx, cry, 0, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+
+  /* ================================================================
+     绘制一道水痕
+     ================================================================ */
+  function drawStream(ctx, stream) {
+    const pts = stream.pts;
+    const n = pts.length;
+    const lastIdx = Math.floor(n * stream.breakAt);
+    if (lastIdx < 6) return;
+
+    const cols = new Array(lastIdx);
+    for (let i = 0; i < lastIdx; i++) {
+      cols[i] = sampleColorSmooth(pts[i].x, pts[i].y);
+    }
+
+    const FALLBACK = [110, 128, 152];
+
+    ctx.save();
+    ctx.lineCap  = 'round';
+    ctx.lineJoin = 'round';
+
+    for (let i = 0; i < lastIdx - 1; i++) {
+      const a = pts[i], b = pts[i + 1];
+      const c = cols[i] || FALLBACK;
+      const w = Math.max(1.2, (a.r + b.r) * 1.7);
+      const alpha = 0.10 * (1 - (i / lastIdx) * 0.55);
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = 'rgba(' +
+        (c[0] * 0.55 | 0) + ',' +
+        (c[1] * 0.62 | 0) + ',' +
+        (c[2] * 0.75 | 0) + ',' + alpha + ')';
+      ctx.lineWidth = w;
+      ctx.stroke();
+    }
+
+    for (let i = 0; i < lastIdx - 1; i++) {
+      const a = pts[i], b = pts[i + 1];
+      const c = cols[i] || FALLBACK;
+      const w = Math.max(0.7, (a.r + b.r) * 1.0);
+      let alpha = 0.72;
+      if (i < 7) alpha *= i / 7;
+      if (stream.breakAt < 1) {
+        const t = i / lastIdx;
+        if (t > 0.7) alpha *= Math.max(0, 1 - (t - 0.7) / 0.3);
+      }
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = 'rgba(' +
+        (c[0] * 0.30 | 0) + ',' +
+        (c[1] * 0.36 | 0) + ',' +
+        (c[2] * 0.50 | 0) + ',' + alpha + ')';
+      ctx.lineWidth = w;
+      ctx.stroke();
+    }
+
+    for (let i = 0; i < lastIdx - 1; i++) {
+      const a = pts[i], b = pts[i + 1];
+      const c = cols[i] || FALLBACK;
+      const w = Math.max(0.35, (a.r + b.r) * 0.55);
+      let alpha = 0.72;
+      if (i < 5) alpha *= i / 5;
+      if (stream.breakAt < 1) {
+        const t = i / lastIdx;
+        if (t > 0.78) alpha *= Math.max(0, 1 - (t - 0.78) / 0.22);
+      }
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = 'rgba(' +
+        (c[0] * 0.12 | 0) + ',' +
+        (c[1] * 0.16 | 0) + ',' +
+        (c[2] * 0.26 | 0) + ',' + alpha + ')';
+      ctx.lineWidth = w;
+      ctx.stroke();
+    }
+
+    for (let i = 0; i < lastIdx - 1; i++) {
+      const a = pts[i], b = pts[i + 1];
+      const c = cols[i] || FALLBACK;
+      const w = Math.max(0.28, (a.r + b.r) * 0.26);
+
+      const dx = b.x - a.x, dy = b.y - a.y;
+      const len = Math.hypot(dx, dy) || 1;
+      let nx = -dy / len, ny = dx / len;
+      if (nx > 0 && ny > 0) { nx = -nx; ny = -ny; }
+      else if (nx > 0) { nx = -nx; }
+      const offset = (a.r + b.r) * 0.55;
+
+      const lum = (c[0] * 0.299 + c[1] * 0.587 + c[2] * 0.114);
+      const boost = lum < 100 ? 110 : (lum < 180 ? 70 : 40);
+      const hr = Math.min(255, c[0] + boost);
+      const hg = Math.min(255, c[1] + boost);
+      const hb = Math.min(255, c[2] + boost * 0.85);
+
+      let alpha = 0.48;
+      if (i < 7) alpha *= i / 7;
+      if (stream.breakAt < 1) {
+        const t = i / lastIdx;
+        if (t > 0.68) alpha *= Math.max(0, 1 - (t - 0.68) / 0.32);
+      }
+
+      ctx.beginPath();
+      ctx.moveTo(a.x + nx * offset, a.y + ny * offset);
+      ctx.lineTo(b.x + nx * offset, b.y + ny * offset);
+      ctx.strokeStyle = 'rgba(' + (hr|0) + ',' + (hg|0) + ',' + (hb|0) + ',' + alpha + ')';
+      ctx.lineWidth = w;
+      ctx.stroke();
+    }
+
+    for (let i = 0; i < lastIdx - 1; i++) {
+      if (i < 4 || i > lastIdx * 0.72) continue;
+      const a = pts[i], b = pts[i + 1];
+      const w = Math.max(0.22, (a.r + b.r) * 0.14);
+      const alpha = 0.32 * (1 - i / lastIdx * 0.5);
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = 'rgba(255, 255, 255, ' + alpha + ')';
+      ctx.lineWidth = w;
+      ctx.stroke();
+    }
+
+    ctx.restore();
+
+    const mainEnd = Math.floor(lastIdx * 0.7);
+    const beadCount = 1 + Math.floor(Math.random() * 3);
+    for (let k = 0; k < beadCount; k++) {
+      const idx = 4 + Math.floor(Math.random() * Math.max(1, mainEnd - 4));
+      if (idx >= mainEnd) continue;
+      const p = pts[idx];
+      const r = Math.max(0.75, p.r * (1.0 + Math.random() * 0.8));
+      if (r > 0.75) {
+        drawDrop(ctx, {
+          x: p.x, y: p.y, r,
+          stretch: 1 + (Math.random() - 0.5) * 0.2,
+          hlx: -0.35, hly: -0.4
+        }, r < 1.5);
+      }
+    }
+
+    const endPt = pts[lastIdx - 1];
+    if (endPt && endPt.r > 1.6 && stream.breakAt >= 1) {
+      drawDrop(ctx, {
+        x: endPt.x,
+        y: endPt.y,
+        r: Math.min(endPt.r * 1.15, 5.5),
+        stretch: 1.20,
+        hlx: -0.35, hly: -0.42
+      });
+    }
+  }
+
+  /* ================================================================
+     重绘 rain canvas —— 分区显示清晰/模糊水痕
+     ================================================================ */
+  let rainRafPending = false;
+  function redrawRain() {
+    if (rainRafPending) return;
+    rainRafPending = true;
+    requestAnimationFrame(() => {
+      rainRafPending = false;
+      if (stageW <= 0 || !img.naturalWidth) return;
+
+      // 水痕关闭：直接清空
+      if (!rainOn) {
+        rctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+        rctx.globalCompositeOperation = 'source-over';
+        rctx.clearRect(0, 0, stageW, stageH);
+        return;
+      }
+
+      refreshClearCache();
+      updatePixelCache();
+
+      rcctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      rcctx.globalCompositeOperation = 'source-over';
+      rcctx.clearRect(0, 0, stageW, stageH);
+      for (const s of dropSeeds) drawDrop(rcctx, s);
+      for (const st of streams) drawStream(rcctx, st);
+
+      const blurAmount = 1.0 + density * 4.0;
+      rbctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      rbctx.globalCompositeOperation = 'source-over';
+      rbctx.clearRect(0, 0, stageW, stageH);
+      rbctx.filter = 'blur(' + blurAmount.toFixed(2) + 'px)';
+      rbctx.drawImage(rainClearLayer, 0, 0, stageW, stageH);
+      rbctx.filter = 'none';
+
+      rctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      rctx.globalCompositeOperation = 'source-over';
+      rctx.clearRect(0, 0, stageW, stageH);
+
+      rctx.drawImage(rainBlurLayer, 0, 0, stageW, stageH);
+
+      rctx.globalCompositeOperation = 'destination-out';
+      rctx.drawImage(maskLayer, 0, 0, stageW, stageH);
+      rctx.globalCompositeOperation = 'source-over';
+
+      tctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      tctx.globalCompositeOperation = 'source-over';
+      tctx.clearRect(0, 0, stageW, stageH);
+      tctx.drawImage(rainClearLayer, 0, 0, stageW, stageH);
+      tctx.globalCompositeOperation = 'destination-in';
+      tctx.drawImage(maskLayer, 0, 0, stageW, stageH);
+      tctx.globalCompositeOperation = 'source-over';
+
+      rctx.drawImage(tempLayer, 0, 0, stageW, stageH);
+    });
+  }
+
+  /* ================================================================
+     指针擦除
+     ================================================================ */
+  function localPos(e) {
+    const rect = fogCanvas.getBoundingClientRect();
+    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  }
+
+  fogCanvas.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    drawing = true; prev = null;
+    try { fogCanvas.setPointerCapture(e.pointerId); } catch (_) {}
+    lastCanvasPos = localPos(e);
+    strokeTo(lastCanvasPos);
+    e.preventDefault();
+  });
+
+  fogCanvas.addEventListener('pointermove', (e) => {
+    if (!drawing) return;
+    lastCanvasPos = localPos(e);
+    strokeTo(lastCanvasPos);
+    e.preventDefault();
+  });
+
+  function endStroke(e) {
+    if (!drawing) return;
+    drawing = false; prev = null;
+    if (e && e.pointerId !== undefined) {
+      try { fogCanvas.releasePointerCapture(e.pointerId); } catch (_) {}
+    }
+    redrawRain();
+  }
+  fogCanvas.addEventListener('pointerup', endStroke);
+  fogCanvas.addEventListener('pointercancel', endStroke);
+
+  /* ================================================================
+     滚轮缩放
+     ================================================================ */
+  stage.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    let dy = e.deltaY;
+    if (e.deltaMode === 1) dy *= 16;
+    else if (e.deltaMode === 2) dy *= 100;
+
+    const factor = Math.exp(-dy * 0.0015);
+    const ns = clamp(scale * factor, MIN_SCALE, MAX_SCALE);
+    if (Math.abs(ns - scale) < 1e-6) return;
+
+    const rect = stage.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    const k = ns / scale;
+    const dx = mx - (stageW / 2 + tx);
+    const dy2 = my - (stageH / 2 + ty);
+
+    tx += dx - dx * k;
+    ty += dy2 - dy2 * k;
+    scale = ns;
+    applyView();
+  }, { passive: false });
+
+  function zoomBy(factor) {
+    const ns = clamp(scale * factor, MIN_SCALE, MAX_SCALE);
+    if (Math.abs(ns - scale) < 1e-6) return;
+    scale = ns; applyView();
+  }
+  document.getElementById('zoomIn').addEventListener('click',  () => zoomBy(1.25));
+  document.getElementById('zoomOut').addEventListener('click', () => zoomBy(1 / 1.25));
+
+  /* ================================================================
+     平移
+     ================================================================ */
+  function panStep() { return Math.max(40, Math.min(stageW, stageH) * 0.09); }
+  function pan(dx, dy) { tx += dx; ty += dy; applyView(); }
+  document.querySelectorAll('.dpad button').forEach((b) => {
+    b.addEventListener('click', () => {
+      const s = panStep();
+      const dir = b.dataset.pan;
+      if (dir === 'up')    pan(0,  s);
+      if (dir === 'down')  pan(0, -s);
+      if (dir === 'left')  pan( s, 0);
+      if (dir === 'right') pan(-s, 0);
+    });
+  });
+
+  /* ================================================================
+     滑块
+     ================================================================ */
+  let brushIndicatorTimer = null;
+  function showBrushIndicator() {
+    if (stageW <= 0) return;
+    let cx, cy;
+    if (lastCanvasPos) {
+      cx = clamp(lastCanvasPos.x, 20, stageW - 20);
+      cy = clamp(lastCanvasPos.y, 20, stageH - 20);
+    } else {
+      cx = stageW / 2;
+      cy = stageH / 2;
+    }
+    brushIndicator.style.width  = brushSize + 'px';
+    brushIndicator.style.height = brushSize + 'px';
+    brushIndicator.style.left   = cx + 'px';
+    brushIndicator.style.top    = cy + 'px';
+    brushIndicator.classList.add('show');
+
+    clearTimeout(brushIndicatorTimer);
+    brushIndicatorTimer = setTimeout(() => {
+      brushIndicator.classList.remove('show');
+    }, 1100);
+  }
+
+  brushEl.addEventListener('input', () => {
+    brushSize = parseInt(brushEl.value, 10);
+    brushR = brushSize / 2;
+    brushVal.textContent = brushSize + ' px';
+    showBrushIndicator();
+  });
+
+  let blurQueued = false;
+  blurEl.addEventListener('input', () => {
+    blurPx = parseInt(blurEl.value, 10);
+    blurVal.textContent = blurPx + ' px';
+    if (blurQueued) return;
+    blurQueued = true;
+    requestAnimationFrame(() => { blurQueued = false; redrawFog(); });
+  });
+
+  let densityQueued = false;
+  densityEl.addEventListener('input', () => {
+    density = parseInt(densityEl.value, 10) / 100;
+    densityVal.textContent = Math.round(density * 100) + '%';
+    if (densityQueued) return;
+    densityQueued = true;
+    requestAnimationFrame(() => {
+      densityQueued = false;
+      generateFogLayer();
+      redrawFog();
+      redrawRain();
+    });
+  });
+
+  let rainDensityQueued = false;
+  rainDensityEl.addEventListener('input', () => {
+    rainDensity = parseInt(rainDensityEl.value, 10) / 100;
+    rainDensityVal.textContent = Math.round(rainDensity * 100) + '%';
+    if (rainDensityQueued) return;
+    rainDensityQueued = true;
+    setTimeout(() => {
+      rainDensityQueued = false;
+      generateSeeds();
+      redrawRain();
+    }, 180);
+  });
+
+  /* ================================================================
+     水痕开关
+     ================================================================ */
+  rainBtn.addEventListener('click', () => {
+    rainOn = !rainOn;
+    rainBtn.classList.toggle('on', rainOn);
+    if (rainOn) {
+      generateSeeds();
+      redrawRain();
+    } else {
+      redrawRain();
+    }
+  });
+
+  /* ================================================================
+     按钮
+     ================================================================ */
+  document.getElementById('regenRain').addEventListener('click', () => {
+    if (!rainOn) {
+      rainOn = true;
+      rainBtn.classList.add('on');
+    }
+    generateSeeds();
+    redrawRain();
+  });
+
+  // ★ 重新起雾 —— 不再触碰提示的显隐
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    mctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    mctx.globalCompositeOperation = 'source-over';
+    mctx.clearRect(0, 0, stageW, stageH);
+    generateFogLayer();
+    redrawFog();
+    redrawRain();
+  });
+
+  /* ================================================================
+     下载当前画面
+     ================================================================ */
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    if (stageW <= 0) return;
+
+    const out = document.createElement('canvas');
+    out.width  = Math.round(stageW * DPR);
+    out.height = Math.round(stageH * DPR);
+    const octx = out.getContext('2d');
+    octx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    octx.fillStyle = '#000';
+    octx.fillRect(0, 0, stageW, stageH);
+
+    const rect = getImageRect();
+    if (img.naturalWidth > 0) {
+      octx.drawImage(img, rect.x, rect.y, rect.w, rect.h);
+    }
+
+    octx.drawImage(rainCanvas, 0, 0, stageW, stageH);
+    octx.drawImage(fogCanvas, 0, 0, stageW, stageH);
+
+    const a = document.createElement('a');
+    const ts = new Date();
+    const pad = n => String(n).padStart(2, '0');
+    const name = 'fog-photo-' +
+      ts.getFullYear() + pad(ts.getMonth() + 1) + pad(ts.getDate()) + '-' +
+      pad(ts.getHours()) + pad(ts.getMinutes()) + pad(ts.getSeconds()) + '.png';
+    a.download = name;
+    try {
+      a.href = out.toDataURL('image/png');
+      a.click();
+    } catch (err) {
+      alert('导出失败：' + err.message);
+    }
+  });
+
+  /* ================================================================
+     换图
+     ================================================================ */
+  function setImage(src) {
+    if (currentUrl && currentUrl.startsWith('blob:')) {
+      URL.revokeObjectURL(currentUrl);
+    }
+    currentUrl = src;
+
+    img.onload = () => {
+      scale = 1; tx = 0; ty = 0;
+      computeBase();
+      applyView();
+    };
+    img.onerror = () => console.warn('图片加载失败');
+    img.src = src;
+  }
+
+  function handleFile(file) {
+    if (!file) return;
+    if (!file.type || !file.type.startsWith('image/')) {
+      alert('请选择图片文件'); return;
+    }
+    setImage(URL.createObjectURL(file));
+  }
+
+  document.getElementById('pickBtn').addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', () => {
+    handleFile(fileInput.files && fileInput.files[0]);
+    fileInput.value = '';
+  });
+
+  /* ================================================================
+     拖拽上传
+     ================================================================ */
+  let dragDepth = 0;
+  window.addEventListener('dragenter', (e) => {
+    e.preventDefault(); dragDepth++;
+    overlay.classList.add('show');
+  });
+  window.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    if (e.dataTransfer) e.dataTransfer.dropEffect = 'copy';
+  });
+  window.addEventListener('dragleave', (e) => {
+    e.preventDefault();
+    dragDepth = Math.max(0, dragDepth - 1);
+    if (dragDepth === 0) overlay.classList.remove('show');
+  });
+  window.addEventListener('drop', (e) => {
+    e.preventDefault(); dragDepth = 0;
+    overlay.classList.remove('show');
+    const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+    handleFile(f);
+  });
+
+  /* ================================================================
+     窗口大小变化
+     ================================================================ */
+  let rzTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(rzTimer);
+    rzTimer = setTimeout(() => {
+      computeBase();
+      applyView();
+    }, 150);
+  });
+
+  /* ================================================================
+     启动
+     ================================================================ */
+  brushVal.textContent   = brushSize + ' px';
+  densityVal.textContent = Math.round(density * 100) + '%';
+  blurVal.textContent    = blurPx + ' px';
+  rainDensityVal.textContent = Math.round(rainDensity * 100) + '%';
+  rainBtn.classList.toggle('on', rainOn);
+
+  setImage(DEFAULT_IMG);
+
+  window.addEventListener('load', () => {
+    if (!img.complete || !img.naturalWidth) return;
+    computeBase();
+    applyView();
+  });
+})();
+</script>
+</body>
+</html>
