@@ -4,101 +4,735 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timeline</title>
+    <title>Vertical Timeline Sample</title>
+    <style>
+        :root {
+            --bg: #fbfbfb;
+            --fg: #111111;
+            --line: #dcdcdc;
+            --accent: #0022aa;
+            --muted: #777777;
+            --major: #e6e6e6;
+            --major-desc-bg: #f2f2f2;
+            --font-impact: Impact, "Arial Black", sans-serif;
+        }
 
-    <!-- 引入样式 -->
-    <link rel="stylesheet" href="css/timeline0122.css">
+        body.dark {
+            --bg: #1b1b1b;
+            --fg: #f0f0f0;
+            --line: #383838;
+            --accent: #5d82ff;
+            --muted: #aaaaaa;
+            --major: #2a2a2a;
+            --major-desc-bg: #262626;
+        }
 
-    <!-- 核心库 -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--fg);
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            min-width: 320px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* ==================== 1. 导航栏 (现版本) ==================== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: 76px;
+            background: var(--bg);
+            border-bottom: 1px solid var(--fg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav {
+            display: flex;
+            gap: 5px;
+            align-items: stretch;
+            height: 100%;
+        }
+
+        .nav-item {
+            padding: 0 17px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: var(--fg);
+            color: var(--bg);
+        }
+
+        .nav-jp {
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .nav-en {
+            font: 10px "Courier New", monospace;
+            letter-spacing: 1px;
+            color: var(--muted);
+        }
+
+        .nav-item:hover .nav-en,
+        .nav-item.active .nav-en {
+            color: var(--bg);
+        }
+
+        .mode {
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid var(--fg);
+            background: transparent;
+            color: var(--fg);
+            padding: 5px 12px;
+            font: 11px "Courier New", monospace;
+            cursor: pointer;
+        }
+
+        /* ==================== 2. Hero 视觉区 ==================== */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 32px 55px;
+            text-align: center;
+        }
+
+        .kicker {
+            font: 11px "Courier New", monospace;
+            letter-spacing: 3px;
+            color: var(--muted);
+        }
+
+        .hero h1 {
+            margin-top: 13px;
+            font-size: clamp(28px, 4vw, 48px);
+            letter-spacing: .08em;
+            font-weight: 900;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            color: var(--muted);
+            font-size: 13px;
+            letter-spacing: .08em;
+        }
+
+        /* ==================== 3. 时间轴主体 (三个版本前样式) ==================== */
+        .timeline {
+            position: relative;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 28px 140px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 27px;
+            bottom: 0;
+            left: 50%;
+            width: 12px;
+            transform: translateX(-50%);
+            background: var(--line);
+            border-radius: 6px;
+        }
+
+        .decade {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 35px 0 28px;
+            height: 54px;
+        }
+
+        .decade:first-child {
+            margin-top: 0;
+        }
+
+        .decade::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .decade span {
+            position: relative;
+            background: var(--bg);
+            padding: 0 20px;
+            font: 700 25px/1 "Courier New", monospace;
+            letter-spacing: 1px;
+            color: #7a7a7a;
+        }
+
+        .row {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 30px 1fr;
+            align-items: center;
+            min-height: 145px;
+            margin: 8px 0;
+        }
+
+        .side {
+            min-width: 0;
+        }
+
+        .left {
+            padding-right: 15px;
+            text-align: right;
+        }
+
+        .right {
+            padding-left: 15px;
+            text-align: left;
+        }
+
+        .empty {
+            visibility: hidden;
+        }
+
+        .connector {
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            background: var(--fg);
+            z-index: 2;
+        }
+
+        .left+.node+.side.right+.connector {
+            right: 50%;
+            width: 15px;
+        }
+
+        .left.empty+.node+.side.right+.connector {
+            left: 50%;
+            width: 15px;
+        }
+
+        .node {
+            position: relative;
+            z-index: 4;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--fg);
+            border-radius: 50%;
+            background: var(--bg);
+            margin: auto;
+        }
+
+        /* ==================== 4. 小事件 (三个版本前原汁原味设计) ==================== */
+        .event {
+            display: inline-block;
+            max-width: 430px;
+            padding: 9px 0;
+            text-align: inherit;
+        }
+
+        .event-date {
+            font: 700 13px/1.2 "Courier New", monospace;
+            color: var(--accent);
+            margin-bottom: 7px;
+        }
+
+        .event-title {
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            background: var(--fg);
+            color: var(--bg);
+            font-size: 18px;
+            font-weight: 900;
+            line-height: 1.55;
+            padding: 2px 8px;
+        }
+
+        .event-desc {
+            margin-top: 12px;
+            font-size: 12px;
+            line-height: 1.8;
+            color: var(--fg);
+        }
+
+        /* ================== 5. 样式 A：关键节点 (IsMajor) 理想CSS ================== */
+        .event-item.is-major {
+            position: relative;
+            border-left: none; /* 确保没有边框 */
+            background: transparent; /* 去掉背景，让灰色大字透出来 */
+            overflow: visible; /* 允许大字溢出一点 */
+            justify-content: flex-start;
+            padding-top: 4vh;
+            display: inline-block;
+            max-width: 460px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .major-content-wrap {
+            position: relative;
+            padding-left: 15px; /* 文字和线的间距 */
+            display: flex;
+            flex-direction: column;
+            /* 关键：让高度自适应内容，而不是撑满格子 */
+            height: fit-content; 
+        }
+
+
+
+        /* 背景大字年份 */
+        .major-bg-year {
+            position: absolute;
+            top: calc(-10% - 20px); /* ★修改点2：整体向上移动20px */
+            left: 0;
+            font-family: var(--font-impact);
+            font-size: 7rem; /* 巨大字体 */
+            color: var(--major); 
+            line-height: 1;
+            z-index: -1; /* 在底层 */
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* 当大事件位于左侧时，背景大字年份靠右对齐 */
+        .left .major-bg-year {
+    left: auto;
+    right: 0;
+    text-align: right;
+}
+
+        /* 黑底白字大标题 */
+        .major-title {
+            background: var(--fg);
+            color: var(--bg); 
+            font-size: 2.2rem;
+            font-weight: 900;
+            padding: 5px 15px;
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: 20px;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+        }
+
+        /* ★修改点3：当大事件位于左侧时，大标题靠右对齐 */
+        .left .major-title {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        /* 下方描述文字 */
+        .major-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            padding: 10px;
+            background: var(--major-desc-bg); 
+            border: 1px solid var(--line); 
+            color: var(--fg);
+        }
+
+        .major-desc span {
+            background: var(--fg);
+            color: var(--bg); 
+            padding: 2px 6px;
+            margin: 0 2px;
+            font-weight: bold;
+            display: inline-block; /* 稍微撑开一点 */
+        }
+
+        /* ================== 6. 图片卡片 & 左上角文件标注 ================== */
+        .event-item.is-image {
+            position: relative; /* 确保标注绝对定位基准 */
+            padding: 0; 
+            border: none;
+            background: transparent;    
+            overflow: hidden; 
+            display: inline-block;
+            max-width: 430px;
+            width: 100%;
+        }
+
+        /* --- 新增：图片左上角文件标注 --- */
+        .img-file-tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%;       /* 占据30%宽度 */
+            height: 24px;     /* 高度约24px */
+            
+            /* 颜色逻辑：跟随主色调，自动反色 */
+            background-color: var(--fg); 
+            color: var(--bg);
+            
+            /* 排版 */
+            display: flex;
+            align-items: center;
+            padding-left: 10px; /* 文字左缩进 */
+            
+            /* 字体风格 */
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            /* 层级 */
+            z-index: 5; /* 保证在图片上面 */
+            pointer-events: none; /* 不影响点击图片 */
+            
+            /* 装饰：防止文字溢出 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 当图片位于左侧时，左上角文件标注靠右对齐 */
+.left .img-file-tag {
+    left: auto;
+    right: 0;
+    padding-left: 0;
+    padding-right: 10px; /* 原先是左缩进，改成右缩进 */
+    justify-content: flex-end; /* 让内部文字靠右 */
+}
+
+        .event-item.is-image img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            object-position: center center;
+            clip-path: inset(0 0 0 0);
+            display: block;
+        }
+
+        /* 页脚 */
+        .footer {
+            border-top: 1px solid var(--fg);
+            padding: 35px;
+            text-align: center;
+            font: 10px "Courier New", monospace;
+            color: var(--muted);
+        }
+
+        /* ==================== 7. 响应式布局 (移动端) ==================== */
+        @media(max-width:700px) {
+            .header {
+                height: 60px;
+                justify-content: flex-start;
+                overflow: auto;
+            }
+
+            .nav {
+                padding-left: 10px;
+            }
+
+            .nav-item {
+                padding: 0 9px;
+            }
+
+            .mode {
+                display: none;
+            }
+
+            .hero {
+                padding: 55px 20px 35px;
+            }
+
+            .timeline {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .timeline::before {
+                left: 24px;
+                transform: none;
+            }
+
+            .row {
+                display: block;
+                min-height: 0;
+                margin: 25px 0 45px;
+                padding-left: 48px;
+            }
+
+            .left,
+            .right {
+                padding: 0;
+                text-align: left;
+            }
+
+            .empty {
+                display: none;
+            }
+
+            .node {
+                position: absolute;
+                left: 15px;
+                top: 10px;
+            }
+
+            .connector {
+                display: none;
+            }
+
+            .event,
+            .event-item.is-major,
+            .event-item.is-image {
+                max-width: none;
+            }
+
+            .major-bg-year {
+                font-size: 4.5rem;
+                top: -5%;
+            }
+
+            .major-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-item">
+                <div class="nav-jp">ホーム</div>
+                <div class="nav-en">HOME</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-jp">登場人物</div>
+                <div class="nav-en">CHARACTER</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-jp">相関図</div>
+                <div class="nav-en">RELATIONSHIP</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-jp">世界観</div>
+                <div class="nav-en">BACKSTORY</div>
+            </div>
+            <div class="nav-item active">
+                <div class="nav-jp">時間軸</div>
+                <div class="nav-en">TIMELINE</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='timeline.html'" >
+                <div class="nav-jp">世界観/年表</div>
+                <div class="nav-en">CHRONOLOGY</div>
+            </div>
+        </nav>
+        <button class="mode" id="mode">DARK</button>
+    </header>
 
-    <!-- 1. 导航栏 (高度锁定 10vh) -->
-    <div class="h-con-right pc" data-mouse="mid">
-        <div class="h-con-right-l" data-mouse="mid">
-            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html'" id="banner0"
-                data-mouse="mid">
-                <div class="div-head-text" data-mouse="mid">ホーム</div>
-                <div class="div-head-text-en" data-mouse="mid">HOME</div>
-            </div>
-            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#1'" id="banner1"
-                data-mouse="mid">
-                <div class="div-head-text" data-mouse="mid">登場人物</div>
-                <div class="div-head-text-en" data-mouse="mid">CHARACTER</div>
-            </div>
-            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#2'" id="banner2"
-                data-mouse="mid">
-                <div class="div-head-text" data-mouse="mid">相関図</div>
-                <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
-            </div>
-            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#3'" id="banner3"
-                data-mouse="mid">
-                <div class="div-head-text" data-mouse="mid">関係性解説</div>
-                <div class="div-head-text-en" data-mouse="mid">RELATIONSHIP</div>
-            </div>
-            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#4'" id="banner4"
-                data-mouse="mid">
-                <div class="div-head-text" data-mouse="mid">世界観</div>
-                <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
-            </div>
-            <div class="div-center div-centerpc" onclick="window.location.href='scene260108.html'" data-mouse="mid">
-                <div class="div-head-text" data-mouse="mid">運命の織機</div>
-                <div class="div-head-text-en" data-mouse="mid">MAIN STORY</div>
-              </div>
-            <div class="div-center div-centerpc" onclick="window.location.href='flowers.html#7'" id="banner8"
-                data-mouse="mid">
-                <div class="div-head-text" data-mouse="mid">情報</div>
-                <div class="div-head-text-en" data-mouse="mid">BACKSTORY</div>
-            </div>
-            <div class="div-center div-centerpc" onclick="window.location.href='../SL27.html'" id="banner10"
-                data-mouse="mid">
-                <div class="div-head-text" data-mouse="mid">ギャラリー</div>
-                <div class="div-head-text-en" data-mouse="mid">GALLERY</div>
-            </div>
-            <div class="div-center div-centerpc" onclick="window.location.href='timeline.html'" id="banner10 data-mouse="mid">
-                <div class="div-head-text" data-mouse="mid">年表</div>
-                <div class="div-head-text-en" data-mouse="mid">Chronology</div>
-            </div>
-            <!-- 选中状态 -->
-            <div class="div-center div-centerpc active" data-mouse="mid">
-                <div class="div-head-text" data-mouse="mid">時間軸</div>
-                <div class="div-head-text-en" data-mouse="mid">TIMELINE</div>
-            </div>
+    <!-- Hero 视觉区 -->
+    <section class="hero">
+        <div class="kicker">ARCHIVE / CHRONOLOGY</div>
+        <h1>HISTORY TIMELINE</h1>
+        <p>同じ時代を生きた二つの軌跡を、一本の時間軸に記録する。</p>
+    </section>
 
-        </div>
+    <!-- 主时间轴容器 -->
+    <main class="timeline" id="timeline"></main>
 
-        <!-- 音乐图标占位 (CSS生成) -->
-        <div class="h-con-right-r">
-            <button id="modeSwitch" class="theme-btn">Light</button>
-            <div class="music-icon"></div>
-        </div>
-    </div>
+    <!-- 页脚 -->
+    <footer class="footer">VERTICAL TIMELINE SAMPLE / 2026</footer>
 
-    <!-- 2. 背景轨道 (10行) -->
-    <div class="bg-tracks"></div>
+    <script>
+        // =========================================================
+        // 数据源定义
+        //  - isMajor: true  -> 大事件（样式 A：理想 CSS）
+        //  - isMajor: false/未定义 -> 小事件（三个版本前原汁原味样式）
+        //  - type: "image"  -> 图片（可包含 title 作为左上角文件标）
+        //  - type: "decade" -> 年代分隔标题
+        // =========================================================
+        const data = [
+            { type: `decade`, text: `1950s` },
+            { 
+                date: `N.F.24`, 
+                title: `「上庭」誕生`, 
+                text: `ディス市を建設し、Ｅ.Ｄ.Ｇ.Ｅ.境界協定を締結した科学者たちは、
+                同時にディス市の中に秘密に上庭区域を区分し、「上庭」組織を創立した。`, 
+                side: `left` 
+            },
+            
+            { type: `decade`, text: `1960s` },
+            { 
+                date: `1962年`, 
+                title: `に組織変更`, 
+                text: `組織変更を行い、次の発展段階へ移行。`, 
+                side: `right` 
+            },
+            { type: `decade`, text: `N.F.80s`},
+            { 
+                date: `N.F.88`, 
+                title: `Shalom 誕生`, 
+                text: `实验体-017`, 
+                side: `left` 
+            },
+            { type: `decade`, text: `N.F.100`},
+            {
+                type: `image`,
+                title: `感情分離手術`,
+                src: `./img/timeline/X_103.jpg`,
+                side: `left`
+            },
+            { 
+                date: `N.F.103`, 
+                title: `HUSH-X`, 
+                text: `瑟琳继任成为第7任清理人，代号HUSH-X`, 
+                side: `left` 
+            },
+            {
+                date: `N.F.104`,
+                bgYear: `N.F.104.11.28`, // 背景大字内容
+                title: `BR-002爆発`,
+                text: `W-31採掘地で事故が発生、直接的な死者は約1万5千人。そのほとんどが鉱阱で働いていた労働者でした。
+                その後、狂厄汚染の影響を受けた人数は約10万人に上っています。ディスシティがYFJを緊急戦略資源として独占し、遠邦への輸出を全面禁止し、関係が急速に悪化
+                HUSH-X、ミッションを受諾：ニルヴァーナ・グループを支援し、リワン鉱山の危機に対処する。`,
+                isMajor: true, // 触发出彩的大事件样式 A
+                side: `left`
+            },
+            {
+                type: `image`,
+                title: `BR-002再爆発`, // 图片左上角文件标
+                src: `./img/timeline/113.jpg`,
+                side: `left`
+            },
+            { type: `decade`, text: `N.F.110`, color: `#5d82ff` },
+            {
+                date: `N.F.113.3`,
+                bgYear: `N.F.113.3`, // 背景大字内容
+                title: `BR-002再爆発`,
+                text: `死者数は約<span>3万人</span>で、このうち一部は黒環の暴発そのものではなく、锈火暴動によって命を落としています。113年8月、<span>FAC</span>が封鎖行動を開始する時点で、狂厄汚染の影響下にある人数はすでに17万人近くに達していました。`,
+                isMajor: true, // 触发出彩的大事件样式 A
+                side: `left`
+            },
+            {
+                type: `image`,
+                title: `BR-002再爆発`, // 图片左上角文件标
+                src: `./img/timeline/113.jpg`,
+                side: `left`
+            },
+            {
+                date: `N.F.113年6月`,
+                text: `BR-002事件後、福音地の勢力は新城から撤退し、東区の混乱事件は減少、西区が主要な戦場となる。FACは黒環防衛陣線の構築を計画する。<br><br>福音地と上庭は互いにスパイを送り込んた。福音地はスパイを通じて上庭の秘密兵器「HUSH」システムの存在を知り、能力者組織「GARDEN」にその破壊を依頼するが、首领レオポルドに拒否される――彼女はより有利な介入のタイミングを待っている。<br><br>一方、HUSH部隊は福音地を掃除任務を受け、まず福音地と曖昧な関係を持つ能力者組織「GARDEN」を標的にした。HUSH部隊はHUSH-X（以下、X）の指揮下で「GARDEN」への破壊を開始。`,
+                side: `right`
+            }
+        ];
 
-    <!-- 3. 底部进度条 -->
-    <div class="bottom-nav">
-        <div class="progress-line">
-            <div class="diamond-cursor">
-                <div class="cursor-label">N.F. Start</div>
-            </div>
-        </div>
-    </div>
+        // =========================================================
+        // 渲染逻辑
+        // =========================================================
+        function render() {
+            const el = document.getElementById(`timeline`);
+            if (!el) return;
+            el.innerHTML = ``;
+            
+            let currentSide = `left`; 
 
-    <!-- 4. 内容容器 -->
-    <div class="wrapper">
-        <div class="horizontal-content" id="timelineContainer">
-            <!-- JS 生成内容 -->
-        </div>
-    </div>
+            data.forEach(item => {
+                // A. 处理年代分隔线
+                if (item.type === `decade`) {
+                    const d = document.createElement(`div`);
+                    d.className = `decade`;
+                    const colorStyle = item.color ? ` style="color: ${item.color}"` : ``;
+                    d.innerHTML = `<span${colorStyle}>${item.text}</span>`;
+                    el.appendChild(d);
+                    return;
+                }
 
-    <!-- 引入逻辑 -->
-    <script src="js/timeline261002.js"></script>
+                // B. 交替计算左右侧
+                const side = item.side || currentSide;
+                currentSide = side === `left` ? `right` : `left`; 
+
+                const row = document.createElement(`div`);
+                row.className = `row`;
+
+                let cardContent = ``;
+
+                if (item.type === `image`) {
+                    // C1. 【图片 + 左上角文件标注】（★修改点1：移除了底部的 caption）
+                    cardContent = `
+                        <div class="event-item is-image">
+                            ${item.title ? `<div class="img-file-tag">${item.title}</div>` : ``}
+                            <img src="${item.src}" alt="${item.title || ``}">
+                        </div>
+                    `;
+                } else if (item.isMajor) {
+                    // C2. 【大事件】样式 A (匹配理想 CSS 结构)
+                    const bgYearText = item.bgYear || item.date || ``;
+                    cardContent = `
+                        <div class="event-item is-major">
+                            ${bgYearText ? `<div class="major-bg-year">${bgYearText}</div>` : ``}
+                            <div class="major-content-wrap">
+                                ${item.title ? `<div class="major-title">${item.title}</div>` : ``}
+                                ${item.text ? `<div class="major-desc">${item.text}</div>` : ``}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // C3. 【小事件】三版本前样式 (蓝字日期 + 黑底白字标题)
+                    const titleHTML = item.title ? `<div><span class="event-title">${item.title}</span></div>` : ``;
+                    const textHTML = item.text ? `<p class="event-desc">${item.text}</p>` : ``;
+                    
+                    cardContent = `
+                        <article class="event">
+                            ${item.date ? `<div class="event-date">${item.date}</div>` : ``}
+                            ${titleHTML}
+                            ${textHTML}
+                        </article>
+                    `;
+                }
+
+                // D. DOM 组装
+                if (side === `left`) {
+                    row.innerHTML = `<div class="side left">${cardContent}</div><div class="node"></div><div class="side right empty"></div><div class="connector"></div>`;
+                } else {
+                    row.innerHTML = `<div class="side left empty"></div><div class="node"></div><div class="side right">${cardContent}</div><div class="connector"></div>`;
+                }
+                
+                el.appendChild(row);
+            });
+        }
+
+        // 初始化渲染
+        render();
+
+        // 暗黑/明亮模式切换
+        const modeBtn = document.getElementById(`mode`);
+        if (modeBtn) {
+            modeBtn.onclick = () => { 
+                document.body.classList.toggle(`dark`); 
+                modeBtn.textContent = document.body.classList.contains(`dark`) ? `LIGHT` : `DARK`;
+            };
+        }
+    </script>
 </body>
 
 </html>
