@@ -65,6 +65,10 @@ export default {
       text: `N.F.113年8月26日 2:13<br>FAC上庭臨時協戦所·特別観察庁`,
     },
     {
+      type: `image`,
+      src: `img/cg/fl_401.jpg`,
+    },
+    {
       type: `narration`,
       text: `これは業師のために周到に用意された罠だ。`,
     },
@@ -106,8 +110,16 @@ export default {
       text: `<ruby>対象<rt>業師</rt></ruby>の状態変化を確認。X、下がれ。SHP-13の回収が最優先だ、今の段階で破損することは許されない。`,
     },
     {
+      type: `image`,
+      src: `img/cg/fl_401_02.jpg`,
+    },
+    {
       type: `narration`,
       text: `執行人は答えない。血に濡れて歩み寄る業師を見つめ、その紅玉のような瞳を覗き込む。`,
+    },
+    {
+      type: `image`,
+      src: `img/cg/fl_401_03.jpg`,
     },
     {
       type: `dialogue`,
