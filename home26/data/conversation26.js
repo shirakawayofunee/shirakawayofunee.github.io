@@ -107,13 +107,13 @@ export default {
       position: `left`,
       avatar: `img/dh/doyle.jpg`,
       name: `ドイル`,
-      text: `ん？どうした？何か欲しいか？`
+      text: `ん?どうした?何か欲しいか?`
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `クリス`,
-      text: `……正義って、存在すると思う？`
+      text: `……正義って、存在すると思う?`
     },
     {
       type: `narration`,
@@ -177,7 +177,7 @@ export default {
       position: `left`,
       
       name: `治安官`,
-      text: `お前がクリスの妹、ミリアか？`
+      text: `お前がクリスの妹、ミリアか?`
     },
     {
       type: `dialogue`,
@@ -191,7 +191,7 @@ export default {
       position: `left`,
       
       name: `治安官`,
-      text: `どけ！徹底的に捜索する！`
+      text: `どけ!徹底的に捜索する!`
     },
     {
       type: `narration`,
@@ -247,13 +247,13 @@ export default {
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
-      text: `ここで何バカやってんの！？`
+      text: `ここで何バカやってんの!?`
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `クリス`,
-      text: `……ミリア？どうして……`
+      text: `……ミリア?どうして……`
     },
     {
       type: `narration`,
@@ -271,7 +271,7 @@ export default {
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
-      text: `これからどうする？どこに逃げる？`
+      text: `これからどうする?どこに逃げる?`
     },
     {
       type: `dialogue`,
@@ -283,7 +283,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリス`,
-      text: `……何が起きたの？`
+      text: `……何が起きたの?`
     },
     {
       type: `narration`,
@@ -294,14 +294,14 @@ export default {
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
-      text: `またあの女のせい？あいつに問題があるって言ったのに、お前だけが自分を騙してた。`
+      text: `またあの女のせい?あいつに問題があるって言ったのに、お前だけが自分を騙してた。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
-      text: `あいつとずっと走り回って、とうに見抜けたはずだろ。真相に直面するのがそんなに難しいか、探偵！？ちっ、もういい。今の状態でも、お前には何か考えがあるんだろ。どうせ止められない。`
+      text: `あいつとずっと走り回って、とうに見抜けたはずだろ。真相に直面するのがそんなに難しいか、探偵!?ちっ、もういい。今の状態でも、お前には何か考えがあるんだろ。どうせ止められない。`
     },
     {
       type: `dialogue`,
@@ -315,7 +315,7 @@ export default {
       position: `left`,
       avatar: `img/dh/Mireya.png`,
       name: `ミリア`,
-      text: `うちに来た時のゾッとする姿を思い出せ。あんなとこから這い出せたんだ、今、しっかりしろ！`
+      text: `うちに来た時のゾッとする姿を思い出せ。あんなとこから這い出せたんだ、今、しっかりしろ!`
     },
     {
       type: `narration`,
@@ -329,11 +329,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `N.F.113年8月24日午前4:21<br>新城治安总局特別事務室`
+      text: `N.F.113年8月24日午前4:21<br>新城治安総局 特別対策室`
     },
     {
       type: `narration`,
-      text: `W区の隠された牢房で、昏迷中の「Garden」の殺し屋・薊が警報で目を覚ました。`
+      text: `W区の隠された牢房で、昏迷中の殺し屋・薊が警報で目を覚ました。`
     },
     {
       type: `narration`,
@@ -368,7 +368,7 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
       name: `『薊』`,
-      text: `！？お前――`
+      text: `!?お前――`
     },
     {
       type: `narration`,
@@ -379,7 +379,7 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
       name: `『薊』`,
-      text: `放せ！何する気だ！？`
+      text: `放せ!何する気だ!?`
     },
     {
       type: `dialogue`,
@@ -398,7 +398,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリス`,
-      text: `この5日、『Coquelicot』が死ぬって噂が飛び交ってる。驚くなよ、八割がたお前らを騙す罠だ。同じ手にかかったろ？`
+      text: `この5日、コクリコが死ぬって噂が飛び交ってる。驚くなよ、八割がたお前らを騙す罠だ。同じ手にかかったろ?`
     },
     {
       type: `dialogue`,
@@ -410,7 +410,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリス`,
-      text: `動かなきゃ、お前の家がなくなるぞ！`
+      text: `動かなきゃ、お前の家がなくなるぞ!`
     },
     {
       type: `narration`,
@@ -421,11 +421,11 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
       name: `『薊』`,
-      text: `壁を壊せ！`
+      text: `壁を壊せ!`
     },
     {
       type: `narration`,
-      text: `暴力探偵は杖を振り、コンクリート壁に大穴を開けた。殺し屋は探偵を引っ張り、十数階の高さから飛び降りた！`
+      text: `暴力探偵は杖を振り、コンクリート壁に大穴を開けた。殺し屋は探偵を引っ張り、十数階の高さから飛び降りた!`
     },
     {
       type: `narration`,
@@ -443,7 +443,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリス`,
-      text: `……何の能力？ここはどこ？`
+      text: `……何の能力?ここはどこ?`
     },
     {
       type: `narration`,
@@ -470,7 +470,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `N.F.113年8月24日午前4:30<br>空間術式-？？`
+      text: `N.F.113年8月24日午前4:30<br>空間術式-??`
     },
     {
       type: `dialogue`,
@@ -494,7 +494,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリス`,
-      text: `これがお前らの能力？`
+      text: `これがお前らの能力?`
     },
     {
       type: `dialogue`,
@@ -515,7 +515,7 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
       name: `『薊』`,
-      text: `つまり、福音地が与えた避難所。さっきのは空間技術？`
+      text: `つまり、福音地が与えた避難所。さっきのは空間技術?`
     },
     {
       type: `narration`,

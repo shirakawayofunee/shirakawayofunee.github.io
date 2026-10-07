@@ -22,7 +22,7 @@ export default {
     characters: [
       {
         name: `Chris`,
-        name2: `未<ruby>来の名探<rt>自称</rt></ruby>偵`,
+        name2: `<ruby>未来の名探<rt></rt></ruby>偵（自称）`,
         avatar: `img/dh/zhentan1.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。
