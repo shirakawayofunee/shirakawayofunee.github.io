@@ -105,7 +105,7 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
       name: `『薊』`,
-      text: `へえ——。後で私、師匠と一緒に<span>西区</span>に行くよ。『Garden』の仲間たちはみんなそっちに流れちゃったみたいだから。もう君には私たちを捕まえることも見つけることもできないよ。去る前に一言、言っとこうと思って。`,
+      text: `へえ——。後で私、師匠と一緒に<span>西区</span>に行くよ。『花庭園』の仲間たちはみんなそっちに流れちゃったみたいだから。もう君には私たちを捕まえることも見つけることもできないよ。去る前に一言、言っとこうと思って。`,
       voice: `wav/JP/conversation32/vo_event_11043_46.wav`,
     },
     {
@@ -113,7 +113,7 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
       name: `『薊』`,
-      text: `私の復讐は終わった。もう殺し屋である必要はない。これからは大好きな『Garden』に残って、ずっと守るよ。`,
+      text: `私の復讐は終わった。もう殺し屋である必要はない。これからは大好きな『花庭園』に残って、ずっと守るよ。`,
       voice: `wav/JP/conversation32/vo_event_11043_41.wav`,
     },
     {

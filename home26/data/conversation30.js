@@ -65,7 +65,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `やめろ、コクリコ！これは戦いじゃない、きみが飲み込まれかけてるの！`,
+      text: `やめろ、コクリコ！これは戦いじゃない、君が飲み込まれかけてるの！`,
       bubbleStyle: "inner-voice-c",
       voice: `wav/JP/conversation30/vo_event_11043_21.wav`,
     },
@@ -84,7 +84,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `ここは現実じゃない。現実の彼女が咲かせた花はもう空間全体を埋め尽くしてる。ついさっき、突然きみへの反撃が始まったの。ここに入って、やっと分かった。`,
+      text: `ここは現実じゃない。現実の彼女が咲かせた花はもう空間全体を埋め尽くしてる。ついさっき、突然君への反撃が始まったの。ここに入って、やっと分かった。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_66.wav' },
       ]
@@ -93,7 +93,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `きみは操られてる！その白い光はもうきみに絡みついてる。彼女を攻撃すればするほど、光はきみを飲み込んでいく。洗脳されるわ、早くやめて！`,
+      text: `君は操られてる！その白い光はもう君に絡みついてる。彼女を攻撃すればするほど、光は君を飲み込んでいく。洗脳されるわ、早くやめて！`,
       voice: `wav/JP/conversation30/vo_event_11043_44.wav`
     },
     {
@@ -165,7 +165,7 @@ export default {
 
     {
       type: `narration`,
-      text: `目の前の金髪の馬鹿は、とっくに満身創痍で、心も粉々に砕けている。なぜだろう、数十年の記憶が雪崩のように押し寄せてくる。彼女を見ていると、『Garden』に初めて足を踏み入れた壊れた人間たちを、そして何より、かつての自分を見ているようだ。`,
+      text: `目の前の金髪の馬鹿は、とっくに満身創痍で、心も粉々に砕けている。なぜだろう、数十年の記憶が雪崩のように押し寄せてくる。彼女を見ていると、『花庭園』に初めて足を踏み入れた壊れた人間たちを、そして何より、かつての自分を見ているようだ。`,
 
     },
     {
@@ -194,7 +194,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `ふ、復讐に目を曇らせないで！彼女は……そういうきみが好きなんだ。……復讐に執着する人間を、彼女は煽ろうとしているんだ！`,
+      text: `ふ、復讐に目を曇らせないで！彼女は……そういう君が好きなんだ。……復讐に執着する人間を、彼女は煽ろうとしているんだ！`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_72.wav' },
       ]
@@ -203,7 +203,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `きみが失ったものが、かけがえのないものだったってことは知ってる。きみには全員に償わせる力があるし、正義なんて信じてないことも、復讐だけがきみを癒せるってことも知ってる。`,
+      text: `君が失ったものが、かけがえのないものだったってことは知ってる。君には全員に償わせる力があるし、正義なんて信じてないことも、復讐だけが君を癒せるってことも知ってる。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_57.wav' },
       ]
@@ -212,7 +212,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `でも、だからってこれが当然だなんて思わない！きみは最初から奪われるべきじゃなかった、こんな目に遭う理屈なんてどこにもない！`,
+      text: `でも、だからってこれが当然だなんて思わない！君は最初から奪われるべきじゃなかった、こんな目に遭う理屈なんてどこにもない！`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_17.wav' },
       ]
@@ -226,14 +226,14 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `『Garden』は生きてる。`,
+      text: `『花庭園』は生きてる。`,
       voice: `wav/JP/conversation30/vo_event_11043_34.wav`,
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `彼女たちを救えるのは君だけなんだよ`,
+      text: `彼女たちを救えるのは君だけなんだよ！`,
       voice: `wav/JP/conversation30/vo_event_11043_71.wav`,
     },
     {
@@ -248,7 +248,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `あの現場には矛盾が多すぎた。でもきみは苦しすぎて、真実が見えなくなってた。私がそれを持ってきたわ。`,
+      text: `あの事件現場には矛盾が多すぎた。でも君は苦しすぎて、真実が見えなくなってた。私がそれを持ってきたわ。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_59.wav' },
       ]
@@ -272,14 +272,14 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `HUSHは現場を偽装し、きみに『Garden』は全滅したと思わせた。執行人は常に効率と節約を求める。あんなに手の込んだ回りくどいことをするのは、二つの目的のため以外にあり得ない。`,
+      text: `HUSHは現場を偽装し、君に『花庭園』は全滅したと思わせた。執行人は常に効率と節約を求める。あんなに手の込んだ回りくどいことをするのは、二つの目的のため以外にあり得ない。`,
       voice: `wav/JP/conversation30/vo_event_11043_117_0001.wav`,
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `<span>『Garden』を生かすこと、そしてきみを発狂させること。</span>`,
+      text: `<span>『花庭園』を生かすこと、そして君を発狂させること。</span>`,
       voice: `wav/JP/conversation30/vo_event_11043_117_0002.wav`,
     },
     {
@@ -359,7 +359,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `ずっと、ずっと、彼女が私を救済してくれたのだと思い込んでいた。けれど……けれど、違った。今のきみの姿を見て、より確信した。真実はそうではない。`,
+      text: `ずっと、ずっと、彼女が私を救済してくれたのだと思い込んでいた。けれど……けれど、違った。今の君の姿を見て、より確信した。真実はそうではない。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_78.wav' },
       ]
@@ -377,7 +377,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `これが『Garden』破壊の真意。彼女はきみの復讐の怒りを煽り、そして今のように、能力を使ってきみを完全に支配しようとしてる。他の人たちの生死なんて……彼女にとっては『節約』できるし、自分の手駒にさえできる、そうでしょ？`,
+      text: `これが『花庭園』破壊の真意。彼女は君の復讐の怒りを煽り、そして今のように、能力を使って君を完全に支配しようとしてる。他の人たちの生死なんて……彼女にとっては『節約』できるし、自分の手駒にさえできる、そうでしょ？`,
       voice: [
         /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
@@ -387,7 +387,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `『Garden』の行方について、いくつか手がかりがあるの。安全な場所に行ったら教える。条件は、きみが目を覚ますこと。真実を見極めること。真実は――`,
+      text: `『花庭園』の行方について、いくつか手がかりがあるの。安全な場所に行ったら教える。条件は、君が目を覚ますこと。真実を見極めること。真実は――`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_48.wav' },
       ]
@@ -410,7 +410,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `きみと違って、復讐なんかじゃ私は治らない！`,
+      text: `君と違って、復讐なんかじゃ私は治らない！`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_68.wav' },
       ]
@@ -429,7 +429,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `きみの言葉で一つだけ認めるわ。私は自分の足で立ち上がるべきだってこと。私を救えるのは私だけ……私は正義が存在することを証明しに行く。そしてそれを、必要としている人に届ける。そうやってしか、私の心は癒えないから。`,
+      text: `君の言葉で一つだけ認めるわ。私は自分の足で立ち上がるべきだってこと。私を救えるのは私だけ……私は正義が存在することを証明しに行く。そしてそれを、必要としている人に届ける。そうやってしか、私の心は癒えないから。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_113.wav' },
       ]
@@ -442,7 +442,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `真実を見つけたから、持ってきた。私には正義を執行する力がない、だからきみが行って。`,
+      text: `真実を見つけたから、持ってきた。私には正義を執行する力がない、だから君が行って。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_46.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_77.wav' },
@@ -452,7 +452,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `運命に弄ばれるな、自分の手で掴めって言ったのはきみじゃない！`,
+      text: `運命に弄ばれるな、自分の手で掴めって言ったのは君じゃない！`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_43.wav' },
       ]
@@ -487,11 +487,8 @@ export default {
       ]
     },
     {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
-      text: `（心の声）当然、戻ってきてほしい`,
+      type: `narration`,
+      text: `当然、戻ってきてほしい`,
     },
     {
       type: `narration`,
@@ -499,7 +496,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `敵なんてどうでもいい、復讐なんてどうでもいい、薄汚い害虫どもなんて知るか。業師はただ今すぐ自分の『Garden』に帰りたかった。自分の花たちが生き生きと咲く姿を見たい、抱きしめたい。`,
+      text: `敵なんてどうでもいい、復讐なんてどうでもいい、薄汚い害虫どもなんて知るか。業師はただ今すぐ自分の『花庭園』に帰りたかった。自分の花たちが生き生きと咲く姿を見たい、抱きしめたい。`,
     },
     {
       type: `narration`,
@@ -939,7 +936,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `この道は復讐のためではない。『Garden』の業師を止められる者は、もはや誰もいない。`,
+      text: `この道は復讐のためではない。『花庭園』の業師を止められる者は、もはや誰もいない。`,
     },
 ]
 };

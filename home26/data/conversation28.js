@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「残花の[復]讐」`,
     bgm: `mp3/bg/conversation28.mp3`,
-    summary: `犠牲になった子供たちのために、踏みにじられた花々のために、業師は自らの手でXへ復讐すると決意した。`
+    summary: `犠牲になった子供たちのために、踏みにじられた花々のために、業師は自らの手で執行人へ復讐すると決意した。`
   },
   infoPanel: {
     glossary: [
@@ -81,7 +81,7 @@ export default {
       position: `left`,
       avatar: `img/dh/Hush.jpg`,
       name: `Hush`,
-      text: `ぐああぁぁ──ッ！！（叫び声）`,
+      text: `ぐああぁぁ──ッ!!（叫び声）`,
       voice: [
         { label: '日', path: 'wav/JP/conversation28/vo_event_11041_30.wav' },
       ]
@@ -103,7 +103,7 @@ export default {
       position: `left`,
       avatar: `img/dh/black_quartz.jpg`,
       name: `黒石英`,
-      text: `<ruby>対象<rt>能力者</rt></ruby>の状態変化を確認。X、下がれ。SHP-13の回収が最優先だ、今の段階で破損することは許されない。`,
+      text: `<ruby>対象<rt>業師</rt></ruby>の状態変化を確認。X、下がれ。SHP-13の回収が最優先だ、今の段階で破損することは許されない。`,
     },
     {
       type: `narration`,
@@ -454,7 +454,7 @@ export default {
       position: `left`,
       avatar: `img/dh/L_401.png`,
       name: `『コクリコ』`,
-      text: `これで私にピッタリの復讐劇を用意できる。思う存分、この怒りを晴らせる！`,
+      text: `これで私にピッタリの復讐劇を用意できる。思う存分、この怒りを晴らせる!`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_3.wav' },
         { label: '日', path: 'wav/JP/conversation28/vo_event_11041_1.wav' },
