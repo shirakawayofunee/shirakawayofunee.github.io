@@ -36,6 +36,11 @@ export default {
   },
   script: [
     {
+      type: `image`,
+      src: `img/cg/bg3.jpg`,
+      bubbleStyle: "center",
+    },
+    {
       type: `narration`,
       text: `N.F.113年8月17日14:23<br>FAC黒環封鎖行動合同指揮部`
     },

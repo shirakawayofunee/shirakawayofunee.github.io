@@ -202,17 +202,15 @@
     <script src="js/eye.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 获取你想要插入眼球组件的父容器
+            // 获取眼球组件父容器
             const eyeContainer1 = document.getElementById('my-first-eye');
             if (eyeContainer1) {
-                // 实例化第一个眼球组件 (使用默认的 'minimal' 极简风格)
-                // 确保 parentElement 存在
                 new MagneticEye(eyeContainer1, { 
-                    style: 'minimal' // 明确指定为极简线框风（对应你原页面左侧的）
+                    style: 'minimal'
                 });
             }
 
-            // 你可以根据需要创建多个眼睛实例
+            // 根据需要创建多个眼睛实例
             const eyeContainer2 = document.getElementById('my-second-eye');
             if (eyeContainer2) {
                 // 实例化第二个眼球组件 (使用 'realistic' 拟物风格)
@@ -221,14 +219,6 @@
                 });
             }
 
-            // 如果你想动态调整大小，可以直接修改父容器的 CSS 属性
-            // 例如：
-            // setTimeout(() => {
-            //     if (eyeContainer1) {
-            //         eyeContainer1.style.width = '300px';
-            //         eyeContainer1.style.height = '150px';
-            //     }
-            // }, 5000);
         });
     </script>
     <script src="js/gsap.min.js"></script>

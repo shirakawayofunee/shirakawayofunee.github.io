@@ -53,6 +53,11 @@ export default {
   },
   script: [
     {
+      type: `image`,
+      src: `img/cg/bg1.jpg`,
+      bubbleStyle: "center",
+    },
+    {
       type: `narration`,
       text: `N.F.113年8月8日 9:00<br>FAC記念墓地<br>西区戦没者追悼式`,
       bubbleStyle: "end-cinematic",

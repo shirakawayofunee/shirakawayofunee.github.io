@@ -61,6 +61,11 @@ export default {
   },
   script: [
     {
+      type: `image`,
+      src: `img/cg/bg4.jpg`,
+      bubbleStyle: "center",
+    },
+    {
       type: `narration`,
       text: `N.F.113年8月26日 2:13<br>FAC上庭臨時協戦所·特別観察庁`,
     },

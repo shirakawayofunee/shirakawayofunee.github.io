@@ -27,7 +27,7 @@ export default {
         note: `工事中`
       },
       {
-        name: `工事中`,
+        name: `■■■`,
         avatar: `img/dh/`,
         note: `工事中`
       }

@@ -24,7 +24,7 @@ export default {
       {
         name: `SHALOM｜<ruby>執行人<rt>Hush-X</rt></ruby>`,
         avatar: `img/dh/X104.png`,
-        note: `「上庭」の七代目執行人`
+        note: `「上庭」の執行人`
       },
       {
         name: `Christina`,
@@ -37,6 +37,11 @@ export default {
     synopsis: `工事中`
   },
   script: [
+    {
+      type: `image`,
+      src: `img/cg/bg2.jpg`,
+      bubbleStyle: "center",
+    },
     {
       type: `dialogue`,
       position: `right`,
