@@ -45,7 +45,8 @@ export default {
         name: `SHALOM｜上庭の<ruby>執行人<rt>Hush-X</rt></ruby>`,
         avatar: `img/dh/x402.png`,
         note: `廃棄期限まであと一ヶ月しかない道具`,
-        basicStats: `非道な振る舞いと、告白にも似た熱烈な囁き。
+        basicStats: `战场定律之一：最大的战斗力产生于亲人阵亡之后
+        非道な振る舞いと、告白にも似た熱烈な囁き。
         Xがこれほどの手間をかけたのは、決してこの世に『我が子を失った母親』を一人増やすためではないはずだ（？）`,
         profile: `
         危険度：	S級
