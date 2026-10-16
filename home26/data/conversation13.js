@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `「业师」`,
+    title: `「[业]师」`,
     bgm: `mp3/bg/conversation13.mp3`,
     summary: `探偵が目を覚ましたのは、優雅な庭園だった。
     そこは伝説の暗殺組織 『Garden』の拠点だ。`
@@ -70,7 +70,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: ` 『業師』`,
+      name: ` 「業師」`,
       text: `さっきの叫び声、めっちゃ悲惨だったね。悪夢でも見た？安心して、君の体にあった汚染は、慈悲深い私が全部抜いてあげたから。`
     ,
       voice: [
@@ -99,7 +99,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: ` 『業師』`,
+      name: ` 「業師」`,
       text: `床、硬いよね。ごめんね、怪我人に膝枕でも貸してあげたいところだけど、君、傷だらけでさ。寄りかかったら私の服が汚れちゃうから。ちょっと我慢してね。`
     ,
       voice: [
@@ -131,7 +131,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: ` 『業師』`,
+      name: ` 「業師」`,
       text: `私の『Garden』。敵の牙城よ、探偵ちゃん。`
     ,
       voice: [
@@ -144,7 +144,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: ` 『業師』`,
+      name: ` 「業師」`,
       text: `私のこと、覚えてる？`
     ,
       voice: [
@@ -167,7 +167,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: ` 『業師』`,
+      name: ` 「業師」`,
       text: `ぷっ。ベビーフェイスなのに、もっと可愛い言葉を話しなさいよ。`
     ,
       voice: [
@@ -179,7 +179,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: ` 『業師』`,
+      name: ` 「業師」`,
       text: `さあ、私の名前を呼んで。<span>コクリコ</span>`
     ,
       voice: [

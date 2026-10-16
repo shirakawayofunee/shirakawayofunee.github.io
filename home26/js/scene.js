@@ -712,7 +712,7 @@ function updateHeaderFromJSON(chapterId, data) {
   }
 
   const jsonSummary =
-    data.meta && data.meta.summary ? data.meta.summary : "NO SUMMARY DATA";
+    data.meta && data.meta.summary ? data.meta.summary : "NO DATA";
 
   const elSummary = document.getElementById("header-summary");
 

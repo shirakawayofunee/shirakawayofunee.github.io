@@ -1780,7 +1780,7 @@ html {
 
 .preface-box.style-c .chapter-summary {
     color: #ececec;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     line-height: 2.2;
     letter-spacing: 2px;
     font-weight: 300;
@@ -1817,7 +1817,7 @@ html {
 .style2-title-box {
     text-align: center;
     margin: 0 0 0 1.2%;
-    margin: 0;
+    margin-top: 30px;
     padding: 0 0 15px 0;
     padding: 0;
     width: 100%;
@@ -2346,14 +2346,13 @@ html {
     border-color: #ccc;
 }
 
-.script-wrapper.light-mode .preface-box.style-a .chapter-summary,
-.script-wrapper.light-mode .preface-box.style-b .chapter-summary,
 .script-wrapper.light-mode .preface-box.style-c .chapter-summary {
     color: #111;
 }
 
 .script-wrapper.light-mode .preface-box.style-c .chapter-summary {
-    font-size: 1.06rem;
+    margin-top: 30px;
+    font-size: 1.3rem;
     line-height: 2.2;
     letter-spacing: 1.2px;
     font-weight: 400;

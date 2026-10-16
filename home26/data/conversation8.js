@@ -39,7 +39,7 @@ export default {
 姉妹の間ではよく口げんかをするが、実は探偵のことを深く心配している。`,
       },
       {
-        name: `Adrien`,
+        name: `ADRIEN`,
         name2: `アドリアン`,
         avatar: `img/dh/fac_commander.png`,
         note: `FAC総司令官、最前線で四十有余年、奮闘し続けている。`,
