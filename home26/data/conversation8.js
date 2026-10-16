@@ -54,7 +54,7 @@ export default {
   script: [
     {
       type: `image`,
-      src: `img/cg/bg1.jpg`,
+      src: `img/cg/title_1.png`,
       bubbleStyle: "center",
     },
     {
