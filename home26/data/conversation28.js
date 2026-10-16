@@ -523,7 +523,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x7.png`,
       name: `執行人`,
-      text: `君がこれほどまでに強く反骨精神を持っていてくれてありがとう……やっぱり君が勝った。`,
+      text: `君がこれほどまでに強く、誰に<ruby>も屈し<rt>桀骜</rt></ruby>ない人でいてくれてありがとう……やっぱり君が勝った。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_22.wav' },
       ]

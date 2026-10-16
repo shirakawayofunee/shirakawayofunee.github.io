@@ -40,8 +40,18 @@
 /* 字体定义 */
 @font-face {
     font-family: "myFont";
-    /* 注意：如果字体加载失败，可能需要根据你实际文件夹层级调整这里的 ../ */
     src: url("../home26/font/DreamHanSansJP-W10.ttf") format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: "ming";
+    src: url("../home26/font/LXGWNeoZhiSongPlus.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ming2";
+    src: url("../home26/font/DreamHanSerifJP-W20.ttf") format("truetype");
     font-display: swap;
 }
 
@@ -163,9 +173,10 @@ body {
    3. 同级页面跳转指引 (Peer Nav)
    ========================================= */
 .peer-nav-section {
+    font-family: "myFont";
     background-color: var(--bg-page);
     border-bottom: 1px solid var(--border-dark);
-    padding: 15px 2vw 15px 2vw;
+    padding: 15px 1vw 15px 1vw;
     position: relative;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
@@ -178,11 +189,6 @@ body {
     display: block;
     text-decoration: none;
     transition: opacity 0.3s, transform 0.3s;
-}
-
-.roll-link-card:hover {
-    opacity: 1;
-    transform: translateY(-2px);
 }
 
 .roll-header {
@@ -201,12 +207,11 @@ body {
 }
 
 .roll-badge {
-    background: var(--bg-page);
+    /* background: var(--bg-page); */
     color: var(--text-lvl-2);
     border: 1px solid var(--border-light);
     padding: 2px 8px;
     margin-right: 10px;
-    font-weight: bold;
     font-size: 0.75rem;
     border-radius: 2px;
 }
@@ -228,20 +233,20 @@ body {
 }
 
 .roll-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text-lvl-1);
-    letter-spacing: 0.5px;
-    line-height: 1.2;
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "ming2";
+    font-size: 2.8rem;
+    /* font-weight: 300; */
+    color: #fafafa;
+    color: var(--text-lvl-2);
+    letter-spacing: 0.4px;
+    line-height: 1.6;
     white-space: normal;
     word-break: break-word;
 }
 
 .roll-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--text-lvl-2);
+    font-size: 1.15rem;
+    color: var(--text-lvl-3);
     margin-right: auto;
 }
 
