@@ -74,7 +74,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `『コクリコ』`,
-      text: `君、まだ生きていたのか。邪魔をしに来たのか。`,
+      text: `まだ生きていたのか。邪魔をしに来たのか。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation30/vo_event_11043_129.wav' },
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_56.wav' },

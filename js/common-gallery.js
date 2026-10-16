@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function () {
             switchTab(tabId);
         });
 
-        link.addEventListener('mouseenter', function () {
+        /* link.addEventListener('mouseenter', function () {
             const tabId = this.getAttribute('href').substring(1);
             hoverTimeout = setTimeout(function () {
                 history.pushState(null, null, '#' + tabId);
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         link.addEventListener('mouseleave', function () {
             clearTimeout(hoverTimeout);
-        });
+        }); */
     });
 
     // 3. 窗口尺寸调整重新计算瀑布流 (防抖处理)
