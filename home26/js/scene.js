@@ -456,7 +456,7 @@ const chapterList = [
   {
     id: "side03",
     category: "extra",
-    title: "「母熊と図書室」",
+    title: "「母熊」",
     subtitle: "Side Story",
     dateLabel: "N.F.114/？/？",
   },
@@ -629,7 +629,7 @@ async function loadChapter(chapterId) {
   if (headerBox) scriptDiv.appendChild(headerBox);
   scriptDiv.insertAdjacentHTML(
     "beforeend",
-    '<div class="narration">運命の果てと果てで、同じような痛みを私たちは抱いているのか</div>'
+    '運命の果てと果てで、同じような痛みを私たちは抱いているのか'
   );
 
   try {

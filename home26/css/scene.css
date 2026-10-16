@@ -16,6 +16,24 @@
 }
 
 @font-face {
+    font-family: "ming2";
+    src: url("../font/漫谜体.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "mingxi";
+    src: url("../font/SourceHanSansJP-ExtraLight.otf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "mingcu";
+    src: url("../font/SourceHanSansJP-Heavy.otf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
     font-family: "GenJyuu";
     src: url("../font/DreamHanSansJP-W14.ttf") format("truetype");
     font-display: swap;
@@ -1780,6 +1798,21 @@ html {
     bottom: 0;
 }
 
+.loading-text{
+    margin: 0;
+    padding: 0;
+    padding-left: 3%;
+    font-family: "mingcu";
+    font-size: 4.2rem;
+    font-weight: 900;
+    line-height: 1.6;
+}
+
+.loading-text span{
+    font-family: "ming2";
+    font-weight: 900;
+    color: #000;
+}
 /* 文学风标题 */
 .style2-title-box {
     text-align: center;
