@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `「暴風」`,
+    title: `「嵐」`,
     bgm: `mp3/bg/storm_abyss.mp3`,
     summary: `FACは可能な限り制御措置を講じたが、BR-002は爆発するまで強化され続ける。`
   },

@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「EDGE-01」`,
     bgm: `mp3/bg/black_ring_tower.mp3`,
-    summary: `ブラックリングの中で、局長とドナルドは黒石英に遭遇し、上庭と一触即発のやり取りを交わした……`
+    summary: `黒環の中で、局長とドナルドは黒石英に遭遇し、上庭と一触即発のやり取りを交わした……`
   },
   infoPanel: {
     glossary: [

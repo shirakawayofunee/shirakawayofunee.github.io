@@ -2,7 +2,7 @@ export default {
   meta: {
     title: `「盟友」`,
     bgm: `mp3/bg/终末.mp3`,
-    summary: `ブラックリング外の迷宮は一種の戦場と化している。そこでドナルドは盟友を見つけた。`
+    summary: `黒環外の迷宮は一種の戦場と化している。そこでドナルドは盟友を見つけた。`
   },
   infoPanel: {
     glossary: [
