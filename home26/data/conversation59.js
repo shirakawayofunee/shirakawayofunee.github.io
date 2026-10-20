@@ -12,7 +12,7 @@ export default {
       },
       {
         term: `清掃令`,
-        desc: `上庭が発動を予定していたローカル・クリーンアップ令。ブラックリングの崩壊により意味を失い、中止が要請される。`
+        desc: `上庭が発動を予定していたローカル・パージ令。ブラックリングの崩壊により意味を失い、中止が要請される。`
       },
       {
         term: `S-019 / S-098`,
@@ -47,7 +47,7 @@ export default {
         basicStats: `「私たちは能力者だ。私たちには自分自身の心がある。」`
       },
       {
-        name: `マティルダ`,
+        name: `マチルダ`,
         avatar: `img/dh/matilda.png`,
         note: `局長を探すのを手伝っていた人物。`,
         basicStats: `カスロに再び助けを求める。`
@@ -128,7 +128,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      name: `マチルダ`,
       text: `彼女はあなたたちに何かをさせたわけじゃない。あなたたちを全力で守ったのは、あの局長への恩返しだった。暴動の中からあなたたちを連れ戻した人もいる。あなたの局長を探すのを、ずっと手伝っていた人もいる。`
     },
     {
@@ -199,7 +199,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/matilda.png`,
-      name: `マティルダ`,
+      name: `マチルダ`,
       text: `カスロ、もう一度頼む。お願い——`
     },
     {

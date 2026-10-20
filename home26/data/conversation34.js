@@ -25,14 +25,16 @@ export default {
     ],
     characters: [
       {
-        name: `<ruby>Hekate<rt>ヘカテー</rt></ruby>`,
+        name0: `無口無表情少女`,
+        name: `HEKATE`,
+        name2: `ヘカテー`,
         avatar: `img/dh/hekadi.png`,
         note: `MBCCに所属する能力者`,
-        basicStats: `行方不明になった局長を探して西区を奔走する無口無表情少女（14歳）`,
+        basicStats: `行方不明になった局長を探して西区を奔走する少女（14歳）`,
         profile: `危険度：A級\n能力：悪夢具現化`,
       },
       {
-        name: `<ruby>Matilda<rt>マチルダ</rt></ruby>`,
+        name: `<ruby>MATILDA<rt>マチルダ</rt></ruby>`,
         avatar: `img/dh/matilda.png`,
         note: `西区再建執行委員会の下士官`,
         basicStats: `キャヴェンディッシュ家の令嬢。堅物で孤立を好むが、秘密裏に錆火を支援している。`,

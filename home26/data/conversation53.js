@@ -270,7 +270,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `narration`,
       text: `二人は汚染の泥沼に身を沈めていた。時折、蠢く腕が這い出してきて、二人にしがみつく。ドナルドが目を開けると、局長が荒い息を吐きながら彼を引きずって泳いでいるのが見えた。ドナルドは笑みを浮かべ、そのまま局長を抱き寄せて前へ泳いだ。
-あの忌々しい黒水晶は局長のそばに浮かんでいた。しかし今回は余計な口を挟まず、約束を守るかのように静かに最終的な選択を待っていた。`
+あの忌々しい黒石英は局長のそばに浮かんでいた。しかし今回は余計な口を挟まず、約束を守るかのように静かに最終的な選択を待っていた。`
     },
     {
       type: `dialogue`,
@@ -282,7 +282,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `そうだな。お前と違って、さっきまた悪夢を見ていた。
@@ -316,7 +316,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `本当に、この黒環を破れる可能性があると思っているのか？`
@@ -354,7 +354,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `……そうだ。ジュリアンは一度も諦めていない。
@@ -377,7 +377,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `……あの人はもういない。

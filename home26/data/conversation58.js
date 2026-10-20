@@ -290,7 +290,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackcrystal.png`,
+      avatar: `img/dh/quartz.jpg`,
       name: `黒石英`,
       text: `……一体何をしている、局長?福音地の術式の影響で、規則の同期率と精度が急速に低下している。すべての攻撃に誤差が生じている。我々にはこれを消滅させることができない。このために用意したエネルギーも、まもなく尽きる。
 こいつは拘束を振り切り、お前を殺す。そうなれば、すべてが無意味になる。
@@ -307,7 +307,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackcrystal.png`,
+      avatar: `img/dh/quartz.jpg`,
       name: `黒石英`,
       text: `……いや、お前が規則に適応するための知識を持っているはずがない。規則の上限を推測できるはずもない。
 誰が上庭の機密を漏らした?お前がMBCCを離れていた間、一体誰と接触した?!`

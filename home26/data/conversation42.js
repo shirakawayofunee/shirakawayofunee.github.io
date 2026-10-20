@@ -24,7 +24,7 @@ export default {
         profile: ``
       },
       {
-        name: `Julian`,
+        name: `Julien`,
         avatar: `img/dh/julian_young_1.png`,
         note: `足の不自由な若き建築家であり、後の錆火を支える人物。`,
         basicStats: `「俺が錆火を守る。流浪児を守る……本当のリーダーが来る、その日まで。」<br>ドナルドの死（あるいは裏切り）を前に、支えを失い瓦解する人々を繋ぎ止めるため、自らが礎となる決意を固める。`,

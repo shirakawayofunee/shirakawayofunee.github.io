@@ -15,7 +15,7 @@ export default {
         desc: `ヘカテーの護衛／分身的存在。子供たちを守るために残される。`
       },
       {
-        term: `黒水晶`,
+        term: `黒石英`,
         desc: `上庭直属部隊を代表する浮遊体。罠に気づき撤退を命じる。`
       },
       {
@@ -52,7 +52,7 @@ export default {
         能力：不明`
       },
       {
-        name: `黒水晶`,
+        name: `黒石英`,
         avatar: `img/dh/blackquartz.png`,
         note: `上庭直属部隊の代表。`,
         basicStats: `罠に気づき撤退を命じ、ヘカテーをガーデンの業師と見なす。`,
@@ -260,7 +260,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/blackquartz.png`,
-      name: `黒水晶`,
+      name: `黒石英`,
       text: `……罠だった。第二観測庭を失った我々には、場域内の集団意識の変化を判断できない。その隙を地底に利用され、黒環内部の狂厄を煽動された。Xを失ったことはあまりにも大きい。
 先遣隊は基地へ帰還。黒環の活動は極めて異常だ。戦略を練り直す。……ずっと街路を見ていたが、何か見つけたか？`
     },
@@ -399,7 +399,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/blackquartz.png`,
-      name: `黒水晶`,
+      name: `黒石英`,
       text: `ガーデンの業師？ならば、局長は確かにここにいる。彼女を排除し、SHPを奪還する！`
     },
     {

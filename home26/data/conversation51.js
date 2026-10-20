@@ -23,12 +23,12 @@ export default {
         desc: `汚染によって変貌した存在。恐怖と怒りの咆哮を上げながら、何かに引き寄せられるように行動する。`
       },
       {
-        term: `ローカル・クリーンアップ令`,
+        term: `ローカル・パージ令`,
         desc: `上庭が提案する最終手段。ルールを通じてBR-002を直接攻撃・消滅させる計画。局長をアンカーとする場合、本人の生存は保証されない。`
       },
       {
         term: `EDGE-01`,
-        desc: `上庭の超環通信チャンネル使用者であり、意思決定者の一人。黒水晶を通じて介入し、局長に選択を迫る。`
+        desc: `上庭の超環通信チャンネル使用者であり、意思決定者の一人。黒石英を通じて介入し、局長に選択を迫る。`
       }
     ],
     characters: [
@@ -49,8 +49,8 @@ export default {
 能力：枷`
       },
       {
-        name: `黒水晶`,
-        avatar: `img/dh/blackcrystal.png`,
+        name: `黒石英`,
+        avatar: `img/dh/quartz.jpg`,
         note: `深度汚染を受けた上庭のエリート。`,
         basicStats: `局長の引き渡しを要求する上庭側の戦士。装甲を自ら引きちぎるなど、異常な行動を見せる。`,
         profile: `所属：上庭
@@ -60,7 +60,7 @@ export default {
         name: `EDGE-01`,
         avatar: `img/dh/edge01.png`,
         note: `上庭の意思決定者の一人。`,
-        basicStats: `超環通信を通じて局長と対話し、BR-002対策としてローカル・クリーンアップ令を提案する。`,
+        basicStats: `超環通信を通じて局長と対話し、BR-002対策としてローカル・パージ令を提案する。`,
         profile: `分類：電子音声・上庭上層`
       },
       {
@@ -76,7 +76,7 @@ export default {
         basicStats: `「あの人……枷……」と繰り返しながら、上庭兵士と共に行動する。`
       }
     ],
-    synopsis: `黒環内部の高塔を、ドナルドが局長を背負って上っていく。下方では上庭と福音地が激戦を繰り広げ、死役の群れが次々と落下してくる。枷が骸と繋がる局長は戦力として使えず、ドナルドは汚染された兵士たちを退けながら進む。深度汚染を受けた上庭エリート・黒水晶が現れ、局長の引き渡しを要求。激戦の末にEDGE-01が介入し、BR-002を消滅させるための「ローカル・クリーンアップ令」と、局長自身の犠牲を巡る選択を提示する。ドナルドは上庭の提案を拒絶し、二人は崩壊する階層から離脱する。`
+    synopsis: `黒環内部の高塔を、ドナルドが局長を背負って上っていく。下方では上庭と福音地が激戦を繰り広げ、死役の群れが次々と落下してくる。枷が骸と繋がる局長は戦力として使えず、ドナルドは汚染された兵士たちを退けながら進む。深度汚染を受けた上庭エリート・黒石英が現れ、局長の引き渡しを要求。激戦の末にEDGE-01が介入し、BR-002を消滅させるための「ローカル・パージ令」と、局長自身の犠牲を巡る選択を提示する。ドナルドは上庭の提案を拒絶し、二人は崩壊する階層から離脱する。`
   },
   script: [
     {
@@ -104,7 +104,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `……下にいるのは、そう簡単に相手できる奴じゃない。枷が骸と繋がっている。この環の中にいるものすべてが、あの女を警戒し、恐れ、死力を尽くして、環の主へ近づこうとする彼女を上へ行かせまいとしているのを感じる。`
@@ -116,7 +116,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `……こういうことだ。私たちだって、あの人には敵わない。
@@ -137,7 +137,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `……背負いきれないなら、下ろしてくれていい。`
@@ -151,7 +151,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `……`
@@ -172,7 +172,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `……うん。`
@@ -183,7 +183,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `ここの汚染は流民寨とは関係ない！あなたの言う任務をやめて！執行委員会が何を企んでいるのか、私は知っている！`
@@ -194,7 +194,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `受骸者を探しに行きたい。
@@ -245,7 +245,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `無理。枷がまだあの怪物と繋がっている。使うとかなり苦しい。
@@ -305,7 +305,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `敵は強い。`
@@ -319,7 +319,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `あなたでは勝てない。`
@@ -333,7 +333,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `なら、どうして来た？
@@ -359,8 +359,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackcrystal.png`,
-      name: `黒水晶`,
+      avatar: `img/dh/quartz.jpg`,
+      name: `黒石英`,
       text: `局長、我々と共に戻ってください。上庭はあなたを必要としています。`
     },
     {

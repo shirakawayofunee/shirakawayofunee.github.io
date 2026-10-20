@@ -133,7 +133,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `君が言った通り、彼はただ建築家になりたかった。建築家はシンジケートの暴力を必要としない。彼は自分の意志と才能だけで、この危機を丸8か月も食い止めた。
@@ -167,7 +167,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `ドナルド?　起きて、起きて!　幻境に呑まれないで!`
@@ -190,7 +190,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `……こんな時まで、格好つけたことを言う。`
@@ -235,7 +235,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `……何をするつもり?`
@@ -246,7 +246,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `そんなことはするな!　自分たちが欲しいものは自分たちで掴め!　希望を私に託すな!　私はあなたたちの命なんていらない、もう二度と自分を犠牲にするな!!`
@@ -269,7 +269,7 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `left`,
+      position: `right`,
       avatar: `img/dh/director.png`,
       name: `局長`,
       text: `やめろ!　生きろ、君は——`
