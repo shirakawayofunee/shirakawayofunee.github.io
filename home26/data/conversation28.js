@@ -47,7 +47,7 @@ export default {
         note: `廃棄期限まであと一ヶ月しかない道具`,
         basicStats: `战场定律之一：最大的战斗力产生于亲人阵亡之后
         非道な振る舞いと、告白にも似た熱烈な囁き。
-        Xがこれほどの手間をかけたのは、決してこの世に『我が子を失った母親』を一人増やすためではないはずだ（？）`,
+        Xがこれほどの手間をかけたのは、決してこの世に「我が子を失った母親」を一人増やすためではないはずだ（？）`,
         profile: `
         危険度：	S級
         能力：	【データ削除】
@@ -141,7 +141,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `どんな反応を期待してた？泣き喚く？絶望する？ハッ、まさか。あの子らの自業自得だ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_8.wav' },
@@ -152,7 +152,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `何度も、何度も言ったはずだ。実力もないのに大口を叩くなと。自分の身だけ守っていればいい。私に構うなと。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_23.wav' },
@@ -163,7 +163,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `……そう言ったのに、馬鹿なことするんだから、どうしようもない。「Garden」の花たちは、生も死も覚悟すべきだった。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_6.wav' },
@@ -174,7 +174,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `ただ、上庭の小娘、君、今年何歳だ？25？26？上庭の培養槽から這い出して何年になる？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_26.wav' },
@@ -185,7 +185,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `あの書き置き……私を怒らせるつもりか？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_20.wav' },
@@ -196,7 +196,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `私を侮っているのか？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_33.wav' },
@@ -217,7 +217,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `その程度で小賢しい真似をするつもり!?`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_19.wav' },
@@ -233,7 +233,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `私さ、何度も奪われたよ。この世界、卑劣な奴が多すぎるから。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_28.wav' },
@@ -258,7 +258,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `最初は猫だ。年上のクソガキに蹴られた。私は泣くまでそいつを殴り続け、手にも顔にも一生消えない傷を刻んでやった。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_12.wav' },
@@ -269,7 +269,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `二度目は家族。屋敷に単身乗り込んで、立ちはだかる高慢な連中を全員始末した。最後はその家の主人が私の前に跪き、4時間も懺悔して泣き喚いたよ。喉が潰れたところで、楽にしてやった。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_11.wav' },
@@ -280,7 +280,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `三度目は友人の瞳。犯人を光の届かない地下室に閉じ込めた。たった2ヶ月で、そいつは自ら命を絶ったよ。ハッ……一生には程遠いな。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_14.wav' },
@@ -291,7 +291,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `4回目、5回目、6回目……君が何回目かなんて、もう覚えてない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_7.wav' },
@@ -312,7 +312,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `私に復讐を求めてくる多くの人間は、酷く苦しんでいるわ。たった一度経験し、たった一度打ちのめされただけ。けれどその痛みはまざまざと焼き付き、抗う術もなく……自分はもう二度と立ち直れないと思い込んでいるの。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_30.wav' },
@@ -323,7 +323,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `ハッ、違うな……何度か経験すればわかる。殺せないものなどない。代償を惜しまなければ、必ず潰せる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_2.wav' },
@@ -334,8 +334,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
-      text: `目には目を、歯には歯を。代償をわからせてやる。誰であろうと、『コクリコ』の所有物には指一本触れさせない。`,
+      name: `「業師」`,
+      text: `目には目を、歯には歯を。代償をわからせてやる。誰であろうと、「コクリコ」の所有物には指一本触れさせない。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_31.wav' },
         { label: '日', path: 'wav/JP/conversation28/vo_event_11041_13.wav' },
@@ -345,7 +345,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `奪われたものは取り返す。例え廃墟になろうとも、私の手に戻す。その後……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_21.wav' },
@@ -356,7 +356,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `人は強くなる。廃墟の上でも花は咲く。折られた場所から新芽が吹き、焼かれた場所から枝が伸びる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_17.wav' },
@@ -367,7 +367,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `私を冒涜した者は皆、同じ末路を辿る。そうして私は、何度でも新生する。こうやって――`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_5.wav' },
@@ -398,7 +398,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `人の人生を簡単に弄べると思ってる？私を容易く踏み潰せると？`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_29.wav' },
@@ -460,7 +460,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/L_401.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `君も簡単には死なんのだろう、上庭の化け物。なら咲いてみせろ……傲慢で非人道的な悪魔がどのような花を咲かせるのか、君の命がどれだけ醜いのかを見せてもらうわ。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_10.wav' },
@@ -471,7 +471,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/L_401.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `これで私にピッタリの復讐劇を用意できる。思う存分、この怒りを晴らせる!`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_3.wav' },

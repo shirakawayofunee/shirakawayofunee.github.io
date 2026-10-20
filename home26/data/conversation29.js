@@ -41,7 +41,7 @@ export default {
     ],
     characters: [
       {
-        name: `『Coquelicot』｜業師`,
+        name: `「Coquelicot」｜業師`,
         avatar: `img/dh/leopold402.png`,
         note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
         basicStats: `憎しみを心ゆくまで楽しみ、愛を思う存分に謳歌する。
@@ -82,7 +82,7 @@ export default {
       },
       
       {
-        name: `『彼を匿っている者』<br>(名前だけ登場)`,
+        name: `「彼を匿っている者」<br>(名前だけ登場)`,
         avatar: `img/dh/don.png`,
         note: `西区最大の民間武装団の元リーダー。`,
         basicStats: `103年、里湾の鉱山作業員代表
@@ -167,7 +167,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `へえ、そう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_13.wav" },
@@ -188,7 +188,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `これが私の「罰」なら、大したことないね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_123.wav" },
@@ -204,7 +204,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `上庭の技術、たいしたもんだ。ここじゃ君を殺せない？ここは何の意識空間？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_109.wav" },
@@ -246,7 +246,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `へえ……ということは、その裂け目の向こうが内海の中枢ってわけ？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_45.wav" },
@@ -259,7 +259,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `まだそこまで深くはありませんが、確かに通常の黒環よりは源泉に近い場所です。それゆえ、この空間にはより厳密な防御ルールが敷かれています。私や君の衝動を制限しているのも、全ては向こう側の『狂厄』の浸透を防ぐため。`,
+      text: `まだそこまで深くはありませんが、確かに通常の黒環よりは源泉に近い場所です。それゆえ、この空間にはより厳密な防御ルールが敷かれています。私や君の衝動を制限しているのも、全ては向こう側の「狂厄」の浸透を防ぐため。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_35.wav" },
       ],
@@ -292,7 +292,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `君も能力者でしょう。少しも反応が出ないなんてこと、ある？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_70.wav" },
@@ -326,8 +326,8 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
-      text: `それが、福音地を驚かせた『技術』ってわけね。反吐が出るわ。どうりで心のない人形のように見えるはず。`,
+      name: `「コクリコ」`,
+      text: `それが、福音地を驚かせた「技術」ってわけね。反吐が出るわ。どうりで心のない人形のように見えるはず。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_68.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_86.wav" }, 
@@ -369,7 +369,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `助ける？あんなことをしておいて、剥がれた仮面を縫い合わせてもう一度御託を並べようっての？私を馬鹿だと思ってる!?`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_100.wav" },
@@ -394,7 +394,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `『花庭園』の結末はとっくに決まっていました。追い詰められ、福音地に捕らえられた時点で、両勢力の戦火に引き裂かれることは確定していたのです。それが、狭間に生きる者の宿命。`,
+      text: `「花庭園」の結末はとっくに決まっていました。追い詰められ、福音地に捕らえられた時点で、両勢力の戦火に引き裂かれることは確定していたのです。それが、狭間に生きる者の宿命。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_11.wav" },
       ],
@@ -451,7 +451,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `……それで？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_93.wav" },
@@ -464,7 +464,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `私が君に命を与えましょう。新たな『花庭園』を見つけるための時間を。そして、君たちを全ての騒乱から完全に遠ざけてみせます。`,
+      text: `私が君に命を与えましょう。新たな「花庭園」を見つけるための時間を。そして、君たちを全ての騒乱から完全に遠ざけてみせます。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_18.wav" },
       ],
@@ -474,7 +474,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `いいね。まるで、すべてを計算しているかのような、その言い草。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_22.wav" },
@@ -497,7 +497,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `その前に、上庭のために働けって？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_85.wav" },
@@ -553,7 +553,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `私には、君を生かす力がある、『花庭園』を守る力も。ただ一つ、私の手伝いをしてほしいのです。ある人物を探してほしい。`,
+      text: `私には、君を生かす力がある、「花庭園」を守る力も。ただ一つ、私の手伝いをしてほしいのです。ある人物を探してほしい。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_97.wav" },
       ],
@@ -564,7 +564,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `ミノスの局長、『枷』の持ち主、SHP-13。彼は西区の暴動で行方不明となり、枷は『骸者』に汚染され拡散しました。黒環の干渉により、上庭も感応を辿って彼を見つけ出すことは不可能です。`,
+      text: `ミノスの局長、「枷」の持ち主、SHP-13。彼は西区の暴動で行方不明となり、枷は「骸者」に汚染され拡散しました。黒環の干渉により、上庭も感応を辿って彼を見つけ出すことは不可能です。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_40.wav" },
       ],
@@ -586,7 +586,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `君に頼みたいのは、その『花庭園』の主としての手腕。そして、表と裏の社会を自在に渡り歩く、君のその実力で、誰よりも早く彼を見つけ出すことです。`,
+      text: `君に頼みたいのは、その「花庭園」の主としての手腕。そして、表と裏の社会を自在に渡り歩く、君のその実力で、誰よりも早く彼を見つけ出すことです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_75.wav" },
       ],
@@ -604,7 +604,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `<ruby>菫<rt>スミレ</rt></ruby>が気にかけていたあの人のことね……でも、君が殺したんじゃなかったかしら？ あの人も、君たちと福音地が殺し合うための生贄でしょう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_12.wav" },
@@ -627,7 +627,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `なら、今さら何のために探すの？根絶やしにして、当時の失敗を埋め合わせるため？それとも局面が制御できなくなって、また連れ戻して犬として飼うつもり？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_47.wav" },
@@ -654,7 +654,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `頭イカれてるんじゃない？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_42.wav" },
@@ -727,7 +727,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `当時、君は『福音地』と密接な関係にあった。覚えているはずです。`,
+      text: `当時、君は「福音地」と密接な関係にあった。覚えているはずです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_110.wav" },
       ],
@@ -737,7 +737,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `(息を呑む)`,
       voice: [
         { label: "▶", path: "wav/CN/conversation29/vo_event_11042_54.wav" },
@@ -765,7 +765,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `……君か。急に来て、鬱陶しいわね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_77.wav" },
@@ -799,7 +799,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `チッ、あの女は君の言いなりかもしれないけど、私は御免だよ——`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_59.wav" },
@@ -830,11 +830,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `気取った福音地の女が、あれほど気色ばんで取り乱したのを見たのは、それが唯一だった。その後の二年間、狂犬のような福音地からの暗殺依頼が『花庭園』の門を叩き続けた。`,
+      text: `気取った福音地の女が、あれほど気色ばんで取り乱したのを見たのは、それが唯一だった。その後の二年間、狂犬のような福音地からの暗殺依頼が「花庭園」の門を叩き続けた。`,
     },
     {
       type: `narration`,
-      text: `――そして、涙も枯れ果て傷だらけになった多くの罪なき人々が、行き場を失い『花庭園』の扉を叩いた。`,
+      text: `――そして、涙も枯れ果て傷だらけになった多くの罪なき人々が、行き場を失い「花庭園」の扉を叩いた。`,
     },
     {
       type: `narration`,
@@ -850,7 +850,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `ハッ、ふふ……なるほど、そっか……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_95.wav" },
@@ -866,7 +866,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `君ら、敵の刀を奪って、使いこなせず、捨てるのも惜しい。いざ決戦となれば、背後から刺されるのが怖くなって、煮え切らない態度のままへし折って溶かし、適当な道具として使い潰す……そういうこと？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_121.wav" },
@@ -889,7 +889,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `もっともらしく語るけど、結局は臆病者じゃん！臆病なだけじゃなく、偽善的で、傲慢で、狂妄で、残酷。自分を何だと思ってる!?`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_28.wav" },
@@ -924,7 +924,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `私はあいつらとは違う!でも、君ら両方とも狗が狗を噛むようなもんだ！悪党を叩いたからって、自分が英雄になったつもりでいないで！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_44.wav" },
@@ -937,7 +937,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x6.png`,
       name: `シャーローム`,
-      text: `そうね。一方は『狂厄』を食い止めるために全てを犠牲にし、もう一方は『狂厄』を得るために全てを犠牲にする。災厄が目覚める前に、人類は自ら堕落し狂い、互いに噛みつき合って全てを焼き尽くすのです。`,
+      text: `そうね。一方は「狂厄」を食い止めるために全てを犠牲にし、もう一方は「狂厄」を得るために全てを犠牲にする。災厄が目覚める前に、人類は自ら堕落し狂い、互いに噛みつき合って全てを焼き尽くすのです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_105.wav" },
       ],
@@ -947,7 +947,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `だったら君らだけで抱き合って地獄へ落ちなさい！他人を巻き込むんじゃないわよ！！！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_120.wav" },
@@ -1022,7 +1022,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `ハッ、なんだ、今さら上庭への裏切り？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_94.wav" },
@@ -1056,7 +1056,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `また君の道具？今度は彼に何をさせるつもり？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_78.wav" },
@@ -1111,7 +1111,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `（心の声）
       嘘も、偽りも、一切の不純物もない
       
@@ -1136,7 +1136,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `……休息が済んだら、考えてあげなくもないわ。でも復讐に彼を使う必要はない。私は私のやり方でやる。他人の力なんて借りないわ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_52.wav" },
@@ -1149,7 +1149,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `ただ、あの泥棒猫がどんな手を使って、私の可愛い子ちゃんをあんな無様な泣きっ面にさせたのか、見てやるだけよ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_32.wav" },
@@ -1169,7 +1169,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `……あの金髪の小娘が私を罵った時、どんな気持ちだったか今なら分かる気がするわ……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_19.wav" },
@@ -1181,7 +1181,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `悪は悪だ。どんな立場や理由があろうと帳消しにはできない。勝手な理屈で手についた血の借金を軽くなかったことにする……その点においては、君も私も罪人ね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_65.wav" },
@@ -1194,7 +1194,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x6.png`,
       name: `シャーローム`,
-      text: `その通り。コスト削減は私の個人的な趣味に過ぎず、ニーズの実現こそが絶対目的。『必要な犠牲』は常套手段です。それが<span>上庭</span>の意志。<span>私</span>を通してそれを見極めれば、僥倖など期待しなくなるでしょう。`,
+      text: `その通り。コスト削減は私の個人的な趣味に過ぎず、ニーズの実現こそが絶対目的。「必要な犠牲」は常套手段です。それが<span>上庭</span>の意志。<span>私</span>を通してそれを見極めれば、僥倖など期待しなくなるでしょう。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_90.wav" },
       ],
@@ -1204,7 +1204,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `今日はこっちを犠牲に、明日はあっちを犠牲に、その量も誰にするかも全部君が決めるってわけ？ハハッ……君、何様!?`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_62.wav" },
@@ -1235,9 +1235,9 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `……そこまでは生きられないわ。君のくれた命もいらないし、鬱憤を晴らすのにそんなに長くは待てない。君の上に誰がいようと、前後にどれだけの人間がいようと関係ない
-      君は私の『花庭園』に手を出した。それだけで十分よ。人生苦短。
+      君は私の「花庭園」に手を出した。それだけで十分よ。人生苦短。
       `,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_89.wav" },
@@ -1249,7 +1249,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `上庭の<span>正しさ</span>や福音地の<span>宿願</span>に比べれば、私たちはちっぽけな存在らしいわね。どうせいつでも切り捨てられる命なら、少しくらい分からず屋で、大逆無道でも……構わないでしょう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_117.wav" },
@@ -1261,7 +1261,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `鴻毛より軽い命なんだもの、好き勝手やったっていいじゃない？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_37.wav" },
@@ -1273,7 +1273,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `君もこの場所も、上庭には大事だろ……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_71.wav" },
@@ -1290,7 +1290,7 @@ export default {
       bubbleStyle: "inner-voice-c",
 
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `この裂け目が、君にとって触れてはならないものだというのなら……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_6.wav" },
@@ -1299,7 +1299,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `『コクリコ』は片手を裂け目へと突き刺した。青い光の棘が猛烈な勢いで彼女の体内に侵入するが、彼女は意に介さず、さらに奥へと割り入ってゆく。`,
+      text: `「コクリコ」は片手を裂け目へと突き刺した。青い光の棘が猛烈な勢いで彼女の体内に侵入するが、彼女は意に介さず、さらに奥へと割り入ってゆく。`,
     },
     {
       type: `narration`,
@@ -1316,7 +1316,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `私のことを理解しているフリをしてたんでしょう？なら分かるはずよ。私が君の言うことなんて聞くわけがないって。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_79.wav" },
@@ -1328,8 +1328,8 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
-      text: `君たちの言う『正しさ』ってやつが、一番虫酸が走るの。私の獲物も、私を殺そうとする奴も、私に助けを求める奴も、どいつもこいつもロクな人間じゃない。`,
+      name: `「コクリコ」`,
+      text: `君たちの言う「正しさ」ってやつが、一番虫酸が走るの。私の獲物も、私を殺そうとする奴も、私に助けを求める奴も、どいつもこいつもロクな人間じゃない。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_91.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_18.wav" },
@@ -1340,8 +1340,8 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
-      text: `正解……私の『花庭園』を壊した、それこそが君の間違いよ！ 今後私が何をしようと君には関係ない。さあ、今すぐ償いなさい！`,
+      name: `「コクリコ」`,
+      text: `正解……私の「花庭園」を壊した、それこそが君の間違いよ！ 今後私が何をしようと君には関係ない。さあ、今すぐ償いなさい！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_87.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_98.wav" },
@@ -1350,7 +1350,7 @@ export default {
 
     {
       type: `narration`,
-      text: `狂気的な力が雪崩れ込む。『コクリコ』は久しく感じなかった生命の充実に震え、裂け目の中から妖しく輝く長剣を引き抜いた。耳をつんざくような轟音と共に、向こう側の狂厄が噴き出す。`,
+      text: `狂気的な力が雪崩れ込む。「コクリコ」は久しく感じなかった生命の充実に震え、裂け目の中から妖しく輝く長剣を引き抜いた。耳をつんざくような轟音と共に、向こう側の狂厄が噴き出す。`,
     },
     {
       type: `narration`,
@@ -1385,7 +1385,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold208.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `なんて痛快……戻ってきた。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_84.wav" },
@@ -1397,7 +1397,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold208.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `誰にも指図はさせない。人生はこれっぽっちしかないの、私が自分で使い果たす。愛するも憎むも、私の心のままに。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_43.wav" },
@@ -1409,7 +1409,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold208.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `誰のためにも犠牲にならず、誰にも仕えず、復讐も享楽も、一分一秒に至るまで私が好きに生きる。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_14.wav" },
@@ -1421,7 +1421,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold208.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `咲くのも自分、生きるのも自分、死ぬのも自分のため！最愛の人は自分自身でなければならない。自分の運命は、必ず自分の手で握る！それこそが<span>Garden</span>！何度言わせれば気が済むの！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_10.wav" },
@@ -1437,7 +1437,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `……君たちも、自分のためだけに生きればよかったのに……馬鹿な子たち……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_60.wav" },
@@ -1446,7 +1446,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `その光の中に、見慣れた笑顔がいくつも浮かんだ。彼女の花たちだ。抱きしめたい、守りたいと思った。本当なら、自分の『花庭園』で安らかに眠りたかった。`,
+      text: `その光の中に、見慣れた笑顔がいくつも浮かんだ。彼女の花たちだ。抱きしめたい、守りたいと思った。本当なら、自分の「花庭園」で安らかに眠りたかった。`,
     },
     {
       type: `narration`,
@@ -1458,7 +1458,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は『コクリコ』を見ていた。希薄な憐れみと悲哀、そしてそれ以上の、ある種の冷徹な期待を込めて。`,
+      text: `彼女は「コクリコ」を見ていた。希薄な憐れみと悲哀、そしてそれ以上の、ある種の冷徹な期待を込めて。`,
     },
     {
       type: `narration`,
@@ -1513,7 +1513,7 @@ export default {
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `……くたばれ`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_49.wav" },
@@ -1526,11 +1526,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `――どうしても許せず、どうしても屈したくなかったあの女が、いつの間にか『コクリコ』の全意識を占領していた。彼女は仇敵に向けて剣を突き立てるが、相手は両手を広げ、まるで彼女の全てを抱擁するかのように待ち受けている。`,
+      text: `――どうしても許せず、どうしても屈したくなかったあの女が、いつの間にか「コクリコ」の全意識を占領していた。彼女は仇敵に向けて剣を突き立てるが、相手は両手を広げ、まるで彼女の全てを抱擁するかのように待ち受けている。`,
     },
     {
       type: `narration`,
-      text: `『コクリコ』の命は回復しつつあったが、意識は徐々に溶解していく――突如として空間が砕け散った。`,
+      text: `「コクリコ」の命は回復しつつあったが、意識は徐々に溶解していく――突如として空間が砕け散った。`,
     },
     {
       type: `dialogue`,
@@ -1547,7 +1547,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `その瞬間、『コクリコ』は確かに見た。あの蝋細工のような女の目に、一筋の驚きが走ったのを。`,
+      text: `その瞬間、「コクリコ」は確かに見た。あの蝋細工のような女の目に、一筋の驚きが走ったのを。`,
     },
     {
       type: `dialogue`,
@@ -1562,7 +1562,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は『コクリコ』を遮り、シャーロームの前に立ち塞がった。激しい息切れ。先ほどの衝突の衝撃からまだ立ち直れていないのか、あるいはこの空間の狂乱に耐え難いのか。`,
+      text: `彼女は「コクリコ」を遮り、シャーロームの前に立ち塞がった。激しい息切れ。先ほどの衝突の衝撃からまだ立ち直れていないのか、あるいはこの空間の狂乱に耐え難いのか。`,
     },
   ],
 };

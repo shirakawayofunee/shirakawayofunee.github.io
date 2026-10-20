@@ -47,6 +47,12 @@
 
 @font-face {
     font-family: "name1";
+    src: url("../font/PretendardJP-Black.otf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "name2";
     src: url("../font/PretendardJP-Bold.otf") format("truetype");
     font-display: swap;
 }
@@ -1503,14 +1509,17 @@ html {
 /* =========================================================================
    6. 信息面板、词汇表、OC人物窗口卡片与简介
    ========================================================================= */
-.info-panel {
+/* ==========================================
+   全局区块容器
+   ========================================== */
+   .info-panel {
     background: rgba(253, 253, 253, 1);
     color: rgba(1, 1, 1, 1);
     font-size: 0.855rem;
     margin: 0;
 }
 
-.info-section{
+.info-section {
     margin-bottom: 4%;
 }
 
@@ -1529,7 +1538,9 @@ html {
     border-bottom: 0px solid rgba(1, 1, 1, 1);
 }
 
-/* 词汇表 (Accordion) */
+/* ==========================================
+   词汇表 (Accordion)
+   ========================================== */
 .glossary-item {
     border-bottom: 1px dashed #aaa;
 }
@@ -1565,68 +1576,13 @@ html {
     padding: 0 6px 9px 6px;
 }
 
-/* 人物详情卡片 */
-.char-card {
-    display: flex;
-    margin-bottom: 15px;
-    background: #f0f0f0;
-    color: rgba(1, 1, 1, 1);
-    border: 1px solid #ccc;
-}
-
-.char-card img {
-    width: 80px;
-    height: 120px;
-    object-fit: cover;
-    margin-right: 10px;
-    border: 1px solid #999;
-}
-
-.char-info strong {
-    display: block;
-    margin-bottom: 4px;
-    font-size: 0.95rem;
-}
-
-.char-info p {
-    margin: 0;
-    font-size: 0.8rem;
-    line-height: 1.3;
-    color: #333;
-}
-
-.synopsis-text {
-    color: #555;
-    line-height: 1.5;
-    padding: 5%;
-}
-
-/* 新增：两端对齐人物属性列表（集成优化后的统一样式） */
-.oc-profile-section {
-    margin: 0;
-    padding: 0 5%;
-}
-
-.oc-profile-section .profile-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 0;
-    border-bottom: 1px solid #eaeaea;
-    font-size: 0.75rem;
-}
-
-.oc-profile-section .profile-label {
-    color: #696969;
-}
-
-.oc-profile-section .profile-value {
-    color: #333333;
-    text-align: right;
-}
-
-/* 剧本通用人物窗口卡片排版 */
-.oc-window-wrapper {
+/* ==========================================
+   剧本通用人物窗口卡片排版（已精简边距冲突）
+   ========================================== */
+/* ==========================================
+   剧本通用人物窗口卡片排版（已集成 name_0 与修整后的引号）
+   ========================================== */
+   .oc-window-wrapper {
     font-family: 'myFont', "Helvetica Neue", Arial, sans-serif;
     color: #333;
     width: 100%;
@@ -1654,7 +1610,7 @@ html {
 }
 
 .oc-avatar-box {
-    width: 100px;
+    width: 115px;
     flex-shrink: 0;
     border-right: 1px solid #333;
     background-color: #e5e5e5;
@@ -1668,31 +1624,70 @@ html {
     display: block;
 }
 
+/* 信息右侧容器（作为背景大引号的定位锚点） */
 .oc-info-box {
     flex-grow: 1;
     min-width: 0;
-    padding: 12px;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    text-align: left;
 }
 
-.oc-name {
-    font-family: "name1";
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0 0 8px 0;
-    line-height: 1.2;
+/* 装饰用大引号背景 */
+.oc-info-box::before {
+    content: ""; /* 清空文字内容 */
+    position: absolute;
+    top: 14px; /* 根据你的需求保留或微调安全坐标 */
+    left: 4px;
+    width: 160px; /* 根据你的 PNG 图片实际比例调整宽度 */
+    height: 120px; /* 根据你的 PNG 图片实际比例调整高度 */
+    background: url('/home26/img/dh/符号.png') no-repeat center;
+    background-size: contain; /* 保证装饰图片按比例完整缩放，不被拉伸变形 */
+    opacity: 0.12; /* 如果你的图片本身不是半透明的，可以用 opacity 控制整体淡化效果 */
+    pointer-events: none; /* 穿透点击，避免影响交互 */
+}
+
+/* 新增：角色称号 (name_0，例如：罪人的救世主) */
+.oc-name_0 {
+    margin: 0 0 4px 0;
+    padding: 0;
+    font-family: "name2"; /* 可根据需要调整字体 */
+    font-size: 0.76rem;
+    transform: scaleX(0.94);
+    color: #696969;
+    text-align: right;
+    /* font-weight: 500; */
     overflow-wrap: break-word;
     word-break: normal;
 }
 
+/* 主名字 (name) */
+.oc-name {
+    margin: 0 0 4px 0;
+    padding: 0;
+    font-family: "name1";
+    font-size: 1.8rem;
+    transform: scaleX(0.94);
+    color: #1c1c1c;
+    text-align: right;
+    line-height: 1;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+/* 副名字 (name_2) */
 .oc-name_2 {
-    font-family: "name2";
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin: 0 0 8px 0;
-    line-height: 1.2;
+    margin: 0 0 6px 0;
+    padding: 0;
+    font-family: "name1";
+    font-size: 1.07rem;
+    transform: scaleX(0.94);
+    color: #1c1c1c;
+    text-align: right;
+    line-height: 1;
     overflow-wrap: break-word;
     word-break: normal;
 }
@@ -1703,11 +1698,12 @@ html {
     font-weight: 700;
     overflow-wrap: break-word;
     word-break: normal;
+    text-align: right;
 }
 
 .oc-bottom-section {
     border-top: 1px solid #333;
-    padding: 7px 5px 10px 12px;
+    padding: 8px 12px;
     background-color: rgba(253, 253, 253, 1);
 }
 
@@ -1720,17 +1716,37 @@ html {
     overflow-wrap: break-word;
 }
 
-.oc-window-card.style-reverse .oc-window-header {
-    flex-direction: row-reverse;
+.oc-profile-section {
+    margin: 0;
+    padding: 0 5%;
 }
 
+.oc-profile-section .profile-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 0.75rem;
+}
+
+.oc-profile-section .profile-label {
+    color: #696969;
+}
+
+.oc-profile-section .profile-value {
+    color: #333333;
+    text-align: right;
+}
+
+/* 左右反转样式支持 */
 .oc-window-card.style-reverse .oc-top-section {
     flex-direction: row-reverse;
 }
 
 .oc-window-card.style-reverse .oc-avatar-box {
     border-right: none;
-    border-left: 2px solid #333;
+    border-left: 1px solid #333;
 }
 
 /* =========================================================================

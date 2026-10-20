@@ -343,14 +343,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `……E-2……私のとこじゃない……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `だろ……あいつがまだ……`
     },
     {
@@ -367,7 +367,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `!?お前――`
     },
     {
@@ -378,7 +378,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `放せ!何する気だ!?`
     },
     {
@@ -391,7 +391,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `ふざけんな、もう二度と――`
     },
     {
@@ -420,7 +420,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `壁を壊せ!`
     },
     {
@@ -465,7 +465,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `……早く……「Garden」に……`
     },
     {
@@ -476,14 +476,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `これが……最後の基地。「登録」した「Garden」のメンバーが入口を開けるけど、開けた後、閉じるまで時間がかかる。さっきみたいに。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `バカな連中で助かった……もし追跡装置を投げ込まれたら、また……`
     },
     {
@@ -500,21 +500,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `違う。師匠は言った。これは報酬……最後の依頼の報酬だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `彼女はついに、誰も邪魔しない「Garden」を手に入れる。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `つまり、福音地が与えた避難所。さっきのは空間技術?`
     },
     {

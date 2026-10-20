@@ -1020,9 +1020,7 @@ function parseProfile(text) {
 // 主渲染函数：已整合您原本的所有逻辑（词汇表、角色卡、简介渲染）
 // =========================================================================
 function renderInfo(info) {
-  // ----------------------------------------------------
-  // 1. 【完全保留】您原先的 glossary 词汇表渲染与 GSAP 初始化
-  // ----------------------------------------------------
+  // 1. 词汇表渲染
   const glossaryDiv = document.getElementById("glossary-container");
   glossaryDiv.innerHTML = "";
 
@@ -1030,11 +1028,10 @@ function renderInfo(info) {
     info.glossary.forEach((g) => {
       const item = document.createElement("div");
       item.className = "glossary-item";
-      // 移除 inline onclick，将 ▼ 替换为 +
       item.innerHTML = `
         <div class="glossary-term">
             <div class="term-text">${g.term}</div>
-            <div class="term-icon" style="display:inline-block; font-weight:600;" font-size:59px;>+</div>
+            <div class="term-icon" style="display:inline-block; font-weight:600; font-size:16px;">+</div>
         </div>
         <div class="glossary-desc">
             <div class="desc-inner">${g.desc}</div>
@@ -1042,24 +1039,17 @@ function renderInfo(info) {
       `;
       glossaryDiv.appendChild(item);
     });
-
-    // 数据渲染完成后，初始化 GSAP 动画手风琴效果
     initAccordion(glossaryDiv);
   }
 
-  // ----------------------------------------------------
-  // 2. 【核心更新】角色卡片渲染
-  // ----------------------------------------------------
+  // 2. 角色卡片渲染（已加入 name0 与干净的嵌套结构）
   const charDiv = document.getElementById("characters-container");
   charDiv.innerHTML = "";
 
   if (info && info.characters) {
     info.characters.forEach((c) => {
-      // A. 判断该角色是否需要交替排版
       const reverseClass = c.isReverse ? "style-reverse" : "";
 
-      // B. 修复您原先代码中的一个细节：原先定义了 cleanNote 却在渲染时错用了 c.note
-      // 这里清洗了 note 里的冗余代码缩进空格
       let cleanNote = "";
       if (c.note) {
         cleanNote = String(c.note)
@@ -1069,11 +1059,8 @@ function renderInfo(info) {
           .trim();
       }
 
-      // C. 【新增核心】：如果数据有 c.profile（两端对齐的数据），就调用辅助函数渲染
-      // 如果数据里没有配置 profile 字段，则输出空字符串，不占用卡片上的任何空间
       const profileHTML = c.profile ? parseProfile(c.profile) : "";
 
-      // D. 清理并准备渲染 bottomSection (basicStats 区域)
       let cleanBasicStats = "";
       if (c.basicStats) {
         cleanBasicStats = String(c.basicStats)
@@ -1082,38 +1069,31 @@ function renderInfo(info) {
           .join("\n")
           .trim();
       }
-      const hasNote = cleanBasicStats !== "";
-      const bottomSectionHTML = hasNote
-        ? `
-          <div class="oc-bottom-section">
-            <div class="oc-summary-text">${cleanBasicStats}</div>
-          </div>
-      `
-        : "";
+      
+      const bottomSectionHTML = cleanBasicStats !== "" ? `
+        <div class="oc-bottom-section">
+          <div class="oc-summary-text">${cleanBasicStats}</div>
+        </div>
+      ` : "";
 
       const card = document.createElement("div");
-      card.className = `oc-window-card ${reverseClass}`; // 注入交替类名
+      card.className = `oc-window-card ${reverseClass}`;
 
       card.innerHTML = `
-        <!-- 主体内容 -->
         <div class="oc-window-body">
-          
-          <!-- 上半区：贴边头像 + 名字 -->
           <div class="oc-top-section">
             <div class="oc-avatar-box">
-               ${c.avatar ? `<img src="${c.avatar}" alt="${c.name}">` : ""}
+               ${c.avatar ? `<img src="${c.avatar}" alt="${c.name || ''}">` : ""}
             </div>
             <div class="oc-info-box">
+              ${c.name0 ? `<div class="oc-name_0">${c.name0}</div>` : ""}
               <div class="oc-name">${c.name || ""}</div>
               <div class="oc-name_2">${c.name2 || ""}</div>
               <div class="oc-stats">${cleanNote || ""}</div>
             </div>
           </div>
-          <!-- 下半区：动态渲染（若无内容则为完全不生成该 div，不会留有空隙） -->
           ${bottomSectionHTML}
-          <!-- 【新增区】：动态生成两端对齐带下划线的属性（若没有该字段则不产生多余空隙） -->
           ${profileHTML}
-  
         </div>
       `;
 
@@ -1121,11 +1101,11 @@ function renderInfo(info) {
     });
   }
 
-  // ----------------------------------------------------
-  // 3. 【完全保留】您原先的 synopsis 简介渲染
-  // ----------------------------------------------------
+  // 3. 剧情简介渲染
   const synDiv = document.getElementById("synopsis-container");
-  synDiv.innerHTML = info.synopsis || "工事中";
+  if (synDiv) {
+    synDiv.innerHTML = info.synopsis || "工事中";
+  }
 }
 
 // --- 辅助功能 ---

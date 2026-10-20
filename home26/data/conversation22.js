@@ -405,14 +405,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `あらら、依頼失敗しちゃって、しかもバレちゃった～次はどうしようかな～`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `面倒がやってくるよ。親愛なる依頼人さんたち、どうするつもり～？`
     }
   ]

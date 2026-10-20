@@ -197,7 +197,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `こんにちは、探偵ちゃん。`,
       voice: `wav/CN/conversation20/vo_event_11026_6.wav`,
       voice: [

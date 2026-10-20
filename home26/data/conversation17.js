@@ -50,7 +50,7 @@ export default {
     },
     {
       "type": "narration",
-      "text": "<span class='rep-tag'>[ REPORTER 1 ]</span>FACの撫恤金事件とこの事件の関係は？能力者が関与してるんですか？\n<span class='rep-tag'>[ REPORTER 2 ]</span>こんな治安事件にFACが絡むのはなぜですか？彼らの管轄なんですか？FACが私腹を肥やしたから凶手の報復を招いたんじゃないですか？！\n<span class='rep-tag'>[ REPORTER 3 ]</span>『FACは城邦を守る盾なんかじゃなく、城邦の安全を裏で壊す危険な組織だ』と主張する声があります。どうお答えになりますか？\n\n騒がしい質問の声とパシャパシャ光るフラッシュが、現場をますます混乱させた。",
+      "text": "<span class='rep-tag'>[ REPORTER 1 ]</span>FACの撫恤金事件とこの事件の関係は？能力者が関与してるんですか？\n<span class='rep-tag'>[ REPORTER 2 ]</span>こんな治安事件にFACが絡むのはなぜですか？彼らの管轄なんですか？FACが私腹を肥やしたから凶手の報復を招いたんじゃないですか？！\n<span class='rep-tag'>[ REPORTER 3 ]</span>「FACは城邦を守る盾なんかじゃなく、城邦の安全を裏で壊す危険な組織だ」と主張する声があります。どうお答えになりますか？\n\n騒がしい質問の声とパシャパシャ光るフラッシュが、現場をますます混乱させた。",
       "bubbleStyle": "npc-press-box"
     },
     {

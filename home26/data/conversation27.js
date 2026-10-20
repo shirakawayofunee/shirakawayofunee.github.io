@@ -243,7 +243,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `『執行人』`,
+      name: `「執行人」`,
       text: `少し困惑してるみたい。審査を始める？`
     },
     {
@@ -258,7 +258,7 @@ export default {
       position: `left`,
       avatar: `img/dh/black_quartz.jpg`,
       name: `黒石英`,
-      text: `『業師』が君の罠に踏み込もうと、彼女の命はもう尽きている。`
+      text: `「業師」が君の罠に踏み込もうと、彼女の命はもう尽きている。`
     },
     {
       type: `dialogue`,
@@ -278,7 +278,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `『執行人』`,
+      name: `「執行人」`,
       text: `そう？いつもとちょっと違う感じね。私、何か間違えたかと思って、チェックされるんじゃないかと。`
     },
     {
@@ -324,21 +324,21 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `『執行人』`,
+      name: `「執行人」`,
       text: `肉体は複製できても、精神や経験は無理。君も感性の罠に落ちたね。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `『執行人』`,
+      name: `「執行人」`,
       text: `それに、仕事はまだ終わってない。別れを急がないで。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `『執行人』`,
+      name: `「執行人」`,
       text: `最後のステップが残ってる……`
     },
     {
@@ -365,7 +365,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/x.png`,
-      name: `『執行人』`,
+      name: `「執行人」`,
       text: `私を捕まえに来なよ、業師。君なら絶対に裏切らない……`
     }
   ]

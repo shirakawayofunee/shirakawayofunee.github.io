@@ -3,13 +3,13 @@ export default {
     title: `「[业]师」`,
     bgm: `mp3/bg/conversation13.mp3`,
     summary: `探偵が目を覚ましたのは、優雅な庭園だった。
-    そこは伝説の暗殺組織 『Garden』の拠点だ。`
+    そこは伝説の暗殺組織 「Garden」の拠点だ。`
   },
   infoPanel: {
     glossary: [
       {
         term: `上庭`,
-        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織『<span>Edge</span>』であり、
+        desc: `人類文明の最高統治機関、その意思決定の中枢は、科学者によって設立された組織「<span>Edge</span>」であり、
     現在は再編を経て7人のメンバーによって構成されている。`
       },
       {
@@ -26,12 +26,12 @@ export default {
         name: `「Coquelicot」`,
         name2: `コクリコ`,
         avatar: `img/dh/L106.png`,
-        note: `『GARDEN』の主·業師、裏社会を陰で牛耳る実力者。`,
+        note: `「GARDEN」の主·業師、裏社会を陰で牛耳る実力者。`,
         basicStats: `「命」や「正義」に対して独特な見解を持つの能力者。
         ▌生の流儀
         人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
         ▌コードネーム由来
-        フランス語の『虞美人』`,
+        フランス語の「虞美人」`,
         profile: `危険度：	S級
         能力：	緋花剣落
         コードネーム：Coquelicot
@@ -43,7 +43,7 @@ export default {
         name2: `<ruby>未来の名探<rt></rt></ruby>偵（自称）`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、警察学校の一年生。`,
-        basicStats: `憧れの『<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん』に頼まれて、『GARDEN』が引き起こした連続殺人事件を調査中。`,
+        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`,
         profile: `危険度：B級
         能力：相信正義
 `, 
@@ -53,7 +53,7 @@ export default {
         name2: `アザミ`,
         avatar: `img/dh/thistle3.jpg`,
         note: `19歳、FACの遺児。`,
-        basicStats: `復讐のために『GARDEN』へ加入したFACの遺児。
+        basicStats: `復讐のために「GARDEN」へ加入したFACの遺児。
         直情径行で衝動的な面があるものの、決して根は悪くない。誰よりも師匠を慕っており、そして心配もしている。
         彼女自身も自分が無知で未熟であることを自覚しており、成し遂げたい思いも持っている。`,
         profile: `危険度：B級
@@ -132,7 +132,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
       name: ` 「業師」`,
-      text: `私の『Garden』。敵の牙城よ、探偵ちゃん。`
+      text: `私の「Garden」。敵の牙城よ、探偵ちゃん。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_86.wav' },
@@ -235,8 +235,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `『コクリコ』`,
-      text: `『Garden』は人生を楽しむ場所なんだから、仕事のつまんない話はなしにしてよ。`
+      name: `「コクリコ」`,
+      text: `「Garden」は人生を楽しむ場所なんだから、仕事のつまんない話はなしにしてよ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_88.wav' },
@@ -258,8 +258,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold3.png`,
-      name: `『コクリコ』`,
-      text: `そうね……ああ、そう言えば君を『Garden』に推薦した人がいるわね。`
+      name: `「コクリコ」`,
+      text: `そうね……ああ、そう言えば君を「Garden」に推薦した人がいるわね。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_21.wav' },
@@ -282,7 +282,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `ふふ、可愛い反応。`
     ,
       voice: [
@@ -294,7 +294,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `君もFACの可哀想な子なんだから、ここの仲間と挨拶でもしたら？`
     ,
       voice: [
@@ -307,7 +307,7 @@ export default {
       position: `right`,
       avatar: `img/dh/zhentan13.png`,
       name: `探偵`,
-      text: `『も』？`
+      text: `「も」？`
     ,
       voice: [
         /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
@@ -318,8 +318,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `『コクリコ』`,
-      text: `何年も経って、FACで死んだ人なんて山ほどいる。君と同じ境遇の子供が『Garden』に加わるなんて、普通でしょ？彼女たち、君のこと結構気に入ってるよ。`
+      name: `「コクリコ」`,
+      text: `何年も経って、FACで死んだ人なんて山ほどいる。君と同じ境遇の子供が「Garden」に加わるなんて、普通でしょ？彼女たち、君のこと結構気に入ってるよ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_15.wav' },
@@ -328,7 +328,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `……復讐のために『Garden』に加わる。探偵はその気持ちをすぐに理解した。彼女は拳をぎゅっと握った。`
+      text: `……復讐のために「Garden」に加わる。探偵はその気持ちをすぐに理解した。彼女は拳をぎゅっと握った。`
     },
     {
       type: `dialogue`,
@@ -345,7 +345,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `何が違うのさ。8年前、君だって一人で涅槃グループに乗り込んで、上庭の代表を刺したじゃない？`
     ,
       voice: [
@@ -368,8 +368,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『コクリコ』`,
-      text: `だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の『Garden』に連れてこられても驚きも騒ぎもしない……`,
+      name: `「コクリコ」`,
+      text: `だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の「Garden」に連れてこられても驚きも騒ぎもしない……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_17.wav' },
         { label: '日', path: 'wav/JP/conversation13/vo_event_11016_8.wav' },
@@ -379,7 +379,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `やっぱり、慣れてるんだね。君の心はずっと真っ暗なところに閉じ込められてる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_6.wav' },
@@ -394,7 +394,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `あの時、何があったの？小さい子がそんな大それたことやっちゃうなんて、どれだけ怒ってたの？`
     ,
       voice: [
@@ -406,7 +406,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `刺殺、成功した？憎しみをぶつけた相手、仕留めた？`
     ,
       voice: [
@@ -434,7 +434,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `じゃあ、刺殺失敗したんだ。残念だね、君、めっちゃ才能あるのに。能力者として覚醒までしてる。`
     ,
       voice: [
@@ -446,7 +446,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `暗殺者として、復讐者として、怒りに燃えてすべてを焼き尽くす者として。君には暴力と破壊の才能がある。ここにいる子たちと同じだ。だからあの女が君をそばに置いてるのね。`
     ,
       voice: [
@@ -458,7 +458,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `正義なんてやめなよ。それは君のシャーローム姉さんがでっち上げた嘘、君を縛る鎖にすぎない。君が扱ってる事件がその証拠でしょ？`
     ,
       voice: [
@@ -470,7 +470,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/regret.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `アナタニアって女、浅はかで虚栄心の塊。道徳の高いところに立って他人を口汚く罵り、人を傷つけたらビビって魂が抜けたみたいになって、数日後にはまた自己弁護して高みに戻る。`
     ,
       voice: [
@@ -482,7 +482,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `ネイサンだって、汚い手口のシンジケートの野犬。頭の腐った議員に取り入って、どれだけの人命を背負ってるんだ。10年経っても、私が裁かなかったら、誰が裁くの？君の正義はどこにあるの？`
     ,
       voice: [
@@ -499,7 +499,7 @@ export default {
       position: `right`,
       avatar: `img/dh/pc208.png`,
       name: `探偵`,
-      text: `……そういうこと言うの、君で何人目だ。『世の中が暗いから、正義なんて存在しない。だからちょっとルールを破ってもいいよね』って。`
+      text: `……そういうこと言うの、君で何人目だ。「世の中が暗いから、正義なんて存在しない。だからちょっとルールを破ってもいいよね」って。`
     ,
       voice: [
         /* { label: '中', path: 'wav/CN/conversation13/vo_event_11016_8.wav' }, */
@@ -537,8 +537,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold3.png`,
-      name: `『コクリコ』`,
-      text: `はぁ……聞いた、薊？これが君が必死で助けた『同類』だよ。`
+      name: `「コクリコ」`,
+      text: `はぁ……聞いた、薊？これが君が必死で助けた「同類」だよ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_80.wav' },
@@ -569,7 +569,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `化け物の山からこいつをせっかく引っ張り出したのに、同じ境遇なら分かり合えると思ったんだろ？でも、相手には君がただのクズに見える。せっかくの好意が無駄だったね。`
     ,
       voice: [
@@ -581,8 +581,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `『コクリコ』`,
-      text: `もしこいつが君の情にほだされて、涙を流して優しい言葉をかけてきたら、君、泣きながら『Garden』の全部を差し出しちゃうつもり？`
+      name: `「コクリコ」`,
+      text: `もしこいつが君の情にほだされて、涙を流して優しい言葉をかけてきたら、君、泣きながら「Garden」の全部を差し出しちゃうつもり？`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_72.wav' },
@@ -602,7 +602,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `ごめんなさい……師匠……許してください……`
     ,
       voice: [
@@ -617,8 +617,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
-      text: `情けない！何度も言ったよね、他人をそんな大事にしないって。今さら泣きわめいて何？『あ、大丈夫、許すよ』って私が言えば、気が楽になる？`
+      name: `「コクリコ」`,
+      text: `情けない！何度も言ったよね、他人をそんな大事にしないって。今さら泣きわめいて何？「あ、大丈夫、許すよ」って私が言えば、気が楽になる？`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_19.wav' },
@@ -629,7 +629,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `勝手な行動で私のルールを破り、敵を本拠地に連れ込み、君の気持ちまで私がケアしろって？私が君のママなの？`
     ,
       voice: [
@@ -641,7 +641,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/impatient.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `ムカつく！せっかくの休息時間、君とその汚い拾い物に台無しにされた。禁閉行き！私が機嫌直すまで出てくんな。`
     ,
       voice: [
@@ -663,7 +663,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `探偵は叫んだが、それは業師に向けたものではなく、泣き出しそうな『Garden』の暗殺者に向けたものだった。`
+      text: `探偵は叫んだが、それは業師に向けたものではなく、泣き出しそうな「Garden」の暗殺者に向けたものだった。`
     },
     {
       type: `narration`,
@@ -681,7 +681,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle2.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `……死ねばよかったのに、飼い慣らされたクズ！`
     ,
       voice: [
@@ -697,7 +697,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/smile0.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `ほら、彼女もFACの遺族だ。103年で全てを失った。でも、君みたいな後ろ盾はなかった。正義にすがっても、返ってきたのはビンタの嵐だけ。だから私のところに来た。`
     ,
       voice: [
@@ -751,7 +751,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `吠えるな。執行人がくれるのは立派な正義で、私が与えるのは憎しみの洗脳だと？誰を見下してるの？`
     ,
       voice: [
@@ -763,7 +763,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `君がどんな奴か、私にはお見通しだ。この世界に復讐する力がないから、一番空っぽなものを救命胴衣みたいにしがみついてるだけ。`
     ,
       voice: [
@@ -775,7 +775,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `君みたいなのが一番騙されやすい、一番間抜けで弱いんだ。薊の馬鹿を目覚めさせるためじゃなきゃ、君のことなんか見向きもしない。`
     ,
       voice: [
@@ -787,8 +787,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
-      text: `『Garden』は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`
+      name: `「コクリコ」`,
+      text: `「Garden」は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_46.wav' },
@@ -799,7 +799,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `私たちを傷つけた奴は、当然私が自分で裁く。そうやって奪われたものを自分の手で取り返すの。`
     ,
       voice: [
@@ -822,7 +822,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `私の深い恨みはもう自分で片付けた。私は自由だ。今やってることは、全部私が楽しみたいから。`
     ,
       voice: [
@@ -834,7 +834,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `で、私が何をしたいかって？君の主人に伝えな。彼女に私と遊んでもらおうじゃない。これもきっと、彼女が君を送り込んだ目的でしょ。`
     ,
       voice: [
@@ -846,7 +846,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `だって……まさか本当に君に事件を解決できるなんて思ってる人、いるわけないよね。`
     ,
       voice: [
@@ -874,7 +874,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `リラックスして。これはただの回復剤に、ほんのちょっと精神薬を混ぜただけ。ここから逃げるのに役立つよ。道さえ覚えなきゃ、君の命は取らない。`
     ,
       voice: [
@@ -886,7 +886,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/leopold2.png`,
-      name: `『コクリコ』`,
+      name: `「コクリコ」`,
       text: `逃げなさい、道端で死なないでね。芝居はまだ終わっていないの。私、君が幕を開けてくれるの、待ってるから。`
       ,
       voice: [

@@ -57,7 +57,7 @@ export default {
         Xはこの「贈り物」をあえて受け入れ、その情報とLが生み出す混乱を逆手に取り、より壮大な陰謀を紡ぎ出そうとしている。`
       },
       {
-        name: `『菫』`,
+        name: `「菫」`,
         avatar: `img/dh/P24.png`,
         note: `27歳。表の顔は華道家
         `,
@@ -66,7 +66,7 @@ export default {
 Lの目には、まるで家出していた子が何か目的を抱えて帰ってきたように映っている。`
       },
       {
-        name: `『Garofano』（名前だけ登場）`,
+        name: `「Garofano」（名前だけ登場）`,
         avatar: `img/dh/S24.png`,
         note: `Lに長年仕えていた組織の古参幹部。`,
         basicStats: `
@@ -79,11 +79,11 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
         note: `「福音地」の司祭であり、「GARDEN」との橋渡しを担う者。`,
         basicStats: `7月
         その死が示すのは、「福音地」による「GARDEN」支配の完全なる終焉。
-        福音地の目論見はこうだ。<br>「隠匿の術式」の解法を餌に上庭を誘導し、『ガーデン』のアジトを特定させる。ガーデンにどれほどの死傷者が出ようと構わない。弟子を守るため、LをXとの血で血を洗う死闘へと追い込むことこそが奴らの狙いである。
+        福音地の目論見はこうだ。<br>「隠匿の術式」の解法を餌に上庭を誘導し、「ガーデン」のアジトを特定させる。ガーデンにどれほどの死傷者が出ようと構わない。弟子を守るため、LをXとの血で血を洗う死闘へと追い込むことこそが奴らの狙いである。
         `,
       },
       {
-        name: `『薊』（名前だけ登場）`,
+        name: `「薊」（名前だけ登場）`,
         avatar: `img/dh/thistle3.jpg`,
         note: ``,
         basicStats: ``
@@ -91,7 +91,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       {
         name: `局長（名前だけ登場）`,
         avatar: `img/dh/PC24.png`,
-        note: `『弱者』の主人公。今回は名前のみ登場。いずれ顔を見せるための予告となります。`,
+        note: `「弱者」の主人公。今回は名前のみ登場。いずれ顔を見せるための予告となります。`,
         basicStats: `Lが義人や賢者なら、局長は■■です。
         「CP要素」についてですが、ご安心ください。義母攻め×娘婿受けという猟奇的な関係性ではありません。
         実際は、「<span>影のヒーロー×表舞台のヒーロー</span>」です。
@@ -114,7 +114,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `うわーっ、今回の仕事は骨が折れたわ。寝すぎて体がバキバキ……`,
       voice: `wav/CN/conversation24/vo_event_11031_49.wav`
     },
@@ -123,7 +123,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/猫1.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `<span>Garofano</span>～お風呂入りたい！今回はバラで、紅茶もバラ、お菓子も――`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_27.wav" },
@@ -135,7 +135,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/猫1.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `ああ、忘れてた。あの子はまだ目が覚めてないんだったわね。`,
       voice: `wav/CN/conversation24/vo_event_11031_28.wav`
     },
@@ -144,7 +144,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/猫1.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `まあいいや、菫でもいいよ。気分、ちょっとマシになった？よかったら、ついでにマッサージしてよ。`,
       voice: `wav/CN/conversation24/vo_event_11031_43.wav`
     },
@@ -153,7 +153,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `仰せのままに。`,
       voice: `wav/CN/conversation24/vo_event_11031_11.wav`
     },
@@ -166,7 +166,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/smile0.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `んん……生き返るわ……`,
       voice: `wav/CN/conversation24/vo_event_11031_74.wav`
     },
@@ -175,7 +175,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `<span>Garofano</span>はどう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_39.wav" },
@@ -187,7 +187,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `まだ眠っていますが、体内での汚染生成は止まりました。師匠が能力を使って、彼女の体内から穢れを取り除いてくださったおかげです。`
     },
     {
@@ -195,7 +195,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `何人かの新人が看病していますので、すぐに目覚めるでしょう。`,
       voice: `wav/CN/conversation24/vo_event_11031_2.wav`
     },
@@ -204,7 +204,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/smile0.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `ならいいわ。`,
       voice: `wav/CN/conversation24/vo_event_11031_40.wav`
     },
@@ -213,8 +213,8 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
-      text: `『ガーデン』の手引きにもう一条追加ね。雇い主の言いなりになって、得体の知れない力に手を染めるなんて、浅はかな真似はおよしなさい。頼れるのは自分だけ。それが無理なら、素直に<ruby>業師<rt>私</rt></ruby>の元へ助けを求めに戻ってきなさい。`,
+      name: `「業師」`,
+      text: `「ガーデン」の手引きにもう一条追加ね。雇い主の言いなりになって、得体の知れない力に手を染めるなんて、浅はかな真似はおよしなさい。頼れるのは自分だけ。それが無理なら、素直に<ruby>業師<rt>私</rt></ruby>の元へ助けを求めに戻ってきなさい。`,
       voice: `wav/CN/conversation24/vo_event_11031_9.wav`
     },
     {
@@ -222,7 +222,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `はい。第73条として記録しておきます。`
     },
     {
@@ -230,7 +230,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `アザミは――`,
       voice: `wav/CN/conversation24/vo_event_11031_54.wav`
     },
@@ -239,7 +239,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `自業自得よ。`,
       voice: `wav/CN/conversation24/vo_event_11031_72.wav`
     },
@@ -252,7 +252,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `再三にわたる私の禁令を破り、勝手な行動を取り、あんな見え透いた罠にかかるなんて。私が前もって手を打っていなければ、今頃情報は筒抜けだったでしょうね。`,
       voice: `wav/CN/conversation24/vo_event_11031_68.wav`
     },
@@ -261,7 +261,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `助けに行くつもりはないわ。自分の蒔いた種は自分で刈らせなさい。`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_82.wav" },
@@ -277,7 +277,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `……まあ、あの子は今頃、<span>9th</span>の心理専門家のお手元でしょうね。私から逆暗示の罠を仕掛けておいたから、連中もしばらくは振り回されるはずよ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_18.wav" },
@@ -289,7 +289,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `9thに閉じ込められているなら、外をうろつき回るよりは安全よ。あの銀蜘蛛は執行人のやり方を毛嫌いしてるから、HUSHに引き渡したりはしないでしょう。`,
       voice: `wav/CN/conversation24/vo_event_11031_59.wav`
     },
@@ -298,7 +298,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `その後は十中八九、君のあの管理局行きになるわね。あの子にはお似合いよ。大願成就したんだもの、自分が何をしたいのか分かるまで、そこで頭を冷やせばいい。`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_47.wav" },
@@ -310,7 +310,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `別に、言ってるほどあの子を嫌ってるわけじゃないのよ。新入りだから掟知らずで生意気だけど、一点だけ、あの子は君たちより優れているところがある。`,
       voice: `wav/CN/conversation24/vo_event_11031_32.wav`
     },
@@ -319,7 +319,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `何をするにも自分のため。他人のために犠牲になろうとか、誰かのためにどうこうしようとか、損な役回りなんて絶対に考えない。その点においては、あの子が一番私に似ているわ。君たちよりよっぽど手がかからない。`,
       voice: `wav/CN/conversation24/vo_event_11031_69.wav`
     },
@@ -328,7 +328,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `彼女が無事なら、それで十分です。`
     },
     {
@@ -340,7 +340,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `師匠、これほど派手に行動されるのは初めてではありませんか？今回はあまりに注目を集めすぎています。大丈夫なのですか？`
     },
     {
@@ -360,7 +360,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `巻き添えが怖いなら隠れてなさい。どうせ君たちの出番はないわ。`,
       voice: `wav/CN/conversation24/vo_event_11031_53.wav`
     },
@@ -369,15 +369,15 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
-      text: `いいえ。『ガーデン』に入ったあの日から、自分の運命に対する覚悟はできています。それに、師匠が最強です。師匠を打ち破れる者がいるとは到底思えません。`
+      name: `「菫」`,
+      text: `いいえ。「ガーデン」に入ったあの日から、自分の運命に対する覚悟はできています。それに、師匠が最強です。師匠を打ち破れる者がいるとは到底思えません。`
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `ただ、福音地と上庭の争いをあれほど嫌悪し、わざわざ見つかりにくいこの場所を選んだ師匠が、今回その渦中に飛び込んだ。何か深い意味があるのですか？`
     },
     {
@@ -385,7 +385,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/smile0.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `深い意味なんてないわよ。この前までは春の眠気で動きたくなかっただけ。今は夏が来て、花が咲く時期だから手を出したの。`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_48.wav" },
@@ -397,7 +397,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/smile0.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `HUSHの連中もいい加減鬱陶しかったし、私の庭にハエがたかるのは我慢ならない。それだけよ。`,
       voice: `wav/CN/conversation24/vo_event_11031_14.wav`
     },
@@ -410,7 +410,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `そういう君こそ、なぜそんなことを聞くの？普段はそんなことに関心もないし、ずっと組織を出たがっていたくせに。君が自分から私を訪ねてきたのはこれが初めてよ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_45.wav" },
@@ -423,8 +423,8 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       bubbleStyle: "inner-voice-c",
 
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
-      text: `そして、『ガーデン』で私を訪ねてくる人間の目的は一つだけ――`,
+      name: `「業師」`,
+      text: `そして、「ガーデン」で私を訪ねてくる人間の目的は一つだけ――`,
       voice: `wav/CN/conversation24/vo_event_11031_45.wav`,
       /* bgm: `mp3/bg/-.mp3`, */
     },
@@ -433,7 +433,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `君の<span>復讐</span>は順調？自分を殺すほど優しい、あの局長のための復讐劇は？私の手助けが必要？`,
       voice: `wav/CN/conversation24/vo_event_11031_15.wav`
     },
@@ -446,7 +446,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `戻ってきたのはそのためでしょう？あの人に手を出した連中を、君が見逃すはずがない。`,
       voice: `wav/CN/conversation24/vo_event_11031_55.wav`
     },
@@ -455,7 +455,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `西区に行って誰を殺したの？錆火、執行委員会……他には誰？涅槃の重役たちに手を下す機会はあった？`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_1.wav" },
@@ -467,15 +467,15 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
-      text: `……はい。最近の師匠のご活躍のおかげで注意が逸れ、彼らに近づく好機を得ました。師匠の行動の妨げにならぬよう、隠密に処理しました。『ガーデン』の手によるものだとは誰にも気づかれません。`
+      name: `「菫」`,
+      text: `……はい。最近の師匠のご活躍のおかげで注意が逸れ、彼らに近づく好機を得ました。師匠の行動の妨げにならぬよう、隠密に処理しました。「ガーデン」の手によるものだとは誰にも気づかれません。`
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `ハッ、お見事。外には噂一つ流れてないわね。さすがは私の自慢の教え子。`,
       voice: `wav/CN/conversation24/vo_event_11031_8.wav`
     },
@@ -484,7 +484,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/smile0.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `で、気が済んだ？スカッとした？あれだけ復讐したんだから、少しは嬉しくなったでしょう。笑ってみせなさいよ。`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_51.wav" },
@@ -496,7 +496,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `君が笑うところ、ずいぶん見てないわ。仏頂面をされてると私の気分まで滅入るの。`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_44.wav" },
@@ -508,7 +508,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `……数多くのギャング、執行官、そして涅槃の偽善者どもを始末しました。仇敵をこの手で葬ったはずなのに……復讐の実感が何一つ湧かないのです。`,
       voice: `wav/JP/conversation24/vo_event_11031_35.wav`
     },
@@ -517,7 +517,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `……キリがありません。私の敵、彼の苦しみに責任があるクズどもは、殺しても殺しても湧いてくる。`
     },
     {
@@ -525,7 +525,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin2.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `彼らは自分たちが何をしたのかさえ知らない！`
     },
     {
@@ -537,7 +537,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin2.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `師匠は、快意恩仇こそが解脱だと言いました。ですが、この憎しみに終わりはありません。私の恨みは次第にぼやけ、疲弊し、私は……救われない。`,
       voice: `wav/JP/conversation24/西秀2.wav`,
     },
@@ -546,7 +546,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `師匠もずっと、終わりのない憎しみと対峙してきました。どうやって向き合っているのですか？どうやって心を麻痺させずにいられるのですか？`,
       voice: `wav/JP/conversation24/vo_event_11031_9.wav`
     },
@@ -555,7 +555,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `それとも、これが心を他人に預けた代償なのでしょうか？`
     },
     {
@@ -563,7 +563,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin3.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `だから師匠は、私たちに自分だけを愛せと教えるのですか？
       どこへ進めばいいのか分かりません。私に……導きをください。`
     },
@@ -572,7 +572,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `彼らの振る舞いを畜生にも劣る外道と糾弾しながら、自らも同じ行いに手を染め畜生に堕ちるわけにはいかない。人間ならば、正邪を弁えることだ。`,
       voice: `wav/CN/conversation24/vo_event_11031_60.wav`
     },
@@ -581,7 +581,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/wuyan.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `……それは復讐じゃないわ。`,
       voice: `wav/CN/conversation24/vo_event_11031_60.wav`
     },
@@ -590,7 +590,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/smile0.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `君はただ痛みに突き動かされてるだけ。目覚めていなさい。理性を保ち、勇敢でありなさい……`,
       voice: `wav/CN/conversation24/vo_event_11031_60.wav`
     },
@@ -599,7 +599,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `あの局長に関しては……目には目をだけじゃなく、実は別の道もあるのよ。`,
       voice: `wav/CN/conversation24/vo_event_11031_4.wav`
     },
@@ -608,7 +608,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin1.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `別の道、ですか……？`
     },
     {
@@ -616,7 +616,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `もしその馬鹿な男が生きてるなら、見つけ出して奪い返しなさい。誰かを好きになるのは構わない。心をあげるんじゃなくて、相手の心を騙し取って、ガッチリ繋ぎ止めておけばいいだけの話でしょう？`,
       voice: `wav/CN/conversation24/vo_event_11031_5.wav`
     },
@@ -625,7 +625,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `機会があれば、私も探しに行ってみたかったわね。あの朴念仁が最近どうしてるか。でも……`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_36.wav" },
@@ -641,7 +641,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `よくお聞き。教えるのはこれが最後よ。二度は言わないわ。`,
       voice: `wav/CN/conversation24/vo_event_11031_13.wav`,
     },
@@ -650,7 +650,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `君たちは私が選んだ花よ。多かれ少なかれ私に似た美点があるから、私の庭に入れた。美しい花ほどハエを寄せ付ける、それは分かるわよね。`,
       voice: `wav/CN/conversation24/vo_event_11031_75.wav`
     },
@@ -659,7 +659,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `確かに花は脆いわ。美しければ美しいほど、軽く揉めば砕け、折れば曲がる。君たちのようにね。ここに来た時はみんな、見るも無残な有様だった。`,
       voice: `wav/CN/conversation24/vo_event_11031_46.wav`
     },
@@ -668,7 +668,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/smile0.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `でも構わない。君たちは弱く見えるだけで、自分が思っている以上に強靭よ。`,
       voice: `wav/CN/conversation24/vo_event_11031_16.wav`
     },
@@ -677,7 +677,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `揉みくちゃにされても、来年にはまた咲く。焼かれても、また新しい芽が出る。運命は君を折ることはできても、君を破壊することは永遠にできない――君がその根を、自分の手で握りしめている限りはね。`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_71.wav" },
@@ -689,8 +689,8 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
-      text: `流されるんじゃないわよ。運命に押されるな、外野に惑わされるな。譲歩は理解とは引き換えられない。苦難の源は『従わないこと』ではなく、『自立していないこと』にあるのよ。`,
+      name: `「業師」`,
+      text: `流されるんじゃないわよ。運命に押されるな、外野に惑わされるな。譲歩は理解とは引き換えられない。苦難の源は「従わないこと」ではなく、「自立していないこと」にあるのよ。`,
       voice: `wav/CN/conversation24/vo_event_11031_56.wav`
     },
     {
@@ -698,7 +698,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `譲歩しても理解は得られない。苦しみの元は「従わない」ことじゃなく、「独立していない」ことだ。`
     },
     {
@@ -706,7 +706,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `自分という主権を持たず、それを守る力もない。それこそが、あのハエどもに、独りよがりに花を踏みにじる機会を与えてしまった原因なの。`
     },
     {
@@ -714,7 +714,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `君たちの人生は君たち自身のもの。私以外の誰の言葉も聞くんじゃないわ。`,
       voice: `wav/CN/conversation24/vo_event_11031_61.wav`
     },
@@ -731,15 +731,15 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin4.png`,
-      name: `『菫』`,
-      text: `肝に銘じます。ですが、師匠、なぜ『最後』なのですか？`
+      name: `「菫」`,
+      text: `肝に銘じます。ですが、師匠、なぜ「最後」なのですか？`
     },
     {
       type: `dialogue`,
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin4.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `ここ二ヶ月、師匠はずっと一人で戦い続けておられます。みんな心配しているのです。`
     },
     {
@@ -747,7 +747,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/jin4.png`,
-      name: `『菫』`,
+      name: `「菫」`,
       text: `何か計画があるのですか？教えてください。お体だって――`
     },
     {
@@ -755,7 +755,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `あーもうダメダメ、体中が痛いのよ。全員呼んできなさい、みんなでマッサージよ。お祝いしましょ、私の誕生日の前祝い。`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_33.wav" },
@@ -767,7 +767,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `今日も変わらず美しく、気分上々。明日も私の思い通りになるように。`,
       voice: `wav/CN/conversation24/vo_event_11031_26.wav`,
       /* bgm: `mp3/bg/330933570.mp3`, */
@@ -777,7 +777,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `<ruby>業師<rt>私</rt></ruby>を喜ばせる方法をよく考えなさい。今日の任務は、今日という日を私にとって最高に楽しい一日にすることよ！`,
       voice: [
         { label: "中", path: "wav/CN/conversation24/vo_event_11031_19.wav" },
@@ -790,7 +790,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
     },
     {
       type: `narration`,
-      text: `その夜が明けると、「業師」は手書きの指令書の束を残し、全ての暗殺者に指定時刻まで外出を禁じると、彼女の『ガーデン』を去った。`,
+      text: `その夜が明けると、「業師」は手書きの指令書の束を残し、全ての暗殺者に指定時刻まで外出を禁じると、彼女の「ガーデン」を去った。`,
       bgm: `mp3/bg/花间.m4a`,
     },
     {
@@ -910,7 +910,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `<span></span>シーゲルじゃない。数日見ないうちにずいぶん落ちぶれたわね。`,
       voice: `wav/CN/conversation24/vo_event_11032_7.wav`
     },
@@ -919,8 +919,8 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/leopold2.png`,
-      name: `『業師』`,
-      text: `死ぬんじゃないわよ、私の『ガーデン』はまだその小細工に隠蔽を頼ってるんだから。`,
+      name: `「業師」`,
+      text: `死ぬんじゃないわよ、私の「ガーデン」はまだその小細工に隠蔽を頼ってるんだから。`,
       voice: `wav/CN/conversation24/vo_event_11032_22.wav`
     },
     {
@@ -944,7 +944,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/smile0.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `そ？なら、悪・か・っ・た・わ・ね`,
       voice: `wav/CN/conversation24/vo_event_11032_13.wav`
     },
@@ -965,7 +965,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `ガロファノを唆したのは君ね……死にに行くような情報を流し、あんな気味の悪いルーン文字まで持たせて。`,
       voice: `wav/CN/conversation24/vo_event_11032_11.wav`
     },
@@ -974,7 +974,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `福音地の仲間じゃなく、私に助けを求めに来たってことは、見捨てられたってことでしょう。最後のご贔屓にしてあげるわ……`,
       voice: `wav/CN/conversation24/vo_event_11032_24.wav`
     },
@@ -983,8 +983,8 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『業師』`,
-      text: `今後、私の『ガーデン』は、君たち福音地とは一切無関係よ。`,
+      name: `「業師」`,
+      text: `今後、私の「ガーデン」は、君たち福音地とは一切無関係よ。`,
       voice: `wav/CN/conversation24/vo_event_11032_25.wav`
     },
     {
@@ -1038,7 +1038,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       position: `left`,
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `当然私がそうしたいからそうしたの。`,
       voice: `wav/CN/conversation24/vo_event_11032_21.wav`
     },
@@ -1048,7 +1048,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
       bubbleStyle: "inner-voice-c",
 
       avatar: `img/dh/impatient.png`,
-      name: `『業師』`,
+      name: `「業師」`,
       text: `さて、次は……`,
       voice: `wav/CN/conversation24/vo_event_11032_20.wav`
     },
