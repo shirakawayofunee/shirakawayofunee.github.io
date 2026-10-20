@@ -54,7 +54,7 @@ export default {
       {
         name: `「<ruby>薊<rt>アザミ</rt></ruby>」`,
         avatar: `img/dh/thistle3.jpg`,
-        note: `19歳、能力者、「GARDEN」の殺し屋`,
+        note: `19歳、能力者、「花園」の殺し屋`,
         basicStats: `復讐のために「花園」へ加入したFACの遺児。
         直情径行で衝動的な面があるものの、決して根は悪くない。`
       },

@@ -52,13 +52,13 @@ export default {
         能力：穿刺蚕食`
       },
     ],
-    synopsis: `業師は福音地からFAC総司令の暗殺依頼を引き受け、「ガロファノ」は「GARDEN」に戻り体を休養する。`,
+    synopsis: `業師は福音地からFAC総司令の暗殺依頼を引き受け、「ガロファノ」は「花園」に戻り体を休養する。`,
   },
   script: [
 
     {
       type: `narration`,
-      text: `N.F.113年7月23日00:41<br>「GARDEN」アジト`,
+      text: `N.F.113年7月23日00:41<br>「花園」アジト`,
     },
     {
       type: `image`,
@@ -81,7 +81,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold1.png`,
       name: `業師`,
-      text: `地下に伝えて、「GARDEN」はこの依頼を受けたと。`
+      text: `地下に伝えて、「花園」はこの依頼を受けたと。`
     },
     {
       type: `dialogue`,

@@ -43,7 +43,7 @@ export default {
       {
         name: `「COQUELIC」`,
         avatar: `img/dh/leopold402.png`,
-        note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
+        note: `「花園」の主、裏社会を陰で牛耳る実力者。`,
         basicStats: `憎しみを心ゆくまで楽しみ、愛を思う存分に謳歌する。
 
         生の流儀：人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。

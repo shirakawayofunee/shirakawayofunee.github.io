@@ -26,7 +26,7 @@ export default {
         name: `「Coquelicot」`,
         name2: `コクリコ`,
         avatar: `img/dh/L106.png`,
-        note: `「GARDEN」の主·業師、裏社会を陰で牛耳る実力者。`,
+        note: `「花園」の主·業師、裏社会を陰で牛耳る実力者。`,
         basicStats: `「命」や「正義」に対して独特な見解を持つの能力者。
         ▌生の流儀
         人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
@@ -43,7 +43,7 @@ export default {
         name2: `<ruby>未来の名探<rt></rt></ruby>偵（自称）`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、警察学校の一年生。`,
-        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`,
+        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「花園」が引き起こした連続殺人事件を調査中。`,
         profile: `危険度：B級
         能力：相信正義
 `, 
@@ -53,7 +53,7 @@ export default {
         name2: `アザミ`,
         avatar: `img/dh/thistle3.jpg`,
         note: `19歳、FACの遺児。`,
-        basicStats: `復讐のために「GARDEN」へ加入したFACの遺児。
+        basicStats: `復讐のために「花園」へ加入したFACの遺児。
         直情径行で衝動的な面があるものの、決して根は悪くない。誰よりも師匠を慕っており、そして心配もしている。
         彼女自身も自分が無知で未熟であることを自覚しており、成し遂げたい思いも持っている。`,
         profile: `危険度：B級

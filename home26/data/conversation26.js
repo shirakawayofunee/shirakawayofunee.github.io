@@ -40,7 +40,7 @@ export default {
       {
         name: `Doyle｜刑事`,
         avatar: `img/dh/doyle.jpg`,
-        note: `支局の刑事で、「GARDEN」による一連の暗殺事件を担当してるよ。`,
+        note: `支局の刑事で、「花園」による一連の暗殺事件を担当してるよ。`,
         basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
         profile: `所属：新都市治安局`
       },

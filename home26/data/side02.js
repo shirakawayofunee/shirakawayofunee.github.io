@@ -32,7 +32,7 @@ export default {
       {
         name: `「Garofano」`,
         avatar: `img/dh/severo5.png`,
-        note: `36歳、能力者、「GARDEN」幹部`,
+        note: `36歳、能力者、「花園」幹部`,
         basicStats: `外を渡り歩く時は、コードネームで通している。
         ▍コードネーム由来：
         「Garofano」 イタリア語の「Carnation」

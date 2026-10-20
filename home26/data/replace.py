@@ -17,10 +17,9 @@ def main():
     # 格式为: '旧关键词': '新关键词'
     # ==========================================
     replacements = {
-        'オーク・ボックス': '「コフィン」',
-        '老婦人': '■■■',
-        'black_crystal.png': 'quartz.jpg',
-        'chief.png': 'PC01.jpg',
+        'オーク箱': '「コフィン」',
+        'ガーデン': '花園',
+        '「GARDEN」': '「花園」',
     }
     
     if not replacements or list(replacements.keys())[0] == 'oldKeyword1':

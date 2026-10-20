@@ -22,7 +22,7 @@ export default {
     characters: [
       {
         name: `ジュリアン`,
-        avatar: `img/dh/julian.png`,
+        avatar: `img/dh/julian_young_4.png`,
         note: `錆火の建築士。車椅子の男。`,
         basicStats: `精神迷宮を進み、過去の声に晒されながら真紅の花へ手を伸ばす。`,
         profile: `危険度：高
@@ -161,7 +161,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/julian.png`,
+      avatar: `img/dh/julian_young_4.png`,
       name: `ジュリアン`,
       text: `……どうでもいい。俺が待っているのは、特別な誰かじゃない。
 俺以外であの男を覚えている者は、ほとんど死んだ。この何年、本人が生きているか死んでいるか、裏切ったのか忠実だったのか、それはもう俺たちには何の影響もない。
@@ -189,7 +189,7 @@ export default {
       text: `最近、死者がずいぶん増えた。異常な狂厄、執委会の追跡……私が連れ帰った「人々」もひどく怯えている。こんな状況は今までになかった。
 錆火の「リーダー」、仲間を守るために何かしないのか？
 できないのか？`,
-      note: `オーク箱`
+      note: `「コフィン」`
     },
     {
       type: `narration`,
@@ -289,7 +289,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/julian.png`,
+      avatar: `img/dh/julian_young_4.png`,
       name: `ジュリアン`,
       text: `……その通りだ。ここまで来た以上、仕方がない。`
     },
@@ -390,7 +390,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/julian.png`,
+      avatar: `img/dh/julian_young_4.png`,
       name: `ジュリアン`,
       text: `戻る？どこへ戻る？もう帰る場所なんてない。
 お前たちがみんなこれを見捨てるなら、俺が……最後まで残る。`
@@ -418,8 +418,8 @@ export default {
 君は扉を開ける。`
     },
     {
-      type: `narration`,
-      text: `（選択肢）……ジュリアン？`
+      type: `choice`,
+      text: `……ジュリアン？`
     },
     {
       type: `narration`,

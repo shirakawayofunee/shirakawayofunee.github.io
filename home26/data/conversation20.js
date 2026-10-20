@@ -39,7 +39,7 @@ export default {
       {
         name: `Leopold｜業師`,
         avatar: `img/dh/leopold1.png`,
-        note: `裏社会を陰で牛耳る実力者。秘密組織「GARDEN」の主宰者`,
+        note: `裏社会を陰で牛耳る実力者。秘密組織「花園」の主宰者`,
         basicStats: `表の犯行動機：
 ①福音地から受けた任務の遂行
 ②ディスシティで混乱を引き起こし、FACの兵力を引きつける

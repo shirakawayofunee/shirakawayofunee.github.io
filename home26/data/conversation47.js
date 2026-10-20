@@ -55,7 +55,7 @@ export default {
         name: `黒石英`,
         avatar: `img/dh/blackquartz.png`,
         note: `上庭直属部隊の代表。`,
-        basicStats: `罠に気づき撤退を命じ、ヘカテーをガーデンの業師と見なす。`,
+        basicStats: `罠に気づき撤退を命じ、ヘカテーを花園の業師と見なす。`,
         profile: `危険度：高
         出身：上庭
         能力：不明`
@@ -63,7 +63,7 @@ export default {
       {
         name: `コクリコ`,
         avatar: `img/dh/coquelicot.png`,
-        note: `ガーデンの業師。`,
+        note: `花園の業師。`,
         basicStats: `上庭部隊に対し、局長への手出しを許さないと宣言する。`,
         profile: `危険度：高
         出身：不明
@@ -400,7 +400,7 @@ export default {
       position: `left`,
       avatar: `img/dh/blackquartz.png`,
       name: `黒石英`,
-      text: `ガーデンの業師？ならば、局長は確かにここにいる。彼女を排除し、SHPを奪還する！`
+      text: `花園の業師？ならば、局長は確かにここにいる。彼女を排除し、SHPを奪還する！`
     },
     {
       type: `dialogue`,
@@ -440,7 +440,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/oakbox.png`,
-      name: `オーク箱`,
+      name: `「コフィン」`,
       text: `行け。
 どうせ結果は同じだ……`
     },

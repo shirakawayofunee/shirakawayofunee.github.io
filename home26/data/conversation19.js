@@ -30,7 +30,7 @@ export default {
         name: `「<ruby>薊<rt>アザミ</rt></ruby>」`,
         avatar: `img/dh/thistle3.jpg`,
         note: `19歳、新米殺し屋`,
-        basicStats: `復讐のために「GARDEN」へ加入したFACの遺児。
+        basicStats: `復讐のために「花園」へ加入したFACの遺児。
         直情径行で衝動的な面があるものの、決して根は悪くない。誰よりも師匠を慕っており、そして心配もしている。
         彼女自身も自分が無知で未熟であることを自覚しており、成し遂げたい思いも持っている。`,
         profile: `危険度：B級
@@ -41,7 +41,7 @@ export default {
       {
         name: `Doyle｜刑事`,
         avatar: `img/dh/doyle.jpg`,
-        note: `支局の刑事で、「GARDEN」による一連の暗殺事件を担当してるよ。`,
+        note: `支局の刑事で、「花園」による一連の暗殺事件を担当してるよ。`,
         basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
         profile: `所属：新都市治安局`
       },
