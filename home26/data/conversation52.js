@@ -34,7 +34,7 @@ export default {
     characters: [
       {
         name: `ドナルド`,
-        avatar: `img/dh/tang.png`,
+        avatar: `img/dh/don_power.png`,
         note: `局長を背負って高塔を上る能力者。`,
         basicStats: `かつての錆火初期リーダー。9年間能力を封印し、肉体を鍛え上げた。黒環の影響で時折意識が飛ぶが、局長を守り抜く意志は揺るがない。`,
         profile: `危険度：S級
@@ -89,8 +89,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `俺の意志が固かったからな。お前らの支配から抜け出すために9年間能力を使わず、鍛えてこの筋肉を手に入れた。`
     },
@@ -105,8 +105,8 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `そうか……先に言ってくれればよかったのに。そしたら遠慮なく暴れてた。
 あいつがいなくなって、お前らも色々と不便になったみたいだな。
@@ -132,8 +132,8 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `自分の身は自分で守れ、局長。こいつは役立たずだが、隣にいる奴はそうじゃない。
 あいつは汚染をものともせず、この一帯を完全に掃討して、俺たちが来るのを待ってた。`
@@ -147,8 +147,8 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `百回言われても同じだ。失せろ！`
     },
@@ -158,8 +158,8 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `？！`
     },
@@ -169,8 +169,8 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `局長、早く避けろ！！！！`
     },
@@ -204,8 +204,8 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `大丈夫か？`
     },
@@ -239,23 +239,21 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `？？（電子音）`,
+      name: `EDGE-01（超環通信）`,
       text: `先ほどの衝突には、そもそも必要性がありませんでした。別の方法で、別の人間と、改めて対話を始めましょう。
 こんにちは、局長。私はEDGE-01超環通信チャンネルの使用者であり、上庭の意思決定者の一人です。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01（電子音）`,
+      name: `EDGE-01（超環通信）`,
       text: `我々は互いに相当な重圧を受けています。ここで争うことは時間の浪費であると同時に、互いを消耗させるだけです。最終的に利益を得るのは黒環と福音地であり、城邦に危害をもたらすことになります。
 ですから、これからはあなたたちへの先制攻撃を停止すると約束します。そして、あなたと率直に話し合いたい。我々にはあなたの理解と助力が必要だからです。`
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `……奴らの言いなりになるな。`
     },
@@ -266,8 +264,7 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `理解に感謝します。それでは過去の誤解については多くを説明せず、時間もありません。単刀直入に本題へ入りましょう。`
     },
     {
@@ -277,57 +274,49 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `我々が立場についてこれ以上説明する必要はないでしょう。この狂厄との戦争において、我々とあなたは共に福音地の敵です。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `彼らの扇動によって、BR-002はすでに極めて危険な規模まで膨張し、放射範囲は西区の8割を覆い、さらに新都市へ拡大しようとしています。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `48時間以内に、人々はすべて変換され、BR-002の狂厄の餌となるでしょう。それによって、あれは完全に消滅可能な範囲を超えることになります。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `それが最後の時間的猶予です。我々は期限内に、あれを弱体化させるか、完全に消滅させなければならない。最も直接的かつ有効な手段は、ローカル・パージ令です。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `ルールは外部から黒環を突破し、受骸者に作用することが難しい。しかし、あなたがいれば話は別です。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `あなたは過去に002骸との戦闘で、枷を通じてそれと強い繋がりを構築した。あなた自身がルールを受け入れ、アンカーとなれば、ルールは黒環を貫通して干渉し、100％の同期率で002骸へ直接、正確な攻撃を加えることができます。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `これは広く支持されている案です。涅槃グループも、ルールへエネルギーを供給するため、異方晶10年分の生産量に相当する資源を提供することに同意しています。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `パージ令に関するすべての措置は停止されます。BR-002による西区への脅威も完全に排除されます。`
     },
     {
@@ -344,29 +333,25 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `その通りです。第二案の代償として、ルールを伝達するあなた自身も100％の同期率の中でルールによって完全に破壊されます。生存の可能性は一切ありません。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `さらに、脆弱なあなたが002骸より先に死亡しないことを保証するため、100％の同期率で一撃必殺となるよう確実にする必要があります。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `以上が、あなたに伝えるべきすべてです。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `では、あなたの選択は？`
     },
     {
@@ -383,29 +368,25 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `あなたはこの選択に道徳的な負担を感じるのですか？それなら、Xの言う通りです。あなたは正直で善良な人間なのでしょう。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `行動記録に示されているものとも一致しています。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `安心してください。あなたに何かを強制するつもりはありません。ここまで事態が進んだ以上、どちらを選んだとしても、人類側はすでに等しく敗北しています。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `ですが、私が決めるのなら、私は迷わずあなたを生かし、パージ令を実行します。`
     },
     {
@@ -415,22 +396,19 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `あなたがそう考えることは分かっています。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `パージ令は実行可能です。ただし強行すれば、あなたの性格からして、上庭はあなたの信頼を永遠に失うでしょう。あなたの強大な精神力も大きく損なわれる。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `そうなれば、あなたを生かすために私が払った犠牲も、当然意味を失います。`
     },
     {
@@ -444,8 +422,7 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01`,
+      name: `EDGE-01（超環通信）`,
       text: `判断は人によって異なります。この問題について、私は上庭を代表することはできません。`
     },
     {
@@ -455,8 +432,7 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/edge01.png`,
-      name: `EDGE-01（電子音）`,
+      name: `EDGE-01（超環通信）`,
       text: `第二観測庭を失ったことで、BR-002との超環通信を安定して維持することも困難になっています。時間がありません。私にも、集中して対処しなければならない敵がまだいます。
 BR-002について、あなたがどちらの案を選ぼうと、私にとっては事態を進めることができます。ですが、あなたにとっては生と死の違いです。
 だから、選択権をあなたに渡します。そして黒石英もあなたに託します。攻撃モジュールはあなたに対して永久に停止され、今後は「ルール」へのインターフェースと、限定的な安全保障のみを提供します。
@@ -466,8 +442,8 @@ BR-002について、あなたがどちらの案を選ぼうと、私にとっ�
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `もういい。こいつにお前が用意した選択をさせる必要はない。`
     },
@@ -477,8 +453,8 @@ BR-002について、あなたがどちらの案を選ぼうと、私にとっ�
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `9年だ……お前らは今でもその顔、そのやり方のままだ。俺たちには俺たちの目的がある。自分たちで答えを探しに来た。
 俺たちを一度だってまともに見ようとしなかった奴らに、ここで偉そうに指図される筋合いはない！`

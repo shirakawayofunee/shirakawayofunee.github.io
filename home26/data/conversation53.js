@@ -30,7 +30,7 @@ export default {
     characters: [
       {
         name: `ドナルド`,
-        avatar: `img/dh/tang.png`,
+        avatar: `img/dh/don608.png`,
         note: `過去の記憶と現在の黒環を行き来する能力者。`,
         basicStats: `かつて錆火のリーダーとして西区の栄光を信じ、涅槃との交渉に臨んだ。現在は局長を守りながら黒環を上る。`,
         profile: `危険度：S級
@@ -90,7 +90,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `俺の傷……治った？あんなにひどい傷が？`
     },
@@ -113,7 +113,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `どういう意味だ？`
     },
@@ -134,7 +134,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `窮地に必要なのはこういう勇気だ。俺が先陣を切って道を開ける！`
     },
@@ -148,7 +148,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `あいつらは命懸けで生産してるんだ。夜になればマフィアの嫌がらせまである。そんな暇——`
     },
@@ -178,7 +178,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `何を育成するって？何の実験だ？これは交渉じゃなかったのか？西区の未来について話し合うんじゃなかったのか？俺たちはすべてを賭けた。それなのに、お前らは何をやってる？
 ふざけんな……俺たちはコストなのか？人の命をお前らにとってただのコスト扱いするのか？
@@ -195,7 +195,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `当然だ！俺たちがここまで来られたのは信念があったからだ。理想は必ず実現する。不安になったら、俺たちの英雄を見ればいい。俺がいつお前たちを失望させた？`
     },
@@ -209,7 +209,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `あ……ああ………………`
     },
@@ -233,7 +233,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `ああああああ、お前らクソ野郎ども!!!`
     },
@@ -260,7 +260,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……俺は何も知らなかった。
 俺たちが意気揚々と勝ち取ろうとしていた勝利に意味があったのか。自分たちが対抗できると思っていた相手が、いったいどこまで先を行っていたのか……俺には何も分からなかった。
@@ -275,7 +275,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `小さい体でよく頑張ったな。ご苦労さん。もうドナルド兄貴が目ぇ覚ました。今度は俺が連れてく。
 よかったな、上庭に叩き潰されずに済んで。まだ随分やる気もあるみたいだ。`
@@ -291,7 +291,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `この程度なら楽勝だ。俺は班彦精神病院で五、六年も修行した、精神病博士だ。毎日悪夢を見てたから、もう暗唱できるくらい慣れてる。`
     },
@@ -310,7 +310,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `見るな。今は気分を保つんだ。まだ長い道のりがある。自分まで鬱にするな。`
     },
@@ -324,7 +324,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……なんでないと思う？
 俺がこの黒環に入った時、いや……外の迷宮を見た時から、ずっと一つのことを考えてた。`
@@ -332,7 +332,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `あれは本当に、あいつの作品なんだ……あいつがこの迷宮を造ったのは、本当に受骸者を守って外敵を阻むためだけだったのか？この成長を続ける黒環の高塔は、本当に力を蓄えて一度に復讐するためだけなのか？
 見てみろ。俺たちの邪魔をする一方で、怪物も閉じ込めてる。あれだけの死役まで閉じ込めてる。他の黒環はどんどん広がって、人を食い続けるのに、この塔だけは福音地に餌を与えられながら、ただ上へ上へと伸びて、汚染の中心を人からどんどん遠ざけてる。`
@@ -347,7 +347,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `俺は単純な人間だ。自分のその単純さのせいで、何度も痛い目を見てきた。だから今回はお前を信じる、局長。教えてくれ。
 ジュリアンはまだ死んでないんだろ？あいつの意志はまだこの黒環の中に残ってるんだろ？`
@@ -365,7 +365,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……はは、これを聞けたなら安心した。やっぱりこいつはデカい流民寨だ。ジュリアンはやっぱりジュリアンだ！
 あいつ、毎日自分には無理だの何だの言って、あちこちでリーダーを押しつけようとしてたくせに。結局、錆火が一番ひどく転んだ時、最後まで支えてたのはいつもあいつだった。

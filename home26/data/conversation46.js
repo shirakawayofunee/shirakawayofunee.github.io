@@ -44,7 +44,7 @@ export default {
       },
       {
         name: `ドナルド`,
-        avatar: `img/dh/tang.png`,
+        avatar: `img/dh/don608.png`,
         note: `元錆火の指導者／狂厄級能力者。`,
         basicStats: `二人を救い、追っ手を引き受ける。標識の影響下で002骸と対峙し、「弱者」を否定する。`,
         profile: `危険度：狂厄級
@@ -243,7 +243,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……任せろ。お前を死なせたりしない。
 ほら、そんなに罪悪感を抱いた顔をするな。お前が鉱坑に入ったのは俺を信じたからだ。なら、その期待を裏切るわけにはいかない。
@@ -307,7 +307,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `なんてこった。お前たち、どうしてこんなことになってるんだ？！`
     },
@@ -318,7 +318,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `無理するなと言っただろう。はあ、FACの兄貴！　こっちだ！　こっち！
 早くこの二人を連れて帰ってくれ。頼む、これで十個くらい借りができたぞ！`
@@ -346,7 +346,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……危うく引き受けるところだった。はあ。ごめんな、ヘカテー。
 俺だって英雄ぶってみたい。でも今回は、本当に無理だ。俺たちの後ろにはまだ追っ手がいる。俺が残らなければ、ここから誰も逃げられない。
@@ -360,7 +360,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `自分を卑下するな。「もっと強い誰か」に頼る必要もない。君自身に力がある。君を助けたいと思っている人間もたくさんいる。君たちは最初から弱者なんかじゃない。
 行け。どんな手を使ってでも、自分の願いを掴め。君に任せる。
@@ -395,7 +395,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……任せろ。お前を死なせたりしない。
 お前たちを連れて帰る。何人いようと構わない。必ず生きて帰す。`
@@ -409,7 +409,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `まだいる……鉱坑の中に、まだ人がいる……`
     },
@@ -423,7 +423,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `いや、絶対に行く。俺が連れてきたんだ。俺が……連れて帰らなきゃ……`
     },
@@ -464,7 +464,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `錆火は最近どうだ？　かなりひどいのか……でもサンジ、俺はもうみんなのために何もできない。
 上庭の女に何か「標識」をつけられた。「あの女を憎むほど、反抗したいと思うほど、力を使うほど、俺はあの女に従うようになって、操られる」らしい。はは……馬鹿げてるだろ？
@@ -481,7 +481,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `自分を卑下するな。「もっと強い誰か」に頼る必要もない。君自身に力がある。君を助けたいと思っている人間もたくさんいる。君たちは最初から弱者なんかじゃない。
 行け。どんな手を使ってでも、自分の願いを掴め。君に任せる。
@@ -501,7 +501,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……黙れ。何が目的だろうと、今回は俺の邪魔をするな。`
     },
@@ -518,7 +518,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `お前たちは偽物だからだ！　俺はもう狂うことには慣れてるんだ。こんなものが怖いか！`
     },
@@ -529,7 +529,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……出てこい、古い相棒。9年も会ってないんだ。まさか俺を忘れてはいないだろうな？`
     },
@@ -550,7 +550,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `ふふふふ……そんなに俺を気にかけてくれるなら、少しくらい気を散らしてくれ。俺の綱引き作戦はまだ続いてる。少し話でもしよう。`
     },
@@ -561,7 +561,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……弱者？　弱者って何だ？
 帳簿も読めない文盲の指導者は弱いのか？　頭に血が上って破壊することしかできない馬鹿は弱いのか？　こそこそと怯えながら9年間隠れ続けたお前は弱いのか？！
@@ -574,7 +574,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `それと、俺にその顔で話しかけるな……忌まわしい怪物、お前にその資格はない！`
     }

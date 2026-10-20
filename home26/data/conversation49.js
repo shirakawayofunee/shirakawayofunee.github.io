@@ -17,13 +17,6 @@ export default {
     ],
     characters: [
       {
-        name: `FAC責任者`,
-        avatar: `img/dh/fac_leader.png`,
-        note: `黒環の防衛線を指揮する司令官。`,
-        basicStats: `黒環境界の急速な拡張を目の当たりにし、狂厄の深淵を前に調査継続の決意と死を覚悟する。`,
-        profile: `所属：FAC`
-      },
-      {
         name: `コージ`,
         avatar: `img/dh/crache.png`,
         note: `影を操る、西区の影の守護神。`,
@@ -60,27 +53,27 @@ export default {
       },
       {
         name: `ドナルド`,
-        avatar: `img/dh/donald.png`,
+        avatar: `img/dh/don_power.png`,
         note: `電弧の雷霆をまとい、黒環の拡大に抗う英雄。`,
         basicStats: `「集中しろ、まだ終わってない。」<br>HUSHの攻勢から局長を救うため、受骸者となったかつての友「ジュリアン」の姿をした黒環の化身と対峙し、領域から弾き出される。`,
         profile: `所属：再建委員会\n能力：放電・機械制御`
       },
       {
         name: `局長`,
-        avatar: `img/dh/chief.png`,
+        avatar: `img/dh/515_pc.png`,
         note: `意識を取り戻し、世界を救うために立ち上がるMBCC局長。`,
         basicStats: `「なら……覚悟を決めろ。これは終わりじゃない。絶対に。」<br>展望台でかつての友の面影と甘いコーヒーを後にし、満身創痍のドナルドを支えて最後まで抗う意志を示す。`,
         profile: `所属：MBCC`
       },
       {
-        name: `オーク・ボックス`,
+        name: `「コフィン」`,
         avatar: `img/dh/oak.png`, // または適切なアバター
         note: `昏睡したヘカテーを受け取り、汚染の中を歩む者。`,
         basicStats: `「……これが、お前たちに与えられる唯一の平等だ。」`,
         profile: `所属：MBCC`
       },
       {
-        name: `老婦人`,
+        name: `■■■`,
         avatar: `img/dh/shepherd.png`, // 牧羊人
         note: `「福音地の牧羊人」と呼ばれる強大なる意思。`,
         basicStats: `「己の小さくも偉大な命を誇りに思い、安心して消え去るがいい。」<br>ドナルドたちの努力を嘲笑い、西区のすべてを貪欲に黒環の養分として呑み込もうとする。`,
@@ -97,7 +90,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/fac_leader.png`,
+      
       name: `FAC責任者`,
       text: `黒環汚染が拡大し、爆発状態へ移行。蓄積されていた狂厄エネルギーが急速に噴出し、黒環境界が急速に膨張しています！\n\n防衛戦線の出力を最大まで上げろ、絶対に食い止めるんだ！！`
     },
@@ -190,7 +183,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `こっちだ！！`
     },
@@ -201,7 +194,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `集中しろ、まだ終わってない。俺はまだ生きてる、付き合ってやる！`
     },
@@ -215,7 +208,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `！うっ——！！`
     },
@@ -244,7 +237,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `……お前の願い？お前は……？`
     },
@@ -262,7 +255,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/don_power.png`,
       name: `ドナルド`,
       text: `……ユ……リア……`
     },
@@ -281,7 +274,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/black_crystal.png`,
+      avatar: `img/dh/quartz.jpg`,
       name: `黒石英`,
       text: `黒環が急速に拡大し、西区全域を放射範囲に収めています。\n\n福音地の羊飼いの存在を確認。黒環境界に極めて近い。この速度では、彼女がBR-002へ侵入するのを阻止することは不可能です。\n\n彼女のエネルギー量は極めて大きく、力も強い。我々SHPの全歴史における上限値を遥かに上回っています。BR-002を呑み込むのを阻止しなければ、取り返しのつかない事態になります。\n\nしかし観測に失敗し、環内の時間場も混乱している現状では、攻撃のタイミングを特定できず、彼女を追って黒環本体へ侵入することも困難です。`
     },
@@ -311,13 +304,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `誰かの手から昏睡したヘカテーを受け取ったオーク・ボックスは、猛威を振るう汚染の中へ歩いていく。無数の亡霊が喚き叫ぶ光景を見つめながら。`
+      text: `誰かの手から昏睡したヘカテーを受け取った「コフィン」は、猛威を振るう汚染の中へ歩いていく。無数の亡霊が喚き叫ぶ光景を見つめながら。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/oak_box.png`,
-      name: `オーク・ボックス`,
+      avatar: `img/dh/oak.png`,
+      name: `「コフィン」`,
       text: `……これが、お前たちに与えられる唯一の平等だ。`
     },
     {
@@ -327,7 +320,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      name: `老婦人`,
+      avatar: `img/dh/muyangren.png`,
+      name: `■■■`,
       text: `弱き地上人よ、お前は……よくやった。私の期待を裏切らなかった。それどころか、遥かに上回った。\n\n他の愚か者たちが力に挑もうとしていた時、お前が生み出した環は確かに私の邪魔をした。なかなか厄介だった。\n\nだが、もう時間だ。`
     },
     {
@@ -337,7 +331,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      name: `老婦人`,
+      avatar: `img/dh/muyangren.png`,
+      name: `■■■`,
       text: `己の小さくも偉大な命を誇りに思い、安心して消え去るがいい。\n\nお前たちのすべては、私に託せばいい。`
     },
     {
@@ -345,16 +340,31 @@ export default {
       text: `黒環は膨張を続け、広がり続ける。何年も伸びることのなかった花が、ゆっくりと開くように、貪欲に養分を吸い上げていく。\n\nその養分こそ、光華の下で恐怖と絶望に囚われた西区のすべての人々だった。\n\n廃墟の間を、かつての英雄がよろめきながら歩いてくる。意識はすでに朦朧としており、どこへ向かえばいいのかも分からない。それでも黒環に背を向け、一歩一歩、必死に前へ進んでいた。終着点がどこにあるのかも知らないまま。\n\nついに力尽きて前へ倒れ込んだ時、別の誰かがその身体を支えた。`
     },
     {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_04_01.png`,
+    },
+    {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/515_pc.png`,
       name: `局長`,
-      text: `……力は尽くした。それでも止められなかった。\n\nこれがシンジケートの黒環だ。数十年にわたって、何百万人もの人々が自ら選び取った運命だ。こうなることは、最初から決まっていた。私たちには、どうすることもできない。`
+      text: `……力は尽くした。それでも止められなかった。`
+    },
+    {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_04_03f.png`,
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/515_pc.png`,
+      name: `局長`,
+      text: `これがシンジケートの黒環だ。数十年にわたって、何百万人もの人々が自ら選び取った運命だ。こうなることは、最初から決まっていた。私たちには、どうすることもできない。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/donald.png`,
+      avatar: `img/dh/515_don.png`,
       name: `ドナルド`,
       text: `……冗談だろ。`
     },
@@ -365,9 +375,20 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/515_pc.png`,
       name: `局長`,
-      text: `なら……覚悟を決めろ。これは終わりじゃない。\n\n絶対に。`
-    }
+      text: `なら……覚悟を決めろ。これは終わりじゃない。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/515_pc.png`,
+      name: `局長`,
+      text: `絶対に。`
+    },
+    {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_04_02.png`,
+    },
   ]
 };

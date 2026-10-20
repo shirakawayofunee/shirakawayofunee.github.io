@@ -156,7 +156,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `自分を卑下する必要も、「もっと強い誰か」に頼る必要もない。君自身に力がある。君を助けたいと思っている人間も大勢いる。君たちは決して弱者じゃない。`
     },
@@ -228,7 +228,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……今回は、俺がお前たちを守る。`
     },

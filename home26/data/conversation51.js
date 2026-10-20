@@ -33,60 +33,45 @@ export default {
     ],
     characters: [
       {
-        name: `ドナルド`,
-        avatar: `img/dh/tang.png`,
-        note: `局長を背負って高塔を上る能力者。`,
-        basicStats: `かつての錆火初期リーダー。9年間能力を封印し、肉体を鍛え上げた。黒環の影響で時折意識が飛ぶが、局長を守り抜く意志は揺るがない。`,
-        profile: `危険度：S級
-能力：肉体強化・戦闘技術`
-      },
-      {
         name: `局長`,
-        avatar: `img/dh/PC01.jpg`,
+        avatar: `img/dh/PC24.png`,
         note: `枷を通じて骸と繋がる存在。`,
         basicStats: `黒環の汚染を一身に背負い、現在はほとんど動けない状態。ドナルドに背負われながら高塔を目指す。`,
         profile: `危険度：不明
 能力：枷`
       },
       {
+        name: `ドナルド`,
+        avatar: `img/dh/don608.png`,
+        note: `局長を背負って高塔を上る能力者。`,
+        basicStats: `かつての錆火初期リーダー。9年間能力を封印し、肉体を鍛え上げた。黒環の影響で時折意識が飛ぶが、局長を守り抜く意志は揺るがない。`,
+        profile: `危険度：S級
+能力：肉体強化・戦闘技術`
+      },
+      {
         name: `黒石英`,
         avatar: `img/dh/quartz.jpg`,
         note: `深度汚染を受けた上庭のエリート。`,
         basicStats: `局長の引き渡しを要求する上庭側の戦士。装甲を自ら引きちぎるなど、異常な行動を見せる。`,
-        profile: `所属：上庭
-分類：深度汚染個体`
+        profile: `所属：上庭`
       },
       {
         name: `EDGE-01`,
         avatar: `img/dh/edge01.png`,
-        note: `上庭の意思決定者の一人。`,
+        note: `上庭の意思決定者·其一`,
         basicStats: `超環通信を通じて局長と対話し、BR-002対策としてローカル・パージ令を提案する。`,
-        profile: `分類：電子音声・上庭上層`
+        profile: `所属：上庭`
       },
-      {
-        name: `汚染された上庭兵士`,
-        avatar: `img/dh/contaminated_soldier.png`,
-        note: `黒環に汚染された上庭の兵士。`,
-        basicStats: `「枷……」としか言葉を発せず、局長を狙って迫る。`
-      },
-      {
-        name: `汚染された福音地傀儡`,
-        avatar: `img/dh/contaminated_puppet.png`,
-        note: `黒環に汚染された福音地の傀儡。`,
-        basicStats: `「あの人……枷……」と繰り返しながら、上庭兵士と共に行動する。`
-      }
     ],
     synopsis: `黒環内部の高塔を、ドナルドが局長を背負って上っていく。下方では上庭と福音地が激戦を繰り広げ、死役の群れが次々と落下してくる。枷が骸と繋がる局長は戦力として使えず、ドナルドは汚染された兵士たちを退けながら進む。深度汚染を受けた上庭エリート・黒石英が現れ、局長の引き渡しを要求。激戦の末にEDGE-01が介入し、BR-002を消滅させるための「ローカル・パージ令」と、局長自身の犠牲を巡る選択を提示する。ドナルドは上庭の提案を拒絶し、二人は崩壊する階層から離脱する。`
   },
   script: [
     {
-      type: `narration`,
-      text: `高塔黒環A-13|13-12・高塔`
-    },
-    {
-      type: `narration`,
-      text: `鉄筋死役：
-ギィィィ————————`
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/鉄筋死役.png`,
+      name: `鉄筋死役`,
+      text: `ギィィィ———`
     },
     {
       type: `narration`,
@@ -96,8 +81,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `俺たち以外にも、この黒環に誰かいるのか？上庭？福音地？随分派手にやり合ってるな。
 前の一戦は福音地が一歩取った。上庭もかなり焦ってるんだろうな。`
@@ -128,8 +113,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `俺がお前を背負って上ってるんだけどな。
 はぁ、あんなにイキって俺と一緒に入ってきたから、どれだけ大した奴かと思ったら、二歩も歩かないうちにもう役立たずか？
@@ -144,8 +129,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `冗談だろ！こんなお前くらい、十人背負ったって、まだ踊りながらパルクールできる。全然問題ない。`
     },
@@ -162,8 +147,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `分かってる。枷のせいだろ。
 お前が目を覚ましてから、能力者たちの状態は前よりずっと良くなったって聞いた。ヘカテーのあれだけ酷かった汚染も、少しずつ抜けてきてる。
@@ -203,8 +188,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `もちろん。ここは内も外も、でかくなった流民寨みたいなもんだ。あいつの設計なら、どこまで行ったって見分けがつく。
 俺もあいつを探したい。たぶん、みんな探してる。でも俺が案内すれば、他の二組より確実に早く着ける。`
@@ -229,15 +214,15 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド＆局長`,
       text: `……`
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……はは、とうとうここまで来たか。
 ここまで来ると、仲良くできるらしいな。
@@ -253,8 +238,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `冗談だろ。こいつら二組とも、外で素手でぶん殴ってきたんだぞ。怖がると思うか？
 でも、お前も少しは手伝ってくれよ。
@@ -266,8 +251,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `ふぅ——よしよし、まだまだ現役だ。もう何匹か来たって俺は——`
     },
@@ -278,8 +263,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `——うっ！ん？俺、またぼーっとしてた？`
     },
@@ -289,8 +274,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `はは……黒環の影響、やっぱりでかいな。しかも今はお前の枷も使えない。俺たち、まさに傷病兵コンビだ。
 でも、お前がいてくれると本当に安心する。ありがとう。
@@ -312,8 +297,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `まあ、なんとかなる。`
     },
@@ -326,8 +311,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `分かってる。`
     },
@@ -342,8 +327,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `……最近、またその話をする奴が増えたな。今の俺、まだそいつらと同じに見えるか？とっくに変わったと思ってたんだけどな。
 悪いな。お前がたくさん苦しんできたことも、お前が大切にしてる人たちがたくさん苦しんできたことも分かってる。俺には何も埋め合わせられない。この旅には俺自身の目的もある。
@@ -365,8 +350,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `嫌なら嫌だってはっきり言えよ、局長さん。俺が守る。`
     },

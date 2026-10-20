@@ -414,7 +414,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `私は錆火の一員ではない。あなたたちのリーダーでもない。誰かを救うことなんてできない。
 すまない。少し一人にしてほしい。`
@@ -500,14 +500,14 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……弱いことを謝る必要はない、ヘカテー。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `そうでなければ、枷を壊してしまった私こそ、みんなに一番申し訳が立たない人間になる。謝るべきなのは私だ。`
     },
@@ -518,7 +518,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `すまない。私がもっと強ければ、君たちを守れた。でも、私も諦めるつもりはない。特に、君たちを傷つけた奴らのことは。
 必ず枷を取り戻す。その前に……君にも一つ、頼みたいことがある。`
@@ -610,7 +610,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `意識は戻ったか？君はどうも、この黒環の影響を特に受けやすいようだ。`
     },

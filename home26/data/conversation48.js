@@ -31,7 +31,7 @@ export default {
       },
       {
         name: `ドナルド`,
-        avatar: `img/dh/tang.png`,
+        avatar: `img/dh/don608.png`,
         note: `執行官。`,
         basicStats: `電光とともにジュリアンを呼び止めようとするが、死役の群れに呑み込まれる。`,
         profile: `危険度：不明
@@ -227,7 +227,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `「反抗も戦いも、すべて意味がある。俺は決してシンジケートを見捨てない。こんなものに負けるつもりもない！」
 ゾーヤに託されて、俺はお前たちと一緒に戦いに来た！
@@ -246,7 +246,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `錆火を動かしているのは、もう目の前にある希望じゃない。お前たちは背後から迫る絶望から逃れるために、ほとんど理性を失うほど足掻いている。
 試してみろ、ジュリアン。少なくとも、これは俺に見えている、実現できる希望だ。試してみろ。
@@ -378,7 +378,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `ジュリアン！戻れ！！`
     },

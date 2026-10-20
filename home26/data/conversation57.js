@@ -51,7 +51,7 @@ export default {
       },
       {
         name: `ドナルド`,
-        avatar: `img/dh/tang.png`,
+        avatar: `img/dh/don608.png`,
         note: `記憶の中の声。`,
         basicStats: `「錆火のためでも、世界を救うためでもない……お前自身が大切にしているもののために。」`
       }
@@ -238,14 +238,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `安心して。俺にはそんなことできない。自分一人でも他人の期待を背負えないのに、どうしてお前に背負わせたりする?`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `錆火のためでも、世界を救うためでもない……お前自身が大切にしているもののために、お前は真実を知り、すべてに決着をつける。あの人たちのもとへ、生きて帰るために。`
     },

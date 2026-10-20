@@ -86,7 +86,7 @@ export default {
       {
         avatar: `img/dh/quartz.jpg`,
       name: `黒石英`,
-        avatar: `img/dh/black_crystal.png`,
+        avatar: `img/dh/quartz.jpg`,
         note: `上庭を代表して乗り込んできた冷酷な指揮官。`,
         basicStats: `SHP-13（ヘラ）の奪取を目的に、マチルダとの対話を完全に拒否して強硬手段に出る。`,
         profile: `所属：上庭`
@@ -471,7 +471,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/chief.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `ゴホッ、ゴホッ――！\n\nうっ――！`
     },
