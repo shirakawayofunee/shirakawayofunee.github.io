@@ -26,9 +26,11 @@ export default {
     ],
     characters: [
       {
+        name0: `君`,
         name: `局長`,
+        name2: `Shp-13`,
         avatar: `img/dh/PC24.png`,
-        note: `MBCC（ミノス危機管理局）の局長、Shp-13`,
+        note: `MBCCの局長`,
         basicStats: `肉体は長期の昏睡状態にあり、意識はBR-002の精神汚染の深層領域を彷徨う。時空が混濁したこの領域で、あなたの目に映ったのは、見知った顔だった……`,
       },
       {

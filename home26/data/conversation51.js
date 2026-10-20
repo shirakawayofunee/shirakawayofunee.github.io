@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `高塔`,
+    title: `「高塔」`,
     bgm: `mp3/bg/black_ring_tower.mp3`,
     summary: `局長とドナルドはようやくブラックリングに辿り着いた。リング内の様々な装置が絡み合い、上に伸び、壮大な塔を形成した。`
   },

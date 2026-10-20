@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `弱者の戦い・Ⅰ`,
+    title: `「弱者の戦い・Ⅰ」`,
     bgm: `mp3/bg/weak_battle.mp3`,
     summary: `弱者は自らの戦いに立ち向かわなければならない。最善を尽くしても勝てないかもしれないが、幸い彼らは一人で戦っているわけではない。`
   },

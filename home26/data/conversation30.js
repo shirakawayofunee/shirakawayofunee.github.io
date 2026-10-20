@@ -55,7 +55,7 @@ export default {
         name: `「<ruby>薊<rt>アザミ</rt></ruby>」`,
         avatar: `img/dh/thistle3.jpg`,
         note: `19歳、能力者、「GARDEN」の殺し屋`,
-        basicStats: `復讐のために「花庭園」へ加入したFACの遺児。
+        basicStats: `復讐のために「花園」へ加入したFACの遺児。
         直情径行で衝動的な面があるものの、決して根は悪くない。`
       },
     ],
@@ -67,7 +67,6 @@ export default {
       position: `right`,
       name: `クリスティーナ`,
       text: `やめろ、コクリコ！これは戦いじゃない、君が飲み込まれかけてるの！`,
-      bubbleStyle: "inner-voice-c",
       voice: `wav/JP/conversation30/vo_event_11043_21.wav`,
     },
     {
@@ -77,8 +76,8 @@ export default {
       name: `「コクリコ」`,
       text: `まだ生きていたのか。邪魔をしに来たのか。`,
       voice: [
-        { label: '中', path: 'wav/CN/conversation30/vo_event_11043_129.wav' },
-        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_56.wav' },
+        { label: 'CN', path: 'wav/CN/conversation30/vo_event_11043_129.wav' },
+        { label: 'JP', path: 'wav/JP/conversation30/vo_event_11043_56.wav' },
       ]
     },
     {
@@ -86,9 +85,7 @@ export default {
       position: `right`,
       name: `クリスティーナ`,
       text: `ここは現実じゃない。現実の彼女が咲かせた花はもう空間全体を埋め尽くしてる。ついさっき、突然君への反撃が始まったの。ここに入って、やっと分かった。`,
-      voice: [
-        { label: '日', path: 'wav/JP/conversation30/vo_event_11043_66.wav' },
-      ]
+      voice: `wav/JP/conversation30/vo_event_11043_66.wav`,
     },
     {
       type: `dialogue`,
@@ -166,7 +163,7 @@ export default {
 
     {
       type: `narration`,
-      text: `目の前の金髪の馬鹿は、とっくに満身創痍で、心も粉々に砕けている。なぜだろう、数十年の記憶が雪崩のように押し寄せてくる。彼女を見ていると、「花庭園」に初めて足を踏み入れた壊れた人間たちを、そして何より、かつての自分を見ているようだ。`,
+      text: `目の前の金髪の馬鹿は、とっくに満身創痍で、心も粉々に砕けている。なぜだろう、数十年の記憶が雪崩のように押し寄せてくる。彼女を見ていると、「花園」に初めて足を踏み入れた壊れた人間たちを、そして何より、かつての自分を見ているようだ。`,
 
     },
     {
@@ -227,7 +224,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `「花庭園」は生きてる。`,
+      text: `「花園」は生きてる。`,
       voice: `wav/JP/conversation30/vo_event_11043_34.wav`,
     },
     {
@@ -273,14 +270,14 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `HUSHは現場を偽装し、君に「花庭園」は全滅したと思わせた。執行人は常に効率と節約を求める。あんなに手の込んだ回りくどいことをするのは、二つの目的のため以外にあり得ない。`,
+      text: `HUSHは現場を偽装し、君に「花園」は全滅したと思わせた。執行人は常に効率と節約を求める。あんなに手の込んだ回りくどいことをするのは、二つの目的のため以外にあり得ない。`,
       voice: `wav/JP/conversation30/vo_event_11043_117_0001.wav`,
     },
     {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `<span>「花庭園」を生かすこと、そして君を発狂させること。</span>`,
+      text: `<span>「花園」を生かすこと、そして君を発狂させること。</span>`,
       voice: `wav/JP/conversation30/vo_event_11043_117_0002.wav`,
     },
     {
@@ -378,7 +375,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `これが「花庭園」破壊の真意。彼女は君の復讐の怒りを煽り、そして今のように、能力を使って君を完全に支配しようとしてる。他の人たちの生死なんて……彼女にとっては「節約」できるし、自分の手駒にさえできる、そうでしょ？`,
+      text: `これが「花園」破壊の真意。彼女は君の復讐の怒りを煽り、そして今のように、能力を使って君を完全に支配しようとしてる。他の人たちの生死なんて……彼女にとっては「節約」できるし、自分の手駒にさえできる、そうでしょ？`,
       voice: [
         /* { label: '中', path: 'wav/CN/conversation30/vo_event_11043_53.wav' }, */
         /* { label: '日', path: 'wav/JP/conversation30/vo_event_11043_7.wav' }, */
@@ -388,7 +385,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `「花庭園」の行方について、いくつか手がかりがあるの。安全な場所に行ったら教える。条件は、君が目を覚ますこと。真実を見極めること。真実は――`,
+      text: `「花園」の行方について、いくつか手がかりがあるの。安全な場所に行ったら教える。条件は、君が目を覚ますこと。真実を見極めること。真実は――`,
       voice: [
         { label: '日', path: 'wav/JP/conversation30/vo_event_11043_48.wav' },
       ]
@@ -497,7 +494,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `敵なんてどうでもいい、復讐なんてどうでもいい、薄汚い害虫どもなんて知るか。業師はただ今すぐ自分の「花庭園」に帰りたかった。自分の花たちが生き生きと咲く姿を見たい、抱きしめたい。`,
+      text: `敵なんてどうでもいい、復讐なんてどうでもいい、薄汚い害虫どもなんて知るか。業師はただ今すぐ自分の「花園」に帰りたかった。自分の花たちが生き生きと咲く姿を見たい、抱きしめたい。`,
     },
     {
       type: `narration`,
@@ -937,7 +934,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `この道は復讐のためではない。「花庭園」の業師を止められる者は、もはや誰もいない。`,
+      text: `この道は復讐のためではない。「花園」の業師を止められる者は、もはや誰もいない。`,
     },
 ]
 };

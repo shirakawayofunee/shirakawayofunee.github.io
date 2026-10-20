@@ -21,31 +21,34 @@ export default {
     ],
     characters: [
       {
-        name: `Chris｜<ruby>未来の名探偵<rt>自称</rt></ruby>`,
+        name0: `未来の名<ruby>探<rt>自称</rt>偵</ruby>`,
+        name: `CHRIS`,
         name2: `クリス`,
         avatar: `img/dh/zhentan1.png`,
-        note: `19歳、能力者、警察学校の一年生。`,
-        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。
+        note: `警察学校の一年生、19歳`,
+        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「花園」が引き起こした連続殺人事件を調査中。
         ▍背景
       父は103年の「月蝕作戦」でFACとして殉職し、母も数年後に悲しみで亡くなった。
-      105年に一人で上庭代表を暗殺した後、HUSH-Xに拾われたんだ。
-      両親の戦友に育てられたけど、養父母も113年3月のBR-002二次勃発でFACとして命を落とした。`,
+      両親の戦友に育てられたけど、養父母も113年3月のBR-002二次爆発でFACとして命を落とした。`,
+      profile: `危険度：B級
+        能力：相信正義
+`, 
       },
       {
-        name: `Mireya｜探偵の妹`,
-        name2: `ミリア`,
-        avatar: `img/dh/Mireya.png`,
-        note: `探偵の養父母の実の娘。人を見る目がある人`,
+        name0: `探偵の妹`,
+        name: `MIREYA`,
+        name2: `ミリヤ`,
+        avatar: `img/dh/miria.png`,
+        note: `探偵養父母の実の娘<br>人を見る目がある人`,
         basicStats: `両脚に障害があるが、それゆえに自立心が強く、賢く、気丈である。
 姉妹の間ではよく口げんかをするが、実は探偵のことを深く心配している。`,
       },
       {
-        name: `Adrien`,
+        name: `ADRIEN`,
+        name2: `アドリアン`,
         avatar: `img/dh/fac_commander.png`,
-        note: `FAC総司令官、最前線で四十有余年、奮闘し続けている。`,
+        note: `FAC総司令官、最前線で四十有余年、奮闘し続けている`,
       },
-
-
     ],
     synopsis: `工事中`,
     relatedLink: {
@@ -54,6 +57,11 @@ export default {
     }
   },
   script: [
+    {
+      type: `image`,
+      src: `img/cg/title_1.png`,
+      bubbleStyle: "center",
+    },
     {
       type: `narration`,
       text: `N.F.113年8月8日 9:00<br>FAC記念墓地<br>西区戦没者追悼式`,

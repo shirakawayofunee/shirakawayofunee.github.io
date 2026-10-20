@@ -1,0 +1,663 @@
+export default {
+  meta: {
+    title: `「最[後]通牒」`,
+    bgm: `mp3/bg/conversation20.mp3`,
+    summary: `Xは彼女なりのやり方で事態を収拾した。しかし、得るものがあれば代償もある。`
+  },
+  infoPanel: {
+    glossary: [
+      {
+        term: `FAC`,
+        desc: `FACは主要な軍事勢力として、さまざまな災厄の迎撃を担当しています。異常災害、黒環、狂厄、能力者など、対象はこれに限りません。`
+      },
+      {
+        term: `M値と能力者`,
+        desc: `M値は、個人が狂厄の影響をどれだけ受けているかを数値化したものです。（簡単に言えばSan値のようなもの）
+        M値が高いほど、狂厄の浸食が深まっていることを示します。
+        個人のM値には危険域が存在し、そこに近づくと狂厄者は崩壊して怪物化してしまいます。
+        また、何らかの未知の理由によって、一部の狂厄者は崩壊せずに覚醒し、常人を遥かに超える力をもつ能力者となることがあります。`
+      },
+      {
+        term: `HUSH部隊`,
+        desc: `HUSH-X（SHALOM）に支配された改造人部隊は、極めて高い戦闘能力を有している。`
+      },
+    ],
+    characters: [
+      {
+        name: `Leopold｜業師`,
+        avatar: `img/dh/leopold1.png`,
+        note: `裏社会を陰で牛耳る実力者。秘密組織「GARDEN」の主宰者`,
+        basicStats: `表の犯行動機：
+①福音地から受けた任務の遂行
+②ディスシティで混乱を引き起こし、FACの兵力を引きつける
+③103年の事件における真の被害者のための復讐
+真の目的：
+子供たちのために障害と隐患を排除しておくこと。自分がもういなくなっても、子供たちが安全に歩き続けられるようにする。`,
+      },
+      {
+        name: `<ruby>執行人X<rt>SHALOM</rt></ruby>`,
+        avatar: `img/dh/x4.png`,
+        note: `廃棄期限まであと一ヶ月しかない道具。他人の苦しみと命を代償に、自分のかすかな希望を買う?`
+      },
+      {
+        name: `Chris（探偵）`,
+        avatar: `img/dh/pc208.png`,
+        note: `探偵服を着て、大きい斧を武器にする少女、犬系（<span>別に本物の犬ではない</span>）。`
+      },
+    ],
+    synopsis: `Xは偽の情報を流し、Lの部下を拉致した。報復としてLは軍総司令、複数の軍高官、そしてXが最も信頼を寄せる部下（探偵役）を拘束し、爆弾を積んだ車両に全員を乗せ、郊外から市街地中心へ移動した。`,
+    relatedLink: {
+      text: `次章`,
+      targetId: `conversation22`
+    }
+  },
+  script: [
+    {
+      type: `narration`,
+      text: `N.F.113年8月15日11:32<br>車内`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `ほら、ドアを叩くのやめな。これはFACの超装甲車だ、いつもぶっ壊してる金庫じゃないんだから。`,
+      voice: `wav/CN/conversation21/vo_event_11027_30.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `まあ、ムキにならないで。君たちだって汚い手で私の人を縛ったじゃない？`,
+      voice: `wav/CN/conversation21/vo_event_11027_55.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `私をどうしようがいいから、総司令を解放して！`,
+      voice: `wav/JP/conversation21/vo_event_11027_48.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `今回の西区作戦はめっちゃ大事だ。BR-002を封鎖できれば、西区は救われる。たくさんの無垢な人が城邦に見捨てられずに済む！今はあんたが気まぐれ起こす時じゃない！`,
+      voice: `wav/JP/conversation21/vo_event_11027_44.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `ふん、知ってる。私がそんなの気にしないってこと、君もわかってるでしょ。`,
+      voice: `wav/CN/conversation21/vo_event_11027_32.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `連絡先を教えて。君の大好きな執行人お姉さんに電話かけたいな。`,
+      voice: `wav/CN/conversation21/vo_event_11027_18.wav`
+    },
+    {
+      type: `narration`,
+      text: `聞き慣れた着信音がトランシーバーの向こうから響いた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `おっと、必要なくなった。彼女から君にかけてきた。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_57.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_17.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `あたしの携帯、盗んだな？！`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `しっ、大人が話してるんだから、子供は口出ししない。君、ミュートにした。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_46.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_26.wav' },
+      ]
+    },
+    {
+      type: `narration`,
+      text: `「業師」は探偵の怒鳴り声を無視し、携帯の着信を直接つなぎ、スピーカーをオンにした。`
+    },
+    {
+      type: `narration`,
+      text: `運転席の向こうでは、小娘が明らかにキレていて、必死にドアを叩き、電話の相手の注意を引こうとしていた。「業師」はのんびり携帯をトランシーバーと自分の間に提げた。車は猛スピードで走り、騒音が少しうるさい。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `執行人`,
+      text: `こんにちは、「業師」。`,
+      voice: `wav/CN/conversation21/vo_event_11027_48.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold2.png`,
+      name: `「業師」`,
+      text: `どうも、執行人さん。君の大事な子が私の手にいるけど、まるで驚いてないみたいね。`,
+      voice: `wav/CN/conversation21/vo_event_11027_11.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `執行人`,
+      text: `キミがあの子を初めて誘拐した時に、GPSを仕込んでおいたから、位置は特定できる。<br>クリスティナが錆の川の近くにいるのは知っている。
+      きっとまたキミに拉致されたんだろつ。`,
+      voice: `wav/CN/conversation21/vo_event_11027_2.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `ふーん、変ね。私が彼女を拉致してから何時間も経ってるのに、なんで今さら電話してきたの？`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_53.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_35.wav' },
+      ]
+    },
+    {
+      type: `narration`,
+      text: `「業師」はドアを叩く音がピタリと止まったのに気づき、冷笑して電話に集中した。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold2.png`,
+      name: `「業師」`,
+      text: `自分の部下を利用して私の位置を特定するつもり? ひどいわね、彼女の心が傷つくじゃない。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_53.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_7.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `執行人`,
+      text: `総司令もそこにいるね。車の位置はすでに特定済み。今回は君を追うのは治安官でもFACでもなく、上庭専属のHUSH部隊だ。`,
+      voice: `wav/CN/conversation21/vo_event_11027_42.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `執行人`,
+      text: `今ならまだ交渉する余地がある、「業師」`,
+      voice: `wav/CN/conversation21/vo_event_11027_45.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/smile0.png`,
+      name: `「業師」`,
+      text: `ふっ、君のHUSH部隊なら、6月から私の邪魔をしていたじゃない。そんなつれないことを言わないで。`,
+      voice: `wav/CN/conversation21/vo_event_11027_8.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `「業師」`,
+      text: `君の指揮に従うために電話に出たわけじゃないわ。`,
+      voice: `wav/CN/conversation21/vo_event_11027_37.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `「業師」`,
+      text: `聞きなさい、上庭の執行人。この車には君たちの総司令、交渉の重要人物十数人、そして君たちが大嫌いな福音地の狂厄爆弾がある。新都市に向かってる。`,
+      voice: `wav/CN/conversation21/vo_event_11027_25.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `「業師」`,
+      text: `運転してるのは福音地の傀儡造物。狙撃しても無駄。この道中で何かあって車が減速したら、爆弾は即爆発する。その時、半径1キロのM値は2000超える。`,
+      voice: `wav/CN/conversation21/vo_event_11027_51.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `「業師」`,
+      text: `爆弾を解除する唯一の方法は、起動装置を直接外すこと。それは老いぼれの体についてる。老いぼれは君の小犬のそばにいる。`,
+      voice: `wav/CN/conversation21/vo_event_11027_1.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/smile0.png`,
+      name: `「業師」`,
+      text: `彼女にその能力があるかどうか……ふ、君も私もわかってるよね。`,
+      voice: `wav/CN/conversation21/vo_event_11027_23.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `執行人`,
+      text: `……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `「業師」`,
+      text: `今は昼の11時32分。あと30分もしないうちに、この車は新都市の最初の人口密集地に着く。私は君と違って、条件は話さない。`,
+      voice: `wav/CN/conversation21/vo_event_11027_4.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `「業師」`,
+      text: `これは君の自業自得。`,
+      voice: `wav/CN/conversation21/vo_event_11027_14.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `執行人`,
+      text: `わかった。これは確かに君らしい選択だ。`,
+      voice: `wav/CN/conversation21/vo_event_11027_38.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x4.png`,
+      name: `執行人`,
+      text: `西区作戦は必要だし、総司令も必要だ。上庭の要求は明確で、私は最小の代償で脅威を解除する。`,
+      voice: `wav/CN/conversation21/vo_event_11027_12.wav`
+    },
+    {
+      type: `narration`,
+      text: `車が何度か衝撃を受け、屋根に何かがしがみついた。数が多い。HUSHの戦闘エリートだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/impatient.png`,
+      name: `「業師」`,
+      text: `……ふん、君たちごときで。`,
+      voice: `wav/CN/conversation21/vo_event_11027_29.wav`
+    },
+    {
+      type: `narration`,
+      text: `「業師」は電話を切り、ついでにトランシーバーのミュートを解除したが、向こうは静まり返っていた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `ほら、ガキ、しょげるのはやめろ。軽くあしらわれたくらい、どうということもない。`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_40.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_31.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `君のシャーロームお姉さんがHUSH部隊をよこしたけど、君を助けに来たんじゃない。当然、彼らじゃ私を止められない。`,
+      voice: `wav/CN/conversation21/vo_event_11027_26.wav`
+    },
+    
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/smile0.png`,
+      name: `「業師」`,
+      text: `遊び方は教えてやった。君の探偵ゲーム、まだ終わってない。続ける？`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_59.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_39.wav' },
+      ]
+    },
+    {
+      type: `narration`,
+      text: `しばらくの沈黙の後、トランシーバーの向こうから低く、しかし確固とした声が響いた。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `私が勝つ。絶対にあんたの思い通りにはさせない。`,
+      voice: `wav/JP/conversation21/vo_event_11027_56.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `ハハハハハ！いいね、じゃあ君の正義をしっかり見せて。`,
+      voice: `wav/CN/conversation21/展示正义.wav`
+    },
+    {
+      type: `narration`,
+      text: `福音地の狂厄傀儡機械が車を運転し、「業師」は手を伸ばしてその体内に突き刺し、漆黒の硬い花剣を引き抜き、窓を叩き割り、自身が車の上に飛び乗った。`
+    },
+    {
+      type: `narration`,
+      text: `疾走する烈風に逆らい、彼女は飛びかかってきた3人の白い仮面の男を刺し貫き、車外に投げ飛ばした。彼らはゴミのよう転がり、跳ね、追ってくる車を何台か破壊した。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `その正義がどれだけ笑えるか、見せて。`,
+      voice: `wav/CN/conversation21/vo_event_11027_34.wav`
+    },
+    {
+      type: `narration`,
+      text: `（……）`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `解けた！`,
+      voice: `wav/JP/conversation21/vo_event_11027_42.wav`
+    },
+    {
+      type: `narration`,
+      text: `それほど複雑な爆弾ではなかったが、探偵に考える時間はなかった。もっと急ぐべきことがあった。`
+    },
+    {
+      type: `narration`,
+      text: `運転席へのドアがガンッと開き、割れた窓から烈風が吹き込み、探偵のいる車内に流れ込んだ。彼女は急いで飛び出し、まず運転席の狂厄傀儡を掴み上げた。`
+    },
+    {
+      type: `narration`,
+      text: `そのまま傀儡を窓の外に投げ捨て、急いでハンドルを握った。ブレーキを探したが、すでに外されていた。`
+    },
+    {
+      type: `narration`,
+      text: `顔を上げると、「業師」がいつの間にか車のボンネットに座り、探偵に背を向け、髪が割れたフロントガラスを通って探偵の視界を乱した。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `11時56分、もうすぐだ。`,
+      voice: `wav/CN/conversation21/vo_event_11027_52.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `爆弾はもう解除した！あんた――`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `お、ほんと？よくやったね。褒めてほしい？`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_46.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_58.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `ふざけないで！あんなの簡単な仕掛けだ、私みたいな素人でも簡単に解けた。あんた、そもそもそれで殺す気なんてなかったでしょ！総司令を殺すのが目的じゃないなら、最後の標的は誰？なんでこんなことしてるの？`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `何を伝えたいの？`
+    },
+    {
+      type: `narration`,
+      text: `風のせいで彼女の声が少し聞き取りづらい。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `HUSHはもうこの車への強攻を諦めた。私には手も足も出ないみたいね。代わりに最後通牒を残してきた。1分後、危険区域に入る前に、車ごと定点爆破するって。`,
+      voice: `wav/CN/conversation21/vo_event_11027_21.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `この！携帯を返して！彼女たちに、爆弾はもう解除したって、問題ないって伝える！車を止めるだけでいい、最悪、燃料が尽きるまで走らせてやる！`,
+      voice: `wav/JP/conversation21/vo_event_11027_8.wav`,
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/leopold3.png`,
+      name: `「業師」`,
+      text: `言ったよ。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_22.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_50.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `え？`,
+      voice: `wav/JP/conversation21/vo_event_11027_43.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `君が仕掛けを解く5分前に、君ならできるってわかってた。執行人にメッセージ送った。`,
+      voice: `wav/CN/conversation21/vo_event_11027_10.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/smile0.png`,
+      name: `「業師」`,
+      text: `まだ返信がない。見なかったのかな？それとも信じなかった？`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_57.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_40.wav' },
+      ]
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `……何だって……`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `それとも……`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_13.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_19.wav' },
+      ]
+    },
+    {
+      type: `narration`,
+      text: `道路の遠く前方に、ぼんやりした人影が現れた。シャーロームが道路の真ん中に立っていた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `ほら、あれ、君の正義の光じゃない？`,
+      voice: [
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_27.wav' },
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_52.wav' },
+      ]
+    },
+    {
+      type: `narration`,
+      text: `探偵はもう「業師」の挑発を聞いていなかった。彼女は浮かび上がる、ゆっくりと開く黒い死神――「黒石英」と呼ばれる上庭の武器を見た。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `……シャーローム……姉さん？`,
+      voice: `wav/JP/conversation21/vo_event_11027_15.wav`,
+    },
+    {
+      type: `narration`,
+      text: `彼女はこの力を見たことがある。かつては正義を守る、絶対に信頼できる強大な力だった。今、それが彼女を恐怖させた。`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `やった……私は彼女を止めた、信じて……お願い……`
+    },
+    {
+      type: `dialogue`,
+      position: `right`,
+      avatar: `img/dh/pc208.png`,
+      name: `探偵`,
+      text: `それを使わないで……お願い……`,
+      voice: `wav/JP/conversation21/vo_event_11027_11.wav`,
+    },
+    {
+      type: `narration`,
+      text: `黒石英はゆっくりと展開し、エネルギーを溜めているようでも、現場を分析しているようでも、死を計算しているようでもあった。流れる光が波のように過ぎ、残酷なカウントダウンのようだった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `ついでに言うと、老いぼれはそう簡単には死なない。でなきゃ、福音地の連中が私にこんな仕事を頼むわけない。`,
+      voice: `wav/CN/conversation21/vo_event_11027_7.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `でも、この車にいる他の人はそうじゃない。`,
+      voice: `wav/CN/conversation21/vo_event_11027_31.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `君も含めてね。`,
+      voice: `wav/CN/conversation21/vo_event_11027_3.wav`
+    },
+    {
+      type: `narration`,
+      text: `彼女は前方を見た。中央に立つ執行人。`
+    },
+    {
+      type: `narration`,
+      text: `「業師」は鼻で笑い、車の上に戻り、去る前に最後の言葉を残した。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/regret.png`,
+      name: `「業師」`,
+      text: `じゃあね、正義の使者。`,
+      voice: [
+        { label: '日', path: 'wav/JP/conversation21/vo_event_11027_25.wav' },
+        { label: '中', path: 'wav/CN/conversation21/vo_event_11027_47.wav' },
+      ]
+    },
+    {
+      type: `narration`,
+      text: `今、探偵の目にはシャーロームしか映らなかった。この距離、割れた窓越しで、互いをはっきり見分けられた。`
+    },
+    {
+      type: `narration`,
+      text: `シャーロームの表情はまるで固まった彫像のようだったが、ある瞬間、探偵は彼女の唇が動くのを見た。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x3.png`,
+      name: `執行人`,
+      text: `位置、力、タイミング……`,
+      voice: `wav/CN/conversation21/vo_event_11027_36.wav`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x3.png`,
+      name: `執行人`,
+      text: `行け。`,
+      voice: `wav/CN/conversation21/vo_event_11027_20.wav`
+    },
+    {
+      type: `image`,
+      src: `img/cg/fl_21.png`
+    },
+    {
+      type: `narration`,
+      text: `黒石英の中心から青い光が垂直に空へ放たれた。車の前方の地面に即座にいくつかの光の円が投影され、制御不能な車がそこに突っ込む瞬間、何かが天から降ってきた。`
+    },
+    {
+      type: `image`,
+      src: `img/cg/fl_21_2.png`
+    },
+    {
+      type: `narration`,
+      text: `白い光が探偵の視界を覆い、巨大な衝撃が彼女を吹き飛ばした。エアバッグが開いたが役に立たず、探偵の頭は地面に強く叩きつけられた。`
+    }
+  ]
+};

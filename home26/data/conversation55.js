@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `影`,
+    title: `「影」`,
     bgm: `mp3/bg/shadow.mp3`,
     summary: `シンジケートは影と腐敗に満ちており、その腐った土の下では何かが蠢いている。`
   },

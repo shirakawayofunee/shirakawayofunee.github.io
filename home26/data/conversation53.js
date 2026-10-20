@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `過去`,
+    title: `「過去」`,
     bgm: `mp3/bg/past_regret.mp3`,
     summary: `過去の記憶は石に刻み込まれているかのように、数千の日々が過ぎた今でも、彼は鮮明に覚えている。`
   },

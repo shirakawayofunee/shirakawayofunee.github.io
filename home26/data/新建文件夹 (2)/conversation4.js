@@ -1,0 +1,326 @@
+export default {
+  meta: {
+    title: `「[大]切なこと」`,
+    bgm: `mp3/bg/conversation2.mp3`,
+    summary: `暴走した能力者たちが束縛を解き、危機が迫る。`
+  },
+  infoPanel: {
+    glossary: [
+      {
+        term: `上庭`,
+        desc: `人类文明的最高统治机构，位于天空之上。`
+      },
+      {
+        term: `GARDEN`,
+        desc: `位于灰色地带的杀手组织，由Leopold领导。`
+      }
+    ],
+    characters: [
+      {
+        name: `「Garofano」`,
+        name2: `ガロファノ`,
+        avatar: `img/dh/severo10.png`,
+        note: `仕立て屋に化けた殺し屋`,
+        basicStats: `
+        `,
+        profile: `所属：GARDEN
+        危険度：A級
+        能力：穿刺蚕食`
+      },
+      {
+        name: `X`,
+        name2: `HUSH-X`,
+        avatar: `img/dh/x.png`,
+        note: `「上庭」の執行人、極端に理性的で<span>人間味のない</span>道具。`,
+        basicStats: `7/14 エアカ山荘に入り、敵をおびき寄せるため情報を流す
+        7/19 山荘内で襲撃を受け、GARDENの暗殺者と特定。接触したが能力者S-048により中断される
+        7/20 計画変更報告書を提出、S-048に対する測定評価
+        7/21 調査の最新走捗状況を提出。計画を変更、GARDENの暗殺者を罠にかけ、地底の情報源を追跡
+        7/22 MBCCに連絡し能力者S-514を逮捕`,
+      },
+      {
+        name: `代理人`,
+        avatar: `img/dh/agent.png`,
+        note: `上庭からXを<ruby>協力<rt>監視</rt></ruby>するために派遣された代理人。`,
+        basicStats: `冷酷で機械的、典型的な上庭の官僚像を体現しており、任務の効率を最優先し、一般人の命や感情を軽視する。`,
+      }
+    ],
+    synopsis: `「ガロファノ」が「GARDEN」への忠誠は揺るぎない。数時間にわたる審問は進展せず、代理人は「ガロファノ」の罵倒以外何も得られなかった。
+    そこへXが「生きている「ガロファノ」の方が価値がある」と提案――「ガロファノ」を人質として連れ去れ、
+    レオポルドから福音地の重要情報を引き出すという計画を立てた。代理人はその提案を認める。
+    しかし、「レオポルド」の名を耳にした瞬間、「ガロファノ」は福音地から与えられた単瞳のルーンを起動。
+    ルーンの力が暴走し、彼女は一瞬で制御を失い、監禁を突破して屋敷から逃走し、大混乱を引き起った。`,
+    relatedLink: {
+      text: `次章`,
+      targetId: `conversation5`
+    }
+  },
+  script: [
+    {
+      type: `narration`,
+      text: `N.F.113年7月22日 23:04<br>X宅の地下室`
+    },
+    {
+      type: `image`,
+      src: `img/cg/br_02.png`
+    },
+    {
+      type: `narration`,
+      text: `寝室で、Xは目を開け、ゆっくりと起き上がる。包帯はすべて解かれ、ベッドに乱雑に散らばっているが、<br>傷はすべて消えていた。肉体の修復には膨大なエネルギーを消費し、Xは疲労の意を感じた。`
+    },
+    {
+      type: `narration`,
+      text: `フレンチドアの外では、藍雨がエリカ山荘を覆い、しとしとと降り続けている。彼女が待つ相手はまだ現れない。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/severo1.png`,
+      name: `「ガロファノ」`,
+      text: `ああ――！！`
+    },
+    {
+      type: `narration`,
+      text: `階下から女の悲鳴が響き、ドアが開く。`
+    },
+    {
+      type: `narration`,
+      text: `メイドがXの着替えを手伝うために部屋に入ったが、ドアを閉める勇気はなかった。<br>階下からは悲鳴、罵倒、狂笑が断続的に響き、上庭の「代理」がいかに哀れな殺し屋を審問しているかを気づかせる。<br>「代理」が入ってきてから、すべてが変わった。女仆は震えが止まらない。`
+    },
+    {
+      type: `narration`,
+      text: `Xは部屋を出て階下へ向かい、警備されている地下室に入る。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/agent.png`,
+      name: `代理人`,
+      text: `準備ができたら出発だ。車は外に用意してある。ここからの仕事は私が引き継ぐ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `…了解した。`
+    },
+    {
+      type: `narration`,
+      text: `彼女は倒れている「ガロファノ」をちらっと見た。<br>この殺し屋はすでに瀕死で、しかしその目は不屈と執念に満ちている。少し考えた後、Xが口を開く。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `こんなに追い詰める必要はない。情報は誰かが持ってくるさ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/agent.png`,
+      name: `代理人`,
+      text: `別の情報源があるなら、この殺し屋にはなおさら生きる価値がない。ここで処分しよう。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `…彼女には価値があると思う。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `この殺し屋の背後にいる者――雇い主ではなく、首領だ――そいつはメンバーの命を重んじるかもしれない。彼女は貴重な餌になる。<br>拷問で情報が得られなくても、殺し屋の首領は彼女のために姿を現し、上庭が必要とする情報を交換してくれるかもしれない。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `「ガロファノ」を生かしておく理由としてはこれで十分でしょう。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/agent.png`,
+      name: `代理人`,
+      text: `…一理あるな。後で——!!`
+    },
+    {
+      type: `narration`,
+      text: `何かの言葉が彼女を刺激したのか、「ガロファノ」が目を開けて、苦痛と憎悪に満ちた目で彼女を見下ろす二人を睨みつけた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/severo9.png`,
+      name: `「ガロファノ」`,
+      text: `お前なんかに…絶対に…させない…`
+    },
+    {
+      type: `narration`,
+      text: `ガロファノの手のひらには単瞳のルーンが握られ、彼女は強大な力を得るが、同時に狂厄に完全に支配される。汚れた棘が彼女の全身から突き出した。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `…それが福音地からもらった最後の手段か。共倒れすると煽られたか…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/x.png`,
+      name: `X`,
+      text: `本当に執拗だ。だからきみは徹底的に利用されたんだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/severo9.png`,
+      name: `「ガロファノ？」`,
+      text: `彼女たちに…触れるな！！`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/agent.png`,
+      name: `代理人`,
+      text: `これは福音地の術式か？！下がれ！`
+    },
+    {
+      type: `narration`,
+      text: `巨大な響きが屋外の守備員を引きつけ、彼らが安全責任者に屋内確認の必要性を尋ねようとした瞬間、門が破られ、一つの人影が飛び出した。濃厚な血の匂いと不吉な気配をまとい、その人は警衛が反応する前に豪雨に突入し、夜の闇の中で消えた。その速度は常人のものではない。`
+    },
+    {
+      type: `narration`,
+      text: `その場にいた全員が呆然とし、振り返ると上庭の「代理」が洋館から出てくる。軽傷を負っているが、その感情はますます冷静だものだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/agent.png`,
+      name: `代理人`,
+      text: `A級警告、福音地の術式が確認された。ここにいるすべての作戦要員は命令を受け。<br>この能力者を包囲しろ、殺さず生け捕りにしろ！`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/agent.png`,
+      name: `代理人`,
+      text: `目標能力者は山荘の北東方向へ移動中、そこに彼女の仲間がいる。山荘内の全治安官、全力で彼女を阻止しろ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/security.png`,
+      name: `治安官`,
+      text: `で、でも…俺たちの仕事は洋館の安全を守ること、彼女を守ることだ。軍はまだいるだろ？遠くに行ってない、すぐそこにいるんだ、なんで彼らを呼ばない！`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/agent.png`,
+      name: `代理人`,
+      text: `彼らには別の任務がある。お前たちの仕事はこの山荘内にいる弱った能力者を捕まえることだ。逃がすな、死なせるな。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/security.png`,
+      name: `治安官`,
+      text: `弱ってる…？これを弱ってるって言うのか？`
+    },
+    {
+      type: `narration`,
+      text: `彼は言葉を失い、花道の向こうから暴走する怪物が自分に向かって突進してくる。咆哮する烈風のような巨大な恐怖が、治安官の理性を一瞬で引き裂いた。`
+    },
+    {
+      type: `narration`,
+      text: `概要：ヒーゲル（福音地の幹事の一人）が「Garofano」を見つけ、「GARDEN」と「命の延長」を餌に、単瞳のルーンを与え、上庭特使Xの暗殺を頼んだ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `聞いたよ、君たちの基地が最近襲われたって。上庭が手を出したんだろ？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/severo3.png`,
+      name: `「ガロファノ」`,
+      text: `…あなたなのね、福音地の卑怯者…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/severo3.png`,
+      name: `「ガロファノ」`,
+      text: `お前たちと上庭の争いに、巻き込む気か。私たちはもうお前たちの道具じゃない。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `へっ、足を洗ったってわけ？`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `上庭はそんなの知ったこっちゃないよ。一度福音地に染まったら、一生溝のネズミとして扱われるのさ。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `彼らはとっくに君たちをマークしてる…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `この組織を作ったのは私たち、君を救って、君の復讐を果たさせた…君の新生は、私たちの贈り物だよ…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/severo3.png`,
+      name: `「ガロファノ」`,
+      text: `違う！復讐は私を救わなかった。私を救ったのは家族、彼女とみんなだった…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `もうすぐ全部上庭に排除されるよ、そんもの。君の首領も、家族も、抵抗なんてできないさ…その日はもうすぐ来る、君もわかってるだろ…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `だが…取引しないか？今の上庭の執行者、君たちを追い詰めてるリーダーが、尻尾を出したんだ…`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/armaf.png`,
+      name: `シーゲル`,
+      text: `そいつを見つけ出せ…一緒にやらないか…十分な力を与えるよ。君の「新生」を守るんのさ。`
+    },
+  ]
+};

@@ -28,8 +28,8 @@ export default {
       },
       {
         name: `■■■`,
-        avatar: `img/dh/`,
-        note: `工事中`
+        avatar: `img/dh/404_muyangren.png`,
+        note: `謎多きの人?`
       }
     ],
     synopsis: `工事中`
@@ -54,14 +54,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/zxx.png`,
-      name: `『業師』`,
+      name: `「コクリコ」`,
       text: `地上の人間はみんな自分思いで、己の縄張りを守るのに必死で、せいぜい周りの数人をかばうくらい…`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/zxx.png`,
-      name: `『業師』`,
+      name: `「コクリコ」`,
       text: `私だってそんなちっぽけな人間だ。君の壮大な宿願にふさわしくないさ。`
     },
     {
@@ -88,7 +88,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/zxx.png`,
-      name: `『業師』`,
+      name: `「コクリコ」`,
       text: `103年…79期…第五陵園だろ…`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_103.wav' },
@@ -109,13 +109,13 @@ export default {
     },
     {
       type: `narration`,
-      text: `証拠の地図や情報シートが地面に散らばる。そこにはXにマーキングされた「Garden」のメンバーが受けた可能性のある、上庭が認めた「任務」が記されている。`
+      text: `証拠の地図や情報シートが地面に散らばる。そこにはXにマーキングされた花園のメンバーが受けた可能性のある、上庭が認めた「任務」が記されている。`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `そんなことしなくていい！彼女たちの居場所、わかってる。私が探しに行く、私が行く！`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_99.wav' },
@@ -126,7 +126,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/cry.png`,
-      name: `『業師』`,
+      name: `「コクリコ」`,
       text: `…そうか…見つけたのか…`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_110.wav' },
@@ -137,7 +137,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/cry.png`,
-      name: `『業師』`,
+      name: `「コクリコ」`,
       text: `何泣いてんだ…そんな必死になって…ほんとバカだな…`,
       voice: [
         { label: '中', path: 'wav/CN/conversation32/vo_event_11043_69.wav' },
@@ -155,8 +155,8 @@ export default {
       text: `edge-07：HUSHシステムが汚染された。ルールは崩壊し、大量の狂厄が第二観測庭に浸透している。現在は進入も修復も不可能。緊急封鎖するしかない。我々はBR-002フィールドの観測を失った。
 edge-07：黒石英の最後の監視記録によると、敵の狂厄級能力者が現場のHUSH部隊を殲滅。黒石英がXを処分する前にそれを破壊し、同時にXの肉体をも損壊させ、彼女の精神空間へ強行侵入した。
 edge-07：使用期間の終了まであと1ヶ月。Xは安全に回収され、処分されるはずだった。スペアの準備も整っていた。彼女は最も完璧な執行人となるはずだったにもかかわらず、土壇場で敵に破壊され、観測庭全体までも巻き込んだ。
-edge-04：福音地の仕業だ。7月にHUSHシステムの存在を知った彼らは、それがどれほど重要であるかを理解し、我々の観測を破壊すべく直ちに刺客を送り込んだ。Xを襲撃したのは悪名高い「Garden」の業師。黒石英を撃破し、Xを破壊して観測庭に侵入できるのは彼女しかいない。
-edge-02：「Garden」の<span>業師</span>は知ってる。彼女は強力だ。だが、これほどの力はあり得ない。
+edge-04：福音地の仕業だ。7月にHUSHシステムの存在を知った彼らは、それがどれほど重要であるかを理解し、我々の観測を破壊すべく直ちに刺客を送り込んだ。Xを襲撃したのは悪名高い花園の業師。黒石英を撃破し、Xを破壊して観測庭に侵入できるのは彼女しかいない。
+edge-02：花園の<span>業師</span>は知ってる。彼女は強力だ。だが、これほどの力はあり得ない。
       edge-02：X本人が裂け目に触れる可能性は皆無だ。理論上、狂厄級能力者であってもXを封鎖するルールは破壊できない。観測庭の裂け目を切り裂くことなど尚更だ。ただし……
       edge-02：その業師が何らかの<span>刺激</span>を受け、<span>狂厄爆発</span>状態に陥った場合を除いて。
 edge-02：…

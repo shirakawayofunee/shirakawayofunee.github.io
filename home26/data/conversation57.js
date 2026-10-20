@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `舞台裏の人`,
+    title: `「舞台裏の人」`,
     bgm: `mp3/bg/mastermind.mp3`,
     summary: `幕の後ろにはまた幕があり、影の下には更に影がある。`
   },

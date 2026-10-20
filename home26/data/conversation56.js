@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: `堕落`,
+    title: `「堕落」`,
     bgm: `mp3/bg/fall.mp3`,
     summary: `誰もが自らの執着のために堕落し、深淵の縁を歩いている。`
   },
