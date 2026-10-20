@@ -1,7 +1,7 @@
 export default {
   meta: {
     title: `「迷宮·終着地」`,
-    bgm: `mp3/bg/终末.mp3`,
+    bgm: `mp3/bg/The Underground.m4a`,
     summary: `時は流れ、ユウレンは過去と再会する。振り返ると、終着地がそこにあった。`
   },
   infoPanel: {

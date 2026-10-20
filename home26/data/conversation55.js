@@ -63,10 +63,6 @@ export default {
   },
   script: [
     {
-      type: `narration`,
-      text: `高塔黒環A-13|SD-1303影`
-    },
-    {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/alarm.png`,

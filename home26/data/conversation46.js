@@ -243,7 +243,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/don608.png`,
+      avatar: `img/dh/don_youth.png`,
       name: `ドナルド`,
       text: `……任せろ。お前を死なせたりしない。
 ほら、そんなに罪悪感を抱いた顔をするな。お前が鉱坑に入ったのは俺を信じたからだ。なら、その期待を裏切るわけにはいかない。
@@ -395,7 +395,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/don608.png`,
+      avatar: `img/dh/don_youth.png`,
       name: `ドナルド`,
       text: `……任せろ。お前を死なせたりしない。
 お前たちを連れて帰る。何人いようと構わない。必ず生きて帰す。`
@@ -409,7 +409,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/don608.png`,
+      avatar: `img/dh/don_youth.png`,
       name: `ドナルド`,
       text: `まだいる……鉱坑の中に、まだ人がいる……`
     },
@@ -423,7 +423,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/don608.png`,
+      avatar: `img/dh/don_youth.png`,
       name: `ドナルド`,
       text: `いや、絶対に行く。俺が連れてきたんだ。俺が……連れて帰らなきゃ……`
     },
@@ -469,7 +469,8 @@ export default {
       text: `錆火は最近どうだ？　かなりひどいのか……でもサンジ、俺はもうみんなのために何もできない。
 上庭の女に何か「標識」をつけられた。「あの女を憎むほど、反抗したいと思うほど、力を使うほど、俺はあの女に従うようになって、操られる」らしい。はは……馬鹿げてるだろ？
 でも、本当なんだ……俺はあの女に逆らえない。たとえ錆火を裏切れと言われても、俺はその通りにしてしまう。ははは……昔は自分の能力が天下一だと思っていたのに、今じゃ使うことすら怖い！
-悪いな、サンジ。俺はもう、錆火の英雄にはなれない……`
+悪いな、サンジ。俺はもう、錆火の英雄にはなれない……`,
+bgm: `mp3/bg/弱者と罪人.mp3`,
     },
     {
       type: `narration`,
@@ -540,7 +541,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/002.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `002骸`,
       text: `……俺は……覚えている……
 ふふふふ……この力を目にするのは久しぶりだ……なんと強大な力だ。これだけのことができるのに、どうして耐えている……
@@ -577,6 +578,10 @@ export default {
       avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `それと、俺にその顔で話しかけるな……忌まわしい怪物、お前にその資格はない！`
-    }
+    },
+    {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_03.png`,
+    },
   ]
 };
