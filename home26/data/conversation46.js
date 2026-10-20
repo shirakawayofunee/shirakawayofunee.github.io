@@ -16,17 +16,17 @@ export default {
       },
       {
         term: `標識`,
-        desc: `上庭の女によってタンに刻まれた鋼印。憎み、反抗し、力を使うほど彼女に従属させられる呪い。`
+        desc: `上庭の女によってドナルドに刻まれた鋼印。憎み、反抗し、力を使うほど彼女に従属させられる呪い。`
       },
       {
         term: `002骸`,
-        desc: `ブラックリングの中核を成す存在。9年前の記憶を共有し、タンを「弱者のためにすり減った」と嘲る。`
+        desc: `ブラックリングの中核を成す存在。9年前の記憶を共有し、ドナルドを「弱者のためにすり減った」と嘲る。`
       }
     ],
     characters: [
       {
         name: `ヘカテー`,
-        avatar: `img/dh/hekate.png`,
+        avatar: `img/dh/hecate.png`,
         note: `局長を探す少女。`,
         basicStats: `ブラックリングの影響で汚染が悪化する中、サンジを守り、白い匣を託される。自身の弱さと向き合う。`,
         profile: `危険度：高（汚染進行中）
@@ -43,7 +43,7 @@ export default {
         能力：不明`
       },
       {
-        name: `タン`,
+        name: `ドナルド`,
         avatar: `img/dh/tang.png`,
         note: `元錆火の指導者／狂厄級能力者。`,
         basicStats: `二人を救い、追っ手を引き受ける。標識の影響下で002骸と対峙し、「弱者」を否定する。`,
@@ -55,7 +55,7 @@ export default {
         name: `FAC責任者`,
         avatar: `img/dh/fac.png`,
         note: `前線部隊の責任者。`,
-        basicStats: `負傷者を支え封鎖線へ戻り、タンに帰還を約束させる。`,
+        basicStats: `負傷者を支え封鎖線へ戻り、ドナルドに帰還を約束させる。`,
         profile: `危険度：不明
         出身：不明
         能力：不明`
@@ -86,7 +86,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `これが局長を救えるもの……あなたはあの人に会った。局長がどこにいるのか分かったの？
 なら……早く、戻って……私は——うっ！`
@@ -101,9 +101,9 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
-      text: `……どうして……何か任務を受けたの？　タンが私を守れと言ったの？
+      text: `……どうして……何か任務を受けたの？　ドナルドが私を守れと言ったの？
 そうじゃないなら、どうして……`
     },
     {
@@ -122,7 +122,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `やめて……私は局長のことだけを気にしていればいい。ただ任務を遂行しているだけ……それはあなたたちの任務じゃない。私のために、こんなことをしないで……
 分からない。必要ない……
@@ -164,7 +164,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `……そんなこと言わないで。分からないし、必要ない……`
     },
@@ -244,7 +244,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `……任せろ。お前を死なせたりしない。
 ほら、そんなに罪悪感を抱いた顔をするな。お前が鉱坑に入ったのは俺を信じたからだ。なら、その期待を裏切るわけにはいかない。
 お前たちを連れて帰る。何人いようと構わない。必ず生きて帰す。`
@@ -265,7 +265,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `やめて——！！`
     },
@@ -283,7 +283,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `もうこんなことしないで。私に優しくしないで。私はただ任務を遂行したいだけ。私は——
 私は弱い。局長すら守れない。これ以上、誰かを大切にさせないで！`
@@ -308,7 +308,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `なんてこった。お前たち、どうしてこんなことになってるんだ？！`
     },
     {
@@ -319,26 +319,26 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `無理するなと言っただろう。はあ、FACの兄貴！　こっちだ！　こっち！
 早くこの二人を連れて帰ってくれ。頼む、これで十個くらい借りができたぞ！`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `さっきのは……あなたの力？
-やっぱり能力者……こんなに強い能力者……タンなら、きっと何でもできる……`
+やっぱり能力者……こんなに強い能力者……ドナルドなら、きっと何でもできる……`
     },
     {
       type: `narration`,
-      text: `彼女は震える手で、持っていた白い匣をタンに渡した。`
+      text: `彼女は震える手で、持っていた白い匣をドナルドに渡した。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `これを……局長に……渡して……助けて……
 私じゃ遅すぎる……弱すぎる……私にはできないことを、お願い……お願いだから……`
@@ -347,7 +347,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `……危うく引き受けるところだった。はあ。ごめんな、ヘカテー。
 俺だって英雄ぶってみたい。でも今回は、本当に無理だ。俺たちの後ろにはまだ追っ手がいる。俺が残らなければ、ここから誰も逃げられない。
 だから今回は、君に頼む。
@@ -361,7 +361,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `自分を卑下するな。「もっと強い誰か」に頼る必要もない。君自身に力がある。君を助けたいと思っている人間もたくさんいる。君たちは最初から弱者なんかじゃない。
 行け。どんな手を使ってでも、自分の願いを掴め。君に任せる。
 その代わり、俺がここにいる追っ手を全部引き受ける。君が残りの道を無事に進めるようにしてやる。`
@@ -379,7 +379,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `タンは答えず、振り返りもしなかった。これから押し寄せてくる怪物の群れに向かい、ただ左手を上げて軽く振る。指先からわずかに電光が走った。
+      text: `ドナルドは答えず、振り返りもしなかった。これから押し寄せてくる怪物の群れに向かい、ただ左手を上げて軽く振る。指先からわずかに電光が走った。
 本人は、本気で自分が格好いいと思っているらしい。`
     },
     {
@@ -396,7 +396,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `……任せろ。お前を死なせたりしない。
 お前たちを連れて帰る。何人いようと構わない。必ず生きて帰す。`
     },
@@ -410,7 +410,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `まだいる……鉱坑の中に、まだ人がいる……`
     },
     {
@@ -418,13 +418,13 @@ export default {
       position: `left`,
       avatar: `img/dh/sanji.png`,
       name: `サンジ`,
-      text: `タン、もう行くな。何度目だ。お前の身体がもたない……`
+      text: `ドナルド、もう行くな。何度目だ。お前の身体がもたない……`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `いや、絶対に行く。俺が連れてきたんだ。俺が……連れて帰らなきゃ……`
     },
     {
@@ -465,7 +465,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `錆火は最近どうだ？　かなりひどいのか……でもサンジ、俺はもうみんなのために何もできない。
 上庭の女に何か「標識」をつけられた。「あの女を憎むほど、反抗したいと思うほど、力を使うほど、俺はあの女に従うようになって、操られる」らしい。はは……馬鹿げてるだろ？
 でも、本当なんだ……俺はあの女に逆らえない。たとえ錆火を裏切れと言われても、俺はその通りにしてしまう。ははは……昔は自分の能力が天下一だと思っていたのに、今じゃ使うことすら怖い！
@@ -482,14 +482,14 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `自分を卑下するな。「もっと強い誰か」に頼る必要もない。君自身に力がある。君を助けたいと思っている人間もたくさんいる。君たちは最初から弱者なんかじゃない。
 行け。どんな手を使ってでも、自分の願いを掴め。君に任せる。
 その代わり、俺がここにいる追っ手を全部引き受ける。君が残りの道を無事に進めるようにしてやる。`
     },
     {
       type: `narration`,
-      text: `押し寄せる死役の群れが広範囲にわたって電撃で麻痺し、電弧がタンの全身を這う。汚染を吹き飛ばし、高い壁を打ち砕いていく。能力を使うのは久しぶりだった。ここで賭けに出た結果は、確かに悪くなかった。
+      text: `押し寄せる死役の群れが広範囲にわたって電撃で麻痺し、電弧がドナルドの全身を這う。汚染を吹き飛ばし、高い壁を打ち砕いていく。能力を使うのは久しぶりだった。ここで賭けに出た結果は、確かに悪くなかった。
 ただ、力を存分に解放するのと同時に、かつて意識の奥深くに刻み込まれた忌まわしい鋼印も再び起動し、密かにその力を発揮していた。`
     },
     {
@@ -502,7 +502,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `……黙れ。何が目的だろうと、今回は俺の邪魔をするな。`
     },
     {
@@ -519,7 +519,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `お前たちは偽物だからだ！　俺はもう狂うことには慣れてるんだ。こんなものが怖いか！`
     },
     {
@@ -530,7 +530,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `……出てこい、古い相棒。9年も会ってないんだ。まさか俺を忘れてはいないだろうな？`
     },
     {
@@ -551,7 +551,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `ふふふふ……そんなに俺を気にかけてくれるなら、少しくらい気を散らしてくれ。俺の綱引き作戦はまだ続いてる。少し話でもしよう。`
     },
     {
@@ -562,7 +562,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `……弱者？　弱者って何だ？
 帳簿も読めない文盲の指導者は弱いのか？　頭に血が上って破壊することしかできない馬鹿は弱いのか？　こそこそと怯えながら9年間隠れ続けたお前は弱いのか？！
 絶対的な強さなんてどこにある。弱いことは罪じゃない。弱者が生きられない世界こそが罪だ！　誰が、お前に奴らが生きる資格があるかどうかを決める権利を与えた！`
@@ -575,7 +575,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/tang.png`,
-      name: `タン`,
+      name: `ドナルド`,
       text: `それと、俺にその顔で話しかけるな……忌まわしい怪物、お前にその資格はない！`
     }
   ]

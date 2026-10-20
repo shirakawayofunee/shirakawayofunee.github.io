@@ -42,7 +42,7 @@ export default {
       },
       {
         name: `局長`,
-        avatar: `img/dh/director.png`,
+        avatar: `img/dh/PC01.jpg`,
         note: `枷を通じて骸と繋がる存在。`,
         basicStats: `黒環の汚染を一身に背負い、現在はほとんど動けない状態。ドナルドに背負われながら高塔を目指す。`,
         profile: `危険度：不明
@@ -188,7 +188,7 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……能力者？`
     },
@@ -216,7 +216,7 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……大丈夫……でも、あの上庭の奴は……`
     },
@@ -337,7 +337,7 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `あなたが私に選ばせる必要なんてない。`
     },
@@ -376,7 +376,7 @@ S-012、再び黒環へ入っても自己を維持できる。確かに驚異的
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `これは道徳的な脅迫だ。数百万人の命を盾にして、私に自殺を選ばせようとしているのか？`
     },

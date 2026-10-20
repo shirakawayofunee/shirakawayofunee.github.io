@@ -26,14 +26,13 @@ export default {
     characters: [
       {
         name: `局長`,
-        avatar: `img/dh/director.png`,
-        note: `運命を人々に託し、帰還する。`,
-        basicStats: `「本当の戦いは、シンジケートの人々に託そう」`,
-        profile: `能力：枷（錨）`
+        avatar: `img/dh/PC24.png`,
+        note: `この世界には君が必要だ`,
+        basicStats: `この世界には君が必要だ。`,
       },
       {
         name: `ドナルド`,
-        avatar: `img/dh/tang.png`,
+        avatar: `img/dh/don608.png`,
         note: `新しい友達を連れて追いつく。`,
         basicStats: `「また縁があれば会おう。」`
       },
@@ -45,9 +44,9 @@ export default {
       },
       {
         name: `X`,
-        avatar: `img/dh/x.png`,
+        avatar: `img/dh/x2.png`,
         note: `第二黒環から別れを告げる。`,
-        basicStats: `「あなたが自由を手にした姿を見られてよかった。それじゃ……幸せに。」`
+        basicStats: `「君が自由を手にした姿を見られてよかった。それじゃ……幸せに。」`
       },
       {
         name: `ヘカテー`,
@@ -65,7 +64,7 @@ export default {
         name: `ナイチンゲール`,
         avatar: `img/dh/nightingale.png`,
         note: `局長の帰還を迎える。`,
-        basicStats: `「お帰りなさい、局長。皆、あなたをずっと待っていました。」`
+        basicStats: `「お帰りなさい、局長。皆、君をずっと待っていました。」`
       },
       {
         name: `002骸`,
@@ -79,18 +78,12 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `高塔黑环A-13|13-18局長・運命`
-    },
-    {
-      type: `narration`,
-      text: `[行動前]
-（「ルール」、「ルール」消散）
-青い枷が次第に弱まり、黒環そのものに引き裂かれた骸も、ついに本来の姿を晒した――巨大で、醜く、禍々しい怪物。`
+      text: `青い枷が次第に弱まり、黒環そのものに引き裂かれた骸も、ついに本来の姿を晒した――巨大で、醜く、禍々しい怪物。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss_2.png`,
       name: `骸`,
       text: `卑劣な□□□……お前はあの女の力もないくせに、こんな手を……
 俺がこんなもので負けるはずがない。せっかく力を取り戻したんだ……こんなところで……
@@ -104,14 +97,13 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/unknown.png`,
       name: `？？`,
       text: `よお、局長。追いついたぜ。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `新しい友達も連れてきた。これでだいぶ心強いだろ?
 ん?なんだ、ずいぶん顔色が悪いな。`
@@ -123,14 +115,14 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `さっきはずいぶん上手に演技してたな。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `はは、人助けのつもりで元気づけてやったんだよ。ほら、結果は上々だろ。
 それに俺はかなり正直者だぜ。追いつくと言ったら追いついたし、友達に会わせると言ったら会わせた。
@@ -144,7 +136,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss_2.png`,
       name: `骸`,
       text: `やめろ……こんなところで終われるか、まだ……あの女を探さなきゃならない、あいつを殺して……復讐を……
 あの女ですら俺を殺せなかったんだ、お前ごときにできるはずがない……今の俺はあの時より強い、死ぬはずがない……
@@ -162,7 +154,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss_2.png`,
       name: `骸`,
       text: `……お前か。まだいたのか、お前……
 うあああああ――!!`
@@ -175,7 +167,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `そうだ……上庭のルールはもう尽きている。それでもこの怪物はまだ足掻いている。なら三人で押さえ込む。逃げる隙を与えるな。
 それから……`
@@ -193,9 +185,9 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/x.png`,
+      avatar: `img/dh/x2.png`,
       name: `X`,
-      text: `まさか決定権を完全に他人へ委ねるとは……あなたが人を驚かせるのが好きなのは知っていたけれど、こんな驚き方をさせられるとは思わなかった。
+      text: `まさか決定権を完全に他人へ委ねるとは……君が人を驚かせるのが好きなのは知っていたけれど、こんな驚き方をさせられるとは思わなかった。
 成功率を評価するどころか、集団観測を失った今、この案の不確実性はほとんど無限大だ。
 賭けるということ?自ら運命に身を委ね、流される……はあ、私にはとても選べない道だ。`
     },
@@ -206,7 +198,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `たくさんの人が努力する姿を見た。弱い人たちも退かず、自分にできることを精一杯やっていた。
 考えてみれば、黒環の下でこれだけ長く耐え続けてきた。怖くなった人はとっくに去っている。最後まで残り、互いに助け合っている人たちは……きっと一番勇気のある人たちなんだ。
@@ -215,10 +207,10 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/x.png`,
+      avatar: `img/dh/x2.png`,
       name: `X`,
-      text: `……そういうことだったのね。あなたが他人を信じられるのは、もっと大きな世界を見て、もっと多くの本当の「人」を知っているから。あなたは……一人じゃない。
-羨ましいな。私もあなたみたいだったら、もっといい方法を考えて、みんなの苦しみを少しでも減らせたかもしれない。ごめんなさい。`
+      text: `……そういうことだったのね。君が他人を信じられるのは、もっと大きな世界を見て、もっと多くの本当の「人」を知っているから。君は……一人じゃない。
+羨ましいな。私も君みたいだったら、もっといい方法を考えて、みんなの苦しみを少しでも減らせたかもしれない。ごめんなさい。`
     },
     {
       type: `narration`,
@@ -227,26 +219,26 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
-      text: `最初は、あなたのような「上庭人」を信じたくなかった。あなたが現れた時、黒環全体が騒ぎ始めた。きっと、とんでもないことをしてきた人なんだと思った。
-でも、この道中、顔も知らない人たちに何度も守られた。ここには、あなたの言う「みんな」がいるのかもしれない。もしかしたら、あなたも。
-あなたはずっと、彼女たちが私をちゃんと守ってくれると信じていたようだった。この日が来るまで。
+      text: `最初は、君のような「上庭人」を信じたくなかった。君が現れた時、黒環全体が騒ぎ始めた。きっと、とんでもないことをしてきた人なんだと思った。
+でも、この道中、顔も知らない人たちに何度も守られた。ここには、君の言う「みんな」がいるのかもしれない。もしかしたら、君も。
+君はずっと、彼女たちが私をちゃんと守ってくれると信じていたようだった。この日が来るまで。
 それに……`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
-      text: `一番危険な場所で、ある人が命懸けで私を掴んで、あなたを私の前まで送り届けた。
-彼女は何も言わなかった。たぶん、これから先も自分の本当の気持ちを語ることはない。それでも、あの真摯な想いを無視することはできない。あなたをただの道具として扱う人たちとは違って、あなたを心から信じている人もいる。
+      text: `一番危険な場所で、ある人が命懸けで私を掴んで、君を私の前まで送り届けた。
+彼女は何も言わなかった。たぶん、これから先も自分の本当の気持ちを語ることはない。それでも、あの真摯な想いを無視することはできない。君をただの道具として扱う人たちとは違って、君を心から信じている人もいる。
 私を羨ましがる必要なんてないと思う。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/x.png`,
+      avatar: `img/dh/x2.png`,
       name: `X`,
       text: `………そう……そういうことだったのね……
 みんなもういなくなったと思っていた。誰にだって自分の道があるのに……`
@@ -259,22 +251,22 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/x.png`,
+      avatar: `img/dh/x2.png`,
       name: `X`,
       text: `そろそろ時間みたいね。
-じゃあ、彼女たちのことを頼むわ。あの子たちは私とは違う。あなたによく似ているし、いずれあなたのもとへ来る。`
+じゃあ、彼女たちのことを頼むわ。あの子たちは私とは違う。君によく似ているし、いずれ君のもとへ来る。`
     },
     {
       type: `narration`,
-      text: `（選択肢）あなたは?あなたは来ないの?`
+      text: `（選択肢）君は?君は来ないの?`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/x.png`,
+      avatar: `img/dh/x2.png`,
       name: `X`,
-      text: `私?私は大丈夫。心配しないで。それより、今回のことは忘れてほしい。そのほうがあなたにとって安全だから。
-あなたは一番険しい道を選んだ。逃げることも、壊すこともせず、すべてと向き合って、新しい可能性を探そうとしている……これからはもっと目まぐるしくなる。くれぐれも慎重に行動して。
+      text: `私?私は大丈夫。心配しないで。それより、今回のことは忘れてほしい。そのほうが君にとって安全だから。
+君は一番険しい道を選んだ。逃げることも、壊すこともせず、すべてと向き合って、新しい可能性を探そうとしている……これからはもっと目まぐるしくなる。くれぐれも慎重に行動して。
 私たちの運命はもう交わって、互いを変えた。後悔することなんて何もない。`
     },
     {
@@ -284,7 +276,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `また会える。次は、私たちの仲間も一緒に来る。`
     },
@@ -295,16 +287,16 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/x.png`,
+      avatar: `img/dh/x2.png`,
       name: `X`,
-      text: `あなたが自由を手にした姿を見られてよかった。それじゃ……幸せに。`
+      text: `君が自由を手にした姿を見られてよかった。それじゃ……幸せに。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/x.png`,
+      avatar: `img/dh/x2.png`,
       name: `X`,
-      text: `そうだ、もしあなたが間違っていたら。西区の人々が別の道を選んでいたら……あなたはどうする?それでも、すべてに意味があったと思える?
+      text: `そうだ、もし君が間違っていたら。西区の人々が別の道を選んでいたら……君はどうする?それでも、すべてに意味があったと思える?
 ふふ……ずいぶん面白い顔をするのね。懐かしい顔だわ。
 でもよかった。運命はこの道を選んだ。
 行って。迎えに来た人がいる。`
@@ -312,22 +304,22 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `受け止めたぜ!さっきからぼーっと何を見てたんだ?`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
-      text: `……
-このシンジケートを見ていた。`
+      text: `……このシンジケートを見ていた。`,
+      bgm: `mp3/bg/【繁花】Moonlight Act Ⅱ Wheel of Destiny.mp3`,
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `ああ……確かに、いい眺めだな。`
     },
@@ -356,7 +348,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/unknown.png`,
+      avatar: `img/dh/rahu_2.png`,
       name: `？？`,
       text: `ふふ……ははははは――これでいい……私も……前に進めた……`
     },
@@ -371,7 +363,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/unknown.png`,
+      avatar: `img/dh/rahu_2.png`,
       name: `？？`,
       text: `必要ない。`
     },
@@ -384,12 +376,12 @@ export default {
       position: `left`,
       avatar: `img/dh/christina.png`,
       name: `クリスティーナ`,
-      text: `この声……あなたは――`
+      text: `この声……君は――`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/unknown.png`,
+      avatar: `img/dh/rahu_2.png`,
       name: `？？`,
       text: `元気で。`
     },
@@ -409,7 +401,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `本当に、よかったな……いろんな可能性を考えてきた。自分ではかなり前向きで、楽観的で、突拍子もないことまで考えてきたつもりだった。
 それでも、シンジケートがこんな結末を勝ち取れるなんて、考えたこともなかった。
@@ -426,14 +418,14 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `ここにいる全員が英雄だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `ぷっ……はははは、お前を上庭の手に戻すのはやっぱり似合わねえな。いっそ――
 そう言いながら下をちらりと見て、笑って言った。`
@@ -441,14 +433,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `残念だな。ちょうど今日はこの鉤索もいまいちで、二人分は支えられない。そうじゃなきゃ今すぐお前を攫っていくところだった。
 また今度だ。`
     },
     {
       type: `narration`,
-      text: `彼はあなたの鉤索を引き上げた。あなたを支えていた力がなくなり、ドナルドがあなたの手を掴む。`
+      text: `彼は君の鉤索を引き上げた。君を支えていた力がなくなり、ドナルドが君の手を掴む。`
     },
     {
       type: `narration`,
@@ -457,7 +449,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/tang.png`,
+      avatar: `img/dh/don608.png`,
       name: `ドナルド`,
       text: `そんなに名残惜しいか?でも、誰かに約束したんだ。お前をちゃんと返すって。
 次にあいつらが嫌になったら呼べ。俺がこの大恩を返してやる。また縁があれば会おう。
@@ -465,7 +457,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼が手を離すと、黒環の残留勢場が時空を歪め、あなたが落下する速度が大きく緩んだ。
+      text: `彼が手を離すと、黒環の残留勢場が時空を歪め、君が落下する速度が大きく緩んだ。
 それは、塔が次第に消えていく姿を見るには十分な時間だった。雲へ届くように伸びた塔の残影の中に、長い階段がぼんやりと見える。
 その階段には、ゆっくりと動く人影がいくつもあった……`
     },
@@ -495,7 +487,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `朦朧とする意識の中で、あなたは建築師が振り返る姿を見た。そして無数の人々が次々とこの階段を上っていく姿を。
+      text: `朦朧とする意識の中で、君は建築師が振り返る姿を見た。そして無数の人々が次々とこの階段を上っていく姿を。
 ロヴナを見た。ドナルドを見た。能力者たちを見た。知っている人も、知らない人も、たくさんの人を見た。そして……
 自分自身を。`
     },
@@ -508,7 +500,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `少女の声があなたを現実へ引き戻し、幻は消えた。ナイトメアが翼を広げてあなたのもとへ飛び、背中ではヘカテーが必死に手を伸ばしている。その瞳にはあまりにも多くの感情が宿り、もう隠そうともせず、ひたむきにあなたを見つめていた。`
+      text: `少女の声が君を現実へ引き戻し、幻は消えた。ナイトメアが翼を広げて君のもとへ飛び、背中ではヘカテーが必死に手を伸ばしている。その瞳にはあまりにも多くの感情が宿り、もう隠そうともせず、ひたむきに君を見つめていた。`
     },
     {
       type: `narration`,
@@ -641,8 +633,8 @@ MBCCもまあ悪くない。訓練とかもあるし……でも、私が見ら�
       name: `ヘカテー`,
       text: `誰も見ていない。大丈夫。
 分かっている。大切なもののために、ヘラも強くなりたい。全部分かっている。
-これはあなたが私に教えてくれたこと。自分を見失いそうになった時、あなたが私の背中を押して、もっとたくさんの人を見せてくれて、局長のもとへ戻してくれた。
-だから、ヘラが必要とする時は、私もあなたを支える。頑張って。`
+これは君が私に教えてくれたこと。自分を見失いそうになった時、君が私の背中を押して、もっとたくさんの人を見せてくれて、局長のもとへ戻してくれた。
+だから、ヘラが必要とする時は、私も君を支える。頑張って。`
     },
     {
       type: `dialogue`,
@@ -656,7 +648,7 @@ MBCCもまあ悪くない。訓練とかもあるし……でも、私が見ら�
       position: `left`,
       avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
-      text: `「ヘラを監視する」任務?大丈夫、もういらない。局長が私たちを助けてくれる。あなたのほうが、そんな任務より大切だから。`
+      text: `「ヘラを監視する」任務?大丈夫、もういらない。局長が私たちを助けてくれる。君のほうが、そんな任務より大切だから。`
     },
     {
       type: `dialogue`,
@@ -664,7 +656,7 @@ MBCCもまあ悪くない。訓練とかもあるし……でも、私が見ら�
       avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `ヘラは私の友達だから。私が自分で選んだ、最初の友達だから。
-時々でいいから、みんなに会いに帰ってきて。あなたがいなくなったら、きっと寂しい。`
+時々でいいから、みんなに会いに帰ってきて。君がいなくなったら、きっと寂しい。`
     },
     {
       type: `dialogue`,
@@ -688,12 +680,12 @@ MBCCもまあ悪くない。訓練とかもあるし……でも、私が見ら�
     },
     {
       type: `narration`,
-      text: `あなたは二人をまとめて抱きしめた。`
+      text: `君は二人をまとめて抱きしめた。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `この世には保釈ってものがあるって知ってるか?
 出たら悪い癖は直すこと。私の小遣いを盗むのはいいけど、他人のものに手を出したら、また連れ戻されるからな。
@@ -717,10 +709,10 @@ MBCCもまあ悪くない。訓練とかもあるし……でも、私が見ら�
       position: `left`,
       avatar: `img/dh/nightingale.png`,
       name: `ナイチンゲール`,
-      text: `あなたが長く不在にしている間に、管理局ではあまりにも多くのことが起こりました。誰かが業務に介入し、能力者たちは多くの苦難を受けました。城邦も、環境も変わり、MBCCも変わらざるを得ませんでした。
-それでも、誰もが本来あるべき姿を知っています。彼らは大切なものを慎重に守り、いつの日かすべてを元に戻し、あなたの帰還を迎えられるよう願っていました。
+      text: `君が長く不在にしている間に、管理局ではあまりにも多くのことが起こりました。誰かが業務に介入し、能力者たちは多くの苦難を受けました。城邦も、環境も変わり、MBCCも変わらざるを得ませんでした。
+それでも、誰もが本来あるべき姿を知っています。彼らは大切なものを慎重に守り、いつの日かすべてを元に戻し、君の帰還を迎えられるよう願っていました。
 私たちは長い間待ちました。そして、ついにこの日が来ました。
-お帰りなさい、局長。皆、あなたをずっと待っていました。`
+お帰りなさい、局長。皆、君をずっと待っていました。`
     },
     {
       type: `narration`,
@@ -806,7 +798,7 @@ BR-002に眠る大量の異方晶の採掘は、再び人の手に委ねられ�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/shangting03.png`,
+      avatar: `img/dh/edge_03.jpg`,
       name: `上庭03`,
       text: `SHP-13体内におけるルールの再発動を確認。安全警戒レベルを引き上げ、接触申請を承認。
 協力に感謝する、局長。私は君がBR-002で死ぬものと思っていた。まさか君が上庭の提案を受け入れ、自らルールの制限を受けることに同意するとは思わなかった。
@@ -815,7 +807,7 @@ BR-002に眠る大量の異方晶の採掘は、再び人の手に委ねられ�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/shangting02.png`,
+      avatar: `img/dh/edge_02.jpg`,
       name: `上庭02`,
       text: `FAC、第九機関の異例の動きも、どうやら多少は君に賭けたようだな。君には本当に驚かされた。もっと早く君に会いに行くべきだった……Xが去る前に。
 だが幸い、私たちにはまだ時間がある。
@@ -824,7 +816,7 @@ BR-002に眠る大量の異方晶の採掘は、再び人の手に委ねられ�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/shangting01.png`,
+      avatar: `img/dh/edge_01.jpg`,
       name: `上庭01`,
       text: `環の中で君と話した時から、また会うことになるような気がしていた。
 こんにちは、局長、局長。理性に従えば、君の過激な案は否定すべきなのだろう。だが……どうにも興味深い過去を思い出させる。
@@ -834,7 +826,7 @@ BR-002に眠る大量の異方晶の採掘は、再び人の手に委ねられ�
     },
     {
       type: `narration`,
-      text: `かつてあなたは、枷のもう一方に何かの気配がかすかに存在するのを感じていた。そして、ある瞬間。`
+      text: `かつて君は、枷のもう一方に何かの気配がかすかに存在するのを感じていた。そして、ある瞬間。`
     },
     {
       type: `dialogue`,
@@ -878,7 +870,7 @@ BR-002に眠る大量の異方晶の採掘は、再び人の手に委ねられ�
       avatar: `img/dh/unknown.png`,
       name: `？？`,
       text: `これは私の可愛い「弟／妹」がわざわざ贈ってくれた再会の贈り物。
-あなたにも、きっと私の存在が感じられたでしょう?愛しい局長……`
+君にも、きっと私の存在が感じられたでしょう?愛しい局長……`
     }
   ]
 };

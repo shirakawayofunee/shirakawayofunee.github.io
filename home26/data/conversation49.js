@@ -25,7 +25,7 @@ export default {
       },
       {
         name: `コージ`,
-        avatar: `img/dh/cohi.png`,
+        avatar: `img/dh/crache.png`,
         note: `影を操る、西区の影の守護神。`,
         basicStats: `「……はは、これが……未来？」<br>噴き上がる巨大な高塔を見つめ、無力感に苛まれながらも、難民たちに地下へ逃れるよう呼びかけ続ける。`,
         profile: `危険度：狂厄級\n能力：影の使役`
@@ -108,7 +108,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/cohi.png`,
+      avatar: `img/dh/crache.png`,
       name: `コージ`,
       text: `外へ逃げるな！戻れ！地下へ行け、隠れて出てくるな！！\n\nくそっ、これだけの影じゃ……あんな大勢を守れるわけがない。`
     },
@@ -208,7 +208,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/受骸者.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `私を足止めするため、局長のために、そうだろう？`
     },
@@ -226,7 +226,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/受骸者.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `もう遅い。環はすでにあまりにも多くの力を吸収した。白匣でも封じきれない。西区のすべてが、あれに力を与えている。今度こそ、上庭も福音地もあれには勝てない。局長にも勝てない。お前も同じだ……\n\nお前はいつもそうだ。来るのが遅すぎる。もう間に合わない。`
     },
@@ -237,7 +237,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/受骸者.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `9年前にできなかったことは、9年後も同じ結果になる。\n\nだが、覚えておけ……今回は、私が黒環を選んだ。黒環は必ず……私の願いを叶える。`
     },
@@ -255,7 +255,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/受骸者.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `次は、お前の番だ。`
     },
@@ -305,7 +305,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/cohi.png`,
+      avatar: `img/dh/crache.png`,
       name: `コージ`,
       text: `……はは、これが……未来？`
     },

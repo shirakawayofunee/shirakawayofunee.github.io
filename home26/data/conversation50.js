@@ -40,7 +40,7 @@ export default {
       },
       {
         name: `ヘカテー`,
-        avatar: `img/dh/hekate.png`,
+        avatar: `img/dh/hecate.png`,
         note: `病床の少女。`,
         basicStats: `自責の念に駆られ、局長の手を握りながら弱さを悔やむ。`,
         profile: `危険度：高（汚染残存）
@@ -485,7 +485,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `……そうなんだ……枷はまだ戻ってなくて、ハクサも目を覚まさなくて……局長はまだ、あんなに頑張ってる……
 私がちゃんとできなかったから？

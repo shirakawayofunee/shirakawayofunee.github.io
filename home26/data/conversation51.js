@@ -42,7 +42,7 @@ export default {
       },
       {
         name: `局長`,
-        avatar: `img/dh/director.png`,
+        avatar: `img/dh/PC01.jpg`,
         note: `枷を通じて骸と繋がる存在。`,
         basicStats: `黒環の汚染を一身に背負い、現在はほとんど動けない状態。ドナルドに背負われながら高塔を目指す。`,
         profile: `危険度：不明
@@ -105,7 +105,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……下にいるのは、そう簡単に相手できる奴じゃない。枷が骸と繋がっている。この環の中にいるものすべてが、あの女を警戒し、恐れ、死力を尽くして、環の主へ近づこうとする彼女を上へ行かせまいとしているのを感じる。`
     },
@@ -117,7 +117,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……こういうことだ。私たちだって、あの人には敵わない。
 だが、弱くてよかった。今は誰も私たちに構っている余裕がない。それが、私たちが急いで上へ進む機会にもなる。`
@@ -138,7 +138,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……背負いきれないなら、下ろしてくれていい。`
     },
@@ -152,7 +152,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……`
     },
@@ -173,7 +173,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……うん。`
     },
@@ -184,7 +184,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `ここの汚染は流民寨とは関係ない！あなたの言う任務をやめて！執行委員会が何を企んでいるのか、私は知っている！`
     },
@@ -195,7 +195,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `受骸者を探しに行きたい。
 枷が繋がっているから、あの怪物がどこにいるのかは分かる。でも、ここの地形には詳しくない。迷宮みたいになっている。
@@ -246,7 +246,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `無理。枷がまだあの怪物と繋がっている。使うとかなり苦しい。
 お前は戦えるか？`
@@ -306,7 +306,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `敵は強い。`
     },
@@ -320,7 +320,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `あなたでは勝てない。`
     },
@@ -334,7 +334,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `なら、どうして来た？
 錆火と同じように、存在しない可能性を追いかけて、自分を追い詰めていくつもりか？

@@ -25,15 +25,15 @@ export default {
     ],
     characters: [
       {
-        name: `痩せた女（シャーローム）`,
-        avatar: `img/dh/seline.png`,
+        name: `痩せた女（シャーローム）（シャーローム）`,
+        avatar: `img/dh/X50.png`,
         note: `第二黒環に精神の一部を根付かせた能力者。`,
         basicStats: `状況分析を得意とし、局長に三つの方案を提示する。かつては上庭が最も誇りにしていた道具。`,
         profile: `分類：特殊能力者`
       },
       {
         name: `局長`,
-        avatar: `img/dh/director.png`,
+        avatar: `img/dh/PC01.jpg`,
         note: `枷を通じて第二黒環と繋がる存在。`,
         basicStats: `自らの本心を語り、シャーロームに手を貸してほしいと懇願する。`
       },
@@ -60,13 +60,9 @@ export default {
   },
   script: [
     {
-      type: `narration`,
-      text: `高塔黑環A-13|RE13-15黒幕`
-    },
-    {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
+      avatar: `img/dh/X50.png`,
       name: `痩せた女（シャーローム）`,
       text: `私は特殊な能力者。災厄に抗うため、精神の一部を第二黒環の狂厄領域に根付かせ、長年にわたって観測と分析を続けている。そして、あなたの枷も第二黒環と深く繋がっている……
 だから、ここであなたと再会できたのかもしれない。奇跡みたいなものだ。みんながあなたをここまで守ってくれたことが嬉しい。
@@ -81,7 +77,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……あなたは上庭の人間?
 それで、これは何?`
@@ -93,30 +89,30 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `上庭の目であり、口でもある。あなたに「規則」を叩き込むためのもの。
 絶対に強く、絶対に正しい力。そして、あなたに課された絶対的な枷。あなたは狂厄と同じ源を持ち、上庭最大の敵とも同じ源を持っている。だから、彼らはあなたを信用していない。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `あいつの話では、これは受骸者を消滅させる力だ。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `そう。同時に、あなたも消滅させる。
 人類の福祉のために、自分を犠牲にする覚悟はある?`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `自分に残された手札がどれだけあるのか知りたいだけ。
 あの人は、俺には選択肢がないと言った。もっと強い枷の持ち主が黒環の中にいる。俺が002骸を喰らえば、その女が俺を喰らいに来る。何の苦労もなく。`
@@ -124,8 +120,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `そんなことを言ったの?ふふふ……安心して。彼もあなたを騙してはいない。ただ、上庭の立場からすれば、その一つの方案しか受け入れられないというだけ。
 でも、見たところあなたにはまだ選択肢がある。`
     },
@@ -136,8 +132,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `これ……福音地のものね?
 広場黒環が発生した時、遺産は何の前触れもなく交渉室に現れた。それなのに誰一人その存在に気づかなかった。高塔黒環が発生した時も、福音地の牧羊人がジュリアンに手を出していたのに、観測庭でさえ彼女の存在を捉えられなかった。
 これは福音地が誇る技術の一つ。上庭をこれほどまでに手こずらせている、隠蔽術式。
@@ -150,8 +146,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `……ジュリアン、錆火、そしてこの黒環にいる人々が、あなたにどれほどの想いを寄せているか。彼らは理解しようともしない。ふふ、あそこまで傲慢でいてくれたことには感謝しないと。`
     },
     {
@@ -161,8 +157,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `上庭の立場から、「人類の福祉」という観点に立てば、あなたに残された選択肢は一つだけ。でも……あなた自身の立場からなら、三つの方案を提示できる。
 方案一。あの小さな三角形が言ったように、もう一度「規則」を受け入れる。あなた自身がそれを導き、受骸者を爆破させ、上庭がすべてを根本から消滅させるのを手伝う。
 ふふ、あの人の計算なら間違いない。彼が出した方案なら、100％実行できる。
@@ -178,8 +174,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `この二つの方案、どちらもあなたは選ばないと思う。構わない、まだ三つ目がある――
 自分の本能と本心に従って、これまでと同じように勇敢に戦う。今のあなたなら、それができる。
 青い枷を恐れる必要はない。「規則」を忌避する必要もない。あなたの枷はすでに受骸者を捉えている。倒して、そして喰らえばいい。この黒環をあなた自身の力にする――彼らはもともと、あなたと同じ人間なのだから。
@@ -194,8 +190,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `これは偉大な意志。上庭や福音地に弄ばれるべきものでも、狂厄に歪められ、汚されるべきものでもない。なら、あなたが受け継いでみればいい。
 あの英雄たちは、あなたに絶対的な自由を与えてくれる。たとえあなたがこの世界を焼き尽くしたいと思ったとしても、彼らはそれを実現してくれる。
 その代わり、彼らの遺志は一つだけだと思う……辛迪加を踏みにじった者たちに、代償を払わせること。
@@ -213,7 +209,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `私が叶えるべき願い……か。`
     },
@@ -260,7 +256,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `試してみた。でも失敗した。今のこの有様になったのも、自業自得。
 私はただの人間。誰かの悲願を背負うことなんてできないし、背負いたくもない。
@@ -269,29 +265,29 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `……私の期待?`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `私に第三の道を進んでほしいと願っている人。一番私に力を与えて、すべてに反逆してほしいと思っている人……本当はあなたでしょう。`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `……今の私は、そんなに考えていることが分かりやすい?
 あなたは私を怒らない?あなたを試すつもりはなかった。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `分かっている。気にしなくていい。私からもあなたに伝えたいことがある。
 私には自分が欲しいものがある。自分に一番合った解決方法を見つけたい。でも、私一人ではきっとできない。
@@ -300,8 +296,8 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/seline.png`,
-      name: `痩せた女`,
+      avatar: `img/dh/X50.png`,
+      name: `痩せた女（シャーローム）`,
       text: `……ふふ、聞かせて?とても興味がある。`
     },
     {

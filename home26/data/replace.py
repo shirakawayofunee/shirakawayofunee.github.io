@@ -2,7 +2,7 @@
 Author: DCBZ
 Date: 2026-10-21 04:18:07
 LastEditors: your name
-LastEditTime: 2026-10-21 05:17:47
+LastEditTime: 2026-10-21 06:10:30
 Description: 
 FilePath: \shirakawayofunee.github.io\home26\data\replace.py
 '''
@@ -17,10 +17,8 @@ def main():
     # 格式为: '旧关键词': '新关键词'
     # ==========================================
     replacements = {
-        'Julian': 'Julien',
-        '粛清命令': 'パージ令',
-        '清洗令': 'パージ令',
-        'クリーンアップ令': 'パージ令',
+        'hekate.png': 'hecate.png',
+        'タン': 'ドナルド',
     }
     
     if not replacements or list(replacements.keys())[0] == 'oldKeyword1':

@@ -31,14 +31,14 @@ export default {
       },
       {
         name: ``,
-        avatar: `img/dh/director.png`,
+        avatar: `img/dh/PC01.jpg`,
         note: ``,
         basicStats: ``,
         profile: ``
       },
       {
         name: `局長`,
-        avatar: `img/dh/director.png`,
+        avatar: `img/dh/PC01.jpg`,
         note: ``,
         basicStats: ``,
         profile: ``

@@ -26,7 +26,7 @@ export default {
     characters: [
       {
         name: `ヘカテー`,
-        avatar: `img/dh/hekate.png`,
+        avatar: `img/dh/hecate.png`,
         note: `局長を探す少女。`,
         basicStats: `一人で白い匣を抱え、流亡者基地へ走り、子供たちを守り、地下道で局長を発見する。`,
         profile: `危険度：高（汚染進行中）
@@ -118,7 +118,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `私はFACから逃げた。以前なら、彼らの命令にも従っていたのに。なぜ？
 誰かを信じたから？任務以外の人を信じたから？これで、いいの？`
@@ -133,7 +133,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `一番大切な人……局長、局長に会いたい。
 どこへ行けばいい？どうすればいい？任務がないのに、誰が私にどうすればいいのか教えてくれる？`
@@ -145,7 +145,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `そうだ、基地に戻れば……`
     },
@@ -170,7 +170,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `ヘラがそこにいる……マチルダ、ロヴナ、それにたくさんの人がいる。私は……みんなのところへ行く……`
     },
@@ -193,7 +193,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `……は、は……うぅ……あなたたちを助ける任務はない。私は急いでる。局長を助けなきゃ……`
     },
@@ -210,7 +210,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `……任務がない……私に……うっ！`
     },
@@ -235,7 +235,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `……ナイトメア！！`
     },
@@ -246,7 +246,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `残る！この子たちを守って！`
     },
@@ -285,7 +285,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `局長はどこ？`
     },
@@ -304,7 +304,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `ヘラ、起きて……ごめん、全部私が悪い。ごめん……
 ……局長……局長、どこにいるの……お願い……答えて……`
@@ -325,7 +325,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `あなたは……？`
     },
@@ -344,7 +344,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `私……局長がどこにいるか分かった……行きたい。私は――`
     },
@@ -380,7 +380,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `局長は？局長はどこ？私に助けさせて！`
     },
@@ -426,7 +426,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `……下？局長は、この下にいる。局長！`
     },
@@ -453,7 +453,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `局長！`
     },
@@ -465,7 +465,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/hekate.png`,
+      avatar: `img/dh/hecate.png`,
       name: `ヘカテー`,
       text: `局長、起きて！`
     }

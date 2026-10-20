@@ -22,7 +22,7 @@ export default {
     characters: [
       {
         name: `局長`,
-        avatar: `img/dh/director.png`,
+        avatar: `img/dh/PC01.jpg`,
         note: `自らの弱さを認める。`,
         basicStats: `混沌の中で多くの人々に助けられてきたことを振り返り、枷を「錨」と再定義する。`,
         profile: `能力：枷（錨）`
@@ -63,13 +63,9 @@ export default {
   },
   script: [
     {
-      type: `narration`,
-      text: `高塔ブラックリングA-13|13-17弱者の戦い`
-    },
-    {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `意識を失っている間、何度も目を覚まそうとした。でも、どうしても目覚められなかった。あの世界はひどく混沌としていた。
 狂厄の深淵には、私の想像を遥かに超える苦痛と困難が無数にあった。
@@ -84,7 +80,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `これこそが、本当の恐ろしい闇だった。一人ではそこから抜け出せなかった。その時になって初めて、自分が「人間」というものを何も知らなかったことに気づいた。
 私も弱者なんだ。`
@@ -111,7 +107,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `ありがとう。でも、弱くてもいいと思う。
 弱いからこそ、たくさんの人に助けてもらえた。もう亡くなった人も、まだもがいている人も、覚えている人も、忘れてしまった人も……
@@ -148,7 +144,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `あの人たちの中で、私はヘカテーの声をはっきり覚えている。あなたは枷を辿って私を探しに来た。誰かが力いっぱい私を押し出して、あなたはその反対側から、枷で私を引き上げてくれた。
 ほら、私たちは同じなんだ。これが私たちの心だ。
@@ -213,7 +209,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `ヘラを守って、自分自身もしっかり守ってくれ。これは命令でも任務でもない。
 君が私を必要としているように、私も君を必要としている。`

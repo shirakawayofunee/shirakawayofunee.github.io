@@ -34,7 +34,7 @@ export default {
       },
       {
         name: `局長`,
-        avatar: `img/dh/director.png`,
+        avatar: `img/dh/PC01.jpg`,
         note: `ドナルドに希望を託され、上方へ引き上げられる。`,
         basicStats: `ジュリアンの建築家としての意志を語り、ドナルドを現実へ引き戻そうとする。`,
         profile: `危険度：不明
@@ -134,7 +134,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `君が言った通り、彼はただ建築家になりたかった。建築家はシンジケートの暴力を必要としない。彼は自分の意志と才能だけで、この危機を丸8か月も食い止めた。
 君たちは皆同じだ……誰よりも頑固で、錆火で最も強い指導者だ。`
@@ -168,7 +168,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `ドナルド?　起きて、起きて!　幻境に呑まれないで!`
     },
@@ -191,7 +191,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……こんな時まで、格好つけたことを言う。`
     },
@@ -236,7 +236,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……何をするつもり?`
     },
@@ -247,7 +247,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `そんなことはするな!　自分たちが欲しいものは自分たちで掴め!　希望を私に託すな!　私はあなたたちの命なんていらない、もう二度と自分を犠牲にするな!!`
     },
@@ -270,7 +270,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `やめろ!　生きろ、君は——`
     },

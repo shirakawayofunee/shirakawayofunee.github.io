@@ -26,14 +26,14 @@ export default {
     characters: [
       {
         name: `黒環の化身`,
-        avatar: `img/dh/blackring_avatar.png`,
+        avatar: `img/dh/julienboss.png`,
         note: `ジュリアンの顔をした受骸者。`,
         basicStats: `領域を拡大し、過去のすべてを清算しようとする。局長の策略に翻弄される。`,
         profile: `分類：受骸者・黒環の主`
       },
       {
         name: `局長`,
-        avatar: `img/dh/director.png`,
+        avatar: `img/dh/PC01.jpg`,
         note: `「規則」と白匣を組み合わせて戦う。`,
         basicStats: `自らを導火線にしながらも無傷で攻撃を命中させ、黒環の運命を人々に委ねる。`
       },
@@ -56,29 +56,25 @@ export default {
         basicStats: `蔻蔻に襟首を掴まれ、逃げる隙を失う。`
       },
       {
-        name: `赫卡蒂`,
+        name: `ヘカテー`,
         avatar: `img/dh/hecate.png`,
-        note: `海拉を守る。`,
+        note: `ヘラを守る。`,
         basicStats: `「私はもう一人じゃない。局長に何かあるはずがない。私は信じている。」`
       },
       {
-        name: `海拉`,
+        name: `ヘラ`,
         avatar: `img/dh/hela.png`,
         note: `傷が治り、力を取り戻す。`,
         basicStats: `「身体が軽くなった……傷が治っていく……」`
       }
     ],
-    synopsis: `局長が黒環の化身と対峙する。弱すぎると嘲る化身に対し、局長は「規則」と白匣を組み合わせ、自らを導火線にしながらも無傷で攻撃を命中させる。上庭の黒石英が抗議する中、局長は「弱者」たちの意志に耳を傾けるべきだと語り、黒環の運命を西区の人々自身に委ねる。各地で渡鴉の詩が力を取り戻し、白逸が解放され、赫卡蒂が海拉を守り、FACが反撃を開始する。局長は沈黙する大多数に、自ら運命を決める時が来たと呼びかける。`
+    synopsis: `局長が黒環の化身と対峙する。弱すぎると嘲る化身に対し、局長は「規則」と白匣を組み合わせ、自らを導火線にしながらも無傷で攻撃を命中させる。上庭の黒石英が抗議する中、局長は「弱者」たちの意志に耳を傾けるべきだと語り、黒環の運命を西区の人々自身に委ねる。各地で渡鴉の詩が力を取り戻し、白逸が解放され、ヘカテーがヘラを守り、FACが反撃を開始する。局長は沈黙する大多数に、自ら運命を決める時が来たと呼びかける。`
   },
   script: [
     {
-      type: `narration`,
-      text: `高塔黒環A-13|13-16「強者」`
-    },
-    {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `誰かと思えば、あいつが造った迷宮を破って、真っ先に死にに来たのはお前か……
 そうか、お前の枷はまだ残っている。まだズルをする手段くらいにはなるらしい。`
@@ -90,7 +86,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `弱すぎる。お前みたいなのがいたことすら忘れていた……あの建築家がお前を隠していなければ、とっくに喰っていた。
 どうした、何も言わないのか。前は随分と口が回ったじゃないか。「辛迪加はお前みたいな怪物の狩場じゃない」ってな。ふふ、あれだけ大義を振りかざしておいて、今回は随分と静かだ。
@@ -105,7 +101,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `もっと強い奴があなたを探しているのを感じる。あなたも長くはないんじゃない?
 見物ついでに勉強させてもらう。枷があんたみたいな怪物をどう始末するのか見てみたい。
@@ -119,7 +115,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `何が、お前にそんな口を利く自信を与えた?そのボロボロの枷か?
 自分もあの女と同じように、俺を踏みつけ、嘲笑えると思っているのか……自分のほうが上だと、俺が弱者だと思っているのか?
@@ -132,7 +128,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `俺の領域は拡大している。辛迪加全域を覆い、ここにいる一人一人の人間、一つ一つの魂が俺の食糧だ。俺はもう自分の力を取り戻した。
 これからは深い穴も俺を閉じ込められない。高塔も俺を閉じ込められない。俺はもっと遠くへ行き、もっと多くを手に入れる。
@@ -147,14 +143,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `……なんだ、これ?枷?違う……これは――`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `上庭の人類最先端技術。どうやら、あなたや私のような狂厄の造物にはよく効くらしい。
 これを使ってあなたを殺せという任務を受けた。よかった。どうやら本当に効果があるらしい。`
@@ -162,7 +158,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `効果がある……ふん、試してみろ。`
     },
@@ -174,7 +170,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `人類最先端技術?ふふ、残念だったな。
 黒環は俺の領域だ。お前たちの技術は外から持ち込んだものにすぎない。俺が拒めば、俺には一切触れられない。まして傷つけることなどできない。
@@ -187,7 +183,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `一度手放してみればいい。せっかく意識を取り戻して、自分を隠す力まで手に入れたんだから。
 黒環の外へ出て、他の骸とは違う運命を歩くこともできる。`
@@ -195,7 +191,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `……愚か者が。死ね。`
     },
@@ -206,7 +202,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `残念。
 もう機会は与えた。`
@@ -219,7 +215,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `これは?!ぐっ!あああ!!`
     },
@@ -230,14 +226,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `なぜだ。俺を傷つけられるはずがない。これは俺の黒環だ。俺に触れられるはずがない。`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `さっき説明しただろう。人類最先端技術。こういう狂厄の造物を滅ぼすために生まれたもの。
 ここではいろいろと制限されているけど……私がいる。
@@ -246,7 +242,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `まさか……お前か?自分自身を導火線にして、こいつに俺を殺させるつもりか?
 狂っているのか!!
@@ -259,7 +255,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `……なに?`
     },
@@ -271,14 +267,14 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `これは……あの女のものか?それで攻撃を避け、自分を隠したのか?!`
     },
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `仕方ない。あなたは強すぎる。この白匣ではあなたの力をすべて封じることはできない。でも、この「弱者」である私を包んで隠すくらいなら問題ない。
 そのせいで私も動けなくなったけど、これなら上庭の技術は私を傷つけず、あなたにだけ正確に命中する。`
@@ -300,7 +296,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `何と言った?私の選択を楽しみにしているんじゃなかったのか?なら、そこで見ていればいい。`
     },
@@ -319,7 +315,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `あなたたちの理性では、すべての可能性を見ることはできない。`
     },
@@ -335,7 +331,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `私は無事に帰るために来た。誰かの思い通りになるためじゃない。
 でも、ここですべてに決着をつける……私自身の願いのために。
@@ -347,7 +343,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `は……はは……あいつらに決めさせるだと?誰がお前を俺の口元まで送り込んだ?誰がお前を食い尽くし、こんな有様にしたのか、忘れたのか?!
 あの蟻ども、烏合の衆……信念もなければ、越えてはならない一線もない。流れに身を任せ、力を得れば横暴に振る舞い、力を失えばダチョウのように何も見ず、麻痺したまま生き延びる。
@@ -357,7 +353,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `そうだ……西区には650万人いる。そのうち暴力を追い求めるのは20万人余り。残りの人たちは、無理やり沈黙させられ、無視され、忘れられ、消されてきた。彼らの願いを気にかける人なんて、これまで誰もいなかった。
 でも幸い、黒環は辛迪加じゃない。誰の力が強いかだけで物事が決まる場所じゃない。
@@ -370,7 +366,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `……ああ、お前……まさか……`
     },
@@ -382,7 +378,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `卑怯者め!小細工を弄して、俺を嵌めたな!
 お前も俺の力を狙っているのか?俺の力を奪おうとしているのか?!`
@@ -390,7 +386,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `私はあなたとは違う。辛迪加の「弱肉強食」に染まっていないし、あなたのような歪んだ力も必要ない。
 でも、一つだけ証明してほしいことがある――最強の黒環が、ただの人間に破壊できるのかどうか。`
@@ -402,14 +398,14 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `私と賭ける勇気はある?`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `この野郎!!!!`
     },
@@ -429,7 +425,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/oak.png`,
-      name: `橡木匣`,
+      name: `「コフィン」`,
       text: `ふふ、私にそんなことを言う必要はない。私が興味があるのは死者の声だけ。あなたの綺麗事はもう聞き飽きた。
 意識を取り戻したのなら、さっさと私の死境から出て、愛しい人間の世界を抱きしめに行けばいい。`
     },
@@ -616,15 +612,15 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/hela.png`,
-      name: `海拉`,
+      name: `ヘラ`,
       text: `……身体が軽くなった……傷が治っていく……何が起きたの、局長?`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/hela.png`,
-      name: `海拉`,
-      text: `……赫卡蒂?
+      name: `ヘラ`,
+      text: `……ヘカテー?
 どうしてここに来たの?!その……あれは……龍――?`
     },
     {
@@ -635,7 +631,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/hela.png`,
-      name: `海拉`,
+      name: `ヘラ`,
       text: `……どうしてここにいるの?猪頭はどうしたの。あいつのところへ行くべきじゃないの?
 一人で大丈夫なの?`
     },
@@ -643,11 +639,11 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/hecate.png`,
-      name: `赫卡蒂`,
+      name: `ヘカテー`,
       text: `……もう大丈夫。
 私はもう一人じゃない。
 局長に何かあるはずがない。私は信じている。だから――
-私が海拉を守る。`
+私がヘラを守る。`
     },
     {
       type: `dialogue`,
@@ -664,7 +660,7 @@ export default {
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `さあ、辛迪加の沈黙する大多数よ。
 弱者を自称し、無力を理由に、あまりにも長く麻痺してきた。あまりにも長く逃げ続けてきた。

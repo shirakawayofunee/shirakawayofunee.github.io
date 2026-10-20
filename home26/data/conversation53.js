@@ -38,7 +38,7 @@ export default {
       },
       {
         name: `局長`,
-        avatar: `img/dh/director.png`,
+        avatar: `img/dh/PC01.jpg`,
         note: `ドナルドを汚染の泥沼から引きずる存在。`,
         basicStats: `ジュリアンの意志と枷を通じて黒環の真実を語る。`,
         profile: `危険度：不明
@@ -79,7 +79,7 @@ export default {
       },
       {
         name: `黒環の化身`,
-        avatar: `img/dh/blackring_avatar.png`,
+        avatar: `img/dh/julienboss.png`,
         note: `黒環そのものの意志を体現する存在。`,
         basicStats: `「今回は私が黒環を選んだ。必ず……私の願いを叶える。」`
       }
@@ -283,7 +283,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `そうだな。お前と違って、さっきまた悪夢を見ていた。
 ……まだ大丈夫か？`
@@ -317,7 +317,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `本当に、この黒環を破れる可能性があると思っているのか？`
     },
@@ -340,7 +340,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/blackring_avatar.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `黒環の化身`,
       text: `だが、覚えておけ……今回は私が黒環を選んだ。必ず……私の願いを叶える。`
     },
@@ -355,12 +355,12 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……そうだ。ジュリアンは一度も諦めていない。
 枷鎖だけで黒環を8か月も拘束し続けることなんてできない。あいつ自身の狂厄に抗おうとする意志が、黒環の行動を制限していた。
 福音地は彼を利用して、より強く、より集中した黒環を手に入れようとしていた。でも逆に、あいつはその隙を掴んで、一時的に黒環の支配権を奪った。
-それに、赫卡蒂を導いて私を見つけさせ、私を狂厄から連れ戻したのもあいつだ。`
+それに、ヘカテーを導いて私を見つけさせ、私を狂厄から連れ戻したのもあいつだ。`
     },
     {
       type: `dialogue`,
@@ -378,7 +378,7 @@ BR-001の観測が技術発展を促した。今じゃ超環通信も実現し�
     {
       type: `dialogue`,
       position: `right`,
-      avatar: `img/dh/director.png`,
+      avatar: `img/dh/PC01.jpg`,
       name: `局長`,
       text: `……あの人はもういない。
 8か月という時間……私たちには、そんな長い間耐え続けることなんてできなかった。私も彼も、所詮は小さな人間だ。巨大な狂厄に永遠に抗い続けることなんてできない。
