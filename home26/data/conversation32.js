@@ -37,7 +37,7 @@ export default {
 
       },
       {
-        name: `『<ruby>薊<rt>アザミ</rt></ruby>』`,
+        name: `「<ruby>薊<rt>アザミ</rt></ruby>」`,
         avatar: `img/dh/thistle3.jpg`,
         note: `19歳、能力者、「GARDEN」の殺し屋`,
         basicStats: `N.F.111年、为了复仇加入「GARDEN」的FAC遗孤。完成复仇后，将守护「GARDEN」视为新的生存意义，往后的日子里，磨练自己的力量不断成长，慢慢地成为了独当一面的人。
@@ -65,14 +65,14 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `よくも私に会いに来たもんだな！『Coquelicot』はどこだ？彼女こそ私に感謝しに来るべきじゃないのか？`,
+      text: `よくも私に会いに来たもんだな！「Coquelicot」はどこだ？彼女こそ私に感謝しに来るべきじゃないのか？`,
       voice: `wav/JP/conversation32/vo_event_11043_114.wav`,
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
+      name: `「薊」`,
       text: `……相変わらず図々しいね、君って。`,
       voice: [
         { label: '日', path: 'wav/JP/conversation32/vo_event_11043_22.wav' },
@@ -82,8 +82,8 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
-      text: `師匠は忙しいから、代わりに私が伝言を預かってきたよ。『正式採用された？ちゃんとやれてる？事件解決率はどれくらい？何人犯人捕まえた？まだ先輩の足引っ張ってる？』ってね。`,
+      name: `「薊」`,
+      text: `師匠は忙しいから、代わりに私が伝言を預かってきたよ。「正式採用された？ちゃんとやれてる？事件解決率はどれくらい？何人犯人捕まえた？まだ先輩の足引っ張ってる？」ってね。`,
       voice: `wav/JP/conversation32/vo_event_11043_53.wav`,
     },
     {
@@ -104,16 +104,16 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
-      text: `へえ——。後で私、師匠と一緒に<span>西区</span>に行くよ。『花庭園』の仲間たちはみんなそっちに流れちゃったみたいだから。もう君には私たちを捕まえることも見つけることもできないよ。去る前に一言、言っとこうと思って。`,
+      name: `「薊」`,
+      text: `へえ——。後で私、師匠と一緒に<span>西区</span>に行くよ。「花園」の仲間たちはみんなそっちに流れちゃったみたいだから。もう君には私たちを捕まえることも見つけることもできないよ。去る前に一言、言っとこうと思って。`,
       voice: `wav/JP/conversation32/vo_event_11043_46.wav`,
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
-      name: `『薊』`,
-      text: `私の復讐は終わった。もう殺し屋である必要はない。これからは大好きな『花庭園』に残って、ずっと守るよ。`,
+      name: `「薊」`,
+      text: `私の復讐は終わった。もう殺し屋である必要はない。これからは大好きな「花園」に残って、ずっと守るよ。`,
       voice: `wav/JP/conversation32/vo_event_11043_41.wav`,
     },
     {

@@ -29,7 +29,7 @@ export default {
     ],
     characters: [
       {
-        name: `「Coquelicot」｜業師（L）`,
+        name: `「COQUELIC」（L）`,
         avatar: `img/dh/L24.png`,
         note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
         basicStats: `頼りになるし強い、子供の感情の揺れに気づき、さりげなく解きほぐせる頼もしい大人。
@@ -439,7 +439,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
     },
     {
       type: `narration`,
-      text: `唐突な話題の転換に、スミレの手が止まる。`
+      text: `ドナルド突な話題の転換に、スミレの手が止まる。`
     },
     {
       type: `dialogue`,
@@ -720,7 +720,7 @@ Lの目には、まるで家出していた子が何か目的を抱えて帰っ�
     },
     {
       type: `narration`,
-      text: `これこそが「Garden」の存在理由であり、それが絶えず発展し強大化してきた理由でもあった。`
+      text: `これこそが「花園」の存在理由であり、それが絶えず発展し強大化してきた理由でもあった。`
     },
     {
       type: `narration`,

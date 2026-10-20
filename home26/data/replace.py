@@ -1,3 +1,11 @@
+'''
+Author: DCBZ
+Date: 2026-10-21 04:18:07
+LastEditors: your name
+LastEditTime: 2026-10-21 04:43:35
+Description: 
+FilePath: \shirakawayofunee.github.io\home26\data\replace.py
+'''
 import os
 
 def main():
@@ -9,40 +17,8 @@ def main():
     # 格式为: '旧关键词': '新关键词'
     # ==========================================
     replacements = {
-        '      {
-        name: `Chris`,
-        name2: `<ruby>未来の名探<rt></rt></ruby>偵（自称）`,
-        avatar: `img/dh/pc2.png`,
-        note: `19歳、警察学校の一年生`,
-        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「GARDEN」が引き起こした連続殺人事件を調査中。`,
-        profile: `危険度：B級
-        能力：相信正義`, 
-      },': '      {
-        name0: `未来の名<ruby>探<rt>自称</rt>偵</ruby>`,
-        name: `CHRIS`,
-        name2: `クリス`,
-        avatar: `img/dh/pc2.png`,
-        note: `警察学校の一年生、19歳`,
-        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「花園」が引き起こした連続殺人事件を調査中。`,
-      profile: `危険度：B級
-        能力：相信正義
-`, 
-      },',
-        '{
-        name: `Doyle`,
-        name2: `ドイル`,
-        avatar: `img/dh/doyle.jpg`,
-        note: `支局の刑事`,
-        basicStats: `「GARDEN」による一連の暗殺事件を担当してるよ。生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
-        profile: `所属：新城治安局`
-      },': '      {
-        name: `DOYLE`,
-        name2: `ドイル`,
-        avatar: `img/dh/doyle.jpg`,
-        note: `支局の刑事`,
-        basicStats: `「花園」による一連の暗殺事件を担当してるよ。生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
-        profile: `所属：新城治安局`
-      },
+        '于連': 'ジュリアン',
+        '唐': 'ドナルド',
     }
     
     if not replacements or list(replacements.keys())[0] == 'oldKeyword1':
@@ -57,8 +33,7 @@ def main():
     # 递归遍历当前目录及所有子目录
     for root, dirs, files in os.walk(current_dir):
         for file in files:
-            if file.endswith('.js'):
-                # 排除脚本自身（以防万一脚本也是 .js 的话，虽然这里是 .py）
+            if file.endswith('.js') and file != 'replace.py':
                 file_path = os.path.join(root, file)
                 
                 try:
@@ -86,7 +61,6 @@ def main():
     print(f"批量替换完成！共修改了 {success_count} 个 JS 文件。")
     print(f"================================")
     
-    # 运行结束后暂停，防止窗口秒关
     input("\n按回车键退出...")
 
 if __name__ == '__main__':

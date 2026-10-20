@@ -1,8 +1,9 @@
 export default {
   meta: {
-    title: `「執行[人]」`,
+    title: `「[執行]人」`,
     bgm: `mp3/bg/conversation20.mp3`,
-    summary: `Xは彼女なりのやり方で事態を収拾した。しかし、得るものがあれば代償もある。`
+    summary: `Xは彼女なりのやり方で事態を収拾した。
+    しかし、得るものがあれば代償もある。`
   },
   infoPanel: {
     glossary: [

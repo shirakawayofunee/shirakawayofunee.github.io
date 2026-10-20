@@ -405,7 +405,7 @@ export default {
       position: `left`,
       avatar: `img/dh/edge_02.jpg`,
       name: `EDGE-02`,
-      text: `「Garden」？`
+      text: `「花園」？`
     },
     {
       type: `dialogue`,

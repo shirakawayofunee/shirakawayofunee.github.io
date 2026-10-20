@@ -37,7 +37,7 @@ export default {
       {
         name: `カスロ`,
         avatar: `img/dh/caslo.png`,
-        note: `退屈な戦いに飽きた戦闘狂コンビクト。`,
+        note: `退屈な戦いに飽きた戦闘狂能力者。`,
         basicStats: `上庭の精鋭が現れたことで歓喜し、マティルダと共に激しい肉弾戦を挑む。`,
         profile: `危険度：高危険度`
       },
@@ -51,7 +51,7 @@ export default {
       {
         name: `ヘカテ`,
         avatar: `img/dh/hecate.png`,
-        note: `局長を探すコンビクトの少女。`,
+        note: `局長を探す能力者の少女。`,
         basicStats: `BR-002の急激な活性化に伴い、枷の共鳴による激痛に悶え、黒い光の棘に体を貫かれる。`,
         profile: `能力：悪夢（ナイトメア）の具現化`
       },
@@ -316,7 +316,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `激戦が再び始まった。\n\n白衣の精鋭は一人で二人の禁閉者を相手取り、マティルダとカスロを同時に抑え込んでいく。\n\nその間にも、黒水晶は負傷者区域へ向かって進んでいた。\n\nその行く先々で、恐怖が広がっていく。`
+      text: `激戦が再び始まった。\n\n白衣の精鋭は一人で二人の能力者を相手取り、マティルダとカスロを同時に抑え込んでいく。\n\nその間にも、黒水晶は負傷者区域へ向かって進んでいた。\n\nその行く先々で、恐怖が広がっていく。`
     },
     {
       type: `dialogue`,
@@ -361,7 +361,7 @@ export default {
       position: `left`,
       avatar: `img/dh/quartz.jpg`,
       name: `黒石英`,
-      text: `禁閉者……身元を確認。S-098。局長失踪前、確かに彼女とともに任務を遂行している。SHP-13はやはりここにいる。`
+      text: `能力者……身元を確認。S-098。局長失踪前、確かに彼女とともに任務を遂行している。SHP-13はやはりここにいる。`
     },
     {
       type: `dialogue`,
@@ -379,7 +379,7 @@ export default {
       position: `left`,
       avatar: `img/dh/quartz.jpg`,
       name: `黒石英`,
-      text: `お前たちが匿っているのか。\n\n城邦の行動を妨害するお前たちは、地下とどういう関係にある。\n\nこの禁閉者を引き渡せ。\n\n彼女を覚醒させ、SHP-13を捜索する。`
+      text: `お前たちが匿っているのか。\n\n城邦の行動を妨害するお前たちは、地下とどういう関係にある。\n\nこの能力者を引き渡せ。\n\n彼女を覚醒させ、SHP-13を捜索する。`
     },
     {
       type: `dialogue`,
@@ -404,7 +404,7 @@ export default {
       position: `left`,
       avatar: `img/dh/quartz.jpg`,
       name: `黒石英`,
-      text: `狂厄級禁閉者を匿っている。\n\nここには明らかに反乱の兆候がある。`
+      text: `狂厄級能力者を匿っている。\n\nここには明らかに反乱の兆候がある。`
     },
     {
       type: `dialogue`,

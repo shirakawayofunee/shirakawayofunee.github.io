@@ -41,7 +41,7 @@ export default {
     ],
     characters: [
       {
-        name: `「Coquelicot」｜業師`,
+        name: `「COQUELIC」`,
         avatar: `img/dh/leopold402.png`,
         note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
         basicStats: `憎しみを心ゆくまで楽しみ、愛を思う存分に謳歌する。
@@ -394,7 +394,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `「花庭園」の結末はとっくに決まっていました。追い詰められ、福音地に捕らえられた時点で、両勢力の戦火に引き裂かれることは確定していたのです。それが、狭間に生きる者の宿命。`,
+      text: `「花園」の結末はとっくに決まっていました。追い詰められ、福音地に捕らえられた時点で、両勢力の戦火に引き裂かれることは確定していたのです。それが、狭間に生きる者の宿命。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_11.wav" },
       ],
@@ -464,7 +464,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `私が君に命を与えましょう。新たな「花庭園」を見つけるための時間を。そして、君たちを全ての騒乱から完全に遠ざけてみせます。`,
+      text: `私が君に命を与えましょう。新たな「花園」を見つけるための時間を。そして、君たちを全ての騒乱から完全に遠ざけてみせます。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_18.wav" },
       ],
@@ -553,7 +553,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `私には、君を生かす力がある、「花庭園」を守る力も。ただ一つ、私の手伝いをしてほしいのです。ある人物を探してほしい。`,
+      text: `私には、君を生かす力がある、「花園」を守る力も。ただ一つ、私の手伝いをしてほしいのです。ある人物を探してほしい。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_97.wav" },
       ],
@@ -586,7 +586,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `君に頼みたいのは、その「花庭園」の主としての手腕。そして、表と裏の社会を自在に渡り歩く、君のその実力で、誰よりも早く彼を見つけ出すことです。`,
+      text: `君に頼みたいのは、その「花園」の主としての手腕。そして、表と裏の社会を自在に渡り歩く、君のその実力で、誰よりも早く彼を見つけ出すことです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_75.wav" },
       ],
@@ -757,7 +757,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `（回想）N.F.103年「Garden」庭院`,
+      text: `（回想）N.F.103年「花園」庭院`,
       bubbleStyle: "end-void",
     },
     {
@@ -830,11 +830,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `気取った福音地の女が、あれほど気色ばんで取り乱したのを見たのは、それが唯一だった。その後の二年間、狂犬のような福音地からの暗殺依頼が「花庭園」の門を叩き続けた。`,
+      text: `気取った福音地の女が、あれほど気色ばんで取り乱したのを見たのは、それが唯一だった。その後の二年間、狂犬のような福音地からの暗殺依頼が「花園」の門を叩き続けた。`,
     },
     {
       type: `narration`,
-      text: `――そして、涙も枯れ果て傷だらけになった多くの罪なき人々が、行き場を失い「花庭園」の扉を叩いた。`,
+      text: `――そして、涙も枯れ果て傷だらけになった多くの罪なき人々が、行き場を失い「花園」の扉を叩いた。`,
     },
     {
       type: `narration`,
@@ -843,7 +843,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `なんと滑稽で、なんと荒唐無稽で、なんと破廉恥な話か。鼻で笑って忘れ去っていた記憶が、今、すべて蘇り、そしてすべてが繋がった。`,
+      text: `なんと滑稽で、なんと荒ドナルド無稽で、なんと破廉恥な話か。鼻で笑って忘れ去っていた記憶が、今、すべて蘇り、そしてすべてが繋がった。`,
     },
     {
       type: `dialogue`,
@@ -1237,7 +1237,7 @@ export default {
       avatar: `img/dh/wuyan.png`,
       name: `「コクリコ」`,
       text: `……そこまでは生きられないわ。君のくれた命もいらないし、鬱憤を晴らすのにそんなに長くは待てない。君の上に誰がいようと、前後にどれだけの人間がいようと関係ない
-      君は私の「花庭園」に手を出した。それだけで十分よ。人生苦短。
+      君は私の「花園」に手を出した。それだけで十分よ。人生苦短。
       `,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_89.wav" },
@@ -1341,7 +1341,7 @@ export default {
       bubbleStyle: "inner-voice-c",
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
-      text: `正解……私の「花庭園」を壊した、それこそが君の間違いよ！ 今後私が何をしようと君には関係ない。さあ、今すぐ償いなさい！`,
+      text: `正解……私の「花園」を壊した、それこそが君の間違いよ！ 今後私が何をしようと君には関係ない。さあ、今すぐ償いなさい！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_87.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_98.wav" },
@@ -1446,7 +1446,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `その光の中に、見慣れた笑顔がいくつも浮かんだ。彼女の花たちだ。抱きしめたい、守りたいと思った。本当なら、自分の「花庭園」で安らかに眠りたかった。`,
+      text: `その光の中に、見慣れた笑顔がいくつも浮かんだ。彼女の花たちだ。抱きしめたい、守りたいと思った。本当なら、自分の「花園」で安らかに眠りたかった。`,
     },
     {
       type: `narration`,

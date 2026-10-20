@@ -71,7 +71,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
-      text: `調査員はすでに現場周辺で「Garden」の拠点を捜索している。君の命がけの脱出が、重要な情報をもたらしてくれた。`
+      text: `調査員はすでに現場周辺で「花園」の拠点を捜索している。君の命がけの脱出が、重要な情報をもたらしてくれた。`
           ,
       voice: [
         /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
@@ -134,7 +134,7 @@ export default {
       position: `right`,
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
-      text: `「Garden」は復讐の依頼を引き受けてるけど、なぜこの数人を選んだのか、最終的に見せつけた組み合わせには何か意図があるはず。`
+      text: `「花園」は復讐の依頼を引き受けてるけど、なぜこの数人を選んだのか、最終的に見せつけた組み合わせには何か意図があるはず。`
           ,
       voice: [
         /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
@@ -171,7 +171,7 @@ export default {
       position: `right`,
       avatar: `img/dh/zhentan7.png`,
       name: `探偵`,
-      text: `「Garden」は当時のことが不公平だと感じて、こうした事件で注目を集め、真相を暴いて何かを訴えたいのかな？`
+      text: `「花園」は当時のことが不公平だと感じて、こうした事件で注目を集め、真相を暴いて何かを訴えたいのかな？`
     },
     {
       type: `narration`,
@@ -286,7 +286,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
-      text: `少なくとも、福音地には絶対に有利だ。「Garden」はもともと福音地勢力が作った暗殺者組織だった。数年前に独立を宣言したとはいえ、エリカ荘園事件を見れば、彼女たちと福音地はまだ繋がってる。`
+      text: `少なくとも、福音地には絶対に有利だ。「花園」はもともと福音地勢力が作った暗殺者組織だった。数年前に独立を宣言したとはいえ、エリカ荘園事件を見れば、彼女たちと福音地はまだ繋がってる。`
           ,
       voice: [
         /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
@@ -457,7 +457,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `クリスが現れた場所の半径10キロを捜索したが、「Garden」の入口は見つからなかった。彼女たちが意図的にクリスを移動させた可能性がある。`
+      text: `クリスが現れた場所の半径10キロを捜索したが、「花園」の入口は見つからなかった。彼女たちが意図的にクリスを移動させた可能性がある。`
           ,
       voice: [
         /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
@@ -683,7 +683,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `探偵は笑った。彼女は自分の道を取り戻した。もう「Garden」の人間に揺さぶられることはない。大丈夫だ。`
+      text: `探偵は笑った。彼女は自分の道を取り戻した。もう「花園」の人間に揺さぶられることはない。大丈夫だ。`
     }
   ]
 };

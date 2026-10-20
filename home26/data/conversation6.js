@@ -250,7 +250,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
-      text: `上庭に挑む組織、その名は<span>「Garden」</span>。かつて地底で飼い慣らされていた能力者殺し屋の集団。`
+      text: `上庭に挑む組織、その名は<span>「花園」</span>。かつて地底で飼い慣らされていた能力者殺し屋の集団。`
     },
     {
       type: `dialogue`,

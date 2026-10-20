@@ -355,7 +355,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `考えていると、壁が轟音とともに破られた。薊は目を瞠った。「Garden」の仲間でこんな無粋な真似をする奴はいない。`
+      text: `考えていると、壁が轟音とともに破られた。薊は目を瞠った。「花園」の仲間でこんな無粋な真似をする奴はいない。`
     },
     {
       type: `dialogue`,
@@ -385,7 +385,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリス`,
-      text: `「Garden」に連れてけ、早く。`
+      text: `「花園」に連れてけ、早く。`
     },
     {
       type: `dialogue`,
@@ -466,7 +466,7 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
       name: `「薊」`,
-      text: `……早く……「Garden」に……`
+      text: `……早く……「花園」に……`
     },
     {
       type: `narration`,
@@ -477,7 +477,7 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
       name: `「薊」`,
-      text: `これが……最後の基地。「登録」した「Garden」のメンバーが入口を開けるけど、開けた後、閉じるまで時間がかかる。さっきみたいに。`
+      text: `これが……最後の基地。「登録」した「花園」のメンバーが入口を開けるけど、開けた後、閉じるまで時間がかかる。さっきみたいに。`
     },
     {
       type: `dialogue`,
@@ -508,7 +508,7 @@ export default {
       position: `left`,
       avatar: `img/dh/thistle3.jpg`,
       name: `「薊」`,
-      text: `彼女はついに、誰も邪魔しない「Garden」を手に入れる。`
+      text: `彼女はついに、誰も邪魔しない「花園」を手に入れる。`
     },
     {
       type: `dialogue`,

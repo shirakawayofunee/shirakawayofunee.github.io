@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `『Garofano』`,
+        name: `「Garofano」`,
         avatar: `img/dh/severo5.png`,
         note: `36歳、能力者、「GARDEN」幹部`,
         basicStats: `▍コードネーム由来：

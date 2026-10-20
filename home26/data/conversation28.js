@@ -30,7 +30,7 @@ export default {
     ],
     characters: [
       {
-        name: `「Coquelicot」｜業師（L）`,
+        name: `「COQUELIC」（L）`,
         avatar: `img/dh/leopold402.png`,
         note: `「GARDEN」の主、裏社会を陰で牛耳る実力者。`,
         basicStats: `生の流儀：人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
@@ -164,7 +164,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「業師」`,
-      text: `……そう言ったのに、馬鹿なことするんだから、どうしようもない。「Garden」の花たちは、生も死も覚悟すべきだった。`,
+      text: `……そう言ったのに、馬鹿なことするんだから、どうしようもない。「花園」の花たちは、生も死も覚悟すべきだった。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_6.wav' },
         { label: '日', path: 'wav/JP/conversation28/vo_event_11041_3.wav' },

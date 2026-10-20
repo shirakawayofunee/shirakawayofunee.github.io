@@ -238,7 +238,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `君は？そんなもの気にしない？君の「Garden」はどうだい？`
+      text: `君は？そんなもの気にしない？君の「花園」はどうだい？`
     },
     {
       type: `dialogue`,
@@ -284,7 +284,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `上庭も福音地も、君の強さと狂気を恐れる。君が代償を求めに来るのを恐れる……君が生きている限り、「Garden」も君の花も踏みにじられる心配はない。`
+      text: `上庭も福音地も、君の強さと狂気を恐れる。君が代償を求めに来るのを恐れる……君が生きている限り、「花園」も君の花も踏みにじられる心配はない。`
     },
     {
       type: `dialogue`,
@@ -305,7 +305,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `両陣営が大戦を控えてるのに、君は避けるどころか飛び込み、福音地の依頼を受けて上庭に挑み、上庭の刀を振り回して福音地を刺した。「Garden」のすべての鎖を焼き切るように、玉石俱焚の覚悟で……`
+      text: `両陣営が大戦を控えてるのに、君は避けるどころか飛び込み、福音地の依頼を受けて上庭に挑み、上庭の刀を振り回して福音地を刺した。「花園」のすべての鎖を焼き切るように、玉石俱焚の覚悟で……`
     },
     {
       type: `narration`,
@@ -356,7 +356,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `それが君が依頼を受けて得た報酬だろ？依頼を果たせば、福音地は「Garden」の基地を完全に隠す方法を渡す。`
+      text: `それが君が依頼を受けて得た報酬だろ？依頼を果たせば、福音地は「花園」の基地を完全に隠す方法を渡す。`
     },
     {
       type: `dialogue`,
@@ -370,7 +370,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `その通り。上庭は福音地みたいに狂厄を熟知してないから、「Garden」も見つけられない。何より、君の花たちは隠匿の術をしっかり学んでる。`
+      text: `その通り。上庭は福音地みたいに狂厄を熟知してないから、「花園」も見つけられない。何より、君の花たちは隠匿の術をしっかり学んでる。`
     },
     {
       type: `dialogue`,
@@ -384,7 +384,7 @@ export default {
       position: `left`,
       avatar: `img/dh/impatient.png`,
       name: `「業師」`,
-      text: `気持ち悪いな。私は自分のためだけだ。「Garden」を引き受けたのだって、彼女たちがいい世話してくれるから、私が楽しくなるからだ。`
+      text: `気持ち悪いな。私は自分のためだけだ。「花園」を引き受けたのだって、彼女たちがいい世話してくれるから、私が楽しくなるからだ。`
     },
     {
       type: `dialogue`,
@@ -497,7 +497,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
-      text: `（心の声）<br>さあ、「Garden」の主はどうする？どこまでできる？`
+      text: `（心の声）<br>さあ、「花園」の主はどうする？どこまでできる？`
     }
   ]
 };

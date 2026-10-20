@@ -439,7 +439,7 @@ export default {
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `お前がエリカ荘園を襲い、シャーローム姉さんを襲ったやつだ！お前が「Garden」の能力者のリーダー、暗殺者の「業師」だ！`
+      text: `お前がエリカ荘園を襲い、シャーローム姉さんを襲ったやつだ！お前が「花園」の能力者のリーダー、暗殺者の「業師」だ！`
     },
     {
       type: `narration`,
@@ -532,7 +532,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.jpg`,
       name: `「業師」`,
-      text: `キミも、シャーロームも、キミの愛する人たち、たくさんの人が私の「Garden」を飾る花になる。`,
+      text: `キミも、シャーロームも、キミの愛する人たち、たくさんの人が私の「花園」を飾る花になる。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation10/vo_event_11012_60.wav' },
         { label: '日', path: 'wav/JP/conversation10/vo_event_11012_11.wav' },

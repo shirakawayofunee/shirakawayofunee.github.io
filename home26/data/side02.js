@@ -30,7 +30,7 @@ export default {
     ],
     characters: [
       {
-        name: `『Garofano』`,
+        name: `「Garofano」`,
         avatar: `img/dh/severo5.png`,
         note: `36歳、能力者、「GARDEN」幹部`,
         basicStats: `外を渡り歩く時は、コードネームで通している。

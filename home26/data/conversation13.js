@@ -3,7 +3,7 @@ export default {
     title: `「[业]师」`,
     bgm: `mp3/bg/conversation13.mp3`,
     summary: `探偵が目を覚ましたのは、優雅な庭園だった。
-    そこは伝説の暗殺組織 「Garden」の拠点だ。`
+    そこは伝説の暗殺組織 「花園」の拠点だ。`
   },
   infoPanel: {
     glossary: [
@@ -132,7 +132,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
       name: ` 「業師」`,
-      text: `私の「Garden」。敵の牙城よ、探偵ちゃん。`
+      text: `私の「花園」。敵の牙城よ、探偵ちゃん。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_86.wav' },
@@ -236,7 +236,7 @@ export default {
       position: `left`,
       avatar: `img/dh/regret.png`,
       name: `「コクリコ」`,
-      text: `「Garden」は人生を楽しむ場所なんだから、仕事のつまんない話はなしにしてよ。`
+      text: `「花園」は人生を楽しむ場所なんだから、仕事のつまんない話はなしにしてよ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_88.wav' },
@@ -259,7 +259,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold3.png`,
       name: `「コクリコ」`,
-      text: `そうね……ああ、そう言えば君を「Garden」に推薦した人がいるわね。`
+      text: `そうね……ああ、そう言えば君を「花園」に推薦した人がいるわね。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_21.wav' },
@@ -319,7 +319,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopoldmy.jpg`,
       name: `「コクリコ」`,
-      text: `何年も経って、FACで死んだ人なんて山ほどいる。君と同じ境遇の子供が「Garden」に加わるなんて、普通でしょ？彼女たち、君のこと結構気に入ってるよ。`
+      text: `何年も経って、FACで死んだ人なんて山ほどいる。君と同じ境遇の子供が「花園」に加わるなんて、普通でしょ？彼女たち、君のこと結構気に入ってるよ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_15.wav' },
@@ -328,7 +328,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `……復讐のために「Garden」に加わる。探偵はその気持ちをすぐに理解した。彼女は拳をぎゅっと握った。`
+      text: `……復讐のために「花園」に加わる。探偵はその気持ちをすぐに理解した。彼女は拳をぎゅっと握った。`
     },
     {
       type: `dialogue`,
@@ -369,7 +369,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold.png`,
       name: `「コクリコ」`,
-      text: `だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の「Garden」に連れてこられても驚きも騒ぎもしない……`,
+      text: `だから、君って変わってるって言ったの。正義だの真実だのって馬鹿みたいなこと言ってるけど、咲かせた花は暗くて哀れっぽい。私の「花園」に連れてこられても驚きも騒ぎもしない……`,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_17.wav' },
         { label: '日', path: 'wav/JP/conversation13/vo_event_11016_8.wav' },
@@ -582,7 +582,7 @@ export default {
       position: `left`,
       avatar: `img/dh/smile0.png`,
       name: `「コクリコ」`,
-      text: `もしこいつが君の情にほだされて、涙を流して優しい言葉をかけてきたら、君、泣きながら「Garden」の全部を差し出しちゃうつもり？`
+      text: `もしこいつが君の情にほだされて、涙を流して優しい言葉をかけてきたら、君、泣きながら「花園」の全部を差し出しちゃうつもり？`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_72.wav' },
@@ -663,7 +663,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `探偵は叫んだが、それは業師に向けたものではなく、泣き出しそうな「Garden」の暗殺者に向けたものだった。`
+      text: `探偵は叫んだが、それは業師に向けたものではなく、泣き出しそうな「花園」の暗殺者に向けたものだった。`
     },
     {
       type: `narration`,
@@ -788,7 +788,7 @@ export default {
       position: `left`,
       avatar: `img/dh/leopold2.png`,
       name: `「コクリコ」`,
-      text: `「Garden」は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`
+      text: `「花園」は君みたいな正義の戯言なんか聞かない。誰の言葉も聞かない。愛や崇高を名目に頭を下げさせるもの、全部汚い嘘だ。外のもののために払う犠牲は、全部愚かさの証明だ。`
     ,
       voice: [
         { label: '中', path: 'wav/CN/conversation13/vo_event_11016_46.wav' },
