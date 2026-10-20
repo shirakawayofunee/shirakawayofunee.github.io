@@ -53,7 +53,7 @@ export default {
         name: `白逸`,
         avatar: `img/dh/baiyi.png`,
         note: `解放された女。`,
-        basicStats: `蔻蔻に襟首を掴まれ、逃げる隙を失う。`
+        basicStats: `K.K.に襟首を掴まれ、逃げる隙を失う。`
       },
       {
         name: `ヘカテー`,
@@ -464,7 +464,7 @@ export default {
       position: `left`,
       avatar: `img/dh/crache.png`,
       name: `コージ`,
-      text: `……レイヴン?`
+      text: `……クロウ?`
     },
     {
       type: `image`,
@@ -494,7 +494,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/koko.png`,
-      name: `蔻蔻`,
+      name: `K.K.`,
       text: `白逸!!`
     },
     {
@@ -515,7 +515,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/koko.png`,
-      name: `蔻蔻`,
+      name: `K.K.`,
       text: `ゆっくりしてたら、あいつがまた逃げる!!`
     },
     {
@@ -526,7 +526,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/koko.png`,
-      name: `蔻蔻`,
+      name: `K.K.`,
       text: `あれだけ借金こさえて逃げるつもりだったの?鍋食ったのに皿も洗わず逃げるつもりだったの?!
 そんな格好してここで何してるの?!!
 くだらないことを終えたら、今度は一人でどこへ行くつもり?!!また何も言わずに行くつもりだったの?私のためとか言って?!`
@@ -542,7 +542,7 @@ export default {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/koko.png`,
-      name: `蔻蔻`,
+      name: `K.K.`,
       text: `……私に言わなくてもいい。辛迪加で過去の一つや二つない奴なんていない。
 私はあなたたちと一緒にいる日々が好き。だから頑張って追いついてきた。あなたたちに出会えたから、私は生きていて面白いと思えた。
 もう私のためとか言わないで。もう私を突き放さないで。

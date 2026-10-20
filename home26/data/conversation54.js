@@ -26,7 +26,7 @@ export default {
     characters: [
       {
         name: `ドナルド`,
-        avatar: `img/dh/tang.png`,
+        avatar: `img/dh/don604.png`,
         note: `前の時代の遺民。局長を上方へ送り出す。`,
         basicStats: `ジュリアンの意志を知り、自らは汚染の中に残ることを選ぶ。愛と理想を最後まで貫く。`,
         profile: `危険度：S級
@@ -65,10 +65,6 @@ export default {
   script: [
     {
       type: `narration`,
-      text: `高塔黒環A-13|13-14遺民`
-    },
-    {
-      type: `narration`,
       text: `出会った初日から、彼はずっとこんな人だった。`
     },
     {
@@ -86,14 +82,12 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/rust_member.png`,
       name: `「錆火構成員」（A）`,
       text: `シンジケートは俺たちのものだ!　失ったすべてを、錆火が取り戻す!`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/rust_member.png`,
       name: `「錆火構成員」（B）`,
       text: `烈火はすぐそこだ、お前たちを残らず灰にしてやる!`
     },
@@ -104,14 +98,12 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/mad_rust.png`,
       name: `狂化した錆火（A）`,
       text: `……へへ……烈火が……来る……へへへへへ……`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/mad_rust.png`,
       name: `狂化した錆火（B）`,
       text: `……シンジケートは俺たちのものだ……`
     },
@@ -141,22 +133,22 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `…………そういうことだったのか……`
     },
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/yulian.png`,
+      avatar: `img/dh/julienboss.png`,
       name: `「ジュリアン」`,
       text: `次は……君の番だ。`
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `あの言葉は、そういう意味だったのか……
 今までずっと、俺なら……できると思ってたんだな……`
@@ -178,8 +170,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `また寝てた?
 大丈夫、いい夢だった。昔の仲間がたくさん会いに来てくれたみたいだ。
@@ -197,8 +189,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `仕方ないだろ。俺は前の時代の遺民なんだから。`
     },
@@ -208,8 +200,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `逃走計画はもう急ピッチで進んでる。外に出れば多少は苦労するだろうが、悪いことばかりじゃない。
 俺たちはずっとシンジケートに閉じ込められてたから、あんなに苦しみながら足掻いてきたんだ。里湾の外に出て西区を見る。西区の外に出て新城を見る。それなら、ディスの外に出て、もっと広い世界を見るのも悪くないだろ?
@@ -222,8 +214,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `じゃあ、君を手伝うか。
 能力者の枷鎖、ディスの牧羊人、第二黒環の接続者、錆火全体を狂熱へと駆り立てた偶像。俺の親友が自分の命と引き換えに取り戻した人。
@@ -257,8 +249,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `これが禁止令か?　マルグレイ美人の擀面杖みたいなもんだな、逆らえなくなる。ジュリアンが命を懸けて君を取り戻したこと、よっぽど腹に据えかねたらしいな。
 安心しろ、俺はそんな真似できない。自分だって他人の期待を背負いきれないのに、どうして君まで振り回せる。
@@ -276,8 +268,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `御意、王子様。
 だが、ここからは一人で歩いてもらう。`
@@ -288,8 +280,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `ちょっとサボって休ませてくれ。昔の仲間と少し一緒にいさせてくれ。君の言う通り、俺も本当にあいつらに会いたくなった……
 少ししたら……追いつくからな……`
@@ -300,8 +292,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `……俺たちは、前の時代の遺民だ。
 俺たちの時代は、弱者を蔑まなかった。冷酷であることを格好いいとも思わなかった。あの時代は、理想を笑わなかった。俺は胸を張って言える。俺がやってきたことは、すべて愛のためだった。
@@ -311,8 +303,8 @@ export default {
     },
     {
       type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/tang.png`,
+      position: `left`,
+      avatar: `img/dh/don604.png`,
       name: `ドナルド`,
       text: `本当に、楽しみだな……`
     }

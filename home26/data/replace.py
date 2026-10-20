@@ -2,7 +2,7 @@
 Author: DCBZ
 Date: 2026-10-21 04:18:07
 LastEditors: your name
-LastEditTime: 2026-10-21 06:10:30
+LastEditTime: 2026-10-21 06:16:42
 Description: 
 FilePath: \shirakawayofunee.github.io\home26\data\replace.py
 '''
@@ -17,8 +17,9 @@ def main():
     # 格式为: '旧关键词': '新关键词'
     # ==========================================
     replacements = {
-        'hekate.png': 'hecate.png',
-        'タン': 'ドナルド',
+        '蔻蔻': 'K.K.',
+        '（シャーローム）（シャーローム）': '（シャーローム）',
+        'レイヴン': 'クロウ',
     }
     
     if not replacements or list(replacements.keys())[0] == 'oldKeyword1':
