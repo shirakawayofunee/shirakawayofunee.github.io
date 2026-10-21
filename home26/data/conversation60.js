@@ -55,12 +55,6 @@ export default {
         basicStats: `「ヘラは私の友達だから。私が自分で選んだ、最初の友達だから。」`
       },
       {
-        name: `ヘラ`,
-        avatar: `img/dh/hela.png`,
-        note: `強くなるために旅立つ決意をする。`,
-        basicStats: `「もっと強くなりたい。私も誰かを守りたい。」`
-      },
-      {
         name: `ナイチンゲール`,
         avatar: `img/dh/nightingale.png`,
         note: `局長の帰還を迎える。`,
@@ -99,6 +93,10 @@ export default {
       position: `left`,
       name: `？？`,
       text: `よお、局長。追いついたぜ。`
+    },
+    {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_09.png`,
     },
     {
       type: `dialogue`,
@@ -151,6 +149,10 @@ export default {
 !?`
     },
     {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_01_03.png`,
+    },
+    {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/yulian.png`,
@@ -184,8 +186,11 @@ export default {
     },
     {
       type: `narration`,
-      text: `[行動後]
-黒環の光が次第に内へ収束し、炎へと変わっていく。それが受骸者の肉体を焼き、前環主の存在を絶え間なく解離させていく。かつて極限まで膨れ上がった巨体は、次々と裂け、砕け、消えていった。
+      text: `[行動後]`
+    },
+    {
+      type: `narration`,
+      text: `黒環の光が次第に内へ収束し、炎へと変わっていく。それが受骸者の肉体を焼き、前環主の存在を絶え間なく解離させていく。かつて極限まで膨れ上がった巨体は、次々と裂け、砕け、消えていった。
 ある瞬間、ずっと魂を締めつけていた感覚が、突然消えた。`
     },
     {
@@ -484,34 +489,49 @@ export default {
 その階段には、ゆっくりと動く人影がいくつもあった……`
     },
     {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_11_01.png`,
+    },
+    {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/yulian.png`,
       name: `ジュリアン`,
       text: `私はずっと弱者だった。
 健全な両足も、強大な力も、いつまでも消えない闘志も持っていない。`
     },
     {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_11_02.png`,
+    },
+    {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/yulian.png`,
       name: `ジュリアン`,
       text: `でも、私には仲間がいる。理想がある。一度は私を受け入れてくれた故郷がある。
 いつか建築師になって、シンジケートを再び栄光へ導きたい。`
     },
     {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_11_03.png`,
+    },
+    {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/yulian.png`,
       name: `ジュリアン`,
       text: `――すべての人に庇護と希望を。
 それこそが、本当の栄光だ。`
     },
     {
       type: `narration`,
-      text: `朦朧とする意識の中で、君は建築師が振り返る姿を見た。そして無数の人々が次々とこの階段を上っていく姿を。
-ロヴナを見た。ドナルドを見た。能力者たちを見た。知っている人も、知らない人も、たくさんの人を見た。そして……
-自分自身を。`
+      text: `朦朧とする意識の中で、君は建築師が振り返る姿を見た。そして無数の人々が次々とこの階段を上っていく姿を。`
+    },
+    {
+      type: `narration`,
+      text: `ロヴナを見た。ドナルドを見た。能力者たちを見た。知っている人も、知らない人も、たくさんの人を見た。そして……`
+    },
+    {
+      type: `narration`,
+      text: `自分自身を。`
     },
     {
       type: `dialogue`,
@@ -528,204 +548,7 @@ export default {
       type: `narration`,
       text: `（選択肢）彼女の手を掴む――`
     },
-    {
-      type: `narration`,
-      text: `早朝、シンジケートの街路。まだ夜が明けきらない中、一人の少女がこっそりと抜け出した。
-そして、背後から聞こえた声に驚いて飛び上がった。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/unknown.png`,
-      name: `？？`,
-      text: `どこへ行くの?`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `！
-ちょ、ちょっと、驚かせないでよヘカテー……
-トイレに行くだけだって。なんでついてくるの?`
-    },
-    {
-      type: `narration`,
-      text: `彼女は気まずそうに目を逸らした。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hecate.png`,
-      name: `ヘカテー`,
-      text: `トイレは東にある。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `あはは、そうだっけ。あっ、そういえばあっちに好きな売店があったんだ。ちょっと行って……`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hecate.png`,
-      name: `ヘカテー`,
-      text: `暴動の間に全部閉店した。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `……うっ、忘れてた。私……`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hecate.png`,
-      name: `ヘカテー`,
-      text: `ヘラ、行くの?`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `違う!
-ただ……ちょっと外の空気を吸いたくて……私も考えなきゃいけないことがいっぱいあるから、少し考えようかなって……`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hecate.png`,
-      name: `ヘカテー`,
-      text: `私たちに何も言わずに?まだ局長にも会っていないでしょう。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `……嫌。
-会ったら、絶対に行けなくなる。嫌……
-上に報告したりしないでよ……これは逃げるんじゃない!これからは手紙を書くから。うっ……拼音でもいいから。
-MBCCもまあ悪くない。訓練とかもあるし……でも、私が見られるものはまだ少なすぎる。できることも少なすぎる。ずっと誰かに守ってもらって……
-つまり、その……私が一人前になったら、堂々と会いに帰ってくるってこと。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hecate.png`,
-      name: `ヘカテー`,
-      text: `うん。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `……もっと強くなりたい。私も誰かを守りたい。本当に、その人たちを守りたい。
-ヘカテーなら、私の言いたいこと分かるでしょう。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hecate.png`,
-      name: `ヘカテー`,
-      text: `うん、分かる。`
-    },
-    {
-      type: `narration`,
-      text: `ヘカテーは一歩前に出ると、逃げ出そうと毛を逆立てた小さなネズミを抱きしめた。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `@#￥#!%!@##￥@#%???!!!!
-ちょっと何するの何するの何するの、こんな捕まえ方ある!?離して離して離して、恥ずかしくないの!?誰か見てるって!`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hecate.png`,
-      name: `ヘカテー`,
-      text: `誰も見ていない。大丈夫。
-分かっている。大切なもののために、ヘラも強くなりたい。全部分かっている。
-これは君が私に教えてくれたこと。自分を見失いそうになった時、君が私の背中を押して、もっとたくさんの人を見せてくれて、局長のもとへ戻してくれた。
-だから、ヘラが必要とする時は、私も君を支える。頑張って。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `じゃあ任務はどうするの?`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hecate.png`,
-      name: `ヘカテー`,
-      text: `「ヘラを監視する」任務?大丈夫、もういらない。局長が私たちを助けてくれる。君のほうが、そんな任務より大切だから。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hecate.png`,
-      name: `ヘカテー`,
-      text: `ヘラは私の友達だから。私が自分で選んだ、最初の友達だから。
-時々でいいから、みんなに会いに帰ってきて。君がいなくなったら、きっと寂しい。`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `うっ……
-うわああああああ、だから会いたくなかったんだよ!こんなんじゃどうやって行けばいいのさ!バカバカ、ヘカテーの大バカ――!!`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `――!?なんであんたまで――!`
-    },
-    {
-      type: `narration`,
-      text: `（選択肢）やあ
-捕まえた`
-    },
-    {
-      type: `narration`,
-      text: `君は二人をまとめて抱きしめた。`
-    },
-    {
-      type: `dialogue`,
-      position: `right`,
-      avatar: `img/dh/PC01.jpg`,
-      name: `局長`,
-      text: `この世には保釈ってものがあるって知ってるか?
-出たら悪い癖は直すこと。私の小遣いを盗むのはいいけど、他人のものに手を出したら、また連れ戻されるからな。
-さて、次に会う時には、きっと大きく変わっているんだろう。行く前に、顔を見せて。`
-    },
-    {
-      type: `narration`,
-      text: `（選択肢）泣いてるのか?
-笑ってみる?`
-    },
-    {
-      type: `dialogue`,
-      position: `left`,
-      avatar: `img/dh/hela.png`,
-      name: `ヘラ`,
-      text: `……うっ……うわあああああああああ見ないで!!二人とも帰ってよ、この大バカ*!!!
-私だけが会いに行くんじゃないからね、あんたたちもちゃんと会いに来るんだから、分かった?!`
-    },
+
     {
       type: `dialogue`,
       position: `left`,
@@ -741,13 +564,23 @@ MBCCもまあ悪くない。訓練とかもあるし……でも、私が見ら�
       text: `（選択肢）ただいま`
     },
     {
+      type: `video`,
+      src: `img/cg/弱者_ED.mkv`,       // 视频路径
+      poster: `img/cg/イベントED_繁花.png`,   // 视频封面（可选，加载前显示的图片）
+      autoplay: false,               // 是否自动播放（默认不自动播放）
+      controls: true,                // 是否显示播放控件
+      loop: false,                   // 是否循环播放
+      muted: false                   // 是否静音
+    },
+    {
       type: `narration`,
       text: `（西風の頌歌）
 白匣を提供した者や、福音地の情報をもたらした者について、ドナルドは一言も口にしなかった。
 ただ、局長はかつて彼らに会ったことがあり、近いうちにまた会うことになるとだけ言った。
 関係者全員への調査が進められる中、MBCCは一人の容疑者を特定した。しかし、ほどなくして手掛かりは途絶えた。
 第九機関のシンジケートにおける諜報員「錆」は、事件の中で死亡したと報告された。
-ランリー長官はそれ以上の説明をしなかった。しかし、この部下の殉職に対して、彼女は珍しくほとんど悲しみを見せなかった。`
+ランリー長官はそれ以上の説明をしなかった。しかし、この部下の殉職に対して、彼女は珍しくほとんど悲しみを見せなかった。`,
+bgm: `mp3/bg/conversation60.mp3`,
     },
     {
       type: `dialogue`,
@@ -764,6 +597,10 @@ MBCCもまあ悪くない。訓練とかもあるし……でも、私が見ら�
       name: `？？`,
       text: `ふふ、向こうがどれだけ恐ろしかろうと、白姓の女はこっちには戻ってこない。あいつにはあいつの居場所がある。
 それにMBCCには、あの小さな局長がいる。悪くない行き先だろう。`
+    },
+    {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_12.png`,
     },
     {
       type: `dialogue`,
@@ -800,7 +637,7 @@ MBCCもまあ悪くない。訓練とかもあるし……でも、私が見ら�
     },
     {
       type: `narration`,
-      text: `最大黒環BR-002の消滅後、その廃墟にはこれまでで最大規模の独立型異方晶鉱坑が誕生した。`,
+      text: `最大黒環BR-002の消滅後、その廃墟にはこれまでで最大規模の<span>独立型異方晶鉱坑</span>が誕生した。`,
 bgm: `mp3/bg/The Paradeisos.m4a`,
     },
     {
@@ -836,9 +673,16 @@ bgm: `mp3/bg/The Paradeisos.m4a`,
       position: `left`,
       avatar: `img/dh/lanli.png`,
       name: `ランリー`,
-      text: `久しぶりだな。大手柄だったようだ。もう「新人」と呼ぶのは似合わないな。
-準備はできたか、局長。これから上庭の老いぼれどもに会いに行く。ずいぶん成長したようだし、まさか緊張しているわけじゃないだろうな?`,
+      text: `久しぶりだな。大手柄だったようだ。もう「新人」と呼ぶのは似合わないな。`,
 
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/lanli.png`,
+      name: `ランリー`,
+      text: `準備はできたか、局長。これから上庭の老いぼれどもに会いに行く。
+      ずいぶん成長したようだし、まさか緊張しているわけじゃないだろうな?`,
     },
     
     {
@@ -846,29 +690,82 @@ bgm: `mp3/bg/The Paradeisos.m4a`,
       position: `left`,
       avatar: `img/dh/edge_03.jpg`,
       name: `上庭03`,
-      text: `SHP-13体内におけるルールの再発動を確認。安全警戒レベルを引き上げ、接触申請を承認。
-協力に感謝する、局長。私は君がBR-002で死ぬものと思っていた。まさか君が上庭の提案を受け入れ、自らルールの制限を受けることに同意するとは思わなかった。
-君がこれから人類にもたらす新たな可能性を、期待してもいいのだろうか?`
+      text: `SHP-13体内におけるルールの再発動を確認。安全警戒レベルを引き上げ、接触申請を承認。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/edge_03.jpg`,
+      name: `上庭03`,
+      text: `協力に感謝する、局長。私は君がBR-002で死ぬものと思っていた。
+      まさか君が上庭の提案を受け入れ、自らルールの制限を受けることに同意するとは思わなかった。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/edge_03.jpg`,
+      name: `上庭03`,
+      text: `君がこれから人類にもたらす新たな可能性を、期待してもいいのだろうか?`
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/edge_02.jpg`,
       name: `上庭02`,
-      text: `FAC、第九機関の異例の動きも、どうやら多少は君に賭けたようだな。君には本当に驚かされた。もっと早く君に会いに行くべきだった……Xが去る前に。
-だが幸い、私たちにはまだ時間がある。
-早く行け。長い間、君を待っている人がいる。`
+      text: `FAC、第九機関の異例の動きも、どうやら多少は君に賭けたようだな。君には本当に驚かされた。
+      もっと早く君に会いに行くべきだった……Xが去る前に。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/edge_02.jpg`,
+      name: `上庭02`,
+      text: `だが幸い、私たちにはまだ時間がある。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/edge_02.jpg`,
+      name: `上庭02`,
+      text: `早く行け。長い間、君を待っている人がいる。`
+    },
+    {
+      type: `image`,
+      src: `img/cg/13/tex_dialogue_common_cg13_13.png`,
     },
     {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/edge_01.jpg`,
       name: `上庭01`,
-      text: `環の中で君と話した時から、また会うことになるような気がしていた。
-こんにちは、局長、局長。理性に従えば、君の過激な案は否定すべきなのだろう。だが……どうにも興味深い過去を思い出させる。
-ならば、結果だけを見よう。
-貴重な時間を私たちのために稼いでくれたことに感謝する。これから、話したいことはたくさんある。
-そして、まだ吸収されていないあの骸、砕け、弱り果てたBR-002……`
+      text: `環の中で君と話した時から、また会うことになるような気がしていた。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/edge_01.jpg`,
+      name: `上庭01`,
+      text: `こんにちは、局長、局長。理性に従えば、君の過激な案は否定すべきなのだろう。
+      だが……どうにも興味深い過去を思い出させる。
+`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/edge_01.jpg`,
+      name: `上庭01`,
+      text: `ならば、結果だけを見よう。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/edge_01.jpg`,
+      name: `上庭01`,
+      text: `貴重な時間を私たちのために稼いでくれたことに感謝する。これから、話したいことはたくさんある。`
+    },
+    {
+      type: `narration`,
+      text: `そして、まだ吸収されていないあの骸、砕け、弱り果てたBR-002……`
     },
     {
       type: `narration`,
@@ -896,15 +793,20 @@ bgm: `mp3/bg/The Paradeisos.m4a`,
 なぜ戻ってきた?ずっとここを避け続けていたはずなのに。まさか――`
     },
     {
-      type: `narration`,
-      text: `（白い閃光）`
-    },
-    {
       type: `dialogue`,
       position: `left`,
       avatar: `img/dh/002.png`,
       name: `002骸`,
       text: `?!`
+    },
+    {
+      type: `video`,
+      src: `img/cg/弱者_ED.mkv`,       // 视频路径
+      poster: `img/cg/イベントED_繁花.png`,   // 视频封面（可选，加载前显示的图片）
+      autoplay: false,               // 是否自动播放（默认不自动播放）
+      controls: true,                // 是否显示播放控件
+      loop: false,                   // 是否循环播放
+      muted: false                   // 是否静音
     },
     {
       type: `narration`,
@@ -913,10 +815,16 @@ bgm: `mp3/bg/The Paradeisos.m4a`,
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/unknown.png`,
-      name: `？？`,
-      text: `これは私の可愛い「弟／妹」がわざわざ贈ってくれた再会の贈り物。
-君にも、きっと私の存在が感じられたでしょう?愛しい局長……`
-    }
+      avatar: `img/dh/muyangren_01.png`,
+      name: `■■■■■■■`,
+      text: `これは私の可愛い「弟／妹」がわざわざ贈ってくれた再会の贈り物。`
+    },
+    {
+      type: `dialogue`,
+      position: `left`,
+      avatar: `img/dh/muyangren_02.png`,
+      name: `■■■■■■■`,
+      text: `君にも、きっと私の存在が感じられたでしょう?`
+    },
   ]
 };

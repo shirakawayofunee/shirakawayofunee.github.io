@@ -439,6 +439,13 @@ const chapterList = [
     dateLabel: "05:54",
   },
   {
+    id: "conversation61",
+    category: "weak",
+    title: "609「後日談」",
+    subtitle: "The Weak",
+    dateLabel: "05:54",
+  },
+  {
     id: "side01",
     category: "extra",
     title: "「サボテン」",

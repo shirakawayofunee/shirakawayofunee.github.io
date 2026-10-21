@@ -17,7 +17,7 @@ def main():
     # 格式为: '旧关键词': '新关键词'
     # ==========================================
     replacements = {
-        '辛迪加': 'シンジケート',
+        '涅槃グループ': '涅槃グループ',
     }
     
     if not replacements or list(replacements.keys())[0] == 'oldKeyword1':
