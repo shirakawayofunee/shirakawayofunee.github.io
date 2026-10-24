@@ -47,7 +47,7 @@ export default {
         name: `CHRIS`,
         name2: `未<ruby>来の名探<rt>自称</rt></ruby>偵`,
         avatar: `img/dh/pc2.png`,
-        note: `19歳、能力者、警察学校の一年生。`,
+        note: `警察学校の一年生、19歳`,
       },
     ],
     synopsis: `Xが上庭との対話を終え、自宅の別荘に戻って自身を修復し状態を整える中、新キャラクターの探偵が登場する。`

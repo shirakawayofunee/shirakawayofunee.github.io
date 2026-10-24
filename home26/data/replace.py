@@ -17,9 +17,7 @@ def main():
     # 格式为: '旧关键词': '新关键词'
     # ==========================================
     replacements = {
-        'tina': 'TINA',
-        'Mireya': 'MIREYA',
-        '｜刑事': '',
+        'CHRIS｜<ruby>未来の名探偵<rt>自称</rt></ruby>': 'CHRIS',
     }
     
     if not replacements or list(replacements.keys())[0] == 'oldKeyword1':

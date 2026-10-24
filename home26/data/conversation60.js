@@ -368,7 +368,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/christina.png`,
+      avatar: `img/dh/chrisTINA.png`,
       name: `クリスティーナ`,
       text: `あっ!負傷者を発見しました。ナイチンゲール副官に伝えてください!!助けが必要な人がいます!
 大丈夫ですか。私が……`
@@ -387,7 +387,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/christina.png`,
+      avatar: `img/dh/chrisTINA.png`,
       name: `クリスティーナ`,
       text: `この声……君は――`
     },

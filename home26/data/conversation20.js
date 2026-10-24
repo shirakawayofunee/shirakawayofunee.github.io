@@ -37,7 +37,7 @@ export default {
     ],
     characters: [
       {
-        name: `Leopold｜業師`,
+        name: `「COQUELIC」`,
         avatar: `img/dh/leopold1.png`,
         note: `裏社会を陰で牛耳る実力者。秘密組織「花園」の主宰者`,
         basicStats: `表の犯行動機：

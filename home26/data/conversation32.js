@@ -24,7 +24,7 @@ export default {
       {
         name: `CHRIS｜探偵`,
         avatar: `img/dh/.png`,
-        note: `19歳、能力者、警察学校の一年生。`,
+        note: `警察学校の一年生、19歳`,
         basicStats: `真相と正義を追いかける警察学校の1年生、ただいま絶賛指名手配されています。<br>
         二人のお姉さんに挟まれて過ごした、人生で一番忘れられない夏だった。
       `,
@@ -65,7 +65,7 @@ export default {
       type: `dialogue`,
       position: `right`,
       name: `クリスティーナ`,
-      text: `よくも私に会いに来たもんだな！「Coquelicot」はどこだ？彼女こそ私に感謝しに来るべきじゃないのか？`,
+      text: `よくも私に会いに来たもんだな！コクリコはどこだ？彼女こそ私に感謝しに来るべきじゃないのか？`,
       voice: `wav/JP/conversation32/vo_event_11043_114.wav`,
     },
     {

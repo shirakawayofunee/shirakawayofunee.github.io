@@ -28,10 +28,10 @@ export default {
         note: `「上庭」の七代目執行人`
       },
       {
-        name: `CHRIStina`,
+        name: `CHRISTINA`,
         name2: `クリスティーナ`,
         avatar: `img/dh/zhentan104.png`,
-        note: `19歳、能力者、警察学校の一年生。`,
+        note: `警察学校の一年生、19歳`,
         basicStats: `憧れの<ruby><span class="jueseqiangdiao">シャーローム</span><rt>上庭の執行人</rt></ruby>姉さんに頼まれて、「花園」が引き起こした連続殺人事件を調査中。
         ▍背景
       父は103年の「月蝕作戦」でFACとして殉職し、母も数年後に悲しみで亡くなった。

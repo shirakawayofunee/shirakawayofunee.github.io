@@ -23,7 +23,7 @@ export default {
     ],
     characters: [
       {
-        name: `「Coquelicot」`,
+        name: `「COQUELIC」`,
         name2: `コクリコ`,
         avatar: `img/dh/L106.png`,
         note: `「花園」の主·業師、裏社会を陰で牛耳る実力者。`,
@@ -34,7 +34,7 @@ export default {
         フランス語の「虞美人」`,
         profile: `危険度：	S級
         能力：	緋花剣落
-        コードネーム：Coquelicot
+        コードネーム：COQUELIC
 `, 
 
       },
