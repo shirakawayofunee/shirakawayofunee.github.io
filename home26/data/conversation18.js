@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `CHRIS`,
+        name: `CHRISTINA`,
         avatar: `img/dh/pc2.png`,
         note: `警察学校の一年生、19歳`,
         basicStats: `憧れの<ruby><span class="jueseqiangdiao">シャーローム</span><rt>上庭の執行人</rt></ruby>姉さんに頼まれて、「花園」が引き起こした連続殺人事件を調査中。`

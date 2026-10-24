@@ -39,10 +39,11 @@ export default {
       },
       {
         name: `DOYLE`,
+        name2: `ドイル`,
         avatar: `img/dh/doyle.jpg`,
-        note: `支局の刑事で、「花園」による一連の暗殺事件を担当してるよ。`,
-        basicStats: `生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。`,
-        profile: `所属：新都市治安局`
+        note: `支局の刑事`,
+        basicStats: `「花園」関連の連続暗殺事件を担当している。<br>生真面目で粗暴な一面もあるが、根は悪人ではないようだ。`,
+        profile: `所属：新城治安局`
       },
     ],
     synopsis: `工事中`

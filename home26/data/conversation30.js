@@ -44,7 +44,7 @@ export default {
         `
       },
       {
-        name: `CHRISTINA｜探偵`,
+        name: `CHRISTINATINA｜探偵`,
         avatar: `img/dh/.png`,
         note: `警察学校の一年生、19歳`,
         basicStats: `<span>真相</span>と<span>正義</span>を追いかける警察学校の1年生、ただいま絶賛指名手配されています。<br>

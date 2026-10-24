@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `SHALOM｜X`,
+        name: `SHALOM`,
         name2: `シャーローム`,
         avatar: `img/dh/X104.png`,
         note: `「上庭」の七代目執行人`
@@ -39,7 +39,7 @@ export default {
       両親の戦友に育てられたけど、養父母も113年3月のBR-002二次勃発でFACとして命を落とした。`,
       },
       {
-        name: `Mireya`,
+        name: `MIREYA`,
         name2: `ミリア`,
         avatar: `img/dh/miria.png`,
         note: `探偵の養父母の実の娘。人を見る目がある人`,
@@ -629,7 +629,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/Mireya_danxin.png`,
+      avatar: `img/dh/MIREYA_danxin.png`,
       name: `ミリア`,
       text: `……あれが、お前が言う「すごい人」？`
           ,
@@ -662,7 +662,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      avatar: `img/dh/Mireya_danxin.png`,
+      avatar: `img/dh/MIREYA_danxin.png`,
       name: `ミリア`,
       text: `……あの女、最初から最後まで私をまともに見てなかった。彼女の目には、私なんか<span>透明</span>なんだ。`
           ,

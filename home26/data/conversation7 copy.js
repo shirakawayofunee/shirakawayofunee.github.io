@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `SHALOM｜X`,
+        name: `SHALOM`,
         name2: `シャーローム`,
         avatar: `img/dh/X104.png`,
         note: `「上庭」の七代目執行人`

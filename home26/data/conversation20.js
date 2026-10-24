@@ -53,14 +53,17 @@ export default {
         note: `廃棄期限まであと一ヶ月しかない道具。他人の苦しみと命を代償に、自分のかすかな希望を買う?`
       },
       {
-        name: `CHRIS（探偵）`,
+        name: `CHRISTINA`,
         avatar: `img/dh/pc208.png`,
-        note: `探偵服を着て、大きい斧を武器にする少女、犬系（<span>別に本物の犬ではない</span>）。`
+        note: `警察学校の一年生、19歳`,
+        basicStats: `探偵服を着て、大きい斧を武器にする少女、犬系（<span>別に本物の犬ではない</span>）。憧れの<ruby><span class="jueseqiangdiao">シャーローム</span><rt>上庭の執行人</rt></ruby>姉さんに頼まれて、「花園」が引き起こした連続殺人事件を調査中。`,
       },
       {
-        name: `Adrien`,
+        name: `ADRIEN`,
+        name2: `アドリアン`,
         avatar: `img/dh/fac_commander.png`,
-        note: `FAC総司令官、最前線で四十有余年、奮闘し続けている。Lは司令の人柄を認めた。だから殺さない選択をした。`
+        note: `FAC総司令官、最前線で四十有余年、奮闘し続けている`,
+        basicStats: `Lは司令の人柄を認めた。だから殺さない選択をした。`,
       },
     ],
     synopsis: `工事中`

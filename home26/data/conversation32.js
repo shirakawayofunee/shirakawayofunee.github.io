@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `CHRIS｜探偵`,
+        name: `CHRISTINA｜探偵`,
         avatar: `img/dh/.png`,
         note: `警察学校の一年生、19歳`,
         basicStats: `真相と正義を追いかける警察学校の1年生、ただいま絶賛指名手配されています。<br>

@@ -39,7 +39,7 @@ export default {
         note: `廃棄期限まであと一ヶ月しかない道具。他人の苦しみと命を代償に、自分のかすかな希望を買う?`
       },
       {
-        name: `CHRIS（探偵）`,
+        name: `CHRISTINA（探偵）`,
         avatar: `img/dh/pc208.png`,
         note: `探偵服を着て、大きい斧を武器にする少女、犬系（<span>別に本物の犬ではない</span>）。`
       },

@@ -40,7 +40,7 @@ export default {
       },
       {
         name: `CHRIS`,
-        name2: `<ruby>未来の名探<rt></rt></ruby>偵（自称）`,
+        name2: `クリス`,
         avatar: `img/dh/pc2.png`,
         note: `警察学校の一年生、19歳`,
         basicStats: `憧れの<ruby><span class="jueseqiangdiao">シャーローム</span><rt>上庭の執行人</rt></ruby>姉さんに頼まれて、「花園」が引き起こした連続殺人事件を調査中。`,
