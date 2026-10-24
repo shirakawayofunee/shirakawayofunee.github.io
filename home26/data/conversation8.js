@@ -26,7 +26,7 @@ export default {
         name2: `クリス`,
         avatar: `img/dh/zhentan1.png`,
         note: `警察学校の一年生、19歳`,
-        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「花園」が引き起こした連続殺人事件を調査中。
+        basicStats: `憧れの<ruby><span class="jueseqiangdiao">シャーローム</span><rt>上庭の執行人</rt></ruby>姉さんに頼まれて、「花園」が引き起こした連続殺人事件を調査中。
         ▍背景
       父は103年の「月蝕作戦」でFACとして殉職し、母も数年後に悲しみで亡くなった。
       両親の戦友に育てられたけど、養父母も113年3月のBR-002二次爆発でFACとして命を落とした。`,

@@ -1470,6 +1470,11 @@ html {
     overflow-wrap: break-word;
 }
 
+.oc-summary-text span.jueseqiangdiao {
+    font-weight: 900;
+    color: #333;
+}
+
 .oc-profile-section {
     margin: 0;
     padding: 0 5%;

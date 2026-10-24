@@ -43,7 +43,7 @@ export default {
         name2: `<ruby>未来の名探<rt></rt></ruby>偵（自称）`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、警察学校の一年生。`,
-        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「花園」が引き起こした連続殺人事件を調査中。`,
+        basicStats: `憧れの<ruby><span class="jueseqiangdiao">シャーローム</span><rt>上庭の執行人</rt></ruby>姉さんに頼まれて、「花園」が引き起こした連続殺人事件を調査中。`,
         profile: `危険度：B級
         能力：相信正義
 `, 

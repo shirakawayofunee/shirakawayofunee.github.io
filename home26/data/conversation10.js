@@ -22,10 +22,13 @@ export default {
     ],
     characters: [
       {
+        name0: `謎多きの容疑者`,
         name: `「業師」`,
         avatar: `img/dh/L102.png`,
-        note: `「花園」の主<br>裏社会を陰で牛耳る実力者。`,
-        basicStats: `「命」や「正義」に対して独特な見解を持つの能力者。`
+        note: `「花園」の主<br>裏社会を陰で牛耳る実力者`,
+        basicStats: `「命」や「正義」に対して独特な見解を持つの能力者。`,
+        profile: `危険度：S級
+        能力：■■■■`
       },
       {
         name0: `未来の名<ruby>探<rt>自称</rt>偵</ruby>`,
@@ -33,7 +36,7 @@ export default {
         name2: `クリス`,
         avatar: `img/dh/pc2.png`,
         note: `警察学校の一年生、19歳`,
-        basicStats: `憧れの「<ruby>シャーローム<rt>上庭の執行人</rt></ruby>姉さん」に頼まれて、「花園」が引き起こした連続殺人事件を調査中。`,
+        basicStats: `憧れの<ruby><span class="jueseqiangdiao">シャーローム</span><rt>上庭の執行人</rt></ruby>姉さんに頼まれて、「花園」が引き起こした連続殺人事件を調査中。`,
       profile: `危険度：B級
         能力：相信正義
 `, 
