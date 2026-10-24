@@ -28,7 +28,7 @@ export default {
         note: `「上庭」の七代目執行人`
       },
       {
-        name: `Christina`,
+        name: `CHRIStina`,
         name2: `クリスティーナ`,
         avatar: `img/dh/zhentan104.png`,
         note: `19歳、能力者、警察学校の一年生。`,

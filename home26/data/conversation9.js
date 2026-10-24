@@ -23,7 +23,7 @@ export default {
     characters: [
       {
         name0: `謎多きの容疑者`,
-        name: `UNKNOWN`,
+        name: `NATHAN`,
         name2: `不気味な男の声`,
         avatar: `img/dh/L102.png`,
         note: `事件現場で治安官に偽装した容疑者`
@@ -44,7 +44,7 @@ export default {
         name: `DOYLE`,
         name2: `ドイル`,
         avatar: `img/dh/doyle.jpg`,
-        note: `支局の刑事、「花園」関連の連続暗殺事件を担当している`,
+        note: `支局の刑事`,
         basicStats: `「花園」関連の連続暗殺事件を担当している。<br>生真面目で粗暴な一面もあるが、根は悪人ではないようだ。`,
         profile: `所属：新城治安局`
       },
@@ -308,7 +308,7 @@ export default {
       position: `right`,
       avatar: `img/dh/pc2.png`,
       name: `探偵`,
-      text: `私はChris、城邦治安学校の1年生です。新城治安分局で夏休みのインターンとして働いていて、調査の補助のために派遣されました。現場責任者にすぐ報告しなくてすみませんでした。`
+      text: `私はクリス、城邦治安学校の1年生です。新城治安分局で夏休みのインターンとして働いていて、調査の補助のために派遣されました。現場責任者にすぐ報告しなくてすみませんでした。`
     },
     {
       type: `dialogue`,
@@ -373,7 +373,7 @@ export default {
       position: `left`,
       avatar: `img/dh/doyle.jpg`,
       name: `ドイル`,
-      text: `（ジェスチャー）スピーカー——`
+      text: `（ジェスチャー）スピーカー`
     },
     {
       type: `narration`,

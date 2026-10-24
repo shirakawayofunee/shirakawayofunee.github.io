@@ -28,7 +28,7 @@ export default {
         note: `「上庭」の執行人`
       },
       {
-        name: `Christina`,
+        name: `CHRIStina`,
         name2: `クリスティーナ`,
         avatar: `img/dh/zhentan104.png`,
         note: `連続殺人事件の特別調査員`,

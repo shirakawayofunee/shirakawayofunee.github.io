@@ -44,7 +44,7 @@ export default {
         `,
       },
       {
-        name: `Chris`,
+        name: `CHRIS`,
         name2: `未<ruby>来の名探<rt>自称</rt></ruby>偵`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、能力者、警察学校の一年生。`,

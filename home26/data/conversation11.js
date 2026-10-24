@@ -22,7 +22,7 @@ export default {
     ],
     characters: [
       {
-        name: `Chris`,
+        name: `CHRIS`,
         name2: `<ruby>未来の名探<rt></rt></ruby>偵（自称）`,
         avatar: `img/dh/pc2.png`,
         note: `19歳、警察学校の一年生`,

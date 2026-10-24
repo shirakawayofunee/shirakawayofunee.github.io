@@ -2,7 +2,7 @@
 Author: DCBZ
 Date: 2026-10-21 04:18:07
 LastEditors: your name
-LastEditTime: 2026-10-25 01:30:55
+LastEditTime: 2026-10-25 01:48:27
 Description: 
 FilePath: \shirakawayofunee.github.io\home26\data\replace.py
 '''
@@ -17,8 +17,9 @@ def main():
     # 格式为: '旧关键词': '新关键词'
     # ==========================================
     replacements = {
-        '「花園」による一連の暗殺事件を担当してるよ。生真面目で粗暴な一面もあるけど、悪い人じゃない気がする。': '「花園」関連の連続暗殺事件を担当している。<br>生真面目で粗暴な一面もあるが、根は悪人ではないようだ。',
-        'Doyle': 'DOYLE',
+        'tina': 'TINA',
+        'Mireya': 'MIREYA',
+        '｜刑事': '',
     }
     
     if not replacements or list(replacements.keys())[0] == 'oldKeyword1':

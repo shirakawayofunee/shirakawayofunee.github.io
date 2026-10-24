@@ -74,7 +74,7 @@ export default {
 `, 
       },
       {
-        name: `Chris｜探偵`,
+        name: `CHRIS｜探偵`,
         avatar: `img/dh/.png`,
         note: `19歳、能力者、警察学校の一年生。`,
         basicStats: `真相と正義を追いかける警察学校の1年生、ただいま絶賛指名手配されています。<br>
