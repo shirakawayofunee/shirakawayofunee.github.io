@@ -17,7 +17,7 @@ def main():
     # 格式为: '旧关键词': '新关键词'
     # ==========================================
     replacements = {
-        'MIREYA.png': 'Mireya.png',
+        '蝕月行動': '月蝕作戦',
     }
     
     if not replacements or list(replacements.keys())[0] == 'oldKeyword1':

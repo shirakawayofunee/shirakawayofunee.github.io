@@ -25,7 +25,7 @@ export default {
         name: `SHALOM`,
         name2: `シャーローム`,
         avatar: `img/dh/X104.png`,
-        note: `「上庭」の七代目執行人`
+        note: `「上庭」の執行人`
       },
       {
         name: `CHRISTINA`,
@@ -208,7 +208,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
-      text: `蝕月行動は高度な機密だった。FACはもっと崇高な目的のために大きな犠牲を払った。でも、その犠牲は誰かに利用され、歪められた。`
+      text: `月蝕作戦は高度な機密だった。FACはもっと崇高な目的のために大きな犠牲を払った。でも、その犠牲は誰かに利用され、歪められた。`
           ,
       voice: [
         /* { label: '日', path: 'wav/JP/conversation15/vo_event_11021_84.wav' }, */
