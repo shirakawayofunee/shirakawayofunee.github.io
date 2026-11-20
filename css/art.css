@@ -64,6 +64,8 @@ body {
     padding: 0;
     overflow-x: hidden;
     padding-top: 4rem;
+      scrollbar-width: thin;                    /* Firefox */
+  scrollbar-color: transparent transparent; /* 默认隐藏 */
 }
 
 /* 滚动条 */
@@ -75,21 +77,62 @@ body {
 
 ::-webkit-scrollbar-track {
     background: #ECECEA;
+    border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background: #333;
+    border-radius: 0;
+    background: #626262;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-main);
+    background: #626262;
 }
 
-/* .secondary-menu-container::-webkit-scrollbar {
-    background: var(--accent-main);
-    color: var(--text-lvl-3);
-} */
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0;
+  height: 0;
+}
+
+/* ========== 单独控制某个容器（比如 secondary-menu-container）========== */
+.secondary-menu-container {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.secondary-menu-container:hover {
+  scrollbar-color: var(--accent-main) #ECECEA;  /* 或者你想要的颜色 */
+}
+
+.secondary-menu-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.secondary-menu-container::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0;
+}
+
+.secondary-menu-container::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0;
+}
+
+.secondary-menu-container:hover::-webkit-scrollbar-track {
+  background: #ECECEA;
+}
+
+.secondary-menu-container:hover::-webkit-scrollbar-thumb {
+  background: var(--accent-main);   /* 这里用你想要的强调色 */
+}
+
+.secondary-menu-container::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0;
+  height: 0;
+}
 
 /* =========================================
    2. 顶部主导航栏
