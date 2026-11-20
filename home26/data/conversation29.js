@@ -139,7 +139,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `ようこそ、業師。見事に侵入したね。`,
@@ -154,7 +154,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `力を動かすのはやめた方がいいよ。悪い考えがあるなら、口で言うだけでいい。行動に移すのはダメ。ここでは、狂厄も反逆も絶対に「許されない」存在だから。`,
@@ -165,7 +165,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `へえ、そう？`,
@@ -186,7 +186,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold2.png`,
       name: `「コクリコ」`,
       text: `これが私の「罰」なら、大したことないね。`,
@@ -202,7 +202,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `上庭の技術、たいしたもんだ。ここじゃ君を殺せない？ここは何の意識空間？`,
@@ -218,7 +218,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `びっくりした？さっき喉を圧迫されて声が出せなかったから、直接、君の意識に語りかけるしかなかったんだ。慣れないだろう`,
@@ -233,7 +233,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `この意識空間は上庭が構築した理性の境界。重層的な防護の下、狂厄を深く観測する最前線だ。`,
@@ -244,7 +244,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `へえ……ということは、その裂け目の向こうが内海の中枢ってわけ？`,
@@ -256,7 +256,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `まだそこまで深くはありませんが、確かに通常の黒環よりは源泉に近い場所です。それゆえ、この空間にはより厳密な防御ルールが敷かれています。私や君の衝動を制限しているのも、全ては向こう側の「狂厄」の浸透を防ぐため。`,
@@ -267,7 +267,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `君は能力者であり、彼らにとって想定外の来訪者でもあります。ここでは、さぞ居心地が悪いことでしょう。`,
@@ -290,7 +290,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `君も能力者でしょう。少しも反応が出ないなんてこと、ある？`,
@@ -302,7 +302,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x6.png`,
       name: `シャーローム`,
       text: `私はずっとここに留まり、全てのルールを熟知し、使いこなしているからです。ゆえに、どんなに複雑なルールも私の自由を縛ることはできません。`,
@@ -313,7 +313,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x6.png`,
       name: `シャーローム`,
       text: `私は七代目執行人。上庭は私の感情を切り離し、裂け目の向こう側へと送りました。そうすることで、純粋理性となった私は前線に安定して留まることができ、感性の方は狂厄の深淵へと潜り、世界と人の心の変化を観測しているのです。`,
@@ -324,7 +324,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `それが、福音地を驚かせた「技術」ってわけね。反吐が出るわ。どうりで心のない人形のように見えるはず。`,
@@ -340,7 +340,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `残酷な時代です。人々は常に複雑で解のない難局に直面します。彼らには、情勢を観察し、変化を分析し、解決策を提示し、実行する存在が必要です。私はそれが得意なのです。私の仕事は、ニーズを受け入れ、詰みの中から正解を見つけ出すこと。`,
@@ -351,7 +351,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x6.png`,
       name: `シャーローム`,
       text: `ですから今、私は君を助けることもできます。`,
@@ -367,7 +367,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold2.png`,
       name: `「コクリコ」`,
       text: `助ける？あんなことをしておいて、剥がれた仮面を縫い合わせてもう一度御託を並べようっての？私を馬鹿だと思ってる!?`,
@@ -379,7 +379,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `もちろん、君は愚かではありません。だからこそ聞いてください。
@@ -391,7 +391,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `「花園」の結末はとっくに決まっていました。追い詰められ、福音地に捕らえられた時点で、両勢力の戦火に引き裂かれることは確定していたのです。それが、狭間に生きる者の宿命。`,
@@ -402,7 +402,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `新たな戦争が間もなく始まります。私がいてもいなくても、君たちは逃れられない。だからこそ君は死に物狂いで足掻いている。`,
@@ -418,7 +418,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `けれど、君が命を削って築いた隠れ家は、君の命が尽きると同時に崩壊する。今回は、復讐すら君の救いにはならない。`,
@@ -429,7 +429,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `もう時間は残されていない。たとえ私を殺し、上庭と福音地を血祭りにあげ、世界を転覆させたとしても……君にはもう、新しい花を探す時間などないのです。君の廃墟は、二度と再生しない。
@@ -449,7 +449,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/wuyan.png`,
       name: `「コクリコ」`,
       text: `……それで？`,
@@ -461,7 +461,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `私が君に命を与えましょう。新たな「花園」を見つけるための時間を。そして、君たちを全ての騒乱から完全に遠ざけてみせます。`,
@@ -472,7 +472,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/wuyan.png`,
       name: `「コクリコ」`,
       text: `いいね。まるで、すべてを計算しているかのような、その言い草。`,
@@ -484,7 +484,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `君をここまで導くことができたのですから、もちろん、君たちが助かるよう計算することも、できることだ。`,
@@ -495,7 +495,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `その前に、上庭のために働けって？`,
@@ -507,7 +507,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x.png`,
       name: `シャーローム`,
       text: `いいえ。君は私の言うことだけを聞けばいい。たった一度だけでいいのです。`,
@@ -522,7 +522,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `ここだけが、彼らの手の及ばない場所。だからこそ、自らの代わりにリスクを制御する数多くのルールが定められたのです。私だけが認可を受け、ここへの侵入権を得ました。
@@ -534,7 +534,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `よかった。これから起こることは、二人だけの話にする。`,
@@ -550,7 +550,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `私には、君を生かす力がある、「花園」を守る力も。ただ一つ、私の手伝いをしてほしいのです。ある人物を探してほしい。`,
@@ -561,7 +561,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `ミノスの局長、「枷」の持ち主、SHP-13。彼は西区の暴動で行方不明となり、枷は「骸者」に汚染され拡散しました。黒環の干渉により、上庭も感応を辿って彼を見つけ出すことは不可能です。`,
@@ -572,7 +572,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x10.png`,
       name: `シャーローム`,
       text: `今、彼を匿っている者はそれなりの手腕を持っていますが、間もなく嗅ぎつけてくる追手は増える一方でしょう。誰にも隠し通せなくなる。`,
@@ -583,10 +583,10 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
-      text: `君に頼みたいのは、その「花園」の主としての手腕。そして、表と裏の社会を自在に渡り歩く、君のその実力で、誰よりも早く彼を見つけ出すことです。`,
+      text: `君に頼みたいのは、花園の主としての手腕。そして、表と裏の社会を自在に渡り歩く、君のその実力で、誰よりも早く彼を見つけ出すことです。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_75.wav" },
       ],
@@ -602,7 +602,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold2.png`,
       name: `「コクリコ」`,
       text: `<ruby>菫<rt>スミレ</rt></ruby>が気にかけていたあの人のことね……でも、君が殺したんじゃなかったかしら？ あの人も、君たちと福音地が殺し合うための生贄でしょう？`,
@@ -614,7 +614,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x6.png`,
       name: `シャーローム`,
       text: `ええ。私が綿密に計画しました。任務を受け、思考を巡らせ、動乱の情勢の中で細心の注意を払い、彼を袋小路へと送り込みました。`,
@@ -625,7 +625,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `なら、今さら何のために探すの？根絶やしにして、当時の失敗を埋め合わせるため？それとも局面が制御できなくなって、また連れ戻して犬として飼うつもり？`,
@@ -637,7 +637,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `いいえ。君には彼を見つけ出し——そして、<span>彼を探しに来る者を全員殺してほしいのです</span>。彼が目覚めるまで、闇の中で守り抜いてください。それ以外は、何もしなくていい。`,
@@ -652,7 +652,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold.png`,
       name: `「コクリコ」`,
       text: `頭イカれてるんじゃない？`,
@@ -668,7 +668,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `そうでしょうか？ 私は一歩ずつ心血を注いでここまで辿り着き、ようやく解法を見つけました。少し自慢したいくらいなのですよ。`,
@@ -679,7 +679,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `それは狂厄の根源から来る力。上庭によって慎重に研究され、利用されてきました。最初は能力者の抑制、次に狂厄への対抗、そして黒環の鎮圧……`,
@@ -690,7 +690,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `十年です。上庭はその力を必要とし、背後にある真実を追い求めながらも、完全に理解することはできず、警戒を解くこともできなかった。`,
@@ -701,7 +701,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `――なぜなら、あれは元々、福音地が生み出した最も狂気じみた創造物だからです。内海の孤島で生まれ、黒環を餌とし、根源へと通じるもの。あれは狂人たちが狂厄を盗み出すために造った究極の器であり、狂厄の蘇生こそが上庭の最大の恐怖なのです。`,
@@ -712,7 +712,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `この情報を得た上庭は、あらゆる代償を惜しまず行動を起こし、内海へ侵攻しました。甚大な犠牲を払って孤島を破壊し、福音地に大打撃を与えた。
@@ -724,7 +724,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `当時、君は「福音地」と密接な関係にあった。覚えているはずです。`,
@@ -735,7 +735,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold.png`,
       name: `「コクリコ」`,
       text: `(息を呑む)`,
@@ -763,7 +763,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `……君か。急に来て、鬱陶しいわね。`,
@@ -775,7 +775,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/armaf.png`,
       name: `シーゲル`,
       text: `緊急任務……我々の敵を排除しろ……`,
@@ -786,7 +786,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/armaf.png`,
       name: `シーゲル`,
       text: `誰でもいい、いっそ全員で行け。このリストにある者を、全員殺せ。`,
@@ -797,7 +797,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `チッ、あの女は君の言いなりかもしれないけど、私は御免だよ——`,
@@ -848,7 +848,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold2.png`,
       name: `「コクリコ」`,
       text: `ハッ、ふふ……なるほど、そっか……`,
@@ -864,7 +864,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `君ら、敵の刀を奪って、使いこなせず、捨てるのも惜しい。いざ決戦となれば、背後から刺されるのが怖くなって、煮え切らない態度のままへし折って溶かし、適当な道具として使い潰す……そういうこと？`,
@@ -876,7 +876,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x10.png`,
       name: `シャーローム`,
       text: `そう。彼はあまりにも多くの力を得て、自身の根源に近づいた。上庭は怖がって、最も厳しいルールで彼が黒環を吞噬するのを止めた。一度、二度……そして三度目で、彼は確実に死ぬ。`,
@@ -887,7 +887,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `もっともらしく語るけど、結局は臆病者じゃん！臆病なだけじゃなく、偽善的で、傲慢で、狂妄で、残酷。自分を何だと思ってる!?`,
@@ -899,7 +899,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `ええ、それが<span>上庭</span>です。必死に真相と正解を求めながら、リスクと未知を恐れ、災厄の再来に怯えている。
@@ -911,7 +911,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `<span>福音地</span>がどのようなものかについては、私よりも君の方が詳しいでしょう？`,
@@ -922,7 +922,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `私はあいつらとは違う!でも、君ら両方とも狗が狗を噛むようなもんだ！悪党を叩いたからって、自分が英雄になったつもりでいないで！`,
@@ -934,7 +934,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x6.png`,
       name: `シャーローム`,
       text: `そうね。一方は「狂厄」を食い止めるために全てを犠牲にし、もう一方は「狂厄」を得るために全てを犠牲にする。災厄が目覚める前に、人類は自ら堕落し狂い、互いに噛みつき合って全てを焼き尽くすのです。`,
@@ -945,7 +945,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `だったら君らだけで抱き合って地獄へ落ちなさい！他人を巻き込むんじゃないわよ！！！`,
@@ -957,7 +957,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `ええ、その時はいずれ訪れます。ですがその前に――`,
@@ -972,7 +972,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `君は、別の可能性を見たくはないですか？ この愚かな流れを拒絶したくはないのですか？ 私の言う通りにして、彼を探しに行くのです。`,
@@ -983,7 +983,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `私は彼を縛るルールを壊し、すべての監視から逃がし、私の手さえ届かない場所へと送りました。ですが、これだけでは足りない。`,
@@ -994,7 +994,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `私の踏み込めない場所へ、向かってくれ。`,
@@ -1008,7 +1008,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `君はこの狭間における最強の存在であり、長きにわたり両側の世界を渡り歩いてきた唯一の者。君になら、彼をどちらの勢力にも渡さず守り抜くことができる。
@@ -1020,7 +1020,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold2.png`,
       name: `「コクリコ」`,
       text: `ハッ、なんだ、今さら上庭への裏切り？`,
@@ -1032,7 +1032,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `何言ってるの？私は任期中、常に最も効率的な執行人でした。あらゆるニーズを実現してきた私が、裏切ったなどと誰に言わせるものですか。`,
@@ -1043,7 +1043,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `ただ……この僵化した盤面で、怪物の縄を少し緩めてやっただけに過ぎません。`,
@@ -1054,7 +1054,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `また君の道具？今度は彼に何をさせるつもり？`,
@@ -1066,7 +1066,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `彼を自由にするのです、コクリコ。君と同じく、彼もまた、両陣営にとって真に痛手となる、得難い厄介者ですから。
@@ -1078,7 +1078,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `依頼の報酬として、私の力を借りて生き延び、新たな生を探すもよし。私を殺して泥のように踏みつけ、さらなる高みへ剣を振るうもよし。好きに試すといい。`,
@@ -1089,7 +1089,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x4.png`,
       name: `シャーローム`,
       text: `私の後に、君に機会を与える者は二度と現れません。`,
@@ -1134,7 +1134,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/wuyan.png`,
       name: `「コクリコ」`,
       text: `……休息が済んだら、考えてあげなくもないわ。でも復讐に彼を使う必要はない。私は私のやり方でやる。他人の力なんて借りないわ。`,
@@ -1144,10 +1144,9 @@ export default {
         /* { label: "日2", path: "wav/JP/conversation29/vo_event_11042_108.wav" }, */
       ],
     },
-    {
+/*     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
       avatar: `img/dh/regret.png`,
       name: `「コクリコ」`,
       text: `ただ、あの泥棒猫がどんな手を使って、私の可愛い子ちゃんをあんな無様な泣きっ面にさせたのか、見てやるだけよ。`,
@@ -1155,7 +1154,7 @@ export default {
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_32.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_107.wav" },
       ],
-    },
+    }, */
     {
       type: `narration`,
       text: `業師は再びシャーロームの手を振り払い、二歩下がって完全に距離を取った。`,
@@ -1167,7 +1166,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/wuyan.png`,
       name: `「コクリコ」`,
       text: `……あの金髪の小娘が私を罵った時、どんな気持ちだったか今なら分かる気がするわ……`,
@@ -1179,10 +1178,10 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold2.png`,
       name: `「コクリコ」`,
-      text: `悪は悪だ。どんな立場や理由があろうと帳消しにはできない。勝手な理屈で手についた血の借金を軽くなかったことにする……その点においては、君も私も罪人ね。`,
+      text: `悪は悪だ。どんな立場や理由があろうと帳消しにはできない。勝手な理屈で手についた血の借金を軽くなかったことにする……その点においては、君も私も罪人。`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_65.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_11.wav" },
@@ -1191,7 +1190,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x6.png`,
       name: `シャーローム`,
       text: `その通り。コスト削減は私の個人的な趣味に過ぎず、ニーズの実現こそが絶対目的。「必要な犠牲」は常套手段です。それが<span>上庭</span>の意志。<span>私</span>を通してそれを見極めれば、僥倖など期待しなくなるでしょう。`,
@@ -1202,7 +1201,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `今日はこっちを犠牲に、明日はあっちを犠牲に、その量も誰にするかも全部君が決めるってわけ？ハハッ……君、何様!?`,
@@ -1218,7 +1217,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x6.png`,
       name: `シャーローム`,
       text: `――使用期限内に、こっそり壊れた道具だけ。`,
@@ -1233,7 +1232,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/wuyan.png`,
       name: `「コクリコ」`,
       text: `……そこまでは生きられないわ。君のくれた命もいらないし、鬱憤を晴らすのにそんなに長くは待てない。君の上に誰がいようと、前後にどれだけの人間がいようと関係ない
@@ -1247,10 +1246,10 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/wuyan.png`,
       name: `「コクリコ」`,
-      text: `上庭の<span>正しさ</span>や福音地の<span>宿願</span>に比べれば、私たちはちっぽけな存在らしいわね。どうせいつでも切り捨てられる命なら、少しくらい分からず屋で、大逆無道でも……構わないでしょう？`,
+      text: `上庭の<span>正しさ</span>や福音地の<span>宿願</span>に比べれば、私たちはちっぽけな存在らしいわね。どうせいつでも切り捨てられる命なら、少しくらい分からず屋で、<span>大逆無道</span>でも……構わないでしょう？`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_117.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_2.wav" },
@@ -1259,7 +1258,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `鴻毛より軽い命なんだもの、好き勝手やったっていいじゃない？`,
@@ -1271,7 +1270,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold2.png`,
       name: `「コクリコ」`,
       text: `君もこの場所も、上庭には大事だろ……`,
@@ -1287,7 +1286,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
 
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
@@ -1314,7 +1313,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `私のことを理解しているフリをしてたんでしょう？なら分かるはずよ。私が君の言うことなんて聞くわけがないって。`,
@@ -1326,7 +1325,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `君たちの言う「正しさ」ってやつが、一番虫酸が走るの。私の獲物も、私を殺そうとする奴も、私に助けを求める奴も、どいつもこいつもロクな人間じゃない。`,
@@ -1338,10 +1337,10 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
-      text: `正解……私の「花園」を壊した、それこそが君の間違いよ！ 今後私が何をしようと君には関係ない。さあ、今すぐ償いなさい！`,
+      text: `正解……私の花園を壊した、それこそが君の間違いよ！ 今後私が何をしようと君には関係ない。さあ、今すぐ償いなさい！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_87.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_98.wav" },
@@ -1359,7 +1358,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `それでいい…今回もまた、私は代償を惜しまない。`,
@@ -1383,7 +1382,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold208.png`,
       name: `「コクリコ」`,
       text: `なんて痛快……戻ってきた。`,
@@ -1395,7 +1394,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold208.png`,
       name: `「コクリコ」`,
       text: `誰にも指図はさせない。人生はこれっぽっちしかないの、私が自分で使い果たす。愛するも憎むも、私の心のままに。`,
@@ -1407,7 +1406,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold208.png`,
       name: `「コクリコ」`,
       text: `誰のためにも犠牲にならず、誰にも仕えず、復讐も享楽も、一分一秒に至るまで私が好きに生きる。`,
@@ -1419,10 +1418,10 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold208.png`,
       name: `「コクリコ」`,
-      text: `咲くのも自分、生きるのも自分、死ぬのも自分のため！最愛の人は自分自身でなければならない。自分の運命は、必ず自分の手で握る！それこそが<span>Garden</span>！何度言わせれば気が済むの！`,
+      text: `<span>咲くのも自分、生きるのも自分、死ぬのも自分のため！最愛の人は自分自身でなければならない。</span>自分の運命は、必ず自分の手で握る！それこそが<span>花園</span>！何度言わせれば気が済むの！`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_10.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_4.wav" },
@@ -1435,10 +1434,10 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold.png`,
       name: `「コクリコ」`,
-      text: `……君たちも、自分のためだけに生きればよかったのに……馬鹿な子たち……`,
+      text: `<span>……君たちも、自分のためだけに生きればよかったのに……馬鹿な子たち……</span>`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_60.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_110.wav" },
@@ -1458,7 +1457,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `彼女は「コクリコ」を見ていた。希薄な憐れみと悲哀、そしてそれ以上の、ある種の冷徹な期待を込めて。`,
+      text: `彼女はコクリコを見ていた。希薄な憐れみと悲哀、そしてそれ以上の、ある種の冷徹な期待を込めて。`,
     },
     {
       type: `narration`,
@@ -1467,7 +1466,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x3.png`,
       name: `シャーローム`,
       text: `君が受け入れないのはわかってた。君たちの感情はあまりにも熱烈で、裸のまま輝いてる。`,
@@ -1478,7 +1477,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x10.png`,
       name: `シャーローム`,
       text: `君の命が尽きてなかったら、もっと穏やかな方案を選びたかった。でも、その時間はもうない。`,
@@ -1489,7 +1488,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x7.png`,
       name: `シャーローム`,
       text: `だから、思う存分抗って……私は全部理解している、全部受け入れるつもりだ。`,
@@ -1500,7 +1499,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/x7.png`,
       name: `シャーローム`,
       text: `私が触れた花は枯れる運命でも、君を生かさなきゃいけない。`,
@@ -1511,7 +1510,7 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      bubbleStyle: "inner-voice-c",
+      
       avatar: `img/dh/leopold.png`,
       name: `「コクリコ」`,
       text: `……くたばれ`,
@@ -1530,7 +1529,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `「コクリコ」の命は回復しつつあったが、意識は徐々に溶解していく――突如として空間が砕け散った。`,
+      text: `コクリコの命は回復しつつあったが、意識は徐々に溶解していく――突如として空間が砕け散った。`,
     },
     {
       type: `dialogue`,
@@ -1547,7 +1546,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `その瞬間、「コクリコ」は確かに見た。あの蝋細工のような女の目に、一筋の驚きが走ったのを。`,
+      text: `その瞬間、コクリコは確かに見た。あの蝋細工のような女の目に、一筋の驚きが走ったのを。`,
     },
     {
       type: `dialogue`,

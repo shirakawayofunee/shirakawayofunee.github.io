@@ -1250,6 +1250,7 @@ html {
     font-style: italic;
     color: #222222;
     text-shadow: 2px 0px 0px rgba(212, 15, 48, 0.4), -2px 0px 0px rgba(0, 112, 255, 0.4);
+    animation: mind-jitter 0.15s infinite alternate;
 }
 
 .narration.npc-press-box {

@@ -489,7 +489,7 @@ export default {
     },
     {
       type: `narration`,
-      text: `そして、<span>倒せない者を倒した</span>のは、闇の中で一瞬の花を咲かせる、燃えるような能力者だった。`,
+      text: `最後に<span>倒せない者を倒した</span>のは、闇の中で全てを燃やし、花を咲く瞬間を求めた目の前の能力者だった。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_53.wav' },
       ]
@@ -523,7 +523,7 @@ export default {
       position: `left`,
       avatar: `img/dh/x7.png`,
       name: `執行人`,
-      text: `君がこれほどまでに強く、誰に<ruby>も屈し<rt>桀骜</rt></ruby>ない人でいてくれてありがとう……やっぱり君が勝った。`,
+      text: `君がこれほどまでに<span>強く、誰に<ruby>も屈し<rt>桀骜</rt></ruby>ない人</span>でいてくれてありがとう……やっぱり君が勝った。`,
       voice: [
         { label: '中', path: 'wav/CN/conversation28/vo_event_11041_22.wav' },
       ]

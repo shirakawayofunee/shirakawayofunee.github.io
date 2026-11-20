@@ -74,7 +74,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--bg-page);
+    background: #ECECEA;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -86,9 +86,10 @@ body {
     background: var(--accent-main);
 }
 
-.secondary-menu-container::-webkit-scrollbar {
-    display: none;
-}
+/* .secondary-menu-container::-webkit-scrollbar {
+    background: var(--accent-main);
+    color: var(--text-lvl-3);
+} */
 
 /* =========================================
    2. 顶部主导航栏
@@ -97,9 +98,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), var(--bg-bar-trans) 90%);
-    background-color: var(--bg-page);
-    backdrop-filter: blur(10px);
+    background-color: #ECECEA;
     width: 100%;
     height: 2.5rem;
     z-index: 1000;
@@ -297,11 +296,8 @@ body {
     top: 2.5rem; /* 距离顶部留出呼吸空间 */
     width: 15%; /* 左侧菜单固定宽度 */
     flex-shrink: 0;
-    background-color: transparent;
-    /* 渐变方向改为从左至右 */
-    background-image: linear-gradient(to right, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.6));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(254, 254, 254, 1);
+    background-color: #FDFDFD;
     /* 边框改为右边框 */
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     border-top: none;
@@ -396,6 +392,8 @@ body {
 }
 
 .gallery-section {
+    /* background-color: rgba(255, 255, 255, 0.85); */
+background-color: #ECECEA;
     padding: 2%;
     min-height: 120vh;
     min-width: 0; /* 防止子元素撑破 Flex 布局 */
@@ -431,12 +429,12 @@ body {
 .caption {
     margin-top: 5px;
     font-size: 12px;
-    color: var(--text-lvl-3);
+    color: #1F1F1E;
     text-align: center;
 }
 
 .caption:hover {
-    color: var(--text-lvl-1);
+    color: var(--bg-page);
 }
 
 /* =========================================
@@ -838,7 +836,8 @@ body {
 
 /* 4. Active 激活状态（Bootstrap 自动添加，整行变黑白） */
 #galleryTabs .nav-link.active {
-    background-color: rgba(1, 1, 1, 1) !important; /* 纯黑背景 */
+    background-color: rgba(1, 1, 1, 0.95) !important; /* 纯黑背景 */
+background-color:#DDDDDD;
     border-bottom: 1px solid rgba(1, 1, 1, 1) !important; /* 实线底边 */
 }
 
@@ -846,8 +845,6 @@ body {
 /* ==========================================================
    5. 状态颜色精准锁定（彻底解决 :link / :visited 颜色不一致问题）
    ========================================================== */
-
-/* --- 5.1 未激活状态 (强制锁定颜色，防止浏览器及 Bootstrap 干扰) --- */
 
 /* 标题默认色 */
 #galleryTabs .nav-link:not(.active) .nav-title {
