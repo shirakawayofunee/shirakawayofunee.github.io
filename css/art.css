@@ -370,7 +370,7 @@ body {
 
 .gallery-header .nav-link {
     border: none;
-    color: var(--text-lvl-3);
+    color: var(--text-lvl-1);
     font-family: 'myFont', sans-serif;
     font-size: 0.85rem;
     background: transparent !important;

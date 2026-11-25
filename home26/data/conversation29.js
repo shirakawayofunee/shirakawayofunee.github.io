@@ -1270,10 +1270,9 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      
       avatar: `img/dh/leopold2.png`,
       name: `「コクリコ」`,
-      text: `君もこの場所も、上庭には大事だろ……`,
+      text: `君もこの場所も、上庭には<span>大事</span>だろ……`,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_71.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_22.wav" },
@@ -1286,8 +1285,6 @@ export default {
     {
       type: `dialogue`,
       position: `left`,
-      
-
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
       text: `この裂け目が、君にとって触れてはならないものだというのなら……`,
