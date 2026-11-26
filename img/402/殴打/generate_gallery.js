@@ -3,11 +3,12 @@ const path = require('path');
 
 // ==================== 配置区 ====================
 const CONFIG = {
-    srcPrefix: "img/402/殴打/",              // 路径前缀（可在命令行通过 --prefix 覆盖）
-    useFilenameAsDescription: true,  // true = 用文件名（去掉后缀）当 description
-    altPrefix: "Blue ",      // alt 文字前缀
+    srcPrefix: "img/X/",              // 路径前缀（可在命令行通过 --prefix 覆盖）
+    useFilenameAsDescription: false,  // true = 用文件名（去掉后缀）当 description
+    altPrefix: "Gallery Image ",      // alt 文字前缀
     recursive: false,                 // true = 递归扫描子文件夹
     startAltIndex: 1,                 // alt 编号起始值
+    outputFilename: "gallery_output.txt" // 导出的 txt 文件名
 };
 // ================================================
 
@@ -28,7 +29,7 @@ for (let i = 0; i < args.length; i++) {
 }
 
 // 支持的图片格式
-const SUPPORTED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.mp4'];
+const SUPPORTED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.avif'];
 
 /**
  * 递归获取目录下所有图片文件
@@ -102,10 +103,17 @@ const galleryArray = imageFiles.map(img => {
     };
 });
 
-// 输出结果
-console.log(JSON.stringify(galleryArray, null, 4)
+// 格式化输出字符串（去掉双引号，保持你想要的 JS 对象字面量风格）
+const jsonString = JSON.stringify(galleryArray, null, 4);
+const formattedOutput = jsonString
     .replace(/"src"/g, '        src')
     .replace(/"alt"/g, 'alt')
     .replace(/"description"/g, 'description')
-    .replace(/: "/g, ': "')
-);
+    .replace(/: "/g, ': "');
+
+// 1. 终端打印
+console.log(formattedOutput);
+
+// 2. 自动写入 txt 文件
+fs.writeFileSync(CONFIG.outputFilename, formattedOutput, 'utf-8');
+console.log(`\n✨ 成功！数组内容已自动导出到当前目录下的: ${CONFIG.outputFilename}`);
