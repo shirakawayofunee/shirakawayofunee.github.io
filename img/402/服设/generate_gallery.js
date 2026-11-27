@@ -4,7 +4,7 @@ const path = require('path');
 // ==================== 配置区 ====================
 const CONFIG = {
     srcPrefix: "img/402/服设/",              // 路径前缀（可在命令行通过 --prefix 覆盖）
-    useFilenameAsDescription: true,  // true = 用文件名（去掉后缀）当 description
+    useFilenameAsDescription: false,  // true = 用文件名（去掉后缀）当 description
     altPrefix: "IDEA ",      // alt 文字前缀
     recursive: false,                 // true = 递归扫描子文件夹
     startAltIndex: 1,                 // alt 编号起始值
