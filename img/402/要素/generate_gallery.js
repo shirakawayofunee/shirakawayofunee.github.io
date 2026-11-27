@@ -3,7 +3,7 @@ const path = require('path');
 
 // ==================== 配置区 ====================
 const CONFIG = {
-    srcPrefix: "img/X/",              // 路径前缀（可在命令行通过 --prefix 覆盖）
+    srcPrefix: "img/402/要素/",              // 路径前缀（可在命令行通过 --prefix 覆盖）
     useFilenameAsDescription: true,  // true = 用文件名（去掉后缀）当 description
     altPrefix: "IDEA ",      // alt 文字前缀
     recursive: false,                 // true = 递归扫描子文件夹
@@ -29,7 +29,7 @@ for (let i = 0; i < args.length; i++) {
 }
 
 // 支持的图片格式
-const SUPPORTED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.avif'];
+const SUPPORTED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.mp4'];
 
 /**
  * 递归获取目录下所有图片文件
