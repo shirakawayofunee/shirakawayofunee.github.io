@@ -3,7 +3,7 @@ const path = require('path');
 
 // ==================== 配置区 ====================
 const CONFIG = {
-    srcPrefix: "img/402/要素构图背景（偏要素/",              // 路径前缀（可在命令行通过 --prefix 覆盖）
+    srcPrefix: "img/X/",              // 路径前缀（可在命令行通过 --prefix 覆盖）
     useFilenameAsDescription: true,  // true = 用文件名（去掉后缀）当 description
     altPrefix: "IDEA ",      // alt 文字前缀
     recursive: false,                 // true = 递归扫描子文件夹
@@ -77,9 +77,9 @@ const currentDir = process.cwd();
 let imageFiles = getImages(currentDir);
 imageFiles.sort(naturalSort);
 
-// 生成数组对象
+// 生成整洁的单行对象数组
 let altCounter = CONFIG.startAltIndex;
-const galleryArray = imageFiles.map(img => {
+const formattedLines = imageFiles.map(img => {
     // 拼接最终的 src 路径
     const src = `${CONFIG.srcPrefix.endsWith('/') ? CONFIG.srcPrefix : CONFIG.srcPrefix + '/'}${img.relativePath}`;
     
@@ -91,29 +91,20 @@ const galleryArray = imageFiles.map(img => {
     if (CONFIG.useFilenameAsDescription) {
         description = img.nameWithoutExt;
     } else if (img.filename.includes('_backstory')) {
-        // 如果文件名包含 backstory，自动适配你的示例格式
         const prefix = img.nameWithoutExt.replace('_backstory', '');
         description = `${prefix}_生い立ち`;
     }
 
-    return {
-        src: src,
-        alt: alt,
-        description: description
-    };
+    // 拼接为单行格式（前面带 8 个空格缩进，可根据需要调整）
+    return `        { src: "${src}", alt: "${alt}", description: "${description}" },`;
 });
 
-// 格式化输出字符串（去掉双引号，保持你想要的 JS 对象字面量风格）
-const jsonString = JSON.stringify(galleryArray, null, 4);
-const formattedOutput = jsonString
-    .replace(/"src"/g, '        src')
-    .replace(/"alt"/g, 'alt')
-    .replace(/"description"/g, 'description')
-    .replace(/: "/g, ': "');
+// 组合所有行
+const finalOutput = formattedLines.join('\n');
 
 // 1. 终端打印
-console.log(formattedOutput);
+console.log(finalOutput);
 
 // 2. 自动写入 txt 文件
-fs.writeFileSync(CONFIG.outputFilename, formattedOutput, 'utf-8');
-console.log(`\n✨ 成功！数组内容已自动导出到当前目录下的: ${CONFIG.outputFilename}`);
+fs.writeFileSync(CONFIG.outputFilename, finalOutput, 'utf-8');
+console.log(`\n✨ 成功！规整的数组内容已自动导出到当前目录下的: ${CONFIG.outputFilename}`);

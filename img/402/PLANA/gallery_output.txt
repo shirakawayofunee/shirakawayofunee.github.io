@@ -1,0 +1,48 @@
+{
+     src: "img/402/PLANA/_015.gif",alt: "IDEA 1",description: "_015"
+    },
+    {
+     src: "img/402/PLANA/9B9AE7547FCC003C7C198E49B7940FCB.jpg",alt: "IDEA 2",description: "9B9AE7547FCC003C7C198E49B7940FCB"
+    },
+    {
+     src: "img/402/PLANA/2026-09-23_12.02.17_来口黏豆包_宿命破碎感直接拉满的殉道向构图大合集_7.jpeg",alt: "IDEA 3",description: "2026-09-23_12.02.17_来口黏豆包_宿命破碎感直接拉满的殉道向构图大合集_7"
+    },
+    {
+     src: "img/402/PLANA/穿透、花.jpeg",alt: "IDEA 4",description: "穿透、花"
+    },
+    {
+     src: "img/402/PLANA/共舞_002.png",alt: "IDEA 5",description: "共舞_002"
+    },
+    {
+     src: "img/402/PLANA/共舞_005.jpeg",alt: "IDEA 6",description: "共舞_005"
+    },
+    {
+     src: "img/402/PLANA/画外人构图.jpeg",alt: "IDEA 7",description: "画外人构图"
+    },
+    {
+     src: "img/402/PLANA/領域を侵す手_006.jpeg",alt: "IDEA 8",description: "領域を侵す手_006"
+    },
+    {
+     src: "img/402/PLANA/領域を侵す手_012.jpeg",alt: "IDEA 9",description: "領域を侵す手_012"
+    },
+    {
+     src: "img/402/PLANA/領域を侵す手_014.jpg",alt: "IDEA 10",description: "領域を侵す手_014"
+    },
+    {
+     src: "img/402/PLANA/手.gif",alt: "IDEA 11",description: "手"
+    },
+    {
+     src: "img/402/PLANA/手2.gif",alt: "IDEA 12",description: "手2"
+    },
+    {
+     src: "img/402/PLANA/塔罗牌-宝剑三.jpg",alt: "IDEA 13",description: "塔罗牌-宝剑三"
+    },
+    {
+     src: "img/402/PLANA/心脏.jpg",alt: "IDEA 14",description: "心脏"
+    },
+    {
+     src: "img/402/PLANA/叙事法漫《致索菲娅的歌谣》 - 小红书.webp",alt: "IDEA 15",description: "叙事法漫《致索菲娅的歌谣》 - 小红书"
+    },
+    {
+     src: "img/402/PLANA/Piano_002.jpeg",alt: "IDEA 16",description: "Piano_002"
+    }
