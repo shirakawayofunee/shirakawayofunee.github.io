@@ -41,9 +41,11 @@ export default {
     ],
     characters: [
       {
+        name0: `見捨てられた者の救世主`,
         name: `「COQUELIC」`,
+        name2: `コクリコ`,
         avatar: `img/dh/leopold402.png`,
-        note: `「花園」の主、裏社会を陰で牛耳る実力者。`,
+        note: `花園の主「業師」<br>裏社会を陰で牛耳る実力者`,
         basicStats: `憎しみを心ゆくまで楽しみ、愛を思う存分に謳歌する。
 
         生の流儀：人の世は百年ばかり。過ごすなら骨の髄まで味わい、鮮烈に艶やかに生きるべし。
@@ -55,9 +57,9 @@ export default {
         `,
         profile: `
         余命：1月
+        嫌い：無意味な犠牲 
         危険度：	S級
         能力：	緋花剣落
-        嫌い：無意味な犠牲 
 `, 
       },
       {
@@ -948,7 +950,8 @@ export default {
       
       avatar: `img/dh/impatient.png`,
       name: `「コクリコ」`,
-      text: `だったら君らだけで抱き合って地獄へ落ちなさい！他人を巻き込むんじゃないわよ！！！`,
+      text: `<span class="big-text no-red">だったら君らだけで抱き合って地獄へ落ちなさい！他人を巻き込むんじゃないわよ！！！</span>
+      `,
       voice: [
         { label: "中", path: "wav/CN/conversation29/vo_event_11042_120.wav" },
         { label: "日", path: "wav/JP/conversation29/vo_event_11042_94.wav" },

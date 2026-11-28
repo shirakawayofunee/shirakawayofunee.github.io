@@ -37,7 +37,7 @@ export default {
         name: `SHALOM`,
         name2: `シャーローム`,
         avatar: `img/dh/X30.png`,
-        note: `Hush-X<br>上庭の七代目執行人`,
+        note: `Hush-X <br>上庭の七代目執行人`,
         /* 高き壁に閉じ込められ感情を奪われた囚人。 */
         basicStats: `<span>執行人</span>はこれまで無数の人生を壊してきた。でも今回ばかりは、
         <span>シャーローム</span>が本心からLと彼女の理想郷が、生き延びられるように、Lを一助けすることを選んだ。
